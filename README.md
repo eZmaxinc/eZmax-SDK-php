@@ -75,9 +75,10 @@ $apiInstance = new OpenAPI\Client\Api\ActivesessionApi(
 );
 
 try {
-    $apiInstance->getCurrent();
+    $result = $apiInstance->call1ObjectActivesessionGetCurrentGet();
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ActivesessionApi->getCurrent: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ActivesessionApi->call1ObjectActivesessionGetCurrentGet: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -89,11 +90,17 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ActivesessionApi* | [**getCurrent**](docs/Api/ActivesessionApi.md#getcurrent) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+*ActivesessionApi* | [**call1ObjectActivesessionGetCurrentGet**](docs/Api/ActivesessionApi.md#call1objectactivesessiongetcurrentget) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 
 
 ## Documentation For Models
 
+ - [Response1ObjectActivesessionGetCurrent](docs/Model/Response1ObjectActivesessionGetCurrent.md)
+ - [Response1ObjectActivesessionGetCurrentAllOf](docs/Model/Response1ObjectActivesessionGetCurrentAllOf.md)
+ - [ResponseGeneric](docs/Model/ResponseGeneric.md)
+ - [SchemaGenericObjDebug](docs/Model/SchemaGenericObjDebug.md)
+ - [SchemaGenericObjDebugPayload](docs/Model/SchemaGenericObjDebugPayload.md)
+ - [SchemaGenericObjSQLQuery](docs/Model/SchemaGenericObjSQLQuery.md)
 
 
 ## Documentation For Authorization

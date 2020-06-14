@@ -4,13 +4,13 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCurrent**](ActivesessionApi.md#getCurrent) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+[**call1ObjectActivesessionGetCurrentGet**](ActivesessionApi.md#call1ObjectActivesessionGetCurrentGet) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 
 
 
-## getCurrent
+## call1ObjectActivesessionGetCurrentGet
 
-> getCurrent()
+> \OpenAPI\Client\Model\Response1ObjectActivesessionGetCurrent call1ObjectActivesessionGetCurrentGet()
 
 Get Current Activesession
 
@@ -37,9 +37,10 @@ $apiInstance = new OpenAPI\Client\Api\ActivesessionApi(
 );
 
 try {
-    $apiInstance->getCurrent();
+    $result = $apiInstance->call1ObjectActivesessionGetCurrentGet();
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ActivesessionApi->getCurrent: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ActivesessionApi->call1ObjectActivesessionGetCurrentGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -50,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**\OpenAPI\Client\Model\Response1ObjectActivesessionGetCurrent**](../Model/Response1ObjectActivesessionGetCurrent.md)
 
 ### Authorization
 
