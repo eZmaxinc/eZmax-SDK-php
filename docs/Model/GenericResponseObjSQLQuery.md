@@ -1,11 +1,11 @@
-# # ResponseGeneric
+# # GenericResponseObjSQLQuery
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**obj_debug_payload** | [**\OpenAPI\Client\Model\SchemaGenericObjDebugPayload**](SchemaGenericObjDebugPayload.md) |  | [optional] 
-**obj_debug** | [**\OpenAPI\Client\Model\SchemaGenericObjDebug**](SchemaGenericObjDebug.md) |  | [optional] 
+**sQuery** | **string** | The SQL Query | 
+**fDuration** | **float** | Execution time of the SQL Query in seconds. | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
