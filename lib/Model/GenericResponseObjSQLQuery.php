@@ -13,7 +13,7 @@
 /**
  * eZmax API Definition
  *
- * TODO Api description
+ * TODO Api description.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support-api@ezmax.ca
