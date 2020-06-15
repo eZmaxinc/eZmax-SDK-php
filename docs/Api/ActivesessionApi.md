@@ -1,16 +1,16 @@
-# OpenAPI\Client\ActivesessionApi
+# eZmaxAPI\Client\ActivesessionApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCurrent**](ActivesessionApi.md#getCurrent) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+[**call1ObjectActivesessionGetCurrentGet**](ActivesessionApi.md#call1ObjectActivesessionGetCurrentGet) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 
 
 
-## getCurrent
+## call1ObjectActivesessionGetCurrentGet
 
-> getCurrent()
+> \eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response call1ObjectActivesessionGetCurrentGet()
 
 Get Current Activesession
 
@@ -24,12 +24,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: Authorization
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\ActivesessionApi(
+$apiInstance = new eZmaxAPI\Client\Api\ActivesessionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -37,9 +37,10 @@ $apiInstance = new OpenAPI\Client\Api\ActivesessionApi(
 );
 
 try {
-    $apiInstance->getCurrent();
+    $result = $apiInstance->call1ObjectActivesessionGetCurrentGet();
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ActivesessionApi->getCurrent: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ActivesessionApi->call1ObjectActivesessionGetCurrentGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -50,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**\eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response**](../Model/ObjectActivesessionGetCurrentV1Response.md)
 
 ### Authorization
 
