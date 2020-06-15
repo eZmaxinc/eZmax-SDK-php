@@ -116,7 +116,7 @@ class ObjectActivesessionApi
     }
 
     /**
-     * Operation objectActivesessionGetCurrent1
+     * Operation objectActivesessionGetCurrentV1
      *
      * Get Current Activesession
      *
@@ -125,14 +125,14 @@ class ObjectActivesessionApi
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response
      */
-    public function objectActivesessionGetCurrent1()
+    public function objectActivesessionGetCurrentV1()
     {
-        list($response) = $this->objectActivesessionGetCurrent1WithHttpInfo();
+        list($response) = $this->objectActivesessionGetCurrentV1WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation objectActivesessionGetCurrent1WithHttpInfo
+     * Operation objectActivesessionGetCurrentV1WithHttpInfo
      *
      * Get Current Activesession
      *
@@ -141,9 +141,9 @@ class ObjectActivesessionApi
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function objectActivesessionGetCurrent1WithHttpInfo()
+    public function objectActivesessionGetCurrentV1WithHttpInfo()
     {
-        $request = $this->objectActivesessionGetCurrent1Request();
+        $request = $this->objectActivesessionGetCurrentV1Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -219,7 +219,7 @@ class ObjectActivesessionApi
     }
 
     /**
-     * Operation objectActivesessionGetCurrent1Async
+     * Operation objectActivesessionGetCurrentV1Async
      *
      * Get Current Activesession
      *
@@ -227,9 +227,9 @@ class ObjectActivesessionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function objectActivesessionGetCurrent1Async()
+    public function objectActivesessionGetCurrentV1Async()
     {
-        return $this->objectActivesessionGetCurrent1AsyncWithHttpInfo()
+        return $this->objectActivesessionGetCurrentV1AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -238,7 +238,7 @@ class ObjectActivesessionApi
     }
 
     /**
-     * Operation objectActivesessionGetCurrent1AsyncWithHttpInfo
+     * Operation objectActivesessionGetCurrentV1AsyncWithHttpInfo
      *
      * Get Current Activesession
      *
@@ -246,10 +246,10 @@ class ObjectActivesessionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function objectActivesessionGetCurrent1AsyncWithHttpInfo()
+    public function objectActivesessionGetCurrentV1AsyncWithHttpInfo()
     {
         $returnType = '\eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response';
-        $request = $this->objectActivesessionGetCurrent1Request();
+        $request = $this->objectActivesessionGetCurrentV1Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -286,13 +286,13 @@ class ObjectActivesessionApi
     }
 
     /**
-     * Create request for operation 'objectActivesessionGetCurrent1'
+     * Create request for operation 'objectActivesessionGetCurrentV1'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function objectActivesessionGetCurrent1Request()
+    protected function objectActivesessionGetCurrentV1Request()
     {
 
         $resourcePath = '/1/object/activesession/getCurrent';
