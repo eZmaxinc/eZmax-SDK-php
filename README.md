@@ -1,4 +1,4 @@
-# ezmaxinc/eZmax-SDK-php
+# ezmaxinc/ezmax-sdk-php
 
 TODO Api description
 
@@ -40,7 +40,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/ezmaxinc/eZmax-SDK-php/vendor/autoload.php');
+    require_once('/path/to/ezmaxinc/ezmax-sdk-php/vendor/autoload.php');
 ```
 
 ## Tests
