@@ -1,6 +1,6 @@
 <?php
 /**
- * DefaultApi
+ * ObjectActivesessionApi
  * PHP version 7.2
  *
  * @category Class
@@ -40,14 +40,14 @@ use eZmaxAPI\Client\HeaderSelector;
 use eZmaxAPI\Client\ObjectSerializer;
 
 /**
- * DefaultApi Class Doc Comment
+ * ObjectActivesessionApi Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DefaultApi
+class ObjectActivesessionApi
 {
     /**
      * @var ClientInterface
@@ -116,7 +116,7 @@ class DefaultApi
     }
 
     /**
-     * Operation testOperationID
+     * Operation objectActivesessionGetCurrent1
      *
      * Get Current Activesession
      *
@@ -125,14 +125,14 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response
      */
-    public function testOperationID()
+    public function objectActivesessionGetCurrent1()
     {
-        list($response) = $this->testOperationIDWithHttpInfo();
+        list($response) = $this->objectActivesessionGetCurrent1WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation testOperationIDWithHttpInfo
+     * Operation objectActivesessionGetCurrent1WithHttpInfo
      *
      * Get Current Activesession
      *
@@ -141,9 +141,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function testOperationIDWithHttpInfo()
+    public function objectActivesessionGetCurrent1WithHttpInfo()
     {
-        $request = $this->testOperationIDRequest();
+        $request = $this->objectActivesessionGetCurrent1Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -219,7 +219,7 @@ class DefaultApi
     }
 
     /**
-     * Operation testOperationIDAsync
+     * Operation objectActivesessionGetCurrent1Async
      *
      * Get Current Activesession
      *
@@ -227,9 +227,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function testOperationIDAsync()
+    public function objectActivesessionGetCurrent1Async()
     {
-        return $this->testOperationIDAsyncWithHttpInfo()
+        return $this->objectActivesessionGetCurrent1AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -238,7 +238,7 @@ class DefaultApi
     }
 
     /**
-     * Operation testOperationIDAsyncWithHttpInfo
+     * Operation objectActivesessionGetCurrent1AsyncWithHttpInfo
      *
      * Get Current Activesession
      *
@@ -246,10 +246,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function testOperationIDAsyncWithHttpInfo()
+    public function objectActivesessionGetCurrent1AsyncWithHttpInfo()
     {
         $returnType = '\eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response';
-        $request = $this->testOperationIDRequest();
+        $request = $this->objectActivesessionGetCurrent1Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -286,13 +286,13 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'testOperationID'
+     * Create request for operation 'objectActivesessionGetCurrent1'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function testOperationIDRequest()
+    protected function objectActivesessionGetCurrent1Request()
     {
 
         $resourcePath = '/1/object/activesession/getCurrent';

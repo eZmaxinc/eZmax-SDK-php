@@ -1,6 +1,6 @@
 <?php
 /**
- * DefaultApiTest
+ * ObjectActivesessionApiTest
  * PHP version 7.2
  *
  * @category Class
@@ -34,14 +34,14 @@ use \eZmaxAPI\Client\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * DefaultApiTest Class Doc Comment
+ * ObjectActivesessionApiTest Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DefaultApiTest extends TestCase
+class ObjectActivesessionApiTest extends TestCase
 {
 
     /**
@@ -73,12 +73,12 @@ class DefaultApiTest extends TestCase
     }
 
     /**
-     * Test case for testOperationID
+     * Test case for objectActivesessionGetCurrent1
      *
      * Get Current Activesession.
      *
      */
-    public function testTestOperationID()
+    public function testObjectActivesessionGetCurrent1()
     {
     }
 }

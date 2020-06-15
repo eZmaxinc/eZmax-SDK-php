@@ -68,7 +68,7 @@ $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\DefaultApi(
+$apiInstance = new eZmaxAPI\Client\Api\ObjectActivesessionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -76,10 +76,10 @@ $apiInstance = new eZmaxAPI\Client\Api\DefaultApi(
 );
 
 try {
-    $result = $apiInstance->testOperationID();
+    $result = $apiInstance->objectActivesessionGetCurrent1();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->testOperationID: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectActivesessionApi->objectActivesessionGetCurrent1: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -91,7 +91,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**testOperationID**](docs/Api/DefaultApi.md#testoperationid) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+*ObjectActivesessionApi* | [**objectActivesessionGetCurrent1**](docs/Api/ObjectActivesessionApi.md#objectactivesessiongetcurrent1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 
 
 ## Documentation For Models
