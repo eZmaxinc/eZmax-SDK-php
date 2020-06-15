@@ -1,4 +1,4 @@
-# ezmaxinc/ezmax-sdk-php
+# ezmaxinc/eZmax-SDK-php
 
 TODO Api description
 
@@ -24,11 +24,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/ezmaxinc/eZmax-SDK-php.git"
+      "url": "https://github.com/ezmaxinc/ezmax-sdk-php.git"
     }
   ],
   "require": {
-    "ezmaxinc/eZmax-SDK-php": "*@dev"
+    "ezmaxinc/ezmax-sdk-php": "*@dev"
   }
 }
 ```
@@ -40,7 +40,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/ezmaxinc/ezmax-sdk-php/vendor/autoload.php');
+    require_once('/path/to/ezmaxinc/eZmax-SDK-php/vendor/autoload.php');
 ```
 
 ## Tests

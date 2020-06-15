@@ -19,7 +19,7 @@ if [ "$git_user_id" = "" ]; then
 fi
 
 if [ "$git_repo_id" = "" ]; then
-    git_repo_id="eZmax-SDK-php"
+    git_repo_id="ezmax-sdk-php"
     echo "[INFO] No command line input provided. Set \$git_repo_id to $git_repo_id"
 fi
 
