@@ -1,6 +1,6 @@
 <?php
 /**
- * ActivesessionApi
+ * DefaultApi
  * PHP version 7.2
  *
  * @category Class
@@ -40,14 +40,14 @@ use eZmaxAPI\Client\HeaderSelector;
 use eZmaxAPI\Client\ObjectSerializer;
 
 /**
- * ActivesessionApi Class Doc Comment
+ * DefaultApi Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ActivesessionApi
+class DefaultApi
 {
     /**
      * @var ClientInterface

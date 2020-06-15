@@ -4,7 +4,7 @@
 .travis.yml
 README.md
 composer.json
-docs/Api/ActivesessionApi.md
+docs/Api/DefaultApi.md
 docs/Model/GenericResponse.md
 docs/Model/GenericResponseObjDebug.md
 docs/Model/GenericResponseObjDebugPayload.md
@@ -12,7 +12,7 @@ docs/Model/GenericResponseObjSQLQuery.md
 docs/Model/ObjectActivesessionGetCurrentV1Response.md
 docs/Model/ObjectActivesessionGetCurrentV1ResponseMPayload.md
 git_push.sh
-lib/Api/ActivesessionApi.php
+lib/Api/DefaultApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
@@ -25,7 +25,7 @@ lib/Model/ObjectActivesessionGetCurrentV1Response.php
 lib/Model/ObjectActivesessionGetCurrentV1ResponseMPayload.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/ActivesessionApiTest.php
+test/Api/DefaultApiTest.php
 test/Model/GenericResponseObjDebugPayloadTest.php
 test/Model/GenericResponseObjDebugTest.php
 test/Model/GenericResponseObjSQLQueryTest.php

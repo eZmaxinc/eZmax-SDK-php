@@ -1,6 +1,6 @@
 <?php
 /**
- * ActivesessionApiTest
+ * DefaultApiTest
  * PHP version 7.2
  *
  * @category Class
@@ -34,14 +34,14 @@ use \eZmaxAPI\Client\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ActivesessionApiTest Class Doc Comment
+ * DefaultApiTest Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ActivesessionApiTest extends TestCase
+class DefaultApiTest extends TestCase
 {
 
     /**
