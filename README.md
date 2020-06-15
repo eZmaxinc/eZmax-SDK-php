@@ -76,10 +76,10 @@ $apiInstance = new eZmaxAPI\Client\Api\ActivesessionApi(
 );
 
 try {
-    $result = $apiInstance->call1ObjectActivesessionGetCurrentGet();
+    $result = $apiInstance->testOperationID();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ActivesessionApi->call1ObjectActivesessionGetCurrentGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ActivesessionApi->testOperationID: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -91,7 +91,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ActivesessionApi* | [**call1ObjectActivesessionGetCurrentGet**](docs/Api/ActivesessionApi.md#call1objectactivesessiongetcurrentget) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+*ActivesessionApi* | [**testOperationID**](docs/Api/ActivesessionApi.md#testoperationid) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 
 
 ## Documentation For Models

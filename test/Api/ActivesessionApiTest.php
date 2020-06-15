@@ -73,12 +73,12 @@ class ActivesessionApiTest extends TestCase
     }
 
     /**
-     * Test case for call1ObjectActivesessionGetCurrentGet
+     * Test case for testOperationID
      *
      * Get Current Activesession.
      *
      */
-    public function testCall1ObjectActivesessionGetCurrentGet()
+    public function testTestOperationID()
     {
     }
 }
