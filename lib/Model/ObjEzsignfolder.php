@@ -63,7 +63,9 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
         'fkiEzsignfoldertypeID' => 'int',
         'fkiLanguageID' => 'int',
         'eEzsignfolderStep' => 'string',
-        'pkiEzsignfolderID' => 'int'
+        'pkiEzsignfolderID' => 'int',
+        'sEzsignfolderDescription' => 'string',
+        'tEzsignfolderNote' => 'string'
     ];
 
     /**
@@ -77,7 +79,9 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
         'fkiEzsignfoldertypeID' => null,
         'fkiLanguageID' => null,
         'eEzsignfolderStep' => null,
-        'pkiEzsignfolderID' => null
+        'pkiEzsignfolderID' => null,
+        'sEzsignfolderDescription' => null,
+        'tEzsignfolderNote' => null
     ];
 
     /**
@@ -112,7 +116,9 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
         'fkiLanguageID' => 'fkiLanguageID',
         'eEzsignfolderStep' => 'eEzsignfolderStep',
-        'pkiEzsignfolderID' => 'pkiEzsignfolderID'
+        'pkiEzsignfolderID' => 'pkiEzsignfolderID',
+        'sEzsignfolderDescription' => 'sEzsignfolderDescription',
+        'tEzsignfolderNote' => 'tEzsignfolderNote'
     ];
 
     /**
@@ -126,7 +132,9 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
         'fkiLanguageID' => 'setFkiLanguageID',
         'eEzsignfolderStep' => 'setEEzsignfolderStep',
-        'pkiEzsignfolderID' => 'setPkiEzsignfolderID'
+        'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
+        'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
+        'tEzsignfolderNote' => 'setTEzsignfolderNote'
     ];
 
     /**
@@ -140,7 +148,9 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
         'fkiLanguageID' => 'getFkiLanguageID',
         'eEzsignfolderStep' => 'getEEzsignfolderStep',
-        'pkiEzsignfolderID' => 'getPkiEzsignfolderID'
+        'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
+        'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
+        'tEzsignfolderNote' => 'getTEzsignfolderNote'
     ];
 
     /**
@@ -184,8 +194,35 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const E_EZSIGNFOLDER_STEP_UNSENT = 'Unsent';
+    const E_EZSIGNFOLDER_STEP_SENT = 'Sent';
+    const E_EZSIGNFOLDER_STEP_PARTIALLY_SIGNED = 'PartiallySigned';
+    const E_EZSIGNFOLDER_STEP_EXPIRED = 'Expired';
+    const E_EZSIGNFOLDER_STEP_SIGNED = 'Signed';
+    const E_EZSIGNFOLDER_STEP_SIGNEDMANUAL = 'Signedmanual';
+    const E_EZSIGNFOLDER_STEP_COMPLETED = 'Completed';
+    const E_EZSIGNFOLDER_STEP_ARCHIVED = 'Archived';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEEzsignfolderStepAllowableValues()
+    {
+        return [
+            self::E_EZSIGNFOLDER_STEP_UNSENT,
+            self::E_EZSIGNFOLDER_STEP_SENT,
+            self::E_EZSIGNFOLDER_STEP_PARTIALLY_SIGNED,
+            self::E_EZSIGNFOLDER_STEP_EXPIRED,
+            self::E_EZSIGNFOLDER_STEP_SIGNED,
+            self::E_EZSIGNFOLDER_STEP_SIGNEDMANUAL,
+            self::E_EZSIGNFOLDER_STEP_COMPLETED,
+            self::E_EZSIGNFOLDER_STEP_ARCHIVED,
+        ];
+    }
     
 
     /**
@@ -209,6 +246,8 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
         $this->container['fkiLanguageID'] = isset($data['fkiLanguageID']) ? $data['fkiLanguageID'] : null;
         $this->container['eEzsignfolderStep'] = isset($data['eEzsignfolderStep']) ? $data['eEzsignfolderStep'] : null;
         $this->container['pkiEzsignfolderID'] = isset($data['pkiEzsignfolderID']) ? $data['pkiEzsignfolderID'] : null;
+        $this->container['sEzsignfolderDescription'] = isset($data['sEzsignfolderDescription']) ? $data['sEzsignfolderDescription'] : null;
+        $this->container['tEzsignfolderNote'] = isset($data['tEzsignfolderNote']) ? $data['tEzsignfolderNote'] : null;
     }
 
     /**
@@ -226,8 +265,19 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
         if ($this->container['fkiLanguageID'] === null) {
             $invalidProperties[] = "'fkiLanguageID' can't be null";
         }
+        $allowedValues = $this->getEEzsignfolderStepAllowableValues();
+        if (!is_null($this->container['eEzsignfolderStep']) && !in_array($this->container['eEzsignfolderStep'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'eEzsignfolderStep', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['pkiEzsignfolderID'] === null) {
             $invalidProperties[] = "'pkiEzsignfolderID' can't be null";
+        }
+        if ($this->container['sEzsignfolderDescription'] === null) {
+            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
         }
         return $invalidProperties;
     }
@@ -329,7 +379,7 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
     /**
      * Sets fkiLanguageID
      *
-     * @param int $fkiLanguageID A Foreign Key to the Language
+     * @param int $fkiLanguageID The ID of the language, Valid values are: 1. French 2. English
      *
      * @return $this
      */
@@ -353,12 +403,21 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
     /**
      * Sets eEzsignfolderStep
      *
-     * @param string|null $eEzsignfolderStep eEzsignfolderStep
+     * @param string|null $eEzsignfolderStep The step or status or the document
      *
      * @return $this
      */
     public function setEEzsignfolderStep($eEzsignfolderStep)
     {
+        $allowedValues = $this->getEEzsignfolderStepAllowableValues();
+        if (!is_null($eEzsignfolderStep) && !in_array($eEzsignfolderStep, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'eEzsignfolderStep', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['eEzsignfolderStep'] = $eEzsignfolderStep;
 
         return $this;
@@ -384,6 +443,54 @@ class ObjEzsignfolder implements ModelInterface, ArrayAccess
     public function setPkiEzsignfolderID($pkiEzsignfolderID)
     {
         $this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
+
+        return $this;
+    }
+
+    /**
+     * Gets sEzsignfolderDescription
+     *
+     * @return string
+     */
+    public function getSEzsignfolderDescription()
+    {
+        return $this->container['sEzsignfolderDescription'];
+    }
+
+    /**
+     * Sets sEzsignfolderDescription
+     *
+     * @param string $sEzsignfolderDescription The description of the Ezsign Folder
+     *
+     * @return $this
+     */
+    public function setSEzsignfolderDescription($sEzsignfolderDescription)
+    {
+        $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets tEzsignfolderNote
+     *
+     * @return string|null
+     */
+    public function getTEzsignfolderNote()
+    {
+        return $this->container['tEzsignfolderNote'];
+    }
+
+    /**
+     * Sets tEzsignfolderNote
+     *
+     * @param string|null $tEzsignfolderNote Somes extra notes about the eZsign Folder
+     *
+     * @return $this
+     */
+    public function setTEzsignfolderNote($tEzsignfolderNote)
+    {
+        $this->container['tEzsignfolderNote'] = $tEzsignfolderNote;
 
         return $this;
     }

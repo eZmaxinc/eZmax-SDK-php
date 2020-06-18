@@ -11,6 +11,8 @@ docs/Model/GenericResponseObjSQLQuery.md
 docs/Model/ObjEzsignfolder.md
 docs/Model/ObjectActivesessionGetCurrentV1Response.md
 docs/Model/ObjectActivesessionGetCurrentV1ResponseMPayload.md
+docs/Model/ObjectEzsignfolderGetObjectV1Response.md
+docs/Model/ObjectEzsignfolderGetObjectV1ResponseMPayload.md
 git_push.sh
 lib/Api/ObjectActivesessionApi.php
 lib/ApiException.php
@@ -24,5 +26,9 @@ lib/Model/ModelInterface.php
 lib/Model/ObjEzsignfolder.php
 lib/Model/ObjectActivesessionGetCurrentV1Response.php
 lib/Model/ObjectActivesessionGetCurrentV1ResponseMPayload.php
+lib/Model/ObjectEzsignfolderGetObjectV1Response.php
+lib/Model/ObjectEzsignfolderGetObjectV1ResponseMPayload.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/ObjectEzsignfolderGetObjectV1ResponseMPayloadTest.php
+test/Model/ObjectEzsignfolderGetObjectV1ResponseTest.php
