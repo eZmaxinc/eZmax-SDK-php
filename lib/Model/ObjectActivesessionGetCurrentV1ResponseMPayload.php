@@ -224,7 +224,7 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
         $this->container['sCustomerCode'] = isset($data['sCustomerCode']) ? $data['sCustomerCode'] : null;
         $this->container['eActivesessionSessiontype'] = isset($data['eActivesessionSessiontype']) ? $data['eActivesessionSessiontype'] : null;
         $this->container['fkiLanguageID'] = isset($data['fkiLanguageID']) ? $data['fkiLanguageID'] : null;
-        $this->container['sCompanyNameX'] = isset($data['sCompanyNameX']) ? $data['sCompanyNameX'] : null;
+        $this->container['sCompanyNameX'] = isset($data['sCompanyNameX']) ? $data['sCompanyNameX'] : 'MSD Informatique';
         $this->container['sDepartmentNameX'] = isset($data['sDepartmentNameX']) ? $data['sDepartmentNameX'] : null;
         $this->container['aRegisteredModules'] = isset($data['aRegisteredModules']) ? $data['aRegisteredModules'] : null;
         $this->container['aPermissions'] = isset($data['aPermissions']) ? $data['aPermissions'] : null;
@@ -259,6 +259,10 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
         if ($this->container['sCompanyNameX'] === null) {
             $invalidProperties[] = "'sCompanyNameX' can't be null";
         }
+        if ((mb_strlen($this->container['sCompanyNameX']) > 25)) {
+            $invalidProperties[] = "invalid value for 'sCompanyNameX', the character length must be smaller than or equal to 25.";
+        }
+
         if ($this->container['sDepartmentNameX'] === null) {
             $invalidProperties[] = "'sDepartmentNameX' can't be null";
         }
@@ -383,6 +387,10 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
      */
     public function setSCompanyNameX($sCompanyNameX)
     {
+        if ((mb_strlen($sCompanyNameX) > 25)) {
+            throw new \InvalidArgumentException('invalid length for $sCompanyNameX when calling ObjectActivesessionGetCurrentV1ResponseMPayload., must be smaller than or equal to 25.');
+        }
+
         $this->container['sCompanyNameX'] = $sCompanyNameX;
 
         return $this;

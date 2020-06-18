@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
  - [GenericResponseObjDebug](docs/Model/GenericResponseObjDebug.md)
  - [GenericResponseObjDebugPayload](docs/Model/GenericResponseObjDebugPayload.md)
  - [GenericResponseObjSQLQuery](docs/Model/GenericResponseObjSQLQuery.md)
+ - [ObjEzsignfolder](docs/Model/ObjEzsignfolder.md)
  - [ObjectActivesessionGetCurrentV1Response](docs/Model/ObjectActivesessionGetCurrentV1Response.md)
  - [ObjectActivesessionGetCurrentV1ResponseMPayload](docs/Model/ObjectActivesessionGetCurrentV1ResponseMPayload.md)
 
