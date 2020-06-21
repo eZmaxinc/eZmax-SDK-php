@@ -74,7 +74,7 @@ $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\ObjectActivesessionApi(
+$apiInstance = new eZmaxAPI\Client\Api\ActivesessionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -82,10 +82,10 @@ $apiInstance = new eZmaxAPI\Client\Api\ObjectActivesessionApi(
 );
 
 try {
-    $result = $apiInstance->objectActivesessionGetCurrentV1();
+    $result = $apiInstance->activesessionGetCurrentV1();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectActivesessionApi->objectActivesessionGetCurrentV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ActivesessionApi->activesessionGetCurrentV1: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -97,32 +97,32 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ObjectActivesessionApi* | [**objectActivesessionGetCurrentV1**](docs/Api/ObjectActivesessionApi.md#objectactivesessiongetcurrentv1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
-*ObjectEzsignfolderApi* | [**objectEzsignfolderCreateObjectV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfoldercreateobjectv1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
-*ObjectEzsignfolderApi* | [**objectEzsignfolderDeleteObjectV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfolderdeleteobjectv1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
-*ObjectEzsignfolderApi* | [**objectEzsignfolderEditObjectV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfoldereditobjectv1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
-*ObjectEzsignfolderApi* | [**objectEzsignfolderGetObjectGetChildrenV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfoldergetobjectgetchildrenv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
-*ObjectEzsignfolderApi* | [**objectEzsignfolderGetObjectV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfoldergetobjectv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
+*ActivesessionApi* | [**activesessionGetCurrentV1**](docs/Api/ActivesessionApi.md#activesessiongetcurrentv1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+*EzsignfolderApi* | [**ezsignfolderCreateObjectV1**](docs/Api/EzsignfolderApi.md#ezsignfoldercreateobjectv1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
+*EzsignfolderApi* | [**ezsignfolderDeleteObjectV1**](docs/Api/EzsignfolderApi.md#ezsignfolderdeleteobjectv1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
+*EzsignfolderApi* | [**ezsignfolderEditObjectV1**](docs/Api/EzsignfolderApi.md#ezsignfoldereditobjectv1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
+*EzsignfolderApi* | [**ezsignfolderGetObjectGetChildrenV1**](docs/Api/EzsignfolderApi.md#ezsignfoldergetobjectgetchildrenv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
+*EzsignfolderApi* | [**ezsignfolderGetObjectV1**](docs/Api/EzsignfolderApi.md#ezsignfoldergetobjectv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 
 
 ## Documentation For Models
 
+ - [ActivesessionGetCurrentV1Response](docs/Model/ActivesessionGetCurrentV1Response.md)
+ - [ActivesessionGetCurrentV1ResponseMPayload](docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md)
+ - [EzsignfolderCompoundRequest](docs/Model/EzsignfolderCompoundRequest.md)
+ - [EzsignfolderCreateObjectV1Request](docs/Model/EzsignfolderCreateObjectV1Request.md)
+ - [EzsignfolderCreateObjectV1Response](docs/Model/EzsignfolderCreateObjectV1Response.md)
+ - [EzsignfolderCreateObjectV1ResponseMPayload](docs/Model/EzsignfolderCreateObjectV1ResponseMPayload.md)
+ - [EzsignfolderDeleteObjectV1Response](docs/Model/EzsignfolderDeleteObjectV1Response.md)
+ - [EzsignfolderEditObjectV1Request](docs/Model/EzsignfolderEditObjectV1Request.md)
+ - [EzsignfolderEditObjectV1Response](docs/Model/EzsignfolderEditObjectV1Response.md)
+ - [EzsignfolderGetObjectV1Response](docs/Model/EzsignfolderGetObjectV1Response.md)
+ - [EzsignfolderRequest](docs/Model/EzsignfolderRequest.md)
  - [GenericResponse](docs/Model/GenericResponse.md)
  - [GenericResponseError](docs/Model/GenericResponseError.md)
  - [GenericResponseObjDebug](docs/Model/GenericResponseObjDebug.md)
  - [GenericResponseObjDebugPayload](docs/Model/GenericResponseObjDebugPayload.md)
  - [GenericResponseObjSQLQuery](docs/Model/GenericResponseObjSQLQuery.md)
- - [ObjEzsignfolderCompoundRequest](docs/Model/ObjEzsignfolderCompoundRequest.md)
- - [ObjEzsignfolderRequest](docs/Model/ObjEzsignfolderRequest.md)
- - [ObjectActivesessionGetCurrentV1Response](docs/Model/ObjectActivesessionGetCurrentV1Response.md)
- - [ObjectActivesessionGetCurrentV1ResponseMPayload](docs/Model/ObjectActivesessionGetCurrentV1ResponseMPayload.md)
- - [ObjectEzsignfolderCreateObjectV1Request](docs/Model/ObjectEzsignfolderCreateObjectV1Request.md)
- - [ObjectEzsignfolderCreateObjectV1Response](docs/Model/ObjectEzsignfolderCreateObjectV1Response.md)
- - [ObjectEzsignfolderCreateObjectV1ResponseMPayload](docs/Model/ObjectEzsignfolderCreateObjectV1ResponseMPayload.md)
- - [ObjectEzsignfolderDeleteObjectV1Response](docs/Model/ObjectEzsignfolderDeleteObjectV1Response.md)
- - [ObjectEzsignfolderEditObjectV1Request](docs/Model/ObjectEzsignfolderEditObjectV1Request.md)
- - [ObjectEzsignfolderEditObjectV1Response](docs/Model/ObjectEzsignfolderEditObjectV1Response.md)
- - [ObjectEzsignfolderGetObjectV1Response](docs/Model/ObjectEzsignfolderGetObjectV1Response.md)
 
 
 ## Documentation For Authorization
