@@ -62,7 +62,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
         'sRunTime' => 'string',
         'iSQLSelects' => 'int',
         'iSQLQueries' => 'int',
-        'aObjQuery' => '\eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[]'
+        'aObjSQLQuery' => '\eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[]'
     ];
 
     /**
@@ -75,7 +75,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
         'sRunTime' => null,
         'iSQLSelects' => null,
         'iSQLQueries' => null,
-        'aObjQuery' => null
+        'aObjSQLQuery' => null
     ];
 
     /**
@@ -109,7 +109,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
         'sRunTime' => 'sRunTime',
         'iSQLSelects' => 'iSQLSelects',
         'iSQLQueries' => 'iSQLQueries',
-        'aObjQuery' => 'a_objQuery'
+        'aObjSQLQuery' => 'a_objSQLQuery'
     ];
 
     /**
@@ -122,7 +122,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
         'sRunTime' => 'setSRunTime',
         'iSQLSelects' => 'setISQLSelects',
         'iSQLQueries' => 'setISQLQueries',
-        'aObjQuery' => 'setAObjQuery'
+        'aObjSQLQuery' => 'setAObjSQLQuery'
     ];
 
     /**
@@ -135,7 +135,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
         'sRunTime' => 'getSRunTime',
         'iSQLSelects' => 'getISQLSelects',
         'iSQLQueries' => 'getISQLQueries',
-        'aObjQuery' => 'getAObjQuery'
+        'aObjSQLQuery' => 'getAObjSQLQuery'
     ];
 
     /**
@@ -202,7 +202,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
         $this->container['sRunTime'] = isset($data['sRunTime']) ? $data['sRunTime'] : null;
         $this->container['iSQLSelects'] = isset($data['iSQLSelects']) ? $data['iSQLSelects'] : null;
         $this->container['iSQLQueries'] = isset($data['iSQLQueries']) ? $data['iSQLQueries'] : null;
-        $this->container['aObjQuery'] = isset($data['aObjQuery']) ? $data['aObjQuery'] : null;
+        $this->container['aObjSQLQuery'] = isset($data['aObjSQLQuery']) ? $data['aObjSQLQuery'] : null;
     }
 
     /**
@@ -226,8 +226,8 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
         if ($this->container['iSQLQueries'] === null) {
             $invalidProperties[] = "'iSQLQueries' can't be null";
         }
-        if ($this->container['aObjQuery'] === null) {
-            $invalidProperties[] = "'aObjQuery' can't be null";
+        if ($this->container['aObjSQLQuery'] === null) {
+            $invalidProperties[] = "'aObjSQLQuery' can't be null";
         }
         return $invalidProperties;
     }
@@ -341,25 +341,25 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets aObjQuery
+     * Gets aObjSQLQuery
      *
      * @return \eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[]
      */
-    public function getAObjQuery()
+    public function getAObjSQLQuery()
     {
-        return $this->container['aObjQuery'];
+        return $this->container['aObjSQLQuery'];
     }
 
     /**
-     * Sets aObjQuery
+     * Sets aObjSQLQuery
      *
-     * @param \eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[] $aObjQuery An array of the SQL Queries that were executed during the API request execution
+     * @param \eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[] $aObjSQLQuery An array of the SQL Queries that were executed during the API request execution
      *
      * @return $this
      */
-    public function setAObjQuery($aObjQuery)
+    public function setAObjSQLQuery($aObjSQLQuery)
     {
-        $this->container['aObjQuery'] = $aObjQuery;
+        $this->container['aObjSQLQuery'] = $aObjSQLQuery;
 
         return $this;
     }

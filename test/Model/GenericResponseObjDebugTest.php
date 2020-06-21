@@ -107,9 +107,9 @@ class GenericResponseObjDebugTest extends TestCase
     }
 
     /**
-     * Test attribute "aObjQuery"
+     * Test attribute "aObjSQLQuery"
      */
-    public function testPropertyAObjQuery()
+    public function testPropertyAObjSQLQuery()
     {
     }
 }
