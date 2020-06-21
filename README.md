@@ -74,7 +74,7 @@ $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\ActivesessionApi(
+$apiInstance = new eZmaxAPI\Client\Api\ObjectActivesessionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -85,7 +85,7 @@ try {
     $result = $apiInstance->objectActivesessionGetCurrentV1();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ActivesessionApi->objectActivesessionGetCurrentV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectActivesessionApi->objectActivesessionGetCurrentV1: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -97,12 +97,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ActivesessionApi* | [**objectActivesessionGetCurrentV1**](docs/Api/ActivesessionApi.md#objectactivesessiongetcurrentv1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
-*EzsignfolderApi* | [**objectEzsignfolderCreateObjectV1**](docs/Api/EzsignfolderApi.md#objectezsignfoldercreateobjectv1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
-*EzsignfolderApi* | [**objectEzsignfolderDeleteObjectV1**](docs/Api/EzsignfolderApi.md#objectezsignfolderdeleteobjectv1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
-*EzsignfolderApi* | [**objectEzsignfolderEditObjectV1**](docs/Api/EzsignfolderApi.md#objectezsignfoldereditobjectv1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
-*EzsignfolderApi* | [**objectEzsignfolderGetObjectGetChildrenV1**](docs/Api/EzsignfolderApi.md#objectezsignfoldergetobjectgetchildrenv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
-*EzsignfolderApi* | [**objectEzsignfolderGetObjectV1**](docs/Api/EzsignfolderApi.md#objectezsignfoldergetobjectv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
+*ObjectActivesessionApi* | [**objectActivesessionGetCurrentV1**](docs/Api/ObjectActivesessionApi.md#objectactivesessiongetcurrentv1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+*ObjectEzsignfolderApi* | [**objectEzsignfolderCreateObjectV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfoldercreateobjectv1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
+*ObjectEzsignfolderApi* | [**objectEzsignfolderDeleteObjectV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfolderdeleteobjectv1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
+*ObjectEzsignfolderApi* | [**objectEzsignfolderEditObjectV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfoldereditobjectv1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
+*ObjectEzsignfolderApi* | [**objectEzsignfolderGetObjectGetChildrenV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfoldergetobjectgetchildrenv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
+*ObjectEzsignfolderApi* | [**objectEzsignfolderGetObjectV1**](docs/Api/ObjectEzsignfolderApi.md#objectezsignfoldergetobjectv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 
 
 ## Documentation For Models

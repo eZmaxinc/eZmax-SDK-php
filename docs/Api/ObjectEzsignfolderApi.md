@@ -1,14 +1,14 @@
-# eZmaxAPI\Client\EzsignfolderApi
+# eZmaxAPI\Client\ObjectEzsignfolderApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**objectEzsignfolderCreateObjectV1**](EzsignfolderApi.md#objectEzsignfolderCreateObjectV1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
-[**objectEzsignfolderDeleteObjectV1**](EzsignfolderApi.md#objectEzsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
-[**objectEzsignfolderEditObjectV1**](EzsignfolderApi.md#objectEzsignfolderEditObjectV1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
-[**objectEzsignfolderGetObjectGetChildrenV1**](EzsignfolderApi.md#objectEzsignfolderGetObjectGetChildrenV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
-[**objectEzsignfolderGetObjectV1**](EzsignfolderApi.md#objectEzsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
+[**objectEzsignfolderCreateObjectV1**](ObjectEzsignfolderApi.md#objectEzsignfolderCreateObjectV1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
+[**objectEzsignfolderDeleteObjectV1**](ObjectEzsignfolderApi.md#objectEzsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
+[**objectEzsignfolderEditObjectV1**](ObjectEzsignfolderApi.md#objectEzsignfolderEditObjectV1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
+[**objectEzsignfolderGetObjectGetChildrenV1**](ObjectEzsignfolderApi.md#objectEzsignfolderGetObjectGetChildrenV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
+[**objectEzsignfolderGetObjectV1**](ObjectEzsignfolderApi.md#objectEzsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 
 
 
@@ -33,7 +33,7 @@ $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Client\Api\ObjectEzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -45,7 +45,7 @@ try {
     $result = $apiInstance->objectEzsignfolderCreateObjectV1($objectEzsignfolderCreateObjectV1Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EzsignfolderApi->objectEzsignfolderCreateObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignfolderApi->objectEzsignfolderCreateObjectV1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -94,7 +94,7 @@ $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Client\Api\ObjectEzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -106,7 +106,7 @@ try {
     $result = $apiInstance->objectEzsignfolderDeleteObjectV1($pkiEzsignfolderID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EzsignfolderApi->objectEzsignfolderDeleteObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignfolderApi->objectEzsignfolderDeleteObjectV1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -155,7 +155,7 @@ $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Client\Api\ObjectEzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -168,7 +168,7 @@ try {
     $result = $apiInstance->objectEzsignfolderEditObjectV1($pkiEzsignfolderID, $objectEzsignfolderEditObjectV1Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EzsignfolderApi->objectEzsignfolderEditObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignfolderApi->objectEzsignfolderEditObjectV1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -218,7 +218,7 @@ $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Client\Api\ObjectEzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -229,7 +229,7 @@ $pkiEzsignfolderID = 56; // int | The unique ID of the Ezsignfolder
 try {
     $apiInstance->objectEzsignfolderGetObjectGetChildrenV1($pkiEzsignfolderID);
 } catch (Exception $e) {
-    echo 'Exception when calling EzsignfolderApi->objectEzsignfolderGetObjectGetChildrenV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignfolderApi->objectEzsignfolderGetObjectGetChildrenV1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -278,7 +278,7 @@ $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Client\Api\ObjectEzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -290,7 +290,7 @@ try {
     $result = $apiInstance->objectEzsignfolderGetObjectV1($pkiEzsignfolderID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EzsignfolderApi->objectEzsignfolderGetObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignfolderApi->objectEzsignfolderGetObjectV1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

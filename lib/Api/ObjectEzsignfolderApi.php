@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfolderApi
+ * ObjectEzsignfolderApi
  * PHP version 7.2
  *
  * @category Class
@@ -40,14 +40,14 @@ use eZmaxAPI\Client\HeaderSelector;
 use eZmaxAPI\Client\ObjectSerializer;
 
 /**
- * EzsignfolderApi Class Doc Comment
+ * ObjectEzsignfolderApi Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class EzsignfolderApi
+class ObjectEzsignfolderApi
 {
     /**
      * @var ClientInterface

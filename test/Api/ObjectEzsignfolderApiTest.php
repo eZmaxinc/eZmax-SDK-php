@@ -1,6 +1,6 @@
 <?php
 /**
- * ActivesessionApiTest
+ * ObjectEzsignfolderApiTest
  * PHP version 7.2
  *
  * @category Class
@@ -34,14 +34,14 @@ use \eZmaxAPI\Client\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ActivesessionApiTest Class Doc Comment
+ * ObjectEzsignfolderApiTest Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ActivesessionApiTest extends TestCase
+class ObjectEzsignfolderApiTest extends TestCase
 {
 
     /**
@@ -73,12 +73,52 @@ class ActivesessionApiTest extends TestCase
     }
 
     /**
-     * Test case for objectActivesessionGetCurrentV1
+     * Test case for objectEzsignfolderCreateObjectV1
      *
-     * Get Current Activesession.
+     * Create a new Ezsignfolder.
      *
      */
-    public function testObjectActivesessionGetCurrentV1()
+    public function testObjectEzsignfolderCreateObjectV1()
+    {
+    }
+
+    /**
+     * Test case for objectEzsignfolderDeleteObjectV1
+     *
+     * Delete an existing Ezsignfolder.
+     *
+     */
+    public function testObjectEzsignfolderDeleteObjectV1()
+    {
+    }
+
+    /**
+     * Test case for objectEzsignfolderEditObjectV1
+     *
+     * Modify an existing Ezsignfolder.
+     *
+     */
+    public function testObjectEzsignfolderEditObjectV1()
+    {
+    }
+
+    /**
+     * Test case for objectEzsignfolderGetObjectGetChildrenV1
+     *
+     * Retrieve an existing Ezsignfolder's children IDs.
+     *
+     */
+    public function testObjectEzsignfolderGetObjectGetChildrenV1()
+    {
+    }
+
+    /**
+     * Test case for objectEzsignfolderGetObjectV1
+     *
+     * Retrieve an existing Ezsignfolder.
+     *
+     */
+    public function testObjectEzsignfolderGetObjectV1()
     {
     }
 }

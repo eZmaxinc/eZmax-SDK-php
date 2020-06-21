@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Get Current Activesession
 
-Todo Description
+Retrieve the details about the current activesession
 
 ### Example
 
