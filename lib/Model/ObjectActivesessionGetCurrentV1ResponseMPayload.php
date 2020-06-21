@@ -13,7 +13,7 @@
 /**
  * eZmax API Definition
  *
- * TODO Api description.
+ * This API expose all the functionnalities for the eZmax and eZsign application.  We provide SDKs for customers. They are generated using OpenAPI codegen, we encourage customers to use them as we also provide samples for them.  You can choose to build your own implementation manually or can use any compatible OpenAPI 3.0 generator like Swagger Codegen, OpenAPI codegen or any commercial generators.  If you need helping understanding how to use this API, don't waste too much time looging for it. Contact support-api@ezmax.ca, we're here to help. We are developpers so we know programmers don't like bad documentation. If you don't find what you need in the documentation, let us know, we'll improve it and put you rapidly up on track.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support-api@ezmax.ca
@@ -36,7 +36,7 @@ use \eZmaxAPI\Client\ObjectSerializer;
  * ObjectActivesessionGetCurrentV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/activesession/getCurrent API Request.
+ * @description Payload for the /1/object/activesession/getCurrent API Request
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -224,7 +224,7 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
         $this->container['sCustomerCode'] = isset($data['sCustomerCode']) ? $data['sCustomerCode'] : null;
         $this->container['eActivesessionSessiontype'] = isset($data['eActivesessionSessiontype']) ? $data['eActivesessionSessiontype'] : null;
         $this->container['fkiLanguageID'] = isset($data['fkiLanguageID']) ? $data['fkiLanguageID'] : null;
-        $this->container['sCompanyNameX'] = isset($data['sCompanyNameX']) ? $data['sCompanyNameX'] : 'MSD Informatique';
+        $this->container['sCompanyNameX'] = isset($data['sCompanyNameX']) ? $data['sCompanyNameX'] : null;
         $this->container['sDepartmentNameX'] = isset($data['sDepartmentNameX']) ? $data['sDepartmentNameX'] : null;
         $this->container['aRegisteredModules'] = isset($data['aRegisteredModules']) ? $data['aRegisteredModules'] : null;
         $this->container['aPermissions'] = isset($data['aPermissions']) ? $data['aPermissions'] : null;
@@ -259,10 +259,6 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
         if ($this->container['sCompanyNameX'] === null) {
             $invalidProperties[] = "'sCompanyNameX' can't be null";
         }
-        if ((mb_strlen($this->container['sCompanyNameX']) > 25)) {
-            $invalidProperties[] = "invalid value for 'sCompanyNameX', the character length must be smaller than or equal to 25.";
-        }
-
         if ($this->container['sDepartmentNameX'] === null) {
             $invalidProperties[] = "'sDepartmentNameX' can't be null";
         }
@@ -300,7 +296,7 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
     /**
      * Sets sCustomerCode
      *
-     * @param string $sCustomerCode The customer code specific to the client in which the API request is being made.
+     * @param string $sCustomerCode The customer code specific to the client in which the API request is being made
      *
      * @return $this
      */
@@ -324,7 +320,7 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
     /**
      * Sets eActivesessionSessiontype
      *
-     * @param string $eActivesessionSessiontype The type of session used for the API request call.
+     * @param string $eActivesessionSessiontype The type of session used for the API request call
      *
      * @return $this
      */
@@ -381,16 +377,12 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
     /**
      * Sets sCompanyNameX
      *
-     * @param string $sCompanyNameX The name of the active Company in the current language.
+     * @param string $sCompanyNameX The name of the active Company in the current language
      *
      * @return $this
      */
     public function setSCompanyNameX($sCompanyNameX)
     {
-        if ((mb_strlen($sCompanyNameX) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $sCompanyNameX when calling ObjectActivesessionGetCurrentV1ResponseMPayload., must be smaller than or equal to 25.');
-        }
-
         $this->container['sCompanyNameX'] = $sCompanyNameX;
 
         return $this;
@@ -409,7 +401,7 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
     /**
      * Sets sDepartmentNameX
      *
-     * @param string $sDepartmentNameX The name of the active Department in the current language.
+     * @param string $sDepartmentNameX The name of the active Department in the current language
      *
      * @return $this
      */
@@ -457,7 +449,7 @@ class ObjectActivesessionGetCurrentV1ResponseMPayload implements ModelInterface,
     /**
      * Sets aPermissions
      *
-     * @param int[] $aPermissions An array of permissions granted to the user or api key.
+     * @param int[] $aPermissions An array of permissions granted to the user or api key
      *
      * @return $this
      */

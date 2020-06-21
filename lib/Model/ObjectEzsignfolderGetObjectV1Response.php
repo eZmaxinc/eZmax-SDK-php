@@ -13,7 +13,7 @@
 /**
  * eZmax API Definition
  *
- * TODO Api description.
+ * This API expose all the functionnalities for the eZmax and eZsign application.  We provide SDKs for customers. They are generated using OpenAPI codegen, we encourage customers to use them as we also provide samples for them.  You can choose to build your own implementation manually or can use any compatible OpenAPI 3.0 generator like Swagger Codegen, OpenAPI codegen or any commercial generators.  If you need helping understanding how to use this API, don't waste too much time looging for it. Contact support-api@ezmax.ca, we're here to help. We are developpers so we know programmers don't like bad documentation. If you don't find what you need in the documentation, let us know, we'll improve it and put you rapidly up on track.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support-api@ezmax.ca
@@ -34,7 +34,7 @@ use \eZmaxAPI\Client\ObjectSerializer;
  * ObjectEzsignfolderGetObjectV1Response Class Doc Comment
  *
  * @category Class
- * @description Response for the /1/object/ezsignfolder/getObject API Request.
+ * @description Response for the /1/object/ezsignfolder/getObject API Request
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -56,7 +56,7 @@ class ObjectEzsignfolderGetObjectV1Response extends GenericResponse
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mPayload' => '\eZmaxAPI\Client\Model\ObjectEzsignfolderGetObjectV1ResponseMPayload'
+        'mPayload' => 'object'
     ];
 
     /**
@@ -205,7 +205,7 @@ class ObjectEzsignfolderGetObjectV1Response extends GenericResponse
     /**
      * Gets mPayload
      *
-     * @return \eZmaxAPI\Client\Model\ObjectEzsignfolderGetObjectV1ResponseMPayload
+     * @return object
      */
     public function getMPayload()
     {
@@ -215,7 +215,7 @@ class ObjectEzsignfolderGetObjectV1Response extends GenericResponse
     /**
      * Sets mPayload
      *
-     * @param \eZmaxAPI\Client\Model\ObjectEzsignfolderGetObjectV1ResponseMPayload $mPayload mPayload
+     * @param object $mPayload Payload for the /1/object/ezsignfolder/getObject API Request
      *
      * @return $this
      */

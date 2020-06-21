@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseObjDebugPayload
+ * ObjectEzsignfolderCreateObjectV1Response
  *
  * PHP version 7.2
  *
@@ -28,20 +28,18 @@
  */
 
 namespace eZmaxAPI\Client\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\Client\ObjectSerializer;
 
 /**
- * GenericResponseObjDebugPayload Class Doc Comment
+ * ObjectEzsignfolderCreateObjectV1Response Class Doc Comment
  *
  * @category Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description Response for the /1/object/ezsignfolder/createObject API Request
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
+class ObjectEzsignfolderCreateObjectV1Response extends GenericResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +48,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Generic-Response-objDebugPayload';
+    protected static $openAPIModelName = 'object-ezsignfolder-createObject-v1-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +56,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iVersionMin' => 'int',
-        'iVersionMax' => 'int',
-        'aRequiredPermissions' => 'int[]'
+        'aPkiEzsignfolderID' => 'int[]'
     ];
 
     /**
@@ -69,9 +65,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'iVersionMin' => null,
-        'iVersionMax' => null,
-        'aRequiredPermissions' => null
+        'aPkiEzsignfolderID' => null
     ];
 
     /**
@@ -81,7 +75,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -91,7 +85,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -101,9 +95,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'iVersionMin' => 'iVersionMin',
-        'iVersionMax' => 'iVersionMax',
-        'aRequiredPermissions' => 'a_RequiredPermissions'
+        'aPkiEzsignfolderID' => 'a_pkiEzsignfolderID'
     ];
 
     /**
@@ -112,9 +104,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'iVersionMin' => 'setIVersionMin',
-        'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermissions' => 'setARequiredPermissions'
+        'aPkiEzsignfolderID' => 'setAPkiEzsignfolderID'
     ];
 
     /**
@@ -123,9 +113,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'iVersionMin' => 'getIVersionMin',
-        'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermissions' => 'getARequiredPermissions'
+        'aPkiEzsignfolderID' => 'getAPkiEzsignfolderID'
     ];
 
     /**
@@ -136,7 +124,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -146,7 +134,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -156,7 +144,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -173,12 +161,6 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -188,9 +170,9 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['iVersionMin'] = isset($data['iVersionMin']) ? $data['iVersionMin'] : null;
-        $this->container['iVersionMax'] = isset($data['iVersionMax']) ? $data['iVersionMax'] : null;
-        $this->container['aRequiredPermissions'] = isset($data['aRequiredPermissions']) ? $data['aRequiredPermissions'] : null;
+        parent::__construct($data);
+
+        $this->container['aPkiEzsignfolderID'] = isset($data['aPkiEzsignfolderID']) ? $data['aPkiEzsignfolderID'] : null;
     }
 
     /**
@@ -200,16 +182,10 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['iVersionMin'] === null) {
-            $invalidProperties[] = "'iVersionMin' can't be null";
-        }
-        if ($this->container['iVersionMax'] === null) {
-            $invalidProperties[] = "'iVersionMax' can't be null";
-        }
-        if ($this->container['aRequiredPermissions'] === null) {
-            $invalidProperties[] = "'aRequiredPermissions' can't be null";
+        if ($this->container['aPkiEzsignfolderID'] === null) {
+            $invalidProperties[] = "'aPkiEzsignfolderID' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,73 +203,25 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets iVersionMin
-     *
-     * @return int
-     */
-    public function getIVersionMin()
-    {
-        return $this->container['iVersionMin'];
-    }
-
-    /**
-     * Sets iVersionMin
-     *
-     * @param int $iVersionMin The minimum version of the function that can be called
-     *
-     * @return $this
-     */
-    public function setIVersionMin($iVersionMin)
-    {
-        $this->container['iVersionMin'] = $iVersionMin;
-
-        return $this;
-    }
-
-    /**
-     * Gets iVersionMax
-     *
-     * @return int
-     */
-    public function getIVersionMax()
-    {
-        return $this->container['iVersionMax'];
-    }
-
-    /**
-     * Sets iVersionMax
-     *
-     * @param int $iVersionMax The maximum version of the function that can be called
-     *
-     * @return $this
-     */
-    public function setIVersionMax($iVersionMax)
-    {
-        $this->container['iVersionMax'] = $iVersionMax;
-
-        return $this;
-    }
-
-    /**
-     * Gets aRequiredPermissions
+     * Gets aPkiEzsignfolderID
      *
      * @return int[]
      */
-    public function getARequiredPermissions()
+    public function getAPkiEzsignfolderID()
     {
-        return $this->container['aRequiredPermissions'];
+        return $this->container['aPkiEzsignfolderID'];
     }
 
     /**
-     * Sets aRequiredPermissions
+     * Sets aPkiEzsignfolderID
      *
-     * @param int[] $aRequiredPermissions An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
+     * @param int[] $aPkiEzsignfolderID An array of unique IDs representing the object that were requested to be created.  They are returned in the same order as the array containing the objects to be created that was sent in the request.
      *
      * @return $this
      */
-    public function setARequiredPermissions($aRequiredPermissions)
+    public function setAPkiEzsignfolderID($aPkiEzsignfolderID)
     {
-        $this->container['aRequiredPermissions'] = $aRequiredPermissions;
+        $this->container['aPkiEzsignfolderID'] = $aPkiEzsignfolderID;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseObjDebugPayload
+ * ObjEzsignfolderRequest
  *
  * PHP version 7.2
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \eZmaxAPI\Client\ObjectSerializer;
 
 /**
- * GenericResponseObjDebugPayload Class Doc Comment
+ * ObjEzsignfolderRequest Class Doc Comment
  *
  * @category Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description An Ezsignfolder Object
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
+class ObjEzsignfolderRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Generic-Response-objDebugPayload';
+    protected static $openAPIModelName = 'objEzsignfolder-Request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iVersionMin' => 'int',
-        'iVersionMax' => 'int',
-        'aRequiredPermissions' => 'int[]'
+        'fkiEzsignfoldertypeID' => 'int',
+        'fkiLanguageID' => 'int',
+        'sEzsignfolderDescription' => 'string',
+        'tEzsignfolderNote' => 'string',
+        'fkiEzsigntsarequirementID' => 'int'
     ];
 
     /**
@@ -69,9 +71,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'iVersionMin' => null,
-        'iVersionMax' => null,
-        'aRequiredPermissions' => null
+        'fkiEzsignfoldertypeID' => null,
+        'fkiLanguageID' => null,
+        'sEzsignfolderDescription' => null,
+        'tEzsignfolderNote' => null,
+        'fkiEzsigntsarequirementID' => null
     ];
 
     /**
@@ -101,9 +105,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'iVersionMin' => 'iVersionMin',
-        'iVersionMax' => 'iVersionMax',
-        'aRequiredPermissions' => 'a_RequiredPermissions'
+        'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
+        'fkiLanguageID' => 'fkiLanguageID',
+        'sEzsignfolderDescription' => 'sEzsignfolderDescription',
+        'tEzsignfolderNote' => 'tEzsignfolderNote',
+        'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID'
     ];
 
     /**
@@ -112,9 +118,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'iVersionMin' => 'setIVersionMin',
-        'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermissions' => 'setARequiredPermissions'
+        'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
+        'fkiLanguageID' => 'setFkiLanguageID',
+        'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
+        'tEzsignfolderNote' => 'setTEzsignfolderNote',
+        'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID'
     ];
 
     /**
@@ -123,9 +131,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'iVersionMin' => 'getIVersionMin',
-        'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermissions' => 'getARequiredPermissions'
+        'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
+        'fkiLanguageID' => 'getFkiLanguageID',
+        'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
+        'tEzsignfolderNote' => 'getTEzsignfolderNote',
+        'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID'
     ];
 
     /**
@@ -188,9 +198,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['iVersionMin'] = isset($data['iVersionMin']) ? $data['iVersionMin'] : null;
-        $this->container['iVersionMax'] = isset($data['iVersionMax']) ? $data['iVersionMax'] : null;
-        $this->container['aRequiredPermissions'] = isset($data['aRequiredPermissions']) ? $data['aRequiredPermissions'] : null;
+        $this->container['fkiEzsignfoldertypeID'] = isset($data['fkiEzsignfoldertypeID']) ? $data['fkiEzsignfoldertypeID'] : null;
+        $this->container['fkiLanguageID'] = isset($data['fkiLanguageID']) ? $data['fkiLanguageID'] : null;
+        $this->container['sEzsignfolderDescription'] = isset($data['sEzsignfolderDescription']) ? $data['sEzsignfolderDescription'] : null;
+        $this->container['tEzsignfolderNote'] = isset($data['tEzsignfolderNote']) ? $data['tEzsignfolderNote'] : null;
+        $this->container['fkiEzsigntsarequirementID'] = isset($data['fkiEzsigntsarequirementID']) ? $data['fkiEzsigntsarequirementID'] : null;
     }
 
     /**
@@ -202,14 +214,20 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['iVersionMin'] === null) {
-            $invalidProperties[] = "'iVersionMin' can't be null";
+        if ($this->container['fkiEzsignfoldertypeID'] === null) {
+            $invalidProperties[] = "'fkiEzsignfoldertypeID' can't be null";
         }
-        if ($this->container['iVersionMax'] === null) {
-            $invalidProperties[] = "'iVersionMax' can't be null";
+        if ($this->container['fkiLanguageID'] === null) {
+            $invalidProperties[] = "'fkiLanguageID' can't be null";
         }
-        if ($this->container['aRequiredPermissions'] === null) {
-            $invalidProperties[] = "'aRequiredPermissions' can't be null";
+        if ($this->container['sEzsignfolderDescription'] === null) {
+            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
+        }
+        if ($this->container['tEzsignfolderNote'] === null) {
+            $invalidProperties[] = "'tEzsignfolderNote' can't be null";
+        }
+        if ($this->container['fkiEzsigntsarequirementID'] === null) {
+            $invalidProperties[] = "'fkiEzsigntsarequirementID' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,73 +245,121 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets iVersionMin
+     * Gets fkiEzsignfoldertypeID
      *
      * @return int
      */
-    public function getIVersionMin()
+    public function getFkiEzsignfoldertypeID()
     {
-        return $this->container['iVersionMin'];
+        return $this->container['fkiEzsignfoldertypeID'];
     }
 
     /**
-     * Sets iVersionMin
+     * Sets fkiEzsignfoldertypeID
      *
-     * @param int $iVersionMin The minimum version of the function that can be called
+     * @param int $fkiEzsignfoldertypeID A Foreign Key to the Ezsign Folder Type
      *
      * @return $this
      */
-    public function setIVersionMin($iVersionMin)
+    public function setFkiEzsignfoldertypeID($fkiEzsignfoldertypeID)
     {
-        $this->container['iVersionMin'] = $iVersionMin;
+        $this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
 
         return $this;
     }
 
     /**
-     * Gets iVersionMax
+     * Gets fkiLanguageID
      *
      * @return int
      */
-    public function getIVersionMax()
+    public function getFkiLanguageID()
     {
-        return $this->container['iVersionMax'];
+        return $this->container['fkiLanguageID'];
     }
 
     /**
-     * Sets iVersionMax
+     * Sets fkiLanguageID
      *
-     * @param int $iVersionMax The maximum version of the function that can be called
+     * @param int $fkiLanguageID The ID of the language, Valid values are: 1. French 2. English
      *
      * @return $this
      */
-    public function setIVersionMax($iVersionMax)
+    public function setFkiLanguageID($fkiLanguageID)
     {
-        $this->container['iVersionMax'] = $iVersionMax;
+        $this->container['fkiLanguageID'] = $fkiLanguageID;
 
         return $this;
     }
 
     /**
-     * Gets aRequiredPermissions
+     * Gets sEzsignfolderDescription
      *
-     * @return int[]
+     * @return string
      */
-    public function getARequiredPermissions()
+    public function getSEzsignfolderDescription()
     {
-        return $this->container['aRequiredPermissions'];
+        return $this->container['sEzsignfolderDescription'];
     }
 
     /**
-     * Sets aRequiredPermissions
+     * Sets sEzsignfolderDescription
      *
-     * @param int[] $aRequiredPermissions An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
+     * @param string $sEzsignfolderDescription The description of the Ezsign Folder
      *
      * @return $this
      */
-    public function setARequiredPermissions($aRequiredPermissions)
+    public function setSEzsignfolderDescription($sEzsignfolderDescription)
     {
-        $this->container['aRequiredPermissions'] = $aRequiredPermissions;
+        $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets tEzsignfolderNote
+     *
+     * @return string
+     */
+    public function getTEzsignfolderNote()
+    {
+        return $this->container['tEzsignfolderNote'];
+    }
+
+    /**
+     * Sets tEzsignfolderNote
+     *
+     * @param string $tEzsignfolderNote Somes extra notes about the eZsign Folder
+     *
+     * @return $this
+     */
+    public function setTEzsignfolderNote($tEzsignfolderNote)
+    {
+        $this->container['tEzsignfolderNote'] = $tEzsignfolderNote;
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiEzsigntsarequirementID
+     *
+     * @return int
+     */
+    public function getFkiEzsigntsarequirementID()
+    {
+        return $this->container['fkiEzsigntsarequirementID'];
+    }
+
+    /**
+     * Sets fkiEzsigntsarequirementID
+     *
+     * @param int $fkiEzsigntsarequirementID The ID of the Time Stamping Authority requirement, Valid values are: 1. No. No TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time. 2. Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies** 3. Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**
+     *
+     * @return $this
+     */
+    public function setFkiEzsigntsarequirementID($fkiEzsigntsarequirementID)
+    {
+        $this->container['fkiEzsigntsarequirementID'] = $fkiEzsigntsarequirementID;
 
         return $this;
     }

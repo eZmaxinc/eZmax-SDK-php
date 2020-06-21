@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseObjDebugPayload
+ * ObjectEzsignfolderEditObjectV1Request
  *
  * PHP version 7.2
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \eZmaxAPI\Client\ObjectSerializer;
 
 /**
- * GenericResponseObjDebugPayload Class Doc Comment
+ * ObjectEzsignfolderEditObjectV1Request Class Doc Comment
  *
  * @category Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description Request for the /1/object/ezsignfolder/editObject API Request
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
+class ObjectEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Generic-Response-objDebugPayload';
+    protected static $openAPIModelName = 'object-ezsignfolder-editObject-v1-Request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iVersionMin' => 'int',
-        'iVersionMax' => 'int',
-        'aRequiredPermissions' => 'int[]'
+        'objEzsignfolder' => '\eZmaxAPI\Client\Model\ObjEzsignfolderRequest'
     ];
 
     /**
@@ -69,9 +67,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'iVersionMin' => null,
-        'iVersionMax' => null,
-        'aRequiredPermissions' => null
+        'objEzsignfolder' => null
     ];
 
     /**
@@ -101,9 +97,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'iVersionMin' => 'iVersionMin',
-        'iVersionMax' => 'iVersionMax',
-        'aRequiredPermissions' => 'a_RequiredPermissions'
+        'objEzsignfolder' => 'objEzsignfolder'
     ];
 
     /**
@@ -112,9 +106,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'iVersionMin' => 'setIVersionMin',
-        'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermissions' => 'setARequiredPermissions'
+        'objEzsignfolder' => 'setObjEzsignfolder'
     ];
 
     /**
@@ -123,9 +115,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'iVersionMin' => 'getIVersionMin',
-        'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermissions' => 'getARequiredPermissions'
+        'objEzsignfolder' => 'getObjEzsignfolder'
     ];
 
     /**
@@ -188,9 +178,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['iVersionMin'] = isset($data['iVersionMin']) ? $data['iVersionMin'] : null;
-        $this->container['iVersionMax'] = isset($data['iVersionMax']) ? $data['iVersionMax'] : null;
-        $this->container['aRequiredPermissions'] = isset($data['aRequiredPermissions']) ? $data['aRequiredPermissions'] : null;
+        $this->container['objEzsignfolder'] = isset($data['objEzsignfolder']) ? $data['objEzsignfolder'] : null;
     }
 
     /**
@@ -202,15 +190,6 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['iVersionMin'] === null) {
-            $invalidProperties[] = "'iVersionMin' can't be null";
-        }
-        if ($this->container['iVersionMax'] === null) {
-            $invalidProperties[] = "'iVersionMax' can't be null";
-        }
-        if ($this->container['aRequiredPermissions'] === null) {
-            $invalidProperties[] = "'aRequiredPermissions' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -227,73 +206,25 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets iVersionMin
+     * Gets objEzsignfolder
      *
-     * @return int
+     * @return \eZmaxAPI\Client\Model\ObjEzsignfolderRequest|null
      */
-    public function getIVersionMin()
+    public function getObjEzsignfolder()
     {
-        return $this->container['iVersionMin'];
+        return $this->container['objEzsignfolder'];
     }
 
     /**
-     * Sets iVersionMin
+     * Sets objEzsignfolder
      *
-     * @param int $iVersionMin The minimum version of the function that can be called
+     * @param \eZmaxAPI\Client\Model\ObjEzsignfolderRequest|null $objEzsignfolder objEzsignfolder
      *
      * @return $this
      */
-    public function setIVersionMin($iVersionMin)
+    public function setObjEzsignfolder($objEzsignfolder)
     {
-        $this->container['iVersionMin'] = $iVersionMin;
-
-        return $this;
-    }
-
-    /**
-     * Gets iVersionMax
-     *
-     * @return int
-     */
-    public function getIVersionMax()
-    {
-        return $this->container['iVersionMax'];
-    }
-
-    /**
-     * Sets iVersionMax
-     *
-     * @param int $iVersionMax The maximum version of the function that can be called
-     *
-     * @return $this
-     */
-    public function setIVersionMax($iVersionMax)
-    {
-        $this->container['iVersionMax'] = $iVersionMax;
-
-        return $this;
-    }
-
-    /**
-     * Gets aRequiredPermissions
-     *
-     * @return int[]
-     */
-    public function getARequiredPermissions()
-    {
-        return $this->container['aRequiredPermissions'];
-    }
-
-    /**
-     * Sets aRequiredPermissions
-     *
-     * @param int[] $aRequiredPermissions An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
-     *
-     * @return $this
-     */
-    public function setARequiredPermissions($aRequiredPermissions)
-    {
-        $this->container['aRequiredPermissions'] = $aRequiredPermissions;
+        $this->container['objEzsignfolder'] = $objEzsignfolder;
 
         return $this;
     }

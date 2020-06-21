@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseObjDebugPayload
+ * GenericResponseError
  *
  * PHP version 7.2
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \eZmaxAPI\Client\ObjectSerializer;
 
 /**
- * GenericResponseObjDebugPayload Class Doc Comment
+ * GenericResponseError Class Doc Comment
  *
  * @category Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description Generic Error Message
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
+class GenericResponseError implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Generic-Response-objDebugPayload';
+    protected static $openAPIModelName = 'Generic-Response-Error';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iVersionMin' => 'int',
-        'iVersionMax' => 'int',
-        'aRequiredPermissions' => 'int[]'
+        'sErrorMessage' => 'string'
     ];
 
     /**
@@ -69,9 +67,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'iVersionMin' => null,
-        'iVersionMax' => null,
-        'aRequiredPermissions' => null
+        'sErrorMessage' => null
     ];
 
     /**
@@ -101,9 +97,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'iVersionMin' => 'iVersionMin',
-        'iVersionMax' => 'iVersionMax',
-        'aRequiredPermissions' => 'a_RequiredPermissions'
+        'sErrorMessage' => 'sErrorMessage'
     ];
 
     /**
@@ -112,9 +106,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'iVersionMin' => 'setIVersionMin',
-        'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermissions' => 'setARequiredPermissions'
+        'sErrorMessage' => 'setSErrorMessage'
     ];
 
     /**
@@ -123,9 +115,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'iVersionMin' => 'getIVersionMin',
-        'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermissions' => 'getARequiredPermissions'
+        'sErrorMessage' => 'getSErrorMessage'
     ];
 
     /**
@@ -188,9 +178,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['iVersionMin'] = isset($data['iVersionMin']) ? $data['iVersionMin'] : null;
-        $this->container['iVersionMax'] = isset($data['iVersionMax']) ? $data['iVersionMax'] : null;
-        $this->container['aRequiredPermissions'] = isset($data['aRequiredPermissions']) ? $data['aRequiredPermissions'] : null;
+        $this->container['sErrorMessage'] = isset($data['sErrorMessage']) ? $data['sErrorMessage'] : null;
     }
 
     /**
@@ -202,14 +190,8 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['iVersionMin'] === null) {
-            $invalidProperties[] = "'iVersionMin' can't be null";
-        }
-        if ($this->container['iVersionMax'] === null) {
-            $invalidProperties[] = "'iVersionMax' can't be null";
-        }
-        if ($this->container['aRequiredPermissions'] === null) {
-            $invalidProperties[] = "'aRequiredPermissions' can't be null";
+        if ($this->container['sErrorMessage'] === null) {
+            $invalidProperties[] = "'sErrorMessage' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,73 +209,25 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets iVersionMin
+     * Gets sErrorMessage
      *
-     * @return int
+     * @return string
      */
-    public function getIVersionMin()
+    public function getSErrorMessage()
     {
-        return $this->container['iVersionMin'];
+        return $this->container['sErrorMessage'];
     }
 
     /**
-     * Sets iVersionMin
+     * Sets sErrorMessage
      *
-     * @param int $iVersionMin The minimum version of the function that can be called
+     * @param string $sErrorMessage More detail about the error
      *
      * @return $this
      */
-    public function setIVersionMin($iVersionMin)
+    public function setSErrorMessage($sErrorMessage)
     {
-        $this->container['iVersionMin'] = $iVersionMin;
-
-        return $this;
-    }
-
-    /**
-     * Gets iVersionMax
-     *
-     * @return int
-     */
-    public function getIVersionMax()
-    {
-        return $this->container['iVersionMax'];
-    }
-
-    /**
-     * Sets iVersionMax
-     *
-     * @param int $iVersionMax The maximum version of the function that can be called
-     *
-     * @return $this
-     */
-    public function setIVersionMax($iVersionMax)
-    {
-        $this->container['iVersionMax'] = $iVersionMax;
-
-        return $this;
-    }
-
-    /**
-     * Gets aRequiredPermissions
-     *
-     * @return int[]
-     */
-    public function getARequiredPermissions()
-    {
-        return $this->container['aRequiredPermissions'];
-    }
-
-    /**
-     * Sets aRequiredPermissions
-     *
-     * @param int[] $aRequiredPermissions An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
-     *
-     * @return $this
-     */
-    public function setARequiredPermissions($aRequiredPermissions)
-    {
-        $this->container['aRequiredPermissions'] = $aRequiredPermissions;
+        $this->container['sErrorMessage'] = $sErrorMessage;
 
         return $this;
     }

@@ -13,7 +13,7 @@
 /**
  * eZmax API Definition
  *
- * TODO Api description.
+ * This API expose all the functionnalities for the eZmax and eZsign application.  We provide SDKs for customers. They are generated using OpenAPI codegen, we encourage customers to use them as we also provide samples for them.  You can choose to build your own implementation manually or can use any compatible OpenAPI 3.0 generator like Swagger Codegen, OpenAPI codegen or any commercial generators.  If you need helping understanding how to use this API, don't waste too much time looging for it. Contact support-api@ezmax.ca, we're here to help. We are developpers so we know programmers don't like bad documentation. If you don't find what you need in the documentation, let us know, we'll improve it and put you rapidly up on track.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support-api@ezmax.ca
@@ -36,7 +36,7 @@ use \eZmaxAPI\Client\ObjectSerializer;
  * GenericResponseObjDebug Class Doc Comment
  *
  * @category Class
- * @description This is a generic debug object that is returned by all API requests.
+ * @description This is a generic debug object that is returned by all API requests
  * @package  eZmaxAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -257,7 +257,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
     /**
      * Sets sMemoryUsage
      *
-     * @param string $sMemoryUsage The peak memory allocated during the API request execution. Formatted as a human readable string.
+     * @param string $sMemoryUsage The peak memory allocated during the API request execution. Formatted as a human readable string
      *
      * @return $this
      */
@@ -281,7 +281,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
     /**
      * Sets sRunTime
      *
-     * @param string $sRunTime The total server execution time of the API request execution. Formatted as a human readable string.
+     * @param string $sRunTime The total server execution time of the API request execution. Formatted as a human readable string
      *
      * @return $this
      */
@@ -305,7 +305,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
     /**
      * Sets iSQLSelects
      *
-     * @param int $iSQLSelects The number of SQL SELECT queries that were sent to the database server during the API request execution.
+     * @param int $iSQLSelects The number of SQL SELECT queries that were sent to the database server during the API request execution
      *
      * @return $this
      */
@@ -329,7 +329,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
     /**
      * Sets iSQLQueries
      *
-     * @param int $iSQLQueries The number of SQL INSERT/UPDATE/DELETE queries that were sent to the database server during the API request execution.
+     * @param int $iSQLQueries The number of SQL INSERT/UPDATE/DELETE queries that were sent to the database server during the API request execution
      *
      * @return $this
      */
@@ -353,7 +353,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
     /**
      * Sets aObjQuery
      *
-     * @param \eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[] $aObjQuery An array of the SQL Queries that were executed during the API request execution.
+     * @param \eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[] $aObjQuery An array of the SQL Queries that were executed during the API request execution
      *
      * @return $this
      */
