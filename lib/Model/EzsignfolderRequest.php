@@ -223,6 +223,10 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         if ($this->container['sEzsignfolderDescription'] === null) {
             $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
         }
+        if ((mb_strlen($this->container['sEzsignfolderDescription']) > 50)) {
+            $invalidProperties[] = "invalid value for 'sEzsignfolderDescription', the character length must be smaller than or equal to 50.";
+        }
+
         if ($this->container['tEzsignfolderNote'] === null) {
             $invalidProperties[] = "'tEzsignfolderNote' can't be null";
         }
@@ -311,6 +315,10 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
      */
     public function setSEzsignfolderDescription($sEzsignfolderDescription)
     {
+        if ((mb_strlen($sEzsignfolderDescription) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $sEzsignfolderDescription when calling EzsignfolderRequest., must be smaller than or equal to 50.');
+        }
+
         $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
 
         return $this;
