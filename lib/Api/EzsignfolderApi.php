@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Api;
+namespace eZmaxAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use eZmaxAPI\Client\ApiException;
-use eZmaxAPI\Client\Configuration;
-use eZmaxAPI\Client\HeaderSelector;
-use eZmaxAPI\Client\ObjectSerializer;
+use eZmaxAPI\ApiException;
+use eZmaxAPI\Configuration;
+use eZmaxAPI\HeaderSelector;
+use eZmaxAPI\ObjectSerializer;
 
 /**
  * EzsignfolderApi Class Doc Comment
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,11 +120,11 @@ class EzsignfolderApi
      *
      * Create a new Ezsignfolder
      *
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request ezsignfolderCreateObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request ezsignfolderCreateObjectV1Request (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Response
+     * @return \eZmaxAPI\Model\EzsignfolderCreateObjectV1Response
      */
     public function ezsignfolderCreateObjectV1($ezsignfolderCreateObjectV1Request)
     {
@@ -137,11 +137,11 @@ class EzsignfolderApi
      *
      * Create a new Ezsignfolder
      *
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzsignfolderCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function ezsignfolderCreateObjectV1WithHttpInfo($ezsignfolderCreateObjectV1Request)
     {
@@ -178,20 +178,20 @@ class EzsignfolderApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 201:
-                    if ('\eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Response' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\EzsignfolderCreateObjectV1Response' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Response', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsignfolderCreateObjectV1Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Response';
+            $returnType = '\eZmaxAPI\Model\EzsignfolderCreateObjectV1Response';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -210,7 +210,7 @@ class EzsignfolderApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Response',
+                        '\eZmaxAPI\Model\EzsignfolderCreateObjectV1Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -225,7 +225,7 @@ class EzsignfolderApi
      *
      * Create a new Ezsignfolder
      *
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -245,14 +245,14 @@ class EzsignfolderApi
      *
      * Create a new Ezsignfolder
      *
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function ezsignfolderCreateObjectV1AsyncWithHttpInfo($ezsignfolderCreateObjectV1Request)
     {
-        $returnType = '\eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Response';
+        $returnType = '\eZmaxAPI\Model\EzsignfolderCreateObjectV1Response';
         $request = $this->ezsignfolderCreateObjectV1Request($ezsignfolderCreateObjectV1Request);
 
         return $this->client
@@ -292,7 +292,7 @@ class EzsignfolderApi
     /**
      * Create request for operation 'ezsignfolderCreateObjectV1'
      *
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -395,9 +395,9 @@ class EzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Client\Model\EzsignfolderDeleteObjectV1Response|\eZmaxAPI\Client\Model\GenericResponseError
+     * @return \eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response|\eZmaxAPI\Model\GenericResponseError
      */
     public function ezsignfolderDeleteObjectV1($pkiEzsignfolderID)
     {
@@ -412,9 +412,9 @@ class EzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Client\Model\EzsignfolderDeleteObjectV1Response|\eZmaxAPI\Client\Model\GenericResponseError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response|\eZmaxAPI\Model\GenericResponseError, HTTP status code, HTTP response headers (array of strings)
      */
     public function ezsignfolderDeleteObjectV1WithHttpInfo($pkiEzsignfolderID)
     {
@@ -451,32 +451,32 @@ class EzsignfolderApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\eZmaxAPI\Client\Model\EzsignfolderDeleteObjectV1Response' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Client\Model\EzsignfolderDeleteObjectV1Response', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\eZmaxAPI\Client\Model\GenericResponseError' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\GenericResponseError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Client\Model\GenericResponseError', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\GenericResponseError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\eZmaxAPI\Client\Model\EzsignfolderDeleteObjectV1Response';
+            $returnType = '\eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -495,7 +495,7 @@ class EzsignfolderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\EzsignfolderDeleteObjectV1Response',
+                        '\eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -503,7 +503,7 @@ class EzsignfolderApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\GenericResponseError',
+                        '\eZmaxAPI\Model\GenericResponseError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -545,7 +545,7 @@ class EzsignfolderApi
      */
     public function ezsignfolderDeleteObjectV1AsyncWithHttpInfo($pkiEzsignfolderID)
     {
-        $returnType = '\eZmaxAPI\Client\Model\EzsignfolderDeleteObjectV1Response';
+        $returnType = '\eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response';
         $request = $this->ezsignfolderDeleteObjectV1Request($pkiEzsignfolderID);
 
         return $this->client
@@ -692,11 +692,11 @@ class EzsignfolderApi
      * Modify an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request ezsignfolderEditObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request ezsignfolderEditObjectV1Request (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Client\Model\GenericResponseError
+     * @return \eZmaxAPI\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Model\GenericResponseError
      */
     public function ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
     {
@@ -710,11 +710,11 @@ class EzsignfolderApi
      * Modify an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Client\Model\GenericResponseError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Model\GenericResponseError, HTTP status code, HTTP response headers (array of strings)
      */
     public function ezsignfolderEditObjectV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
     {
@@ -751,32 +751,32 @@ class EzsignfolderApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Response' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\EzsignfolderEditObjectV1Response' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Response', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsignfolderEditObjectV1Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\eZmaxAPI\Client\Model\GenericResponseError' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\GenericResponseError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Client\Model\GenericResponseError', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\GenericResponseError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Response';
+            $returnType = '\eZmaxAPI\Model\EzsignfolderEditObjectV1Response';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -795,7 +795,7 @@ class EzsignfolderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Response',
+                        '\eZmaxAPI\Model\EzsignfolderEditObjectV1Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -803,7 +803,7 @@ class EzsignfolderApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\GenericResponseError',
+                        '\eZmaxAPI\Model\GenericResponseError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -819,7 +819,7 @@ class EzsignfolderApi
      * Modify an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -840,14 +840,14 @@ class EzsignfolderApi
      * Modify an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function ezsignfolderEditObjectV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
     {
-        $returnType = '\eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Response';
+        $returnType = '\eZmaxAPI\Model\EzsignfolderEditObjectV1Response';
         $request = $this->ezsignfolderEditObjectV1Request($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request);
 
         return $this->client
@@ -888,7 +888,7 @@ class EzsignfolderApi
      * Create request for operation 'ezsignfolderEditObjectV1'
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
-     * @param  \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
+     * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1005,7 +1005,7 @@ class EzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1021,7 +1021,7 @@ class EzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1064,7 +1064,7 @@ class EzsignfolderApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\GenericResponseError',
+                        '\eZmaxAPI\Model\GenericResponseError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1243,9 +1243,9 @@ class EzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Client\Model\EzsignfolderGetObjectV1Response|\eZmaxAPI\Client\Model\GenericResponseError
+     * @return \eZmaxAPI\Model\EzsignfolderGetObjectV1Response|\eZmaxAPI\Model\GenericResponseError
      */
     public function ezsignfolderGetObjectV1($pkiEzsignfolderID)
     {
@@ -1260,9 +1260,9 @@ class EzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Client\Model\EzsignfolderGetObjectV1Response|\eZmaxAPI\Client\Model\GenericResponseError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzsignfolderGetObjectV1Response|\eZmaxAPI\Model\GenericResponseError, HTTP status code, HTTP response headers (array of strings)
      */
     public function ezsignfolderGetObjectV1WithHttpInfo($pkiEzsignfolderID)
     {
@@ -1299,32 +1299,32 @@ class EzsignfolderApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\eZmaxAPI\Client\Model\EzsignfolderGetObjectV1Response' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\EzsignfolderGetObjectV1Response' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Client\Model\EzsignfolderGetObjectV1Response', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsignfolderGetObjectV1Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\eZmaxAPI\Client\Model\GenericResponseError' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\GenericResponseError' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Client\Model\GenericResponseError', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\GenericResponseError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\eZmaxAPI\Client\Model\EzsignfolderGetObjectV1Response';
+            $returnType = '\eZmaxAPI\Model\EzsignfolderGetObjectV1Response';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1343,7 +1343,7 @@ class EzsignfolderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\EzsignfolderGetObjectV1Response',
+                        '\eZmaxAPI\Model\EzsignfolderGetObjectV1Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1351,7 +1351,7 @@ class EzsignfolderApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\GenericResponseError',
+                        '\eZmaxAPI\Model\GenericResponseError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1393,7 +1393,7 @@ class EzsignfolderApi
      */
     public function ezsignfolderGetObjectV1AsyncWithHttpInfo($pkiEzsignfolderID)
     {
-        $returnType = '\eZmaxAPI\Client\Model\EzsignfolderGetObjectV1Response';
+        $returnType = '\eZmaxAPI\Model\EzsignfolderGetObjectV1Response';
         $request = $this->ezsignfolderGetObjectV1Request($pkiEzsignfolderID);
 
         return $this->client

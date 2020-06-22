@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Api;
+namespace eZmaxAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use eZmaxAPI\Client\ApiException;
-use eZmaxAPI\Client\Configuration;
-use eZmaxAPI\Client\HeaderSelector;
-use eZmaxAPI\Client\ObjectSerializer;
+use eZmaxAPI\ApiException;
+use eZmaxAPI\Configuration;
+use eZmaxAPI\HeaderSelector;
+use eZmaxAPI\ObjectSerializer;
 
 /**
  * ActivesessionApi Class Doc Comment
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -121,9 +121,9 @@ class ActivesessionApi
      * Get Current Activesession
      *
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Client\Model\ActivesessionGetCurrentV1Response
+     * @return \eZmaxAPI\Model\ActivesessionGetCurrentV1Response
      */
     public function activesessionGetCurrentV1()
     {
@@ -137,9 +137,9 @@ class ActivesessionApi
      * Get Current Activesession
      *
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Client\Model\ActivesessionGetCurrentV1Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\ActivesessionGetCurrentV1Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function activesessionGetCurrentV1WithHttpInfo()
     {
@@ -176,20 +176,20 @@ class ActivesessionApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\eZmaxAPI\Client\Model\ActivesessionGetCurrentV1Response' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\ActivesessionGetCurrentV1Response' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Client\Model\ActivesessionGetCurrentV1Response', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\ActivesessionGetCurrentV1Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\eZmaxAPI\Client\Model\ActivesessionGetCurrentV1Response';
+            $returnType = '\eZmaxAPI\Model\ActivesessionGetCurrentV1Response';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -208,7 +208,7 @@ class ActivesessionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\ActivesessionGetCurrentV1Response',
+                        '\eZmaxAPI\Model\ActivesessionGetCurrentV1Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -248,7 +248,7 @@ class ActivesessionApi
      */
     public function activesessionGetCurrentV1AsyncWithHttpInfo()
     {
-        $returnType = '\eZmaxAPI\Client\Model\ActivesessionGetCurrentV1Response';
+        $returnType = '\eZmaxAPI\Model\ActivesessionGetCurrentV1Response';
         $request = $this->activesessionGetCurrentV1Request();
 
         return $this->client

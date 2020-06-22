@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client\Model
+ * @package  eZmaxAPI\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,12 +27,12 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Model;
+namespace eZmaxAPI\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package eZmaxAPI\Client\Model
+ * @package eZmaxAPI\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

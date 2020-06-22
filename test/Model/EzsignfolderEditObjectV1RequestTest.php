@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace eZmaxAPI\Client;
+namespace eZmaxAPI;
 
 use PHPUnit\Framework\TestCase;
 
@@ -36,7 +36,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description Request for the /1/object/ezsignfolder/editObject API Request
- * @package     eZmaxAPI\Client
+ * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

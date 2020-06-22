@@ -1,4 +1,4 @@
-# eZmaxAPI\Client\EzsignfolderApi
+# eZmaxAPI\EzsignfolderApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## ezsignfolderCreateObjectV1
 
-> \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Response ezsignfolderCreateObjectV1($ezsignfolderCreateObjectV1Request)
+> \eZmaxAPI\Model\EzsignfolderCreateObjectV1Response ezsignfolderCreateObjectV1($ezsignfolderCreateObjectV1Request)
 
 Create a new Ezsignfolder
 
@@ -28,18 +28,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: Authorization
-$config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Api\EzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ezsignfolderCreateObjectV1Request = array(new \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Request()); // \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Request[] | 
+$ezsignfolderCreateObjectV1Request = array(new \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request()); // \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] | 
 
 try {
     $result = $apiInstance->ezsignfolderCreateObjectV1($ezsignfolderCreateObjectV1Request);
@@ -55,11 +55,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ezsignfolderCreateObjectV1Request** | [**\eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Request[]**](../Model/EzsignfolderCreateObjectV1Request.md)|  |
+ **ezsignfolderCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[]**](../Model/EzsignfolderCreateObjectV1Request.md)|  |
 
 ### Return type
 
-[**\eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1Response**](../Model/EzsignfolderCreateObjectV1Response.md)
+[**\eZmaxAPI\Model\EzsignfolderCreateObjectV1Response**](../Model/EzsignfolderCreateObjectV1Response.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## ezsignfolderDeleteObjectV1
 
-> \eZmaxAPI\Client\Model\EzsignfolderDeleteObjectV1Response ezsignfolderDeleteObjectV1($pkiEzsignfolderID)
+> \eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response ezsignfolderDeleteObjectV1($pkiEzsignfolderID)
 
 Delete an existing Ezsignfolder
 
@@ -89,12 +89,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: Authorization
-$config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Api\EzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eZmaxAPI\Client\Model\EzsignfolderDeleteObjectV1Response**](../Model/EzsignfolderDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response**](../Model/EzsignfolderDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## ezsignfolderEditObjectV1
 
-> \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Response ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
+> \eZmaxAPI\Model\EzsignfolderEditObjectV1Response ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
 
 Modify an existing Ezsignfolder
 
@@ -150,19 +150,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: Authorization
-$config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Api\EzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $pkiEzsignfolderID = 56; // int | The unique ID of the Ezsignfolder
-$ezsignfolderEditObjectV1Request = new \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Request(); // \eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Request | 
+$ezsignfolderEditObjectV1Request = new \eZmaxAPI\Model\EzsignfolderEditObjectV1Request(); // \eZmaxAPI\Model\EzsignfolderEditObjectV1Request | 
 
 try {
     $result = $apiInstance->ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request);
@@ -179,11 +179,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiEzsignfolderID** | **int**| The unique ID of the Ezsignfolder |
- **ezsignfolderEditObjectV1Request** | [**\eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Request**](../Model/EzsignfolderEditObjectV1Request.md)|  |
+ **ezsignfolderEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignfolderEditObjectV1Request**](../Model/EzsignfolderEditObjectV1Request.md)|  |
 
 ### Return type
 
-[**\eZmaxAPI\Client\Model\EzsignfolderEditObjectV1Response**](../Model/EzsignfolderEditObjectV1Response.md)
+[**\eZmaxAPI\Model\EzsignfolderEditObjectV1Response**](../Model/EzsignfolderEditObjectV1Response.md)
 
 ### Authorization
 
@@ -213,12 +213,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: Authorization
-$config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Api\EzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -261,7 +261,7 @@ void (empty response body)
 
 ## ezsignfolderGetObjectV1
 
-> \eZmaxAPI\Client\Model\EzsignfolderGetObjectV1Response ezsignfolderGetObjectV1($pkiEzsignfolderID)
+> \eZmaxAPI\Model\EzsignfolderGetObjectV1Response ezsignfolderGetObjectV1($pkiEzsignfolderID)
 
 Retrieve an existing Ezsignfolder
 
@@ -273,12 +273,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: Authorization
-$config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\EzsignfolderApi(
+$apiInstance = new eZmaxAPI\Api\EzsignfolderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\eZmaxAPI\Client\Model\EzsignfolderGetObjectV1Response**](../Model/EzsignfolderGetObjectV1Response.md)
+[**\eZmaxAPI\Model\EzsignfolderGetObjectV1Response**](../Model/EzsignfolderGetObjectV1Response.md)
 
 ### Authorization
 

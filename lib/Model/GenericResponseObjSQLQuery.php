@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Model;
+namespace eZmaxAPI\Model;
 
 use \ArrayAccess;
-use \eZmaxAPI\Client\ObjectSerializer;
+use \eZmaxAPI\ObjectSerializer;
 
 /**
  * GenericResponseObjSQLQuery Class Doc Comment
  *
  * @category Class
  * @description Definition of objSQLQuery Object
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

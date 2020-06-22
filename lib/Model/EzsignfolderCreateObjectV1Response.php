@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,15 +27,15 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Model;
-use \eZmaxAPI\Client\ObjectSerializer;
+namespace eZmaxAPI\Model;
+use \eZmaxAPI\ObjectSerializer;
 
 /**
  * EzsignfolderCreateObjectV1Response Class Doc Comment
  *
  * @category Class
  * @description Response for the /1/object/ezsignfolder/createObject API Request
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -56,7 +56,7 @@ class EzsignfolderCreateObjectV1Response extends GenericResponse
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mPayload' => '\eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1ResponseMPayload'
+        'mPayload' => '\eZmaxAPI\Model\EzsignfolderCreateObjectV1ResponseMPayload'
     ];
 
     /**
@@ -205,7 +205,7 @@ class EzsignfolderCreateObjectV1Response extends GenericResponse
     /**
      * Gets mPayload
      *
-     * @return \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1ResponseMPayload
+     * @return \eZmaxAPI\Model\EzsignfolderCreateObjectV1ResponseMPayload
      */
     public function getMPayload()
     {
@@ -215,7 +215,7 @@ class EzsignfolderCreateObjectV1Response extends GenericResponse
     /**
      * Sets mPayload
      *
-     * @param \eZmaxAPI\Client\Model\EzsignfolderCreateObjectV1ResponseMPayload $mPayload mPayload
+     * @param \eZmaxAPI\Model\EzsignfolderCreateObjectV1ResponseMPayload $mPayload mPayload
      *
      * @return $this
      */

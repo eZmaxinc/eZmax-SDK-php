@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,15 +27,15 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Model;
-use \eZmaxAPI\Client\ObjectSerializer;
+namespace eZmaxAPI\Model;
+use \eZmaxAPI\ObjectSerializer;
 
 /**
  * EzsignfolderDeleteObjectV1Response Class Doc Comment
  *
  * @category Class
  * @description Response for the /1/object/ezsignfolder/deleteObject API Request
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

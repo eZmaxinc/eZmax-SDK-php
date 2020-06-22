@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Model;
+namespace eZmaxAPI\Model;
 
 use \ArrayAccess;
-use \eZmaxAPI\Client\ObjectSerializer;
+use \eZmaxAPI\ObjectSerializer;
 
 /**
  * GenericResponseObjDebug Class Doc Comment
  *
  * @category Class
  * @description This is a generic debug object that is returned by all API requests
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -62,7 +62,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
         'sRunTime' => 'string',
         'iSQLSelects' => 'int',
         'iSQLQueries' => 'int',
-        'aObjSQLQuery' => '\eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[]'
+        'aObjSQLQuery' => '\eZmaxAPI\Model\GenericResponseObjSQLQuery[]'
     ];
 
     /**
@@ -343,7 +343,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
     /**
      * Gets aObjSQLQuery
      *
-     * @return \eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[]
+     * @return \eZmaxAPI\Model\GenericResponseObjSQLQuery[]
      */
     public function getAObjSQLQuery()
     {
@@ -353,7 +353,7 @@ class GenericResponseObjDebug implements ModelInterface, ArrayAccess
     /**
      * Sets aObjSQLQuery
      *
-     * @param \eZmaxAPI\Client\Model\GenericResponseObjSQLQuery[] $aObjSQLQuery An array of the SQL Queries that were executed during the API request execution
+     * @param \eZmaxAPI\Model\GenericResponseObjSQLQuery[] $aObjSQLQuery An array of the SQL Queries that were executed during the API request execution
      *
      * @return $this
      */

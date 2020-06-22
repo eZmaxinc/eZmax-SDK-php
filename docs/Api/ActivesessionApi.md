@@ -1,4 +1,4 @@
-# eZmaxAPI\Client\ActivesessionApi
+# eZmaxAPI\ActivesessionApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## activesessionGetCurrentV1
 
-> \eZmaxAPI\Client\Model\ActivesessionGetCurrentV1Response activesessionGetCurrentV1()
+> \eZmaxAPI\Model\ActivesessionGetCurrentV1Response activesessionGetCurrentV1()
 
 Get Current Activesession
 
@@ -24,12 +24,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: Authorization
-$config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Client\Api\ActivesessionApi(
+$apiInstance = new eZmaxAPI\Api\ActivesessionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eZmaxAPI\Client\Model\ActivesessionGetCurrentV1Response**](../Model/ActivesessionGetCurrentV1Response.md)
+[**\eZmaxAPI\Model\ActivesessionGetCurrentV1Response**](../Model/ActivesessionGetCurrentV1Response.md)
 
 ### Authorization
 

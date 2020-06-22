@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Model;
+namespace eZmaxAPI\Model;
 
 use \ArrayAccess;
-use \eZmaxAPI\Client\ObjectSerializer;
+use \eZmaxAPI\ObjectSerializer;
 
 /**
  * EzsignfolderCreateObjectV1Request Class Doc Comment
  *
  * @category Class
  * @description Request for the /1/object/ezsignfolder/createObject API Request
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,8 +58,8 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objEzsignfolder' => '\eZmaxAPI\Client\Model\EzsignfolderRequest',
-        'objEzsignfolderCompound' => '\eZmaxAPI\Client\Model\EzsignfolderCompoundRequest'
+        'objEzsignfolder' => '\eZmaxAPI\Model\EzsignfolderRequest',
+        'objEzsignfolderCompound' => '\eZmaxAPI\Model\EzsignfolderCompoundRequest'
     ];
 
     /**
@@ -214,7 +214,7 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess
     /**
      * Gets objEzsignfolder
      *
-     * @return \eZmaxAPI\Client\Model\EzsignfolderRequest|null
+     * @return \eZmaxAPI\Model\EzsignfolderRequest|null
      */
     public function getObjEzsignfolder()
     {
@@ -224,7 +224,7 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess
     /**
      * Sets objEzsignfolder
      *
-     * @param \eZmaxAPI\Client\Model\EzsignfolderRequest|null $objEzsignfolder objEzsignfolder
+     * @param \eZmaxAPI\Model\EzsignfolderRequest|null $objEzsignfolder objEzsignfolder
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess
     /**
      * Gets objEzsignfolderCompound
      *
-     * @return \eZmaxAPI\Client\Model\EzsignfolderCompoundRequest|null
+     * @return \eZmaxAPI\Model\EzsignfolderCompoundRequest|null
      */
     public function getObjEzsignfolderCompound()
     {
@@ -248,7 +248,7 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess
     /**
      * Sets objEzsignfolderCompound
      *
-     * @param \eZmaxAPI\Client\Model\EzsignfolderCompoundRequest|null $objEzsignfolderCompound objEzsignfolderCompound
+     * @param \eZmaxAPI\Model\EzsignfolderCompoundRequest|null $objEzsignfolderCompound objEzsignfolderCompound
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Model;
+namespace eZmaxAPI\Model;
 
 use \ArrayAccess;
-use \eZmaxAPI\Client\ObjectSerializer;
+use \eZmaxAPI\ObjectSerializer;
 
 /**
  * GenericResponse Class Doc Comment
  *
  * @category Class
  * @description All API response will inherit this based Response
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,8 +58,8 @@ class GenericResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objDebugPayload' => '\eZmaxAPI\Client\Model\GenericResponseObjDebugPayload',
-        'objDebug' => '\eZmaxAPI\Client\Model\GenericResponseObjDebug'
+        'objDebugPayload' => '\eZmaxAPI\Model\GenericResponseObjDebugPayload',
+        'objDebug' => '\eZmaxAPI\Model\GenericResponseObjDebug'
     ];
 
     /**
@@ -214,7 +214,7 @@ class GenericResponse implements ModelInterface, ArrayAccess
     /**
      * Gets objDebugPayload
      *
-     * @return \eZmaxAPI\Client\Model\GenericResponseObjDebugPayload|null
+     * @return \eZmaxAPI\Model\GenericResponseObjDebugPayload|null
      */
     public function getObjDebugPayload()
     {
@@ -224,7 +224,7 @@ class GenericResponse implements ModelInterface, ArrayAccess
     /**
      * Sets objDebugPayload
      *
-     * @param \eZmaxAPI\Client\Model\GenericResponseObjDebugPayload|null $objDebugPayload objDebugPayload
+     * @param \eZmaxAPI\Model\GenericResponseObjDebugPayload|null $objDebugPayload objDebugPayload
      *
      * @return $this
      */
@@ -238,7 +238,7 @@ class GenericResponse implements ModelInterface, ArrayAccess
     /**
      * Gets objDebug
      *
-     * @return \eZmaxAPI\Client\Model\GenericResponseObjDebug|null
+     * @return \eZmaxAPI\Model\GenericResponseObjDebug|null
      */
     public function getObjDebug()
     {
@@ -248,7 +248,7 @@ class GenericResponse implements ModelInterface, ArrayAccess
     /**
      * Sets objDebug
      *
-     * @param \eZmaxAPI\Client\Model\GenericResponseObjDebug|null $objDebug objDebug
+     * @param \eZmaxAPI\Model\GenericResponseObjDebug|null $objDebug objDebug
      *
      * @return $this
      */

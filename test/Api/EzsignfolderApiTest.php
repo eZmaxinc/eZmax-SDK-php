@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,18 +26,18 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace eZmaxAPI\Client;
+namespace eZmaxAPI;
 
-use \eZmaxAPI\Client\Configuration;
-use \eZmaxAPI\Client\ApiException;
-use \eZmaxAPI\Client\ObjectSerializer;
+use \eZmaxAPI\Configuration;
+use \eZmaxAPI\ApiException;
+use \eZmaxAPI\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
  * EzsignfolderApiTest Class Doc Comment
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
