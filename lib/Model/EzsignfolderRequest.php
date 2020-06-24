@@ -63,7 +63,17 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'sEzsignfolderDescription' => 'string',
         'tEzsignfolderNote' => 'string',
         'fkiEzsigntsarequirementID' => 'int',
-        'eObjectType' => '\eZmaxAPI\Model\CommonEObjectType'
+        'testEnum' => 'string',
+        'testString' => 'string',
+        'testInteger' => 'int',
+        'testBoolean' => 'bool',
+        'testBase64' => 'string',
+        'testEmail' => 'string',
+        'testIPV4' => 'string',
+        'testDate' => '\DateTime',
+        'patternSSN' => 'string',
+        'testNullableTrue' => 'string',
+        'testEzmaxCustom' => 'string'
     ];
 
     /**
@@ -77,7 +87,17 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'sEzsignfolderDescription' => null,
         'tEzsignfolderNote' => null,
         'fkiEzsigntsarequirementID' => null,
-        'eObjectType' => null
+        'testEnum' => null,
+        'testString' => null,
+        'testInteger' => null,
+        'testBoolean' => null,
+        'testBase64' => 'byte',
+        'testEmail' => 'email',
+        'testIPV4' => 'IPv4',
+        'testDate' => 'date',
+        'patternSSN' => null,
+        'testNullableTrue' => null,
+        'testEzmaxCustom' => 'Ezmax-date'
     ];
 
     /**
@@ -112,7 +132,17 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'sEzsignfolderDescription' => 'sEzsignfolderDescription',
         'tEzsignfolderNote' => 'tEzsignfolderNote',
         'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID',
-        'eObjectType' => 'eObjectType'
+        'testEnum' => 'testEnum',
+        'testString' => 'testString',
+        'testInteger' => 'testInteger',
+        'testBoolean' => 'testBoolean',
+        'testBase64' => 'testBase64',
+        'testEmail' => 'testEmail',
+        'testIPV4' => 'testIPV4',
+        'testDate' => 'testDate',
+        'patternSSN' => 'patternSSN',
+        'testNullableTrue' => 'testNullableTrue',
+        'testEzmaxCustom' => 'testEzmaxCustom'
     ];
 
     /**
@@ -126,7 +156,17 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
         'tEzsignfolderNote' => 'setTEzsignfolderNote',
         'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID',
-        'eObjectType' => 'setEObjectType'
+        'testEnum' => 'setTestEnum',
+        'testString' => 'setTestString',
+        'testInteger' => 'setTestInteger',
+        'testBoolean' => 'setTestBoolean',
+        'testBase64' => 'setTestBase64',
+        'testEmail' => 'setTestEmail',
+        'testIPV4' => 'setTestIPV4',
+        'testDate' => 'setTestDate',
+        'patternSSN' => 'setPatternSSN',
+        'testNullableTrue' => 'setTestNullableTrue',
+        'testEzmaxCustom' => 'setTestEzmaxCustom'
     ];
 
     /**
@@ -140,7 +180,17 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
         'tEzsignfolderNote' => 'getTEzsignfolderNote',
         'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID',
-        'eObjectType' => 'getEObjectType'
+        'testEnum' => 'getTestEnum',
+        'testString' => 'getTestString',
+        'testInteger' => 'getTestInteger',
+        'testBoolean' => 'getTestBoolean',
+        'testBase64' => 'getTestBase64',
+        'testEmail' => 'getTestEmail',
+        'testIPV4' => 'getTestIPV4',
+        'testDate' => 'getTestDate',
+        'patternSSN' => 'getPatternSSN',
+        'testNullableTrue' => 'getTestNullableTrue',
+        'testEzmaxCustom' => 'getTestEzmaxCustom'
     ];
 
     /**
@@ -184,8 +234,23 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const TEST_ENUM_SIMPLE = 'Simple';
+    const TEST_ENUM_COMPOUND = 'Compound';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTestEnumAllowableValues()
+    {
+        return [
+            self::TEST_ENUM_SIMPLE,
+            self::TEST_ENUM_COMPOUND,
+        ];
+    }
     
 
     /**
@@ -208,7 +273,17 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         $this->container['sEzsignfolderDescription'] = isset($data['sEzsignfolderDescription']) ? $data['sEzsignfolderDescription'] : null;
         $this->container['tEzsignfolderNote'] = isset($data['tEzsignfolderNote']) ? $data['tEzsignfolderNote'] : null;
         $this->container['fkiEzsigntsarequirementID'] = isset($data['fkiEzsigntsarequirementID']) ? $data['fkiEzsigntsarequirementID'] : null;
-        $this->container['eObjectType'] = isset($data['eObjectType']) ? $data['eObjectType'] : null;
+        $this->container['testEnum'] = isset($data['testEnum']) ? $data['testEnum'] : null;
+        $this->container['testString'] = isset($data['testString']) ? $data['testString'] : null;
+        $this->container['testInteger'] = isset($data['testInteger']) ? $data['testInteger'] : null;
+        $this->container['testBoolean'] = isset($data['testBoolean']) ? $data['testBoolean'] : null;
+        $this->container['testBase64'] = isset($data['testBase64']) ? $data['testBase64'] : null;
+        $this->container['testEmail'] = isset($data['testEmail']) ? $data['testEmail'] : null;
+        $this->container['testIPV4'] = isset($data['testIPV4']) ? $data['testIPV4'] : null;
+        $this->container['testDate'] = isset($data['testDate']) ? $data['testDate'] : null;
+        $this->container['patternSSN'] = isset($data['patternSSN']) ? $data['patternSSN'] : null;
+        $this->container['testNullableTrue'] = isset($data['testNullableTrue']) ? $data['testNullableTrue'] : null;
+        $this->container['testEzmaxCustom'] = isset($data['testEzmaxCustom']) ? $data['testEzmaxCustom'] : null;
     }
 
     /**
@@ -235,9 +310,34 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         if ($this->container['fkiEzsigntsarequirementID'] === null) {
             $invalidProperties[] = "'fkiEzsigntsarequirementID' can't be null";
         }
-        if ($this->container['eObjectType'] === null) {
-            $invalidProperties[] = "'eObjectType' can't be null";
+        $allowedValues = $this->getTestEnumAllowableValues();
+        if (!is_null($this->container['testEnum']) && !in_array($this->container['testEnum'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'testEnum', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
         }
+
+        if (!is_null($this->container['testString']) && (mb_strlen($this->container['testString']) > 25)) {
+            $invalidProperties[] = "invalid value for 'testString', the character length must be smaller than or equal to 25.";
+        }
+
+        if (!is_null($this->container['testString']) && (mb_strlen($this->container['testString']) < 5)) {
+            $invalidProperties[] = "invalid value for 'testString', the character length must be bigger than or equal to 5.";
+        }
+
+        if (!is_null($this->container['testInteger']) && ($this->container['testInteger'] > 66)) {
+            $invalidProperties[] = "invalid value for 'testInteger', must be smaller than or equal to 66.";
+        }
+
+        if (!is_null($this->container['testInteger']) && ($this->container['testInteger'] < 33)) {
+            $invalidProperties[] = "invalid value for 'testInteger', must be bigger than or equal to 33.";
+        }
+
+        if (!is_null($this->container['patternSSN']) && !preg_match("/'^\\d{3}-\\d{2}-\\d{4}$'/", $this->container['patternSSN'])) {
+            $invalidProperties[] = "invalid value for 'patternSSN', must be conform to the pattern /'^\\d{3}-\\d{2}-\\d{4}$'/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -374,25 +474,294 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets eObjectType
+     * Gets testEnum
      *
-     * @return \eZmaxAPI\Model\CommonEObjectType
+     * @return string|null
      */
-    public function getEObjectType()
+    public function getTestEnum()
     {
-        return $this->container['eObjectType'];
+        return $this->container['testEnum'];
     }
 
     /**
-     * Sets eObjectType
+     * Sets testEnum
      *
-     * @param \eZmaxAPI\Model\CommonEObjectType $eObjectType eObjectType
+     * @param string|null $testEnum testEnum
      *
      * @return $this
      */
-    public function setEObjectType($eObjectType)
+    public function setTestEnum($testEnum)
     {
-        $this->container['eObjectType'] = $eObjectType;
+        $allowedValues = $this->getTestEnumAllowableValues();
+        if (!is_null($testEnum) && !in_array($testEnum, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'testEnum', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['testEnum'] = $testEnum;
+
+        return $this;
+    }
+
+    /**
+     * Gets testString
+     *
+     * @return string|null
+     */
+    public function getTestString()
+    {
+        return $this->container['testString'];
+    }
+
+    /**
+     * Sets testString
+     *
+     * @param string|null $testString testString
+     *
+     * @return $this
+     */
+    public function setTestString($testString)
+    {
+        if (!is_null($testString) && (mb_strlen($testString) > 25)) {
+            throw new \InvalidArgumentException('invalid length for $testString when calling EzsignfolderRequest., must be smaller than or equal to 25.');
+        }
+        if (!is_null($testString) && (mb_strlen($testString) < 5)) {
+            throw new \InvalidArgumentException('invalid length for $testString when calling EzsignfolderRequest., must be bigger than or equal to 5.');
+        }
+
+        $this->container['testString'] = $testString;
+
+        return $this;
+    }
+
+    /**
+     * Gets testInteger
+     *
+     * @return int|null
+     */
+    public function getTestInteger()
+    {
+        return $this->container['testInteger'];
+    }
+
+    /**
+     * Sets testInteger
+     *
+     * @param int|null $testInteger testInteger
+     *
+     * @return $this
+     */
+    public function setTestInteger($testInteger)
+    {
+
+        if (!is_null($testInteger) && ($testInteger > 66)) {
+            throw new \InvalidArgumentException('invalid value for $testInteger when calling EzsignfolderRequest., must be smaller than or equal to 66.');
+        }
+        if (!is_null($testInteger) && ($testInteger < 33)) {
+            throw new \InvalidArgumentException('invalid value for $testInteger when calling EzsignfolderRequest., must be bigger than or equal to 33.');
+        }
+
+        $this->container['testInteger'] = $testInteger;
+
+        return $this;
+    }
+
+    /**
+     * Gets testBoolean
+     *
+     * @return bool|null
+     */
+    public function getTestBoolean()
+    {
+        return $this->container['testBoolean'];
+    }
+
+    /**
+     * Sets testBoolean
+     *
+     * @param bool|null $testBoolean testBoolean
+     *
+     * @return $this
+     */
+    public function setTestBoolean($testBoolean)
+    {
+        $this->container['testBoolean'] = $testBoolean;
+
+        return $this;
+    }
+
+    /**
+     * Gets testBase64
+     *
+     * @return string|null
+     */
+    public function getTestBase64()
+    {
+        return $this->container['testBase64'];
+    }
+
+    /**
+     * Sets testBase64
+     *
+     * @param string|null $testBase64 testBase64
+     *
+     * @return $this
+     */
+    public function setTestBase64($testBase64)
+    {
+        $this->container['testBase64'] = $testBase64;
+
+        return $this;
+    }
+
+    /**
+     * Gets testEmail
+     *
+     * @return string|null
+     */
+    public function getTestEmail()
+    {
+        return $this->container['testEmail'];
+    }
+
+    /**
+     * Sets testEmail
+     *
+     * @param string|null $testEmail testEmail
+     *
+     * @return $this
+     */
+    public function setTestEmail($testEmail)
+    {
+        $this->container['testEmail'] = $testEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets testIPV4
+     *
+     * @return string|null
+     */
+    public function getTestIPV4()
+    {
+        return $this->container['testIPV4'];
+    }
+
+    /**
+     * Sets testIPV4
+     *
+     * @param string|null $testIPV4 testIPV4
+     *
+     * @return $this
+     */
+    public function setTestIPV4($testIPV4)
+    {
+        $this->container['testIPV4'] = $testIPV4;
+
+        return $this;
+    }
+
+    /**
+     * Gets testDate
+     *
+     * @return \DateTime|null
+     */
+    public function getTestDate()
+    {
+        return $this->container['testDate'];
+    }
+
+    /**
+     * Sets testDate
+     *
+     * @param \DateTime|null $testDate testDate
+     *
+     * @return $this
+     */
+    public function setTestDate($testDate)
+    {
+        $this->container['testDate'] = $testDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets patternSSN
+     *
+     * @return string|null
+     */
+    public function getPatternSSN()
+    {
+        return $this->container['patternSSN'];
+    }
+
+    /**
+     * Sets patternSSN
+     *
+     * @param string|null $patternSSN patternSSN
+     *
+     * @return $this
+     */
+    public function setPatternSSN($patternSSN)
+    {
+
+        if (!is_null($patternSSN) && (!preg_match("/'^\\d{3}-\\d{2}-\\d{4}$'/", $patternSSN))) {
+            throw new \InvalidArgumentException("invalid value for $patternSSN when calling EzsignfolderRequest., must conform to the pattern /'^\\d{3}-\\d{2}-\\d{4}$'/.");
+        }
+
+        $this->container['patternSSN'] = $patternSSN;
+
+        return $this;
+    }
+
+    /**
+     * Gets testNullableTrue
+     *
+     * @return string|null
+     */
+    public function getTestNullableTrue()
+    {
+        return $this->container['testNullableTrue'];
+    }
+
+    /**
+     * Sets testNullableTrue
+     *
+     * @param string|null $testNullableTrue testNullableTrue
+     *
+     * @return $this
+     */
+    public function setTestNullableTrue($testNullableTrue)
+    {
+        $this->container['testNullableTrue'] = $testNullableTrue;
+
+        return $this;
+    }
+
+    /**
+     * Gets testEzmaxCustom
+     *
+     * @return string|null
+     */
+    public function getTestEzmaxCustom()
+    {
+        return $this->container['testEzmaxCustom'];
+    }
+
+    /**
+     * Sets testEzmaxCustom
+     *
+     * @param string|null $testEzmaxCustom testEzmaxCustom
+     *
+     * @return $this
+     */
+    public function setTestEzmaxCustom($testEzmaxCustom)
+    {
+        $this->container['testEzmaxCustom'] = $testEzmaxCustom;
 
         return $this;
     }

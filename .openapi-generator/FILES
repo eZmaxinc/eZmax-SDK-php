@@ -8,7 +8,6 @@ docs/Api/ActivesessionApi.md
 docs/Api/EzsignfolderApi.md
 docs/Model/ActivesessionGetCurrentV1Response.md
 docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md
-docs/Model/CommonEObjectType.md
 docs/Model/CommonResponse.md
 docs/Model/CommonResponseError.md
 docs/Model/CommonResponseObjDebug.md
@@ -31,7 +30,6 @@ lib/Configuration.php
 lib/HeaderSelector.php
 lib/Model/ActivesessionGetCurrentV1Response.php
 lib/Model/ActivesessionGetCurrentV1ResponseMPayload.php
-lib/Model/CommonEObjectType.php
 lib/Model/CommonResponse.php
 lib/Model/CommonResponseError.php
 lib/Model/CommonResponseObjDebug.php
@@ -53,7 +51,6 @@ test/Api/ActivesessionApiTest.php
 test/Api/EzsignfolderApiTest.php
 test/Model/ActivesessionGetCurrentV1ResponseMPayloadTest.php
 test/Model/ActivesessionGetCurrentV1ResponseTest.php
-test/Model/CommonEObjectTypeTest.php
 test/Model/CommonResponseErrorTest.php
 test/Model/CommonResponseObjDebugPayloadTest.php
 test/Model/CommonResponseObjDebugTest.php

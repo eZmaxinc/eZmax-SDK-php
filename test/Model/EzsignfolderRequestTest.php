@@ -114,9 +114,79 @@ class EzsignfolderRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "eObjectType"
+     * Test attribute "testEnum"
      */
-    public function testPropertyEObjectType()
+    public function testPropertyTestEnum()
+    {
+    }
+
+    /**
+     * Test attribute "testString"
+     */
+    public function testPropertyTestString()
+    {
+    }
+
+    /**
+     * Test attribute "testInteger"
+     */
+    public function testPropertyTestInteger()
+    {
+    }
+
+    /**
+     * Test attribute "testBoolean"
+     */
+    public function testPropertyTestBoolean()
+    {
+    }
+
+    /**
+     * Test attribute "testBase64"
+     */
+    public function testPropertyTestBase64()
+    {
+    }
+
+    /**
+     * Test attribute "testEmail"
+     */
+    public function testPropertyTestEmail()
+    {
+    }
+
+    /**
+     * Test attribute "testIPV4"
+     */
+    public function testPropertyTestIPV4()
+    {
+    }
+
+    /**
+     * Test attribute "testDate"
+     */
+    public function testPropertyTestDate()
+    {
+    }
+
+    /**
+     * Test attribute "patternSSN"
+     */
+    public function testPropertyPatternSSN()
+    {
+    }
+
+    /**
+     * Test attribute "testNullableTrue"
+     */
+    public function testPropertyTestNullableTrue()
+    {
+    }
+
+    /**
+     * Test attribute "testEzmaxCustom"
+     */
+    public function testPropertyTestEzmaxCustom()
     {
     }
 }
