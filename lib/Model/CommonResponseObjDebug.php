@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseObjDebugPayload
+ * CommonResponseObjDebug
  *
  * PHP version 7.2
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * GenericResponseObjDebugPayload Class Doc Comment
+ * CommonResponseObjDebug Class Doc Comment
  *
  * @category Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description This is a generic debug object that is returned by all API requests
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
+class CommonResponseObjDebug implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Generic-Response-objDebugPayload';
+    protected static $openAPIModelName = 'Common-Response-objDebug';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iVersionMin' => 'int',
-        'iVersionMax' => 'int',
-        'aRequiredPermissions' => 'int[]'
+        'sMemoryUsage' => 'string',
+        'sRunTime' => 'string',
+        'iSQLSelects' => 'int',
+        'iSQLQueries' => 'int',
+        'aObjSQLQuery' => '\eZmaxAPI\Model\CommonResponseObjSQLQuery[]'
     ];
 
     /**
@@ -69,9 +71,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'iVersionMin' => null,
-        'iVersionMax' => null,
-        'aRequiredPermissions' => null
+        'sMemoryUsage' => null,
+        'sRunTime' => null,
+        'iSQLSelects' => null,
+        'iSQLQueries' => null,
+        'aObjSQLQuery' => null
     ];
 
     /**
@@ -101,9 +105,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'iVersionMin' => 'iVersionMin',
-        'iVersionMax' => 'iVersionMax',
-        'aRequiredPermissions' => 'a_RequiredPermissions'
+        'sMemoryUsage' => 'sMemoryUsage',
+        'sRunTime' => 'sRunTime',
+        'iSQLSelects' => 'iSQLSelects',
+        'iSQLQueries' => 'iSQLQueries',
+        'aObjSQLQuery' => 'a_objSQLQuery'
     ];
 
     /**
@@ -112,9 +118,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'iVersionMin' => 'setIVersionMin',
-        'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermissions' => 'setARequiredPermissions'
+        'sMemoryUsage' => 'setSMemoryUsage',
+        'sRunTime' => 'setSRunTime',
+        'iSQLSelects' => 'setISQLSelects',
+        'iSQLQueries' => 'setISQLQueries',
+        'aObjSQLQuery' => 'setAObjSQLQuery'
     ];
 
     /**
@@ -123,9 +131,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'iVersionMin' => 'getIVersionMin',
-        'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermissions' => 'getARequiredPermissions'
+        'sMemoryUsage' => 'getSMemoryUsage',
+        'sRunTime' => 'getSRunTime',
+        'iSQLSelects' => 'getISQLSelects',
+        'iSQLQueries' => 'getISQLQueries',
+        'aObjSQLQuery' => 'getAObjSQLQuery'
     ];
 
     /**
@@ -188,9 +198,11 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['iVersionMin'] = isset($data['iVersionMin']) ? $data['iVersionMin'] : null;
-        $this->container['iVersionMax'] = isset($data['iVersionMax']) ? $data['iVersionMax'] : null;
-        $this->container['aRequiredPermissions'] = isset($data['aRequiredPermissions']) ? $data['aRequiredPermissions'] : null;
+        $this->container['sMemoryUsage'] = isset($data['sMemoryUsage']) ? $data['sMemoryUsage'] : null;
+        $this->container['sRunTime'] = isset($data['sRunTime']) ? $data['sRunTime'] : null;
+        $this->container['iSQLSelects'] = isset($data['iSQLSelects']) ? $data['iSQLSelects'] : null;
+        $this->container['iSQLQueries'] = isset($data['iSQLQueries']) ? $data['iSQLQueries'] : null;
+        $this->container['aObjSQLQuery'] = isset($data['aObjSQLQuery']) ? $data['aObjSQLQuery'] : null;
     }
 
     /**
@@ -202,14 +214,20 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['iVersionMin'] === null) {
-            $invalidProperties[] = "'iVersionMin' can't be null";
+        if ($this->container['sMemoryUsage'] === null) {
+            $invalidProperties[] = "'sMemoryUsage' can't be null";
         }
-        if ($this->container['iVersionMax'] === null) {
-            $invalidProperties[] = "'iVersionMax' can't be null";
+        if ($this->container['sRunTime'] === null) {
+            $invalidProperties[] = "'sRunTime' can't be null";
         }
-        if ($this->container['aRequiredPermissions'] === null) {
-            $invalidProperties[] = "'aRequiredPermissions' can't be null";
+        if ($this->container['iSQLSelects'] === null) {
+            $invalidProperties[] = "'iSQLSelects' can't be null";
+        }
+        if ($this->container['iSQLQueries'] === null) {
+            $invalidProperties[] = "'iSQLQueries' can't be null";
+        }
+        if ($this->container['aObjSQLQuery'] === null) {
+            $invalidProperties[] = "'aObjSQLQuery' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,73 +245,121 @@ class GenericResponseObjDebugPayload implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets iVersionMin
+     * Gets sMemoryUsage
      *
-     * @return int
+     * @return string
      */
-    public function getIVersionMin()
+    public function getSMemoryUsage()
     {
-        return $this->container['iVersionMin'];
+        return $this->container['sMemoryUsage'];
     }
 
     /**
-     * Sets iVersionMin
+     * Sets sMemoryUsage
      *
-     * @param int $iVersionMin The minimum version of the function that can be called
+     * @param string $sMemoryUsage The peak memory allocated during the API request execution. Formatted as a human readable string
      *
      * @return $this
      */
-    public function setIVersionMin($iVersionMin)
+    public function setSMemoryUsage($sMemoryUsage)
     {
-        $this->container['iVersionMin'] = $iVersionMin;
+        $this->container['sMemoryUsage'] = $sMemoryUsage;
 
         return $this;
     }
 
     /**
-     * Gets iVersionMax
+     * Gets sRunTime
      *
-     * @return int
+     * @return string
      */
-    public function getIVersionMax()
+    public function getSRunTime()
     {
-        return $this->container['iVersionMax'];
+        return $this->container['sRunTime'];
     }
 
     /**
-     * Sets iVersionMax
+     * Sets sRunTime
      *
-     * @param int $iVersionMax The maximum version of the function that can be called
+     * @param string $sRunTime The total server execution time of the API request execution. Formatted as a human readable string
      *
      * @return $this
      */
-    public function setIVersionMax($iVersionMax)
+    public function setSRunTime($sRunTime)
     {
-        $this->container['iVersionMax'] = $iVersionMax;
+        $this->container['sRunTime'] = $sRunTime;
 
         return $this;
     }
 
     /**
-     * Gets aRequiredPermissions
+     * Gets iSQLSelects
      *
-     * @return int[]
+     * @return int
      */
-    public function getARequiredPermissions()
+    public function getISQLSelects()
     {
-        return $this->container['aRequiredPermissions'];
+        return $this->container['iSQLSelects'];
     }
 
     /**
-     * Sets aRequiredPermissions
+     * Sets iSQLSelects
      *
-     * @param int[] $aRequiredPermissions An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
+     * @param int $iSQLSelects The number of SQL SELECT queries that were sent to the database server during the API request execution
      *
      * @return $this
      */
-    public function setARequiredPermissions($aRequiredPermissions)
+    public function setISQLSelects($iSQLSelects)
     {
-        $this->container['aRequiredPermissions'] = $aRequiredPermissions;
+        $this->container['iSQLSelects'] = $iSQLSelects;
+
+        return $this;
+    }
+
+    /**
+     * Gets iSQLQueries
+     *
+     * @return int
+     */
+    public function getISQLQueries()
+    {
+        return $this->container['iSQLQueries'];
+    }
+
+    /**
+     * Sets iSQLQueries
+     *
+     * @param int $iSQLQueries The number of SQL INSERT/UPDATE/DELETE queries that were sent to the database server during the API request execution
+     *
+     * @return $this
+     */
+    public function setISQLQueries($iSQLQueries)
+    {
+        $this->container['iSQLQueries'] = $iSQLQueries;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjSQLQuery
+     *
+     * @return \eZmaxAPI\Model\CommonResponseObjSQLQuery[]
+     */
+    public function getAObjSQLQuery()
+    {
+        return $this->container['aObjSQLQuery'];
+    }
+
+    /**
+     * Sets aObjSQLQuery
+     *
+     * @param \eZmaxAPI\Model\CommonResponseObjSQLQuery[] $aObjSQLQuery An array of the SQL Queries that were executed during the API request execution
+     *
+     * @return $this
+     */
+    public function setAObjSQLQuery($aObjSQLQuery)
+    {
+        $this->container['aObjSQLQuery'] = $aObjSQLQuery;
 
         return $this;
     }

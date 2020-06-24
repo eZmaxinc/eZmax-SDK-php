@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseObjDebugPayloadTest
+ * CommonResponseObjDebugTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GenericResponseObjDebugPayloadTest Class Doc Comment
+ * CommonResponseObjDebugTest Class Doc Comment
  *
  * @category    Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description This is a generic debug object that is returned by all API requests
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GenericResponseObjDebugPayloadTest extends TestCase
+class CommonResponseObjDebugTest extends TestCase
 {
 
     /**
@@ -72,30 +72,44 @@ class GenericResponseObjDebugPayloadTest extends TestCase
     }
 
     /**
-     * Test "GenericResponseObjDebugPayload"
+     * Test "CommonResponseObjDebug"
      */
-    public function testGenericResponseObjDebugPayload()
+    public function testCommonResponseObjDebug()
     {
     }
 
     /**
-     * Test attribute "iVersionMin"
+     * Test attribute "sMemoryUsage"
      */
-    public function testPropertyIVersionMin()
+    public function testPropertySMemoryUsage()
     {
     }
 
     /**
-     * Test attribute "iVersionMax"
+     * Test attribute "sRunTime"
      */
-    public function testPropertyIVersionMax()
+    public function testPropertySRunTime()
     {
     }
 
     /**
-     * Test attribute "aRequiredPermissions"
+     * Test attribute "iSQLSelects"
      */
-    public function testPropertyARequiredPermissions()
+    public function testPropertyISQLSelects()
+    {
+    }
+
+    /**
+     * Test attribute "iSQLQueries"
+     */
+    public function testPropertyISQLQueries()
+    {
+    }
+
+    /**
+     * Test attribute "aObjSQLQuery"
+     */
+    public function testPropertyAObjSQLQuery()
     {
     }
 }

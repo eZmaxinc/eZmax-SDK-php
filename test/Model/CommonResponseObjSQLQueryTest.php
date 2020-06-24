@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseObjDebugTest
+ * CommonResponseObjSQLQueryTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GenericResponseObjDebugTest Class Doc Comment
+ * CommonResponseObjSQLQueryTest Class Doc Comment
  *
  * @category    Class
- * @description This is a generic debug object that is returned by all API requests
+ * @description Definition of objSQLQuery Object
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GenericResponseObjDebugTest extends TestCase
+class CommonResponseObjSQLQueryTest extends TestCase
 {
 
     /**
@@ -72,44 +72,23 @@ class GenericResponseObjDebugTest extends TestCase
     }
 
     /**
-     * Test "GenericResponseObjDebug"
+     * Test "CommonResponseObjSQLQuery"
      */
-    public function testGenericResponseObjDebug()
+    public function testCommonResponseObjSQLQuery()
     {
     }
 
     /**
-     * Test attribute "sMemoryUsage"
+     * Test attribute "sQuery"
      */
-    public function testPropertySMemoryUsage()
+    public function testPropertySQuery()
     {
     }
 
     /**
-     * Test attribute "sRunTime"
+     * Test attribute "fDuration"
      */
-    public function testPropertySRunTime()
-    {
-    }
-
-    /**
-     * Test attribute "iSQLSelects"
-     */
-    public function testPropertyISQLSelects()
-    {
-    }
-
-    /**
-     * Test attribute "iSQLQueries"
-     */
-    public function testPropertyISQLQueries()
-    {
-    }
-
-    /**
-     * Test attribute "aObjSQLQuery"
-     */
-    public function testPropertyAObjSQLQuery()
+    public function testPropertyFDuration()
     {
     }
 }

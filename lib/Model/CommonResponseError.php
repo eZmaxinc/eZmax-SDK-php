@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseError
+ * CommonResponseError
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * GenericResponseError Class Doc Comment
+ * CommonResponseError Class Doc Comment
  *
  * @category Class
  * @description Generic Error Message
@@ -41,7 +41,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GenericResponseError implements ModelInterface, ArrayAccess
+class CommonResponseError implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GenericResponseError implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Generic-Response-Error';
+    protected static $openAPIModelName = 'Common-Response-Error';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

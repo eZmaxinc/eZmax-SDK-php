@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseObjSQLQuery
+ * CommonResponseObjSQLQuery
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * GenericResponseObjSQLQuery Class Doc Comment
+ * CommonResponseObjSQLQuery Class Doc Comment
  *
  * @category Class
  * @description Definition of objSQLQuery Object
@@ -41,7 +41,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GenericResponseObjSQLQuery implements ModelInterface, ArrayAccess
+class CommonResponseObjSQLQuery implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GenericResponseObjSQLQuery implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Generic-Response-objSQLQuery';
+    protected static $openAPIModelName = 'Common-Response-objSQLQuery';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

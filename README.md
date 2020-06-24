@@ -109,6 +109,12 @@ Class | Method | HTTP request | Description
 
  - [ActivesessionGetCurrentV1Response](docs/Model/ActivesessionGetCurrentV1Response.md)
  - [ActivesessionGetCurrentV1ResponseMPayload](docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md)
+ - [CommonEObjectType](docs/Model/CommonEObjectType.md)
+ - [CommonResponse](docs/Model/CommonResponse.md)
+ - [CommonResponseError](docs/Model/CommonResponseError.md)
+ - [CommonResponseObjDebug](docs/Model/CommonResponseObjDebug.md)
+ - [CommonResponseObjDebugPayload](docs/Model/CommonResponseObjDebugPayload.md)
+ - [CommonResponseObjSQLQuery](docs/Model/CommonResponseObjSQLQuery.md)
  - [EzsignfolderCompoundRequest](docs/Model/EzsignfolderCompoundRequest.md)
  - [EzsignfolderCreateObjectV1Request](docs/Model/EzsignfolderCreateObjectV1Request.md)
  - [EzsignfolderCreateObjectV1Response](docs/Model/EzsignfolderCreateObjectV1Response.md)
@@ -118,11 +124,6 @@ Class | Method | HTTP request | Description
  - [EzsignfolderEditObjectV1Response](docs/Model/EzsignfolderEditObjectV1Response.md)
  - [EzsignfolderGetObjectV1Response](docs/Model/EzsignfolderGetObjectV1Response.md)
  - [EzsignfolderRequest](docs/Model/EzsignfolderRequest.md)
- - [GenericResponse](docs/Model/GenericResponse.md)
- - [GenericResponseError](docs/Model/GenericResponseError.md)
- - [GenericResponseObjDebug](docs/Model/GenericResponseObjDebug.md)
- - [GenericResponseObjDebugPayload](docs/Model/GenericResponseObjDebugPayload.md)
- - [GenericResponseObjSQLQuery](docs/Model/GenericResponseObjSQLQuery.md)
 
 
 ## Documentation For Authorization

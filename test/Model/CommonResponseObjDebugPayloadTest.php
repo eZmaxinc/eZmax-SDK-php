@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfolderRequestTest
+ * CommonResponseObjDebugPayloadTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfolderRequestTest Class Doc Comment
+ * CommonResponseObjDebugPayloadTest Class Doc Comment
  *
  * @category    Class
- * @description An Ezsignfolder Object
+ * @description This is a debug object containing debugging information on the actual function
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfolderRequestTest extends TestCase
+class CommonResponseObjDebugPayloadTest extends TestCase
 {
 
     /**
@@ -72,51 +72,30 @@ class EzsignfolderRequestTest extends TestCase
     }
 
     /**
-     * Test "EzsignfolderRequest"
+     * Test "CommonResponseObjDebugPayload"
      */
-    public function testEzsignfolderRequest()
+    public function testCommonResponseObjDebugPayload()
     {
     }
 
     /**
-     * Test attribute "fkiEzsignfoldertypeID"
+     * Test attribute "iVersionMin"
      */
-    public function testPropertyFkiEzsignfoldertypeID()
+    public function testPropertyIVersionMin()
     {
     }
 
     /**
-     * Test attribute "fkiLanguageID"
+     * Test attribute "iVersionMax"
      */
-    public function testPropertyFkiLanguageID()
+    public function testPropertyIVersionMax()
     {
     }
 
     /**
-     * Test attribute "sEzsignfolderDescription"
+     * Test attribute "aRequiredPermissions"
      */
-    public function testPropertySEzsignfolderDescription()
-    {
-    }
-
-    /**
-     * Test attribute "tEzsignfolderNote"
-     */
-    public function testPropertyTEzsignfolderNote()
-    {
-    }
-
-    /**
-     * Test attribute "fkiEzsigntsarequirementID"
-     */
-    public function testPropertyFkiEzsigntsarequirementID()
-    {
-    }
-
-    /**
-     * Test attribute "eObjectType"
-     */
-    public function testPropertyEObjectType()
+    public function testPropertyARequiredPermissions()
     {
     }
 }

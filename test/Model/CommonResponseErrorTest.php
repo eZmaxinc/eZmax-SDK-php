@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseObjSQLQueryTest
+ * CommonResponseErrorTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GenericResponseObjSQLQueryTest Class Doc Comment
+ * CommonResponseErrorTest Class Doc Comment
  *
  * @category    Class
- * @description Definition of objSQLQuery Object
+ * @description Generic Error Message
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GenericResponseObjSQLQueryTest extends TestCase
+class CommonResponseErrorTest extends TestCase
 {
 
     /**
@@ -72,23 +72,16 @@ class GenericResponseObjSQLQueryTest extends TestCase
     }
 
     /**
-     * Test "GenericResponseObjSQLQuery"
+     * Test "CommonResponseError"
      */
-    public function testGenericResponseObjSQLQuery()
+    public function testCommonResponseError()
     {
     }
 
     /**
-     * Test attribute "sQuery"
+     * Test attribute "sErrorMessage"
      */
-    public function testPropertySQuery()
-    {
-    }
-
-    /**
-     * Test attribute "fDuration"
-     */
-    public function testPropertyFDuration()
+    public function testPropertySErrorMessage()
     {
     }
 }

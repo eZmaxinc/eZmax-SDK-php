@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfolderRequestTest
+ * CommonEObjectTypeTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfolderRequestTest Class Doc Comment
+ * CommonEObjectTypeTest Class Doc Comment
  *
  * @category    Class
- * @description An Ezsignfolder Object
+ * @description Define if the object is a Simple or Compound type.
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfolderRequestTest extends TestCase
+class CommonEObjectTypeTest extends TestCase
 {
 
     /**
@@ -72,51 +72,9 @@ class EzsignfolderRequestTest extends TestCase
     }
 
     /**
-     * Test "EzsignfolderRequest"
+     * Test "CommonEObjectType"
      */
-    public function testEzsignfolderRequest()
-    {
-    }
-
-    /**
-     * Test attribute "fkiEzsignfoldertypeID"
-     */
-    public function testPropertyFkiEzsignfoldertypeID()
-    {
-    }
-
-    /**
-     * Test attribute "fkiLanguageID"
-     */
-    public function testPropertyFkiLanguageID()
-    {
-    }
-
-    /**
-     * Test attribute "sEzsignfolderDescription"
-     */
-    public function testPropertySEzsignfolderDescription()
-    {
-    }
-
-    /**
-     * Test attribute "tEzsignfolderNote"
-     */
-    public function testPropertyTEzsignfolderNote()
-    {
-    }
-
-    /**
-     * Test attribute "fkiEzsigntsarequirementID"
-     */
-    public function testPropertyFkiEzsigntsarequirementID()
-    {
-    }
-
-    /**
-     * Test attribute "eObjectType"
-     */
-    public function testPropertyEObjectType()
+    public function testCommonEObjectType()
     {
     }
 }

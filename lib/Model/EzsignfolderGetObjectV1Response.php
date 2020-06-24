@@ -39,7 +39,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class EzsignfolderGetObjectV1Response extends GenericResponse 
+class EzsignfolderGetObjectV1Response extends CommonResponse 
 {
     const DISCRIMINATOR = null;
 

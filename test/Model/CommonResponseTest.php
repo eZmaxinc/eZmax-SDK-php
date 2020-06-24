@@ -1,6 +1,6 @@
 <?php
 /**
- * GenericResponseErrorTest
+ * CommonResponseTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GenericResponseErrorTest Class Doc Comment
+ * CommonResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Generic Error Message
+ * @description All API response will inherit this based Response
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GenericResponseErrorTest extends TestCase
+class CommonResponseTest extends TestCase
 {
 
     /**
@@ -72,16 +72,23 @@ class GenericResponseErrorTest extends TestCase
     }
 
     /**
-     * Test "GenericResponseError"
+     * Test "CommonResponse"
      */
-    public function testGenericResponseError()
+    public function testCommonResponse()
     {
     }
 
     /**
-     * Test attribute "sErrorMessage"
+     * Test attribute "objDebugPayload"
      */
-    public function testPropertySErrorMessage()
+    public function testPropertyObjDebugPayload()
+    {
+    }
+
+    /**
+     * Test attribute "objDebug"
+     */
+    public function testPropertyObjDebug()
     {
     }
 }

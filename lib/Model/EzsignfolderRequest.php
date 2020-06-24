@@ -62,7 +62,8 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'fkiLanguageID' => 'int',
         'sEzsignfolderDescription' => 'string',
         'tEzsignfolderNote' => 'string',
-        'fkiEzsigntsarequirementID' => 'int'
+        'fkiEzsigntsarequirementID' => 'int',
+        'eObjectType' => '\eZmaxAPI\Model\CommonEObjectType'
     ];
 
     /**
@@ -75,7 +76,8 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'fkiLanguageID' => null,
         'sEzsignfolderDescription' => null,
         'tEzsignfolderNote' => null,
-        'fkiEzsigntsarequirementID' => null
+        'fkiEzsigntsarequirementID' => null,
+        'eObjectType' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'fkiLanguageID' => 'fkiLanguageID',
         'sEzsignfolderDescription' => 'sEzsignfolderDescription',
         'tEzsignfolderNote' => 'tEzsignfolderNote',
-        'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID'
+        'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID',
+        'eObjectType' => 'eObjectType'
     ];
 
     /**
@@ -122,7 +125,8 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'fkiLanguageID' => 'setFkiLanguageID',
         'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
         'tEzsignfolderNote' => 'setTEzsignfolderNote',
-        'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID'
+        'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID',
+        'eObjectType' => 'setEObjectType'
     ];
 
     /**
@@ -135,7 +139,8 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         'fkiLanguageID' => 'getFkiLanguageID',
         'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
         'tEzsignfolderNote' => 'getTEzsignfolderNote',
-        'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID'
+        'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID',
+        'eObjectType' => 'getEObjectType'
     ];
 
     /**
@@ -203,6 +208,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         $this->container['sEzsignfolderDescription'] = isset($data['sEzsignfolderDescription']) ? $data['sEzsignfolderDescription'] : null;
         $this->container['tEzsignfolderNote'] = isset($data['tEzsignfolderNote']) ? $data['tEzsignfolderNote'] : null;
         $this->container['fkiEzsigntsarequirementID'] = isset($data['fkiEzsigntsarequirementID']) ? $data['fkiEzsigntsarequirementID'] : null;
+        $this->container['eObjectType'] = isset($data['eObjectType']) ? $data['eObjectType'] : null;
     }
 
     /**
@@ -223,15 +229,14 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         if ($this->container['sEzsignfolderDescription'] === null) {
             $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
         }
-        if ((mb_strlen($this->container['sEzsignfolderDescription']) > 50)) {
-            $invalidProperties[] = "invalid value for 'sEzsignfolderDescription', the character length must be smaller than or equal to 50.";
-        }
-
         if ($this->container['tEzsignfolderNote'] === null) {
             $invalidProperties[] = "'tEzsignfolderNote' can't be null";
         }
         if ($this->container['fkiEzsigntsarequirementID'] === null) {
             $invalidProperties[] = "'fkiEzsigntsarequirementID' can't be null";
+        }
+        if ($this->container['eObjectType'] === null) {
+            $invalidProperties[] = "'eObjectType' can't be null";
         }
         return $invalidProperties;
     }
@@ -315,10 +320,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
      */
     public function setSEzsignfolderDescription($sEzsignfolderDescription)
     {
-        if ((mb_strlen($sEzsignfolderDescription) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $sEzsignfolderDescription when calling EzsignfolderRequest., must be smaller than or equal to 50.');
-        }
-
         $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
 
         return $this;
@@ -368,6 +369,30 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     public function setFkiEzsigntsarequirementID($fkiEzsigntsarequirementID)
     {
         $this->container['fkiEzsigntsarequirementID'] = $fkiEzsigntsarequirementID;
+
+        return $this;
+    }
+
+    /**
+     * Gets eObjectType
+     *
+     * @return \eZmaxAPI\Model\CommonEObjectType
+     */
+    public function getEObjectType()
+    {
+        return $this->container['eObjectType'];
+    }
+
+    /**
+     * Sets eObjectType
+     *
+     * @param \eZmaxAPI\Model\CommonEObjectType $eObjectType eObjectType
+     *
+     * @return $this
+     */
+    public function setEObjectType($eObjectType)
+    {
+        $this->container['eObjectType'] = $eObjectType;
 
         return $this;
     }
