@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfolderCompoundRequest
+ * EzsignsignerRequest
  *
  * PHP version 7.2
  *
@@ -28,18 +28,20 @@
  */
 
 namespace eZmaxAPI\Model;
+
+use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfolderCompoundRequest Class Doc Comment
+ * EzsignsignerRequest Class Doc Comment
  *
  * @category Class
- * @description An Ezsignfolder Object and children to create a complete structure
+ * @description An Ezsignsigner Object
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class EzsignfolderCompoundRequest extends EzsignfolderRequest 
+class EzsignsignerRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +50,7 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfolderCompound-Request';
+    protected static $openAPIModelName = 'ezsignsigner-Request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +58,8 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerRequest[]'
+        'fkiTaxassignmentID' => 'int',
+        'eEzsignsignerLogintype' => 'string'
     ];
 
     /**
@@ -65,7 +68,8 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'aEzsignsigner' => null
+        'fkiTaxassignmentID' => null,
+        'eEzsignsignerLogintype' => null
     ];
 
     /**
@@ -75,7 +79,7 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPITypes;
     }
 
     /**
@@ -85,7 +89,7 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats + parent::openAPIFormats();
+        return self::$openAPIFormats;
     }
 
     /**
@@ -95,7 +99,8 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'aEzsignsigner' => 'a_Ezsignsigner'
+        'fkiTaxassignmentID' => 'fkiTaxassignmentID',
+        'eEzsignsignerLogintype' => 'eEzsignsignerLogintype'
     ];
 
     /**
@@ -104,7 +109,8 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      * @var string[]
      */
     protected static $setters = [
-        'aEzsignsigner' => 'setAEzsignsigner'
+        'fkiTaxassignmentID' => 'setFkiTaxassignmentID',
+        'eEzsignsignerLogintype' => 'setEEzsignsignerLogintype'
     ];
 
     /**
@@ -113,7 +119,8 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      * @var string[]
      */
     protected static $getters = [
-        'aEzsignsigner' => 'getAEzsignsigner'
+        'fkiTaxassignmentID' => 'getFkiTaxassignmentID',
+        'eEzsignsignerLogintype' => 'getEEzsignsignerLogintype'
     ];
 
     /**
@@ -124,7 +131,7 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -134,7 +141,7 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -144,7 +151,7 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -157,10 +164,35 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
         return self::$openAPIModelName;
     }
 
+    const E_EZSIGNSIGNER_LOGINTYPE_PASSWORD = 'Password';
+    const E_EZSIGNSIGNER_LOGINTYPE_PASSWORD_PHONE = 'PasswordPhone';
+    const E_EZSIGNSIGNER_LOGINTYPE_PASSWORD_QUESTION = 'PasswordQuestion';
+    const E_EZSIGNSIGNER_LOGINTYPE_PHONE = 'Phone';
     
 
     
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEEzsignsignerLogintypeAllowableValues()
+    {
+        return [
+            self::E_EZSIGNSIGNER_LOGINTYPE_PASSWORD,
+            self::E_EZSIGNSIGNER_LOGINTYPE_PASSWORD_PHONE,
+            self::E_EZSIGNSIGNER_LOGINTYPE_PASSWORD_QUESTION,
+            self::E_EZSIGNSIGNER_LOGINTYPE_PHONE,
+        ];
+    }
+    
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -170,9 +202,8 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
-        $this->container['aEzsignsigner'] = isset($data['aEzsignsigner']) ? $data['aEzsignsigner'] : null;
+        $this->container['fkiTaxassignmentID'] = isset($data['fkiTaxassignmentID']) ? $data['fkiTaxassignmentID'] : null;
+        $this->container['eEzsignsignerLogintype'] = isset($data['eEzsignsignerLogintype']) ? $data['eEzsignsignerLogintype'] : null;
     }
 
     /**
@@ -182,11 +213,30 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['aEzsignsigner'] === null) {
-            $invalidProperties[] = "'aEzsignsigner' can't be null";
+        if ($this->container['fkiTaxassignmentID'] === null) {
+            $invalidProperties[] = "'fkiTaxassignmentID' can't be null";
         }
+        if (($this->container['fkiTaxassignmentID'] > 15)) {
+            $invalidProperties[] = "invalid value for 'fkiTaxassignmentID', must be smaller than or equal to 15.";
+        }
+
+        if (($this->container['fkiTaxassignmentID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiTaxassignmentID', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['eEzsignsignerLogintype'] === null) {
+            $invalidProperties[] = "'eEzsignsignerLogintype' can't be null";
+        }
+        $allowedValues = $this->getEEzsignsignerLogintypeAllowableValues();
+        if (!is_null($this->container['eEzsignsignerLogintype']) && !in_array($this->container['eEzsignsignerLogintype'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'eEzsignsignerLogintype', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -203,25 +253,66 @@ class EzsignfolderCompoundRequest extends EzsignfolderRequest
 
 
     /**
-     * Gets aEzsignsigner
+     * Gets fkiTaxassignmentID
      *
-     * @return \eZmaxAPI\Model\EzsignsignerRequest[]
+     * @return int
      */
-    public function getAEzsignsigner()
+    public function getFkiTaxassignmentID()
     {
-        return $this->container['aEzsignsigner'];
+        return $this->container['fkiTaxassignmentID'];
     }
 
     /**
-     * Sets aEzsignsigner
+     * Sets fkiTaxassignmentID
      *
-     * @param \eZmaxAPI\Model\EzsignsignerRequest[] $aEzsignsigner An array of signers that will be invited to sign the Ezsigndocuments
+     * @param int $fkiTaxassignmentID The ID of the tax assignment, Valid values are: 1. No tax 2. GST 3. HST (ON) 4. HST (NB) 5. HST (NS) 6. HST (NL) 7. HST (PE) 8. GST + QST (QC) 9. GST + QST (QC) Non-Recoverable 10. GST + PST (BC) 11. GST + PST (SK) 12. GST + RST (MB) 13. GST + PST (BC) Non-Recoverable 14. GST + PST (SK) Non-Recoverable 15. GST + RST (MB) Non-Recoverable
      *
      * @return $this
      */
-    public function setAEzsignsigner($aEzsignsigner)
+    public function setFkiTaxassignmentID($fkiTaxassignmentID)
     {
-        $this->container['aEzsignsigner'] = $aEzsignsigner;
+
+        if (($fkiTaxassignmentID > 15)) {
+            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerRequest., must be smaller than or equal to 15.');
+        }
+        if (($fkiTaxassignmentID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fkiTaxassignmentID'] = $fkiTaxassignmentID;
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsignsignerLogintype
+     *
+     * @return string
+     */
+    public function getEEzsignsignerLogintype()
+    {
+        return $this->container['eEzsignsignerLogintype'];
+    }
+
+    /**
+     * Sets eEzsignsignerLogintype
+     *
+     * @param string $eEzsignsignerLogintype The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **Phone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign.
+     *
+     * @return $this
+     */
+    public function setEEzsignsignerLogintype($eEzsignsignerLogintype)
+    {
+        $allowedValues = $this->getEEzsignsignerLogintypeAllowableValues();
+        if (!in_array($eEzsignsignerLogintype, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'eEzsignsignerLogintype', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['eEzsignsignerLogintype'] = $eEzsignsignerLogintype;
 
         return $this;
     }

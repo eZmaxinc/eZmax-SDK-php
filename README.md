@@ -123,6 +123,7 @@ Class | Method | HTTP request | Description
  - [EzsignfolderEditObjectV1Response](docs/Model/EzsignfolderEditObjectV1Response.md)
  - [EzsignfolderGetObjectV1Response](docs/Model/EzsignfolderGetObjectV1Response.md)
  - [EzsignfolderRequest](docs/Model/EzsignfolderRequest.md)
+ - [EzsignsignerRequest](docs/Model/EzsignsignerRequest.md)
 
 
 ## Documentation For Authorization

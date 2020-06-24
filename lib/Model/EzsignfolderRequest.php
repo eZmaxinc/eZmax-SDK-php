@@ -60,20 +60,10 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'fkiEzsignfoldertypeID' => 'int',
         'fkiLanguageID' => 'int',
+        'fkiEzsigntsarequirementID' => 'int',
         'sEzsignfolderDescription' => 'string',
         'tEzsignfolderNote' => 'string',
-        'fkiEzsigntsarequirementID' => 'int',
-        'testEnum' => 'string',
-        'testString' => 'string',
-        'testInteger' => 'int',
-        'testBoolean' => 'bool',
-        'testBase64' => 'string',
-        'testEmail' => 'string',
-        'testIPV4' => 'string',
-        'testDate' => '\DateTime',
-        'patternSSN' => 'string',
-        'testNullableTrue' => 'string',
-        'testEzmaxCustom' => 'string'
+        'eEzsignfolderSendreminderfrequency' => 'string'
     ];
 
     /**
@@ -84,20 +74,10 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'fkiEzsignfoldertypeID' => null,
         'fkiLanguageID' => null,
+        'fkiEzsigntsarequirementID' => null,
         'sEzsignfolderDescription' => null,
         'tEzsignfolderNote' => null,
-        'fkiEzsigntsarequirementID' => null,
-        'testEnum' => null,
-        'testString' => null,
-        'testInteger' => null,
-        'testBoolean' => null,
-        'testBase64' => 'byte',
-        'testEmail' => 'email',
-        'testIPV4' => 'IPv4',
-        'testDate' => 'date',
-        'patternSSN' => null,
-        'testNullableTrue' => null,
-        'testEzmaxCustom' => 'Ezmax-date'
+        'eEzsignfolderSendreminderfrequency' => null
     ];
 
     /**
@@ -129,20 +109,10 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
         'fkiLanguageID' => 'fkiLanguageID',
+        'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID',
         'sEzsignfolderDescription' => 'sEzsignfolderDescription',
         'tEzsignfolderNote' => 'tEzsignfolderNote',
-        'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID',
-        'testEnum' => 'testEnum',
-        'testString' => 'testString',
-        'testInteger' => 'testInteger',
-        'testBoolean' => 'testBoolean',
-        'testBase64' => 'testBase64',
-        'testEmail' => 'testEmail',
-        'testIPV4' => 'testIPV4',
-        'testDate' => 'testDate',
-        'patternSSN' => 'patternSSN',
-        'testNullableTrue' => 'testNullableTrue',
-        'testEzmaxCustom' => 'testEzmaxCustom'
+        'eEzsignfolderSendreminderfrequency' => 'eEzsignfolderSendreminderfrequency'
     ];
 
     /**
@@ -153,20 +123,10 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
         'fkiLanguageID' => 'setFkiLanguageID',
+        'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID',
         'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
         'tEzsignfolderNote' => 'setTEzsignfolderNote',
-        'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID',
-        'testEnum' => 'setTestEnum',
-        'testString' => 'setTestString',
-        'testInteger' => 'setTestInteger',
-        'testBoolean' => 'setTestBoolean',
-        'testBase64' => 'setTestBase64',
-        'testEmail' => 'setTestEmail',
-        'testIPV4' => 'setTestIPV4',
-        'testDate' => 'setTestDate',
-        'patternSSN' => 'setPatternSSN',
-        'testNullableTrue' => 'setTestNullableTrue',
-        'testEzmaxCustom' => 'setTestEzmaxCustom'
+        'eEzsignfolderSendreminderfrequency' => 'setEEzsignfolderSendreminderfrequency'
     ];
 
     /**
@@ -177,20 +137,10 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
         'fkiLanguageID' => 'getFkiLanguageID',
+        'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID',
         'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
         'tEzsignfolderNote' => 'getTEzsignfolderNote',
-        'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID',
-        'testEnum' => 'getTestEnum',
-        'testString' => 'getTestString',
-        'testInteger' => 'getTestInteger',
-        'testBoolean' => 'getTestBoolean',
-        'testBase64' => 'getTestBase64',
-        'testEmail' => 'getTestEmail',
-        'testIPV4' => 'getTestIPV4',
-        'testDate' => 'getTestDate',
-        'patternSSN' => 'getPatternSSN',
-        'testNullableTrue' => 'getTestNullableTrue',
-        'testEzmaxCustom' => 'getTestEzmaxCustom'
+        'eEzsignfolderSendreminderfrequency' => 'getEEzsignfolderSendreminderfrequency'
     ];
 
     /**
@@ -234,8 +184,9 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const TEST_ENUM_SIMPLE = 'Simple';
-    const TEST_ENUM_COMPOUND = 'Compound';
+    const E_EZSIGNFOLDER_SENDREMINDERFREQUENCY_NONE = 'None';
+    const E_EZSIGNFOLDER_SENDREMINDERFREQUENCY_DAILY = 'Daily';
+    const E_EZSIGNFOLDER_SENDREMINDERFREQUENCY_WEEKLY = 'Weekly';
     
 
     
@@ -244,11 +195,12 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
      *
      * @return string[]
      */
-    public function getTestEnumAllowableValues()
+    public function getEEzsignfolderSendreminderfrequencyAllowableValues()
     {
         return [
-            self::TEST_ENUM_SIMPLE,
-            self::TEST_ENUM_COMPOUND,
+            self::E_EZSIGNFOLDER_SENDREMINDERFREQUENCY_NONE,
+            self::E_EZSIGNFOLDER_SENDREMINDERFREQUENCY_DAILY,
+            self::E_EZSIGNFOLDER_SENDREMINDERFREQUENCY_WEEKLY,
         ];
     }
     
@@ -270,20 +222,10 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     {
         $this->container['fkiEzsignfoldertypeID'] = isset($data['fkiEzsignfoldertypeID']) ? $data['fkiEzsignfoldertypeID'] : null;
         $this->container['fkiLanguageID'] = isset($data['fkiLanguageID']) ? $data['fkiLanguageID'] : null;
+        $this->container['fkiEzsigntsarequirementID'] = isset($data['fkiEzsigntsarequirementID']) ? $data['fkiEzsigntsarequirementID'] : null;
         $this->container['sEzsignfolderDescription'] = isset($data['sEzsignfolderDescription']) ? $data['sEzsignfolderDescription'] : null;
         $this->container['tEzsignfolderNote'] = isset($data['tEzsignfolderNote']) ? $data['tEzsignfolderNote'] : null;
-        $this->container['fkiEzsigntsarequirementID'] = isset($data['fkiEzsigntsarequirementID']) ? $data['fkiEzsigntsarequirementID'] : null;
-        $this->container['testEnum'] = isset($data['testEnum']) ? $data['testEnum'] : null;
-        $this->container['testString'] = isset($data['testString']) ? $data['testString'] : null;
-        $this->container['testInteger'] = isset($data['testInteger']) ? $data['testInteger'] : null;
-        $this->container['testBoolean'] = isset($data['testBoolean']) ? $data['testBoolean'] : null;
-        $this->container['testBase64'] = isset($data['testBase64']) ? $data['testBase64'] : null;
-        $this->container['testEmail'] = isset($data['testEmail']) ? $data['testEmail'] : null;
-        $this->container['testIPV4'] = isset($data['testIPV4']) ? $data['testIPV4'] : null;
-        $this->container['testDate'] = isset($data['testDate']) ? $data['testDate'] : null;
-        $this->container['patternSSN'] = isset($data['patternSSN']) ? $data['patternSSN'] : null;
-        $this->container['testNullableTrue'] = isset($data['testNullableTrue']) ? $data['testNullableTrue'] : null;
-        $this->container['testEzmaxCustom'] = isset($data['testEzmaxCustom']) ? $data['testEzmaxCustom'] : null;
+        $this->container['eEzsignfolderSendreminderfrequency'] = isset($data['eEzsignfolderSendreminderfrequency']) ? $data['eEzsignfolderSendreminderfrequency'] : null;
     }
 
     /**
@@ -298,44 +240,55 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         if ($this->container['fkiEzsignfoldertypeID'] === null) {
             $invalidProperties[] = "'fkiEzsignfoldertypeID' can't be null";
         }
+        if (($this->container['fkiEzsignfoldertypeID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiEzsignfoldertypeID', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['fkiLanguageID'] === null) {
             $invalidProperties[] = "'fkiLanguageID' can't be null";
         }
-        if ($this->container['sEzsignfolderDescription'] === null) {
-            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
+        if (($this->container['fkiLanguageID'] > 2)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
         }
-        if ($this->container['tEzsignfolderNote'] === null) {
-            $invalidProperties[] = "'tEzsignfolderNote' can't be null";
+
+        if (($this->container['fkiLanguageID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
         }
+
         if ($this->container['fkiEzsigntsarequirementID'] === null) {
             $invalidProperties[] = "'fkiEzsigntsarequirementID' can't be null";
         }
-        $allowedValues = $this->getTestEnumAllowableValues();
-        if (!is_null($this->container['testEnum']) && !in_array($this->container['testEnum'], $allowedValues, true)) {
+        if (($this->container['fkiEzsigntsarequirementID'] > 3)) {
+            $invalidProperties[] = "invalid value for 'fkiEzsigntsarequirementID', must be smaller than or equal to 3.";
+        }
+
+        if (($this->container['fkiEzsigntsarequirementID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiEzsigntsarequirementID', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['sEzsignfolderDescription'] === null) {
+            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
+        }
+        if ((mb_strlen($this->container['sEzsignfolderDescription']) > 75)) {
+            $invalidProperties[] = "invalid value for 'sEzsignfolderDescription', the character length must be smaller than or equal to 75.";
+        }
+
+        if ((mb_strlen($this->container['sEzsignfolderDescription']) < 1)) {
+            $invalidProperties[] = "invalid value for 'sEzsignfolderDescription', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['tEzsignfolderNote'] === null) {
+            $invalidProperties[] = "'tEzsignfolderNote' can't be null";
+        }
+        if ($this->container['eEzsignfolderSendreminderfrequency'] === null) {
+            $invalidProperties[] = "'eEzsignfolderSendreminderfrequency' can't be null";
+        }
+        $allowedValues = $this->getEEzsignfolderSendreminderfrequencyAllowableValues();
+        if (!is_null($this->container['eEzsignfolderSendreminderfrequency']) && !in_array($this->container['eEzsignfolderSendreminderfrequency'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'testEnum', must be one of '%s'",
+                "invalid value for 'eEzsignfolderSendreminderfrequency', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
-        }
-
-        if (!is_null($this->container['testString']) && (mb_strlen($this->container['testString']) > 25)) {
-            $invalidProperties[] = "invalid value for 'testString', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['testString']) && (mb_strlen($this->container['testString']) < 5)) {
-            $invalidProperties[] = "invalid value for 'testString', the character length must be bigger than or equal to 5.";
-        }
-
-        if (!is_null($this->container['testInteger']) && ($this->container['testInteger'] > 66)) {
-            $invalidProperties[] = "invalid value for 'testInteger', must be smaller than or equal to 66.";
-        }
-
-        if (!is_null($this->container['testInteger']) && ($this->container['testInteger'] < 33)) {
-            $invalidProperties[] = "invalid value for 'testInteger', must be bigger than or equal to 33.";
-        }
-
-        if (!is_null($this->container['patternSSN']) && !preg_match("/'^\\d{3}-\\d{2}-\\d{4}$'/", $this->container['patternSSN'])) {
-            $invalidProperties[] = "invalid value for 'patternSSN', must be conform to the pattern /'^\\d{3}-\\d{2}-\\d{4}$'/.";
         }
 
         return $invalidProperties;
@@ -372,6 +325,11 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
      */
     public function setFkiEzsignfoldertypeID($fkiEzsignfoldertypeID)
     {
+
+        if (($fkiEzsignfoldertypeID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling EzsignfolderRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
 
         return $this;
@@ -396,7 +354,47 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
      */
     public function setFkiLanguageID($fkiLanguageID)
     {
+
+        if (($fkiLanguageID > 2)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignfolderRequest., must be smaller than or equal to 2.');
+        }
+        if (($fkiLanguageID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignfolderRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['fkiLanguageID'] = $fkiLanguageID;
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiEzsigntsarequirementID
+     *
+     * @return int
+     */
+    public function getFkiEzsigntsarequirementID()
+    {
+        return $this->container['fkiEzsigntsarequirementID'];
+    }
+
+    /**
+     * Sets fkiEzsigntsarequirementID
+     *
+     * @param int $fkiEzsigntsarequirementID Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values are: 1. No. No TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time. 2. Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies** 3. Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**
+     *
+     * @return $this
+     */
+    public function setFkiEzsigntsarequirementID($fkiEzsigntsarequirementID)
+    {
+
+        if (($fkiEzsigntsarequirementID > 3)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigntsarequirementID when calling EzsignfolderRequest., must be smaller than or equal to 3.');
+        }
+        if (($fkiEzsigntsarequirementID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigntsarequirementID when calling EzsignfolderRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fkiEzsigntsarequirementID'] = $fkiEzsigntsarequirementID;
 
         return $this;
     }
@@ -420,6 +418,13 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
      */
     public function setSEzsignfolderDescription($sEzsignfolderDescription)
     {
+        if ((mb_strlen($sEzsignfolderDescription) > 75)) {
+            throw new \InvalidArgumentException('invalid length for $sEzsignfolderDescription when calling EzsignfolderRequest., must be smaller than or equal to 75.');
+        }
+        if ((mb_strlen($sEzsignfolderDescription) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $sEzsignfolderDescription when calling EzsignfolderRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
 
         return $this;
@@ -450,318 +455,34 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets fkiEzsigntsarequirementID
+     * Gets eEzsignfolderSendreminderfrequency
      *
-     * @return int
+     * @return string
      */
-    public function getFkiEzsigntsarequirementID()
+    public function getEEzsignfolderSendreminderfrequency()
     {
-        return $this->container['fkiEzsigntsarequirementID'];
+        return $this->container['eEzsignfolderSendreminderfrequency'];
     }
 
     /**
-     * Sets fkiEzsigntsarequirementID
+     * Sets eEzsignfolderSendreminderfrequency
      *
-     * @param int $fkiEzsigntsarequirementID Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values are: 1. No. No TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time. 2. Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies** 3. Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**
+     * @param string $eEzsignfolderSendreminderfrequency Frequency at which reminders will be sent to signers that haven't signed the documents
      *
      * @return $this
      */
-    public function setFkiEzsigntsarequirementID($fkiEzsigntsarequirementID)
+    public function setEEzsignfolderSendreminderfrequency($eEzsignfolderSendreminderfrequency)
     {
-        $this->container['fkiEzsigntsarequirementID'] = $fkiEzsigntsarequirementID;
-
-        return $this;
-    }
-
-    /**
-     * Gets testEnum
-     *
-     * @return string|null
-     */
-    public function getTestEnum()
-    {
-        return $this->container['testEnum'];
-    }
-
-    /**
-     * Sets testEnum
-     *
-     * @param string|null $testEnum testEnum
-     *
-     * @return $this
-     */
-    public function setTestEnum($testEnum)
-    {
-        $allowedValues = $this->getTestEnumAllowableValues();
-        if (!is_null($testEnum) && !in_array($testEnum, $allowedValues, true)) {
+        $allowedValues = $this->getEEzsignfolderSendreminderfrequencyAllowableValues();
+        if (!in_array($eEzsignfolderSendreminderfrequency, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'testEnum', must be one of '%s'",
+                    "Invalid value for 'eEzsignfolderSendreminderfrequency', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['testEnum'] = $testEnum;
-
-        return $this;
-    }
-
-    /**
-     * Gets testString
-     *
-     * @return string|null
-     */
-    public function getTestString()
-    {
-        return $this->container['testString'];
-    }
-
-    /**
-     * Sets testString
-     *
-     * @param string|null $testString testString
-     *
-     * @return $this
-     */
-    public function setTestString($testString)
-    {
-        if (!is_null($testString) && (mb_strlen($testString) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $testString when calling EzsignfolderRequest., must be smaller than or equal to 25.');
-        }
-        if (!is_null($testString) && (mb_strlen($testString) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $testString when calling EzsignfolderRequest., must be bigger than or equal to 5.');
-        }
-
-        $this->container['testString'] = $testString;
-
-        return $this;
-    }
-
-    /**
-     * Gets testInteger
-     *
-     * @return int|null
-     */
-    public function getTestInteger()
-    {
-        return $this->container['testInteger'];
-    }
-
-    /**
-     * Sets testInteger
-     *
-     * @param int|null $testInteger testInteger
-     *
-     * @return $this
-     */
-    public function setTestInteger($testInteger)
-    {
-
-        if (!is_null($testInteger) && ($testInteger > 66)) {
-            throw new \InvalidArgumentException('invalid value for $testInteger when calling EzsignfolderRequest., must be smaller than or equal to 66.');
-        }
-        if (!is_null($testInteger) && ($testInteger < 33)) {
-            throw new \InvalidArgumentException('invalid value for $testInteger when calling EzsignfolderRequest., must be bigger than or equal to 33.');
-        }
-
-        $this->container['testInteger'] = $testInteger;
-
-        return $this;
-    }
-
-    /**
-     * Gets testBoolean
-     *
-     * @return bool|null
-     */
-    public function getTestBoolean()
-    {
-        return $this->container['testBoolean'];
-    }
-
-    /**
-     * Sets testBoolean
-     *
-     * @param bool|null $testBoolean testBoolean
-     *
-     * @return $this
-     */
-    public function setTestBoolean($testBoolean)
-    {
-        $this->container['testBoolean'] = $testBoolean;
-
-        return $this;
-    }
-
-    /**
-     * Gets testBase64
-     *
-     * @return string|null
-     */
-    public function getTestBase64()
-    {
-        return $this->container['testBase64'];
-    }
-
-    /**
-     * Sets testBase64
-     *
-     * @param string|null $testBase64 testBase64
-     *
-     * @return $this
-     */
-    public function setTestBase64($testBase64)
-    {
-        $this->container['testBase64'] = $testBase64;
-
-        return $this;
-    }
-
-    /**
-     * Gets testEmail
-     *
-     * @return string|null
-     */
-    public function getTestEmail()
-    {
-        return $this->container['testEmail'];
-    }
-
-    /**
-     * Sets testEmail
-     *
-     * @param string|null $testEmail testEmail
-     *
-     * @return $this
-     */
-    public function setTestEmail($testEmail)
-    {
-        $this->container['testEmail'] = $testEmail;
-
-        return $this;
-    }
-
-    /**
-     * Gets testIPV4
-     *
-     * @return string|null
-     */
-    public function getTestIPV4()
-    {
-        return $this->container['testIPV4'];
-    }
-
-    /**
-     * Sets testIPV4
-     *
-     * @param string|null $testIPV4 testIPV4
-     *
-     * @return $this
-     */
-    public function setTestIPV4($testIPV4)
-    {
-        $this->container['testIPV4'] = $testIPV4;
-
-        return $this;
-    }
-
-    /**
-     * Gets testDate
-     *
-     * @return \DateTime|null
-     */
-    public function getTestDate()
-    {
-        return $this->container['testDate'];
-    }
-
-    /**
-     * Sets testDate
-     *
-     * @param \DateTime|null $testDate testDate
-     *
-     * @return $this
-     */
-    public function setTestDate($testDate)
-    {
-        $this->container['testDate'] = $testDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets patternSSN
-     *
-     * @return string|null
-     */
-    public function getPatternSSN()
-    {
-        return $this->container['patternSSN'];
-    }
-
-    /**
-     * Sets patternSSN
-     *
-     * @param string|null $patternSSN patternSSN
-     *
-     * @return $this
-     */
-    public function setPatternSSN($patternSSN)
-    {
-
-        if (!is_null($patternSSN) && (!preg_match("/'^\\d{3}-\\d{2}-\\d{4}$'/", $patternSSN))) {
-            throw new \InvalidArgumentException("invalid value for $patternSSN when calling EzsignfolderRequest., must conform to the pattern /'^\\d{3}-\\d{2}-\\d{4}$'/.");
-        }
-
-        $this->container['patternSSN'] = $patternSSN;
-
-        return $this;
-    }
-
-    /**
-     * Gets testNullableTrue
-     *
-     * @return string|null
-     */
-    public function getTestNullableTrue()
-    {
-        return $this->container['testNullableTrue'];
-    }
-
-    /**
-     * Sets testNullableTrue
-     *
-     * @param string|null $testNullableTrue testNullableTrue
-     *
-     * @return $this
-     */
-    public function setTestNullableTrue($testNullableTrue)
-    {
-        $this->container['testNullableTrue'] = $testNullableTrue;
-
-        return $this;
-    }
-
-    /**
-     * Gets testEzmaxCustom
-     *
-     * @return string|null
-     */
-    public function getTestEzmaxCustom()
-    {
-        return $this->container['testEzmaxCustom'];
-    }
-
-    /**
-     * Sets testEzmaxCustom
-     *
-     * @param string|null $testEzmaxCustom testEzmaxCustom
-     *
-     * @return $this
-     */
-    public function setTestEzmaxCustom($testEzmaxCustom)
-    {
-        $this->container['testEzmaxCustom'] = $testEzmaxCustom;
+        $this->container['eEzsignfolderSendreminderfrequency'] = $eEzsignfolderSendreminderfrequency;
 
         return $this;
     }

@@ -256,6 +256,14 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         if ($this->container['fkiLanguageID'] === null) {
             $invalidProperties[] = "'fkiLanguageID' can't be null";
         }
+        if (($this->container['fkiLanguageID'] > 2)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
+        }
+
+        if (($this->container['fkiLanguageID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['sCompanyNameX'] === null) {
             $invalidProperties[] = "'sCompanyNameX' can't be null";
         }
@@ -359,6 +367,14 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
      */
     public function setFkiLanguageID($fkiLanguageID)
     {
+
+        if (($fkiLanguageID > 2)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionGetCurrentV1ResponseMPayload., must be smaller than or equal to 2.');
+        }
+        if (($fkiLanguageID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionGetCurrentV1ResponseMPayload., must be bigger than or equal to 1.');
+        }
+
         $this->container['fkiLanguageID'] = $fkiLanguageID;
 
         return $this;

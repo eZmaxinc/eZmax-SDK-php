@@ -22,6 +22,7 @@ docs/Model/EzsignfolderEditObjectV1Request.md
 docs/Model/EzsignfolderEditObjectV1Response.md
 docs/Model/EzsignfolderGetObjectV1Response.md
 docs/Model/EzsignfolderRequest.md
+docs/Model/EzsignsignerRequest.md
 git_push.sh
 lib/Api/ActivesessionApi.php
 lib/Api/EzsignfolderApi.php
@@ -44,6 +45,7 @@ lib/Model/EzsignfolderEditObjectV1Request.php
 lib/Model/EzsignfolderEditObjectV1Response.php
 lib/Model/EzsignfolderGetObjectV1Response.php
 lib/Model/EzsignfolderRequest.php
+lib/Model/EzsignsignerRequest.php
 lib/Model/ModelInterface.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
@@ -65,3 +67,4 @@ test/Model/EzsignfolderEditObjectV1RequestTest.php
 test/Model/EzsignfolderEditObjectV1ResponseTest.php
 test/Model/EzsignfolderGetObjectV1ResponseTest.php
 test/Model/EzsignfolderRequestTest.php
+test/Model/EzsignsignerRequestTest.php

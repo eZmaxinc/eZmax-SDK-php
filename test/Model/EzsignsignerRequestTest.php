@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfolderCompoundRequestTest
+ * EzsignsignerRequestTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfolderCompoundRequestTest Class Doc Comment
+ * EzsignsignerRequestTest Class Doc Comment
  *
  * @category    Class
- * @description An Ezsignfolder Object and children to create a complete structure
+ * @description An Ezsignsigner Object
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfolderCompoundRequestTest extends TestCase
+class EzsignsignerRequestTest extends TestCase
 {
 
     /**
@@ -72,16 +72,23 @@ class EzsignfolderCompoundRequestTest extends TestCase
     }
 
     /**
-     * Test "EzsignfolderCompoundRequest"
+     * Test "EzsignsignerRequest"
      */
-    public function testEzsignfolderCompoundRequest()
+    public function testEzsignsignerRequest()
     {
     }
 
     /**
-     * Test attribute "aEzsignsigner"
+     * Test attribute "fkiTaxassignmentID"
      */
-    public function testPropertyAEzsignsigner()
+    public function testPropertyFkiTaxassignmentID()
+    {
+    }
+
+    /**
+     * Test attribute "eEzsignsignerLogintype"
+     */
+    public function testPropertyEEzsignsignerLogintype()
     {
     }
 }
