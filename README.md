@@ -98,6 +98,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ActivesessionApi* | [**activesessionGetCurrentV1**](docs/Api/ActivesessionApi.md#activesessiongetcurrentv1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+*EzsigndocumentApi* | [**ezsigndocumentCreateObjectV1**](docs/Api/EzsigndocumentApi.md#ezsigndocumentcreateobjectv1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
+*EzsigndocumentApi* | [**ezsigndocumentDeleteObjectV1**](docs/Api/EzsigndocumentApi.md#ezsigndocumentdeleteobjectv1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
+*EzsigndocumentApi* | [**ezsigndocumentEditObjectV1**](docs/Api/EzsigndocumentApi.md#ezsigndocumenteditobjectv1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Modify an existing Ezsigndocument
+*EzsigndocumentApi* | [**ezsigndocumentGetObjectGetChildrenV1**](docs/Api/EzsigndocumentApi.md#ezsigndocumentgetobjectgetchildrenv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs
+*EzsigndocumentApi* | [**ezsigndocumentGetObjectV1**](docs/Api/EzsigndocumentApi.md#ezsigndocumentgetobjectv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
 *EzsignfolderApi* | [**ezsignfolderCreateObjectV1**](docs/Api/EzsignfolderApi.md#ezsignfoldercreateobjectv1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 *EzsignfolderApi* | [**ezsignfolderDeleteObjectV1**](docs/Api/EzsignfolderApi.md#ezsignfolderdeleteobjectv1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
 *EzsignfolderApi* | [**ezsignfolderEditObjectV1**](docs/Api/EzsignfolderApi.md#ezsignfoldereditobjectv1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
@@ -114,6 +119,15 @@ Class | Method | HTTP request | Description
  - [CommonResponseObjDebug](docs/Model/CommonResponseObjDebug.md)
  - [CommonResponseObjDebugPayload](docs/Model/CommonResponseObjDebugPayload.md)
  - [CommonResponseObjSQLQuery](docs/Model/CommonResponseObjSQLQuery.md)
+ - [EzsigndocumentCompoundRequest](docs/Model/EzsigndocumentCompoundRequest.md)
+ - [EzsigndocumentCreateObjectV1Request](docs/Model/EzsigndocumentCreateObjectV1Request.md)
+ - [EzsigndocumentCreateObjectV1Response](docs/Model/EzsigndocumentCreateObjectV1Response.md)
+ - [EzsigndocumentCreateObjectV1ResponseMPayload](docs/Model/EzsigndocumentCreateObjectV1ResponseMPayload.md)
+ - [EzsigndocumentDeleteObjectV1Response](docs/Model/EzsigndocumentDeleteObjectV1Response.md)
+ - [EzsigndocumentEditObjectV1Request](docs/Model/EzsigndocumentEditObjectV1Request.md)
+ - [EzsigndocumentEditObjectV1Response](docs/Model/EzsigndocumentEditObjectV1Response.md)
+ - [EzsigndocumentGetObjectV1Response](docs/Model/EzsigndocumentGetObjectV1Response.md)
+ - [EzsigndocumentRequest](docs/Model/EzsigndocumentRequest.md)
  - [EzsignfolderCompoundRequest](docs/Model/EzsignfolderCompoundRequest.md)
  - [EzsignfolderCreateObjectV1Request](docs/Model/EzsignfolderCreateObjectV1Request.md)
  - [EzsignfolderCreateObjectV1Response](docs/Model/EzsignfolderCreateObjectV1Response.md)
