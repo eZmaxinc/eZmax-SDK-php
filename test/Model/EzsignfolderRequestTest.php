@@ -86,13 +86,6 @@ class EzsignfolderRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "fkiLanguageID"
-     */
-    public function testPropertyFkiLanguageID()
-    {
-    }
-
-    /**
      * Test attribute "fkiEzsigntsarequirementID"
      */
     public function testPropertyFkiEzsigntsarequirementID()

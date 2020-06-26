@@ -59,7 +59,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'fkiEzsignfoldertypeID' => 'int',
-        'fkiLanguageID' => 'int',
         'fkiEzsigntsarequirementID' => 'int',
         'sEzsignfolderDescription' => 'string',
         'tEzsignfolderNote' => 'string',
@@ -73,7 +72,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'fkiEzsignfoldertypeID' => null,
-        'fkiLanguageID' => null,
         'fkiEzsigntsarequirementID' => null,
         'sEzsignfolderDescription' => null,
         'tEzsignfolderNote' => null,
@@ -108,7 +106,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
-        'fkiLanguageID' => 'fkiLanguageID',
         'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID',
         'sEzsignfolderDescription' => 'sEzsignfolderDescription',
         'tEzsignfolderNote' => 'tEzsignfolderNote',
@@ -122,7 +119,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
-        'fkiLanguageID' => 'setFkiLanguageID',
         'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID',
         'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
         'tEzsignfolderNote' => 'setTEzsignfolderNote',
@@ -136,7 +132,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
-        'fkiLanguageID' => 'getFkiLanguageID',
         'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID',
         'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
         'tEzsignfolderNote' => 'getTEzsignfolderNote',
@@ -221,7 +216,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['fkiEzsignfoldertypeID'] = isset($data['fkiEzsignfoldertypeID']) ? $data['fkiEzsignfoldertypeID'] : null;
-        $this->container['fkiLanguageID'] = isset($data['fkiLanguageID']) ? $data['fkiLanguageID'] : null;
         $this->container['fkiEzsigntsarequirementID'] = isset($data['fkiEzsigntsarequirementID']) ? $data['fkiEzsigntsarequirementID'] : null;
         $this->container['sEzsignfolderDescription'] = isset($data['sEzsignfolderDescription']) ? $data['sEzsignfolderDescription'] : null;
         $this->container['tEzsignfolderNote'] = isset($data['tEzsignfolderNote']) ? $data['tEzsignfolderNote'] : null;
@@ -242,17 +236,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         }
         if (($this->container['fkiEzsignfoldertypeID'] < 1)) {
             $invalidProperties[] = "invalid value for 'fkiEzsignfoldertypeID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['fkiLanguageID'] === null) {
-            $invalidProperties[] = "'fkiLanguageID' can't be null";
-        }
-        if (($this->container['fkiLanguageID'] > 2)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
-        }
-
-        if (($this->container['fkiLanguageID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
         }
 
         if ($this->container['fkiEzsigntsarequirementID'] === null) {
@@ -331,38 +314,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess
         }
 
         $this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiLanguageID
-     *
-     * @return int
-     */
-    public function getFkiLanguageID()
-    {
-        return $this->container['fkiLanguageID'];
-    }
-
-    /**
-     * Sets fkiLanguageID
-     *
-     * @param int $fkiLanguageID The ID of the language, Valid values are: 1. French 2. English
-     *
-     * @return $this
-     */
-    public function setFkiLanguageID($fkiLanguageID)
-    {
-
-        if (($fkiLanguageID > 2)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignfolderRequest., must be smaller than or equal to 2.');
-        }
-        if (($fkiLanguageID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignfolderRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['fkiLanguageID'] = $fkiLanguageID;
 
         return $this;
     }

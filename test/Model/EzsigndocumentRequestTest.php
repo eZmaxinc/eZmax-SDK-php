@@ -126,4 +126,11 @@ class EzsigndocumentRequestTest extends TestCase
     public function testPropertyDtEzsigndocumentDuedate()
     {
     }
+
+    /**
+     * Test attribute "fkiLanguageID"
+     */
+    public function testPropertyFkiLanguageID()
+    {
+    }
 }

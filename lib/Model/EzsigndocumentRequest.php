@@ -64,7 +64,8 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
         'eEzsigndocumentFormat' => 'string',
         'sEzsigndocumentBase64' => 'string',
         'fkiEzsignfolderID' => 'int',
-        'dtEzsigndocumentDuedate' => 'string'
+        'dtEzsigndocumentDuedate' => 'string',
+        'fkiLanguageID' => 'int'
     ];
 
     /**
@@ -79,7 +80,8 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
         'eEzsigndocumentFormat' => null,
         'sEzsigndocumentBase64' => 'byte',
         'fkiEzsignfolderID' => null,
-        'dtEzsigndocumentDuedate' => null
+        'dtEzsigndocumentDuedate' => null,
+        'fkiLanguageID' => null
     ];
 
     /**
@@ -115,7 +117,8 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
         'eEzsigndocumentFormat' => 'eEzsigndocumentFormat',
         'sEzsigndocumentBase64' => 'sEzsigndocumentBase64',
         'fkiEzsignfolderID' => 'fkiEzsignfolderID',
-        'dtEzsigndocumentDuedate' => 'dtEzsigndocumentDuedate'
+        'dtEzsigndocumentDuedate' => 'dtEzsigndocumentDuedate',
+        'fkiLanguageID' => 'fkiLanguageID'
     ];
 
     /**
@@ -130,7 +133,8 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
         'eEzsigndocumentFormat' => 'setEEzsigndocumentFormat',
         'sEzsigndocumentBase64' => 'setSEzsigndocumentBase64',
         'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
-        'dtEzsigndocumentDuedate' => 'setDtEzsigndocumentDuedate'
+        'dtEzsigndocumentDuedate' => 'setDtEzsigndocumentDuedate',
+        'fkiLanguageID' => 'setFkiLanguageID'
     ];
 
     /**
@@ -145,7 +149,8 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
         'eEzsigndocumentFormat' => 'getEEzsigndocumentFormat',
         'sEzsigndocumentBase64' => 'getSEzsigndocumentBase64',
         'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
-        'dtEzsigndocumentDuedate' => 'getDtEzsigndocumentDuedate'
+        'dtEzsigndocumentDuedate' => 'getDtEzsigndocumentDuedate',
+        'fkiLanguageID' => 'getFkiLanguageID'
     ];
 
     /**
@@ -241,6 +246,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
         $this->container['sEzsigndocumentBase64'] = isset($data['sEzsigndocumentBase64']) ? $data['sEzsigndocumentBase64'] : null;
         $this->container['fkiEzsignfolderID'] = isset($data['fkiEzsignfolderID']) ? $data['fkiEzsignfolderID'] : null;
         $this->container['dtEzsigndocumentDuedate'] = isset($data['dtEzsigndocumentDuedate']) ? $data['dtEzsigndocumentDuedate'] : null;
+        $this->container['fkiLanguageID'] = isset($data['fkiLanguageID']) ? $data['fkiLanguageID'] : null;
     }
 
     /**
@@ -280,16 +286,23 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
             );
         }
 
-        if (!is_null($this->container['sEzsigndocumentBase64']) && !preg_match("/^\\\\d{3}-\\\\d{2}-\\\\d{4}$/", $this->container['sEzsigndocumentBase64'])) {
-            $invalidProperties[] = "invalid value for 'sEzsigndocumentBase64', must be conform to the pattern /^\\\\d{3}-\\\\d{2}-\\\\d{4}$/.";
-        }
-
         if ($this->container['fkiEzsignfolderID'] === null) {
             $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
         }
         if ($this->container['dtEzsigndocumentDuedate'] === null) {
             $invalidProperties[] = "'dtEzsigndocumentDuedate' can't be null";
         }
+        if ($this->container['fkiLanguageID'] === null) {
+            $invalidProperties[] = "'fkiLanguageID' can't be null";
+        }
+        if (($this->container['fkiLanguageID'] > 2)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
+        }
+
+        if (($this->container['fkiLanguageID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -438,11 +451,6 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
      */
     public function setSEzsigndocumentBase64($sEzsigndocumentBase64)
     {
-
-        if (!is_null($sEzsigndocumentBase64) && (!preg_match("/^\\\\d{3}-\\\\d{2}-\\\\d{4}$/", $sEzsigndocumentBase64))) {
-            throw new \InvalidArgumentException("invalid value for $sEzsigndocumentBase64 when calling EzsigndocumentRequest., must conform to the pattern /^\\\\d{3}-\\\\d{2}-\\\\d{4}$/.");
-        }
-
         $this->container['sEzsigndocumentBase64'] = $sEzsigndocumentBase64;
 
         return $this;
@@ -492,6 +500,38 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
     public function setDtEzsigndocumentDuedate($dtEzsigndocumentDuedate)
     {
         $this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiLanguageID
+     *
+     * @return int
+     */
+    public function getFkiLanguageID()
+    {
+        return $this->container['fkiLanguageID'];
+    }
+
+    /**
+     * Sets fkiLanguageID
+     *
+     * @param int $fkiLanguageID The ID of the language, Valid values are: 1. French 2. English
+     *
+     * @return $this
+     */
+    public function setFkiLanguageID($fkiLanguageID)
+    {
+
+        if (($fkiLanguageID > 2)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsigndocumentRequest., must be smaller than or equal to 2.');
+        }
+        if (($fkiLanguageID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsigndocumentRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fkiLanguageID'] = $fkiLanguageID;
 
         return $this;
     }
