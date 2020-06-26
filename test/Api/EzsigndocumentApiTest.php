@@ -1,6 +1,6 @@
 <?php
 /**
- * ActivesessionApiTest
+ * EzsigndocumentApiTest
  * PHP version 7.2
  *
  * @category Class
@@ -34,14 +34,14 @@ use \eZmaxAPI\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ActivesessionApiTest Class Doc Comment
+ * EzsigndocumentApiTest Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ActivesessionApiTest extends TestCase
+class EzsigndocumentApiTest extends TestCase
 {
 
     /**
@@ -73,12 +73,52 @@ class ActivesessionApiTest extends TestCase
     }
 
     /**
-     * Test case for activesessionGetCurrentV1
+     * Test case for ezsigndocumentCreateObjectV1
      *
-     * Get Current Activesession.
+     * Create a new Ezsigndocument.
      *
      */
-    public function testActivesessionGetCurrentV1()
+    public function testEzsigndocumentCreateObjectV1()
+    {
+    }
+
+    /**
+     * Test case for ezsigndocumentDeleteObjectV1
+     *
+     * Delete an existing Ezsigndocument.
+     *
+     */
+    public function testEzsigndocumentDeleteObjectV1()
+    {
+    }
+
+    /**
+     * Test case for ezsigndocumentEditObjectV1
+     *
+     * Modify an existing Ezsigndocument.
+     *
+     */
+    public function testEzsigndocumentEditObjectV1()
+    {
+    }
+
+    /**
+     * Test case for ezsigndocumentGetObjectGetChildrenV1
+     *
+     * Retrieve an existing Ezsigndocument's children IDs.
+     *
+     */
+    public function testEzsigndocumentGetObjectGetChildrenV1()
+    {
+    }
+
+    /**
+     * Test case for ezsigndocumentGetObjectV1
+     *
+     * Retrieve an existing Ezsigndocument.
+     *
+     */
+    public function testEzsigndocumentGetObjectV1()
     {
     }
 }

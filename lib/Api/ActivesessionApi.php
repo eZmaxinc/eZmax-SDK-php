@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -12,7 +12,7 @@
 /**
  * eZmax API Definition
  *
- * TODO Api description.
+ * This API expose all the functionnalities for the eZmax and eZsign application.  We provide SDKs for customers. They are generated using OpenAPI codegen, we encourage customers to use them as we also provide samples for them.  You can choose to build your own implementation manually or can use any compatible OpenAPI 3.0 generator like Swagger Codegen, OpenAPI codegen or any commercial generators.  If you need helping understanding how to use this API, don't waste too much time looging for it. Contact support-api@ezmax.ca, we're here to help. We are developpers so we know programmers don't like bad documentation. If you don't find what you need in the documentation, let us know, we'll improve it and put you rapidly up on track.
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support-api@ezmax.ca
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace eZmaxAPI\Client\Api;
+namespace eZmaxAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use eZmaxAPI\Client\ApiException;
-use eZmaxAPI\Client\Configuration;
-use eZmaxAPI\Client\HeaderSelector;
-use eZmaxAPI\Client\ObjectSerializer;
+use eZmaxAPI\ApiException;
+use eZmaxAPI\Configuration;
+use eZmaxAPI\HeaderSelector;
+use eZmaxAPI\ObjectSerializer;
 
 /**
  * ActivesessionApi Class Doc Comment
  *
  * @category Class
- * @package  eZmaxAPI\Client
+ * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -116,34 +116,34 @@ class ActivesessionApi
     }
 
     /**
-     * Operation call1ObjectActivesessionGetCurrentGet
+     * Operation activesessionGetCurrentV1
      *
      * Get Current Activesession
      *
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response
+     * @return \eZmaxAPI\Model\ActivesessionGetCurrentV1Response
      */
-    public function call1ObjectActivesessionGetCurrentGet()
+    public function activesessionGetCurrentV1()
     {
-        list($response) = $this->call1ObjectActivesessionGetCurrentGetWithHttpInfo();
+        list($response) = $this->activesessionGetCurrentV1WithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation call1ObjectActivesessionGetCurrentGetWithHttpInfo
+     * Operation activesessionGetCurrentV1WithHttpInfo
      *
      * Get Current Activesession
      *
      *
-     * @throws \eZmaxAPI\Client\ApiException on non-2xx response
+     * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\ActivesessionGetCurrentV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function call1ObjectActivesessionGetCurrentGetWithHttpInfo()
+    public function activesessionGetCurrentV1WithHttpInfo()
     {
-        $request = $this->call1ObjectActivesessionGetCurrentGetRequest();
+        $request = $this->activesessionGetCurrentV1Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -176,20 +176,20 @@ class ActivesessionApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\ActivesessionGetCurrentV1Response' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\ActivesessionGetCurrentV1Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response';
+            $returnType = '\eZmaxAPI\Model\ActivesessionGetCurrentV1Response';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -208,7 +208,7 @@ class ActivesessionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response',
+                        '\eZmaxAPI\Model\ActivesessionGetCurrentV1Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -219,7 +219,7 @@ class ActivesessionApi
     }
 
     /**
-     * Operation call1ObjectActivesessionGetCurrentGetAsync
+     * Operation activesessionGetCurrentV1Async
      *
      * Get Current Activesession
      *
@@ -227,9 +227,9 @@ class ActivesessionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function call1ObjectActivesessionGetCurrentGetAsync()
+    public function activesessionGetCurrentV1Async()
     {
-        return $this->call1ObjectActivesessionGetCurrentGetAsyncWithHttpInfo()
+        return $this->activesessionGetCurrentV1AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -238,7 +238,7 @@ class ActivesessionApi
     }
 
     /**
-     * Operation call1ObjectActivesessionGetCurrentGetAsyncWithHttpInfo
+     * Operation activesessionGetCurrentV1AsyncWithHttpInfo
      *
      * Get Current Activesession
      *
@@ -246,10 +246,10 @@ class ActivesessionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function call1ObjectActivesessionGetCurrentGetAsyncWithHttpInfo()
+    public function activesessionGetCurrentV1AsyncWithHttpInfo()
     {
-        $returnType = '\eZmaxAPI\Client\Model\ObjectActivesessionGetCurrentV1Response';
-        $request = $this->call1ObjectActivesessionGetCurrentGetRequest();
+        $returnType = '\eZmaxAPI\Model\ActivesessionGetCurrentV1Response';
+        $request = $this->activesessionGetCurrentV1Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -286,13 +286,13 @@ class ActivesessionApi
     }
 
     /**
-     * Create request for operation 'call1ObjectActivesessionGetCurrentGet'
+     * Create request for operation 'activesessionGetCurrentV1'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function call1ObjectActivesessionGetCurrentGetRequest()
+    protected function activesessionGetCurrentV1Request()
     {
 
         $resourcePath = '/1/object/activesession/getCurrent';
