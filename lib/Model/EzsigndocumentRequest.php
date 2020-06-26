@@ -280,6 +280,10 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
             );
         }
 
+        if (!is_null($this->container['sEzsigndocumentBase64']) && !preg_match("/^\\\\d{3}-\\\\d{2}-\\\\d{4}$/", $this->container['sEzsigndocumentBase64'])) {
+            $invalidProperties[] = "invalid value for 'sEzsigndocumentBase64', must be conform to the pattern /^\\\\d{3}-\\\\d{2}-\\\\d{4}$/.";
+        }
+
         if ($this->container['fkiEzsignfolderID'] === null) {
             $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
         }
@@ -434,6 +438,11 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess
      */
     public function setSEzsigndocumentBase64($sEzsigndocumentBase64)
     {
+
+        if (!is_null($sEzsigndocumentBase64) && (!preg_match("/^\\\\d{3}-\\\\d{2}-\\\\d{4}$/", $sEzsigndocumentBase64))) {
+            throw new \InvalidArgumentException("invalid value for $sEzsigndocumentBase64 when calling EzsigndocumentRequest., must conform to the pattern /^\\\\d{3}-\\\\d{2}-\\\\d{4}$/.");
+        }
+
         $this->container['sEzsigndocumentBase64'] = $sEzsigndocumentBase64;
 
         return $this;

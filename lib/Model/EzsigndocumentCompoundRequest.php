@@ -56,7 +56,7 @@ class EzsigndocumentCompoundRequest extends EzsigndocumentRequest
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerRequest[]'
+        
     ];
 
     /**
@@ -65,7 +65,7 @@ class EzsigndocumentCompoundRequest extends EzsigndocumentRequest
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'aEzsignsigner' => null
+        
     ];
 
     /**
@@ -95,7 +95,7 @@ class EzsigndocumentCompoundRequest extends EzsigndocumentRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'aEzsignsigner' => 'a_Ezsignsigner'
+        
     ];
 
     /**
@@ -104,7 +104,7 @@ class EzsigndocumentCompoundRequest extends EzsigndocumentRequest
      * @var string[]
      */
     protected static $setters = [
-        'aEzsignsigner' => 'setAEzsignsigner'
+        
     ];
 
     /**
@@ -113,7 +113,7 @@ class EzsigndocumentCompoundRequest extends EzsigndocumentRequest
      * @var string[]
      */
     protected static $getters = [
-        'aEzsignsigner' => 'getAEzsignsigner'
+        
     ];
 
     /**
@@ -172,7 +172,6 @@ class EzsigndocumentCompoundRequest extends EzsigndocumentRequest
     {
         parent::__construct($data);
 
-        $this->container['aEzsignsigner'] = isset($data['aEzsignsigner']) ? $data['aEzsignsigner'] : null;
     }
 
     /**
@@ -184,9 +183,6 @@ class EzsigndocumentCompoundRequest extends EzsigndocumentRequest
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['aEzsignsigner'] === null) {
-            $invalidProperties[] = "'aEzsignsigner' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -201,30 +197,6 @@ class EzsigndocumentCompoundRequest extends EzsigndocumentRequest
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets aEzsignsigner
-     *
-     * @return \eZmaxAPI\Model\EzsignsignerRequest[]
-     */
-    public function getAEzsignsigner()
-    {
-        return $this->container['aEzsignsigner'];
-    }
-
-    /**
-     * Sets aEzsignsigner
-     *
-     * @param \eZmaxAPI\Model\EzsignsignerRequest[] $aEzsignsigner An array of signers that will be invited to sign the Ezsigndocuments
-     *
-     * @return $this
-     */
-    public function setAEzsignsigner($aEzsignsigner)
-    {
-        $this->container['aEzsignsigner'] = $aEzsignsigner;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

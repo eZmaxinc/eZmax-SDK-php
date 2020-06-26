@@ -77,11 +77,4 @@ class EzsigndocumentCompoundRequestTest extends TestCase
     public function testEzsigndocumentCompoundRequest()
     {
     }
-
-    /**
-     * Test attribute "aEzsignsigner"
-     */
-    public function testPropertyAEzsignsigner()
-    {
-    }
 }
