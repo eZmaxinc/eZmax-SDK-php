@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sEzsignDocumentName** | **string** | The name of the document that will be presented to Ezsignsigners | 
+**sEzsignDocumentName** | **string** | The name of the document that will be presented to Ezsignfoldersignerassociations | 
 **sEzsignDocumentFilename** | **string** | The actual file name that will be used when downloading or attaching to an email. | 
 **eEzsigndocumentSource** | **string** | Indicates where to look for the document binary content. | 
 **eEzsigndocumentFormat** | **string** | Indicates the format of the document. | 
