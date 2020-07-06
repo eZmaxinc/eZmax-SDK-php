@@ -397,7 +397,7 @@ class EzsignfoldersignerassociationApi
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError
+     * @return \eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
     public function ezsignfoldersignerassociationDeleteObjectV1($pkiEzsignfoldersignerassociationID)
     {
@@ -414,7 +414,7 @@ class EzsignfoldersignerassociationApi
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
     public function ezsignfoldersignerassociationDeleteObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID)
     {
@@ -474,6 +474,18 @@ class EzsignfoldersignerassociationApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response';
@@ -501,6 +513,14 @@ class EzsignfoldersignerassociationApi
                     $e->setResponseObject($data);
                     break;
                 case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\eZmaxAPI\Model\CommonResponseError',
