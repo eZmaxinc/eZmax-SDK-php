@@ -1,4 +1,4 @@
-# # EzsigndocumentCompoundRequest
+# # EzsignfolderSendV1Response
 
 ## Properties
 
