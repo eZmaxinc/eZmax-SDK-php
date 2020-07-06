@@ -33,6 +33,8 @@ docs/Model/EzsignfolderEditObjectV1Response.md
 docs/Model/EzsignfolderGetObjectV1Response.md
 docs/Model/EzsignfolderRequest.md
 docs/Model/EzsignfolderRequestCompound.md
+docs/Model/EzsignfolderSendV1Request.md
+docs/Model/EzsignfolderSendV1Response.md
 docs/Model/EzsignfoldersignerassociationCreateObjectV1Request.md
 docs/Model/EzsignfoldersignerassociationCreateObjectV1Response.md
 docs/Model/EzsignfoldersignerassociationCreateObjectV1ResponseMPayload.md
@@ -78,6 +80,8 @@ lib/Model/EzsignfolderEditObjectV1Response.php
 lib/Model/EzsignfolderGetObjectV1Response.php
 lib/Model/EzsignfolderRequest.php
 lib/Model/EzsignfolderRequestCompound.php
+lib/Model/EzsignfolderSendV1Request.php
+lib/Model/EzsignfolderSendV1Response.php
 lib/Model/EzsignfoldersignerassociationCreateObjectV1Request.php
 lib/Model/EzsignfoldersignerassociationCreateObjectV1Response.php
 lib/Model/EzsignfoldersignerassociationCreateObjectV1ResponseMPayload.php
@@ -122,6 +126,8 @@ test/Model/EzsignfolderEditObjectV1ResponseTest.php
 test/Model/EzsignfolderGetObjectV1ResponseTest.php
 test/Model/EzsignfolderRequestCompoundTest.php
 test/Model/EzsignfolderRequestTest.php
+test/Model/EzsignfolderSendV1RequestTest.php
+test/Model/EzsignfolderSendV1ResponseTest.php
 test/Model/EzsignfoldersignerassociationCreateObjectV1RequestTest.php
 test/Model/EzsignfoldersignerassociationCreateObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfoldersignerassociationCreateObjectV1ResponseTest.php
