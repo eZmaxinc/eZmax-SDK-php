@@ -63,7 +63,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess
         'fkiLanguageID' => 'int',
         'sEmailAddress' => 'string',
         'sPhoneNumber' => 'string',
-        'sPhoneNumberCell' => 'mixed'
+        'sPhoneNumberCell' => 'string'
     ];
 
     /**
@@ -383,7 +383,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess
     /**
      * Gets sPhoneNumberCell
      *
-     * @return mixed|null
+     * @return string|null
      */
     public function getSPhoneNumberCell()
     {
@@ -393,7 +393,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess
     /**
      * Sets sPhoneNumberCell
      *
-     * @param mixed|null $sPhoneNumberCell The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
+     * @param string|null $sPhoneNumberCell The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
      *
      * @return $this
      */
