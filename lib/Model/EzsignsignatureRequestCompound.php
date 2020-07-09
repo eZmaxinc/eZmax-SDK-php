@@ -64,7 +64,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess
         'iEzsignsignatureY' => 'int',
         'iEzsignsignatureStep' => 'int',
         'eEzsignsignatureType' => 'string',
-        'fkiEzsignfolderID' => 'int'
+        'fkiEzsigndocumentID' => 'int'
     ];
 
     /**
@@ -79,7 +79,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess
         'iEzsignsignatureY' => null,
         'iEzsignsignatureStep' => null,
         'eEzsignsignatureType' => null,
-        'fkiEzsignfolderID' => null
+        'fkiEzsigndocumentID' => null
     ];
 
     /**
@@ -115,7 +115,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess
         'iEzsignsignatureY' => 'iEzsignsignatureY',
         'iEzsignsignatureStep' => 'iEzsignsignatureStep',
         'eEzsignsignatureType' => 'eEzsignsignatureType',
-        'fkiEzsignfolderID' => 'fkiEzsignfolderID'
+        'fkiEzsigndocumentID' => 'fkiEzsigndocumentID'
     ];
 
     /**
@@ -130,7 +130,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess
         'iEzsignsignatureY' => 'setIEzsignsignatureY',
         'iEzsignsignatureStep' => 'setIEzsignsignatureStep',
         'eEzsignsignatureType' => 'setEEzsignsignatureType',
-        'fkiEzsignfolderID' => 'setFkiEzsignfolderID'
+        'fkiEzsigndocumentID' => 'setFkiEzsigndocumentID'
     ];
 
     /**
@@ -145,7 +145,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess
         'iEzsignsignatureY' => 'getIEzsignsignatureY',
         'iEzsignsignatureStep' => 'getIEzsignsignatureStep',
         'eEzsignsignatureType' => 'getEEzsignsignatureType',
-        'fkiEzsignfolderID' => 'getFkiEzsignfolderID'
+        'fkiEzsigndocumentID' => 'getFkiEzsigndocumentID'
     ];
 
     /**
@@ -233,7 +233,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess
         $this->container['iEzsignsignatureY'] = isset($data['iEzsignsignatureY']) ? $data['iEzsignsignatureY'] : null;
         $this->container['iEzsignsignatureStep'] = isset($data['iEzsignsignatureStep']) ? $data['iEzsignsignatureStep'] : null;
         $this->container['eEzsignsignatureType'] = isset($data['eEzsignsignatureType']) ? $data['eEzsignsignatureType'] : null;
-        $this->container['fkiEzsignfolderID'] = isset($data['fkiEzsignfolderID']) ? $data['fkiEzsignfolderID'] : null;
+        $this->container['fkiEzsigndocumentID'] = isset($data['fkiEzsigndocumentID']) ? $data['fkiEzsigndocumentID'] : null;
     }
 
     /**
@@ -271,8 +271,8 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['fkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
+        if ($this->container['fkiEzsigndocumentID'] === null) {
+            $invalidProperties[] = "'fkiEzsigndocumentID' can't be null";
         }
         return $invalidProperties;
     }
@@ -443,25 +443,25 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets fkiEzsignfolderID
+     * Gets fkiEzsigndocumentID
      *
      * @return int
      */
-    public function getFkiEzsignfolderID()
+    public function getFkiEzsigndocumentID()
     {
-        return $this->container['fkiEzsignfolderID'];
+        return $this->container['fkiEzsigndocumentID'];
     }
 
     /**
-     * Sets fkiEzsignfolderID
+     * Sets fkiEzsigndocumentID
      *
-     * @param int $fkiEzsignfolderID A reference to a valid Ezsignfolder.  That value is returned after a successful Ezsignfolder Creation.
+     * @param int $fkiEzsigndocumentID A reference to a valid Ezsigndocument.  That value is returned after a successful Ezsigndocumentation Creation.
      *
      * @return $this
      */
-    public function setFkiEzsignfolderID($fkiEzsignfolderID)
+    public function setFkiEzsigndocumentID($fkiEzsigndocumentID)
     {
-        $this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
+        $this->container['fkiEzsigndocumentID'] = $fkiEzsigndocumentID;
 
         return $this;
     }

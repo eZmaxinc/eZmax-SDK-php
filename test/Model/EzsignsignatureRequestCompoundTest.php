@@ -121,9 +121,9 @@ class EzsignsignatureRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "fkiEzsignfolderID"
+     * Test attribute "fkiEzsigndocumentID"
      */
-    public function testPropertyFkiEzsignfolderID()
+    public function testPropertyFkiEzsigndocumentID()
     {
     }
 }
