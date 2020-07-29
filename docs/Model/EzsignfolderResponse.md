@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **sEzsignfolderDescription** | **string** | The description of the Ezsign Folder | 
 **tEzsignfolderNote** | **string** | Somes extra notes about the eZsign Folder | 
 **eEzsignfolderSendreminderfrequency** | **string** | Frequency at which reminders will be sent to signers that haven&#39;t signed the documents | 
+**pkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
