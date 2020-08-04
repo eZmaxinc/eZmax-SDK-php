@@ -13,6 +13,7 @@ docs/Api/EzsignsignatureApi.md
 docs/Model/ActivesessionGetCurrentV1Response.md
 docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md
 docs/Model/AttemptResponse.md
+docs/Model/CommonAudit.md
 docs/Model/CommonResponse.md
 docs/Model/CommonResponseError.md
 docs/Model/CommonResponseObjDebug.md
@@ -26,9 +27,11 @@ docs/Model/EzsigndocumentDeleteObjectV1Response.md
 docs/Model/EzsigndocumentEditObjectV1Request.md
 docs/Model/EzsigndocumentEditObjectV1Response.md
 docs/Model/EzsigndocumentGetObjectV1Response.md
+docs/Model/EzsigndocumentGetObjectV1ResponseMPayload.md
 docs/Model/EzsigndocumentRequest.md
 docs/Model/EzsigndocumentRequestCompound.md
 docs/Model/EzsigndocumentResponse.md
+docs/Model/EzsigndocumentResponseAllOf.md
 docs/Model/EzsigndocumentResponseCompound.md
 docs/Model/EzsignfolderCreateObjectV1Request.md
 docs/Model/EzsignfolderCreateObjectV1Response.md
@@ -37,9 +40,11 @@ docs/Model/EzsignfolderDeleteObjectV1Response.md
 docs/Model/EzsignfolderEditObjectV1Request.md
 docs/Model/EzsignfolderEditObjectV1Response.md
 docs/Model/EzsignfolderGetObjectV1Response.md
+docs/Model/EzsignfolderGetObjectV1ResponseMPayload.md
 docs/Model/EzsignfolderRequest.md
 docs/Model/EzsignfolderRequestCompound.md
 docs/Model/EzsignfolderResponse.md
+docs/Model/EzsignfolderResponseAllOf.md
 docs/Model/EzsignfolderResponseCompound.md
 docs/Model/EzsignfolderSendV1Request.md
 docs/Model/EzsignfolderSendV1Response.md
@@ -64,6 +69,9 @@ docs/Model/EzsignsignatureRequestCompound.md
 docs/Model/EzsignsignerRequest.md
 docs/Model/EzsignsignerRequestCompound.md
 docs/Model/EzsignsignerRequestCompoundContact.md
+docs/Model/FieldEEzsigndocumentStep.md
+docs/Model/FieldEEzsignfolderSendreminderfrequency.md
+docs/Model/FieldEEzsignfolderStep.md
 docs/Model/WebhookEzsignDocumentCompleted.md
 docs/Model/WebhookEzsignDocumentCompletedAllOf.md
 docs/Model/WebhookEzsignFolderCompleted.md
@@ -82,6 +90,7 @@ lib/HeaderSelector.php
 lib/Model/ActivesessionGetCurrentV1Response.php
 lib/Model/ActivesessionGetCurrentV1ResponseMPayload.php
 lib/Model/AttemptResponse.php
+lib/Model/CommonAudit.php
 lib/Model/CommonResponse.php
 lib/Model/CommonResponseError.php
 lib/Model/CommonResponseObjDebug.php
@@ -95,9 +104,11 @@ lib/Model/EzsigndocumentDeleteObjectV1Response.php
 lib/Model/EzsigndocumentEditObjectV1Request.php
 lib/Model/EzsigndocumentEditObjectV1Response.php
 lib/Model/EzsigndocumentGetObjectV1Response.php
+lib/Model/EzsigndocumentGetObjectV1ResponseMPayload.php
 lib/Model/EzsigndocumentRequest.php
 lib/Model/EzsigndocumentRequestCompound.php
 lib/Model/EzsigndocumentResponse.php
+lib/Model/EzsigndocumentResponseAllOf.php
 lib/Model/EzsigndocumentResponseCompound.php
 lib/Model/EzsignfolderCreateObjectV1Request.php
 lib/Model/EzsignfolderCreateObjectV1Response.php
@@ -106,9 +117,11 @@ lib/Model/EzsignfolderDeleteObjectV1Response.php
 lib/Model/EzsignfolderEditObjectV1Request.php
 lib/Model/EzsignfolderEditObjectV1Response.php
 lib/Model/EzsignfolderGetObjectV1Response.php
+lib/Model/EzsignfolderGetObjectV1ResponseMPayload.php
 lib/Model/EzsignfolderRequest.php
 lib/Model/EzsignfolderRequestCompound.php
 lib/Model/EzsignfolderResponse.php
+lib/Model/EzsignfolderResponseAllOf.php
 lib/Model/EzsignfolderResponseCompound.php
 lib/Model/EzsignfolderSendV1Request.php
 lib/Model/EzsignfolderSendV1Response.php
@@ -133,6 +146,9 @@ lib/Model/EzsignsignatureRequestCompound.php
 lib/Model/EzsignsignerRequest.php
 lib/Model/EzsignsignerRequestCompound.php
 lib/Model/EzsignsignerRequestCompoundContact.php
+lib/Model/FieldEEzsigndocumentStep.php
+lib/Model/FieldEEzsignfolderSendreminderfrequency.php
+lib/Model/FieldEEzsignfolderStep.php
 lib/Model/ModelInterface.php
 lib/Model/WebhookEzsignDocumentCompleted.php
 lib/Model/WebhookEzsignDocumentCompletedAllOf.php
@@ -150,6 +166,7 @@ test/Api/EzsignsignatureApiTest.php
 test/Model/ActivesessionGetCurrentV1ResponseMPayloadTest.php
 test/Model/ActivesessionGetCurrentV1ResponseTest.php
 test/Model/AttemptResponseTest.php
+test/Model/CommonAuditTest.php
 test/Model/CommonResponseErrorTest.php
 test/Model/CommonResponseObjDebugPayloadTest.php
 test/Model/CommonResponseObjDebugTest.php
@@ -162,9 +179,11 @@ test/Model/EzsigndocumentCreateObjectV1ResponseTest.php
 test/Model/EzsigndocumentDeleteObjectV1ResponseTest.php
 test/Model/EzsigndocumentEditObjectV1RequestTest.php
 test/Model/EzsigndocumentEditObjectV1ResponseTest.php
+test/Model/EzsigndocumentGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseTest.php
 test/Model/EzsigndocumentRequestCompoundTest.php
 test/Model/EzsigndocumentRequestTest.php
+test/Model/EzsigndocumentResponseAllOfTest.php
 test/Model/EzsigndocumentResponseCompoundTest.php
 test/Model/EzsigndocumentResponseTest.php
 test/Model/EzsignfolderCreateObjectV1RequestTest.php
@@ -173,9 +192,11 @@ test/Model/EzsignfolderCreateObjectV1ResponseTest.php
 test/Model/EzsignfolderDeleteObjectV1ResponseTest.php
 test/Model/EzsignfolderEditObjectV1RequestTest.php
 test/Model/EzsignfolderEditObjectV1ResponseTest.php
+test/Model/EzsignfolderGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfolderGetObjectV1ResponseTest.php
 test/Model/EzsignfolderRequestCompoundTest.php
 test/Model/EzsignfolderRequestTest.php
+test/Model/EzsignfolderResponseAllOfTest.php
 test/Model/EzsignfolderResponseCompoundTest.php
 test/Model/EzsignfolderResponseTest.php
 test/Model/EzsignfolderSendV1RequestTest.php
@@ -201,6 +222,9 @@ test/Model/EzsignsignatureRequestTest.php
 test/Model/EzsignsignerRequestCompoundContactTest.php
 test/Model/EzsignsignerRequestCompoundTest.php
 test/Model/EzsignsignerRequestTest.php
+test/Model/FieldEEzsigndocumentStepTest.php
+test/Model/FieldEEzsignfolderSendreminderfrequencyTest.php
+test/Model/FieldEEzsignfolderStepTest.php
 test/Model/WebhookEzsignDocumentCompletedAllOfTest.php
 test/Model/WebhookEzsignDocumentCompletedTest.php
 test/Model/WebhookEzsignFolderCompletedAllOfTest.php
