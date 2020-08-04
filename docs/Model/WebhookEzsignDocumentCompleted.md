@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objEzsigndocument** | [**\eZmaxAPI\Model\EzsigndocumentResponseCompound**](EzsigndocumentResponseCompound.md) |  | 
+**objEzsigndocument** | [**\eZmaxAPI\Model\EzsigndocumentResponse**](EzsigndocumentResponse.md) |  | 
 **objWebhook** | [**\eZmaxAPI\Model\WebhookResponse**](WebhookResponse.md) |  | 
 **aObjAttempt** | [**\eZmaxAPI\Model\AttemptResponse[]**](AttemptResponse.md) | An array containing details of previous attempts that were made to deliver the message. The array is empty if it&#39;s the first attempt. | 
 

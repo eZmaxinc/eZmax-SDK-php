@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sCustomerCode** | **string** | The customer code specific to the client in which the API request is being made | 
 **eActivesessionSessiontype** | **string** | The type of session used for the API request call | 
-**fkiLanguageID** | **int** | The ID of the language, Valid values are: 1. French 2. English | 
+**fkiLanguageID** | **int** | The unique ID of the Language.  Valid values are: 1. French 2. English | 
 **sCompanyNameX** | **string** | The name of the active Company in the current language | 
 **sDepartmentNameX** | **string** | The name of the active Department in the current language | 
 **aRegisteredModules** | **string[]** | An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key. | 
