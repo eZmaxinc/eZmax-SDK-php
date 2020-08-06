@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **pkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder | 
 **dtEzsignfolderSentdate** | **string** | The date and time at which the Ezsign folder was sent the last time. | 
 **eEzsignfolderStep** | [**\eZmaxAPI\Model\FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  | 
-**fkiLanguageID** | **int** | The unique ID of the Language.  Valid values are: 1. French 2. English | 
 **dtEzsignfolderClose** | **string** | The date and time at which the folder was closed. Either by applying the last signature or by completing it prematurely. | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
