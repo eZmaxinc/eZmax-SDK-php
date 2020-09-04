@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **sEzsigndocumentBase64** | **string** | The Base64 encoded binary content of the document.  This field is Required when eEzsigndocumentSource &#x3D; Base64. | [optional] 
 **fkiEzsignfolderID** | **int** | A reference to a valid Ezsignfolder.  That value is returned after a successful Ezsignfolder Creation. | 
 **dtEzsigndocumentDuedate** | **string** | Represent a Date Time. The timezone is the one configured in the User&#39;s profile. | 
-**fkiLanguageID** | **int** | The unique ID of the Language.  Valid values are: 1. French 2. English | 
+**fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 
 **sEzsigndocumentFilename** | **string** | The actual file name that will be used when downloading or attaching to an email. | 
 **sEzsigndocumentName** | **string** | The name of the document that will be presented to Ezsignfoldersignerassociations | 
 
