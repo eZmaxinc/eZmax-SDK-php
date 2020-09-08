@@ -24,6 +24,7 @@ docs/Model/CommonWebhook.md
 docs/Model/ContactRequest.md
 docs/Model/ContactRequestCompound.md
 docs/Model/ContactRequestCompoundAllOf.md
+docs/Model/ContactinformationsRequest.md
 docs/Model/ContactinformationsRequestCompound.md
 docs/Model/EmailRequest.md
 docs/Model/EzsigndocumentCreateObjectV1Request.md
@@ -119,6 +120,7 @@ lib/Model/CommonWebhook.php
 lib/Model/ContactRequest.php
 lib/Model/ContactRequestCompound.php
 lib/Model/ContactRequestCompoundAllOf.php
+lib/Model/ContactinformationsRequest.php
 lib/Model/ContactinformationsRequestCompound.php
 lib/Model/EmailRequest.php
 lib/Model/EzsigndocumentCreateObjectV1Request.php
@@ -214,6 +216,7 @@ test/Model/ContactRequestCompoundAllOfTest.php
 test/Model/ContactRequestCompoundTest.php
 test/Model/ContactRequestTest.php
 test/Model/ContactinformationsRequestCompoundTest.php
+test/Model/ContactinformationsRequestTest.php
 test/Model/EmailRequestTest.php
 test/Model/EzsigndocumentCreateObjectV1RequestTest.php
 test/Model/EzsigndocumentCreateObjectV1ResponseMPayloadTest.php

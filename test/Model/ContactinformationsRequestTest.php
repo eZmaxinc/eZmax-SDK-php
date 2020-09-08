@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignsignerRequestCompoundContactTest
+ * ContactinformationsRequestTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignsignerRequestCompoundContactTest Class Doc Comment
+ * ContactinformationsRequestTest Class Doc Comment
  *
  * @category    Class
- * @description A Ezsignsigner-&gt;Contact Object and children to create a complete structure
+ * @description A Contactinformations Object
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignsignerRequestCompoundContactTest extends TestCase
+class ContactinformationsRequestTest extends TestCase
 {
 
     /**
@@ -72,51 +72,37 @@ class EzsignsignerRequestCompoundContactTest extends TestCase
     }
 
     /**
-     * Test "EzsignsignerRequestCompoundContact"
+     * Test "ContactinformationsRequest"
      */
-    public function testEzsignsignerRequestCompoundContact()
+    public function testContactinformationsRequest()
     {
     }
 
     /**
-     * Test attribute "sContactFirstname"
+     * Test attribute "iAddressDefault"
      */
-    public function testPropertySContactFirstname()
+    public function testPropertyIAddressDefault()
     {
     }
 
     /**
-     * Test attribute "sContactLastname"
+     * Test attribute "iPhoneDefault"
      */
-    public function testPropertySContactLastname()
+    public function testPropertyIPhoneDefault()
     {
     }
 
     /**
-     * Test attribute "fkiLanguageID"
+     * Test attribute "iEmailDefault"
      */
-    public function testPropertyFkiLanguageID()
+    public function testPropertyIEmailDefault()
     {
     }
 
     /**
-     * Test attribute "sEmailAddress"
+     * Test attribute "iWebsiteDefault"
      */
-    public function testPropertySEmailAddress()
-    {
-    }
-
-    /**
-     * Test attribute "sPhoneNumber"
-     */
-    public function testPropertySPhoneNumber()
-    {
-    }
-
-    /**
-     * Test attribute "sPhoneNumberCell"
-     */
-    public function testPropertySPhoneNumberCell()
+    public function testPropertyIWebsiteDefault()
     {
     }
 }
