@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignsignatureCreateObjectV1Response
+ * ContactinformationsRequest
  *
  * PHP version 7.2
  *
@@ -28,18 +28,20 @@
  */
 
 namespace eZmaxAPI\Model;
+
+use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignsignatureCreateObjectV1Response Class Doc Comment
+ * ContactinformationsRequest Class Doc Comment
  *
  * @category Class
- * @description Response for the /1/object/ezsignsignature/createObject API Request
+ * @description A Contactinformations Object
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class EzsignsignatureCreateObjectV1Response extends CommonResponse 
+class ContactinformationsRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +50,7 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignsignature-createObject-v1-Response';
+    protected static $openAPIModelName = 'contactinformations-Request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +58,10 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mPayload' => '\eZmaxAPI\Model\EzsignsignatureCreateObjectV1ResponseMPayload'
+        'iAddressDefault' => 'int',
+        'iPhoneDefault' => 'int',
+        'iEmailDefault' => 'int',
+        'iWebsiteDefault' => 'int'
     ];
 
     /**
@@ -65,7 +70,10 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'mPayload' => null
+        'iAddressDefault' => null,
+        'iPhoneDefault' => null,
+        'iEmailDefault' => null,
+        'iWebsiteDefault' => null
     ];
 
     /**
@@ -75,7 +83,7 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes + parent::openAPITypes();
+        return self::$openAPITypes;
     }
 
     /**
@@ -85,7 +93,7 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats + parent::openAPIFormats();
+        return self::$openAPIFormats;
     }
 
     /**
@@ -95,7 +103,10 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'mPayload' => 'mPayload'
+        'iAddressDefault' => 'iAddressDefault',
+        'iPhoneDefault' => 'iPhoneDefault',
+        'iEmailDefault' => 'iEmailDefault',
+        'iWebsiteDefault' => 'iWebsiteDefault'
     ];
 
     /**
@@ -104,7 +115,10 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      * @var string[]
      */
     protected static $setters = [
-        'mPayload' => 'setMPayload'
+        'iAddressDefault' => 'setIAddressDefault',
+        'iPhoneDefault' => 'setIPhoneDefault',
+        'iEmailDefault' => 'setIEmailDefault',
+        'iWebsiteDefault' => 'setIWebsiteDefault'
     ];
 
     /**
@@ -113,7 +127,10 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      * @var string[]
      */
     protected static $getters = [
-        'mPayload' => 'getMPayload'
+        'iAddressDefault' => 'getIAddressDefault',
+        'iPhoneDefault' => 'getIPhoneDefault',
+        'iEmailDefault' => 'getIEmailDefault',
+        'iWebsiteDefault' => 'getIWebsiteDefault'
     ];
 
     /**
@@ -124,7 +141,7 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -134,7 +151,7 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -144,7 +161,7 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -161,6 +178,12 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
 
     
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
      * Constructor
@@ -170,9 +193,10 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
-        $this->container['mPayload'] = isset($data['mPayload']) ? $data['mPayload'] : null;
+        $this->container['iAddressDefault'] = isset($data['iAddressDefault']) ? $data['iAddressDefault'] : null;
+        $this->container['iPhoneDefault'] = isset($data['iPhoneDefault']) ? $data['iPhoneDefault'] : null;
+        $this->container['iEmailDefault'] = isset($data['iEmailDefault']) ? $data['iEmailDefault'] : null;
+        $this->container['iWebsiteDefault'] = isset($data['iWebsiteDefault']) ? $data['iWebsiteDefault'] : null;
     }
 
     /**
@@ -182,10 +206,19 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['mPayload'] === null) {
-            $invalidProperties[] = "'mPayload' can't be null";
+        if ($this->container['iAddressDefault'] === null) {
+            $invalidProperties[] = "'iAddressDefault' can't be null";
+        }
+        if ($this->container['iPhoneDefault'] === null) {
+            $invalidProperties[] = "'iPhoneDefault' can't be null";
+        }
+        if ($this->container['iEmailDefault'] === null) {
+            $invalidProperties[] = "'iEmailDefault' can't be null";
+        }
+        if ($this->container['iWebsiteDefault'] === null) {
+            $invalidProperties[] = "'iWebsiteDefault' can't be null";
         }
         return $invalidProperties;
     }
@@ -203,25 +236,97 @@ class EzsignsignatureCreateObjectV1Response extends CommonResponse
 
 
     /**
-     * Gets mPayload
+     * Gets iAddressDefault
      *
-     * @return \eZmaxAPI\Model\EzsignsignatureCreateObjectV1ResponseMPayload
+     * @return int
      */
-    public function getMPayload()
+    public function getIAddressDefault()
     {
-        return $this->container['mPayload'];
+        return $this->container['iAddressDefault'];
     }
 
     /**
-     * Sets mPayload
+     * Sets iAddressDefault
      *
-     * @param \eZmaxAPI\Model\EzsignsignatureCreateObjectV1ResponseMPayload $mPayload mPayload
+     * @param int $iAddressDefault The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.
      *
      * @return $this
      */
-    public function setMPayload($mPayload)
+    public function setIAddressDefault($iAddressDefault)
     {
-        $this->container['mPayload'] = $mPayload;
+        $this->container['iAddressDefault'] = $iAddressDefault;
+
+        return $this;
+    }
+
+    /**
+     * Gets iPhoneDefault
+     *
+     * @return int
+     */
+    public function getIPhoneDefault()
+    {
+        return $this->container['iPhoneDefault'];
+    }
+
+    /**
+     * Sets iPhoneDefault
+     *
+     * @param int $iPhoneDefault The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty.
+     *
+     * @return $this
+     */
+    public function setIPhoneDefault($iPhoneDefault)
+    {
+        $this->container['iPhoneDefault'] = $iPhoneDefault;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEmailDefault
+     *
+     * @return int
+     */
+    public function getIEmailDefault()
+    {
+        return $this->container['iEmailDefault'];
+    }
+
+    /**
+     * Sets iEmailDefault
+     *
+     * @param int $iEmailDefault The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty.
+     *
+     * @return $this
+     */
+    public function setIEmailDefault($iEmailDefault)
+    {
+        $this->container['iEmailDefault'] = $iEmailDefault;
+
+        return $this;
+    }
+
+    /**
+     * Gets iWebsiteDefault
+     *
+     * @return int
+     */
+    public function getIWebsiteDefault()
+    {
+        return $this->container['iWebsiteDefault'];
+    }
+
+    /**
+     * Sets iWebsiteDefault
+     *
+     * @param int $iWebsiteDefault The index in the a_objWebsite array (zero based index) representing the Website object that should become the default one.  You can leave the value to 0 if the array is empty.
+     *
+     * @return $this
+     */
+    public function setIWebsiteDefault($iWebsiteDefault)
+    {
+        $this->container['iWebsiteDefault'] = $iWebsiteDefault;
 
         return $this;
     }
