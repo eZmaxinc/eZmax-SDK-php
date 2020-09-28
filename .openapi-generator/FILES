@@ -10,11 +10,14 @@ docs/Api/EzsignfolderApi.md
 docs/Api/EzsignfoldersignerassociationApi.md
 docs/Api/EzsignsignatureApi.md
 docs/Api/FranchisereferalincomeApi.md
+docs/Api/PeriodApi.md
 docs/Model/ActivesessionGetCurrentV1Response.md
 docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md
 docs/Model/AddressRequest.md
 docs/Model/AttemptResponse.md
 docs/Model/CommonAudit.md
+docs/Model/CommonGetAutocompleteV1Response.md
+docs/Model/CommonGetAutocompleteV1ResponseMPayload.md
 docs/Model/CommonResponse.md
 docs/Model/CommonResponseError.md
 docs/Model/CommonResponseObjDebug.md
@@ -103,6 +106,7 @@ lib/Api/EzsignfolderApi.php
 lib/Api/EzsignfoldersignerassociationApi.php
 lib/Api/EzsignsignatureApi.php
 lib/Api/FranchisereferalincomeApi.php
+lib/Api/PeriodApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
@@ -111,6 +115,8 @@ lib/Model/ActivesessionGetCurrentV1ResponseMPayload.php
 lib/Model/AddressRequest.php
 lib/Model/AttemptResponse.php
 lib/Model/CommonAudit.php
+lib/Model/CommonGetAutocompleteV1Response.php
+lib/Model/CommonGetAutocompleteV1ResponseMPayload.php
 lib/Model/CommonResponse.php
 lib/Model/CommonResponseError.php
 lib/Model/CommonResponseObjDebug.php
@@ -201,11 +207,14 @@ test/Api/EzsignfolderApiTest.php
 test/Api/EzsignfoldersignerassociationApiTest.php
 test/Api/EzsignsignatureApiTest.php
 test/Api/FranchisereferalincomeApiTest.php
+test/Api/PeriodApiTest.php
 test/Model/ActivesessionGetCurrentV1ResponseMPayloadTest.php
 test/Model/ActivesessionGetCurrentV1ResponseTest.php
 test/Model/AddressRequestTest.php
 test/Model/AttemptResponseTest.php
 test/Model/CommonAuditTest.php
+test/Model/CommonGetAutocompleteV1ResponseMPayloadTest.php
+test/Model/CommonGetAutocompleteV1ResponseTest.php
 test/Model/CommonResponseErrorTest.php
 test/Model/CommonResponseObjDebugPayloadTest.php
 test/Model/CommonResponseObjDebugTest.php
