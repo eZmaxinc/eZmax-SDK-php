@@ -4,7 +4,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**periodGetAutocompleteV1**](PeriodApi.md#periodGetAutocompleteV1) | **GET** /1/object/period/getAutocomplete | Retrieve Periods and IDs
+[**periodGetAutocompleteV1**](PeriodApi.md#periodGetAutocompleteV1) | **GET** /1/object/period/getAutocomplete/{sSelector} | Retrieve Periods and IDs
 
 
 
