@@ -1,6 +1,6 @@
 <?php
 /**
- * PeriodApi
+ * FranchisebrokerApi
  * PHP version 7.2
  *
  * @category Class
@@ -40,14 +40,14 @@ use eZmaxAPI\HeaderSelector;
 use eZmaxAPI\ObjectSerializer;
 
 /**
- * PeriodApi Class Doc Comment
+ * FranchisebrokerApi Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PeriodApi
+class FranchisebrokerApi
 {
     /**
      * @var ClientInterface
@@ -116,36 +116,38 @@ class PeriodApi
     }
 
     /**
-     * Operation periodGetAutocompleteV1
+     * Operation franchisebrokerGetAutocompleteV1
      *
-     * Retrieve Periods and IDs
+     * Retrieve Franchisebrokers and IDs
      *
-     * @param  string $sSelector The types of Periods to return (required)
+     * @param  string $sSelector The type of Franchisebrokers to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\CommonGetAutocompleteV1Response
      */
-    public function periodGetAutocompleteV1($sSelector)
+    public function franchisebrokerGetAutocompleteV1($sSelector, $sQuery = null)
     {
-        list($response) = $this->periodGetAutocompleteV1WithHttpInfo($sSelector);
+        list($response) = $this->franchisebrokerGetAutocompleteV1WithHttpInfo($sSelector, $sQuery);
         return $response;
     }
 
     /**
-     * Operation periodGetAutocompleteV1WithHttpInfo
+     * Operation franchisebrokerGetAutocompleteV1WithHttpInfo
      *
-     * Retrieve Periods and IDs
+     * Retrieve Franchisebrokers and IDs
      *
-     * @param  string $sSelector The types of Periods to return (required)
+     * @param  string $sSelector The type of Franchisebrokers to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\CommonGetAutocompleteV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function periodGetAutocompleteV1WithHttpInfo($sSelector)
+    public function franchisebrokerGetAutocompleteV1WithHttpInfo($sSelector, $sQuery = null)
     {
-        $request = $this->periodGetAutocompleteV1Request($sSelector);
+        $request = $this->franchisebrokerGetAutocompleteV1Request($sSelector, $sQuery);
 
         try {
             $options = $this->createHttpClientOption();
@@ -221,18 +223,19 @@ class PeriodApi
     }
 
     /**
-     * Operation periodGetAutocompleteV1Async
+     * Operation franchisebrokerGetAutocompleteV1Async
      *
-     * Retrieve Periods and IDs
+     * Retrieve Franchisebrokers and IDs
      *
-     * @param  string $sSelector The types of Periods to return (required)
+     * @param  string $sSelector The type of Franchisebrokers to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function periodGetAutocompleteV1Async($sSelector)
+    public function franchisebrokerGetAutocompleteV1Async($sSelector, $sQuery = null)
     {
-        return $this->periodGetAutocompleteV1AsyncWithHttpInfo($sSelector)
+        return $this->franchisebrokerGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -241,19 +244,20 @@ class PeriodApi
     }
 
     /**
-     * Operation periodGetAutocompleteV1AsyncWithHttpInfo
+     * Operation franchisebrokerGetAutocompleteV1AsyncWithHttpInfo
      *
-     * Retrieve Periods and IDs
+     * Retrieve Franchisebrokers and IDs
      *
-     * @param  string $sSelector The types of Periods to return (required)
+     * @param  string $sSelector The type of Franchisebrokers to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function periodGetAutocompleteV1AsyncWithHttpInfo($sSelector)
+    public function franchisebrokerGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery = null)
     {
         $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteV1Response';
-        $request = $this->periodGetAutocompleteV1Request($sSelector);
+        $request = $this->franchisebrokerGetAutocompleteV1Request($sSelector, $sQuery);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -290,29 +294,41 @@ class PeriodApi
     }
 
     /**
-     * Create request for operation 'periodGetAutocompleteV1'
+     * Create request for operation 'franchisebrokerGetAutocompleteV1'
      *
-     * @param  string $sSelector The types of Periods to return (required)
+     * @param  string $sSelector The type of Franchisebrokers to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function periodGetAutocompleteV1Request($sSelector)
+    protected function franchisebrokerGetAutocompleteV1Request($sSelector, $sQuery = null)
     {
         // verify the required parameter 'sSelector' is set
         if ($sSelector === null || (is_array($sSelector) && count($sSelector) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sSelector when calling periodGetAutocompleteV1'
+                'Missing the required parameter $sSelector when calling franchisebrokerGetAutocompleteV1'
             );
         }
 
-        $resourcePath = '/1/object/period/getAutocomplete/{sSelector}';
+        $resourcePath = '/1/object/franchisebroker/getAutocomplete/{sSelector}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($sQuery !== null) {
+            if('form' === 'form' && is_array($sQuery)) {
+                foreach($sQuery as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['sQuery'] = $sQuery;
+            }
+        }
 
 
         // path params

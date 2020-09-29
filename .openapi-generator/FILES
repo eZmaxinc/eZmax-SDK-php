@@ -9,6 +9,7 @@ docs/Api/EzsigndocumentApi.md
 docs/Api/EzsignfolderApi.md
 docs/Api/EzsignfoldersignerassociationApi.md
 docs/Api/EzsignsignatureApi.md
+docs/Api/FranchisebrokerApi.md
 docs/Api/FranchisereferalincomeApi.md
 docs/Api/PeriodApi.md
 docs/Model/ActivesessionGetCurrentV1Response.md
@@ -105,6 +106,7 @@ lib/Api/EzsigndocumentApi.php
 lib/Api/EzsignfolderApi.php
 lib/Api/EzsignfoldersignerassociationApi.php
 lib/Api/EzsignsignatureApi.php
+lib/Api/FranchisebrokerApi.php
 lib/Api/FranchisereferalincomeApi.php
 lib/Api/PeriodApi.php
 lib/ApiException.php
@@ -206,6 +208,7 @@ test/Api/EzsigndocumentApiTest.php
 test/Api/EzsignfolderApiTest.php
 test/Api/EzsignfoldersignerassociationApiTest.php
 test/Api/EzsignsignatureApiTest.php
+test/Api/FranchisebrokerApiTest.php
 test/Api/FranchisereferalincomeApiTest.php
 test/Api/PeriodApiTest.php
 test/Model/ActivesessionGetCurrentV1ResponseMPayloadTest.php
