@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## periodGetAutocompleteV1
 
-> \eZmaxAPI\Model\CommonGetAutocompleteV1Response periodGetAutocompleteV1($sSelector)
+> \eZmaxAPI\Model\CommonGetAutocompleteV1Response periodGetAutocompleteV1($sSelector, $sQuery)
 
 Retrieve Periods and IDs
 
@@ -36,9 +36,10 @@ $apiInstance = new eZmaxAPI\Api\PeriodApi(
     $config
 );
 $sSelector = 'sSelector_example'; // string | The types of Periods to return
+$sQuery = 'sQuery_example'; // string | Allow to filter on the option value
 
 try {
-    $result = $apiInstance->periodGetAutocompleteV1($sSelector);
+    $result = $apiInstance->periodGetAutocompleteV1($sSelector, $sQuery);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PeriodApi->periodGetAutocompleteV1: ', $e->getMessage(), PHP_EOL;
@@ -52,6 +53,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **string**| The types of Periods to return |
+ **sQuery** | **string**| Allow to filter on the option value | [optional]
 
 ### Return type
 
