@@ -1,6 +1,6 @@
 <?php
 /**
- * FranchisereferalincomeApi
+ * FranchiseofficeApi
  * PHP version 7.2
  *
  * @category Class
@@ -40,14 +40,14 @@ use eZmaxAPI\HeaderSelector;
 use eZmaxAPI\ObjectSerializer;
 
 /**
- * FranchisereferalincomeApi Class Doc Comment
+ * FranchiseofficeApi Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class FranchisereferalincomeApi
+class FranchiseofficeApi
 {
     /**
      * @var ClientInterface
@@ -116,36 +116,38 @@ class FranchisereferalincomeApi
     }
 
     /**
-     * Operation franchisereferalincomeCreateObjectV1
+     * Operation franchiseofficeGetAutocompleteV1
      *
-     * Create a new Franchisereferalincome
+     * Retrieve Franchiseoffices and IDs
      *
-     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $sSelector The type of Franchiseoffices to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response
+     * @return \eZmaxAPI\Model\CommonGetAutocompleteV1Response
      */
-    public function franchisereferalincomeCreateObjectV1($franchisereferalincomeCreateObjectV1Request)
+    public function franchiseofficeGetAutocompleteV1($sSelector, $sQuery = null)
     {
-        list($response) = $this->franchisereferalincomeCreateObjectV1WithHttpInfo($franchisereferalincomeCreateObjectV1Request);
+        list($response) = $this->franchiseofficeGetAutocompleteV1WithHttpInfo($sSelector, $sQuery);
         return $response;
     }
 
     /**
-     * Operation franchisereferalincomeCreateObjectV1WithHttpInfo
+     * Operation franchiseofficeGetAutocompleteV1WithHttpInfo
      *
-     * Create a new Franchisereferalincome
+     * Retrieve Franchiseoffices and IDs
      *
-     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $sSelector The type of Franchiseoffices to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\CommonGetAutocompleteV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function franchisereferalincomeCreateObjectV1WithHttpInfo($franchisereferalincomeCreateObjectV1Request)
+    public function franchiseofficeGetAutocompleteV1WithHttpInfo($sSelector, $sQuery = null)
     {
-        $request = $this->franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request);
+        $request = $this->franchiseofficeGetAutocompleteV1Request($sSelector, $sQuery);
 
         try {
             $options = $this->createHttpClientOption();
@@ -177,21 +179,21 @@ class FranchisereferalincomeApi
 
             $responseBody = $response->getBody();
             switch($statusCode) {
-                case 201:
-                    if ('\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response' === '\SplFileObject') {
+                case 200:
+                    if ('\eZmaxAPI\Model\CommonGetAutocompleteV1Response' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonGetAutocompleteV1Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response';
+            $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteV1Response';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -207,10 +209,10 @@ class FranchisereferalincomeApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response',
+                        '\eZmaxAPI\Model\CommonGetAutocompleteV1Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -221,18 +223,19 @@ class FranchisereferalincomeApi
     }
 
     /**
-     * Operation franchisereferalincomeCreateObjectV1Async
+     * Operation franchiseofficeGetAutocompleteV1Async
      *
-     * Create a new Franchisereferalincome
+     * Retrieve Franchiseoffices and IDs
      *
-     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $sSelector The type of Franchiseoffices to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function franchisereferalincomeCreateObjectV1Async($franchisereferalincomeCreateObjectV1Request)
+    public function franchiseofficeGetAutocompleteV1Async($sSelector, $sQuery = null)
     {
-        return $this->franchisereferalincomeCreateObjectV1AsyncWithHttpInfo($franchisereferalincomeCreateObjectV1Request)
+        return $this->franchiseofficeGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -241,19 +244,20 @@ class FranchisereferalincomeApi
     }
 
     /**
-     * Operation franchisereferalincomeCreateObjectV1AsyncWithHttpInfo
+     * Operation franchiseofficeGetAutocompleteV1AsyncWithHttpInfo
      *
-     * Create a new Franchisereferalincome
+     * Retrieve Franchiseoffices and IDs
      *
-     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $sSelector The type of Franchiseoffices to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function franchisereferalincomeCreateObjectV1AsyncWithHttpInfo($franchisereferalincomeCreateObjectV1Request)
+    public function franchiseofficeGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery = null)
     {
-        $returnType = '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response';
-        $request = $this->franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request);
+        $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteV1Response';
+        $request = $this->franchiseofficeGetAutocompleteV1Request($sSelector, $sQuery);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -290,31 +294,51 @@ class FranchisereferalincomeApi
     }
 
     /**
-     * Create request for operation 'franchisereferalincomeCreateObjectV1'
+     * Create request for operation 'franchiseofficeGetAutocompleteV1'
      *
-     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $sSelector The type of Franchiseoffices to return (required)
+     * @param  string $sQuery Allow to filter on the option value (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request)
+    protected function franchiseofficeGetAutocompleteV1Request($sSelector, $sQuery = null)
     {
-        // verify the required parameter 'franchisereferalincomeCreateObjectV1Request' is set
-        if ($franchisereferalincomeCreateObjectV1Request === null || (is_array($franchisereferalincomeCreateObjectV1Request) && count($franchisereferalincomeCreateObjectV1Request) === 0)) {
+        // verify the required parameter 'sSelector' is set
+        if ($sSelector === null || (is_array($sSelector) && count($sSelector) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $franchisereferalincomeCreateObjectV1Request when calling franchisereferalincomeCreateObjectV1'
+                'Missing the required parameter $sSelector when calling franchiseofficeGetAutocompleteV1'
             );
         }
 
-        $resourcePath = '/1/object/franchisereferalincome';
+        $resourcePath = '/1/object/franchiseoffice/getAutocomplete/{sSelector}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($sQuery !== null) {
+            if('form' === 'form' && is_array($sQuery)) {
+                foreach($sQuery as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['sQuery'] = $sQuery;
+            }
+        }
 
 
+        // path params
+        if ($sSelector !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sSelector' . '}',
+                ObjectSerializer::toPathValue($sSelector),
+                $resourcePath
+            );
+        }
 
 
         if ($multipart) {
@@ -324,18 +348,12 @@ class FranchisereferalincomeApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                []
             );
         }
 
         // for model (json/xml)
-        if (isset($franchisereferalincomeCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($franchisereferalincomeCreateObjectV1Request));
-            } else {
-                $httpBody = $franchisereferalincomeCreateObjectV1Request;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -378,7 +396,7 @@ class FranchisereferalincomeApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
