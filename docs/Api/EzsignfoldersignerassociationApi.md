@@ -1,21 +1,22 @@
 # eZmaxAPI\EzsignfoldersignerassociationApi
 
-All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ezsignfoldersignerassociationCreateObjectV1**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateObjectV1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
-[**ezsignfoldersignerassociationDeleteObjectV1**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationDeleteObjectV1) | **DELETE** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Delete an existing Ezsignfoldersignerassociation
-[**ezsignfoldersignerassociationEditObjectV1**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationEditObjectV1) | **PUT** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Modify an existing Ezsignfoldersignerassociation
-[**ezsignfoldersignerassociationGetInPersonLoginUrlV1**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetInPersonLoginUrlV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl | Retrieve a Login Url to allow In-Person signing
-[**ezsignfoldersignerassociationGetObjectGetChildrenV1**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectGetChildrenV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getChildren | Retrieve an existing Ezsignfoldersignerassociation&#39;s children IDs
-[**ezsignfoldersignerassociationGetObjectV1**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
+[**ezsignfoldersignerassociationCreateObjectV1()**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateObjectV1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
+[**ezsignfoldersignerassociationDeleteObjectV1()**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationDeleteObjectV1) | **DELETE** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Delete an existing Ezsignfoldersignerassociation
+[**ezsignfoldersignerassociationEditObjectV1()**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationEditObjectV1) | **PUT** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Modify an existing Ezsignfoldersignerassociation
+[**ezsignfoldersignerassociationGetInPersonLoginUrlV1()**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetInPersonLoginUrlV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl | Retrieve a Login Url to allow In-Person signing
+[**ezsignfoldersignerassociationGetObjectGetChildrenV1()**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectGetChildrenV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getChildren | Retrieve an existing Ezsignfoldersignerassociation&#39;s children IDs
+[**ezsignfoldersignerassociationGetObjectV1()**](EzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
 
 
+## `ezsignfoldersignerassociationCreateObjectV1()`
 
-## ezsignfoldersignerassociationCreateObjectV1
-
-> \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Response ezsignfoldersignerassociationCreateObjectV1($ezsignfoldersignerassociationCreateObjectV1Request)
+```php
+ezsignfoldersignerassociationCreateObjectV1($ezsignfoldersignerassociationCreateObjectV1Request): \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Response
+```
 
 Create a new Ezsignfoldersignerassociation
 
@@ -40,7 +41,7 @@ $apiInstance = new eZmaxAPI\Api\EzsignfoldersignerassociationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ezsignfoldersignerassociationCreateObjectV1Request = array(new \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Request()); // \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Request[] | 
+$ezsignfoldersignerassociationCreateObjectV1Request = array(new \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Request()); // \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Request[]
 
 try {
     $result = $apiInstance->ezsignfoldersignerassociationCreateObjectV1($ezsignfoldersignerassociationCreateObjectV1Request);
@@ -48,11 +49,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfoldersignerassociationApi->ezsignfoldersignerassociationCreateObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -68,17 +67,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfoldersignerassociationDeleteObjectV1()`
 
-## ezsignfoldersignerassociationDeleteObjectV1
-
-> \eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response ezsignfoldersignerassociationDeleteObjectV1($pkiEzsignfoldersignerassociationID)
+```php
+ezsignfoldersignerassociationDeleteObjectV1($pkiEzsignfoldersignerassociationID): \eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response
+```
 
 Delete an existing Ezsignfoldersignerassociation
 
@@ -109,11 +109,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfoldersignerassociationApi->ezsignfoldersignerassociationDeleteObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,16 +128,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfoldersignerassociationEditObjectV1()`
 
-## ezsignfoldersignerassociationEditObjectV1
-
-> \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Response ezsignfoldersignerassociationEditObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request)
+```php
+ezsignfoldersignerassociationEditObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request): \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Response
+```
 
 Modify an existing Ezsignfoldersignerassociation
 
@@ -163,7 +162,7 @@ $apiInstance = new eZmaxAPI\Api\EzsignfoldersignerassociationApi(
     $config
 );
 $pkiEzsignfoldersignerassociationID = 56; // int | The unique ID of the Ezsignfoldersignerassociation
-$ezsignfoldersignerassociationEditObjectV1Request = new \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Request(); // \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Request | 
+$ezsignfoldersignerassociationEditObjectV1Request = new \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Request(); // \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Request
 
 try {
     $result = $apiInstance->ezsignfoldersignerassociationEditObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request);
@@ -171,11 +170,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfoldersignerassociationApi->ezsignfoldersignerassociationEditObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -192,17 +189,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfoldersignerassociationGetInPersonLoginUrlV1()`
 
-## ezsignfoldersignerassociationGetInPersonLoginUrlV1
-
-> \eZmaxAPI\Model\EzsignfoldersignerassociationGetInPersonLoginUrlV1Response ezsignfoldersignerassociationGetInPersonLoginUrlV1($pkiEzsignfoldersignerassociationID)
+```php
+ezsignfoldersignerassociationGetInPersonLoginUrlV1($pkiEzsignfoldersignerassociationID): \eZmaxAPI\Model\EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
+```
 
 Retrieve a Login Url to allow In-Person signing
 
@@ -235,11 +233,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfoldersignerassociationApi->ezsignfoldersignerassociationGetInPersonLoginUrlV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -256,16 +252,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfoldersignerassociationGetObjectGetChildrenV1()`
 
-## ezsignfoldersignerassociationGetObjectGetChildrenV1
-
-> ezsignfoldersignerassociationGetObjectGetChildrenV1($pkiEzsignfoldersignerassociationID)
+```php
+ezsignfoldersignerassociationGetObjectGetChildrenV1($pkiEzsignfoldersignerassociationID)
+```
 
 Retrieve an existing Ezsignfoldersignerassociation's children IDs
 
@@ -295,11 +292,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfoldersignerassociationApi->ezsignfoldersignerassociationGetObjectGetChildrenV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -316,16 +311,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfoldersignerassociationGetObjectV1()`
 
-## ezsignfoldersignerassociationGetObjectV1
-
-> \eZmaxAPI\Model\EzsignfoldersignerassociationGetObjectV1Response ezsignfoldersignerassociationGetObjectV1($pkiEzsignfoldersignerassociationID)
+```php
+ezsignfoldersignerassociationGetObjectV1($pkiEzsignfoldersignerassociationID): \eZmaxAPI\Model\EzsignfoldersignerassociationGetObjectV1Response
+```
 
 Retrieve an existing Ezsignfoldersignerassociation
 
@@ -356,11 +352,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfoldersignerassociationApi->ezsignfoldersignerassociationGetObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -377,9 +371,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

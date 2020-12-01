@@ -1,21 +1,22 @@
 # eZmaxAPI\EzsignfolderApi
 
-All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ezsignfolderCreateObjectV1**](EzsignfolderApi.md#ezsignfolderCreateObjectV1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
-[**ezsignfolderDeleteObjectV1**](EzsignfolderApi.md#ezsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
-[**ezsignfolderEditObjectV1**](EzsignfolderApi.md#ezsignfolderEditObjectV1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
-[**ezsignfolderGetObjectGetChildrenV1**](EzsignfolderApi.md#ezsignfolderGetObjectGetChildrenV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
-[**ezsignfolderGetObjectV1**](EzsignfolderApi.md#ezsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
-[**ezsignfolderSendV1**](EzsignfolderApi.md#ezsignfolderSendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
+[**ezsignfolderCreateObjectV1()**](EzsignfolderApi.md#ezsignfolderCreateObjectV1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
+[**ezsignfolderDeleteObjectV1()**](EzsignfolderApi.md#ezsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
+[**ezsignfolderEditObjectV1()**](EzsignfolderApi.md#ezsignfolderEditObjectV1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
+[**ezsignfolderGetObjectGetChildrenV1()**](EzsignfolderApi.md#ezsignfolderGetObjectGetChildrenV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
+[**ezsignfolderGetObjectV1()**](EzsignfolderApi.md#ezsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
+[**ezsignfolderSendV1()**](EzsignfolderApi.md#ezsignfolderSendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 
 
+## `ezsignfolderCreateObjectV1()`
 
-## ezsignfolderCreateObjectV1
-
-> \eZmaxAPI\Model\EzsignfolderCreateObjectV1Response ezsignfolderCreateObjectV1($ezsignfolderCreateObjectV1Request)
+```php
+ezsignfolderCreateObjectV1($ezsignfolderCreateObjectV1Request): \eZmaxAPI\Model\EzsignfolderCreateObjectV1Response
+```
 
 Create a new Ezsignfolder
 
@@ -40,7 +41,7 @@ $apiInstance = new eZmaxAPI\Api\EzsignfolderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ezsignfolderCreateObjectV1Request = array(new \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request()); // \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] | 
+$ezsignfolderCreateObjectV1Request = array(new \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request()); // \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[]
 
 try {
     $result = $apiInstance->ezsignfolderCreateObjectV1($ezsignfolderCreateObjectV1Request);
@@ -48,11 +49,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfolderApi->ezsignfolderCreateObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -68,17 +67,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfolderDeleteObjectV1()`
 
-## ezsignfolderDeleteObjectV1
-
-> \eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response ezsignfolderDeleteObjectV1($pkiEzsignfolderID)
+```php
+ezsignfolderDeleteObjectV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response
+```
 
 Delete an existing Ezsignfolder
 
@@ -109,11 +109,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfolderApi->ezsignfolderDeleteObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,16 +128,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfolderEditObjectV1()`
 
-## ezsignfolderEditObjectV1
-
-> \eZmaxAPI\Model\EzsignfolderEditObjectV1Response ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
+```php
+ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request): \eZmaxAPI\Model\EzsignfolderEditObjectV1Response
+```
 
 Modify an existing Ezsignfolder
 
@@ -163,7 +162,7 @@ $apiInstance = new eZmaxAPI\Api\EzsignfolderApi(
     $config
 );
 $pkiEzsignfolderID = 56; // int | The unique ID of the Ezsignfolder
-$ezsignfolderEditObjectV1Request = new \eZmaxAPI\Model\EzsignfolderEditObjectV1Request(); // \eZmaxAPI\Model\EzsignfolderEditObjectV1Request | 
+$ezsignfolderEditObjectV1Request = new \eZmaxAPI\Model\EzsignfolderEditObjectV1Request(); // \eZmaxAPI\Model\EzsignfolderEditObjectV1Request
 
 try {
     $result = $apiInstance->ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request);
@@ -171,11 +170,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfolderApi->ezsignfolderEditObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -192,17 +189,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfolderGetObjectGetChildrenV1()`
 
-## ezsignfolderGetObjectGetChildrenV1
-
-> ezsignfolderGetObjectGetChildrenV1($pkiEzsignfolderID)
+```php
+ezsignfolderGetObjectGetChildrenV1($pkiEzsignfolderID)
+```
 
 Retrieve an existing Ezsignfolder's children IDs
 
@@ -232,11 +230,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfolderApi->ezsignfolderGetObjectGetChildrenV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -253,16 +249,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfolderGetObjectV1()`
 
-## ezsignfolderGetObjectV1
-
-> \eZmaxAPI\Model\EzsignfolderGetObjectV1Response ezsignfolderGetObjectV1($pkiEzsignfolderID)
+```php
+ezsignfolderGetObjectV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderGetObjectV1Response
+```
 
 Retrieve an existing Ezsignfolder
 
@@ -293,11 +290,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfolderApi->ezsignfolderGetObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -314,16 +309,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfolderSendV1()`
 
-## ezsignfolderSendV1
-
-> \eZmaxAPI\Model\EzsignfolderSendV1Response ezsignfolderSendV1($pkiEzsignfolderID, $ezsignfolderSendV1Request)
+```php
+ezsignfolderSendV1($pkiEzsignfolderID, $ezsignfolderSendV1Request): \eZmaxAPI\Model\EzsignfolderSendV1Response
+```
 
 Send the Ezsignfolder to the signatories for signature
 
@@ -347,7 +343,7 @@ $apiInstance = new eZmaxAPI\Api\EzsignfolderApi(
     $config
 );
 $pkiEzsignfolderID = 56; // int | The unique ID of the Ezsignfolder
-$ezsignfolderSendV1Request = new \eZmaxAPI\Model\EzsignfolderSendV1Request(); // \eZmaxAPI\Model\EzsignfolderSendV1Request | 
+$ezsignfolderSendV1Request = new \eZmaxAPI\Model\EzsignfolderSendV1Request(); // \eZmaxAPI\Model\EzsignfolderSendV1Request
 
 try {
     $result = $apiInstance->ezsignfolderSendV1($pkiEzsignfolderID, $ezsignfolderSendV1Request);
@@ -355,11 +351,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignfolderApi->ezsignfolderSendV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -376,10 +370,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

@@ -4,9 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objEzsignsignature** | [**\eZmaxAPI\Model\EzsignsignatureRequest**](EzsignsignatureRequest.md) |  | [optional] 
-**objEzsignsignatureCompound** | [**\eZmaxAPI\Model\EzsignsignatureRequestCompound**](EzsignsignatureRequestCompound.md) |  | [optional] 
+**objEzsignsignature** | [**\eZmaxAPI\Model\EzsignsignatureRequest**](EzsignsignatureRequest.md) |  | [optional]
+**objEzsignsignatureCompound** | [**\eZmaxAPI\Model\EzsignsignatureRequestCompound**](EzsignsignatureRequestCompound.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
