@@ -1,20 +1,21 @@
 # eZmaxAPI\EzsignsignatureApi
 
-All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ezsignsignatureCreateObjectV1**](EzsignsignatureApi.md#ezsignsignatureCreateObjectV1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
-[**ezsignsignatureDeleteObjectV1**](EzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
-[**ezsignsignatureEditObjectV1**](EzsignsignatureApi.md#ezsignsignatureEditObjectV1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Modify an existing Ezsignsignature
-[**ezsignsignatureGetObjectGetChildrenV1**](EzsignsignatureApi.md#ezsignsignatureGetObjectGetChildrenV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs
-[**ezsignsignatureGetObjectV1**](EzsignsignatureApi.md#ezsignsignatureGetObjectV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
+[**ezsignsignatureCreateObjectV1()**](EzsignsignatureApi.md#ezsignsignatureCreateObjectV1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
+[**ezsignsignatureDeleteObjectV1()**](EzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
+[**ezsignsignatureEditObjectV1()**](EzsignsignatureApi.md#ezsignsignatureEditObjectV1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Modify an existing Ezsignsignature
+[**ezsignsignatureGetObjectGetChildrenV1()**](EzsignsignatureApi.md#ezsignsignatureGetObjectGetChildrenV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs
+[**ezsignsignatureGetObjectV1()**](EzsignsignatureApi.md#ezsignsignatureGetObjectV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
 
 
+## `ezsignsignatureCreateObjectV1()`
 
-## ezsignsignatureCreateObjectV1
-
-> \eZmaxAPI\Model\EzsignsignatureCreateObjectV1Response ezsignsignatureCreateObjectV1($ezsignsignatureCreateObjectV1Request)
+```php
+ezsignsignatureCreateObjectV1($ezsignsignatureCreateObjectV1Request): \eZmaxAPI\Model\EzsignsignatureCreateObjectV1Response
+```
 
 Create a new Ezsignsignature
 
@@ -39,7 +40,7 @@ $apiInstance = new eZmaxAPI\Api\EzsignsignatureApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ezsignsignatureCreateObjectV1Request = array(new \eZmaxAPI\Model\EzsignsignatureCreateObjectV1Request()); // \eZmaxAPI\Model\EzsignsignatureCreateObjectV1Request[] | 
+$ezsignsignatureCreateObjectV1Request = array(new \eZmaxAPI\Model\EzsignsignatureCreateObjectV1Request()); // \eZmaxAPI\Model\EzsignsignatureCreateObjectV1Request[]
 
 try {
     $result = $apiInstance->ezsignsignatureCreateObjectV1($ezsignsignatureCreateObjectV1Request);
@@ -47,11 +48,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignsignatureApi->ezsignsignatureCreateObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -67,17 +66,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignsignatureDeleteObjectV1()`
 
-## ezsignsignatureDeleteObjectV1
-
-> \eZmaxAPI\Model\EzsignsignatureDeleteObjectV1Response ezsignsignatureDeleteObjectV1($pkiEzsignsignatureID)
+```php
+ezsignsignatureDeleteObjectV1($pkiEzsignsignatureID): \eZmaxAPI\Model\EzsignsignatureDeleteObjectV1Response
+```
 
 Delete an existing Ezsignsignature
 
@@ -108,11 +108,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignsignatureApi->ezsignsignatureDeleteObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -129,16 +127,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignsignatureEditObjectV1()`
 
-## ezsignsignatureEditObjectV1
-
-> \eZmaxAPI\Model\EzsignsignatureEditObjectV1Response ezsignsignatureEditObjectV1($pkiEzsignsignatureID, $ezsignsignatureEditObjectV1Request)
+```php
+ezsignsignatureEditObjectV1($pkiEzsignsignatureID, $ezsignsignatureEditObjectV1Request): \eZmaxAPI\Model\EzsignsignatureEditObjectV1Response
+```
 
 Modify an existing Ezsignsignature
 
@@ -162,7 +161,7 @@ $apiInstance = new eZmaxAPI\Api\EzsignsignatureApi(
     $config
 );
 $pkiEzsignsignatureID = 56; // int | The unique ID of the Ezsignsignature
-$ezsignsignatureEditObjectV1Request = new \eZmaxAPI\Model\EzsignsignatureEditObjectV1Request(); // \eZmaxAPI\Model\EzsignsignatureEditObjectV1Request | 
+$ezsignsignatureEditObjectV1Request = new \eZmaxAPI\Model\EzsignsignatureEditObjectV1Request(); // \eZmaxAPI\Model\EzsignsignatureEditObjectV1Request
 
 try {
     $result = $apiInstance->ezsignsignatureEditObjectV1($pkiEzsignsignatureID, $ezsignsignatureEditObjectV1Request);
@@ -170,11 +169,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignsignatureApi->ezsignsignatureEditObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,17 +188,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignsignatureGetObjectGetChildrenV1()`
 
-## ezsignsignatureGetObjectGetChildrenV1
-
-> ezsignsignatureGetObjectGetChildrenV1($pkiEzsignsignatureID)
+```php
+ezsignsignatureGetObjectGetChildrenV1($pkiEzsignsignatureID)
+```
 
 Retrieve an existing Ezsignsignature's children IDs
 
@@ -231,11 +229,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignsignatureApi->ezsignsignatureGetObjectGetChildrenV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -252,16 +248,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignsignatureGetObjectV1()`
 
-## ezsignsignatureGetObjectV1
-
-> \eZmaxAPI\Model\EzsignsignatureGetObjectV1Response ezsignsignatureGetObjectV1($pkiEzsignsignatureID)
+```php
+ezsignsignatureGetObjectV1($pkiEzsignsignatureID): \eZmaxAPI\Model\EzsignsignatureGetObjectV1Response
+```
 
 Retrieve an existing Ezsignsignature
 
@@ -292,11 +289,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsignsignatureApi->ezsignsignatureGetObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -313,9 +308,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

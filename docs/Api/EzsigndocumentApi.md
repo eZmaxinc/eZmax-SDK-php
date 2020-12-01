@@ -1,21 +1,22 @@
 # eZmaxAPI\EzsigndocumentApi
 
-All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ezsigndocumentCreateObjectV1**](EzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
-[**ezsigndocumentDeleteObjectV1**](EzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
-[**ezsigndocumentEditObjectV1**](EzsigndocumentApi.md#ezsigndocumentEditObjectV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Modify an existing Ezsigndocument
-[**ezsigndocumentGetDownloadUrlV1**](EzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
-[**ezsigndocumentGetObjectGetChildrenV1**](EzsigndocumentApi.md#ezsigndocumentGetObjectGetChildrenV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs
-[**ezsigndocumentGetObjectV1**](EzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
+[**ezsigndocumentCreateObjectV1()**](EzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
+[**ezsigndocumentDeleteObjectV1()**](EzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
+[**ezsigndocumentEditObjectV1()**](EzsigndocumentApi.md#ezsigndocumentEditObjectV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Modify an existing Ezsigndocument
+[**ezsigndocumentGetDownloadUrlV1()**](EzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
+[**ezsigndocumentGetObjectGetChildrenV1()**](EzsigndocumentApi.md#ezsigndocumentGetObjectGetChildrenV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs
+[**ezsigndocumentGetObjectV1()**](EzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
 
 
+## `ezsigndocumentCreateObjectV1()`
 
-## ezsigndocumentCreateObjectV1
-
-> \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Response ezsigndocumentCreateObjectV1($ezsigndocumentCreateObjectV1Request)
+```php
+ezsigndocumentCreateObjectV1($ezsigndocumentCreateObjectV1Request): \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Response
+```
 
 Create a new Ezsigndocument
 
@@ -40,7 +41,7 @@ $apiInstance = new eZmaxAPI\Api\EzsigndocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ezsigndocumentCreateObjectV1Request = array(new \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Request()); // \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Request[] | 
+$ezsigndocumentCreateObjectV1Request = array(new \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Request()); // \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Request[]
 
 try {
     $result = $apiInstance->ezsigndocumentCreateObjectV1($ezsigndocumentCreateObjectV1Request);
@@ -48,11 +49,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsigndocumentApi->ezsigndocumentCreateObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -68,17 +67,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigndocumentDeleteObjectV1()`
 
-## ezsigndocumentDeleteObjectV1
-
-> \eZmaxAPI\Model\EzsigndocumentDeleteObjectV1Response ezsigndocumentDeleteObjectV1($pkiEzsigndocumentID)
+```php
+ezsigndocumentDeleteObjectV1($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentDeleteObjectV1Response
+```
 
 Delete an existing Ezsigndocument
 
@@ -109,11 +109,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsigndocumentApi->ezsigndocumentDeleteObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,16 +128,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigndocumentEditObjectV1()`
 
-## ezsigndocumentEditObjectV1
-
-> \eZmaxAPI\Model\EzsigndocumentEditObjectV1Response ezsigndocumentEditObjectV1($pkiEzsigndocumentID, $ezsigndocumentEditObjectV1Request)
+```php
+ezsigndocumentEditObjectV1($pkiEzsigndocumentID, $ezsigndocumentEditObjectV1Request): \eZmaxAPI\Model\EzsigndocumentEditObjectV1Response
+```
 
 Modify an existing Ezsigndocument
 
@@ -163,7 +162,7 @@ $apiInstance = new eZmaxAPI\Api\EzsigndocumentApi(
     $config
 );
 $pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
-$ezsigndocumentEditObjectV1Request = new \eZmaxAPI\Model\EzsigndocumentEditObjectV1Request(); // \eZmaxAPI\Model\EzsigndocumentEditObjectV1Request | 
+$ezsigndocumentEditObjectV1Request = new \eZmaxAPI\Model\EzsigndocumentEditObjectV1Request(); // \eZmaxAPI\Model\EzsigndocumentEditObjectV1Request
 
 try {
     $result = $apiInstance->ezsigndocumentEditObjectV1($pkiEzsigndocumentID, $ezsigndocumentEditObjectV1Request);
@@ -171,11 +170,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsigndocumentApi->ezsigndocumentEditObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -192,17 +189,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigndocumentGetDownloadUrlV1()`
 
-## ezsigndocumentGetDownloadUrlV1
-
-> \eZmaxAPI\Model\EzsigndocumentGetDownloadUrlV1Response ezsigndocumentGetDownloadUrlV1($pkiEzsigndocumentID, $eDocumentType)
+```php
+ezsigndocumentGetDownloadUrlV1($pkiEzsigndocumentID, $eDocumentType): \eZmaxAPI\Model\EzsigndocumentGetDownloadUrlV1Response
+```
 
 Retrieve a URL to download documents.
 
@@ -236,11 +234,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsigndocumentApi->ezsigndocumentGetDownloadUrlV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -258,16 +254,17 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigndocumentGetObjectGetChildrenV1()`
 
-## ezsigndocumentGetObjectGetChildrenV1
-
-> ezsigndocumentGetObjectGetChildrenV1($pkiEzsigndocumentID)
+```php
+ezsigndocumentGetObjectGetChildrenV1($pkiEzsigndocumentID)
+```
 
 Retrieve an existing Ezsigndocument's children IDs
 
@@ -297,11 +294,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsigndocumentApi->ezsigndocumentGetObjectGetChildrenV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -318,16 +313,17 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigndocumentGetObjectV1()`
 
-## ezsigndocumentGetObjectV1
-
-> \eZmaxAPI\Model\EzsigndocumentGetObjectV1Response ezsigndocumentGetObjectV1($pkiEzsigndocumentID)
+```php
+ezsigndocumentGetObjectV1($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentGetObjectV1Response
+```
 
 Retrieve an existing Ezsigndocument
 
@@ -358,11 +354,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling EzsigndocumentApi->ezsigndocumentGetObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -379,9 +373,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

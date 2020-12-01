@@ -1,16 +1,17 @@
 # eZmaxAPI\FranchisebrokerApi
 
-All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**franchisebrokerGetAutocompleteV1**](FranchisebrokerApi.md#franchisebrokerGetAutocompleteV1) | **GET** /1/object/franchisebroker/getAutocomplete/{sSelector} | Retrieve Franchisebrokers and IDs
+[**franchisebrokerGetAutocompleteV1()**](FranchisebrokerApi.md#franchisebrokerGetAutocompleteV1) | **GET** /1/object/franchisebroker/getAutocomplete/{sSelector} | Retrieve Franchisebrokers and IDs
 
 
+## `franchisebrokerGetAutocompleteV1()`
 
-## franchisebrokerGetAutocompleteV1
-
-> \eZmaxAPI\Model\CommonGetAutocompleteV1Response franchisebrokerGetAutocompleteV1($sSelector, $sQuery)
+```php
+franchisebrokerGetAutocompleteV1($sSelector, $sQuery): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
+```
 
 Retrieve Franchisebrokers and IDs
 
@@ -44,11 +45,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FranchisebrokerApi->franchisebrokerGetAutocompleteV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -66,9 +65,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

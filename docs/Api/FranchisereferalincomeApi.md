@@ -1,16 +1,17 @@
 # eZmaxAPI\FranchisereferalincomeApi
 
-All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**franchisereferalincomeCreateObjectV1**](FranchisereferalincomeApi.md#franchisereferalincomeCreateObjectV1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome
+[**franchisereferalincomeCreateObjectV1()**](FranchisereferalincomeApi.md#franchisereferalincomeCreateObjectV1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome
 
 
+## `franchisereferalincomeCreateObjectV1()`
 
-## franchisereferalincomeCreateObjectV1
-
-> \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response franchisereferalincomeCreateObjectV1($franchisereferalincomeCreateObjectV1Request)
+```php
+franchisereferalincomeCreateObjectV1($franchisereferalincomeCreateObjectV1Request): \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response
+```
 
 Create a new Franchisereferalincome
 
@@ -35,7 +36,7 @@ $apiInstance = new eZmaxAPI\Api\FranchisereferalincomeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$franchisereferalincomeCreateObjectV1Request = array(new \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request()); // \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] | 
+$franchisereferalincomeCreateObjectV1Request = array(new \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request()); // \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[]
 
 try {
     $result = $apiInstance->franchisereferalincomeCreateObjectV1($franchisereferalincomeCreateObjectV1Request);
@@ -43,11 +44,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FranchisereferalincomeApi->franchisereferalincomeCreateObjectV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -63,10 +62,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

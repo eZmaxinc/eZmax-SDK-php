@@ -1,16 +1,17 @@
 # eZmaxAPI\PeriodApi
 
-All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**periodGetAutocompleteV1**](PeriodApi.md#periodGetAutocompleteV1) | **GET** /1/object/period/getAutocomplete/{sSelector} | Retrieve Periods and IDs
+[**periodGetAutocompleteV1()**](PeriodApi.md#periodGetAutocompleteV1) | **GET** /1/object/period/getAutocomplete/{sSelector} | Retrieve Periods and IDs
 
 
+## `periodGetAutocompleteV1()`
 
-## periodGetAutocompleteV1
-
-> \eZmaxAPI\Model\CommonGetAutocompleteV1Response periodGetAutocompleteV1($sSelector, $sQuery)
+```php
+periodGetAutocompleteV1($sSelector, $sQuery): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
+```
 
 Retrieve Periods and IDs
 
@@ -44,11 +45,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling PeriodApi->periodGetAutocompleteV1: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -66,9 +65,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-
