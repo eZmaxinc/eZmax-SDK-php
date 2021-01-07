@@ -6,6 +6,7 @@ README.md
 composer.json
 docs/Api/ModuleUserApi.md
 docs/Api/ObjectActivesessionApi.md
+docs/Api/ObjectApikeyApi.md
 docs/Api/ObjectEzsigndocumentApi.md
 docs/Api/ObjectEzsignfolderApi.md
 docs/Api/ObjectEzsignfoldersignerassociationApi.md
@@ -17,6 +18,12 @@ docs/Api/ObjectPeriodApi.md
 docs/Model/ActivesessionGetCurrentV1Response.md
 docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md
 docs/Model/AddressRequest.md
+docs/Model/ApikeyCreateObjectV1Request.md
+docs/Model/ApikeyCreateObjectV1Response.md
+docs/Model/ApikeyCreateObjectV1ResponseMPayload.md
+docs/Model/ApikeyRequest.md
+docs/Model/ApikeyRequestCompound.md
+docs/Model/ApikeyResponse.md
 docs/Model/AttemptResponse.md
 docs/Model/CommonAudit.md
 docs/Model/CommonGetAutocompleteV1Response.md
@@ -98,6 +105,7 @@ docs/Model/FranchisereferalincomeCreateObjectV1Response.md
 docs/Model/FranchisereferalincomeCreateObjectV1ResponseMPayload.md
 docs/Model/FranchisereferalincomeRequest.md
 docs/Model/FranchisereferalincomeRequestCompound.md
+docs/Model/MultilingualApikeyDescription.md
 docs/Model/PhoneRequest.md
 docs/Model/UserCreateEzsignuserV1Request.md
 docs/Model/UserCreateEzsignuserV1Response.md
@@ -115,6 +123,7 @@ docs/Model/WebsiteRequest.md
 git_push.sh
 lib/Api/ModuleUserApi.php
 lib/Api/ObjectActivesessionApi.php
+lib/Api/ObjectApikeyApi.php
 lib/Api/ObjectEzsigndocumentApi.php
 lib/Api/ObjectEzsignfolderApi.php
 lib/Api/ObjectEzsignfoldersignerassociationApi.php
@@ -129,6 +138,12 @@ lib/HeaderSelector.php
 lib/Model/ActivesessionGetCurrentV1Response.php
 lib/Model/ActivesessionGetCurrentV1ResponseMPayload.php
 lib/Model/AddressRequest.php
+lib/Model/ApikeyCreateObjectV1Request.php
+lib/Model/ApikeyCreateObjectV1Response.php
+lib/Model/ApikeyCreateObjectV1ResponseMPayload.php
+lib/Model/ApikeyRequest.php
+lib/Model/ApikeyRequestCompound.php
+lib/Model/ApikeyResponse.php
 lib/Model/AttemptResponse.php
 lib/Model/CommonAudit.php
 lib/Model/CommonGetAutocompleteV1Response.php
@@ -211,6 +226,7 @@ lib/Model/FranchisereferalincomeCreateObjectV1ResponseMPayload.php
 lib/Model/FranchisereferalincomeRequest.php
 lib/Model/FranchisereferalincomeRequestCompound.php
 lib/Model/ModelInterface.php
+lib/Model/MultilingualApikeyDescription.php
 lib/Model/PhoneRequest.php
 lib/Model/UserCreateEzsignuserV1Request.php
 lib/Model/UserCreateEzsignuserV1Response.php
@@ -229,6 +245,7 @@ lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/ModuleUserApiTest.php
 test/Api/ObjectActivesessionApiTest.php
+test/Api/ObjectApikeyApiTest.php
 test/Api/ObjectEzsigndocumentApiTest.php
 test/Api/ObjectEzsignfolderApiTest.php
 test/Api/ObjectEzsignfoldersignerassociationApiTest.php
@@ -240,6 +257,12 @@ test/Api/ObjectPeriodApiTest.php
 test/Model/ActivesessionGetCurrentV1ResponseMPayloadTest.php
 test/Model/ActivesessionGetCurrentV1ResponseTest.php
 test/Model/AddressRequestTest.php
+test/Model/ApikeyCreateObjectV1RequestTest.php
+test/Model/ApikeyCreateObjectV1ResponseMPayloadTest.php
+test/Model/ApikeyCreateObjectV1ResponseTest.php
+test/Model/ApikeyRequestCompoundTest.php
+test/Model/ApikeyRequestTest.php
+test/Model/ApikeyResponseTest.php
 test/Model/AttemptResponseTest.php
 test/Model/CommonAuditTest.php
 test/Model/CommonGetAutocompleteV1ResponseMPayloadTest.php
@@ -321,6 +344,7 @@ test/Model/FranchisereferalincomeCreateObjectV1ResponseMPayloadTest.php
 test/Model/FranchisereferalincomeCreateObjectV1ResponseTest.php
 test/Model/FranchisereferalincomeRequestCompoundTest.php
 test/Model/FranchisereferalincomeRequestTest.php
+test/Model/MultilingualApikeyDescriptionTest.php
 test/Model/PhoneRequestTest.php
 test/Model/UserCreateEzsignuserV1RequestTest.php
 test/Model/UserCreateEzsignuserV1ResponseMPayloadTest.php
