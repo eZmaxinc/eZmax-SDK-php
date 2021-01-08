@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **sUserFirstname** | **string** | The First name of the user |
 **sUserLastname** | **string** | The Last name of the user |
 **sUserLoginname** | **string** | The Login name of the User. |
+**objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

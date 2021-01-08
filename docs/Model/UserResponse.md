@@ -10,11 +10,6 @@ Name | Type | Description | Notes
 **sUserFirstname** | **string** | The First name of the user |
 **sUserLastname** | **string** | The Last name of the user |
 **sUserLoginname** | **string** | The Login name of the User. |
-**fkiUserIDCreated** | **int** | The id of the User that created the object. |
-**fkiUserIDModified** | **int** | The id of the User that made the last modification on the object. |
-**fkiApikeyIDCreated** | **int** | The id of the API Key that created the object. | [optional]
-**fkiApikeyIDModified** | **int** | The id of the API Key that made the last modification on the object. | [optional]
-**dtCreatedDate** | **string** | Represent a Date Time. The timezone is the one configured in the User&#39;s profile. |
-**dtModifiedDate** | **string** | Represent a Date Time. The timezone is the one configured in the User&#39;s profile. |
+**objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
