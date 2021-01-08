@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **dtEzsignfolderSentdate** | **string** | The date and time at which the Ezsign folder was sent the last time. |
 **eEzsignfolderStep** | [**\eZmaxAPI\Model\FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |
 **dtEzsignfolderClose** | **string** | The date and time at which the folder was closed. Either by applying the last signature or by completing it prematurely. |
+**objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
