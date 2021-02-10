@@ -4,6 +4,7 @@
 .travis.yml
 README.md
 composer.json
+docs/Api/GlobalCustomerApi.md
 docs/Api/ModuleUserApi.md
 docs/Api/ObjectActivesessionApi.md
 docs/Api/ObjectApikeyApi.md
@@ -105,6 +106,7 @@ docs/Model/FranchisereferalincomeCreateObjectV1Response.md
 docs/Model/FranchisereferalincomeCreateObjectV1ResponseMPayload.md
 docs/Model/FranchisereferalincomeRequest.md
 docs/Model/FranchisereferalincomeRequestCompound.md
+docs/Model/GlobalCustomerGetEndpointV1Response.md
 docs/Model/MultilingualApikeyDescription.md
 docs/Model/PhoneRequest.md
 docs/Model/UserCreateEzsignuserV1Request.md
@@ -121,6 +123,7 @@ docs/Model/WebhookUserUserCreated.md
 docs/Model/WebhookUserUserCreatedAllOf.md
 docs/Model/WebsiteRequest.md
 git_push.sh
+lib/Api/GlobalCustomerApi.php
 lib/Api/ModuleUserApi.php
 lib/Api/ObjectActivesessionApi.php
 lib/Api/ObjectApikeyApi.php
@@ -225,6 +228,7 @@ lib/Model/FranchisereferalincomeCreateObjectV1Response.php
 lib/Model/FranchisereferalincomeCreateObjectV1ResponseMPayload.php
 lib/Model/FranchisereferalincomeRequest.php
 lib/Model/FranchisereferalincomeRequestCompound.php
+lib/Model/GlobalCustomerGetEndpointV1Response.php
 lib/Model/ModelInterface.php
 lib/Model/MultilingualApikeyDescription.php
 lib/Model/PhoneRequest.php
@@ -243,6 +247,7 @@ lib/Model/WebhookUserUserCreatedAllOf.php
 lib/Model/WebsiteRequest.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/GlobalCustomerApiTest.php
 test/Api/ModuleUserApiTest.php
 test/Api/ObjectActivesessionApiTest.php
 test/Api/ObjectApikeyApiTest.php
@@ -344,6 +349,7 @@ test/Model/FranchisereferalincomeCreateObjectV1ResponseMPayloadTest.php
 test/Model/FranchisereferalincomeCreateObjectV1ResponseTest.php
 test/Model/FranchisereferalincomeRequestCompoundTest.php
 test/Model/FranchisereferalincomeRequestTest.php
+test/Model/GlobalCustomerGetEndpointV1ResponseTest.php
 test/Model/MultilingualApikeyDescriptionTest.php
 test/Model/PhoneRequestTest.php
 test/Model/UserCreateEzsignuserV1RequestTest.php
