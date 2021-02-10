@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**ezsignsignatureCreateObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 [**ezsignsignatureDeleteObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
 [**ezsignsignatureEditObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureEditObjectV1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Modify an existing Ezsignsignature
-[**ezsignsignatureGetObjectGetChildrenV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectGetChildrenV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs
+[**ezsignsignatureGetChildrenV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetChildrenV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs
 [**ezsignsignatureGetObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
 
 
@@ -195,10 +195,10 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsignsignatureGetObjectGetChildrenV1()`
+## `ezsignsignatureGetChildrenV1()`
 
 ```php
-ezsignsignatureGetObjectGetChildrenV1($pkiEzsignsignatureID)
+ezsignsignatureGetChildrenV1($pkiEzsignsignatureID)
 ```
 
 Retrieve an existing Ezsignsignature's children IDs
@@ -225,9 +225,9 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignsignatureApi(
 $pkiEzsignsignatureID = 56; // int | The unique ID of the Ezsignsignature
 
 try {
-    $apiInstance->ezsignsignatureGetObjectGetChildrenV1($pkiEzsignsignatureID);
+    $apiInstance->ezsignsignatureGetChildrenV1($pkiEzsignsignatureID);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignsignatureApi->ezsignsignatureGetObjectGetChildrenV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignsignatureApi->ezsignsignatureGetChildrenV1: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
