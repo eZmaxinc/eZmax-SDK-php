@@ -5,6 +5,7 @@
 README.md
 composer.json
 docs/Api/GlobalCustomerApi.md
+docs/Api/ModuleSsprApi.md
 docs/Api/ModuleUserApi.md
 docs/Api/ObjectActivesessionApi.md
 docs/Api/ObjectApikeyApi.md
@@ -124,6 +125,7 @@ docs/Model/WebhookUserUserCreatedAllOf.md
 docs/Model/WebsiteRequest.md
 git_push.sh
 lib/Api/GlobalCustomerApi.php
+lib/Api/ModuleSsprApi.php
 lib/Api/ModuleUserApi.php
 lib/Api/ObjectActivesessionApi.php
 lib/Api/ObjectApikeyApi.php
@@ -248,6 +250,7 @@ lib/Model/WebsiteRequest.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/GlobalCustomerApiTest.php
+test/Api/ModuleSsprApiTest.php
 test/Api/ModuleUserApiTest.php
 test/Api/ObjectActivesessionApiTest.php
 test/Api/ObjectApikeyApiTest.php
