@@ -1,6 +1,6 @@
 <?php
 /**
- * ObjectApikeyApi
+ * ModuleSsprApi
  * PHP version 7.2
  *
  * @category Class
@@ -40,14 +40,14 @@ use eZmaxAPI\HeaderSelector;
 use eZmaxAPI\ObjectSerializer;
 
 /**
- * ObjectApikeyApi Class Doc Comment
+ * ModuleSsprApi Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ObjectApikeyApi
+class ModuleSsprApi
 {
     /**
      * @var ClientInterface
@@ -116,36 +116,33 @@ class ObjectApikeyApi
     }
 
     /**
-     * Operation apikeyCreateObjectV1
+     * Operation ssprRemindUsernamesV1
      *
-     * Create a new Apikey
+     * Remind of forgotten username(s)
      *
-     * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request apikeyCreateObjectV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\ApikeyCreateObjectV1Response
+     * @return void
      */
-    public function apikeyCreateObjectV1($apikeyCreateObjectV1Request)
+    public function ssprRemindUsernamesV1()
     {
-        list($response) = $this->apikeyCreateObjectV1WithHttpInfo($apikeyCreateObjectV1Request);
-        return $response;
+        $this->ssprRemindUsernamesV1WithHttpInfo();
     }
 
     /**
-     * Operation apikeyCreateObjectV1WithHttpInfo
+     * Operation ssprRemindUsernamesV1WithHttpInfo
      *
-     * Create a new Apikey
+     * Remind of forgotten username(s)
      *
-     * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\ApikeyCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apikeyCreateObjectV1WithHttpInfo($apikeyCreateObjectV1Request)
+    public function ssprRemindUsernamesV1WithHttpInfo()
     {
-        $request = $this->apikeyCreateObjectV1Request($apikeyCreateObjectV1Request);
+        $request = $this->ssprRemindUsernamesV1Request();
 
         try {
             $options = $this->createHttpClientOption();
@@ -175,42 +172,30 @@ class ObjectApikeyApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 201:
-                    if ('\eZmaxAPI\Model\ApikeyCreateObjectV1Response' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\ApikeyCreateObjectV1Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\eZmaxAPI\Model\ApikeyCreateObjectV1Response';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 201:
+                case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Model\ApikeyCreateObjectV1Response',
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -221,18 +206,17 @@ class ObjectApikeyApi
     }
 
     /**
-     * Operation apikeyCreateObjectV1Async
+     * Operation ssprRemindUsernamesV1Async
      *
-     * Create a new Apikey
+     * Remind of forgotten username(s)
      *
-     * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apikeyCreateObjectV1Async($apikeyCreateObjectV1Request)
+    public function ssprRemindUsernamesV1Async()
     {
-        return $this->apikeyCreateObjectV1AsyncWithHttpInfo($apikeyCreateObjectV1Request)
+        return $this->ssprRemindUsernamesV1AsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -241,36 +225,24 @@ class ObjectApikeyApi
     }
 
     /**
-     * Operation apikeyCreateObjectV1AsyncWithHttpInfo
+     * Operation ssprRemindUsernamesV1AsyncWithHttpInfo
      *
-     * Create a new Apikey
+     * Remind of forgotten username(s)
      *
-     * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apikeyCreateObjectV1AsyncWithHttpInfo($apikeyCreateObjectV1Request)
+    public function ssprRemindUsernamesV1AsyncWithHttpInfo()
     {
-        $returnType = '\eZmaxAPI\Model\ApikeyCreateObjectV1Response';
-        $request = $this->apikeyCreateObjectV1Request($apikeyCreateObjectV1Request);
+        $returnType = '';
+        $request = $this->ssprRemindUsernamesV1Request();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -290,23 +262,16 @@ class ObjectApikeyApi
     }
 
     /**
-     * Create request for operation 'apikeyCreateObjectV1'
+     * Create request for operation 'ssprRemindUsernamesV1'
      *
-     * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apikeyCreateObjectV1Request($apikeyCreateObjectV1Request)
+    public function ssprRemindUsernamesV1Request()
     {
-        // verify the required parameter 'apikeyCreateObjectV1Request' is set
-        if ($apikeyCreateObjectV1Request === null || (is_array($apikeyCreateObjectV1Request) && count($apikeyCreateObjectV1Request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $apikeyCreateObjectV1Request when calling apikeyCreateObjectV1'
-            );
-        }
 
-        $resourcePath = '/1/object/apikey';
+        $resourcePath = '/1/module/sspr/remindUsernames';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -324,18 +289,12 @@ class ObjectApikeyApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                []
             );
         }
 
         // for model (json/xml)
-        if (isset($apikeyCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($apikeyCreateObjectV1Request));
-            } else {
-                $httpBody = $apikeyCreateObjectV1Request;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
