@@ -48,8 +48,6 @@ docs/Model/EzsigndocumentCreateObjectV1Request.md
 docs/Model/EzsigndocumentCreateObjectV1Response.md
 docs/Model/EzsigndocumentCreateObjectV1ResponseMPayload.md
 docs/Model/EzsigndocumentDeleteObjectV1Response.md
-docs/Model/EzsigndocumentEditObjectV1Request.md
-docs/Model/EzsigndocumentEditObjectV1Response.md
 docs/Model/EzsigndocumentGetDownloadUrlV1Response.md
 docs/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md
 docs/Model/EzsigndocumentGetObjectV1Response.md
@@ -63,8 +61,6 @@ docs/Model/EzsignfolderCreateObjectV1Request.md
 docs/Model/EzsignfolderCreateObjectV1Response.md
 docs/Model/EzsignfolderCreateObjectV1ResponseMPayload.md
 docs/Model/EzsignfolderDeleteObjectV1Response.md
-docs/Model/EzsignfolderEditObjectV1Request.md
-docs/Model/EzsignfolderEditObjectV1Response.md
 docs/Model/EzsignfolderGetObjectV1Response.md
 docs/Model/EzsignfolderGetObjectV1ResponseMPayload.md
 docs/Model/EzsignfolderRequest.md
@@ -78,8 +74,6 @@ docs/Model/EzsignfoldersignerassociationCreateObjectV1Request.md
 docs/Model/EzsignfoldersignerassociationCreateObjectV1Response.md
 docs/Model/EzsignfoldersignerassociationCreateObjectV1ResponseMPayload.md
 docs/Model/EzsignfoldersignerassociationDeleteObjectV1Response.md
-docs/Model/EzsignfoldersignerassociationEditObjectV1Request.md
-docs/Model/EzsignfoldersignerassociationEditObjectV1Response.md
 docs/Model/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response.md
 docs/Model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.md
 docs/Model/EzsignfoldersignerassociationGetObjectV1Response.md
@@ -89,8 +83,6 @@ docs/Model/EzsignsignatureCreateObjectV1Request.md
 docs/Model/EzsignsignatureCreateObjectV1Response.md
 docs/Model/EzsignsignatureCreateObjectV1ResponseMPayload.md
 docs/Model/EzsignsignatureDeleteObjectV1Response.md
-docs/Model/EzsignsignatureEditObjectV1Request.md
-docs/Model/EzsignsignatureEditObjectV1Response.md
 docs/Model/EzsignsignatureGetObjectV1Response.md
 docs/Model/EzsignsignatureRequest.md
 docs/Model/EzsignsignatureRequestCompound.md
@@ -110,6 +102,14 @@ docs/Model/FranchisereferalincomeRequestCompound.md
 docs/Model/GlobalCustomerGetEndpointV1Response.md
 docs/Model/MultilingualApikeyDescription.md
 docs/Model/PhoneRequest.md
+docs/Model/UNUSEDEzsigndocumentEditObjectV1Request.md
+docs/Model/UNUSEDEzsigndocumentEditObjectV1Response.md
+docs/Model/UNUSEDEzsignfolderEditObjectV1Request.md
+docs/Model/UNUSEDEzsignfolderEditObjectV1Response.md
+docs/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.md
+docs/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.md
+docs/Model/UNUSEDEzsignsignatureEditObjectV1Request.md
+docs/Model/UNUSEDEzsignsignatureEditObjectV1Response.md
 docs/Model/UserCreateEzsignuserV1Request.md
 docs/Model/UserCreateEzsignuserV1Response.md
 docs/Model/UserCreateEzsignuserV1ResponseMPayload.md
@@ -171,8 +171,6 @@ lib/Model/EzsigndocumentCreateObjectV1Request.php
 lib/Model/EzsigndocumentCreateObjectV1Response.php
 lib/Model/EzsigndocumentCreateObjectV1ResponseMPayload.php
 lib/Model/EzsigndocumentDeleteObjectV1Response.php
-lib/Model/EzsigndocumentEditObjectV1Request.php
-lib/Model/EzsigndocumentEditObjectV1Response.php
 lib/Model/EzsigndocumentGetDownloadUrlV1Response.php
 lib/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.php
 lib/Model/EzsigndocumentGetObjectV1Response.php
@@ -186,8 +184,6 @@ lib/Model/EzsignfolderCreateObjectV1Request.php
 lib/Model/EzsignfolderCreateObjectV1Response.php
 lib/Model/EzsignfolderCreateObjectV1ResponseMPayload.php
 lib/Model/EzsignfolderDeleteObjectV1Response.php
-lib/Model/EzsignfolderEditObjectV1Request.php
-lib/Model/EzsignfolderEditObjectV1Response.php
 lib/Model/EzsignfolderGetObjectV1Response.php
 lib/Model/EzsignfolderGetObjectV1ResponseMPayload.php
 lib/Model/EzsignfolderRequest.php
@@ -201,8 +197,6 @@ lib/Model/EzsignfoldersignerassociationCreateObjectV1Request.php
 lib/Model/EzsignfoldersignerassociationCreateObjectV1Response.php
 lib/Model/EzsignfoldersignerassociationCreateObjectV1ResponseMPayload.php
 lib/Model/EzsignfoldersignerassociationDeleteObjectV1Response.php
-lib/Model/EzsignfoldersignerassociationEditObjectV1Request.php
-lib/Model/EzsignfoldersignerassociationEditObjectV1Response.php
 lib/Model/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response.php
 lib/Model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.php
 lib/Model/EzsignfoldersignerassociationGetObjectV1Response.php
@@ -212,8 +206,6 @@ lib/Model/EzsignsignatureCreateObjectV1Request.php
 lib/Model/EzsignsignatureCreateObjectV1Response.php
 lib/Model/EzsignsignatureCreateObjectV1ResponseMPayload.php
 lib/Model/EzsignsignatureDeleteObjectV1Response.php
-lib/Model/EzsignsignatureEditObjectV1Request.php
-lib/Model/EzsignsignatureEditObjectV1Response.php
 lib/Model/EzsignsignatureGetObjectV1Response.php
 lib/Model/EzsignsignatureRequest.php
 lib/Model/EzsignsignatureRequestCompound.php
@@ -234,6 +226,14 @@ lib/Model/GlobalCustomerGetEndpointV1Response.php
 lib/Model/ModelInterface.php
 lib/Model/MultilingualApikeyDescription.php
 lib/Model/PhoneRequest.php
+lib/Model/UNUSEDEzsigndocumentEditObjectV1Request.php
+lib/Model/UNUSEDEzsigndocumentEditObjectV1Response.php
+lib/Model/UNUSEDEzsignfolderEditObjectV1Request.php
+lib/Model/UNUSEDEzsignfolderEditObjectV1Response.php
+lib/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.php
+lib/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.php
+lib/Model/UNUSEDEzsignsignatureEditObjectV1Request.php
+lib/Model/UNUSEDEzsignsignatureEditObjectV1Response.php
 lib/Model/UserCreateEzsignuserV1Request.php
 lib/Model/UserCreateEzsignuserV1Response.php
 lib/Model/UserCreateEzsignuserV1ResponseMPayload.php
@@ -293,8 +293,6 @@ test/Model/EzsigndocumentCreateObjectV1RequestTest.php
 test/Model/EzsigndocumentCreateObjectV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentCreateObjectV1ResponseTest.php
 test/Model/EzsigndocumentDeleteObjectV1ResponseTest.php
-test/Model/EzsigndocumentEditObjectV1RequestTest.php
-test/Model/EzsigndocumentEditObjectV1ResponseTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseMPayloadTest.php
@@ -308,8 +306,6 @@ test/Model/EzsignfolderCreateObjectV1RequestTest.php
 test/Model/EzsignfolderCreateObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfolderCreateObjectV1ResponseTest.php
 test/Model/EzsignfolderDeleteObjectV1ResponseTest.php
-test/Model/EzsignfolderEditObjectV1RequestTest.php
-test/Model/EzsignfolderEditObjectV1ResponseTest.php
 test/Model/EzsignfolderGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfolderGetObjectV1ResponseTest.php
 test/Model/EzsignfolderRequestCompoundTest.php
@@ -323,8 +319,6 @@ test/Model/EzsignfoldersignerassociationCreateObjectV1RequestTest.php
 test/Model/EzsignfoldersignerassociationCreateObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfoldersignerassociationCreateObjectV1ResponseTest.php
 test/Model/EzsignfoldersignerassociationDeleteObjectV1ResponseTest.php
-test/Model/EzsignfoldersignerassociationEditObjectV1RequestTest.php
-test/Model/EzsignfoldersignerassociationEditObjectV1ResponseTest.php
 test/Model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayloadTest.php
 test/Model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseTest.php
 test/Model/EzsignfoldersignerassociationGetObjectV1ResponseTest.php
@@ -334,8 +328,6 @@ test/Model/EzsignsignatureCreateObjectV1RequestTest.php
 test/Model/EzsignsignatureCreateObjectV1ResponseMPayloadTest.php
 test/Model/EzsignsignatureCreateObjectV1ResponseTest.php
 test/Model/EzsignsignatureDeleteObjectV1ResponseTest.php
-test/Model/EzsignsignatureEditObjectV1RequestTest.php
-test/Model/EzsignsignatureEditObjectV1ResponseTest.php
 test/Model/EzsignsignatureGetObjectV1ResponseTest.php
 test/Model/EzsignsignatureRequestCompoundTest.php
 test/Model/EzsignsignatureRequestTest.php
@@ -355,6 +347,14 @@ test/Model/FranchisereferalincomeRequestTest.php
 test/Model/GlobalCustomerGetEndpointV1ResponseTest.php
 test/Model/MultilingualApikeyDescriptionTest.php
 test/Model/PhoneRequestTest.php
+test/Model/UNUSEDEzsigndocumentEditObjectV1RequestTest.php
+test/Model/UNUSEDEzsigndocumentEditObjectV1ResponseTest.php
+test/Model/UNUSEDEzsignfolderEditObjectV1RequestTest.php
+test/Model/UNUSEDEzsignfolderEditObjectV1ResponseTest.php
+test/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1RequestTest.php
+test/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1ResponseTest.php
+test/Model/UNUSEDEzsignsignatureEditObjectV1RequestTest.php
+test/Model/UNUSEDEzsignsignatureEditObjectV1ResponseTest.php
 test/Model/UserCreateEzsignuserV1RequestTest.php
 test/Model/UserCreateEzsignuserV1ResponseMPayloadTest.php
 test/Model/UserCreateEzsignuserV1ResponseTest.php

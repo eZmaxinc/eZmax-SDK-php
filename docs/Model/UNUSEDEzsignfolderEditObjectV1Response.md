@@ -1,4 +1,4 @@
-# # EzsignsignatureEditObjectV1Response
+# # UNUSEDEzsignfolderEditObjectV1Response
 
 ## Properties
 
