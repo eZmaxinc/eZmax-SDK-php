@@ -1,7 +1,7 @@
 {
     "name": "ezmaxinc/ezmax-sdk-php",
-    "version": "1.0.30",
-    "description": "This API expose all the functionnalities for the eZmax and eZsign application.",
+    "version": "1.0.31",
+    "description": "This API expose all the functionnalities for the eZmax and eZsign applications.",
     "keywords": [
         "openapitools",
         "openapi-generator",
