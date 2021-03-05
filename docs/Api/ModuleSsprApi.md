@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**ssprSendUsernamesV1()**](ModuleSsprApi.md#ssprSendUsernamesV1) | **POST** /1/module/sspr/sendUsernames | Send username(s)
 [**ssprUnlockAccountRequestV1()**](ModuleSsprApi.md#ssprUnlockAccountRequestV1) | **POST** /1/module/sspr/unlockAccountRequest | Unlock Account Request
 [**ssprUnlockAccountV1()**](ModuleSsprApi.md#ssprUnlockAccountV1) | **POST** /1/module/sspr/unlockAccount | Unlock Account
+[**ssprValidateTokenV1()**](ModuleSsprApi.md#ssprValidateTokenV1) | **POST** /1/module/sspr/validateToken | Validate Token
 
 
 ## `ssprResetPasswordRequestV1()`
@@ -298,6 +299,67 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ssprUnlockAccountV1Request** | [**\eZmaxAPI\Model\SsprUnlockAccountV1Request**](../Model/SsprUnlockAccountV1Request.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ssprValidateTokenV1()`
+
+```php
+ssprValidateTokenV1($ssprValidateTokenV1Request)
+```
+
+Validate Token
+
+This endpoint validates if a Token is valid and not expired. If the token has less than an hour to its life, the TTL is reset to 1 hour.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ModuleSsprApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ssprValidateTokenV1Request = new \eZmaxAPI\Model\SsprValidateTokenV1Request(); // \eZmaxAPI\Model\SsprValidateTokenV1Request
+
+try {
+    $apiInstance->ssprValidateTokenV1($ssprValidateTokenV1Request);
+} catch (Exception $e) {
+    echo 'Exception when calling ModuleSsprApi->ssprValidateTokenV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ssprValidateTokenV1Request** | [**\eZmaxAPI\Model\SsprValidateTokenV1Request**](../Model/SsprValidateTokenV1Request.md)|  |
 
 ### Return type
 

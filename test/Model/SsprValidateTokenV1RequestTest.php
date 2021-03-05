@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayloadTest
+ * SsprValidateTokenV1RequestTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CommonResponseObjDebugPayloadTest Class Doc Comment
+ * SsprValidateTokenV1RequestTest Class Doc Comment
  *
  * @category    Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description Request for the /1/module/sspr/validateToken API Request
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CommonResponseObjDebugPayloadTest extends TestCase
+class SsprValidateTokenV1RequestTest extends TestCase
 {
 
     /**
@@ -72,36 +72,63 @@ class CommonResponseObjDebugPayloadTest extends TestCase
     }
 
     /**
-     * Test "CommonResponseObjDebugPayload"
+     * Test "SsprValidateTokenV1Request"
      */
-    public function testCommonResponseObjDebugPayload()
+    public function testSsprValidateTokenV1Request()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iVersionMin"
+     * Test attribute "pksCustomerCode"
      */
-    public function testPropertyIVersionMin()
+    public function testPropertyPksCustomerCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iVersionMax"
+     * Test attribute "fkiLanguageID"
      */
-    public function testPropertyIVersionMax()
+    public function testPropertyFkiLanguageID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "aRequiredPermissions"
+     * Test attribute "eUserTypeSSPR"
      */
-    public function testPropertyARequiredPermissions()
+    public function testPropertyEUserTypeSSPR()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEmailAddress"
+     */
+    public function testPropertySEmailAddress()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sUserLoginname"
+     */
+    public function testPropertySUserLoginname()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "binUserSSPRtoken"
+     */
+    public function testPropertyBinUserSSPRtoken()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -1,6 +1,6 @@
 <?php
 /**
- * UserResponseAllOf
+ * SsprValidateTokenV1Request
  *
  * PHP version 7.2
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UserResponseAllOf Class Doc Comment
+ * SsprValidateTokenV1Request Class Doc Comment
  *
  * @category Class
+ * @description Request for the /1/module/sspr/validateToken API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
+class SsprValidateTokenV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'user_Response_allOf';
+    protected static $openAPIModelName = 'sspr-validateToken-v1-Request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,13 +61,12 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiUserID' => 'int',
+        'pksCustomerCode' => 'string',
         'fkiLanguageID' => 'int',
-        'eUserType' => '\eZmaxAPI\Model\FieldEUserType',
-        'sUserFirstname' => 'string',
-        'sUserLastname' => 'string',
+        'eUserTypeSSPR' => '\eZmaxAPI\Model\FieldEUserTypeSSPR',
+        'sEmailAddress' => 'string',
         'sUserLoginname' => 'string',
-        'objAudit' => '\eZmaxAPI\Model\CommonAudit'
+        'binUserSSPRtoken' => 'string'
     ];
 
     /**
@@ -77,13 +77,12 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiUserID' => null,
+        'pksCustomerCode' => null,
         'fkiLanguageID' => null,
-        'eUserType' => null,
-        'sUserFirstname' => null,
-        'sUserLastname' => null,
+        'eUserTypeSSPR' => null,
+        'sEmailAddress' => null,
         'sUserLoginname' => null,
-        'objAudit' => null
+        'binUserSSPRtoken' => null
     ];
 
     /**
@@ -113,13 +112,12 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiUserID' => 'pkiUserID',
+        'pksCustomerCode' => 'pksCustomerCode',
         'fkiLanguageID' => 'fkiLanguageID',
-        'eUserType' => 'eUserType',
-        'sUserFirstname' => 'sUserFirstname',
-        'sUserLastname' => 'sUserLastname',
+        'eUserTypeSSPR' => 'eUserTypeSSPR',
+        'sEmailAddress' => 'sEmailAddress',
         'sUserLoginname' => 'sUserLoginname',
-        'objAudit' => 'objAudit'
+        'binUserSSPRtoken' => 'binUserSSPRtoken'
     ];
 
     /**
@@ -128,13 +126,12 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'pkiUserID' => 'setPkiUserID',
+        'pksCustomerCode' => 'setPksCustomerCode',
         'fkiLanguageID' => 'setFkiLanguageID',
-        'eUserType' => 'setEUserType',
-        'sUserFirstname' => 'setSUserFirstname',
-        'sUserLastname' => 'setSUserLastname',
+        'eUserTypeSSPR' => 'setEUserTypeSSPR',
+        'sEmailAddress' => 'setSEmailAddress',
         'sUserLoginname' => 'setSUserLoginname',
-        'objAudit' => 'setObjAudit'
+        'binUserSSPRtoken' => 'setBinUserSSPRtoken'
     ];
 
     /**
@@ -143,13 +140,12 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'pkiUserID' => 'getPkiUserID',
+        'pksCustomerCode' => 'getPksCustomerCode',
         'fkiLanguageID' => 'getFkiLanguageID',
-        'eUserType' => 'getEUserType',
-        'sUserFirstname' => 'getSUserFirstname',
-        'sUserLastname' => 'getSUserLastname',
+        'eUserTypeSSPR' => 'getEUserTypeSSPR',
+        'sEmailAddress' => 'getSEmailAddress',
         'sUserLoginname' => 'getSUserLoginname',
-        'objAudit' => 'getObjAudit'
+        'binUserSSPRtoken' => 'getBinUserSSPRtoken'
     ];
 
     /**
@@ -212,13 +208,12 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['pkiUserID'] = $data['pkiUserID'] ?? null;
+        $this->container['pksCustomerCode'] = $data['pksCustomerCode'] ?? null;
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
-        $this->container['eUserType'] = $data['eUserType'] ?? null;
-        $this->container['sUserFirstname'] = $data['sUserFirstname'] ?? null;
-        $this->container['sUserLastname'] = $data['sUserLastname'] ?? null;
+        $this->container['eUserTypeSSPR'] = $data['eUserTypeSSPR'] ?? null;
+        $this->container['sEmailAddress'] = $data['sEmailAddress'] ?? null;
         $this->container['sUserLoginname'] = $data['sUserLoginname'] ?? null;
-        $this->container['objAudit'] = $data['objAudit'] ?? null;
+        $this->container['binUserSSPRtoken'] = $data['binUserSSPRtoken'] ?? null;
     }
 
     /**
@@ -230,9 +225,17 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['pkiUserID'] === null) {
-            $invalidProperties[] = "'pkiUserID' can't be null";
+        if ($this->container['pksCustomerCode'] === null) {
+            $invalidProperties[] = "'pksCustomerCode' can't be null";
         }
+        if ((mb_strlen($this->container['pksCustomerCode']) > 6)) {
+            $invalidProperties[] = "invalid value for 'pksCustomerCode', the character length must be smaller than or equal to 6.";
+        }
+
+        if ((mb_strlen($this->container['pksCustomerCode']) < 2)) {
+            $invalidProperties[] = "invalid value for 'pksCustomerCode', the character length must be bigger than or equal to 2.";
+        }
+
         if ($this->container['fkiLanguageID'] === null) {
             $invalidProperties[] = "'fkiLanguageID' can't be null";
         }
@@ -244,20 +247,11 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
             $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['eUserType'] === null) {
-            $invalidProperties[] = "'eUserType' can't be null";
+        if ($this->container['eUserTypeSSPR'] === null) {
+            $invalidProperties[] = "'eUserTypeSSPR' can't be null";
         }
-        if ($this->container['sUserFirstname'] === null) {
-            $invalidProperties[] = "'sUserFirstname' can't be null";
-        }
-        if ($this->container['sUserLastname'] === null) {
-            $invalidProperties[] = "'sUserLastname' can't be null";
-        }
-        if ($this->container['sUserLoginname'] === null) {
-            $invalidProperties[] = "'sUserLoginname' can't be null";
-        }
-        if ($this->container['objAudit'] === null) {
-            $invalidProperties[] = "'objAudit' can't be null";
+        if ($this->container['binUserSSPRtoken'] === null) {
+            $invalidProperties[] = "'binUserSSPRtoken' can't be null";
         }
         return $invalidProperties;
     }
@@ -275,25 +269,32 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets pkiUserID
+     * Gets pksCustomerCode
      *
-     * @return int
+     * @return string
      */
-    public function getPkiUserID()
+    public function getPksCustomerCode()
     {
-        return $this->container['pkiUserID'];
+        return $this->container['pksCustomerCode'];
     }
 
     /**
-     * Sets pkiUserID
+     * Sets pksCustomerCode
      *
-     * @param int $pkiUserID The unique ID of the User
+     * @param string $pksCustomerCode The customer code assigned to your account
      *
      * @return self
      */
-    public function setPkiUserID($pkiUserID)
+    public function setPksCustomerCode($pksCustomerCode)
     {
-        $this->container['pkiUserID'] = $pkiUserID;
+        if ((mb_strlen($pksCustomerCode) > 6)) {
+            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling SsprValidateTokenV1Request., must be smaller than or equal to 6.');
+        }
+        if ((mb_strlen($pksCustomerCode) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling SsprValidateTokenV1Request., must be bigger than or equal to 2.');
+        }
+
+        $this->container['pksCustomerCode'] = $pksCustomerCode;
 
         return $this;
     }
@@ -319,10 +320,10 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
 
         if (($fkiLanguageID > 2)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling UserResponseAllOf., must be smaller than or equal to 2.');
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling SsprValidateTokenV1Request., must be smaller than or equal to 2.');
         }
         if (($fkiLanguageID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling UserResponseAllOf., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling SsprValidateTokenV1Request., must be bigger than or equal to 1.');
         }
 
         $this->container['fkiLanguageID'] = $fkiLanguageID;
@@ -331,73 +332,49 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets eUserType
+     * Gets eUserTypeSSPR
      *
-     * @return \eZmaxAPI\Model\FieldEUserType
+     * @return \eZmaxAPI\Model\FieldEUserTypeSSPR
      */
-    public function getEUserType()
+    public function getEUserTypeSSPR()
     {
-        return $this->container['eUserType'];
+        return $this->container['eUserTypeSSPR'];
     }
 
     /**
-     * Sets eUserType
+     * Sets eUserTypeSSPR
      *
-     * @param \eZmaxAPI\Model\FieldEUserType $eUserType eUserType
+     * @param \eZmaxAPI\Model\FieldEUserTypeSSPR $eUserTypeSSPR eUserTypeSSPR
      *
      * @return self
      */
-    public function setEUserType($eUserType)
+    public function setEUserTypeSSPR($eUserTypeSSPR)
     {
-        $this->container['eUserType'] = $eUserType;
+        $this->container['eUserTypeSSPR'] = $eUserTypeSSPR;
 
         return $this;
     }
 
     /**
-     * Gets sUserFirstname
+     * Gets sEmailAddress
      *
-     * @return string
+     * @return string|null
      */
-    public function getSUserFirstname()
+    public function getSEmailAddress()
     {
-        return $this->container['sUserFirstname'];
+        return $this->container['sEmailAddress'];
     }
 
     /**
-     * Sets sUserFirstname
+     * Sets sEmailAddress
      *
-     * @param string $sUserFirstname The First name of the user
+     * @param string|null $sEmailAddress The email address.
      *
      * @return self
      */
-    public function setSUserFirstname($sUserFirstname)
+    public function setSEmailAddress($sEmailAddress)
     {
-        $this->container['sUserFirstname'] = $sUserFirstname;
-
-        return $this;
-    }
-
-    /**
-     * Gets sUserLastname
-     *
-     * @return string
-     */
-    public function getSUserLastname()
-    {
-        return $this->container['sUserLastname'];
-    }
-
-    /**
-     * Sets sUserLastname
-     *
-     * @param string $sUserLastname The Last name of the user
-     *
-     * @return self
-     */
-    public function setSUserLastname($sUserLastname)
-    {
-        $this->container['sUserLastname'] = $sUserLastname;
+        $this->container['sEmailAddress'] = $sEmailAddress;
 
         return $this;
     }
@@ -405,7 +382,7 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets sUserLoginname
      *
-     * @return string
+     * @return string|null
      */
     public function getSUserLoginname()
     {
@@ -415,7 +392,7 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets sUserLoginname
      *
-     * @param string $sUserLoginname The Login name of the User.
+     * @param string|null $sUserLoginname The Login name of the User.
      *
      * @return self
      */
@@ -427,25 +404,25 @@ class UserResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets objAudit
+     * Gets binUserSSPRtoken
      *
-     * @return \eZmaxAPI\Model\CommonAudit
+     * @return string
      */
-    public function getObjAudit()
+    public function getBinUserSSPRtoken()
     {
-        return $this->container['objAudit'];
+        return $this->container['binUserSSPRtoken'];
     }
 
     /**
-     * Sets objAudit
+     * Sets binUserSSPRtoken
      *
-     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
+     * @param string $binUserSSPRtoken Hex Encoded Secret SSPR token
      *
      * @return self
      */
-    public function setObjAudit($objAudit)
+    public function setBinUserSSPRtoken($binUserSSPRtoken)
     {
-        $this->container['objAudit'] = $objAudit;
+        $this->container['binUserSSPRtoken'] = $binUserSSPRtoken;
 
         return $this;
     }
