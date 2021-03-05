@@ -108,6 +108,7 @@ docs/Model/SsprResetPasswordV1Request.md
 docs/Model/SsprSendUsernamesV1Request.md
 docs/Model/SsprUnlockAccountRequestV1Request.md
 docs/Model/SsprUnlockAccountV1Request.md
+docs/Model/SsprValidateTokenV1Request.md
 docs/Model/UNUSEDEzsigndocumentEditObjectV1Request.md
 docs/Model/UNUSEDEzsigndocumentEditObjectV1Response.md
 docs/Model/UNUSEDEzsignfolderEditObjectV1Request.md
@@ -238,6 +239,7 @@ lib/Model/SsprResetPasswordV1Request.php
 lib/Model/SsprSendUsernamesV1Request.php
 lib/Model/SsprUnlockAccountRequestV1Request.php
 lib/Model/SsprUnlockAccountV1Request.php
+lib/Model/SsprValidateTokenV1Request.php
 lib/Model/UNUSEDEzsigndocumentEditObjectV1Request.php
 lib/Model/UNUSEDEzsigndocumentEditObjectV1Response.php
 lib/Model/UNUSEDEzsignfolderEditObjectV1Request.php
@@ -365,6 +367,7 @@ test/Model/SsprResetPasswordV1RequestTest.php
 test/Model/SsprSendUsernamesV1RequestTest.php
 test/Model/SsprUnlockAccountRequestV1RequestTest.php
 test/Model/SsprUnlockAccountV1RequestTest.php
+test/Model/SsprValidateTokenV1RequestTest.php
 test/Model/UNUSEDEzsigndocumentEditObjectV1RequestTest.php
 test/Model/UNUSEDEzsigndocumentEditObjectV1ResponseTest.php
 test/Model/UNUSEDEzsignfolderEditObjectV1RequestTest.php
