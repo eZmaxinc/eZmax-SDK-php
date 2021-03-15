@@ -262,6 +262,7 @@ lib/Model/WebhookUserUserCreated.php
 lib/Model/WebhookUserUserCreatedAllOf.php
 lib/Model/WebsiteRequest.php
 lib/ObjectSerializer.php
+lib/RequestSignature.php
 phpunit.xml.dist
 test/Api/GlobalCustomerApiTest.php
 test/Api/ModuleSsprApiTest.php
