@@ -35,7 +35,7 @@ class RequestSignature
 
 	public static function getSignatureV1 ($sAuthorization, $dtDate, $sFingerprint, $sSecret) {
 		$sContentToSign = "$sFingerprint$sAuthorization$dtDate";
-		return 'v1='.hash_hmac('sha512/256', $sContentToSign, $sSecret);
+		return 'v1='.hash_hmac('sha256', $sContentToSign, $sSecret);
 	}
 
 	public static function getHeadersV1 ($sAuthorization, $sSecret, $sMethod, $sURL, $sBody = '') {
