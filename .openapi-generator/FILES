@@ -5,6 +5,7 @@
 README.md
 composer.json
 docs/Api/GlobalCustomerApi.md
+docs/Api/ModuleAuthenticateApi.md
 docs/Api/ModuleSsprApi.md
 docs/Api/ModuleUserApi.md
 docs/Api/ObjectActivesessionApi.md
@@ -27,6 +28,9 @@ docs/Model/ApikeyRequest.md
 docs/Model/ApikeyRequestCompound.md
 docs/Model/ApikeyResponse.md
 docs/Model/AttemptResponse.md
+docs/Model/AuthenticateAuthenticateV2Request.md
+docs/Model/AuthenticateAuthenticateV2Response.md
+docs/Model/AuthenticateAuthenticateV2ResponseMPayload.md
 docs/Model/CommonAudit.md
 docs/Model/CommonGetAutocompleteV1Response.md
 docs/Model/CommonGetAutocompleteV1ResponseMPayload.md
@@ -132,6 +136,7 @@ docs/Model/WebhookUserUserCreatedAllOf.md
 docs/Model/WebsiteRequest.md
 git_push.sh
 lib/Api/GlobalCustomerApi.php
+lib/Api/ModuleAuthenticateApi.php
 lib/Api/ModuleSsprApi.php
 lib/Api/ModuleUserApi.php
 lib/Api/ObjectActivesessionApi.php
@@ -157,6 +162,9 @@ lib/Model/ApikeyRequest.php
 lib/Model/ApikeyRequestCompound.php
 lib/Model/ApikeyResponse.php
 lib/Model/AttemptResponse.php
+lib/Model/AuthenticateAuthenticateV2Request.php
+lib/Model/AuthenticateAuthenticateV2Response.php
+lib/Model/AuthenticateAuthenticateV2ResponseMPayload.php
 lib/Model/CommonAudit.php
 lib/Model/CommonGetAutocompleteV1Response.php
 lib/Model/CommonGetAutocompleteV1ResponseMPayload.php
@@ -265,6 +273,7 @@ lib/ObjectSerializer.php
 lib/RequestSignature.php
 phpunit.xml.dist
 test/Api/GlobalCustomerApiTest.php
+test/Api/ModuleAuthenticateApiTest.php
 test/Api/ModuleSsprApiTest.php
 test/Api/ModuleUserApiTest.php
 test/Api/ObjectActivesessionApiTest.php
@@ -287,6 +296,9 @@ test/Model/ApikeyRequestCompoundTest.php
 test/Model/ApikeyRequestTest.php
 test/Model/ApikeyResponseTest.php
 test/Model/AttemptResponseTest.php
+test/Model/AuthenticateAuthenticateV2RequestTest.php
+test/Model/AuthenticateAuthenticateV2ResponseMPayloadTest.php
+test/Model/AuthenticateAuthenticateV2ResponseTest.php
 test/Model/CommonAuditTest.php
 test/Model/CommonGetAutocompleteV1ResponseMPayloadTest.php
 test/Model/CommonGetAutocompleteV1ResponseTest.php
