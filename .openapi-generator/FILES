@@ -96,6 +96,7 @@ docs/Model/EzsignsignerRequestCompoundContact.md
 docs/Model/FieldEEzsigndocumentStep.md
 docs/Model/FieldEEzsignfolderSendreminderfrequency.md
 docs/Model/FieldEEzsignfolderStep.md
+docs/Model/FieldEEzsignsignatureType.md
 docs/Model/FieldEPhoneType.md
 docs/Model/FieldEUserType.md
 docs/Model/FieldEUserTypeSSPR.md
@@ -230,6 +231,7 @@ lib/Model/EzsignsignerRequestCompoundContact.php
 lib/Model/FieldEEzsigndocumentStep.php
 lib/Model/FieldEEzsignfolderSendreminderfrequency.php
 lib/Model/FieldEEzsignfolderStep.php
+lib/Model/FieldEEzsignsignatureType.php
 lib/Model/FieldEPhoneType.php
 lib/Model/FieldEUserType.php
 lib/Model/FieldEUserTypeSSPR.php
@@ -364,6 +366,7 @@ test/Model/EzsignsignerRequestTest.php
 test/Model/FieldEEzsigndocumentStepTest.php
 test/Model/FieldEEzsignfolderSendreminderfrequencyTest.php
 test/Model/FieldEEzsignfolderStepTest.php
+test/Model/FieldEEzsignsignatureTypeTest.php
 test/Model/FieldEPhoneTypeTest.php
 test/Model/FieldEUserTypeSSPRTest.php
 test/Model/FieldEUserTypeTest.php

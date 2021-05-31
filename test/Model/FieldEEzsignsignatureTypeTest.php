@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsigndocumentApplyEzsigntemplateV1ResponseTest
+ * FieldEEzsignsignatureTypeTest
  *
  * PHP version 7.2
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsigndocumentApplyEzsigntemplateV1ResponseTest Class Doc Comment
+ * FieldEEzsignsignatureTypeTest Class Doc Comment
  *
  * @category    Class
- * @description Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplate API Request
+ * @description The type of signature.  1. **Acknowledgement** is for an acknowledgment of receipt. 2. **City** is to request the city where the document is signed. 2. **Handwritten** is for a handwritten kind of signature where users needs to \&quot;draw\&quot; their signature on screen. 3. **Initials** is a simple \&quot;click to add initials\&quot; block. 4. **Name** is a simple \&quot;Click to sign\&quot; block. This is the most common block of signature.
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsigndocumentApplyEzsigntemplateV1ResponseTest extends TestCase
+class FieldEEzsignsignatureTypeTest extends TestCase
 {
 
     /**
@@ -72,27 +72,9 @@ class EzsigndocumentApplyEzsigntemplateV1ResponseTest extends TestCase
     }
 
     /**
-     * Test "EzsigndocumentApplyEzsigntemplateV1Response"
+     * Test "FieldEEzsignsignatureType"
      */
-    public function testEzsigndocumentApplyEzsigntemplateV1Response()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objDebugPayload"
-     */
-    public function testPropertyObjDebugPayload()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objDebug"
-     */
-    public function testPropertyObjDebug()
+    public function testFieldEEzsignsignatureType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

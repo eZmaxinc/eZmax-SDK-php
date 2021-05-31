@@ -1,6 +1,6 @@
 <?php
 /**
- * FieldEEzsignfolderStep
+ * FieldEEzsignsignatureType
  *
  * PHP version 7.2
  *
@@ -31,26 +31,24 @@ namespace eZmaxAPI\Model;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * FieldEEzsignfolderStep Class Doc Comment
+ * FieldEEzsignsignatureType Class Doc Comment
  *
  * @category Class
- * @description The signature step of the Ezsignfolder.
+ * @description The type of signature.  1. **Acknowledgement** is for an acknowledgment of receipt. 2. **City** is to request the city where the document is signed. 2. **Handwritten** is for a handwritten kind of signature where users needs to \&quot;draw\&quot; their signature on screen. 3. **Initials** is a simple \&quot;click to add initials\&quot; block. 4. **Name** is a simple \&quot;Click to sign\&quot; block. This is the most common block of signature.
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class FieldEEzsignfolderStep
+class FieldEEzsignsignatureType
 {
     /**
      * Possible values of this enum
      */
-    const UNSENT = 'Unsent';
-    const SENT = 'Sent';
-    const PARTIALLY_SIGNED = 'PartiallySigned';
-    const EXPIRED = 'Expired';
-    const SIGNED = 'Signed';
-    const COMPLETED = 'Completed';
-    const ARCHIVED = 'Archived';
+    const ACKNOWLEDGEMENT = 'Acknowledgement';
+    const CITY = 'City';
+    const HANDWRITTEN = 'Handwritten';
+    const INITIALS = 'Initials';
+    const NAME = 'Name';
     
     /**
      * Gets allowable values of the enum
@@ -59,13 +57,11 @@ class FieldEEzsignfolderStep
     public static function getAllowableEnumValues()
     {
         return [
-            self::UNSENT,
-            self::SENT,
-            self::PARTIALLY_SIGNED,
-            self::EXPIRED,
-            self::SIGNED,
-            self::COMPLETED,
-            self::ARCHIVED,
+            self::ACKNOWLEDGEMENT,
+            self::CITY,
+            self::HANDWRITTEN,
+            self::INITIALS,
+            self::NAME,
         ];
     }
 }
