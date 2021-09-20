@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objAddress** | [**\eZmaxAPI\Model\AddressRequest**](AddressRequest.md) |  | [optional]
+**objAddress** | [**\eZmaxAPI\Model\AddressRequest**](AddressRequest.md) |  |
 **aObjContact** | [**\eZmaxAPI\Model\ContactRequestCompound[]**](ContactRequestCompound.md) |  |
 **fkiFranchisebrokerID** | **int** | The unique ID of the Franchisebroker |
 **fkiFranchisereferalincomeprogramID** | **int** | The unique ID of the Franchisereferalincomeprogram |
