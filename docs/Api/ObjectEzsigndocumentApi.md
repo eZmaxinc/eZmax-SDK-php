@@ -9,7 +9,9 @@ Method | HTTP request | Description
 [**ezsigndocumentDeleteObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
 [**ezsigndocumentGetChildrenV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetChildrenV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs
 [**ezsigndocumentGetDownloadUrlV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
+[**ezsigndocumentGetFormDataV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetFormDataV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
 [**ezsigndocumentGetObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
+[**ezsigndocumentGetWordsPositionsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetWordsPositionsV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
 
 
 ## `ezsigndocumentApplyEzsigntemplateV1()`
@@ -206,6 +208,8 @@ ezsigndocumentGetChildrenV1($pkiEzsigndocumentID)
 
 Retrieve an existing Ezsigndocument's children IDs
 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
 ### Example
 
 ```php
@@ -321,6 +325,68 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigndocumentGetFormDataV1()`
+
+```php
+ezsigndocumentGetFormDataV1($pkiEzsigndocumentID): \SplFileObject
+```
+
+Retrieve an existing Ezsigndocument's Form Data
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
+
+try {
+    $result = $apiInstance->ezsigndocumentGetFormDataV1($pkiEzsigndocumentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetFormDataV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **int**| The unique ID of the Ezsigndocument |
+
+### Return type
+
+[**\SplFileObject**](../Model/\SplFileObject.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/zip`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `ezsigndocumentGetObjectV1()`
 
 ```php
@@ -328,6 +394,8 @@ ezsigndocumentGetObjectV1($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentG
 ```
 
 Retrieve an existing Ezsigndocument
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Example
 
@@ -375,6 +443,70 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentGetWordsPositionsV1()`
+
+```php
+ezsigndocumentGetWordsPositionsV1($pkiEzsigndocumentID, $ezsigndocumentGetWordsPositionsV1Request): \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Response
+```
+
+Retrieve positions X,Y of given words from a Ezsigndocument
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
+$ezsigndocumentGetWordsPositionsV1Request = new \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request(); // \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request
+
+try {
+    $result = $apiInstance->ezsigndocumentGetWordsPositionsV1($pkiEzsigndocumentID, $ezsigndocumentGetWordsPositionsV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetWordsPositionsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **int**| The unique ID of the Ezsigndocument |
+ **ezsigndocumentGetWordsPositionsV1Request** | [**\eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request**](../Model/EzsigndocumentGetWordsPositionsV1Request.md)|  |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Response**](../Model/EzsigndocumentGetWordsPositionsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

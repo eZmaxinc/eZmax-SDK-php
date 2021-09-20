@@ -140,6 +140,8 @@ ezsignsignatureGetChildrenV1($pkiEzsignsignatureID)
 
 Retrieve an existing Ezsignsignature's children IDs
 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
 ### Example
 
 ```php
@@ -198,6 +200,8 @@ ezsignsignatureGetObjectV1($pkiEzsignsignatureID): \eZmaxAPI\Model\Ezsignsignatu
 ```
 
 Retrieve an existing Ezsignsignature
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Example
 
