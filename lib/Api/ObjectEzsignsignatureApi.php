@@ -397,7 +397,7 @@ class ObjectEzsignsignatureApi
      *
      * Delete an existing Ezsignsignature
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID pkiEzsignsignatureID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -414,7 +414,7 @@ class ObjectEzsignsignatureApi
      *
      * Delete an existing Ezsignsignature
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -540,7 +540,7 @@ class ObjectEzsignsignatureApi
      *
      * Delete an existing Ezsignsignature
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -560,7 +560,7 @@ class ObjectEzsignsignatureApi
      *
      * Delete an existing Ezsignsignature
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -606,7 +606,7 @@ class ObjectEzsignsignatureApi
     /**
      * Create request for operation 'ezsignsignatureDeleteObjectV1'
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -715,7 +715,7 @@ class ObjectEzsignsignatureApi
      *
      * Retrieve an existing Ezsignsignature&#39;s children IDs
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID pkiEzsignsignatureID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -731,7 +731,7 @@ class ObjectEzsignsignatureApi
      *
      * Retrieve an existing Ezsignsignature&#39;s children IDs
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -791,7 +791,7 @@ class ObjectEzsignsignatureApi
      *
      * Retrieve an existing Ezsignsignature&#39;s children IDs
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -811,7 +811,7 @@ class ObjectEzsignsignatureApi
      *
      * Retrieve an existing Ezsignsignature&#39;s children IDs
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -847,7 +847,7 @@ class ObjectEzsignsignatureApi
     /**
      * Create request for operation 'ezsignsignatureGetChildrenV1'
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -956,7 +956,7 @@ class ObjectEzsignsignatureApi
      *
      * Retrieve an existing Ezsignsignature
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID pkiEzsignsignatureID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -973,7 +973,7 @@ class ObjectEzsignsignatureApi
      *
      * Retrieve an existing Ezsignsignature
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1079,7 +1079,7 @@ class ObjectEzsignsignatureApi
      *
      * Retrieve an existing Ezsignsignature
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1099,7 +1099,7 @@ class ObjectEzsignsignatureApi
      *
      * Retrieve an existing Ezsignsignature
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1145,7 +1145,7 @@ class ObjectEzsignsignatureApi
     /**
      * Create request for operation 'ezsignsignatureGetObjectV1'
      *
-     * @param  int $pkiEzsignsignatureID The unique ID of the Ezsignsignature (required)
+     * @param  int $pkiEzsignsignatureID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -133,6 +133,18 @@ class ObjectEzsigndocumentApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsigndocumentGetEzsignpagesV1
+     *
+     * Retrieve an existing Ezsigndocument's Ezsignpages.
+     *
+     */
+    public function testEzsigndocumentGetEzsignpagesV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsigndocumentGetFormDataV1
      *
      * Retrieve an existing Ezsigndocument's Form Data.

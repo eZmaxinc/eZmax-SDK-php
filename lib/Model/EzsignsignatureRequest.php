@@ -301,7 +301,7 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets iEzsignpagePagenumber
      *
-     * @param int $iEzsignpagePagenumber The page number in the document where to apply the signature
+     * @param int $iEzsignpagePagenumber The page number in the Ezsigndocument
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets fkiEzsigndocumentID
      *
-     * @param int $fkiEzsigndocumentID The unique ID of the Ezsigntemplate
+     * @param int $fkiEzsigndocumentID The unique ID of the Ezsigndocument
      *
      * @return self
      */

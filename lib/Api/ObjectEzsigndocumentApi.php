@@ -121,7 +121,7 @@ class ObjectEzsigndocumentApi
      *
      * Apply an Ezsign Template to the Ezsigndocument.
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request $ezsigndocumentApplyEzsigntemplateV1Request ezsigndocumentApplyEzsigntemplateV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -139,7 +139,7 @@ class ObjectEzsigndocumentApi
      *
      * Apply an Ezsign Template to the Ezsigndocument.
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request $ezsigndocumentApplyEzsigntemplateV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -266,7 +266,7 @@ class ObjectEzsigndocumentApi
      *
      * Apply an Ezsign Template to the Ezsigndocument.
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request $ezsigndocumentApplyEzsigntemplateV1Request (required)
      *
      * @throws \InvalidArgumentException
@@ -287,7 +287,7 @@ class ObjectEzsigndocumentApi
      *
      * Apply an Ezsign Template to the Ezsigndocument.
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request $ezsigndocumentApplyEzsigntemplateV1Request (required)
      *
      * @throws \InvalidArgumentException
@@ -334,7 +334,7 @@ class ObjectEzsigndocumentApi
     /**
      * Create request for operation 'ezsigndocumentApplyEzsigntemplateV1'
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request $ezsigndocumentApplyEzsigntemplateV1Request (required)
      *
      * @throws \InvalidArgumentException
@@ -732,7 +732,7 @@ class ObjectEzsigndocumentApi
      *
      * Delete an existing Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -749,7 +749,7 @@ class ObjectEzsigndocumentApi
      *
      * Delete an existing Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -875,7 +875,7 @@ class ObjectEzsigndocumentApi
      *
      * Delete an existing Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -895,7 +895,7 @@ class ObjectEzsigndocumentApi
      *
      * Delete an existing Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -941,7 +941,7 @@ class ObjectEzsigndocumentApi
     /**
      * Create request for operation 'ezsigndocumentDeleteObjectV1'
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1050,7 +1050,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument&#39;s children IDs
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1066,7 +1066,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument&#39;s children IDs
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1126,7 +1126,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument&#39;s children IDs
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1146,7 +1146,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument&#39;s children IDs
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1182,7 +1182,7 @@ class ObjectEzsigndocumentApi
     /**
      * Create request for operation 'ezsigndocumentGetChildrenV1'
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1291,7 +1291,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve a URL to download documents.
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
      * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -1309,7 +1309,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve a URL to download documents.
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -1436,7 +1436,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve a URL to download documents.
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
      *
      * @throws \InvalidArgumentException
@@ -1457,7 +1457,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve a URL to download documents.
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
      *
      * @throws \InvalidArgumentException
@@ -1504,7 +1504,7 @@ class ObjectEzsigndocumentApi
     /**
      * Create request for operation 'ezsigndocumentGetDownloadUrlV1'
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
      *
      * @throws \InvalidArgumentException
@@ -1624,11 +1624,329 @@ class ObjectEzsigndocumentApi
     }
 
     /**
+     * Operation ezsigndocumentGetEzsignpagesV1
+     *
+     * Retrieve an existing Ezsigndocument&#39;s Ezsignpages
+     *
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsigndocumentGetEzsignpagesV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsigndocumentGetEzsignpagesV1($pkiEzsigndocumentID)
+    {
+        list($response) = $this->ezsigndocumentGetEzsignpagesV1WithHttpInfo($pkiEzsigndocumentID);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigndocumentGetEzsignpagesV1WithHttpInfo
+     *
+     * Retrieve an existing Ezsigndocument&#39;s Ezsignpages
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsigndocumentGetEzsignpagesV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigndocumentGetEzsignpagesV1WithHttpInfo($pkiEzsigndocumentID)
+    {
+        $request = $this->ezsigndocumentGetEzsignpagesV1Request($pkiEzsigndocumentID);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsigndocumentGetEzsignpagesV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsigndocumentGetEzsignpagesV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsigndocumentGetEzsignpagesV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsigndocumentGetEzsignpagesV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigndocumentGetEzsignpagesV1Async
+     *
+     * Retrieve an existing Ezsigndocument&#39;s Ezsignpages
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigndocumentGetEzsignpagesV1Async($pkiEzsigndocumentID)
+    {
+        return $this->ezsigndocumentGetEzsignpagesV1AsyncWithHttpInfo($pkiEzsigndocumentID)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigndocumentGetEzsignpagesV1AsyncWithHttpInfo
+     *
+     * Retrieve an existing Ezsigndocument&#39;s Ezsignpages
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigndocumentGetEzsignpagesV1AsyncWithHttpInfo($pkiEzsigndocumentID)
+    {
+        $returnType = '\eZmaxAPI\Model\EzsigndocumentGetEzsignpagesV1Response';
+        $request = $this->ezsigndocumentGetEzsignpagesV1Request($pkiEzsigndocumentID);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigndocumentGetEzsignpagesV1'
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigndocumentGetEzsignpagesV1Request($pkiEzsigndocumentID)
+    {
+        // verify the required parameter 'pkiEzsigndocumentID' is set
+        if ($pkiEzsigndocumentID === null || (is_array($pkiEzsigndocumentID) && count($pkiEzsigndocumentID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsigndocumentID when calling ezsigndocumentGetEzsignpagesV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsigndocumentID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsigndocumentID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsigndocumentID),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation ezsigndocumentGetFormDataV1
      *
      * Retrieve an existing Ezsigndocument&#39;s Form Data
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1645,7 +1963,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument&#39;s Form Data
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1771,7 +2089,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument&#39;s Form Data
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1791,7 +2109,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument&#39;s Form Data
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1837,7 +2155,7 @@ class ObjectEzsigndocumentApi
     /**
      * Create request for operation 'ezsigndocumentGetFormDataV1'
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1946,7 +2264,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1963,7 +2281,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2069,7 +2387,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2089,7 +2407,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve an existing Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2135,7 +2453,7 @@ class ObjectEzsigndocumentApi
     /**
      * Create request for operation 'ezsigndocumentGetObjectV1'
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2244,7 +2562,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve positions X,Y of given words from a Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request $ezsigndocumentGetWordsPositionsV1Request ezsigndocumentGetWordsPositionsV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -2262,7 +2580,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve positions X,Y of given words from a Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request $ezsigndocumentGetWordsPositionsV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -2389,7 +2707,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve positions X,Y of given words from a Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request $ezsigndocumentGetWordsPositionsV1Request (required)
      *
      * @throws \InvalidArgumentException
@@ -2410,7 +2728,7 @@ class ObjectEzsigndocumentApi
      *
      * Retrieve positions X,Y of given words from a Ezsigndocument
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request $ezsigndocumentGetWordsPositionsV1Request (required)
      *
      * @throws \InvalidArgumentException
@@ -2457,7 +2775,7 @@ class ObjectEzsigndocumentApi
     /**
      * Create request for operation 'ezsigndocumentGetWordsPositionsV1'
      *
-     * @param  int $pkiEzsigndocumentID The unique ID of the Ezsigndocument (required)
+     * @param  int $pkiEzsigndocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request $ezsigndocumentGetWordsPositionsV1Request (required)
      *
      * @throws \InvalidArgumentException

@@ -99,7 +99,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignsignatureApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsignsignatureID = 56; // int | The unique ID of the Ezsignsignature
+$pkiEzsignsignatureID = 56; // int
 
 try {
     $result = $apiInstance->ezsignsignatureDeleteObjectV1($pkiEzsignsignatureID);
@@ -113,7 +113,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **int**| The unique ID of the Ezsignsignature |
+ **pkiEzsignsignatureID** | **int**|  |
 
 ### Return type
 
@@ -161,7 +161,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignsignatureApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsignsignatureID = 56; // int | The unique ID of the Ezsignsignature
+$pkiEzsignsignatureID = 56; // int
 
 try {
     $apiInstance->ezsignsignatureGetChildrenV1($pkiEzsignsignatureID);
@@ -174,7 +174,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **int**| The unique ID of the Ezsignsignature |
+ **pkiEzsignsignatureID** | **int**|  |
 
 ### Return type
 
@@ -222,7 +222,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignsignatureApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsignsignatureID = 56; // int | The unique ID of the Ezsignsignature
+$pkiEzsignsignatureID = 56; // int
 
 try {
     $result = $apiInstance->ezsignsignatureGetObjectV1($pkiEzsignsignatureID);
@@ -236,7 +236,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **int**| The unique ID of the Ezsignsignature |
+ **pkiEzsignsignatureID** | **int**|  |
 
 ### Return type
 

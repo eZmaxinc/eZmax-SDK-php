@@ -121,7 +121,7 @@ class GlobalCustomerApi
      *
      * Get customer endpoint
      *
-     * @param  string $pksCustomerCode The customer code assigned to your account (required)
+     * @param  string $pksCustomerCode pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -139,7 +139,7 @@ class GlobalCustomerApi
      *
      * Get customer endpoint
      *
-     * @param  string $pksCustomerCode The customer code assigned to your account (required)
+     * @param  string $pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -246,7 +246,7 @@ class GlobalCustomerApi
      *
      * Get customer endpoint
      *
-     * @param  string $pksCustomerCode The customer code assigned to your account (required)
+     * @param  string $pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
      *
      * @throws \InvalidArgumentException
@@ -267,7 +267,7 @@ class GlobalCustomerApi
      *
      * Get customer endpoint
      *
-     * @param  string $pksCustomerCode The customer code assigned to your account (required)
+     * @param  string $pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
      *
      * @throws \InvalidArgumentException
@@ -314,7 +314,7 @@ class GlobalCustomerApi
     /**
      * Create request for operation 'globalCustomerGetEndpointV1'
      *
-     * @param  string $pksCustomerCode The customer code assigned to your account (required)
+     * @param  string $pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
      *
      * @throws \InvalidArgumentException
@@ -328,6 +328,13 @@ class GlobalCustomerApi
                 'Missing the required parameter $pksCustomerCode when calling globalCustomerGetEndpointV1'
             );
         }
+        if (strlen($pksCustomerCode) > 6) {
+            throw new \InvalidArgumentException('invalid length for "$pksCustomerCode" when calling GlobalCustomerApi.globalCustomerGetEndpointV1, must be smaller than or equal to 6.');
+        }
+        if (strlen($pksCustomerCode) < 2) {
+            throw new \InvalidArgumentException('invalid length for "$pksCustomerCode" when calling GlobalCustomerApi.globalCustomerGetEndpointV1, must be bigger than or equal to 2.');
+        }
+
 
         $resourcePath = '/1/customer/{pksCustomerCode}/endpoint';
         $formParams = [];

@@ -97,7 +97,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload implements ModelInterface, Array
         'iEzsigndocumentOrder' => null,
         'iEzsigndocumentPagetotal' => null,
         'iEzsigndocumentSignaturesigned' => null,
-        'iEzsigndocumentSignaturetotal' => 'int32',
+        'iEzsigndocumentSignaturetotal' => null,
         'sEzsigndocumentMD5initial' => null,
         'sEzsigndocumentMD5signed' => null,
         'objAudit' => null
@@ -461,7 +461,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload implements ModelInterface, Array
     /**
      * Sets pkiEzsigndocumentID
      *
-     * @param int $pkiEzsigndocumentID The unique ID of the Ezsigntemplate
+     * @param int $pkiEzsigndocumentID The unique ID of the Ezsigndocument
      *
      * @return self
      */

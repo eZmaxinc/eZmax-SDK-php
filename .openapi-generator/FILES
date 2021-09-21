@@ -61,6 +61,9 @@ docs/Model/EzsigndocumentDeleteObjectV1Response.md
 docs/Model/EzsigndocumentGetDownloadUrlV1Response.md
 docs/Model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md
 docs/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md
+docs/Model/EzsigndocumentGetEzsignpagesV1Response.md
+docs/Model/EzsigndocumentGetEzsignpagesV1ResponseAllOf.md
+docs/Model/EzsigndocumentGetEzsignpagesV1ResponseMPayload.md
 docs/Model/EzsigndocumentGetObjectV1Response.md
 docs/Model/EzsigndocumentGetObjectV1ResponseAllOf.md
 docs/Model/EzsigndocumentGetObjectV1ResponseMPayload.md
@@ -71,7 +74,6 @@ docs/Model/EzsigndocumentGetWordsPositionsV1ResponseMPayload.md
 docs/Model/EzsigndocumentRequest.md
 docs/Model/EzsigndocumentRequestCompound.md
 docs/Model/EzsigndocumentResponse.md
-docs/Model/EzsigndocumentResponseAllOf.md
 docs/Model/EzsigndocumentResponseCompound.md
 docs/Model/EzsignfolderCreateObjectV1Request.md
 docs/Model/EzsignfolderCreateObjectV1Response.md
@@ -100,6 +102,7 @@ docs/Model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.md
 docs/Model/EzsignfoldersignerassociationRequest.md
 docs/Model/EzsignfoldersignerassociationRequestCompound.md
 docs/Model/EzsignfoldersignerassociationRequestCompoundAllOf.md
+docs/Model/EzsignpageResponse.md
 docs/Model/EzsignsignatureCreateObjectV1Request.md
 docs/Model/EzsignsignatureCreateObjectV1Response.md
 docs/Model/EzsignsignatureCreateObjectV1ResponseAllOf.md
@@ -219,6 +222,9 @@ lib/Model/EzsigndocumentDeleteObjectV1Response.php
 lib/Model/EzsigndocumentGetDownloadUrlV1Response.php
 lib/Model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.php
 lib/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.php
+lib/Model/EzsigndocumentGetEzsignpagesV1Response.php
+lib/Model/EzsigndocumentGetEzsignpagesV1ResponseAllOf.php
+lib/Model/EzsigndocumentGetEzsignpagesV1ResponseMPayload.php
 lib/Model/EzsigndocumentGetObjectV1Response.php
 lib/Model/EzsigndocumentGetObjectV1ResponseAllOf.php
 lib/Model/EzsigndocumentGetObjectV1ResponseMPayload.php
@@ -229,7 +235,6 @@ lib/Model/EzsigndocumentGetWordsPositionsV1ResponseMPayload.php
 lib/Model/EzsigndocumentRequest.php
 lib/Model/EzsigndocumentRequestCompound.php
 lib/Model/EzsigndocumentResponse.php
-lib/Model/EzsigndocumentResponseAllOf.php
 lib/Model/EzsigndocumentResponseCompound.php
 lib/Model/EzsignfolderCreateObjectV1Request.php
 lib/Model/EzsignfolderCreateObjectV1Response.php
@@ -258,6 +263,7 @@ lib/Model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.php
 lib/Model/EzsignfoldersignerassociationRequest.php
 lib/Model/EzsignfoldersignerassociationRequestCompound.php
 lib/Model/EzsignfoldersignerassociationRequestCompoundAllOf.php
+lib/Model/EzsignpageResponse.php
 lib/Model/EzsignsignatureCreateObjectV1Request.php
 lib/Model/EzsignsignatureCreateObjectV1Response.php
 lib/Model/EzsignsignatureCreateObjectV1ResponseAllOf.php
@@ -377,6 +383,9 @@ test/Model/EzsigndocumentDeleteObjectV1ResponseTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseTest.php
+test/Model/EzsigndocumentGetEzsignpagesV1ResponseAllOfTest.php
+test/Model/EzsigndocumentGetEzsignpagesV1ResponseMPayloadTest.php
+test/Model/EzsigndocumentGetEzsignpagesV1ResponseTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseTest.php
@@ -386,7 +395,6 @@ test/Model/EzsigndocumentGetWordsPositionsV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1ResponseTest.php
 test/Model/EzsigndocumentRequestCompoundTest.php
 test/Model/EzsigndocumentRequestTest.php
-test/Model/EzsigndocumentResponseAllOfTest.php
 test/Model/EzsigndocumentResponseCompoundTest.php
 test/Model/EzsigndocumentResponseTest.php
 test/Model/EzsignfolderCreateObjectV1RequestTest.php
@@ -416,6 +424,7 @@ test/Model/EzsignfoldersignerassociationGetObjectV1ResponseTest.php
 test/Model/EzsignfoldersignerassociationRequestCompoundAllOfTest.php
 test/Model/EzsignfoldersignerassociationRequestCompoundTest.php
 test/Model/EzsignfoldersignerassociationRequestTest.php
+test/Model/EzsignpageResponseTest.php
 test/Model/EzsignsignatureCreateObjectV1RequestTest.php
 test/Model/EzsignsignatureCreateObjectV1ResponseAllOfTest.php
 test/Model/EzsignsignatureCreateObjectV1ResponseMPayloadTest.php

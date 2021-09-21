@@ -36,7 +36,7 @@ $apiInstance = new eZmaxAPI\Api\GlobalCustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pksCustomerCode = 'pksCustomerCode_example'; // string | The customer code assigned to your account
+$pksCustomerCode = 'pksCustomerCode_example'; // string
 $sInfrastructureproductCode = 'sInfrastructureproductCode_example'; // string | The infrastructure product Code  If undefined, \"appcluster01\" is assumed
 
 try {
@@ -51,7 +51,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pksCustomerCode** | **string**| The customer code assigned to your account |
+ **pksCustomerCode** | **string**|  |
  **sInfrastructureproductCode** | **string**| The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed | [optional]
 
 ### Return type

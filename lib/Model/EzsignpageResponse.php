@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignsignatureRequestCompound
+ * EzsignpageResponse
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignsignatureRequestCompound Class Doc Comment
+ * EzsignpageResponse Class Doc Comment
  *
  * @category Class
- * @description An Ezsignsignature Object and children to create a complete structure
+ * @description An Ezsignpage Object
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignpageResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignsignature-RequestCompound';
+    protected static $openAPIModelName = 'ezsignpage-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,13 +61,13 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fkiEzsignfoldersignerassociationID' => 'int',
+        'pkiEzsignpageID' => 'int',
+        'iEzsignpageWidthimage' => 'int',
+        'iEzsignpageHeightimage' => 'int',
+        'iEzsignpageWidthpdf' => 'int',
+        'iEzsignpageHeightpdf' => 'int',
         'iEzsignpagePagenumber' => 'int',
-        'iEzsignsignatureX' => 'int',
-        'iEzsignsignatureY' => 'int',
-        'iEzsignsignatureStep' => 'int',
-        'eEzsignsignatureType' => '\eZmaxAPI\Model\FieldEEzsignsignatureType',
-        'fkiEzsigndocumentID' => 'int'
+        'sImageUrl' => 'string'
     ];
 
     /**
@@ -78,13 +78,13 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'fkiEzsignfoldersignerassociationID' => null,
+        'pkiEzsignpageID' => null,
+        'iEzsignpageWidthimage' => null,
+        'iEzsignpageHeightimage' => null,
+        'iEzsignpageWidthpdf' => null,
+        'iEzsignpageHeightpdf' => null,
         'iEzsignpagePagenumber' => null,
-        'iEzsignsignatureX' => null,
-        'iEzsignsignatureY' => null,
-        'iEzsignsignatureStep' => null,
-        'eEzsignsignatureType' => null,
-        'fkiEzsigndocumentID' => null
+        'sImageUrl' => null
     ];
 
     /**
@@ -114,13 +114,13 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'fkiEzsignfoldersignerassociationID' => 'fkiEzsignfoldersignerassociationID',
+        'pkiEzsignpageID' => 'pkiEzsignpageID',
+        'iEzsignpageWidthimage' => 'iEzsignpageWidthimage',
+        'iEzsignpageHeightimage' => 'iEzsignpageHeightimage',
+        'iEzsignpageWidthpdf' => 'iEzsignpageWidthpdf',
+        'iEzsignpageHeightpdf' => 'iEzsignpageHeightpdf',
         'iEzsignpagePagenumber' => 'iEzsignpagePagenumber',
-        'iEzsignsignatureX' => 'iEzsignsignatureX',
-        'iEzsignsignatureY' => 'iEzsignsignatureY',
-        'iEzsignsignatureStep' => 'iEzsignsignatureStep',
-        'eEzsignsignatureType' => 'eEzsignsignatureType',
-        'fkiEzsigndocumentID' => 'fkiEzsigndocumentID'
+        'sImageUrl' => 'sImageUrl'
     ];
 
     /**
@@ -129,13 +129,13 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'fkiEzsignfoldersignerassociationID' => 'setFkiEzsignfoldersignerassociationID',
+        'pkiEzsignpageID' => 'setPkiEzsignpageID',
+        'iEzsignpageWidthimage' => 'setIEzsignpageWidthimage',
+        'iEzsignpageHeightimage' => 'setIEzsignpageHeightimage',
+        'iEzsignpageWidthpdf' => 'setIEzsignpageWidthpdf',
+        'iEzsignpageHeightpdf' => 'setIEzsignpageHeightpdf',
         'iEzsignpagePagenumber' => 'setIEzsignpagePagenumber',
-        'iEzsignsignatureX' => 'setIEzsignsignatureX',
-        'iEzsignsignatureY' => 'setIEzsignsignatureY',
-        'iEzsignsignatureStep' => 'setIEzsignsignatureStep',
-        'eEzsignsignatureType' => 'setEEzsignsignatureType',
-        'fkiEzsigndocumentID' => 'setFkiEzsigndocumentID'
+        'sImageUrl' => 'setSImageUrl'
     ];
 
     /**
@@ -144,13 +144,13 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'fkiEzsignfoldersignerassociationID' => 'getFkiEzsignfoldersignerassociationID',
+        'pkiEzsignpageID' => 'getPkiEzsignpageID',
+        'iEzsignpageWidthimage' => 'getIEzsignpageWidthimage',
+        'iEzsignpageHeightimage' => 'getIEzsignpageHeightimage',
+        'iEzsignpageWidthpdf' => 'getIEzsignpageWidthpdf',
+        'iEzsignpageHeightpdf' => 'getIEzsignpageHeightpdf',
         'iEzsignpagePagenumber' => 'getIEzsignpagePagenumber',
-        'iEzsignsignatureX' => 'getIEzsignsignatureX',
-        'iEzsignsignatureY' => 'getIEzsignsignatureY',
-        'iEzsignsignatureStep' => 'getIEzsignsignatureStep',
-        'eEzsignsignatureType' => 'getEEzsignsignatureType',
-        'fkiEzsigndocumentID' => 'getFkiEzsigndocumentID'
+        'sImageUrl' => 'getSImageUrl'
     ];
 
     /**
@@ -210,13 +210,13 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['fkiEzsignfoldersignerassociationID'] = $data['fkiEzsignfoldersignerassociationID'] ?? null;
+        $this->container['pkiEzsignpageID'] = $data['pkiEzsignpageID'] ?? null;
+        $this->container['iEzsignpageWidthimage'] = $data['iEzsignpageWidthimage'] ?? null;
+        $this->container['iEzsignpageHeightimage'] = $data['iEzsignpageHeightimage'] ?? null;
+        $this->container['iEzsignpageWidthpdf'] = $data['iEzsignpageWidthpdf'] ?? null;
+        $this->container['iEzsignpageHeightpdf'] = $data['iEzsignpageHeightpdf'] ?? null;
         $this->container['iEzsignpagePagenumber'] = $data['iEzsignpagePagenumber'] ?? null;
-        $this->container['iEzsignsignatureX'] = $data['iEzsignsignatureX'] ?? null;
-        $this->container['iEzsignsignatureY'] = $data['iEzsignsignatureY'] ?? null;
-        $this->container['iEzsignsignatureStep'] = $data['iEzsignsignatureStep'] ?? null;
-        $this->container['eEzsignsignatureType'] = $data['eEzsignsignatureType'] ?? null;
-        $this->container['fkiEzsigndocumentID'] = $data['fkiEzsigndocumentID'] ?? null;
+        $this->container['sImageUrl'] = $data['sImageUrl'] ?? null;
     }
 
     /**
@@ -228,26 +228,26 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['fkiEzsignfoldersignerassociationID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfoldersignerassociationID' can't be null";
+        if ($this->container['pkiEzsignpageID'] === null) {
+            $invalidProperties[] = "'pkiEzsignpageID' can't be null";
+        }
+        if ($this->container['iEzsignpageWidthimage'] === null) {
+            $invalidProperties[] = "'iEzsignpageWidthimage' can't be null";
+        }
+        if ($this->container['iEzsignpageHeightimage'] === null) {
+            $invalidProperties[] = "'iEzsignpageHeightimage' can't be null";
+        }
+        if ($this->container['iEzsignpageWidthpdf'] === null) {
+            $invalidProperties[] = "'iEzsignpageWidthpdf' can't be null";
+        }
+        if ($this->container['iEzsignpageHeightpdf'] === null) {
+            $invalidProperties[] = "'iEzsignpageHeightpdf' can't be null";
         }
         if ($this->container['iEzsignpagePagenumber'] === null) {
             $invalidProperties[] = "'iEzsignpagePagenumber' can't be null";
         }
-        if ($this->container['iEzsignsignatureX'] === null) {
-            $invalidProperties[] = "'iEzsignsignatureX' can't be null";
-        }
-        if ($this->container['iEzsignsignatureY'] === null) {
-            $invalidProperties[] = "'iEzsignsignatureY' can't be null";
-        }
-        if ($this->container['iEzsignsignatureStep'] === null) {
-            $invalidProperties[] = "'iEzsignsignatureStep' can't be null";
-        }
-        if ($this->container['eEzsignsignatureType'] === null) {
-            $invalidProperties[] = "'eEzsignsignatureType' can't be null";
-        }
-        if ($this->container['fkiEzsigndocumentID'] === null) {
-            $invalidProperties[] = "'fkiEzsigndocumentID' can't be null";
+        if ($this->container['sImageUrl'] === null) {
+            $invalidProperties[] = "'sImageUrl' can't be null";
         }
         return $invalidProperties;
     }
@@ -265,25 +265,121 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
 
 
     /**
-     * Gets fkiEzsignfoldersignerassociationID
+     * Gets pkiEzsignpageID
      *
      * @return int
      */
-    public function getFkiEzsignfoldersignerassociationID()
+    public function getPkiEzsignpageID()
     {
-        return $this->container['fkiEzsignfoldersignerassociationID'];
+        return $this->container['pkiEzsignpageID'];
     }
 
     /**
-     * Sets fkiEzsignfoldersignerassociationID
+     * Sets pkiEzsignpageID
      *
-     * @param int $fkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param int $pkiEzsignpageID The unique ID of the Ezsignpage
      *
      * @return self
      */
-    public function setFkiEzsignfoldersignerassociationID($fkiEzsignfoldersignerassociationID)
+    public function setPkiEzsignpageID($pkiEzsignpageID)
     {
-        $this->container['fkiEzsignfoldersignerassociationID'] = $fkiEzsignfoldersignerassociationID;
+        $this->container['pkiEzsignpageID'] = $pkiEzsignpageID;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsignpageWidthimage
+     *
+     * @return int
+     */
+    public function getIEzsignpageWidthimage()
+    {
+        return $this->container['iEzsignpageWidthimage'];
+    }
+
+    /**
+     * Sets iEzsignpageWidthimage
+     *
+     * @param int $iEzsignpageWidthimage The Width of the page's image in pixels calculated at 100 DPI
+     *
+     * @return self
+     */
+    public function setIEzsignpageWidthimage($iEzsignpageWidthimage)
+    {
+        $this->container['iEzsignpageWidthimage'] = $iEzsignpageWidthimage;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsignpageHeightimage
+     *
+     * @return int
+     */
+    public function getIEzsignpageHeightimage()
+    {
+        return $this->container['iEzsignpageHeightimage'];
+    }
+
+    /**
+     * Sets iEzsignpageHeightimage
+     *
+     * @param int $iEzsignpageHeightimage The Height of the page's image in pixels calculated at 100 DPI
+     *
+     * @return self
+     */
+    public function setIEzsignpageHeightimage($iEzsignpageHeightimage)
+    {
+        $this->container['iEzsignpageHeightimage'] = $iEzsignpageHeightimage;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsignpageWidthpdf
+     *
+     * @return int
+     */
+    public function getIEzsignpageWidthpdf()
+    {
+        return $this->container['iEzsignpageWidthpdf'];
+    }
+
+    /**
+     * Sets iEzsignpageWidthpdf
+     *
+     * @param int $iEzsignpageWidthpdf The Width of the page in points calculated at 72 DPI
+     *
+     * @return self
+     */
+    public function setIEzsignpageWidthpdf($iEzsignpageWidthpdf)
+    {
+        $this->container['iEzsignpageWidthpdf'] = $iEzsignpageWidthpdf;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsignpageHeightpdf
+     *
+     * @return int
+     */
+    public function getIEzsignpageHeightpdf()
+    {
+        return $this->container['iEzsignpageHeightpdf'];
+    }
+
+    /**
+     * Sets iEzsignpageHeightpdf
+     *
+     * @param int $iEzsignpageHeightpdf The Height of the page in points calculated at 72 DPI
+     *
+     * @return self
+     */
+    public function setIEzsignpageHeightpdf($iEzsignpageHeightpdf)
+    {
+        $this->container['iEzsignpageHeightpdf'] = $iEzsignpageHeightpdf;
 
         return $this;
     }
@@ -313,121 +409,25 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets iEzsignsignatureX
+     * Gets sImageUrl
      *
-     * @return int
+     * @return string
      */
-    public function getIEzsignsignatureX()
+    public function getSImageUrl()
     {
-        return $this->container['iEzsignsignatureX'];
+        return $this->container['sImageUrl'];
     }
 
     /**
-     * Sets iEzsignsignatureX
+     * Sets sImageUrl
      *
-     * @param int $iEzsignsignatureX The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * @param string $sImageUrl The Url to the Ezsignpage's rasterized image.  Url will expire after 5 minutes.
      *
      * @return self
      */
-    public function setIEzsignsignatureX($iEzsignsignatureX)
+    public function setSImageUrl($sImageUrl)
     {
-        $this->container['iEzsignsignatureX'] = $iEzsignsignatureX;
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignsignatureY
-     *
-     * @return int
-     */
-    public function getIEzsignsignatureY()
-    {
-        return $this->container['iEzsignsignatureY'];
-    }
-
-    /**
-     * Sets iEzsignsignatureY
-     *
-     * @param int $iEzsignsignatureY The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
-     *
-     * @return self
-     */
-    public function setIEzsignsignatureY($iEzsignsignatureY)
-    {
-        $this->container['iEzsignsignatureY'] = $iEzsignsignatureY;
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignsignatureStep
-     *
-     * @return int
-     */
-    public function getIEzsignsignatureStep()
-    {
-        return $this->container['iEzsignsignatureStep'];
-    }
-
-    /**
-     * Sets iEzsignsignatureStep
-     *
-     * @param int $iEzsignsignatureStep The step when the Ezsignsigner will be invited to sign.
-     *
-     * @return self
-     */
-    public function setIEzsignsignatureStep($iEzsignsignatureStep)
-    {
-        $this->container['iEzsignsignatureStep'] = $iEzsignsignatureStep;
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsignsignatureType
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsignsignatureType
-     */
-    public function getEEzsignsignatureType()
-    {
-        return $this->container['eEzsignsignatureType'];
-    }
-
-    /**
-     * Sets eEzsignsignatureType
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsignsignatureType $eEzsignsignatureType eEzsignsignatureType
-     *
-     * @return self
-     */
-    public function setEEzsignsignatureType($eEzsignsignatureType)
-    {
-        $this->container['eEzsignsignatureType'] = $eEzsignsignatureType;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigndocumentID
-     *
-     * @return int
-     */
-    public function getFkiEzsigndocumentID()
-    {
-        return $this->container['fkiEzsigndocumentID'];
-    }
-
-    /**
-     * Sets fkiEzsigndocumentID
-     *
-     * @param int $fkiEzsigndocumentID The unique ID of the Ezsigndocument
-     *
-     * @return self
-     */
-    public function setFkiEzsigndocumentID($fkiEzsigndocumentID)
-    {
-        $this->container['fkiEzsigndocumentID'] = $fkiEzsigndocumentID;
+        $this->container['sImageUrl'] = $sImageUrl;
 
         return $this;
     }

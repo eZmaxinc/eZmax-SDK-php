@@ -397,7 +397,7 @@ class ObjectEzsignfolderApi
      *
      * Delete an existing Ezsignfolder
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -414,7 +414,7 @@ class ObjectEzsignfolderApi
      *
      * Delete an existing Ezsignfolder
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -540,7 +540,7 @@ class ObjectEzsignfolderApi
      *
      * Delete an existing Ezsignfolder
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -560,7 +560,7 @@ class ObjectEzsignfolderApi
      *
      * Delete an existing Ezsignfolder
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -606,7 +606,7 @@ class ObjectEzsignfolderApi
     /**
      * Create request for operation 'ezsignfolderDeleteObjectV1'
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -715,7 +715,7 @@ class ObjectEzsignfolderApi
      *
      * Retrieve an existing Ezsignfolder&#39;s children IDs
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -731,7 +731,7 @@ class ObjectEzsignfolderApi
      *
      * Retrieve an existing Ezsignfolder&#39;s children IDs
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -791,7 +791,7 @@ class ObjectEzsignfolderApi
      *
      * Retrieve an existing Ezsignfolder&#39;s children IDs
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -811,7 +811,7 @@ class ObjectEzsignfolderApi
      *
      * Retrieve an existing Ezsignfolder&#39;s children IDs
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -847,7 +847,7 @@ class ObjectEzsignfolderApi
     /**
      * Create request for operation 'ezsignfolderGetChildrenV1'
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -952,11 +952,329 @@ class ObjectEzsignfolderApi
     }
 
     /**
+     * Operation ezsignfolderGetFormsDataV1
+     *
+     * Retrieve an existing Ezsignfolder&#39;s forms data
+     *
+     * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsignfolderGetFormsDataV1($pkiEzsignfolderID)
+    {
+        list($response) = $this->ezsignfolderGetFormsDataV1WithHttpInfo($pkiEzsignfolderID);
+        return $response;
+    }
+
+    /**
+     * Operation ezsignfolderGetFormsDataV1WithHttpInfo
+     *
+     * Retrieve an existing Ezsignfolder&#39;s forms data
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsignfolderGetFormsDataV1WithHttpInfo($pkiEzsignfolderID)
+    {
+        $request = $this->ezsignfolderGetFormsDataV1Request($pkiEzsignfolderID);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\SplFileObject' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\SplFileObject', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\SplFileObject';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SplFileObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsignfolderGetFormsDataV1Async
+     *
+     * Retrieve an existing Ezsignfolder&#39;s forms data
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignfolderGetFormsDataV1Async($pkiEzsignfolderID)
+    {
+        return $this->ezsignfolderGetFormsDataV1AsyncWithHttpInfo($pkiEzsignfolderID)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsignfolderGetFormsDataV1AsyncWithHttpInfo
+     *
+     * Retrieve an existing Ezsignfolder&#39;s forms data
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignfolderGetFormsDataV1AsyncWithHttpInfo($pkiEzsignfolderID)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->ezsignfolderGetFormsDataV1Request($pkiEzsignfolderID);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsignfolderGetFormsDataV1'
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsignfolderGetFormsDataV1Request($pkiEzsignfolderID)
+    {
+        // verify the required parameter 'pkiEzsignfolderID' is set
+        if ($pkiEzsignfolderID === null || (is_array($pkiEzsignfolderID) && count($pkiEzsignfolderID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsignfolderID when calling ezsignfolderGetFormsDataV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsignfolderID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsignfolderID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsignfolderID),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/zip', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/zip', 'application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation ezsignfolderGetObjectV1
      *
      * Retrieve an existing Ezsignfolder
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -973,7 +1291,7 @@ class ObjectEzsignfolderApi
      *
      * Retrieve an existing Ezsignfolder
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1079,7 +1397,7 @@ class ObjectEzsignfolderApi
      *
      * Retrieve an existing Ezsignfolder
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1099,7 +1417,7 @@ class ObjectEzsignfolderApi
      *
      * Retrieve an existing Ezsignfolder
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1145,7 +1463,7 @@ class ObjectEzsignfolderApi
     /**
      * Create request for operation 'ezsignfolderGetObjectV1'
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1254,7 +1572,7 @@ class ObjectEzsignfolderApi
      *
      * Send the Ezsignfolder to the signatories for signature
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request ezsignfolderSendV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -1272,7 +1590,7 @@ class ObjectEzsignfolderApi
      *
      * Send the Ezsignfolder to the signatories for signature
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -1399,7 +1717,7 @@ class ObjectEzsignfolderApi
      *
      * Send the Ezsignfolder to the signatories for signature
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request (required)
      *
      * @throws \InvalidArgumentException
@@ -1420,7 +1738,7 @@ class ObjectEzsignfolderApi
      *
      * Send the Ezsignfolder to the signatories for signature
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request (required)
      *
      * @throws \InvalidArgumentException
@@ -1467,7 +1785,7 @@ class ObjectEzsignfolderApi
     /**
      * Create request for operation 'ezsignfolderSendV1'
      *
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (required)
+     * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request (required)
      *
      * @throws \InvalidArgumentException

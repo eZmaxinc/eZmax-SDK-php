@@ -97,7 +97,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsigndocumentOrder' => null,
         'iEzsigndocumentPagetotal' => null,
         'iEzsigndocumentSignaturesigned' => null,
-        'iEzsigndocumentSignaturetotal' => 'int32',
+        'iEzsigndocumentSignaturetotal' => null,
         'sEzsigndocumentMD5initial' => null,
         'sEzsigndocumentMD5signed' => null,
         'objAudit' => null
@@ -461,7 +461,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets pkiEzsigndocumentID
      *
-     * @param int $pkiEzsigndocumentID The unique ID of the Ezsigntemplate
+     * @param int $pkiEzsigndocumentID The unique ID of the Ezsigndocument
      *
      * @return self
      */
