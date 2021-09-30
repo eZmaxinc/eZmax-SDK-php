@@ -198,7 +198,7 @@ void (empty response body)
 ## `ezsignfolderGetFormsDataV1()`
 
 ```php
-ezsignfolderGetFormsDataV1($pkiEzsignfolderID): \SplFileObject
+ezsignfolderGetFormsDataV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderGetFormsDataV1Response
 ```
 
 Retrieve an existing Ezsignfolder's forms data
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+[**\eZmaxAPI\Model\EzsignfolderGetFormsDataV1Response**](../Model/EzsignfolderGetFormsDataV1Response.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/zip`, `application/json`
+- **Accept**: `application/json`, `application/zip`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
