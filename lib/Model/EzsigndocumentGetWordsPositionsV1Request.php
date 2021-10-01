@@ -61,7 +61,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aSWords' => 'string[]'
+        'eGet' => 'string',
+        'aSWord' => 'string[]'
     ];
 
     /**
@@ -72,7 +73,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aSWords' => null
+        'eGet' => null,
+        'aSWord' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'aSWords' => 'a_sWords'
+        'eGet' => 'eGet',
+        'aSWord' => 'a_sWord'
     ];
 
     /**
@@ -111,7 +114,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'aSWords' => 'setASWords'
+        'eGet' => 'setEGet',
+        'aSWord' => 'setASWord'
     ];
 
     /**
@@ -120,7 +124,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'aSWords' => 'getASWords'
+        'eGet' => 'getEGet',
+        'aSWord' => 'getASWord'
     ];
 
     /**
@@ -164,6 +169,21 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
         return self::$openAPIModelName;
     }
 
+    const E_GET_ALL = 'All';
+    const E_GET_WORDS = 'Words';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEGetAllowableValues()
+    {
+        return [
+            self::E_GET_ALL,
+            self::E_GET_WORDS,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -180,7 +200,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->container['aSWords'] = $data['aSWords'] ?? null;
+        $this->container['eGet'] = $data['eGet'] ?? null;
+        $this->container['aSWord'] = $data['aSWord'] ?? null;
     }
 
     /**
@@ -192,9 +213,15 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
-        if ($this->container['aSWords'] === null) {
-            $invalidProperties[] = "'aSWords' can't be null";
+        $allowedValues = $this->getEGetAllowableValues();
+        if (!is_null($this->container['eGet']) && !in_array($this->container['eGet'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'eGet', must be one of '%s'",
+                $this->container['eGet'],
+                implode("', '", $allowedValues)
+            );
         }
+
         return $invalidProperties;
     }
 
@@ -211,25 +238,59 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
 
 
     /**
-     * Gets aSWords
+     * Gets eGet
      *
-     * @return string[]
+     * @return string|null
      */
-    public function getASWords()
+    public function getEGet()
     {
-        return $this->container['aSWords'];
+        return $this->container['eGet'];
     }
 
     /**
-     * Sets aSWords
+     * Sets eGet
      *
-     * @param string[] $aSWords aSWords
+     * @param string|null $eGet Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
      *
      * @return self
      */
-    public function setASWords($aSWords)
+    public function setEGet($eGet)
     {
-        $this->container['aSWords'] = $aSWords;
+        $allowedValues = $this->getEGetAllowableValues();
+        if (!is_null($eGet) && !in_array($eGet, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'eGet', must be one of '%s'",
+                    $eGet,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['eGet'] = $eGet;
+
+        return $this;
+    }
+
+    /**
+     * Gets aSWord
+     *
+     * @return string[]|null
+     */
+    public function getASWord()
+    {
+        return $this->container['aSWord'];
+    }
+
+    /**
+     * Sets aSWord
+     *
+     * @param string[]|null $aSWord Array of words to find in the document
+     *
+     * @return self
+     */
+    public function setASWord($aSWord)
+    {
+        $this->container['aSWord'] = $aSWord;
 
         return $this;
     }

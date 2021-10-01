@@ -352,7 +352,7 @@ class CustomFormDataSignerResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets aObjEzsignformfieldgroupCompound
      *
-     * @param \eZmaxAPI\Model\EzsignformfieldgroupResponseCompound[] $aObjEzsignformfieldgroupCompound This array contains the labels or each Form fields in the form but WITHOUT the values
+     * @param \eZmaxAPI\Model\EzsignformfieldgroupResponseCompound[] $aObjEzsignformfieldgroupCompound aObjEzsignformfieldgroupCompound
      *
      * @return self
      */

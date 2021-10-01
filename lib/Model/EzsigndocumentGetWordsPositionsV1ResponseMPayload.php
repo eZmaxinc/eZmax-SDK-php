@@ -61,7 +61,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aSWords' => '\eZmaxAPI\Model\CustomWordPositionResponse[]'
+        
     ];
 
     /**
@@ -72,7 +72,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aSWords' => null
+        
     ];
 
     /**
@@ -102,7 +102,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
-        'aSWords' => 'a_sWords'
+        
     ];
 
     /**
@@ -111,7 +111,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-        'aSWords' => 'setASWords'
+        
     ];
 
     /**
@@ -120,7 +120,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
-        'aSWords' => 'getASWords'
+        
     ];
 
     /**
@@ -180,7 +180,6 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
      */
     public function __construct(array $data = null)
     {
-        $this->container['aSWords'] = $data['aSWords'] ?? null;
     }
 
     /**
@@ -192,9 +191,6 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
     {
         $invalidProperties = [];
 
-        if ($this->container['aSWords'] === null) {
-            $invalidProperties[] = "'aSWords' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,30 +205,6 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets aSWords
-     *
-     * @return \eZmaxAPI\Model\CustomWordPositionResponse[]
-     */
-    public function getASWords()
-    {
-        return $this->container['aSWords'];
-    }
-
-    /**
-     * Sets aSWords
-     *
-     * @param \eZmaxAPI\Model\CustomWordPositionResponse[] $aSWords An array of words with an array of pages and positions X,Y  They are returned with the sames words that was sent in the request.
-     *
-     * @return self
-     */
-    public function setASWords($aSWords)
-    {
-        $this->container['aSWords'] = $aSWords;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

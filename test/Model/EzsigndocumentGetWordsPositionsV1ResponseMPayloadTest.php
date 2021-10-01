@@ -79,14 +79,5 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayloadTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "aSWords"
-     */
-    public function testPropertyASWords()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
 }
 ?>

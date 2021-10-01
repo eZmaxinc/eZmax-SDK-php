@@ -81,9 +81,18 @@ class EzsigndocumentGetWordsPositionsV1RequestTest extends TestCase
     }
 
     /**
-     * Test attribute "aSWords"
+     * Test attribute "eGet"
      */
-    public function testPropertyASWords()
+    public function testPropertyEGet()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aSWord"
+     */
+    public function testPropertyASWord()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
