@@ -61,7 +61,7 @@ class EzsigndocumentGetWordsPositionsV1Response implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mPayload' => '\eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1ResponseMPayload',
+        'mPayload' => '\eZmaxAPI\Model\CustomWordPositionWordResponse[]',
         'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
         'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
@@ -225,7 +225,7 @@ class EzsigndocumentGetWordsPositionsV1Response implements ModelInterface, Array
     /**
      * Gets mPayload
      *
-     * @return \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1ResponseMPayload
+     * @return \eZmaxAPI\Model\CustomWordPositionWordResponse[]
      */
     public function getMPayload()
     {
@@ -235,7 +235,7 @@ class EzsigndocumentGetWordsPositionsV1Response implements ModelInterface, Array
     /**
      * Sets mPayload
      *
-     * @param \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1ResponseMPayload $mPayload mPayload
+     * @param \eZmaxAPI\Model\CustomWordPositionWordResponse[] $mPayload Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# # CustomWordPositionResponse
+# # CustomWordPositionOccurenceResponse
 
 ## Properties
 

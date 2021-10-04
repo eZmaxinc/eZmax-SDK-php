@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsigndocumentGetWordsPositionsV1ResponseMPayload
+ * CustomWordPositionWordResponse
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsigndocumentGetWordsPositionsV1ResponseMPayload Class Doc Comment
+ * CustomWordPositionWordResponse Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+ * @description A Word Position Object
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsigndocument-getWordsPositions-v1-Response-mPayload';
+    protected static $openAPIModelName = 'Custom-WordPositionWord-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,8 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        
+        'sWord' => 'string',
+        'objWordPositionOccurence' => '\eZmaxAPI\Model\CustomWordPositionOccurenceResponse[]'
     ];
 
     /**
@@ -72,7 +73,8 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        
+        'sWord' => null,
+        'objWordPositionOccurence' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'sWord' => 'sWord',
+        'objWordPositionOccurence' => 'objWordPositionOccurence'
     ];
 
     /**
@@ -111,7 +114,8 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-        
+        'sWord' => 'setSWord',
+        'objWordPositionOccurence' => 'setObjWordPositionOccurence'
     ];
 
     /**
@@ -120,7 +124,8 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
-        
+        'sWord' => 'getSWord',
+        'objWordPositionOccurence' => 'getObjWordPositionOccurence'
     ];
 
     /**
@@ -180,6 +185,8 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
      */
     public function __construct(array $data = null)
     {
+        $this->container['sWord'] = $data['sWord'] ?? null;
+        $this->container['objWordPositionOccurence'] = $data['objWordPositionOccurence'] ?? null;
     }
 
     /**
@@ -191,6 +198,12 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
     {
         $invalidProperties = [];
 
+        if ($this->container['sWord'] === null) {
+            $invalidProperties[] = "'sWord' can't be null";
+        }
+        if ($this->container['objWordPositionOccurence'] === null) {
+            $invalidProperties[] = "'objWordPositionOccurence' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -205,6 +218,54 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload implements ModelInterfac
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets sWord
+     *
+     * @return string
+     */
+    public function getSWord()
+    {
+        return $this->container['sWord'];
+    }
+
+    /**
+     * Sets sWord
+     *
+     * @param string $sWord The searched word
+     *
+     * @return self
+     */
+    public function setSWord($sWord)
+    {
+        $this->container['sWord'] = $sWord;
+
+        return $this;
+    }
+
+    /**
+     * Gets objWordPositionOccurence
+     *
+     * @return \eZmaxAPI\Model\CustomWordPositionOccurenceResponse[]
+     */
+    public function getObjWordPositionOccurence()
+    {
+        return $this->container['objWordPositionOccurence'];
+    }
+
+    /**
+     * Sets objWordPositionOccurence
+     *
+     * @param \eZmaxAPI\Model\CustomWordPositionOccurenceResponse[] $objWordPositionOccurence The found occurences for the seached word
+     *
+     * @return self
+     */
+    public function setObjWordPositionOccurence($objWordPositionOccurence)
+    {
+        $this->container['objWordPositionOccurence'] = $objWordPositionOccurence;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

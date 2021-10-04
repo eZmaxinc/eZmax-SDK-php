@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomWordPositionResponse
+ * CustomWordPositionOccurenceResponse
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * CustomWordPositionResponse Class Doc Comment
+ * CustomWordPositionOccurenceResponse Class Doc Comment
  *
  * @category Class
  * @description A Word Position Object
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CustomWordPositionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class CustomWordPositionOccurenceResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class CustomWordPositionResponse implements ModelInterface, ArrayAccess, \JsonSe
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Custom-WordPosition-Response';
+    protected static $openAPIModelName = 'Custom-WordPositionOccurence-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -252,7 +252,7 @@ class CustomWordPositionResponse implements ModelInterface, ArrayAccess, \JsonSe
     {
 
         if (!is_null($iPage) && ($iPage < 1)) {
-            throw new \InvalidArgumentException('invalid value for $iPage when calling CustomWordPositionResponse., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $iPage when calling CustomWordPositionOccurenceResponse., must be bigger than or equal to 1.');
         }
 
         $this->container['iPage'] = $iPage;
@@ -281,7 +281,7 @@ class CustomWordPositionResponse implements ModelInterface, ArrayAccess, \JsonSe
     {
 
         if (!is_null($iX) && ($iX < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iX when calling CustomWordPositionResponse., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for $iX when calling CustomWordPositionOccurenceResponse., must be bigger than or equal to 0.');
         }
 
         $this->container['iX'] = $iX;
@@ -310,7 +310,7 @@ class CustomWordPositionResponse implements ModelInterface, ArrayAccess, \JsonSe
     {
 
         if (!is_null($iY) && ($iY < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iY when calling CustomWordPositionResponse., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value for $iY when calling CustomWordPositionOccurenceResponse., must be bigger than or equal to 0.');
         }
 
         $this->container['iY'] = $iY;

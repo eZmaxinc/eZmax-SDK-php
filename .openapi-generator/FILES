@@ -53,7 +53,8 @@ docs/Model/ContactinformationsRequestCompoundAllOf.md
 docs/Model/CustomFormDataDocumentResponse.md
 docs/Model/CustomFormDataFolderResponse.md
 docs/Model/CustomFormDataSignerResponse.md
-docs/Model/CustomWordPositionResponse.md
+docs/Model/CustomWordPositionOccurenceResponse.md
+docs/Model/CustomWordPositionWordResponse.md
 docs/Model/EmailRequest.md
 docs/Model/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/Model/EzsigndocumentApplyEzsigntemplateV1Response.md
@@ -79,7 +80,6 @@ docs/Model/EzsigndocumentGetObjectV1ResponseMPayload.md
 docs/Model/EzsigndocumentGetWordsPositionsV1Request.md
 docs/Model/EzsigndocumentGetWordsPositionsV1Response.md
 docs/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
-docs/Model/EzsigndocumentGetWordsPositionsV1ResponseMPayload.md
 docs/Model/EzsigndocumentRequest.md
 docs/Model/EzsigndocumentRequestCompound.md
 docs/Model/EzsigndocumentResponse.md
@@ -230,7 +230,8 @@ lib/Model/ContactinformationsRequestCompoundAllOf.php
 lib/Model/CustomFormDataDocumentResponse.php
 lib/Model/CustomFormDataFolderResponse.php
 lib/Model/CustomFormDataSignerResponse.php
-lib/Model/CustomWordPositionResponse.php
+lib/Model/CustomWordPositionOccurenceResponse.php
+lib/Model/CustomWordPositionWordResponse.php
 lib/Model/EmailRequest.php
 lib/Model/EzsigndocumentApplyEzsigntemplateV1Request.php
 lib/Model/EzsigndocumentApplyEzsigntemplateV1Response.php
@@ -256,7 +257,6 @@ lib/Model/EzsigndocumentGetObjectV1ResponseMPayload.php
 lib/Model/EzsigndocumentGetWordsPositionsV1Request.php
 lib/Model/EzsigndocumentGetWordsPositionsV1Response.php
 lib/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.php
-lib/Model/EzsigndocumentGetWordsPositionsV1ResponseMPayload.php
 lib/Model/EzsigndocumentRequest.php
 lib/Model/EzsigndocumentRequestCompound.php
 lib/Model/EzsigndocumentResponse.php
@@ -407,7 +407,8 @@ test/Model/ContactinformationsRequestTest.php
 test/Model/CustomFormDataDocumentResponseTest.php
 test/Model/CustomFormDataFolderResponseTest.php
 test/Model/CustomFormDataSignerResponseTest.php
-test/Model/CustomWordPositionResponseTest.php
+test/Model/CustomWordPositionOccurenceResponseTest.php
+test/Model/CustomWordPositionWordResponseTest.php
 test/Model/EmailRequestTest.php
 test/Model/EzsigndocumentApplyEzsigntemplateV1RequestTest.php
 test/Model/EzsigndocumentApplyEzsigntemplateV1ResponseTest.php
@@ -432,7 +433,6 @@ test/Model/EzsigndocumentGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1RequestTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOfTest.php
-test/Model/EzsigndocumentGetWordsPositionsV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1ResponseTest.php
 test/Model/EzsigndocumentRequestCompoundTest.php
 test/Model/EzsigndocumentRequestTest.php

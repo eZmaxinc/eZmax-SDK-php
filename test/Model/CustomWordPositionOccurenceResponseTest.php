@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsigndocumentGetWordsPositionsV1ResponseMPayloadTest
+ * CustomWordPositionOccurenceResponseTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsigndocumentGetWordsPositionsV1ResponseMPayloadTest Class Doc Comment
+ * CustomWordPositionOccurenceResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+ * @description A Word Position Object
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsigndocumentGetWordsPositionsV1ResponseMPayloadTest extends TestCase
+class CustomWordPositionOccurenceResponseTest extends TestCase
 {
 
     /**
@@ -72,9 +72,36 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "EzsigndocumentGetWordsPositionsV1ResponseMPayload"
+     * Test "CustomWordPositionOccurenceResponse"
      */
-    public function testEzsigndocumentGetWordsPositionsV1ResponseMPayload()
+    public function testCustomWordPositionOccurenceResponse()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iPage"
+     */
+    public function testPropertyIPage()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iX"
+     */
+    public function testPropertyIX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iY"
+     */
+    public function testPropertyIY()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

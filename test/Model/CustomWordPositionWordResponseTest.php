@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomWordPositionResponseTest
+ * CustomWordPositionWordResponseTest
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CustomWordPositionResponseTest Class Doc Comment
+ * CustomWordPositionWordResponseTest Class Doc Comment
  *
  * @category    Class
  * @description A Word Position Object
@@ -40,7 +40,7 @@ use PHPUnit\Framework\TestCase;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CustomWordPositionResponseTest extends TestCase
+class CustomWordPositionWordResponseTest extends TestCase
 {
 
     /**
@@ -72,36 +72,27 @@ class CustomWordPositionResponseTest extends TestCase
     }
 
     /**
-     * Test "CustomWordPositionResponse"
+     * Test "CustomWordPositionWordResponse"
      */
-    public function testCustomWordPositionResponse()
+    public function testCustomWordPositionWordResponse()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iPage"
+     * Test attribute "sWord"
      */
-    public function testPropertyIPage()
+    public function testPropertySWord()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iX"
+     * Test attribute "objWordPositionOccurence"
      */
-    public function testPropertyIX()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iY"
-     */
-    public function testPropertyIY()
+    public function testPropertyObjWordPositionOccurence()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
