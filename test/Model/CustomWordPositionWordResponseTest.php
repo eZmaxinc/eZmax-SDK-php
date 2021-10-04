@@ -90,9 +90,9 @@ class CustomWordPositionWordResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "objWordPositionOccurence"
+     * Test attribute "aObjWordPositionOccurence"
      */
-    public function testPropertyObjWordPositionOccurence()
+    public function testPropertyAObjWordPositionOccurence()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -62,7 +62,7 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'sWord' => 'string',
-        'objWordPositionOccurence' => '\eZmaxAPI\Model\CustomWordPositionOccurenceResponse[]'
+        'aObjWordPositionOccurence' => '\eZmaxAPI\Model\CustomWordPositionOccurenceResponse[]'
     ];
 
     /**
@@ -74,7 +74,7 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'sWord' => null,
-        'objWordPositionOccurence' => null
+        'aObjWordPositionOccurence' => null
     ];
 
     /**
@@ -105,7 +105,7 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'sWord' => 'sWord',
-        'objWordPositionOccurence' => 'objWordPositionOccurence'
+        'aObjWordPositionOccurence' => 'a_objWordPositionOccurence'
     ];
 
     /**
@@ -115,7 +115,7 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'sWord' => 'setSWord',
-        'objWordPositionOccurence' => 'setObjWordPositionOccurence'
+        'aObjWordPositionOccurence' => 'setAObjWordPositionOccurence'
     ];
 
     /**
@@ -125,7 +125,7 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'sWord' => 'getSWord',
-        'objWordPositionOccurence' => 'getObjWordPositionOccurence'
+        'aObjWordPositionOccurence' => 'getAObjWordPositionOccurence'
     ];
 
     /**
@@ -186,7 +186,7 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
     public function __construct(array $data = null)
     {
         $this->container['sWord'] = $data['sWord'] ?? null;
-        $this->container['objWordPositionOccurence'] = $data['objWordPositionOccurence'] ?? null;
+        $this->container['aObjWordPositionOccurence'] = $data['aObjWordPositionOccurence'] ?? null;
     }
 
     /**
@@ -201,8 +201,8 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
         if ($this->container['sWord'] === null) {
             $invalidProperties[] = "'sWord' can't be null";
         }
-        if ($this->container['objWordPositionOccurence'] === null) {
-            $invalidProperties[] = "'objWordPositionOccurence' can't be null";
+        if ($this->container['aObjWordPositionOccurence'] === null) {
+            $invalidProperties[] = "'aObjWordPositionOccurence' can't be null";
         }
         return $invalidProperties;
     }
@@ -244,25 +244,25 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets objWordPositionOccurence
+     * Gets aObjWordPositionOccurence
      *
      * @return \eZmaxAPI\Model\CustomWordPositionOccurenceResponse[]
      */
-    public function getObjWordPositionOccurence()
+    public function getAObjWordPositionOccurence()
     {
-        return $this->container['objWordPositionOccurence'];
+        return $this->container['aObjWordPositionOccurence'];
     }
 
     /**
-     * Sets objWordPositionOccurence
+     * Sets aObjWordPositionOccurence
      *
-     * @param \eZmaxAPI\Model\CustomWordPositionOccurenceResponse[] $objWordPositionOccurence The found occurences for the seached word
+     * @param \eZmaxAPI\Model\CustomWordPositionOccurenceResponse[] $aObjWordPositionOccurence The found occurences for the seached word
      *
      * @return self
      */
-    public function setObjWordPositionOccurence($objWordPositionOccurence)
+    public function setAObjWordPositionOccurence($aObjWordPositionOccurence)
     {
-        $this->container['objWordPositionOccurence'] = $objWordPositionOccurence;
+        $this->container['aObjWordPositionOccurence'] = $aObjWordPositionOccurence;
 
         return $this;
     }
