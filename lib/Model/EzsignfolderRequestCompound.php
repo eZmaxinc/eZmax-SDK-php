@@ -308,7 +308,7 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets fkiEzsignfoldertypeID
      *
-     * @param int $fkiEzsignfoldertypeID The unique ID of the Ezsignfoldertype.    This value can be queried by the API and is also visible in the admin interface.    There are two types of Ezsignfoldertype. **User** and **Shared**. **User** can only be seen by the user who created the folder or its assistants. Access to **Shared** folders are configurable for access and email delivery. You should typically choose a **Shared** type here.
+     * @param int $fkiEzsignfoldertypeID The unique ID of the Ezsignfoldertype.
      *
      * @return self
      */

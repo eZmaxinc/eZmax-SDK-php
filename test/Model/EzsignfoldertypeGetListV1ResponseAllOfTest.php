@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsigndocumentGetWordsPositionsV1RequestTest
+ * EzsignfoldertypeGetListV1ResponseAllOfTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsigndocumentGetWordsPositionsV1RequestTest Class Doc Comment
+ * EzsignfoldertypeGetListV1ResponseAllOfTest Class Doc Comment
  *
  * @category    Class
- * @description Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+ * @description EzsignfoldertypeGetListV1ResponseAllOf
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsigndocumentGetWordsPositionsV1RequestTest extends TestCase
+class EzsignfoldertypeGetListV1ResponseAllOfTest extends TestCase
 {
 
     /**
@@ -72,36 +72,18 @@ class EzsigndocumentGetWordsPositionsV1RequestTest extends TestCase
     }
 
     /**
-     * Test "EzsigndocumentGetWordsPositionsV1Request"
+     * Test "EzsignfoldertypeGetListV1ResponseAllOf"
      */
-    public function testEzsigndocumentGetWordsPositionsV1Request()
+    public function testEzsignfoldertypeGetListV1ResponseAllOf()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "eGet"
+     * Test attribute "mPayload"
      */
-    public function testPropertyEGet()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bWordCaseSensitive"
-     */
-    public function testPropertyBWordCaseSensitive()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aSWord"
-     */
-    public function testPropertyASWord()
+    public function testPropertyMPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

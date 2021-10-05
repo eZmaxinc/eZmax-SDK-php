@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsigndocumentGetWordsPositionsV1RequestTest
+ * EzsignfoldertypeGetListV1ResponseMPayloadTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsigndocumentGetWordsPositionsV1RequestTest Class Doc Comment
+ * EzsignfoldertypeGetListV1ResponseMPayloadTest Class Doc Comment
  *
  * @category    Class
- * @description Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+ * @description Payload for the /1/object/ezsignfolder/getList API Request
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsigndocumentGetWordsPositionsV1RequestTest extends TestCase
+class EzsignfoldertypeGetListV1ResponseMPayloadTest extends TestCase
 {
 
     /**
@@ -72,36 +72,36 @@ class EzsigndocumentGetWordsPositionsV1RequestTest extends TestCase
     }
 
     /**
-     * Test "EzsigndocumentGetWordsPositionsV1Request"
+     * Test "EzsignfoldertypeGetListV1ResponseMPayload"
      */
-    public function testEzsigndocumentGetWordsPositionsV1Request()
+    public function testEzsignfoldertypeGetListV1ResponseMPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "eGet"
+     * Test attribute "aObjEzsignfoldertype"
      */
-    public function testPropertyEGet()
+    public function testPropertyAObjEzsignfoldertype()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "bWordCaseSensitive"
+     * Test attribute "iRowReturned"
      */
-    public function testPropertyBWordCaseSensitive()
+    public function testPropertyIRowReturned()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "aSWord"
+     * Test attribute "iRowFiltered"
      */
-    public function testPropertyASWord()
+    public function testPropertyIRowFiltered()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -2366,7 +2366,7 @@ class ObjectEzsigndocumentApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
-                case 422:
+                case 406:
                     if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
@@ -2378,7 +2378,7 @@ class ObjectEzsigndocumentApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
-                case 406:
+                case 422:
                     if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
@@ -2423,7 +2423,7 @@ class ObjectEzsigndocumentApi
                     );
                     $e->setResponseObject($data);
                     break;
-                case 422:
+                case 406:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\eZmaxAPI\Model\CommonResponseError',
@@ -2431,7 +2431,7 @@ class ObjectEzsigndocumentApi
                     );
                     $e->setResponseObject($data);
                     break;
-                case 406:
+                case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\eZmaxAPI\Model\CommonResponseError',

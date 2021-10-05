@@ -13,6 +13,7 @@ docs/Api/ObjectApikeyApi.md
 docs/Api/ObjectEzsigndocumentApi.md
 docs/Api/ObjectEzsignfolderApi.md
 docs/Api/ObjectEzsignfoldersignerassociationApi.md
+docs/Api/ObjectEzsignfoldertypeApi.md
 docs/Api/ObjectEzsignsignatureApi.md
 docs/Api/ObjectFranchisebrokerApi.md
 docs/Api/ObjectFranchiseofficeApi.md
@@ -38,6 +39,7 @@ docs/Model/CommonAudit.md
 docs/Model/CommonGetAutocompleteV1Response.md
 docs/Model/CommonGetAutocompleteV1ResponseAllOf.md
 docs/Model/CommonGetAutocompleteV1ResponseMPayload.md
+docs/Model/CommonGetListV1ResponseMPayload.md
 docs/Model/CommonResponse.md
 docs/Model/CommonResponseError.md
 docs/Model/CommonResponseObjDebug.md
@@ -114,6 +116,11 @@ docs/Model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.md
 docs/Model/EzsignfoldersignerassociationRequest.md
 docs/Model/EzsignfoldersignerassociationRequestCompound.md
 docs/Model/EzsignfoldersignerassociationRequestCompoundAllOf.md
+docs/Model/EzsignfoldertypeGetListV1Response.md
+docs/Model/EzsignfoldertypeGetListV1ResponseAllOf.md
+docs/Model/EzsignfoldertypeGetListV1ResponseMPayload.md
+docs/Model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.md
+docs/Model/EzsignfoldertypeListElement.md
 docs/Model/EzsignformfieldResponse.md
 docs/Model/EzsignformfieldResponseCompound.md
 docs/Model/EzsignformfieldgroupResponse.md
@@ -187,6 +194,7 @@ lib/Api/ObjectApikeyApi.php
 lib/Api/ObjectEzsigndocumentApi.php
 lib/Api/ObjectEzsignfolderApi.php
 lib/Api/ObjectEzsignfoldersignerassociationApi.php
+lib/Api/ObjectEzsignfoldertypeApi.php
 lib/Api/ObjectEzsignsignatureApi.php
 lib/Api/ObjectFranchisebrokerApi.php
 lib/Api/ObjectFranchiseofficeApi.php
@@ -215,6 +223,7 @@ lib/Model/CommonAudit.php
 lib/Model/CommonGetAutocompleteV1Response.php
 lib/Model/CommonGetAutocompleteV1ResponseAllOf.php
 lib/Model/CommonGetAutocompleteV1ResponseMPayload.php
+lib/Model/CommonGetListV1ResponseMPayload.php
 lib/Model/CommonResponse.php
 lib/Model/CommonResponseError.php
 lib/Model/CommonResponseObjDebug.php
@@ -291,6 +300,11 @@ lib/Model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.php
 lib/Model/EzsignfoldersignerassociationRequest.php
 lib/Model/EzsignfoldersignerassociationRequestCompound.php
 lib/Model/EzsignfoldersignerassociationRequestCompoundAllOf.php
+lib/Model/EzsignfoldertypeGetListV1Response.php
+lib/Model/EzsignfoldertypeGetListV1ResponseAllOf.php
+lib/Model/EzsignfoldertypeGetListV1ResponseMPayload.php
+lib/Model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.php
+lib/Model/EzsignfoldertypeListElement.php
 lib/Model/EzsignformfieldResponse.php
 lib/Model/EzsignformfieldResponseCompound.php
 lib/Model/EzsignformfieldgroupResponse.php
@@ -367,6 +381,7 @@ test/Api/ObjectApikeyApiTest.php
 test/Api/ObjectEzsigndocumentApiTest.php
 test/Api/ObjectEzsignfolderApiTest.php
 test/Api/ObjectEzsignfoldersignerassociationApiTest.php
+test/Api/ObjectEzsignfoldertypeApiTest.php
 test/Api/ObjectEzsignsignatureApiTest.php
 test/Api/ObjectFranchisebrokerApiTest.php
 test/Api/ObjectFranchiseofficeApiTest.php
@@ -392,6 +407,7 @@ test/Model/CommonAuditTest.php
 test/Model/CommonGetAutocompleteV1ResponseAllOfTest.php
 test/Model/CommonGetAutocompleteV1ResponseMPayloadTest.php
 test/Model/CommonGetAutocompleteV1ResponseTest.php
+test/Model/CommonGetListV1ResponseMPayloadTest.php
 test/Model/CommonResponseErrorTest.php
 test/Model/CommonResponseObjDebugPayloadTest.php
 test/Model/CommonResponseObjDebugTest.php
@@ -468,6 +484,11 @@ test/Model/EzsignfoldersignerassociationGetObjectV1ResponseTest.php
 test/Model/EzsignfoldersignerassociationRequestCompoundAllOfTest.php
 test/Model/EzsignfoldersignerassociationRequestCompoundTest.php
 test/Model/EzsignfoldersignerassociationRequestTest.php
+test/Model/EzsignfoldertypeGetListV1ResponseAllOfTest.php
+test/Model/EzsignfoldertypeGetListV1ResponseMPayloadAllOfTest.php
+test/Model/EzsignfoldertypeGetListV1ResponseMPayloadTest.php
+test/Model/EzsignfoldertypeGetListV1ResponseTest.php
+test/Model/EzsignfoldertypeListElementTest.php
 test/Model/EzsignformfieldResponseCompoundTest.php
 test/Model/EzsignformfieldResponseTest.php
 test/Model/EzsignformfieldgroupResponseCompoundAllOfTest.php

@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsigndocumentGetWordsPositionsV1Request
+ * EzsignfoldertypeListElement
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsigndocumentGetWordsPositionsV1Request Class Doc Comment
+ * EzsignfoldertypeListElement Class Doc Comment
  *
  * @category Class
- * @description Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+ * @description An Ezsignfoldertype List Element
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsigndocument-getWordsPositions-v1-Request';
+    protected static $openAPIModelName = 'ezsignfoldertype-ListElement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'eGet' => 'string',
-        'bWordCaseSensitive' => 'bool',
-        'aSWord' => 'string[]'
+        'pkiEzsignfoldertypeID' => 'int',
+        'sEzsignfoldertypeNameX' => 'string'
     ];
 
     /**
@@ -74,9 +73,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'eGet' => null,
-        'bWordCaseSensitive' => null,
-        'aSWord' => null
+        'pkiEzsignfoldertypeID' => null,
+        'sEzsignfoldertypeNameX' => null
     ];
 
     /**
@@ -106,9 +104,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'eGet' => 'eGet',
-        'bWordCaseSensitive' => 'bWordCaseSensitive',
-        'aSWord' => 'a_sWord'
+        'pkiEzsignfoldertypeID' => 'pkiEzsignfoldertypeID',
+        'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX'
     ];
 
     /**
@@ -117,9 +114,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'eGet' => 'setEGet',
-        'bWordCaseSensitive' => 'setBWordCaseSensitive',
-        'aSWord' => 'setASWord'
+        'pkiEzsignfoldertypeID' => 'setPkiEzsignfoldertypeID',
+        'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX'
     ];
 
     /**
@@ -128,9 +124,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'eGet' => 'getEGet',
-        'bWordCaseSensitive' => 'getBWordCaseSensitive',
-        'aSWord' => 'getASWord'
+        'pkiEzsignfoldertypeID' => 'getPkiEzsignfoldertypeID',
+        'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX'
     ];
 
     /**
@@ -174,21 +169,6 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
         return self::$openAPIModelName;
     }
 
-    const E_GET_ALL = 'All';
-    const E_GET_WORDS = 'Words';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getEGetAllowableValues()
-    {
-        return [
-            self::E_GET_ALL,
-            self::E_GET_WORDS,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -205,9 +185,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->container['eGet'] = $data['eGet'] ?? null;
-        $this->container['bWordCaseSensitive'] = $data['bWordCaseSensitive'] ?? null;
-        $this->container['aSWord'] = $data['aSWord'] ?? null;
+        $this->container['pkiEzsignfoldertypeID'] = $data['pkiEzsignfoldertypeID'] ?? null;
+        $this->container['sEzsignfoldertypeNameX'] = $data['sEzsignfoldertypeNameX'] ?? null;
     }
 
     /**
@@ -219,20 +198,11 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
-        if ($this->container['eGet'] === null) {
-            $invalidProperties[] = "'eGet' can't be null";
+        if ($this->container['pkiEzsignfoldertypeID'] === null) {
+            $invalidProperties[] = "'pkiEzsignfoldertypeID' can't be null";
         }
-        $allowedValues = $this->getEGetAllowableValues();
-        if (!is_null($this->container['eGet']) && !in_array($this->container['eGet'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'eGet', must be one of '%s'",
-                $this->container['eGet'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['bWordCaseSensitive'] === null) {
-            $invalidProperties[] = "'bWordCaseSensitive' can't be null";
+        if ($this->container['sEzsignfoldertypeNameX'] === null) {
+            $invalidProperties[] = "'sEzsignfoldertypeNameX' can't be null";
         }
         return $invalidProperties;
     }
@@ -250,83 +220,49 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
 
 
     /**
-     * Gets eGet
+     * Gets pkiEzsignfoldertypeID
+     *
+     * @return int
+     */
+    public function getPkiEzsignfoldertypeID()
+    {
+        return $this->container['pkiEzsignfoldertypeID'];
+    }
+
+    /**
+     * Sets pkiEzsignfoldertypeID
+     *
+     * @param int $pkiEzsignfoldertypeID The unique ID of the Ezsignfoldertype.
+     *
+     * @return self
+     */
+    public function setPkiEzsignfoldertypeID($pkiEzsignfoldertypeID)
+    {
+        $this->container['pkiEzsignfoldertypeID'] = $pkiEzsignfoldertypeID;
+
+        return $this;
+    }
+
+    /**
+     * Gets sEzsignfoldertypeNameX
      *
      * @return string
      */
-    public function getEGet()
+    public function getSEzsignfoldertypeNameX()
     {
-        return $this->container['eGet'];
+        return $this->container['sEzsignfoldertypeNameX'];
     }
 
     /**
-     * Sets eGet
+     * Sets sEzsignfoldertypeNameX
      *
-     * @param string $eGet Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search for in *a_sWord*.
+     * @param string $sEzsignfoldertypeNameX The name of the Ezsignfoldertype in the language of the requester
      *
      * @return self
      */
-    public function setEGet($eGet)
+    public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
     {
-        $allowedValues = $this->getEGetAllowableValues();
-        if (!in_array($eGet, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'eGet', must be one of '%s'",
-                    $eGet,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['eGet'] = $eGet;
-
-        return $this;
-    }
-
-    /**
-     * Gets bWordCaseSensitive
-     *
-     * @return bool
-     */
-    public function getBWordCaseSensitive()
-    {
-        return $this->container['bWordCaseSensitive'];
-    }
-
-    /**
-     * Sets bWordCaseSensitive
-     *
-     * @param bool $bWordCaseSensitive IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.
-     *
-     * @return self
-     */
-    public function setBWordCaseSensitive($bWordCaseSensitive)
-    {
-        $this->container['bWordCaseSensitive'] = $bWordCaseSensitive;
-
-        return $this;
-    }
-
-    /**
-     * Gets aSWord
-     *
-     * @return string[]|null
-     */
-    public function getASWord()
-    {
-        return $this->container['aSWord'];
-    }
-
-    /**
-     * Sets aSWord
-     *
-     * @param string[]|null $aSWord Array of words to find in the document
-     *
-     * @return self
-     */
-    public function setASWord($aSWord)
-    {
-        $this->container['aSWord'] = $aSWord;
+        $this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
 
         return $this;
     }

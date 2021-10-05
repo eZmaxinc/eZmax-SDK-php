@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsigndocumentGetWordsPositionsV1RequestTest
+ * EzsignfoldertypeGetListV1ResponseTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsigndocumentGetWordsPositionsV1RequestTest Class Doc Comment
+ * EzsignfoldertypeGetListV1ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+ * @description Response for the /1/object/ezsignfoldertype/getList API Request
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsigndocumentGetWordsPositionsV1RequestTest extends TestCase
+class EzsignfoldertypeGetListV1ResponseTest extends TestCase
 {
 
     /**
@@ -72,36 +72,36 @@ class EzsigndocumentGetWordsPositionsV1RequestTest extends TestCase
     }
 
     /**
-     * Test "EzsigndocumentGetWordsPositionsV1Request"
+     * Test "EzsignfoldertypeGetListV1Response"
      */
-    public function testEzsigndocumentGetWordsPositionsV1Request()
+    public function testEzsignfoldertypeGetListV1Response()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "eGet"
+     * Test attribute "mPayload"
      */
-    public function testPropertyEGet()
+    public function testPropertyMPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "bWordCaseSensitive"
+     * Test attribute "objDebugPayload"
      */
-    public function testPropertyBWordCaseSensitive()
+    public function testPropertyObjDebugPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "aSWord"
+     * Test attribute "objDebug"
      */
-    public function testPropertyASWord()
+    public function testPropertyObjDebug()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
