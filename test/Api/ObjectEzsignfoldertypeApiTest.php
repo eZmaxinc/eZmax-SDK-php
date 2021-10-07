@@ -84,4 +84,3 @@ class ObjectEzsignfoldertypeApiTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

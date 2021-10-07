@@ -89,4 +89,3 @@ class EzsignformfieldgroupResponseCompoundAllOfTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

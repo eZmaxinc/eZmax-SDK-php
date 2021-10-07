@@ -125,4 +125,3 @@ class CommonResponseObjDebugTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

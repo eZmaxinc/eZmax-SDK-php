@@ -1268,4 +1268,3 @@ class ObjectEzsignsignatureApi
         return $options;
     }
 }
-?>

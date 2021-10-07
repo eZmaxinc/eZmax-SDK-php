@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomFormDataFolderResponseTest
+ * HeaderAcceptLanguageTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CustomFormDataFolderResponseTest Class Doc Comment
+ * HeaderAcceptLanguageTest Class Doc Comment
  *
  * @category    Class
- * @description A form Data Folder Object
+ * @description The language of the returned content.  1. **\\*** (or header not defined) Default language 2. **en** English 2. **fr** French
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CustomFormDataFolderResponseTest extends TestCase
+class HeaderAcceptLanguageTest extends TestCase
 {
 
     /**
@@ -72,39 +72,11 @@ class CustomFormDataFolderResponseTest extends TestCase
     }
 
     /**
-     * Test "CustomFormDataFolderResponse"
+     * Test "HeaderAcceptLanguage"
      */
-    public function testCustomFormDataFolderResponse()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "pkiEzsignfolderID"
-     */
-    public function testPropertyPkiEzsignfolderID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sEzsignfolderDescription"
-     */
-    public function testPropertySEzsignfolderDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjFormDataDocument"
-     */
-    public function testPropertyAObjFormDataDocument()
+    public function testHeaderAcceptLanguage()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

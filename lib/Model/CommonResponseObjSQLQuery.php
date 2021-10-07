@@ -356,4 +356,3 @@ class CommonResponseObjSQLQuery implements ModelInterface, ArrayAccess, \JsonSer
 }
 
 
-?>

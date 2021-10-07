@@ -383,4 +383,3 @@ class ActivesessionGetCurrentV1Response implements ModelInterface, ArrayAccess, 
 }
 
 
-?>

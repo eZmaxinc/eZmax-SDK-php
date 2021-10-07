@@ -121,14 +121,19 @@ class ObjectEzsignfoldertypeApi
      *
      * Retrieve Ezsignfoldertype list
      *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax iRowMax (optional)
+     * @param  int $iRowOffset iRowOffset (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $sFilter sFilter (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\EzsignfoldertypeGetListV1Response
+     * @return \eZmaxAPI\Model\EzsignfoldertypeGetListV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfoldertypeGetListV1()
+    public function ezsignfoldertypeGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
     {
-        list($response) = $this->ezsignfoldertypeGetListV1WithHttpInfo();
+        list($response) = $this->ezsignfoldertypeGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
         return $response;
     }
 
@@ -137,14 +142,19 @@ class ObjectEzsignfoldertypeApi
      *
      * Retrieve Ezsignfoldertype list
      *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax (optional)
+     * @param  int $iRowOffset (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $sFilter (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\EzsignfoldertypeGetListV1Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzsignfoldertypeGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfoldertypeGetListV1WithHttpInfo()
+    public function ezsignfoldertypeGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
     {
-        $request = $this->ezsignfoldertypeGetListV1Request();
+        $request = $this->ezsignfoldertypeGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,6 +197,18 @@ class ObjectEzsignfoldertypeApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 406:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\eZmaxAPI\Model\EzsignfoldertypeGetListV1Response';
@@ -212,6 +234,14 @@ class ObjectEzsignfoldertypeApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -222,13 +252,18 @@ class ObjectEzsignfoldertypeApi
      *
      * Retrieve Ezsignfoldertype list
      *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax (optional)
+     * @param  int $iRowOffset (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $sFilter (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldertypeGetListV1Async()
+    public function ezsignfoldertypeGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
     {
-        return $this->ezsignfoldertypeGetListV1AsyncWithHttpInfo()
+        return $this->ezsignfoldertypeGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -241,14 +276,19 @@ class ObjectEzsignfoldertypeApi
      *
      * Retrieve Ezsignfoldertype list
      *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax (optional)
+     * @param  int $iRowOffset (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $sFilter (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldertypeGetListV1AsyncWithHttpInfo()
+    public function ezsignfoldertypeGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldertypeGetListV1Response';
-        $request = $this->ezsignfoldertypeGetListV1Request();
+        $request = $this->ezsignfoldertypeGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -286,11 +326,16 @@ class ObjectEzsignfoldertypeApi
     /**
      * Create request for operation 'ezsignfoldertypeGetListV1'
      *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax (optional)
+     * @param  int $iRowOffset (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $sFilter (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfoldertypeGetListV1Request()
+    public function ezsignfoldertypeGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
     {
 
         $resourcePath = '/1/object/ezsignfoldertype/getList';
@@ -300,17 +345,65 @@ class ObjectEzsignfoldertypeApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($eOrderBy !== null) {
+            if('form' === 'form' && is_array($eOrderBy)) {
+                foreach($eOrderBy as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['eOrderBy'] = $eOrderBy;
+            }
+        }
+        // query params
+        if ($iRowMax !== null) {
+            if('form' === 'form' && is_array($iRowMax)) {
+                foreach($iRowMax as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['iRowMax'] = $iRowMax;
+            }
+        }
+        // query params
+        if ($iRowOffset !== null) {
+            if('form' === 'form' && is_array($iRowOffset)) {
+                foreach($iRowOffset as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['iRowOffset'] = $iRowOffset;
+            }
+        }
+        // query params
+        if ($sFilter !== null) {
+            if('form' === 'form' && is_array($sFilter)) {
+                foreach($sFilter as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['sFilter'] = $sFilter;
+            }
+        }
 
+        // header params
+        if ($acceptLanguage !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($acceptLanguage);
+        }
 
 
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
                 []
             );
         }
@@ -394,4 +487,3 @@ class ObjectEzsignfoldertypeApi
         return $options;
     }
 }
-?>

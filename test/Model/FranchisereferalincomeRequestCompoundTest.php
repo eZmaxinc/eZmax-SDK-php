@@ -197,4 +197,3 @@ class FranchisereferalincomeRequestCompoundTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

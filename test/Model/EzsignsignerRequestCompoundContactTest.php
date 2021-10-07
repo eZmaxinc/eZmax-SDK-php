@@ -134,4 +134,3 @@ class EzsignsignerRequestCompoundContactTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

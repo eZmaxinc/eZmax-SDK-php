@@ -107,4 +107,3 @@ class ActivesessionGetCurrentV1ResponseTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

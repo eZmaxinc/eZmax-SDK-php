@@ -429,4 +429,3 @@ class ObjectFranchiseofficeApi
         return $options;
     }
 }
-?>

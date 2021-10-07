@@ -356,4 +356,3 @@ class ApikeyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
 }
 
 
-?>

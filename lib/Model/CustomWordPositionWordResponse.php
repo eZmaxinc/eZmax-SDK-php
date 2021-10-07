@@ -356,4 +356,3 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
 }
 
 
-?>

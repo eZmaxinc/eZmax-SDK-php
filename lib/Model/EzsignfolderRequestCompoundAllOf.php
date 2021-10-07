@@ -322,4 +322,3 @@ class EzsignfolderRequestCompoundAllOf implements ModelInterface, ArrayAccess, \
 }
 
 
-?>

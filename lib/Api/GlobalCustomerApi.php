@@ -456,4 +456,3 @@ class GlobalCustomerApi
         return $options;
     }
 }
-?>

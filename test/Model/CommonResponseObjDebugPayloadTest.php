@@ -107,4 +107,3 @@ class CommonResponseObjDebugPayloadTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

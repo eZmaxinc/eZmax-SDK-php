@@ -350,4 +350,3 @@ class CommonResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 }
 
 
-?>

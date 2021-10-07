@@ -98,4 +98,3 @@ class CustomWordPositionWordResponseTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

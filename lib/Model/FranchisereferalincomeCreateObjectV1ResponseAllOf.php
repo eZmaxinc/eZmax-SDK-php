@@ -322,4 +322,3 @@ class FranchisereferalincomeCreateObjectV1ResponseAllOf implements ModelInterfac
 }
 
 
-?>

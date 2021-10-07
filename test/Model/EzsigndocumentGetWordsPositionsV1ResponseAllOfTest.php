@@ -89,4 +89,3 @@ class EzsigndocumentGetWordsPositionsV1ResponseAllOfTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

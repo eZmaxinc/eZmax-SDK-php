@@ -143,4 +143,3 @@ class SsprResetPasswordV1RequestTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

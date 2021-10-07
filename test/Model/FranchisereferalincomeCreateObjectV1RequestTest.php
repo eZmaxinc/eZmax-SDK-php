@@ -98,4 +98,3 @@ class FranchisereferalincomeCreateObjectV1RequestTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

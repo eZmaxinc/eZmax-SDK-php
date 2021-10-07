@@ -170,4 +170,3 @@ class EzsignfolderResponseCompoundTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

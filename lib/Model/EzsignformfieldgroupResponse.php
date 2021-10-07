@@ -323,4 +323,3 @@ class EzsignformfieldgroupResponse implements ModelInterface, ArrayAccess, \Json
 }
 
 
-?>

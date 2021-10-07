@@ -636,4 +636,3 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
 }
 
 
-?>

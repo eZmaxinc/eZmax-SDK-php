@@ -84,4 +84,3 @@ class ModuleUserApiTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

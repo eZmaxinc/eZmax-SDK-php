@@ -352,4 +352,3 @@ class FranchisereferalincomeRequestCompoundAllOf implements ModelInterface, Arra
 }
 
 
-?>

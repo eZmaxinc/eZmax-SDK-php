@@ -546,4 +546,3 @@ class SsprResetPasswordV1Request implements ModelInterface, ArrayAccess, \JsonSe
 }
 
 
-?>

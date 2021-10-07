@@ -84,4 +84,3 @@ class ObjectFranchiseofficeApiTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

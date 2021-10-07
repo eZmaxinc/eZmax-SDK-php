@@ -322,4 +322,3 @@ class ContactRequestCompoundAllOf implements ModelInterface, ArrayAccess, \JsonS
 }
 
 
-?>

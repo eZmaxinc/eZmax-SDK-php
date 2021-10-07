@@ -482,4 +482,3 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
 }
 
 
-?>

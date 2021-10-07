@@ -107,4 +107,3 @@ class CustomWordPositionOccurenceResponseTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

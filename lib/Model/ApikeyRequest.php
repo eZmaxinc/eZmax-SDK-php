@@ -356,4 +356,3 @@ class ApikeyRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 }
 
 
-?>

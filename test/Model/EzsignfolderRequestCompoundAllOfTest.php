@@ -89,4 +89,3 @@ class EzsignfolderRequestCompoundAllOfTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

@@ -394,4 +394,3 @@ class ObjectActivesessionApi
         return $options;
     }
 }
-?>

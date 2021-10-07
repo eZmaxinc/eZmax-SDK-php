@@ -53,8 +53,8 @@ docs/Model/ContactinformationsRequest.md
 docs/Model/ContactinformationsRequestCompound.md
 docs/Model/ContactinformationsRequestCompoundAllOf.md
 docs/Model/CustomFormDataDocumentResponse.md
-docs/Model/CustomFormDataFolderResponse.md
 docs/Model/CustomFormDataSignerResponse.md
+docs/Model/CustomFormsDataFolderResponse.md
 docs/Model/CustomWordPositionOccurenceResponse.md
 docs/Model/CustomWordPositionWordResponse.md
 docs/Model/EmailRequest.md
@@ -155,6 +155,7 @@ docs/Model/FranchisereferalincomeRequest.md
 docs/Model/FranchisereferalincomeRequestCompound.md
 docs/Model/FranchisereferalincomeRequestCompoundAllOf.md
 docs/Model/GlobalCustomerGetEndpointV1Response.md
+docs/Model/HeaderAcceptLanguage.md
 docs/Model/MultilingualApikeyDescription.md
 docs/Model/PhoneRequest.md
 docs/Model/SsprResetPasswordRequestV1Request.md
@@ -237,8 +238,8 @@ lib/Model/ContactinformationsRequest.php
 lib/Model/ContactinformationsRequestCompound.php
 lib/Model/ContactinformationsRequestCompoundAllOf.php
 lib/Model/CustomFormDataDocumentResponse.php
-lib/Model/CustomFormDataFolderResponse.php
 lib/Model/CustomFormDataSignerResponse.php
+lib/Model/CustomFormsDataFolderResponse.php
 lib/Model/CustomWordPositionOccurenceResponse.php
 lib/Model/CustomWordPositionWordResponse.php
 lib/Model/EmailRequest.php
@@ -339,6 +340,7 @@ lib/Model/FranchisereferalincomeRequest.php
 lib/Model/FranchisereferalincomeRequestCompound.php
 lib/Model/FranchisereferalincomeRequestCompoundAllOf.php
 lib/Model/GlobalCustomerGetEndpointV1Response.php
+lib/Model/HeaderAcceptLanguage.php
 lib/Model/ModelInterface.php
 lib/Model/MultilingualApikeyDescription.php
 lib/Model/PhoneRequest.php
@@ -421,8 +423,8 @@ test/Model/ContactinformationsRequestCompoundAllOfTest.php
 test/Model/ContactinformationsRequestCompoundTest.php
 test/Model/ContactinformationsRequestTest.php
 test/Model/CustomFormDataDocumentResponseTest.php
-test/Model/CustomFormDataFolderResponseTest.php
 test/Model/CustomFormDataSignerResponseTest.php
+test/Model/CustomFormsDataFolderResponseTest.php
 test/Model/CustomWordPositionOccurenceResponseTest.php
 test/Model/CustomWordPositionWordResponseTest.php
 test/Model/EmailRequestTest.php
@@ -523,6 +525,7 @@ test/Model/FranchisereferalincomeRequestCompoundAllOfTest.php
 test/Model/FranchisereferalincomeRequestCompoundTest.php
 test/Model/FranchisereferalincomeRequestTest.php
 test/Model/GlobalCustomerGetEndpointV1ResponseTest.php
+test/Model/HeaderAcceptLanguageTest.php
 test/Model/MultilingualApikeyDescriptionTest.php
 test/Model/PhoneRequestTest.php
 test/Model/SsprResetPasswordRequestV1RequestTest.php

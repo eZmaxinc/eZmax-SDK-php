@@ -21,4 +21,3 @@ return PhpCsFixer\Config::create()
         ->exclude('tests')
         ->in(__DIR__)
     );
-?>

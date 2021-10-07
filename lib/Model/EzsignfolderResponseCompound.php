@@ -636,4 +636,3 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
 }
 
 
-?>

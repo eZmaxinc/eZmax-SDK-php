@@ -322,4 +322,3 @@ class EzsigndocumentGetWordsPositionsV1ResponseAllOf implements ModelInterface, 
 }
 
 
-?>

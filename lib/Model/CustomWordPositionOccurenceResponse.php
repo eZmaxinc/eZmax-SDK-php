@@ -407,4 +407,3 @@ class CustomWordPositionOccurenceResponse implements ModelInterface, ArrayAccess
 }
 
 
-?>

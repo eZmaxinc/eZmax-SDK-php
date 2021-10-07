@@ -422,4 +422,3 @@ class ContactinformationsRequest implements ModelInterface, ArrayAccess, \JsonSe
 }
 
 
-?>

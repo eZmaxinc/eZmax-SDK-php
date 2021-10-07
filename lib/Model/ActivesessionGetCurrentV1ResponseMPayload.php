@@ -635,4 +635,3 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
 }
 
 
-?>

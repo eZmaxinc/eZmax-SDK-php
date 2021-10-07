@@ -411,4 +411,3 @@ class ModuleUserApi
         return $options;
     }
 }
-?>

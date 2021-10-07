@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomFormDataFolderResponse
+ * CustomFormsDataFolderResponse
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * CustomFormDataFolderResponse Class Doc Comment
+ * CustomFormsDataFolderResponse Class Doc Comment
  *
  * @category Class
- * @description A form Data Folder Object
+ * @description A forms Data Folder Object
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CustomFormDataFolderResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class CustomFormsDataFolderResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class CustomFormDataFolderResponse implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Custom-FormDataFolder-Response';
+    protected static $openAPIModelName = 'Custom-FormsDataFolder-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -389,4 +389,3 @@ class CustomFormDataFolderResponse implements ModelInterface, ArrayAccess, \Json
 }
 
 
-?>

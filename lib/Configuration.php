@@ -552,4 +552,3 @@ class Configuration
         return $url;
     }
 }
-?>

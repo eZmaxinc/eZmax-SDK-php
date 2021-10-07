@@ -98,4 +98,3 @@ class EmailRequestTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

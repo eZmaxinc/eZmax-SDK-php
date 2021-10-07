@@ -389,4 +389,3 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
 }
 
 
-?>

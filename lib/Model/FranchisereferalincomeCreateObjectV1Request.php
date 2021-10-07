@@ -350,4 +350,3 @@ class FranchisereferalincomeCreateObjectV1Request implements ModelInterface, Arr
 }
 
 
-?>

@@ -486,4 +486,3 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 }
 
 
-?>

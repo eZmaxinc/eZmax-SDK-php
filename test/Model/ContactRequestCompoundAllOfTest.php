@@ -89,4 +89,3 @@ class ContactRequestCompoundAllOfTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

@@ -94,4 +94,3 @@ interface ModelInterface
      */
     public function valid();
 }
-?>

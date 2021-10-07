@@ -653,4 +653,3 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
 }
 
 
-?>

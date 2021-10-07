@@ -322,4 +322,3 @@ class EzsignfoldertypeGetListV1ResponseMPayloadAllOf implements ModelInterface, 
 }
 
 
-?>

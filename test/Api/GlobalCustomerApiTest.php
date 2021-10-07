@@ -84,4 +84,3 @@ class GlobalCustomerApiTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

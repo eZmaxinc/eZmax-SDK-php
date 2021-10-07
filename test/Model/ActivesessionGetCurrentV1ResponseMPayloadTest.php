@@ -161,4 +161,3 @@ class ActivesessionGetCurrentV1ResponseMPayloadTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

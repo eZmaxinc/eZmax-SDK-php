@@ -630,4 +630,3 @@ class WebhookResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 }
 
 
-?>

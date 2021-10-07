@@ -98,4 +98,3 @@ class CommonResponseTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

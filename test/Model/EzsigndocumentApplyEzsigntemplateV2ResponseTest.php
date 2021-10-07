@@ -98,4 +98,3 @@ class EzsigndocumentApplyEzsigntemplateV2ResponseTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

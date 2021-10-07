@@ -143,4 +143,3 @@ class ContactRequestCompoundTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

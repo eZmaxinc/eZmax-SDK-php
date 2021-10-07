@@ -429,4 +429,3 @@ class ObjectPeriodApi
         return $options;
     }
 }
-?>

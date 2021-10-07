@@ -389,4 +389,3 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
 }
 
 
-?>

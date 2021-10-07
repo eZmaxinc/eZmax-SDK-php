@@ -1617,4 +1617,3 @@ class ModuleSsprApi
         return $options;
     }
 }
-?>

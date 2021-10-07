@@ -719,4 +719,3 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
 }
 
 
-?>

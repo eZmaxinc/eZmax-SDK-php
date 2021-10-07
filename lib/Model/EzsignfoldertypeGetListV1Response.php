@@ -383,4 +383,3 @@ class EzsignfoldertypeGetListV1Response implements ModelInterface, ArrayAccess, 
 }
 
 
-?>

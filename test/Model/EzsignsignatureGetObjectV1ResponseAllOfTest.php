@@ -89,4 +89,3 @@ class EzsignsignatureGetObjectV1ResponseAllOfTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

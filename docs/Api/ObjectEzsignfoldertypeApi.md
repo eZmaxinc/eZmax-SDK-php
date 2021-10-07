@@ -10,12 +10,12 @@ Method | HTTP request | Description
 ## `ezsignfoldertypeGetListV1()`
 
 ```php
-ezsignfoldertypeGetListV1(): \eZmaxAPI\Model\EzsignfoldertypeGetListV1Response
+ezsignfoldertypeGetListV1($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter): \eZmaxAPI\Model\EzsignfoldertypeGetListV1Response
 ```
 
 Retrieve Ezsignfoldertype list
 
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
 
 ### Example
 
@@ -36,9 +36,14 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldertypeApi(
     new GuzzleHttp\Client(),
     $config
 );
+$eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
+$iRowMax = 56; // int
+$iRowOffset = 56; // int
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$sFilter = 'sFilter_example'; // string
 
 try {
-    $result = $apiInstance->ezsignfoldertypeGetListV1();
+    $result = $apiInstance->ezsignfoldertypeGetListV1($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeGetListV1: ', $e->getMessage(), PHP_EOL;
@@ -47,7 +52,13 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional]
+ **iRowMax** | **int**|  | [optional]
+ **iRowOffset** | **int**|  | [optional]
+ **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+ **sFilter** | **string**|  | [optional]
 
 ### Return type
 
@@ -60,7 +71,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
+- **Accept**: `application/json`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

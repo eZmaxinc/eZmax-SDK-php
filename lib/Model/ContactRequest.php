@@ -501,4 +501,3 @@ class ContactRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 }
 
 
-?>

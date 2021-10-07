@@ -98,4 +98,3 @@ class AuthenticateAuthenticateV2ResponseMPayloadTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

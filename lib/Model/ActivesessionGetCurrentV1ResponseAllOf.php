@@ -322,4 +322,3 @@ class ActivesessionGetCurrentV1ResponseAllOf implements ModelInterface, ArrayAcc
 }
 
 
-?>

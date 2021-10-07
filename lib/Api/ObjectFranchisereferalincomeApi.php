@@ -411,4 +411,3 @@ class ObjectFranchisereferalincomeApi
         return $options;
     }
 }
-?>

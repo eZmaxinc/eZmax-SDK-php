@@ -389,4 +389,3 @@ class AttemptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 }
 
 
-?>

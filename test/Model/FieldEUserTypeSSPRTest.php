@@ -80,4 +80,3 @@ class FieldEUserTypeSSPRTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

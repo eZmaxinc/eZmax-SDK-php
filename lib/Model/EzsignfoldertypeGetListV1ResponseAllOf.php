@@ -322,4 +322,3 @@ class EzsignfoldertypeGetListV1ResponseAllOf implements ModelInterface, ArrayAcc
 }
 
 
-?>

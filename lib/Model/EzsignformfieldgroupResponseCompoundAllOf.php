@@ -322,4 +322,3 @@ class EzsignformfieldgroupResponseCompoundAllOf implements ModelInterface, Array
 }
 
 
-?>

@@ -537,4 +537,3 @@ class UserResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 }
 
 
-?>

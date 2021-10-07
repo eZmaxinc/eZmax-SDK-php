@@ -98,4 +98,3 @@ class CommonWebhookTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

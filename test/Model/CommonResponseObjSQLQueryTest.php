@@ -98,4 +98,3 @@ class CommonResponseObjSQLQueryTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

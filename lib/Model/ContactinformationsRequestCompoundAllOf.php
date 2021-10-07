@@ -421,4 +421,3 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
 }
 
 
-?>

@@ -350,4 +350,3 @@ class EzsignfolderSendV1Response implements ModelInterface, ArrayAccess, \JsonSe
 }
 
 
-?>

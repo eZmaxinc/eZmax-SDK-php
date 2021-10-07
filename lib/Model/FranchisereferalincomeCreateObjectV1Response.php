@@ -383,4 +383,3 @@ class FranchisereferalincomeCreateObjectV1Response implements ModelInterface, Ar
 }
 
 
-?>

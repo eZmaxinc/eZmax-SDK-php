@@ -450,4 +450,3 @@ class ModuleAuthenticateApi
         return $options;
     }
 }
-?>

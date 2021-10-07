@@ -534,4 +534,3 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
 }
 
 
-?>

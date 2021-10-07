@@ -116,4 +116,3 @@ class SsprSendUsernamesV1RequestTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

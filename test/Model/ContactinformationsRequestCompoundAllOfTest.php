@@ -116,4 +116,3 @@ class ContactinformationsRequestCompoundAllOfTest extends TestCase
         $this->markTestIncomplete('Not implemented');
     }
 }
-?>

@@ -353,4 +353,3 @@ class CommonResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
 }
 
 
-?>

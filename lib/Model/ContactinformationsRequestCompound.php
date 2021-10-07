@@ -554,4 +554,3 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
 }
 
 
-?>
