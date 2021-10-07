@@ -88,6 +88,7 @@ docs/Model/EzsigndocumentResponse.md
 docs/Model/EzsigndocumentResponseCompound.md
 docs/Model/EzsignfolderCreateObjectV1Request.md
 docs/Model/EzsignfolderCreateObjectV1Response.md
+docs/Model/EzsignfolderCreateObjectV1ResponseAllOf.md
 docs/Model/EzsignfolderCreateObjectV1ResponseMPayload.md
 docs/Model/EzsignfolderDeleteObjectV1Response.md
 docs/Model/EzsignfolderGetFormsDataV1Response.md
@@ -273,6 +274,7 @@ lib/Model/EzsigndocumentResponse.php
 lib/Model/EzsigndocumentResponseCompound.php
 lib/Model/EzsignfolderCreateObjectV1Request.php
 lib/Model/EzsignfolderCreateObjectV1Response.php
+lib/Model/EzsignfolderCreateObjectV1ResponseAllOf.php
 lib/Model/EzsignfolderCreateObjectV1ResponseMPayload.php
 lib/Model/EzsignfolderDeleteObjectV1Response.php
 lib/Model/EzsignfolderGetFormsDataV1Response.php
@@ -457,6 +459,7 @@ test/Model/EzsigndocumentRequestTest.php
 test/Model/EzsigndocumentResponseCompoundTest.php
 test/Model/EzsigndocumentResponseTest.php
 test/Model/EzsignfolderCreateObjectV1RequestTest.php
+test/Model/EzsignfolderCreateObjectV1ResponseAllOfTest.php
 test/Model/EzsignfolderCreateObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfolderCreateObjectV1ResponseTest.php
 test/Model/EzsignfolderDeleteObjectV1ResponseTest.php
