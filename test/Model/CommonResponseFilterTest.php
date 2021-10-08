@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayloadTest
+ * CommonResponseFilterTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CommonResponseObjDebugPayloadTest Class Doc Comment
+ * CommonResponseFilterTest Class Doc Comment
  *
  * @category    Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description Definition of Filters for getList
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CommonResponseObjDebugPayloadTest extends TestCase
+class CommonResponseFilterTest extends TestCase
 {
 
     /**
@@ -72,36 +72,27 @@ class CommonResponseObjDebugPayloadTest extends TestCase
     }
 
     /**
-     * Test "CommonResponseObjDebugPayload"
+     * Test "CommonResponseFilter"
      */
-    public function testCommonResponseObjDebugPayload()
+    public function testCommonResponseFilter()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iVersionMin"
+     * Test attribute "aAutoType"
      */
-    public function testPropertyIVersionMin()
+    public function testPropertyAAutoType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iVersionMax"
+     * Test attribute "aEnum"
      */
-    public function testPropertyIVersionMax()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aRequiredPermission"
-     */
-    public function testPropertyARequiredPermission()
+    public function testPropertyAEnum()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -42,8 +42,12 @@ docs/Model/CommonGetAutocompleteV1ResponseMPayload.md
 docs/Model/CommonGetListV1ResponseMPayload.md
 docs/Model/CommonResponse.md
 docs/Model/CommonResponseError.md
+docs/Model/CommonResponseFilter.md
+docs/Model/CommonResponseGetList.md
 docs/Model/CommonResponseObjDebug.md
 docs/Model/CommonResponseObjDebugPayload.md
+docs/Model/CommonResponseObjDebugPayloadGetList.md
+docs/Model/CommonResponseObjDebugPayloadGetListAllOf.md
 docs/Model/CommonResponseObjSQLQuery.md
 docs/Model/CommonWebhook.md
 docs/Model/ContactRequest.md
@@ -144,6 +148,7 @@ docs/Model/EzsignsignerRequestCompoundContact.md
 docs/Model/FieldEEzsigndocumentStep.md
 docs/Model/FieldEEzsignfolderSendreminderfrequency.md
 docs/Model/FieldEEzsignfolderStep.md
+docs/Model/FieldEEzsignfoldertypePrivacylevel.md
 docs/Model/FieldEEzsignsignatureType.md
 docs/Model/FieldEPhoneType.md
 docs/Model/FieldEUserType.md
@@ -228,8 +233,12 @@ lib/Model/CommonGetAutocompleteV1ResponseMPayload.php
 lib/Model/CommonGetListV1ResponseMPayload.php
 lib/Model/CommonResponse.php
 lib/Model/CommonResponseError.php
+lib/Model/CommonResponseFilter.php
+lib/Model/CommonResponseGetList.php
 lib/Model/CommonResponseObjDebug.php
 lib/Model/CommonResponseObjDebugPayload.php
+lib/Model/CommonResponseObjDebugPayloadGetList.php
+lib/Model/CommonResponseObjDebugPayloadGetListAllOf.php
 lib/Model/CommonResponseObjSQLQuery.php
 lib/Model/CommonWebhook.php
 lib/Model/ContactRequest.php
@@ -330,6 +339,7 @@ lib/Model/EzsignsignerRequestCompoundContact.php
 lib/Model/FieldEEzsigndocumentStep.php
 lib/Model/FieldEEzsignfolderSendreminderfrequency.php
 lib/Model/FieldEEzsignfolderStep.php
+lib/Model/FieldEEzsignfoldertypePrivacylevel.php
 lib/Model/FieldEEzsignsignatureType.php
 lib/Model/FieldEPhoneType.php
 lib/Model/FieldEUserType.php
@@ -413,6 +423,10 @@ test/Model/CommonGetAutocompleteV1ResponseMPayloadTest.php
 test/Model/CommonGetAutocompleteV1ResponseTest.php
 test/Model/CommonGetListV1ResponseMPayloadTest.php
 test/Model/CommonResponseErrorTest.php
+test/Model/CommonResponseFilterTest.php
+test/Model/CommonResponseGetListTest.php
+test/Model/CommonResponseObjDebugPayloadGetListAllOfTest.php
+test/Model/CommonResponseObjDebugPayloadGetListTest.php
 test/Model/CommonResponseObjDebugPayloadTest.php
 test/Model/CommonResponseObjDebugTest.php
 test/Model/CommonResponseObjSQLQueryTest.php
@@ -516,6 +530,7 @@ test/Model/EzsignsignerRequestTest.php
 test/Model/FieldEEzsigndocumentStepTest.php
 test/Model/FieldEEzsignfolderSendreminderfrequencyTest.php
 test/Model/FieldEEzsignfolderStepTest.php
+test/Model/FieldEEzsignfoldertypePrivacylevelTest.php
 test/Model/FieldEEzsignsignatureTypeTest.php
 test/Model/FieldEPhoneTypeTest.php
 test/Model/FieldEUserTypeSSPRTest.php

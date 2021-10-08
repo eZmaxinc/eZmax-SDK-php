@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayloadTest
+ * CommonResponseGetListTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CommonResponseObjDebugPayloadTest Class Doc Comment
+ * CommonResponseGetListTest Class Doc Comment
  *
  * @category    Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description All API response will inherit this based Response
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CommonResponseObjDebugPayloadTest extends TestCase
+class CommonResponseGetListTest extends TestCase
 {
 
     /**
@@ -72,36 +72,27 @@ class CommonResponseObjDebugPayloadTest extends TestCase
     }
 
     /**
-     * Test "CommonResponseObjDebugPayload"
+     * Test "CommonResponseGetList"
      */
-    public function testCommonResponseObjDebugPayload()
+    public function testCommonResponseGetList()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iVersionMin"
+     * Test attribute "objDebugPayload"
      */
-    public function testPropertyIVersionMin()
+    public function testPropertyObjDebugPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iVersionMax"
+     * Test attribute "objDebug"
      */
-    public function testPropertyIVersionMax()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aRequiredPermission"
-     */
-    public function testPropertyARequiredPermission()
+    public function testPropertyObjDebug()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

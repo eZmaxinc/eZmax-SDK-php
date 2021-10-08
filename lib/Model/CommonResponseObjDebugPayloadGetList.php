@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayload
+ * CommonResponseObjDebugPayloadGetList
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * CommonResponseObjDebugPayload Class Doc Comment
+ * CommonResponseObjDebugPayloadGetList Class Doc Comment
  *
  * @category Class
  * @description This is a debug object containing debugging information on the actual function
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Common-Response-objDebugPayload';
+    protected static $openAPIModelName = 'Common-Response-objDebugPayload_getList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -63,7 +63,9 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'iVersionMin' => 'int',
         'iVersionMax' => 'int',
-        'aRequiredPermission' => 'int[]'
+        'aRequiredPermission' => 'int[]',
+        'aFilter' => '\eZmaxAPI\Model\CommonResponseFilter',
+        'aOrderBy' => 'array<string,string>'
     ];
 
     /**
@@ -76,7 +78,9 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPIFormats = [
         'iVersionMin' => null,
         'iVersionMax' => null,
-        'aRequiredPermission' => null
+        'aRequiredPermission' => null,
+        'aFilter' => null,
+        'aOrderBy' => null
     ];
 
     /**
@@ -108,7 +112,9 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     protected static $attributeMap = [
         'iVersionMin' => 'iVersionMin',
         'iVersionMax' => 'iVersionMax',
-        'aRequiredPermission' => 'a_RequiredPermission'
+        'aRequiredPermission' => 'a_RequiredPermission',
+        'aFilter' => 'a_Filter',
+        'aOrderBy' => 'a_OrderBy'
     ];
 
     /**
@@ -119,7 +125,9 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     protected static $setters = [
         'iVersionMin' => 'setIVersionMin',
         'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermission' => 'setARequiredPermission'
+        'aRequiredPermission' => 'setARequiredPermission',
+        'aFilter' => 'setAFilter',
+        'aOrderBy' => 'setAOrderBy'
     ];
 
     /**
@@ -130,7 +138,9 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     protected static $getters = [
         'iVersionMin' => 'getIVersionMin',
         'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermission' => 'getARequiredPermission'
+        'aRequiredPermission' => 'getARequiredPermission',
+        'aFilter' => 'getAFilter',
+        'aOrderBy' => 'getAOrderBy'
     ];
 
     /**
@@ -193,6 +203,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
         $this->container['iVersionMin'] = $data['iVersionMin'] ?? null;
         $this->container['iVersionMax'] = $data['iVersionMax'] ?? null;
         $this->container['aRequiredPermission'] = $data['aRequiredPermission'] ?? null;
+        $this->container['aFilter'] = $data['aFilter'] ?? null;
+        $this->container['aOrderBy'] = $data['aOrderBy'] ?? null;
     }
 
     /**
@@ -212,6 +224,12 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
         }
         if ($this->container['aRequiredPermission'] === null) {
             $invalidProperties[] = "'aRequiredPermission' can't be null";
+        }
+        if ($this->container['aFilter'] === null) {
+            $invalidProperties[] = "'aFilter' can't be null";
+        }
+        if ($this->container['aOrderBy'] === null) {
+            $invalidProperties[] = "'aOrderBy' can't be null";
         }
         return $invalidProperties;
     }
@@ -296,6 +314,54 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     public function setARequiredPermission($aRequiredPermission)
     {
         $this->container['aRequiredPermission'] = $aRequiredPermission;
+
+        return $this;
+    }
+
+    /**
+     * Gets aFilter
+     *
+     * @return \eZmaxAPI\Model\CommonResponseFilter
+     */
+    public function getAFilter()
+    {
+        return $this->container['aFilter'];
+    }
+
+    /**
+     * Sets aFilter
+     *
+     * @param \eZmaxAPI\Model\CommonResponseFilter $aFilter aFilter
+     *
+     * @return self
+     */
+    public function setAFilter($aFilter)
+    {
+        $this->container['aFilter'] = $aFilter;
+
+        return $this;
+    }
+
+    /**
+     * Gets aOrderBy
+     *
+     * @return array<string,string>
+     */
+    public function getAOrderBy()
+    {
+        return $this->container['aOrderBy'];
+    }
+
+    /**
+     * Sets aOrderBy
+     *
+     * @param array<string,string> $aOrderBy List of available values for *eOrderBy*
+     *
+     * @return self
+     */
+    public function setAOrderBy($aOrderBy)
+    {
+        $this->container['aOrderBy'] = $aOrderBy;
 
         return $this;
     }

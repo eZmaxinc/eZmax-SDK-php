@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayloadTest
+ * FieldEEzsignfoldertypePrivacylevelTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CommonResponseObjDebugPayloadTest Class Doc Comment
+ * FieldEEzsignfoldertypePrivacylevelTest Class Doc Comment
  *
  * @category    Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description The Privacy level of the Ezsignfolder type.  * **User** is for personal folders use and cannot be shared * **Usergroup** is for shared folders and complex permission can be configured to control access
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CommonResponseObjDebugPayloadTest extends TestCase
+class FieldEEzsignfoldertypePrivacylevelTest extends TestCase
 {
 
     /**
@@ -72,36 +72,9 @@ class CommonResponseObjDebugPayloadTest extends TestCase
     }
 
     /**
-     * Test "CommonResponseObjDebugPayload"
+     * Test "FieldEEzsignfoldertypePrivacylevel"
      */
-    public function testCommonResponseObjDebugPayload()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iVersionMin"
-     */
-    public function testPropertyIVersionMin()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iVersionMax"
-     */
-    public function testPropertyIVersionMax()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aRequiredPermission"
-     */
-    public function testPropertyARequiredPermission()
+    public function testFieldEEzsignfoldertypePrivacylevel()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -90,9 +90,27 @@ class EzsignfoldertypeListElementTest extends TestCase
     }
 
     /**
+     * Test attribute "eEzsignfoldertypePrivacylevel"
+     */
+    public function testPropertyEEzsignfoldertypePrivacylevel()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsignfoldertypeNameX"
      */
     public function testPropertySEzsignfoldertypeNameX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignfoldertypeIsactive"
+     */
+    public function testPropertyBEzsignfoldertypeIsactive()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

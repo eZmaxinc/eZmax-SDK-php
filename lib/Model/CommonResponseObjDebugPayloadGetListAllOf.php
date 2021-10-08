@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayload
+ * CommonResponseObjDebugPayloadGetListAllOf
  *
  * PHP version 7.3
  *
@@ -33,10 +33,9 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * CommonResponseObjDebugPayload Class Doc Comment
+ * CommonResponseObjDebugPayloadGetListAllOf Class Doc Comment
  *
  * @category Class
- * @description This is a debug object containing debugging information on the actual function
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +43,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class CommonResponseObjDebugPayloadGetListAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Common-Response-objDebugPayload';
+    protected static $openAPIModelName = 'Common_Response_objDebugPayload_getList_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +60,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iVersionMin' => 'int',
-        'iVersionMax' => 'int',
-        'aRequiredPermission' => 'int[]'
+        'aFilter' => '\eZmaxAPI\Model\CommonResponseFilter',
+        'aOrderBy' => 'array<string,string>'
     ];
 
     /**
@@ -74,9 +72,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'iVersionMin' => null,
-        'iVersionMax' => null,
-        'aRequiredPermission' => null
+        'aFilter' => null,
+        'aOrderBy' => null
     ];
 
     /**
@@ -106,9 +103,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'iVersionMin' => 'iVersionMin',
-        'iVersionMax' => 'iVersionMax',
-        'aRequiredPermission' => 'a_RequiredPermission'
+        'aFilter' => 'a_Filter',
+        'aOrderBy' => 'a_OrderBy'
     ];
 
     /**
@@ -117,9 +113,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'iVersionMin' => 'setIVersionMin',
-        'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermission' => 'setARequiredPermission'
+        'aFilter' => 'setAFilter',
+        'aOrderBy' => 'setAOrderBy'
     ];
 
     /**
@@ -128,9 +123,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'iVersionMin' => 'getIVersionMin',
-        'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermission' => 'getARequiredPermission'
+        'aFilter' => 'getAFilter',
+        'aOrderBy' => 'getAOrderBy'
     ];
 
     /**
@@ -190,9 +184,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->container['iVersionMin'] = $data['iVersionMin'] ?? null;
-        $this->container['iVersionMax'] = $data['iVersionMax'] ?? null;
-        $this->container['aRequiredPermission'] = $data['aRequiredPermission'] ?? null;
+        $this->container['aFilter'] = $data['aFilter'] ?? null;
+        $this->container['aOrderBy'] = $data['aOrderBy'] ?? null;
     }
 
     /**
@@ -204,14 +197,11 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['iVersionMin'] === null) {
-            $invalidProperties[] = "'iVersionMin' can't be null";
+        if ($this->container['aFilter'] === null) {
+            $invalidProperties[] = "'aFilter' can't be null";
         }
-        if ($this->container['iVersionMax'] === null) {
-            $invalidProperties[] = "'iVersionMax' can't be null";
-        }
-        if ($this->container['aRequiredPermission'] === null) {
-            $invalidProperties[] = "'aRequiredPermission' can't be null";
+        if ($this->container['aOrderBy'] === null) {
+            $invalidProperties[] = "'aOrderBy' can't be null";
         }
         return $invalidProperties;
     }
@@ -229,73 +219,49 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets iVersionMin
+     * Gets aFilter
      *
-     * @return int
+     * @return \eZmaxAPI\Model\CommonResponseFilter
      */
-    public function getIVersionMin()
+    public function getAFilter()
     {
-        return $this->container['iVersionMin'];
+        return $this->container['aFilter'];
     }
 
     /**
-     * Sets iVersionMin
+     * Sets aFilter
      *
-     * @param int $iVersionMin The minimum version of the function that can be called
+     * @param \eZmaxAPI\Model\CommonResponseFilter $aFilter aFilter
      *
      * @return self
      */
-    public function setIVersionMin($iVersionMin)
+    public function setAFilter($aFilter)
     {
-        $this->container['iVersionMin'] = $iVersionMin;
+        $this->container['aFilter'] = $aFilter;
 
         return $this;
     }
 
     /**
-     * Gets iVersionMax
+     * Gets aOrderBy
      *
-     * @return int
+     * @return array<string,string>
      */
-    public function getIVersionMax()
+    public function getAOrderBy()
     {
-        return $this->container['iVersionMax'];
+        return $this->container['aOrderBy'];
     }
 
     /**
-     * Sets iVersionMax
+     * Sets aOrderBy
      *
-     * @param int $iVersionMax The maximum version of the function that can be called
+     * @param array<string,string> $aOrderBy List of available values for *eOrderBy*
      *
      * @return self
      */
-    public function setIVersionMax($iVersionMax)
+    public function setAOrderBy($aOrderBy)
     {
-        $this->container['iVersionMax'] = $iVersionMax;
-
-        return $this;
-    }
-
-    /**
-     * Gets aRequiredPermission
-     *
-     * @return int[]
-     */
-    public function getARequiredPermission()
-    {
-        return $this->container['aRequiredPermission'];
-    }
-
-    /**
-     * Sets aRequiredPermission
-     *
-     * @param int[] $aRequiredPermission An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
-     *
-     * @return self
-     */
-    public function setARequiredPermission($aRequiredPermission)
-    {
-        $this->container['aRequiredPermission'] = $aRequiredPermission;
+        $this->container['aOrderBy'] = $aOrderBy;
 
         return $this;
     }

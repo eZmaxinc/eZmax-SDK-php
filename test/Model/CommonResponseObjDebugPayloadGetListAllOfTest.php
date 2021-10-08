@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayloadTest
+ * CommonResponseObjDebugPayloadGetListAllOfTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CommonResponseObjDebugPayloadTest Class Doc Comment
+ * CommonResponseObjDebugPayloadGetListAllOfTest Class Doc Comment
  *
  * @category    Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description CommonResponseObjDebugPayloadGetListAllOf
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CommonResponseObjDebugPayloadTest extends TestCase
+class CommonResponseObjDebugPayloadGetListAllOfTest extends TestCase
 {
 
     /**
@@ -72,36 +72,27 @@ class CommonResponseObjDebugPayloadTest extends TestCase
     }
 
     /**
-     * Test "CommonResponseObjDebugPayload"
+     * Test "CommonResponseObjDebugPayloadGetListAllOf"
      */
-    public function testCommonResponseObjDebugPayload()
+    public function testCommonResponseObjDebugPayloadGetListAllOf()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iVersionMin"
+     * Test attribute "aFilter"
      */
-    public function testPropertyIVersionMin()
+    public function testPropertyAFilter()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iVersionMax"
+     * Test attribute "aOrderBy"
      */
-    public function testPropertyIVersionMax()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aRequiredPermission"
-     */
-    public function testPropertyARequiredPermission()
+    public function testPropertyAOrderBy()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

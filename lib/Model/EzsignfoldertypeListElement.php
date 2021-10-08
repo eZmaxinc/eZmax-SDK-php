@@ -62,7 +62,9 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'pkiEzsignfoldertypeID' => 'int',
-        'sEzsignfoldertypeNameX' => 'string'
+        'eEzsignfoldertypePrivacylevel' => '\eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel',
+        'sEzsignfoldertypeNameX' => 'string',
+        'bEzsignfoldertypeIsactive' => 'bool'
     ];
 
     /**
@@ -74,7 +76,9 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPIFormats = [
         'pkiEzsignfoldertypeID' => null,
-        'sEzsignfoldertypeNameX' => null
+        'eEzsignfoldertypePrivacylevel' => null,
+        'sEzsignfoldertypeNameX' => null,
+        'bEzsignfoldertypeIsactive' => null
     ];
 
     /**
@@ -105,7 +109,9 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $attributeMap = [
         'pkiEzsignfoldertypeID' => 'pkiEzsignfoldertypeID',
-        'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX'
+        'eEzsignfoldertypePrivacylevel' => 'eEzsignfoldertypePrivacylevel',
+        'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX',
+        'bEzsignfoldertypeIsactive' => 'bEzsignfoldertypeIsactive'
     ];
 
     /**
@@ -115,7 +121,9 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $setters = [
         'pkiEzsignfoldertypeID' => 'setPkiEzsignfoldertypeID',
-        'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX'
+        'eEzsignfoldertypePrivacylevel' => 'setEEzsignfoldertypePrivacylevel',
+        'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX',
+        'bEzsignfoldertypeIsactive' => 'setBEzsignfoldertypeIsactive'
     ];
 
     /**
@@ -125,7 +133,9 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $getters = [
         'pkiEzsignfoldertypeID' => 'getPkiEzsignfoldertypeID',
-        'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX'
+        'eEzsignfoldertypePrivacylevel' => 'getEEzsignfoldertypePrivacylevel',
+        'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX',
+        'bEzsignfoldertypeIsactive' => 'getBEzsignfoldertypeIsactive'
     ];
 
     /**
@@ -186,7 +196,9 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
     public function __construct(array $data = null)
     {
         $this->container['pkiEzsignfoldertypeID'] = $data['pkiEzsignfoldertypeID'] ?? null;
+        $this->container['eEzsignfoldertypePrivacylevel'] = $data['eEzsignfoldertypePrivacylevel'] ?? null;
         $this->container['sEzsignfoldertypeNameX'] = $data['sEzsignfoldertypeNameX'] ?? null;
+        $this->container['bEzsignfoldertypeIsactive'] = $data['bEzsignfoldertypeIsactive'] ?? null;
     }
 
     /**
@@ -201,8 +213,14 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['pkiEzsignfoldertypeID'] === null) {
             $invalidProperties[] = "'pkiEzsignfoldertypeID' can't be null";
         }
+        if ($this->container['eEzsignfoldertypePrivacylevel'] === null) {
+            $invalidProperties[] = "'eEzsignfoldertypePrivacylevel' can't be null";
+        }
         if ($this->container['sEzsignfoldertypeNameX'] === null) {
             $invalidProperties[] = "'sEzsignfoldertypeNameX' can't be null";
+        }
+        if ($this->container['bEzsignfoldertypeIsactive'] === null) {
+            $invalidProperties[] = "'bEzsignfoldertypeIsactive' can't be null";
         }
         return $invalidProperties;
     }
@@ -244,6 +262,30 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets eEzsignfoldertypePrivacylevel
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel
+     */
+    public function getEEzsignfoldertypePrivacylevel()
+    {
+        return $this->container['eEzsignfoldertypePrivacylevel'];
+    }
+
+    /**
+     * Sets eEzsignfoldertypePrivacylevel
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel $eEzsignfoldertypePrivacylevel eEzsignfoldertypePrivacylevel
+     *
+     * @return self
+     */
+    public function setEEzsignfoldertypePrivacylevel($eEzsignfoldertypePrivacylevel)
+    {
+        $this->container['eEzsignfoldertypePrivacylevel'] = $eEzsignfoldertypePrivacylevel;
+
+        return $this;
+    }
+
+    /**
      * Gets sEzsignfoldertypeNameX
      *
      * @return string
@@ -263,6 +305,30 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
     public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
     {
         $this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsignfoldertypeIsactive
+     *
+     * @return bool
+     */
+    public function getBEzsignfoldertypeIsactive()
+    {
+        return $this->container['bEzsignfoldertypeIsactive'];
+    }
+
+    /**
+     * Sets bEzsignfoldertypeIsactive
+     *
+     * @param bool $bEzsignfoldertypeIsactive Whether the Ezsignfoldertype is active or not
+     *
+     * @return self
+     */
+    public function setBEzsignfoldertypeIsactive($bEzsignfoldertypeIsactive)
+    {
+        $this->container['bEzsignfoldertypeIsactive'] = $bEzsignfoldertypeIsactive;
 
         return $this;
     }

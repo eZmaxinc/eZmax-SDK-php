@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayload
+ * CommonResponseGetList
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * CommonResponseObjDebugPayload Class Doc Comment
+ * CommonResponseGetList Class Doc Comment
  *
  * @category Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description All API response will inherit this based Response
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class CommonResponseGetList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Common-Response-objDebugPayload';
+    protected static $openAPIModelName = 'Common-Response_getList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iVersionMin' => 'int',
-        'iVersionMax' => 'int',
-        'aRequiredPermission' => 'int[]'
+        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList',
+        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
 
     /**
@@ -74,9 +73,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'iVersionMin' => null,
-        'iVersionMax' => null,
-        'aRequiredPermission' => null
+        'objDebugPayload' => null,
+        'objDebug' => null
     ];
 
     /**
@@ -106,9 +104,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'iVersionMin' => 'iVersionMin',
-        'iVersionMax' => 'iVersionMax',
-        'aRequiredPermission' => 'a_RequiredPermission'
+        'objDebugPayload' => 'objDebugPayload',
+        'objDebug' => 'objDebug'
     ];
 
     /**
@@ -117,9 +114,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'iVersionMin' => 'setIVersionMin',
-        'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermission' => 'setARequiredPermission'
+        'objDebugPayload' => 'setObjDebugPayload',
+        'objDebug' => 'setObjDebug'
     ];
 
     /**
@@ -128,9 +124,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'iVersionMin' => 'getIVersionMin',
-        'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermission' => 'getARequiredPermission'
+        'objDebugPayload' => 'getObjDebugPayload',
+        'objDebug' => 'getObjDebug'
     ];
 
     /**
@@ -190,9 +185,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->container['iVersionMin'] = $data['iVersionMin'] ?? null;
-        $this->container['iVersionMax'] = $data['iVersionMax'] ?? null;
-        $this->container['aRequiredPermission'] = $data['aRequiredPermission'] ?? null;
+        $this->container['objDebugPayload'] = $data['objDebugPayload'] ?? null;
+        $this->container['objDebug'] = $data['objDebug'] ?? null;
     }
 
     /**
@@ -204,15 +198,6 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['iVersionMin'] === null) {
-            $invalidProperties[] = "'iVersionMin' can't be null";
-        }
-        if ($this->container['iVersionMax'] === null) {
-            $invalidProperties[] = "'iVersionMax' can't be null";
-        }
-        if ($this->container['aRequiredPermission'] === null) {
-            $invalidProperties[] = "'aRequiredPermission' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -229,73 +214,49 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets iVersionMin
+     * Gets objDebugPayload
      *
-     * @return int
+     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null
      */
-    public function getIVersionMin()
+    public function getObjDebugPayload()
     {
-        return $this->container['iVersionMin'];
+        return $this->container['objDebugPayload'];
     }
 
     /**
-     * Sets iVersionMin
+     * Sets objDebugPayload
      *
-     * @param int $iVersionMin The minimum version of the function that can be called
+     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null $objDebugPayload objDebugPayload
      *
      * @return self
      */
-    public function setIVersionMin($iVersionMin)
+    public function setObjDebugPayload($objDebugPayload)
     {
-        $this->container['iVersionMin'] = $iVersionMin;
+        $this->container['objDebugPayload'] = $objDebugPayload;
 
         return $this;
     }
 
     /**
-     * Gets iVersionMax
+     * Gets objDebug
      *
-     * @return int
+     * @return \eZmaxAPI\Model\CommonResponseObjDebug|null
      */
-    public function getIVersionMax()
+    public function getObjDebug()
     {
-        return $this->container['iVersionMax'];
+        return $this->container['objDebug'];
     }
 
     /**
-     * Sets iVersionMax
+     * Sets objDebug
      *
-     * @param int $iVersionMax The maximum version of the function that can be called
+     * @param \eZmaxAPI\Model\CommonResponseObjDebug|null $objDebug objDebug
      *
      * @return self
      */
-    public function setIVersionMax($iVersionMax)
+    public function setObjDebug($objDebug)
     {
-        $this->container['iVersionMax'] = $iVersionMax;
-
-        return $this;
-    }
-
-    /**
-     * Gets aRequiredPermission
-     *
-     * @return int[]
-     */
-    public function getARequiredPermission()
-    {
-        return $this->container['aRequiredPermission'];
-    }
-
-    /**
-     * Sets aRequiredPermission
-     *
-     * @param int[] $aRequiredPermission An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
-     *
-     * @return self
-     */
-    public function setARequiredPermission($aRequiredPermission)
-    {
-        $this->container['aRequiredPermission'] = $aRequiredPermission;
+        $this->container['objDebug'] = $objDebug;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayload
+ * CommonResponseFilter
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * CommonResponseObjDebugPayload Class Doc Comment
+ * CommonResponseFilter Class Doc Comment
  *
  * @category Class
- * @description This is a debug object containing debugging information on the actual function
+ * @description Definition of Filters for getList
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class CommonResponseFilter implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Common-Response-objDebugPayload';
+    protected static $openAPIModelName = 'Common-Response-Filter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iVersionMin' => 'int',
-        'iVersionMax' => 'int',
-        'aRequiredPermission' => 'int[]'
+        'aAutoType' => 'array<string,string>',
+        'aEnum' => 'array<string,array<string,string>>'
     ];
 
     /**
@@ -74,9 +73,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'iVersionMin' => null,
-        'iVersionMax' => null,
-        'aRequiredPermission' => null
+        'aAutoType' => null,
+        'aEnum' => null
     ];
 
     /**
@@ -106,9 +104,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'iVersionMin' => 'iVersionMin',
-        'iVersionMax' => 'iVersionMax',
-        'aRequiredPermission' => 'a_RequiredPermission'
+        'aAutoType' => 'a_AutoType',
+        'aEnum' => 'a_Enum'
     ];
 
     /**
@@ -117,9 +114,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'iVersionMin' => 'setIVersionMin',
-        'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermission' => 'setARequiredPermission'
+        'aAutoType' => 'setAAutoType',
+        'aEnum' => 'setAEnum'
     ];
 
     /**
@@ -128,9 +124,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'iVersionMin' => 'getIVersionMin',
-        'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermission' => 'getARequiredPermission'
+        'aAutoType' => 'getAAutoType',
+        'aEnum' => 'getAEnum'
     ];
 
     /**
@@ -190,9 +185,8 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->container['iVersionMin'] = $data['iVersionMin'] ?? null;
-        $this->container['iVersionMax'] = $data['iVersionMax'] ?? null;
-        $this->container['aRequiredPermission'] = $data['aRequiredPermission'] ?? null;
+        $this->container['aAutoType'] = $data['aAutoType'] ?? null;
+        $this->container['aEnum'] = $data['aEnum'] ?? null;
     }
 
     /**
@@ -204,15 +198,6 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['iVersionMin'] === null) {
-            $invalidProperties[] = "'iVersionMin' can't be null";
-        }
-        if ($this->container['iVersionMax'] === null) {
-            $invalidProperties[] = "'iVersionMax' can't be null";
-        }
-        if ($this->container['aRequiredPermission'] === null) {
-            $invalidProperties[] = "'aRequiredPermission' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -229,73 +214,49 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets iVersionMin
+     * Gets aAutoType
      *
-     * @return int
+     * @return array<string,string>|null
      */
-    public function getIVersionMin()
+    public function getAAutoType()
     {
-        return $this->container['iVersionMin'];
+        return $this->container['aAutoType'];
     }
 
     /**
-     * Sets iVersionMin
+     * Sets aAutoType
      *
-     * @param int $iVersionMin The minimum version of the function that can be called
+     * @param array<string,string>|null $aAutoType List of filters that can be used in *sFilter* (Automatic types)
      *
      * @return self
      */
-    public function setIVersionMin($iVersionMin)
+    public function setAAutoType($aAutoType)
     {
-        $this->container['iVersionMin'] = $iVersionMin;
+        $this->container['aAutoType'] = $aAutoType;
 
         return $this;
     }
 
     /**
-     * Gets iVersionMax
+     * Gets aEnum
      *
-     * @return int
+     * @return array<string,array<string,string>>|null
      */
-    public function getIVersionMax()
+    public function getAEnum()
     {
-        return $this->container['iVersionMax'];
+        return $this->container['aEnum'];
     }
 
     /**
-     * Sets iVersionMax
+     * Sets aEnum
      *
-     * @param int $iVersionMax The maximum version of the function that can be called
+     * @param array<string,array<string,string>>|null $aEnum List of filters that can be used in *sFilter* (Enum types)
      *
      * @return self
      */
-    public function setIVersionMax($iVersionMax)
+    public function setAEnum($aEnum)
     {
-        $this->container['iVersionMax'] = $iVersionMax;
-
-        return $this;
-    }
-
-    /**
-     * Gets aRequiredPermission
-     *
-     * @return int[]
-     */
-    public function getARequiredPermission()
-    {
-        return $this->container['aRequiredPermission'];
-    }
-
-    /**
-     * Sets aRequiredPermission
-     *
-     * @param int[] $aRequiredPermission An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
-     *
-     * @return self
-     */
-    public function setARequiredPermission($aRequiredPermission)
-    {
-        $this->container['aRequiredPermission'] = $aRequiredPermission;
+        $this->container['aEnum'] = $aEnum;
 
         return $this;
     }

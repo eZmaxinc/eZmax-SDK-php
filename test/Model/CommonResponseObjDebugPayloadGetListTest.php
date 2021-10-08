@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonResponseObjDebugPayloadTest
+ * CommonResponseObjDebugPayloadGetListTest
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CommonResponseObjDebugPayloadTest Class Doc Comment
+ * CommonResponseObjDebugPayloadGetListTest Class Doc Comment
  *
  * @category    Class
  * @description This is a debug object containing debugging information on the actual function
@@ -40,7 +40,7 @@ use PHPUnit\Framework\TestCase;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CommonResponseObjDebugPayloadTest extends TestCase
+class CommonResponseObjDebugPayloadGetListTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class CommonResponseObjDebugPayloadTest extends TestCase
     }
 
     /**
-     * Test "CommonResponseObjDebugPayload"
+     * Test "CommonResponseObjDebugPayloadGetList"
      */
-    public function testCommonResponseObjDebugPayload()
+    public function testCommonResponseObjDebugPayloadGetList()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -102,6 +102,24 @@ class CommonResponseObjDebugPayloadTest extends TestCase
      * Test attribute "aRequiredPermission"
      */
     public function testPropertyARequiredPermission()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aFilter"
+     */
+    public function testPropertyAFilter()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aOrderBy"
+     */
+    public function testPropertyAOrderBy()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

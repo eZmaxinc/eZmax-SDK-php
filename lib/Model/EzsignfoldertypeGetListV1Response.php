@@ -62,7 +62,7 @@ class EzsignfoldertypeGetListV1Response implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPITypes = [
         'mPayload' => '\eZmaxAPI\Model\EzsignfoldertypeGetListV1ResponseMPayload',
-        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
+        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList',
         'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
 
@@ -249,7 +249,7 @@ class EzsignfoldertypeGetListV1Response implements ModelInterface, ArrayAccess, 
     /**
      * Gets objDebugPayload
      *
-     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayload|null
+     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null
      */
     public function getObjDebugPayload()
     {
@@ -259,7 +259,7 @@ class EzsignfoldertypeGetListV1Response implements ModelInterface, ArrayAccess, 
     /**
      * Sets objDebugPayload
      *
-     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayload|null $objDebugPayload objDebugPayload
+     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null $objDebugPayload objDebugPayload
      *
      * @return self
      */
