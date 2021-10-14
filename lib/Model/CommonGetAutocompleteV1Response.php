@@ -61,7 +61,7 @@ class CommonGetAutocompleteV1Response implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mPayload' => '\eZmaxAPI\Model\CommonGetAutocompleteV1ResponseMPayload[]',
+        'mPayload' => '\eZmaxAPI\Model\CustomAutocompleteElementResponse[]',
         'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
         'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
@@ -225,7 +225,7 @@ class CommonGetAutocompleteV1Response implements ModelInterface, ArrayAccess, \J
     /**
      * Gets mPayload
      *
-     * @return \eZmaxAPI\Model\CommonGetAutocompleteV1ResponseMPayload[]
+     * @return \eZmaxAPI\Model\CustomAutocompleteElementResponse[]
      */
     public function getMPayload()
     {
@@ -235,7 +235,7 @@ class CommonGetAutocompleteV1Response implements ModelInterface, ArrayAccess, \J
     /**
      * Sets mPayload
      *
-     * @param \eZmaxAPI\Model\CommonGetAutocompleteV1ResponseMPayload[] $mPayload mPayload
+     * @param \eZmaxAPI\Model\CustomAutocompleteElementResponse[] $mPayload Generic Autocomplete Response
      *
      * @return self
      */

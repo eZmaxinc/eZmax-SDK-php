@@ -38,7 +38,6 @@ docs/Model/AuthenticateAuthenticateV2ResponseMPayload.md
 docs/Model/CommonAudit.md
 docs/Model/CommonGetAutocompleteV1Response.md
 docs/Model/CommonGetAutocompleteV1ResponseAllOf.md
-docs/Model/CommonGetAutocompleteV1ResponseMPayload.md
 docs/Model/CommonGetListV1ResponseMPayload.md
 docs/Model/CommonResponse.md
 docs/Model/CommonResponseError.md
@@ -56,6 +55,7 @@ docs/Model/ContactRequestCompoundAllOf.md
 docs/Model/ContactinformationsRequest.md
 docs/Model/ContactinformationsRequestCompound.md
 docs/Model/ContactinformationsRequestCompoundAllOf.md
+docs/Model/CustomAutocompleteElementResponse.md
 docs/Model/CustomFormDataDocumentResponse.md
 docs/Model/CustomFormDataSignerResponse.md
 docs/Model/CustomFormsDataFolderResponse.md
@@ -98,9 +98,14 @@ docs/Model/EzsignfolderDeleteObjectV1Response.md
 docs/Model/EzsignfolderGetFormsDataV1Response.md
 docs/Model/EzsignfolderGetFormsDataV1ResponseAllOf.md
 docs/Model/EzsignfolderGetFormsDataV1ResponseMPayload.md
+docs/Model/EzsignfolderGetListV1Response.md
+docs/Model/EzsignfolderGetListV1ResponseAllOf.md
+docs/Model/EzsignfolderGetListV1ResponseMPayload.md
+docs/Model/EzsignfolderGetListV1ResponseMPayloadAllOf.md
 docs/Model/EzsignfolderGetObjectV1Response.md
 docs/Model/EzsignfolderGetObjectV1ResponseAllOf.md
 docs/Model/EzsignfolderGetObjectV1ResponseMPayload.md
+docs/Model/EzsignfolderListElement.md
 docs/Model/EzsignfolderRequest.md
 docs/Model/EzsignfolderRequestCompound.md
 docs/Model/EzsignfolderRequestCompoundAllOf.md
@@ -229,7 +234,6 @@ lib/Model/AuthenticateAuthenticateV2ResponseMPayload.php
 lib/Model/CommonAudit.php
 lib/Model/CommonGetAutocompleteV1Response.php
 lib/Model/CommonGetAutocompleteV1ResponseAllOf.php
-lib/Model/CommonGetAutocompleteV1ResponseMPayload.php
 lib/Model/CommonGetListV1ResponseMPayload.php
 lib/Model/CommonResponse.php
 lib/Model/CommonResponseError.php
@@ -247,6 +251,7 @@ lib/Model/ContactRequestCompoundAllOf.php
 lib/Model/ContactinformationsRequest.php
 lib/Model/ContactinformationsRequestCompound.php
 lib/Model/ContactinformationsRequestCompoundAllOf.php
+lib/Model/CustomAutocompleteElementResponse.php
 lib/Model/CustomFormDataDocumentResponse.php
 lib/Model/CustomFormDataSignerResponse.php
 lib/Model/CustomFormsDataFolderResponse.php
@@ -289,9 +294,14 @@ lib/Model/EzsignfolderDeleteObjectV1Response.php
 lib/Model/EzsignfolderGetFormsDataV1Response.php
 lib/Model/EzsignfolderGetFormsDataV1ResponseAllOf.php
 lib/Model/EzsignfolderGetFormsDataV1ResponseMPayload.php
+lib/Model/EzsignfolderGetListV1Response.php
+lib/Model/EzsignfolderGetListV1ResponseAllOf.php
+lib/Model/EzsignfolderGetListV1ResponseMPayload.php
+lib/Model/EzsignfolderGetListV1ResponseMPayloadAllOf.php
 lib/Model/EzsignfolderGetObjectV1Response.php
 lib/Model/EzsignfolderGetObjectV1ResponseAllOf.php
 lib/Model/EzsignfolderGetObjectV1ResponseMPayload.php
+lib/Model/EzsignfolderListElement.php
 lib/Model/EzsignfolderRequest.php
 lib/Model/EzsignfolderRequestCompound.php
 lib/Model/EzsignfolderRequestCompoundAllOf.php
@@ -419,7 +429,6 @@ test/Model/AuthenticateAuthenticateV2ResponseMPayloadTest.php
 test/Model/AuthenticateAuthenticateV2ResponseTest.php
 test/Model/CommonAuditTest.php
 test/Model/CommonGetAutocompleteV1ResponseAllOfTest.php
-test/Model/CommonGetAutocompleteV1ResponseMPayloadTest.php
 test/Model/CommonGetAutocompleteV1ResponseTest.php
 test/Model/CommonGetListV1ResponseMPayloadTest.php
 test/Model/CommonResponseErrorTest.php
@@ -438,6 +447,7 @@ test/Model/ContactRequestTest.php
 test/Model/ContactinformationsRequestCompoundAllOfTest.php
 test/Model/ContactinformationsRequestCompoundTest.php
 test/Model/ContactinformationsRequestTest.php
+test/Model/CustomAutocompleteElementResponseTest.php
 test/Model/CustomFormDataDocumentResponseTest.php
 test/Model/CustomFormDataSignerResponseTest.php
 test/Model/CustomFormsDataFolderResponseTest.php
@@ -480,9 +490,14 @@ test/Model/EzsignfolderDeleteObjectV1ResponseTest.php
 test/Model/EzsignfolderGetFormsDataV1ResponseAllOfTest.php
 test/Model/EzsignfolderGetFormsDataV1ResponseMPayloadTest.php
 test/Model/EzsignfolderGetFormsDataV1ResponseTest.php
+test/Model/EzsignfolderGetListV1ResponseAllOfTest.php
+test/Model/EzsignfolderGetListV1ResponseMPayloadAllOfTest.php
+test/Model/EzsignfolderGetListV1ResponseMPayloadTest.php
+test/Model/EzsignfolderGetListV1ResponseTest.php
 test/Model/EzsignfolderGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignfolderGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfolderGetObjectV1ResponseTest.php
+test/Model/EzsignfolderListElementTest.php
 test/Model/EzsignfolderRequestCompoundAllOfTest.php
 test/Model/EzsignfolderRequestCompoundTest.php
 test/Model/EzsignfolderRequestTest.php

@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldertypeGetListV1ResponseMPayload
+ * CustomAutocompleteElementResponse
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfoldertypeGetListV1ResponseMPayload Class Doc Comment
+ * CustomAutocompleteElementResponse Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignfoldertype/getList API Request
+ * @description Generic Autocomplete Response
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfoldertype-getList-v1-Response-mPayload';
+    protected static $openAPIModelName = 'Custom-AutocompleteElement-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,9 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjEzsignfoldertype' => '\eZmaxAPI\Model\EzsignfoldertypeListElement[]',
-        'iRowReturned' => 'int',
-        'iRowFiltered' => 'int'
+        'sCategory' => 'string',
+        'sLabel' => 'string',
+        'mValue' => 'OneOfIntegerString'
     ];
 
     /**
@@ -74,9 +74,9 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aObjEzsignfoldertype' => null,
-        'iRowReturned' => null,
-        'iRowFiltered' => null
+        'sCategory' => null,
+        'sLabel' => null,
+        'mValue' => null
     ];
 
     /**
@@ -106,9 +106,9 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'aObjEzsignfoldertype' => 'a_objEzsignfoldertype',
-        'iRowReturned' => 'iRowReturned',
-        'iRowFiltered' => 'iRowFiltered'
+        'sCategory' => 'sCategory',
+        'sLabel' => 'sLabel',
+        'mValue' => 'mValue'
     ];
 
     /**
@@ -117,9 +117,9 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'aObjEzsignfoldertype' => 'setAObjEzsignfoldertype',
-        'iRowReturned' => 'setIRowReturned',
-        'iRowFiltered' => 'setIRowFiltered'
+        'sCategory' => 'setSCategory',
+        'sLabel' => 'setSLabel',
+        'mValue' => 'setMValue'
     ];
 
     /**
@@ -128,9 +128,9 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'aObjEzsignfoldertype' => 'getAObjEzsignfoldertype',
-        'iRowReturned' => 'getIRowReturned',
-        'iRowFiltered' => 'getIRowFiltered'
+        'sCategory' => 'getSCategory',
+        'sLabel' => 'getSLabel',
+        'mValue' => 'getMValue'
     ];
 
     /**
@@ -190,9 +190,9 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['aObjEzsignfoldertype'] = $data['aObjEzsignfoldertype'] ?? null;
-        $this->container['iRowReturned'] = $data['iRowReturned'] ?? null;
-        $this->container['iRowFiltered'] = $data['iRowFiltered'] ?? null;
+        $this->container['sCategory'] = $data['sCategory'] ?? null;
+        $this->container['sLabel'] = $data['sLabel'] ?? null;
+        $this->container['mValue'] = $data['mValue'] ?? null;
     }
 
     /**
@@ -204,14 +204,14 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['aObjEzsignfoldertype'] === null) {
-            $invalidProperties[] = "'aObjEzsignfoldertype' can't be null";
+        if ($this->container['sCategory'] === null) {
+            $invalidProperties[] = "'sCategory' can't be null";
         }
-        if ($this->container['iRowReturned'] === null) {
-            $invalidProperties[] = "'iRowReturned' can't be null";
+        if ($this->container['sLabel'] === null) {
+            $invalidProperties[] = "'sLabel' can't be null";
         }
-        if ($this->container['iRowFiltered'] === null) {
-            $invalidProperties[] = "'iRowFiltered' can't be null";
+        if ($this->container['mValue'] === null) {
+            $invalidProperties[] = "'mValue' can't be null";
         }
         return $invalidProperties;
     }
@@ -229,73 +229,73 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
 
 
     /**
-     * Gets aObjEzsignfoldertype
+     * Gets sCategory
      *
-     * @return \eZmaxAPI\Model\EzsignfoldertypeListElement[]
+     * @return string
      */
-    public function getAObjEzsignfoldertype()
+    public function getSCategory()
     {
-        return $this->container['aObjEzsignfoldertype'];
+        return $this->container['sCategory'];
     }
 
     /**
-     * Sets aObjEzsignfoldertype
+     * Sets sCategory
      *
-     * @param \eZmaxAPI\Model\EzsignfoldertypeListElement[] $aObjEzsignfoldertype aObjEzsignfoldertype
+     * @param string $sCategory The Category for the dropdown or an empty string if not categorized
      *
      * @return self
      */
-    public function setAObjEzsignfoldertype($aObjEzsignfoldertype)
+    public function setSCategory($sCategory)
     {
-        $this->container['aObjEzsignfoldertype'] = $aObjEzsignfoldertype;
+        $this->container['sCategory'] = $sCategory;
 
         return $this;
     }
 
     /**
-     * Gets iRowReturned
+     * Gets sLabel
      *
-     * @return int
+     * @return string
      */
-    public function getIRowReturned()
+    public function getSLabel()
     {
-        return $this->container['iRowReturned'];
+        return $this->container['sLabel'];
     }
 
     /**
-     * Sets iRowReturned
+     * Sets sLabel
      *
-     * @param int $iRowReturned The number of rows returned
+     * @param string $sLabel The Description of the element
      *
      * @return self
      */
-    public function setIRowReturned($iRowReturned)
+    public function setSLabel($sLabel)
     {
-        $this->container['iRowReturned'] = $iRowReturned;
+        $this->container['sLabel'] = $sLabel;
 
         return $this;
     }
 
     /**
-     * Gets iRowFiltered
+     * Gets mValue
      *
-     * @return int
+     * @return OneOfIntegerString
      */
-    public function getIRowFiltered()
+    public function getMValue()
     {
-        return $this->container['iRowFiltered'];
+        return $this->container['mValue'];
     }
 
     /**
-     * Sets iRowFiltered
+     * Sets mValue
      *
-     * @param int $iRowFiltered The number of rows matching your filters (if any) or the total number of rows
+     * @param OneOfIntegerString $mValue The Unique ID of the element
      *
      * @return self
      */
-    public function setIRowFiltered($iRowFiltered)
+    public function setMValue($mValue)
     {
-        $this->container['iRowFiltered'] = $iRowFiltered;
+        $this->container['mValue'] = $mValue;
 
         return $this;
     }

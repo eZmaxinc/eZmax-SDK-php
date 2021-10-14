@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldertypeGetListV1ResponseMPayloadTest
+ * EzsignfolderListElementTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfoldertypeGetListV1ResponseMPayloadTest Class Doc Comment
+ * EzsignfolderListElementTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsignfoldertype/getList API Request
+ * @description An Ezsignfolder List Element
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfoldertypeGetListV1ResponseMPayloadTest extends TestCase
+class EzsignfolderListElementTest extends TestCase
 {
 
     /**
@@ -72,36 +72,27 @@ class EzsignfoldertypeGetListV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "EzsignfoldertypeGetListV1ResponseMPayload"
+     * Test "EzsignfolderListElement"
      */
-    public function testEzsignfoldertypeGetListV1ResponseMPayload()
+    public function testEzsignfolderListElement()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "aObjEzsignfoldertype"
+     * Test attribute "pkiEzsignfolderID"
      */
-    public function testPropertyAObjEzsignfoldertype()
+    public function testPropertyPkiEzsignfolderID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iRowReturned"
+     * Test attribute "sEzsignfolderDescription"
      */
-    public function testPropertyIRowReturned()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iRowFiltered"
-     */
-    public function testPropertyIRowFiltered()
+    public function testPropertySEzsignfolderDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

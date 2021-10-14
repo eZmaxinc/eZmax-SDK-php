@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldertypeGetListV1ResponseMPayloadTest
+ * EzsignfolderGetListV1ResponseTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfoldertypeGetListV1ResponseMPayloadTest Class Doc Comment
+ * EzsignfolderGetListV1ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsignfoldertype/getList API Request
+ * @description Response for the /1/object/ezsignfolder/getList API Request
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfoldertypeGetListV1ResponseMPayloadTest extends TestCase
+class EzsignfolderGetListV1ResponseTest extends TestCase
 {
 
     /**
@@ -72,36 +72,36 @@ class EzsignfoldertypeGetListV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "EzsignfoldertypeGetListV1ResponseMPayload"
+     * Test "EzsignfolderGetListV1Response"
      */
-    public function testEzsignfoldertypeGetListV1ResponseMPayload()
+    public function testEzsignfolderGetListV1Response()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "aObjEzsignfoldertype"
+     * Test attribute "mPayload"
      */
-    public function testPropertyAObjEzsignfoldertype()
+    public function testPropertyMPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iRowReturned"
+     * Test attribute "objDebugPayload"
      */
-    public function testPropertyIRowReturned()
+    public function testPropertyObjDebugPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iRowFiltered"
+     * Test attribute "objDebug"
      */
-    public function testPropertyIRowFiltered()
+    public function testPropertyObjDebug()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

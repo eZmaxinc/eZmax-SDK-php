@@ -73,6 +73,18 @@ class ObjectEzsignfoldertypeApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignfoldertypeGetAutocompleteV1
+     *
+     * Retrieve Ezsignfoldertypes and IDs.
+     *
+     */
+    public function testEzsignfoldertypeGetAutocompleteV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignfoldertypeGetListV1
      *
      * Retrieve Ezsignfoldertype list.

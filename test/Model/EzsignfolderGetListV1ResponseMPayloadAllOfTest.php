@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonGetAutocompleteV1ResponseMPayloadTest
+ * EzsignfolderGetListV1ResponseMPayloadAllOfTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CommonGetAutocompleteV1ResponseMPayloadTest Class Doc Comment
+ * EzsignfolderGetListV1ResponseMPayloadAllOfTest Class Doc Comment
  *
  * @category    Class
- * @description Generic Autocomplete Response
+ * @description EzsignfolderGetListV1ResponseMPayloadAllOf
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CommonGetAutocompleteV1ResponseMPayloadTest extends TestCase
+class EzsignfolderGetListV1ResponseMPayloadAllOfTest extends TestCase
 {
 
     /**
@@ -72,36 +72,18 @@ class CommonGetAutocompleteV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "CommonGetAutocompleteV1ResponseMPayload"
+     * Test "EzsignfolderGetListV1ResponseMPayloadAllOf"
      */
-    public function testCommonGetAutocompleteV1ResponseMPayload()
+    public function testEzsignfolderGetListV1ResponseMPayloadAllOf()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "group"
+     * Test attribute "aObjEzsignfolder"
      */
-    public function testPropertyGroup()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "option"
-     */
-    public function testPropertyOption()
+    public function testPropertyAObjEzsignfolder()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

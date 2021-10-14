@@ -459,8 +459,6 @@ ezsigndocumentGetFormDataV1($pkiEzsigndocumentID): \eZmaxAPI\Model\Ezsigndocumen
 
 Retrieve an existing Ezsigndocument's Form Data
 
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-
 ### Example
 
 ```php
@@ -582,8 +580,6 @@ ezsigndocumentGetWordsPositionsV1($pkiEzsigndocumentID, $ezsigndocumentGetWordsP
 ```
 
 Retrieve positions X,Y of given words from a Ezsigndocument
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Example
 

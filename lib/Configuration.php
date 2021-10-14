@@ -487,8 +487,7 @@ class Configuration
                         "description" => "The region where your services are hosted.",
                         "default_value" => "ca-central-1",
                         "enum_values" => [
-                            "ca-central-1",
-                            "local"
+                            "ca-central-1"
                         ]
                     ]
                 ]

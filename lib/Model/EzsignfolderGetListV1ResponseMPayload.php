@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldertypeGetListV1ResponseMPayload
+ * EzsignfolderGetListV1ResponseMPayload
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfoldertypeGetListV1ResponseMPayload Class Doc Comment
+ * EzsignfolderGetListV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignfoldertype/getList API Request
+ * @description Payload for the /1/object/ezsignfolder/getList API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfolderGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfoldertype-getList-v1-Response-mPayload';
+    protected static $openAPIModelName = 'ezsignfolder-getList-v1-Response-mPayload';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjEzsignfoldertype' => '\eZmaxAPI\Model\EzsignfoldertypeListElement[]',
+        'aObjEzsignfolder' => '\eZmaxAPI\Model\EzsignfolderListElement[]',
         'iRowReturned' => 'int',
         'iRowFiltered' => 'int'
     ];
@@ -74,7 +74,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aObjEzsignfoldertype' => null,
+        'aObjEzsignfolder' => null,
         'iRowReturned' => null,
         'iRowFiltered' => null
     ];
@@ -106,7 +106,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'aObjEzsignfoldertype' => 'a_objEzsignfoldertype',
+        'aObjEzsignfolder' => 'a_objEzsignfolder',
         'iRowReturned' => 'iRowReturned',
         'iRowFiltered' => 'iRowFiltered'
     ];
@@ -117,7 +117,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'aObjEzsignfoldertype' => 'setAObjEzsignfoldertype',
+        'aObjEzsignfolder' => 'setAObjEzsignfolder',
         'iRowReturned' => 'setIRowReturned',
         'iRowFiltered' => 'setIRowFiltered'
     ];
@@ -128,7 +128,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'aObjEzsignfoldertype' => 'getAObjEzsignfoldertype',
+        'aObjEzsignfolder' => 'getAObjEzsignfolder',
         'iRowReturned' => 'getIRowReturned',
         'iRowFiltered' => 'getIRowFiltered'
     ];
@@ -190,7 +190,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['aObjEzsignfoldertype'] = $data['aObjEzsignfoldertype'] ?? null;
+        $this->container['aObjEzsignfolder'] = $data['aObjEzsignfolder'] ?? null;
         $this->container['iRowReturned'] = $data['iRowReturned'] ?? null;
         $this->container['iRowFiltered'] = $data['iRowFiltered'] ?? null;
     }
@@ -204,8 +204,8 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['aObjEzsignfoldertype'] === null) {
-            $invalidProperties[] = "'aObjEzsignfoldertype' can't be null";
+        if ($this->container['aObjEzsignfolder'] === null) {
+            $invalidProperties[] = "'aObjEzsignfolder' can't be null";
         }
         if ($this->container['iRowReturned'] === null) {
             $invalidProperties[] = "'iRowReturned' can't be null";
@@ -229,25 +229,25 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
 
 
     /**
-     * Gets aObjEzsignfoldertype
+     * Gets aObjEzsignfolder
      *
-     * @return \eZmaxAPI\Model\EzsignfoldertypeListElement[]
+     * @return \eZmaxAPI\Model\EzsignfolderListElement[]
      */
-    public function getAObjEzsignfoldertype()
+    public function getAObjEzsignfolder()
     {
-        return $this->container['aObjEzsignfoldertype'];
+        return $this->container['aObjEzsignfolder'];
     }
 
     /**
-     * Sets aObjEzsignfoldertype
+     * Sets aObjEzsignfolder
      *
-     * @param \eZmaxAPI\Model\EzsignfoldertypeListElement[] $aObjEzsignfoldertype aObjEzsignfoldertype
+     * @param \eZmaxAPI\Model\EzsignfolderListElement[] $aObjEzsignfolder aObjEzsignfolder
      *
      * @return self
      */
-    public function setAObjEzsignfoldertype($aObjEzsignfoldertype)
+    public function setAObjEzsignfolder($aObjEzsignfolder)
     {
-        $this->container['aObjEzsignfoldertype'] = $aObjEzsignfoldertype;
+        $this->container['aObjEzsignfolder'] = $aObjEzsignfolder;
 
         return $this;
     }

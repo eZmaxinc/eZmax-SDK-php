@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldertypeGetListV1ResponseMPayload
+ * EzsignfolderGetListV1ResponseMPayloadAllOf
  *
  * PHP version 7.3
  *
@@ -33,10 +33,9 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfoldertypeGetListV1ResponseMPayload Class Doc Comment
+ * EzsignfolderGetListV1ResponseMPayloadAllOf Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignfoldertype/getList API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +43,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfolderGetListV1ResponseMPayloadAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfoldertype-getList-v1-Response-mPayload';
+    protected static $openAPIModelName = 'ezsignfolder_getList_v1_Response_mPayload_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +60,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjEzsignfoldertype' => '\eZmaxAPI\Model\EzsignfoldertypeListElement[]',
-        'iRowReturned' => 'int',
-        'iRowFiltered' => 'int'
+        'aObjEzsignfolder' => '\eZmaxAPI\Model\EzsignfolderListElement[]'
     ];
 
     /**
@@ -74,9 +71,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aObjEzsignfoldertype' => null,
-        'iRowReturned' => null,
-        'iRowFiltered' => null
+        'aObjEzsignfolder' => null
     ];
 
     /**
@@ -106,9 +101,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'aObjEzsignfoldertype' => 'a_objEzsignfoldertype',
-        'iRowReturned' => 'iRowReturned',
-        'iRowFiltered' => 'iRowFiltered'
+        'aObjEzsignfolder' => 'a_objEzsignfolder'
     ];
 
     /**
@@ -117,9 +110,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'aObjEzsignfoldertype' => 'setAObjEzsignfoldertype',
-        'iRowReturned' => 'setIRowReturned',
-        'iRowFiltered' => 'setIRowFiltered'
+        'aObjEzsignfolder' => 'setAObjEzsignfolder'
     ];
 
     /**
@@ -128,9 +119,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'aObjEzsignfoldertype' => 'getAObjEzsignfoldertype',
-        'iRowReturned' => 'getIRowReturned',
-        'iRowFiltered' => 'getIRowFiltered'
+        'aObjEzsignfolder' => 'getAObjEzsignfolder'
     ];
 
     /**
@@ -190,9 +179,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['aObjEzsignfoldertype'] = $data['aObjEzsignfoldertype'] ?? null;
-        $this->container['iRowReturned'] = $data['iRowReturned'] ?? null;
-        $this->container['iRowFiltered'] = $data['iRowFiltered'] ?? null;
+        $this->container['aObjEzsignfolder'] = $data['aObjEzsignfolder'] ?? null;
     }
 
     /**
@@ -204,14 +191,8 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['aObjEzsignfoldertype'] === null) {
-            $invalidProperties[] = "'aObjEzsignfoldertype' can't be null";
-        }
-        if ($this->container['iRowReturned'] === null) {
-            $invalidProperties[] = "'iRowReturned' can't be null";
-        }
-        if ($this->container['iRowFiltered'] === null) {
-            $invalidProperties[] = "'iRowFiltered' can't be null";
+        if ($this->container['aObjEzsignfolder'] === null) {
+            $invalidProperties[] = "'aObjEzsignfolder' can't be null";
         }
         return $invalidProperties;
     }
@@ -229,73 +210,25 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
 
 
     /**
-     * Gets aObjEzsignfoldertype
+     * Gets aObjEzsignfolder
      *
-     * @return \eZmaxAPI\Model\EzsignfoldertypeListElement[]
+     * @return \eZmaxAPI\Model\EzsignfolderListElement[]
      */
-    public function getAObjEzsignfoldertype()
+    public function getAObjEzsignfolder()
     {
-        return $this->container['aObjEzsignfoldertype'];
+        return $this->container['aObjEzsignfolder'];
     }
 
     /**
-     * Sets aObjEzsignfoldertype
+     * Sets aObjEzsignfolder
      *
-     * @param \eZmaxAPI\Model\EzsignfoldertypeListElement[] $aObjEzsignfoldertype aObjEzsignfoldertype
+     * @param \eZmaxAPI\Model\EzsignfolderListElement[] $aObjEzsignfolder aObjEzsignfolder
      *
      * @return self
      */
-    public function setAObjEzsignfoldertype($aObjEzsignfoldertype)
+    public function setAObjEzsignfolder($aObjEzsignfolder)
     {
-        $this->container['aObjEzsignfoldertype'] = $aObjEzsignfoldertype;
-
-        return $this;
-    }
-
-    /**
-     * Gets iRowReturned
-     *
-     * @return int
-     */
-    public function getIRowReturned()
-    {
-        return $this->container['iRowReturned'];
-    }
-
-    /**
-     * Sets iRowReturned
-     *
-     * @param int $iRowReturned The number of rows returned
-     *
-     * @return self
-     */
-    public function setIRowReturned($iRowReturned)
-    {
-        $this->container['iRowReturned'] = $iRowReturned;
-
-        return $this;
-    }
-
-    /**
-     * Gets iRowFiltered
-     *
-     * @return int
-     */
-    public function getIRowFiltered()
-    {
-        return $this->container['iRowFiltered'];
-    }
-
-    /**
-     * Sets iRowFiltered
-     *
-     * @param int $iRowFiltered The number of rows matching your filters (if any) or the total number of rows
-     *
-     * @return self
-     */
-    public function setIRowFiltered($iRowFiltered)
-    {
-        $this->container['iRowFiltered'] = $iRowFiltered;
+        $this->container['aObjEzsignfolder'] = $aObjEzsignfolder;
 
         return $this;
     }

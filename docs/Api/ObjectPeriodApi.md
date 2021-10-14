@@ -37,7 +37,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectPeriodApi(
     $config
 );
 $sSelector = 'sSelector_example'; // string | The types of Periods to return
-$sQuery = 'sQuery_example'; // string | Allow to filter on the option value
+$sQuery = 'sQuery_example'; // string | Allow to filter the returned results
 
 try {
     $result = $apiInstance->periodGetAutocompleteV1($sSelector, $sQuery);
@@ -52,7 +52,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **string**| The types of Periods to return |
- **sQuery** | **string**| Allow to filter on the option value | [optional]
+ **sQuery** | **string**| Allow to filter the returned results | [optional]
 
 ### Return type
 

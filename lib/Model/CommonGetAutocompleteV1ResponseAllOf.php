@@ -60,7 +60,7 @@ class CommonGetAutocompleteV1ResponseAllOf implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mPayload' => '\eZmaxAPI\Model\CommonGetAutocompleteV1ResponseMPayload[]'
+        'mPayload' => '\eZmaxAPI\Model\CustomAutocompleteElementResponse[]'
     ];
 
     /**
@@ -212,7 +212,7 @@ class CommonGetAutocompleteV1ResponseAllOf implements ModelInterface, ArrayAcces
     /**
      * Gets mPayload
      *
-     * @return \eZmaxAPI\Model\CommonGetAutocompleteV1ResponseMPayload[]
+     * @return \eZmaxAPI\Model\CustomAutocompleteElementResponse[]
      */
     public function getMPayload()
     {
@@ -222,7 +222,7 @@ class CommonGetAutocompleteV1ResponseAllOf implements ModelInterface, ArrayAcces
     /**
      * Sets mPayload
      *
-     * @param \eZmaxAPI\Model\CommonGetAutocompleteV1ResponseMPayload[] $mPayload mPayload
+     * @param \eZmaxAPI\Model\CustomAutocompleteElementResponse[] $mPayload Generic Autocomplete Response
      *
      * @return self
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldertypeGetListV1ResponseMPayload
+ * EzsignfolderListElement
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfoldertypeGetListV1ResponseMPayload Class Doc Comment
+ * EzsignfolderListElement Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignfoldertype/getList API Request
+ * @description An Ezsignfolder List Element
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfoldertype-getList-v1-Response-mPayload';
+    protected static $openAPIModelName = 'ezsignfolder-ListElement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,8 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjEzsignfoldertype' => '\eZmaxAPI\Model\EzsignfoldertypeListElement[]',
-        'iRowReturned' => 'int',
-        'iRowFiltered' => 'int'
+        'pkiEzsignfolderID' => 'int',
+        'sEzsignfolderDescription' => 'string'
     ];
 
     /**
@@ -74,9 +73,8 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aObjEzsignfoldertype' => null,
-        'iRowReturned' => null,
-        'iRowFiltered' => null
+        'pkiEzsignfolderID' => null,
+        'sEzsignfolderDescription' => null
     ];
 
     /**
@@ -106,9 +104,8 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'aObjEzsignfoldertype' => 'a_objEzsignfoldertype',
-        'iRowReturned' => 'iRowReturned',
-        'iRowFiltered' => 'iRowFiltered'
+        'pkiEzsignfolderID' => 'pkiEzsignfolderID',
+        'sEzsignfolderDescription' => 'sEzsignfolderDescription'
     ];
 
     /**
@@ -117,9 +114,8 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'aObjEzsignfoldertype' => 'setAObjEzsignfoldertype',
-        'iRowReturned' => 'setIRowReturned',
-        'iRowFiltered' => 'setIRowFiltered'
+        'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
+        'sEzsignfolderDescription' => 'setSEzsignfolderDescription'
     ];
 
     /**
@@ -128,9 +124,8 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'aObjEzsignfoldertype' => 'getAObjEzsignfoldertype',
-        'iRowReturned' => 'getIRowReturned',
-        'iRowFiltered' => 'getIRowFiltered'
+        'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
+        'sEzsignfolderDescription' => 'getSEzsignfolderDescription'
     ];
 
     /**
@@ -190,9 +185,8 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['aObjEzsignfoldertype'] = $data['aObjEzsignfoldertype'] ?? null;
-        $this->container['iRowReturned'] = $data['iRowReturned'] ?? null;
-        $this->container['iRowFiltered'] = $data['iRowFiltered'] ?? null;
+        $this->container['pkiEzsignfolderID'] = $data['pkiEzsignfolderID'] ?? null;
+        $this->container['sEzsignfolderDescription'] = $data['sEzsignfolderDescription'] ?? null;
     }
 
     /**
@@ -204,14 +198,11 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['aObjEzsignfoldertype'] === null) {
-            $invalidProperties[] = "'aObjEzsignfoldertype' can't be null";
+        if ($this->container['pkiEzsignfolderID'] === null) {
+            $invalidProperties[] = "'pkiEzsignfolderID' can't be null";
         }
-        if ($this->container['iRowReturned'] === null) {
-            $invalidProperties[] = "'iRowReturned' can't be null";
-        }
-        if ($this->container['iRowFiltered'] === null) {
-            $invalidProperties[] = "'iRowFiltered' can't be null";
+        if ($this->container['sEzsignfolderDescription'] === null) {
+            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
         }
         return $invalidProperties;
     }
@@ -229,73 +220,49 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
 
 
     /**
-     * Gets aObjEzsignfoldertype
+     * Gets pkiEzsignfolderID
      *
-     * @return \eZmaxAPI\Model\EzsignfoldertypeListElement[]
+     * @return int
      */
-    public function getAObjEzsignfoldertype()
+    public function getPkiEzsignfolderID()
     {
-        return $this->container['aObjEzsignfoldertype'];
+        return $this->container['pkiEzsignfolderID'];
     }
 
     /**
-     * Sets aObjEzsignfoldertype
+     * Sets pkiEzsignfolderID
      *
-     * @param \eZmaxAPI\Model\EzsignfoldertypeListElement[] $aObjEzsignfoldertype aObjEzsignfoldertype
+     * @param int $pkiEzsignfolderID The unique ID of the Ezsignfolder
      *
      * @return self
      */
-    public function setAObjEzsignfoldertype($aObjEzsignfoldertype)
+    public function setPkiEzsignfolderID($pkiEzsignfolderID)
     {
-        $this->container['aObjEzsignfoldertype'] = $aObjEzsignfoldertype;
+        $this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
 
         return $this;
     }
 
     /**
-     * Gets iRowReturned
+     * Gets sEzsignfolderDescription
      *
-     * @return int
+     * @return string
      */
-    public function getIRowReturned()
+    public function getSEzsignfolderDescription()
     {
-        return $this->container['iRowReturned'];
+        return $this->container['sEzsignfolderDescription'];
     }
 
     /**
-     * Sets iRowReturned
+     * Sets sEzsignfolderDescription
      *
-     * @param int $iRowReturned The number of rows returned
+     * @param string $sEzsignfolderDescription The description of the Ezsign Folder
      *
      * @return self
      */
-    public function setIRowReturned($iRowReturned)
+    public function setSEzsignfolderDescription($sEzsignfolderDescription)
     {
-        $this->container['iRowReturned'] = $iRowReturned;
-
-        return $this;
-    }
-
-    /**
-     * Gets iRowFiltered
-     *
-     * @return int
-     */
-    public function getIRowFiltered()
-    {
-        return $this->container['iRowFiltered'];
-    }
-
-    /**
-     * Sets iRowFiltered
-     *
-     * @param int $iRowFiltered The number of rows matching your filters (if any) or the total number of rows
-     *
-     * @return self
-     */
-    public function setIRowFiltered($iRowFiltered)
-    {
-        $this->container['iRowFiltered'] = $iRowFiltered;
+        $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
 
         return $this;
     }

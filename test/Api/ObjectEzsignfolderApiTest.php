@@ -121,6 +121,18 @@ class ObjectEzsignfolderApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignfolderGetListV1
+     *
+     * Retrieve Ezsignfolder list.
+     *
+     */
+    public function testEzsignfolderGetListV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignfolderGetObjectV1
      *
      * Retrieve an existing Ezsignfolder.

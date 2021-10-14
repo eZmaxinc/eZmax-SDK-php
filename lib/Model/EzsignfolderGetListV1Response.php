@@ -1,6 +1,6 @@
 <?php
 /**
- * CommonGetAutocompleteV1ResponseMPayload
+ * EzsignfolderGetListV1Response
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * CommonGetAutocompleteV1ResponseMPayload Class Doc Comment
+ * EzsignfolderGetListV1Response Class Doc Comment
  *
  * @category Class
- * @description Generic Autocomplete Response
+ * @description Response for the /1/object/ezsignfolder/getList API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfolderGetListV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Common-getAutocomplete-v1-Response-mPayload';
+    protected static $openAPIModelName = 'ezsignfolder-getList-v1-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,9 @@ class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'group' => 'string',
-        'id' => 'string',
-        'option' => 'string'
+        'mPayload' => '\eZmaxAPI\Model\EzsignfolderGetListV1ResponseMPayload',
+        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList',
+        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
 
     /**
@@ -74,9 +74,9 @@ class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'group' => null,
-        'id' => null,
-        'option' => null
+        'mPayload' => null,
+        'objDebugPayload' => null,
+        'objDebug' => null
     ];
 
     /**
@@ -106,9 +106,9 @@ class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'group' => 'group',
-        'id' => 'id',
-        'option' => 'option'
+        'mPayload' => 'mPayload',
+        'objDebugPayload' => 'objDebugPayload',
+        'objDebug' => 'objDebug'
     ];
 
     /**
@@ -117,9 +117,9 @@ class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'group' => 'setGroup',
-        'id' => 'setId',
-        'option' => 'setOption'
+        'mPayload' => 'setMPayload',
+        'objDebugPayload' => 'setObjDebugPayload',
+        'objDebug' => 'setObjDebug'
     ];
 
     /**
@@ -128,9 +128,9 @@ class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'group' => 'getGroup',
-        'id' => 'getId',
-        'option' => 'getOption'
+        'mPayload' => 'getMPayload',
+        'objDebugPayload' => 'getObjDebugPayload',
+        'objDebug' => 'getObjDebug'
     ];
 
     /**
@@ -190,9 +190,9 @@ class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['group'] = $data['group'] ?? null;
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['option'] = $data['option'] ?? null;
+        $this->container['mPayload'] = $data['mPayload'] ?? null;
+        $this->container['objDebugPayload'] = $data['objDebugPayload'] ?? null;
+        $this->container['objDebug'] = $data['objDebug'] ?? null;
     }
 
     /**
@@ -204,14 +204,8 @@ class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['group'] === null) {
-            $invalidProperties[] = "'group' can't be null";
-        }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['option'] === null) {
-            $invalidProperties[] = "'option' can't be null";
+        if ($this->container['mPayload'] === null) {
+            $invalidProperties[] = "'mPayload' can't be null";
         }
         return $invalidProperties;
     }
@@ -229,73 +223,73 @@ class CommonGetAutocompleteV1ResponseMPayload implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets group
+     * Gets mPayload
      *
-     * @return string
+     * @return \eZmaxAPI\Model\EzsignfolderGetListV1ResponseMPayload
      */
-    public function getGroup()
+    public function getMPayload()
     {
-        return $this->container['group'];
+        return $this->container['mPayload'];
     }
 
     /**
-     * Sets group
+     * Sets mPayload
      *
-     * @param string $group The Category (ie group) for the dropdown or an empty string if not categorized
+     * @param \eZmaxAPI\Model\EzsignfolderGetListV1ResponseMPayload $mPayload mPayload
      *
      * @return self
      */
-    public function setGroup($group)
+    public function setMPayload($mPayload)
     {
-        $this->container['group'] = $group;
+        $this->container['mPayload'] = $mPayload;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets objDebugPayload
      *
-     * @return string
+     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null
      */
-    public function getId()
+    public function getObjDebugPayload()
     {
-        return $this->container['id'];
+        return $this->container['objDebugPayload'];
     }
 
     /**
-     * Sets id
+     * Sets objDebugPayload
      *
-     * @param string $id The Unique ID of the element
+     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null $objDebugPayload objDebugPayload
      *
      * @return self
      */
-    public function setId($id)
+    public function setObjDebugPayload($objDebugPayload)
     {
-        $this->container['id'] = $id;
+        $this->container['objDebugPayload'] = $objDebugPayload;
 
         return $this;
     }
 
     /**
-     * Gets option
+     * Gets objDebug
      *
-     * @return string
+     * @return \eZmaxAPI\Model\CommonResponseObjDebug|null
      */
-    public function getOption()
+    public function getObjDebug()
     {
-        return $this->container['option'];
+        return $this->container['objDebug'];
     }
 
     /**
-     * Sets option
+     * Sets objDebug
      *
-     * @param string $option The Description of the element
+     * @param \eZmaxAPI\Model\CommonResponseObjDebug|null $objDebug objDebug
      *
      * @return self
      */
-    public function setOption($option)
+    public function setObjDebug($objDebug)
     {
-        $this->container['option'] = $option;
+        $this->container['objDebug'] = $objDebug;
 
         return $this;
     }

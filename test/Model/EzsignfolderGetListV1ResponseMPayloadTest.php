@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldertypeGetListV1ResponseMPayloadTest
+ * EzsignfolderGetListV1ResponseMPayloadTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfoldertypeGetListV1ResponseMPayloadTest Class Doc Comment
+ * EzsignfolderGetListV1ResponseMPayloadTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsignfoldertype/getList API Request
+ * @description Payload for the /1/object/ezsignfolder/getList API Request
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfoldertypeGetListV1ResponseMPayloadTest extends TestCase
+class EzsignfolderGetListV1ResponseMPayloadTest extends TestCase
 {
 
     /**
@@ -72,18 +72,18 @@ class EzsignfoldertypeGetListV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "EzsignfoldertypeGetListV1ResponseMPayload"
+     * Test "EzsignfolderGetListV1ResponseMPayload"
      */
-    public function testEzsignfoldertypeGetListV1ResponseMPayload()
+    public function testEzsignfolderGetListV1ResponseMPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "aObjEzsignfoldertype"
+     * Test attribute "aObjEzsignfolder"
      */
-    public function testPropertyAObjEzsignfoldertype()
+    public function testPropertyAObjEzsignfolder()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

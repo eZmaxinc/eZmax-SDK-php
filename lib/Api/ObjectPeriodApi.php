@@ -122,7 +122,7 @@ class ObjectPeriodApi
      * Retrieve Periods and IDs
      *
      * @param  string $sSelector The types of Periods to return (required)
-     * @param  string $sQuery Allow to filter on the option value (optional)
+     * @param  string $sQuery Allow to filter the returned results (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -140,7 +140,7 @@ class ObjectPeriodApi
      * Retrieve Periods and IDs
      *
      * @param  string $sSelector The types of Periods to return (required)
-     * @param  string $sQuery Allow to filter on the option value (optional)
+     * @param  string $sQuery Allow to filter the returned results (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -227,7 +227,7 @@ class ObjectPeriodApi
      * Retrieve Periods and IDs
      *
      * @param  string $sSelector The types of Periods to return (required)
-     * @param  string $sQuery Allow to filter on the option value (optional)
+     * @param  string $sQuery Allow to filter the returned results (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -248,7 +248,7 @@ class ObjectPeriodApi
      * Retrieve Periods and IDs
      *
      * @param  string $sSelector The types of Periods to return (required)
-     * @param  string $sQuery Allow to filter on the option value (optional)
+     * @param  string $sQuery Allow to filter the returned results (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -295,7 +295,7 @@ class ObjectPeriodApi
      * Create request for operation 'periodGetAutocompleteV1'
      *
      * @param  string $sSelector The types of Periods to return (required)
-     * @param  string $sQuery Allow to filter on the option value (optional)
+     * @param  string $sQuery Allow to filter the returned results (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

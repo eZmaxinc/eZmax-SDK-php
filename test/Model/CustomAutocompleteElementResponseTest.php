@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldertypeGetListV1ResponseMPayloadTest
+ * CustomAutocompleteElementResponseTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfoldertypeGetListV1ResponseMPayloadTest Class Doc Comment
+ * CustomAutocompleteElementResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsignfoldertype/getList API Request
+ * @description Generic Autocomplete Response
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfoldertypeGetListV1ResponseMPayloadTest extends TestCase
+class CustomAutocompleteElementResponseTest extends TestCase
 {
 
     /**
@@ -72,36 +72,36 @@ class EzsignfoldertypeGetListV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "EzsignfoldertypeGetListV1ResponseMPayload"
+     * Test "CustomAutocompleteElementResponse"
      */
-    public function testEzsignfoldertypeGetListV1ResponseMPayload()
+    public function testCustomAutocompleteElementResponse()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "aObjEzsignfoldertype"
+     * Test attribute "sCategory"
      */
-    public function testPropertyAObjEzsignfoldertype()
+    public function testPropertySCategory()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iRowReturned"
+     * Test attribute "sLabel"
      */
-    public function testPropertyIRowReturned()
+    public function testPropertySLabel()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "iRowFiltered"
+     * Test attribute "mValue"
      */
-    public function testPropertyIRowFiltered()
+    public function testPropertyMValue()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
