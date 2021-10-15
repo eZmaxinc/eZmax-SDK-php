@@ -314,7 +314,7 @@ class ObjectEzsignfoldertypeApi
             );
         }
 
-        $resourcePath = '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}/';
+        $resourcePath = '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

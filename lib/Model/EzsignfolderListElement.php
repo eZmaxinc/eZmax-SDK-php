@@ -62,7 +62,17 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'pkiEzsignfolderID' => 'int',
-        'sEzsignfolderDescription' => 'string'
+        'fkiEzsignfoldertypeID' => 'int',
+        'sEzsignfoldertypeNameX' => 'string',
+        'sEzsignfolderDescription' => 'string',
+        'eEzsignfolderStep' => '\eZmaxAPI\Model\FieldEEzsignfolderStep',
+        'dtCreatedDate' => 'string',
+        'dtEzsignfolderSentdate' => 'OneOfStringNull',
+        'dtDueDate' => 'OneOfStringNull',
+        'iTotalDocument' => 'int',
+        'iTotalDocumentEdm' => 'int',
+        'iTotalSignature' => 'int',
+        'iTotalSignatureSigned' => 'int'
     ];
 
     /**
@@ -74,7 +84,17 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'pkiEzsignfolderID' => null,
-        'sEzsignfolderDescription' => null
+        'fkiEzsignfoldertypeID' => null,
+        'sEzsignfoldertypeNameX' => null,
+        'sEzsignfolderDescription' => null,
+        'eEzsignfolderStep' => null,
+        'dtCreatedDate' => null,
+        'dtEzsignfolderSentdate' => null,
+        'dtDueDate' => null,
+        'iTotalDocument' => null,
+        'iTotalDocumentEdm' => null,
+        'iTotalSignature' => null,
+        'iTotalSignatureSigned' => null
     ];
 
     /**
@@ -105,7 +125,17 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $attributeMap = [
         'pkiEzsignfolderID' => 'pkiEzsignfolderID',
-        'sEzsignfolderDescription' => 'sEzsignfolderDescription'
+        'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
+        'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX',
+        'sEzsignfolderDescription' => 'sEzsignfolderDescription',
+        'eEzsignfolderStep' => 'eEzsignfolderStep',
+        'dtCreatedDate' => 'dtCreatedDate',
+        'dtEzsignfolderSentdate' => 'dtEzsignfolderSentdate',
+        'dtDueDate' => 'dtDueDate',
+        'iTotalDocument' => 'iTotalDocument',
+        'iTotalDocumentEdm' => 'iTotalDocumentEdm',
+        'iTotalSignature' => 'iTotalSignature',
+        'iTotalSignatureSigned' => 'iTotalSignatureSigned'
     ];
 
     /**
@@ -115,7 +145,17 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $setters = [
         'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
-        'sEzsignfolderDescription' => 'setSEzsignfolderDescription'
+        'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
+        'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX',
+        'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
+        'eEzsignfolderStep' => 'setEEzsignfolderStep',
+        'dtCreatedDate' => 'setDtCreatedDate',
+        'dtEzsignfolderSentdate' => 'setDtEzsignfolderSentdate',
+        'dtDueDate' => 'setDtDueDate',
+        'iTotalDocument' => 'setITotalDocument',
+        'iTotalDocumentEdm' => 'setITotalDocumentEdm',
+        'iTotalSignature' => 'setITotalSignature',
+        'iTotalSignatureSigned' => 'setITotalSignatureSigned'
     ];
 
     /**
@@ -125,7 +165,17 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $getters = [
         'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
-        'sEzsignfolderDescription' => 'getSEzsignfolderDescription'
+        'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
+        'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX',
+        'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
+        'eEzsignfolderStep' => 'getEEzsignfolderStep',
+        'dtCreatedDate' => 'getDtCreatedDate',
+        'dtEzsignfolderSentdate' => 'getDtEzsignfolderSentdate',
+        'dtDueDate' => 'getDtDueDate',
+        'iTotalDocument' => 'getITotalDocument',
+        'iTotalDocumentEdm' => 'getITotalDocumentEdm',
+        'iTotalSignature' => 'getITotalSignature',
+        'iTotalSignatureSigned' => 'getITotalSignatureSigned'
     ];
 
     /**
@@ -186,7 +236,17 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     public function __construct(array $data = null)
     {
         $this->container['pkiEzsignfolderID'] = $data['pkiEzsignfolderID'] ?? null;
+        $this->container['fkiEzsignfoldertypeID'] = $data['fkiEzsignfoldertypeID'] ?? null;
+        $this->container['sEzsignfoldertypeNameX'] = $data['sEzsignfoldertypeNameX'] ?? null;
         $this->container['sEzsignfolderDescription'] = $data['sEzsignfolderDescription'] ?? null;
+        $this->container['eEzsignfolderStep'] = $data['eEzsignfolderStep'] ?? null;
+        $this->container['dtCreatedDate'] = $data['dtCreatedDate'] ?? null;
+        $this->container['dtEzsignfolderSentdate'] = $data['dtEzsignfolderSentdate'] ?? null;
+        $this->container['dtDueDate'] = $data['dtDueDate'] ?? null;
+        $this->container['iTotalDocument'] = $data['iTotalDocument'] ?? null;
+        $this->container['iTotalDocumentEdm'] = $data['iTotalDocumentEdm'] ?? null;
+        $this->container['iTotalSignature'] = $data['iTotalSignature'] ?? null;
+        $this->container['iTotalSignatureSigned'] = $data['iTotalSignatureSigned'] ?? null;
     }
 
     /**
@@ -201,8 +261,38 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['pkiEzsignfolderID'] === null) {
             $invalidProperties[] = "'pkiEzsignfolderID' can't be null";
         }
+        if ($this->container['fkiEzsignfoldertypeID'] === null) {
+            $invalidProperties[] = "'fkiEzsignfoldertypeID' can't be null";
+        }
+        if ($this->container['sEzsignfoldertypeNameX'] === null) {
+            $invalidProperties[] = "'sEzsignfoldertypeNameX' can't be null";
+        }
         if ($this->container['sEzsignfolderDescription'] === null) {
             $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
+        }
+        if ($this->container['eEzsignfolderStep'] === null) {
+            $invalidProperties[] = "'eEzsignfolderStep' can't be null";
+        }
+        if ($this->container['dtCreatedDate'] === null) {
+            $invalidProperties[] = "'dtCreatedDate' can't be null";
+        }
+        if ($this->container['dtEzsignfolderSentdate'] === null) {
+            $invalidProperties[] = "'dtEzsignfolderSentdate' can't be null";
+        }
+        if ($this->container['dtDueDate'] === null) {
+            $invalidProperties[] = "'dtDueDate' can't be null";
+        }
+        if ($this->container['iTotalDocument'] === null) {
+            $invalidProperties[] = "'iTotalDocument' can't be null";
+        }
+        if ($this->container['iTotalDocumentEdm'] === null) {
+            $invalidProperties[] = "'iTotalDocumentEdm' can't be null";
+        }
+        if ($this->container['iTotalSignature'] === null) {
+            $invalidProperties[] = "'iTotalSignature' can't be null";
+        }
+        if ($this->container['iTotalSignatureSigned'] === null) {
+            $invalidProperties[] = "'iTotalSignatureSigned' can't be null";
         }
         return $invalidProperties;
     }
@@ -244,6 +334,54 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
+     * Gets fkiEzsignfoldertypeID
+     *
+     * @return int
+     */
+    public function getFkiEzsignfoldertypeID()
+    {
+        return $this->container['fkiEzsignfoldertypeID'];
+    }
+
+    /**
+     * Sets fkiEzsignfoldertypeID
+     *
+     * @param int $fkiEzsignfoldertypeID The unique ID of the Ezsignfoldertype.
+     *
+     * @return self
+     */
+    public function setFkiEzsignfoldertypeID($fkiEzsignfoldertypeID)
+    {
+        $this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
+
+        return $this;
+    }
+
+    /**
+     * Gets sEzsignfoldertypeNameX
+     *
+     * @return string
+     */
+    public function getSEzsignfoldertypeNameX()
+    {
+        return $this->container['sEzsignfoldertypeNameX'];
+    }
+
+    /**
+     * Sets sEzsignfoldertypeNameX
+     *
+     * @param string $sEzsignfoldertypeNameX The name of the Ezsignfoldertype in the language of the requester
+     *
+     * @return self
+     */
+    public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
+    {
+        $this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
+
+        return $this;
+    }
+
+    /**
      * Gets sEzsignfolderDescription
      *
      * @return string
@@ -263,6 +401,198 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     public function setSEzsignfolderDescription($sEzsignfolderDescription)
     {
         $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsignfolderStep
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignfolderStep
+     */
+    public function getEEzsignfolderStep()
+    {
+        return $this->container['eEzsignfolderStep'];
+    }
+
+    /**
+     * Sets eEzsignfolderStep
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignfolderStep $eEzsignfolderStep eEzsignfolderStep
+     *
+     * @return self
+     */
+    public function setEEzsignfolderStep($eEzsignfolderStep)
+    {
+        $this->container['eEzsignfolderStep'] = $eEzsignfolderStep;
+
+        return $this;
+    }
+
+    /**
+     * Gets dtCreatedDate
+     *
+     * @return string
+     */
+    public function getDtCreatedDate()
+    {
+        return $this->container['dtCreatedDate'];
+    }
+
+    /**
+     * Sets dtCreatedDate
+     *
+     * @param string $dtCreatedDate The date and time at which the object was created
+     *
+     * @return self
+     */
+    public function setDtCreatedDate($dtCreatedDate)
+    {
+        $this->container['dtCreatedDate'] = $dtCreatedDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets dtEzsignfolderSentdate
+     *
+     * @return OneOfStringNull
+     */
+    public function getDtEzsignfolderSentdate()
+    {
+        return $this->container['dtEzsignfolderSentdate'];
+    }
+
+    /**
+     * Sets dtEzsignfolderSentdate
+     *
+     * @param OneOfStringNull $dtEzsignfolderSentdate dtEzsignfolderSentdate
+     *
+     * @return self
+     */
+    public function setDtEzsignfolderSentdate($dtEzsignfolderSentdate)
+    {
+        $this->container['dtEzsignfolderSentdate'] = $dtEzsignfolderSentdate;
+
+        return $this;
+    }
+
+    /**
+     * Gets dtDueDate
+     *
+     * @return OneOfStringNull
+     */
+    public function getDtDueDate()
+    {
+        return $this->container['dtDueDate'];
+    }
+
+    /**
+     * Sets dtDueDate
+     *
+     * @param OneOfStringNull $dtDueDate The date at which no more signature will be accepted on the folder
+     *
+     * @return self
+     */
+    public function setDtDueDate($dtDueDate)
+    {
+        $this->container['dtDueDate'] = $dtDueDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets iTotalDocument
+     *
+     * @return int
+     */
+    public function getITotalDocument()
+    {
+        return $this->container['iTotalDocument'];
+    }
+
+    /**
+     * Sets iTotalDocument
+     *
+     * @param int $iTotalDocument The total number of Ezsigndocument in the folder
+     *
+     * @return self
+     */
+    public function setITotalDocument($iTotalDocument)
+    {
+        $this->container['iTotalDocument'] = $iTotalDocument;
+
+        return $this;
+    }
+
+    /**
+     * Gets iTotalDocumentEdm
+     *
+     * @return int
+     */
+    public function getITotalDocumentEdm()
+    {
+        return $this->container['iTotalDocumentEdm'];
+    }
+
+    /**
+     * Sets iTotalDocumentEdm
+     *
+     * @param int $iTotalDocumentEdm The total number of Ezsigndocument in the folder that were saved in the edm system
+     *
+     * @return self
+     */
+    public function setITotalDocumentEdm($iTotalDocumentEdm)
+    {
+        $this->container['iTotalDocumentEdm'] = $iTotalDocumentEdm;
+
+        return $this;
+    }
+
+    /**
+     * Gets iTotalSignature
+     *
+     * @return int
+     */
+    public function getITotalSignature()
+    {
+        return $this->container['iTotalSignature'];
+    }
+
+    /**
+     * Sets iTotalSignature
+     *
+     * @param int $iTotalSignature The total number of signature blocks in all Ezsigndocuments in the folder
+     *
+     * @return self
+     */
+    public function setITotalSignature($iTotalSignature)
+    {
+        $this->container['iTotalSignature'] = $iTotalSignature;
+
+        return $this;
+    }
+
+    /**
+     * Gets iTotalSignatureSigned
+     *
+     * @return int
+     */
+    public function getITotalSignatureSigned()
+    {
+        return $this->container['iTotalSignatureSigned'];
+    }
+
+    /**
+     * Sets iTotalSignatureSigned
+     *
+     * @param int $iTotalSignatureSigned The total number of already signed signature blocks in all Ezsigndocuments in the folder
+     *
+     * @return self
+     */
+    public function setITotalSignatureSigned($iTotalSignatureSigned)
+    {
+        $this->container['iTotalSignatureSigned'] = $iTotalSignatureSigned;
 
         return $this;
     }

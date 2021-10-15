@@ -52,8 +52,6 @@ class FieldEEzsignfolderStep
 
     const EXPIRED = 'Expired';
 
-    const SIGNED = 'Signed';
-
     const COMPLETED = 'Completed';
 
     const ARCHIVED = 'Archived';
@@ -69,7 +67,6 @@ class FieldEEzsignfolderStep
             self::SENT,
             self::PARTIALLY_SIGNED,
             self::EXPIRED,
-            self::SIGNED,
             self::COMPLETED,
             self::ARCHIVED
         ];

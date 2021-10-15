@@ -90,9 +90,99 @@ class EzsignfolderListElementTest extends TestCase
     }
 
     /**
+     * Test attribute "fkiEzsignfoldertypeID"
+     */
+    public function testPropertyFkiEzsignfoldertypeID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsignfoldertypeNameX"
+     */
+    public function testPropertySEzsignfoldertypeNameX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsignfolderDescription"
      */
     public function testPropertySEzsignfolderDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eEzsignfolderStep"
+     */
+    public function testPropertyEEzsignfolderStep()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "dtCreatedDate"
+     */
+    public function testPropertyDtCreatedDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "dtEzsignfolderSentdate"
+     */
+    public function testPropertyDtEzsignfolderSentdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "dtDueDate"
+     */
+    public function testPropertyDtDueDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iTotalDocument"
+     */
+    public function testPropertyITotalDocument()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iTotalDocumentEdm"
+     */
+    public function testPropertyITotalDocumentEdm()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iTotalSignature"
+     */
+    public function testPropertyITotalSignature()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iTotalSignatureSigned"
+     */
+    public function testPropertyITotalSignatureSigned()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
