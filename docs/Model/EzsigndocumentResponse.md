@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **dtEzsigndocumentDuedate** | **string** | The maximum date and time at which the document can be signed. |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **sEzsigndocumentName** | **string** | The name of the document that will be presented to Ezsignfoldersignerassociations |
-**pkiEzsigndocumentID** | **int** | The unique ID of the Ezsigntemplate |
+**pkiEzsigndocumentID** | **int** | The unique ID of the Ezsigndocument |
 **eEzsigndocumentStep** | [**\eZmaxAPI\Model\FieldEEzsigndocumentStep**](FieldEEzsigndocumentStep.md) |  |
 **dtEzsigndocumentFirstsend** | **string** | The date and time when the Ezsigndocument was first sent. |
 **dtEzsigndocumentLastsend** | **string** | The date and time when the Ezsigndocument was sent the last time. |

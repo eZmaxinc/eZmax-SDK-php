@@ -100,7 +100,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldersignerassociationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsignfoldersignerassociationID = 56; // int | The unique ID of the Ezsignfoldersignerassociation
+$pkiEzsignfoldersignerassociationID = 56; // int
 
 try {
     $result = $apiInstance->ezsignfoldersignerassociationDeleteObjectV1($pkiEzsignfoldersignerassociationID);
@@ -114,7 +114,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldersignerassociationID** | **int**| The unique ID of the Ezsignfoldersignerassociation |
+ **pkiEzsignfoldersignerassociationID** | **int**|  |
 
 ### Return type
 
@@ -162,7 +162,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldersignerassociationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsignfoldersignerassociationID = 56; // int | The unique ID of the Ezsignfoldersignerassociation
+$pkiEzsignfoldersignerassociationID = 56; // int
 
 try {
     $apiInstance->ezsignfoldersignerassociationGetChildrenV1($pkiEzsignfoldersignerassociationID);
@@ -175,7 +175,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldersignerassociationID** | **int**| The unique ID of the Ezsignfoldersignerassociation |
+ **pkiEzsignfoldersignerassociationID** | **int**|  |
 
 ### Return type
 
@@ -223,7 +223,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldersignerassociationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsignfoldersignerassociationID = 56; // int | The unique ID of the Ezsignfoldersignerassociation
+$pkiEzsignfoldersignerassociationID = 56; // int
 
 try {
     $result = $apiInstance->ezsignfoldersignerassociationGetInPersonLoginUrlV1($pkiEzsignfoldersignerassociationID);
@@ -237,7 +237,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldersignerassociationID** | **int**| The unique ID of the Ezsignfoldersignerassociation |
+ **pkiEzsignfoldersignerassociationID** | **int**|  |
 
 ### Return type
 
@@ -285,7 +285,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldersignerassociationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsignfoldersignerassociationID = 56; // int | The unique ID of the Ezsignfoldersignerassociation
+$pkiEzsignfoldersignerassociationID = 56; // int
 
 try {
     $result = $apiInstance->ezsignfoldersignerassociationGetObjectV1($pkiEzsignfoldersignerassociationID);
@@ -299,7 +299,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldersignerassociationID** | **int**| The unique ID of the Ezsignfoldersignerassociation |
+ **pkiEzsignfoldersignerassociationID** | **int**|  |
 
 ### Return type
 

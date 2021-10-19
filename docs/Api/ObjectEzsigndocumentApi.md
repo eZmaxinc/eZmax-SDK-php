@@ -5,10 +5,12 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ezsigndocumentApplyEzsigntemplateV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsign Template to the Ezsigndocument.
+[**ezsigndocumentApplyEzsigntemplateV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsign Template to the Ezsigndocument.
 [**ezsigndocumentCreateObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
 [**ezsigndocumentDeleteObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
 [**ezsigndocumentGetChildrenV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetChildrenV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs
 [**ezsigndocumentGetDownloadUrlV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
+[**ezsigndocumentGetEzsignpagesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignpagesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages
 [**ezsigndocumentGetFormDataV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetFormDataV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
 [**ezsigndocumentGetObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
 [**ezsigndocumentGetWordsPositionsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetWordsPositionsV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
@@ -18,6 +20,70 @@ Method | HTTP request | Description
 
 ```php
 ezsigndocumentApplyEzsigntemplateV1($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateV1Request): \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Response
+```
+
+Apply an Ezsign Template to the Ezsigndocument.
+
+This function is deprecated. Please use *applyEzsigntemplate* instead which is doing the same thing but with a capital \"E\" to normalize the nomenclature.  This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+$ezsigndocumentApplyEzsigntemplateV1Request = new \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request(); // \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request
+
+try {
+    $result = $apiInstance->ezsigndocumentApplyEzsigntemplateV1($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentApplyEzsigntemplateV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **int**|  |
+ **ezsigndocumentApplyEzsigntemplateV1Request** | [**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request**](../Model/EzsigndocumentApplyEzsigntemplateV1Request.md)|  |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Response**](../Model/EzsigndocumentApplyEzsigntemplateV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentApplyEzsigntemplateV2()`
+
+```php
+ezsigndocumentApplyEzsigntemplateV2($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateV2Request): \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV2Response
 ```
 
 Apply an Ezsign Template to the Ezsigndocument.
@@ -43,14 +109,14 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
-$ezsigndocumentApplyEzsigntemplateV1Request = new \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request(); // \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request
+$pkiEzsigndocumentID = 56; // int
+$ezsigndocumentApplyEzsigntemplateV2Request = new \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV2Request(); // \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV2Request
 
 try {
-    $result = $apiInstance->ezsigndocumentApplyEzsigntemplateV1($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateV1Request);
+    $result = $apiInstance->ezsigndocumentApplyEzsigntemplateV2($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentApplyEzsigntemplateV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentApplyEzsigntemplateV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -58,12 +124,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**| The unique ID of the Ezsigndocument |
- **ezsigndocumentApplyEzsigntemplateV1Request** | [**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request**](../Model/EzsigndocumentApplyEzsigntemplateV1Request.md)|  |
+ **pkiEzsigndocumentID** | **int**|  |
+ **ezsigndocumentApplyEzsigntemplateV2Request** | [**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV2Request**](../Model/EzsigndocumentApplyEzsigntemplateV2Request.md)|  |
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Response**](../Model/EzsigndocumentApplyEzsigntemplateV1Response.md)
+[**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV2Response**](../Model/EzsigndocumentApplyEzsigntemplateV2Response.md)
 
 ### Authorization
 
@@ -167,7 +233,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
+$pkiEzsigndocumentID = 56; // int
 
 try {
     $result = $apiInstance->ezsigndocumentDeleteObjectV1($pkiEzsigndocumentID);
@@ -181,7 +247,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**| The unique ID of the Ezsigndocument |
+ **pkiEzsigndocumentID** | **int**|  |
 
 ### Return type
 
@@ -229,7 +295,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
+$pkiEzsigndocumentID = 56; // int
 
 try {
     $apiInstance->ezsigndocumentGetChildrenV1($pkiEzsigndocumentID);
@@ -242,7 +308,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**| The unique ID of the Ezsigndocument |
+ **pkiEzsigndocumentID** | **int**|  |
 
 ### Return type
 
@@ -290,7 +356,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
+$pkiEzsigndocumentID = 56; // int
 $eDocumentType = 'eDocumentType_example'; // string | The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more.
 
 try {
@@ -305,7 +371,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**| The unique ID of the Ezsigndocument |
+ **pkiEzsigndocumentID** | **int**|  |
  **eDocumentType** | **string**| The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. |
 
 ### Return type
@@ -325,15 +391,13 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsigndocumentGetFormDataV1()`
+## `ezsigndocumentGetEzsignpagesV1()`
 
 ```php
-ezsigndocumentGetFormDataV1($pkiEzsigndocumentID): \SplFileObject
+ezsigndocumentGetEzsignpagesV1($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentGetEzsignpagesV1Response
 ```
 
-Retrieve an existing Ezsigndocument's Form Data
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+Retrieve an existing Ezsigndocument's Ezsignpages
 
 ### Example
 
@@ -354,7 +418,67 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
+$pkiEzsigndocumentID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigndocumentGetEzsignpagesV1($pkiEzsigndocumentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetEzsignpagesV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **int**|  |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentGetEzsignpagesV1Response**](../Model/EzsigndocumentGetEzsignpagesV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentGetFormDataV1()`
+
+```php
+ezsigndocumentGetFormDataV1($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentGetFormDataV1Response
+```
+
+Retrieve an existing Ezsigndocument's Form Data
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
 
 try {
     $result = $apiInstance->ezsigndocumentGetFormDataV1($pkiEzsigndocumentID);
@@ -368,11 +492,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**| The unique ID of the Ezsigndocument |
+ **pkiEzsigndocumentID** | **int**|  |
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+[**\eZmaxAPI\Model\EzsigndocumentGetFormDataV1Response**](../Model/EzsigndocumentGetFormDataV1Response.md)
 
 ### Authorization
 
@@ -381,7 +505,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/zip`, `application/json`
+- **Accept**: `application/json`, `application/zip`, `text/csv`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -416,7 +540,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
+$pkiEzsigndocumentID = 56; // int
 
 try {
     $result = $apiInstance->ezsigndocumentGetObjectV1($pkiEzsigndocumentID);
@@ -430,7 +554,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**| The unique ID of the Ezsigndocument |
+ **pkiEzsigndocumentID** | **int**|  |
 
 ### Return type
 
@@ -457,8 +581,6 @@ ezsigndocumentGetWordsPositionsV1($pkiEzsigndocumentID, $ezsigndocumentGetWordsP
 
 Retrieve positions X,Y of given words from a Ezsigndocument
 
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-
 ### Example
 
 ```php
@@ -478,7 +600,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsigndocumentID = 56; // int | The unique ID of the Ezsigndocument
+$pkiEzsigndocumentID = 56; // int
 $ezsigndocumentGetWordsPositionsV1Request = new \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request(); // \eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request
 
 try {
@@ -493,7 +615,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**| The unique ID of the Ezsigndocument |
+ **pkiEzsigndocumentID** | **int**|  |
  **ezsigndocumentGetWordsPositionsV1Request** | [**\eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request**](../Model/EzsigndocumentGetWordsPositionsV1Request.md)|  |
 
 ### Return type

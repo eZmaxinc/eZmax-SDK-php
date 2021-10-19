@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | [**\eZmaxAPI\Model\CommonGetAutocompleteV1ResponseMPayload[]**](CommonGetAutocompleteV1ResponseMPayload.md) |  |
+**mPayload** | [**\eZmaxAPI\Model\CustomAutocompleteElementResponse[]**](CustomAutocompleteElementResponse.md) | Generic Autocomplete Response |
 **objDebugPayload** | [**\eZmaxAPI\Model\CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional]
 **objDebug** | [**\eZmaxAPI\Model\CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional]
 
