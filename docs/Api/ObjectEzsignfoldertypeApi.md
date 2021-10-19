@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `ezsignfoldertypeGetAutocompleteV1()`
 
 ```php
-ezsignfoldertypeGetAutocompleteV1($sSelector, $acceptLanguage, $sQuery): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
+ezsignfoldertypeGetAutocompleteV1($sSelector, $sQuery, $acceptLanguage): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
 ```
 
 Retrieve Ezsignfoldertypes and IDs
@@ -38,11 +38,11 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldertypeApi(
     $config
 );
 $sSelector = 'sSelector_example'; // string | The type of Ezsignfoldertypes to return
-$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 
 try {
-    $result = $apiInstance->ezsignfoldertypeGetAutocompleteV1($sSelector, $acceptLanguage, $sQuery);
+    $result = $apiInstance->ezsignfoldertypeGetAutocompleteV1($sSelector, $sQuery, $acceptLanguage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeGetAutocompleteV1: ', $e->getMessage(), PHP_EOL;
@@ -54,8 +54,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **string**| The type of Ezsignfoldertypes to return |
- **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional]
  **sQuery** | **string**| Allow to filter the returned results | [optional]
+ **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional]
 
 ### Return type
 

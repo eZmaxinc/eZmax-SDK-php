@@ -31,6 +31,7 @@ namespace eZmaxAPI\Api;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
@@ -122,16 +123,16 @@ class ObjectEzsignfoldertypeApi
      * Retrieve Ezsignfoldertypes and IDs
      *
      * @param  string $sSelector The type of Ezsignfoldertypes to return (required)
-     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\CommonGetAutocompleteV1Response
      */
-    public function ezsignfoldertypeGetAutocompleteV1($sSelector, $acceptLanguage = null, $sQuery = null)
+    public function ezsignfoldertypeGetAutocompleteV1($sSelector, $sQuery = null, $acceptLanguage = null)
     {
-        list($response) = $this->ezsignfoldertypeGetAutocompleteV1WithHttpInfo($sSelector, $acceptLanguage, $sQuery);
+        list($response) = $this->ezsignfoldertypeGetAutocompleteV1WithHttpInfo($sSelector, $sQuery, $acceptLanguage);
         return $response;
     }
 
@@ -141,16 +142,16 @@ class ObjectEzsignfoldertypeApi
      * Retrieve Ezsignfoldertypes and IDs
      *
      * @param  string $sSelector The type of Ezsignfoldertypes to return (required)
-     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\CommonGetAutocompleteV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfoldertypeGetAutocompleteV1WithHttpInfo($sSelector, $acceptLanguage = null, $sQuery = null)
+    public function ezsignfoldertypeGetAutocompleteV1WithHttpInfo($sSelector, $sQuery = null, $acceptLanguage = null)
     {
-        $request = $this->ezsignfoldertypeGetAutocompleteV1Request($sSelector, $acceptLanguage, $sQuery);
+        $request = $this->ezsignfoldertypeGetAutocompleteV1Request($sSelector, $sQuery, $acceptLanguage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -162,6 +163,13 @@ class ObjectEzsignfoldertypeApi
                     (int) $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
                     $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
                 );
             }
 
@@ -229,15 +237,15 @@ class ObjectEzsignfoldertypeApi
      * Retrieve Ezsignfoldertypes and IDs
      *
      * @param  string $sSelector The type of Ezsignfoldertypes to return (required)
-     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldertypeGetAutocompleteV1Async($sSelector, $acceptLanguage = null, $sQuery = null)
+    public function ezsignfoldertypeGetAutocompleteV1Async($sSelector, $sQuery = null, $acceptLanguage = null)
     {
-        return $this->ezsignfoldertypeGetAutocompleteV1AsyncWithHttpInfo($sSelector, $acceptLanguage, $sQuery)
+        return $this->ezsignfoldertypeGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery, $acceptLanguage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -251,16 +259,16 @@ class ObjectEzsignfoldertypeApi
      * Retrieve Ezsignfoldertypes and IDs
      *
      * @param  string $sSelector The type of Ezsignfoldertypes to return (required)
-     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldertypeGetAutocompleteV1AsyncWithHttpInfo($sSelector, $acceptLanguage = null, $sQuery = null)
+    public function ezsignfoldertypeGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery = null, $acceptLanguage = null)
     {
         $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteV1Response';
-        $request = $this->ezsignfoldertypeGetAutocompleteV1Request($sSelector, $acceptLanguage, $sQuery);
+        $request = $this->ezsignfoldertypeGetAutocompleteV1Request($sSelector, $sQuery, $acceptLanguage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -299,13 +307,13 @@ class ObjectEzsignfoldertypeApi
      * Create request for operation 'ezsignfoldertypeGetAutocompleteV1'
      *
      * @param  string $sSelector The type of Ezsignfoldertypes to return (required)
-     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfoldertypeGetAutocompleteV1Request($sSelector, $acceptLanguage = null, $sQuery = null)
+    public function ezsignfoldertypeGetAutocompleteV1Request($sSelector, $sQuery = null, $acceptLanguage = null)
     {
         // verify the required parameter 'sSelector' is set
         if ($sSelector === null || (is_array($sSelector) && count($sSelector) === 0)) {
@@ -380,7 +388,7 @@ class ObjectEzsignfoldertypeApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
@@ -401,7 +409,7 @@ class ObjectEzsignfoldertypeApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
 
         if ($apiKey !== null) {
             $secret = $this->config->getSecret();
@@ -469,6 +477,13 @@ class ObjectEzsignfoldertypeApi
                     (int) $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
                     $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
                 );
             }
 
@@ -732,7 +747,7 @@ class ObjectEzsignfoldertypeApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
@@ -753,7 +768,7 @@ class ObjectEzsignfoldertypeApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
 
         if ($apiKey !== null) {
             $secret = $this->config->getSecret();
