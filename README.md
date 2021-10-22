@@ -82,6 +82,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *GlobalCustomerApi* | [**globalCustomerGetEndpointV1**](docs/Api/GlobalCustomerApi.md#globalcustomergetendpointv1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
 *ModuleAuthenticateApi* | [**authenticateAuthenticateV2**](docs/Api/ModuleAuthenticateApi.md#authenticateauthenticatev2) | **POST** /2/module/authenticate/authenticate/{eSessionType} | Authenticate a user
+*ModuleListApi* | [**listGetListpresentationV1**](docs/Api/ModuleListApi.md#listgetlistpresentationv1) | **GET** /1/module/list/listpresentation/{sListName} | Get all Listpresentation for a specific list
+*ModuleListApi* | [**listSaveListpresentationV1**](docs/Api/ModuleListApi.md#listsavelistpresentationv1) | **POST** /1/module/list/listpresentation/{sListName} | Save all Listpresentation for a specific list
 *ModuleSsprApi* | [**ssprResetPasswordRequestV1**](docs/Api/ModuleSsprApi.md#ssprresetpasswordrequestv1) | **POST** /1/module/sspr/resetPasswordRequest | Reset Password Request
 *ModuleSsprApi* | [**ssprResetPasswordV1**](docs/Api/ModuleSsprApi.md#ssprresetpasswordv1) | **POST** /1/module/sspr/resetPassword | Reset Password
 *ModuleSsprApi* | [**ssprSendUsernamesV1**](docs/Api/ModuleSsprApi.md#ssprsendusernamesv1) | **POST** /1/module/sspr/sendUsernames | Send username(s)
@@ -108,6 +110,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolderGetListV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetlistv1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list
 *ObjectEzsignfolderApi* | [**ezsignfolderGetObjectV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetobjectv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderSendV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldersendv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
+*ObjectEzsignfolderApi* | [**ezsignfolderUnsendV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderunsendv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend | Unsend the Ezsignfolder
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateObjectV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateobjectv1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationDeleteObjectV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationdeleteobjectv1) | **DELETE** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Delete an existing Ezsignfoldersignerassociation
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationGetChildrenV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationgetchildrenv1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getChildren | Retrieve an existing Ezsignfoldersignerassociation&#39;s children IDs
@@ -220,6 +223,7 @@ Class | Method | HTTP request | Description
 - [EzsignfolderResponseCompound](docs/Model/EzsignfolderResponseCompound.md)
 - [EzsignfolderSendV1Request](docs/Model/EzsignfolderSendV1Request.md)
 - [EzsignfolderSendV1Response](docs/Model/EzsignfolderSendV1Response.md)
+- [EzsignfolderUnsendV1Response](docs/Model/EzsignfolderUnsendV1Response.md)
 - [EzsignfoldersignerassociationCreateObjectV1Request](docs/Model/EzsignfoldersignerassociationCreateObjectV1Request.md)
 - [EzsignfoldersignerassociationCreateObjectV1Response](docs/Model/EzsignfoldersignerassociationCreateObjectV1Response.md)
 - [EzsignfoldersignerassociationCreateObjectV1ResponseAllOf](docs/Model/EzsignfoldersignerassociationCreateObjectV1ResponseAllOf.md)
@@ -274,6 +278,12 @@ Class | Method | HTTP request | Description
 - [FranchisereferalincomeRequestCompoundAllOf](docs/Model/FranchisereferalincomeRequestCompoundAllOf.md)
 - [GlobalCustomerGetEndpointV1Response](docs/Model/GlobalCustomerGetEndpointV1Response.md)
 - [HeaderAcceptLanguage](docs/Model/HeaderAcceptLanguage.md)
+- [ListGetListpresentationV1Response](docs/Model/ListGetListpresentationV1Response.md)
+- [ListGetListpresentationV1ResponseAllOf](docs/Model/ListGetListpresentationV1ResponseAllOf.md)
+- [ListGetListpresentationV1ResponseMPayload](docs/Model/ListGetListpresentationV1ResponseMPayload.md)
+- [ListSaveListpresentationV1Request](docs/Model/ListSaveListpresentationV1Request.md)
+- [ListSaveListpresentationV1Response](docs/Model/ListSaveListpresentationV1Response.md)
+- [ListpresentationRequest](docs/Model/ListpresentationRequest.md)
 - [MultilingualApikeyDescription](docs/Model/MultilingualApikeyDescription.md)
 - [PhoneRequest](docs/Model/PhoneRequest.md)
 - [SsprResetPasswordRequestV1Request](docs/Model/SsprResetPasswordRequestV1Request.md)
@@ -330,6 +340,6 @@ support-api@ezmax.ca
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.1.0`
-    - Package version: `1.1.0`
+- API version: `1.1.1`
+    - Package version: `1.1.1`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

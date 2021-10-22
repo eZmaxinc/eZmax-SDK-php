@@ -6,6 +6,7 @@ README.md
 composer.json
 docs/Api/GlobalCustomerApi.md
 docs/Api/ModuleAuthenticateApi.md
+docs/Api/ModuleListApi.md
 docs/Api/ModuleSsprApi.md
 docs/Api/ModuleUserApi.md
 docs/Api/ObjectActivesessionApi.md
@@ -113,6 +114,7 @@ docs/Model/EzsignfolderResponse.md
 docs/Model/EzsignfolderResponseCompound.md
 docs/Model/EzsignfolderSendV1Request.md
 docs/Model/EzsignfolderSendV1Response.md
+docs/Model/EzsignfolderUnsendV1Response.md
 docs/Model/EzsignfoldersignerassociationCreateObjectV1Request.md
 docs/Model/EzsignfoldersignerassociationCreateObjectV1Response.md
 docs/Model/EzsignfoldersignerassociationCreateObjectV1ResponseAllOf.md
@@ -167,6 +169,12 @@ docs/Model/FranchisereferalincomeRequestCompound.md
 docs/Model/FranchisereferalincomeRequestCompoundAllOf.md
 docs/Model/GlobalCustomerGetEndpointV1Response.md
 docs/Model/HeaderAcceptLanguage.md
+docs/Model/ListGetListpresentationV1Response.md
+docs/Model/ListGetListpresentationV1ResponseAllOf.md
+docs/Model/ListGetListpresentationV1ResponseMPayload.md
+docs/Model/ListSaveListpresentationV1Request.md
+docs/Model/ListSaveListpresentationV1Response.md
+docs/Model/ListpresentationRequest.md
 docs/Model/MultilingualApikeyDescription.md
 docs/Model/PhoneRequest.md
 docs/Model/SsprResetPasswordRequestV1Request.md
@@ -199,6 +207,7 @@ docs/Model/WebsiteRequest.md
 git_push.sh
 lib/Api/GlobalCustomerApi.php
 lib/Api/ModuleAuthenticateApi.php
+lib/Api/ModuleListApi.php
 lib/Api/ModuleSsprApi.php
 lib/Api/ModuleUserApi.php
 lib/Api/ObjectActivesessionApi.php
@@ -309,6 +318,7 @@ lib/Model/EzsignfolderResponse.php
 lib/Model/EzsignfolderResponseCompound.php
 lib/Model/EzsignfolderSendV1Request.php
 lib/Model/EzsignfolderSendV1Response.php
+lib/Model/EzsignfolderUnsendV1Response.php
 lib/Model/EzsignfoldersignerassociationCreateObjectV1Request.php
 lib/Model/EzsignfoldersignerassociationCreateObjectV1Response.php
 lib/Model/EzsignfoldersignerassociationCreateObjectV1ResponseAllOf.php
@@ -363,6 +373,12 @@ lib/Model/FranchisereferalincomeRequestCompound.php
 lib/Model/FranchisereferalincomeRequestCompoundAllOf.php
 lib/Model/GlobalCustomerGetEndpointV1Response.php
 lib/Model/HeaderAcceptLanguage.php
+lib/Model/ListGetListpresentationV1Response.php
+lib/Model/ListGetListpresentationV1ResponseAllOf.php
+lib/Model/ListGetListpresentationV1ResponseMPayload.php
+lib/Model/ListSaveListpresentationV1Request.php
+lib/Model/ListSaveListpresentationV1Response.php
+lib/Model/ListpresentationRequest.php
 lib/Model/ModelInterface.php
 lib/Model/MultilingualApikeyDescription.php
 lib/Model/PhoneRequest.php
@@ -398,6 +414,7 @@ lib/RequestSignature.php
 phpunit.xml.dist
 test/Api/GlobalCustomerApiTest.php
 test/Api/ModuleAuthenticateApiTest.php
+test/Api/ModuleListApiTest.php
 test/Api/ModuleSsprApiTest.php
 test/Api/ModuleUserApiTest.php
 test/Api/ObjectActivesessionApiTest.php
@@ -505,6 +522,7 @@ test/Model/EzsignfolderResponseCompoundTest.php
 test/Model/EzsignfolderResponseTest.php
 test/Model/EzsignfolderSendV1RequestTest.php
 test/Model/EzsignfolderSendV1ResponseTest.php
+test/Model/EzsignfolderUnsendV1ResponseTest.php
 test/Model/EzsignfoldersignerassociationCreateObjectV1RequestTest.php
 test/Model/EzsignfoldersignerassociationCreateObjectV1ResponseAllOfTest.php
 test/Model/EzsignfoldersignerassociationCreateObjectV1ResponseMPayloadTest.php
@@ -559,6 +577,12 @@ test/Model/FranchisereferalincomeRequestCompoundTest.php
 test/Model/FranchisereferalincomeRequestTest.php
 test/Model/GlobalCustomerGetEndpointV1ResponseTest.php
 test/Model/HeaderAcceptLanguageTest.php
+test/Model/ListGetListpresentationV1ResponseAllOfTest.php
+test/Model/ListGetListpresentationV1ResponseMPayloadTest.php
+test/Model/ListGetListpresentationV1ResponseTest.php
+test/Model/ListSaveListpresentationV1RequestTest.php
+test/Model/ListSaveListpresentationV1ResponseTest.php
+test/Model/ListpresentationRequestTest.php
 test/Model/MultilingualApikeyDescriptionTest.php
 test/Model/PhoneRequestTest.php
 test/Model/SsprResetPasswordRequestV1RequestTest.php
