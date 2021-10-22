@@ -81,15 +81,6 @@ class ListSaveListpresentationV1ResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "mPayload"
-     */
-    public function testPropertyMPayload()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "objDebugPayload"
      */
     public function testPropertyObjDebugPayload()

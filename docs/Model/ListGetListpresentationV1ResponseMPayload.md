@@ -1,4 +1,4 @@
-# # ListSaveListpresentationV1ResponseMPayload
+# # ListGetListpresentationV1ResponseMPayload
 
 ## Properties
 

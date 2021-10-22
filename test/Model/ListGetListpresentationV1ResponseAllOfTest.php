@@ -1,6 +1,6 @@
 <?php
 /**
- * ListSaveListpresentationV1ResponseMPayloadTest
+ * ListGetListpresentationV1ResponseAllOfTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ListSaveListpresentationV1ResponseMPayloadTest Class Doc Comment
+ * ListGetListpresentationV1ResponseAllOfTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the POST /1/module/list/listpresentation/{sListName} API Request
+ * @description ListGetListpresentationV1ResponseAllOf
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ListSaveListpresentationV1ResponseMPayloadTest extends TestCase
+class ListGetListpresentationV1ResponseAllOfTest extends TestCase
 {
 
     /**
@@ -72,18 +72,18 @@ class ListSaveListpresentationV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "ListSaveListpresentationV1ResponseMPayload"
+     * Test "ListGetListpresentationV1ResponseAllOf"
      */
-    public function testListSaveListpresentationV1ResponseMPayload()
+    public function testListGetListpresentationV1ResponseAllOf()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "aObjListpresentation"
+     * Test attribute "mPayload"
      */
-    public function testPropertyAObjListpresentation()
+    public function testPropertyMPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

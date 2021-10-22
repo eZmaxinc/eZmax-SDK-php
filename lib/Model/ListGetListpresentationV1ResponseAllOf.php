@@ -1,6 +1,6 @@
 <?php
 /**
- * ListSaveListpresentationV1ResponseAllOf
+ * ListGetListpresentationV1ResponseAllOf
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * ListSaveListpresentationV1ResponseAllOf Class Doc Comment
+ * ListGetListpresentationV1ResponseAllOf Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI
@@ -43,7 +43,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ListSaveListpresentationV1ResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
+class ListGetListpresentationV1ResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class ListSaveListpresentationV1ResponseAllOf implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'list_saveListpresentation_v1_Response_allOf';
+    protected static $openAPIModelName = 'list_getListpresentation_v1_Response_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +60,7 @@ class ListSaveListpresentationV1ResponseAllOf implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mPayload' => '\eZmaxAPI\Model\ListSaveListpresentationV1ResponseMPayload'
+        'mPayload' => '\eZmaxAPI\Model\ListGetListpresentationV1ResponseMPayload'
     ];
 
     /**
@@ -212,7 +212,7 @@ class ListSaveListpresentationV1ResponseAllOf implements ModelInterface, ArrayAc
     /**
      * Gets mPayload
      *
-     * @return \eZmaxAPI\Model\ListSaveListpresentationV1ResponseMPayload
+     * @return \eZmaxAPI\Model\ListGetListpresentationV1ResponseMPayload
      */
     public function getMPayload()
     {
@@ -222,7 +222,7 @@ class ListSaveListpresentationV1ResponseAllOf implements ModelInterface, ArrayAc
     /**
      * Sets mPayload
      *
-     * @param \eZmaxAPI\Model\ListSaveListpresentationV1ResponseMPayload $mPayload mPayload
+     * @param \eZmaxAPI\Model\ListGetListpresentationV1ResponseMPayload $mPayload mPayload
      *
      * @return self
      */

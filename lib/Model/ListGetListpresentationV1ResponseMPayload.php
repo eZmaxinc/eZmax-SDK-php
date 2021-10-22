@@ -1,6 +1,6 @@
 <?php
 /**
- * ListSaveListpresentationV1ResponseMPayload
+ * ListGetListpresentationV1ResponseMPayload
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * ListSaveListpresentationV1ResponseMPayload Class Doc Comment
+ * ListGetListpresentationV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Payload for the POST /1/module/list/listpresentation/{sListName} API Request
+ * @description Payload for the GET /1/module/list/listpresentation/{sListName} API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ListSaveListpresentationV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class ListGetListpresentationV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class ListSaveListpresentationV1ResponseMPayload implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $openAPIModelName = 'list-saveListpresentation-v1-Response-mPayload';
+    protected static $openAPIModelName = 'list-getListpresentation-v1-Response-mPayload';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
