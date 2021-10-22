@@ -133,4 +133,13 @@ class ListpresentationRequestTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "bListpresentationDefault"
+     */
+    public function testPropertyBListpresentationDefault()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

@@ -66,7 +66,8 @@ class ListpresentationRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'sListpresentationOrderby' => 'string',
         'aSColumnName' => 'string[]',
         'iListpresentationRowMax' => 'int',
-        'iListpresentationRowOffset' => 'int'
+        'iListpresentationRowOffset' => 'int',
+        'bListpresentationDefault' => 'bool'
     ];
 
     /**
@@ -82,7 +83,8 @@ class ListpresentationRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'sListpresentationOrderby' => null,
         'aSColumnName' => null,
         'iListpresentationRowMax' => null,
-        'iListpresentationRowOffset' => null
+        'iListpresentationRowOffset' => null,
+        'bListpresentationDefault' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class ListpresentationRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'sListpresentationOrderby' => 'sListpresentationOrderby',
         'aSColumnName' => 'a_sColumnName',
         'iListpresentationRowMax' => 'iListpresentationRowMax',
-        'iListpresentationRowOffset' => 'iListpresentationRowOffset'
+        'iListpresentationRowOffset' => 'iListpresentationRowOffset',
+        'bListpresentationDefault' => 'bListpresentationDefault'
     ];
 
     /**
@@ -131,7 +134,8 @@ class ListpresentationRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'sListpresentationOrderby' => 'setSListpresentationOrderby',
         'aSColumnName' => 'setASColumnName',
         'iListpresentationRowMax' => 'setIListpresentationRowMax',
-        'iListpresentationRowOffset' => 'setIListpresentationRowOffset'
+        'iListpresentationRowOffset' => 'setIListpresentationRowOffset',
+        'bListpresentationDefault' => 'setBListpresentationDefault'
     ];
 
     /**
@@ -145,7 +149,8 @@ class ListpresentationRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'sListpresentationOrderby' => 'getSListpresentationOrderby',
         'aSColumnName' => 'getASColumnName',
         'iListpresentationRowMax' => 'getIListpresentationRowMax',
-        'iListpresentationRowOffset' => 'getIListpresentationRowOffset'
+        'iListpresentationRowOffset' => 'getIListpresentationRowOffset',
+        'bListpresentationDefault' => 'getBListpresentationDefault'
     ];
 
     /**
@@ -211,6 +216,7 @@ class ListpresentationRequest implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['aSColumnName'] = $data['aSColumnName'] ?? null;
         $this->container['iListpresentationRowMax'] = $data['iListpresentationRowMax'] ?? null;
         $this->container['iListpresentationRowOffset'] = $data['iListpresentationRowOffset'] ?? null;
+        $this->container['bListpresentationDefault'] = $data['bListpresentationDefault'] ?? null;
     }
 
     /**
@@ -239,6 +245,9 @@ class ListpresentationRequest implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if ($this->container['iListpresentationRowOffset'] === null) {
             $invalidProperties[] = "'iListpresentationRowOffset' can't be null";
+        }
+        if ($this->container['bListpresentationDefault'] === null) {
+            $invalidProperties[] = "'bListpresentationDefault' can't be null";
         }
         return $invalidProperties;
     }
@@ -395,6 +404,30 @@ class ListpresentationRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function setIListpresentationRowOffset($iListpresentationRowOffset)
     {
         $this->container['iListpresentationRowOffset'] = $iListpresentationRowOffset;
+
+        return $this;
+    }
+
+    /**
+     * Gets bListpresentationDefault
+     *
+     * @return bool
+     */
+    public function getBListpresentationDefault()
+    {
+        return $this->container['bListpresentationDefault'];
+    }
+
+    /**
+     * Sets bListpresentationDefault
+     *
+     * @param bool $bListpresentationDefault Set to true if the user chose this Listpresentation as the default one. A single element should be set to true
+     *
+     * @return self
+     */
+    public function setBListpresentationDefault($bListpresentationDefault)
+    {
+        $this->container['bListpresentationDefault'] = $bListpresentationDefault;
 
         return $this;
     }
