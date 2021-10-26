@@ -42,6 +42,8 @@ docs/Model/CommonGetAutocompleteV1ResponseAllOf.md
 docs/Model/CommonGetListV1ResponseMPayload.md
 docs/Model/CommonResponse.md
 docs/Model/CommonResponseError.md
+docs/Model/CommonResponseErrorSTemporaryFileUrl.md
+docs/Model/CommonResponseErrorSTemporaryFileUrlAllOf.md
 docs/Model/CommonResponseFilter.md
 docs/Model/CommonResponseGetList.md
 docs/Model/CommonResponseObjDebug.md
@@ -246,6 +248,8 @@ lib/Model/CommonGetAutocompleteV1ResponseAllOf.php
 lib/Model/CommonGetListV1ResponseMPayload.php
 lib/Model/CommonResponse.php
 lib/Model/CommonResponseError.php
+lib/Model/CommonResponseErrorSTemporaryFileUrl.php
+lib/Model/CommonResponseErrorSTemporaryFileUrlAllOf.php
 lib/Model/CommonResponseFilter.php
 lib/Model/CommonResponseGetList.php
 lib/Model/CommonResponseObjDebug.php
@@ -448,6 +452,8 @@ test/Model/CommonAuditTest.php
 test/Model/CommonGetAutocompleteV1ResponseAllOfTest.php
 test/Model/CommonGetAutocompleteV1ResponseTest.php
 test/Model/CommonGetListV1ResponseMPayloadTest.php
+test/Model/CommonResponseErrorSTemporaryFileUrlAllOfTest.php
+test/Model/CommonResponseErrorSTemporaryFileUrlTest.php
 test/Model/CommonResponseErrorTest.php
 test/Model/CommonResponseFilterTest.php
 test/Model/CommonResponseGetListTest.php

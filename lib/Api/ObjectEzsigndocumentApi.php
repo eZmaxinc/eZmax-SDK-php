@@ -815,7 +815,7 @@ class ObjectEzsigndocumentApi
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Response|\eZmaxAPI\Model\CommonResponseError|CommonResponseError
+     * @return \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseErrorSTemporaryFileUrl
      */
     public function ezsigndocumentCreateObjectV1($ezsigndocumentCreateObjectV1Request)
     {
@@ -832,7 +832,7 @@ class ObjectEzsigndocumentApi
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Response|\eZmaxAPI\Model\CommonResponseError|CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzsigndocumentCreateObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseErrorSTemporaryFileUrl, HTTP status code, HTTP response headers (array of strings)
      */
     public function ezsigndocumentCreateObjectV1WithHttpInfo($ezsigndocumentCreateObjectV1Request)
     {
@@ -899,14 +899,14 @@ class ObjectEzsigndocumentApi
                         $response->getHeaders()
                     ];
                 case 422:
-                    if ('CommonResponseError' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\CommonResponseErrorSTemporaryFileUrl' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, 'CommonResponseError', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseErrorSTemporaryFileUrl', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -946,7 +946,7 @@ class ObjectEzsigndocumentApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'CommonResponseError',
+                        '\eZmaxAPI\Model\CommonResponseErrorSTemporaryFileUrl',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

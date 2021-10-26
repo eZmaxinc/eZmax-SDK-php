@@ -151,6 +151,8 @@ Class | Method | HTTP request | Description
 - [CommonGetListV1ResponseMPayload](docs/Model/CommonGetListV1ResponseMPayload.md)
 - [CommonResponse](docs/Model/CommonResponse.md)
 - [CommonResponseError](docs/Model/CommonResponseError.md)
+- [CommonResponseErrorSTemporaryFileUrl](docs/Model/CommonResponseErrorSTemporaryFileUrl.md)
+- [CommonResponseErrorSTemporaryFileUrlAllOf](docs/Model/CommonResponseErrorSTemporaryFileUrlAllOf.md)
 - [CommonResponseFilter](docs/Model/CommonResponseFilter.md)
 - [CommonResponseGetList](docs/Model/CommonResponseGetList.md)
 - [CommonResponseObjDebug](docs/Model/CommonResponseObjDebug.md)
