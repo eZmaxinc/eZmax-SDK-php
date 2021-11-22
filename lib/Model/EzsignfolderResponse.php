@@ -368,7 +368,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets sEzsignfolderDescription
      *
-     * @param string $sEzsignfolderDescription The description of the Ezsign Folder
+     * @param string $sEzsignfolderDescription The description of the Ezsignfolder
      *
      * @return self
      */

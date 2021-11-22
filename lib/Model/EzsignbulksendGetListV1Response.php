@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfolderGetFormsDataV1ResponseMPayload
+ * EzsignbulksendGetListV1Response
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfolderGetFormsDataV1ResponseMPayload Class Doc Comment
+ * EzsignbulksendGetListV1Response Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData API Request
+ * @description Response for the /1/object/ezsignbulksend/getList API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignbulksendGetListV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfolder-getFormsData-v1-Response-mPayload';
+    protected static $openAPIModelName = 'ezsignbulksend-getList-v1-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,9 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignfolderID' => 'int',
-        'sEzsignfolderDescription' => 'string',
-        'aObjFormDataDocument' => '\eZmaxAPI\Model\CustomFormDataDocumentResponse[]'
+        'mPayload' => '\eZmaxAPI\Model\EzsignbulksendGetListV1ResponseMPayload',
+        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList',
+        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
 
     /**
@@ -74,9 +74,9 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignfolderID' => null,
-        'sEzsignfolderDescription' => null,
-        'aObjFormDataDocument' => null
+        'mPayload' => null,
+        'objDebugPayload' => null,
+        'objDebug' => null
     ];
 
     /**
@@ -106,9 +106,9 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignfolderID' => 'pkiEzsignfolderID',
-        'sEzsignfolderDescription' => 'sEzsignfolderDescription',
-        'aObjFormDataDocument' => 'a_objFormDataDocument'
+        'mPayload' => 'mPayload',
+        'objDebugPayload' => 'objDebugPayload',
+        'objDebug' => 'objDebug'
     ];
 
     /**
@@ -117,9 +117,9 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
-        'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
-        'aObjFormDataDocument' => 'setAObjFormDataDocument'
+        'mPayload' => 'setMPayload',
+        'objDebugPayload' => 'setObjDebugPayload',
+        'objDebug' => 'setObjDebug'
     ];
 
     /**
@@ -128,9 +128,9 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
-        'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
-        'aObjFormDataDocument' => 'getAObjFormDataDocument'
+        'mPayload' => 'getMPayload',
+        'objDebugPayload' => 'getObjDebugPayload',
+        'objDebug' => 'getObjDebug'
     ];
 
     /**
@@ -190,9 +190,9 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['pkiEzsignfolderID'] = $data['pkiEzsignfolderID'] ?? null;
-        $this->container['sEzsignfolderDescription'] = $data['sEzsignfolderDescription'] ?? null;
-        $this->container['aObjFormDataDocument'] = $data['aObjFormDataDocument'] ?? null;
+        $this->container['mPayload'] = $data['mPayload'] ?? null;
+        $this->container['objDebugPayload'] = $data['objDebugPayload'] ?? null;
+        $this->container['objDebug'] = $data['objDebug'] ?? null;
     }
 
     /**
@@ -204,14 +204,8 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
-        if ($this->container['pkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'pkiEzsignfolderID' can't be null";
-        }
-        if ($this->container['sEzsignfolderDescription'] === null) {
-            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
-        }
-        if ($this->container['aObjFormDataDocument'] === null) {
-            $invalidProperties[] = "'aObjFormDataDocument' can't be null";
+        if ($this->container['mPayload'] === null) {
+            $invalidProperties[] = "'mPayload' can't be null";
         }
         return $invalidProperties;
     }
@@ -229,73 +223,73 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
 
 
     /**
-     * Gets pkiEzsignfolderID
+     * Gets mPayload
      *
-     * @return int
+     * @return \eZmaxAPI\Model\EzsignbulksendGetListV1ResponseMPayload
      */
-    public function getPkiEzsignfolderID()
+    public function getMPayload()
     {
-        return $this->container['pkiEzsignfolderID'];
+        return $this->container['mPayload'];
     }
 
     /**
-     * Sets pkiEzsignfolderID
+     * Sets mPayload
      *
-     * @param int $pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param \eZmaxAPI\Model\EzsignbulksendGetListV1ResponseMPayload $mPayload mPayload
      *
      * @return self
      */
-    public function setPkiEzsignfolderID($pkiEzsignfolderID)
+    public function setMPayload($mPayload)
     {
-        $this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
+        $this->container['mPayload'] = $mPayload;
 
         return $this;
     }
 
     /**
-     * Gets sEzsignfolderDescription
+     * Gets objDebugPayload
      *
-     * @return string
+     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null
      */
-    public function getSEzsignfolderDescription()
+    public function getObjDebugPayload()
     {
-        return $this->container['sEzsignfolderDescription'];
+        return $this->container['objDebugPayload'];
     }
 
     /**
-     * Sets sEzsignfolderDescription
+     * Sets objDebugPayload
      *
-     * @param string $sEzsignfolderDescription The description of the Ezsignfolder
+     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null $objDebugPayload objDebugPayload
      *
      * @return self
      */
-    public function setSEzsignfolderDescription($sEzsignfolderDescription)
+    public function setObjDebugPayload($objDebugPayload)
     {
-        $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
+        $this->container['objDebugPayload'] = $objDebugPayload;
 
         return $this;
     }
 
     /**
-     * Gets aObjFormDataDocument
+     * Gets objDebug
      *
-     * @return \eZmaxAPI\Model\CustomFormDataDocumentResponse[]
+     * @return \eZmaxAPI\Model\CommonResponseObjDebug|null
      */
-    public function getAObjFormDataDocument()
+    public function getObjDebug()
     {
-        return $this->container['aObjFormDataDocument'];
+        return $this->container['objDebug'];
     }
 
     /**
-     * Sets aObjFormDataDocument
+     * Sets objDebug
      *
-     * @param \eZmaxAPI\Model\CustomFormDataDocumentResponse[] $aObjFormDataDocument aObjFormDataDocument
+     * @param \eZmaxAPI\Model\CommonResponseObjDebug|null $objDebug objDebug
      *
      * @return self
      */
-    public function setAObjFormDataDocument($aObjFormDataDocument)
+    public function setObjDebug($objDebug)
     {
-        $this->container['aObjFormDataDocument'] = $aObjFormDataDocument;
+        $this->container['objDebug'] = $objDebug;
 
         return $this;
     }

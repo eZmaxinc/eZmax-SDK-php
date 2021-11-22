@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfolderListElementTest
+ * EzsignbulksendListElementTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfolderListElementTest Class Doc Comment
+ * EzsignbulksendListElementTest Class Doc Comment
  *
  * @category    Class
- * @description An Ezsignfolder List Element
+ * @description An Ezsignbulksend List Element
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfolderListElementTest extends TestCase
+class EzsignbulksendListElementTest extends TestCase
 {
 
     /**
@@ -72,18 +72,18 @@ class EzsignfolderListElementTest extends TestCase
     }
 
     /**
-     * Test "EzsignfolderListElement"
+     * Test "EzsignbulksendListElement"
      */
-    public function testEzsignfolderListElement()
+    public function testEzsignbulksendListElement()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "pkiEzsignfolderID"
+     * Test attribute "pkiEzsignbulksendID"
      */
-    public function testPropertyPkiEzsignfolderID()
+    public function testPropertyPkiEzsignbulksendID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -99,9 +99,9 @@ class EzsignfolderListElementTest extends TestCase
     }
 
     /**
-     * Test attribute "eEzsignfoldertypePrivacylevel"
+     * Test attribute "sEzsignbulksendDescription"
      */
-    public function testPropertyEEzsignfoldertypePrivacylevel()
+    public function testPropertySEzsignbulksendDescription()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -117,45 +117,36 @@ class EzsignfolderListElementTest extends TestCase
     }
 
     /**
-     * Test attribute "sEzsignfolderDescription"
+     * Test attribute "eEzsignfoldertypePrivacylevel"
      */
-    public function testPropertySEzsignfolderDescription()
+    public function testPropertyEEzsignfoldertypePrivacylevel()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "eEzsignfolderStep"
+     * Test attribute "bEzsignbulksendIsactive"
      */
-    public function testPropertyEEzsignfolderStep()
+    public function testPropertyBEzsignbulksendIsactive()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "dtCreatedDate"
+     * Test attribute "iEzsignbulksendtransmission"
      */
-    public function testPropertyDtCreatedDate()
+    public function testPropertyIEzsignbulksendtransmission()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "dtEzsignfolderSentdate"
+     * Test attribute "iEzsignfolder"
      */
-    public function testPropertyDtEzsignfolderSentdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "dtDueDate"
-     */
-    public function testPropertyDtDueDate()
+    public function testPropertyIEzsignfolder()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -165,15 +156,6 @@ class EzsignfolderListElementTest extends TestCase
      * Test attribute "iEzsigndocument"
      */
     public function testPropertyIEzsigndocument()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iEzsigndocumentEdm"
-     */
-    public function testPropertyIEzsigndocumentEdm()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

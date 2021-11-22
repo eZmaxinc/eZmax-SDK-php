@@ -368,7 +368,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets sEzsignfolderDescription
      *
-     * @param string $sEzsignfolderDescription The description of the Ezsign Folder
+     * @param string $sEzsignfolderDescription The description of the Ezsignfolder
      *
      * @return self
      */

@@ -323,7 +323,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sEzsignfolderDescription
      *
-     * @param string $sEzsignfolderDescription The description of the Ezsign Folder
+     * @param string $sEzsignfolderDescription The description of the Ezsignfolder
      *
      * @return self
      */

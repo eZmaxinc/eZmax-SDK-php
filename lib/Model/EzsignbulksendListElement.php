@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfolderListElement
+ * EzsignbulksendListElement
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfolderListElement Class Doc Comment
+ * EzsignbulksendListElement Class Doc Comment
  *
  * @category Class
- * @description An Ezsignfolder List Element
+ * @description An Ezsignbulksend List Element
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfolder-ListElement';
+    protected static $openAPIModelName = 'ezsignbulksend-ListElement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,17 +61,15 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignfolderID' => 'int',
+        'pkiEzsignbulksendID' => 'int',
         'fkiEzsignfoldertypeID' => 'int',
-        'eEzsignfoldertypePrivacylevel' => '\eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel',
+        'sEzsignbulksendDescription' => 'string',
         'sEzsignfoldertypeNameX' => 'string',
-        'sEzsignfolderDescription' => 'string',
-        'eEzsignfolderStep' => '\eZmaxAPI\Model\FieldEEzsignfolderStep',
-        'dtCreatedDate' => 'string',
-        'dtEzsignfolderSentdate' => 'OneOfStringObject',
-        'dtDueDate' => 'OneOfStringObject',
+        'eEzsignfoldertypePrivacylevel' => '\eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel',
+        'bEzsignbulksendIsactive' => 'bool',
+        'iEzsignbulksendtransmission' => 'int',
+        'iEzsignfolder' => 'int',
         'iEzsigndocument' => 'int',
-        'iEzsigndocumentEdm' => 'int',
         'iEzsignsignature' => 'int',
         'iEzsignsignatureSigned' => 'int'
     ];
@@ -84,17 +82,15 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignfolderID' => null,
+        'pkiEzsignbulksendID' => null,
         'fkiEzsignfoldertypeID' => null,
-        'eEzsignfoldertypePrivacylevel' => null,
+        'sEzsignbulksendDescription' => null,
         'sEzsignfoldertypeNameX' => null,
-        'sEzsignfolderDescription' => null,
-        'eEzsignfolderStep' => null,
-        'dtCreatedDate' => null,
-        'dtEzsignfolderSentdate' => null,
-        'dtDueDate' => null,
+        'eEzsignfoldertypePrivacylevel' => null,
+        'bEzsignbulksendIsactive' => null,
+        'iEzsignbulksendtransmission' => null,
+        'iEzsignfolder' => null,
         'iEzsigndocument' => null,
-        'iEzsigndocumentEdm' => null,
         'iEzsignsignature' => null,
         'iEzsignsignatureSigned' => null
     ];
@@ -126,17 +122,15 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignfolderID' => 'pkiEzsignfolderID',
+        'pkiEzsignbulksendID' => 'pkiEzsignbulksendID',
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
-        'eEzsignfoldertypePrivacylevel' => 'eEzsignfoldertypePrivacylevel',
+        'sEzsignbulksendDescription' => 'sEzsignbulksendDescription',
         'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX',
-        'sEzsignfolderDescription' => 'sEzsignfolderDescription',
-        'eEzsignfolderStep' => 'eEzsignfolderStep',
-        'dtCreatedDate' => 'dtCreatedDate',
-        'dtEzsignfolderSentdate' => 'dtEzsignfolderSentdate',
-        'dtDueDate' => 'dtDueDate',
+        'eEzsignfoldertypePrivacylevel' => 'eEzsignfoldertypePrivacylevel',
+        'bEzsignbulksendIsactive' => 'bEzsignbulksendIsactive',
+        'iEzsignbulksendtransmission' => 'iEzsignbulksendtransmission',
+        'iEzsignfolder' => 'iEzsignfolder',
         'iEzsigndocument' => 'iEzsigndocument',
-        'iEzsigndocumentEdm' => 'iEzsigndocumentEdm',
         'iEzsignsignature' => 'iEzsignsignature',
         'iEzsignsignatureSigned' => 'iEzsignsignatureSigned'
     ];
@@ -147,17 +141,15 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
+        'pkiEzsignbulksendID' => 'setPkiEzsignbulksendID',
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
-        'eEzsignfoldertypePrivacylevel' => 'setEEzsignfoldertypePrivacylevel',
+        'sEzsignbulksendDescription' => 'setSEzsignbulksendDescription',
         'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX',
-        'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
-        'eEzsignfolderStep' => 'setEEzsignfolderStep',
-        'dtCreatedDate' => 'setDtCreatedDate',
-        'dtEzsignfolderSentdate' => 'setDtEzsignfolderSentdate',
-        'dtDueDate' => 'setDtDueDate',
+        'eEzsignfoldertypePrivacylevel' => 'setEEzsignfoldertypePrivacylevel',
+        'bEzsignbulksendIsactive' => 'setBEzsignbulksendIsactive',
+        'iEzsignbulksendtransmission' => 'setIEzsignbulksendtransmission',
+        'iEzsignfolder' => 'setIEzsignfolder',
         'iEzsigndocument' => 'setIEzsigndocument',
-        'iEzsigndocumentEdm' => 'setIEzsigndocumentEdm',
         'iEzsignsignature' => 'setIEzsignsignature',
         'iEzsignsignatureSigned' => 'setIEzsignsignatureSigned'
     ];
@@ -168,17 +160,15 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
+        'pkiEzsignbulksendID' => 'getPkiEzsignbulksendID',
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
-        'eEzsignfoldertypePrivacylevel' => 'getEEzsignfoldertypePrivacylevel',
+        'sEzsignbulksendDescription' => 'getSEzsignbulksendDescription',
         'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX',
-        'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
-        'eEzsignfolderStep' => 'getEEzsignfolderStep',
-        'dtCreatedDate' => 'getDtCreatedDate',
-        'dtEzsignfolderSentdate' => 'getDtEzsignfolderSentdate',
-        'dtDueDate' => 'getDtDueDate',
+        'eEzsignfoldertypePrivacylevel' => 'getEEzsignfoldertypePrivacylevel',
+        'bEzsignbulksendIsactive' => 'getBEzsignbulksendIsactive',
+        'iEzsignbulksendtransmission' => 'getIEzsignbulksendtransmission',
+        'iEzsignfolder' => 'getIEzsignfolder',
         'iEzsigndocument' => 'getIEzsigndocument',
-        'iEzsigndocumentEdm' => 'getIEzsigndocumentEdm',
         'iEzsignsignature' => 'getIEzsignsignature',
         'iEzsignsignatureSigned' => 'getIEzsignsignatureSigned'
     ];
@@ -240,17 +230,15 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['pkiEzsignfolderID'] = $data['pkiEzsignfolderID'] ?? null;
+        $this->container['pkiEzsignbulksendID'] = $data['pkiEzsignbulksendID'] ?? null;
         $this->container['fkiEzsignfoldertypeID'] = $data['fkiEzsignfoldertypeID'] ?? null;
-        $this->container['eEzsignfoldertypePrivacylevel'] = $data['eEzsignfoldertypePrivacylevel'] ?? null;
+        $this->container['sEzsignbulksendDescription'] = $data['sEzsignbulksendDescription'] ?? null;
         $this->container['sEzsignfoldertypeNameX'] = $data['sEzsignfoldertypeNameX'] ?? null;
-        $this->container['sEzsignfolderDescription'] = $data['sEzsignfolderDescription'] ?? null;
-        $this->container['eEzsignfolderStep'] = $data['eEzsignfolderStep'] ?? null;
-        $this->container['dtCreatedDate'] = $data['dtCreatedDate'] ?? null;
-        $this->container['dtEzsignfolderSentdate'] = $data['dtEzsignfolderSentdate'] ?? null;
-        $this->container['dtDueDate'] = $data['dtDueDate'] ?? null;
+        $this->container['eEzsignfoldertypePrivacylevel'] = $data['eEzsignfoldertypePrivacylevel'] ?? null;
+        $this->container['bEzsignbulksendIsactive'] = $data['bEzsignbulksendIsactive'] ?? null;
+        $this->container['iEzsignbulksendtransmission'] = $data['iEzsignbulksendtransmission'] ?? null;
+        $this->container['iEzsignfolder'] = $data['iEzsignfolder'] ?? null;
         $this->container['iEzsigndocument'] = $data['iEzsigndocument'] ?? null;
-        $this->container['iEzsigndocumentEdm'] = $data['iEzsigndocumentEdm'] ?? null;
         $this->container['iEzsignsignature'] = $data['iEzsignsignature'] ?? null;
         $this->container['iEzsignsignatureSigned'] = $data['iEzsignsignatureSigned'] ?? null;
     }
@@ -264,38 +252,32 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['pkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'pkiEzsignfolderID' can't be null";
+        if ($this->container['pkiEzsignbulksendID'] === null) {
+            $invalidProperties[] = "'pkiEzsignbulksendID' can't be null";
         }
         if ($this->container['fkiEzsignfoldertypeID'] === null) {
             $invalidProperties[] = "'fkiEzsignfoldertypeID' can't be null";
         }
-        if ($this->container['eEzsignfoldertypePrivacylevel'] === null) {
-            $invalidProperties[] = "'eEzsignfoldertypePrivacylevel' can't be null";
+        if ($this->container['sEzsignbulksendDescription'] === null) {
+            $invalidProperties[] = "'sEzsignbulksendDescription' can't be null";
         }
         if ($this->container['sEzsignfoldertypeNameX'] === null) {
             $invalidProperties[] = "'sEzsignfoldertypeNameX' can't be null";
         }
-        if ($this->container['sEzsignfolderDescription'] === null) {
-            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
+        if ($this->container['eEzsignfoldertypePrivacylevel'] === null) {
+            $invalidProperties[] = "'eEzsignfoldertypePrivacylevel' can't be null";
         }
-        if ($this->container['eEzsignfolderStep'] === null) {
-            $invalidProperties[] = "'eEzsignfolderStep' can't be null";
+        if ($this->container['bEzsignbulksendIsactive'] === null) {
+            $invalidProperties[] = "'bEzsignbulksendIsactive' can't be null";
         }
-        if ($this->container['dtCreatedDate'] === null) {
-            $invalidProperties[] = "'dtCreatedDate' can't be null";
+        if ($this->container['iEzsignbulksendtransmission'] === null) {
+            $invalidProperties[] = "'iEzsignbulksendtransmission' can't be null";
         }
-        if ($this->container['dtEzsignfolderSentdate'] === null) {
-            $invalidProperties[] = "'dtEzsignfolderSentdate' can't be null";
-        }
-        if ($this->container['dtDueDate'] === null) {
-            $invalidProperties[] = "'dtDueDate' can't be null";
+        if ($this->container['iEzsignfolder'] === null) {
+            $invalidProperties[] = "'iEzsignfolder' can't be null";
         }
         if ($this->container['iEzsigndocument'] === null) {
             $invalidProperties[] = "'iEzsigndocument' can't be null";
-        }
-        if ($this->container['iEzsigndocumentEdm'] === null) {
-            $invalidProperties[] = "'iEzsigndocumentEdm' can't be null";
         }
         if ($this->container['iEzsignsignature'] === null) {
             $invalidProperties[] = "'iEzsignsignature' can't be null";
@@ -319,25 +301,25 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets pkiEzsignfolderID
+     * Gets pkiEzsignbulksendID
      *
      * @return int
      */
-    public function getPkiEzsignfolderID()
+    public function getPkiEzsignbulksendID()
     {
-        return $this->container['pkiEzsignfolderID'];
+        return $this->container['pkiEzsignbulksendID'];
     }
 
     /**
-     * Sets pkiEzsignfolderID
+     * Sets pkiEzsignbulksendID
      *
-     * @param int $pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param int $pkiEzsignbulksendID The unique ID of the Ezsignbulksend
      *
      * @return self
      */
-    public function setPkiEzsignfolderID($pkiEzsignfolderID)
+    public function setPkiEzsignbulksendID($pkiEzsignbulksendID)
     {
-        $this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
+        $this->container['pkiEzsignbulksendID'] = $pkiEzsignbulksendID;
 
         return $this;
     }
@@ -367,25 +349,25 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets eEzsignfoldertypePrivacylevel
+     * Gets sEzsignbulksendDescription
      *
-     * @return \eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel
+     * @return string
      */
-    public function getEEzsignfoldertypePrivacylevel()
+    public function getSEzsignbulksendDescription()
     {
-        return $this->container['eEzsignfoldertypePrivacylevel'];
+        return $this->container['sEzsignbulksendDescription'];
     }
 
     /**
-     * Sets eEzsignfoldertypePrivacylevel
+     * Sets sEzsignbulksendDescription
      *
-     * @param \eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel $eEzsignfoldertypePrivacylevel eEzsignfoldertypePrivacylevel
+     * @param string $sEzsignbulksendDescription The description of the Ezsignbulksend
      *
      * @return self
      */
-    public function setEEzsignfoldertypePrivacylevel($eEzsignfoldertypePrivacylevel)
+    public function setSEzsignbulksendDescription($sEzsignbulksendDescription)
     {
-        $this->container['eEzsignfoldertypePrivacylevel'] = $eEzsignfoldertypePrivacylevel;
+        $this->container['sEzsignbulksendDescription'] = $sEzsignbulksendDescription;
 
         return $this;
     }
@@ -415,121 +397,97 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets sEzsignfolderDescription
+     * Gets eEzsignfoldertypePrivacylevel
      *
-     * @return string
+     * @return \eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel
      */
-    public function getSEzsignfolderDescription()
+    public function getEEzsignfoldertypePrivacylevel()
     {
-        return $this->container['sEzsignfolderDescription'];
+        return $this->container['eEzsignfoldertypePrivacylevel'];
     }
 
     /**
-     * Sets sEzsignfolderDescription
+     * Sets eEzsignfoldertypePrivacylevel
      *
-     * @param string $sEzsignfolderDescription The description of the Ezsignfolder
+     * @param \eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel $eEzsignfoldertypePrivacylevel eEzsignfoldertypePrivacylevel
      *
      * @return self
      */
-    public function setSEzsignfolderDescription($sEzsignfolderDescription)
+    public function setEEzsignfoldertypePrivacylevel($eEzsignfoldertypePrivacylevel)
     {
-        $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
+        $this->container['eEzsignfoldertypePrivacylevel'] = $eEzsignfoldertypePrivacylevel;
 
         return $this;
     }
 
     /**
-     * Gets eEzsignfolderStep
+     * Gets bEzsignbulksendIsactive
      *
-     * @return \eZmaxAPI\Model\FieldEEzsignfolderStep
+     * @return bool
      */
-    public function getEEzsignfolderStep()
+    public function getBEzsignbulksendIsactive()
     {
-        return $this->container['eEzsignfolderStep'];
+        return $this->container['bEzsignbulksendIsactive'];
     }
 
     /**
-     * Sets eEzsignfolderStep
+     * Sets bEzsignbulksendIsactive
      *
-     * @param \eZmaxAPI\Model\FieldEEzsignfolderStep $eEzsignfolderStep eEzsignfolderStep
+     * @param bool $bEzsignbulksendIsactive Whether the Ezsignbulksend is active or not
      *
      * @return self
      */
-    public function setEEzsignfolderStep($eEzsignfolderStep)
+    public function setBEzsignbulksendIsactive($bEzsignbulksendIsactive)
     {
-        $this->container['eEzsignfolderStep'] = $eEzsignfolderStep;
+        $this->container['bEzsignbulksendIsactive'] = $bEzsignbulksendIsactive;
 
         return $this;
     }
 
     /**
-     * Gets dtCreatedDate
+     * Gets iEzsignbulksendtransmission
      *
-     * @return string
+     * @return int
      */
-    public function getDtCreatedDate()
+    public function getIEzsignbulksendtransmission()
     {
-        return $this->container['dtCreatedDate'];
+        return $this->container['iEzsignbulksendtransmission'];
     }
 
     /**
-     * Sets dtCreatedDate
+     * Sets iEzsignbulksendtransmission
      *
-     * @param string $dtCreatedDate The date and time at which the object was created
+     * @param int $iEzsignbulksendtransmission The total number of Ezsignbulksendtransmissions in the Ezsignbulksend
      *
      * @return self
      */
-    public function setDtCreatedDate($dtCreatedDate)
+    public function setIEzsignbulksendtransmission($iEzsignbulksendtransmission)
     {
-        $this->container['dtCreatedDate'] = $dtCreatedDate;
+        $this->container['iEzsignbulksendtransmission'] = $iEzsignbulksendtransmission;
 
         return $this;
     }
 
     /**
-     * Gets dtEzsignfolderSentdate
+     * Gets iEzsignfolder
      *
-     * @return OneOfStringObject
+     * @return int
      */
-    public function getDtEzsignfolderSentdate()
+    public function getIEzsignfolder()
     {
-        return $this->container['dtEzsignfolderSentdate'];
+        return $this->container['iEzsignfolder'];
     }
 
     /**
-     * Sets dtEzsignfolderSentdate
+     * Sets iEzsignfolder
      *
-     * @param OneOfStringObject $dtEzsignfolderSentdate dtEzsignfolderSentdate
+     * @param int $iEzsignfolder The total number of Ezsignfolders in the Ezsignbulksend
      *
      * @return self
      */
-    public function setDtEzsignfolderSentdate($dtEzsignfolderSentdate)
+    public function setIEzsignfolder($iEzsignfolder)
     {
-        $this->container['dtEzsignfolderSentdate'] = $dtEzsignfolderSentdate;
-
-        return $this;
-    }
-
-    /**
-     * Gets dtDueDate
-     *
-     * @return OneOfStringObject
-     */
-    public function getDtDueDate()
-    {
-        return $this->container['dtDueDate'];
-    }
-
-    /**
-     * Sets dtDueDate
-     *
-     * @param OneOfStringObject $dtDueDate The date at which no more signature will be accepted on the folder
-     *
-     * @return self
-     */
-    public function setDtDueDate($dtDueDate)
-    {
-        $this->container['dtDueDate'] = $dtDueDate;
+        $this->container['iEzsignfolder'] = $iEzsignfolder;
 
         return $this;
     }
@@ -547,37 +505,13 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets iEzsigndocument
      *
-     * @param int $iEzsigndocument The total number of Ezsigndocument in the folder
+     * @param int $iEzsigndocument The total number of Ezsigndocuments in the Ezsignbulksend
      *
      * @return self
      */
     public function setIEzsigndocument($iEzsigndocument)
     {
         $this->container['iEzsigndocument'] = $iEzsigndocument;
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigndocumentEdm
-     *
-     * @return int
-     */
-    public function getIEzsigndocumentEdm()
-    {
-        return $this->container['iEzsigndocumentEdm'];
-    }
-
-    /**
-     * Sets iEzsigndocumentEdm
-     *
-     * @param int $iEzsigndocumentEdm The total number of Ezsigndocument in the folder that were saved in the edm system
-     *
-     * @return self
-     */
-    public function setIEzsigndocumentEdm($iEzsigndocumentEdm)
-    {
-        $this->container['iEzsigndocumentEdm'] = $iEzsigndocumentEdm;
 
         return $this;
     }
@@ -595,7 +529,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets iEzsignsignature
      *
-     * @param int $iEzsignsignature The total number of signature blocks in all Ezsigndocuments in the folder
+     * @param int $iEzsignsignature The total number of Ezsignsignature in the Ezsignbulksend
      *
      * @return self
      */
@@ -619,7 +553,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets iEzsignsignatureSigned
      *
-     * @param int $iEzsignsignatureSigned The total number of already signed signature blocks in all Ezsigndocuments in the folder
+     * @param int $iEzsignsignatureSigned The total number of already signed Ezsignsignature blocks in the Ezsignbulksend
      *
      * @return self
      */

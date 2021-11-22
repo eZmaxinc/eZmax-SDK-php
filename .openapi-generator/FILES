@@ -11,6 +11,7 @@ docs/Api/ModuleSsprApi.md
 docs/Api/ModuleUserApi.md
 docs/Api/ObjectActivesessionApi.md
 docs/Api/ObjectApikeyApi.md
+docs/Api/ObjectEzsignbulksendApi.md
 docs/Api/ObjectEzsigndocumentApi.md
 docs/Api/ObjectEzsignfolderApi.md
 docs/Api/ObjectEzsignfoldersignerassociationApi.md
@@ -65,6 +66,11 @@ docs/Model/CustomFormsDataFolderResponse.md
 docs/Model/CustomWordPositionOccurenceResponse.md
 docs/Model/CustomWordPositionWordResponse.md
 docs/Model/EmailRequest.md
+docs/Model/EzsignbulksendGetListV1Response.md
+docs/Model/EzsignbulksendGetListV1ResponseAllOf.md
+docs/Model/EzsignbulksendGetListV1ResponseMPayload.md
+docs/Model/EzsignbulksendGetListV1ResponseMPayloadAllOf.md
+docs/Model/EzsignbulksendListElement.md
 docs/Model/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/Model/EzsigndocumentApplyEzsigntemplateV1Response.md
 docs/Model/EzsigndocumentApplyEzsigntemplateV2Request.md
@@ -214,6 +220,7 @@ lib/Api/ModuleSsprApi.php
 lib/Api/ModuleUserApi.php
 lib/Api/ObjectActivesessionApi.php
 lib/Api/ObjectApikeyApi.php
+lib/Api/ObjectEzsignbulksendApi.php
 lib/Api/ObjectEzsigndocumentApi.php
 lib/Api/ObjectEzsignfolderApi.php
 lib/Api/ObjectEzsignfoldersignerassociationApi.php
@@ -271,6 +278,11 @@ lib/Model/CustomFormsDataFolderResponse.php
 lib/Model/CustomWordPositionOccurenceResponse.php
 lib/Model/CustomWordPositionWordResponse.php
 lib/Model/EmailRequest.php
+lib/Model/EzsignbulksendGetListV1Response.php
+lib/Model/EzsignbulksendGetListV1ResponseAllOf.php
+lib/Model/EzsignbulksendGetListV1ResponseMPayload.php
+lib/Model/EzsignbulksendGetListV1ResponseMPayloadAllOf.php
+lib/Model/EzsignbulksendListElement.php
 lib/Model/EzsigndocumentApplyEzsigntemplateV1Request.php
 lib/Model/EzsigndocumentApplyEzsigntemplateV1Response.php
 lib/Model/EzsigndocumentApplyEzsigntemplateV2Request.php
@@ -423,6 +435,7 @@ test/Api/ModuleSsprApiTest.php
 test/Api/ModuleUserApiTest.php
 test/Api/ObjectActivesessionApiTest.php
 test/Api/ObjectApikeyApiTest.php
+test/Api/ObjectEzsignbulksendApiTest.php
 test/Api/ObjectEzsigndocumentApiTest.php
 test/Api/ObjectEzsignfolderApiTest.php
 test/Api/ObjectEzsignfoldersignerassociationApiTest.php
@@ -477,6 +490,11 @@ test/Model/CustomFormsDataFolderResponseTest.php
 test/Model/CustomWordPositionOccurenceResponseTest.php
 test/Model/CustomWordPositionWordResponseTest.php
 test/Model/EmailRequestTest.php
+test/Model/EzsignbulksendGetListV1ResponseAllOfTest.php
+test/Model/EzsignbulksendGetListV1ResponseMPayloadAllOfTest.php
+test/Model/EzsignbulksendGetListV1ResponseMPayloadTest.php
+test/Model/EzsignbulksendGetListV1ResponseTest.php
+test/Model/EzsignbulksendListElementTest.php
 test/Model/EzsigndocumentApplyEzsigntemplateV1RequestTest.php
 test/Model/EzsigndocumentApplyEzsigntemplateV1ResponseTest.php
 test/Model/EzsigndocumentApplyEzsigntemplateV2RequestTest.php
