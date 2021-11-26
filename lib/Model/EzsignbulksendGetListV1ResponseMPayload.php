@@ -61,7 +61,7 @@ class EzsignbulksendGetListV1ResponseMPayload implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjEzsignfolder' => '\eZmaxAPI\Model\EzsignbulksendListElement[]',
+        'aObjEzsignbulksend' => '\eZmaxAPI\Model\EzsignbulksendListElement[]',
         'iRowReturned' => 'int',
         'iRowFiltered' => 'int'
     ];
@@ -74,7 +74,7 @@ class EzsignbulksendGetListV1ResponseMPayload implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aObjEzsignfolder' => null,
+        'aObjEzsignbulksend' => null,
         'iRowReturned' => null,
         'iRowFiltered' => null
     ];
@@ -106,7 +106,7 @@ class EzsignbulksendGetListV1ResponseMPayload implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'aObjEzsignfolder' => 'a_objEzsignfolder',
+        'aObjEzsignbulksend' => 'a_objEzsignbulksend',
         'iRowReturned' => 'iRowReturned',
         'iRowFiltered' => 'iRowFiltered'
     ];
@@ -117,7 +117,7 @@ class EzsignbulksendGetListV1ResponseMPayload implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'aObjEzsignfolder' => 'setAObjEzsignfolder',
+        'aObjEzsignbulksend' => 'setAObjEzsignbulksend',
         'iRowReturned' => 'setIRowReturned',
         'iRowFiltered' => 'setIRowFiltered'
     ];
@@ -128,7 +128,7 @@ class EzsignbulksendGetListV1ResponseMPayload implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'aObjEzsignfolder' => 'getAObjEzsignfolder',
+        'aObjEzsignbulksend' => 'getAObjEzsignbulksend',
         'iRowReturned' => 'getIRowReturned',
         'iRowFiltered' => 'getIRowFiltered'
     ];
@@ -190,7 +190,7 @@ class EzsignbulksendGetListV1ResponseMPayload implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['aObjEzsignfolder'] = $data['aObjEzsignfolder'] ?? null;
+        $this->container['aObjEzsignbulksend'] = $data['aObjEzsignbulksend'] ?? null;
         $this->container['iRowReturned'] = $data['iRowReturned'] ?? null;
         $this->container['iRowFiltered'] = $data['iRowFiltered'] ?? null;
     }
@@ -204,6 +204,9 @@ class EzsignbulksendGetListV1ResponseMPayload implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjEzsignbulksend'] === null) {
+            $invalidProperties[] = "'aObjEzsignbulksend' can't be null";
+        }
         if ($this->container['iRowReturned'] === null) {
             $invalidProperties[] = "'iRowReturned' can't be null";
         }
@@ -226,25 +229,25 @@ class EzsignbulksendGetListV1ResponseMPayload implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets aObjEzsignfolder
+     * Gets aObjEzsignbulksend
      *
-     * @return \eZmaxAPI\Model\EzsignbulksendListElement[]|null
+     * @return \eZmaxAPI\Model\EzsignbulksendListElement[]
      */
-    public function getAObjEzsignfolder()
+    public function getAObjEzsignbulksend()
     {
-        return $this->container['aObjEzsignfolder'];
+        return $this->container['aObjEzsignbulksend'];
     }
 
     /**
-     * Sets aObjEzsignfolder
+     * Sets aObjEzsignbulksend
      *
-     * @param \eZmaxAPI\Model\EzsignbulksendListElement[]|null $aObjEzsignfolder aObjEzsignfolder
+     * @param \eZmaxAPI\Model\EzsignbulksendListElement[] $aObjEzsignbulksend aObjEzsignbulksend
      *
      * @return self
      */
-    public function setAObjEzsignfolder($aObjEzsignfolder)
+    public function setAObjEzsignbulksend($aObjEzsignbulksend)
     {
-        $this->container['aObjEzsignfolder'] = $aObjEzsignfolder;
+        $this->container['aObjEzsignbulksend'] = $aObjEzsignbulksend;
 
         return $this;
     }

@@ -15,7 +15,7 @@ ezsigntemplatepackageGetListV1($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage
 
 Retrieve Ezsigntemplatepackage list
 
-Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | ezsigntemplatepackage | Company<br>Department<br>Team<br>User<br>Usergroup |
+Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
 
 ### Example
 

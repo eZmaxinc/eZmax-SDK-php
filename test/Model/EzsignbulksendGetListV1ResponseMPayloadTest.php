@@ -81,9 +81,9 @@ class EzsignbulksendGetListV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test attribute "aObjEzsignfolder"
+     * Test attribute "aObjEzsignbulksend"
      */
-    public function testPropertyAObjEzsignfolder()
+    public function testPropertyAObjEzsignbulksend()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
