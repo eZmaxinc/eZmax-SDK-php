@@ -63,7 +63,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     protected static $openAPITypes = [
         'sCategory' => 'string',
         'sLabel' => 'string',
-        'mValue' => 'OneOfIntegerString'
+        'mValue' => 'string'
     ];
 
     /**
@@ -279,7 +279,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     /**
      * Gets mValue
      *
-     * @return OneOfIntegerString
+     * @return string
      */
     public function getMValue()
     {
@@ -289,7 +289,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     /**
      * Sets mValue
      *
-     * @param OneOfIntegerString $mValue The Unique ID of the element
+     * @param string $mValue The Unique ID of the element
      *
      * @return self
      */

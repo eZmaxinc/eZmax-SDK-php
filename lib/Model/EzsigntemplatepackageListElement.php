@@ -62,9 +62,9 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'pkiEzsigntemplatepackageID' => 'int',
-        'fkiDepartmentID' => 'OneOfIntegerObject',
-        'fkiTeamID' => 'OneOfIntegerObject',
-        'fkiEzsignfoldertypeID' => 'OneOfIntegerObject',
+        'fkiDepartmentID' => 'int',
+        'fkiTeamID' => 'int',
+        'fkiEzsignfoldertypeID' => 'int',
         'fkiLanguageID' => 'int',
         'eEzsigntemplatepackageType' => '\eZmaxAPI\Model\FieldEEzsigntemplatepackageType',
         'sEzsigntemplatepackageDescription' => 'string',
@@ -317,7 +317,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     /**
      * Gets fkiDepartmentID
      *
-     * @return OneOfIntegerObject
+     * @return int
      */
     public function getFkiDepartmentID()
     {
@@ -327,7 +327,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     /**
      * Sets fkiDepartmentID
      *
-     * @param OneOfIntegerObject $fkiDepartmentID fkiDepartmentID
+     * @param int $fkiDepartmentID The unique ID of the Department.
      *
      * @return self
      */
@@ -341,7 +341,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     /**
      * Gets fkiTeamID
      *
-     * @return OneOfIntegerObject
+     * @return int
      */
     public function getFkiTeamID()
     {
@@ -351,7 +351,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     /**
      * Sets fkiTeamID
      *
-     * @param OneOfIntegerObject $fkiTeamID fkiTeamID
+     * @param int $fkiTeamID The unique ID of the Team
      *
      * @return self
      */
@@ -365,7 +365,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     /**
      * Gets fkiEzsignfoldertypeID
      *
-     * @return OneOfIntegerObject
+     * @return int
      */
     public function getFkiEzsignfoldertypeID()
     {
@@ -375,7 +375,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     /**
      * Sets fkiEzsignfoldertypeID
      *
-     * @param OneOfIntegerObject $fkiEzsignfoldertypeID fkiEzsignfoldertypeID
+     * @param int $fkiEzsignfoldertypeID The unique ID of the Ezsignfoldertype.
      *
      * @return self
      */

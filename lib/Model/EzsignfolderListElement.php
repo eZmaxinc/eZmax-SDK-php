@@ -68,8 +68,8 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'sEzsignfolderDescription' => 'string',
         'eEzsignfolderStep' => '\eZmaxAPI\Model\FieldEEzsignfolderStep',
         'dtCreatedDate' => 'string',
-        'dtEzsignfolderSentdate' => 'OneOfStringObject',
-        'dtDueDate' => 'OneOfStringObject',
+        'dtEzsignfolderSentdate' => 'string',
+        'dtDueDate' => 'string',
         'iEzsigndocument' => 'int',
         'iEzsigndocumentEdm' => 'int',
         'iEzsignsignature' => 'int',
@@ -489,7 +489,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets dtEzsignfolderSentdate
      *
-     * @return OneOfStringObject
+     * @return string
      */
     public function getDtEzsignfolderSentdate()
     {
@@ -499,7 +499,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets dtEzsignfolderSentdate
      *
-     * @param OneOfStringObject $dtEzsignfolderSentdate dtEzsignfolderSentdate
+     * @param string $dtEzsignfolderSentdate The date and time at which the Ezsign folder was sent the last time.
      *
      * @return self
      */
@@ -513,7 +513,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets dtDueDate
      *
-     * @return OneOfStringObject
+     * @return string
      */
     public function getDtDueDate()
     {
@@ -523,7 +523,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets dtDueDate
      *
-     * @param OneOfStringObject $dtDueDate The date at which no more signature will be accepted on the folder
+     * @param string $dtDueDate Represent a Date Time. The timezone is the one configured in the User's profile.
      *
      * @return self
      */
