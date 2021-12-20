@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **bEzsigndocumentForcerepair** | **bool** | Try to repair the document or flatten it if it cannot be used for electronic signature. | [optional] [default to true]
 **sEzsigndocumentPassword** | **string** | If the source document is password protected, the password to open/modify it. | [optional] [default to '']
 **fkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder |
-**dtEzsigndocumentDuedate** | **string** | The maximum date and time at which the document can be signed. |
+**dtEzsigndocumentDuedate** | **string** | The maximum date and time at which the Ezsigndocument can be signed. |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **sEzsigndocumentName** | **string** | The name of the document that will be presented to Ezsignfoldersignerassociations |
 
