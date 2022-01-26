@@ -274,6 +274,7 @@ Class | Method | HTTP request | Description
 - [EzsignsignatureGetObjectV1ResponseAllOf](docs/Model/EzsignsignatureGetObjectV1ResponseAllOf.md)
 - [EzsignsignatureRequest](docs/Model/EzsignsignatureRequest.md)
 - [EzsignsignatureRequestCompound](docs/Model/EzsignsignatureRequestCompound.md)
+- [EzsignsignaturecustomdateRequest](docs/Model/EzsignsignaturecustomdateRequest.md)
 - [EzsignsignerRequest](docs/Model/EzsignsignerRequest.md)
 - [EzsignsignerRequestCompound](docs/Model/EzsignsignerRequestCompound.md)
 - [EzsignsignerRequestCompoundAllOf](docs/Model/EzsignsignerRequestCompoundAllOf.md)

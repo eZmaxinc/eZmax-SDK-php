@@ -61,6 +61,8 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
+        'bEzsignsignatureCustomdate' => 'bool',
+        'aObjEzsignsignaturecustomdate' => '\eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]',
         'fkiEzsignfoldersignerassociationID' => 'int',
         'iEzsignpagePagenumber' => 'int',
         'iEzsignsignatureX' => 'int',
@@ -78,6 +80,8 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'bEzsignsignatureCustomdate' => null,
+        'aObjEzsignsignaturecustomdate' => null,
         'fkiEzsignfoldersignerassociationID' => null,
         'iEzsignpagePagenumber' => null,
         'iEzsignsignatureX' => null,
@@ -114,6 +118,8 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
+        'bEzsignsignatureCustomdate' => 'bEzsignsignatureCustomdate',
+        'aObjEzsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
         'fkiEzsignfoldersignerassociationID' => 'fkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'iEzsignpagePagenumber',
         'iEzsignsignatureX' => 'iEzsignsignatureX',
@@ -129,6 +135,8 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
+        'bEzsignsignatureCustomdate' => 'setBEzsignsignatureCustomdate',
+        'aObjEzsignsignaturecustomdate' => 'setAObjEzsignsignaturecustomdate',
         'fkiEzsignfoldersignerassociationID' => 'setFkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'setIEzsignpagePagenumber',
         'iEzsignsignatureX' => 'setIEzsignsignatureX',
@@ -144,6 +152,8 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
+        'bEzsignsignatureCustomdate' => 'getBEzsignsignatureCustomdate',
+        'aObjEzsignsignaturecustomdate' => 'getAObjEzsignsignaturecustomdate',
         'fkiEzsignfoldersignerassociationID' => 'getFkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'getIEzsignpagePagenumber',
         'iEzsignsignatureX' => 'getIEzsignsignatureX',
@@ -210,6 +220,8 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
+        $this->container['bEzsignsignatureCustomdate'] = $data['bEzsignsignatureCustomdate'] ?? null;
+        $this->container['aObjEzsignsignaturecustomdate'] = $data['aObjEzsignsignaturecustomdate'] ?? null;
         $this->container['fkiEzsignfoldersignerassociationID'] = $data['fkiEzsignfoldersignerassociationID'] ?? null;
         $this->container['iEzsignpagePagenumber'] = $data['iEzsignpagePagenumber'] ?? null;
         $this->container['iEzsignsignatureX'] = $data['iEzsignsignatureX'] ?? null;
@@ -263,6 +275,54 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets bEzsignsignatureCustomdate
+     *
+     * @return bool|null
+     */
+    public function getBEzsignsignatureCustomdate()
+    {
+        return $this->container['bEzsignsignatureCustomdate'];
+    }
+
+    /**
+     * Sets bEzsignsignatureCustomdate
+     *
+     * @param bool|null $bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     *
+     * @return self
+     */
+    public function setBEzsignsignatureCustomdate($bEzsignsignatureCustomdate)
+    {
+        $this->container['bEzsignsignatureCustomdate'] = $bEzsignsignatureCustomdate;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjEzsignsignaturecustomdate
+     *
+     * @return \eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]|null
+     */
+    public function getAObjEzsignsignaturecustomdate()
+    {
+        return $this->container['aObjEzsignsignaturecustomdate'];
+    }
+
+    /**
+     * Sets aObjEzsignsignaturecustomdate
+     *
+     * @param \eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]|null $aObjEzsignsignaturecustomdate An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+     *
+     * @return self
+     */
+    public function setAObjEzsignsignaturecustomdate($aObjEzsignsignaturecustomdate)
+    {
+        $this->container['aObjEzsignsignaturecustomdate'] = $aObjEzsignsignaturecustomdate;
+
+        return $this;
+    }
 
     /**
      * Gets fkiEzsignfoldersignerassociationID

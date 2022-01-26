@@ -81,6 +81,24 @@ class EzsignsignatureRequestCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "bEzsignsignatureCustomdate"
+     */
+    public function testPropertyBEzsignsignatureCustomdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjEzsignsignaturecustomdate"
+     */
+    public function testPropertyAObjEzsignsignaturecustomdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "fkiEzsignfoldersignerassociationID"
      */
     public function testPropertyFkiEzsignfoldersignerassociationID()

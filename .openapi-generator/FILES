@@ -167,6 +167,7 @@ docs/Model/EzsignsignatureGetObjectV1Response.md
 docs/Model/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/Model/EzsignsignatureRequest.md
 docs/Model/EzsignsignatureRequestCompound.md
+docs/Model/EzsignsignaturecustomdateRequest.md
 docs/Model/EzsignsignerRequest.md
 docs/Model/EzsignsignerRequestCompound.md
 docs/Model/EzsignsignerRequestCompoundAllOf.md
@@ -400,6 +401,7 @@ lib/Model/EzsignsignatureGetObjectV1Response.php
 lib/Model/EzsignsignatureGetObjectV1ResponseAllOf.php
 lib/Model/EzsignsignatureRequest.php
 lib/Model/EzsignsignatureRequestCompound.php
+lib/Model/EzsignsignaturecustomdateRequest.php
 lib/Model/EzsignsignerRequest.php
 lib/Model/EzsignsignerRequestCompound.php
 lib/Model/EzsignsignerRequestCompoundAllOf.php
@@ -633,6 +635,7 @@ test/Model/EzsignsignatureGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignsignatureGetObjectV1ResponseTest.php
 test/Model/EzsignsignatureRequestCompoundTest.php
 test/Model/EzsignsignatureRequestTest.php
+test/Model/EzsignsignaturecustomdateRequestTest.php
 test/Model/EzsignsignerRequestCompoundAllOfTest.php
 test/Model/EzsignsignerRequestCompoundContactTest.php
 test/Model/EzsignsignerRequestCompoundTest.php
