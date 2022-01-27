@@ -63,8 +63,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     protected static $openAPITypes = [
         'pkiEzsignfoldersignerassociationID' => 'int',
         'fkiEzsignfolderID' => 'int',
-        'fkiEzsignsignerID' => 'int',
-        'fkiUserID' => 'int',
         'bEzsignfoldersignerassociationReceivecopy' => 'bool'
     ];
 
@@ -78,8 +76,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     protected static $openAPIFormats = [
         'pkiEzsignfoldersignerassociationID' => null,
         'fkiEzsignfolderID' => null,
-        'fkiEzsignsignerID' => null,
-        'fkiUserID' => null,
         'bEzsignfoldersignerassociationReceivecopy' => null
     ];
 
@@ -112,8 +108,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     protected static $attributeMap = [
         'pkiEzsignfoldersignerassociationID' => 'pkiEzsignfoldersignerassociationID',
         'fkiEzsignfolderID' => 'fkiEzsignfolderID',
-        'fkiEzsignsignerID' => 'fkiEzsignsignerID',
-        'fkiUserID' => 'fkiUserID',
         'bEzsignfoldersignerassociationReceivecopy' => 'bEzsignfoldersignerassociationReceivecopy'
     ];
 
@@ -125,8 +119,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     protected static $setters = [
         'pkiEzsignfoldersignerassociationID' => 'setPkiEzsignfoldersignerassociationID',
         'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
-        'fkiEzsignsignerID' => 'setFkiEzsignsignerID',
-        'fkiUserID' => 'setFkiUserID',
         'bEzsignfoldersignerassociationReceivecopy' => 'setBEzsignfoldersignerassociationReceivecopy'
     ];
 
@@ -138,8 +130,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     protected static $getters = [
         'pkiEzsignfoldersignerassociationID' => 'getPkiEzsignfoldersignerassociationID',
         'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
-        'fkiEzsignsignerID' => 'getFkiEzsignsignerID',
-        'fkiUserID' => 'getFkiUserID',
         'bEzsignfoldersignerassociationReceivecopy' => 'getBEzsignfoldersignerassociationReceivecopy'
     ];
 
@@ -202,8 +192,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     {
         $this->container['pkiEzsignfoldersignerassociationID'] = $data['pkiEzsignfoldersignerassociationID'] ?? null;
         $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
-        $this->container['fkiEzsignsignerID'] = $data['fkiEzsignsignerID'] ?? null;
-        $this->container['fkiUserID'] = $data['fkiUserID'] ?? null;
         $this->container['bEzsignfoldersignerassociationReceivecopy'] = $data['bEzsignfoldersignerassociationReceivecopy'] ?? null;
     }
 
@@ -221,12 +209,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
         }
         if ($this->container['fkiEzsignfolderID'] === null) {
             $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
-        }
-        if ($this->container['fkiEzsignsignerID'] === null) {
-            $invalidProperties[] = "'fkiEzsignsignerID' can't be null";
-        }
-        if ($this->container['fkiUserID'] === null) {
-            $invalidProperties[] = "'fkiUserID' can't be null";
         }
         if ($this->container['bEzsignfoldersignerassociationReceivecopy'] === null) {
             $invalidProperties[] = "'bEzsignfoldersignerassociationReceivecopy' can't be null";
@@ -290,54 +272,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     public function setFkiEzsignfolderID($fkiEzsignfolderID)
     {
         $this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignsignerID
-     *
-     * @return int
-     */
-    public function getFkiEzsignsignerID()
-    {
-        return $this->container['fkiEzsignsignerID'];
-    }
-
-    /**
-     * Sets fkiEzsignsignerID
-     *
-     * @param int $fkiEzsignsignerID The unique ID of the Ezsignsigner
-     *
-     * @return self
-     */
-    public function setFkiEzsignsignerID($fkiEzsignsignerID)
-    {
-        $this->container['fkiEzsignsignerID'] = $fkiEzsignsignerID;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUserID
-     *
-     * @return int
-     */
-    public function getFkiUserID()
-    {
-        return $this->container['fkiUserID'];
-    }
-
-    /**
-     * Sets fkiUserID
-     *
-     * @param int $fkiUserID The unique ID of the User
-     *
-     * @return self
-     */
-    public function setFkiUserID($fkiUserID)
-    {
-        $this->container['fkiUserID'] = $fkiUserID;
 
         return $this;
     }

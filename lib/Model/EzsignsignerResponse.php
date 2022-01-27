@@ -61,10 +61,11 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
+        'pkiEzsignsignerID' => 'int',
         'fkiTaxassignmentID' => 'int',
         'fkiSecretquestionID' => 'int',
-        'eEzsignsignerLogintype' => 'string',
-        'sEzsignsignerSecretanswer' => 'string'
+        'fkiUserlogintypeID' => 'int',
+        'sUserlogintypeDescriptionX' => 'string'
     ];
 
     /**
@@ -75,10 +76,11 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'pkiEzsignsignerID' => null,
         'fkiTaxassignmentID' => null,
         'fkiSecretquestionID' => null,
-        'eEzsignsignerLogintype' => null,
-        'sEzsignsignerSecretanswer' => null
+        'fkiUserlogintypeID' => null,
+        'sUserlogintypeDescriptionX' => null
     ];
 
     /**
@@ -108,10 +110,11 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
+        'pkiEzsignsignerID' => 'pkiEzsignsignerID',
         'fkiTaxassignmentID' => 'fkiTaxassignmentID',
         'fkiSecretquestionID' => 'fkiSecretquestionID',
-        'eEzsignsignerLogintype' => 'eEzsignsignerLogintype',
-        'sEzsignsignerSecretanswer' => 'sEzsignsignerSecretanswer'
+        'fkiUserlogintypeID' => 'fkiUserlogintypeID',
+        'sUserlogintypeDescriptionX' => 'sUserlogintypeDescriptionX'
     ];
 
     /**
@@ -120,10 +123,11 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
+        'pkiEzsignsignerID' => 'setPkiEzsignsignerID',
         'fkiTaxassignmentID' => 'setFkiTaxassignmentID',
         'fkiSecretquestionID' => 'setFkiSecretquestionID',
-        'eEzsignsignerLogintype' => 'setEEzsignsignerLogintype',
-        'sEzsignsignerSecretanswer' => 'setSEzsignsignerSecretanswer'
+        'fkiUserlogintypeID' => 'setFkiUserlogintypeID',
+        'sUserlogintypeDescriptionX' => 'setSUserlogintypeDescriptionX'
     ];
 
     /**
@@ -132,10 +136,11 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
+        'pkiEzsignsignerID' => 'getPkiEzsignsignerID',
         'fkiTaxassignmentID' => 'getFkiTaxassignmentID',
         'fkiSecretquestionID' => 'getFkiSecretquestionID',
-        'eEzsignsignerLogintype' => 'getEEzsignsignerLogintype',
-        'sEzsignsignerSecretanswer' => 'getSEzsignsignerSecretanswer'
+        'fkiUserlogintypeID' => 'getFkiUserlogintypeID',
+        'sUserlogintypeDescriptionX' => 'getSUserlogintypeDescriptionX'
     ];
 
     /**
@@ -179,27 +184,6 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         return self::$openAPIModelName;
     }
 
-    const E_EZSIGNSIGNER_LOGINTYPE_PASSWORD = 'Password';
-    const E_EZSIGNSIGNER_LOGINTYPE_PASSWORD_PHONE = 'PasswordPhone';
-    const E_EZSIGNSIGNER_LOGINTYPE_PASSWORD_QUESTION = 'PasswordQuestion';
-    const E_EZSIGNSIGNER_LOGINTYPE_IN_PERSON_PHONE = 'InPersonPhone';
-    const E_EZSIGNSIGNER_LOGINTYPE_IN_PERSON = 'InPerson';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getEEzsignsignerLogintypeAllowableValues()
-    {
-        return [
-            self::E_EZSIGNSIGNER_LOGINTYPE_PASSWORD,
-            self::E_EZSIGNSIGNER_LOGINTYPE_PASSWORD_PHONE,
-            self::E_EZSIGNSIGNER_LOGINTYPE_PASSWORD_QUESTION,
-            self::E_EZSIGNSIGNER_LOGINTYPE_IN_PERSON_PHONE,
-            self::E_EZSIGNSIGNER_LOGINTYPE_IN_PERSON,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -216,10 +200,11 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
+        $this->container['pkiEzsignsignerID'] = $data['pkiEzsignsignerID'] ?? null;
         $this->container['fkiTaxassignmentID'] = $data['fkiTaxassignmentID'] ?? null;
         $this->container['fkiSecretquestionID'] = $data['fkiSecretquestionID'] ?? null;
-        $this->container['eEzsignsignerLogintype'] = $data['eEzsignsignerLogintype'] ?? null;
-        $this->container['sEzsignsignerSecretanswer'] = $data['sEzsignsignerSecretanswer'] ?? null;
+        $this->container['fkiUserlogintypeID'] = $data['fkiUserlogintypeID'] ?? null;
+        $this->container['sUserlogintypeDescriptionX'] = $data['sUserlogintypeDescriptionX'] ?? null;
     }
 
     /**
@@ -231,6 +216,9 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
+        if ($this->container['pkiEzsignsignerID'] === null) {
+            $invalidProperties[] = "'pkiEzsignsignerID' can't be null";
+        }
         if ($this->container['fkiTaxassignmentID'] === null) {
             $invalidProperties[] = "'fkiTaxassignmentID' can't be null";
         }
@@ -242,18 +230,12 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'fkiTaxassignmentID', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['eEzsignsignerLogintype'] === null) {
-            $invalidProperties[] = "'eEzsignsignerLogintype' can't be null";
+        if ($this->container['fkiUserlogintypeID'] === null) {
+            $invalidProperties[] = "'fkiUserlogintypeID' can't be null";
         }
-        $allowedValues = $this->getEEzsignsignerLogintypeAllowableValues();
-        if (!is_null($this->container['eEzsignsignerLogintype']) && !in_array($this->container['eEzsignsignerLogintype'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'eEzsignsignerLogintype', must be one of '%s'",
-                $this->container['eEzsignsignerLogintype'],
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['sUserlogintypeDescriptionX'] === null) {
+            $invalidProperties[] = "'sUserlogintypeDescriptionX' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -268,6 +250,30 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets pkiEzsignsignerID
+     *
+     * @return int
+     */
+    public function getPkiEzsignsignerID()
+    {
+        return $this->container['pkiEzsignsignerID'];
+    }
+
+    /**
+     * Sets pkiEzsignsignerID
+     *
+     * @param int $pkiEzsignsignerID The unique ID of the Ezsignsigner
+     *
+     * @return self
+     */
+    public function setPkiEzsignsignerID($pkiEzsignsignerID)
+    {
+        $this->container['pkiEzsignsignerID'] = $pkiEzsignsignerID;
+
+        return $this;
+    }
 
     /**
      * Gets fkiTaxassignmentID
@@ -326,59 +332,49 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets eEzsignsignerLogintype
+     * Gets fkiUserlogintypeID
      *
-     * @return string
+     * @return int
      */
-    public function getEEzsignsignerLogintype()
+    public function getFkiUserlogintypeID()
     {
-        return $this->container['eEzsignsignerLogintype'];
+        return $this->container['fkiUserlogintypeID'];
     }
 
     /**
-     * Sets eEzsignsignerLogintype
+     * Sets fkiUserlogintypeID
      *
-     * @param string $eEzsignsignerLogintype The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
+     * @param int $fkiUserlogintypeID The unique ID of the Userlogintype
      *
      * @return self
      */
-    public function setEEzsignsignerLogintype($eEzsignsignerLogintype)
+    public function setFkiUserlogintypeID($fkiUserlogintypeID)
     {
-        $allowedValues = $this->getEEzsignsignerLogintypeAllowableValues();
-        if (!in_array($eEzsignsignerLogintype, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'eEzsignsignerLogintype', must be one of '%s'",
-                    $eEzsignsignerLogintype,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['eEzsignsignerLogintype'] = $eEzsignsignerLogintype;
+        $this->container['fkiUserlogintypeID'] = $fkiUserlogintypeID;
 
         return $this;
     }
 
     /**
-     * Gets sEzsignsignerSecretanswer
+     * Gets sUserlogintypeDescriptionX
      *
-     * @return string|null
+     * @return string
      */
-    public function getSEzsignsignerSecretanswer()
+    public function getSUserlogintypeDescriptionX()
     {
-        return $this->container['sEzsignsignerSecretanswer'];
+        return $this->container['sUserlogintypeDescriptionX'];
     }
 
     /**
-     * Sets sEzsignsignerSecretanswer
+     * Sets sUserlogintypeDescriptionX
      *
-     * @param string|null $sEzsignsignerSecretanswer The predefined answer to the secret question the Ezsignsigner will need to provide to successfully authenticate.
+     * @param string $sUserlogintypeDescriptionX The description of the Userlogintype in the language of the requester
      *
      * @return self
      */
-    public function setSEzsignsignerSecretanswer($sEzsignsignerSecretanswer)
+    public function setSUserlogintypeDescriptionX($sUserlogintypeDescriptionX)
     {
-        $this->container['sEzsignsignerSecretanswer'] = $sEzsignsignerSecretanswer;
+        $this->container['sUserlogintypeDescriptionX'] = $sUserlogintypeDescriptionX;
 
         return $this;
     }

@@ -117,18 +117,18 @@ class EzsignsignerResponseCompoundContactTest extends TestCase
     }
 
     /**
-     * Test attribute "sPhoneNumber"
+     * Test attribute "sPhoneE164"
      */
-    public function testPropertySPhoneNumber()
+    public function testPropertySPhoneE164()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sPhoneNumberCell"
+     * Test attribute "sPhoneE164Cell"
      */
-    public function testPropertySPhoneNumberCell()
+    public function testPropertySPhoneE164Cell()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

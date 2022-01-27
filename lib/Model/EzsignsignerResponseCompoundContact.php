@@ -65,8 +65,8 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'sContactLastname' => 'string',
         'fkiLanguageID' => 'int',
         'sEmailAddress' => 'string',
-        'sPhoneNumber' => 'string',
-        'sPhoneNumberCell' => 'string'
+        'sPhoneE164' => 'string',
+        'sPhoneE164Cell' => 'string'
     ];
 
     /**
@@ -81,8 +81,8 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'sContactLastname' => null,
         'fkiLanguageID' => null,
         'sEmailAddress' => null,
-        'sPhoneNumber' => null,
-        'sPhoneNumberCell' => null
+        'sPhoneE164' => null,
+        'sPhoneE164Cell' => null
     ];
 
     /**
@@ -116,8 +116,8 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'sContactLastname' => 'sContactLastname',
         'fkiLanguageID' => 'fkiLanguageID',
         'sEmailAddress' => 'sEmailAddress',
-        'sPhoneNumber' => 'sPhoneNumber',
-        'sPhoneNumberCell' => 'sPhoneNumberCell'
+        'sPhoneE164' => 'sPhoneE164',
+        'sPhoneE164Cell' => 'sPhoneE164Cell'
     ];
 
     /**
@@ -130,8 +130,8 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'sContactLastname' => 'setSContactLastname',
         'fkiLanguageID' => 'setFkiLanguageID',
         'sEmailAddress' => 'setSEmailAddress',
-        'sPhoneNumber' => 'setSPhoneNumber',
-        'sPhoneNumberCell' => 'setSPhoneNumberCell'
+        'sPhoneE164' => 'setSPhoneE164',
+        'sPhoneE164Cell' => 'setSPhoneE164Cell'
     ];
 
     /**
@@ -144,8 +144,8 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'sContactLastname' => 'getSContactLastname',
         'fkiLanguageID' => 'getFkiLanguageID',
         'sEmailAddress' => 'getSEmailAddress',
-        'sPhoneNumber' => 'getSPhoneNumber',
-        'sPhoneNumberCell' => 'getSPhoneNumberCell'
+        'sPhoneE164' => 'getSPhoneE164',
+        'sPhoneE164Cell' => 'getSPhoneE164Cell'
     ];
 
     /**
@@ -209,8 +209,8 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         $this->container['sContactLastname'] = $data['sContactLastname'] ?? null;
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
         $this->container['sEmailAddress'] = $data['sEmailAddress'] ?? null;
-        $this->container['sPhoneNumber'] = $data['sPhoneNumber'] ?? null;
-        $this->container['sPhoneNumberCell'] = $data['sPhoneNumberCell'] ?? null;
+        $this->container['sPhoneE164'] = $data['sPhoneE164'] ?? null;
+        $this->container['sPhoneE164Cell'] = $data['sPhoneE164Cell'] ?? null;
     }
 
     /**
@@ -359,49 +359,49 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets sPhoneNumber
+     * Gets sPhoneE164
      *
      * @return string|null
      */
-    public function getSPhoneNumber()
+    public function getSPhoneE164()
     {
-        return $this->container['sPhoneNumber'];
+        return $this->container['sPhoneE164'];
     }
 
     /**
-     * Sets sPhoneNumber
+     * Sets sPhoneE164
      *
-     * @param string|null $sPhoneNumber The Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
+     * @param string|null $sPhoneE164 A phone number in E.164 Format
      *
      * @return self
      */
-    public function setSPhoneNumber($sPhoneNumber)
+    public function setSPhoneE164($sPhoneE164)
     {
-        $this->container['sPhoneNumber'] = $sPhoneNumber;
+        $this->container['sPhoneE164'] = $sPhoneE164;
 
         return $this;
     }
 
     /**
-     * Gets sPhoneNumberCell
+     * Gets sPhoneE164Cell
      *
      * @return string|null
      */
-    public function getSPhoneNumberCell()
+    public function getSPhoneE164Cell()
     {
-        return $this->container['sPhoneNumberCell'];
+        return $this->container['sPhoneE164Cell'];
     }
 
     /**
-     * Sets sPhoneNumberCell
+     * Sets sPhoneE164Cell
      *
-     * @param string|null $sPhoneNumberCell The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
+     * @param string|null $sPhoneE164Cell A phone number in E.164 Format
      *
      * @return self
      */
-    public function setSPhoneNumberCell($sPhoneNumberCell)
+    public function setSPhoneE164Cell($sPhoneE164Cell)
     {
-        $this->container['sPhoneNumberCell'] = $sPhoneNumberCell;
+        $this->container['sPhoneE164Cell'] = $sPhoneE164Cell;
 
         return $this;
     }

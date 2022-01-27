@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldersignerassociationResponseCompound
+ * EzsignfoldersignerassociationResponseCompoundUser
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfoldersignerassociationResponseCompound Class Doc Comment
+ * EzsignfoldersignerassociationResponseCompoundUser Class Doc Comment
  *
  * @category Class
- * @description An Ezsignfoldersignerassociation Object
+ * @description A Ezsignfoldersignerassociation-&gt;User Object and children to create a complete structure
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfoldersignerassociationResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfoldersignerassociationResponseCompoundUser implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfoldersignerassociation-ResponseCompound';
+    protected static $openAPIModelName = 'ezsignfoldersignerassociation-ResponseCompound-User';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,11 +61,11 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objUser' => '\eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser',
-        'objEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerResponseCompound',
-        'pkiEzsignfoldersignerassociationID' => 'int',
-        'fkiEzsignfolderID' => 'int',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bool'
+        'pkiUserID' => 'int',
+        'fkiLanguageID' => 'int',
+        'sUserFirstname' => 'string',
+        'sUserLastname' => 'string',
+        'sEmailAddress' => 'string'
     ];
 
     /**
@@ -76,11 +76,11 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objUser' => null,
-        'objEzsignsigner' => null,
-        'pkiEzsignfoldersignerassociationID' => null,
-        'fkiEzsignfolderID' => null,
-        'bEzsignfoldersignerassociationReceivecopy' => null
+        'pkiUserID' => null,
+        'fkiLanguageID' => null,
+        'sUserFirstname' => null,
+        'sUserLastname' => null,
+        'sEmailAddress' => null
     ];
 
     /**
@@ -110,11 +110,11 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $attributeMap = [
-        'objUser' => 'objUser',
-        'objEzsignsigner' => 'objEzsignsigner',
-        'pkiEzsignfoldersignerassociationID' => 'pkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'fkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bEzsignfoldersignerassociationReceivecopy'
+        'pkiUserID' => 'pkiUserID',
+        'fkiLanguageID' => 'fkiLanguageID',
+        'sUserFirstname' => 'sUserFirstname',
+        'sUserLastname' => 'sUserLastname',
+        'sEmailAddress' => 'sEmailAddress'
     ];
 
     /**
@@ -123,11 +123,11 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-        'objUser' => 'setObjUser',
-        'objEzsignsigner' => 'setObjEzsignsigner',
-        'pkiEzsignfoldersignerassociationID' => 'setPkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'setBEzsignfoldersignerassociationReceivecopy'
+        'pkiUserID' => 'setPkiUserID',
+        'fkiLanguageID' => 'setFkiLanguageID',
+        'sUserFirstname' => 'setSUserFirstname',
+        'sUserLastname' => 'setSUserLastname',
+        'sEmailAddress' => 'setSEmailAddress'
     ];
 
     /**
@@ -136,11 +136,11 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $getters = [
-        'objUser' => 'getObjUser',
-        'objEzsignsigner' => 'getObjEzsignsigner',
-        'pkiEzsignfoldersignerassociationID' => 'getPkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'getBEzsignfoldersignerassociationReceivecopy'
+        'pkiUserID' => 'getPkiUserID',
+        'fkiLanguageID' => 'getFkiLanguageID',
+        'sUserFirstname' => 'getSUserFirstname',
+        'sUserLastname' => 'getSUserLastname',
+        'sEmailAddress' => 'getSEmailAddress'
     ];
 
     /**
@@ -200,11 +200,11 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
      */
     public function __construct(array $data = null)
     {
-        $this->container['objUser'] = $data['objUser'] ?? null;
-        $this->container['objEzsignsigner'] = $data['objEzsignsigner'] ?? null;
-        $this->container['pkiEzsignfoldersignerassociationID'] = $data['pkiEzsignfoldersignerassociationID'] ?? null;
-        $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
-        $this->container['bEzsignfoldersignerassociationReceivecopy'] = $data['bEzsignfoldersignerassociationReceivecopy'] ?? null;
+        $this->container['pkiUserID'] = $data['pkiUserID'] ?? null;
+        $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
+        $this->container['sUserFirstname'] = $data['sUserFirstname'] ?? null;
+        $this->container['sUserLastname'] = $data['sUserLastname'] ?? null;
+        $this->container['sEmailAddress'] = $data['sEmailAddress'] ?? null;
     }
 
     /**
@@ -216,14 +216,28 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
     {
         $invalidProperties = [];
 
-        if ($this->container['pkiEzsignfoldersignerassociationID'] === null) {
-            $invalidProperties[] = "'pkiEzsignfoldersignerassociationID' can't be null";
+        if ($this->container['pkiUserID'] === null) {
+            $invalidProperties[] = "'pkiUserID' can't be null";
         }
-        if ($this->container['fkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
+        if ($this->container['fkiLanguageID'] === null) {
+            $invalidProperties[] = "'fkiLanguageID' can't be null";
         }
-        if ($this->container['bEzsignfoldersignerassociationReceivecopy'] === null) {
-            $invalidProperties[] = "'bEzsignfoldersignerassociationReceivecopy' can't be null";
+        if (($this->container['fkiLanguageID'] > 2)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
+        }
+
+        if (($this->container['fkiLanguageID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['sUserFirstname'] === null) {
+            $invalidProperties[] = "'sUserFirstname' can't be null";
+        }
+        if ($this->container['sUserLastname'] === null) {
+            $invalidProperties[] = "'sUserLastname' can't be null";
+        }
+        if ($this->container['sEmailAddress'] === null) {
+            $invalidProperties[] = "'sEmailAddress' can't be null";
         }
         return $invalidProperties;
     }
@@ -241,121 +255,129 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
 
 
     /**
-     * Gets objUser
-     *
-     * @return \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser|null
-     */
-    public function getObjUser()
-    {
-        return $this->container['objUser'];
-    }
-
-    /**
-     * Sets objUser
-     *
-     * @param \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser|null $objUser objUser
-     *
-     * @return self
-     */
-    public function setObjUser($objUser)
-    {
-        $this->container['objUser'] = $objUser;
-
-        return $this;
-    }
-
-    /**
-     * Gets objEzsignsigner
-     *
-     * @return \eZmaxAPI\Model\EzsignsignerResponseCompound|null
-     */
-    public function getObjEzsignsigner()
-    {
-        return $this->container['objEzsignsigner'];
-    }
-
-    /**
-     * Sets objEzsignsigner
-     *
-     * @param \eZmaxAPI\Model\EzsignsignerResponseCompound|null $objEzsignsigner objEzsignsigner
-     *
-     * @return self
-     */
-    public function setObjEzsignsigner($objEzsignsigner)
-    {
-        $this->container['objEzsignsigner'] = $objEzsignsigner;
-
-        return $this;
-    }
-
-    /**
-     * Gets pkiEzsignfoldersignerassociationID
+     * Gets pkiUserID
      *
      * @return int
      */
-    public function getPkiEzsignfoldersignerassociationID()
+    public function getPkiUserID()
     {
-        return $this->container['pkiEzsignfoldersignerassociationID'];
+        return $this->container['pkiUserID'];
     }
 
     /**
-     * Sets pkiEzsignfoldersignerassociationID
+     * Sets pkiUserID
      *
-     * @param int $pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param int $pkiUserID The unique ID of the User
      *
      * @return self
      */
-    public function setPkiEzsignfoldersignerassociationID($pkiEzsignfoldersignerassociationID)
+    public function setPkiUserID($pkiUserID)
     {
-        $this->container['pkiEzsignfoldersignerassociationID'] = $pkiEzsignfoldersignerassociationID;
+        $this->container['pkiUserID'] = $pkiUserID;
 
         return $this;
     }
 
     /**
-     * Gets fkiEzsignfolderID
+     * Gets fkiLanguageID
      *
      * @return int
      */
-    public function getFkiEzsignfolderID()
+    public function getFkiLanguageID()
     {
-        return $this->container['fkiEzsignfolderID'];
+        return $this->container['fkiLanguageID'];
     }
 
     /**
-     * Sets fkiEzsignfolderID
+     * Sets fkiLanguageID
      *
-     * @param int $fkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param int $fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      *
      * @return self
      */
-    public function setFkiEzsignfolderID($fkiEzsignfolderID)
+    public function setFkiLanguageID($fkiLanguageID)
     {
-        $this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
+
+        if (($fkiLanguageID > 2)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignfoldersignerassociationResponseCompoundUser., must be smaller than or equal to 2.');
+        }
+        if (($fkiLanguageID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignfoldersignerassociationResponseCompoundUser., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fkiLanguageID'] = $fkiLanguageID;
 
         return $this;
     }
 
     /**
-     * Gets bEzsignfoldersignerassociationReceivecopy
+     * Gets sUserFirstname
      *
-     * @return bool
+     * @return string
      */
-    public function getBEzsignfoldersignerassociationReceivecopy()
+    public function getSUserFirstname()
     {
-        return $this->container['bEzsignfoldersignerassociationReceivecopy'];
+        return $this->container['sUserFirstname'];
     }
 
     /**
-     * Sets bEzsignfoldersignerassociationReceivecopy
+     * Sets sUserFirstname
      *
-     * @param bool $bEzsignfoldersignerassociationReceivecopy If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
+     * @param string $sUserFirstname The First name of the user
      *
      * @return self
      */
-    public function setBEzsignfoldersignerassociationReceivecopy($bEzsignfoldersignerassociationReceivecopy)
+    public function setSUserFirstname($sUserFirstname)
     {
-        $this->container['bEzsignfoldersignerassociationReceivecopy'] = $bEzsignfoldersignerassociationReceivecopy;
+        $this->container['sUserFirstname'] = $sUserFirstname;
+
+        return $this;
+    }
+
+    /**
+     * Gets sUserLastname
+     *
+     * @return string
+     */
+    public function getSUserLastname()
+    {
+        return $this->container['sUserLastname'];
+    }
+
+    /**
+     * Sets sUserLastname
+     *
+     * @param string $sUserLastname The Last name of the user
+     *
+     * @return self
+     */
+    public function setSUserLastname($sUserLastname)
+    {
+        $this->container['sUserLastname'] = $sUserLastname;
+
+        return $this;
+    }
+
+    /**
+     * Gets sEmailAddress
+     *
+     * @return string
+     */
+    public function getSEmailAddress()
+    {
+        return $this->container['sEmailAddress'];
+    }
+
+    /**
+     * Sets sEmailAddress
+     *
+     * @param string $sEmailAddress The email address.
+     *
+     * @return self
+     */
+    public function setSEmailAddress($sEmailAddress)
+    {
+        $this->container['sEmailAddress'] = $sEmailAddress;
 
         return $this;
     }

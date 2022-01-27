@@ -382,7 +382,7 @@ class PhoneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sPhoneInternational
      *
-     * @param string|null $sPhoneInternational The international phone number. (For phone numbers outside of North)  Do not specify the \"011\" part of the phone number used to dial an international phone number from North America.  For example for this sample phone number \"+442071838750\", you would send \"442071838750\" without the \"+\" sign.
+     * @param string|null $sPhoneInternational A phone number in E.164 Format
      *
      * @return self
      */

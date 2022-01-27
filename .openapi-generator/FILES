@@ -147,6 +147,7 @@ docs/Model/EzsignfoldersignerassociationRequestCompound.md
 docs/Model/EzsignfoldersignerassociationRequestCompoundAllOf.md
 docs/Model/EzsignfoldersignerassociationResponse.md
 docs/Model/EzsignfoldersignerassociationResponseCompound.md
+docs/Model/EzsignfoldersignerassociationResponseCompoundUser.md
 docs/Model/EzsignfoldertypeGetListV1Response.md
 docs/Model/EzsignfoldertypeGetListV1ResponseAllOf.md
 docs/Model/EzsignfoldertypeGetListV1ResponseMPayload.md
@@ -381,6 +382,7 @@ lib/Model/EzsignfoldersignerassociationRequestCompound.php
 lib/Model/EzsignfoldersignerassociationRequestCompoundAllOf.php
 lib/Model/EzsignfoldersignerassociationResponse.php
 lib/Model/EzsignfoldersignerassociationResponseCompound.php
+lib/Model/EzsignfoldersignerassociationResponseCompoundUser.php
 lib/Model/EzsignfoldertypeGetListV1Response.php
 lib/Model/EzsignfoldertypeGetListV1ResponseAllOf.php
 lib/Model/EzsignfoldertypeGetListV1ResponseMPayload.php
@@ -614,6 +616,7 @@ test/Model/EzsignfoldersignerassociationRequestCompoundAllOfTest.php
 test/Model/EzsignfoldersignerassociationRequestCompoundTest.php
 test/Model/EzsignfoldersignerassociationRequestTest.php
 test/Model/EzsignfoldersignerassociationResponseCompoundTest.php
+test/Model/EzsignfoldersignerassociationResponseCompoundUserTest.php
 test/Model/EzsignfoldersignerassociationResponseTest.php
 test/Model/EzsignfoldertypeGetListV1ResponseAllOfTest.php
 test/Model/EzsignfoldertypeGetListV1ResponseMPayloadAllOfTest.php

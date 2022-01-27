@@ -61,7 +61,7 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload implements
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjEzsignfoldersignerassociation' => '\eZmaxAPI\Model\EzsignfoldersignerassociationResponse[]'
+        'aObjEzsignfoldersignerassociation' => '\eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompound[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload implements
     /**
      * Gets aObjEzsignfoldersignerassociation
      *
-     * @return \eZmaxAPI\Model\EzsignfoldersignerassociationResponse[]
+     * @return \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompound[]
      */
     public function getAObjEzsignfoldersignerassociation()
     {
@@ -223,7 +223,7 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload implements
     /**
      * Sets aObjEzsignfoldersignerassociation
      *
-     * @param \eZmaxAPI\Model\EzsignfoldersignerassociationResponse[] $aObjEzsignfoldersignerassociation aObjEzsignfoldersignerassociation
+     * @param \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompound[] $aObjEzsignfoldersignerassociation aObjEzsignfoldersignerassociation
      *
      * @return self
      */

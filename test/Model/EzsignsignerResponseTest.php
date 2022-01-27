@@ -81,6 +81,15 @@ class EzsignsignerResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "pkiEzsignsignerID"
+     */
+    public function testPropertyPkiEzsignsignerID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "fkiTaxassignmentID"
      */
     public function testPropertyFkiTaxassignmentID()
@@ -99,18 +108,18 @@ class EzsignsignerResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "eEzsignsignerLogintype"
+     * Test attribute "fkiUserlogintypeID"
      */
-    public function testPropertyEEzsignsignerLogintype()
+    public function testPropertyFkiUserlogintypeID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sEzsignsignerSecretanswer"
+     * Test attribute "sUserlogintypeDescriptionX"
      */
-    public function testPropertySEzsignsignerSecretanswer()
+    public function testPropertySUserlogintypeDescriptionX()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

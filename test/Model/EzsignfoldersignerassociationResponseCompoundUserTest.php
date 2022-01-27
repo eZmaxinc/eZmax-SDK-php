@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest
+ * EzsignfoldersignerassociationResponseCompoundUserTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest Class Doc Comment
+ * EzsignfoldersignerassociationResponseCompoundUserTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsignfoldersignerassociation/getObject API Request
+ * @description A Ezsignfoldersignerassociation-&gt;User Object and children to create a complete structure
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest extends TestCase
+class EzsignfoldersignerassociationResponseCompoundUserTest extends TestCase
 {
 
     /**
@@ -72,36 +72,54 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest extends TestC
     }
 
     /**
-     * Test "EzsignfoldersignerassociationGetObjectV1ResponseMPayload"
+     * Test "EzsignfoldersignerassociationResponseCompoundUser"
      */
-    public function testEzsignfoldersignerassociationGetObjectV1ResponseMPayload()
+    public function testEzsignfoldersignerassociationResponseCompoundUser()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "pkiEzsignfoldersignerassociationID"
+     * Test attribute "pkiUserID"
      */
-    public function testPropertyPkiEzsignfoldersignerassociationID()
+    public function testPropertyPkiUserID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "fkiEzsignfolderID"
+     * Test attribute "fkiLanguageID"
      */
-    public function testPropertyFkiEzsignfolderID()
+    public function testPropertyFkiLanguageID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "bEzsignfoldersignerassociationReceivecopy"
+     * Test attribute "sUserFirstname"
      */
-    public function testPropertyBEzsignfoldersignerassociationReceivecopy()
+    public function testPropertySUserFirstname()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sUserLastname"
+     */
+    public function testPropertySUserLastname()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEmailAddress"
+     */
+    public function testPropertySEmailAddress()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
