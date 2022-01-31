@@ -235,6 +235,7 @@ docs/Model/WebhookResponse.md
 docs/Model/WebhookUserUserCreated.md
 docs/Model/WebhookUserUserCreatedAllOf.md
 docs/Model/WebsiteRequest.md
+docs/Model/Xxxx.md
 git_push.sh
 lib/Api/GlobalCustomerApi.php
 lib/Api/ModuleAuthenticateApi.php
@@ -471,6 +472,7 @@ lib/Model/WebhookResponse.php
 lib/Model/WebhookUserUserCreated.php
 lib/Model/WebhookUserUserCreatedAllOf.php
 lib/Model/WebsiteRequest.php
+lib/Model/Xxxx.php
 lib/ObjectSerializer.php
 lib/RequestSignature.php
 phpunit.xml.dist
@@ -705,3 +707,4 @@ test/Model/WebhookResponseTest.php
 test/Model/WebhookUserUserCreatedAllOfTest.php
 test/Model/WebhookUserUserCreatedTest.php
 test/Model/WebsiteRequestTest.php
+test/Model/XxxxTest.php

@@ -342,6 +342,7 @@ Class | Method | HTTP request | Description
 - [WebhookUserUserCreated](docs/Model/WebhookUserUserCreated.md)
 - [WebhookUserUserCreatedAllOf](docs/Model/WebhookUserUserCreatedAllOf.md)
 - [WebsiteRequest](docs/Model/WebsiteRequest.md)
+- [Xxxx](docs/Model/Xxxx.md)
 
 ## Authorization
 
