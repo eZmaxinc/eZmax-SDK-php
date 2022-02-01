@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayload
+ * EzsigndocumentResponseCompoundAllOf
  *
  * PHP version 7.3
  *
@@ -33,10 +33,9 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayload Class Doc Comment
+ * EzsigndocumentResponseCompoundAllOf Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignfoldersignerassociation/getObject API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +43,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigndocumentResponseCompoundAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfoldersignerassociation-getObject-v1-Response-mPayload';
+    protected static $openAPIModelName = 'ezsigndocument_ResponseCompound_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,11 +60,11 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objUser' => '\eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser',
-        'objEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerResponseCompound',
-        'pkiEzsignfoldersignerassociationID' => 'int',
-        'fkiEzsignfolderID' => 'int',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bool'
+        'iEzsigndocumentStepformtotal' => 'int',
+        'iEzsigndocumentStepformcurrent' => 'int',
+        'iEzsigndocumentStepsignaturetotal' => 'int',
+        'iEzsigndocumentStepsignatureCurrent' => 'int',
+        'aObjEzsignfoldersignerassociationstatus' => '\eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[]'
     ];
 
     /**
@@ -76,11 +75,11 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objUser' => null,
-        'objEzsignsigner' => null,
-        'pkiEzsignfoldersignerassociationID' => null,
-        'fkiEzsignfolderID' => null,
-        'bEzsignfoldersignerassociationReceivecopy' => null
+        'iEzsigndocumentStepformtotal' => null,
+        'iEzsigndocumentStepformcurrent' => null,
+        'iEzsigndocumentStepsignaturetotal' => null,
+        'iEzsigndocumentStepsignatureCurrent' => null,
+        'aObjEzsignfoldersignerassociationstatus' => null
     ];
 
     /**
@@ -110,11 +109,11 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      * @var string[]
      */
     protected static $attributeMap = [
-        'objUser' => 'objUser',
-        'objEzsignsigner' => 'objEzsignsigner',
-        'pkiEzsignfoldersignerassociationID' => 'pkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'fkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bEzsignfoldersignerassociationReceivecopy'
+        'iEzsigndocumentStepformtotal' => 'iEzsigndocumentStepformtotal',
+        'iEzsigndocumentStepformcurrent' => 'iEzsigndocumentStepformcurrent',
+        'iEzsigndocumentStepsignaturetotal' => 'iEzsigndocumentStepsignaturetotal',
+        'iEzsigndocumentStepsignatureCurrent' => 'iEzsigndocumentStepsignatureCurrent',
+        'aObjEzsignfoldersignerassociationstatus' => 'a_objEzsignfoldersignerassociationstatus'
     ];
 
     /**
@@ -123,11 +122,11 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      * @var string[]
      */
     protected static $setters = [
-        'objUser' => 'setObjUser',
-        'objEzsignsigner' => 'setObjEzsignsigner',
-        'pkiEzsignfoldersignerassociationID' => 'setPkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'setBEzsignfoldersignerassociationReceivecopy'
+        'iEzsigndocumentStepformtotal' => 'setIEzsigndocumentStepformtotal',
+        'iEzsigndocumentStepformcurrent' => 'setIEzsigndocumentStepformcurrent',
+        'iEzsigndocumentStepsignaturetotal' => 'setIEzsigndocumentStepsignaturetotal',
+        'iEzsigndocumentStepsignatureCurrent' => 'setIEzsigndocumentStepsignatureCurrent',
+        'aObjEzsignfoldersignerassociationstatus' => 'setAObjEzsignfoldersignerassociationstatus'
     ];
 
     /**
@@ -136,11 +135,11 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      * @var string[]
      */
     protected static $getters = [
-        'objUser' => 'getObjUser',
-        'objEzsignsigner' => 'getObjEzsignsigner',
-        'pkiEzsignfoldersignerassociationID' => 'getPkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'getBEzsignfoldersignerassociationReceivecopy'
+        'iEzsigndocumentStepformtotal' => 'getIEzsigndocumentStepformtotal',
+        'iEzsigndocumentStepformcurrent' => 'getIEzsigndocumentStepformcurrent',
+        'iEzsigndocumentStepsignaturetotal' => 'getIEzsigndocumentStepsignaturetotal',
+        'iEzsigndocumentStepsignatureCurrent' => 'getIEzsigndocumentStepsignatureCurrent',
+        'aObjEzsignfoldersignerassociationstatus' => 'getAObjEzsignfoldersignerassociationstatus'
     ];
 
     /**
@@ -200,11 +199,11 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     public function __construct(array $data = null)
     {
-        $this->container['objUser'] = $data['objUser'] ?? null;
-        $this->container['objEzsignsigner'] = $data['objEzsignsigner'] ?? null;
-        $this->container['pkiEzsignfoldersignerassociationID'] = $data['pkiEzsignfoldersignerassociationID'] ?? null;
-        $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
-        $this->container['bEzsignfoldersignerassociationReceivecopy'] = $data['bEzsignfoldersignerassociationReceivecopy'] ?? null;
+        $this->container['iEzsigndocumentStepformtotal'] = $data['iEzsigndocumentStepformtotal'] ?? null;
+        $this->container['iEzsigndocumentStepformcurrent'] = $data['iEzsigndocumentStepformcurrent'] ?? null;
+        $this->container['iEzsigndocumentStepsignaturetotal'] = $data['iEzsigndocumentStepsignaturetotal'] ?? null;
+        $this->container['iEzsigndocumentStepsignatureCurrent'] = $data['iEzsigndocumentStepsignatureCurrent'] ?? null;
+        $this->container['aObjEzsignfoldersignerassociationstatus'] = $data['aObjEzsignfoldersignerassociationstatus'] ?? null;
     }
 
     /**
@@ -216,14 +215,20 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     {
         $invalidProperties = [];
 
-        if ($this->container['pkiEzsignfoldersignerassociationID'] === null) {
-            $invalidProperties[] = "'pkiEzsignfoldersignerassociationID' can't be null";
+        if ($this->container['iEzsigndocumentStepformtotal'] === null) {
+            $invalidProperties[] = "'iEzsigndocumentStepformtotal' can't be null";
         }
-        if ($this->container['fkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
+        if ($this->container['iEzsigndocumentStepformcurrent'] === null) {
+            $invalidProperties[] = "'iEzsigndocumentStepformcurrent' can't be null";
         }
-        if ($this->container['bEzsignfoldersignerassociationReceivecopy'] === null) {
-            $invalidProperties[] = "'bEzsignfoldersignerassociationReceivecopy' can't be null";
+        if ($this->container['iEzsigndocumentStepsignaturetotal'] === null) {
+            $invalidProperties[] = "'iEzsigndocumentStepsignaturetotal' can't be null";
+        }
+        if ($this->container['iEzsigndocumentStepsignatureCurrent'] === null) {
+            $invalidProperties[] = "'iEzsigndocumentStepsignatureCurrent' can't be null";
+        }
+        if ($this->container['aObjEzsignfoldersignerassociationstatus'] === null) {
+            $invalidProperties[] = "'aObjEzsignfoldersignerassociationstatus' can't be null";
         }
         return $invalidProperties;
     }
@@ -241,121 +246,121 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
 
 
     /**
-     * Gets objUser
-     *
-     * @return \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser|null
-     */
-    public function getObjUser()
-    {
-        return $this->container['objUser'];
-    }
-
-    /**
-     * Sets objUser
-     *
-     * @param \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser|null $objUser objUser
-     *
-     * @return self
-     */
-    public function setObjUser($objUser)
-    {
-        $this->container['objUser'] = $objUser;
-
-        return $this;
-    }
-
-    /**
-     * Gets objEzsignsigner
-     *
-     * @return \eZmaxAPI\Model\EzsignsignerResponseCompound|null
-     */
-    public function getObjEzsignsigner()
-    {
-        return $this->container['objEzsignsigner'];
-    }
-
-    /**
-     * Sets objEzsignsigner
-     *
-     * @param \eZmaxAPI\Model\EzsignsignerResponseCompound|null $objEzsignsigner objEzsignsigner
-     *
-     * @return self
-     */
-    public function setObjEzsignsigner($objEzsignsigner)
-    {
-        $this->container['objEzsignsigner'] = $objEzsignsigner;
-
-        return $this;
-    }
-
-    /**
-     * Gets pkiEzsignfoldersignerassociationID
+     * Gets iEzsigndocumentStepformtotal
      *
      * @return int
      */
-    public function getPkiEzsignfoldersignerassociationID()
+    public function getIEzsigndocumentStepformtotal()
     {
-        return $this->container['pkiEzsignfoldersignerassociationID'];
+        return $this->container['iEzsigndocumentStepformtotal'];
     }
 
     /**
-     * Sets pkiEzsignfoldersignerassociationID
+     * Sets iEzsigndocumentStepformtotal
      *
-     * @param int $pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param int $iEzsigndocumentStepformtotal The total number of steps in the form filling phase
      *
      * @return self
      */
-    public function setPkiEzsignfoldersignerassociationID($pkiEzsignfoldersignerassociationID)
+    public function setIEzsigndocumentStepformtotal($iEzsigndocumentStepformtotal)
     {
-        $this->container['pkiEzsignfoldersignerassociationID'] = $pkiEzsignfoldersignerassociationID;
+        $this->container['iEzsigndocumentStepformtotal'] = $iEzsigndocumentStepformtotal;
 
         return $this;
     }
 
     /**
-     * Gets fkiEzsignfolderID
+     * Gets iEzsigndocumentStepformcurrent
      *
      * @return int
      */
-    public function getFkiEzsignfolderID()
+    public function getIEzsigndocumentStepformcurrent()
     {
-        return $this->container['fkiEzsignfolderID'];
+        return $this->container['iEzsigndocumentStepformcurrent'];
     }
 
     /**
-     * Sets fkiEzsignfolderID
+     * Sets iEzsigndocumentStepformcurrent
      *
-     * @param int $fkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param int $iEzsigndocumentStepformcurrent The current step in the form filling phase
      *
      * @return self
      */
-    public function setFkiEzsignfolderID($fkiEzsignfolderID)
+    public function setIEzsigndocumentStepformcurrent($iEzsigndocumentStepformcurrent)
     {
-        $this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
+        $this->container['iEzsigndocumentStepformcurrent'] = $iEzsigndocumentStepformcurrent;
 
         return $this;
     }
 
     /**
-     * Gets bEzsignfoldersignerassociationReceivecopy
+     * Gets iEzsigndocumentStepsignaturetotal
      *
-     * @return bool
+     * @return int
      */
-    public function getBEzsignfoldersignerassociationReceivecopy()
+    public function getIEzsigndocumentStepsignaturetotal()
     {
-        return $this->container['bEzsignfoldersignerassociationReceivecopy'];
+        return $this->container['iEzsigndocumentStepsignaturetotal'];
     }
 
     /**
-     * Sets bEzsignfoldersignerassociationReceivecopy
+     * Sets iEzsigndocumentStepsignaturetotal
      *
-     * @param bool $bEzsignfoldersignerassociationReceivecopy If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
+     * @param int $iEzsigndocumentStepsignaturetotal The total number of steps in the signature filling phase
      *
      * @return self
      */
-    public function setBEzsignfoldersignerassociationReceivecopy($bEzsignfoldersignerassociationReceivecopy)
+    public function setIEzsigndocumentStepsignaturetotal($iEzsigndocumentStepsignaturetotal)
     {
-        $this->container['bEzsignfoldersignerassociationReceivecopy'] = $bEzsignfoldersignerassociationReceivecopy;
+        $this->container['iEzsigndocumentStepsignaturetotal'] = $iEzsigndocumentStepsignaturetotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigndocumentStepsignatureCurrent
+     *
+     * @return int
+     */
+    public function getIEzsigndocumentStepsignatureCurrent()
+    {
+        return $this->container['iEzsigndocumentStepsignatureCurrent'];
+    }
+
+    /**
+     * Sets iEzsigndocumentStepsignatureCurrent
+     *
+     * @param int $iEzsigndocumentStepsignatureCurrent The current step in the signature phase
+     *
+     * @return self
+     */
+    public function setIEzsigndocumentStepsignatureCurrent($iEzsigndocumentStepsignatureCurrent)
+    {
+        $this->container['iEzsigndocumentStepsignatureCurrent'] = $iEzsigndocumentStepsignatureCurrent;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjEzsignfoldersignerassociationstatus
+     *
+     * @return \eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[]
+     */
+    public function getAObjEzsignfoldersignerassociationstatus()
+    {
+        return $this->container['aObjEzsignfoldersignerassociationstatus'];
+    }
+
+    /**
+     * Sets aObjEzsignfoldersignerassociationstatus
+     *
+     * @param \eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[] $aObjEzsignfoldersignerassociationstatus aObjEzsignfoldersignerassociationstatus
+     *
+     * @return self
+     */
+    public function setAObjEzsignfoldersignerassociationstatus($aObjEzsignfoldersignerassociationstatus)
+    {
+        $this->container['aObjEzsignfoldersignerassociationstatus'] = $aObjEzsignfoldersignerassociationstatus;
 
         return $this;
     }

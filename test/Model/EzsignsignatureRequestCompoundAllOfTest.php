@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest
+ * EzsignsignatureRequestCompoundAllOfTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest Class Doc Comment
+ * EzsignsignatureRequestCompoundAllOfTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsignfoldersignerassociation/getObject API Request
+ * @description EzsignsignatureRequestCompoundAllOf
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest extends TestCase
+class EzsignsignatureRequestCompoundAllOfTest extends TestCase
 {
 
     /**
@@ -72,54 +72,27 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest extends TestC
     }
 
     /**
-     * Test "EzsignfoldersignerassociationGetObjectV1ResponseMPayload"
+     * Test "EzsignsignatureRequestCompoundAllOf"
      */
-    public function testEzsignfoldersignerassociationGetObjectV1ResponseMPayload()
+    public function testEzsignsignatureRequestCompoundAllOf()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "objUser"
+     * Test attribute "bEzsignsignatureCustomdate"
      */
-    public function testPropertyObjUser()
+    public function testPropertyBEzsignsignatureCustomdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "objEzsignsigner"
+     * Test attribute "aObjEzsignsignaturecustomdate"
      */
-    public function testPropertyObjEzsignsigner()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "pkiEzsignfoldersignerassociationID"
-     */
-    public function testPropertyPkiEzsignfoldersignerassociationID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsignfolderID"
-     */
-    public function testPropertyFkiEzsignfolderID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bEzsignfoldersignerassociationReceivecopy"
-     */
-    public function testPropertyBEzsignfoldersignerassociationReceivecopy()
+    public function testPropertyAObjEzsignsignaturecustomdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

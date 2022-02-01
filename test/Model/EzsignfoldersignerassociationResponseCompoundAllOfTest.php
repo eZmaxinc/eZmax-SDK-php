@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest
+ * EzsignfoldersignerassociationResponseCompoundAllOfTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest Class Doc Comment
+ * EzsignfoldersignerassociationResponseCompoundAllOfTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsignfoldersignerassociation/getObject API Request
+ * @description EzsignfoldersignerassociationResponseCompoundAllOf
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest extends TestCase
+class EzsignfoldersignerassociationResponseCompoundAllOfTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest extends TestC
     }
 
     /**
-     * Test "EzsignfoldersignerassociationGetObjectV1ResponseMPayload"
+     * Test "EzsignfoldersignerassociationResponseCompoundAllOf"
      */
-    public function testEzsignfoldersignerassociationGetObjectV1ResponseMPayload()
+    public function testEzsignfoldersignerassociationResponseCompoundAllOf()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -93,33 +93,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest extends TestC
      * Test attribute "objEzsignsigner"
      */
     public function testPropertyObjEzsignsigner()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "pkiEzsignfoldersignerassociationID"
-     */
-    public function testPropertyPkiEzsignfoldersignerassociationID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsignfolderID"
-     */
-    public function testPropertyFkiEzsignfolderID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bEzsignfoldersignerassociationReceivecopy"
-     */
-    public function testPropertyBEzsignfoldersignerassociationReceivecopy()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

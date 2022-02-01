@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sCustomerCode** | **string** | The customer code specific to the client in which the API request is being made |
 **eActivesessionSessiontype** | **string** | The type of session used for the API request call |
+**eActivesessionWeekdaystart** | [**\eZmaxAPI\Model\FieldEActivesessionWeekdaystart**](FieldEActivesessionWeekdaystart.md) |  |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **sCompanyNameX** | **string** | The name of the active Company in the current language |
 **sDepartmentNameX** | **string** | The name of the active Department in the current language |

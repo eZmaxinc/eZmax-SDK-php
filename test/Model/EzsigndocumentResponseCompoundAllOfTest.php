@@ -1,6 +1,6 @@
 <?php
 /**
- * ActivesessionGetCurrentV1ResponseMPayloadTest
+ * EzsigndocumentResponseCompoundAllOfTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ActivesessionGetCurrentV1ResponseMPayloadTest Class Doc Comment
+ * EzsigndocumentResponseCompoundAllOfTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/activesession/getCurrent API Request
+ * @description EzsigndocumentResponseCompoundAllOf
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ActivesessionGetCurrentV1ResponseMPayloadTest extends TestCase
+class EzsigndocumentResponseCompoundAllOfTest extends TestCase
 {
 
     /**
@@ -72,99 +72,54 @@ class ActivesessionGetCurrentV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "ActivesessionGetCurrentV1ResponseMPayload"
+     * Test "EzsigndocumentResponseCompoundAllOf"
      */
-    public function testActivesessionGetCurrentV1ResponseMPayload()
+    public function testEzsigndocumentResponseCompoundAllOf()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sCustomerCode"
+     * Test attribute "iEzsigndocumentStepformtotal"
      */
-    public function testPropertySCustomerCode()
+    public function testPropertyIEzsigndocumentStepformtotal()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "eActivesessionSessiontype"
+     * Test attribute "iEzsigndocumentStepformcurrent"
      */
-    public function testPropertyEActivesessionSessiontype()
+    public function testPropertyIEzsigndocumentStepformcurrent()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "eActivesessionWeekdaystart"
+     * Test attribute "iEzsigndocumentStepsignaturetotal"
      */
-    public function testPropertyEActivesessionWeekdaystart()
+    public function testPropertyIEzsigndocumentStepsignaturetotal()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "fkiLanguageID"
+     * Test attribute "iEzsigndocumentStepsignatureCurrent"
      */
-    public function testPropertyFkiLanguageID()
+    public function testPropertyIEzsigndocumentStepsignatureCurrent()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sCompanyNameX"
+     * Test attribute "aObjEzsignfoldersignerassociationstatus"
      */
-    public function testPropertySCompanyNameX()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sDepartmentNameX"
-     */
-    public function testPropertySDepartmentNameX()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aRegisteredModules"
-     */
-    public function testPropertyARegisteredModules()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aPermissions"
-     */
-    public function testPropertyAPermissions()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiUserID"
-     */
-    public function testPropertyFkiUserID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiApikeyID"
-     */
-    public function testPropertyFkiApikeyID()
+    public function testPropertyAObjEzsignfoldersignerassociationstatus()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayload
+ * EzsignsignatureRequestCompoundAllOf
  *
  * PHP version 7.3
  *
@@ -33,10 +33,9 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfoldersignerassociationGetObjectV1ResponseMPayload Class Doc Comment
+ * EzsignsignatureRequestCompoundAllOf Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignfoldersignerassociation/getObject API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +43,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignsignatureRequestCompoundAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfoldersignerassociation-getObject-v1-Response-mPayload';
+    protected static $openAPIModelName = 'ezsignsignature_RequestCompound_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,11 +60,8 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objUser' => '\eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser',
-        'objEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerResponseCompound',
-        'pkiEzsignfoldersignerassociationID' => 'int',
-        'fkiEzsignfolderID' => 'int',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bool'
+        'bEzsignsignatureCustomdate' => 'bool',
+        'aObjEzsignsignaturecustomdate' => '\eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]'
     ];
 
     /**
@@ -76,11 +72,8 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objUser' => null,
-        'objEzsignsigner' => null,
-        'pkiEzsignfoldersignerassociationID' => null,
-        'fkiEzsignfolderID' => null,
-        'bEzsignfoldersignerassociationReceivecopy' => null
+        'bEzsignsignatureCustomdate' => null,
+        'aObjEzsignsignaturecustomdate' => null
     ];
 
     /**
@@ -110,11 +103,8 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      * @var string[]
      */
     protected static $attributeMap = [
-        'objUser' => 'objUser',
-        'objEzsignsigner' => 'objEzsignsigner',
-        'pkiEzsignfoldersignerassociationID' => 'pkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'fkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bEzsignfoldersignerassociationReceivecopy'
+        'bEzsignsignatureCustomdate' => 'bEzsignsignatureCustomdate',
+        'aObjEzsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate'
     ];
 
     /**
@@ -123,11 +113,8 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      * @var string[]
      */
     protected static $setters = [
-        'objUser' => 'setObjUser',
-        'objEzsignsigner' => 'setObjEzsignsigner',
-        'pkiEzsignfoldersignerassociationID' => 'setPkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'setBEzsignfoldersignerassociationReceivecopy'
+        'bEzsignsignatureCustomdate' => 'setBEzsignsignatureCustomdate',
+        'aObjEzsignsignaturecustomdate' => 'setAObjEzsignsignaturecustomdate'
     ];
 
     /**
@@ -136,11 +123,8 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      * @var string[]
      */
     protected static $getters = [
-        'objUser' => 'getObjUser',
-        'objEzsignsigner' => 'getObjEzsignsigner',
-        'pkiEzsignfoldersignerassociationID' => 'getPkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'getBEzsignfoldersignerassociationReceivecopy'
+        'bEzsignsignatureCustomdate' => 'getBEzsignsignatureCustomdate',
+        'aObjEzsignsignaturecustomdate' => 'getAObjEzsignsignaturecustomdate'
     ];
 
     /**
@@ -200,11 +184,8 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     public function __construct(array $data = null)
     {
-        $this->container['objUser'] = $data['objUser'] ?? null;
-        $this->container['objEzsignsigner'] = $data['objEzsignsigner'] ?? null;
-        $this->container['pkiEzsignfoldersignerassociationID'] = $data['pkiEzsignfoldersignerassociationID'] ?? null;
-        $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
-        $this->container['bEzsignfoldersignerassociationReceivecopy'] = $data['bEzsignfoldersignerassociationReceivecopy'] ?? null;
+        $this->container['bEzsignsignatureCustomdate'] = $data['bEzsignsignatureCustomdate'] ?? null;
+        $this->container['aObjEzsignsignaturecustomdate'] = $data['aObjEzsignsignaturecustomdate'] ?? null;
     }
 
     /**
@@ -216,15 +197,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     {
         $invalidProperties = [];
 
-        if ($this->container['pkiEzsignfoldersignerassociationID'] === null) {
-            $invalidProperties[] = "'pkiEzsignfoldersignerassociationID' can't be null";
-        }
-        if ($this->container['fkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
-        }
-        if ($this->container['bEzsignfoldersignerassociationReceivecopy'] === null) {
-            $invalidProperties[] = "'bEzsignfoldersignerassociationReceivecopy' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -241,121 +213,49 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
 
 
     /**
-     * Gets objUser
+     * Gets bEzsignsignatureCustomdate
      *
-     * @return \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser|null
+     * @return bool|null
      */
-    public function getObjUser()
+    public function getBEzsignsignatureCustomdate()
     {
-        return $this->container['objUser'];
+        return $this->container['bEzsignsignatureCustomdate'];
     }
 
     /**
-     * Sets objUser
+     * Sets bEzsignsignatureCustomdate
      *
-     * @param \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser|null $objUser objUser
+     * @param bool|null $bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
      *
      * @return self
      */
-    public function setObjUser($objUser)
+    public function setBEzsignsignatureCustomdate($bEzsignsignatureCustomdate)
     {
-        $this->container['objUser'] = $objUser;
+        $this->container['bEzsignsignatureCustomdate'] = $bEzsignsignatureCustomdate;
 
         return $this;
     }
 
     /**
-     * Gets objEzsignsigner
+     * Gets aObjEzsignsignaturecustomdate
      *
-     * @return \eZmaxAPI\Model\EzsignsignerResponseCompound|null
+     * @return \eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]|null
      */
-    public function getObjEzsignsigner()
+    public function getAObjEzsignsignaturecustomdate()
     {
-        return $this->container['objEzsignsigner'];
+        return $this->container['aObjEzsignsignaturecustomdate'];
     }
 
     /**
-     * Sets objEzsignsigner
+     * Sets aObjEzsignsignaturecustomdate
      *
-     * @param \eZmaxAPI\Model\EzsignsignerResponseCompound|null $objEzsignsigner objEzsignsigner
+     * @param \eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]|null $aObjEzsignsignaturecustomdate An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
      *
      * @return self
      */
-    public function setObjEzsignsigner($objEzsignsigner)
+    public function setAObjEzsignsignaturecustomdate($aObjEzsignsignaturecustomdate)
     {
-        $this->container['objEzsignsigner'] = $objEzsignsigner;
-
-        return $this;
-    }
-
-    /**
-     * Gets pkiEzsignfoldersignerassociationID
-     *
-     * @return int
-     */
-    public function getPkiEzsignfoldersignerassociationID()
-    {
-        return $this->container['pkiEzsignfoldersignerassociationID'];
-    }
-
-    /**
-     * Sets pkiEzsignfoldersignerassociationID
-     *
-     * @param int $pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
-     *
-     * @return self
-     */
-    public function setPkiEzsignfoldersignerassociationID($pkiEzsignfoldersignerassociationID)
-    {
-        $this->container['pkiEzsignfoldersignerassociationID'] = $pkiEzsignfoldersignerassociationID;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignfolderID
-     *
-     * @return int
-     */
-    public function getFkiEzsignfolderID()
-    {
-        return $this->container['fkiEzsignfolderID'];
-    }
-
-    /**
-     * Sets fkiEzsignfolderID
-     *
-     * @param int $fkiEzsignfolderID The unique ID of the Ezsignfolder
-     *
-     * @return self
-     */
-    public function setFkiEzsignfolderID($fkiEzsignfolderID)
-    {
-        $this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsignfoldersignerassociationReceivecopy
-     *
-     * @return bool
-     */
-    public function getBEzsignfoldersignerassociationReceivecopy()
-    {
-        return $this->container['bEzsignfoldersignerassociationReceivecopy'];
-    }
-
-    /**
-     * Sets bEzsignfoldersignerassociationReceivecopy
-     *
-     * @param bool $bEzsignfoldersignerassociationReceivecopy If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
-     *
-     * @return self
-     */
-    public function setBEzsignfoldersignerassociationReceivecopy($bEzsignfoldersignerassociationReceivecopy)
-    {
-        $this->container['bEzsignfoldersignerassociationReceivecopy'] = $bEzsignfoldersignerassociationReceivecopy;
+        $this->container['aObjEzsignsignaturecustomdate'] = $aObjEzsignsignaturecustomdate;
 
         return $this;
     }

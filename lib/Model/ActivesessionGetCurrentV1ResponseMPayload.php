@@ -63,6 +63,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     protected static $openAPITypes = [
         'sCustomerCode' => 'string',
         'eActivesessionSessiontype' => 'string',
+        'eActivesessionWeekdaystart' => '\eZmaxAPI\Model\FieldEActivesessionWeekdaystart',
         'fkiLanguageID' => 'int',
         'sCompanyNameX' => 'string',
         'sDepartmentNameX' => 'string',
@@ -82,6 +83,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     protected static $openAPIFormats = [
         'sCustomerCode' => null,
         'eActivesessionSessiontype' => null,
+        'eActivesessionWeekdaystart' => null,
         'fkiLanguageID' => null,
         'sCompanyNameX' => null,
         'sDepartmentNameX' => null,
@@ -120,6 +122,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     protected static $attributeMap = [
         'sCustomerCode' => 'sCustomerCode',
         'eActivesessionSessiontype' => 'eActivesessionSessiontype',
+        'eActivesessionWeekdaystart' => 'eActivesessionWeekdaystart',
         'fkiLanguageID' => 'fkiLanguageID',
         'sCompanyNameX' => 'sCompanyNameX',
         'sDepartmentNameX' => 'sDepartmentNameX',
@@ -137,6 +140,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     protected static $setters = [
         'sCustomerCode' => 'setSCustomerCode',
         'eActivesessionSessiontype' => 'setEActivesessionSessiontype',
+        'eActivesessionWeekdaystart' => 'setEActivesessionWeekdaystart',
         'fkiLanguageID' => 'setFkiLanguageID',
         'sCompanyNameX' => 'setSCompanyNameX',
         'sDepartmentNameX' => 'setSDepartmentNameX',
@@ -154,6 +158,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     protected static $getters = [
         'sCustomerCode' => 'getSCustomerCode',
         'eActivesessionSessiontype' => 'getEActivesessionSessiontype',
+        'eActivesessionWeekdaystart' => 'getEActivesessionWeekdaystart',
         'fkiLanguageID' => 'getFkiLanguageID',
         'sCompanyNameX' => 'getSCompanyNameX',
         'sDepartmentNameX' => 'getSDepartmentNameX',
@@ -235,6 +240,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     {
         $this->container['sCustomerCode'] = $data['sCustomerCode'] ?? null;
         $this->container['eActivesessionSessiontype'] = $data['eActivesessionSessiontype'] ?? null;
+        $this->container['eActivesessionWeekdaystart'] = $data['eActivesessionWeekdaystart'] ?? null;
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
         $this->container['sCompanyNameX'] = $data['sCompanyNameX'] ?? null;
         $this->container['sDepartmentNameX'] = $data['sDepartmentNameX'] ?? null;
@@ -268,6 +274,9 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
             );
         }
 
+        if ($this->container['eActivesessionWeekdaystart'] === null) {
+            $invalidProperties[] = "'eActivesessionWeekdaystart' can't be null";
+        }
         if ($this->container['fkiLanguageID'] === null) {
             $invalidProperties[] = "'fkiLanguageID' can't be null";
         }
@@ -366,6 +375,30 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
             );
         }
         $this->container['eActivesessionSessiontype'] = $eActivesessionSessiontype;
+
+        return $this;
+    }
+
+    /**
+     * Gets eActivesessionWeekdaystart
+     *
+     * @return \eZmaxAPI\Model\FieldEActivesessionWeekdaystart
+     */
+    public function getEActivesessionWeekdaystart()
+    {
+        return $this->container['eActivesessionWeekdaystart'];
+    }
+
+    /**
+     * Sets eActivesessionWeekdaystart
+     *
+     * @param \eZmaxAPI\Model\FieldEActivesessionWeekdaystart $eActivesessionWeekdaystart eActivesessionWeekdaystart
+     *
+     * @return self
+     */
+    public function setEActivesessionWeekdaystart($eActivesessionWeekdaystart)
+    {
+        $this->container['eActivesessionWeekdaystart'] = $eActivesessionWeekdaystart;
 
         return $this;
     }

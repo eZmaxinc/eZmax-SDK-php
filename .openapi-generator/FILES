@@ -102,6 +102,7 @@ docs/Model/EzsigndocumentRequest.md
 docs/Model/EzsigndocumentRequestCompound.md
 docs/Model/EzsigndocumentResponse.md
 docs/Model/EzsigndocumentResponseCompound.md
+docs/Model/EzsigndocumentResponseCompoundAllOf.md
 docs/Model/EzsignfolderCreateObjectV1Request.md
 docs/Model/EzsignfolderCreateObjectV1Response.md
 docs/Model/EzsignfolderCreateObjectV1ResponseAllOf.md
@@ -147,6 +148,7 @@ docs/Model/EzsignfoldersignerassociationRequestCompound.md
 docs/Model/EzsignfoldersignerassociationRequestCompoundAllOf.md
 docs/Model/EzsignfoldersignerassociationResponse.md
 docs/Model/EzsignfoldersignerassociationResponseCompound.md
+docs/Model/EzsignfoldersignerassociationResponseCompoundAllOf.md
 docs/Model/EzsignfoldersignerassociationResponseCompoundUser.md
 docs/Model/EzsignfoldertypeGetListV1Response.md
 docs/Model/EzsignfoldertypeGetListV1ResponseAllOf.md
@@ -168,6 +170,7 @@ docs/Model/EzsignsignatureGetObjectV1Response.md
 docs/Model/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/Model/EzsignsignatureRequest.md
 docs/Model/EzsignsignatureRequestCompound.md
+docs/Model/EzsignsignatureRequestCompoundAllOf.md
 docs/Model/EzsignsignaturecustomdateRequest.md
 docs/Model/EzsignsignerRequest.md
 docs/Model/EzsignsignerRequestCompound.md
@@ -182,6 +185,7 @@ docs/Model/EzsigntemplatepackageGetListV1ResponseAllOf.md
 docs/Model/EzsigntemplatepackageGetListV1ResponseMPayload.md
 docs/Model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md
 docs/Model/EzsigntemplatepackageListElement.md
+docs/Model/FieldEActivesessionWeekdaystart.md
 docs/Model/FieldEEzsigndocumentStep.md
 docs/Model/FieldEEzsignfolderSendreminderfrequency.md
 docs/Model/FieldEEzsignfolderStep.md
@@ -338,6 +342,7 @@ lib/Model/EzsigndocumentRequest.php
 lib/Model/EzsigndocumentRequestCompound.php
 lib/Model/EzsigndocumentResponse.php
 lib/Model/EzsigndocumentResponseCompound.php
+lib/Model/EzsigndocumentResponseCompoundAllOf.php
 lib/Model/EzsignfolderCreateObjectV1Request.php
 lib/Model/EzsignfolderCreateObjectV1Response.php
 lib/Model/EzsignfolderCreateObjectV1ResponseAllOf.php
@@ -383,6 +388,7 @@ lib/Model/EzsignfoldersignerassociationRequestCompound.php
 lib/Model/EzsignfoldersignerassociationRequestCompoundAllOf.php
 lib/Model/EzsignfoldersignerassociationResponse.php
 lib/Model/EzsignfoldersignerassociationResponseCompound.php
+lib/Model/EzsignfoldersignerassociationResponseCompoundAllOf.php
 lib/Model/EzsignfoldersignerassociationResponseCompoundUser.php
 lib/Model/EzsignfoldertypeGetListV1Response.php
 lib/Model/EzsignfoldertypeGetListV1ResponseAllOf.php
@@ -404,6 +410,7 @@ lib/Model/EzsignsignatureGetObjectV1Response.php
 lib/Model/EzsignsignatureGetObjectV1ResponseAllOf.php
 lib/Model/EzsignsignatureRequest.php
 lib/Model/EzsignsignatureRequestCompound.php
+lib/Model/EzsignsignatureRequestCompoundAllOf.php
 lib/Model/EzsignsignaturecustomdateRequest.php
 lib/Model/EzsignsignerRequest.php
 lib/Model/EzsignsignerRequestCompound.php
@@ -418,6 +425,7 @@ lib/Model/EzsigntemplatepackageGetListV1ResponseAllOf.php
 lib/Model/EzsigntemplatepackageGetListV1ResponseMPayload.php
 lib/Model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.php
 lib/Model/EzsigntemplatepackageListElement.php
+lib/Model/FieldEActivesessionWeekdaystart.php
 lib/Model/FieldEEzsigndocumentStep.php
 lib/Model/FieldEEzsignfolderSendreminderfrequency.php
 lib/Model/FieldEEzsignfolderStep.php
@@ -572,6 +580,7 @@ test/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1ResponseTest.php
 test/Model/EzsigndocumentRequestCompoundTest.php
 test/Model/EzsigndocumentRequestTest.php
+test/Model/EzsigndocumentResponseCompoundAllOfTest.php
 test/Model/EzsigndocumentResponseCompoundTest.php
 test/Model/EzsigndocumentResponseTest.php
 test/Model/EzsignfolderCreateObjectV1RequestTest.php
@@ -617,6 +626,7 @@ test/Model/EzsignfoldersignerassociationGetObjectV1ResponseTest.php
 test/Model/EzsignfoldersignerassociationRequestCompoundAllOfTest.php
 test/Model/EzsignfoldersignerassociationRequestCompoundTest.php
 test/Model/EzsignfoldersignerassociationRequestTest.php
+test/Model/EzsignfoldersignerassociationResponseCompoundAllOfTest.php
 test/Model/EzsignfoldersignerassociationResponseCompoundTest.php
 test/Model/EzsignfoldersignerassociationResponseCompoundUserTest.php
 test/Model/EzsignfoldersignerassociationResponseTest.php
@@ -638,6 +648,7 @@ test/Model/EzsignsignatureCreateObjectV1ResponseTest.php
 test/Model/EzsignsignatureDeleteObjectV1ResponseTest.php
 test/Model/EzsignsignatureGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignsignatureGetObjectV1ResponseTest.php
+test/Model/EzsignsignatureRequestCompoundAllOfTest.php
 test/Model/EzsignsignatureRequestCompoundTest.php
 test/Model/EzsignsignatureRequestTest.php
 test/Model/EzsignsignaturecustomdateRequestTest.php
@@ -654,6 +665,7 @@ test/Model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOfTest.php
 test/Model/EzsigntemplatepackageGetListV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatepackageGetListV1ResponseTest.php
 test/Model/EzsigntemplatepackageListElementTest.php
+test/Model/FieldEActivesessionWeekdaystartTest.php
 test/Model/FieldEEzsigndocumentStepTest.php
 test/Model/FieldEEzsignfolderSendreminderfrequencyTest.php
 test/Model/FieldEEzsignfolderStepTest.php
