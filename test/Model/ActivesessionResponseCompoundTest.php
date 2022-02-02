@@ -1,6 +1,6 @@
 <?php
 /**
- * ActivesessionGetCurrentV1ResponseMPayloadTest
+ * ActivesessionResponseCompoundTest
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ActivesessionGetCurrentV1ResponseMPayloadTest Class Doc Comment
+ * ActivesessionResponseCompoundTest Class Doc Comment
  *
  * @category    Class
  * @description Payload for the /1/object/activesession/getCurrent API Request
@@ -40,7 +40,7 @@ use PHPUnit\Framework\TestCase;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ActivesessionGetCurrentV1ResponseMPayloadTest extends TestCase
+class ActivesessionResponseCompoundTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class ActivesessionGetCurrentV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "ActivesessionGetCurrentV1ResponseMPayload"
+     * Test "ActivesessionResponseCompound"
      */
-    public function testActivesessionGetCurrentV1ResponseMPayload()
+    public function testActivesessionResponseCompound()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

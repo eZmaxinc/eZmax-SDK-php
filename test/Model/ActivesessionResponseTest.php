@@ -1,6 +1,6 @@
 <?php
 /**
- * ActivesessionGetCurrentV1ResponseMPayloadTest
+ * ActivesessionResponseTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ActivesessionGetCurrentV1ResponseMPayloadTest Class Doc Comment
+ * ActivesessionResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/activesession/getCurrent API Request
+ * @description An Activesession Object
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ActivesessionGetCurrentV1ResponseMPayloadTest extends TestCase
+class ActivesessionResponseTest extends TestCase
 {
 
     /**
@@ -72,54 +72,9 @@ class ActivesessionGetCurrentV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test "ActivesessionGetCurrentV1ResponseMPayload"
+     * Test "ActivesessionResponse"
      */
-    public function testActivesessionGetCurrentV1ResponseMPayload()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aPkiPermissionID"
-     */
-    public function testPropertyAPkiPermissionID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objUserReal"
-     */
-    public function testPropertyObjUserReal()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objUserCloned"
-     */
-    public function testPropertyObjUserCloned()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objApikey"
-     */
-    public function testPropertyObjApikey()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aEModuleInternalname"
-     */
-    public function testPropertyAEModuleInternalname()
+    public function testActivesessionResponse()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

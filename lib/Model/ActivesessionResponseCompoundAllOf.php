@@ -1,6 +1,6 @@
 <?php
 /**
- * ActivesessionGetCurrentV1ResponseMPayload
+ * ActivesessionResponseCompoundAllOf
  *
  * PHP version 7.3
  *
@@ -33,10 +33,9 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * ActivesessionGetCurrentV1ResponseMPayload Class Doc Comment
+ * ActivesessionResponseCompoundAllOf Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/activesession/getCurrent API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +43,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class ActivesessionResponseCompoundAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $openAPIModelName = 'activesession-getCurrent-v1-Response-mPayload';
+    protected static $openAPIModelName = 'activesession_ResponseCompound_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -65,14 +64,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         'objUserReal' => '\eZmaxAPI\Model\ActivesessionResponseCompoundUser',
         'objUserCloned' => '\eZmaxAPI\Model\ActivesessionResponseCompoundUser',
         'objApikey' => '\eZmaxAPI\Model\ActivesessionResponseCompoundApikey',
-        'aEModuleInternalname' => 'string[]',
-        'eActivesessionSessiontype' => '\eZmaxAPI\Model\FieldEActivesessionSessiontype',
-        'eActivesessionWeekdaystart' => '\eZmaxAPI\Model\FieldEActivesessionWeekdaystart',
-        'fkiLanguageID' => 'int',
-        'sCompanyNameX' => 'string',
-        'sDepartmentNameX' => 'string',
-        'bActivesessionDebug' => 'bool',
-        'pksCustomerCode' => 'string'
+        'aEModuleInternalname' => 'string[]'
     ];
 
     /**
@@ -87,14 +79,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         'objUserReal' => null,
         'objUserCloned' => null,
         'objApikey' => null,
-        'aEModuleInternalname' => null,
-        'eActivesessionSessiontype' => null,
-        'eActivesessionWeekdaystart' => null,
-        'fkiLanguageID' => null,
-        'sCompanyNameX' => null,
-        'sDepartmentNameX' => null,
-        'bActivesessionDebug' => null,
-        'pksCustomerCode' => null
+        'aEModuleInternalname' => null
     ];
 
     /**
@@ -128,14 +113,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         'objUserReal' => 'objUserReal',
         'objUserCloned' => 'objUserCloned',
         'objApikey' => 'objApikey',
-        'aEModuleInternalname' => 'a_eModuleInternalname',
-        'eActivesessionSessiontype' => 'eActivesessionSessiontype',
-        'eActivesessionWeekdaystart' => 'eActivesessionWeekdaystart',
-        'fkiLanguageID' => 'fkiLanguageID',
-        'sCompanyNameX' => 'sCompanyNameX',
-        'sDepartmentNameX' => 'sDepartmentNameX',
-        'bActivesessionDebug' => 'bActivesessionDebug',
-        'pksCustomerCode' => 'pksCustomerCode'
+        'aEModuleInternalname' => 'a_eModuleInternalname'
     ];
 
     /**
@@ -148,14 +126,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         'objUserReal' => 'setObjUserReal',
         'objUserCloned' => 'setObjUserCloned',
         'objApikey' => 'setObjApikey',
-        'aEModuleInternalname' => 'setAEModuleInternalname',
-        'eActivesessionSessiontype' => 'setEActivesessionSessiontype',
-        'eActivesessionWeekdaystart' => 'setEActivesessionWeekdaystart',
-        'fkiLanguageID' => 'setFkiLanguageID',
-        'sCompanyNameX' => 'setSCompanyNameX',
-        'sDepartmentNameX' => 'setSDepartmentNameX',
-        'bActivesessionDebug' => 'setBActivesessionDebug',
-        'pksCustomerCode' => 'setPksCustomerCode'
+        'aEModuleInternalname' => 'setAEModuleInternalname'
     ];
 
     /**
@@ -168,14 +139,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         'objUserReal' => 'getObjUserReal',
         'objUserCloned' => 'getObjUserCloned',
         'objApikey' => 'getObjApikey',
-        'aEModuleInternalname' => 'getAEModuleInternalname',
-        'eActivesessionSessiontype' => 'getEActivesessionSessiontype',
-        'eActivesessionWeekdaystart' => 'getEActivesessionWeekdaystart',
-        'fkiLanguageID' => 'getFkiLanguageID',
-        'sCompanyNameX' => 'getSCompanyNameX',
-        'sDepartmentNameX' => 'getSDepartmentNameX',
-        'bActivesessionDebug' => 'getBActivesessionDebug',
-        'pksCustomerCode' => 'getPksCustomerCode'
+        'aEModuleInternalname' => 'getAEModuleInternalname'
     ];
 
     /**
@@ -240,13 +204,6 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         $this->container['objUserCloned'] = $data['objUserCloned'] ?? null;
         $this->container['objApikey'] = $data['objApikey'] ?? null;
         $this->container['aEModuleInternalname'] = $data['aEModuleInternalname'] ?? null;
-        $this->container['eActivesessionSessiontype'] = $data['eActivesessionSessiontype'] ?? null;
-        $this->container['eActivesessionWeekdaystart'] = $data['eActivesessionWeekdaystart'] ?? null;
-        $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
-        $this->container['sCompanyNameX'] = $data['sCompanyNameX'] ?? null;
-        $this->container['sDepartmentNameX'] = $data['sDepartmentNameX'] ?? null;
-        $this->container['bActivesessionDebug'] = $data['bActivesessionDebug'] ?? null;
-        $this->container['pksCustomerCode'] = $data['pksCustomerCode'] ?? null;
     }
 
     /**
@@ -267,43 +224,6 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         if ($this->container['aEModuleInternalname'] === null) {
             $invalidProperties[] = "'aEModuleInternalname' can't be null";
         }
-        if ($this->container['eActivesessionSessiontype'] === null) {
-            $invalidProperties[] = "'eActivesessionSessiontype' can't be null";
-        }
-        if ($this->container['eActivesessionWeekdaystart'] === null) {
-            $invalidProperties[] = "'eActivesessionWeekdaystart' can't be null";
-        }
-        if ($this->container['fkiLanguageID'] === null) {
-            $invalidProperties[] = "'fkiLanguageID' can't be null";
-        }
-        if (($this->container['fkiLanguageID'] > 2)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
-        }
-
-        if (($this->container['fkiLanguageID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['sCompanyNameX'] === null) {
-            $invalidProperties[] = "'sCompanyNameX' can't be null";
-        }
-        if ($this->container['sDepartmentNameX'] === null) {
-            $invalidProperties[] = "'sDepartmentNameX' can't be null";
-        }
-        if ($this->container['bActivesessionDebug'] === null) {
-            $invalidProperties[] = "'bActivesessionDebug' can't be null";
-        }
-        if ($this->container['pksCustomerCode'] === null) {
-            $invalidProperties[] = "'pksCustomerCode' can't be null";
-        }
-        if ((mb_strlen($this->container['pksCustomerCode']) > 6)) {
-            $invalidProperties[] = "invalid value for 'pksCustomerCode', the character length must be smaller than or equal to 6.";
-        }
-
-        if ((mb_strlen($this->container['pksCustomerCode']) < 2)) {
-            $invalidProperties[] = "invalid value for 'pksCustomerCode', the character length must be bigger than or equal to 2.";
-        }
-
         return $invalidProperties;
     }
 
@@ -435,189 +355,6 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     public function setAEModuleInternalname($aEModuleInternalname)
     {
         $this->container['aEModuleInternalname'] = $aEModuleInternalname;
-
-        return $this;
-    }
-
-    /**
-     * Gets eActivesessionSessiontype
-     *
-     * @return \eZmaxAPI\Model\FieldEActivesessionSessiontype
-     */
-    public function getEActivesessionSessiontype()
-    {
-        return $this->container['eActivesessionSessiontype'];
-    }
-
-    /**
-     * Sets eActivesessionSessiontype
-     *
-     * @param \eZmaxAPI\Model\FieldEActivesessionSessiontype $eActivesessionSessiontype eActivesessionSessiontype
-     *
-     * @return self
-     */
-    public function setEActivesessionSessiontype($eActivesessionSessiontype)
-    {
-        $this->container['eActivesessionSessiontype'] = $eActivesessionSessiontype;
-
-        return $this;
-    }
-
-    /**
-     * Gets eActivesessionWeekdaystart
-     *
-     * @return \eZmaxAPI\Model\FieldEActivesessionWeekdaystart
-     */
-    public function getEActivesessionWeekdaystart()
-    {
-        return $this->container['eActivesessionWeekdaystart'];
-    }
-
-    /**
-     * Sets eActivesessionWeekdaystart
-     *
-     * @param \eZmaxAPI\Model\FieldEActivesessionWeekdaystart $eActivesessionWeekdaystart eActivesessionWeekdaystart
-     *
-     * @return self
-     */
-    public function setEActivesessionWeekdaystart($eActivesessionWeekdaystart)
-    {
-        $this->container['eActivesessionWeekdaystart'] = $eActivesessionWeekdaystart;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiLanguageID
-     *
-     * @return int
-     */
-    public function getFkiLanguageID()
-    {
-        return $this->container['fkiLanguageID'];
-    }
-
-    /**
-     * Sets fkiLanguageID
-     *
-     * @param int $fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     *
-     * @return self
-     */
-    public function setFkiLanguageID($fkiLanguageID)
-    {
-
-        if (($fkiLanguageID > 2)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionGetCurrentV1ResponseMPayload., must be smaller than or equal to 2.');
-        }
-        if (($fkiLanguageID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionGetCurrentV1ResponseMPayload., must be bigger than or equal to 1.');
-        }
-
-        $this->container['fkiLanguageID'] = $fkiLanguageID;
-
-        return $this;
-    }
-
-    /**
-     * Gets sCompanyNameX
-     *
-     * @return string
-     */
-    public function getSCompanyNameX()
-    {
-        return $this->container['sCompanyNameX'];
-    }
-
-    /**
-     * Sets sCompanyNameX
-     *
-     * @param string $sCompanyNameX The Name of the Company in the language of the requester
-     *
-     * @return self
-     */
-    public function setSCompanyNameX($sCompanyNameX)
-    {
-        $this->container['sCompanyNameX'] = $sCompanyNameX;
-
-        return $this;
-    }
-
-    /**
-     * Gets sDepartmentNameX
-     *
-     * @return string
-     */
-    public function getSDepartmentNameX()
-    {
-        return $this->container['sDepartmentNameX'];
-    }
-
-    /**
-     * Sets sDepartmentNameX
-     *
-     * @param string $sDepartmentNameX The Name of the Department in the language of the requester
-     *
-     * @return self
-     */
-    public function setSDepartmentNameX($sDepartmentNameX)
-    {
-        $this->container['sDepartmentNameX'] = $sDepartmentNameX;
-
-        return $this;
-    }
-
-    /**
-     * Gets bActivesessionDebug
-     *
-     * @return bool
-     */
-    public function getBActivesessionDebug()
-    {
-        return $this->container['bActivesessionDebug'];
-    }
-
-    /**
-     * Sets bActivesessionDebug
-     *
-     * @param bool $bActivesessionDebug Whether the active session is in debug or not
-     *
-     * @return self
-     */
-    public function setBActivesessionDebug($bActivesessionDebug)
-    {
-        $this->container['bActivesessionDebug'] = $bActivesessionDebug;
-
-        return $this;
-    }
-
-    /**
-     * Gets pksCustomerCode
-     *
-     * @return string
-     */
-    public function getPksCustomerCode()
-    {
-        return $this->container['pksCustomerCode'];
-    }
-
-    /**
-     * Sets pksCustomerCode
-     *
-     * @param string $pksCustomerCode The customer code assigned to your account
-     *
-     * @return self
-     */
-    public function setPksCustomerCode($pksCustomerCode)
-    {
-        if ((mb_strlen($pksCustomerCode) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling ActivesessionGetCurrentV1ResponseMPayload., must be smaller than or equal to 6.');
-        }
-        if ((mb_strlen($pksCustomerCode) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling ActivesessionGetCurrentV1ResponseMPayload., must be bigger than or equal to 2.');
-        }
-
-        $this->container['pksCustomerCode'] = $pksCustomerCode;
 
         return $this;
     }

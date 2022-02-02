@@ -1,6 +1,6 @@
 <?php
 /**
- * XxxxTest
+ * ActivesessionResponseCompoundAllOfTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * XxxxTest Class Doc Comment
+ * ActivesessionResponseCompoundAllOfTest Class Doc Comment
  *
  * @category    Class
- * @description Test
+ * @description ActivesessionResponseCompoundAllOf
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class XxxxTest extends TestCase
+class ActivesessionResponseCompoundAllOfTest extends TestCase
 {
 
     /**
@@ -72,27 +72,54 @@ class XxxxTest extends TestCase
     }
 
     /**
-     * Test "Xxxx"
+     * Test "ActivesessionResponseCompoundAllOf"
      */
-    public function testXxxx()
+    public function testActivesessionResponseCompoundAllOf()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "foo"
+     * Test attribute "aPkiPermissionID"
      */
-    public function testPropertyFoo()
+    public function testPropertyAPkiPermissionID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "bar"
+     * Test attribute "objUserReal"
      */
-    public function testPropertyBar()
+    public function testPropertyObjUserReal()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objUserCloned"
+     */
+    public function testPropertyObjUserCloned()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objApikey"
+     */
+    public function testPropertyObjApikey()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aEModuleInternalname"
+     */
+    public function testPropertyAEModuleInternalname()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

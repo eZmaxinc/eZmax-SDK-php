@@ -1,14 +1,9 @@
-# # ActivesessionGetCurrentV1ResponseMPayload
+# # ActivesessionResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aPkiPermissionID** | **int[]** | An array of permissions granted to the user or api key |
-**objUserReal** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  |
-**objUserCloned** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional]
-**objApikey** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundApikey**](ActivesessionResponseCompoundApikey.md) |  | [optional]
-**aEModuleInternalname** | **string[]** | An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key. |
 **eActivesessionSessiontype** | [**\eZmaxAPI\Model\FieldEActivesessionSessiontype**](FieldEActivesessionSessiontype.md) |  |
 **eActivesessionWeekdaystart** | [**\eZmaxAPI\Model\FieldEActivesessionWeekdaystart**](FieldEActivesessionWeekdaystart.md) |  |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |

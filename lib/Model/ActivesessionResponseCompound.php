@@ -1,6 +1,6 @@
 <?php
 /**
- * ActivesessionGetCurrentV1ResponseMPayload
+ * ActivesessionResponseCompound
  *
  * PHP version 7.3
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * ActivesessionGetCurrentV1ResponseMPayload Class Doc Comment
+ * ActivesessionResponseCompound Class Doc Comment
  *
  * @category Class
  * @description Payload for the /1/object/activesession/getCurrent API Request
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $openAPIModelName = 'activesession-getCurrent-v1-Response-mPayload';
+    protected static $openAPIModelName = 'activesession-ResponseCompound';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -508,10 +508,10 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     {
 
         if (($fkiLanguageID > 2)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionGetCurrentV1ResponseMPayload., must be smaller than or equal to 2.');
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionResponseCompound., must be smaller than or equal to 2.');
         }
         if (($fkiLanguageID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionGetCurrentV1ResponseMPayload., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionResponseCompound., must be bigger than or equal to 1.');
         }
 
         $this->container['fkiLanguageID'] = $fkiLanguageID;
@@ -611,10 +611,10 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     public function setPksCustomerCode($pksCustomerCode)
     {
         if ((mb_strlen($pksCustomerCode) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling ActivesessionGetCurrentV1ResponseMPayload., must be smaller than or equal to 6.');
+            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling ActivesessionResponseCompound., must be smaller than or equal to 6.');
         }
         if ((mb_strlen($pksCustomerCode) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling ActivesessionGetCurrentV1ResponseMPayload., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling ActivesessionResponseCompound., must be bigger than or equal to 2.');
         }
 
         $this->container['pksCustomerCode'] = $pksCustomerCode;

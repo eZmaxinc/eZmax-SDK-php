@@ -25,6 +25,11 @@ docs/Api/ObjectPeriodApi.md
 docs/Model/ActivesessionGetCurrentV1Response.md
 docs/Model/ActivesessionGetCurrentV1ResponseAllOf.md
 docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md
+docs/Model/ActivesessionResponse.md
+docs/Model/ActivesessionResponseCompound.md
+docs/Model/ActivesessionResponseCompoundAllOf.md
+docs/Model/ActivesessionResponseCompoundApikey.md
+docs/Model/ActivesessionResponseCompoundUser.md
 docs/Model/AddressRequest.md
 docs/Model/ApikeyCreateObjectV1Request.md
 docs/Model/ApikeyCreateObjectV1Response.md
@@ -185,6 +190,7 @@ docs/Model/EzsigntemplatepackageGetListV1ResponseAllOf.md
 docs/Model/EzsigntemplatepackageGetListV1ResponseMPayload.md
 docs/Model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md
 docs/Model/EzsigntemplatepackageListElement.md
+docs/Model/FieldEActivesessionSessiontype.md
 docs/Model/FieldEActivesessionWeekdaystart.md
 docs/Model/FieldEEzsigndocumentStep.md
 docs/Model/FieldEEzsignfolderSendreminderfrequency.md
@@ -239,7 +245,6 @@ docs/Model/WebhookResponse.md
 docs/Model/WebhookUserUserCreated.md
 docs/Model/WebhookUserUserCreatedAllOf.md
 docs/Model/WebsiteRequest.md
-docs/Model/Xxxx.md
 git_push.sh
 lib/Api/GlobalCustomerApi.php
 lib/Api/ModuleAuthenticateApi.php
@@ -265,6 +270,11 @@ lib/HeaderSelector.php
 lib/Model/ActivesessionGetCurrentV1Response.php
 lib/Model/ActivesessionGetCurrentV1ResponseAllOf.php
 lib/Model/ActivesessionGetCurrentV1ResponseMPayload.php
+lib/Model/ActivesessionResponse.php
+lib/Model/ActivesessionResponseCompound.php
+lib/Model/ActivesessionResponseCompoundAllOf.php
+lib/Model/ActivesessionResponseCompoundApikey.php
+lib/Model/ActivesessionResponseCompoundUser.php
 lib/Model/AddressRequest.php
 lib/Model/ApikeyCreateObjectV1Request.php
 lib/Model/ApikeyCreateObjectV1Response.php
@@ -425,6 +435,7 @@ lib/Model/EzsigntemplatepackageGetListV1ResponseAllOf.php
 lib/Model/EzsigntemplatepackageGetListV1ResponseMPayload.php
 lib/Model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.php
 lib/Model/EzsigntemplatepackageListElement.php
+lib/Model/FieldEActivesessionSessiontype.php
 lib/Model/FieldEActivesessionWeekdaystart.php
 lib/Model/FieldEEzsigndocumentStep.php
 lib/Model/FieldEEzsignfolderSendreminderfrequency.php
@@ -480,7 +491,6 @@ lib/Model/WebhookResponse.php
 lib/Model/WebhookUserUserCreated.php
 lib/Model/WebhookUserUserCreatedAllOf.php
 lib/Model/WebsiteRequest.php
-lib/Model/Xxxx.php
 lib/ObjectSerializer.php
 lib/RequestSignature.php
 phpunit.xml.dist
@@ -505,6 +515,11 @@ test/Api/ObjectPeriodApiTest.php
 test/Model/ActivesessionGetCurrentV1ResponseAllOfTest.php
 test/Model/ActivesessionGetCurrentV1ResponseMPayloadTest.php
 test/Model/ActivesessionGetCurrentV1ResponseTest.php
+test/Model/ActivesessionResponseCompoundAllOfTest.php
+test/Model/ActivesessionResponseCompoundApikeyTest.php
+test/Model/ActivesessionResponseCompoundTest.php
+test/Model/ActivesessionResponseCompoundUserTest.php
+test/Model/ActivesessionResponseTest.php
 test/Model/AddressRequestTest.php
 test/Model/ApikeyCreateObjectV1RequestTest.php
 test/Model/ApikeyCreateObjectV1ResponseAllOfTest.php
@@ -665,6 +680,7 @@ test/Model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOfTest.php
 test/Model/EzsigntemplatepackageGetListV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatepackageGetListV1ResponseTest.php
 test/Model/EzsigntemplatepackageListElementTest.php
+test/Model/FieldEActivesessionSessiontypeTest.php
 test/Model/FieldEActivesessionWeekdaystartTest.php
 test/Model/FieldEEzsigndocumentStepTest.php
 test/Model/FieldEEzsignfolderSendreminderfrequencyTest.php
@@ -719,4 +735,3 @@ test/Model/WebhookResponseTest.php
 test/Model/WebhookUserUserCreatedAllOfTest.php
 test/Model/WebhookUserUserCreatedTest.php
 test/Model/WebsiteRequestTest.php
-test/Model/XxxxTest.php

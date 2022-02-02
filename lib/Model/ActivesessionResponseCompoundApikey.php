@@ -1,6 +1,6 @@
 <?php
 /**
- * Xxxx
+ * ActivesessionResponseCompoundApikey
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * Xxxx Class Doc Comment
+ * ActivesessionResponseCompoundApikey Class Doc Comment
  *
  * @category Class
- * @description Test
+ * @description An Activesession-&gt;Apikey object and children to create a complete structure
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
+class ActivesessionResponseCompoundApikey implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'xxxx';
+    protected static $openAPIModelName = 'activesession-ResponseCompound-Apikey';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,8 +61,8 @@ class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'foo' => 'int',
-        'bar' => 'int'
+        'pkiApikeyID' => 'int',
+        'sApikeyDescriptionX' => 'string'
     ];
 
     /**
@@ -73,8 +73,8 @@ class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'foo' => null,
-        'bar' => null
+        'pkiApikeyID' => null,
+        'sApikeyDescriptionX' => null
     ];
 
     /**
@@ -104,8 +104,8 @@ class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'foo' => 'foo',
-        'bar' => 'bar'
+        'pkiApikeyID' => 'pkiApikeyID',
+        'sApikeyDescriptionX' => 'sApikeyDescriptionX'
     ];
 
     /**
@@ -114,8 +114,8 @@ class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'foo' => 'setFoo',
-        'bar' => 'setBar'
+        'pkiApikeyID' => 'setPkiApikeyID',
+        'sApikeyDescriptionX' => 'setSApikeyDescriptionX'
     ];
 
     /**
@@ -124,8 +124,8 @@ class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'foo' => 'getFoo',
-        'bar' => 'getBar'
+        'pkiApikeyID' => 'getPkiApikeyID',
+        'sApikeyDescriptionX' => 'getSApikeyDescriptionX'
     ];
 
     /**
@@ -185,8 +185,8 @@ class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['foo'] = $data['foo'] ?? null;
-        $this->container['bar'] = $data['bar'] ?? null;
+        $this->container['pkiApikeyID'] = $data['pkiApikeyID'] ?? null;
+        $this->container['sApikeyDescriptionX'] = $data['sApikeyDescriptionX'] ?? null;
     }
 
     /**
@@ -198,11 +198,11 @@ class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['foo'] === null) {
-            $invalidProperties[] = "'foo' can't be null";
+        if ($this->container['pkiApikeyID'] === null) {
+            $invalidProperties[] = "'pkiApikeyID' can't be null";
         }
-        if ($this->container['bar'] === null) {
-            $invalidProperties[] = "'bar' can't be null";
+        if ($this->container['sApikeyDescriptionX'] === null) {
+            $invalidProperties[] = "'sApikeyDescriptionX' can't be null";
         }
         return $invalidProperties;
     }
@@ -220,49 +220,49 @@ class Xxxx implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets foo
+     * Gets pkiApikeyID
      *
      * @return int
      */
-    public function getFoo()
+    public function getPkiApikeyID()
     {
-        return $this->container['foo'];
+        return $this->container['pkiApikeyID'];
     }
 
     /**
-     * Sets foo
+     * Sets pkiApikeyID
      *
-     * @param int $foo foo
+     * @param int $pkiApikeyID The unique ID of the Apikey
      *
      * @return self
      */
-    public function setFoo($foo)
+    public function setPkiApikeyID($pkiApikeyID)
     {
-        $this->container['foo'] = $foo;
+        $this->container['pkiApikeyID'] = $pkiApikeyID;
 
         return $this;
     }
 
     /**
-     * Gets bar
+     * Gets sApikeyDescriptionX
      *
-     * @return int
+     * @return string
      */
-    public function getBar()
+    public function getSApikeyDescriptionX()
     {
-        return $this->container['bar'];
+        return $this->container['sApikeyDescriptionX'];
     }
 
     /**
-     * Sets bar
+     * Sets sApikeyDescriptionX
      *
-     * @param int $bar bar
+     * @param string $sApikeyDescriptionX The description of the Apikey in the language of the requester
      *
      * @return self
      */
-    public function setBar($bar)
+    public function setSApikeyDescriptionX($sApikeyDescriptionX)
     {
-        $this->container['bar'] = $bar;
+        $this->container['sApikeyDescriptionX'] = $sApikeyDescriptionX;
 
         return $this;
     }
