@@ -63,6 +63,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     protected static $openAPITypes = [
         'bEzsignsignatureCustomdate' => 'bool',
         'aObjEzsignsignaturecustomdate' => '\eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]',
+        'pkiEzsignsignatureID' => 'int',
         'fkiEzsignfoldersignerassociationID' => 'int',
         'iEzsignpagePagenumber' => 'int',
         'iEzsignsignatureX' => 'int',
@@ -82,6 +83,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     protected static $openAPIFormats = [
         'bEzsignsignatureCustomdate' => null,
         'aObjEzsignsignaturecustomdate' => null,
+        'pkiEzsignsignatureID' => null,
         'fkiEzsignfoldersignerassociationID' => null,
         'iEzsignpagePagenumber' => null,
         'iEzsignsignatureX' => null,
@@ -120,6 +122,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     protected static $attributeMap = [
         'bEzsignsignatureCustomdate' => 'bEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
+        'pkiEzsignsignatureID' => 'pkiEzsignsignatureID',
         'fkiEzsignfoldersignerassociationID' => 'fkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'iEzsignpagePagenumber',
         'iEzsignsignatureX' => 'iEzsignsignatureX',
@@ -137,6 +140,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     protected static $setters = [
         'bEzsignsignatureCustomdate' => 'setBEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'setAObjEzsignsignaturecustomdate',
+        'pkiEzsignsignatureID' => 'setPkiEzsignsignatureID',
         'fkiEzsignfoldersignerassociationID' => 'setFkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'setIEzsignpagePagenumber',
         'iEzsignsignatureX' => 'setIEzsignsignatureX',
@@ -154,6 +158,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     protected static $getters = [
         'bEzsignsignatureCustomdate' => 'getBEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'getAObjEzsignsignaturecustomdate',
+        'pkiEzsignsignatureID' => 'getPkiEzsignsignatureID',
         'fkiEzsignfoldersignerassociationID' => 'getFkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'getIEzsignpagePagenumber',
         'iEzsignsignatureX' => 'getIEzsignsignatureX',
@@ -222,6 +227,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     {
         $this->container['bEzsignsignatureCustomdate'] = $data['bEzsignsignatureCustomdate'] ?? null;
         $this->container['aObjEzsignsignaturecustomdate'] = $data['aObjEzsignsignaturecustomdate'] ?? null;
+        $this->container['pkiEzsignsignatureID'] = $data['pkiEzsignsignatureID'] ?? null;
         $this->container['fkiEzsignfoldersignerassociationID'] = $data['fkiEzsignfoldersignerassociationID'] ?? null;
         $this->container['iEzsignpagePagenumber'] = $data['iEzsignpagePagenumber'] ?? null;
         $this->container['iEzsignsignatureX'] = $data['iEzsignsignatureX'] ?? null;
@@ -320,6 +326,30 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     public function setAObjEzsignsignaturecustomdate($aObjEzsignsignaturecustomdate)
     {
         $this->container['aObjEzsignsignaturecustomdate'] = $aObjEzsignsignaturecustomdate;
+
+        return $this;
+    }
+
+    /**
+     * Gets pkiEzsignsignatureID
+     *
+     * @return int|null
+     */
+    public function getPkiEzsignsignatureID()
+    {
+        return $this->container['pkiEzsignsignatureID'];
+    }
+
+    /**
+     * Sets pkiEzsignsignatureID
+     *
+     * @param int|null $pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     *
+     * @return self
+     */
+    public function setPkiEzsignsignatureID($pkiEzsignsignatureID)
+    {
+        $this->container['pkiEzsignsignatureID'] = $pkiEzsignsignatureID;
 
         return $this;
     }

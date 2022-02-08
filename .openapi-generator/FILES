@@ -113,6 +113,8 @@ docs/Model/EzsignfolderCreateObjectV1Response.md
 docs/Model/EzsignfolderCreateObjectV1ResponseAllOf.md
 docs/Model/EzsignfolderCreateObjectV1ResponseMPayload.md
 docs/Model/EzsignfolderDeleteObjectV1Response.md
+docs/Model/EzsignfolderEditObjectV1Request.md
+docs/Model/EzsignfolderEditObjectV1Response.md
 docs/Model/EzsignfolderGetEzsigndocumentsV1Response.md
 docs/Model/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.md
 docs/Model/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.md
@@ -358,6 +360,8 @@ lib/Model/EzsignfolderCreateObjectV1Response.php
 lib/Model/EzsignfolderCreateObjectV1ResponseAllOf.php
 lib/Model/EzsignfolderCreateObjectV1ResponseMPayload.php
 lib/Model/EzsignfolderDeleteObjectV1Response.php
+lib/Model/EzsignfolderEditObjectV1Request.php
+lib/Model/EzsignfolderEditObjectV1Response.php
 lib/Model/EzsignfolderGetEzsigndocumentsV1Response.php
 lib/Model/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.php
 lib/Model/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.php
@@ -603,6 +607,8 @@ test/Model/EzsignfolderCreateObjectV1ResponseAllOfTest.php
 test/Model/EzsignfolderCreateObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfolderCreateObjectV1ResponseTest.php
 test/Model/EzsignfolderDeleteObjectV1ResponseTest.php
+test/Model/EzsignfolderEditObjectV1RequestTest.php
+test/Model/EzsignfolderEditObjectV1ResponseTest.php
 test/Model/EzsignfolderGetEzsigndocumentsV1ResponseAllOfTest.php
 test/Model/EzsignfolderGetEzsigndocumentsV1ResponseMPayloadTest.php
 test/Model/EzsignfolderGetEzsigndocumentsV1ResponseTest.php

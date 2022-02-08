@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfoldersignerassociationRequest
+ * EzsignfolderEditObjectV1Response
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfoldersignerassociationRequest Class Doc Comment
+ * EzsignfolderEditObjectV1Response Class Doc Comment
  *
  * @category Class
- * @description An Ezsignfoldersignerassociation Object
+ * @description Response for the /1/object/ezsignfolder/editObject API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfolderEditObjectV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfoldersignerassociation-Request';
+    protected static $openAPIModelName = 'ezsignfolder-editObject-v1-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,10 +61,8 @@ class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignfoldersignerassociationID' => 'int',
-        'fkiUserID' => 'int',
-        'fkiEzsignfolderID' => 'int',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bool'
+        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
+        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
 
     /**
@@ -75,10 +73,8 @@ class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignfoldersignerassociationID' => null,
-        'fkiUserID' => null,
-        'fkiEzsignfolderID' => null,
-        'bEzsignfoldersignerassociationReceivecopy' => null
+        'objDebugPayload' => null,
+        'objDebug' => null
     ];
 
     /**
@@ -108,10 +104,8 @@ class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignfoldersignerassociationID' => 'pkiEzsignfoldersignerassociationID',
-        'fkiUserID' => 'fkiUserID',
-        'fkiEzsignfolderID' => 'fkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bEzsignfoldersignerassociationReceivecopy'
+        'objDebugPayload' => 'objDebugPayload',
+        'objDebug' => 'objDebug'
     ];
 
     /**
@@ -120,10 +114,8 @@ class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignfoldersignerassociationID' => 'setPkiEzsignfoldersignerassociationID',
-        'fkiUserID' => 'setFkiUserID',
-        'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'setBEzsignfoldersignerassociationReceivecopy'
+        'objDebugPayload' => 'setObjDebugPayload',
+        'objDebug' => 'setObjDebug'
     ];
 
     /**
@@ -132,10 +124,8 @@ class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignfoldersignerassociationID' => 'getPkiEzsignfoldersignerassociationID',
-        'fkiUserID' => 'getFkiUserID',
-        'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationReceivecopy' => 'getBEzsignfoldersignerassociationReceivecopy'
+        'objDebugPayload' => 'getObjDebugPayload',
+        'objDebug' => 'getObjDebug'
     ];
 
     /**
@@ -195,10 +185,8 @@ class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['pkiEzsignfoldersignerassociationID'] = $data['pkiEzsignfoldersignerassociationID'] ?? null;
-        $this->container['fkiUserID'] = $data['fkiUserID'] ?? null;
-        $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
-        $this->container['bEzsignfoldersignerassociationReceivecopy'] = $data['bEzsignfoldersignerassociationReceivecopy'] ?? null;
+        $this->container['objDebugPayload'] = $data['objDebugPayload'] ?? null;
+        $this->container['objDebug'] = $data['objDebug'] ?? null;
     }
 
     /**
@@ -210,9 +198,6 @@ class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
-        if ($this->container['fkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -229,97 +214,49 @@ class EzsignfoldersignerassociationRequest implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets pkiEzsignfoldersignerassociationID
+     * Gets objDebugPayload
      *
-     * @return int|null
+     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayload|null
      */
-    public function getPkiEzsignfoldersignerassociationID()
+    public function getObjDebugPayload()
     {
-        return $this->container['pkiEzsignfoldersignerassociationID'];
+        return $this->container['objDebugPayload'];
     }
 
     /**
-     * Sets pkiEzsignfoldersignerassociationID
+     * Sets objDebugPayload
      *
-     * @param int|null $pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayload|null $objDebugPayload objDebugPayload
      *
      * @return self
      */
-    public function setPkiEzsignfoldersignerassociationID($pkiEzsignfoldersignerassociationID)
+    public function setObjDebugPayload($objDebugPayload)
     {
-        $this->container['pkiEzsignfoldersignerassociationID'] = $pkiEzsignfoldersignerassociationID;
+        $this->container['objDebugPayload'] = $objDebugPayload;
 
         return $this;
     }
 
     /**
-     * Gets fkiUserID
+     * Gets objDebug
      *
-     * @return int|null
+     * @return \eZmaxAPI\Model\CommonResponseObjDebug|null
      */
-    public function getFkiUserID()
+    public function getObjDebug()
     {
-        return $this->container['fkiUserID'];
+        return $this->container['objDebug'];
     }
 
     /**
-     * Sets fkiUserID
+     * Sets objDebug
      *
-     * @param int|null $fkiUserID The unique ID of the User
+     * @param \eZmaxAPI\Model\CommonResponseObjDebug|null $objDebug objDebug
      *
      * @return self
      */
-    public function setFkiUserID($fkiUserID)
+    public function setObjDebug($objDebug)
     {
-        $this->container['fkiUserID'] = $fkiUserID;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignfolderID
-     *
-     * @return int
-     */
-    public function getFkiEzsignfolderID()
-    {
-        return $this->container['fkiEzsignfolderID'];
-    }
-
-    /**
-     * Sets fkiEzsignfolderID
-     *
-     * @param int $fkiEzsignfolderID The unique ID of the Ezsignfolder
-     *
-     * @return self
-     */
-    public function setFkiEzsignfolderID($fkiEzsignfolderID)
-    {
-        $this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsignfoldersignerassociationReceivecopy
-     *
-     * @return bool|null
-     */
-    public function getBEzsignfoldersignerassociationReceivecopy()
-    {
-        return $this->container['bEzsignfoldersignerassociationReceivecopy'];
-    }
-
-    /**
-     * Sets bEzsignfoldersignerassociationReceivecopy
-     *
-     * @param bool|null $bEzsignfoldersignerassociationReceivecopy If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
-     *
-     * @return self
-     */
-    public function setBEzsignfoldersignerassociationReceivecopy($bEzsignfoldersignerassociationReceivecopy)
-    {
-        $this->container['bEzsignfoldersignerassociationReceivecopy'] = $bEzsignfoldersignerassociationReceivecopy;
+        $this->container['objDebug'] = $objDebug;
 
         return $this;
     }

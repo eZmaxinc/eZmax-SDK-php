@@ -61,6 +61,7 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
+        'pkiEzsignfolderID' => 'int',
         'fkiEzsignfoldertypeID' => 'int',
         'fkiEzsigntsarequirementID' => 'int',
         'sEzsignfolderDescription' => 'string',
@@ -76,6 +77,7 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'pkiEzsignfolderID' => null,
         'fkiEzsignfoldertypeID' => null,
         'fkiEzsigntsarequirementID' => null,
         'sEzsignfolderDescription' => null,
@@ -110,6 +112,7 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
+        'pkiEzsignfolderID' => 'pkiEzsignfolderID',
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
         'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID',
         'sEzsignfolderDescription' => 'sEzsignfolderDescription',
@@ -123,6 +126,7 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
+        'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
         'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID',
         'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
@@ -136,6 +140,7 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
+        'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
         'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID',
         'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
@@ -200,6 +205,7 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
+        $this->container['pkiEzsignfolderID'] = $data['pkiEzsignfolderID'] ?? null;
         $this->container['fkiEzsignfoldertypeID'] = $data['fkiEzsignfoldertypeID'] ?? null;
         $this->container['fkiEzsigntsarequirementID'] = $data['fkiEzsigntsarequirementID'] ?? null;
         $this->container['sEzsignfolderDescription'] = $data['sEzsignfolderDescription'] ?? null;
@@ -253,6 +259,30 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets pkiEzsignfolderID
+     *
+     * @return int|null
+     */
+    public function getPkiEzsignfolderID()
+    {
+        return $this->container['pkiEzsignfolderID'];
+    }
+
+    /**
+     * Sets pkiEzsignfolderID
+     *
+     * @param int|null $pkiEzsignfolderID The unique ID of the Ezsignfolder
+     *
+     * @return self
+     */
+    public function setPkiEzsignfolderID($pkiEzsignfolderID)
+    {
+        $this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
+
+        return $this;
+    }
 
     /**
      * Gets fkiEzsignfoldertypeID

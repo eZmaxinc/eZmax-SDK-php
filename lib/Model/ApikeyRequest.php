@@ -61,6 +61,7 @@ class ApikeyRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'pkiApikeyID' => 'int',
         'fkiUserID' => 'int',
         'objApikeyDescription' => '\eZmaxAPI\Model\MultilingualApikeyDescription'
     ];
@@ -73,6 +74,7 @@ class ApikeyRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'pkiApikeyID' => null,
         'fkiUserID' => null,
         'objApikeyDescription' => null
     ];
@@ -104,6 +106,7 @@ class ApikeyRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'pkiApikeyID' => 'pkiApikeyID',
         'fkiUserID' => 'fkiUserID',
         'objApikeyDescription' => 'objApikeyDescription'
     ];
@@ -114,6 +117,7 @@ class ApikeyRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'pkiApikeyID' => 'setPkiApikeyID',
         'fkiUserID' => 'setFkiUserID',
         'objApikeyDescription' => 'setObjApikeyDescription'
     ];
@@ -124,6 +128,7 @@ class ApikeyRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'pkiApikeyID' => 'getPkiApikeyID',
         'fkiUserID' => 'getFkiUserID',
         'objApikeyDescription' => 'getObjApikeyDescription'
     ];
@@ -185,6 +190,7 @@ class ApikeyRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['pkiApikeyID'] = $data['pkiApikeyID'] ?? null;
         $this->container['fkiUserID'] = $data['fkiUserID'] ?? null;
         $this->container['objApikeyDescription'] = $data['objApikeyDescription'] ?? null;
     }
@@ -218,6 +224,30 @@ class ApikeyRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets pkiApikeyID
+     *
+     * @return int|null
+     */
+    public function getPkiApikeyID()
+    {
+        return $this->container['pkiApikeyID'];
+    }
+
+    /**
+     * Sets pkiApikeyID
+     *
+     * @param int|null $pkiApikeyID The unique ID of the Apikey
+     *
+     * @return self
+     */
+    public function setPkiApikeyID($pkiApikeyID)
+    {
+        $this->container['pkiApikeyID'] = $pkiApikeyID;
+
+        return $this;
+    }
 
     /**
      * Gets fkiUserID

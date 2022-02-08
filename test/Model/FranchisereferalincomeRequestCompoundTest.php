@@ -99,6 +99,15 @@ class FranchisereferalincomeRequestCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "pkiFranchisereferalincomeID"
+     */
+    public function testPropertyPkiFranchisereferalincomeID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "fkiFranchisebrokerID"
      */
     public function testPropertyFkiFranchisebrokerID()

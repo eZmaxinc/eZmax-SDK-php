@@ -61,6 +61,7 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
+        'pkiEzsignsignatureID' => 'int',
         'fkiEzsignfoldersignerassociationID' => 'int',
         'iEzsignpagePagenumber' => 'int',
         'iEzsignsignatureX' => 'int',
@@ -78,6 +79,7 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'pkiEzsignsignatureID' => null,
         'fkiEzsignfoldersignerassociationID' => null,
         'iEzsignpagePagenumber' => null,
         'iEzsignsignatureX' => null,
@@ -114,6 +116,7 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'pkiEzsignsignatureID' => 'pkiEzsignsignatureID',
         'fkiEzsignfoldersignerassociationID' => 'fkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'iEzsignpagePagenumber',
         'iEzsignsignatureX' => 'iEzsignsignatureX',
@@ -129,6 +132,7 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'pkiEzsignsignatureID' => 'setPkiEzsignsignatureID',
         'fkiEzsignfoldersignerassociationID' => 'setFkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'setIEzsignpagePagenumber',
         'iEzsignsignatureX' => 'setIEzsignsignatureX',
@@ -144,6 +148,7 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'pkiEzsignsignatureID' => 'getPkiEzsignsignatureID',
         'fkiEzsignfoldersignerassociationID' => 'getFkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'getIEzsignpagePagenumber',
         'iEzsignsignatureX' => 'getIEzsignsignatureX',
@@ -210,6 +215,7 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
+        $this->container['pkiEzsignsignatureID'] = $data['pkiEzsignsignatureID'] ?? null;
         $this->container['fkiEzsignfoldersignerassociationID'] = $data['fkiEzsignfoldersignerassociationID'] ?? null;
         $this->container['iEzsignpagePagenumber'] = $data['iEzsignpagePagenumber'] ?? null;
         $this->container['iEzsignsignatureX'] = $data['iEzsignsignatureX'] ?? null;
@@ -263,6 +269,30 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets pkiEzsignsignatureID
+     *
+     * @return int|null
+     */
+    public function getPkiEzsignsignatureID()
+    {
+        return $this->container['pkiEzsignsignatureID'];
+    }
+
+    /**
+     * Sets pkiEzsignsignatureID
+     *
+     * @param int|null $pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     *
+     * @return self
+     */
+    public function setPkiEzsignsignatureID($pkiEzsignsignatureID)
+    {
+        $this->container['pkiEzsignsignatureID'] = $pkiEzsignsignatureID;
+
+        return $this;
+    }
 
     /**
      * Gets fkiEzsignfoldersignerassociationID

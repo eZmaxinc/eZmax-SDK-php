@@ -61,6 +61,7 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
+        'pkiFranchisereferalincomeID' => 'int',
         'fkiFranchisebrokerID' => 'int',
         'fkiFranchisereferalincomeprogramID' => 'int',
         'fkiPeriodID' => 'int',
@@ -82,6 +83,7 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'pkiFranchisereferalincomeID' => null,
         'fkiFranchisebrokerID' => null,
         'fkiFranchisereferalincomeprogramID' => null,
         'fkiPeriodID' => null,
@@ -122,6 +124,7 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
+        'pkiFranchisereferalincomeID' => 'pkiFranchisereferalincomeID',
         'fkiFranchisebrokerID' => 'fkiFranchisebrokerID',
         'fkiFranchisereferalincomeprogramID' => 'fkiFranchisereferalincomeprogramID',
         'fkiPeriodID' => 'fkiPeriodID',
@@ -141,6 +144,7 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
+        'pkiFranchisereferalincomeID' => 'setPkiFranchisereferalincomeID',
         'fkiFranchisebrokerID' => 'setFkiFranchisebrokerID',
         'fkiFranchisereferalincomeprogramID' => 'setFkiFranchisereferalincomeprogramID',
         'fkiPeriodID' => 'setFkiPeriodID',
@@ -160,6 +164,7 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
+        'pkiFranchisereferalincomeID' => 'getPkiFranchisereferalincomeID',
         'fkiFranchisebrokerID' => 'getFkiFranchisebrokerID',
         'fkiFranchisereferalincomeprogramID' => 'getFkiFranchisereferalincomeprogramID',
         'fkiPeriodID' => 'getFkiPeriodID',
@@ -230,6 +235,7 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
+        $this->container['pkiFranchisereferalincomeID'] = $data['pkiFranchisereferalincomeID'] ?? null;
         $this->container['fkiFranchisebrokerID'] = $data['fkiFranchisebrokerID'] ?? null;
         $this->container['fkiFranchisereferalincomeprogramID'] = $data['fkiFranchisereferalincomeprogramID'] ?? null;
         $this->container['fkiPeriodID'] = $data['fkiPeriodID'] ?? null;
@@ -299,6 +305,30 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets pkiFranchisereferalincomeID
+     *
+     * @return int|null
+     */
+    public function getPkiFranchisereferalincomeID()
+    {
+        return $this->container['pkiFranchisereferalincomeID'];
+    }
+
+    /**
+     * Sets pkiFranchisereferalincomeID
+     *
+     * @param int|null $pkiFranchisereferalincomeID The unique ID of the Franchisereferalincome
+     *
+     * @return self
+     */
+    public function setPkiFranchisereferalincomeID($pkiFranchisereferalincomeID)
+    {
+        $this->container['pkiFranchisereferalincomeID'] = $pkiFranchisereferalincomeID;
+
+        return $this;
+    }
 
     /**
      * Gets fkiFranchisebrokerID

@@ -62,6 +62,7 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
       */
     protected static $openAPITypes = [
         'objEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerRequestCompound',
+        'pkiEzsignfoldersignerassociationID' => 'int',
         'fkiUserID' => 'int',
         'fkiEzsignfolderID' => 'int',
         'bEzsignfoldersignerassociationReceivecopy' => 'bool'
@@ -76,6 +77,7 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
       */
     protected static $openAPIFormats = [
         'objEzsignsigner' => null,
+        'pkiEzsignfoldersignerassociationID' => null,
         'fkiUserID' => null,
         'fkiEzsignfolderID' => null,
         'bEzsignfoldersignerassociationReceivecopy' => null
@@ -109,6 +111,7 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
      */
     protected static $attributeMap = [
         'objEzsignsigner' => 'objEzsignsigner',
+        'pkiEzsignfoldersignerassociationID' => 'pkiEzsignfoldersignerassociationID',
         'fkiUserID' => 'fkiUserID',
         'fkiEzsignfolderID' => 'fkiEzsignfolderID',
         'bEzsignfoldersignerassociationReceivecopy' => 'bEzsignfoldersignerassociationReceivecopy'
@@ -121,6 +124,7 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
      */
     protected static $setters = [
         'objEzsignsigner' => 'setObjEzsignsigner',
+        'pkiEzsignfoldersignerassociationID' => 'setPkiEzsignfoldersignerassociationID',
         'fkiUserID' => 'setFkiUserID',
         'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
         'bEzsignfoldersignerassociationReceivecopy' => 'setBEzsignfoldersignerassociationReceivecopy'
@@ -133,6 +137,7 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
      */
     protected static $getters = [
         'objEzsignsigner' => 'getObjEzsignsigner',
+        'pkiEzsignfoldersignerassociationID' => 'getPkiEzsignfoldersignerassociationID',
         'fkiUserID' => 'getFkiUserID',
         'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
         'bEzsignfoldersignerassociationReceivecopy' => 'getBEzsignfoldersignerassociationReceivecopy'
@@ -196,6 +201,7 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     public function __construct(array $data = null)
     {
         $this->container['objEzsignsigner'] = $data['objEzsignsigner'] ?? null;
+        $this->container['pkiEzsignfoldersignerassociationID'] = $data['pkiEzsignfoldersignerassociationID'] ?? null;
         $this->container['fkiUserID'] = $data['fkiUserID'] ?? null;
         $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
         $this->container['bEzsignfoldersignerassociationReceivecopy'] = $data['bEzsignfoldersignerassociationReceivecopy'] ?? null;
@@ -248,6 +254,30 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     public function setObjEzsignsigner($objEzsignsigner)
     {
         $this->container['objEzsignsigner'] = $objEzsignsigner;
+
+        return $this;
+    }
+
+    /**
+     * Gets pkiEzsignfoldersignerassociationID
+     *
+     * @return int|null
+     */
+    public function getPkiEzsignfoldersignerassociationID()
+    {
+        return $this->container['pkiEzsignfoldersignerassociationID'];
+    }
+
+    /**
+     * Sets pkiEzsignfoldersignerassociationID
+     *
+     * @param int|null $pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     *
+     * @return self
+     */
+    public function setPkiEzsignfoldersignerassociationID($pkiEzsignfoldersignerassociationID)
+    {
+        $this->container['pkiEzsignfoldersignerassociationID'] = $pkiEzsignfoldersignerassociationID;
 
         return $this;
     }

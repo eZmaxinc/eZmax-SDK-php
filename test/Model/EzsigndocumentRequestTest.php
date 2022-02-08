@@ -81,6 +81,15 @@ class EzsigndocumentRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "pkiEzsigndocumentID"
+     */
+    public function testPropertyPkiEzsigndocumentID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "eEzsigndocumentSource"
      */
     public function testPropertyEEzsigndocumentSource()

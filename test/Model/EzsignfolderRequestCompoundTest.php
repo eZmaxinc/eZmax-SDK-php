@@ -81,6 +81,15 @@ class EzsignfolderRequestCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "pkiEzsignfolderID"
+     */
+    public function testPropertyPkiEzsignfolderID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "fkiEzsignfoldertypeID"
      */
     public function testPropertyFkiEzsignfoldertypeID()

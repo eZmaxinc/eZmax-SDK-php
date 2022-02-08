@@ -81,6 +81,15 @@ class ApikeyRequestCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "pkiApikeyID"
+     */
+    public function testPropertyPkiApikeyID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "fkiUserID"
      */
     public function testPropertyFkiUserID()

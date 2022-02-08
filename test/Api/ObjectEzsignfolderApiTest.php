@@ -97,6 +97,18 @@ class ObjectEzsignfolderApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignfolderEditObjectV1
+     *
+     * Edit an Ezsignfolder.
+     *
+     */
+    public function testEzsignfolderEditObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignfolderGetEzsigndocumentsV1
      *
      * Retrieve an existing Ezsignfolder's Ezsigndocuments.

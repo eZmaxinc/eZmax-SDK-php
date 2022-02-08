@@ -99,6 +99,15 @@ class EzsignsignatureRequestCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "pkiEzsignsignatureID"
+     */
+    public function testPropertyPkiEzsignsignatureID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "fkiEzsignfoldersignerassociationID"
      */
     public function testPropertyFkiEzsignfoldersignerassociationID()

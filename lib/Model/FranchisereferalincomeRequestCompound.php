@@ -63,6 +63,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'objAddress' => '\eZmaxAPI\Model\AddressRequest',
         'aObjContact' => '\eZmaxAPI\Model\ContactRequestCompound[]',
+        'pkiFranchisereferalincomeID' => 'int',
         'fkiFranchisebrokerID' => 'int',
         'fkiFranchisereferalincomeprogramID' => 'int',
         'fkiPeriodID' => 'int',
@@ -86,6 +87,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     protected static $openAPIFormats = [
         'objAddress' => null,
         'aObjContact' => null,
+        'pkiFranchisereferalincomeID' => null,
         'fkiFranchisebrokerID' => null,
         'fkiFranchisereferalincomeprogramID' => null,
         'fkiPeriodID' => null,
@@ -128,6 +130,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     protected static $attributeMap = [
         'objAddress' => 'objAddress',
         'aObjContact' => 'a_objContact',
+        'pkiFranchisereferalincomeID' => 'pkiFranchisereferalincomeID',
         'fkiFranchisebrokerID' => 'fkiFranchisebrokerID',
         'fkiFranchisereferalincomeprogramID' => 'fkiFranchisereferalincomeprogramID',
         'fkiPeriodID' => 'fkiPeriodID',
@@ -149,6 +152,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     protected static $setters = [
         'objAddress' => 'setObjAddress',
         'aObjContact' => 'setAObjContact',
+        'pkiFranchisereferalincomeID' => 'setPkiFranchisereferalincomeID',
         'fkiFranchisebrokerID' => 'setFkiFranchisebrokerID',
         'fkiFranchisereferalincomeprogramID' => 'setFkiFranchisereferalincomeprogramID',
         'fkiPeriodID' => 'setFkiPeriodID',
@@ -170,6 +174,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     protected static $getters = [
         'objAddress' => 'getObjAddress',
         'aObjContact' => 'getAObjContact',
+        'pkiFranchisereferalincomeID' => 'getPkiFranchisereferalincomeID',
         'fkiFranchisebrokerID' => 'getFkiFranchisebrokerID',
         'fkiFranchisereferalincomeprogramID' => 'getFkiFranchisereferalincomeprogramID',
         'fkiPeriodID' => 'getFkiPeriodID',
@@ -242,6 +247,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     {
         $this->container['objAddress'] = $data['objAddress'] ?? null;
         $this->container['aObjContact'] = $data['aObjContact'] ?? null;
+        $this->container['pkiFranchisereferalincomeID'] = $data['pkiFranchisereferalincomeID'] ?? null;
         $this->container['fkiFranchisebrokerID'] = $data['fkiFranchisebrokerID'] ?? null;
         $this->container['fkiFranchisereferalincomeprogramID'] = $data['fkiFranchisereferalincomeprogramID'] ?? null;
         $this->container['fkiPeriodID'] = $data['fkiPeriodID'] ?? null;
@@ -362,6 +368,30 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     public function setAObjContact($aObjContact)
     {
         $this->container['aObjContact'] = $aObjContact;
+
+        return $this;
+    }
+
+    /**
+     * Gets pkiFranchisereferalincomeID
+     *
+     * @return int|null
+     */
+    public function getPkiFranchisereferalincomeID()
+    {
+        return $this->container['pkiFranchisereferalincomeID'];
+    }
+
+    /**
+     * Sets pkiFranchisereferalincomeID
+     *
+     * @param int|null $pkiFranchisereferalincomeID The unique ID of the Franchisereferalincome
+     *
+     * @return self
+     */
+    public function setPkiFranchisereferalincomeID($pkiFranchisereferalincomeID)
+    {
+        $this->container['pkiFranchisereferalincomeID'] = $pkiFranchisereferalincomeID;
 
         return $this;
     }
