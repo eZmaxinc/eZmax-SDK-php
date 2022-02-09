@@ -99,7 +99,7 @@ class ObjectEzsignfolderApiTest extends TestCase
     /**
      * Test case for ezsignfolderEditObjectV1
      *
-     * Edit an Ezsignfolder.
+     * Modify an existing Ezsignfolder.
      *
      */
     public function testEzsignfolderEditObjectV1()

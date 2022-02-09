@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**ezsigndocumentGetFormDataV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetFormDataV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
 [**ezsigndocumentGetObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
 [**ezsigndocumentGetWordsPositionsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetWordsPositionsV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
+[**ezsigndocumentPatchObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentPatchObjectV1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument
 
 
 ## `ezsigndocumentApplyEzsigntemplateV1()`
@@ -559,6 +560,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Response**](../Model/EzsigndocumentGetWordsPositionsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentPatchObjectV1()`
+
+```php
+ezsigndocumentPatchObjectV1($pkiEzsigndocumentID, $ezsigndocumentPatchObjectV1Request): \eZmaxAPI\Model\EzsigndocumentPatchObjectV1Response
+```
+
+Patch an existing Ezsigndocument
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+$ezsigndocumentPatchObjectV1Request = new \eZmaxAPI\Model\EzsigndocumentPatchObjectV1Request(); // \eZmaxAPI\Model\EzsigndocumentPatchObjectV1Request
+
+try {
+    $result = $apiInstance->ezsigndocumentPatchObjectV1($pkiEzsigndocumentID, $ezsigndocumentPatchObjectV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentPatchObjectV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **int**|  |
+ **ezsigndocumentPatchObjectV1Request** | [**\eZmaxAPI\Model\EzsigndocumentPatchObjectV1Request**](../Model/EzsigndocumentPatchObjectV1Request.md)|  |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentPatchObjectV1Response**](../Model/EzsigndocumentPatchObjectV1Response.md)
 
 ### Authorization
 

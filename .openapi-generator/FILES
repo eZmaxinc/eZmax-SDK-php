@@ -103,8 +103,11 @@ docs/Model/EzsigndocumentGetObjectV1ResponseMPayload.md
 docs/Model/EzsigndocumentGetWordsPositionsV1Request.md
 docs/Model/EzsigndocumentGetWordsPositionsV1Response.md
 docs/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
+docs/Model/EzsigndocumentPatchObjectV1Request.md
+docs/Model/EzsigndocumentPatchObjectV1Response.md
 docs/Model/EzsigndocumentRequest.md
 docs/Model/EzsigndocumentRequestCompound.md
+docs/Model/EzsigndocumentRequestPatch.md
 docs/Model/EzsigndocumentResponse.md
 docs/Model/EzsigndocumentResponseCompound.md
 docs/Model/EzsigndocumentResponseCompoundAllOf.md
@@ -350,8 +353,11 @@ lib/Model/EzsigndocumentGetObjectV1ResponseMPayload.php
 lib/Model/EzsigndocumentGetWordsPositionsV1Request.php
 lib/Model/EzsigndocumentGetWordsPositionsV1Response.php
 lib/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.php
+lib/Model/EzsigndocumentPatchObjectV1Request.php
+lib/Model/EzsigndocumentPatchObjectV1Response.php
 lib/Model/EzsigndocumentRequest.php
 lib/Model/EzsigndocumentRequestCompound.php
+lib/Model/EzsigndocumentRequestPatch.php
 lib/Model/EzsigndocumentResponse.php
 lib/Model/EzsigndocumentResponseCompound.php
 lib/Model/EzsigndocumentResponseCompoundAllOf.php
@@ -597,7 +603,10 @@ test/Model/EzsigndocumentGetObjectV1ResponseTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1RequestTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1ResponseTest.php
+test/Model/EzsigndocumentPatchObjectV1RequestTest.php
+test/Model/EzsigndocumentPatchObjectV1ResponseTest.php
 test/Model/EzsigndocumentRequestCompoundTest.php
+test/Model/EzsigndocumentRequestPatchTest.php
 test/Model/EzsigndocumentRequestTest.php
 test/Model/EzsigndocumentResponseCompoundAllOfTest.php
 test/Model/EzsigndocumentResponseCompoundTest.php

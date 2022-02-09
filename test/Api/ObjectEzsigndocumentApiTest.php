@@ -179,4 +179,16 @@ class ObjectEzsigndocumentApiTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test case for ezsigndocumentPatchObjectV1
+     *
+     * Patch an existing Ezsigndocument.
+     *
+     */
+    public function testEzsigndocumentPatchObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

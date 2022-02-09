@@ -728,14 +728,14 @@ class ObjectEzsignfolderApi
     /**
      * Operation ezsignfolderEditObjectV1
      *
-     * Edit an Ezsignfolder
+     * Modify an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request ezsignfolderEditObjectV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError
+     * @return \eZmaxAPI\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
     public function ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
     {
@@ -746,14 +746,14 @@ class ObjectEzsignfolderApi
     /**
      * Operation ezsignfolderEditObjectV1WithHttpInfo
      *
-     * Edit an Ezsignfolder
+     * Modify an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
     public function ezsignfolderEditObjectV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
     {
@@ -819,6 +819,18 @@ class ObjectEzsignfolderApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\eZmaxAPI\Model\EzsignfolderEditObjectV1Response';
@@ -852,6 +864,14 @@ class ObjectEzsignfolderApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -860,7 +880,7 @@ class ObjectEzsignfolderApi
     /**
      * Operation ezsignfolderEditObjectV1Async
      *
-     * Edit an Ezsignfolder
+     * Modify an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
@@ -881,7 +901,7 @@ class ObjectEzsignfolderApi
     /**
      * Operation ezsignfolderEditObjectV1AsyncWithHttpInfo
      *
-     * Edit an Ezsignfolder
+     * Modify an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
