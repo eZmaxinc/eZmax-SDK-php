@@ -176,6 +176,8 @@ docs/Model/EzsignsignatureCreateObjectV1Response.md
 docs/Model/EzsignsignatureCreateObjectV1ResponseAllOf.md
 docs/Model/EzsignsignatureCreateObjectV1ResponseMPayload.md
 docs/Model/EzsignsignatureDeleteObjectV1Response.md
+docs/Model/EzsignsignatureEditObjectV1Request.md
+docs/Model/EzsignsignatureEditObjectV1Response.md
 docs/Model/EzsignsignatureGetObjectV1Response.md
 docs/Model/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/Model/EzsignsignatureRequest.md
@@ -426,6 +428,8 @@ lib/Model/EzsignsignatureCreateObjectV1Response.php
 lib/Model/EzsignsignatureCreateObjectV1ResponseAllOf.php
 lib/Model/EzsignsignatureCreateObjectV1ResponseMPayload.php
 lib/Model/EzsignsignatureDeleteObjectV1Response.php
+lib/Model/EzsignsignatureEditObjectV1Request.php
+lib/Model/EzsignsignatureEditObjectV1Response.php
 lib/Model/EzsignsignatureGetObjectV1Response.php
 lib/Model/EzsignsignatureGetObjectV1ResponseAllOf.php
 lib/Model/EzsignsignatureRequest.php
@@ -676,6 +680,8 @@ test/Model/EzsignsignatureCreateObjectV1ResponseAllOfTest.php
 test/Model/EzsignsignatureCreateObjectV1ResponseMPayloadTest.php
 test/Model/EzsignsignatureCreateObjectV1ResponseTest.php
 test/Model/EzsignsignatureDeleteObjectV1ResponseTest.php
+test/Model/EzsignsignatureEditObjectV1RequestTest.php
+test/Model/EzsignsignatureEditObjectV1ResponseTest.php
 test/Model/EzsignsignatureGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignsignatureGetObjectV1ResponseTest.php
 test/Model/EzsignsignatureRequestCompoundAllOfTest.php
