@@ -81,6 +81,15 @@ class EzsignsignaturecustomdateRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "pkiEzsignsignaturecustomdateID"
+     */
+    public function testPropertyPkiEzsignsignaturecustomdateID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "iEzsignsignaturecustomdateX"
      */
     public function testPropertyIEzsignsignaturecustomdateX()

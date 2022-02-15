@@ -61,6 +61,7 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
+        'pkiEzsignsignaturecustomdateID' => 'int',
         'iEzsignsignaturecustomdateX' => 'int',
         'iEzsignsignaturecustomdateY' => 'int',
         'sEzsignsignaturecustomdateFormat' => 'string'
@@ -74,6 +75,7 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'pkiEzsignsignaturecustomdateID' => null,
         'iEzsignsignaturecustomdateX' => null,
         'iEzsignsignaturecustomdateY' => null,
         'sEzsignsignaturecustomdateFormat' => null
@@ -106,6 +108,7 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
+        'pkiEzsignsignaturecustomdateID' => 'pkiEzsignsignaturecustomdateID',
         'iEzsignsignaturecustomdateX' => 'iEzsignsignaturecustomdateX',
         'iEzsignsignaturecustomdateY' => 'iEzsignsignaturecustomdateY',
         'sEzsignsignaturecustomdateFormat' => 'sEzsignsignaturecustomdateFormat'
@@ -117,6 +120,7 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
+        'pkiEzsignsignaturecustomdateID' => 'setPkiEzsignsignaturecustomdateID',
         'iEzsignsignaturecustomdateX' => 'setIEzsignsignaturecustomdateX',
         'iEzsignsignaturecustomdateY' => 'setIEzsignsignaturecustomdateY',
         'sEzsignsignaturecustomdateFormat' => 'setSEzsignsignaturecustomdateFormat'
@@ -128,6 +132,7 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
+        'pkiEzsignsignaturecustomdateID' => 'getPkiEzsignsignaturecustomdateID',
         'iEzsignsignaturecustomdateX' => 'getIEzsignsignaturecustomdateX',
         'iEzsignsignaturecustomdateY' => 'getIEzsignsignaturecustomdateY',
         'sEzsignsignaturecustomdateFormat' => 'getSEzsignsignaturecustomdateFormat'
@@ -190,6 +195,7 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
+        $this->container['pkiEzsignsignaturecustomdateID'] = $data['pkiEzsignsignaturecustomdateID'] ?? null;
         $this->container['iEzsignsignaturecustomdateX'] = $data['iEzsignsignaturecustomdateX'] ?? null;
         $this->container['iEzsignsignaturecustomdateY'] = $data['iEzsignsignaturecustomdateY'] ?? null;
         $this->container['sEzsignsignaturecustomdateFormat'] = $data['sEzsignsignaturecustomdateFormat'] ?? null;
@@ -227,6 +233,30 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets pkiEzsignsignaturecustomdateID
+     *
+     * @return int|null
+     */
+    public function getPkiEzsignsignaturecustomdateID()
+    {
+        return $this->container['pkiEzsignsignaturecustomdateID'];
+    }
+
+    /**
+     * Sets pkiEzsignsignaturecustomdateID
+     *
+     * @param int|null $pkiEzsignsignaturecustomdateID The unique ID of the Ezsignsignaturecustomdate
+     *
+     * @return self
+     */
+    public function setPkiEzsignsignaturecustomdateID($pkiEzsignsignaturecustomdateID)
+    {
+        $this->container['pkiEzsignsignaturecustomdateID'] = $pkiEzsignsignaturecustomdateID;
+
+        return $this;
+    }
 
     /**
      * Gets iEzsignsignaturecustomdateX
