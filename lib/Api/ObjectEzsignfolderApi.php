@@ -728,7 +728,7 @@ class ObjectEzsignfolderApi
     /**
      * Operation ezsignfolderEditObjectV1
      *
-     * Modify an existing Ezsignfolder
+     * Edit an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request ezsignfolderEditObjectV1Request (required)
@@ -746,7 +746,7 @@ class ObjectEzsignfolderApi
     /**
      * Operation ezsignfolderEditObjectV1WithHttpInfo
      *
-     * Modify an existing Ezsignfolder
+     * Edit an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
@@ -880,7 +880,7 @@ class ObjectEzsignfolderApi
     /**
      * Operation ezsignfolderEditObjectV1Async
      *
-     * Modify an existing Ezsignfolder
+     * Edit an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
@@ -901,7 +901,7 @@ class ObjectEzsignfolderApi
     /**
      * Operation ezsignfolderEditObjectV1AsyncWithHttpInfo
      *
-     * Modify an existing Ezsignfolder
+     * Edit an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)

@@ -88,6 +88,7 @@ docs/Model/EzsigndocumentCreateObjectV1Response.md
 docs/Model/EzsigndocumentCreateObjectV1ResponseAllOf.md
 docs/Model/EzsigndocumentCreateObjectV1ResponseMPayload.md
 docs/Model/EzsigndocumentDeleteObjectV1Response.md
+docs/Model/EzsigndocumentEditEzsignsignaturesV1Response.md
 docs/Model/EzsigndocumentGetDownloadUrlV1Response.md
 docs/Model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md
 docs/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md
@@ -340,6 +341,7 @@ lib/Model/EzsigndocumentCreateObjectV1Response.php
 lib/Model/EzsigndocumentCreateObjectV1ResponseAllOf.php
 lib/Model/EzsigndocumentCreateObjectV1ResponseMPayload.php
 lib/Model/EzsigndocumentDeleteObjectV1Response.php
+lib/Model/EzsigndocumentEditEzsignsignaturesV1Response.php
 lib/Model/EzsigndocumentGetDownloadUrlV1Response.php
 lib/Model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.php
 lib/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.php
@@ -592,6 +594,7 @@ test/Model/EzsigndocumentCreateObjectV1ResponseAllOfTest.php
 test/Model/EzsigndocumentCreateObjectV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentCreateObjectV1ResponseTest.php
 test/Model/EzsigndocumentDeleteObjectV1ResponseTest.php
+test/Model/EzsigndocumentEditEzsignsignaturesV1ResponseTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseTest.php

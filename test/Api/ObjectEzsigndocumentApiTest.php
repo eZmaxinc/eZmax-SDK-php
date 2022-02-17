@@ -121,6 +121,18 @@ class ObjectEzsigndocumentApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsigndocumentEditEzsignsignaturesV1
+     *
+     * Edit multiple ezsignsignatures.
+     *
+     */
+    public function testEzsigndocumentEditEzsignsignaturesV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsigndocumentGetDownloadUrlV1
      *
      * Retrieve a URL to download documents..
