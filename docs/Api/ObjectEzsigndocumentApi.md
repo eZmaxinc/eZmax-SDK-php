@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 ## `ezsigndocumentEditEzsignsignaturesV1()`
 
 ```php
-ezsigndocumentEditEzsignsignaturesV1($pkiEzsigndocumentID, $ezsignsignatureRequestCompound): \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Response
+ezsigndocumentEditEzsignsignaturesV1($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request): \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Response
 ```
 
 Edit multiple ezsignsignatures
@@ -297,10 +297,10 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
     $config
 );
 $pkiEzsigndocumentID = 56; // int
-$ezsignsignatureRequestCompound = array(new \eZmaxAPI\Model\EzsignsignatureRequestCompound()); // \eZmaxAPI\Model\EzsignsignatureRequestCompound[]
+$ezsigndocumentEditEzsignsignaturesV1Request = new \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request(); // \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request
 
 try {
-    $result = $apiInstance->ezsigndocumentEditEzsignsignaturesV1($pkiEzsigndocumentID, $ezsignsignatureRequestCompound);
+    $result = $apiInstance->ezsigndocumentEditEzsignsignaturesV1($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentEditEzsignsignaturesV1: ', $e->getMessage(), PHP_EOL;
@@ -312,7 +312,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiEzsigndocumentID** | **int**|  |
- **ezsignsignatureRequestCompound** | [**\eZmaxAPI\Model\EzsignsignatureRequestCompound[]**](../Model/EzsignsignatureRequestCompound.md)|  |
+ **ezsigndocumentEditEzsignsignaturesV1Request** | [**\eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request**](../Model/EzsigndocumentEditEzsignsignaturesV1Request.md)|  |
 
 ### Return type
 

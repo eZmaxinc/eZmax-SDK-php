@@ -1440,15 +1440,15 @@ class ObjectEzsigndocumentApi
      * Edit multiple ezsignsignatures
      *
      * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
-     * @param  \eZmaxAPI\Model\EzsignsignatureRequestCompound[] $ezsignsignatureRequestCompound ezsignsignatureRequestCompound (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request $ezsigndocumentEditEzsignsignaturesV1Request ezsigndocumentEditEzsignsignaturesV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsigndocumentEditEzsignsignaturesV1($pkiEzsigndocumentID, $ezsignsignatureRequestCompound)
+    public function ezsigndocumentEditEzsignsignaturesV1($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request)
     {
-        list($response) = $this->ezsigndocumentEditEzsignsignaturesV1WithHttpInfo($pkiEzsigndocumentID, $ezsignsignatureRequestCompound);
+        list($response) = $this->ezsigndocumentEditEzsignsignaturesV1WithHttpInfo($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request);
         return $response;
     }
 
@@ -1458,15 +1458,15 @@ class ObjectEzsigndocumentApi
      * Edit multiple ezsignsignatures
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  \eZmaxAPI\Model\EzsignsignatureRequestCompound[] $ezsignsignatureRequestCompound (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request $ezsigndocumentEditEzsignsignaturesV1Request (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigndocumentEditEzsignsignaturesV1WithHttpInfo($pkiEzsigndocumentID, $ezsignsignatureRequestCompound)
+    public function ezsigndocumentEditEzsignsignaturesV1WithHttpInfo($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request)
     {
-        $request = $this->ezsigndocumentEditEzsignsignaturesV1Request($pkiEzsigndocumentID, $ezsignsignatureRequestCompound);
+        $request = $this->ezsigndocumentEditEzsignsignaturesV1Request($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1592,14 +1592,14 @@ class ObjectEzsigndocumentApi
      * Edit multiple ezsignsignatures
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  \eZmaxAPI\Model\EzsignsignatureRequestCompound[] $ezsignsignatureRequestCompound (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request $ezsigndocumentEditEzsignsignaturesV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigndocumentEditEzsignsignaturesV1Async($pkiEzsigndocumentID, $ezsignsignatureRequestCompound)
+    public function ezsigndocumentEditEzsignsignaturesV1Async($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request)
     {
-        return $this->ezsigndocumentEditEzsignsignaturesV1AsyncWithHttpInfo($pkiEzsigndocumentID, $ezsignsignatureRequestCompound)
+        return $this->ezsigndocumentEditEzsignsignaturesV1AsyncWithHttpInfo($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1613,15 +1613,15 @@ class ObjectEzsigndocumentApi
      * Edit multiple ezsignsignatures
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  \eZmaxAPI\Model\EzsignsignatureRequestCompound[] $ezsignsignatureRequestCompound (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request $ezsigndocumentEditEzsignsignaturesV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigndocumentEditEzsignsignaturesV1AsyncWithHttpInfo($pkiEzsigndocumentID, $ezsignsignatureRequestCompound)
+    public function ezsigndocumentEditEzsignsignaturesV1AsyncWithHttpInfo($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request)
     {
         $returnType = '\eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Response';
-        $request = $this->ezsigndocumentEditEzsignsignaturesV1Request($pkiEzsigndocumentID, $ezsignsignatureRequestCompound);
+        $request = $this->ezsigndocumentEditEzsignsignaturesV1Request($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1660,12 +1660,12 @@ class ObjectEzsigndocumentApi
      * Create request for operation 'ezsigndocumentEditEzsignsignaturesV1'
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  \eZmaxAPI\Model\EzsignsignatureRequestCompound[] $ezsignsignatureRequestCompound (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request $ezsigndocumentEditEzsignsignaturesV1Request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigndocumentEditEzsignsignaturesV1Request($pkiEzsigndocumentID, $ezsignsignatureRequestCompound)
+    public function ezsigndocumentEditEzsignsignaturesV1Request($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV1Request)
     {
         // verify the required parameter 'pkiEzsigndocumentID' is set
         if ($pkiEzsigndocumentID === null || (is_array($pkiEzsigndocumentID) && count($pkiEzsigndocumentID) === 0)) {
@@ -1673,10 +1673,10 @@ class ObjectEzsigndocumentApi
                 'Missing the required parameter $pkiEzsigndocumentID when calling ezsigndocumentEditEzsignsignaturesV1'
             );
         }
-        // verify the required parameter 'ezsignsignatureRequestCompound' is set
-        if ($ezsignsignatureRequestCompound === null || (is_array($ezsignsignatureRequestCompound) && count($ezsignsignatureRequestCompound) === 0)) {
+        // verify the required parameter 'ezsigndocumentEditEzsignsignaturesV1Request' is set
+        if ($ezsigndocumentEditEzsignsignaturesV1Request === null || (is_array($ezsigndocumentEditEzsignsignaturesV1Request) && count($ezsigndocumentEditEzsignsignaturesV1Request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $ezsignsignatureRequestCompound when calling ezsigndocumentEditEzsignsignaturesV1'
+                'Missing the required parameter $ezsigndocumentEditEzsignsignaturesV1Request when calling ezsigndocumentEditEzsignsignaturesV1'
             );
         }
 
@@ -1711,11 +1711,11 @@ class ObjectEzsigndocumentApi
         }
 
         // for model (json/xml)
-        if (isset($ezsignsignatureRequestCompound)) {
+        if (isset($ezsigndocumentEditEzsignsignaturesV1Request)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignsignatureRequestCompound));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigndocumentEditEzsignsignaturesV1Request));
             } else {
-                $httpBody = $ezsignsignatureRequestCompound;
+                $httpBody = $ezsigndocumentEditEzsignsignaturesV1Request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
