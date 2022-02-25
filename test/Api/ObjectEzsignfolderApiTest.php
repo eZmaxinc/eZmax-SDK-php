@@ -85,6 +85,18 @@ class ObjectEzsignfolderApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignfolderCreateObjectV2
+     *
+     * Create a new Ezsignfolder.
+     *
+     */
+    public function testEzsignfolderCreateObjectV2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignfolderDeleteObjectV1
      *
      * Delete an existing Ezsignfolder.

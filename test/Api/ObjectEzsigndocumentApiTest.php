@@ -109,6 +109,18 @@ class ObjectEzsigndocumentApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsigndocumentCreateObjectV2
+     *
+     * Create a new Ezsigndocument.
+     *
+     */
+    public function testEzsigndocumentCreateObjectV2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsigndocumentDeleteObjectV1
      *
      * Delete an existing Ezsigndocument.

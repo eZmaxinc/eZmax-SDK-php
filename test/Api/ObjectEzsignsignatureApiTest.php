@@ -85,6 +85,18 @@ class ObjectEzsignsignatureApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignsignatureCreateObjectV2
+     *
+     * Create a new Ezsignsignature.
+     *
+     */
+    public function testEzsignsignatureCreateObjectV2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignsignatureDeleteObjectV1
      *
      * Delete an existing Ezsignsignature.

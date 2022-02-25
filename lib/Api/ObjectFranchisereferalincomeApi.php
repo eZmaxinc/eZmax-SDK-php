@@ -127,6 +127,7 @@ class ObjectFranchisereferalincomeApi
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response
+     * @deprecated
      */
     public function franchisereferalincomeCreateObjectV1($franchisereferalincomeCreateObjectV1Request)
     {
@@ -144,6 +145,7 @@ class ObjectFranchisereferalincomeApi
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function franchisereferalincomeCreateObjectV1WithHttpInfo($franchisereferalincomeCreateObjectV1Request)
     {
@@ -236,6 +238,7 @@ class ObjectFranchisereferalincomeApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function franchisereferalincomeCreateObjectV1Async($franchisereferalincomeCreateObjectV1Request)
     {
@@ -256,6 +259,7 @@ class ObjectFranchisereferalincomeApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function franchisereferalincomeCreateObjectV1AsyncWithHttpInfo($franchisereferalincomeCreateObjectV1Request)
     {
@@ -302,6 +306,7 @@ class ObjectFranchisereferalincomeApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request)
     {
@@ -340,6 +345,289 @@ class ObjectFranchisereferalincomeApi
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($franchisereferalincomeCreateObjectV1Request));
             } else {
                 $httpBody = $franchisereferalincomeCreateObjectV1Request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation franchisereferalincomeCreateObjectV2
+     *
+     * Create a new Franchisereferalincome
+     *
+     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request franchisereferalincomeCreateObjectV2Request (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response
+     */
+    public function franchisereferalincomeCreateObjectV2($franchisereferalincomeCreateObjectV2Request)
+    {
+        list($response) = $this->franchisereferalincomeCreateObjectV2WithHttpInfo($franchisereferalincomeCreateObjectV2Request);
+        return $response;
+    }
+
+    /**
+     * Operation franchisereferalincomeCreateObjectV2WithHttpInfo
+     *
+     * Create a new Franchisereferalincome
+     *
+     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function franchisereferalincomeCreateObjectV2WithHttpInfo($franchisereferalincomeCreateObjectV2Request)
+    {
+        $request = $this->franchisereferalincomeCreateObjectV2Request($franchisereferalincomeCreateObjectV2Request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 201:
+                    if ('\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation franchisereferalincomeCreateObjectV2Async
+     *
+     * Create a new Franchisereferalincome
+     *
+     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function franchisereferalincomeCreateObjectV2Async($franchisereferalincomeCreateObjectV2Request)
+    {
+        return $this->franchisereferalincomeCreateObjectV2AsyncWithHttpInfo($franchisereferalincomeCreateObjectV2Request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation franchisereferalincomeCreateObjectV2AsyncWithHttpInfo
+     *
+     * Create a new Franchisereferalincome
+     *
+     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function franchisereferalincomeCreateObjectV2AsyncWithHttpInfo($franchisereferalincomeCreateObjectV2Request)
+    {
+        $returnType = '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response';
+        $request = $this->franchisereferalincomeCreateObjectV2Request($franchisereferalincomeCreateObjectV2Request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'franchisereferalincomeCreateObjectV2'
+     *
+     * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function franchisereferalincomeCreateObjectV2Request($franchisereferalincomeCreateObjectV2Request)
+    {
+        // verify the required parameter 'franchisereferalincomeCreateObjectV2Request' is set
+        if ($franchisereferalincomeCreateObjectV2Request === null || (is_array($franchisereferalincomeCreateObjectV2Request) && count($franchisereferalincomeCreateObjectV2Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $franchisereferalincomeCreateObjectV2Request when calling franchisereferalincomeCreateObjectV2'
+            );
+        }
+
+        $resourcePath = '/2/object/franchisereferalincome';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($franchisereferalincomeCreateObjectV2Request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($franchisereferalincomeCreateObjectV2Request));
+            } else {
+                $httpBody = $franchisereferalincomeCreateObjectV2Request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

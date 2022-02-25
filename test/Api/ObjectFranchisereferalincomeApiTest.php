@@ -83,4 +83,16 @@ class ObjectFranchisereferalincomeApiTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test case for franchisereferalincomeCreateObjectV2
+     *
+     * Create a new Franchisereferalincome.
+     *
+     */
+    public function testFranchisereferalincomeCreateObjectV2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

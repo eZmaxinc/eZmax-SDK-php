@@ -85,6 +85,18 @@ class ObjectEzsignfoldersignerassociationApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignfoldersignerassociationCreateObjectV2
+     *
+     * Create a new Ezsignfoldersignerassociation.
+     *
+     */
+    public function testEzsignfoldersignerassociationCreateObjectV2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignfoldersignerassociationDeleteObjectV1
      *
      * Delete an existing Ezsignfoldersignerassociation.

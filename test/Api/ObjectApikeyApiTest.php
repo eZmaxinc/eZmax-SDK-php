@@ -83,4 +83,16 @@ class ObjectApikeyApiTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test case for apikeyCreateObjectV2
+     *
+     * Create a new Apikey.
+     *
+     */
+    public function testApikeyCreateObjectV2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }
