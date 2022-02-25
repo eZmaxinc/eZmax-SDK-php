@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ezsignsignatureCreateObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 [**ezsignsignatureDeleteObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
-[**ezsignsignatureGetChildrenV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetChildrenV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs
+[**ezsignsignatureEditObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureEditObjectV1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature
 [**ezsignsignatureGetObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
 
 
@@ -80,6 +80,8 @@ ezsignsignatureDeleteObjectV1($pkiEzsignsignatureID): \eZmaxAPI\Model\Ezsignsign
 
 Delete an existing Ezsignsignature
 
+
+
 ### Example
 
 ```php
@@ -132,15 +134,15 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsignsignatureGetChildrenV1()`
+## `ezsignsignatureEditObjectV1()`
 
 ```php
-ezsignsignatureGetChildrenV1($pkiEzsignsignatureID)
+ezsignsignatureEditObjectV1($pkiEzsignsignatureID, $ezsignsignatureEditObjectV1Request): \eZmaxAPI\Model\EzsignsignatureEditObjectV1Response
 ```
 
-Retrieve an existing Ezsignsignature's children IDs
+Edit an existing Ezsignsignature
 
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
 
 ### Example
 
@@ -162,11 +164,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignsignatureApi(
     $config
 );
 $pkiEzsignsignatureID = 56; // int
+$ezsignsignatureEditObjectV1Request = new \eZmaxAPI\Model\EzsignsignatureEditObjectV1Request(); // \eZmaxAPI\Model\EzsignsignatureEditObjectV1Request
 
 try {
-    $apiInstance->ezsignsignatureGetChildrenV1($pkiEzsignsignatureID);
+    $result = $apiInstance->ezsignsignatureEditObjectV1($pkiEzsignsignatureID, $ezsignsignatureEditObjectV1Request);
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignsignatureApi->ezsignsignatureGetChildrenV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignsignatureApi->ezsignsignatureEditObjectV1: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -175,10 +179,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiEzsignsignatureID** | **int**|  |
+ **ezsignsignatureEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignsignatureEditObjectV1Request**](../Model/EzsignsignatureEditObjectV1Request.md)|  |
 
 ### Return type
 
-void (empty response body)
+[**\eZmaxAPI\Model\EzsignsignatureEditObjectV1Response**](../Model/EzsignsignatureEditObjectV1Response.md)
 
 ### Authorization
 
@@ -186,7 +191,7 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

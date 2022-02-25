@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pkiApikeyID** | **int** | The unique ID of the Apikey | [optional]
 **fkiUserID** | **int** | The unique ID of the User |
 **objApikeyDescription** | [**\eZmaxAPI\Model\MultilingualApikeyDescription**](MultilingualApikeyDescription.md) |  |
 

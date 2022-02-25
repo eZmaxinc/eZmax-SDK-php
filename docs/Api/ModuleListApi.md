@@ -100,7 +100,7 @@ $apiInstance = new eZmaxAPI\Api\ModuleListApi(
     $config
 );
 $sListName = 'sListName_example'; // string | The list Name
-$listSaveListpresentationV1Request = new \eZmaxAPI\Model\ListSaveListpresentationV1Request(); // \eZmaxAPI\Model\ListSaveListpresentationV1Request
+$listSaveListpresentationV1Request = new \eZmaxAPI\Model\ListSaveListpresentationV1Request(); // \eZmaxAPI\Model\ListSaveListpresentationV1Request | 
 
 try {
     $result = $apiInstance->listSaveListpresentationV1($sListName, $listSaveListpresentationV1Request);

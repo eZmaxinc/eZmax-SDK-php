@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pkiFranchisereferalincomeID** | **int** | The unique ID of the Franchisereferalincome | [optional]
 **fkiFranchisebrokerID** | **int** | The unique ID of the Franchisebroker |
 **fkiFranchisereferalincomeprogramID** | **int** | The unique ID of the Franchisereferalincomeprogram |
 **fkiPeriodID** | **int** | The unique ID of the Period |
@@ -12,7 +13,7 @@ Name | Type | Description | Notes
 **dFranchisereferalincomeFranchisoramount** | **string** | The amount that will be kept by the franchisor |
 **dFranchisereferalincomeAgentamount** | **string** | The amount that will be given to the agent |
 **dtFranchisereferalincomeDisbursed** | **string** | The date the amounts were disbursed |
-**tFranchisereferalincomeComment** | **string** | A comment about the transaction |
+**tFranchisereferalincomeComment** | **string** | Comment about the transaction |
 **fkiFranchiseofficeID** | **int** | The unique ID of the Franchisereoffice |
 **sFranchisereferalincomeRemoteid** | **string** |  |
 

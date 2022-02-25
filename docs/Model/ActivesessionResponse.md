@@ -1,0 +1,15 @@
+# # ActivesessionResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**eActivesessionSessiontype** | [**\eZmaxAPI\Model\FieldEActivesessionSessiontype**](FieldEActivesessionSessiontype.md) |  |
+**eActivesessionWeekdaystart** | [**\eZmaxAPI\Model\FieldEActivesessionWeekdaystart**](FieldEActivesessionWeekdaystart.md) |  |
+**fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
+**sCompanyNameX** | **string** | The Name of the Company in the language of the requester |
+**sDepartmentNameX** | **string** | The Name of the Department in the language of the requester |
+**bActivesessionDebug** | **bool** | Whether the active session is in debug or not |
+**pksCustomerCode** | **string** | The customer code assigned to your account |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
