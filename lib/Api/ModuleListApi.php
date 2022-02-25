@@ -428,7 +428,7 @@ class ModuleListApi
      * Save all Listpresentation for a specific list
      *
      * @param  string $sListName The list Name (required)
-     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request listSaveListpresentationV1Request (required)
+     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request  (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -446,7 +446,7 @@ class ModuleListApi
      * Save all Listpresentation for a specific list
      *
      * @param  string $sListName The list Name (required)
-     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request (required)
+     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request  (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -560,7 +560,7 @@ class ModuleListApi
      * Save all Listpresentation for a specific list
      *
      * @param  string $sListName The list Name (required)
-     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request (required)
+     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -581,7 +581,7 @@ class ModuleListApi
      * Save all Listpresentation for a specific list
      *
      * @param  string $sListName The list Name (required)
-     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request (required)
+     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -628,7 +628,7 @@ class ModuleListApi
      * Create request for operation 'listSaveListpresentationV1'
      *
      * @param  string $sListName The list Name (required)
-     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request (required)
+     * @param  \eZmaxAPI\Model\ListSaveListpresentationV1Request $listSaveListpresentationV1Request  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

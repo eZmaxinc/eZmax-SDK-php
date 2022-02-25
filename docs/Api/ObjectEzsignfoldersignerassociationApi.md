@@ -80,6 +80,8 @@ ezsignfoldersignerassociationDeleteObjectV1($pkiEzsignfoldersignerassociationID)
 
 Delete an existing Ezsignfoldersignerassociation
 
+
+
 ### Example
 
 ```php
@@ -201,6 +203,8 @@ ezsignfoldersignerassociationGetObjectV1($pkiEzsignfoldersignerassociationID): \
 ```
 
 Retrieve an existing Ezsignfoldersignerassociation
+
+
 
 ### Example
 

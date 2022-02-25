@@ -241,7 +241,7 @@ class EzsignbulksendGetListV1ResponseMPayload implements ModelInterface, ArrayAc
     /**
      * Sets aObjEzsignbulksend
      *
-     * @param \eZmaxAPI\Model\EzsignbulksendListElement[] $aObjEzsignbulksend aObjEzsignbulksend
+     * @param \eZmaxAPI\Model\EzsignbulksendListElement[] $aObjEzsignbulksend 
      *
      * @return self
      */

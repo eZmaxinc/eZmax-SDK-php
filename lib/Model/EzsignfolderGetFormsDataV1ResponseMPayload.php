@@ -289,7 +289,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
     /**
      * Sets aObjFormDataDocument
      *
-     * @param \eZmaxAPI\Model\CustomFormDataDocumentResponse[] $aObjFormDataDocument aObjFormDataDocument
+     * @param \eZmaxAPI\Model\CustomFormDataDocumentResponse[] $aObjFormDataDocument 
      *
      * @return self
      */

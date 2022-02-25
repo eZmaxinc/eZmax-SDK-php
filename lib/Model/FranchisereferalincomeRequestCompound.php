@@ -361,7 +361,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     /**
      * Sets aObjContact
      *
-     * @param \eZmaxAPI\Model\ContactRequestCompound[] $aObjContact aObjContact
+     * @param \eZmaxAPI\Model\ContactRequestCompound[] $aObjContact 
      *
      * @return self
      */
@@ -601,7 +601,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     /**
      * Sets tFranchisereferalincomeComment
      *
-     * @param string $tFranchisereferalincomeComment A comment about the transaction
+     * @param string $tFranchisereferalincomeComment Comment about the transaction
      *
      * @return self
      */
@@ -649,7 +649,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     /**
      * Sets sFranchisereferalincomeRemoteid
      *
-     * @param string $sFranchisereferalincomeRemoteid sFranchisereferalincomeRemoteid
+     * @param string $sFranchisereferalincomeRemoteid 
      *
      * @return self
      */

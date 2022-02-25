@@ -241,7 +241,7 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
     /**
      * Sets aObjEzsignfoldertype
      *
-     * @param \eZmaxAPI\Model\EzsignfoldertypeListElement[] $aObjEzsignfoldertype aObjEzsignfoldertype
+     * @param \eZmaxAPI\Model\EzsignfoldertypeListElement[] $aObjEzsignfoldertype 
      *
      * @return self
      */

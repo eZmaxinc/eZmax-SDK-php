@@ -222,7 +222,7 @@ class EzsignfoldertypeGetListV1ResponseMPayloadAllOf implements ModelInterface, 
     /**
      * Sets aObjEzsignfoldertype
      *
-     * @param \eZmaxAPI\Model\EzsignfoldertypeListElement[] $aObjEzsignfoldertype aObjEzsignfoldertype
+     * @param \eZmaxAPI\Model\EzsignfoldertypeListElement[] $aObjEzsignfoldertype 
      *
      * @return self
      */

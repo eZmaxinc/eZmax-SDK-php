@@ -252,7 +252,7 @@ class FranchisereferalincomeRequestCompoundAllOf implements ModelInterface, Arra
     /**
      * Sets aObjContact
      *
-     * @param \eZmaxAPI\Model\ContactRequestCompound[] $aObjContact aObjContact
+     * @param \eZmaxAPI\Model\ContactRequestCompound[] $aObjContact 
      *
      * @return self
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsignfolderEditObjectV1RequestTest
+ * EzsigndocumentEndPrematurelyV1ResponseTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * UNUSEDEzsignfolderEditObjectV1RequestTest Class Doc Comment
+ * EzsigndocumentEndPrematurelyV1ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Request for the /1/object/ezsignfolder/editObject API Request
+ * @description Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/endPrematurely API Request
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class UNUSEDEzsignfolderEditObjectV1RequestTest extends TestCase
+class EzsigndocumentEndPrematurelyV1ResponseTest extends TestCase
 {
 
     /**
@@ -72,18 +72,27 @@ class UNUSEDEzsignfolderEditObjectV1RequestTest extends TestCase
     }
 
     /**
-     * Test "UNUSEDEzsignfolderEditObjectV1Request"
+     * Test "EzsigndocumentEndPrematurelyV1Response"
      */
-    public function testUNUSEDEzsignfolderEditObjectV1Request()
+    public function testEzsigndocumentEndPrematurelyV1Response()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "objEzsignfolder"
+     * Test attribute "objDebugPayload"
      */
-    public function testPropertyObjEzsignfolder()
+    public function testPropertyObjDebugPayload()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objDebug"
+     */
+    public function testPropertyObjDebug()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

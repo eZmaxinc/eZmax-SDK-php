@@ -3034,7 +3034,7 @@ class ObjectEzsignfolderApi
      * Unsend the Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
-     * @param  string $body body (required)
+     * @param  object $body body (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3052,7 +3052,7 @@ class ObjectEzsignfolderApi
      * Unsend the Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
-     * @param  string $body (required)
+     * @param  object $body (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3186,7 +3186,7 @@ class ObjectEzsignfolderApi
      * Unsend the Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
-     * @param  string $body (required)
+     * @param  object $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3207,7 +3207,7 @@ class ObjectEzsignfolderApi
      * Unsend the Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
-     * @param  string $body (required)
+     * @param  object $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3254,7 +3254,7 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderUnsendV1'
      *
      * @param  int $pkiEzsignfolderID (required)
-     * @param  string $body (required)
+     * @param  object $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

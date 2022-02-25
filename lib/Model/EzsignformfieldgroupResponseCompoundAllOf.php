@@ -222,7 +222,7 @@ class EzsignformfieldgroupResponseCompoundAllOf implements ModelInterface, Array
     /**
      * Sets aObjEzsignformfield
      *
-     * @param \eZmaxAPI\Model\EzsignformfieldResponse[] $aObjEzsignformfield aObjEzsignformfield
+     * @param \eZmaxAPI\Model\EzsignformfieldResponse[] $aObjEzsignformfield 
      *
      * @return self
      */

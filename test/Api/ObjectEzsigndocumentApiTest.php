@@ -133,6 +133,18 @@ class ObjectEzsigndocumentApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsigndocumentEndPrematurelyV1
+     *
+     * End prematurely.
+     *
+     */
+    public function testEzsigndocumentEndPrematurelyV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsigndocumentGetDownloadUrlV1
      *
      * Retrieve a URL to download documents..
@@ -175,6 +187,18 @@ class ObjectEzsigndocumentApiTest extends TestCase
      *
      */
     public function testEzsigndocumentGetObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsigndocumentGetTemporaryProofV1
+     *
+     * Retrieve the temporary proof.
+     *
+     */
+    public function testEzsigndocumentGetTemporaryProofV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

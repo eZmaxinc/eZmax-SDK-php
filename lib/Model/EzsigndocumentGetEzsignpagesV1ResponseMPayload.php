@@ -223,7 +223,7 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload implements ModelInterface, 
     /**
      * Sets aObjEzsignpage
      *
-     * @param \eZmaxAPI\Model\EzsignpageResponse[] $aObjEzsignpage aObjEzsignpage
+     * @param \eZmaxAPI\Model\EzsignpageResponse[] $aObjEzsignpage 
      *
      * @return self
      */

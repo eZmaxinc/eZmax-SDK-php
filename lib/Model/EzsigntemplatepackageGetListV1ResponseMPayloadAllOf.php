@@ -222,7 +222,7 @@ class EzsigntemplatepackageGetListV1ResponseMPayloadAllOf implements ModelInterf
     /**
      * Sets aObjEzsigntemplatepackage
      *
-     * @param \eZmaxAPI\Model\EzsigntemplatepackageListElement[] $aObjEzsigntemplatepackage aObjEzsigntemplatepackage
+     * @param \eZmaxAPI\Model\EzsigntemplatepackageListElement[] $aObjEzsigntemplatepackage 
      *
      * @return self
      */

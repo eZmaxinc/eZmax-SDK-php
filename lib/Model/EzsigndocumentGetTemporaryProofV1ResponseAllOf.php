@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsignfoldersignerassociationEditObjectV1Request
+ * EzsigndocumentGetTemporaryProofV1ResponseAllOf
  *
  * PHP version 7.3
  *
@@ -33,10 +33,9 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UNUSEDEzsignfoldersignerassociationEditObjectV1Request Class Doc Comment
+ * EzsigndocumentGetTemporaryProofV1ResponseAllOf Class Doc Comment
  *
  * @category Class
- * @description Request for the /1/object/ezsignfoldersignerassociation/editObject API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +43,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigndocumentGetTemporaryProofV1ResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInt
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UNUSED-ezsignfoldersignerassociation-editObject-v1-Request';
+    protected static $openAPIModelName = 'ezsigndocument_getTemporaryProof_v1_Response_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +60,7 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInt
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objEzsignfoldersignerassociation' => '\eZmaxAPI\Model\EzsignfoldersignerassociationRequest'
+        'mPayload' => '\eZmaxAPI\Model\EzsigndocumentGetTemporaryProofV1ResponseMPayload'
     ];
 
     /**
@@ -72,7 +71,7 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInt
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objEzsignfoldersignerassociation' => null
+        'mPayload' => null
     ];
 
     /**
@@ -102,7 +101,7 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInt
      * @var string[]
      */
     protected static $attributeMap = [
-        'objEzsignfoldersignerassociation' => 'objEzsignfoldersignerassociation'
+        'mPayload' => 'mPayload'
     ];
 
     /**
@@ -111,7 +110,7 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-        'objEzsignfoldersignerassociation' => 'setObjEzsignfoldersignerassociation'
+        'mPayload' => 'setMPayload'
     ];
 
     /**
@@ -120,7 +119,7 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInt
      * @var string[]
      */
     protected static $getters = [
-        'objEzsignfoldersignerassociation' => 'getObjEzsignfoldersignerassociation'
+        'mPayload' => 'getMPayload'
     ];
 
     /**
@@ -180,7 +179,7 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInt
      */
     public function __construct(array $data = null)
     {
-        $this->container['objEzsignfoldersignerassociation'] = $data['objEzsignfoldersignerassociation'] ?? null;
+        $this->container['mPayload'] = $data['mPayload'] ?? null;
     }
 
     /**
@@ -192,6 +191,9 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInt
     {
         $invalidProperties = [];
 
+        if ($this->container['mPayload'] === null) {
+            $invalidProperties[] = "'mPayload' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -208,25 +210,25 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Request implements ModelInt
 
 
     /**
-     * Gets objEzsignfoldersignerassociation
+     * Gets mPayload
      *
-     * @return \eZmaxAPI\Model\EzsignfoldersignerassociationRequest|null
+     * @return \eZmaxAPI\Model\EzsigndocumentGetTemporaryProofV1ResponseMPayload
      */
-    public function getObjEzsignfoldersignerassociation()
+    public function getMPayload()
     {
-        return $this->container['objEzsignfoldersignerassociation'];
+        return $this->container['mPayload'];
     }
 
     /**
-     * Sets objEzsignfoldersignerassociation
+     * Sets mPayload
      *
-     * @param \eZmaxAPI\Model\EzsignfoldersignerassociationRequest|null $objEzsignfoldersignerassociation objEzsignfoldersignerassociation
+     * @param \eZmaxAPI\Model\EzsigndocumentGetTemporaryProofV1ResponseMPayload $mPayload mPayload
      *
      * @return self
      */
-    public function setObjEzsignfoldersignerassociation($objEzsignfoldersignerassociation)
+    public function setMPayload($mPayload)
     {
-        $this->container['objEzsignfoldersignerassociation'] = $objEzsignfoldersignerassociation;
+        $this->container['mPayload'] = $mPayload;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsigndocumentEditObjectV1Request
+ * EzsignbulksendGetObjectV1ResponseAllOf
  *
  * PHP version 7.3
  *
@@ -33,10 +33,9 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UNUSEDEzsigndocumentEditObjectV1Request Class Doc Comment
+ * EzsignbulksendGetObjectV1ResponseAllOf Class Doc Comment
  *
  * @category Class
- * @description Request for the /1/object/ezsigndocument/editObject API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +43,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignbulksendGetObjectV1ResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UNUSED-ezsigndocument-editObject-v1-Request';
+    protected static $openAPIModelName = 'ezsignbulksend_getObject_v1_Response_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +60,7 @@ class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objEzsigndocument' => '\eZmaxAPI\Model\EzsigndocumentRequest'
+        'mPayload' => '\eZmaxAPI\Model\EzsignbulksendGetObjectV1ResponseMPayload'
     ];
 
     /**
@@ -72,7 +71,7 @@ class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objEzsigndocument' => null
+        'mPayload' => null
     ];
 
     /**
@@ -102,7 +101,7 @@ class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'objEzsigndocument' => 'objEzsigndocument'
+        'mPayload' => 'mPayload'
     ];
 
     /**
@@ -111,7 +110,7 @@ class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'objEzsigndocument' => 'setObjEzsigndocument'
+        'mPayload' => 'setMPayload'
     ];
 
     /**
@@ -120,7 +119,7 @@ class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'objEzsigndocument' => 'getObjEzsigndocument'
+        'mPayload' => 'getMPayload'
     ];
 
     /**
@@ -180,7 +179,7 @@ class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['objEzsigndocument'] = $data['objEzsigndocument'] ?? null;
+        $this->container['mPayload'] = $data['mPayload'] ?? null;
     }
 
     /**
@@ -192,6 +191,9 @@ class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
+        if ($this->container['mPayload'] === null) {
+            $invalidProperties[] = "'mPayload' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -208,25 +210,25 @@ class UNUSEDEzsigndocumentEditObjectV1Request implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets objEzsigndocument
+     * Gets mPayload
      *
-     * @return \eZmaxAPI\Model\EzsigndocumentRequest|null
+     * @return \eZmaxAPI\Model\EzsignbulksendGetObjectV1ResponseMPayload
      */
-    public function getObjEzsigndocument()
+    public function getMPayload()
     {
-        return $this->container['objEzsigndocument'];
+        return $this->container['mPayload'];
     }
 
     /**
-     * Sets objEzsigndocument
+     * Sets mPayload
      *
-     * @param \eZmaxAPI\Model\EzsigndocumentRequest|null $objEzsigndocument objEzsigndocument
+     * @param \eZmaxAPI\Model\EzsignbulksendGetObjectV1ResponseMPayload $mPayload mPayload
      *
      * @return self
      */
-    public function setObjEzsigndocument($objEzsigndocument)
+    public function setMPayload($mPayload)
     {
-        $this->container['objEzsigndocument'] = $objEzsigndocument;
+        $this->container['mPayload'] = $mPayload;
 
         return $this;
     }

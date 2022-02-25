@@ -289,7 +289,7 @@ class CustomFormsDataFolderResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets aObjFormDataDocument
      *
-     * @param \eZmaxAPI\Model\CustomFormDataDocumentResponse[] $aObjFormDataDocument aObjFormDataDocument
+     * @param \eZmaxAPI\Model\CustomFormDataDocumentResponse[] $aObjFormDataDocument 
      *
      * @return self
      */

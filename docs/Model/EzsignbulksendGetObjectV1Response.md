@@ -1,9 +1,10 @@
-# # UNUSEDEzsignsignatureEditObjectV1Response
+# # EzsignbulksendGetObjectV1Response
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**mPayload** | [**\eZmaxAPI\Model\EzsignbulksendGetObjectV1ResponseMPayload**](EzsignbulksendGetObjectV1ResponseMPayload.md) |  |
 **objDebugPayload** | [**\eZmaxAPI\Model\CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional]
 **objDebug** | [**\eZmaxAPI\Model\CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional]
 

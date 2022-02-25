@@ -37,7 +37,7 @@ $apiInstance = new eZmaxAPI\Api\ModuleAuthenticateApi(
     $config
 );
 $eSessionType = 'eSessionType_example'; // string
-$authenticateAuthenticateV2Request = new \eZmaxAPI\Model\AuthenticateAuthenticateV2Request(); // \eZmaxAPI\Model\AuthenticateAuthenticateV2Request
+$authenticateAuthenticateV2Request = new \eZmaxAPI\Model\AuthenticateAuthenticateV2Request(); // \eZmaxAPI\Model\AuthenticateAuthenticateV2Request | 
 
 try {
     $result = $apiInstance->authenticateAuthenticateV2($eSessionType, $authenticateAuthenticateV2Request);

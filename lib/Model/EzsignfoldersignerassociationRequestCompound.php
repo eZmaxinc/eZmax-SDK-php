@@ -216,6 +216,9 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     {
         $invalidProperties = [];
 
+        if ($this->container['objEzsignsigner'] === null) {
+            $invalidProperties[] = "'objEzsignsigner' can't be null";
+        }
         if ($this->container['fkiEzsignfolderID'] === null) {
             $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
         }
@@ -237,7 +240,7 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     /**
      * Gets objEzsignsigner
      *
-     * @return \eZmaxAPI\Model\EzsignsignerRequestCompound|null
+     * @return \eZmaxAPI\Model\EzsignsignerRequestCompound
      */
     public function getObjEzsignsigner()
     {
@@ -247,7 +250,7 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     /**
      * Sets objEzsignsigner
      *
-     * @param \eZmaxAPI\Model\EzsignsignerRequestCompound|null $objEzsignsigner objEzsignsigner
+     * @param \eZmaxAPI\Model\EzsignsignerRequestCompound $objEzsignsigner objEzsignsigner
      *
      * @return self
      */

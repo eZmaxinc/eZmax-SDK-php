@@ -256,7 +256,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
     /**
      * Sets aObjEzsignformfield
      *
-     * @param \eZmaxAPI\Model\EzsignformfieldResponse[] $aObjEzsignformfield aObjEzsignformfield
+     * @param \eZmaxAPI\Model\EzsignformfieldResponse[] $aObjEzsignformfield 
      *
      * @return self
      */

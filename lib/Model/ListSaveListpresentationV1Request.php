@@ -223,7 +223,7 @@ class ListSaveListpresentationV1Request implements ModelInterface, ArrayAccess, 
     /**
      * Sets aObjListpresentation
      *
-     * @param \eZmaxAPI\Model\ListpresentationRequest[] $aObjListpresentation aObjListpresentation
+     * @param \eZmaxAPI\Model\ListpresentationRequest[] $aObjListpresentation 
      *
      * @return self
      */

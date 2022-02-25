@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsignfolderEditObjectV1ResponseTest
+ * EzsignbulksendGetObjectV1ResponseMPayloadTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * UNUSEDEzsignfolderEditObjectV1ResponseTest Class Doc Comment
+ * EzsignbulksendGetObjectV1ResponseMPayloadTest Class Doc Comment
  *
  * @category    Class
- * @description Response for the /1/object/ezsignfolder/editObject API Request
+ * @description Payload for the /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getObject API Request
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class UNUSEDEzsignfolderEditObjectV1ResponseTest extends TestCase
+class EzsignbulksendGetObjectV1ResponseMPayloadTest extends TestCase
 {
 
     /**
@@ -72,27 +72,72 @@ class UNUSEDEzsignfolderEditObjectV1ResponseTest extends TestCase
     }
 
     /**
-     * Test "UNUSEDEzsignfolderEditObjectV1Response"
+     * Test "EzsignbulksendGetObjectV1ResponseMPayload"
      */
-    public function testUNUSEDEzsignfolderEditObjectV1Response()
+    public function testEzsignbulksendGetObjectV1ResponseMPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "objDebugPayload"
+     * Test attribute "pkiEzsignbulksendID"
      */
-    public function testPropertyObjDebugPayload()
+    public function testPropertyPkiEzsignbulksendID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "objDebug"
+     * Test attribute "fkiEzsignfoldertypeID"
      */
-    public function testPropertyObjDebug()
+    public function testPropertyFkiEzsignfoldertypeID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fkiLanguageID"
+     */
+    public function testPropertyFkiLanguageID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsignbulksendDescription"
+     */
+    public function testPropertySEzsignbulksendDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tEzsignbulksendNote"
+     */
+    public function testPropertyTEzsignbulksendNote()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignbulksendIsactive"
+     */
+    public function testPropertyBEzsignbulksendIsactive()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objAudit"
+     */
+    public function testPropertyObjAudit()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

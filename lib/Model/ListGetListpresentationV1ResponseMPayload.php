@@ -223,7 +223,7 @@ class ListGetListpresentationV1ResponseMPayload implements ModelInterface, Array
     /**
      * Sets aObjListpresentation
      *
-     * @param \eZmaxAPI\Model\ListpresentationRequest[] $aObjListpresentation aObjListpresentation
+     * @param \eZmaxAPI\Model\ListpresentationRequest[] $aObjListpresentation 
      *
      * @return self
      */

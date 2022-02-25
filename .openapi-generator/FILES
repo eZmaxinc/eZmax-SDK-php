@@ -7,7 +7,6 @@ composer.json
 docs/Api/GlobalCustomerApi.md
 docs/Api/ModuleAuthenticateApi.md
 docs/Api/ModuleListApi.md
-docs/Api/ModuleSsprApi.md
 docs/Api/ModuleUserApi.md
 docs/Api/ObjectActivesessionApi.md
 docs/Api/ObjectApikeyApi.md
@@ -78,7 +77,12 @@ docs/Model/EzsignbulksendGetListV1Response.md
 docs/Model/EzsignbulksendGetListV1ResponseAllOf.md
 docs/Model/EzsignbulksendGetListV1ResponseMPayload.md
 docs/Model/EzsignbulksendGetListV1ResponseMPayloadAllOf.md
+docs/Model/EzsignbulksendGetObjectV1Response.md
+docs/Model/EzsignbulksendGetObjectV1ResponseAllOf.md
+docs/Model/EzsignbulksendGetObjectV1ResponseMPayload.md
 docs/Model/EzsignbulksendListElement.md
+docs/Model/EzsignbulksendResponse.md
+docs/Model/EzsignbulksendResponseCompound.md
 docs/Model/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/Model/EzsigndocumentApplyEzsigntemplateV1Response.md
 docs/Model/EzsigndocumentApplyEzsigntemplateV2Request.md
@@ -90,6 +94,7 @@ docs/Model/EzsigndocumentCreateObjectV1ResponseMPayload.md
 docs/Model/EzsigndocumentDeleteObjectV1Response.md
 docs/Model/EzsigndocumentEditEzsignsignaturesV1Request.md
 docs/Model/EzsigndocumentEditEzsignsignaturesV1Response.md
+docs/Model/EzsigndocumentEndPrematurelyV1Response.md
 docs/Model/EzsigndocumentGetDownloadUrlV1Response.md
 docs/Model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md
 docs/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md
@@ -102,6 +107,9 @@ docs/Model/EzsigndocumentGetFormDataV1ResponseMPayload.md
 docs/Model/EzsigndocumentGetObjectV1Response.md
 docs/Model/EzsigndocumentGetObjectV1ResponseAllOf.md
 docs/Model/EzsigndocumentGetObjectV1ResponseMPayload.md
+docs/Model/EzsigndocumentGetTemporaryProofV1Response.md
+docs/Model/EzsigndocumentGetTemporaryProofV1ResponseAllOf.md
+docs/Model/EzsigndocumentGetTemporaryProofV1ResponseMPayload.md
 docs/Model/EzsigndocumentGetWordsPositionsV1Request.md
 docs/Model/EzsigndocumentGetWordsPositionsV1Response.md
 docs/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
@@ -113,6 +121,7 @@ docs/Model/EzsigndocumentRequestPatch.md
 docs/Model/EzsigndocumentResponse.md
 docs/Model/EzsigndocumentResponseCompound.md
 docs/Model/EzsigndocumentResponseCompoundAllOf.md
+docs/Model/EzsigndocumentlogResponse.md
 docs/Model/EzsignfolderCreateObjectV1Request.md
 docs/Model/EzsignfolderCreateObjectV1Response.md
 docs/Model/EzsignfolderCreateObjectV1ResponseAllOf.md
@@ -202,6 +211,7 @@ docs/Model/EzsigntemplatepackageListElement.md
 docs/Model/FieldEActivesessionSessiontype.md
 docs/Model/FieldEActivesessionWeekdaystart.md
 docs/Model/FieldEEzsigndocumentStep.md
+docs/Model/FieldEEzsigndocumentlogType.md
 docs/Model/FieldEEzsignfolderSendreminderfrequency.md
 docs/Model/FieldEEzsignfolderStep.md
 docs/Model/FieldEEzsignfoldertypePrivacylevel.md
@@ -233,14 +243,6 @@ docs/Model/SsprSendUsernamesV1Request.md
 docs/Model/SsprUnlockAccountRequestV1Request.md
 docs/Model/SsprUnlockAccountV1Request.md
 docs/Model/SsprValidateTokenV1Request.md
-docs/Model/UNUSEDEzsigndocumentEditObjectV1Request.md
-docs/Model/UNUSEDEzsigndocumentEditObjectV1Response.md
-docs/Model/UNUSEDEzsignfolderEditObjectV1Request.md
-docs/Model/UNUSEDEzsignfolderEditObjectV1Response.md
-docs/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.md
-docs/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.md
-docs/Model/UNUSEDEzsignsignatureEditObjectV1Request.md
-docs/Model/UNUSEDEzsignsignatureEditObjectV1Response.md
 docs/Model/UserCreateEzsignuserV1Request.md
 docs/Model/UserCreateEzsignuserV1Response.md
 docs/Model/UserCreateEzsignuserV1ResponseAllOf.md
@@ -258,7 +260,6 @@ git_push.sh
 lib/Api/GlobalCustomerApi.php
 lib/Api/ModuleAuthenticateApi.php
 lib/Api/ModuleListApi.php
-lib/Api/ModuleSsprApi.php
 lib/Api/ModuleUserApi.php
 lib/Api/ObjectActivesessionApi.php
 lib/Api/ObjectApikeyApi.php
@@ -332,7 +333,12 @@ lib/Model/EzsignbulksendGetListV1Response.php
 lib/Model/EzsignbulksendGetListV1ResponseAllOf.php
 lib/Model/EzsignbulksendGetListV1ResponseMPayload.php
 lib/Model/EzsignbulksendGetListV1ResponseMPayloadAllOf.php
+lib/Model/EzsignbulksendGetObjectV1Response.php
+lib/Model/EzsignbulksendGetObjectV1ResponseAllOf.php
+lib/Model/EzsignbulksendGetObjectV1ResponseMPayload.php
 lib/Model/EzsignbulksendListElement.php
+lib/Model/EzsignbulksendResponse.php
+lib/Model/EzsignbulksendResponseCompound.php
 lib/Model/EzsigndocumentApplyEzsigntemplateV1Request.php
 lib/Model/EzsigndocumentApplyEzsigntemplateV1Response.php
 lib/Model/EzsigndocumentApplyEzsigntemplateV2Request.php
@@ -344,6 +350,7 @@ lib/Model/EzsigndocumentCreateObjectV1ResponseMPayload.php
 lib/Model/EzsigndocumentDeleteObjectV1Response.php
 lib/Model/EzsigndocumentEditEzsignsignaturesV1Request.php
 lib/Model/EzsigndocumentEditEzsignsignaturesV1Response.php
+lib/Model/EzsigndocumentEndPrematurelyV1Response.php
 lib/Model/EzsigndocumentGetDownloadUrlV1Response.php
 lib/Model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.php
 lib/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.php
@@ -356,6 +363,9 @@ lib/Model/EzsigndocumentGetFormDataV1ResponseMPayload.php
 lib/Model/EzsigndocumentGetObjectV1Response.php
 lib/Model/EzsigndocumentGetObjectV1ResponseAllOf.php
 lib/Model/EzsigndocumentGetObjectV1ResponseMPayload.php
+lib/Model/EzsigndocumentGetTemporaryProofV1Response.php
+lib/Model/EzsigndocumentGetTemporaryProofV1ResponseAllOf.php
+lib/Model/EzsigndocumentGetTemporaryProofV1ResponseMPayload.php
 lib/Model/EzsigndocumentGetWordsPositionsV1Request.php
 lib/Model/EzsigndocumentGetWordsPositionsV1Response.php
 lib/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.php
@@ -367,6 +377,7 @@ lib/Model/EzsigndocumentRequestPatch.php
 lib/Model/EzsigndocumentResponse.php
 lib/Model/EzsigndocumentResponseCompound.php
 lib/Model/EzsigndocumentResponseCompoundAllOf.php
+lib/Model/EzsigndocumentlogResponse.php
 lib/Model/EzsignfolderCreateObjectV1Request.php
 lib/Model/EzsignfolderCreateObjectV1Response.php
 lib/Model/EzsignfolderCreateObjectV1ResponseAllOf.php
@@ -456,6 +467,7 @@ lib/Model/EzsigntemplatepackageListElement.php
 lib/Model/FieldEActivesessionSessiontype.php
 lib/Model/FieldEActivesessionWeekdaystart.php
 lib/Model/FieldEEzsigndocumentStep.php
+lib/Model/FieldEEzsigndocumentlogType.php
 lib/Model/FieldEEzsignfolderSendreminderfrequency.php
 lib/Model/FieldEEzsignfolderStep.php
 lib/Model/FieldEEzsignfoldertypePrivacylevel.php
@@ -488,14 +500,6 @@ lib/Model/SsprSendUsernamesV1Request.php
 lib/Model/SsprUnlockAccountRequestV1Request.php
 lib/Model/SsprUnlockAccountV1Request.php
 lib/Model/SsprValidateTokenV1Request.php
-lib/Model/UNUSEDEzsigndocumentEditObjectV1Request.php
-lib/Model/UNUSEDEzsigndocumentEditObjectV1Response.php
-lib/Model/UNUSEDEzsignfolderEditObjectV1Request.php
-lib/Model/UNUSEDEzsignfolderEditObjectV1Response.php
-lib/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.php
-lib/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.php
-lib/Model/UNUSEDEzsignsignatureEditObjectV1Request.php
-lib/Model/UNUSEDEzsignsignatureEditObjectV1Response.php
 lib/Model/UserCreateEzsignuserV1Request.php
 lib/Model/UserCreateEzsignuserV1Response.php
 lib/Model/UserCreateEzsignuserV1ResponseAllOf.php
@@ -515,7 +519,6 @@ phpunit.xml.dist
 test/Api/GlobalCustomerApiTest.php
 test/Api/ModuleAuthenticateApiTest.php
 test/Api/ModuleListApiTest.php
-test/Api/ModuleSsprApiTest.php
 test/Api/ModuleUserApiTest.php
 test/Api/ObjectActivesessionApiTest.php
 test/Api/ObjectApikeyApiTest.php
@@ -586,7 +589,12 @@ test/Model/EzsignbulksendGetListV1ResponseAllOfTest.php
 test/Model/EzsignbulksendGetListV1ResponseMPayloadAllOfTest.php
 test/Model/EzsignbulksendGetListV1ResponseMPayloadTest.php
 test/Model/EzsignbulksendGetListV1ResponseTest.php
+test/Model/EzsignbulksendGetObjectV1ResponseAllOfTest.php
+test/Model/EzsignbulksendGetObjectV1ResponseMPayloadTest.php
+test/Model/EzsignbulksendGetObjectV1ResponseTest.php
 test/Model/EzsignbulksendListElementTest.php
+test/Model/EzsignbulksendResponseCompoundTest.php
+test/Model/EzsignbulksendResponseTest.php
 test/Model/EzsigndocumentApplyEzsigntemplateV1RequestTest.php
 test/Model/EzsigndocumentApplyEzsigntemplateV1ResponseTest.php
 test/Model/EzsigndocumentApplyEzsigntemplateV2RequestTest.php
@@ -598,6 +606,7 @@ test/Model/EzsigndocumentCreateObjectV1ResponseTest.php
 test/Model/EzsigndocumentDeleteObjectV1ResponseTest.php
 test/Model/EzsigndocumentEditEzsignsignaturesV1RequestTest.php
 test/Model/EzsigndocumentEditEzsignsignaturesV1ResponseTest.php
+test/Model/EzsigndocumentEndPrematurelyV1ResponseTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetDownloadUrlV1ResponseTest.php
@@ -610,6 +619,9 @@ test/Model/EzsigndocumentGetFormDataV1ResponseTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseTest.php
+test/Model/EzsigndocumentGetTemporaryProofV1ResponseAllOfTest.php
+test/Model/EzsigndocumentGetTemporaryProofV1ResponseMPayloadTest.php
+test/Model/EzsigndocumentGetTemporaryProofV1ResponseTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1RequestTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetWordsPositionsV1ResponseTest.php
@@ -621,6 +633,7 @@ test/Model/EzsigndocumentRequestTest.php
 test/Model/EzsigndocumentResponseCompoundAllOfTest.php
 test/Model/EzsigndocumentResponseCompoundTest.php
 test/Model/EzsigndocumentResponseTest.php
+test/Model/EzsigndocumentlogResponseTest.php
 test/Model/EzsignfolderCreateObjectV1RequestTest.php
 test/Model/EzsignfolderCreateObjectV1ResponseAllOfTest.php
 test/Model/EzsignfolderCreateObjectV1ResponseMPayloadTest.php
@@ -710,6 +723,7 @@ test/Model/EzsigntemplatepackageListElementTest.php
 test/Model/FieldEActivesessionSessiontypeTest.php
 test/Model/FieldEActivesessionWeekdaystartTest.php
 test/Model/FieldEEzsigndocumentStepTest.php
+test/Model/FieldEEzsigndocumentlogTypeTest.php
 test/Model/FieldEEzsignfolderSendreminderfrequencyTest.php
 test/Model/FieldEEzsignfolderStepTest.php
 test/Model/FieldEEzsignfoldertypePrivacylevelTest.php
@@ -741,14 +755,6 @@ test/Model/SsprSendUsernamesV1RequestTest.php
 test/Model/SsprUnlockAccountRequestV1RequestTest.php
 test/Model/SsprUnlockAccountV1RequestTest.php
 test/Model/SsprValidateTokenV1RequestTest.php
-test/Model/UNUSEDEzsigndocumentEditObjectV1RequestTest.php
-test/Model/UNUSEDEzsigndocumentEditObjectV1ResponseTest.php
-test/Model/UNUSEDEzsignfolderEditObjectV1RequestTest.php
-test/Model/UNUSEDEzsignfolderEditObjectV1ResponseTest.php
-test/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1RequestTest.php
-test/Model/UNUSEDEzsignfoldersignerassociationEditObjectV1ResponseTest.php
-test/Model/UNUSEDEzsignsignatureEditObjectV1RequestTest.php
-test/Model/UNUSEDEzsignsignatureEditObjectV1ResponseTest.php
 test/Model/UserCreateEzsignuserV1RequestTest.php
 test/Model/UserCreateEzsignuserV1ResponseAllOfTest.php
 test/Model/UserCreateEzsignuserV1ResponseMPayloadTest.php

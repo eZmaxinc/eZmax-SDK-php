@@ -1,9 +1,9 @@
-# # UNUSEDEzsignsignatureEditObjectV1Request
+# # EzsignbulksendGetObjectV1ResponseAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objEzsignsignature** | [**\eZmaxAPI\Model\EzsignsignatureRequest**](EzsignsignatureRequest.md) |  | [optional]
+**mPayload** | [**\eZmaxAPI\Model\EzsignbulksendGetObjectV1ResponseMPayload**](EzsignbulksendGetObjectV1ResponseMPayload.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

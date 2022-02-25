@@ -222,7 +222,7 @@ class EzsignfolderGetListV1ResponseMPayloadAllOf implements ModelInterface, Arra
     /**
      * Sets aObjEzsignfolder
      *
-     * @param \eZmaxAPI\Model\EzsignfolderListElement[] $aObjEzsignfolder aObjEzsignfolder
+     * @param \eZmaxAPI\Model\EzsignfolderListElement[] $aObjEzsignfolder 
      *
      * @return self
      */

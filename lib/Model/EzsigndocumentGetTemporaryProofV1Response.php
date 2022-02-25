@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsigndocumentEditObjectV1Response
+ * EzsigndocumentGetTemporaryProofV1Response
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UNUSEDEzsigndocumentEditObjectV1Response Class Doc Comment
+ * EzsigndocumentGetTemporaryProofV1Response Class Doc Comment
  *
  * @category Class
- * @description Response for the /1/object/ezsigndocument/editObject API Request
+ * @description Response for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigndocumentGetTemporaryProofV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayA
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UNUSED-ezsigndocument-editObject-v1-Response';
+    protected static $openAPIModelName = 'ezsigndocument-getTemporaryProof-v1-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,6 +61,7 @@ class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
+        'mPayload' => '\eZmaxAPI\Model\EzsigndocumentGetTemporaryProofV1ResponseMPayload',
         'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
         'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
@@ -73,6 +74,7 @@ class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'mPayload' => null,
         'objDebugPayload' => null,
         'objDebug' => null
     ];
@@ -104,6 +106,7 @@ class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
+        'mPayload' => 'mPayload',
         'objDebugPayload' => 'objDebugPayload',
         'objDebug' => 'objDebug'
     ];
@@ -114,6 +117,7 @@ class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
+        'mPayload' => 'setMPayload',
         'objDebugPayload' => 'setObjDebugPayload',
         'objDebug' => 'setObjDebug'
     ];
@@ -124,6 +128,7 @@ class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
+        'mPayload' => 'getMPayload',
         'objDebugPayload' => 'getObjDebugPayload',
         'objDebug' => 'getObjDebug'
     ];
@@ -185,6 +190,7 @@ class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
+        $this->container['mPayload'] = $data['mPayload'] ?? null;
         $this->container['objDebugPayload'] = $data['objDebugPayload'] ?? null;
         $this->container['objDebug'] = $data['objDebug'] ?? null;
     }
@@ -198,6 +204,9 @@ class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
+        if ($this->container['mPayload'] === null) {
+            $invalidProperties[] = "'mPayload' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -212,6 +221,30 @@ class UNUSEDEzsigndocumentEditObjectV1Response implements ModelInterface, ArrayA
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets mPayload
+     *
+     * @return \eZmaxAPI\Model\EzsigndocumentGetTemporaryProofV1ResponseMPayload
+     */
+    public function getMPayload()
+    {
+        return $this->container['mPayload'];
+    }
+
+    /**
+     * Sets mPayload
+     *
+     * @param \eZmaxAPI\Model\EzsigndocumentGetTemporaryProofV1ResponseMPayload $mPayload mPayload
+     *
+     * @return self
+     */
+    public function setMPayload($mPayload)
+    {
+        $this->container['mPayload'] = $mPayload;
+
+        return $this;
+    }
 
     /**
      * Gets objDebugPayload

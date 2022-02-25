@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsignsignatureEditObjectV1Response
+ * EzsigndocumentGetTemporaryProofV1ResponseMPayload
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UNUSEDEzsignsignatureEditObjectV1Response Class Doc Comment
+ * EzsigndocumentGetTemporaryProofV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Response for the /1/object/ezsignsignature/editObject API Request
+ * @description Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigndocumentGetTemporaryProofV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, Array
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UNUSED-ezsignsignature-editObject-v1-Response';
+    protected static $openAPIModelName = 'ezsigndocument-getTemporaryProof-v1-Response-mPayload';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,8 +61,7 @@ class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
-        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
+        'aObjEzsigndocumentlog' => '\eZmaxAPI\Model\EzsigndocumentlogResponse'
     ];
 
     /**
@@ -73,8 +72,7 @@ class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objDebugPayload' => null,
-        'objDebug' => null
+        'aObjEzsigndocumentlog' => null
     ];
 
     /**
@@ -104,8 +102,7 @@ class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'objDebugPayload' => 'objDebugPayload',
-        'objDebug' => 'objDebug'
+        'aObjEzsigndocumentlog' => 'a_objEzsigndocumentlog'
     ];
 
     /**
@@ -114,8 +111,7 @@ class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'objDebugPayload' => 'setObjDebugPayload',
-        'objDebug' => 'setObjDebug'
+        'aObjEzsigndocumentlog' => 'setAObjEzsigndocumentlog'
     ];
 
     /**
@@ -124,8 +120,7 @@ class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'objDebugPayload' => 'getObjDebugPayload',
-        'objDebug' => 'getObjDebug'
+        'aObjEzsigndocumentlog' => 'getAObjEzsigndocumentlog'
     ];
 
     /**
@@ -185,8 +180,7 @@ class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['objDebugPayload'] = $data['objDebugPayload'] ?? null;
-        $this->container['objDebug'] = $data['objDebug'] ?? null;
+        $this->container['aObjEzsigndocumentlog'] = $data['aObjEzsigndocumentlog'] ?? null;
     }
 
     /**
@@ -198,6 +192,9 @@ class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, Array
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjEzsigndocumentlog'] === null) {
+            $invalidProperties[] = "'aObjEzsigndocumentlog' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -214,49 +211,25 @@ class UNUSEDEzsignsignatureEditObjectV1Response implements ModelInterface, Array
 
 
     /**
-     * Gets objDebugPayload
+     * Gets aObjEzsigndocumentlog
      *
-     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayload|null
+     * @return \eZmaxAPI\Model\EzsigndocumentlogResponse
      */
-    public function getObjDebugPayload()
+    public function getAObjEzsigndocumentlog()
     {
-        return $this->container['objDebugPayload'];
+        return $this->container['aObjEzsigndocumentlog'];
     }
 
     /**
-     * Sets objDebugPayload
+     * Sets aObjEzsigndocumentlog
      *
-     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayload|null $objDebugPayload objDebugPayload
+     * @param \eZmaxAPI\Model\EzsigndocumentlogResponse $aObjEzsigndocumentlog aObjEzsigndocumentlog
      *
      * @return self
      */
-    public function setObjDebugPayload($objDebugPayload)
+    public function setAObjEzsigndocumentlog($aObjEzsigndocumentlog)
     {
-        $this->container['objDebugPayload'] = $objDebugPayload;
-
-        return $this;
-    }
-
-    /**
-     * Gets objDebug
-     *
-     * @return \eZmaxAPI\Model\CommonResponseObjDebug|null
-     */
-    public function getObjDebug()
-    {
-        return $this->container['objDebug'];
-    }
-
-    /**
-     * Sets objDebug
-     *
-     * @param \eZmaxAPI\Model\CommonResponseObjDebug|null $objDebug objDebug
-     *
-     * @return self
-     */
-    public function setObjDebug($objDebug)
-    {
-        $this->container['objDebug'] = $objDebug;
+        $this->container['aObjEzsigndocumentlog'] = $aObjEzsigndocumentlog;
 
         return $this;
     }

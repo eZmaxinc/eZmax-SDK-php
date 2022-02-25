@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsignsignatureEditObjectV1RequestTest
+ * EzsigndocumentGetTemporaryProofV1ResponseTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * UNUSEDEzsignsignatureEditObjectV1RequestTest Class Doc Comment
+ * EzsigndocumentGetTemporaryProofV1ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Request for the /1/object/ezsignsignature/editObject API Request
+ * @description Response for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof API Request
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class UNUSEDEzsignsignatureEditObjectV1RequestTest extends TestCase
+class EzsigndocumentGetTemporaryProofV1ResponseTest extends TestCase
 {
 
     /**
@@ -72,18 +72,36 @@ class UNUSEDEzsignsignatureEditObjectV1RequestTest extends TestCase
     }
 
     /**
-     * Test "UNUSEDEzsignsignatureEditObjectV1Request"
+     * Test "EzsigndocumentGetTemporaryProofV1Response"
      */
-    public function testUNUSEDEzsignsignatureEditObjectV1Request()
+    public function testEzsigndocumentGetTemporaryProofV1Response()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "objEzsignsignature"
+     * Test attribute "mPayload"
      */
-    public function testPropertyObjEzsignsignature()
+    public function testPropertyMPayload()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objDebugPayload"
+     */
+    public function testPropertyObjDebugPayload()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objDebug"
+     */
+    public function testPropertyObjDebug()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

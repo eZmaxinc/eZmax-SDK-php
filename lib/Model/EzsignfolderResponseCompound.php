@@ -575,7 +575,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets tEzsignfolderNote
      *
-     * @param string $tEzsignfolderNote Somes extra notes about the eZsign Folder
+     * @param string $tEzsignfolderNote Note about the Ezsignfolder
      *
      * @return self
      */

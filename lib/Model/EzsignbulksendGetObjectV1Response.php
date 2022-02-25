@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsignfolderEditObjectV1Request
+ * EzsignbulksendGetObjectV1Response
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UNUSEDEzsignfolderEditObjectV1Request Class Doc Comment
+ * EzsignbulksendGetObjectV1Response Class Doc Comment
  *
  * @category Class
- * @description Request for the /1/object/ezsignfolder/editObject API Request
+ * @description Response for the /1/object/ezsignbulksend/getObject API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignbulksendGetObjectV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAcce
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UNUSED-ezsignfolder-editObject-v1-Request';
+    protected static $openAPIModelName = 'ezsignbulksend-getObject-v1-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,9 @@ class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objEzsignfolder' => '\eZmaxAPI\Model\EzsignfolderRequest'
+        'mPayload' => '\eZmaxAPI\Model\EzsignbulksendGetObjectV1ResponseMPayload',
+        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
+        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
 
     /**
@@ -72,7 +74,9 @@ class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objEzsignfolder' => null
+        'mPayload' => null,
+        'objDebugPayload' => null,
+        'objDebug' => null
     ];
 
     /**
@@ -102,7 +106,9 @@ class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'objEzsignfolder' => 'objEzsignfolder'
+        'mPayload' => 'mPayload',
+        'objDebugPayload' => 'objDebugPayload',
+        'objDebug' => 'objDebug'
     ];
 
     /**
@@ -111,7 +117,9 @@ class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'objEzsignfolder' => 'setObjEzsignfolder'
+        'mPayload' => 'setMPayload',
+        'objDebugPayload' => 'setObjDebugPayload',
+        'objDebug' => 'setObjDebug'
     ];
 
     /**
@@ -120,7 +128,9 @@ class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'objEzsignfolder' => 'getObjEzsignfolder'
+        'mPayload' => 'getMPayload',
+        'objDebugPayload' => 'getObjDebugPayload',
+        'objDebug' => 'getObjDebug'
     ];
 
     /**
@@ -180,7 +190,9 @@ class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['objEzsignfolder'] = $data['objEzsignfolder'] ?? null;
+        $this->container['mPayload'] = $data['mPayload'] ?? null;
+        $this->container['objDebugPayload'] = $data['objDebugPayload'] ?? null;
+        $this->container['objDebug'] = $data['objDebug'] ?? null;
     }
 
     /**
@@ -192,6 +204,9 @@ class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
+        if ($this->container['mPayload'] === null) {
+            $invalidProperties[] = "'mPayload' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -208,25 +223,73 @@ class UNUSEDEzsignfolderEditObjectV1Request implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets objEzsignfolder
+     * Gets mPayload
      *
-     * @return \eZmaxAPI\Model\EzsignfolderRequest|null
+     * @return \eZmaxAPI\Model\EzsignbulksendGetObjectV1ResponseMPayload
      */
-    public function getObjEzsignfolder()
+    public function getMPayload()
     {
-        return $this->container['objEzsignfolder'];
+        return $this->container['mPayload'];
     }
 
     /**
-     * Sets objEzsignfolder
+     * Sets mPayload
      *
-     * @param \eZmaxAPI\Model\EzsignfolderRequest|null $objEzsignfolder objEzsignfolder
+     * @param \eZmaxAPI\Model\EzsignbulksendGetObjectV1ResponseMPayload $mPayload mPayload
      *
      * @return self
      */
-    public function setObjEzsignfolder($objEzsignfolder)
+    public function setMPayload($mPayload)
     {
-        $this->container['objEzsignfolder'] = $objEzsignfolder;
+        $this->container['mPayload'] = $mPayload;
+
+        return $this;
+    }
+
+    /**
+     * Gets objDebugPayload
+     *
+     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayload|null
+     */
+    public function getObjDebugPayload()
+    {
+        return $this->container['objDebugPayload'];
+    }
+
+    /**
+     * Sets objDebugPayload
+     *
+     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayload|null $objDebugPayload objDebugPayload
+     *
+     * @return self
+     */
+    public function setObjDebugPayload($objDebugPayload)
+    {
+        $this->container['objDebugPayload'] = $objDebugPayload;
+
+        return $this;
+    }
+
+    /**
+     * Gets objDebug
+     *
+     * @return \eZmaxAPI\Model\CommonResponseObjDebug|null
+     */
+    public function getObjDebug()
+    {
+        return $this->container['objDebug'];
+    }
+
+    /**
+     * Sets objDebug
+     *
+     * @param \eZmaxAPI\Model\CommonResponseObjDebug|null $objDebug objDebug
+     *
+     * @return self
+     */
+    public function setObjDebug($objDebug)
+    {
+        $this->container['objDebug'] = $objDebug;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsigndocumentEditObjectV1RequestTest
+ * FieldEEzsigndocumentlogTypeTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * UNUSEDEzsigndocumentEditObjectV1RequestTest Class Doc Comment
+ * FieldEEzsigndocumentlogTypeTest Class Doc Comment
  *
  * @category    Class
- * @description Request for the /1/object/ezsigndocument/editObject API Request
+ * @description The Ezsigndocumentlog Type.
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class UNUSEDEzsigndocumentEditObjectV1RequestTest extends TestCase
+class FieldEEzsigndocumentlogTypeTest extends TestCase
 {
 
     /**
@@ -72,18 +72,9 @@ class UNUSEDEzsigndocumentEditObjectV1RequestTest extends TestCase
     }
 
     /**
-     * Test "UNUSEDEzsigndocumentEditObjectV1Request"
+     * Test "FieldEEzsigndocumentlogType"
      */
-    public function testUNUSEDEzsigndocumentEditObjectV1Request()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objEzsigndocument"
-     */
-    public function testPropertyObjEzsigndocument()
+    public function testFieldEEzsigndocumentlogType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

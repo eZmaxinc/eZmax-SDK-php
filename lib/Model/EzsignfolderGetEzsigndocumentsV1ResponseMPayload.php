@@ -223,7 +223,7 @@ class EzsignfolderGetEzsigndocumentsV1ResponseMPayload implements ModelInterface
     /**
      * Sets aObjEzsigndocument
      *
-     * @param \eZmaxAPI\Model\EzsigndocumentResponseCompound[] $aObjEzsigndocument aObjEzsigndocument
+     * @param \eZmaxAPI\Model\EzsigndocumentResponseCompound[] $aObjEzsigndocument 
      *
      * @return self
      */

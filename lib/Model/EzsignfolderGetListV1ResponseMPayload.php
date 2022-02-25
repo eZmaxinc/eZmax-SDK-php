@@ -241,7 +241,7 @@ class EzsignfolderGetListV1ResponseMPayload implements ModelInterface, ArrayAcce
     /**
      * Sets aObjEzsignfolder
      *
-     * @param \eZmaxAPI\Model\EzsignfolderListElement[] $aObjEzsignfolder aObjEzsignfolder
+     * @param \eZmaxAPI\Model\EzsignfolderListElement[] $aObjEzsignfolder 
      *
      * @return self
      */

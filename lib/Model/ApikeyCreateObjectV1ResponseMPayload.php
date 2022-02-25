@@ -223,7 +223,7 @@ class ApikeyCreateObjectV1ResponseMPayload implements ModelInterface, ArrayAcces
     /**
      * Sets aObjApikey
      *
-     * @param \eZmaxAPI\Model\ApikeyResponse[] $aObjApikey aObjApikey
+     * @param \eZmaxAPI\Model\ApikeyResponse[] $aObjApikey 
      *
      * @return self
      */

@@ -249,7 +249,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Sets aObjAddress
      *
-     * @param \eZmaxAPI\Model\AddressRequest[] $aObjAddress aObjAddress
+     * @param \eZmaxAPI\Model\AddressRequest[] $aObjAddress 
      *
      * @return self
      */
@@ -273,7 +273,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Sets aObjPhone
      *
-     * @param \eZmaxAPI\Model\PhoneRequest[] $aObjPhone aObjPhone
+     * @param \eZmaxAPI\Model\PhoneRequest[] $aObjPhone 
      *
      * @return self
      */
@@ -297,7 +297,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Sets aObjEmail
      *
-     * @param \eZmaxAPI\Model\EmailRequest[] $aObjEmail aObjEmail
+     * @param \eZmaxAPI\Model\EmailRequest[] $aObjEmail 
      *
      * @return self
      */
@@ -321,7 +321,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Sets aObjWebsite
      *
-     * @param \eZmaxAPI\Model\WebsiteRequest[] $aObjWebsite aObjWebsite
+     * @param \eZmaxAPI\Model\WebsiteRequest[] $aObjWebsite 
      *
      * @return self
      */

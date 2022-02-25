@@ -80,6 +80,8 @@ ezsignsignatureDeleteObjectV1($pkiEzsignsignatureID): \eZmaxAPI\Model\Ezsignsign
 
 Delete an existing Ezsignsignature
 
+
+
 ### Example
 
 ```php
@@ -139,6 +141,8 @@ ezsignsignatureEditObjectV1($pkiEzsignsignatureID, $ezsignsignatureEditObjectV1R
 ```
 
 Edit an existing Ezsignsignature
+
+
 
 ### Example
 

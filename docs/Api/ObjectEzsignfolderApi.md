@@ -86,6 +86,8 @@ ezsignfolderDeleteObjectV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderDele
 
 Delete an existing Ezsignfolder
 
+
+
 ### Example
 
 ```php
@@ -145,6 +147,8 @@ ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request): 
 ```
 
 Edit an existing Ezsignfolder
+
+
 
 ### Example
 
@@ -208,6 +212,8 @@ ezsignfolderGetEzsigndocumentsV1($pkiEzsignfolderID): \eZmaxAPI\Model\Ezsignfold
 
 Retrieve an existing Ezsignfolder's Ezsigndocuments
 
+
+
 ### Example
 
 ```php
@@ -268,6 +274,8 @@ ezsignfolderGetEzsignfoldersignerassociationsV1($pkiEzsignfolderID): \eZmaxAPI\M
 
 Retrieve an existing Ezsignfolder's Ezsignfoldersignerassociations
 
+
+
 ### Example
 
 ```php
@@ -327,6 +335,8 @@ ezsignfolderGetFormsDataV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderGetF
 ```
 
 Retrieve an existing Ezsignfolder's forms data
+
+
 
 ### Example
 
@@ -458,6 +468,8 @@ ezsignfolderGetObjectV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderGetObje
 
 Retrieve an existing Ezsignfolder
 
+
+
 ### Example
 
 ```php
@@ -517,6 +529,8 @@ ezsignfolderSendV1($pkiEzsignfolderID, $ezsignfolderSendV1Request): \eZmaxAPI\Mo
 ```
 
 Send the Ezsignfolder to the signatories for signature
+
+
 
 ### Example
 
@@ -602,7 +616,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
     $config
 );
 $pkiEzsignfolderID = 56; // int
-$body = 'body_example'; // string
+$body = array('key' => new \stdClass); // object
 
 try {
     $result = $apiInstance->ezsignfolderUnsendV1($pkiEzsignfolderID, $body);
@@ -617,7 +631,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiEzsignfolderID** | **int**|  |
- **body** | **string**|  |
+ **body** | **object**|  |
 
 ### Return type
 

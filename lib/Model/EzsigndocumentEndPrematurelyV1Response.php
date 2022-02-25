@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsignfoldersignerassociationEditObjectV1Response
+ * EzsigndocumentEndPrematurelyV1Response
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UNUSEDEzsignfoldersignerassociationEditObjectV1Response Class Doc Comment
+ * EzsigndocumentEndPrematurelyV1Response Class Doc Comment
  *
  * @category Class
- * @description Response for the /1/object/ezsignfoldersignerassociation/editObject API Request
+ * @description Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/endPrematurely API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UNUSEDEzsignfoldersignerassociationEditObjectV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigndocumentEndPrematurelyV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1Response implements ModelIn
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UNUSED-ezsignfoldersignerassociation-editObject-v1-Response';
+    protected static $openAPIModelName = 'ezsigndocument-endPrematurely-v1-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -222,7 +222,7 @@ class EzsignbulksendGetListV1ResponseMPayloadAllOf implements ModelInterface, Ar
     /**
      * Sets aObjEzsignbulksend
      *
-     * @param \eZmaxAPI\Model\EzsignbulksendListElement[] $aObjEzsignbulksend aObjEzsignbulksend
+     * @param \eZmaxAPI\Model\EzsignbulksendListElement[] $aObjEzsignbulksend 
      *
      * @return self
      */

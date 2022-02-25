@@ -1,6 +1,6 @@
 <?php
 /**
- * EzsignfolderRequestCompound
+ * EzsignbulksendGetObjectV1ResponseMPayload
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * EzsignfolderRequestCompound Class Doc Comment
+ * EzsignbulksendGetObjectV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description An Ezsignfolder Object and children to create a complete structure
+ * @description Payload for the /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getObject API Request
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignbulksendGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ezsignfolder-RequestCompound';
+    protected static $openAPIModelName = 'ezsignbulksend-getObject-v1-Response-mPayload';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,12 +61,13 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignfolderID' => 'int',
+        'pkiEzsignbulksendID' => 'int',
         'fkiEzsignfoldertypeID' => 'int',
-        'fkiEzsigntsarequirementID' => 'int',
-        'sEzsignfolderDescription' => 'string',
-        'tEzsignfolderNote' => 'string',
-        'eEzsignfolderSendreminderfrequency' => '\eZmaxAPI\Model\FieldEEzsignfolderSendreminderfrequency'
+        'fkiLanguageID' => 'int',
+        'sEzsignbulksendDescription' => 'string',
+        'tEzsignbulksendNote' => 'string',
+        'bEzsignbulksendIsactive' => 'bool',
+        'objAudit' => '\eZmaxAPI\Model\CommonAudit'
     ];
 
     /**
@@ -77,12 +78,13 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignfolderID' => null,
+        'pkiEzsignbulksendID' => null,
         'fkiEzsignfoldertypeID' => null,
-        'fkiEzsigntsarequirementID' => null,
-        'sEzsignfolderDescription' => null,
-        'tEzsignfolderNote' => null,
-        'eEzsignfolderSendreminderfrequency' => null
+        'fkiLanguageID' => null,
+        'sEzsignbulksendDescription' => null,
+        'tEzsignbulksendNote' => null,
+        'bEzsignbulksendIsactive' => null,
+        'objAudit' => null
     ];
 
     /**
@@ -112,12 +114,13 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignfolderID' => 'pkiEzsignfolderID',
+        'pkiEzsignbulksendID' => 'pkiEzsignbulksendID',
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
-        'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID',
-        'sEzsignfolderDescription' => 'sEzsignfolderDescription',
-        'tEzsignfolderNote' => 'tEzsignfolderNote',
-        'eEzsignfolderSendreminderfrequency' => 'eEzsignfolderSendreminderfrequency'
+        'fkiLanguageID' => 'fkiLanguageID',
+        'sEzsignbulksendDescription' => 'sEzsignbulksendDescription',
+        'tEzsignbulksendNote' => 'tEzsignbulksendNote',
+        'bEzsignbulksendIsactive' => 'bEzsignbulksendIsactive',
+        'objAudit' => 'objAudit'
     ];
 
     /**
@@ -126,12 +129,13 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
+        'pkiEzsignbulksendID' => 'setPkiEzsignbulksendID',
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
-        'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID',
-        'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
-        'tEzsignfolderNote' => 'setTEzsignfolderNote',
-        'eEzsignfolderSendreminderfrequency' => 'setEEzsignfolderSendreminderfrequency'
+        'fkiLanguageID' => 'setFkiLanguageID',
+        'sEzsignbulksendDescription' => 'setSEzsignbulksendDescription',
+        'tEzsignbulksendNote' => 'setTEzsignbulksendNote',
+        'bEzsignbulksendIsactive' => 'setBEzsignbulksendIsactive',
+        'objAudit' => 'setObjAudit'
     ];
 
     /**
@@ -140,12 +144,13 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
+        'pkiEzsignbulksendID' => 'getPkiEzsignbulksendID',
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
-        'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID',
-        'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
-        'tEzsignfolderNote' => 'getTEzsignfolderNote',
-        'eEzsignfolderSendreminderfrequency' => 'getEEzsignfolderSendreminderfrequency'
+        'fkiLanguageID' => 'getFkiLanguageID',
+        'sEzsignbulksendDescription' => 'getSEzsignbulksendDescription',
+        'tEzsignbulksendNote' => 'getTEzsignbulksendNote',
+        'bEzsignbulksendIsactive' => 'getBEzsignbulksendIsactive',
+        'objAudit' => 'getObjAudit'
     ];
 
     /**
@@ -205,12 +210,13 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->container['pkiEzsignfolderID'] = $data['pkiEzsignfolderID'] ?? null;
+        $this->container['pkiEzsignbulksendID'] = $data['pkiEzsignbulksendID'] ?? null;
         $this->container['fkiEzsignfoldertypeID'] = $data['fkiEzsignfoldertypeID'] ?? null;
-        $this->container['fkiEzsigntsarequirementID'] = $data['fkiEzsigntsarequirementID'] ?? null;
-        $this->container['sEzsignfolderDescription'] = $data['sEzsignfolderDescription'] ?? null;
-        $this->container['tEzsignfolderNote'] = $data['tEzsignfolderNote'] ?? null;
-        $this->container['eEzsignfolderSendreminderfrequency'] = $data['eEzsignfolderSendreminderfrequency'] ?? null;
+        $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
+        $this->container['sEzsignbulksendDescription'] = $data['sEzsignbulksendDescription'] ?? null;
+        $this->container['tEzsignbulksendNote'] = $data['tEzsignbulksendNote'] ?? null;
+        $this->container['bEzsignbulksendIsactive'] = $data['bEzsignbulksendIsactive'] ?? null;
+        $this->container['objAudit'] = $data['objAudit'] ?? null;
     }
 
     /**
@@ -222,28 +228,34 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
+        if ($this->container['pkiEzsignbulksendID'] === null) {
+            $invalidProperties[] = "'pkiEzsignbulksendID' can't be null";
+        }
         if ($this->container['fkiEzsignfoldertypeID'] === null) {
             $invalidProperties[] = "'fkiEzsignfoldertypeID' can't be null";
         }
-        if ($this->container['fkiEzsigntsarequirementID'] === null) {
-            $invalidProperties[] = "'fkiEzsigntsarequirementID' can't be null";
+        if ($this->container['fkiLanguageID'] === null) {
+            $invalidProperties[] = "'fkiLanguageID' can't be null";
         }
-        if (($this->container['fkiEzsigntsarequirementID'] > 3)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntsarequirementID', must be smaller than or equal to 3.";
-        }
-
-        if (($this->container['fkiEzsigntsarequirementID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntsarequirementID', must be bigger than or equal to 1.";
+        if (($this->container['fkiLanguageID'] > 2)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
         }
 
-        if ($this->container['sEzsignfolderDescription'] === null) {
-            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
+        if (($this->container['fkiLanguageID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
         }
-        if ($this->container['tEzsignfolderNote'] === null) {
-            $invalidProperties[] = "'tEzsignfolderNote' can't be null";
+
+        if ($this->container['sEzsignbulksendDescription'] === null) {
+            $invalidProperties[] = "'sEzsignbulksendDescription' can't be null";
         }
-        if ($this->container['eEzsignfolderSendreminderfrequency'] === null) {
-            $invalidProperties[] = "'eEzsignfolderSendreminderfrequency' can't be null";
+        if ($this->container['tEzsignbulksendNote'] === null) {
+            $invalidProperties[] = "'tEzsignbulksendNote' can't be null";
+        }
+        if ($this->container['bEzsignbulksendIsactive'] === null) {
+            $invalidProperties[] = "'bEzsignbulksendIsactive' can't be null";
+        }
+        if ($this->container['objAudit'] === null) {
+            $invalidProperties[] = "'objAudit' can't be null";
         }
         return $invalidProperties;
     }
@@ -261,25 +273,25 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets pkiEzsignfolderID
+     * Gets pkiEzsignbulksendID
      *
-     * @return int|null
+     * @return int
      */
-    public function getPkiEzsignfolderID()
+    public function getPkiEzsignbulksendID()
     {
-        return $this->container['pkiEzsignfolderID'];
+        return $this->container['pkiEzsignbulksendID'];
     }
 
     /**
-     * Sets pkiEzsignfolderID
+     * Sets pkiEzsignbulksendID
      *
-     * @param int|null $pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param int $pkiEzsignbulksendID The unique ID of the Ezsignbulksend
      *
      * @return self
      */
-    public function setPkiEzsignfolderID($pkiEzsignfolderID)
+    public function setPkiEzsignbulksendID($pkiEzsignbulksendID)
     {
-        $this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
+        $this->container['pkiEzsignbulksendID'] = $pkiEzsignbulksendID;
 
         return $this;
     }
@@ -309,105 +321,129 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets fkiEzsigntsarequirementID
+     * Gets fkiLanguageID
      *
      * @return int
      */
-    public function getFkiEzsigntsarequirementID()
+    public function getFkiLanguageID()
     {
-        return $this->container['fkiEzsigntsarequirementID'];
+        return $this->container['fkiLanguageID'];
     }
 
     /**
-     * Sets fkiEzsigntsarequirementID
+     * Sets fkiLanguageID
      *
-     * @param int $fkiEzsigntsarequirementID The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
+     * @param int $fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      *
      * @return self
      */
-    public function setFkiEzsigntsarequirementID($fkiEzsigntsarequirementID)
+    public function setFkiLanguageID($fkiLanguageID)
     {
 
-        if (($fkiEzsigntsarequirementID > 3)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigntsarequirementID when calling EzsignfolderRequestCompound., must be smaller than or equal to 3.');
+        if (($fkiLanguageID > 2)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignbulksendGetObjectV1ResponseMPayload., must be smaller than or equal to 2.');
         }
-        if (($fkiEzsigntsarequirementID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigntsarequirementID when calling EzsignfolderRequestCompound., must be bigger than or equal to 1.');
+        if (($fkiLanguageID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignbulksendGetObjectV1ResponseMPayload., must be bigger than or equal to 1.');
         }
 
-        $this->container['fkiEzsigntsarequirementID'] = $fkiEzsigntsarequirementID;
+        $this->container['fkiLanguageID'] = $fkiLanguageID;
 
         return $this;
     }
 
     /**
-     * Gets sEzsignfolderDescription
+     * Gets sEzsignbulksendDescription
      *
      * @return string
      */
-    public function getSEzsignfolderDescription()
+    public function getSEzsignbulksendDescription()
     {
-        return $this->container['sEzsignfolderDescription'];
+        return $this->container['sEzsignbulksendDescription'];
     }
 
     /**
-     * Sets sEzsignfolderDescription
+     * Sets sEzsignbulksendDescription
      *
-     * @param string $sEzsignfolderDescription The description of the Ezsignfolder
+     * @param string $sEzsignbulksendDescription The description of the Ezsignbulksend
      *
      * @return self
      */
-    public function setSEzsignfolderDescription($sEzsignfolderDescription)
+    public function setSEzsignbulksendDescription($sEzsignbulksendDescription)
     {
-        $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
+        $this->container['sEzsignbulksendDescription'] = $sEzsignbulksendDescription;
 
         return $this;
     }
 
     /**
-     * Gets tEzsignfolderNote
+     * Gets tEzsignbulksendNote
      *
      * @return string
      */
-    public function getTEzsignfolderNote()
+    public function getTEzsignbulksendNote()
     {
-        return $this->container['tEzsignfolderNote'];
+        return $this->container['tEzsignbulksendNote'];
     }
 
     /**
-     * Sets tEzsignfolderNote
+     * Sets tEzsignbulksendNote
      *
-     * @param string $tEzsignfolderNote Note about the Ezsignfolder
+     * @param string $tEzsignbulksendNote Note about the Ezsignbulksend
      *
      * @return self
      */
-    public function setTEzsignfolderNote($tEzsignfolderNote)
+    public function setTEzsignbulksendNote($tEzsignbulksendNote)
     {
-        $this->container['tEzsignfolderNote'] = $tEzsignfolderNote;
+        $this->container['tEzsignbulksendNote'] = $tEzsignbulksendNote;
 
         return $this;
     }
 
     /**
-     * Gets eEzsignfolderSendreminderfrequency
+     * Gets bEzsignbulksendIsactive
      *
-     * @return \eZmaxAPI\Model\FieldEEzsignfolderSendreminderfrequency
+     * @return bool
      */
-    public function getEEzsignfolderSendreminderfrequency()
+    public function getBEzsignbulksendIsactive()
     {
-        return $this->container['eEzsignfolderSendreminderfrequency'];
+        return $this->container['bEzsignbulksendIsactive'];
     }
 
     /**
-     * Sets eEzsignfolderSendreminderfrequency
+     * Sets bEzsignbulksendIsactive
      *
-     * @param \eZmaxAPI\Model\FieldEEzsignfolderSendreminderfrequency $eEzsignfolderSendreminderfrequency eEzsignfolderSendreminderfrequency
+     * @param bool $bEzsignbulksendIsactive Whether the Ezsignbulksend is active or not
      *
      * @return self
      */
-    public function setEEzsignfolderSendreminderfrequency($eEzsignfolderSendreminderfrequency)
+    public function setBEzsignbulksendIsactive($bEzsignbulksendIsactive)
     {
-        $this->container['eEzsignfolderSendreminderfrequency'] = $eEzsignfolderSendreminderfrequency;
+        $this->container['bEzsignbulksendIsactive'] = $bEzsignbulksendIsactive;
+
+        return $this;
+    }
+
+    /**
+     * Gets objAudit
+     *
+     * @return \eZmaxAPI\Model\CommonAudit
+     */
+    public function getObjAudit()
+    {
+        return $this->container['objAudit'];
+    }
+
+    /**
+     * Sets objAudit
+     *
+     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
+     *
+     * @return self
+     */
+    public function setObjAudit($objAudit)
+    {
+        $this->container['objAudit'] = $objAudit;
 
         return $this;
     }

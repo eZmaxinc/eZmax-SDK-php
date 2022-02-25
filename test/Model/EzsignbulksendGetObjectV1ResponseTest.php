@@ -1,6 +1,6 @@
 <?php
 /**
- * UNUSEDEzsignfoldersignerassociationEditObjectV1ResponseTest
+ * EzsignbulksendGetObjectV1ResponseTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace eZmaxAPI\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * UNUSEDEzsignfoldersignerassociationEditObjectV1ResponseTest Class Doc Comment
+ * EzsignbulksendGetObjectV1ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Response for the /1/object/ezsignfoldersignerassociation/editObject API Request
+ * @description Response for the /1/object/ezsignbulksend/getObject API Request
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class UNUSEDEzsignfoldersignerassociationEditObjectV1ResponseTest extends TestCase
+class EzsignbulksendGetObjectV1ResponseTest extends TestCase
 {
 
     /**
@@ -72,9 +72,18 @@ class UNUSEDEzsignfoldersignerassociationEditObjectV1ResponseTest extends TestCa
     }
 
     /**
-     * Test "UNUSEDEzsignfoldersignerassociationEditObjectV1Response"
+     * Test "EzsignbulksendGetObjectV1Response"
      */
-    public function testUNUSEDEzsignfoldersignerassociationEditObjectV1Response()
+    public function testEzsignbulksendGetObjectV1Response()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "mPayload"
+     */
+    public function testPropertyMPayload()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -123,7 +123,7 @@ class ModuleAuthenticateApi
      * Authenticate a user
      *
      * @param  string $eSessionType eSessionType (required)
-     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request authenticateAuthenticateV2Request (required)
+     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request  (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -141,7 +141,7 @@ class ModuleAuthenticateApi
      * Authenticate a user
      *
      * @param  string $eSessionType (required)
-     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request (required)
+     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request  (required)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -255,7 +255,7 @@ class ModuleAuthenticateApi
      * Authenticate a user
      *
      * @param  string $eSessionType (required)
-     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request (required)
+     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -276,7 +276,7 @@ class ModuleAuthenticateApi
      * Authenticate a user
      *
      * @param  string $eSessionType (required)
-     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request (required)
+     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -323,7 +323,7 @@ class ModuleAuthenticateApi
      * Create request for operation 'authenticateAuthenticateV2'
      *
      * @param  string $eSessionType (required)
-     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request (required)
+     * @param  \eZmaxAPI\Model\AuthenticateAuthenticateV2Request $authenticateAuthenticateV2Request  (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

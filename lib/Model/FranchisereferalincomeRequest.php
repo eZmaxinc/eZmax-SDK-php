@@ -535,7 +535,7 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets tFranchisereferalincomeComment
      *
-     * @param string $tFranchisereferalincomeComment A comment about the transaction
+     * @param string $tFranchisereferalincomeComment Comment about the transaction
      *
      * @return self
      */
@@ -583,7 +583,7 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets sFranchisereferalincomeRemoteid
      *
-     * @param string $sFranchisereferalincomeRemoteid sFranchisereferalincomeRemoteid
+     * @param string $sFranchisereferalincomeRemoteid 
      *
      * @return self
      */

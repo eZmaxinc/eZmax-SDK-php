@@ -1,9 +1,9 @@
-# # UNUSEDEzsigndocumentEditObjectV1Request
+# # EzsigndocumentGetTemporaryProofV1ResponseMPayload
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objEzsigndocument** | [**\eZmaxAPI\Model\EzsigndocumentRequest**](EzsigndocumentRequest.md) |  | [optional]
+**aObjEzsigndocumentlog** | [**\eZmaxAPI\Model\EzsigndocumentlogResponse**](EzsigndocumentlogResponse.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
