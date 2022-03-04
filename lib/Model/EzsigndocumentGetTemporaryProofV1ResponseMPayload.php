@@ -61,7 +61,7 @@ class EzsigndocumentGetTemporaryProofV1ResponseMPayload implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjEzsigndocumentlog' => '\eZmaxAPI\Model\EzsigndocumentlogResponse'
+        'aObjEzsigndocumentlog' => '\eZmaxAPI\Model\EzsigndocumentlogResponseCompound'
     ];
 
     /**
@@ -213,7 +213,7 @@ class EzsigndocumentGetTemporaryProofV1ResponseMPayload implements ModelInterfac
     /**
      * Gets aObjEzsigndocumentlog
      *
-     * @return \eZmaxAPI\Model\EzsigndocumentlogResponse
+     * @return \eZmaxAPI\Model\EzsigndocumentlogResponseCompound
      */
     public function getAObjEzsigndocumentlog()
     {
@@ -223,7 +223,7 @@ class EzsigndocumentGetTemporaryProofV1ResponseMPayload implements ModelInterfac
     /**
      * Sets aObjEzsigndocumentlog
      *
-     * @param \eZmaxAPI\Model\EzsigndocumentlogResponse $aObjEzsigndocumentlog aObjEzsigndocumentlog
+     * @param \eZmaxAPI\Model\EzsigndocumentlogResponseCompound $aObjEzsigndocumentlog aObjEzsigndocumentlog
      *
      * @return self
      */

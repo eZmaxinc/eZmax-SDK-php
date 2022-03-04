@@ -61,11 +61,6 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iEzsigndocumentStepformtotal' => 'int',
-        'iEzsigndocumentStepformcurrent' => 'int',
-        'iEzsigndocumentStepsignaturetotal' => 'int',
-        'iEzsigndocumentStepsignatureCurrent' => 'int',
-        'aObjEzsignfoldersignerassociationstatus' => '\eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[]',
         'fkiEzsignfolderID' => 'int',
         'dtEzsigndocumentDuedate' => 'string',
         'fkiLanguageID' => 'int',
@@ -80,7 +75,12 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsigndocumentSignaturetotal' => 'int',
         'sEzsigndocumentMD5initial' => 'string',
         'sEzsigndocumentMD5signed' => 'string',
-        'objAudit' => '\eZmaxAPI\Model\CommonAudit'
+        'objAudit' => '\eZmaxAPI\Model\CommonAudit',
+        'iEzsigndocumentStepformtotal' => 'int',
+        'iEzsigndocumentStepformcurrent' => 'int',
+        'iEzsigndocumentStepsignaturetotal' => 'int',
+        'iEzsigndocumentStepsignatureCurrent' => 'int',
+        'aObjEzsignfoldersignerassociationstatus' => '\eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[]'
     ];
 
     /**
@@ -91,11 +91,6 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'iEzsigndocumentStepformtotal' => null,
-        'iEzsigndocumentStepformcurrent' => null,
-        'iEzsigndocumentStepsignaturetotal' => null,
-        'iEzsigndocumentStepsignatureCurrent' => null,
-        'aObjEzsignfoldersignerassociationstatus' => null,
         'fkiEzsignfolderID' => null,
         'dtEzsigndocumentDuedate' => null,
         'fkiLanguageID' => null,
@@ -110,7 +105,12 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsigndocumentSignaturetotal' => null,
         'sEzsigndocumentMD5initial' => null,
         'sEzsigndocumentMD5signed' => null,
-        'objAudit' => null
+        'objAudit' => null,
+        'iEzsigndocumentStepformtotal' => null,
+        'iEzsigndocumentStepformcurrent' => null,
+        'iEzsigndocumentStepsignaturetotal' => null,
+        'iEzsigndocumentStepsignatureCurrent' => null,
+        'aObjEzsignfoldersignerassociationstatus' => null
     ];
 
     /**
@@ -140,11 +140,6 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'iEzsigndocumentStepformtotal' => 'iEzsigndocumentStepformtotal',
-        'iEzsigndocumentStepformcurrent' => 'iEzsigndocumentStepformcurrent',
-        'iEzsigndocumentStepsignaturetotal' => 'iEzsigndocumentStepsignaturetotal',
-        'iEzsigndocumentStepsignatureCurrent' => 'iEzsigndocumentStepsignatureCurrent',
-        'aObjEzsignfoldersignerassociationstatus' => 'a_objEzsignfoldersignerassociationstatus',
         'fkiEzsignfolderID' => 'fkiEzsignfolderID',
         'dtEzsigndocumentDuedate' => 'dtEzsigndocumentDuedate',
         'fkiLanguageID' => 'fkiLanguageID',
@@ -159,7 +154,12 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsigndocumentSignaturetotal' => 'iEzsigndocumentSignaturetotal',
         'sEzsigndocumentMD5initial' => 'sEzsigndocumentMD5initial',
         'sEzsigndocumentMD5signed' => 'sEzsigndocumentMD5signed',
-        'objAudit' => 'objAudit'
+        'objAudit' => 'objAudit',
+        'iEzsigndocumentStepformtotal' => 'iEzsigndocumentStepformtotal',
+        'iEzsigndocumentStepformcurrent' => 'iEzsigndocumentStepformcurrent',
+        'iEzsigndocumentStepsignaturetotal' => 'iEzsigndocumentStepsignaturetotal',
+        'iEzsigndocumentStepsignatureCurrent' => 'iEzsigndocumentStepsignatureCurrent',
+        'aObjEzsignfoldersignerassociationstatus' => 'a_objEzsignfoldersignerassociationstatus'
     ];
 
     /**
@@ -168,11 +168,6 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'iEzsigndocumentStepformtotal' => 'setIEzsigndocumentStepformtotal',
-        'iEzsigndocumentStepformcurrent' => 'setIEzsigndocumentStepformcurrent',
-        'iEzsigndocumentStepsignaturetotal' => 'setIEzsigndocumentStepsignaturetotal',
-        'iEzsigndocumentStepsignatureCurrent' => 'setIEzsigndocumentStepsignatureCurrent',
-        'aObjEzsignfoldersignerassociationstatus' => 'setAObjEzsignfoldersignerassociationstatus',
         'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
         'dtEzsigndocumentDuedate' => 'setDtEzsigndocumentDuedate',
         'fkiLanguageID' => 'setFkiLanguageID',
@@ -187,7 +182,12 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsigndocumentSignaturetotal' => 'setIEzsigndocumentSignaturetotal',
         'sEzsigndocumentMD5initial' => 'setSEzsigndocumentMD5initial',
         'sEzsigndocumentMD5signed' => 'setSEzsigndocumentMD5signed',
-        'objAudit' => 'setObjAudit'
+        'objAudit' => 'setObjAudit',
+        'iEzsigndocumentStepformtotal' => 'setIEzsigndocumentStepformtotal',
+        'iEzsigndocumentStepformcurrent' => 'setIEzsigndocumentStepformcurrent',
+        'iEzsigndocumentStepsignaturetotal' => 'setIEzsigndocumentStepsignaturetotal',
+        'iEzsigndocumentStepsignatureCurrent' => 'setIEzsigndocumentStepsignatureCurrent',
+        'aObjEzsignfoldersignerassociationstatus' => 'setAObjEzsignfoldersignerassociationstatus'
     ];
 
     /**
@@ -196,11 +196,6 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'iEzsigndocumentStepformtotal' => 'getIEzsigndocumentStepformtotal',
-        'iEzsigndocumentStepformcurrent' => 'getIEzsigndocumentStepformcurrent',
-        'iEzsigndocumentStepsignaturetotal' => 'getIEzsigndocumentStepsignaturetotal',
-        'iEzsigndocumentStepsignatureCurrent' => 'getIEzsigndocumentStepsignatureCurrent',
-        'aObjEzsignfoldersignerassociationstatus' => 'getAObjEzsignfoldersignerassociationstatus',
         'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
         'dtEzsigndocumentDuedate' => 'getDtEzsigndocumentDuedate',
         'fkiLanguageID' => 'getFkiLanguageID',
@@ -215,7 +210,12 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsigndocumentSignaturetotal' => 'getIEzsigndocumentSignaturetotal',
         'sEzsigndocumentMD5initial' => 'getSEzsigndocumentMD5initial',
         'sEzsigndocumentMD5signed' => 'getSEzsigndocumentMD5signed',
-        'objAudit' => 'getObjAudit'
+        'objAudit' => 'getObjAudit',
+        'iEzsigndocumentStepformtotal' => 'getIEzsigndocumentStepformtotal',
+        'iEzsigndocumentStepformcurrent' => 'getIEzsigndocumentStepformcurrent',
+        'iEzsigndocumentStepsignaturetotal' => 'getIEzsigndocumentStepsignaturetotal',
+        'iEzsigndocumentStepsignatureCurrent' => 'getIEzsigndocumentStepsignatureCurrent',
+        'aObjEzsignfoldersignerassociationstatus' => 'getAObjEzsignfoldersignerassociationstatus'
     ];
 
     /**
@@ -275,11 +275,6 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['iEzsigndocumentStepformtotal'] = $data['iEzsigndocumentStepformtotal'] ?? null;
-        $this->container['iEzsigndocumentStepformcurrent'] = $data['iEzsigndocumentStepformcurrent'] ?? null;
-        $this->container['iEzsigndocumentStepsignaturetotal'] = $data['iEzsigndocumentStepsignaturetotal'] ?? null;
-        $this->container['iEzsigndocumentStepsignatureCurrent'] = $data['iEzsigndocumentStepsignatureCurrent'] ?? null;
-        $this->container['aObjEzsignfoldersignerassociationstatus'] = $data['aObjEzsignfoldersignerassociationstatus'] ?? null;
         $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
         $this->container['dtEzsigndocumentDuedate'] = $data['dtEzsigndocumentDuedate'] ?? null;
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
@@ -295,6 +290,11 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         $this->container['sEzsigndocumentMD5initial'] = $data['sEzsigndocumentMD5initial'] ?? null;
         $this->container['sEzsigndocumentMD5signed'] = $data['sEzsigndocumentMD5signed'] ?? null;
         $this->container['objAudit'] = $data['objAudit'] ?? null;
+        $this->container['iEzsigndocumentStepformtotal'] = $data['iEzsigndocumentStepformtotal'] ?? null;
+        $this->container['iEzsigndocumentStepformcurrent'] = $data['iEzsigndocumentStepformcurrent'] ?? null;
+        $this->container['iEzsigndocumentStepsignaturetotal'] = $data['iEzsigndocumentStepsignaturetotal'] ?? null;
+        $this->container['iEzsigndocumentStepsignatureCurrent'] = $data['iEzsigndocumentStepsignatureCurrent'] ?? null;
+        $this->container['aObjEzsignfoldersignerassociationstatus'] = $data['aObjEzsignfoldersignerassociationstatus'] ?? null;
     }
 
     /**
@@ -306,21 +306,6 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['iEzsigndocumentStepformtotal'] === null) {
-            $invalidProperties[] = "'iEzsigndocumentStepformtotal' can't be null";
-        }
-        if ($this->container['iEzsigndocumentStepformcurrent'] === null) {
-            $invalidProperties[] = "'iEzsigndocumentStepformcurrent' can't be null";
-        }
-        if ($this->container['iEzsigndocumentStepsignaturetotal'] === null) {
-            $invalidProperties[] = "'iEzsigndocumentStepsignaturetotal' can't be null";
-        }
-        if ($this->container['iEzsigndocumentStepsignatureCurrent'] === null) {
-            $invalidProperties[] = "'iEzsigndocumentStepsignatureCurrent' can't be null";
-        }
-        if ($this->container['aObjEzsignfoldersignerassociationstatus'] === null) {
-            $invalidProperties[] = "'aObjEzsignfoldersignerassociationstatus' can't be null";
-        }
         if ($this->container['fkiEzsignfolderID'] === null) {
             $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
         }
@@ -374,6 +359,21 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         if ($this->container['objAudit'] === null) {
             $invalidProperties[] = "'objAudit' can't be null";
         }
+        if ($this->container['iEzsigndocumentStepformtotal'] === null) {
+            $invalidProperties[] = "'iEzsigndocumentStepformtotal' can't be null";
+        }
+        if ($this->container['iEzsigndocumentStepformcurrent'] === null) {
+            $invalidProperties[] = "'iEzsigndocumentStepformcurrent' can't be null";
+        }
+        if ($this->container['iEzsigndocumentStepsignaturetotal'] === null) {
+            $invalidProperties[] = "'iEzsigndocumentStepsignaturetotal' can't be null";
+        }
+        if ($this->container['iEzsigndocumentStepsignatureCurrent'] === null) {
+            $invalidProperties[] = "'iEzsigndocumentStepsignatureCurrent' can't be null";
+        }
+        if ($this->container['aObjEzsignfoldersignerassociationstatus'] === null) {
+            $invalidProperties[] = "'aObjEzsignfoldersignerassociationstatus' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -388,126 +388,6 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets iEzsigndocumentStepformtotal
-     *
-     * @return int
-     */
-    public function getIEzsigndocumentStepformtotal()
-    {
-        return $this->container['iEzsigndocumentStepformtotal'];
-    }
-
-    /**
-     * Sets iEzsigndocumentStepformtotal
-     *
-     * @param int $iEzsigndocumentStepformtotal The total number of steps in the form filling phase
-     *
-     * @return self
-     */
-    public function setIEzsigndocumentStepformtotal($iEzsigndocumentStepformtotal)
-    {
-        $this->container['iEzsigndocumentStepformtotal'] = $iEzsigndocumentStepformtotal;
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigndocumentStepformcurrent
-     *
-     * @return int
-     */
-    public function getIEzsigndocumentStepformcurrent()
-    {
-        return $this->container['iEzsigndocumentStepformcurrent'];
-    }
-
-    /**
-     * Sets iEzsigndocumentStepformcurrent
-     *
-     * @param int $iEzsigndocumentStepformcurrent The current step in the form filling phase
-     *
-     * @return self
-     */
-    public function setIEzsigndocumentStepformcurrent($iEzsigndocumentStepformcurrent)
-    {
-        $this->container['iEzsigndocumentStepformcurrent'] = $iEzsigndocumentStepformcurrent;
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigndocumentStepsignaturetotal
-     *
-     * @return int
-     */
-    public function getIEzsigndocumentStepsignaturetotal()
-    {
-        return $this->container['iEzsigndocumentStepsignaturetotal'];
-    }
-
-    /**
-     * Sets iEzsigndocumentStepsignaturetotal
-     *
-     * @param int $iEzsigndocumentStepsignaturetotal The total number of steps in the signature filling phase
-     *
-     * @return self
-     */
-    public function setIEzsigndocumentStepsignaturetotal($iEzsigndocumentStepsignaturetotal)
-    {
-        $this->container['iEzsigndocumentStepsignaturetotal'] = $iEzsigndocumentStepsignaturetotal;
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigndocumentStepsignatureCurrent
-     *
-     * @return int
-     */
-    public function getIEzsigndocumentStepsignatureCurrent()
-    {
-        return $this->container['iEzsigndocumentStepsignatureCurrent'];
-    }
-
-    /**
-     * Sets iEzsigndocumentStepsignatureCurrent
-     *
-     * @param int $iEzsigndocumentStepsignatureCurrent The current step in the signature phase
-     *
-     * @return self
-     */
-    public function setIEzsigndocumentStepsignatureCurrent($iEzsigndocumentStepsignatureCurrent)
-    {
-        $this->container['iEzsigndocumentStepsignatureCurrent'] = $iEzsigndocumentStepsignatureCurrent;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjEzsignfoldersignerassociationstatus
-     *
-     * @return \eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[]
-     */
-    public function getAObjEzsignfoldersignerassociationstatus()
-    {
-        return $this->container['aObjEzsignfoldersignerassociationstatus'];
-    }
-
-    /**
-     * Sets aObjEzsignfoldersignerassociationstatus
-     *
-     * @param \eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[] $aObjEzsignfoldersignerassociationstatus aObjEzsignfoldersignerassociationstatus
-     *
-     * @return self
-     */
-    public function setAObjEzsignfoldersignerassociationstatus($aObjEzsignfoldersignerassociationstatus)
-    {
-        $this->container['aObjEzsignfoldersignerassociationstatus'] = $aObjEzsignfoldersignerassociationstatus;
-
-        return $this;
-    }
 
     /**
      * Gets fkiEzsignfolderID
@@ -873,6 +753,126 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
     public function setObjAudit($objAudit)
     {
         $this->container['objAudit'] = $objAudit;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigndocumentStepformtotal
+     *
+     * @return int
+     */
+    public function getIEzsigndocumentStepformtotal()
+    {
+        return $this->container['iEzsigndocumentStepformtotal'];
+    }
+
+    /**
+     * Sets iEzsigndocumentStepformtotal
+     *
+     * @param int $iEzsigndocumentStepformtotal The total number of steps in the form filling phase
+     *
+     * @return self
+     */
+    public function setIEzsigndocumentStepformtotal($iEzsigndocumentStepformtotal)
+    {
+        $this->container['iEzsigndocumentStepformtotal'] = $iEzsigndocumentStepformtotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigndocumentStepformcurrent
+     *
+     * @return int
+     */
+    public function getIEzsigndocumentStepformcurrent()
+    {
+        return $this->container['iEzsigndocumentStepformcurrent'];
+    }
+
+    /**
+     * Sets iEzsigndocumentStepformcurrent
+     *
+     * @param int $iEzsigndocumentStepformcurrent The current step in the form filling phase
+     *
+     * @return self
+     */
+    public function setIEzsigndocumentStepformcurrent($iEzsigndocumentStepformcurrent)
+    {
+        $this->container['iEzsigndocumentStepformcurrent'] = $iEzsigndocumentStepformcurrent;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigndocumentStepsignaturetotal
+     *
+     * @return int
+     */
+    public function getIEzsigndocumentStepsignaturetotal()
+    {
+        return $this->container['iEzsigndocumentStepsignaturetotal'];
+    }
+
+    /**
+     * Sets iEzsigndocumentStepsignaturetotal
+     *
+     * @param int $iEzsigndocumentStepsignaturetotal The total number of steps in the signature filling phase
+     *
+     * @return self
+     */
+    public function setIEzsigndocumentStepsignaturetotal($iEzsigndocumentStepsignaturetotal)
+    {
+        $this->container['iEzsigndocumentStepsignaturetotal'] = $iEzsigndocumentStepsignaturetotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigndocumentStepsignatureCurrent
+     *
+     * @return int
+     */
+    public function getIEzsigndocumentStepsignatureCurrent()
+    {
+        return $this->container['iEzsigndocumentStepsignatureCurrent'];
+    }
+
+    /**
+     * Sets iEzsigndocumentStepsignatureCurrent
+     *
+     * @param int $iEzsigndocumentStepsignatureCurrent The current step in the signature phase
+     *
+     * @return self
+     */
+    public function setIEzsigndocumentStepsignatureCurrent($iEzsigndocumentStepsignatureCurrent)
+    {
+        $this->container['iEzsigndocumentStepsignatureCurrent'] = $iEzsigndocumentStepsignatureCurrent;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjEzsignfoldersignerassociationstatus
+     *
+     * @return \eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[]
+     */
+    public function getAObjEzsignfoldersignerassociationstatus()
+    {
+        return $this->container['aObjEzsignfoldersignerassociationstatus'];
+    }
+
+    /**
+     * Sets aObjEzsignfoldersignerassociationstatus
+     *
+     * @param \eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[] $aObjEzsignfoldersignerassociationstatus aObjEzsignfoldersignerassociationstatus
+     *
+     * @return self
+     */
+    public function setAObjEzsignfoldersignerassociationstatus($aObjEzsignfoldersignerassociationstatus)
+    {
+        $this->container['aObjEzsignfoldersignerassociationstatus'] = $aObjEzsignfoldersignerassociationstatus;
 
         return $this;
     }

@@ -81,15 +81,6 @@ class EzsignfoldersignerassociationRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "objEzsignsigner"
-     */
-    public function testPropertyObjEzsignsigner()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "pkiEzsignfoldersignerassociationID"
      */
     public function testPropertyPkiEzsignfoldersignerassociationID()
@@ -120,6 +111,15 @@ class EzsignfoldersignerassociationRequestCompoundTest extends TestCase
      * Test attribute "bEzsignfoldersignerassociationReceivecopy"
      */
     public function testPropertyBEzsignfoldersignerassociationReceivecopy()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objEzsignsigner"
+     */
+    public function testPropertyObjEzsignsigner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

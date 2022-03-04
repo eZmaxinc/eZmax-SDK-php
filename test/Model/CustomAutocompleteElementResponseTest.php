@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * CustomAutocompleteElementResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Generic Autocomplete Response
+ * @description Generic AutocompleteElement Response
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

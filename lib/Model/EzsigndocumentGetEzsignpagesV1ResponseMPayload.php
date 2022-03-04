@@ -61,7 +61,7 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjEzsignpage' => '\eZmaxAPI\Model\EzsignpageResponse[]'
+        'aObjEzsignpage' => '\eZmaxAPI\Model\EzsignpageResponseCompound[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload implements ModelInterface, 
     /**
      * Gets aObjEzsignpage
      *
-     * @return \eZmaxAPI\Model\EzsignpageResponse[]
+     * @return \eZmaxAPI\Model\EzsignpageResponseCompound[]
      */
     public function getAObjEzsignpage()
     {
@@ -223,7 +223,7 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload implements ModelInterface, 
     /**
      * Sets aObjEzsignpage
      *
-     * @param \eZmaxAPI\Model\EzsignpageResponse[] $aObjEzsignpage 
+     * @param \eZmaxAPI\Model\EzsignpageResponseCompound[] $aObjEzsignpage aObjEzsignpage
      *
      * @return self
      */

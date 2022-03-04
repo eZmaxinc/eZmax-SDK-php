@@ -81,24 +81,6 @@ class FranchisereferalincomeRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "objAddress"
-     */
-    public function testPropertyObjAddress()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjContact"
-     */
-    public function testPropertyAObjContact()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "pkiFranchisereferalincomeID"
      */
     public function testPropertyPkiFranchisereferalincomeID()
@@ -201,6 +183,24 @@ class FranchisereferalincomeRequestCompoundTest extends TestCase
      * Test attribute "sFranchisereferalincomeRemoteid"
      */
     public function testPropertySFranchisereferalincomeRemoteid()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objAddress"
+     */
+    public function testPropertyObjAddress()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjContact"
+     */
+    public function testPropertyAObjContact()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

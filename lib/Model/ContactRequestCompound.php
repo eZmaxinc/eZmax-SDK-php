@@ -61,13 +61,13 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objContactinformations' => '\eZmaxAPI\Model\ContactinformationsRequestCompound',
         'fkiContacttitleID' => 'int',
         'fkiLanguageID' => 'int',
         'sContactFirstname' => 'string',
         'sContactLastname' => 'string',
         'sContactCompany' => 'string',
-        'dtContactBirthdate' => 'string'
+        'dtContactBirthdate' => 'string',
+        'objContactinformations' => '\eZmaxAPI\Model\ContactinformationsRequestCompound'
     ];
 
     /**
@@ -78,13 +78,13 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objContactinformations' => null,
         'fkiContacttitleID' => null,
         'fkiLanguageID' => null,
         'sContactFirstname' => null,
         'sContactLastname' => null,
         'sContactCompany' => null,
-        'dtContactBirthdate' => null
+        'dtContactBirthdate' => null,
+        'objContactinformations' => null
     ];
 
     /**
@@ -114,13 +114,13 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'objContactinformations' => 'objContactinformations',
         'fkiContacttitleID' => 'fkiContacttitleID',
         'fkiLanguageID' => 'fkiLanguageID',
         'sContactFirstname' => 'sContactFirstname',
         'sContactLastname' => 'sContactLastname',
         'sContactCompany' => 'sContactCompany',
-        'dtContactBirthdate' => 'dtContactBirthdate'
+        'dtContactBirthdate' => 'dtContactBirthdate',
+        'objContactinformations' => 'objContactinformations'
     ];
 
     /**
@@ -129,13 +129,13 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'objContactinformations' => 'setObjContactinformations',
         'fkiContacttitleID' => 'setFkiContacttitleID',
         'fkiLanguageID' => 'setFkiLanguageID',
         'sContactFirstname' => 'setSContactFirstname',
         'sContactLastname' => 'setSContactLastname',
         'sContactCompany' => 'setSContactCompany',
-        'dtContactBirthdate' => 'setDtContactBirthdate'
+        'dtContactBirthdate' => 'setDtContactBirthdate',
+        'objContactinformations' => 'setObjContactinformations'
     ];
 
     /**
@@ -144,13 +144,13 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'objContactinformations' => 'getObjContactinformations',
         'fkiContacttitleID' => 'getFkiContacttitleID',
         'fkiLanguageID' => 'getFkiLanguageID',
         'sContactFirstname' => 'getSContactFirstname',
         'sContactLastname' => 'getSContactLastname',
         'sContactCompany' => 'getSContactCompany',
-        'dtContactBirthdate' => 'getDtContactBirthdate'
+        'dtContactBirthdate' => 'getDtContactBirthdate',
+        'objContactinformations' => 'getObjContactinformations'
     ];
 
     /**
@@ -210,13 +210,13 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['objContactinformations'] = $data['objContactinformations'] ?? null;
         $this->container['fkiContacttitleID'] = $data['fkiContacttitleID'] ?? null;
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
         $this->container['sContactFirstname'] = $data['sContactFirstname'] ?? null;
         $this->container['sContactLastname'] = $data['sContactLastname'] ?? null;
         $this->container['sContactCompany'] = $data['sContactCompany'] ?? null;
         $this->container['dtContactBirthdate'] = $data['dtContactBirthdate'] ?? null;
+        $this->container['objContactinformations'] = $data['objContactinformations'] ?? null;
     }
 
     /**
@@ -228,9 +228,6 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['objContactinformations'] === null) {
-            $invalidProperties[] = "'objContactinformations' can't be null";
-        }
         if ($this->container['fkiContacttitleID'] === null) {
             $invalidProperties[] = "'fkiContacttitleID' can't be null";
         }
@@ -254,6 +251,9 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['sContactCompany'] === null) {
             $invalidProperties[] = "'sContactCompany' can't be null";
         }
+        if ($this->container['objContactinformations'] === null) {
+            $invalidProperties[] = "'objContactinformations' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -268,30 +268,6 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets objContactinformations
-     *
-     * @return \eZmaxAPI\Model\ContactinformationsRequestCompound
-     */
-    public function getObjContactinformations()
-    {
-        return $this->container['objContactinformations'];
-    }
-
-    /**
-     * Sets objContactinformations
-     *
-     * @param \eZmaxAPI\Model\ContactinformationsRequestCompound $objContactinformations objContactinformations
-     *
-     * @return self
-     */
-    public function setObjContactinformations($objContactinformations)
-    {
-        $this->container['objContactinformations'] = $objContactinformations;
-
-        return $this;
-    }
 
     /**
      * Gets fkiContacttitleID
@@ -441,6 +417,30 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
     public function setDtContactBirthdate($dtContactBirthdate)
     {
         $this->container['dtContactBirthdate'] = $dtContactBirthdate;
+
+        return $this;
+    }
+
+    /**
+     * Gets objContactinformations
+     *
+     * @return \eZmaxAPI\Model\ContactinformationsRequestCompound
+     */
+    public function getObjContactinformations()
+    {
+        return $this->container['objContactinformations'];
+    }
+
+    /**
+     * Sets objContactinformations
+     *
+     * @param \eZmaxAPI\Model\ContactinformationsRequestCompound $objContactinformations objContactinformations
+     *
+     * @return self
+     */
+    public function setObjContactinformations($objContactinformations)
+    {
+        $this->container['objContactinformations'] = $objContactinformations;
 
         return $this;
     }

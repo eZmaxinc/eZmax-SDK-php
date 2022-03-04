@@ -355,7 +355,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
     /**
      * Sets aObjFormDataSigner
      *
-     * @param \eZmaxAPI\Model\CustomFormDataSignerResponse[] $aObjFormDataSigner 
+     * @param \eZmaxAPI\Model\CustomFormDataSignerResponse[] $aObjFormDataSigner aObjFormDataSigner
      *
      * @return self
      */

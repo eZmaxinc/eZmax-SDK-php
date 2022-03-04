@@ -81,42 +81,6 @@ class ContactinformationsRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "aObjAddress"
-     */
-    public function testPropertyAObjAddress()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjPhone"
-     */
-    public function testPropertyAObjPhone()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjEmail"
-     */
-    public function testPropertyAObjEmail()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjWebsite"
-     */
-    public function testPropertyAObjWebsite()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "iAddressDefault"
      */
     public function testPropertyIAddressDefault()
@@ -147,6 +111,42 @@ class ContactinformationsRequestCompoundTest extends TestCase
      * Test attribute "iWebsiteDefault"
      */
     public function testPropertyIWebsiteDefault()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjAddress"
+     */
+    public function testPropertyAObjAddress()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjPhone"
+     */
+    public function testPropertyAObjPhone()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjEmail"
+     */
+    public function testPropertyAObjEmail()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjWebsite"
+     */
+    public function testPropertyAObjWebsite()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

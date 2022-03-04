@@ -62,7 +62,7 @@ class CommonWebhook implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'objWebhook' => '\eZmaxAPI\Model\WebhookResponse',
-        'aObjAttempt' => '\eZmaxAPI\Model\AttemptResponse[]'
+        'aObjAttempt' => '\eZmaxAPI\Model\AttemptResponseCompound[]'
     ];
 
     /**
@@ -246,7 +246,7 @@ class CommonWebhook implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets aObjAttempt
      *
-     * @return \eZmaxAPI\Model\AttemptResponse[]
+     * @return \eZmaxAPI\Model\AttemptResponseCompound[]
      */
     public function getAObjAttempt()
     {
@@ -256,7 +256,7 @@ class CommonWebhook implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets aObjAttempt
      *
-     * @param \eZmaxAPI\Model\AttemptResponse[] $aObjAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+     * @param \eZmaxAPI\Model\AttemptResponseCompound[] $aObjAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
      *
      * @return self
      */

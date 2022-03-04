@@ -61,7 +61,7 @@ class ApikeyCreateObjectV1ResponseMPayload implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjApikey' => '\eZmaxAPI\Model\ApikeyResponse[]'
+        'aObjApikey' => '\eZmaxAPI\Model\ApikeyResponseCompound[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class ApikeyCreateObjectV1ResponseMPayload implements ModelInterface, ArrayAcces
     /**
      * Gets aObjApikey
      *
-     * @return \eZmaxAPI\Model\ApikeyResponse[]
+     * @return \eZmaxAPI\Model\ApikeyResponseCompound[]
      */
     public function getAObjApikey()
     {
@@ -223,7 +223,7 @@ class ApikeyCreateObjectV1ResponseMPayload implements ModelInterface, ArrayAcces
     /**
      * Sets aObjApikey
      *
-     * @param \eZmaxAPI\Model\ApikeyResponse[] $aObjApikey 
+     * @param \eZmaxAPI\Model\ApikeyResponseCompound[] $aObjApikey aObjApikey
      *
      * @return self
      */

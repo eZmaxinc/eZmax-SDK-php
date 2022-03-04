@@ -117,9 +117,9 @@ class CustomFormDataSignerResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "aObjEzsignformfieldgroupCompound"
+     * Test attribute "aObjEzsignformfieldgroup"
      */
-    public function testPropertyAObjEzsignformfieldgroupCompound()
+    public function testPropertyAObjEzsignformfieldgroup()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

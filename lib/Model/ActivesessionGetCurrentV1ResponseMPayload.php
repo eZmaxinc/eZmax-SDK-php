@@ -61,18 +61,18 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aPkiPermissionID' => 'int[]',
-        'objUserReal' => '\eZmaxAPI\Model\ActivesessionResponseCompoundUser',
-        'objUserCloned' => '\eZmaxAPI\Model\ActivesessionResponseCompoundUser',
-        'objApikey' => '\eZmaxAPI\Model\ActivesessionResponseCompoundApikey',
-        'aEModuleInternalname' => 'string[]',
         'eActivesessionSessiontype' => '\eZmaxAPI\Model\FieldEActivesessionSessiontype',
         'eActivesessionWeekdaystart' => '\eZmaxAPI\Model\FieldEActivesessionWeekdaystart',
         'fkiLanguageID' => 'int',
         'sCompanyNameX' => 'string',
         'sDepartmentNameX' => 'string',
         'bActivesessionDebug' => 'bool',
-        'pksCustomerCode' => 'string'
+        'pksCustomerCode' => 'string',
+        'aPkiPermissionID' => 'int[]',
+        'objUserReal' => '\eZmaxAPI\Model\ActivesessionResponseCompoundUser',
+        'objUserCloned' => '\eZmaxAPI\Model\ActivesessionResponseCompoundUser',
+        'objApikey' => '\eZmaxAPI\Model\ActivesessionResponseCompoundApikey',
+        'aEModuleInternalname' => 'string[]'
     ];
 
     /**
@@ -83,18 +83,18 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aPkiPermissionID' => null,
-        'objUserReal' => null,
-        'objUserCloned' => null,
-        'objApikey' => null,
-        'aEModuleInternalname' => null,
         'eActivesessionSessiontype' => null,
         'eActivesessionWeekdaystart' => null,
         'fkiLanguageID' => null,
         'sCompanyNameX' => null,
         'sDepartmentNameX' => null,
         'bActivesessionDebug' => null,
-        'pksCustomerCode' => null
+        'pksCustomerCode' => null,
+        'aPkiPermissionID' => null,
+        'objUserReal' => null,
+        'objUserCloned' => null,
+        'objApikey' => null,
+        'aEModuleInternalname' => null
     ];
 
     /**
@@ -124,18 +124,18 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'aPkiPermissionID' => 'a_pkiPermissionID',
-        'objUserReal' => 'objUserReal',
-        'objUserCloned' => 'objUserCloned',
-        'objApikey' => 'objApikey',
-        'aEModuleInternalname' => 'a_eModuleInternalname',
         'eActivesessionSessiontype' => 'eActivesessionSessiontype',
         'eActivesessionWeekdaystart' => 'eActivesessionWeekdaystart',
         'fkiLanguageID' => 'fkiLanguageID',
         'sCompanyNameX' => 'sCompanyNameX',
         'sDepartmentNameX' => 'sDepartmentNameX',
         'bActivesessionDebug' => 'bActivesessionDebug',
-        'pksCustomerCode' => 'pksCustomerCode'
+        'pksCustomerCode' => 'pksCustomerCode',
+        'aPkiPermissionID' => 'a_pkiPermissionID',
+        'objUserReal' => 'objUserReal',
+        'objUserCloned' => 'objUserCloned',
+        'objApikey' => 'objApikey',
+        'aEModuleInternalname' => 'a_eModuleInternalname'
     ];
 
     /**
@@ -144,18 +144,18 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-        'aPkiPermissionID' => 'setAPkiPermissionID',
-        'objUserReal' => 'setObjUserReal',
-        'objUserCloned' => 'setObjUserCloned',
-        'objApikey' => 'setObjApikey',
-        'aEModuleInternalname' => 'setAEModuleInternalname',
         'eActivesessionSessiontype' => 'setEActivesessionSessiontype',
         'eActivesessionWeekdaystart' => 'setEActivesessionWeekdaystart',
         'fkiLanguageID' => 'setFkiLanguageID',
         'sCompanyNameX' => 'setSCompanyNameX',
         'sDepartmentNameX' => 'setSDepartmentNameX',
         'bActivesessionDebug' => 'setBActivesessionDebug',
-        'pksCustomerCode' => 'setPksCustomerCode'
+        'pksCustomerCode' => 'setPksCustomerCode',
+        'aPkiPermissionID' => 'setAPkiPermissionID',
+        'objUserReal' => 'setObjUserReal',
+        'objUserCloned' => 'setObjUserCloned',
+        'objApikey' => 'setObjApikey',
+        'aEModuleInternalname' => 'setAEModuleInternalname'
     ];
 
     /**
@@ -164,18 +164,18 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
      * @var string[]
      */
     protected static $getters = [
-        'aPkiPermissionID' => 'getAPkiPermissionID',
-        'objUserReal' => 'getObjUserReal',
-        'objUserCloned' => 'getObjUserCloned',
-        'objApikey' => 'getObjApikey',
-        'aEModuleInternalname' => 'getAEModuleInternalname',
         'eActivesessionSessiontype' => 'getEActivesessionSessiontype',
         'eActivesessionWeekdaystart' => 'getEActivesessionWeekdaystart',
         'fkiLanguageID' => 'getFkiLanguageID',
         'sCompanyNameX' => 'getSCompanyNameX',
         'sDepartmentNameX' => 'getSDepartmentNameX',
         'bActivesessionDebug' => 'getBActivesessionDebug',
-        'pksCustomerCode' => 'getPksCustomerCode'
+        'pksCustomerCode' => 'getPksCustomerCode',
+        'aPkiPermissionID' => 'getAPkiPermissionID',
+        'objUserReal' => 'getObjUserReal',
+        'objUserCloned' => 'getObjUserCloned',
+        'objApikey' => 'getObjApikey',
+        'aEModuleInternalname' => 'getAEModuleInternalname'
     ];
 
     /**
@@ -235,11 +235,6 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['aPkiPermissionID'] = $data['aPkiPermissionID'] ?? null;
-        $this->container['objUserReal'] = $data['objUserReal'] ?? null;
-        $this->container['objUserCloned'] = $data['objUserCloned'] ?? null;
-        $this->container['objApikey'] = $data['objApikey'] ?? null;
-        $this->container['aEModuleInternalname'] = $data['aEModuleInternalname'] ?? null;
         $this->container['eActivesessionSessiontype'] = $data['eActivesessionSessiontype'] ?? null;
         $this->container['eActivesessionWeekdaystart'] = $data['eActivesessionWeekdaystart'] ?? null;
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
@@ -247,6 +242,11 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         $this->container['sDepartmentNameX'] = $data['sDepartmentNameX'] ?? null;
         $this->container['bActivesessionDebug'] = $data['bActivesessionDebug'] ?? null;
         $this->container['pksCustomerCode'] = $data['pksCustomerCode'] ?? null;
+        $this->container['aPkiPermissionID'] = $data['aPkiPermissionID'] ?? null;
+        $this->container['objUserReal'] = $data['objUserReal'] ?? null;
+        $this->container['objUserCloned'] = $data['objUserCloned'] ?? null;
+        $this->container['objApikey'] = $data['objApikey'] ?? null;
+        $this->container['aEModuleInternalname'] = $data['aEModuleInternalname'] ?? null;
     }
 
     /**
@@ -258,15 +258,6 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
     {
         $invalidProperties = [];
 
-        if ($this->container['aPkiPermissionID'] === null) {
-            $invalidProperties[] = "'aPkiPermissionID' can't be null";
-        }
-        if ($this->container['objUserReal'] === null) {
-            $invalidProperties[] = "'objUserReal' can't be null";
-        }
-        if ($this->container['aEModuleInternalname'] === null) {
-            $invalidProperties[] = "'aEModuleInternalname' can't be null";
-        }
         if ($this->container['eActivesessionSessiontype'] === null) {
             $invalidProperties[] = "'eActivesessionSessiontype' can't be null";
         }
@@ -304,6 +295,15 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
             $invalidProperties[] = "invalid value for 'pksCustomerCode', the character length must be bigger than or equal to 2.";
         }
 
+        if ($this->container['aPkiPermissionID'] === null) {
+            $invalidProperties[] = "'aPkiPermissionID' can't be null";
+        }
+        if ($this->container['objUserReal'] === null) {
+            $invalidProperties[] = "'objUserReal' can't be null";
+        }
+        if ($this->container['aEModuleInternalname'] === null) {
+            $invalidProperties[] = "'aEModuleInternalname' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -318,126 +318,6 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets aPkiPermissionID
-     *
-     * @return int[]
-     */
-    public function getAPkiPermissionID()
-    {
-        return $this->container['aPkiPermissionID'];
-    }
-
-    /**
-     * Sets aPkiPermissionID
-     *
-     * @param int[] $aPkiPermissionID An array of permissions granted to the user or api key
-     *
-     * @return self
-     */
-    public function setAPkiPermissionID($aPkiPermissionID)
-    {
-        $this->container['aPkiPermissionID'] = $aPkiPermissionID;
-
-        return $this;
-    }
-
-    /**
-     * Gets objUserReal
-     *
-     * @return \eZmaxAPI\Model\ActivesessionResponseCompoundUser
-     */
-    public function getObjUserReal()
-    {
-        return $this->container['objUserReal'];
-    }
-
-    /**
-     * Sets objUserReal
-     *
-     * @param \eZmaxAPI\Model\ActivesessionResponseCompoundUser $objUserReal objUserReal
-     *
-     * @return self
-     */
-    public function setObjUserReal($objUserReal)
-    {
-        $this->container['objUserReal'] = $objUserReal;
-
-        return $this;
-    }
-
-    /**
-     * Gets objUserCloned
-     *
-     * @return \eZmaxAPI\Model\ActivesessionResponseCompoundUser|null
-     */
-    public function getObjUserCloned()
-    {
-        return $this->container['objUserCloned'];
-    }
-
-    /**
-     * Sets objUserCloned
-     *
-     * @param \eZmaxAPI\Model\ActivesessionResponseCompoundUser|null $objUserCloned objUserCloned
-     *
-     * @return self
-     */
-    public function setObjUserCloned($objUserCloned)
-    {
-        $this->container['objUserCloned'] = $objUserCloned;
-
-        return $this;
-    }
-
-    /**
-     * Gets objApikey
-     *
-     * @return \eZmaxAPI\Model\ActivesessionResponseCompoundApikey|null
-     */
-    public function getObjApikey()
-    {
-        return $this->container['objApikey'];
-    }
-
-    /**
-     * Sets objApikey
-     *
-     * @param \eZmaxAPI\Model\ActivesessionResponseCompoundApikey|null $objApikey objApikey
-     *
-     * @return self
-     */
-    public function setObjApikey($objApikey)
-    {
-        $this->container['objApikey'] = $objApikey;
-
-        return $this;
-    }
-
-    /**
-     * Gets aEModuleInternalname
-     *
-     * @return string[]
-     */
-    public function getAEModuleInternalname()
-    {
-        return $this->container['aEModuleInternalname'];
-    }
-
-    /**
-     * Sets aEModuleInternalname
-     *
-     * @param string[] $aEModuleInternalname An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
-     *
-     * @return self
-     */
-    public function setAEModuleInternalname($aEModuleInternalname)
-    {
-        $this->container['aEModuleInternalname'] = $aEModuleInternalname;
-
-        return $this;
-    }
 
     /**
      * Gets eActivesessionSessiontype
@@ -618,6 +498,126 @@ class ActivesessionGetCurrentV1ResponseMPayload implements ModelInterface, Array
         }
 
         $this->container['pksCustomerCode'] = $pksCustomerCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets aPkiPermissionID
+     *
+     * @return int[]
+     */
+    public function getAPkiPermissionID()
+    {
+        return $this->container['aPkiPermissionID'];
+    }
+
+    /**
+     * Sets aPkiPermissionID
+     *
+     * @param int[] $aPkiPermissionID An array of permissions granted to the user or api key
+     *
+     * @return self
+     */
+    public function setAPkiPermissionID($aPkiPermissionID)
+    {
+        $this->container['aPkiPermissionID'] = $aPkiPermissionID;
+
+        return $this;
+    }
+
+    /**
+     * Gets objUserReal
+     *
+     * @return \eZmaxAPI\Model\ActivesessionResponseCompoundUser
+     */
+    public function getObjUserReal()
+    {
+        return $this->container['objUserReal'];
+    }
+
+    /**
+     * Sets objUserReal
+     *
+     * @param \eZmaxAPI\Model\ActivesessionResponseCompoundUser $objUserReal objUserReal
+     *
+     * @return self
+     */
+    public function setObjUserReal($objUserReal)
+    {
+        $this->container['objUserReal'] = $objUserReal;
+
+        return $this;
+    }
+
+    /**
+     * Gets objUserCloned
+     *
+     * @return \eZmaxAPI\Model\ActivesessionResponseCompoundUser|null
+     */
+    public function getObjUserCloned()
+    {
+        return $this->container['objUserCloned'];
+    }
+
+    /**
+     * Sets objUserCloned
+     *
+     * @param \eZmaxAPI\Model\ActivesessionResponseCompoundUser|null $objUserCloned objUserCloned
+     *
+     * @return self
+     */
+    public function setObjUserCloned($objUserCloned)
+    {
+        $this->container['objUserCloned'] = $objUserCloned;
+
+        return $this;
+    }
+
+    /**
+     * Gets objApikey
+     *
+     * @return \eZmaxAPI\Model\ActivesessionResponseCompoundApikey|null
+     */
+    public function getObjApikey()
+    {
+        return $this->container['objApikey'];
+    }
+
+    /**
+     * Sets objApikey
+     *
+     * @param \eZmaxAPI\Model\ActivesessionResponseCompoundApikey|null $objApikey objApikey
+     *
+     * @return self
+     */
+    public function setObjApikey($objApikey)
+    {
+        $this->container['objApikey'] = $objApikey;
+
+        return $this;
+    }
+
+    /**
+     * Gets aEModuleInternalname
+     *
+     * @return string[]
+     */
+    public function getAEModuleInternalname()
+    {
+        return $this->container['aEModuleInternalname'];
+    }
+
+    /**
+     * Sets aEModuleInternalname
+     *
+     * @param string[] $aEModuleInternalname An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
+     *
+     * @return self
+     */
+    public function setAEModuleInternalname($aEModuleInternalname)
+    {
+        $this->container['aEModuleInternalname'] = $aEModuleInternalname;
 
         return $this;
     }

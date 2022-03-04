@@ -81,51 +81,6 @@ class ActivesessionGetCurrentV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test attribute "aPkiPermissionID"
-     */
-    public function testPropertyAPkiPermissionID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objUserReal"
-     */
-    public function testPropertyObjUserReal()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objUserCloned"
-     */
-    public function testPropertyObjUserCloned()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objApikey"
-     */
-    public function testPropertyObjApikey()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aEModuleInternalname"
-     */
-    public function testPropertyAEModuleInternalname()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "eActivesessionSessiontype"
      */
     public function testPropertyEActivesessionSessiontype()
@@ -183,6 +138,51 @@ class ActivesessionGetCurrentV1ResponseMPayloadTest extends TestCase
      * Test attribute "pksCustomerCode"
      */
     public function testPropertyPksCustomerCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aPkiPermissionID"
+     */
+    public function testPropertyAPkiPermissionID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objUserReal"
+     */
+    public function testPropertyObjUserReal()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objUserCloned"
+     */
+    public function testPropertyObjUserCloned()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objApikey"
+     */
+    public function testPropertyObjApikey()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aEModuleInternalname"
+     */
+    public function testPropertyAEModuleInternalname()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

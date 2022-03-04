@@ -61,8 +61,6 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objAddress' => '\eZmaxAPI\Model\AddressRequest',
-        'aObjContact' => '\eZmaxAPI\Model\ContactRequestCompound[]',
         'pkiFranchisereferalincomeID' => 'int',
         'fkiFranchisebrokerID' => 'int',
         'fkiFranchisereferalincomeprogramID' => 'int',
@@ -74,7 +72,9 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         'dtFranchisereferalincomeDisbursed' => 'string',
         'tFranchisereferalincomeComment' => 'string',
         'fkiFranchiseofficeID' => 'int',
-        'sFranchisereferalincomeRemoteid' => 'string'
+        'sFranchisereferalincomeRemoteid' => 'string',
+        'objAddress' => '\eZmaxAPI\Model\AddressRequest',
+        'aObjContact' => '\eZmaxAPI\Model\ContactRequestCompound[]'
     ];
 
     /**
@@ -85,8 +85,6 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objAddress' => null,
-        'aObjContact' => null,
         'pkiFranchisereferalincomeID' => null,
         'fkiFranchisebrokerID' => null,
         'fkiFranchisereferalincomeprogramID' => null,
@@ -98,7 +96,9 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         'dtFranchisereferalincomeDisbursed' => null,
         'tFranchisereferalincomeComment' => null,
         'fkiFranchiseofficeID' => null,
-        'sFranchisereferalincomeRemoteid' => null
+        'sFranchisereferalincomeRemoteid' => null,
+        'objAddress' => null,
+        'aObjContact' => null
     ];
 
     /**
@@ -128,8 +128,6 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'objAddress' => 'objAddress',
-        'aObjContact' => 'a_objContact',
         'pkiFranchisereferalincomeID' => 'pkiFranchisereferalincomeID',
         'fkiFranchisebrokerID' => 'fkiFranchisebrokerID',
         'fkiFranchisereferalincomeprogramID' => 'fkiFranchisereferalincomeprogramID',
@@ -141,7 +139,9 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         'dtFranchisereferalincomeDisbursed' => 'dtFranchisereferalincomeDisbursed',
         'tFranchisereferalincomeComment' => 'tFranchisereferalincomeComment',
         'fkiFranchiseofficeID' => 'fkiFranchiseofficeID',
-        'sFranchisereferalincomeRemoteid' => 'sFranchisereferalincomeRemoteid'
+        'sFranchisereferalincomeRemoteid' => 'sFranchisereferalincomeRemoteid',
+        'objAddress' => 'objAddress',
+        'aObjContact' => 'a_objContact'
     ];
 
     /**
@@ -150,8 +150,6 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'objAddress' => 'setObjAddress',
-        'aObjContact' => 'setAObjContact',
         'pkiFranchisereferalincomeID' => 'setPkiFranchisereferalincomeID',
         'fkiFranchisebrokerID' => 'setFkiFranchisebrokerID',
         'fkiFranchisereferalincomeprogramID' => 'setFkiFranchisereferalincomeprogramID',
@@ -163,7 +161,9 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         'dtFranchisereferalincomeDisbursed' => 'setDtFranchisereferalincomeDisbursed',
         'tFranchisereferalincomeComment' => 'setTFranchisereferalincomeComment',
         'fkiFranchiseofficeID' => 'setFkiFranchiseofficeID',
-        'sFranchisereferalincomeRemoteid' => 'setSFranchisereferalincomeRemoteid'
+        'sFranchisereferalincomeRemoteid' => 'setSFranchisereferalincomeRemoteid',
+        'objAddress' => 'setObjAddress',
+        'aObjContact' => 'setAObjContact'
     ];
 
     /**
@@ -172,8 +172,6 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'objAddress' => 'getObjAddress',
-        'aObjContact' => 'getAObjContact',
         'pkiFranchisereferalincomeID' => 'getPkiFranchisereferalincomeID',
         'fkiFranchisebrokerID' => 'getFkiFranchisebrokerID',
         'fkiFranchisereferalincomeprogramID' => 'getFkiFranchisereferalincomeprogramID',
@@ -185,7 +183,9 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         'dtFranchisereferalincomeDisbursed' => 'getDtFranchisereferalincomeDisbursed',
         'tFranchisereferalincomeComment' => 'getTFranchisereferalincomeComment',
         'fkiFranchiseofficeID' => 'getFkiFranchiseofficeID',
-        'sFranchisereferalincomeRemoteid' => 'getSFranchisereferalincomeRemoteid'
+        'sFranchisereferalincomeRemoteid' => 'getSFranchisereferalincomeRemoteid',
+        'objAddress' => 'getObjAddress',
+        'aObjContact' => 'getAObjContact'
     ];
 
     /**
@@ -245,8 +245,6 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['objAddress'] = $data['objAddress'] ?? null;
-        $this->container['aObjContact'] = $data['aObjContact'] ?? null;
         $this->container['pkiFranchisereferalincomeID'] = $data['pkiFranchisereferalincomeID'] ?? null;
         $this->container['fkiFranchisebrokerID'] = $data['fkiFranchisebrokerID'] ?? null;
         $this->container['fkiFranchisereferalincomeprogramID'] = $data['fkiFranchisereferalincomeprogramID'] ?? null;
@@ -259,6 +257,8 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         $this->container['tFranchisereferalincomeComment'] = $data['tFranchisereferalincomeComment'] ?? null;
         $this->container['fkiFranchiseofficeID'] = $data['fkiFranchiseofficeID'] ?? null;
         $this->container['sFranchisereferalincomeRemoteid'] = $data['sFranchisereferalincomeRemoteid'] ?? null;
+        $this->container['objAddress'] = $data['objAddress'] ?? null;
+        $this->container['aObjContact'] = $data['aObjContact'] ?? null;
     }
 
     /**
@@ -270,12 +270,6 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
-        if ($this->container['objAddress'] === null) {
-            $invalidProperties[] = "'objAddress' can't be null";
-        }
-        if ($this->container['aObjContact'] === null) {
-            $invalidProperties[] = "'aObjContact' can't be null";
-        }
         if ($this->container['fkiFranchisebrokerID'] === null) {
             $invalidProperties[] = "'fkiFranchisebrokerID' can't be null";
         }
@@ -309,6 +303,12 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         if ($this->container['sFranchisereferalincomeRemoteid'] === null) {
             $invalidProperties[] = "'sFranchisereferalincomeRemoteid' can't be null";
         }
+        if ($this->container['objAddress'] === null) {
+            $invalidProperties[] = "'objAddress' can't be null";
+        }
+        if ($this->container['aObjContact'] === null) {
+            $invalidProperties[] = "'aObjContact' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -323,54 +323,6 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets objAddress
-     *
-     * @return \eZmaxAPI\Model\AddressRequest
-     */
-    public function getObjAddress()
-    {
-        return $this->container['objAddress'];
-    }
-
-    /**
-     * Sets objAddress
-     *
-     * @param \eZmaxAPI\Model\AddressRequest $objAddress objAddress
-     *
-     * @return self
-     */
-    public function setObjAddress($objAddress)
-    {
-        $this->container['objAddress'] = $objAddress;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjContact
-     *
-     * @return \eZmaxAPI\Model\ContactRequestCompound[]
-     */
-    public function getAObjContact()
-    {
-        return $this->container['aObjContact'];
-    }
-
-    /**
-     * Sets aObjContact
-     *
-     * @param \eZmaxAPI\Model\ContactRequestCompound[] $aObjContact 
-     *
-     * @return self
-     */
-    public function setAObjContact($aObjContact)
-    {
-        $this->container['aObjContact'] = $aObjContact;
-
-        return $this;
-    }
 
     /**
      * Gets pkiFranchisereferalincomeID
@@ -656,6 +608,54 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     public function setSFranchisereferalincomeRemoteid($sFranchisereferalincomeRemoteid)
     {
         $this->container['sFranchisereferalincomeRemoteid'] = $sFranchisereferalincomeRemoteid;
+
+        return $this;
+    }
+
+    /**
+     * Gets objAddress
+     *
+     * @return \eZmaxAPI\Model\AddressRequest
+     */
+    public function getObjAddress()
+    {
+        return $this->container['objAddress'];
+    }
+
+    /**
+     * Sets objAddress
+     *
+     * @param \eZmaxAPI\Model\AddressRequest $objAddress objAddress
+     *
+     * @return self
+     */
+    public function setObjAddress($objAddress)
+    {
+        $this->container['objAddress'] = $objAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjContact
+     *
+     * @return \eZmaxAPI\Model\ContactRequestCompound[]
+     */
+    public function getAObjContact()
+    {
+        return $this->container['aObjContact'];
+    }
+
+    /**
+     * Sets aObjContact
+     *
+     * @param \eZmaxAPI\Model\ContactRequestCompound[] $aObjContact aObjContact
+     *
+     * @return self
+     */
+    public function setAObjContact($aObjContact)
+    {
+        $this->container['aObjContact'] = $aObjContact;
 
         return $this;
     }

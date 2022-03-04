@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EmailRequestTest Class Doc Comment
  *
  * @category    Class
- * @description A Contact Object
+ * @description An Email Object
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

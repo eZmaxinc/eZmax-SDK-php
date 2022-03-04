@@ -61,7 +61,7 @@ class ListGetListpresentationV1ResponseMPayload implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjListpresentation' => '\eZmaxAPI\Model\ListpresentationRequest[]'
+        'aObjListpresentation' => '\eZmaxAPI\Model\ListpresentationResponseCompound[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class ListGetListpresentationV1ResponseMPayload implements ModelInterface, Array
     /**
      * Gets aObjListpresentation
      *
-     * @return \eZmaxAPI\Model\ListpresentationRequest[]
+     * @return \eZmaxAPI\Model\ListpresentationResponseCompound[]
      */
     public function getAObjListpresentation()
     {
@@ -223,7 +223,7 @@ class ListGetListpresentationV1ResponseMPayload implements ModelInterface, Array
     /**
      * Sets aObjListpresentation
      *
-     * @param \eZmaxAPI\Model\ListpresentationRequest[] $aObjListpresentation 
+     * @param \eZmaxAPI\Model\ListpresentationResponseCompound[] $aObjListpresentation aObjListpresentation
      *
      * @return self
      */

@@ -61,6 +61,7 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'fkiUserlogintypeID' => 'int',
         'fkiTaxassignmentID' => 'int',
         'fkiSecretquestionID' => 'int',
         'eEzsignsignerLogintype' => 'string',
@@ -75,6 +76,7 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'fkiUserlogintypeID' => null,
         'fkiTaxassignmentID' => null,
         'fkiSecretquestionID' => null,
         'eEzsignsignerLogintype' => null,
@@ -108,6 +110,7 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
+        'fkiUserlogintypeID' => 'fkiUserlogintypeID',
         'fkiTaxassignmentID' => 'fkiTaxassignmentID',
         'fkiSecretquestionID' => 'fkiSecretquestionID',
         'eEzsignsignerLogintype' => 'eEzsignsignerLogintype',
@@ -120,6 +123,7 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
+        'fkiUserlogintypeID' => 'setFkiUserlogintypeID',
         'fkiTaxassignmentID' => 'setFkiTaxassignmentID',
         'fkiSecretquestionID' => 'setFkiSecretquestionID',
         'eEzsignsignerLogintype' => 'setEEzsignsignerLogintype',
@@ -132,6 +136,7 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
+        'fkiUserlogintypeID' => 'getFkiUserlogintypeID',
         'fkiTaxassignmentID' => 'getFkiTaxassignmentID',
         'fkiSecretquestionID' => 'getFkiSecretquestionID',
         'eEzsignsignerLogintype' => 'getEEzsignsignerLogintype',
@@ -216,6 +221,7 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
+        $this->container['fkiUserlogintypeID'] = $data['fkiUserlogintypeID'] ?? null;
         $this->container['fkiTaxassignmentID'] = $data['fkiTaxassignmentID'] ?? null;
         $this->container['fkiSecretquestionID'] = $data['fkiSecretquestionID'] ?? null;
         $this->container['eEzsignsignerLogintype'] = $data['eEzsignsignerLogintype'] ?? null;
@@ -242,9 +248,6 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'fkiTaxassignmentID', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['eEzsignsignerLogintype'] === null) {
-            $invalidProperties[] = "'eEzsignsignerLogintype' can't be null";
-        }
         $allowedValues = $this->getEEzsignsignerLogintypeAllowableValues();
         if (!is_null($this->container['eEzsignsignerLogintype']) && !in_array($this->container['eEzsignsignerLogintype'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -268,6 +271,30 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets fkiUserlogintypeID
+     *
+     * @return int|null
+     */
+    public function getFkiUserlogintypeID()
+    {
+        return $this->container['fkiUserlogintypeID'];
+    }
+
+    /**
+     * Sets fkiUserlogintypeID
+     *
+     * @param int|null $fkiUserlogintypeID The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|
+     *
+     * @return self
+     */
+    public function setFkiUserlogintypeID($fkiUserlogintypeID)
+    {
+        $this->container['fkiUserlogintypeID'] = $fkiUserlogintypeID;
+
+        return $this;
+    }
 
     /**
      * Gets fkiTaxassignmentID
@@ -328,7 +355,8 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets eEzsignsignerLogintype
      *
-     * @return string
+     * @return string|null
+     * @deprecated
      */
     public function getEEzsignsignerLogintype()
     {
@@ -338,14 +366,15 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets eEzsignsignerLogintype
      *
-     * @param string $eEzsignsignerLogintype The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
+     * @param string|null $eEzsignsignerLogintype The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
      *
      * @return self
+     * @deprecated
      */
     public function setEEzsignsignerLogintype($eEzsignsignerLogintype)
     {
         $allowedValues = $this->getEEzsignsignerLogintypeAllowableValues();
-        if (!in_array($eEzsignsignerLogintype, $allowedValues, true)) {
+        if (!is_null($eEzsignsignerLogintype) && !in_array($eEzsignsignerLogintype, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'eEzsignsignerLogintype', must be one of '%s'",

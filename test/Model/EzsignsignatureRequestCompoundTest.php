@@ -81,24 +81,6 @@ class EzsignsignatureRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "bEzsignsignatureCustomdate"
-     */
-    public function testPropertyBEzsignsignatureCustomdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjEzsignsignaturecustomdate"
-     */
-    public function testPropertyAObjEzsignsignaturecustomdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "pkiEzsignsignatureID"
      */
     public function testPropertyPkiEzsignsignatureID()
@@ -165,6 +147,24 @@ class EzsignsignatureRequestCompoundTest extends TestCase
      * Test attribute "fkiEzsigndocumentID"
      */
     public function testPropertyFkiEzsigndocumentID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignsignatureCustomdate"
+     */
+    public function testPropertyBEzsignsignatureCustomdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjEzsignsignaturecustomdate"
+     */
+    public function testPropertyAObjEzsignsignaturecustomdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

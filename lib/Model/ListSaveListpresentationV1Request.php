@@ -61,7 +61,7 @@ class ListSaveListpresentationV1Request implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjListpresentation' => '\eZmaxAPI\Model\ListpresentationRequest[]'
+        'aObjListpresentation' => '\eZmaxAPI\Model\ListpresentationRequestCompound[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class ListSaveListpresentationV1Request implements ModelInterface, ArrayAccess, 
     /**
      * Gets aObjListpresentation
      *
-     * @return \eZmaxAPI\Model\ListpresentationRequest[]
+     * @return \eZmaxAPI\Model\ListpresentationRequestCompound[]
      */
     public function getAObjListpresentation()
     {
@@ -223,7 +223,7 @@ class ListSaveListpresentationV1Request implements ModelInterface, ArrayAccess, 
     /**
      * Sets aObjListpresentation
      *
-     * @param \eZmaxAPI\Model\ListpresentationRequest[] $aObjListpresentation 
+     * @param \eZmaxAPI\Model\ListpresentationRequestCompound[] $aObjListpresentation aObjListpresentation
      *
      * @return self
      */

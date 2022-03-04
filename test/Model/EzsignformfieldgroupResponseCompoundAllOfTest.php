@@ -88,4 +88,22 @@ class EzsignformfieldgroupResponseCompoundAllOfTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "aObjDropdownElement"
+     */
+    public function testPropertyAObjDropdownElement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjEzsignformfieldgroupsigner"
+     */
+    public function testPropertyAObjEzsignformfieldgroupsigner()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

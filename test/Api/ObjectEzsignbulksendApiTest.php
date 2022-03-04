@@ -73,6 +73,18 @@ class ObjectEzsignbulksendApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignbulksendGetEzsignbulksendtransmissionsV1
+     *
+     * Retrieve an existing Ezsignbulksend's Ezsignbulksendtransmissions.
+     *
+     */
+    public function testEzsignbulksendGetEzsignbulksendtransmissionsV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignbulksendGetListV1
      *
      * Retrieve Ezsignbulksend list.

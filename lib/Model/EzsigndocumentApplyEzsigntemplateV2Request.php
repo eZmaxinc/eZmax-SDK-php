@@ -265,7 +265,7 @@ class EzsigndocumentApplyEzsigntemplateV2Request implements ModelInterface, Arra
     /**
      * Sets aSEzsigntemplatesigner
      *
-     * @param string[] $aSEzsigntemplatesigner 
+     * @param string[] $aSEzsigntemplatesigner aSEzsigntemplatesigner
      *
      * @return self
      */

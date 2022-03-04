@@ -223,7 +223,7 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload implements
     /**
      * Sets aObjEzsignfoldersignerassociation
      *
-     * @param \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompound[] $aObjEzsignfoldersignerassociation 
+     * @param \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompound[] $aObjEzsignfoldersignerassociation aObjEzsignfoldersignerassociation
      *
      * @return self
      */

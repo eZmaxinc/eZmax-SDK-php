@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aObjAddress** | [**\eZmaxAPI\Model\AddressRequest[]**](AddressRequest.md) |  |
-**aObjPhone** | [**\eZmaxAPI\Model\PhoneRequest[]**](PhoneRequest.md) |  |
-**aObjEmail** | [**\eZmaxAPI\Model\EmailRequest[]**](EmailRequest.md) |  |
-**aObjWebsite** | [**\eZmaxAPI\Model\WebsiteRequest[]**](WebsiteRequest.md) |  |
 **iAddressDefault** | **int** | The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty. |
 **iPhoneDefault** | **int** | The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty. |
 **iEmailDefault** | **int** | The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty. |
 **iWebsiteDefault** | **int** | The index in the a_objWebsite array (zero based index) representing the Website object that should become the default one.  You can leave the value to 0 if the array is empty. |
+**aObjAddress** | [**\eZmaxAPI\Model\AddressRequestCompound[]**](AddressRequestCompound.md) |  |
+**aObjPhone** | [**\eZmaxAPI\Model\PhoneRequestCompound[]**](PhoneRequestCompound.md) |  |
+**aObjEmail** | [**\eZmaxAPI\Model\EmailRequestCompound[]**](EmailRequestCompound.md) |  |
+**aObjWebsite** | [**\eZmaxAPI\Model\WebsiteRequestCompound[]**](WebsiteRequestCompound.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

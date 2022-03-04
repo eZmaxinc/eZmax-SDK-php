@@ -133,9 +133,21 @@ class ObjectEzsigndocumentApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsigndocumentEditEzsignformfieldgroupsV1
+     *
+     * Edit multiple Ezsignformfieldgroups.
+     *
+     */
+    public function testEzsigndocumentEditEzsignformfieldgroupsV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsigndocumentEditEzsignsignaturesV1
      *
-     * Edit multiple ezsignsignatures.
+     * Edit multiple Ezsignsignatures.
      *
      */
     public function testEzsigndocumentEditEzsignsignaturesV1()
@@ -169,12 +181,36 @@ class ObjectEzsigndocumentApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsigndocumentGetEzsignformfieldgroupsV1
+     *
+     * Retrieve an existing Ezsigndocument's Ezsignformfieldgroups.
+     *
+     */
+    public function testEzsigndocumentGetEzsignformfieldgroupsV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsigndocumentGetEzsignpagesV1
      *
      * Retrieve an existing Ezsigndocument's Ezsignpages.
      *
      */
     public function testEzsigndocumentGetEzsignpagesV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsigndocumentGetEzsignsignaturesV1
+     *
+     * Retrieve an existing Ezsigndocument's Ezsignsignatures.
+     *
+     */
+    public function testEzsigndocumentGetEzsignsignaturesV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

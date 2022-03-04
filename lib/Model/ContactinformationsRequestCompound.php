@@ -61,14 +61,14 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjAddress' => '\eZmaxAPI\Model\AddressRequest[]',
-        'aObjPhone' => '\eZmaxAPI\Model\PhoneRequest[]',
-        'aObjEmail' => '\eZmaxAPI\Model\EmailRequest[]',
-        'aObjWebsite' => '\eZmaxAPI\Model\WebsiteRequest[]',
         'iAddressDefault' => 'int',
         'iPhoneDefault' => 'int',
         'iEmailDefault' => 'int',
-        'iWebsiteDefault' => 'int'
+        'iWebsiteDefault' => 'int',
+        'aObjAddress' => '\eZmaxAPI\Model\AddressRequestCompound[]',
+        'aObjPhone' => '\eZmaxAPI\Model\PhoneRequestCompound[]',
+        'aObjEmail' => '\eZmaxAPI\Model\EmailRequestCompound[]',
+        'aObjWebsite' => '\eZmaxAPI\Model\WebsiteRequestCompound[]'
     ];
 
     /**
@@ -79,14 +79,14 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aObjAddress' => null,
-        'aObjPhone' => null,
-        'aObjEmail' => null,
-        'aObjWebsite' => null,
         'iAddressDefault' => null,
         'iPhoneDefault' => null,
         'iEmailDefault' => null,
-        'iWebsiteDefault' => null
+        'iWebsiteDefault' => null,
+        'aObjAddress' => null,
+        'aObjPhone' => null,
+        'aObjEmail' => null,
+        'aObjWebsite' => null
     ];
 
     /**
@@ -116,14 +116,14 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'aObjAddress' => 'a_objAddress',
-        'aObjPhone' => 'a_objPhone',
-        'aObjEmail' => 'a_objEmail',
-        'aObjWebsite' => 'a_objWebsite',
         'iAddressDefault' => 'iAddressDefault',
         'iPhoneDefault' => 'iPhoneDefault',
         'iEmailDefault' => 'iEmailDefault',
-        'iWebsiteDefault' => 'iWebsiteDefault'
+        'iWebsiteDefault' => 'iWebsiteDefault',
+        'aObjAddress' => 'a_objAddress',
+        'aObjPhone' => 'a_objPhone',
+        'aObjEmail' => 'a_objEmail',
+        'aObjWebsite' => 'a_objWebsite'
     ];
 
     /**
@@ -132,14 +132,14 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'aObjAddress' => 'setAObjAddress',
-        'aObjPhone' => 'setAObjPhone',
-        'aObjEmail' => 'setAObjEmail',
-        'aObjWebsite' => 'setAObjWebsite',
         'iAddressDefault' => 'setIAddressDefault',
         'iPhoneDefault' => 'setIPhoneDefault',
         'iEmailDefault' => 'setIEmailDefault',
-        'iWebsiteDefault' => 'setIWebsiteDefault'
+        'iWebsiteDefault' => 'setIWebsiteDefault',
+        'aObjAddress' => 'setAObjAddress',
+        'aObjPhone' => 'setAObjPhone',
+        'aObjEmail' => 'setAObjEmail',
+        'aObjWebsite' => 'setAObjWebsite'
     ];
 
     /**
@@ -148,14 +148,14 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'aObjAddress' => 'getAObjAddress',
-        'aObjPhone' => 'getAObjPhone',
-        'aObjEmail' => 'getAObjEmail',
-        'aObjWebsite' => 'getAObjWebsite',
         'iAddressDefault' => 'getIAddressDefault',
         'iPhoneDefault' => 'getIPhoneDefault',
         'iEmailDefault' => 'getIEmailDefault',
-        'iWebsiteDefault' => 'getIWebsiteDefault'
+        'iWebsiteDefault' => 'getIWebsiteDefault',
+        'aObjAddress' => 'getAObjAddress',
+        'aObjPhone' => 'getAObjPhone',
+        'aObjEmail' => 'getAObjEmail',
+        'aObjWebsite' => 'getAObjWebsite'
     ];
 
     /**
@@ -215,14 +215,14 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->container['aObjAddress'] = $data['aObjAddress'] ?? null;
-        $this->container['aObjPhone'] = $data['aObjPhone'] ?? null;
-        $this->container['aObjEmail'] = $data['aObjEmail'] ?? null;
-        $this->container['aObjWebsite'] = $data['aObjWebsite'] ?? null;
         $this->container['iAddressDefault'] = $data['iAddressDefault'] ?? null;
         $this->container['iPhoneDefault'] = $data['iPhoneDefault'] ?? null;
         $this->container['iEmailDefault'] = $data['iEmailDefault'] ?? null;
         $this->container['iWebsiteDefault'] = $data['iWebsiteDefault'] ?? null;
+        $this->container['aObjAddress'] = $data['aObjAddress'] ?? null;
+        $this->container['aObjPhone'] = $data['aObjPhone'] ?? null;
+        $this->container['aObjEmail'] = $data['aObjEmail'] ?? null;
+        $this->container['aObjWebsite'] = $data['aObjWebsite'] ?? null;
     }
 
     /**
@@ -234,18 +234,6 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
     {
         $invalidProperties = [];
 
-        if ($this->container['aObjAddress'] === null) {
-            $invalidProperties[] = "'aObjAddress' can't be null";
-        }
-        if ($this->container['aObjPhone'] === null) {
-            $invalidProperties[] = "'aObjPhone' can't be null";
-        }
-        if ($this->container['aObjEmail'] === null) {
-            $invalidProperties[] = "'aObjEmail' can't be null";
-        }
-        if ($this->container['aObjWebsite'] === null) {
-            $invalidProperties[] = "'aObjWebsite' can't be null";
-        }
         if ($this->container['iAddressDefault'] === null) {
             $invalidProperties[] = "'iAddressDefault' can't be null";
         }
@@ -257,6 +245,18 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
         }
         if ($this->container['iWebsiteDefault'] === null) {
             $invalidProperties[] = "'iWebsiteDefault' can't be null";
+        }
+        if ($this->container['aObjAddress'] === null) {
+            $invalidProperties[] = "'aObjAddress' can't be null";
+        }
+        if ($this->container['aObjPhone'] === null) {
+            $invalidProperties[] = "'aObjPhone' can't be null";
+        }
+        if ($this->container['aObjEmail'] === null) {
+            $invalidProperties[] = "'aObjEmail' can't be null";
+        }
+        if ($this->container['aObjWebsite'] === null) {
+            $invalidProperties[] = "'aObjWebsite' can't be null";
         }
         return $invalidProperties;
     }
@@ -272,102 +272,6 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets aObjAddress
-     *
-     * @return \eZmaxAPI\Model\AddressRequest[]
-     */
-    public function getAObjAddress()
-    {
-        return $this->container['aObjAddress'];
-    }
-
-    /**
-     * Sets aObjAddress
-     *
-     * @param \eZmaxAPI\Model\AddressRequest[] $aObjAddress 
-     *
-     * @return self
-     */
-    public function setAObjAddress($aObjAddress)
-    {
-        $this->container['aObjAddress'] = $aObjAddress;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjPhone
-     *
-     * @return \eZmaxAPI\Model\PhoneRequest[]
-     */
-    public function getAObjPhone()
-    {
-        return $this->container['aObjPhone'];
-    }
-
-    /**
-     * Sets aObjPhone
-     *
-     * @param \eZmaxAPI\Model\PhoneRequest[] $aObjPhone 
-     *
-     * @return self
-     */
-    public function setAObjPhone($aObjPhone)
-    {
-        $this->container['aObjPhone'] = $aObjPhone;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjEmail
-     *
-     * @return \eZmaxAPI\Model\EmailRequest[]
-     */
-    public function getAObjEmail()
-    {
-        return $this->container['aObjEmail'];
-    }
-
-    /**
-     * Sets aObjEmail
-     *
-     * @param \eZmaxAPI\Model\EmailRequest[] $aObjEmail 
-     *
-     * @return self
-     */
-    public function setAObjEmail($aObjEmail)
-    {
-        $this->container['aObjEmail'] = $aObjEmail;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjWebsite
-     *
-     * @return \eZmaxAPI\Model\WebsiteRequest[]
-     */
-    public function getAObjWebsite()
-    {
-        return $this->container['aObjWebsite'];
-    }
-
-    /**
-     * Sets aObjWebsite
-     *
-     * @param \eZmaxAPI\Model\WebsiteRequest[] $aObjWebsite 
-     *
-     * @return self
-     */
-    public function setAObjWebsite($aObjWebsite)
-    {
-        $this->container['aObjWebsite'] = $aObjWebsite;
-
-        return $this;
-    }
 
     /**
      * Gets iAddressDefault
@@ -461,6 +365,102 @@ class ContactinformationsRequestCompound implements ModelInterface, ArrayAccess,
     public function setIWebsiteDefault($iWebsiteDefault)
     {
         $this->container['iWebsiteDefault'] = $iWebsiteDefault;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjAddress
+     *
+     * @return \eZmaxAPI\Model\AddressRequestCompound[]
+     */
+    public function getAObjAddress()
+    {
+        return $this->container['aObjAddress'];
+    }
+
+    /**
+     * Sets aObjAddress
+     *
+     * @param \eZmaxAPI\Model\AddressRequestCompound[] $aObjAddress aObjAddress
+     *
+     * @return self
+     */
+    public function setAObjAddress($aObjAddress)
+    {
+        $this->container['aObjAddress'] = $aObjAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjPhone
+     *
+     * @return \eZmaxAPI\Model\PhoneRequestCompound[]
+     */
+    public function getAObjPhone()
+    {
+        return $this->container['aObjPhone'];
+    }
+
+    /**
+     * Sets aObjPhone
+     *
+     * @param \eZmaxAPI\Model\PhoneRequestCompound[] $aObjPhone aObjPhone
+     *
+     * @return self
+     */
+    public function setAObjPhone($aObjPhone)
+    {
+        $this->container['aObjPhone'] = $aObjPhone;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjEmail
+     *
+     * @return \eZmaxAPI\Model\EmailRequestCompound[]
+     */
+    public function getAObjEmail()
+    {
+        return $this->container['aObjEmail'];
+    }
+
+    /**
+     * Sets aObjEmail
+     *
+     * @param \eZmaxAPI\Model\EmailRequestCompound[] $aObjEmail aObjEmail
+     *
+     * @return self
+     */
+    public function setAObjEmail($aObjEmail)
+    {
+        $this->container['aObjEmail'] = $aObjEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjWebsite
+     *
+     * @return \eZmaxAPI\Model\WebsiteRequestCompound[]
+     */
+    public function getAObjWebsite()
+    {
+        return $this->container['aObjWebsite'];
+    }
+
+    /**
+     * Sets aObjWebsite
+     *
+     * @param \eZmaxAPI\Model\WebsiteRequestCompound[] $aObjWebsite aObjWebsite
+     *
+     * @return self
+     */
+    public function setAObjWebsite($aObjWebsite)
+    {
+        $this->container['aObjWebsite'] = $aObjWebsite;
 
         return $this;
     }

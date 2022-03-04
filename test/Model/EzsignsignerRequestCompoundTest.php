@@ -81,9 +81,9 @@ class EzsignsignerRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "objContact"
+     * Test attribute "fkiUserlogintypeID"
      */
-    public function testPropertyObjContact()
+    public function testPropertyFkiUserlogintypeID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -120,6 +120,15 @@ class EzsignsignerRequestCompoundTest extends TestCase
      * Test attribute "sEzsignsignerSecretanswer"
      */
     public function testPropertySEzsignsignerSecretanswer()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objContact"
+     */
+    public function testPropertyObjContact()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

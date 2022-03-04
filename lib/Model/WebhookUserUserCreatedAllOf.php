@@ -60,7 +60,7 @@ class WebhookUserUserCreatedAllOf implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objUser' => '\eZmaxAPI\Model\UserResponse'
+        'objUser' => '\eZmaxAPI\Model\UserResponseCompound'
     ];
 
     /**
@@ -212,7 +212,7 @@ class WebhookUserUserCreatedAllOf implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets objUser
      *
-     * @return \eZmaxAPI\Model\UserResponse
+     * @return \eZmaxAPI\Model\UserResponseCompound
      */
     public function getObjUser()
     {
@@ -222,7 +222,7 @@ class WebhookUserUserCreatedAllOf implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets objUser
      *
-     * @param \eZmaxAPI\Model\UserResponse $objUser objUser
+     * @param \eZmaxAPI\Model\UserResponseCompound $objUser objUser
      *
      * @return self
      */

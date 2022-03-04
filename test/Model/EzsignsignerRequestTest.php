@@ -81,6 +81,15 @@ class EzsignsignerRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "fkiUserlogintypeID"
+     */
+    public function testPropertyFkiUserlogintypeID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "fkiTaxassignmentID"
      */
     public function testPropertyFkiTaxassignmentID()

@@ -81,51 +81,6 @@ class EzsigndocumentResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "iEzsigndocumentStepformtotal"
-     */
-    public function testPropertyIEzsigndocumentStepformtotal()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iEzsigndocumentStepformcurrent"
-     */
-    public function testPropertyIEzsigndocumentStepformcurrent()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iEzsigndocumentStepsignaturetotal"
-     */
-    public function testPropertyIEzsigndocumentStepsignaturetotal()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iEzsigndocumentStepsignatureCurrent"
-     */
-    public function testPropertyIEzsigndocumentStepsignatureCurrent()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjEzsignfoldersignerassociationstatus"
-     */
-    public function testPropertyAObjEzsignfoldersignerassociationstatus()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "fkiEzsignfolderID"
      */
     public function testPropertyFkiEzsignfolderID()
@@ -255,6 +210,51 @@ class EzsigndocumentResponseCompoundTest extends TestCase
      * Test attribute "objAudit"
      */
     public function testPropertyObjAudit()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsigndocumentStepformtotal"
+     */
+    public function testPropertyIEzsigndocumentStepformtotal()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsigndocumentStepformcurrent"
+     */
+    public function testPropertyIEzsigndocumentStepformcurrent()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsigndocumentStepsignaturetotal"
+     */
+    public function testPropertyIEzsigndocumentStepsignaturetotal()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsigndocumentStepsignatureCurrent"
+     */
+    public function testPropertyIEzsigndocumentStepsignatureCurrent()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjEzsignfoldersignerassociationstatus"
+     */
+    public function testPropertyAObjEzsignfoldersignerassociationstatus()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

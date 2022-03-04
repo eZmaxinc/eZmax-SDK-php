@@ -81,6 +81,24 @@ class EzsignformfieldResponseCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "pkiEzsignformfieldID"
+     */
+    public function testPropertyPkiEzsignformfieldID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsignpagePagenumber"
+     */
+    public function testPropertyIEzsignpagePagenumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsignformfieldLabel"
      */
     public function testPropertySEzsignformfieldLabel()
@@ -93,6 +111,60 @@ class EzsignformfieldResponseCompoundTest extends TestCase
      * Test attribute "sEzsignformfieldValue"
      */
     public function testPropertySEzsignformfieldValue()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsignformfieldX"
+     */
+    public function testPropertyIEzsignformfieldX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsignformfieldY"
+     */
+    public function testPropertyIEzsignformfieldY()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsignformfieldWidth"
+     */
+    public function testPropertyIEzsignformfieldWidth()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsignformfieldHeight"
+     */
+    public function testPropertyIEzsignformfieldHeight()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignformfieldSelected"
+     */
+    public function testPropertyBEzsignformfieldSelected()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsignformfieldEnteredvalue"
+     */
+    public function testPropertySEzsignformfieldEnteredvalue()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

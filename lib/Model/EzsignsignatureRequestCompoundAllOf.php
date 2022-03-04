@@ -61,7 +61,7 @@ class EzsignsignatureRequestCompoundAllOf implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'bEzsignsignatureCustomdate' => 'bool',
-        'aObjEzsignsignaturecustomdate' => '\eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]'
+        'aObjEzsignsignaturecustomdate' => '\eZmaxAPI\Model\EzsignsignaturecustomdateRequestCompound[]'
     ];
 
     /**
@@ -239,7 +239,7 @@ class EzsignsignatureRequestCompoundAllOf implements ModelInterface, ArrayAccess
     /**
      * Gets aObjEzsignsignaturecustomdate
      *
-     * @return \eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]|null
+     * @return \eZmaxAPI\Model\EzsignsignaturecustomdateRequestCompound[]|null
      */
     public function getAObjEzsignsignaturecustomdate()
     {
@@ -249,7 +249,7 @@ class EzsignsignatureRequestCompoundAllOf implements ModelInterface, ArrayAccess
     /**
      * Sets aObjEzsignsignaturecustomdate
      *
-     * @param \eZmaxAPI\Model\EzsignsignaturecustomdateRequest[]|null $aObjEzsignsignaturecustomdate An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+     * @param \eZmaxAPI\Model\EzsignsignaturecustomdateRequestCompound[]|null $aObjEzsignsignaturecustomdate An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
      *
      * @return self
      */

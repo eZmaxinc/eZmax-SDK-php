@@ -63,7 +63,7 @@ class WebhookEzsignFolderCompleted implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'objEzsignfolder' => '\eZmaxAPI\Model\EzsignfolderResponse',
         'objWebhook' => '\eZmaxAPI\Model\WebhookResponse',
-        'aObjAttempt' => '\eZmaxAPI\Model\AttemptResponse[]'
+        'aObjAttempt' => '\eZmaxAPI\Model\AttemptResponseCompound[]'
     ];
 
     /**
@@ -279,7 +279,7 @@ class WebhookEzsignFolderCompleted implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets aObjAttempt
      *
-     * @return \eZmaxAPI\Model\AttemptResponse[]
+     * @return \eZmaxAPI\Model\AttemptResponseCompound[]
      */
     public function getAObjAttempt()
     {
@@ -289,7 +289,7 @@ class WebhookEzsignFolderCompleted implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets aObjAttempt
      *
-     * @param \eZmaxAPI\Model\AttemptResponse[] $aObjAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+     * @param \eZmaxAPI\Model\AttemptResponseCompound[] $aObjAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
      *
      * @return self
      */

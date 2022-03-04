@@ -60,10 +60,10 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjAddress' => '\eZmaxAPI\Model\AddressRequest[]',
-        'aObjPhone' => '\eZmaxAPI\Model\PhoneRequest[]',
-        'aObjEmail' => '\eZmaxAPI\Model\EmailRequest[]',
-        'aObjWebsite' => '\eZmaxAPI\Model\WebsiteRequest[]'
+        'aObjAddress' => '\eZmaxAPI\Model\AddressRequestCompound[]',
+        'aObjPhone' => '\eZmaxAPI\Model\PhoneRequestCompound[]',
+        'aObjEmail' => '\eZmaxAPI\Model\EmailRequestCompound[]',
+        'aObjWebsite' => '\eZmaxAPI\Model\WebsiteRequestCompound[]'
     ];
 
     /**
@@ -239,7 +239,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Gets aObjAddress
      *
-     * @return \eZmaxAPI\Model\AddressRequest[]
+     * @return \eZmaxAPI\Model\AddressRequestCompound[]
      */
     public function getAObjAddress()
     {
@@ -249,7 +249,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Sets aObjAddress
      *
-     * @param \eZmaxAPI\Model\AddressRequest[] $aObjAddress 
+     * @param \eZmaxAPI\Model\AddressRequestCompound[] $aObjAddress aObjAddress
      *
      * @return self
      */
@@ -263,7 +263,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Gets aObjPhone
      *
-     * @return \eZmaxAPI\Model\PhoneRequest[]
+     * @return \eZmaxAPI\Model\PhoneRequestCompound[]
      */
     public function getAObjPhone()
     {
@@ -273,7 +273,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Sets aObjPhone
      *
-     * @param \eZmaxAPI\Model\PhoneRequest[] $aObjPhone 
+     * @param \eZmaxAPI\Model\PhoneRequestCompound[] $aObjPhone aObjPhone
      *
      * @return self
      */
@@ -287,7 +287,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Gets aObjEmail
      *
-     * @return \eZmaxAPI\Model\EmailRequest[]
+     * @return \eZmaxAPI\Model\EmailRequestCompound[]
      */
     public function getAObjEmail()
     {
@@ -297,7 +297,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Sets aObjEmail
      *
-     * @param \eZmaxAPI\Model\EmailRequest[] $aObjEmail 
+     * @param \eZmaxAPI\Model\EmailRequestCompound[] $aObjEmail aObjEmail
      *
      * @return self
      */
@@ -311,7 +311,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Gets aObjWebsite
      *
-     * @return \eZmaxAPI\Model\WebsiteRequest[]
+     * @return \eZmaxAPI\Model\WebsiteRequestCompound[]
      */
     public function getAObjWebsite()
     {
@@ -321,7 +321,7 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
     /**
      * Sets aObjWebsite
      *
-     * @param \eZmaxAPI\Model\WebsiteRequest[] $aObjWebsite 
+     * @param \eZmaxAPI\Model\WebsiteRequestCompound[] $aObjWebsite aObjWebsite
      *
      * @return self
      */

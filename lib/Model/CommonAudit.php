@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * CommonAudit Class Doc Comment
  *
  * @category Class
- * @description Gives informations about the user that created the object and the last user to have modified it.  If the object was never modified after creation, both Created and Modified informations will be the same.  Apikey details will only be provided if the changes were made by an API key.
+ * @description Gives informations about the user that created the object and the last user to have modified it.  If the object was never modified after creation, objAuditdetailModified won&#39;t be returned.
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,12 +61,8 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fkiUserIDCreated' => 'int',
-        'fkiUserIDModified' => 'int',
-        'fkiApikeyIDCreated' => 'int',
-        'fkiApikeyIDModified' => 'int',
-        'dtCreatedDate' => 'string',
-        'dtModifiedDate' => 'string'
+        'objAuditdetailCreated' => '\eZmaxAPI\Model\CommonAuditdetail',
+        'objAuditdetailModified' => '\eZmaxAPI\Model\CommonAuditdetail'
     ];
 
     /**
@@ -77,12 +73,8 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'fkiUserIDCreated' => null,
-        'fkiUserIDModified' => null,
-        'fkiApikeyIDCreated' => null,
-        'fkiApikeyIDModified' => null,
-        'dtCreatedDate' => null,
-        'dtModifiedDate' => null
+        'objAuditdetailCreated' => null,
+        'objAuditdetailModified' => null
     ];
 
     /**
@@ -112,12 +104,8 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'fkiUserIDCreated' => 'fkiUserIDCreated',
-        'fkiUserIDModified' => 'fkiUserIDModified',
-        'fkiApikeyIDCreated' => 'fkiApikeyIDCreated',
-        'fkiApikeyIDModified' => 'fkiApikeyIDModified',
-        'dtCreatedDate' => 'dtCreatedDate',
-        'dtModifiedDate' => 'dtModifiedDate'
+        'objAuditdetailCreated' => 'objAuditdetailCreated',
+        'objAuditdetailModified' => 'objAuditdetailModified'
     ];
 
     /**
@@ -126,12 +114,8 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'fkiUserIDCreated' => 'setFkiUserIDCreated',
-        'fkiUserIDModified' => 'setFkiUserIDModified',
-        'fkiApikeyIDCreated' => 'setFkiApikeyIDCreated',
-        'fkiApikeyIDModified' => 'setFkiApikeyIDModified',
-        'dtCreatedDate' => 'setDtCreatedDate',
-        'dtModifiedDate' => 'setDtModifiedDate'
+        'objAuditdetailCreated' => 'setObjAuditdetailCreated',
+        'objAuditdetailModified' => 'setObjAuditdetailModified'
     ];
 
     /**
@@ -140,12 +124,8 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'fkiUserIDCreated' => 'getFkiUserIDCreated',
-        'fkiUserIDModified' => 'getFkiUserIDModified',
-        'fkiApikeyIDCreated' => 'getFkiApikeyIDCreated',
-        'fkiApikeyIDModified' => 'getFkiApikeyIDModified',
-        'dtCreatedDate' => 'getDtCreatedDate',
-        'dtModifiedDate' => 'getDtModifiedDate'
+        'objAuditdetailCreated' => 'getObjAuditdetailCreated',
+        'objAuditdetailModified' => 'getObjAuditdetailModified'
     ];
 
     /**
@@ -205,12 +185,8 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['fkiUserIDCreated'] = $data['fkiUserIDCreated'] ?? null;
-        $this->container['fkiUserIDModified'] = $data['fkiUserIDModified'] ?? null;
-        $this->container['fkiApikeyIDCreated'] = $data['fkiApikeyIDCreated'] ?? null;
-        $this->container['fkiApikeyIDModified'] = $data['fkiApikeyIDModified'] ?? null;
-        $this->container['dtCreatedDate'] = $data['dtCreatedDate'] ?? null;
-        $this->container['dtModifiedDate'] = $data['dtModifiedDate'] ?? null;
+        $this->container['objAuditdetailCreated'] = $data['objAuditdetailCreated'] ?? null;
+        $this->container['objAuditdetailModified'] = $data['objAuditdetailModified'] ?? null;
     }
 
     /**
@@ -222,17 +198,8 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['fkiUserIDCreated'] === null) {
-            $invalidProperties[] = "'fkiUserIDCreated' can't be null";
-        }
-        if ($this->container['fkiUserIDModified'] === null) {
-            $invalidProperties[] = "'fkiUserIDModified' can't be null";
-        }
-        if ($this->container['dtCreatedDate'] === null) {
-            $invalidProperties[] = "'dtCreatedDate' can't be null";
-        }
-        if ($this->container['dtModifiedDate'] === null) {
-            $invalidProperties[] = "'dtModifiedDate' can't be null";
+        if ($this->container['objAuditdetailCreated'] === null) {
+            $invalidProperties[] = "'objAuditdetailCreated' can't be null";
         }
         return $invalidProperties;
     }
@@ -250,145 +217,49 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets fkiUserIDCreated
+     * Gets objAuditdetailCreated
      *
-     * @return int
+     * @return \eZmaxAPI\Model\CommonAuditdetail
      */
-    public function getFkiUserIDCreated()
+    public function getObjAuditdetailCreated()
     {
-        return $this->container['fkiUserIDCreated'];
+        return $this->container['objAuditdetailCreated'];
     }
 
     /**
-     * Sets fkiUserIDCreated
+     * Sets objAuditdetailCreated
      *
-     * @param int $fkiUserIDCreated The unique ID of the User
+     * @param \eZmaxAPI\Model\CommonAuditdetail $objAuditdetailCreated objAuditdetailCreated
      *
      * @return self
      */
-    public function setFkiUserIDCreated($fkiUserIDCreated)
+    public function setObjAuditdetailCreated($objAuditdetailCreated)
     {
-        $this->container['fkiUserIDCreated'] = $fkiUserIDCreated;
+        $this->container['objAuditdetailCreated'] = $objAuditdetailCreated;
 
         return $this;
     }
 
     /**
-     * Gets fkiUserIDModified
+     * Gets objAuditdetailModified
      *
-     * @return int
+     * @return \eZmaxAPI\Model\CommonAuditdetail|null
      */
-    public function getFkiUserIDModified()
+    public function getObjAuditdetailModified()
     {
-        return $this->container['fkiUserIDModified'];
+        return $this->container['objAuditdetailModified'];
     }
 
     /**
-     * Sets fkiUserIDModified
+     * Sets objAuditdetailModified
      *
-     * @param int $fkiUserIDModified The unique ID of the User
+     * @param \eZmaxAPI\Model\CommonAuditdetail|null $objAuditdetailModified objAuditdetailModified
      *
      * @return self
      */
-    public function setFkiUserIDModified($fkiUserIDModified)
+    public function setObjAuditdetailModified($objAuditdetailModified)
     {
-        $this->container['fkiUserIDModified'] = $fkiUserIDModified;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiApikeyIDCreated
-     *
-     * @return int|null
-     */
-    public function getFkiApikeyIDCreated()
-    {
-        return $this->container['fkiApikeyIDCreated'];
-    }
-
-    /**
-     * Sets fkiApikeyIDCreated
-     *
-     * @param int|null $fkiApikeyIDCreated The unique ID of the Apikey
-     *
-     * @return self
-     */
-    public function setFkiApikeyIDCreated($fkiApikeyIDCreated)
-    {
-        $this->container['fkiApikeyIDCreated'] = $fkiApikeyIDCreated;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiApikeyIDModified
-     *
-     * @return int|null
-     */
-    public function getFkiApikeyIDModified()
-    {
-        return $this->container['fkiApikeyIDModified'];
-    }
-
-    /**
-     * Sets fkiApikeyIDModified
-     *
-     * @param int|null $fkiApikeyIDModified The unique ID of the Apikey
-     *
-     * @return self
-     */
-    public function setFkiApikeyIDModified($fkiApikeyIDModified)
-    {
-        $this->container['fkiApikeyIDModified'] = $fkiApikeyIDModified;
-
-        return $this;
-    }
-
-    /**
-     * Gets dtCreatedDate
-     *
-     * @return string
-     */
-    public function getDtCreatedDate()
-    {
-        return $this->container['dtCreatedDate'];
-    }
-
-    /**
-     * Sets dtCreatedDate
-     *
-     * @param string $dtCreatedDate Represent a Date Time. The timezone is the one configured in the User's profile.
-     *
-     * @return self
-     */
-    public function setDtCreatedDate($dtCreatedDate)
-    {
-        $this->container['dtCreatedDate'] = $dtCreatedDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets dtModifiedDate
-     *
-     * @return string
-     */
-    public function getDtModifiedDate()
-    {
-        return $this->container['dtModifiedDate'];
-    }
-
-    /**
-     * Sets dtModifiedDate
-     *
-     * @param string $dtModifiedDate Represent a Date Time. The timezone is the one configured in the User's profile.
-     *
-     * @return self
-     */
-    public function setDtModifiedDate($dtModifiedDate)
-    {
-        $this->container['dtModifiedDate'] = $dtModifiedDate;
+        $this->container['objAuditdetailModified'] = $objAuditdetailModified;
 
         return $this;
     }

@@ -61,9 +61,9 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objUser' => '\eZmaxAPI\Model\UserResponse',
+        'objUser' => '\eZmaxAPI\Model\UserResponseCompound',
         'objWebhook' => '\eZmaxAPI\Model\WebhookResponse',
-        'aObjAttempt' => '\eZmaxAPI\Model\AttemptResponse[]'
+        'aObjAttempt' => '\eZmaxAPI\Model\AttemptResponseCompound[]'
     ];
 
     /**
@@ -231,7 +231,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets objUser
      *
-     * @return \eZmaxAPI\Model\UserResponse
+     * @return \eZmaxAPI\Model\UserResponseCompound
      */
     public function getObjUser()
     {
@@ -241,7 +241,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets objUser
      *
-     * @param \eZmaxAPI\Model\UserResponse $objUser objUser
+     * @param \eZmaxAPI\Model\UserResponseCompound $objUser objUser
      *
      * @return self
      */
@@ -279,7 +279,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets aObjAttempt
      *
-     * @return \eZmaxAPI\Model\AttemptResponse[]
+     * @return \eZmaxAPI\Model\AttemptResponseCompound[]
      */
     public function getAObjAttempt()
     {
@@ -289,7 +289,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets aObjAttempt
      *
-     * @param \eZmaxAPI\Model\AttemptResponse[] $aObjAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+     * @param \eZmaxAPI\Model\AttemptResponseCompound[] $aObjAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
      *
      * @return self
      */

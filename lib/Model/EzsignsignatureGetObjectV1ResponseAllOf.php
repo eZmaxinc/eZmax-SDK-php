@@ -60,7 +60,7 @@ class EzsignsignatureGetObjectV1ResponseAllOf implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mPayload' => 'object'
+        'mPayload' => '\eZmaxAPI\Model\EzsignsignatureGetObjectV1ResponseMPayload'
     ];
 
     /**
@@ -212,7 +212,7 @@ class EzsignsignatureGetObjectV1ResponseAllOf implements ModelInterface, ArrayAc
     /**
      * Gets mPayload
      *
-     * @return object
+     * @return \eZmaxAPI\Model\EzsignsignatureGetObjectV1ResponseMPayload
      */
     public function getMPayload()
     {
@@ -222,7 +222,7 @@ class EzsignsignatureGetObjectV1ResponseAllOf implements ModelInterface, ArrayAc
     /**
      * Sets mPayload
      *
-     * @param object $mPayload Payload for the /1/object/ezsignsignature/getObject API Request
+     * @param \eZmaxAPI\Model\EzsignsignatureGetObjectV1ResponseMPayload $mPayload mPayload
      *
      * @return self
      */

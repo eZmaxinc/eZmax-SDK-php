@@ -81,9 +81,135 @@ class EzsignformfieldgroupResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "pkiEzsignformfieldgroupID"
+     */
+    public function testPropertyPkiEzsignformfieldgroupID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fkiEzsigndocumentID"
+     */
+    public function testPropertyFkiEzsigndocumentID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eEzsignformfieldgroupType"
+     */
+    public function testPropertyEEzsignformfieldgroupType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eEzsignformfieldgroupSignerrequirement"
+     */
+    public function testPropertyEEzsignformfieldgroupSignerrequirement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsignformfieldgroupLabel"
      */
     public function testPropertySEzsignformfieldgroupLabel()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsignformfieldgroupStep"
+     */
+    public function testPropertyIEzsignformfieldgroupStep()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsignformfieldgroupDefaultvalue"
+     */
+    public function testPropertySEzsignformfieldgroupDefaultvalue()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsignformfieldgroupFilledmin"
+     */
+    public function testPropertyIEzsignformfieldgroupFilledmin()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsignformfieldgroupFilledmax"
+     */
+    public function testPropertyIEzsignformfieldgroupFilledmax()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignformfieldgroupReadonly"
+     */
+    public function testPropertyBEzsignformfieldgroupReadonly()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsignformfieldgroupMaxlength"
+     */
+    public function testPropertyIEzsignformfieldgroupMaxlength()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignformfieldgroupEncrypted"
+     */
+    public function testPropertyBEzsignformfieldgroupEncrypted()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsignformfieldgroupRegexp"
+     */
+    public function testPropertySEzsignformfieldgroupRegexp()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tEzsignformfieldgroupTooltip"
+     */
+    public function testPropertyTEzsignformfieldgroupTooltip()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eEzsignformfieldgroupTooltipposition"
+     */
+    public function testPropertyEEzsignformfieldgroupTooltipposition()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

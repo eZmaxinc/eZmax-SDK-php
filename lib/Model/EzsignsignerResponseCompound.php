@@ -61,12 +61,12 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objContact' => '\eZmaxAPI\Model\EzsignsignerResponseCompoundContact',
         'pkiEzsignsignerID' => 'int',
         'fkiTaxassignmentID' => 'int',
         'fkiSecretquestionID' => 'int',
         'fkiUserlogintypeID' => 'int',
-        'sUserlogintypeDescriptionX' => 'string'
+        'sUserlogintypeDescriptionX' => 'string',
+        'objContact' => '\eZmaxAPI\Model\EzsignsignerResponseCompoundContact'
     ];
 
     /**
@@ -77,12 +77,12 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objContact' => null,
         'pkiEzsignsignerID' => null,
         'fkiTaxassignmentID' => null,
         'fkiSecretquestionID' => null,
         'fkiUserlogintypeID' => null,
-        'sUserlogintypeDescriptionX' => null
+        'sUserlogintypeDescriptionX' => null,
+        'objContact' => null
     ];
 
     /**
@@ -112,12 +112,12 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'objContact' => 'objContact',
         'pkiEzsignsignerID' => 'pkiEzsignsignerID',
         'fkiTaxassignmentID' => 'fkiTaxassignmentID',
         'fkiSecretquestionID' => 'fkiSecretquestionID',
         'fkiUserlogintypeID' => 'fkiUserlogintypeID',
-        'sUserlogintypeDescriptionX' => 'sUserlogintypeDescriptionX'
+        'sUserlogintypeDescriptionX' => 'sUserlogintypeDescriptionX',
+        'objContact' => 'objContact'
     ];
 
     /**
@@ -126,12 +126,12 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'objContact' => 'setObjContact',
         'pkiEzsignsignerID' => 'setPkiEzsignsignerID',
         'fkiTaxassignmentID' => 'setFkiTaxassignmentID',
         'fkiSecretquestionID' => 'setFkiSecretquestionID',
         'fkiUserlogintypeID' => 'setFkiUserlogintypeID',
-        'sUserlogintypeDescriptionX' => 'setSUserlogintypeDescriptionX'
+        'sUserlogintypeDescriptionX' => 'setSUserlogintypeDescriptionX',
+        'objContact' => 'setObjContact'
     ];
 
     /**
@@ -140,12 +140,12 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'objContact' => 'getObjContact',
         'pkiEzsignsignerID' => 'getPkiEzsignsignerID',
         'fkiTaxassignmentID' => 'getFkiTaxassignmentID',
         'fkiSecretquestionID' => 'getFkiSecretquestionID',
         'fkiUserlogintypeID' => 'getFkiUserlogintypeID',
-        'sUserlogintypeDescriptionX' => 'getSUserlogintypeDescriptionX'
+        'sUserlogintypeDescriptionX' => 'getSUserlogintypeDescriptionX',
+        'objContact' => 'getObjContact'
     ];
 
     /**
@@ -205,12 +205,12 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['objContact'] = $data['objContact'] ?? null;
         $this->container['pkiEzsignsignerID'] = $data['pkiEzsignsignerID'] ?? null;
         $this->container['fkiTaxassignmentID'] = $data['fkiTaxassignmentID'] ?? null;
         $this->container['fkiSecretquestionID'] = $data['fkiSecretquestionID'] ?? null;
         $this->container['fkiUserlogintypeID'] = $data['fkiUserlogintypeID'] ?? null;
         $this->container['sUserlogintypeDescriptionX'] = $data['sUserlogintypeDescriptionX'] ?? null;
+        $this->container['objContact'] = $data['objContact'] ?? null;
     }
 
     /**
@@ -222,9 +222,6 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['objContact'] === null) {
-            $invalidProperties[] = "'objContact' can't be null";
-        }
         if ($this->container['pkiEzsignsignerID'] === null) {
             $invalidProperties[] = "'pkiEzsignsignerID' can't be null";
         }
@@ -245,6 +242,9 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
         if ($this->container['sUserlogintypeDescriptionX'] === null) {
             $invalidProperties[] = "'sUserlogintypeDescriptionX' can't be null";
         }
+        if ($this->container['objContact'] === null) {
+            $invalidProperties[] = "'objContact' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -259,30 +259,6 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets objContact
-     *
-     * @return \eZmaxAPI\Model\EzsignsignerResponseCompoundContact
-     */
-    public function getObjContact()
-    {
-        return $this->container['objContact'];
-    }
-
-    /**
-     * Sets objContact
-     *
-     * @param \eZmaxAPI\Model\EzsignsignerResponseCompoundContact $objContact objContact
-     *
-     * @return self
-     */
-    public function setObjContact($objContact)
-    {
-        $this->container['objContact'] = $objContact;
-
-        return $this;
-    }
 
     /**
      * Gets pkiEzsignsignerID
@@ -377,7 +353,7 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets fkiUserlogintypeID
      *
-     * @param int $fkiUserlogintypeID The unique ID of the Userlogintype
+     * @param int $fkiUserlogintypeID The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|
      *
      * @return self
      */
@@ -408,6 +384,30 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
     public function setSUserlogintypeDescriptionX($sUserlogintypeDescriptionX)
     {
         $this->container['sUserlogintypeDescriptionX'] = $sUserlogintypeDescriptionX;
+
+        return $this;
+    }
+
+    /**
+     * Gets objContact
+     *
+     * @return \eZmaxAPI\Model\EzsignsignerResponseCompoundContact
+     */
+    public function getObjContact()
+    {
+        return $this->container['objContact'];
+    }
+
+    /**
+     * Sets objContact
+     *
+     * @param \eZmaxAPI\Model\EzsignsignerResponseCompoundContact $objContact objContact
+     *
+     * @return self
+     */
+    public function setObjContact($objContact)
+    {
+        $this->container['objContact'] = $objContact;
 
         return $this;
     }

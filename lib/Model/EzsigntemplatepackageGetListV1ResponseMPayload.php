@@ -241,7 +241,7 @@ class EzsigntemplatepackageGetListV1ResponseMPayload implements ModelInterface, 
     /**
      * Sets aObjEzsigntemplatepackage
      *
-     * @param \eZmaxAPI\Model\EzsigntemplatepackageListElement[] $aObjEzsigntemplatepackage 
+     * @param \eZmaxAPI\Model\EzsigntemplatepackageListElement[] $aObjEzsigntemplatepackage aObjEzsigntemplatepackage
      *
      * @return self
      */

@@ -355,7 +355,7 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets aObjFormDataSigner
      *
-     * @param \eZmaxAPI\Model\CustomFormDataSignerResponse[] $aObjFormDataSigner 
+     * @param \eZmaxAPI\Model\CustomFormDataSignerResponse[] $aObjFormDataSigner aObjFormDataSigner
      *
      * @return self
      */

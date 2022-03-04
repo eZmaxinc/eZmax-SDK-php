@@ -81,15 +81,6 @@ class ContactRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "objContactinformations"
-     */
-    public function testPropertyObjContactinformations()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "fkiContacttitleID"
      */
     public function testPropertyFkiContacttitleID()
@@ -138,6 +129,15 @@ class ContactRequestCompoundTest extends TestCase
      * Test attribute "dtContactBirthdate"
      */
     public function testPropertyDtContactBirthdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objContactinformations"
+     */
+    public function testPropertyObjContactinformations()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

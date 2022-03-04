@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | **object** | Payload for the /1/object/ezsignsignature/getObject API Request |
+**mPayload** | [**\eZmaxAPI\Model\EzsignsignatureGetObjectV1ResponseMPayload**](EzsignsignatureGetObjectV1ResponseMPayload.md) |  |
 **objDebugPayload** | [**\eZmaxAPI\Model\CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional]
 **objDebug** | [**\eZmaxAPI\Model\CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional]
 

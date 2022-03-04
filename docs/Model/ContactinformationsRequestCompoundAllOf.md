@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aObjAddress** | [**\eZmaxAPI\Model\AddressRequest[]**](AddressRequest.md) |  |
-**aObjPhone** | [**\eZmaxAPI\Model\PhoneRequest[]**](PhoneRequest.md) |  |
-**aObjEmail** | [**\eZmaxAPI\Model\EmailRequest[]**](EmailRequest.md) |  |
-**aObjWebsite** | [**\eZmaxAPI\Model\WebsiteRequest[]**](WebsiteRequest.md) |  |
+**aObjAddress** | [**\eZmaxAPI\Model\AddressRequestCompound[]**](AddressRequestCompound.md) |  |
+**aObjPhone** | [**\eZmaxAPI\Model\PhoneRequestCompound[]**](PhoneRequestCompound.md) |  |
+**aObjEmail** | [**\eZmaxAPI\Model\EmailRequestCompound[]**](EmailRequestCompound.md) |  |
+**aObjWebsite** | [**\eZmaxAPI\Model\WebsiteRequestCompound[]**](WebsiteRequestCompound.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
