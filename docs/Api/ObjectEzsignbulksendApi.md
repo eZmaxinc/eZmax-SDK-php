@@ -4,9 +4,72 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ezsignbulksendGetEzsignbulksendtransmissionsV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetEzsignbulksendtransmissionsV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignbulksendtransmissions | Retrieve an existing Ezsignbulksend&#39;s Ezsignbulksendtransmissions
 [**ezsignbulksendGetListV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetListV1) | **GET** /1/object/ezsignbulksend/getList | Retrieve Ezsignbulksend list
 [**ezsignbulksendGetObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetObjectV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend
 
+
+## `ezsignbulksendGetEzsignbulksendtransmissionsV1()`
+
+```php
+ezsignbulksendGetEzsignbulksendtransmissionsV1($pkiEzsignbulksendID): \eZmaxAPI\Model\EzsignbulksendGetEzsignbulksendtransmissionsV1Response
+```
+
+Retrieve an existing Ezsignbulksend's Ezsignbulksendtransmissions
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksendApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignbulksendID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignbulksendGetEzsignbulksendtransmissionsV1($pkiEzsignbulksendID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignbulksendApi->ezsignbulksendGetEzsignbulksendtransmissionsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsignbulksendID** | **int**|  |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignbulksendGetEzsignbulksendtransmissionsV1Response**](../Model/EzsignbulksendGetEzsignbulksendtransmissionsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `ezsignbulksendGetListV1()`
 

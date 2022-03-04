@@ -4,11 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**iEzsigndocumentStepformtotal** | **int** | The total number of steps in the form filling phase |
-**iEzsigndocumentStepformcurrent** | **int** | The current step in the form filling phase |
-**iEzsigndocumentStepsignaturetotal** | **int** | The total number of steps in the signature filling phase |
-**iEzsigndocumentStepsignatureCurrent** | **int** | The current step in the signature phase |
-**aObjEzsignfoldersignerassociationstatus** | [**\eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[]**](CustomEzsignfoldersignerassociationstatusResponse.md) |  |
 **fkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder |
 **dtEzsigndocumentDuedate** | **string** | The maximum date and time at which the Ezsigndocument can be signed. |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
@@ -24,5 +19,10 @@ Name | Type | Description | Notes
 **sEzsigndocumentMD5initial** | **string** | MD5 Hash of the initial PDF Document before signatures were applied to it. |
 **sEzsigndocumentMD5signed** | **string** | MD5 Hash of the final PDF Document after all signatures were applied to it. |
 **objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
+**iEzsigndocumentStepformtotal** | **int** | The total number of steps in the form filling phase |
+**iEzsigndocumentStepformcurrent** | **int** | The current step in the form filling phase |
+**iEzsigndocumentStepsignaturetotal** | **int** | The total number of steps in the signature filling phase |
+**iEzsigndocumentStepsignatureCurrent** | **int** | The current step in the signature phase |
+**aObjEzsignfoldersignerassociationstatus** | [**\eZmaxAPI\Model\CustomEzsignfoldersignerassociationstatusResponse[]**](CustomEzsignfoldersignerassociationstatusResponse.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
