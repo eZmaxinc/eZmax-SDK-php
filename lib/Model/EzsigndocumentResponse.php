@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentResponse
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -75,6 +75,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsigndocumentSignaturetotal' => 'int',
         'sEzsigndocumentMD5initial' => 'string',
         'sEzsigndocumentMD5signed' => 'string',
+        'bEzsigndocumentEzsignform' => 'bool',
         'objAudit' => '\eZmaxAPI\Model\CommonAudit'
     ];
 
@@ -100,6 +101,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsigndocumentSignaturetotal' => null,
         'sEzsigndocumentMD5initial' => null,
         'sEzsigndocumentMD5signed' => null,
+        'bEzsigndocumentEzsignform' => null,
         'objAudit' => null
     ];
 
@@ -144,6 +146,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsigndocumentSignaturetotal' => 'iEzsigndocumentSignaturetotal',
         'sEzsigndocumentMD5initial' => 'sEzsigndocumentMD5initial',
         'sEzsigndocumentMD5signed' => 'sEzsigndocumentMD5signed',
+        'bEzsigndocumentEzsignform' => 'bEzsigndocumentEzsignform',
         'objAudit' => 'objAudit'
     ];
 
@@ -167,6 +170,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsigndocumentSignaturetotal' => 'setIEzsigndocumentSignaturetotal',
         'sEzsigndocumentMD5initial' => 'setSEzsigndocumentMD5initial',
         'sEzsigndocumentMD5signed' => 'setSEzsigndocumentMD5signed',
+        'bEzsigndocumentEzsignform' => 'setBEzsigndocumentEzsignform',
         'objAudit' => 'setObjAudit'
     ];
 
@@ -190,6 +194,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsigndocumentSignaturetotal' => 'getIEzsigndocumentSignaturetotal',
         'sEzsigndocumentMD5initial' => 'getSEzsigndocumentMD5initial',
         'sEzsigndocumentMD5signed' => 'getSEzsigndocumentMD5signed',
+        'bEzsigndocumentEzsignform' => 'getBEzsigndocumentEzsignform',
         'objAudit' => 'getObjAudit'
     ];
 
@@ -264,6 +269,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['iEzsigndocumentSignaturetotal'] = $data['iEzsigndocumentSignaturetotal'] ?? null;
         $this->container['sEzsigndocumentMD5initial'] = $data['sEzsigndocumentMD5initial'] ?? null;
         $this->container['sEzsigndocumentMD5signed'] = $data['sEzsigndocumentMD5signed'] ?? null;
+        $this->container['bEzsigndocumentEzsignform'] = $data['bEzsigndocumentEzsignform'] ?? null;
         $this->container['objAudit'] = $data['objAudit'] ?? null;
     }
 
@@ -325,6 +331,9 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         }
         if ($this->container['sEzsigndocumentMD5signed'] === null) {
             $invalidProperties[] = "'sEzsigndocumentMD5signed' can't be null";
+        }
+        if ($this->container['bEzsigndocumentEzsignform'] === null) {
+            $invalidProperties[] = "'bEzsigndocumentEzsignform' can't be null";
         }
         if ($this->container['objAudit'] === null) {
             $invalidProperties[] = "'objAudit' can't be null";
@@ -689,6 +698,30 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets bEzsigndocumentEzsignform
+     *
+     * @return bool
+     */
+    public function getBEzsigndocumentEzsignform()
+    {
+        return $this->container['bEzsigndocumentEzsignform'];
+    }
+
+    /**
+     * Sets bEzsigndocumentEzsignform
+     *
+     * @param bool $bEzsigndocumentEzsignform If the Ezsigndocument contains an Ezsignform or not
+     *
+     * @return self
+     */
+    public function setBEzsigndocumentEzsignform($bEzsigndocumentEzsignform)
+    {
+        $this->container['bEzsigndocumentEzsignform'] = $bEzsigndocumentEzsignform;
+
+        return $this;
+    }
+
+    /**
      * Gets objAudit
      *
      * @return \eZmaxAPI\Model\CommonAudit
@@ -718,7 +751,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -730,6 +763,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -743,7 +777,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -759,7 +793,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -771,6 +805,7 @@ class EzsigndocumentResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

@@ -1,7 +1,7 @@
 <?php
 /**
  * ObjectEzsignsignatureApiTest
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -10,7 +10,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -127,6 +127,18 @@ class ObjectEzsignsignatureApiTest extends TestCase
      *
      */
     public function testEzsignsignatureGetObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignsignatureSignV1
+     *
+     * Sign the Ezsignsignature.
+     *
+     */
+    public function testEzsignsignatureSignV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

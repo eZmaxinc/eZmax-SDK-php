@@ -1,7 +1,7 @@
 <?php
 /**
  * Configuration
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -10,7 +10,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -30,7 +30,7 @@ namespace eZmaxAPI;
 
 /**
  * Configuration Class Doc Comment
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI

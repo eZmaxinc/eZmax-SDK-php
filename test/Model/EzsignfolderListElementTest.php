@@ -2,7 +2,7 @@
 /**
  * EzsignfolderListElementTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -153,9 +153,9 @@ class EzsignfolderListElementTest extends TestCase
     }
 
     /**
-     * Test attribute "dtDueDate"
+     * Test attribute "dtEzsignfolderDuedate"
      */
-    public function testPropertyDtDueDate()
+    public function testPropertyDtEzsignfolderDuedate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

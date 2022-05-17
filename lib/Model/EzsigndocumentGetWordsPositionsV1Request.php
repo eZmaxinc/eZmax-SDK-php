@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentGetWordsPositionsV1Request
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * EzsigndocumentGetWordsPositionsV1Request Class Doc Comment
  *
  * @category Class
- * @description Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+ * @description Request for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -174,8 +174,8 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
         return self::$openAPIModelName;
     }
 
-    const E_GET_ALL = 'All';
-    const E_GET_WORDS = 'Words';
+    public const E_GET_ALL = 'All';
+    public const E_GET_WORDS = 'Words';
 
     /**
      * Gets allowable values of the enum
@@ -337,7 +337,7 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -349,6 +349,7 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -362,7 +363,7 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -378,7 +379,7 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -390,6 +391,7 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

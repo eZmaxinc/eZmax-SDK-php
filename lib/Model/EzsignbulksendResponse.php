@@ -2,7 +2,7 @@
 /**
  * EzsignbulksendResponse
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -64,8 +64,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiEzsignbulksendID' => 'int',
         'fkiEzsignfoldertypeID' => 'int',
         'fkiLanguageID' => 'int',
+        'sLanguageNameX' => 'string',
+        'sEzsignfoldertypeNameX' => 'string',
         'sEzsignbulksendDescription' => 'string',
         'tEzsignbulksendNote' => 'string',
+        'bEzsignbulksendNeedvalidation' => 'bool',
         'bEzsignbulksendIsactive' => 'bool',
         'objAudit' => '\eZmaxAPI\Model\CommonAudit'
     ];
@@ -81,8 +84,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiEzsignbulksendID' => null,
         'fkiEzsignfoldertypeID' => null,
         'fkiLanguageID' => null,
+        'sLanguageNameX' => null,
+        'sEzsignfoldertypeNameX' => null,
         'sEzsignbulksendDescription' => null,
         'tEzsignbulksendNote' => null,
+        'bEzsignbulksendNeedvalidation' => null,
         'bEzsignbulksendIsactive' => null,
         'objAudit' => null
     ];
@@ -117,8 +123,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiEzsignbulksendID' => 'pkiEzsignbulksendID',
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
         'fkiLanguageID' => 'fkiLanguageID',
+        'sLanguageNameX' => 'sLanguageNameX',
+        'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX',
         'sEzsignbulksendDescription' => 'sEzsignbulksendDescription',
         'tEzsignbulksendNote' => 'tEzsignbulksendNote',
+        'bEzsignbulksendNeedvalidation' => 'bEzsignbulksendNeedvalidation',
         'bEzsignbulksendIsactive' => 'bEzsignbulksendIsactive',
         'objAudit' => 'objAudit'
     ];
@@ -132,8 +141,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiEzsignbulksendID' => 'setPkiEzsignbulksendID',
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
         'fkiLanguageID' => 'setFkiLanguageID',
+        'sLanguageNameX' => 'setSLanguageNameX',
+        'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX',
         'sEzsignbulksendDescription' => 'setSEzsignbulksendDescription',
         'tEzsignbulksendNote' => 'setTEzsignbulksendNote',
+        'bEzsignbulksendNeedvalidation' => 'setBEzsignbulksendNeedvalidation',
         'bEzsignbulksendIsactive' => 'setBEzsignbulksendIsactive',
         'objAudit' => 'setObjAudit'
     ];
@@ -147,8 +159,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiEzsignbulksendID' => 'getPkiEzsignbulksendID',
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
         'fkiLanguageID' => 'getFkiLanguageID',
+        'sLanguageNameX' => 'getSLanguageNameX',
+        'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX',
         'sEzsignbulksendDescription' => 'getSEzsignbulksendDescription',
         'tEzsignbulksendNote' => 'getTEzsignbulksendNote',
+        'bEzsignbulksendNeedvalidation' => 'getBEzsignbulksendNeedvalidation',
         'bEzsignbulksendIsactive' => 'getBEzsignbulksendIsactive',
         'objAudit' => 'getObjAudit'
     ];
@@ -213,8 +228,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['pkiEzsignbulksendID'] = $data['pkiEzsignbulksendID'] ?? null;
         $this->container['fkiEzsignfoldertypeID'] = $data['fkiEzsignfoldertypeID'] ?? null;
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
+        $this->container['sLanguageNameX'] = $data['sLanguageNameX'] ?? null;
+        $this->container['sEzsignfoldertypeNameX'] = $data['sEzsignfoldertypeNameX'] ?? null;
         $this->container['sEzsignbulksendDescription'] = $data['sEzsignbulksendDescription'] ?? null;
         $this->container['tEzsignbulksendNote'] = $data['tEzsignbulksendNote'] ?? null;
+        $this->container['bEzsignbulksendNeedvalidation'] = $data['bEzsignbulksendNeedvalidation'] ?? null;
         $this->container['bEzsignbulksendIsactive'] = $data['bEzsignbulksendIsactive'] ?? null;
         $this->container['objAudit'] = $data['objAudit'] ?? null;
     }
@@ -245,11 +263,20 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['sLanguageNameX'] === null) {
+            $invalidProperties[] = "'sLanguageNameX' can't be null";
+        }
+        if ($this->container['sEzsignfoldertypeNameX'] === null) {
+            $invalidProperties[] = "'sEzsignfoldertypeNameX' can't be null";
+        }
         if ($this->container['sEzsignbulksendDescription'] === null) {
             $invalidProperties[] = "'sEzsignbulksendDescription' can't be null";
         }
         if ($this->container['tEzsignbulksendNote'] === null) {
             $invalidProperties[] = "'tEzsignbulksendNote' can't be null";
+        }
+        if ($this->container['bEzsignbulksendNeedvalidation'] === null) {
+            $invalidProperties[] = "'bEzsignbulksendNeedvalidation' can't be null";
         }
         if ($this->container['bEzsignbulksendIsactive'] === null) {
             $invalidProperties[] = "'bEzsignbulksendIsactive' can't be null";
@@ -353,6 +380,54 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets sLanguageNameX
+     *
+     * @return string
+     */
+    public function getSLanguageNameX()
+    {
+        return $this->container['sLanguageNameX'];
+    }
+
+    /**
+     * Sets sLanguageNameX
+     *
+     * @param string $sLanguageNameX The Name of the Language in the language of the requester
+     *
+     * @return self
+     */
+    public function setSLanguageNameX($sLanguageNameX)
+    {
+        $this->container['sLanguageNameX'] = $sLanguageNameX;
+
+        return $this;
+    }
+
+    /**
+     * Gets sEzsignfoldertypeNameX
+     *
+     * @return string
+     */
+    public function getSEzsignfoldertypeNameX()
+    {
+        return $this->container['sEzsignfoldertypeNameX'];
+    }
+
+    /**
+     * Sets sEzsignfoldertypeNameX
+     *
+     * @param string $sEzsignfoldertypeNameX The name of the Ezsignfoldertype in the language of the requester
+     *
+     * @return self
+     */
+    public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
+    {
+        $this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
+
+        return $this;
+    }
+
+    /**
      * Gets sEzsignbulksendDescription
      *
      * @return string
@@ -396,6 +471,30 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
     public function setTEzsignbulksendNote($tEzsignbulksendNote)
     {
         $this->container['tEzsignbulksendNote'] = $tEzsignbulksendNote;
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsignbulksendNeedvalidation
+     *
+     * @return bool
+     */
+    public function getBEzsignbulksendNeedvalidation()
+    {
+        return $this->container['bEzsignbulksendNeedvalidation'];
+    }
+
+    /**
+     * Sets bEzsignbulksendNeedvalidation
+     *
+     * @param bool $bEzsignbulksendNeedvalidation Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+     *
+     * @return self
+     */
+    public function setBEzsignbulksendNeedvalidation($bEzsignbulksendNeedvalidation)
+    {
+        $this->container['bEzsignbulksendNeedvalidation'] = $bEzsignbulksendNeedvalidation;
 
         return $this;
     }
@@ -454,7 +553,7 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -466,6 +565,7 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -479,7 +579,7 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -495,7 +595,7 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -507,6 +607,7 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

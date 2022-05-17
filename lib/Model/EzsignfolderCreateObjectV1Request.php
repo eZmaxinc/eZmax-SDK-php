@@ -2,7 +2,7 @@
 /**
  * EzsignfolderCreateObjectV1Request
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * EzsignfolderCreateObjectV1Request Class Doc Comment
  *
  * @category Class
- * @description Request for the /1/object/ezsignfolder/createObject API Request
+ * @description Request for POST /1/object/ezsignfolder
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -267,7 +267,7 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess, 
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -279,6 +279,7 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess, 
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -292,7 +293,7 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess, 
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -308,7 +309,7 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess, 
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -320,6 +321,7 @@ class EzsignfolderCreateObjectV1Request implements ModelInterface, ArrayAccess, 
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

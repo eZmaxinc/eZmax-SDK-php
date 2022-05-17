@@ -2,7 +2,7 @@
 /**
  * ActivesessionResponse
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -61,7 +61,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'eActivesessionSessiontype' => '\eZmaxAPI\Model\FieldEActivesessionSessiontype',
+        'eActivesessionUsertype' => '\eZmaxAPI\Model\FieldEActivesessionUsertype',
         'eActivesessionWeekdaystart' => '\eZmaxAPI\Model\FieldEActivesessionWeekdaystart',
         'fkiLanguageID' => 'int',
         'sCompanyNameX' => 'string',
@@ -78,7 +78,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'eActivesessionSessiontype' => null,
+        'eActivesessionUsertype' => null,
         'eActivesessionWeekdaystart' => null,
         'fkiLanguageID' => null,
         'sCompanyNameX' => null,
@@ -114,7 +114,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'eActivesessionSessiontype' => 'eActivesessionSessiontype',
+        'eActivesessionUsertype' => 'eActivesessionUsertype',
         'eActivesessionWeekdaystart' => 'eActivesessionWeekdaystart',
         'fkiLanguageID' => 'fkiLanguageID',
         'sCompanyNameX' => 'sCompanyNameX',
@@ -129,7 +129,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'eActivesessionSessiontype' => 'setEActivesessionSessiontype',
+        'eActivesessionUsertype' => 'setEActivesessionUsertype',
         'eActivesessionWeekdaystart' => 'setEActivesessionWeekdaystart',
         'fkiLanguageID' => 'setFkiLanguageID',
         'sCompanyNameX' => 'setSCompanyNameX',
@@ -144,7 +144,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'eActivesessionSessiontype' => 'getEActivesessionSessiontype',
+        'eActivesessionUsertype' => 'getEActivesessionUsertype',
         'eActivesessionWeekdaystart' => 'getEActivesessionWeekdaystart',
         'fkiLanguageID' => 'getFkiLanguageID',
         'sCompanyNameX' => 'getSCompanyNameX',
@@ -210,7 +210,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['eActivesessionSessiontype'] = $data['eActivesessionSessiontype'] ?? null;
+        $this->container['eActivesessionUsertype'] = $data['eActivesessionUsertype'] ?? null;
         $this->container['eActivesessionWeekdaystart'] = $data['eActivesessionWeekdaystart'] ?? null;
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
         $this->container['sCompanyNameX'] = $data['sCompanyNameX'] ?? null;
@@ -228,8 +228,8 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['eActivesessionSessiontype'] === null) {
-            $invalidProperties[] = "'eActivesessionSessiontype' can't be null";
+        if ($this->container['eActivesessionUsertype'] === null) {
+            $invalidProperties[] = "'eActivesessionUsertype' can't be null";
         }
         if ($this->container['eActivesessionWeekdaystart'] === null) {
             $invalidProperties[] = "'eActivesessionWeekdaystart' can't be null";
@@ -281,25 +281,25 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets eActivesessionSessiontype
+     * Gets eActivesessionUsertype
      *
-     * @return \eZmaxAPI\Model\FieldEActivesessionSessiontype
+     * @return \eZmaxAPI\Model\FieldEActivesessionUsertype
      */
-    public function getEActivesessionSessiontype()
+    public function getEActivesessionUsertype()
     {
-        return $this->container['eActivesessionSessiontype'];
+        return $this->container['eActivesessionUsertype'];
     }
 
     /**
-     * Sets eActivesessionSessiontype
+     * Sets eActivesessionUsertype
      *
-     * @param \eZmaxAPI\Model\FieldEActivesessionSessiontype $eActivesessionSessiontype eActivesessionSessiontype
+     * @param \eZmaxAPI\Model\FieldEActivesessionUsertype $eActivesessionUsertype eActivesessionUsertype
      *
      * @return self
      */
-    public function setEActivesessionSessiontype($eActivesessionSessiontype)
+    public function setEActivesessionUsertype($eActivesessionUsertype)
     {
-        $this->container['eActivesessionSessiontype'] = $eActivesessionSessiontype;
+        $this->container['eActivesessionUsertype'] = $eActivesessionUsertype;
 
         return $this;
     }
@@ -469,7 +469,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -481,6 +481,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -494,7 +495,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -510,7 +511,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -522,6 +523,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

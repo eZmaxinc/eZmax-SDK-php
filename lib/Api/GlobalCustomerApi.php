@@ -1,7 +1,7 @@
 <?php
 /**
  * GlobalCustomerApi
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -10,7 +10,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -30,8 +30,8 @@ namespace eZmaxAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
@@ -192,6 +192,9 @@ class GlobalCustomerApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\GlobalCustomerGetEndpointV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -204,6 +207,9 @@ class GlobalCustomerApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -218,6 +224,9 @@ class GlobalCustomerApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -294,6 +303,9 @@ class GlobalCustomerApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -352,16 +364,14 @@ class GlobalCustomerApi
         $multipart = false;
 
         // query params
-        if ($sInfrastructureproductCode !== null) {
-            if('form' === 'form' && is_array($sInfrastructureproductCode)) {
-                foreach($sInfrastructureproductCode as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['sInfrastructureproductCode'] = $sInfrastructureproductCode;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sInfrastructureproductCode,
+            'sInfrastructureproductCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
         // path params
@@ -406,7 +416,7 @@ class GlobalCustomerApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -427,7 +437,7 @@ class GlobalCustomerApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
 
         if ($apiKey !== null) {
             $secret = $this->config->getSecret();

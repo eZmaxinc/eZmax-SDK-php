@@ -1,7 +1,7 @@
 <?php
 /**
  * ObjectEzsigntemplatepackageApiTest
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -10,7 +10,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -73,12 +73,84 @@ class ObjectEzsigntemplatepackageApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsigntemplatepackageCreateObjectV1
+     *
+     * Create a new Ezsigntemplatepackage.
+     *
+     */
+    public function testEzsigntemplatepackageCreateObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsigntemplatepackageDeleteObjectV1
+     *
+     * Delete an existing Ezsigntemplatepackage.
+     *
+     */
+    public function testEzsigntemplatepackageDeleteObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsigntemplatepackageEditEzsigntemplatepackagesignersV1
+     *
+     * Edit multiple Ezsigntemplatepackagesigners.
+     *
+     */
+    public function testEzsigntemplatepackageEditEzsigntemplatepackagesignersV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsigntemplatepackageEditObjectV1
+     *
+     * Edit an existing Ezsigntemplatepackage.
+     *
+     */
+    public function testEzsigntemplatepackageEditObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsigntemplatepackageGetAutocompleteV1
+     *
+     * Retrieve Ezsigntemplatepackages and IDs.
+     *
+     */
+    public function testEzsigntemplatepackageGetAutocompleteV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsigntemplatepackageGetListV1
      *
      * Retrieve Ezsigntemplatepackage list.
      *
      */
     public function testEzsigntemplatepackageGetListV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsigntemplatepackageGetObjectV1
+     *
+     * Retrieve an existing Ezsigntemplatepackage.
+     *
+     */
+    public function testEzsigntemplatepackageGetObjectV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

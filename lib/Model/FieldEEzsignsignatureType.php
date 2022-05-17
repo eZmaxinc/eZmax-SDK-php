@@ -2,7 +2,7 @@
 /**
  * FieldEEzsignsignatureType
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -44,15 +44,15 @@ class FieldEEzsignsignatureType
     /**
      * Possible values of this enum
      */
-    const ACKNOWLEDGEMENT = 'Acknowledgement';
+    public const ACKNOWLEDGEMENT = 'Acknowledgement';
 
-    const CITY = 'City';
+    public const CITY = 'City';
 
-    const HANDWRITTEN = 'Handwritten';
+    public const HANDWRITTEN = 'Handwritten';
 
-    const INITIALS = 'Initials';
+    public const INITIALS = 'Initials';
 
-    const NAME = 'Name';
+    public const NAME = 'Name';
 
     /**
      * Gets allowable values of the enum

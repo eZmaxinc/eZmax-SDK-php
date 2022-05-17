@@ -2,7 +2,7 @@
 /**
  * CommonResponseErrorSTemporaryFileUrlAllOf
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -236,7 +236,7 @@ class CommonResponseErrorSTemporaryFileUrlAllOf implements ModelInterface, Array
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -248,6 +248,7 @@ class CommonResponseErrorSTemporaryFileUrlAllOf implements ModelInterface, Array
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -261,7 +262,7 @@ class CommonResponseErrorSTemporaryFileUrlAllOf implements ModelInterface, Array
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -277,7 +278,7 @@ class CommonResponseErrorSTemporaryFileUrlAllOf implements ModelInterface, Array
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -289,6 +290,7 @@ class CommonResponseErrorSTemporaryFileUrlAllOf implements ModelInterface, Array
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

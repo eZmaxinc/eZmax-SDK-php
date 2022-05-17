@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentResponseTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -201,6 +201,15 @@ class EzsigndocumentResponseTest extends TestCase
      * Test attribute "sEzsigndocumentMD5signed"
      */
     public function testPropertySEzsigndocumentMD5signed()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsigndocumentEzsignform"
+     */
+    public function testPropertyBEzsigndocumentEzsignform()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

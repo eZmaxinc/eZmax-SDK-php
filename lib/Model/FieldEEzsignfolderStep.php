@@ -2,7 +2,7 @@
 /**
  * FieldEEzsignfolderStep
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -44,17 +44,19 @@ class FieldEEzsignfolderStep
     /**
      * Possible values of this enum
      */
-    const UNSENT = 'Unsent';
+    public const UNSENT = 'Unsent';
 
-    const SENT = 'Sent';
+    public const SENT = 'Sent';
 
-    const PARTIALLY_SIGNED = 'PartiallySigned';
+    public const PARTIALLY_SIGNED = 'PartiallySigned';
 
-    const EXPIRED = 'Expired';
+    public const EXPIRED = 'Expired';
 
-    const COMPLETED = 'Completed';
+    public const COMPLETED = 'Completed';
 
-    const ARCHIVED = 'Archived';
+    public const ARCHIVED = 'Archived';
+
+    public const DISPOSED = 'Disposed';
 
     /**
      * Gets allowable values of the enum
@@ -68,7 +70,8 @@ class FieldEEzsignfolderStep
             self::PARTIALLY_SIGNED,
             self::EXPIRED,
             self::COMPLETED,
-            self::ARCHIVED
+            self::ARCHIVED,
+            self::DISPOSED
         ];
     }
 }

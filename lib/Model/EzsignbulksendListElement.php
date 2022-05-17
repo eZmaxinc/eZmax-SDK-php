@@ -2,7 +2,7 @@
 /**
  * EzsignbulksendListElement
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -65,7 +65,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
         'fkiEzsignfoldertypeID' => 'int',
         'sEzsignbulksendDescription' => 'string',
         'sEzsignfoldertypeNameX' => 'string',
-        'eEzsignfoldertypePrivacylevel' => '\eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel',
+        'bEzsignbulksendNeedvalidation' => 'bool',
         'bEzsignbulksendIsactive' => 'bool',
         'iEzsignbulksendtransmission' => 'int',
         'iEzsignfolder' => 'int',
@@ -86,7 +86,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
         'fkiEzsignfoldertypeID' => null,
         'sEzsignbulksendDescription' => null,
         'sEzsignfoldertypeNameX' => null,
-        'eEzsignfoldertypePrivacylevel' => null,
+        'bEzsignbulksendNeedvalidation' => null,
         'bEzsignbulksendIsactive' => null,
         'iEzsignbulksendtransmission' => null,
         'iEzsignfolder' => null,
@@ -126,7 +126,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
         'sEzsignbulksendDescription' => 'sEzsignbulksendDescription',
         'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX',
-        'eEzsignfoldertypePrivacylevel' => 'eEzsignfoldertypePrivacylevel',
+        'bEzsignbulksendNeedvalidation' => 'bEzsignbulksendNeedvalidation',
         'bEzsignbulksendIsactive' => 'bEzsignbulksendIsactive',
         'iEzsignbulksendtransmission' => 'iEzsignbulksendtransmission',
         'iEzsignfolder' => 'iEzsignfolder',
@@ -145,7 +145,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
         'sEzsignbulksendDescription' => 'setSEzsignbulksendDescription',
         'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX',
-        'eEzsignfoldertypePrivacylevel' => 'setEEzsignfoldertypePrivacylevel',
+        'bEzsignbulksendNeedvalidation' => 'setBEzsignbulksendNeedvalidation',
         'bEzsignbulksendIsactive' => 'setBEzsignbulksendIsactive',
         'iEzsignbulksendtransmission' => 'setIEzsignbulksendtransmission',
         'iEzsignfolder' => 'setIEzsignfolder',
@@ -164,7 +164,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
         'sEzsignbulksendDescription' => 'getSEzsignbulksendDescription',
         'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX',
-        'eEzsignfoldertypePrivacylevel' => 'getEEzsignfoldertypePrivacylevel',
+        'bEzsignbulksendNeedvalidation' => 'getBEzsignbulksendNeedvalidation',
         'bEzsignbulksendIsactive' => 'getBEzsignbulksendIsactive',
         'iEzsignbulksendtransmission' => 'getIEzsignbulksendtransmission',
         'iEzsignfolder' => 'getIEzsignfolder',
@@ -234,7 +234,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['fkiEzsignfoldertypeID'] = $data['fkiEzsignfoldertypeID'] ?? null;
         $this->container['sEzsignbulksendDescription'] = $data['sEzsignbulksendDescription'] ?? null;
         $this->container['sEzsignfoldertypeNameX'] = $data['sEzsignfoldertypeNameX'] ?? null;
-        $this->container['eEzsignfoldertypePrivacylevel'] = $data['eEzsignfoldertypePrivacylevel'] ?? null;
+        $this->container['bEzsignbulksendNeedvalidation'] = $data['bEzsignbulksendNeedvalidation'] ?? null;
         $this->container['bEzsignbulksendIsactive'] = $data['bEzsignbulksendIsactive'] ?? null;
         $this->container['iEzsignbulksendtransmission'] = $data['iEzsignbulksendtransmission'] ?? null;
         $this->container['iEzsignfolder'] = $data['iEzsignfolder'] ?? null;
@@ -264,8 +264,8 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['sEzsignfoldertypeNameX'] === null) {
             $invalidProperties[] = "'sEzsignfoldertypeNameX' can't be null";
         }
-        if ($this->container['eEzsignfoldertypePrivacylevel'] === null) {
-            $invalidProperties[] = "'eEzsignfoldertypePrivacylevel' can't be null";
+        if ($this->container['bEzsignbulksendNeedvalidation'] === null) {
+            $invalidProperties[] = "'bEzsignbulksendNeedvalidation' can't be null";
         }
         if ($this->container['bEzsignbulksendIsactive'] === null) {
             $invalidProperties[] = "'bEzsignbulksendIsactive' can't be null";
@@ -397,25 +397,25 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets eEzsignfoldertypePrivacylevel
+     * Gets bEzsignbulksendNeedvalidation
      *
-     * @return \eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel
+     * @return bool
      */
-    public function getEEzsignfoldertypePrivacylevel()
+    public function getBEzsignbulksendNeedvalidation()
     {
-        return $this->container['eEzsignfoldertypePrivacylevel'];
+        return $this->container['bEzsignbulksendNeedvalidation'];
     }
 
     /**
-     * Sets eEzsignfoldertypePrivacylevel
+     * Sets bEzsignbulksendNeedvalidation
      *
-     * @param \eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel $eEzsignfoldertypePrivacylevel eEzsignfoldertypePrivacylevel
+     * @param bool $bEzsignbulksendNeedvalidation Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
      *
      * @return self
      */
-    public function setEEzsignfoldertypePrivacylevel($eEzsignfoldertypePrivacylevel)
+    public function setBEzsignbulksendNeedvalidation($bEzsignbulksendNeedvalidation)
     {
-        $this->container['eEzsignfoldertypePrivacylevel'] = $eEzsignfoldertypePrivacylevel;
+        $this->container['bEzsignbulksendNeedvalidation'] = $bEzsignbulksendNeedvalidation;
 
         return $this;
     }
@@ -570,7 +570,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -582,6 +582,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -595,7 +596,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -611,7 +612,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -623,6 +624,7 @@ class EzsignbulksendListElement implements ModelInterface, ArrayAccess, \JsonSer
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

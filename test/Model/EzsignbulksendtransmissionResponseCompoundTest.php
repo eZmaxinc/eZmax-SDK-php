@@ -2,7 +2,7 @@
 /**
  * EzsignbulksendtransmissionResponseCompoundTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -120,6 +120,15 @@ class EzsignbulksendtransmissionResponseCompoundTest extends TestCase
      * Test attribute "objAudit"
      */
     public function testPropertyObjAudit()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjEzsignfoldertransmission"
+     */
+    public function testPropertyAObjEzsignfoldertransmission()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

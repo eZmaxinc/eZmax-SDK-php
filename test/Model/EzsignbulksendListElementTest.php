@@ -2,7 +2,7 @@
 /**
  * EzsignbulksendListElementTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -117,9 +117,9 @@ class EzsignbulksendListElementTest extends TestCase
     }
 
     /**
-     * Test attribute "eEzsignfoldertypePrivacylevel"
+     * Test attribute "bEzsignbulksendNeedvalidation"
      */
-    public function testPropertyEEzsignfoldertypePrivacylevel()
+    public function testPropertyBEzsignbulksendNeedvalidation()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

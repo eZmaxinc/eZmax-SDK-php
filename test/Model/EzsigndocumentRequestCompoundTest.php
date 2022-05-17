@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentRequestCompoundTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -90,6 +90,42 @@ class EzsigndocumentRequestCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "fkiEzsignfolderID"
+     */
+    public function testPropertyFkiEzsignfolderID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fkiEzsigntemplateID"
+     */
+    public function testPropertyFkiEzsigntemplateID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fkiEzsignfoldersignerassociationID"
+     */
+    public function testPropertyFkiEzsignfoldersignerassociationID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fkiLanguageID"
+     */
+    public function testPropertyFkiLanguageID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "eEzsigndocumentSource"
      */
     public function testPropertyEEzsigndocumentSource()
@@ -144,9 +180,9 @@ class EzsigndocumentRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "fkiEzsignfolderID"
+     * Test attribute "eEzsigndocumentForm"
      */
-    public function testPropertyFkiEzsignfolderID()
+    public function testPropertyEEzsigndocumentForm()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -156,15 +192,6 @@ class EzsigndocumentRequestCompoundTest extends TestCase
      * Test attribute "dtEzsigndocumentDuedate"
      */
     public function testPropertyDtEzsigndocumentDuedate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiLanguageID"
-     */
-    public function testPropertyFkiLanguageID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

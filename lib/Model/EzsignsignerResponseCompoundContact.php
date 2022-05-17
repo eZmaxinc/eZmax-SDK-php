@@ -2,7 +2,7 @@
 /**
  * EzsignsignerResponseCompoundContact
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -67,6 +67,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'fkiLanguageID' => 'int',
         'sEmailAddress' => 'string',
         'sPhoneE164' => 'string',
+        'sPhoneExtension' => 'string',
         'sPhoneE164Cell' => 'string'
     ];
 
@@ -84,6 +85,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'fkiLanguageID' => null,
         'sEmailAddress' => null,
         'sPhoneE164' => null,
+        'sPhoneExtension' => null,
         'sPhoneE164Cell' => null
     ];
 
@@ -120,6 +122,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'fkiLanguageID' => 'fkiLanguageID',
         'sEmailAddress' => 'sEmailAddress',
         'sPhoneE164' => 'sPhoneE164',
+        'sPhoneExtension' => 'sPhoneExtension',
         'sPhoneE164Cell' => 'sPhoneE164Cell'
     ];
 
@@ -135,6 +138,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'fkiLanguageID' => 'setFkiLanguageID',
         'sEmailAddress' => 'setSEmailAddress',
         'sPhoneE164' => 'setSPhoneE164',
+        'sPhoneExtension' => 'setSPhoneExtension',
         'sPhoneE164Cell' => 'setSPhoneE164Cell'
     ];
 
@@ -150,6 +154,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         'fkiLanguageID' => 'getFkiLanguageID',
         'sEmailAddress' => 'getSEmailAddress',
         'sPhoneE164' => 'getSPhoneE164',
+        'sPhoneExtension' => 'getSPhoneExtension',
         'sPhoneE164Cell' => 'getSPhoneE164Cell'
     ];
 
@@ -216,6 +221,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
         $this->container['sEmailAddress'] = $data['sEmailAddress'] ?? null;
         $this->container['sPhoneE164'] = $data['sPhoneE164'] ?? null;
+        $this->container['sPhoneExtension'] = $data['sPhoneExtension'] ?? null;
         $this->container['sPhoneE164Cell'] = $data['sPhoneE164Cell'] ?? null;
     }
 
@@ -246,6 +252,14 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
 
         if (($this->container['fkiLanguageID'] < 1)) {
             $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['sPhoneE164']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneE164'])) {
+            $invalidProperties[] = "invalid value for 'sPhoneE164', must be conform to the pattern /^\\+[1-9]\\d{1,14}$/.";
+        }
+
+        if (!is_null($this->container['sPhoneE164Cell']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneE164Cell'])) {
+            $invalidProperties[] = "invalid value for 'sPhoneE164Cell', must be conform to the pattern /^\\+[1-9]\\d{1,14}$/.";
         }
 
         return $invalidProperties;
@@ -410,7 +424,36 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
      */
     public function setSPhoneE164($sPhoneE164)
     {
+
+        if (!is_null($sPhoneE164) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164))) {
+            throw new \InvalidArgumentException("invalid value for $sPhoneE164 when calling EzsignsignerResponseCompoundContact., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
+        }
+
         $this->container['sPhoneE164'] = $sPhoneE164;
+
+        return $this;
+    }
+
+    /**
+     * Gets sPhoneExtension
+     *
+     * @return string|null
+     */
+    public function getSPhoneExtension()
+    {
+        return $this->container['sPhoneExtension'];
+    }
+
+    /**
+     * Sets sPhoneExtension
+     *
+     * @param string|null $sPhoneExtension The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
+     *
+     * @return self
+     */
+    public function setSPhoneExtension($sPhoneExtension)
+    {
+        $this->container['sPhoneExtension'] = $sPhoneExtension;
 
         return $this;
     }
@@ -434,6 +477,11 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
      */
     public function setSPhoneE164Cell($sPhoneE164Cell)
     {
+
+        if (!is_null($sPhoneE164Cell) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164Cell))) {
+            throw new \InvalidArgumentException("invalid value for $sPhoneE164Cell when calling EzsignsignerResponseCompoundContact., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
+        }
+
         $this->container['sPhoneE164Cell'] = $sPhoneE164Cell;
 
         return $this;
@@ -445,7 +493,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -457,6 +505,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -470,7 +519,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -486,7 +535,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -498,6 +547,7 @@ class EzsignsignerResponseCompoundContact implements ModelInterface, ArrayAccess
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

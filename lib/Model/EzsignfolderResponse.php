@@ -2,7 +2,7 @@
 /**
  * EzsignfolderResponse
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -326,12 +326,6 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['eEzsignfolderSendreminderfrequency'] === null) {
             $invalidProperties[] = "'eEzsignfolderSendreminderfrequency' can't be null";
         }
-        if ($this->container['dtEzsignfolderDuedate'] === null) {
-            $invalidProperties[] = "'dtEzsignfolderDuedate' can't be null";
-        }
-        if ($this->container['dtEzsignfolderSentdate'] === null) {
-            $invalidProperties[] = "'dtEzsignfolderSentdate' can't be null";
-        }
         if ($this->container['dtEzsignfolderScheduledarchive'] === null) {
             $invalidProperties[] = "'dtEzsignfolderScheduledarchive' can't be null";
         }
@@ -613,7 +607,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets dtEzsignfolderDuedate
      *
-     * @return string
+     * @return string|null
      */
     public function getDtEzsignfolderDuedate()
     {
@@ -623,7 +617,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets dtEzsignfolderDuedate
      *
-     * @param string $dtEzsignfolderDuedate The maximum date and time at which the Ezsignfolder can be signed.
+     * @param string|null $dtEzsignfolderDuedate The maximum date and time at which the Ezsignfolder can be signed.
      *
      * @return self
      */
@@ -637,7 +631,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets dtEzsignfolderSentdate
      *
-     * @return string
+     * @return string|null
      */
     public function getDtEzsignfolderSentdate()
     {
@@ -647,7 +641,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets dtEzsignfolderSentdate
      *
-     * @param string $dtEzsignfolderSentdate The date and time at which the Ezsign folder was sent the last time.
+     * @param string|null $dtEzsignfolderSentdate The date and time at which the Ezsign folder was sent the last time.
      *
      * @return self
      */
@@ -784,7 +778,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -796,6 +790,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -809,7 +804,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -825,7 +820,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -837,6 +832,7 @@ class EzsignfolderResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

@@ -2,7 +2,7 @@
 /**
  * EzsignfolderCreateObjectV2RequestTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EzsignfolderCreateObjectV2RequestTest Class Doc Comment
  *
  * @category    Class
- * @description Request for the /2/object/ezsignfolder/createObject API Request
+ * @description Request for POST /2/object/ezsignfolder
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

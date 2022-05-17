@@ -2,7 +2,7 @@
 /**
  * EzsignfolderGetFormsDataV1ResponseMPayload
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * EzsignfolderGetFormsDataV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData API Request
+ * @description Payload for GET /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,9 +61,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignfolderID' => 'int',
-        'sEzsignfolderDescription' => 'string',
-        'aObjFormDataDocument' => '\eZmaxAPI\Model\CustomFormDataDocumentResponse[]'
+        'objFormsDataFolder' => '\eZmaxAPI\Model\CustomFormsDataFolderResponse'
     ];
 
     /**
@@ -74,9 +72,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignfolderID' => null,
-        'sEzsignfolderDescription' => null,
-        'aObjFormDataDocument' => null
+        'objFormsDataFolder' => null
     ];
 
     /**
@@ -106,9 +102,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignfolderID' => 'pkiEzsignfolderID',
-        'sEzsignfolderDescription' => 'sEzsignfolderDescription',
-        'aObjFormDataDocument' => 'a_objFormDataDocument'
+        'objFormsDataFolder' => 'objFormsDataFolder'
     ];
 
     /**
@@ -117,9 +111,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
-        'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
-        'aObjFormDataDocument' => 'setAObjFormDataDocument'
+        'objFormsDataFolder' => 'setObjFormsDataFolder'
     ];
 
     /**
@@ -128,9 +120,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
-        'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
-        'aObjFormDataDocument' => 'getAObjFormDataDocument'
+        'objFormsDataFolder' => 'getObjFormsDataFolder'
     ];
 
     /**
@@ -190,9 +180,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['pkiEzsignfolderID'] = $data['pkiEzsignfolderID'] ?? null;
-        $this->container['sEzsignfolderDescription'] = $data['sEzsignfolderDescription'] ?? null;
-        $this->container['aObjFormDataDocument'] = $data['aObjFormDataDocument'] ?? null;
+        $this->container['objFormsDataFolder'] = $data['objFormsDataFolder'] ?? null;
     }
 
     /**
@@ -204,14 +192,8 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
-        if ($this->container['pkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'pkiEzsignfolderID' can't be null";
-        }
-        if ($this->container['sEzsignfolderDescription'] === null) {
-            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
-        }
-        if ($this->container['aObjFormDataDocument'] === null) {
-            $invalidProperties[] = "'aObjFormDataDocument' can't be null";
+        if ($this->container['objFormsDataFolder'] === null) {
+            $invalidProperties[] = "'objFormsDataFolder' can't be null";
         }
         return $invalidProperties;
     }
@@ -229,73 +211,25 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
 
 
     /**
-     * Gets pkiEzsignfolderID
+     * Gets objFormsDataFolder
      *
-     * @return int
+     * @return \eZmaxAPI\Model\CustomFormsDataFolderResponse
      */
-    public function getPkiEzsignfolderID()
+    public function getObjFormsDataFolder()
     {
-        return $this->container['pkiEzsignfolderID'];
+        return $this->container['objFormsDataFolder'];
     }
 
     /**
-     * Sets pkiEzsignfolderID
+     * Sets objFormsDataFolder
      *
-     * @param int $pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param \eZmaxAPI\Model\CustomFormsDataFolderResponse $objFormsDataFolder objFormsDataFolder
      *
      * @return self
      */
-    public function setPkiEzsignfolderID($pkiEzsignfolderID)
+    public function setObjFormsDataFolder($objFormsDataFolder)
     {
-        $this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignfolderDescription
-     *
-     * @return string
-     */
-    public function getSEzsignfolderDescription()
-    {
-        return $this->container['sEzsignfolderDescription'];
-    }
-
-    /**
-     * Sets sEzsignfolderDescription
-     *
-     * @param string $sEzsignfolderDescription The description of the Ezsignfolder
-     *
-     * @return self
-     */
-    public function setSEzsignfolderDescription($sEzsignfolderDescription)
-    {
-        $this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjFormDataDocument
-     *
-     * @return \eZmaxAPI\Model\CustomFormDataDocumentResponse[]
-     */
-    public function getAObjFormDataDocument()
-    {
-        return $this->container['aObjFormDataDocument'];
-    }
-
-    /**
-     * Sets aObjFormDataDocument
-     *
-     * @param \eZmaxAPI\Model\CustomFormDataDocumentResponse[] $aObjFormDataDocument aObjFormDataDocument
-     *
-     * @return self
-     */
-    public function setAObjFormDataDocument($aObjFormDataDocument)
-    {
-        $this->container['aObjFormDataDocument'] = $aObjFormDataDocument;
+        $this->container['objFormsDataFolder'] = $objFormsDataFolder;
 
         return $this;
     }
@@ -306,7 +240,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -318,6 +252,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -331,7 +266,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -347,7 +282,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -359,6 +294,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload implements ModelInterface, Arra
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

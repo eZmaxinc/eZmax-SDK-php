@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fkiEzsigntemplateID** | **int** | The unique ID of the Ezsigndocument |
+**fkiEzsigntemplateID** | **int** | The unique ID of the Ezsigntemplate |
 **aSEzsigntemplatesigner** | **string[]** |  |
 **aPkiEzsignfoldersignerassociationID** | **int[]** |  |
 

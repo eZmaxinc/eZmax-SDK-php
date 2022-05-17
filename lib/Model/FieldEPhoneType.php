@@ -2,7 +2,7 @@
 /**
  * FieldEPhoneType
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -44,9 +44,9 @@ class FieldEPhoneType
     /**
      * Possible values of this enum
      */
-    const LOCAL = 'Local';
+    public const LOCAL = 'Local';
 
-    const INTERNATIONAL = 'International';
+    public const INTERNATIONAL = 'International';
 
     /**
      * Gets allowable values of the enum

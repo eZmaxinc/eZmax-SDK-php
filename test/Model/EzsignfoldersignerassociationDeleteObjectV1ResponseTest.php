@@ -2,7 +2,7 @@
 /**
  * EzsignfoldersignerassociationDeleteObjectV1ResponseTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EzsignfoldersignerassociationDeleteObjectV1ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Response for the /1/object/ezsignfoldersignerassociation/deleteObject API Request
+ * @description Response for DELETE /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

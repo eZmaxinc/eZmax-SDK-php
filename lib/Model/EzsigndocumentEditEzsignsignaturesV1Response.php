@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentEditEzsignsignaturesV1Response
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * EzsigndocumentEditEzsignsignaturesV1Response Class Doc Comment
  *
  * @category Class
- * @description Response for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures API Request
+ * @description Response for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,6 +61,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
+        'mPayload' => '\eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1ResponseMPayload',
         'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
         'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
@@ -73,6 +74,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'mPayload' => null,
         'objDebugPayload' => null,
         'objDebug' => null
     ];
@@ -104,6 +106,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
      * @var string[]
      */
     protected static $attributeMap = [
+        'mPayload' => 'mPayload',
         'objDebugPayload' => 'objDebugPayload',
         'objDebug' => 'objDebug'
     ];
@@ -114,6 +117,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
+        'mPayload' => 'setMPayload',
         'objDebugPayload' => 'setObjDebugPayload',
         'objDebug' => 'setObjDebug'
     ];
@@ -124,6 +128,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
      * @var string[]
      */
     protected static $getters = [
+        'mPayload' => 'getMPayload',
         'objDebugPayload' => 'getObjDebugPayload',
         'objDebug' => 'getObjDebug'
     ];
@@ -185,6 +190,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
      */
     public function __construct(array $data = null)
     {
+        $this->container['mPayload'] = $data['mPayload'] ?? null;
         $this->container['objDebugPayload'] = $data['objDebugPayload'] ?? null;
         $this->container['objDebug'] = $data['objDebug'] ?? null;
     }
@@ -198,6 +204,9 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
     {
         $invalidProperties = [];
 
+        if ($this->container['mPayload'] === null) {
+            $invalidProperties[] = "'mPayload' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -212,6 +221,30 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets mPayload
+     *
+     * @return \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1ResponseMPayload
+     */
+    public function getMPayload()
+    {
+        return $this->container['mPayload'];
+    }
+
+    /**
+     * Sets mPayload
+     *
+     * @param \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1ResponseMPayload $mPayload mPayload
+     *
+     * @return self
+     */
+    public function setMPayload($mPayload)
+    {
+        $this->container['mPayload'] = $mPayload;
+
+        return $this;
+    }
 
     /**
      * Gets objDebugPayload
@@ -267,7 +300,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -279,6 +312,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -292,7 +326,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -308,7 +342,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -320,6 +354,7 @@ class EzsigndocumentEditEzsignsignaturesV1Response implements ModelInterface, Ar
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

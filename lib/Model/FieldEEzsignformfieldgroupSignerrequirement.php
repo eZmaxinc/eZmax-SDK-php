@@ -2,7 +2,7 @@
 /**
  * FieldEEzsignformfieldgroupSignerrequirement
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -44,9 +44,9 @@ class FieldEEzsignformfieldgroupSignerrequirement
     /**
      * Possible values of this enum
      */
-    const ALL = 'All';
+    public const ALL = 'All';
 
-    const ONE = 'One';
+    public const ONE = 'One';
 
     /**
      * Gets allowable values of the enum

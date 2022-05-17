@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentApplyEzsigntemplateV1RequestTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EzsigndocumentApplyEzsigntemplateV1RequestTest Class Doc Comment
  *
  * @category    Class
- * @description Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate API Request
+ * @description Request for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

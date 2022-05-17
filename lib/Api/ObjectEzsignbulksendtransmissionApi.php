@@ -1,7 +1,7 @@
 <?php
 /**
  * ObjectEzsignbulksendtransmissionApi
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -10,7 +10,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -30,8 +30,8 @@ namespace eZmaxAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
@@ -118,6 +118,732 @@ class ObjectEzsignbulksendtransmissionApi
     }
 
     /**
+     * Operation ezsignbulksendtransmissionGetCsvErrorsV1
+     *
+     * Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return string|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsignbulksendtransmissionGetCsvErrorsV1($pkiEzsignbulksendtransmissionID)
+    {
+        list($response) = $this->ezsignbulksendtransmissionGetCsvErrorsV1WithHttpInfo($pkiEzsignbulksendtransmissionID);
+        return $response;
+    }
+
+    /**
+     * Operation ezsignbulksendtransmissionGetCsvErrorsV1WithHttpInfo
+     *
+     * Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of string|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsignbulksendtransmissionGetCsvErrorsV1WithHttpInfo($pkiEzsignbulksendtransmissionID)
+    {
+        $request = $this->ezsignbulksendtransmissionGetCsvErrorsV1Request($pkiEzsignbulksendtransmissionID);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('string' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('string' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 406:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'string';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsignbulksendtransmissionGetCsvErrorsV1Async
+     *
+     * Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignbulksendtransmissionGetCsvErrorsV1Async($pkiEzsignbulksendtransmissionID)
+    {
+        return $this->ezsignbulksendtransmissionGetCsvErrorsV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsignbulksendtransmissionGetCsvErrorsV1AsyncWithHttpInfo
+     *
+     * Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignbulksendtransmissionGetCsvErrorsV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+    {
+        $returnType = 'string';
+        $request = $this->ezsignbulksendtransmissionGetCsvErrorsV1Request($pkiEzsignbulksendtransmissionID);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsignbulksendtransmissionGetCsvErrorsV1'
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsignbulksendtransmissionGetCsvErrorsV1Request($pkiEzsignbulksendtransmissionID)
+    {
+        // verify the required parameter 'pkiEzsignbulksendtransmissionID' is set
+        if ($pkiEzsignbulksendtransmissionID === null || (is_array($pkiEzsignbulksendtransmissionID) && count($pkiEzsignbulksendtransmissionID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsignbulksendtransmissionID when calling ezsignbulksendtransmissionGetCsvErrorsV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getCsvErrors';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsignbulksendtransmissionID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsignbulksendtransmissionID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsignbulksendtransmissionID),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/csv', 'application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/csv', 'application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsignbulksendtransmissionGetFormsDataV1
+     *
+     * Retrieve an existing Ezsignbulksendtransmission&#39;s forms data
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsignbulksendtransmissionGetFormsDataV1($pkiEzsignbulksendtransmissionID)
+    {
+        list($response) = $this->ezsignbulksendtransmissionGetFormsDataV1WithHttpInfo($pkiEzsignbulksendtransmissionID);
+        return $response;
+    }
+
+    /**
+     * Operation ezsignbulksendtransmissionGetFormsDataV1WithHttpInfo
+     *
+     * Retrieve an existing Ezsignbulksendtransmission&#39;s forms data
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsignbulksendtransmissionGetFormsDataV1WithHttpInfo($pkiEzsignbulksendtransmissionID)
+    {
+        $request = $this->ezsignbulksendtransmissionGetFormsDataV1Request($pkiEzsignbulksendtransmissionID);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 406:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsignbulksendtransmissionGetFormsDataV1Async
+     *
+     * Retrieve an existing Ezsignbulksendtransmission&#39;s forms data
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignbulksendtransmissionGetFormsDataV1Async($pkiEzsignbulksendtransmissionID)
+    {
+        return $this->ezsignbulksendtransmissionGetFormsDataV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsignbulksendtransmissionGetFormsDataV1AsyncWithHttpInfo
+     *
+     * Retrieve an existing Ezsignbulksendtransmission&#39;s forms data
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignbulksendtransmissionGetFormsDataV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+    {
+        $returnType = '\eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response';
+        $request = $this->ezsignbulksendtransmissionGetFormsDataV1Request($pkiEzsignbulksendtransmissionID);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsignbulksendtransmissionGetFormsDataV1'
+     *
+     * @param  int $pkiEzsignbulksendtransmissionID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsignbulksendtransmissionGetFormsDataV1Request($pkiEzsignbulksendtransmissionID)
+    {
+        // verify the required parameter 'pkiEzsignbulksendtransmissionID' is set
+        if ($pkiEzsignbulksendtransmissionID === null || (is_array($pkiEzsignbulksendtransmissionID) && count($pkiEzsignbulksendtransmissionID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsignbulksendtransmissionID when calling ezsignbulksendtransmissionGetFormsDataV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getFormsData';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsignbulksendtransmissionID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsignbulksendtransmissionID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsignbulksendtransmissionID),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'application/zip']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'application/zip'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation ezsignbulksendtransmissionGetObjectV1
      *
      * Retrieve an existing Ezsignbulksendtransmission
@@ -190,6 +916,9 @@ class ObjectEzsignbulksendtransmissionApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -202,6 +931,9 @@ class ObjectEzsignbulksendtransmissionApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -216,6 +948,9 @@ class ObjectEzsignbulksendtransmissionApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -290,6 +1025,9 @@ class ObjectEzsignbulksendtransmissionApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -383,7 +1121,7 @@ class ObjectEzsignbulksendtransmissionApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -404,7 +1142,7 @@ class ObjectEzsignbulksendtransmissionApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
 
         if ($apiKey !== null) {
             $secret = $this->config->getSecret();

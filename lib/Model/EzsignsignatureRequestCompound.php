@@ -2,7 +2,7 @@
 /**
  * EzsignsignatureRequestCompound
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -69,6 +69,9 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignsignatureStep' => 'int',
         'eEzsignsignatureType' => '\eZmaxAPI\Model\FieldEEzsignsignatureType',
         'fkiEzsigndocumentID' => 'int',
+        'tEzsignsignatureTooltip' => 'string',
+        'eEzsignsignatureTooltipposition' => '\eZmaxAPI\Model\FieldEEzsignsignatureTooltipposition',
+        'eEzsignsignatureFont' => '\eZmaxAPI\Model\FieldEEzsignsignatureFont',
         'bEzsignsignatureCustomdate' => 'bool',
         'aObjEzsignsignaturecustomdate' => '\eZmaxAPI\Model\EzsignsignaturecustomdateRequestCompound[]'
     ];
@@ -89,6 +92,9 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignsignatureStep' => null,
         'eEzsignsignatureType' => null,
         'fkiEzsigndocumentID' => null,
+        'tEzsignsignatureTooltip' => null,
+        'eEzsignsignatureTooltipposition' => null,
+        'eEzsignsignatureFont' => null,
         'bEzsignsignatureCustomdate' => null,
         'aObjEzsignsignaturecustomdate' => null
     ];
@@ -128,6 +134,9 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignsignatureStep' => 'iEzsignsignatureStep',
         'eEzsignsignatureType' => 'eEzsignsignatureType',
         'fkiEzsigndocumentID' => 'fkiEzsigndocumentID',
+        'tEzsignsignatureTooltip' => 'tEzsignsignatureTooltip',
+        'eEzsignsignatureTooltipposition' => 'eEzsignsignatureTooltipposition',
+        'eEzsignsignatureFont' => 'eEzsignsignatureFont',
         'bEzsignsignatureCustomdate' => 'bEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate'
     ];
@@ -146,6 +155,9 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignsignatureStep' => 'setIEzsignsignatureStep',
         'eEzsignsignatureType' => 'setEEzsignsignatureType',
         'fkiEzsigndocumentID' => 'setFkiEzsigndocumentID',
+        'tEzsignsignatureTooltip' => 'setTEzsignsignatureTooltip',
+        'eEzsignsignatureTooltipposition' => 'setEEzsignsignatureTooltipposition',
+        'eEzsignsignatureFont' => 'setEEzsignsignatureFont',
         'bEzsignsignatureCustomdate' => 'setBEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'setAObjEzsignsignaturecustomdate'
     ];
@@ -164,6 +176,9 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignsignatureStep' => 'getIEzsignsignatureStep',
         'eEzsignsignatureType' => 'getEEzsignsignatureType',
         'fkiEzsigndocumentID' => 'getFkiEzsigndocumentID',
+        'tEzsignsignatureTooltip' => 'getTEzsignsignatureTooltip',
+        'eEzsignsignatureTooltipposition' => 'getEEzsignsignatureTooltipposition',
+        'eEzsignsignatureFont' => 'getEEzsignsignatureFont',
         'bEzsignsignatureCustomdate' => 'getBEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'getAObjEzsignsignaturecustomdate'
     ];
@@ -233,6 +248,9 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
         $this->container['iEzsignsignatureStep'] = $data['iEzsignsignatureStep'] ?? null;
         $this->container['eEzsignsignatureType'] = $data['eEzsignsignatureType'] ?? null;
         $this->container['fkiEzsigndocumentID'] = $data['fkiEzsigndocumentID'] ?? null;
+        $this->container['tEzsignsignatureTooltip'] = $data['tEzsignsignatureTooltip'] ?? null;
+        $this->container['eEzsignsignatureTooltipposition'] = $data['eEzsignsignatureTooltipposition'] ?? null;
+        $this->container['eEzsignsignatureFont'] = $data['eEzsignsignatureFont'] ?? null;
         $this->container['bEzsignsignatureCustomdate'] = $data['bEzsignsignatureCustomdate'] ?? null;
         $this->container['aObjEzsignsignaturecustomdate'] = $data['aObjEzsignsignaturecustomdate'] ?? null;
     }
@@ -391,7 +409,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets iEzsignsignatureY
      *
-     * @param int $iEzsignsignatureY The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param int $iEzsignsignatureY The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      *
      * @return self
      */
@@ -475,6 +493,78 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
+     * Gets tEzsignsignatureTooltip
+     *
+     * @return string|null
+     */
+    public function getTEzsignsignatureTooltip()
+    {
+        return $this->container['tEzsignsignatureTooltip'];
+    }
+
+    /**
+     * Sets tEzsignsignatureTooltip
+     *
+     * @param string|null $tEzsignsignatureTooltip A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+     *
+     * @return self
+     */
+    public function setTEzsignsignatureTooltip($tEzsignsignatureTooltip)
+    {
+        $this->container['tEzsignsignatureTooltip'] = $tEzsignsignatureTooltip;
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsignsignatureTooltipposition
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignsignatureTooltipposition|null
+     */
+    public function getEEzsignsignatureTooltipposition()
+    {
+        return $this->container['eEzsignsignatureTooltipposition'];
+    }
+
+    /**
+     * Sets eEzsignsignatureTooltipposition
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignsignatureTooltipposition|null $eEzsignsignatureTooltipposition eEzsignsignatureTooltipposition
+     *
+     * @return self
+     */
+    public function setEEzsignsignatureTooltipposition($eEzsignsignatureTooltipposition)
+    {
+        $this->container['eEzsignsignatureTooltipposition'] = $eEzsignsignatureTooltipposition;
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsignsignatureFont
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignsignatureFont|null
+     */
+    public function getEEzsignsignatureFont()
+    {
+        return $this->container['eEzsignsignatureFont'];
+    }
+
+    /**
+     * Sets eEzsignsignatureFont
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignsignatureFont|null $eEzsignsignatureFont eEzsignsignatureFont
+     *
+     * @return self
+     */
+    public function setEEzsignsignatureFont($eEzsignsignatureFont)
+    {
+        $this->container['eEzsignsignatureFont'] = $eEzsignsignatureFont;
+
+        return $this;
+    }
+
+    /**
      * Gets bEzsignsignatureCustomdate
      *
      * @return bool|null
@@ -487,7 +577,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets bEzsignsignatureCustomdate
      *
-     * @param bool|null $bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * @param bool|null $bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
      *
      * @return self
      */
@@ -528,7 +618,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -540,6 +630,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -553,7 +644,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -569,7 +660,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -581,6 +672,7 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

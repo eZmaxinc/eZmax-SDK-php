@@ -1,7 +1,7 @@
 <?php
 /**
  * ObjectEzsignfolderApiTest
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -10,7 +10,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -73,6 +73,30 @@ class ObjectEzsignfolderApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignfolderArchiveV1
+     *
+     * Archive the Ezsignfolder.
+     *
+     */
+    public function testEzsignfolderArchiveV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignfolderBatchDownloadV1
+     *
+     * Download multiples files from an Ezsignfolder.
+     *
+     */
+    public function testEzsignfolderBatchDownloadV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignfolderCreateObjectV1
      *
      * Create a new Ezsignfolder.
@@ -115,6 +139,18 @@ class ObjectEzsignfolderApiTest extends TestCase
      *
      */
     public function testEzsignfolderEditObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignfolderGetActionableElementsV1
+     *
+     * Retrieve actionable elements for the Ezsignfolder.
+     *
+     */
+    public function testEzsignfolderGetActionableElementsV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -175,6 +211,30 @@ class ObjectEzsignfolderApiTest extends TestCase
      *
      */
     public function testEzsignfolderGetObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignfolderImportEzsigntemplatepackageV1
+     *
+     * Import an Ezsigntemplatepackage in the Ezsignfolder..
+     *
+     */
+    public function testEzsignfolderImportEzsigntemplatepackageV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignfolderReorderV1
+     *
+     * Reorder Ezsigndocuments in the Ezsignfolder.
+     *
+     */
+    public function testEzsignfolderReorderV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

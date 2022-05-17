@@ -1,7 +1,7 @@
 <?php
 /**
  * ObjectEzsigntemplatepackageApi
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -10,7 +10,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -30,8 +30,8 @@ namespace eZmaxAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
@@ -118,6 +118,1646 @@ class ObjectEzsigntemplatepackageApi
     }
 
     /**
+     * Operation ezsigntemplatepackageCreateObjectV1
+     *
+     * Create a new Ezsigntemplatepackage
+     *
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Request $ezsigntemplatepackageCreateObjectV1Request ezsigntemplatepackageCreateObjectV1Request (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Response
+     */
+    public function ezsigntemplatepackageCreateObjectV1($ezsigntemplatepackageCreateObjectV1Request)
+    {
+        list($response) = $this->ezsigntemplatepackageCreateObjectV1WithHttpInfo($ezsigntemplatepackageCreateObjectV1Request);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigntemplatepackageCreateObjectV1WithHttpInfo
+     *
+     * Create a new Ezsigntemplatepackage
+     *
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Request $ezsigntemplatepackageCreateObjectV1Request (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigntemplatepackageCreateObjectV1WithHttpInfo($ezsigntemplatepackageCreateObjectV1Request)
+    {
+        $request = $this->ezsigntemplatepackageCreateObjectV1Request($ezsigntemplatepackageCreateObjectV1Request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 201:
+                    if ('\eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigntemplatepackageCreateObjectV1Async
+     *
+     * Create a new Ezsigntemplatepackage
+     *
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Request $ezsigntemplatepackageCreateObjectV1Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageCreateObjectV1Async($ezsigntemplatepackageCreateObjectV1Request)
+    {
+        return $this->ezsigntemplatepackageCreateObjectV1AsyncWithHttpInfo($ezsigntemplatepackageCreateObjectV1Request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageCreateObjectV1AsyncWithHttpInfo
+     *
+     * Create a new Ezsigntemplatepackage
+     *
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Request $ezsigntemplatepackageCreateObjectV1Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageCreateObjectV1AsyncWithHttpInfo($ezsigntemplatepackageCreateObjectV1Request)
+    {
+        $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Response';
+        $request = $this->ezsigntemplatepackageCreateObjectV1Request($ezsigntemplatepackageCreateObjectV1Request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigntemplatepackageCreateObjectV1'
+     *
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Request $ezsigntemplatepackageCreateObjectV1Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigntemplatepackageCreateObjectV1Request($ezsigntemplatepackageCreateObjectV1Request)
+    {
+        // verify the required parameter 'ezsigntemplatepackageCreateObjectV1Request' is set
+        if ($ezsigntemplatepackageCreateObjectV1Request === null || (is_array($ezsigntemplatepackageCreateObjectV1Request) && count($ezsigntemplatepackageCreateObjectV1Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $ezsigntemplatepackageCreateObjectV1Request when calling ezsigntemplatepackageCreateObjectV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsigntemplatepackage';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($ezsigntemplatepackageCreateObjectV1Request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatepackageCreateObjectV1Request));
+            } else {
+                $httpBody = $ezsigntemplatepackageCreateObjectV1Request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageDeleteObjectV1
+     *
+     * Delete an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsigntemplatepackageDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsigntemplatepackageDeleteObjectV1($pkiEzsigntemplatepackageID)
+    {
+        list($response) = $this->ezsigntemplatepackageDeleteObjectV1WithHttpInfo($pkiEzsigntemplatepackageID);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigntemplatepackageDeleteObjectV1WithHttpInfo
+     *
+     * Delete an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsigntemplatepackageDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigntemplatepackageDeleteObjectV1WithHttpInfo($pkiEzsigntemplatepackageID)
+    {
+        $request = $this->ezsigntemplatepackageDeleteObjectV1Request($pkiEzsigntemplatepackageID);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsigntemplatepackageDeleteObjectV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsigntemplatepackageDeleteObjectV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsigntemplatepackageDeleteObjectV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageDeleteObjectV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsigntemplatepackageDeleteObjectV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigntemplatepackageDeleteObjectV1Async
+     *
+     * Delete an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageDeleteObjectV1Async($pkiEzsigntemplatepackageID)
+    {
+        return $this->ezsigntemplatepackageDeleteObjectV1AsyncWithHttpInfo($pkiEzsigntemplatepackageID)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageDeleteObjectV1AsyncWithHttpInfo
+     *
+     * Delete an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageDeleteObjectV1AsyncWithHttpInfo($pkiEzsigntemplatepackageID)
+    {
+        $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageDeleteObjectV1Response';
+        $request = $this->ezsigntemplatepackageDeleteObjectV1Request($pkiEzsigntemplatepackageID);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigntemplatepackageDeleteObjectV1'
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigntemplatepackageDeleteObjectV1Request($pkiEzsigntemplatepackageID)
+    {
+        // verify the required parameter 'pkiEzsigntemplatepackageID' is set
+        if ($pkiEzsigntemplatepackageID === null || (is_array($pkiEzsigntemplatepackageID) && count($pkiEzsigntemplatepackageID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsigntemplatepackageID when calling ezsigntemplatepackageDeleteObjectV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsigntemplatepackageID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsigntemplatepackageID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsigntemplatepackageID),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'DELETE', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageEditEzsigntemplatepackagesignersV1
+     *
+     * Edit multiple Ezsigntemplatepackagesigners
+     *
+     * @param  int $pkiEzsigntemplatepackageID pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsigntemplatepackageEditEzsigntemplatepackagesignersV1($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request)
+    {
+        list($response) = $this->ezsigntemplatepackageEditEzsigntemplatepackagesignersV1WithHttpInfo($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigntemplatepackageEditEzsigntemplatepackagesignersV1WithHttpInfo
+     *
+     * Edit multiple Ezsigntemplatepackagesigners
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigntemplatepackageEditEzsigntemplatepackagesignersV1WithHttpInfo($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request)
+    {
+        $request = $this->ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Async
+     *
+     * Edit multiple Ezsigntemplatepackagesigners
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Async($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request)
+    {
+        return $this->ezsigntemplatepackageEditEzsigntemplatepackagesignersV1AsyncWithHttpInfo($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageEditEzsigntemplatepackagesignersV1AsyncWithHttpInfo
+     *
+     * Edit multiple Ezsigntemplatepackagesigners
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageEditEzsigntemplatepackagesignersV1AsyncWithHttpInfo($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request)
+    {
+        $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response';
+        $request = $this->ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigntemplatepackageEditEzsigntemplatepackagesignersV1'
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request)
+    {
+        // verify the required parameter 'pkiEzsigntemplatepackageID' is set
+        if ($pkiEzsigntemplatepackageID === null || (is_array($pkiEzsigntemplatepackageID) && count($pkiEzsigntemplatepackageID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsigntemplatepackageID when calling ezsigntemplatepackageEditEzsigntemplatepackagesignersV1'
+            );
+        }
+        // verify the required parameter 'ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request' is set
+        if ($ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request === null || (is_array($ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request) && count($ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request when calling ezsigntemplatepackageEditEzsigntemplatepackagesignersV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsigntemplatepackageID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsigntemplatepackageID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsigntemplatepackageID),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request));
+            } else {
+                $httpBody = $ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'PUT', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageEditObjectV1
+     *
+     * Edit an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Request $ezsigntemplatepackageEditObjectV1Request ezsigntemplatepackageEditObjectV1Request (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsigntemplatepackageEditObjectV1($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditObjectV1Request)
+    {
+        list($response) = $this->ezsigntemplatepackageEditObjectV1WithHttpInfo($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditObjectV1Request);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigntemplatepackageEditObjectV1WithHttpInfo
+     *
+     * Edit an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Request $ezsigntemplatepackageEditObjectV1Request (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigntemplatepackageEditObjectV1WithHttpInfo($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditObjectV1Request)
+    {
+        $request = $this->ezsigntemplatepackageEditObjectV1Request($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditObjectV1Request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigntemplatepackageEditObjectV1Async
+     *
+     * Edit an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Request $ezsigntemplatepackageEditObjectV1Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageEditObjectV1Async($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditObjectV1Request)
+    {
+        return $this->ezsigntemplatepackageEditObjectV1AsyncWithHttpInfo($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditObjectV1Request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageEditObjectV1AsyncWithHttpInfo
+     *
+     * Edit an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Request $ezsigntemplatepackageEditObjectV1Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageEditObjectV1AsyncWithHttpInfo($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditObjectV1Request)
+    {
+        $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Response';
+        $request = $this->ezsigntemplatepackageEditObjectV1Request($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditObjectV1Request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigntemplatepackageEditObjectV1'
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     * @param  \eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Request $ezsigntemplatepackageEditObjectV1Request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigntemplatepackageEditObjectV1Request($pkiEzsigntemplatepackageID, $ezsigntemplatepackageEditObjectV1Request)
+    {
+        // verify the required parameter 'pkiEzsigntemplatepackageID' is set
+        if ($pkiEzsigntemplatepackageID === null || (is_array($pkiEzsigntemplatepackageID) && count($pkiEzsigntemplatepackageID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsigntemplatepackageID when calling ezsigntemplatepackageEditObjectV1'
+            );
+        }
+        // verify the required parameter 'ezsigntemplatepackageEditObjectV1Request' is set
+        if ($ezsigntemplatepackageEditObjectV1Request === null || (is_array($ezsigntemplatepackageEditObjectV1Request) && count($ezsigntemplatepackageEditObjectV1Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $ezsigntemplatepackageEditObjectV1Request when calling ezsigntemplatepackageEditObjectV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsigntemplatepackageID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsigntemplatepackageID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsigntemplatepackageID),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($ezsigntemplatepackageEditObjectV1Request)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatepackageEditObjectV1Request));
+            } else {
+                $httpBody = $ezsigntemplatepackageEditObjectV1Request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'PUT', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageGetAutocompleteV1
+     *
+     * Retrieve Ezsigntemplatepackages and IDs
+     *
+     * @param  string $sSelector The type of Ezsigntemplatepackages to return (required)
+     * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response
+     */
+    public function ezsigntemplatepackageGetAutocompleteV1($sSelector, $sQuery = null, $acceptLanguage = null)
+    {
+        list($response) = $this->ezsigntemplatepackageGetAutocompleteV1WithHttpInfo($sSelector, $sQuery, $acceptLanguage);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigntemplatepackageGetAutocompleteV1WithHttpInfo
+     *
+     * Retrieve Ezsigntemplatepackages and IDs
+     *
+     * @param  string $sSelector The type of Ezsigntemplatepackages to return (required)
+     * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigntemplatepackageGetAutocompleteV1WithHttpInfo($sSelector, $sQuery = null, $acceptLanguage = null)
+    {
+        $request = $this->ezsigntemplatepackageGetAutocompleteV1Request($sSelector, $sQuery, $acceptLanguage);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigntemplatepackageGetAutocompleteV1Async
+     *
+     * Retrieve Ezsigntemplatepackages and IDs
+     *
+     * @param  string $sSelector The type of Ezsigntemplatepackages to return (required)
+     * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageGetAutocompleteV1Async($sSelector, $sQuery = null, $acceptLanguage = null)
+    {
+        return $this->ezsigntemplatepackageGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery, $acceptLanguage)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageGetAutocompleteV1AsyncWithHttpInfo
+     *
+     * Retrieve Ezsigntemplatepackages and IDs
+     *
+     * @param  string $sSelector The type of Ezsigntemplatepackages to return (required)
+     * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery = null, $acceptLanguage = null)
+    {
+        $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response';
+        $request = $this->ezsigntemplatepackageGetAutocompleteV1Request($sSelector, $sQuery, $acceptLanguage);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigntemplatepackageGetAutocompleteV1'
+     *
+     * @param  string $sSelector The type of Ezsigntemplatepackages to return (required)
+     * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigntemplatepackageGetAutocompleteV1Request($sSelector, $sQuery = null, $acceptLanguage = null)
+    {
+        // verify the required parameter 'sSelector' is set
+        if ($sSelector === null || (is_array($sSelector) && count($sSelector) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sSelector when calling ezsigntemplatepackageGetAutocompleteV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsigntemplatepackage/getAutocomplete/{sSelector}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sQuery,
+            'sQuery', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($acceptLanguage !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($acceptLanguage);
+        }
+
+        // path params
+        if ($sSelector !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sSelector' . '}',
+                ObjectSerializer::toPathValue($sSelector),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation ezsigntemplatepackageGetListV1
      *
      * Retrieve Ezsigntemplatepackage list
@@ -198,6 +1838,9 @@ class ObjectEzsigntemplatepackageApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsigntemplatepackageGetListV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -210,6 +1853,9 @@ class ObjectEzsigntemplatepackageApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -224,6 +1870,9 @@ class ObjectEzsigntemplatepackageApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -306,6 +1955,9 @@ class ObjectEzsigntemplatepackageApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -354,49 +2006,41 @@ class ObjectEzsigntemplatepackageApi
         $multipart = false;
 
         // query params
-        if ($eOrderBy !== null) {
-            if('form' === 'form' && is_array($eOrderBy)) {
-                foreach($eOrderBy as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['eOrderBy'] = $eOrderBy;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eOrderBy,
+            'eOrderBy', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
-        if ($iRowMax !== null) {
-            if('form' === 'form' && is_array($iRowMax)) {
-                foreach($iRowMax as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['iRowMax'] = $iRowMax;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowMax,
+            'iRowMax', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
-        if ($iRowOffset !== null) {
-            if('form' === 'form' && is_array($iRowOffset)) {
-                foreach($iRowOffset as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['iRowOffset'] = $iRowOffset;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowOffset,
+            'iRowOffset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
-        if ($sFilter !== null) {
-            if('form' === 'form' && is_array($sFilter)) {
-                foreach($sFilter as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['sFilter'] = $sFilter;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sFilter,
+            'sFilter', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
         // header params
         if ($acceptLanguage !== null) {
@@ -437,7 +2081,7 @@ class ObjectEzsigntemplatepackageApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -458,7 +2102,324 @@ class ObjectEzsigntemplatepackageApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageGetObjectV1
+     *
+     * Retrieve an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsigntemplatepackageGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsigntemplatepackageGetObjectV1($pkiEzsigntemplatepackageID)
+    {
+        list($response) = $this->ezsigntemplatepackageGetObjectV1WithHttpInfo($pkiEzsigntemplatepackageID);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigntemplatepackageGetObjectV1WithHttpInfo
+     *
+     * Retrieve an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsigntemplatepackageGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigntemplatepackageGetObjectV1WithHttpInfo($pkiEzsigntemplatepackageID)
+    {
+        $request = $this->ezsigntemplatepackageGetObjectV1Request($pkiEzsigntemplatepackageID);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsigntemplatepackageGetObjectV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsigntemplatepackageGetObjectV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsigntemplatepackageGetObjectV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageGetObjectV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsigntemplatepackageGetObjectV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigntemplatepackageGetObjectV1Async
+     *
+     * Retrieve an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageGetObjectV1Async($pkiEzsigntemplatepackageID)
+    {
+        return $this->ezsigntemplatepackageGetObjectV1AsyncWithHttpInfo($pkiEzsigntemplatepackageID)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigntemplatepackageGetObjectV1AsyncWithHttpInfo
+     *
+     * Retrieve an existing Ezsigntemplatepackage
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigntemplatepackageGetObjectV1AsyncWithHttpInfo($pkiEzsigntemplatepackageID)
+    {
+        $returnType = '\eZmaxAPI\Model\EzsigntemplatepackageGetObjectV1Response';
+        $request = $this->ezsigntemplatepackageGetObjectV1Request($pkiEzsigntemplatepackageID);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigntemplatepackageGetObjectV1'
+     *
+     * @param  int $pkiEzsigntemplatepackageID (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigntemplatepackageGetObjectV1Request($pkiEzsigntemplatepackageID)
+    {
+        // verify the required parameter 'pkiEzsigntemplatepackageID' is set
+        if ($pkiEzsigntemplatepackageID === null || (is_array($pkiEzsigntemplatepackageID) && count($pkiEzsigntemplatepackageID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsigntemplatepackageID when calling ezsigntemplatepackageGetObjectV1'
+            );
+        }
+
+        $resourcePath = '/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsigntemplatepackageID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsigntemplatepackageID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsigntemplatepackageID),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
 
         if ($apiKey !== null) {
             $secret = $this->config->getSecret();

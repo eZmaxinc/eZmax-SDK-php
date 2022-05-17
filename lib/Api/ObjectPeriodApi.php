@@ -1,7 +1,7 @@
 <?php
 /**
  * ObjectPeriodApi
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -10,7 +10,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -30,8 +30,8 @@ namespace eZmaxAPI\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
@@ -124,14 +124,15 @@ class ObjectPeriodApi
      *
      * @param  string $sSelector The types of Periods to return (required)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\CommonGetAutocompleteV1Response
      */
-    public function periodGetAutocompleteV1($sSelector, $sQuery = null)
+    public function periodGetAutocompleteV1($sSelector, $sQuery = null, $acceptLanguage = null)
     {
-        list($response) = $this->periodGetAutocompleteV1WithHttpInfo($sSelector, $sQuery);
+        list($response) = $this->periodGetAutocompleteV1WithHttpInfo($sSelector, $sQuery, $acceptLanguage);
         return $response;
     }
 
@@ -142,14 +143,15 @@ class ObjectPeriodApi
      *
      * @param  string $sSelector The types of Periods to return (required)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\CommonGetAutocompleteV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function periodGetAutocompleteV1WithHttpInfo($sSelector, $sQuery = null)
+    public function periodGetAutocompleteV1WithHttpInfo($sSelector, $sQuery = null, $acceptLanguage = null)
     {
-        $request = $this->periodGetAutocompleteV1Request($sSelector, $sQuery);
+        $request = $this->periodGetAutocompleteV1Request($sSelector, $sQuery, $acceptLanguage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -192,6 +194,9 @@ class ObjectPeriodApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonGetAutocompleteV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -206,6 +211,9 @@ class ObjectPeriodApi
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
             return [
@@ -236,13 +244,14 @@ class ObjectPeriodApi
      *
      * @param  string $sSelector The types of Periods to return (required)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function periodGetAutocompleteV1Async($sSelector, $sQuery = null)
+    public function periodGetAutocompleteV1Async($sSelector, $sQuery = null, $acceptLanguage = null)
     {
-        return $this->periodGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery)
+        return $this->periodGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery, $acceptLanguage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,14 +266,15 @@ class ObjectPeriodApi
      *
      * @param  string $sSelector The types of Periods to return (required)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function periodGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery = null)
+    public function periodGetAutocompleteV1AsyncWithHttpInfo($sSelector, $sQuery = null, $acceptLanguage = null)
     {
         $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteV1Response';
-        $request = $this->periodGetAutocompleteV1Request($sSelector, $sQuery);
+        $request = $this->periodGetAutocompleteV1Request($sSelector, $sQuery, $acceptLanguage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -274,6 +284,9 @@ class ObjectPeriodApi
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
 
                     return [
@@ -304,11 +317,12 @@ class ObjectPeriodApi
      *
      * @param  string $sSelector The types of Periods to return (required)
      * @param  string $sQuery Allow to filter the returned results (optional)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage $acceptLanguage (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function periodGetAutocompleteV1Request($sSelector, $sQuery = null)
+    public function periodGetAutocompleteV1Request($sSelector, $sQuery = null, $acceptLanguage = null)
     {
         // verify the required parameter 'sSelector' is set
         if ($sSelector === null || (is_array($sSelector) && count($sSelector) === 0)) {
@@ -325,17 +339,19 @@ class ObjectPeriodApi
         $multipart = false;
 
         // query params
-        if ($sQuery !== null) {
-            if('form' === 'form' && is_array($sQuery)) {
-                foreach($sQuery as $key => $value) {
-                    $queryParams[$key] = $value;
-                }
-            }
-            else {
-                $queryParams['sQuery'] = $sQuery;
-            }
-        }
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sQuery,
+            'sQuery', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
+        // header params
+        if ($acceptLanguage !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($acceptLanguage);
+        }
 
         // path params
         if ($sSelector !== null) {
@@ -379,7 +395,7 @@ class ObjectPeriodApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+                $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
 
@@ -400,7 +416,7 @@ class ObjectPeriodApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        $query = ObjectSerializer::buildQuery($queryParams);
 
         if ($apiKey !== null) {
             $secret = $this->config->getSecret();

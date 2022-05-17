@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentRequestCompound
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -62,15 +62,18 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'pkiEzsigndocumentID' => 'int',
+        'fkiEzsignfolderID' => 'int',
+        'fkiEzsigntemplateID' => 'int',
+        'fkiEzsignfoldersignerassociationID' => 'int',
+        'fkiLanguageID' => 'int',
         'eEzsigndocumentSource' => 'string',
         'eEzsigndocumentFormat' => 'string',
         'sEzsigndocumentBase64' => 'string',
         'sEzsigndocumentUrl' => 'string',
         'bEzsigndocumentForcerepair' => 'bool',
         'sEzsigndocumentPassword' => 'string',
-        'fkiEzsignfolderID' => 'int',
+        'eEzsigndocumentForm' => 'string',
         'dtEzsigndocumentDuedate' => 'string',
-        'fkiLanguageID' => 'int',
         'sEzsigndocumentName' => 'string'
     ];
 
@@ -83,15 +86,18 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'pkiEzsigndocumentID' => null,
+        'fkiEzsignfolderID' => null,
+        'fkiEzsigntemplateID' => null,
+        'fkiEzsignfoldersignerassociationID' => null,
+        'fkiLanguageID' => null,
         'eEzsigndocumentSource' => null,
         'eEzsigndocumentFormat' => null,
         'sEzsigndocumentBase64' => 'byte',
         'sEzsigndocumentUrl' => null,
         'bEzsigndocumentForcerepair' => null,
         'sEzsigndocumentPassword' => null,
-        'fkiEzsignfolderID' => null,
+        'eEzsigndocumentForm' => null,
         'dtEzsigndocumentDuedate' => null,
-        'fkiLanguageID' => null,
         'sEzsigndocumentName' => null
     ];
 
@@ -123,15 +129,18 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $attributeMap = [
         'pkiEzsigndocumentID' => 'pkiEzsigndocumentID',
+        'fkiEzsignfolderID' => 'fkiEzsignfolderID',
+        'fkiEzsigntemplateID' => 'fkiEzsigntemplateID',
+        'fkiEzsignfoldersignerassociationID' => 'fkiEzsignfoldersignerassociationID',
+        'fkiLanguageID' => 'fkiLanguageID',
         'eEzsigndocumentSource' => 'eEzsigndocumentSource',
         'eEzsigndocumentFormat' => 'eEzsigndocumentFormat',
         'sEzsigndocumentBase64' => 'sEzsigndocumentBase64',
         'sEzsigndocumentUrl' => 'sEzsigndocumentUrl',
         'bEzsigndocumentForcerepair' => 'bEzsigndocumentForcerepair',
         'sEzsigndocumentPassword' => 'sEzsigndocumentPassword',
-        'fkiEzsignfolderID' => 'fkiEzsignfolderID',
+        'eEzsigndocumentForm' => 'eEzsigndocumentForm',
         'dtEzsigndocumentDuedate' => 'dtEzsigndocumentDuedate',
-        'fkiLanguageID' => 'fkiLanguageID',
         'sEzsigndocumentName' => 'sEzsigndocumentName'
     ];
 
@@ -142,15 +151,18 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'pkiEzsigndocumentID' => 'setPkiEzsigndocumentID',
+        'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
+        'fkiEzsigntemplateID' => 'setFkiEzsigntemplateID',
+        'fkiEzsignfoldersignerassociationID' => 'setFkiEzsignfoldersignerassociationID',
+        'fkiLanguageID' => 'setFkiLanguageID',
         'eEzsigndocumentSource' => 'setEEzsigndocumentSource',
         'eEzsigndocumentFormat' => 'setEEzsigndocumentFormat',
         'sEzsigndocumentBase64' => 'setSEzsigndocumentBase64',
         'sEzsigndocumentUrl' => 'setSEzsigndocumentUrl',
         'bEzsigndocumentForcerepair' => 'setBEzsigndocumentForcerepair',
         'sEzsigndocumentPassword' => 'setSEzsigndocumentPassword',
-        'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
+        'eEzsigndocumentForm' => 'setEEzsigndocumentForm',
         'dtEzsigndocumentDuedate' => 'setDtEzsigndocumentDuedate',
-        'fkiLanguageID' => 'setFkiLanguageID',
         'sEzsigndocumentName' => 'setSEzsigndocumentName'
     ];
 
@@ -161,15 +173,18 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'pkiEzsigndocumentID' => 'getPkiEzsigndocumentID',
+        'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
+        'fkiEzsigntemplateID' => 'getFkiEzsigntemplateID',
+        'fkiEzsignfoldersignerassociationID' => 'getFkiEzsignfoldersignerassociationID',
+        'fkiLanguageID' => 'getFkiLanguageID',
         'eEzsigndocumentSource' => 'getEEzsigndocumentSource',
         'eEzsigndocumentFormat' => 'getEEzsigndocumentFormat',
         'sEzsigndocumentBase64' => 'getSEzsigndocumentBase64',
         'sEzsigndocumentUrl' => 'getSEzsigndocumentUrl',
         'bEzsigndocumentForcerepair' => 'getBEzsigndocumentForcerepair',
         'sEzsigndocumentPassword' => 'getSEzsigndocumentPassword',
-        'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
+        'eEzsigndocumentForm' => 'getEEzsigndocumentForm',
         'dtEzsigndocumentDuedate' => 'getDtEzsigndocumentDuedate',
-        'fkiLanguageID' => 'getFkiLanguageID',
         'sEzsigndocumentName' => 'getSEzsigndocumentName'
     ];
 
@@ -214,9 +229,12 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
         return self::$openAPIModelName;
     }
 
-    const E_EZSIGNDOCUMENT_SOURCE_BASE64 = 'Base64';
-    const E_EZSIGNDOCUMENT_SOURCE_URL = 'Url';
-    const E_EZSIGNDOCUMENT_FORMAT_PDF = 'Pdf';
+    public const E_EZSIGNDOCUMENT_SOURCE_BASE64 = 'Base64';
+    public const E_EZSIGNDOCUMENT_SOURCE_EZSIGNTEMPLATE = 'Ezsigntemplate';
+    public const E_EZSIGNDOCUMENT_SOURCE_URL = 'Url';
+    public const E_EZSIGNDOCUMENT_FORMAT_PDF = 'Pdf';
+    public const E_EZSIGNDOCUMENT_FORM_KEEP = 'Keep';
+    public const E_EZSIGNDOCUMENT_FORM_CONVERT = 'Convert';
 
     /**
      * Gets allowable values of the enum
@@ -227,6 +245,7 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
     {
         return [
             self::E_EZSIGNDOCUMENT_SOURCE_BASE64,
+            self::E_EZSIGNDOCUMENT_SOURCE_EZSIGNTEMPLATE,
             self::E_EZSIGNDOCUMENT_SOURCE_URL,
         ];
     }
@@ -240,6 +259,19 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
     {
         return [
             self::E_EZSIGNDOCUMENT_FORMAT_PDF,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEEzsigndocumentFormAllowableValues()
+    {
+        return [
+            self::E_EZSIGNDOCUMENT_FORM_KEEP,
+            self::E_EZSIGNDOCUMENT_FORM_CONVERT,
         ];
     }
 
@@ -259,15 +291,18 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
     public function __construct(array $data = null)
     {
         $this->container['pkiEzsigndocumentID'] = $data['pkiEzsigndocumentID'] ?? null;
+        $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
+        $this->container['fkiEzsigntemplateID'] = $data['fkiEzsigntemplateID'] ?? null;
+        $this->container['fkiEzsignfoldersignerassociationID'] = $data['fkiEzsignfoldersignerassociationID'] ?? null;
+        $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
         $this->container['eEzsigndocumentSource'] = $data['eEzsigndocumentSource'] ?? null;
         $this->container['eEzsigndocumentFormat'] = $data['eEzsigndocumentFormat'] ?? null;
         $this->container['sEzsigndocumentBase64'] = $data['sEzsigndocumentBase64'] ?? null;
         $this->container['sEzsigndocumentUrl'] = $data['sEzsigndocumentUrl'] ?? null;
         $this->container['bEzsigndocumentForcerepair'] = $data['bEzsigndocumentForcerepair'] ?? true;
-        $this->container['sEzsigndocumentPassword'] = $data['sEzsigndocumentPassword'] ?? '';
-        $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
+        $this->container['sEzsigndocumentPassword'] = $data['sEzsigndocumentPassword'] ?? null;
+        $this->container['eEzsigndocumentForm'] = $data['eEzsigndocumentForm'] ?? null;
         $this->container['dtEzsigndocumentDuedate'] = $data['dtEzsigndocumentDuedate'] ?? null;
-        $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
         $this->container['sEzsigndocumentName'] = $data['sEzsigndocumentName'] ?? null;
     }
 
@@ -279,6 +314,20 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['fkiEzsignfolderID'] === null) {
+            $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
+        }
+        if ($this->container['fkiLanguageID'] === null) {
+            $invalidProperties[] = "'fkiLanguageID' can't be null";
+        }
+        if (($this->container['fkiLanguageID'] > 2)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
+        }
+
+        if (($this->container['fkiLanguageID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
+        }
 
         if ($this->container['eEzsigndocumentSource'] === null) {
             $invalidProperties[] = "'eEzsigndocumentSource' can't be null";
@@ -292,9 +341,6 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
             );
         }
 
-        if ($this->container['eEzsigndocumentFormat'] === null) {
-            $invalidProperties[] = "'eEzsigndocumentFormat' can't be null";
-        }
         $allowedValues = $this->getEEzsigndocumentFormatAllowableValues();
         if (!is_null($this->container['eEzsigndocumentFormat']) && !in_array($this->container['eEzsigndocumentFormat'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -304,23 +350,18 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
             );
         }
 
-        if ($this->container['fkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
+        $allowedValues = $this->getEEzsigndocumentFormAllowableValues();
+        if (!is_null($this->container['eEzsigndocumentForm']) && !in_array($this->container['eEzsigndocumentForm'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'eEzsigndocumentForm', must be one of '%s'",
+                $this->container['eEzsigndocumentForm'],
+                implode("', '", $allowedValues)
+            );
         }
+
         if ($this->container['dtEzsigndocumentDuedate'] === null) {
             $invalidProperties[] = "'dtEzsigndocumentDuedate' can't be null";
         }
-        if ($this->container['fkiLanguageID'] === null) {
-            $invalidProperties[] = "'fkiLanguageID' can't be null";
-        }
-        if (($this->container['fkiLanguageID'] > 2)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
-        }
-
-        if (($this->container['fkiLanguageID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['sEzsigndocumentName'] === null) {
             $invalidProperties[] = "'sEzsigndocumentName' can't be null";
         }
@@ -364,6 +405,110 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Gets fkiEzsignfolderID
+     *
+     * @return int
+     */
+    public function getFkiEzsignfolderID()
+    {
+        return $this->container['fkiEzsignfolderID'];
+    }
+
+    /**
+     * Sets fkiEzsignfolderID
+     *
+     * @param int $fkiEzsignfolderID The unique ID of the Ezsignfolder
+     *
+     * @return self
+     */
+    public function setFkiEzsignfolderID($fkiEzsignfolderID)
+    {
+        $this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiEzsigntemplateID
+     *
+     * @return int|null
+     */
+    public function getFkiEzsigntemplateID()
+    {
+        return $this->container['fkiEzsigntemplateID'];
+    }
+
+    /**
+     * Sets fkiEzsigntemplateID
+     *
+     * @param int|null $fkiEzsigntemplateID The unique ID of the Ezsigntemplate
+     *
+     * @return self
+     */
+    public function setFkiEzsigntemplateID($fkiEzsigntemplateID)
+    {
+        $this->container['fkiEzsigntemplateID'] = $fkiEzsigntemplateID;
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiEzsignfoldersignerassociationID
+     *
+     * @return int|null
+     */
+    public function getFkiEzsignfoldersignerassociationID()
+    {
+        return $this->container['fkiEzsignfoldersignerassociationID'];
+    }
+
+    /**
+     * Sets fkiEzsignfoldersignerassociationID
+     *
+     * @param int|null $fkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     *
+     * @return self
+     */
+    public function setFkiEzsignfoldersignerassociationID($fkiEzsignfoldersignerassociationID)
+    {
+        $this->container['fkiEzsignfoldersignerassociationID'] = $fkiEzsignfoldersignerassociationID;
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiLanguageID
+     *
+     * @return int
+     */
+    public function getFkiLanguageID()
+    {
+        return $this->container['fkiLanguageID'];
+    }
+
+    /**
+     * Sets fkiLanguageID
+     *
+     * @param int $fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     *
+     * @return self
+     */
+    public function setFkiLanguageID($fkiLanguageID)
+    {
+
+        if (($fkiLanguageID > 2)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsigndocumentRequestCompound., must be smaller than or equal to 2.');
+        }
+        if (($fkiLanguageID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsigndocumentRequestCompound., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fkiLanguageID'] = $fkiLanguageID;
+
+        return $this;
+    }
+
+    /**
      * Gets eEzsigndocumentSource
      *
      * @return string
@@ -400,7 +545,7 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets eEzsigndocumentFormat
      *
-     * @return string
+     * @return string|null
      */
     public function getEEzsigndocumentFormat()
     {
@@ -410,14 +555,14 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets eEzsigndocumentFormat
      *
-     * @param string $eEzsigndocumentFormat Indicates the format of the document.
+     * @param string|null $eEzsigndocumentFormat Indicates the format of the document.
      *
      * @return self
      */
     public function setEEzsigndocumentFormat($eEzsigndocumentFormat)
     {
         $allowedValues = $this->getEEzsigndocumentFormatAllowableValues();
-        if (!in_array($eEzsigndocumentFormat, $allowedValues, true)) {
+        if (!is_null($eEzsigndocumentFormat) && !in_array($eEzsigndocumentFormat, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'eEzsigndocumentFormat', must be one of '%s'",
@@ -528,25 +673,35 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets fkiEzsignfolderID
+     * Gets eEzsigndocumentForm
      *
-     * @return int
+     * @return string|null
      */
-    public function getFkiEzsignfolderID()
+    public function getEEzsigndocumentForm()
     {
-        return $this->container['fkiEzsignfolderID'];
+        return $this->container['eEzsigndocumentForm'];
     }
 
     /**
-     * Sets fkiEzsignfolderID
+     * Sets eEzsigndocumentForm
      *
-     * @param int $fkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param string|null $eEzsigndocumentForm If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
      *
      * @return self
      */
-    public function setFkiEzsignfolderID($fkiEzsignfolderID)
+    public function setEEzsigndocumentForm($eEzsigndocumentForm)
     {
-        $this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
+        $allowedValues = $this->getEEzsigndocumentFormAllowableValues();
+        if (!is_null($eEzsigndocumentForm) && !in_array($eEzsigndocumentForm, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'eEzsigndocumentForm', must be one of '%s'",
+                    $eEzsigndocumentForm,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['eEzsigndocumentForm'] = $eEzsigndocumentForm;
 
         return $this;
     }
@@ -571,38 +726,6 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
     public function setDtEzsigndocumentDuedate($dtEzsigndocumentDuedate)
     {
         $this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiLanguageID
-     *
-     * @return int
-     */
-    public function getFkiLanguageID()
-    {
-        return $this->container['fkiLanguageID'];
-    }
-
-    /**
-     * Sets fkiLanguageID
-     *
-     * @param int $fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     *
-     * @return self
-     */
-    public function setFkiLanguageID($fkiLanguageID)
-    {
-
-        if (($fkiLanguageID > 2)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsigndocumentRequestCompound., must be smaller than or equal to 2.');
-        }
-        if (($fkiLanguageID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsigndocumentRequestCompound., must be bigger than or equal to 1.');
-        }
-
-        $this->container['fkiLanguageID'] = $fkiLanguageID;
 
         return $this;
     }
@@ -637,7 +760,7 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -649,6 +772,7 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -662,7 +786,7 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -678,7 +802,7 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -690,6 +814,7 @@ class EzsigndocumentRequestCompound implements ModelInterface, ArrayAccess, \Jso
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

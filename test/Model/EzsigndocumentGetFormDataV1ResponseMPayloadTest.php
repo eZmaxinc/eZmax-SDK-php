@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentGetFormDataV1ResponseMPayloadTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EzsigndocumentGetFormDataV1ResponseMPayloadTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getFormData API Request
+ * @description Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getFormData
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -81,45 +81,9 @@ class EzsigndocumentGetFormDataV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiEzsigndocumentID"
+     * Test attribute "objFormDataDocument"
      */
-    public function testPropertyPkiEzsigndocumentID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsignfolderID"
-     */
-    public function testPropertyFkiEzsignfolderID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sEzsigndocumentName"
-     */
-    public function testPropertySEzsigndocumentName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "dtModifiedDate"
-     */
-    public function testPropertyDtModifiedDate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjFormDataSigner"
-     */
-    public function testPropertyAObjFormDataSigner()
+    public function testPropertyObjFormDataDocument()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

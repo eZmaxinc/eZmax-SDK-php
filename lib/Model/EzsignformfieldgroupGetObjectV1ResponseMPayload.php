@@ -2,7 +2,7 @@
 /**
  * EzsignformfieldgroupGetObjectV1ResponseMPayload
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * EzsignformfieldgroupGetObjectV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignformfieldgroup/getObject API Request
+ * @description Payload for GET /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -78,7 +78,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload implements ModelInterface,
         'eEzsignformfieldgroupTooltipposition' => '\eZmaxAPI\Model\FieldEEzsignformfieldgroupTooltipposition',
         'aObjEzsignformfield' => '\eZmaxAPI\Model\EzsignformfieldResponseCompound[]',
         'aObjDropdownElement' => '\eZmaxAPI\Model\CustomDropdownElementResponseCompound[]',
-        'aObjEzsignformfieldgroupsigner' => '\eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound'
+        'aObjEzsignformfieldgroupsigner' => '\eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[]'
     ];
 
     /**
@@ -756,7 +756,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload implements ModelInterface,
     /**
      * Gets aObjEzsignformfieldgroupsigner
      *
-     * @return \eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound
+     * @return \eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[]
      */
     public function getAObjEzsignformfieldgroupsigner()
     {
@@ -766,7 +766,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload implements ModelInterface,
     /**
      * Sets aObjEzsignformfieldgroupsigner
      *
-     * @param \eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound $aObjEzsignformfieldgroupsigner aObjEzsignformfieldgroupsigner
+     * @param \eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[] $aObjEzsignformfieldgroupsigner aObjEzsignformfieldgroupsigner
      *
      * @return self
      */
@@ -783,7 +783,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload implements ModelInterface,
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -795,6 +795,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload implements ModelInterface,
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -808,7 +809,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload implements ModelInterface,
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -824,7 +825,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload implements ModelInterface,
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -836,6 +837,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload implements ModelInterface,
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

@@ -2,7 +2,7 @@
 /**
  * EzsignsignatureGetObjectV1ResponseMPayloadTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EzsignsignatureGetObjectV1ResponseMPayloadTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsignsignature/getObject API Request
+ * @description Payload for GET /1/object/ezsignsignature/{pkiEzsignsignatureID}
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -84,6 +84,15 @@ class EzsignsignatureGetObjectV1ResponseMPayloadTest extends TestCase
      * Test attribute "pkiEzsignsignatureID"
      */
     public function testPropertyPkiEzsignsignatureID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fkiEzsigndocumentID"
+     */
+    public function testPropertyFkiEzsigndocumentID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -144,9 +153,27 @@ class EzsignsignatureGetObjectV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test attribute "fkiEzsigndocumentID"
+     * Test attribute "tEzsignsignatureTooltip"
      */
-    public function testPropertyFkiEzsigndocumentID()
+    public function testPropertyTEzsignsignatureTooltip()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eEzsignsignatureTooltipposition"
+     */
+    public function testPropertyEEzsignsignatureTooltipposition()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eEzsignsignatureFont"
+     */
+    public function testPropertyEEzsignsignatureFont()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

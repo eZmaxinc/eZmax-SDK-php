@@ -2,7 +2,7 @@
 /**
  * CustomAutocompleteElementResponse
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -63,6 +63,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     protected static $openAPITypes = [
         'sCategory' => 'string',
         'sLabel' => 'string',
+        'sValue' => 'string',
         'mValue' => 'string'
     ];
 
@@ -76,6 +77,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     protected static $openAPIFormats = [
         'sCategory' => null,
         'sLabel' => null,
+        'sValue' => null,
         'mValue' => null
     ];
 
@@ -108,6 +110,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     protected static $attributeMap = [
         'sCategory' => 'sCategory',
         'sLabel' => 'sLabel',
+        'sValue' => 'sValue',
         'mValue' => 'mValue'
     ];
 
@@ -119,6 +122,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     protected static $setters = [
         'sCategory' => 'setSCategory',
         'sLabel' => 'setSLabel',
+        'sValue' => 'setSValue',
         'mValue' => 'setMValue'
     ];
 
@@ -130,6 +134,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     protected static $getters = [
         'sCategory' => 'getSCategory',
         'sLabel' => 'getSLabel',
+        'sValue' => 'getSValue',
         'mValue' => 'getMValue'
     ];
 
@@ -192,6 +197,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     {
         $this->container['sCategory'] = $data['sCategory'] ?? null;
         $this->container['sLabel'] = $data['sLabel'] ?? null;
+        $this->container['sValue'] = $data['sValue'] ?? null;
         $this->container['mValue'] = $data['mValue'] ?? null;
     }
 
@@ -210,8 +216,8 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
         if ($this->container['sLabel'] === null) {
             $invalidProperties[] = "'sLabel' can't be null";
         }
-        if ($this->container['mValue'] === null) {
-            $invalidProperties[] = "'mValue' can't be null";
+        if ($this->container['sValue'] === null) {
+            $invalidProperties[] = "'sValue' can't be null";
         }
         return $invalidProperties;
     }
@@ -277,9 +283,34 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets mValue
+     * Gets sValue
      *
      * @return string
+     */
+    public function getSValue()
+    {
+        return $this->container['sValue'];
+    }
+
+    /**
+     * Sets sValue
+     *
+     * @param string $sValue The Unique ID of the element
+     *
+     * @return self
+     */
+    public function setSValue($sValue)
+    {
+        $this->container['sValue'] = $sValue;
+
+        return $this;
+    }
+
+    /**
+     * Gets mValue
+     *
+     * @return string|null
+     * @deprecated
      */
     public function getMValue()
     {
@@ -289,9 +320,10 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
     /**
      * Sets mValue
      *
-     * @param string $mValue The Unique ID of the element
+     * @param string|null $mValue The Unique ID of the element
      *
      * @return self
+     * @deprecated
      */
     public function setMValue($mValue)
     {
@@ -306,7 +338,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -318,6 +350,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -331,7 +364,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -347,7 +380,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -359,6 +392,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

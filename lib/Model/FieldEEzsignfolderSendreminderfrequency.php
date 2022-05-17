@@ -2,7 +2,7 @@
 /**
  * FieldEEzsignfolderSendreminderfrequency
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -44,11 +44,11 @@ class FieldEEzsignfolderSendreminderfrequency
     /**
      * Possible values of this enum
      */
-    const NONE = 'None';
+    public const NONE = 'None';
 
-    const DAILY = 'Daily';
+    public const DAILY = 'Daily';
 
-    const WEEKLY = 'Weekly';
+    public const WEEKLY = 'Weekly';
 
     /**
      * Gets allowable values of the enum

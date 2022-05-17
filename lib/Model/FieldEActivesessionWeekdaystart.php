@@ -2,7 +2,7 @@
 /**
  * FieldEActivesessionWeekdaystart
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -44,19 +44,19 @@ class FieldEActivesessionWeekdaystart
     /**
      * Possible values of this enum
      */
-    const SUNDAY = 'Sunday';
+    public const SUNDAY = 'Sunday';
 
-    const MONDAY = 'Monday';
+    public const MONDAY = 'Monday';
 
-    const TUESDAY = 'Tuesday';
+    public const TUESDAY = 'Tuesday';
 
-    const WEDNESDAY = 'Wednesday';
+    public const WEDNESDAY = 'Wednesday';
 
-    const THURSDAY = 'Thursday';
+    public const THURSDAY = 'Thursday';
 
-    const FRIDAY = 'Friday';
+    public const FRIDAY = 'Friday';
 
-    const SATURDAY = 'Saturday';
+    public const SATURDAY = 'Saturday';
 
     /**
      * Gets allowable values of the enum

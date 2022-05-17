@@ -2,7 +2,7 @@
 /**
  * EzsignformfieldgroupResponseCompound
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -78,7 +78,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
         'eEzsignformfieldgroupTooltipposition' => '\eZmaxAPI\Model\FieldEEzsignformfieldgroupTooltipposition',
         'aObjEzsignformfield' => '\eZmaxAPI\Model\EzsignformfieldResponseCompound[]',
         'aObjDropdownElement' => '\eZmaxAPI\Model\CustomDropdownElementResponseCompound[]',
-        'aObjEzsignformfieldgroupsigner' => '\eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound'
+        'aObjEzsignformfieldgroupsigner' => '\eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[]'
     ];
 
     /**
@@ -756,7 +756,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
     /**
      * Gets aObjEzsignformfieldgroupsigner
      *
-     * @return \eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound
+     * @return \eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[]
      */
     public function getAObjEzsignformfieldgroupsigner()
     {
@@ -766,7 +766,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
     /**
      * Sets aObjEzsignformfieldgroupsigner
      *
-     * @param \eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound $aObjEzsignformfieldgroupsigner aObjEzsignformfieldgroupsigner
+     * @param \eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[] $aObjEzsignformfieldgroupsigner aObjEzsignformfieldgroupsigner
      *
      * @return self
      */
@@ -783,7 +783,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -795,6 +795,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -808,7 +809,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -824,7 +825,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -836,6 +837,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

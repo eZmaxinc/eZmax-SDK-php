@@ -2,7 +2,7 @@
 /**
  * FieldEEzsigndocumentStep
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -44,17 +44,17 @@ class FieldEEzsigndocumentStep
     /**
      * Possible values of this enum
      */
-    const UNSENT = 'Unsent';
+    public const UNSENT = 'Unsent';
 
-    const UNSIGNED = 'Unsigned';
+    public const UNSIGNED = 'Unsigned';
 
-    const PARTIALLY_SIGNED = 'PartiallySigned';
+    public const PARTIALLY_SIGNED = 'PartiallySigned';
 
-    const DECLINED_TO_SIGN = 'DeclinedToSign';
+    public const DECLINED_TO_SIGN = 'DeclinedToSign';
 
-    const PREMATURELY_ENDED = 'PrematurelyEnded';
+    public const PREMATURELY_ENDED = 'PrematurelyEnded';
 
-    const COMPLETED = 'Completed';
+    public const COMPLETED = 'Completed';
 
     /**
      * Gets allowable values of the enum

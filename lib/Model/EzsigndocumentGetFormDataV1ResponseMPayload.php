@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentGetFormDataV1ResponseMPayload
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * EzsigndocumentGetFormDataV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getFormData API Request
+ * @description Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getFormData
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,11 +61,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsigndocumentID' => 'int',
-        'fkiEzsignfolderID' => 'int',
-        'sEzsigndocumentName' => 'string',
-        'dtModifiedDate' => 'string',
-        'aObjFormDataSigner' => '\eZmaxAPI\Model\CustomFormDataSignerResponse[]'
+        'objFormDataDocument' => '\eZmaxAPI\Model\CustomFormDataDocumentResponse'
     ];
 
     /**
@@ -76,11 +72,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsigndocumentID' => null,
-        'fkiEzsignfolderID' => null,
-        'sEzsigndocumentName' => null,
-        'dtModifiedDate' => null,
-        'aObjFormDataSigner' => null
+        'objFormDataDocument' => null
     ];
 
     /**
@@ -110,11 +102,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsigndocumentID' => 'pkiEzsigndocumentID',
-        'fkiEzsignfolderID' => 'fkiEzsignfolderID',
-        'sEzsigndocumentName' => 'sEzsigndocumentName',
-        'dtModifiedDate' => 'dtModifiedDate',
-        'aObjFormDataSigner' => 'a_objFormDataSigner'
+        'objFormDataDocument' => 'objFormDataDocument'
     ];
 
     /**
@@ -123,11 +111,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsigndocumentID' => 'setPkiEzsigndocumentID',
-        'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
-        'sEzsigndocumentName' => 'setSEzsigndocumentName',
-        'dtModifiedDate' => 'setDtModifiedDate',
-        'aObjFormDataSigner' => 'setAObjFormDataSigner'
+        'objFormDataDocument' => 'setObjFormDataDocument'
     ];
 
     /**
@@ -136,11 +120,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsigndocumentID' => 'getPkiEzsigndocumentID',
-        'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
-        'sEzsigndocumentName' => 'getSEzsigndocumentName',
-        'dtModifiedDate' => 'getDtModifiedDate',
-        'aObjFormDataSigner' => 'getAObjFormDataSigner'
+        'objFormDataDocument' => 'getObjFormDataDocument'
     ];
 
     /**
@@ -200,11 +180,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->container['pkiEzsigndocumentID'] = $data['pkiEzsigndocumentID'] ?? null;
-        $this->container['fkiEzsignfolderID'] = $data['fkiEzsignfolderID'] ?? null;
-        $this->container['sEzsigndocumentName'] = $data['sEzsigndocumentName'] ?? null;
-        $this->container['dtModifiedDate'] = $data['dtModifiedDate'] ?? null;
-        $this->container['aObjFormDataSigner'] = $data['aObjFormDataSigner'] ?? null;
+        $this->container['objFormDataDocument'] = $data['objFormDataDocument'] ?? null;
     }
 
     /**
@@ -216,20 +192,8 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
     {
         $invalidProperties = [];
 
-        if ($this->container['pkiEzsigndocumentID'] === null) {
-            $invalidProperties[] = "'pkiEzsigndocumentID' can't be null";
-        }
-        if ($this->container['fkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
-        }
-        if ($this->container['sEzsigndocumentName'] === null) {
-            $invalidProperties[] = "'sEzsigndocumentName' can't be null";
-        }
-        if ($this->container['dtModifiedDate'] === null) {
-            $invalidProperties[] = "'dtModifiedDate' can't be null";
-        }
-        if ($this->container['aObjFormDataSigner'] === null) {
-            $invalidProperties[] = "'aObjFormDataSigner' can't be null";
+        if ($this->container['objFormDataDocument'] === null) {
+            $invalidProperties[] = "'objFormDataDocument' can't be null";
         }
         return $invalidProperties;
     }
@@ -247,123 +211,25 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
 
 
     /**
-     * Gets pkiEzsigndocumentID
+     * Gets objFormDataDocument
      *
-     * @return int
+     * @return \eZmaxAPI\Model\CustomFormDataDocumentResponse
      */
-    public function getPkiEzsigndocumentID()
+    public function getObjFormDataDocument()
     {
-        return $this->container['pkiEzsigndocumentID'];
+        return $this->container['objFormDataDocument'];
     }
 
     /**
-     * Sets pkiEzsigndocumentID
+     * Sets objFormDataDocument
      *
-     * @param int $pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param \eZmaxAPI\Model\CustomFormDataDocumentResponse $objFormDataDocument objFormDataDocument
      *
      * @return self
      */
-    public function setPkiEzsigndocumentID($pkiEzsigndocumentID)
+    public function setObjFormDataDocument($objFormDataDocument)
     {
-        $this->container['pkiEzsigndocumentID'] = $pkiEzsigndocumentID;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignfolderID
-     *
-     * @return int
-     */
-    public function getFkiEzsignfolderID()
-    {
-        return $this->container['fkiEzsignfolderID'];
-    }
-
-    /**
-     * Sets fkiEzsignfolderID
-     *
-     * @param int $fkiEzsignfolderID The unique ID of the Ezsignfolder
-     *
-     * @return self
-     */
-    public function setFkiEzsignfolderID($fkiEzsignfolderID)
-    {
-        $this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsigndocumentName
-     *
-     * @return string
-     */
-    public function getSEzsigndocumentName()
-    {
-        return $this->container['sEzsigndocumentName'];
-    }
-
-    /**
-     * Sets sEzsigndocumentName
-     *
-     * @param string $sEzsigndocumentName The name of the document that will be presented to Ezsignfoldersignerassociations
-     *
-     * @return self
-     */
-    public function setSEzsigndocumentName($sEzsigndocumentName)
-    {
-        $this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
-
-        return $this;
-    }
-
-    /**
-     * Gets dtModifiedDate
-     *
-     * @return string
-     */
-    public function getDtModifiedDate()
-    {
-        return $this->container['dtModifiedDate'];
-    }
-
-    /**
-     * Sets dtModifiedDate
-     *
-     * @param string $dtModifiedDate The date and time at which the object was last modified
-     *
-     * @return self
-     */
-    public function setDtModifiedDate($dtModifiedDate)
-    {
-        $this->container['dtModifiedDate'] = $dtModifiedDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjFormDataSigner
-     *
-     * @return \eZmaxAPI\Model\CustomFormDataSignerResponse[]
-     */
-    public function getAObjFormDataSigner()
-    {
-        return $this->container['aObjFormDataSigner'];
-    }
-
-    /**
-     * Sets aObjFormDataSigner
-     *
-     * @param \eZmaxAPI\Model\CustomFormDataSignerResponse[] $aObjFormDataSigner aObjFormDataSigner
-     *
-     * @return self
-     */
-    public function setAObjFormDataSigner($aObjFormDataSigner)
-    {
-
-
-        $this->container['aObjFormDataSigner'] = $aObjFormDataSigner;
+        $this->container['objFormDataDocument'] = $objFormDataDocument;
 
         return $this;
     }
@@ -374,7 +240,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -386,6 +252,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -399,7 +266,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -415,7 +282,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -427,6 +294,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload implements ModelInterface, Arr
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

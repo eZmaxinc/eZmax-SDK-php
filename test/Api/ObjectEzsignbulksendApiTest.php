@@ -1,7 +1,7 @@
 <?php
 /**
  * ObjectEzsignbulksendApiTest
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -10,7 +10,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -73,12 +73,84 @@ class ObjectEzsignbulksendApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignbulksendCreateEzsignbulksendtransmissionV1
+     *
+     * Create a new Ezsignbulksendtransmission in the Ezsignbulksend.
+     *
+     */
+    public function testEzsignbulksendCreateEzsignbulksendtransmissionV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignbulksendCreateObjectV1
+     *
+     * Create a new Ezsignbulksend.
+     *
+     */
+    public function testEzsignbulksendCreateObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignbulksendDeleteObjectV1
+     *
+     * Delete an existing Ezsignbulksend.
+     *
+     */
+    public function testEzsignbulksendDeleteObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignbulksendEditObjectV1
+     *
+     * Edit an existing Ezsignbulksend.
+     *
+     */
+    public function testEzsignbulksendEditObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignbulksendGetCsvTemplateV1
+     *
+     * Retrieve an existing Ezsignbulksend's empty Csv template.
+     *
+     */
+    public function testEzsignbulksendGetCsvTemplateV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignbulksendGetEzsignbulksendtransmissionsV1
      *
      * Retrieve an existing Ezsignbulksend's Ezsignbulksendtransmissions.
      *
      */
     public function testEzsignbulksendGetEzsignbulksendtransmissionsV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignbulksendGetFormsDataV1
+     *
+     * Retrieve an existing Ezsignbulksend's forms data.
+     *
+     */
+    public function testEzsignbulksendGetFormsDataV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -103,6 +175,18 @@ class ObjectEzsignbulksendApiTest extends TestCase
      *
      */
     public function testEzsignbulksendGetObjectV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignbulksendReorderV1
+     *
+     * Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend.
+     *
+     */
+    public function testEzsignbulksendReorderV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -2,7 +2,7 @@
 /**
  * WebhookResponseTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -81,6 +81,15 @@ class WebhookResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "pksCustomerCode"
+     */
+    public function testPropertyPksCustomerCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "pkiWebhookID"
      */
     public function testPropertyPkiWebhookID()
@@ -108,9 +117,9 @@ class WebhookResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "pksCustomerCode"
+     * Test attribute "eWebhookManagementevent"
      */
-    public function testPropertyPksCustomerCode()
+    public function testPropertyEWebhookManagementevent()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -126,18 +135,27 @@ class WebhookResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "sWebhookEmailfailed"
+     * Test attribute "bWebhookTest"
      */
-    public function testPropertySWebhookEmailfailed()
+    public function testPropertyBWebhookTest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "eWebhookManagementevent"
+     * Test attribute "bWebhookSkipsslvalidation"
      */
-    public function testPropertyEWebhookManagementevent()
+    public function testPropertyBWebhookSkipsslvalidation()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sWebhookEmailfailed"
+     */
+    public function testPropertySWebhookEmailfailed()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

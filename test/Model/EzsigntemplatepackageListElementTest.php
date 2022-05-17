@@ -2,7 +2,7 @@
 /**
  * EzsigntemplatepackageListElementTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -90,24 +90,6 @@ class EzsigntemplatepackageListElementTest extends TestCase
     }
 
     /**
-     * Test attribute "fkiDepartmentID"
-     */
-    public function testPropertyFkiDepartmentID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiTeamID"
-     */
-    public function testPropertyFkiTeamID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "fkiEzsignfoldertypeID"
      */
     public function testPropertyFkiEzsignfoldertypeID()
@@ -120,15 +102,6 @@ class EzsigntemplatepackageListElementTest extends TestCase
      * Test attribute "fkiLanguageID"
      */
     public function testPropertyFkiLanguageID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "eEzsigntemplatepackageType"
-     */
-    public function testPropertyEEzsigntemplatepackageType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -153,9 +126,27 @@ class EzsigntemplatepackageListElementTest extends TestCase
     }
 
     /**
+     * Test attribute "bEzsigntemplatepackageNeedvalidation"
+     */
+    public function testPropertyBEzsigntemplatepackageNeedvalidation()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "iEzsigntemplatepackagemembership"
      */
     public function testPropertyIEzsigntemplatepackagemembership()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsignfoldertypeNameX"
+     */
+    public function testPropertySEzsignfoldertypeNameX()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

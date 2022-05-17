@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | [**\eZmaxAPI\Model\CustomWordPositionWordResponse[]**](CustomWordPositionWordResponse.md) | Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request |
+**mPayload** | [**\eZmaxAPI\Model\CustomWordPositionWordResponse[]**](CustomWordPositionWordResponse.md) | Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions |
 **objDebugPayload** | [**\eZmaxAPI\Model\CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional]
 **objDebug** | [**\eZmaxAPI\Model\CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional]
 

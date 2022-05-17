@@ -2,7 +2,7 @@
 /**
  * EzsignsignatureCreateObjectV2ResponseTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EzsignsignatureCreateObjectV2ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Response for the /2/object/ezsignsignature/createObject API Request
+ * @description Response for POST /2/object/ezsignsignature
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

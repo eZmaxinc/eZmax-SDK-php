@@ -2,7 +2,7 @@
 /**
  * EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayloadTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayloadTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignformfieldgroups API Request
+ * @description Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignformfieldgroups
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

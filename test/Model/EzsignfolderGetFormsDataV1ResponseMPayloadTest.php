@@ -2,7 +2,7 @@
 /**
  * EzsignfolderGetFormsDataV1ResponseMPayloadTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EzsignfolderGetFormsDataV1ResponseMPayloadTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for the /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData API Request
+ * @description Payload for GET /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -81,27 +81,9 @@ class EzsignfolderGetFormsDataV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiEzsignfolderID"
+     * Test attribute "objFormsDataFolder"
      */
-    public function testPropertyPkiEzsignfolderID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sEzsignfolderDescription"
-     */
-    public function testPropertySEzsignfolderDescription()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjFormDataDocument"
-     */
-    public function testPropertyAObjFormDataDocument()
+    public function testPropertyObjFormsDataFolder()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

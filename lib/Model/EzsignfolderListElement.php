@@ -2,7 +2,7 @@
 /**
  * EzsignfolderListElement
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -69,7 +69,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'eEzsignfolderStep' => '\eZmaxAPI\Model\FieldEEzsignfolderStep',
         'dtCreatedDate' => 'string',
         'dtEzsignfolderSentdate' => 'string',
-        'dtDueDate' => 'string',
+        'dtEzsignfolderDuedate' => 'string',
         'iEzsigndocument' => 'int',
         'iEzsigndocumentEdm' => 'int',
         'iEzsignsignature' => 'int',
@@ -92,7 +92,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'eEzsignfolderStep' => null,
         'dtCreatedDate' => null,
         'dtEzsignfolderSentdate' => null,
-        'dtDueDate' => null,
+        'dtEzsignfolderDuedate' => null,
         'iEzsigndocument' => null,
         'iEzsigndocumentEdm' => null,
         'iEzsignsignature' => null,
@@ -134,7 +134,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'eEzsignfolderStep' => 'eEzsignfolderStep',
         'dtCreatedDate' => 'dtCreatedDate',
         'dtEzsignfolderSentdate' => 'dtEzsignfolderSentdate',
-        'dtDueDate' => 'dtDueDate',
+        'dtEzsignfolderDuedate' => 'dtEzsignfolderDuedate',
         'iEzsigndocument' => 'iEzsigndocument',
         'iEzsigndocumentEdm' => 'iEzsigndocumentEdm',
         'iEzsignsignature' => 'iEzsignsignature',
@@ -155,7 +155,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'eEzsignfolderStep' => 'setEEzsignfolderStep',
         'dtCreatedDate' => 'setDtCreatedDate',
         'dtEzsignfolderSentdate' => 'setDtEzsignfolderSentdate',
-        'dtDueDate' => 'setDtDueDate',
+        'dtEzsignfolderDuedate' => 'setDtEzsignfolderDuedate',
         'iEzsigndocument' => 'setIEzsigndocument',
         'iEzsigndocumentEdm' => 'setIEzsigndocumentEdm',
         'iEzsignsignature' => 'setIEzsignsignature',
@@ -176,7 +176,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'eEzsignfolderStep' => 'getEEzsignfolderStep',
         'dtCreatedDate' => 'getDtCreatedDate',
         'dtEzsignfolderSentdate' => 'getDtEzsignfolderSentdate',
-        'dtDueDate' => 'getDtDueDate',
+        'dtEzsignfolderDuedate' => 'getDtEzsignfolderDuedate',
         'iEzsigndocument' => 'getIEzsigndocument',
         'iEzsigndocumentEdm' => 'getIEzsigndocumentEdm',
         'iEzsignsignature' => 'getIEzsignsignature',
@@ -248,7 +248,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['eEzsignfolderStep'] = $data['eEzsignfolderStep'] ?? null;
         $this->container['dtCreatedDate'] = $data['dtCreatedDate'] ?? null;
         $this->container['dtEzsignfolderSentdate'] = $data['dtEzsignfolderSentdate'] ?? null;
-        $this->container['dtDueDate'] = $data['dtDueDate'] ?? null;
+        $this->container['dtEzsignfolderDuedate'] = $data['dtEzsignfolderDuedate'] ?? null;
         $this->container['iEzsigndocument'] = $data['iEzsigndocument'] ?? null;
         $this->container['iEzsigndocumentEdm'] = $data['iEzsigndocumentEdm'] ?? null;
         $this->container['iEzsignsignature'] = $data['iEzsignsignature'] ?? null;
@@ -284,12 +284,6 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if ($this->container['dtCreatedDate'] === null) {
             $invalidProperties[] = "'dtCreatedDate' can't be null";
-        }
-        if ($this->container['dtEzsignfolderSentdate'] === null) {
-            $invalidProperties[] = "'dtEzsignfolderSentdate' can't be null";
-        }
-        if ($this->container['dtDueDate'] === null) {
-            $invalidProperties[] = "'dtDueDate' can't be null";
         }
         if ($this->container['iEzsigndocument'] === null) {
             $invalidProperties[] = "'iEzsigndocument' can't be null";
@@ -489,7 +483,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets dtEzsignfolderSentdate
      *
-     * @return string
+     * @return string|null
      */
     public function getDtEzsignfolderSentdate()
     {
@@ -499,7 +493,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets dtEzsignfolderSentdate
      *
-     * @param string $dtEzsignfolderSentdate The date and time at which the Ezsign folder was sent the last time.
+     * @param string|null $dtEzsignfolderSentdate The date and time at which the Ezsign folder was sent the last time.
      *
      * @return self
      */
@@ -511,25 +505,25 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets dtDueDate
+     * Gets dtEzsignfolderDuedate
      *
-     * @return string
+     * @return string|null
      */
-    public function getDtDueDate()
+    public function getDtEzsignfolderDuedate()
     {
-        return $this->container['dtDueDate'];
+        return $this->container['dtEzsignfolderDuedate'];
     }
 
     /**
-     * Sets dtDueDate
+     * Sets dtEzsignfolderDuedate
      *
-     * @param string $dtDueDate Represent a Date Time. The timezone is the one configured in the User's profile.
+     * @param string|null $dtEzsignfolderDuedate The maximum date and time at which the Ezsignfolder can be signed.
      *
      * @return self
      */
-    public function setDtDueDate($dtDueDate)
+    public function setDtEzsignfolderDuedate($dtEzsignfolderDuedate)
     {
-        $this->container['dtDueDate'] = $dtDueDate;
+        $this->container['dtEzsignfolderDuedate'] = $dtEzsignfolderDuedate;
 
         return $this;
     }
@@ -636,7 +630,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -648,6 +642,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -661,7 +656,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -677,7 +672,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -689,6 +684,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

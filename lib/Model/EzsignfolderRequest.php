@@ -2,7 +2,7 @@
 /**
  * EzsignfolderRequest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -225,14 +225,11 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['fkiEzsignfoldertypeID'] === null) {
             $invalidProperties[] = "'fkiEzsignfoldertypeID' can't be null";
         }
-        if ($this->container['fkiEzsigntsarequirementID'] === null) {
-            $invalidProperties[] = "'fkiEzsigntsarequirementID' can't be null";
-        }
-        if (($this->container['fkiEzsigntsarequirementID'] > 3)) {
+        if (!is_null($this->container['fkiEzsigntsarequirementID']) && ($this->container['fkiEzsigntsarequirementID'] > 3)) {
             $invalidProperties[] = "invalid value for 'fkiEzsigntsarequirementID', must be smaller than or equal to 3.";
         }
 
-        if (($this->container['fkiEzsigntsarequirementID'] < 1)) {
+        if (!is_null($this->container['fkiEzsigntsarequirementID']) && ($this->container['fkiEzsigntsarequirementID'] < 1)) {
             $invalidProperties[] = "invalid value for 'fkiEzsigntsarequirementID', must be bigger than or equal to 1.";
         }
 
@@ -311,7 +308,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets fkiEzsigntsarequirementID
      *
-     * @return int
+     * @return int|null
      */
     public function getFkiEzsigntsarequirementID()
     {
@@ -321,17 +318,17 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets fkiEzsigntsarequirementID
      *
-     * @param int $fkiEzsigntsarequirementID The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
+     * @param int|null $fkiEzsigntsarequirementID The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
      *
      * @return self
      */
     public function setFkiEzsigntsarequirementID($fkiEzsigntsarequirementID)
     {
 
-        if (($fkiEzsigntsarequirementID > 3)) {
+        if (!is_null($fkiEzsigntsarequirementID) && ($fkiEzsigntsarequirementID > 3)) {
             throw new \InvalidArgumentException('invalid value for $fkiEzsigntsarequirementID when calling EzsignfolderRequest., must be smaller than or equal to 3.');
         }
-        if (($fkiEzsigntsarequirementID < 1)) {
+        if (!is_null($fkiEzsigntsarequirementID) && ($fkiEzsigntsarequirementID < 1)) {
             throw new \InvalidArgumentException('invalid value for $fkiEzsigntsarequirementID when calling EzsignfolderRequest., must be bigger than or equal to 1.');
         }
 
@@ -418,7 +415,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -430,6 +427,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -443,7 +441,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -459,7 +457,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -471,6 +469,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

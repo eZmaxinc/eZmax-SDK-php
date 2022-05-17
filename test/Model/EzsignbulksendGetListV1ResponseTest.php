@@ -2,7 +2,7 @@
 /**
  * EzsignbulksendGetListV1ResponseTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * EzsignbulksendGetListV1ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Response for the /1/object/ezsignbulksend/getList API Request
+ * @description Response for GET /1/object/ezsignbulksend/getList
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

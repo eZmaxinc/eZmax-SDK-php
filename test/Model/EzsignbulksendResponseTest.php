@@ -2,7 +2,7 @@
 /**
  * EzsignbulksendResponseTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -108,6 +108,24 @@ class EzsignbulksendResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "sLanguageNameX"
+     */
+    public function testPropertySLanguageNameX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsignfoldertypeNameX"
+     */
+    public function testPropertySEzsignfoldertypeNameX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsignbulksendDescription"
      */
     public function testPropertySEzsignbulksendDescription()
@@ -120,6 +138,15 @@ class EzsignbulksendResponseTest extends TestCase
      * Test attribute "tEzsignbulksendNote"
      */
     public function testPropertyTEzsignbulksendNote()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignbulksendNeedvalidation"
+     */
+    public function testPropertyBEzsignbulksendNeedvalidation()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**eActivesessionSessiontype** | [**\eZmaxAPI\Model\FieldEActivesessionSessiontype**](FieldEActivesessionSessiontype.md) |  |
+**eActivesessionUsertype** | [**\eZmaxAPI\Model\FieldEActivesessionUsertype**](FieldEActivesessionUsertype.md) |  |
 **eActivesessionWeekdaystart** | [**\eZmaxAPI\Model\FieldEActivesessionWeekdaystart**](FieldEActivesessionWeekdaystart.md) |  |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **sCompanyNameX** | **string** | The Name of the Company in the language of the requester |

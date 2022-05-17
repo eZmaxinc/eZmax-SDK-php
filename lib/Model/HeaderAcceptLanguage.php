@@ -2,7 +2,7 @@
 /**
  * HeaderAcceptLanguage
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -44,11 +44,11 @@ class HeaderAcceptLanguage
     /**
      * Possible values of this enum
      */
-    const STAR = '*';
+    public const STAR = '*';
 
-    const EN = 'en';
+    public const EN = 'en';
 
-    const FR = 'fr';
+    public const FR = 'fr';
 
     /**
      * Gets allowable values of the enum

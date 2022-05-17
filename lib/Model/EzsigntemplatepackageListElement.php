@@ -2,7 +2,7 @@
 /**
  * EzsigntemplatepackageListElement
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -62,14 +62,13 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'pkiEzsigntemplatepackageID' => 'int',
-        'fkiDepartmentID' => 'int',
-        'fkiTeamID' => 'int',
         'fkiEzsignfoldertypeID' => 'int',
         'fkiLanguageID' => 'int',
-        'eEzsigntemplatepackageType' => '\eZmaxAPI\Model\FieldEEzsigntemplatepackageType',
         'sEzsigntemplatepackageDescription' => 'string',
         'bEzsigntemplatepackageIsactive' => 'bool',
-        'iEzsigntemplatepackagemembership' => 'int'
+        'bEzsigntemplatepackageNeedvalidation' => 'bool',
+        'iEzsigntemplatepackagemembership' => 'int',
+        'sEzsignfoldertypeNameX' => 'string'
     ];
 
     /**
@@ -81,14 +80,13 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPIFormats = [
         'pkiEzsigntemplatepackageID' => null,
-        'fkiDepartmentID' => null,
-        'fkiTeamID' => null,
         'fkiEzsignfoldertypeID' => null,
         'fkiLanguageID' => null,
-        'eEzsigntemplatepackageType' => null,
         'sEzsigntemplatepackageDescription' => null,
         'bEzsigntemplatepackageIsactive' => null,
-        'iEzsigntemplatepackagemembership' => null
+        'bEzsigntemplatepackageNeedvalidation' => null,
+        'iEzsigntemplatepackagemembership' => null,
+        'sEzsignfoldertypeNameX' => null
     ];
 
     /**
@@ -119,14 +117,13 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      */
     protected static $attributeMap = [
         'pkiEzsigntemplatepackageID' => 'pkiEzsigntemplatepackageID',
-        'fkiDepartmentID' => 'fkiDepartmentID',
-        'fkiTeamID' => 'fkiTeamID',
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
         'fkiLanguageID' => 'fkiLanguageID',
-        'eEzsigntemplatepackageType' => 'eEzsigntemplatepackageType',
         'sEzsigntemplatepackageDescription' => 'sEzsigntemplatepackageDescription',
         'bEzsigntemplatepackageIsactive' => 'bEzsigntemplatepackageIsactive',
-        'iEzsigntemplatepackagemembership' => 'iEzsigntemplatepackagemembership'
+        'bEzsigntemplatepackageNeedvalidation' => 'bEzsigntemplatepackageNeedvalidation',
+        'iEzsigntemplatepackagemembership' => 'iEzsigntemplatepackagemembership',
+        'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX'
     ];
 
     /**
@@ -136,14 +133,13 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      */
     protected static $setters = [
         'pkiEzsigntemplatepackageID' => 'setPkiEzsigntemplatepackageID',
-        'fkiDepartmentID' => 'setFkiDepartmentID',
-        'fkiTeamID' => 'setFkiTeamID',
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
         'fkiLanguageID' => 'setFkiLanguageID',
-        'eEzsigntemplatepackageType' => 'setEEzsigntemplatepackageType',
         'sEzsigntemplatepackageDescription' => 'setSEzsigntemplatepackageDescription',
         'bEzsigntemplatepackageIsactive' => 'setBEzsigntemplatepackageIsactive',
-        'iEzsigntemplatepackagemembership' => 'setIEzsigntemplatepackagemembership'
+        'bEzsigntemplatepackageNeedvalidation' => 'setBEzsigntemplatepackageNeedvalidation',
+        'iEzsigntemplatepackagemembership' => 'setIEzsigntemplatepackagemembership',
+        'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX'
     ];
 
     /**
@@ -153,14 +149,13 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      */
     protected static $getters = [
         'pkiEzsigntemplatepackageID' => 'getPkiEzsigntemplatepackageID',
-        'fkiDepartmentID' => 'getFkiDepartmentID',
-        'fkiTeamID' => 'getFkiTeamID',
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
         'fkiLanguageID' => 'getFkiLanguageID',
-        'eEzsigntemplatepackageType' => 'getEEzsigntemplatepackageType',
         'sEzsigntemplatepackageDescription' => 'getSEzsigntemplatepackageDescription',
         'bEzsigntemplatepackageIsactive' => 'getBEzsigntemplatepackageIsactive',
-        'iEzsigntemplatepackagemembership' => 'getIEzsigntemplatepackagemembership'
+        'bEzsigntemplatepackageNeedvalidation' => 'getBEzsigntemplatepackageNeedvalidation',
+        'iEzsigntemplatepackagemembership' => 'getIEzsigntemplatepackagemembership',
+        'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX'
     ];
 
     /**
@@ -221,14 +216,13 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     public function __construct(array $data = null)
     {
         $this->container['pkiEzsigntemplatepackageID'] = $data['pkiEzsigntemplatepackageID'] ?? null;
-        $this->container['fkiDepartmentID'] = $data['fkiDepartmentID'] ?? null;
-        $this->container['fkiTeamID'] = $data['fkiTeamID'] ?? null;
         $this->container['fkiEzsignfoldertypeID'] = $data['fkiEzsignfoldertypeID'] ?? null;
         $this->container['fkiLanguageID'] = $data['fkiLanguageID'] ?? null;
-        $this->container['eEzsigntemplatepackageType'] = $data['eEzsigntemplatepackageType'] ?? null;
         $this->container['sEzsigntemplatepackageDescription'] = $data['sEzsigntemplatepackageDescription'] ?? null;
         $this->container['bEzsigntemplatepackageIsactive'] = $data['bEzsigntemplatepackageIsactive'] ?? null;
+        $this->container['bEzsigntemplatepackageNeedvalidation'] = $data['bEzsigntemplatepackageNeedvalidation'] ?? null;
         $this->container['iEzsigntemplatepackagemembership'] = $data['iEzsigntemplatepackagemembership'] ?? null;
+        $this->container['sEzsignfoldertypeNameX'] = $data['sEzsignfoldertypeNameX'] ?? null;
     }
 
     /**
@@ -242,12 +236,6 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
 
         if ($this->container['pkiEzsigntemplatepackageID'] === null) {
             $invalidProperties[] = "'pkiEzsigntemplatepackageID' can't be null";
-        }
-        if ($this->container['fkiDepartmentID'] === null) {
-            $invalidProperties[] = "'fkiDepartmentID' can't be null";
-        }
-        if ($this->container['fkiTeamID'] === null) {
-            $invalidProperties[] = "'fkiTeamID' can't be null";
         }
         if ($this->container['fkiEzsignfoldertypeID'] === null) {
             $invalidProperties[] = "'fkiEzsignfoldertypeID' can't be null";
@@ -263,17 +251,20 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['eEzsigntemplatepackageType'] === null) {
-            $invalidProperties[] = "'eEzsigntemplatepackageType' can't be null";
-        }
         if ($this->container['sEzsigntemplatepackageDescription'] === null) {
             $invalidProperties[] = "'sEzsigntemplatepackageDescription' can't be null";
         }
         if ($this->container['bEzsigntemplatepackageIsactive'] === null) {
             $invalidProperties[] = "'bEzsigntemplatepackageIsactive' can't be null";
         }
+        if ($this->container['bEzsigntemplatepackageNeedvalidation'] === null) {
+            $invalidProperties[] = "'bEzsigntemplatepackageNeedvalidation' can't be null";
+        }
         if ($this->container['iEzsigntemplatepackagemembership'] === null) {
             $invalidProperties[] = "'iEzsigntemplatepackagemembership' can't be null";
+        }
+        if ($this->container['sEzsignfoldertypeNameX'] === null) {
+            $invalidProperties[] = "'sEzsignfoldertypeNameX' can't be null";
         }
         return $invalidProperties;
     }
@@ -310,54 +301,6 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     public function setPkiEzsigntemplatepackageID($pkiEzsigntemplatepackageID)
     {
         $this->container['pkiEzsigntemplatepackageID'] = $pkiEzsigntemplatepackageID;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiDepartmentID
-     *
-     * @return int
-     */
-    public function getFkiDepartmentID()
-    {
-        return $this->container['fkiDepartmentID'];
-    }
-
-    /**
-     * Sets fkiDepartmentID
-     *
-     * @param int $fkiDepartmentID The unique ID of the Department.
-     *
-     * @return self
-     */
-    public function setFkiDepartmentID($fkiDepartmentID)
-    {
-        $this->container['fkiDepartmentID'] = $fkiDepartmentID;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiTeamID
-     *
-     * @return int
-     */
-    public function getFkiTeamID()
-    {
-        return $this->container['fkiTeamID'];
-    }
-
-    /**
-     * Sets fkiTeamID
-     *
-     * @param int $fkiTeamID The unique ID of the Team
-     *
-     * @return self
-     */
-    public function setFkiTeamID($fkiTeamID)
-    {
-        $this->container['fkiTeamID'] = $fkiTeamID;
 
         return $this;
     }
@@ -419,30 +362,6 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Gets eEzsigntemplatepackageType
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsigntemplatepackageType
-     */
-    public function getEEzsigntemplatepackageType()
-    {
-        return $this->container['eEzsigntemplatepackageType'];
-    }
-
-    /**
-     * Sets eEzsigntemplatepackageType
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsigntemplatepackageType $eEzsigntemplatepackageType eEzsigntemplatepackageType
-     *
-     * @return self
-     */
-    public function setEEzsigntemplatepackageType($eEzsigntemplatepackageType)
-    {
-        $this->container['eEzsigntemplatepackageType'] = $eEzsigntemplatepackageType;
-
-        return $this;
-    }
-
-    /**
      * Gets sEzsigntemplatepackageDescription
      *
      * @return string
@@ -491,6 +410,30 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
     }
 
     /**
+     * Gets bEzsigntemplatepackageNeedvalidation
+     *
+     * @return bool
+     */
+    public function getBEzsigntemplatepackageNeedvalidation()
+    {
+        return $this->container['bEzsigntemplatepackageNeedvalidation'];
+    }
+
+    /**
+     * Sets bEzsigntemplatepackageNeedvalidation
+     *
+     * @param bool $bEzsigntemplatepackageNeedvalidation Whether the Ezsignbulksend was automatically modified and needs a manual validation
+     *
+     * @return self
+     */
+    public function setBEzsigntemplatepackageNeedvalidation($bEzsigntemplatepackageNeedvalidation)
+    {
+        $this->container['bEzsigntemplatepackageNeedvalidation'] = $bEzsigntemplatepackageNeedvalidation;
+
+        return $this;
+    }
+
+    /**
      * Gets iEzsigntemplatepackagemembership
      *
      * @return int
@@ -513,6 +456,30 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
+
+    /**
+     * Gets sEzsignfoldertypeNameX
+     *
+     * @return string
+     */
+    public function getSEzsignfoldertypeNameX()
+    {
+        return $this->container['sEzsignfoldertypeNameX'];
+    }
+
+    /**
+     * Sets sEzsignfoldertypeNameX
+     *
+     * @param string $sEzsignfoldertypeNameX The name of the Ezsignfoldertype in the language of the requester
+     *
+     * @return self
+     */
+    public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
+    {
+        $this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -520,7 +487,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -532,6 +499,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -545,7 +513,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -561,7 +529,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -573,6 +541,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

@@ -2,7 +2,7 @@
 /**
  * EzsignsignatureGetObjectV1ResponseMPayload
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  eZmaxAPI
@@ -11,7 +11,7 @@
  */
 
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  *
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * EzsignsignatureGetObjectV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Payload for the /1/object/ezsignsignature/getObject API Request
+ * @description Payload for GET /1/object/ezsignsignature/{pkiEzsignsignatureID}
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -62,13 +62,16 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
       */
     protected static $openAPITypes = [
         'pkiEzsignsignatureID' => 'int',
+        'fkiEzsigndocumentID' => 'int',
         'fkiEzsignfoldersignerassociationID' => 'int',
         'iEzsignpagePagenumber' => 'int',
         'iEzsignsignatureX' => 'int',
         'iEzsignsignatureY' => 'int',
         'iEzsignsignatureStep' => 'int',
         'eEzsignsignatureType' => '\eZmaxAPI\Model\FieldEEzsignsignatureType',
-        'fkiEzsigndocumentID' => 'int',
+        'tEzsignsignatureTooltip' => 'string',
+        'eEzsignsignatureTooltipposition' => '\eZmaxAPI\Model\FieldEEzsignsignatureTooltipposition',
+        'eEzsignsignatureFont' => '\eZmaxAPI\Model\FieldEEzsignsignatureFont',
         'bEzsignsignatureCustomdate' => 'bool',
         'aObjEzsignsignaturecustomdate' => '\eZmaxAPI\Model\EzsignsignaturecustomdateResponseCompound[]'
     ];
@@ -82,13 +85,16 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
       */
     protected static $openAPIFormats = [
         'pkiEzsignsignatureID' => null,
+        'fkiEzsigndocumentID' => null,
         'fkiEzsignfoldersignerassociationID' => null,
         'iEzsignpagePagenumber' => null,
         'iEzsignsignatureX' => null,
         'iEzsignsignatureY' => null,
         'iEzsignsignatureStep' => null,
         'eEzsignsignatureType' => null,
-        'fkiEzsigndocumentID' => null,
+        'tEzsignsignatureTooltip' => null,
+        'eEzsignsignatureTooltipposition' => null,
+        'eEzsignsignatureFont' => null,
         'bEzsignsignatureCustomdate' => null,
         'aObjEzsignsignaturecustomdate' => null
     ];
@@ -121,13 +127,16 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
      */
     protected static $attributeMap = [
         'pkiEzsignsignatureID' => 'pkiEzsignsignatureID',
+        'fkiEzsigndocumentID' => 'fkiEzsigndocumentID',
         'fkiEzsignfoldersignerassociationID' => 'fkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'iEzsignpagePagenumber',
         'iEzsignsignatureX' => 'iEzsignsignatureX',
         'iEzsignsignatureY' => 'iEzsignsignatureY',
         'iEzsignsignatureStep' => 'iEzsignsignatureStep',
         'eEzsignsignatureType' => 'eEzsignsignatureType',
-        'fkiEzsigndocumentID' => 'fkiEzsigndocumentID',
+        'tEzsignsignatureTooltip' => 'tEzsignsignatureTooltip',
+        'eEzsignsignatureTooltipposition' => 'eEzsignsignatureTooltipposition',
+        'eEzsignsignatureFont' => 'eEzsignsignatureFont',
         'bEzsignsignatureCustomdate' => 'bEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate'
     ];
@@ -139,13 +148,16 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
      */
     protected static $setters = [
         'pkiEzsignsignatureID' => 'setPkiEzsignsignatureID',
+        'fkiEzsigndocumentID' => 'setFkiEzsigndocumentID',
         'fkiEzsignfoldersignerassociationID' => 'setFkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'setIEzsignpagePagenumber',
         'iEzsignsignatureX' => 'setIEzsignsignatureX',
         'iEzsignsignatureY' => 'setIEzsignsignatureY',
         'iEzsignsignatureStep' => 'setIEzsignsignatureStep',
         'eEzsignsignatureType' => 'setEEzsignsignatureType',
-        'fkiEzsigndocumentID' => 'setFkiEzsigndocumentID',
+        'tEzsignsignatureTooltip' => 'setTEzsignsignatureTooltip',
+        'eEzsignsignatureTooltipposition' => 'setEEzsignsignatureTooltipposition',
+        'eEzsignsignatureFont' => 'setEEzsignsignatureFont',
         'bEzsignsignatureCustomdate' => 'setBEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'setAObjEzsignsignaturecustomdate'
     ];
@@ -157,13 +169,16 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
      */
     protected static $getters = [
         'pkiEzsignsignatureID' => 'getPkiEzsignsignatureID',
+        'fkiEzsigndocumentID' => 'getFkiEzsigndocumentID',
         'fkiEzsignfoldersignerassociationID' => 'getFkiEzsignfoldersignerassociationID',
         'iEzsignpagePagenumber' => 'getIEzsignpagePagenumber',
         'iEzsignsignatureX' => 'getIEzsignsignatureX',
         'iEzsignsignatureY' => 'getIEzsignsignatureY',
         'iEzsignsignatureStep' => 'getIEzsignsignatureStep',
         'eEzsignsignatureType' => 'getEEzsignsignatureType',
-        'fkiEzsigndocumentID' => 'getFkiEzsigndocumentID',
+        'tEzsignsignatureTooltip' => 'getTEzsignsignatureTooltip',
+        'eEzsignsignatureTooltipposition' => 'getEEzsignsignatureTooltipposition',
+        'eEzsignsignatureFont' => 'getEEzsignsignatureFont',
         'bEzsignsignatureCustomdate' => 'getBEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'getAObjEzsignsignaturecustomdate'
     ];
@@ -226,13 +241,16 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
     public function __construct(array $data = null)
     {
         $this->container['pkiEzsignsignatureID'] = $data['pkiEzsignsignatureID'] ?? null;
+        $this->container['fkiEzsigndocumentID'] = $data['fkiEzsigndocumentID'] ?? null;
         $this->container['fkiEzsignfoldersignerassociationID'] = $data['fkiEzsignfoldersignerassociationID'] ?? null;
         $this->container['iEzsignpagePagenumber'] = $data['iEzsignpagePagenumber'] ?? null;
         $this->container['iEzsignsignatureX'] = $data['iEzsignsignatureX'] ?? null;
         $this->container['iEzsignsignatureY'] = $data['iEzsignsignatureY'] ?? null;
         $this->container['iEzsignsignatureStep'] = $data['iEzsignsignatureStep'] ?? null;
         $this->container['eEzsignsignatureType'] = $data['eEzsignsignatureType'] ?? null;
-        $this->container['fkiEzsigndocumentID'] = $data['fkiEzsigndocumentID'] ?? null;
+        $this->container['tEzsignsignatureTooltip'] = $data['tEzsignsignatureTooltip'] ?? null;
+        $this->container['eEzsignsignatureTooltipposition'] = $data['eEzsignsignatureTooltipposition'] ?? null;
+        $this->container['eEzsignsignatureFont'] = $data['eEzsignsignatureFont'] ?? null;
         $this->container['bEzsignsignatureCustomdate'] = $data['bEzsignsignatureCustomdate'] ?? null;
         $this->container['aObjEzsignsignaturecustomdate'] = $data['aObjEzsignsignaturecustomdate'] ?? null;
     }
@@ -248,6 +266,9 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
 
         if ($this->container['pkiEzsignsignatureID'] === null) {
             $invalidProperties[] = "'pkiEzsignsignatureID' can't be null";
+        }
+        if ($this->container['fkiEzsigndocumentID'] === null) {
+            $invalidProperties[] = "'fkiEzsigndocumentID' can't be null";
         }
         if ($this->container['fkiEzsignfoldersignerassociationID'] === null) {
             $invalidProperties[] = "'fkiEzsignfoldersignerassociationID' can't be null";
@@ -266,9 +287,6 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
         }
         if ($this->container['eEzsignsignatureType'] === null) {
             $invalidProperties[] = "'eEzsignsignatureType' can't be null";
-        }
-        if ($this->container['fkiEzsigndocumentID'] === null) {
-            $invalidProperties[] = "'fkiEzsigndocumentID' can't be null";
         }
         return $invalidProperties;
     }
@@ -305,6 +323,30 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
     public function setPkiEzsignsignatureID($pkiEzsignsignatureID)
     {
         $this->container['pkiEzsignsignatureID'] = $pkiEzsignsignatureID;
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiEzsigndocumentID
+     *
+     * @return int
+     */
+    public function getFkiEzsigndocumentID()
+    {
+        return $this->container['fkiEzsigndocumentID'];
+    }
+
+    /**
+     * Sets fkiEzsigndocumentID
+     *
+     * @param int $fkiEzsigndocumentID The unique ID of the Ezsigndocument
+     *
+     * @return self
+     */
+    public function setFkiEzsigndocumentID($fkiEzsigndocumentID)
+    {
+        $this->container['fkiEzsigndocumentID'] = $fkiEzsigndocumentID;
 
         return $this;
     }
@@ -394,7 +436,7 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
     /**
      * Sets iEzsignsignatureY
      *
-     * @param int $iEzsignsignatureY The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param int $iEzsignsignatureY The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      *
      * @return self
      */
@@ -454,25 +496,73 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
     }
 
     /**
-     * Gets fkiEzsigndocumentID
+     * Gets tEzsignsignatureTooltip
      *
-     * @return int
+     * @return string|null
      */
-    public function getFkiEzsigndocumentID()
+    public function getTEzsignsignatureTooltip()
     {
-        return $this->container['fkiEzsigndocumentID'];
+        return $this->container['tEzsignsignatureTooltip'];
     }
 
     /**
-     * Sets fkiEzsigndocumentID
+     * Sets tEzsignsignatureTooltip
      *
-     * @param int $fkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param string|null $tEzsignsignatureTooltip A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
      *
      * @return self
      */
-    public function setFkiEzsigndocumentID($fkiEzsigndocumentID)
+    public function setTEzsignsignatureTooltip($tEzsignsignatureTooltip)
     {
-        $this->container['fkiEzsigndocumentID'] = $fkiEzsigndocumentID;
+        $this->container['tEzsignsignatureTooltip'] = $tEzsignsignatureTooltip;
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsignsignatureTooltipposition
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignsignatureTooltipposition|null
+     */
+    public function getEEzsignsignatureTooltipposition()
+    {
+        return $this->container['eEzsignsignatureTooltipposition'];
+    }
+
+    /**
+     * Sets eEzsignsignatureTooltipposition
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignsignatureTooltipposition|null $eEzsignsignatureTooltipposition eEzsignsignatureTooltipposition
+     *
+     * @return self
+     */
+    public function setEEzsignsignatureTooltipposition($eEzsignsignatureTooltipposition)
+    {
+        $this->container['eEzsignsignatureTooltipposition'] = $eEzsignsignatureTooltipposition;
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsignsignatureFont
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignsignatureFont|null
+     */
+    public function getEEzsignsignatureFont()
+    {
+        return $this->container['eEzsignsignatureFont'];
+    }
+
+    /**
+     * Sets eEzsignsignatureFont
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignsignatureFont|null $eEzsignsignatureFont eEzsignsignatureFont
+     *
+     * @return self
+     */
+    public function setEEzsignsignatureFont($eEzsignsignatureFont)
+    {
+        $this->container['eEzsignsignatureFont'] = $eEzsignsignatureFont;
 
         return $this;
     }
@@ -490,7 +580,7 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
     /**
      * Sets bEzsignsignatureCustomdate
      *
-     * @param bool|null $bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * @param bool|null $bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
      *
      * @return self
      */
@@ -531,7 +621,7 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
      *
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -543,6 +633,7 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -556,7 +647,7 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -572,7 +663,7 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -584,6 +675,7 @@ class EzsignsignatureGetObjectV1ResponseMPayload implements ModelInterface, Arra
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
