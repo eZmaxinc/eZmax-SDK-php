@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `franchiseofficeGetAutocompleteV1()`
 
 ```php
-franchiseofficeGetAutocompleteV1($sSelector, $sQuery): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
+franchiseofficeGetAutocompleteV1($sSelector, $sQuery, $acceptLanguage): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
 ```
 
 Retrieve Franchiseoffices and IDs
@@ -38,9 +38,10 @@ $apiInstance = new eZmaxAPI\Api\ObjectFranchiseofficeApi(
 );
 $sSelector = 'sSelector_example'; // string | The type of Franchiseoffices to return
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 
 try {
-    $result = $apiInstance->franchiseofficeGetAutocompleteV1($sSelector, $sQuery);
+    $result = $apiInstance->franchiseofficeGetAutocompleteV1($sSelector, $sQuery, $acceptLanguage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectFranchiseofficeApi->franchiseofficeGetAutocompleteV1: ', $e->getMessage(), PHP_EOL;
@@ -53,6 +54,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **string**| The type of Franchiseoffices to return |
  **sQuery** | **string**| Allow to filter the returned results | [optional]
+ **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional]
 
 ### Return type
 

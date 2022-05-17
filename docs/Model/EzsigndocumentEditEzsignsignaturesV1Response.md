@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**mPayload** | [**\eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1ResponseMPayload**](EzsigndocumentEditEzsignsignaturesV1ResponseMPayload.md) |  |
 **objDebugPayload** | [**\eZmaxAPI\Model\CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional]
 **objDebug** | [**\eZmaxAPI\Model\CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional]
 

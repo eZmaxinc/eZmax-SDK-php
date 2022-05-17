@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fkiUserID** | **int** | The unique ID of the User |
-**fkiEzsignsignerID** | **int** | The unique ID of the Ezsignsigner |
+**fkiUserID** | **int** | The unique ID of the User | [optional]
+**fkiEzsignsignerID** | **int** | The unique ID of the Ezsignsigner | [optional]
 **dtEzsigndocumentlogDatetime** | **string** | The date and time at which the event was logged |
 **eEzsigndocumentlogType** | [**\eZmaxAPI\Model\FieldEEzsigndocumentlogType**](FieldEEzsigndocumentlogType.md) |  |
 **sEzsigndocumentlogDetail** | **string** | The detail of the Ezsigndocumentlog |

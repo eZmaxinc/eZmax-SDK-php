@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **sEzsignfolderDescription** | **string** | The description of the Ezsignfolder |
 **eEzsignfolderStep** | [**\eZmaxAPI\Model\FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |
 **dtCreatedDate** | **string** | The date and time at which the object was created |
-**dtEzsignfolderSentdate** | **string** | The date and time at which the Ezsign folder was sent the last time. |
-**dtDueDate** | **string** | Represent a Date Time. The timezone is the one configured in the User&#39;s profile. |
+**dtEzsignfolderSentdate** | **string** | The date and time at which the Ezsign folder was sent the last time. | [optional]
+**dtEzsignfolderDuedate** | **string** | The maximum date and time at which the Ezsignfolder can be signed. | [optional]
 **iEzsigndocument** | **int** | The total number of Ezsigndocument in the folder |
 **iEzsigndocumentEdm** | **int** | The total number of Ezsigndocument in the folder that were saved in the edm system |
 **iEzsignsignature** | **int** | The total number of signature blocks in all Ezsigndocuments in the folder |
