@@ -39,7 +39,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntsarequirementApi(
 $sSelector = 'sSelector_example'; // string | The type of Ezsigntsarequirements to return
 $fkiEzsignfoldertypeID = 56; // int
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 
 try {
     $result = $apiInstance->ezsigntsarequirementGetAutocompleteV1($sSelector, $fkiEzsignfoldertypeID, $sQuery, $acceptLanguage);
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
  **sSelector** | **string**| The type of Ezsigntsarequirements to return |
  **fkiEzsignfoldertypeID** | **int**|  | [optional]
  **sQuery** | **string**| Allow to filter the returned results | [optional]
- **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+ **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
 
 ### Return type
 
