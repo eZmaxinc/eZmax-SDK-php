@@ -9,6 +9,8 @@ docs/Api/ModuleEzsignApi.md
 docs/Api/ModuleUserApi.md
 docs/Api/ObjectActivesessionApi.md
 docs/Api/ObjectApikeyApi.md
+docs/Api/ObjectBillingentityinternalApi.md
+docs/Api/ObjectBrandingApi.md
 docs/Api/ObjectEzsignbulksendApi.md
 docs/Api/ObjectEzsignbulksenddocumentmappingApi.md
 docs/Api/ObjectEzsignbulksendsignermappingApi.md
@@ -33,8 +35,13 @@ docs/Api/ObjectFranchisebrokerApi.md
 docs/Api/ObjectFranchiseofficeApi.md
 docs/Api/ObjectFranchisereferalincomeApi.md
 docs/Api/ObjectNotificationsectionApi.md
+docs/Api/ObjectNotificationtestApi.md
 docs/Api/ObjectPeriodApi.md
 docs/Api/ObjectSecretquestionApi.md
+docs/Api/ObjectTaxassignmentApi.md
+docs/Api/ObjectTimezoneApi.md
+docs/Api/ObjectUserApi.md
+docs/Api/ObjectUsergroupApi.md
 docs/Model/ActivesessionGetCurrentV1Response.md
 docs/Model/ActivesessionGetCurrentV1ResponseAllOf.md
 docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md
@@ -77,6 +84,8 @@ docs/Model/CommonResponseObjDebugPayload.md
 docs/Model/CommonResponseObjDebugPayloadGetList.md
 docs/Model/CommonResponseObjDebugPayloadGetListAllOf.md
 docs/Model/CommonResponseObjSQLQuery.md
+docs/Model/CommonResponseRedirectSSecretquestionTextX.md
+docs/Model/CommonResponseWarning.md
 docs/Model/CommonWebhook.md
 docs/Model/ContactRequest.md
 docs/Model/ContactRequestCompound.md
@@ -253,6 +262,9 @@ docs/Model/EzsignfolderCreateObjectV2Response.md
 docs/Model/EzsignfolderCreateObjectV2ResponseAllOf.md
 docs/Model/EzsignfolderCreateObjectV2ResponseMPayload.md
 docs/Model/EzsignfolderDeleteObjectV1Response.md
+docs/Model/EzsignfolderDisposeEzsignfoldersV1Request.md
+docs/Model/EzsignfolderDisposeEzsignfoldersV1Response.md
+docs/Model/EzsignfolderDisposeV1Response.md
 docs/Model/EzsignfolderEditObjectV1Request.md
 docs/Model/EzsignfolderEditObjectV1Response.md
 docs/Model/EzsignfolderGetActionableElementsV1Response.md
@@ -412,6 +424,7 @@ docs/Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf.md
 docs/Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload.md
 docs/Model/EzsigntemplatedocumentEditObjectV1Request.md
 docs/Model/EzsigntemplatedocumentEditObjectV1Response.md
+docs/Model/EzsigntemplatedocumentEditObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response.md
 docs/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf.md
 docs/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload.md
@@ -582,6 +595,7 @@ docs/Model/FieldEEzsigntemplatesignatureTooltipposition.md
 docs/Model/FieldEEzsigntemplatesignatureType.md
 docs/Model/FieldENotificationpreferenceStatus.md
 docs/Model/FieldEPhoneType.md
+docs/Model/FieldEUserEzsignsendreminderfrequency.md
 docs/Model/FieldEUserType.md
 docs/Model/FranchisereferalincomeCreateObjectV1Request.md
 docs/Model/FranchisereferalincomeCreateObjectV1Response.md
@@ -601,6 +615,9 @@ docs/Model/NotificationsectionGetNotificationtestsV1Response.md
 docs/Model/NotificationsectionGetNotificationtestsV1ResponseAllOf.md
 docs/Model/NotificationsectionGetNotificationtestsV1ResponseMPayload.md
 docs/Model/NotificationsubsectionResponse.md
+docs/Model/NotificationtestGetElementsV1Response.md
+docs/Model/NotificationtestGetElementsV1ResponseAllOf.md
+docs/Model/NotificationtestGetElementsV1ResponseMPayload.md
 docs/Model/NotificationtestResponse.md
 docs/Model/PhoneRequest.md
 docs/Model/PhoneRequestCompound.md
@@ -625,6 +642,8 @@ lib/Api/ModuleEzsignApi.php
 lib/Api/ModuleUserApi.php
 lib/Api/ObjectActivesessionApi.php
 lib/Api/ObjectApikeyApi.php
+lib/Api/ObjectBillingentityinternalApi.php
+lib/Api/ObjectBrandingApi.php
 lib/Api/ObjectEzsignbulksendApi.php
 lib/Api/ObjectEzsignbulksenddocumentmappingApi.php
 lib/Api/ObjectEzsignbulksendsignermappingApi.php
@@ -649,8 +668,13 @@ lib/Api/ObjectFranchisebrokerApi.php
 lib/Api/ObjectFranchiseofficeApi.php
 lib/Api/ObjectFranchisereferalincomeApi.php
 lib/Api/ObjectNotificationsectionApi.php
+lib/Api/ObjectNotificationtestApi.php
 lib/Api/ObjectPeriodApi.php
 lib/Api/ObjectSecretquestionApi.php
+lib/Api/ObjectTaxassignmentApi.php
+lib/Api/ObjectTimezoneApi.php
+lib/Api/ObjectUserApi.php
+lib/Api/ObjectUsergroupApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
@@ -696,6 +720,8 @@ lib/Model/CommonResponseObjDebugPayload.php
 lib/Model/CommonResponseObjDebugPayloadGetList.php
 lib/Model/CommonResponseObjDebugPayloadGetListAllOf.php
 lib/Model/CommonResponseObjSQLQuery.php
+lib/Model/CommonResponseRedirectSSecretquestionTextX.php
+lib/Model/CommonResponseWarning.php
 lib/Model/CommonWebhook.php
 lib/Model/ContactRequest.php
 lib/Model/ContactRequestCompound.php
@@ -872,6 +898,9 @@ lib/Model/EzsignfolderCreateObjectV2Response.php
 lib/Model/EzsignfolderCreateObjectV2ResponseAllOf.php
 lib/Model/EzsignfolderCreateObjectV2ResponseMPayload.php
 lib/Model/EzsignfolderDeleteObjectV1Response.php
+lib/Model/EzsignfolderDisposeEzsignfoldersV1Request.php
+lib/Model/EzsignfolderDisposeEzsignfoldersV1Response.php
+lib/Model/EzsignfolderDisposeV1Response.php
 lib/Model/EzsignfolderEditObjectV1Request.php
 lib/Model/EzsignfolderEditObjectV1Response.php
 lib/Model/EzsignfolderGetActionableElementsV1Response.php
@@ -1031,6 +1060,7 @@ lib/Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf.php
 lib/Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload.php
 lib/Model/EzsigntemplatedocumentEditObjectV1Request.php
 lib/Model/EzsigntemplatedocumentEditObjectV1Response.php
+lib/Model/EzsigntemplatedocumentEditObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response.php
 lib/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf.php
 lib/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload.php
@@ -1201,6 +1231,7 @@ lib/Model/FieldEEzsigntemplatesignatureTooltipposition.php
 lib/Model/FieldEEzsigntemplatesignatureType.php
 lib/Model/FieldENotificationpreferenceStatus.php
 lib/Model/FieldEPhoneType.php
+lib/Model/FieldEUserEzsignsendreminderfrequency.php
 lib/Model/FieldEUserType.php
 lib/Model/FranchisereferalincomeCreateObjectV1Request.php
 lib/Model/FranchisereferalincomeCreateObjectV1Response.php
@@ -1221,6 +1252,9 @@ lib/Model/NotificationsectionGetNotificationtestsV1Response.php
 lib/Model/NotificationsectionGetNotificationtestsV1ResponseAllOf.php
 lib/Model/NotificationsectionGetNotificationtestsV1ResponseMPayload.php
 lib/Model/NotificationsubsectionResponse.php
+lib/Model/NotificationtestGetElementsV1Response.php
+lib/Model/NotificationtestGetElementsV1ResponseAllOf.php
+lib/Model/NotificationtestGetElementsV1ResponseMPayload.php
 lib/Model/NotificationtestResponse.php
 lib/Model/PhoneRequest.php
 lib/Model/PhoneRequestCompound.php
@@ -1247,6 +1281,8 @@ test/Api/ModuleEzsignApiTest.php
 test/Api/ModuleUserApiTest.php
 test/Api/ObjectActivesessionApiTest.php
 test/Api/ObjectApikeyApiTest.php
+test/Api/ObjectBillingentityinternalApiTest.php
+test/Api/ObjectBrandingApiTest.php
 test/Api/ObjectEzsignbulksendApiTest.php
 test/Api/ObjectEzsignbulksenddocumentmappingApiTest.php
 test/Api/ObjectEzsignbulksendsignermappingApiTest.php
@@ -1271,8 +1307,13 @@ test/Api/ObjectFranchisebrokerApiTest.php
 test/Api/ObjectFranchiseofficeApiTest.php
 test/Api/ObjectFranchisereferalincomeApiTest.php
 test/Api/ObjectNotificationsectionApiTest.php
+test/Api/ObjectNotificationtestApiTest.php
 test/Api/ObjectPeriodApiTest.php
 test/Api/ObjectSecretquestionApiTest.php
+test/Api/ObjectTaxassignmentApiTest.php
+test/Api/ObjectTimezoneApiTest.php
+test/Api/ObjectUserApiTest.php
+test/Api/ObjectUsergroupApiTest.php
 test/Model/ActivesessionGetCurrentV1ResponseAllOfTest.php
 test/Model/ActivesessionGetCurrentV1ResponseMPayloadTest.php
 test/Model/ActivesessionGetCurrentV1ResponseTest.php
@@ -1314,7 +1355,9 @@ test/Model/CommonResponseObjDebugPayloadGetListTest.php
 test/Model/CommonResponseObjDebugPayloadTest.php
 test/Model/CommonResponseObjDebugTest.php
 test/Model/CommonResponseObjSQLQueryTest.php
+test/Model/CommonResponseRedirectSSecretquestionTextXTest.php
 test/Model/CommonResponseTest.php
+test/Model/CommonResponseWarningTest.php
 test/Model/CommonWebhookTest.php
 test/Model/ContactRequestCompoundAllOfTest.php
 test/Model/ContactRequestCompoundTest.php
@@ -1491,6 +1534,9 @@ test/Model/EzsignfolderCreateObjectV2ResponseAllOfTest.php
 test/Model/EzsignfolderCreateObjectV2ResponseMPayloadTest.php
 test/Model/EzsignfolderCreateObjectV2ResponseTest.php
 test/Model/EzsignfolderDeleteObjectV1ResponseTest.php
+test/Model/EzsignfolderDisposeEzsignfoldersV1RequestTest.php
+test/Model/EzsignfolderDisposeEzsignfoldersV1ResponseTest.php
+test/Model/EzsignfolderDisposeV1ResponseTest.php
 test/Model/EzsignfolderEditObjectV1RequestTest.php
 test/Model/EzsignfolderEditObjectV1ResponseTest.php
 test/Model/EzsignfolderGetActionableElementsV1ResponseAllOfTest.php
@@ -1649,6 +1695,7 @@ test/Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOfTest
 test/Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseTest.php
 test/Model/EzsigntemplatedocumentEditObjectV1RequestTest.php
+test/Model/EzsigntemplatedocumentEditObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplatedocumentEditObjectV1ResponseTest.php
 test/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOfTest.php
 test/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayloadTest.php
@@ -1820,6 +1867,7 @@ test/Model/FieldEEzsigntemplatesignatureTooltippositionTest.php
 test/Model/FieldEEzsigntemplatesignatureTypeTest.php
 test/Model/FieldENotificationpreferenceStatusTest.php
 test/Model/FieldEPhoneTypeTest.php
+test/Model/FieldEUserEzsignsendreminderfrequencyTest.php
 test/Model/FieldEUserTypeTest.php
 test/Model/FranchisereferalincomeCreateObjectV1RequestTest.php
 test/Model/FranchisereferalincomeCreateObjectV1ResponseAllOfTest.php
@@ -1839,6 +1887,9 @@ test/Model/NotificationsectionGetNotificationtestsV1ResponseAllOfTest.php
 test/Model/NotificationsectionGetNotificationtestsV1ResponseMPayloadTest.php
 test/Model/NotificationsectionGetNotificationtestsV1ResponseTest.php
 test/Model/NotificationsubsectionResponseTest.php
+test/Model/NotificationtestGetElementsV1ResponseAllOfTest.php
+test/Model/NotificationtestGetElementsV1ResponseMPayloadTest.php
+test/Model/NotificationtestGetElementsV1ResponseTest.php
 test/Model/NotificationtestResponseTest.php
 test/Model/PhoneRequestCompoundTest.php
 test/Model/PhoneRequestTest.php

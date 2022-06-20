@@ -231,7 +231,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
 );
 $sSelector = 'sSelector_example'; // string | The type of Ezsigntemplate to return
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 
 try {
     $result = $apiInstance->ezsigntemplateGetAutocompleteV1($sSelector, $sQuery, $acceptLanguage);
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **string**| The type of Ezsigntemplate to return |
  **sQuery** | **string**| Allow to filter the returned results | [optional]
- **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+ **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
 
 ### Return type
 
@@ -298,7 +298,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 56; // int
-$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
  **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional]
  **iRowMax** | **int**|  | [optional]
  **iRowOffset** | **int**|  | [optional]
- **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+ **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
  **sFilter** | **string**|  | [optional]
 
 ### Return type

@@ -38,7 +38,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectFranchisebrokerApi(
 );
 $sSelector = 'sSelector_example'; // string | The type of Franchisebrokers to return
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 
 try {
     $result = $apiInstance->franchisebrokerGetAutocompleteV1($sSelector, $sQuery, $acceptLanguage);
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **string**| The type of Franchisebrokers to return |
  **sQuery** | **string**| Allow to filter the returned results | [optional]
- **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+ **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
 
 ### Return type
 

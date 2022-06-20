@@ -486,7 +486,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksendApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 56; // int
-$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
  **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional]
  **iRowMax** | **int**|  | [optional]
  **iRowOffset** | **int**|  | [optional]
- **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+ **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
  **sFilter** | **string**|  | [optional]
 
 ### Return type
