@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **sEzsigndocumentName** | **string** | The name of the document that will be presented to Ezsignfoldersignerassociations |
 **pkiEzsigndocumentID** | **int** | The unique ID of the Ezsigndocument |
 **eEzsigndocumentStep** | [**\eZmaxAPI\Model\FieldEEzsigndocumentStep**](FieldEEzsigndocumentStep.md) |  |
-**dtEzsigndocumentFirstsend** | **string** | The date and time when the Ezsigndocument was first sent. |
-**dtEzsigndocumentLastsend** | **string** | The date and time when the Ezsigndocument was sent the last time. |
+**dtEzsigndocumentFirstsend** | **string** | The date and time when the Ezsigndocument was first sent. | [optional]
+**dtEzsigndocumentLastsend** | **string** | The date and time when the Ezsigndocument was sent the last time. | [optional]
 **iEzsigndocumentOrder** | **int** | The order in which the Ezsigndocument will be presented to the signatory in the Ezsignfolder. |
 **iEzsigndocumentPagetotal** | **int** | The number of pages in the Ezsigndocument. |
 **iEzsigndocumentSignaturesigned** | **int** | The number of signatures that were signed in the document. |
