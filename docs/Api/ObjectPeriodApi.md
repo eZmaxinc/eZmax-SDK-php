@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `periodGetAutocompleteV1()`
 
 ```php
-periodGetAutocompleteV1($sSelector, $sQuery, $acceptLanguage): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
+periodGetAutocompleteV1($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
 ```
 
 Retrieve Periods and IDs
@@ -37,11 +37,12 @@ $apiInstance = new eZmaxAPI\Api\ObjectPeriodApi(
     $config
 );
 $sSelector = 'sSelector_example'; // string | The types of Periods to return
+$eFilterActive = 'Active'; // string | Specify which results we want to display.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
 $acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 
 try {
-    $result = $apiInstance->periodGetAutocompleteV1($sSelector, $sQuery, $acceptLanguage);
+    $result = $apiInstance->periodGetAutocompleteV1($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectPeriodApi->periodGetAutocompleteV1: ', $e->getMessage(), PHP_EOL;
@@ -53,6 +54,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **string**| The types of Periods to return |
+ **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
  **sQuery** | **string**| Allow to filter the returned results | [optional]
  **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
 

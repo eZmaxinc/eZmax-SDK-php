@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder |
 **dtEzsigndocumentDuedate** | **string** | The maximum date and time at which the Ezsigndocument can be signed. |
+**dtEzsignformCompleted** | **string** | The date and time at which the Ezsignform has been completed. | [optional]
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **sEzsigndocumentName** | **string** | The name of the document that will be presented to Ezsignfoldersignerassociations |
 **pkiEzsigndocumentID** | **int** | The unique ID of the Ezsigndocument |
