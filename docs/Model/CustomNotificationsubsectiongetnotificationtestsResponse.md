@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiNotificationsubsectionID** | **int** | The unique ID of the Notificationsubsection |
 **fkiNotificationsectionID** | **int** | The unique ID of the Notificationsection |
+**objNotificationsubsectionName** | [**\eZmaxAPI\Model\MultilingualNotificationsubsectionName**](MultilingualNotificationsubsectionName.md) |  | [optional]
+**sNotificationsectionNameX** | **string** | The name of the Notificationsection in the language of the requester | [optional]
 **sNotificationsubsectionNameX** | **string** | The name of the Notificationsubsection in the language of the requester |
 **aObjNotificationtest** | [**\eZmaxAPI\Model\CustomNotificationtestgetnotificationtestsResponse[]**](CustomNotificationtestgetnotificationtestsResponse.md) |  |
 

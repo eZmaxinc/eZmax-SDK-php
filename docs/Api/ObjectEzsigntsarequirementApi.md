@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `ezsigntsarequirementGetAutocompleteV1()`
 
 ```php
-ezsigntsarequirementGetAutocompleteV1($sSelector, $fkiEzsignfoldertypeID, $sQuery, $acceptLanguage): \eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response
+ezsigntsarequirementGetAutocompleteV1($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response
 ```
 
 Retrieve Ezsigntsarequirements and IDs
@@ -38,11 +38,12 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntsarequirementApi(
 );
 $sSelector = 'sSelector_example'; // string | The type of Ezsigntsarequirements to return
 $fkiEzsignfoldertypeID = 56; // int
+$eFilterActive = 'Active'; // string | Specify which results we want to display.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
 $acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 
 try {
-    $result = $apiInstance->ezsigntsarequirementGetAutocompleteV1($sSelector, $fkiEzsignfoldertypeID, $sQuery, $acceptLanguage);
+    $result = $apiInstance->ezsigntsarequirementGetAutocompleteV1($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectEzsigntsarequirementApi->ezsigntsarequirementGetAutocompleteV1: ', $e->getMessage(), PHP_EOL;
@@ -55,6 +56,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **string**| The type of Ezsigntsarequirements to return |
  **fkiEzsignfoldertypeID** | **int**|  | [optional]
+ **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
  **sQuery** | **string**| Allow to filter the returned results | [optional]
  **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
 
