@@ -1,10 +1,10 @@
 # eZmaxAPI\ObjectFranchisebrokerApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**franchisebrokerGetAutocompleteV1()**](ObjectFranchisebrokerApi.md#franchisebrokerGetAutocompleteV1) | **GET** /1/object/franchisebroker/getAutocomplete/{sSelector} | Retrieve Franchisebrokers and IDs
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**franchisebrokerGetAutocompleteV1()**](ObjectFranchisebrokerApi.md#franchisebrokerGetAutocompleteV1) | **GET** /1/object/franchisebroker/getAutocomplete/{sSelector} | Retrieve Franchisebrokers and IDs |
 
 
 ## `franchisebrokerGetAutocompleteV1()`
@@ -51,12 +51,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sSelector** | **string**| The type of Franchisebrokers to return |
- **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
- **sQuery** | **string**| Allow to filter the returned results | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sSelector** | **string**| The type of Franchisebrokers to return | |
+| **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
+| **sQuery** | **string**| Allow to filter the returned results | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 
 ### Return type
 

@@ -1,11 +1,11 @@
 # eZmaxAPI\ModuleEzsignApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsignSuggestSignersV1()**](ModuleEzsignApi.md#ezsignSuggestSignersV1) | **GET** /1/module/ezsign/suggestSigners | Suggest signers
-[**ezsignSuggestTemplatesV1()**](ModuleEzsignApi.md#ezsignSuggestTemplatesV1) | **GET** /1/module/ezsign/suggestTemplates | Suggest templates
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsignSuggestSignersV1()**](ModuleEzsignApi.md#ezsignSuggestSignersV1) | **GET** /1/module/ezsign/suggestSigners | Suggest signers |
+| [**ezsignSuggestTemplatesV1()**](ModuleEzsignApi.md#ezsignSuggestTemplatesV1) | **GET** /1/module/ezsign/suggestTemplates | Suggest templates |
 
 
 ## `ezsignSuggestSignersV1()`
@@ -108,9 +108,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fkiEzsignfoldertypeID** | **int**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **fkiEzsignfoldertypeID** | **int**|  | [optional] |
 
 ### Return type
 

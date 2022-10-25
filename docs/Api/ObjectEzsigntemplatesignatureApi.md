@@ -1,13 +1,13 @@
 # eZmaxAPI\ObjectEzsigntemplatesignatureApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsigntemplatesignatureCreateObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureCreateObjectV1) | **POST** /1/object/ezsigntemplatesignature | Create a new Ezsigntemplatesignature
-[**ezsigntemplatesignatureDeleteObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Delete an existing Ezsigntemplatesignature
-[**ezsigntemplatesignatureEditObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureEditObjectV1) | **PUT** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Edit an existing Ezsigntemplatesignature
-[**ezsigntemplatesignatureGetObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureGetObjectV1) | **GET** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Retrieve an existing Ezsigntemplatesignature
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsigntemplatesignatureCreateObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureCreateObjectV1) | **POST** /1/object/ezsigntemplatesignature | Create a new Ezsigntemplatesignature |
+| [**ezsigntemplatesignatureDeleteObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Delete an existing Ezsigntemplatesignature |
+| [**ezsigntemplatesignatureEditObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureEditObjectV1) | **PUT** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Edit an existing Ezsigntemplatesignature |
+| [**ezsigntemplatesignatureGetObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureGetObjectV1) | **GET** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Retrieve an existing Ezsigntemplatesignature |
 
 
 ## `ezsigntemplatesignatureCreateObjectV1()`
@@ -51,9 +51,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsigntemplatesignatureCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV1Request**](../Model/EzsigntemplatesignatureCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigntemplatesignatureCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV1Request**](../Model/EzsigntemplatesignatureCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -113,9 +113,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatesignatureID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatesignatureID** | **int**|  | |
 
 ### Return type
 
@@ -176,10 +176,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatesignatureID** | **int**|  |
- **ezsigntemplatesignatureEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV1Request**](../Model/EzsigntemplatesignatureEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatesignatureID** | **int**|  | |
+| **ezsigntemplatesignatureEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV1Request**](../Model/EzsigntemplatesignatureEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -239,9 +239,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatesignatureID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatesignatureID** | **int**|  | |
 
 ### Return type
 

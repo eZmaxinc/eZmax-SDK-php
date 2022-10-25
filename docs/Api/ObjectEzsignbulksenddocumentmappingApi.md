@@ -1,12 +1,12 @@
 # eZmaxAPI\ObjectEzsignbulksenddocumentmappingApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsignbulksenddocumentmappingCreateObjectV1()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingCreateObjectV1) | **POST** /1/object/ezsignbulksenddocumentmapping | Create a new Ezsignbulksenddocumentmapping
-[**ezsignbulksenddocumentmappingDeleteObjectV1()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingDeleteObjectV1) | **DELETE** /1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Delete an existing Ezsignbulksenddocumentmapping
-[**ezsignbulksenddocumentmappingGetObjectV1()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingGetObjectV1) | **GET** /1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Retrieve an existing Ezsignbulksenddocumentmapping
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsignbulksenddocumentmappingCreateObjectV1()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingCreateObjectV1) | **POST** /1/object/ezsignbulksenddocumentmapping | Create a new Ezsignbulksenddocumentmapping |
+| [**ezsignbulksenddocumentmappingDeleteObjectV1()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingDeleteObjectV1) | **DELETE** /1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Delete an existing Ezsignbulksenddocumentmapping |
+| [**ezsignbulksenddocumentmappingGetObjectV1()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingGetObjectV1) | **GET** /1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Retrieve an existing Ezsignbulksenddocumentmapping |
 
 
 ## `ezsignbulksenddocumentmappingCreateObjectV1()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsignbulksenddocumentmappingCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Request**](../Model/EzsignbulksenddocumentmappingCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignbulksenddocumentmappingCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Request**](../Model/EzsignbulksenddocumentmappingCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -112,9 +112,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksenddocumentmappingID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksenddocumentmappingID** | **int**|  | |
 
 ### Return type
 
@@ -174,9 +174,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksenddocumentmappingID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksenddocumentmappingID** | **int**|  | |
 
 ### Return type
 

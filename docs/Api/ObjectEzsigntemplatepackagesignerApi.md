@@ -1,13 +1,13 @@
 # eZmaxAPI\ObjectEzsigntemplatepackagesignerApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsigntemplatepackagesignerCreateObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerCreateObjectV1) | **POST** /1/object/ezsigntemplatepackagesigner | Create a new Ezsigntemplatepackagesigner
-[**ezsigntemplatepackagesignerDeleteObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Delete an existing Ezsigntemplatepackagesigner
-[**ezsigntemplatepackagesignerEditObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerEditObjectV1) | **PUT** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Edit an existing Ezsigntemplatepackagesigner
-[**ezsigntemplatepackagesignerGetObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerGetObjectV1) | **GET** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Retrieve an existing Ezsigntemplatepackagesigner
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsigntemplatepackagesignerCreateObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerCreateObjectV1) | **POST** /1/object/ezsigntemplatepackagesigner | Create a new Ezsigntemplatepackagesigner |
+| [**ezsigntemplatepackagesignerDeleteObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Delete an existing Ezsigntemplatepackagesigner |
+| [**ezsigntemplatepackagesignerEditObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerEditObjectV1) | **PUT** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Edit an existing Ezsigntemplatepackagesigner |
+| [**ezsigntemplatepackagesignerGetObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerGetObjectV1) | **GET** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Retrieve an existing Ezsigntemplatepackagesigner |
 
 
 ## `ezsigntemplatepackagesignerCreateObjectV1()`
@@ -51,9 +51,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsigntemplatepackagesignerCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackagesignerCreateObjectV1Request**](../Model/EzsigntemplatepackagesignerCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigntemplatepackagesignerCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackagesignerCreateObjectV1Request**](../Model/EzsigntemplatepackagesignerCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -113,9 +113,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatepackagesignerID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackagesignerID** | **int**|  | |
 
 ### Return type
 
@@ -176,10 +176,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatepackagesignerID** | **int**|  |
- **ezsigntemplatepackagesignerEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackagesignerEditObjectV1Request**](../Model/EzsigntemplatepackagesignerEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackagesignerID** | **int**|  | |
+| **ezsigntemplatepackagesignerEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackagesignerEditObjectV1Request**](../Model/EzsigntemplatepackagesignerEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -239,9 +239,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatepackagesignerID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackagesignerID** | **int**|  | |
 
 ### Return type
 

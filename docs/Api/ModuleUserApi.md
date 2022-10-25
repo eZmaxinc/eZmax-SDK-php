@@ -1,10 +1,10 @@
 # eZmaxAPI\ModuleUserApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**userCreateEzsignuserV1()**](ModuleUserApi.md#userCreateEzsignuserV1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**userCreateEzsignuserV1()**](ModuleUserApi.md#userCreateEzsignuserV1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser |
 
 
 ## `userCreateEzsignuserV1()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userCreateEzsignuserV1Request** | [**\eZmaxAPI\Model\UserCreateEzsignuserV1Request[]**](../Model/UserCreateEzsignuserV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userCreateEzsignuserV1Request** | [**\eZmaxAPI\Model\UserCreateEzsignuserV1Request[]**](../Model/UserCreateEzsignuserV1Request.md)|  | |
 
 ### Return type
 

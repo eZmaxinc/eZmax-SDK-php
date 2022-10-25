@@ -1,14 +1,15 @@
 # eZmaxAPI\ObjectEzsignfoldertypeApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsignfoldertypeCreateObjectV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeCreateObjectV1) | **POST** /1/object/ezsignfoldertype | Create a new Ezsignfoldertype
-[**ezsignfoldertypeEditObjectV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeEditObjectV1) | **PUT** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype
-[**ezsignfoldertypeGetAutocompleteV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetAutocompleteV1) | **GET** /1/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
-[**ezsignfoldertypeGetListV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetListV1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list
-[**ezsignfoldertypeGetObjectV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetObjectV1) | **GET** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsignfoldertypeCreateObjectV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeCreateObjectV1) | **POST** /1/object/ezsignfoldertype | Create a new Ezsignfoldertype |
+| [**ezsignfoldertypeEditObjectV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeEditObjectV1) | **PUT** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype |
+| [**ezsignfoldertypeGetAutocompleteV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetAutocompleteV1) | **GET** /1/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs |
+| [**ezsignfoldertypeGetAutocompleteV2()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetAutocompleteV2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs |
+| [**ezsignfoldertypeGetListV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetListV1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list |
+| [**ezsignfoldertypeGetObjectV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetObjectV1) | **GET** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype |
 
 
 ## `ezsignfoldertypeCreateObjectV1()`
@@ -52,9 +53,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsignfoldertypeCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignfoldertypeCreateObjectV1Request**](../Model/EzsignfoldertypeCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignfoldertypeCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignfoldertypeCreateObjectV1Request**](../Model/EzsignfoldertypeCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -115,10 +116,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldertypeID** | **int**|  |
- **ezsignfoldertypeEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignfoldertypeEditObjectV1Request**](../Model/EzsignfoldertypeEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfoldertypeID** | **int**|  | |
+| **ezsignfoldertypeEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignfoldertypeEditObjectV1Request**](../Model/EzsignfoldertypeEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -181,16 +182,84 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sSelector** | **string**| The type of Ezsignfoldertypes to return |
- **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
- **sQuery** | **string**| Allow to filter the returned results | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sSelector** | **string**| The type of Ezsignfoldertypes to return | |
+| **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
+| **sQuery** | **string**| Allow to filter the returned results | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 
 ### Return type
 
 [**\eZmaxAPI\Model\CommonGetAutocompleteV1Response**](../Model/CommonGetAutocompleteV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfoldertypeGetAutocompleteV2()`
+
+```php
+ezsignfoldertypeGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\EzsignfoldertypeGetAutocompleteV2Response
+```
+
+Retrieve Ezsignfoldertypes and IDs
+
+Get the list of Ezsignfoldertype to be used in a dropdown or autocomplete control.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldertypeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$sSelector = 'sSelector_example'; // string | The type of Ezsignfoldertypes to return
+$eFilterActive = 'Active'; // string | Specify which results we want to display.
+$sQuery = 'sQuery_example'; // string | Allow to filter the returned results
+$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+
+try {
+    $result = $apiInstance->ezsignfoldertypeGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeGetAutocompleteV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sSelector** | **string**| The type of Ezsignfoldertypes to return | |
+| **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
+| **sQuery** | **string**| Allow to filter the returned results | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfoldertypeGetAutocompleteV2Response**](../Model/EzsignfoldertypeGetAutocompleteV2Response.md)
 
 ### Authorization
 
@@ -250,13 +319,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional]
- **iRowMax** | **int**|  | [optional]
- **iRowOffset** | **int**|  | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
- **sFilter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
+| **iRowMax** | **int**|  | [optional] |
+| **iRowOffset** | **int**|  | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **sFilter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -316,9 +385,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldertypeID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfoldertypeID** | **int**|  | |
 
 ### Return type
 

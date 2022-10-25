@@ -1,16 +1,16 @@
 # eZmaxAPI\ObjectWebhookApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**webhookCreateObjectV1()**](ObjectWebhookApi.md#webhookCreateObjectV1) | **POST** /1/object/webhook | Create a new Webhook
-[**webhookDeleteObjectV1()**](ObjectWebhookApi.md#webhookDeleteObjectV1) | **DELETE** /1/object/webhook/{pkiWebhookID} | Delete an existing Webhook
-[**webhookEditObjectV1()**](ObjectWebhookApi.md#webhookEditObjectV1) | **PUT** /1/object/webhook/{pkiWebhookID} | Edit an existing Webhook
-[**webhookGetHistoryV1()**](ObjectWebhookApi.md#webhookGetHistoryV1) | **GET** /1/object/webhook/{pkiWebhookID}/getHistory | Retrieve the logs for recent Webhook calls
-[**webhookGetListV1()**](ObjectWebhookApi.md#webhookGetListV1) | **GET** /1/object/webhook/getList | Retrieve Webhook list
-[**webhookGetObjectV1()**](ObjectWebhookApi.md#webhookGetObjectV1) | **GET** /1/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook
-[**webhookTestUrlV1()**](ObjectWebhookApi.md#webhookTestUrlV1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**webhookCreateObjectV1()**](ObjectWebhookApi.md#webhookCreateObjectV1) | **POST** /1/object/webhook | Create a new Webhook |
+| [**webhookDeleteObjectV1()**](ObjectWebhookApi.md#webhookDeleteObjectV1) | **DELETE** /1/object/webhook/{pkiWebhookID} | Delete an existing Webhook |
+| [**webhookEditObjectV1()**](ObjectWebhookApi.md#webhookEditObjectV1) | **PUT** /1/object/webhook/{pkiWebhookID} | Edit an existing Webhook |
+| [**webhookGetHistoryV1()**](ObjectWebhookApi.md#webhookGetHistoryV1) | **GET** /1/object/webhook/{pkiWebhookID}/getHistory | Retrieve the logs for recent Webhook calls |
+| [**webhookGetListV1()**](ObjectWebhookApi.md#webhookGetListV1) | **GET** /1/object/webhook/getList | Retrieve Webhook list |
+| [**webhookGetObjectV1()**](ObjectWebhookApi.md#webhookGetObjectV1) | **GET** /1/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook |
+| [**webhookTestV1()**](ObjectWebhookApi.md#webhookTestV1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url |
 
 
 ## `webhookCreateObjectV1()`
@@ -54,9 +54,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookCreateObjectV1Request** | [**\eZmaxAPI\Model\WebhookCreateObjectV1Request**](../Model/WebhookCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **webhookCreateObjectV1Request** | [**\eZmaxAPI\Model\WebhookCreateObjectV1Request**](../Model/WebhookCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -116,9 +116,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiWebhookID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiWebhookID** | **int**|  | |
 
 ### Return type
 
@@ -179,10 +179,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiWebhookID** | **int**|  |
- **webhookEditObjectV1Request** | [**\eZmaxAPI\Model\WebhookEditObjectV1Request**](../Model/WebhookEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiWebhookID** | **int**|  | |
+| **webhookEditObjectV1Request** | [**\eZmaxAPI\Model\WebhookEditObjectV1Request**](../Model/WebhookEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -243,10 +243,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiWebhookID** | **int**|  |
- **eWebhookHistoryinterval** | **string**| The number of days to return |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiWebhookID** | **int**|  | |
+| **eWebhookHistoryinterval** | **string**| The number of days to return | |
 
 ### Return type
 
@@ -310,13 +310,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional]
- **iRowMax** | **int**|  | [optional]
- **iRowOffset** | **int**|  | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
- **sFilter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
+| **iRowMax** | **int**|  | [optional] |
+| **iRowOffset** | **int**|  | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **sFilter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -376,9 +376,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiWebhookID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiWebhookID** | **int**|  | |
 
 ### Return type
 
@@ -397,10 +397,10 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `webhookTestUrlV1()`
+## `webhookTestV1()`
 
 ```php
-webhookTestUrlV1($pkiWebhookID): \eZmaxAPI\Model\WebhookTestV1Response
+webhookTestV1($pkiWebhookID, $body): \eZmaxAPI\Model\WebhookTestV1Response
 ```
 
 Test the Webhook by calling the Url
@@ -427,20 +427,22 @@ $apiInstance = new eZmaxAPI\Api\ObjectWebhookApi(
     $config
 );
 $pkiWebhookID = 56; // int
+$body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->webhookTestUrlV1($pkiWebhookID);
+    $result = $apiInstance->webhookTestV1($pkiWebhookID, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectWebhookApi->webhookTestUrlV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectWebhookApi->webhookTestV1: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiWebhookID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiWebhookID** | **int**|  | |
+| **body** | **object**|  | |
 
 ### Return type
 
@@ -452,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

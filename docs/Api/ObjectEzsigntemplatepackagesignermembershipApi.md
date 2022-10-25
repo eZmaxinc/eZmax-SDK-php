@@ -1,12 +1,12 @@
 # eZmaxAPI\ObjectEzsigntemplatepackagesignermembershipApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsigntemplatepackagesignermembershipCreateObjectV1()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipCreateObjectV1) | **POST** /1/object/ezsigntemplatepackagesignermembership | Create a new Ezsigntemplatepackagesignermembership
-[**ezsigntemplatepackagesignermembershipDeleteObjectV1()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Delete an existing Ezsigntemplatepackagesignermembership
-[**ezsigntemplatepackagesignermembershipGetObjectV1()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipGetObjectV1) | **GET** /1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Retrieve an existing Ezsigntemplatepackagesignermembership
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsigntemplatepackagesignermembershipCreateObjectV1()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipCreateObjectV1) | **POST** /1/object/ezsigntemplatepackagesignermembership | Create a new Ezsigntemplatepackagesignermembership |
+| [**ezsigntemplatepackagesignermembershipDeleteObjectV1()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Delete an existing Ezsigntemplatepackagesignermembership |
+| [**ezsigntemplatepackagesignermembershipGetObjectV1()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipGetObjectV1) | **GET** /1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Retrieve an existing Ezsigntemplatepackagesignermembership |
 
 
 ## `ezsigntemplatepackagesignermembershipCreateObjectV1()`
@@ -50,9 +50,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsigntemplatepackagesignermembershipCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackagesignermembershipCreateObjectV1Request**](../Model/EzsigntemplatepackagesignermembershipCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigntemplatepackagesignermembershipCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackagesignermembershipCreateObjectV1Request**](../Model/EzsigntemplatepackagesignermembershipCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -112,9 +112,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatepackagesignermembershipID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackagesignermembershipID** | **int**|  | |
 
 ### Return type
 
@@ -174,9 +174,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatepackagesignermembershipID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackagesignermembershipID** | **int**|  | |
 
 ### Return type
 

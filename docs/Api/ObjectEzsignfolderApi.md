@@ -1,29 +1,29 @@
 # eZmaxAPI\ObjectEzsignfolderApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsignfolderArchiveV1()**](ObjectEzsignfolderApi.md#ezsignfolderArchiveV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/archive | Archive the Ezsignfolder
-[**ezsignfolderBatchDownloadV1()**](ObjectEzsignfolderApi.md#ezsignfolderBatchDownloadV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/batchDownload | Download multiples files from an Ezsignfolder
-[**ezsignfolderCreateObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderCreateObjectV1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
-[**ezsignfolderCreateObjectV2()**](ObjectEzsignfolderApi.md#ezsignfolderCreateObjectV2) | **POST** /2/object/ezsignfolder | Create a new Ezsignfolder
-[**ezsignfolderDeleteObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
-[**ezsignfolderDisposeEzsignfoldersV1()**](ObjectEzsignfolderApi.md#ezsignfolderDisposeEzsignfoldersV1) | **POST** /1/object/ezsignfolder/disposeEzsignfolders | Dispose Ezsignfolders
-[**ezsignfolderDisposeV1()**](ObjectEzsignfolderApi.md#ezsignfolderDisposeV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/dispose | Dispose the Ezsignfolder
-[**ezsignfolderEditObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderEditObjectV1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder
-[**ezsignfolderGetActionableElementsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
-[**ezsignfolderGetEzsigndocumentsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsigndocumentsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
-[**ezsignfolderGetEzsignfoldersignerassociationsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsignfoldersignerassociationsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
-[**ezsignfolderGetFormsDataV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetFormsDataV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data
-[**ezsignfolderGetListV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetListV1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list
-[**ezsignfolderGetObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
-[**ezsignfolderImportEzsignfoldersignerassociationsV1()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsignfoldersignerassociationsV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsignfoldersignerassociations | Import an existing Ezsignfoldersignerassociation into this Ezsignfolder
-[**ezsignfolderImportEzsigntemplatepackageV1()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsigntemplatepackageV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder.
-[**ezsignfolderReorderV1()**](ObjectEzsignfolderApi.md#ezsignfolderReorderV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder
-[**ezsignfolderSendV1()**](ObjectEzsignfolderApi.md#ezsignfolderSendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
-[**ezsignfolderSendV2()**](ObjectEzsignfolderApi.md#ezsignfolderSendV2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
-[**ezsignfolderUnsendV1()**](ObjectEzsignfolderApi.md#ezsignfolderUnsendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend | Unsend the Ezsignfolder
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsignfolderArchiveV1()**](ObjectEzsignfolderApi.md#ezsignfolderArchiveV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/archive | Archive the Ezsignfolder |
+| [**ezsignfolderBatchDownloadV1()**](ObjectEzsignfolderApi.md#ezsignfolderBatchDownloadV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/batchDownload | Download multiples files from an Ezsignfolder |
+| [**ezsignfolderCreateObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderCreateObjectV1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder |
+| [**ezsignfolderCreateObjectV2()**](ObjectEzsignfolderApi.md#ezsignfolderCreateObjectV2) | **POST** /2/object/ezsignfolder | Create a new Ezsignfolder |
+| [**ezsignfolderDeleteObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder |
+| [**ezsignfolderDisposeEzsignfoldersV1()**](ObjectEzsignfolderApi.md#ezsignfolderDisposeEzsignfoldersV1) | **POST** /1/object/ezsignfolder/disposeEzsignfolders | Dispose Ezsignfolders |
+| [**ezsignfolderDisposeV1()**](ObjectEzsignfolderApi.md#ezsignfolderDisposeV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/dispose | Dispose the Ezsignfolder |
+| [**ezsignfolderEditObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderEditObjectV1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder |
+| [**ezsignfolderGetActionableElementsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
+| [**ezsignfolderGetEzsigndocumentsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsigndocumentsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments |
+| [**ezsignfolderGetEzsignfoldersignerassociationsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsignfoldersignerassociationsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations |
+| [**ezsignfolderGetFormsDataV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetFormsDataV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data |
+| [**ezsignfolderGetListV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetListV1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list |
+| [**ezsignfolderGetObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder |
+| [**ezsignfolderImportEzsignfoldersignerassociationsV1()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsignfoldersignerassociationsV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsignfoldersignerassociations | Import an existing Ezsignfoldersignerassociation into this Ezsignfolder |
+| [**ezsignfolderImportEzsigntemplatepackageV1()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsigntemplatepackageV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder. |
+| [**ezsignfolderReorderV1()**](ObjectEzsignfolderApi.md#ezsignfolderReorderV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder |
+| [**ezsignfolderSendV1()**](ObjectEzsignfolderApi.md#ezsignfolderSendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
+| [**ezsignfolderSendV2()**](ObjectEzsignfolderApi.md#ezsignfolderSendV2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
+| [**ezsignfolderUnsendV1()**](ObjectEzsignfolderApi.md#ezsignfolderUnsendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend | Unsend the Ezsignfolder |
 
 
 ## `ezsignfolderArchiveV1()`
@@ -68,10 +68,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **body** | **object**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **body** | **object**|  | |
 
 ### Return type
 
@@ -130,10 +130,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **ezsignfolderBatchDownloadV1Request** | [**\eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request**](../Model/EzsignfolderBatchDownloadV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **ezsignfolderBatchDownloadV1Request** | [**\eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request**](../Model/EzsignfolderBatchDownloadV1Request.md)|  | |
 
 ### Return type
 
@@ -193,9 +193,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsignfolderCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[]**](../Model/EzsignfolderCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignfolderCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[]**](../Model/EzsignfolderCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -255,9 +255,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsignfolderCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsignfolderCreateObjectV2Request**](../Model/EzsignfolderCreateObjectV2Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignfolderCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsignfolderCreateObjectV2Request**](../Model/EzsignfolderCreateObjectV2Request.md)|  | |
 
 ### Return type
 
@@ -315,9 +315,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
 
 ### Return type
 
@@ -377,9 +377,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsignfolderDisposeEzsignfoldersV1Request** | [**\eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Request**](../Model/EzsignfolderDisposeEzsignfoldersV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignfolderDisposeEzsignfoldersV1Request** | [**\eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Request**](../Model/EzsignfolderDisposeEzsignfoldersV1Request.md)|  | |
 
 ### Return type
 
@@ -440,10 +440,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **body** | **object**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **body** | **object**|  | |
 
 ### Return type
 
@@ -504,10 +504,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **ezsignfolderEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignfolderEditObjectV1Request**](../Model/EzsignfolderEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **ezsignfolderEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignfolderEditObjectV1Request**](../Model/EzsignfolderEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -567,9 +567,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
 
 ### Return type
 
@@ -629,9 +629,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
 
 ### Return type
 
@@ -691,9 +691,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
 
 ### Return type
 
@@ -753,9 +753,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
 
 ### Return type
 
@@ -819,13 +819,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional]
- **iRowMax** | **int**|  | [optional]
- **iRowOffset** | **int**|  | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
- **sFilter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
+| **iRowMax** | **int**|  | [optional] |
+| **iRowOffset** | **int**|  | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **sFilter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -883,9 +883,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
 
 ### Return type
 
@@ -946,10 +946,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **ezsignfolderImportEzsignfoldersignerassociationsV1Request** | [**\eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Request**](../Model/EzsignfolderImportEzsignfoldersignerassociationsV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **ezsignfolderImportEzsignfoldersignerassociationsV1Request** | [**\eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Request**](../Model/EzsignfolderImportEzsignfoldersignerassociationsV1Request.md)|  | |
 
 ### Return type
 
@@ -1010,10 +1010,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **ezsignfolderImportEzsigntemplatepackageV1Request** | [**\eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Request**](../Model/EzsignfolderImportEzsigntemplatepackageV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **ezsignfolderImportEzsigntemplatepackageV1Request** | [**\eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Request**](../Model/EzsignfolderImportEzsigntemplatepackageV1Request.md)|  | |
 
 ### Return type
 
@@ -1072,10 +1072,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **ezsignfolderReorderV1Request** | [**\eZmaxAPI\Model\EzsignfolderReorderV1Request**](../Model/EzsignfolderReorderV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **ezsignfolderReorderV1Request** | [**\eZmaxAPI\Model\EzsignfolderReorderV1Request**](../Model/EzsignfolderReorderV1Request.md)|  | |
 
 ### Return type
 
@@ -1136,10 +1136,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **ezsignfolderSendV1Request** | [**\eZmaxAPI\Model\EzsignfolderSendV1Request**](../Model/EzsignfolderSendV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **ezsignfolderSendV1Request** | [**\eZmaxAPI\Model\EzsignfolderSendV1Request**](../Model/EzsignfolderSendV1Request.md)|  | |
 
 ### Return type
 
@@ -1200,10 +1200,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **ezsignfolderSendV2Request** | [**\eZmaxAPI\Model\EzsignfolderSendV2Request**](../Model/EzsignfolderSendV2Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **ezsignfolderSendV2Request** | [**\eZmaxAPI\Model\EzsignfolderSendV2Request**](../Model/EzsignfolderSendV2Request.md)|  | |
 
 ### Return type
 
@@ -1264,10 +1264,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **int**|  |
- **body** | **object**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **body** | **object**|  | |
 
 ### Return type
 

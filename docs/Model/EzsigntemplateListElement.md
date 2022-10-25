@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **fkiEzsignfoldertypeID** | **int** | The unique ID of the Ezsignfoldertype. |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **sEzsigntemplateDescription** | **string** | The description of the Ezsigntemplate |
-**iEzsigntemplatedocumentPagetotal** | **int** | The number of pages in the Ezsigntemplatedocument. |
-**iEzsigntemplateSignaturetotal** | **int** | The number of total signatures in the Ezsigntemplate. |
+**iEzsigntemplatedocumentPagetotal** | **int** | The number of pages in the Ezsigntemplatedocument. | [optional]
+**iEzsigntemplateSignaturetotal** | **int** | The number of total signatures in the Ezsigntemplate. | [optional]
+**iEzsigntemplateFormfieldtotal** | **int** | The number of total form fields in the Ezsigntemplate. | [optional]
 **bEzsigntemplateIncomplete** | **bool** | Indicate the Ezsigntemplate is incomplete and cannot be used |
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester |
 

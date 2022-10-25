@@ -1,16 +1,17 @@
 # eZmaxAPI\ObjectEzsigntemplatepackageApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsigntemplatepackageCreateObjectV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageCreateObjectV1) | **POST** /1/object/ezsigntemplatepackage | Create a new Ezsigntemplatepackage
-[**ezsigntemplatepackageDeleteObjectV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Delete an existing Ezsigntemplatepackage
-[**ezsigntemplatepackageEditEzsigntemplatepackagesignersV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageEditEzsigntemplatepackagesignersV1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners | Edit multiple Ezsigntemplatepackagesigners
-[**ezsigntemplatepackageEditObjectV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageEditObjectV1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Edit an existing Ezsigntemplatepackage
-[**ezsigntemplatepackageGetAutocompleteV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageGetAutocompleteV1) | **GET** /1/object/ezsigntemplatepackage/getAutocomplete/{sSelector} | Retrieve Ezsigntemplatepackages and IDs
-[**ezsigntemplatepackageGetListV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageGetListV1) | **GET** /1/object/ezsigntemplatepackage/getList | Retrieve Ezsigntemplatepackage list
-[**ezsigntemplatepackageGetObjectV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageGetObjectV1) | **GET** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Retrieve an existing Ezsigntemplatepackage
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsigntemplatepackageCreateObjectV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageCreateObjectV1) | **POST** /1/object/ezsigntemplatepackage | Create a new Ezsigntemplatepackage |
+| [**ezsigntemplatepackageDeleteObjectV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Delete an existing Ezsigntemplatepackage |
+| [**ezsigntemplatepackageEditEzsigntemplatepackagesignersV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageEditEzsigntemplatepackagesignersV1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners | Edit multiple Ezsigntemplatepackagesigners |
+| [**ezsigntemplatepackageEditObjectV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageEditObjectV1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Edit an existing Ezsigntemplatepackage |
+| [**ezsigntemplatepackageGetAutocompleteV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageGetAutocompleteV1) | **GET** /1/object/ezsigntemplatepackage/getAutocomplete/{sSelector} | Retrieve Ezsigntemplatepackages and IDs |
+| [**ezsigntemplatepackageGetAutocompleteV2()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageGetAutocompleteV2) | **GET** /2/object/ezsigntemplatepackage/getAutocomplete/{sSelector} | Retrieve Ezsigntemplatepackages and IDs |
+| [**ezsigntemplatepackageGetListV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageGetListV1) | **GET** /1/object/ezsigntemplatepackage/getList | Retrieve Ezsigntemplatepackage list |
+| [**ezsigntemplatepackageGetObjectV1()**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageGetObjectV1) | **GET** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Retrieve an existing Ezsigntemplatepackage |
 
 
 ## `ezsigntemplatepackageCreateObjectV1()`
@@ -54,9 +55,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsigntemplatepackageCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Request**](../Model/EzsigntemplatepackageCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigntemplatepackageCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackageCreateObjectV1Request**](../Model/EzsigntemplatepackageCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -116,9 +117,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatepackageID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackageID** | **int**|  | |
 
 ### Return type
 
@@ -179,10 +180,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatepackageID** | **int**|  |
- **ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request**](../Model/EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackageID** | **int**|  | |
+| **ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request**](../Model/EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request.md)|  | |
 
 ### Return type
 
@@ -243,10 +244,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatepackageID** | **int**|  |
- **ezsigntemplatepackageEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Request**](../Model/EzsigntemplatepackageEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackageID** | **int**|  | |
+| **ezsigntemplatepackageEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatepackageEditObjectV1Request**](../Model/EzsigntemplatepackageEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -309,16 +310,84 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sSelector** | **string**| The type of Ezsigntemplatepackages to return |
- **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
- **sQuery** | **string**| Allow to filter the returned results | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sSelector** | **string**| The type of Ezsigntemplatepackages to return | |
+| **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
+| **sQuery** | **string**| Allow to filter the returned results | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 
 ### Return type
 
 [**\eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response**](../Model/CommonGetAutocompleteDisabledV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigntemplatepackageGetAutocompleteV2()`
+
+```php
+ezsigntemplatepackageGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\EzsigntemplatepackageGetAutocompleteV2Response
+```
+
+Retrieve Ezsigntemplatepackages and IDs
+
+Get the list of Ezsigntemplatepackage to be used in a dropdown or autocomplete control.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatepackageApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$sSelector = 'sSelector_example'; // string | The type of Ezsigntemplatepackages to return
+$eFilterActive = 'Active'; // string | Specify which results we want to display.
+$sQuery = 'sQuery_example'; // string | Allow to filter the returned results
+$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+
+try {
+    $result = $apiInstance->ezsigntemplatepackageGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplatepackageApi->ezsigntemplatepackageGetAutocompleteV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sSelector** | **string**| The type of Ezsigntemplatepackages to return | |
+| **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
+| **sQuery** | **string**| Allow to filter the returned results | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplatepackageGetAutocompleteV2Response**](../Model/EzsigntemplatepackageGetAutocompleteV2Response.md)
 
 ### Authorization
 
@@ -378,13 +447,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional]
- **iRowMax** | **int**|  | [optional]
- **iRowOffset** | **int**|  | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
- **sFilter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
+| **iRowMax** | **int**|  | [optional] |
+| **iRowOffset** | **int**|  | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **sFilter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -444,9 +513,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatepackageID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackageID** | **int**|  | |
 
 ### Return type
 

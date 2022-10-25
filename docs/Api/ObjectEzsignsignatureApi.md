@@ -1,15 +1,15 @@
 # eZmaxAPI\ObjectEzsignsignatureApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsignsignatureCreateObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
-[**ezsignsignatureCreateObjectV2()**](ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV2) | **POST** /2/object/ezsignsignature | Create a new Ezsignsignature
-[**ezsignsignatureDeleteObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
-[**ezsignsignatureEditObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureEditObjectV1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature
-[**ezsignsignatureGetObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
-[**ezsignsignatureSignV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureSignV1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsignsignatureCreateObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature |
+| [**ezsignsignatureCreateObjectV2()**](ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV2) | **POST** /2/object/ezsignsignature | Create a new Ezsignsignature |
+| [**ezsignsignatureDeleteObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature |
+| [**ezsignsignatureEditObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureEditObjectV1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature |
+| [**ezsignsignatureGetObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
+| [**ezsignsignatureSignV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureSignV1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature |
 
 
 ## `ezsignsignatureCreateObjectV1()`
@@ -53,9 +53,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsignsignatureCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignsignatureCreateObjectV1Request[]**](../Model/EzsignsignatureCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignsignatureCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignsignatureCreateObjectV1Request[]**](../Model/EzsignsignatureCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -115,9 +115,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsignsignatureCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsignsignatureCreateObjectV2Request**](../Model/EzsignsignatureCreateObjectV2Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignsignatureCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsignsignatureCreateObjectV2Request**](../Model/EzsignsignatureCreateObjectV2Request.md)|  | |
 
 ### Return type
 
@@ -177,9 +177,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignsignatureID** | **int**|  | |
 
 ### Return type
 
@@ -240,10 +240,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **int**|  |
- **ezsignsignatureEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignsignatureEditObjectV1Request**](../Model/EzsignsignatureEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignsignatureID** | **int**|  | |
+| **ezsignsignatureEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignsignatureEditObjectV1Request**](../Model/EzsignsignatureEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -303,9 +303,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignsignatureID** | **int**|  | |
 
 ### Return type
 
@@ -366,10 +366,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **int**|  |
- **ezsignsignatureSignV1Request** | [**\eZmaxAPI\Model\EzsignsignatureSignV1Request**](../Model/EzsignsignatureSignV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignsignatureID** | **int**|  | |
+| **ezsignsignatureSignV1Request** | [**\eZmaxAPI\Model\EzsignsignatureSignV1Request**](../Model/EzsignsignatureSignV1Request.md)|  | |
 
 ### Return type
 
