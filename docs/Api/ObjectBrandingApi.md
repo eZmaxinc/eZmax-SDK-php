@@ -1,14 +1,15 @@
 # eZmaxAPI\ObjectBrandingApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**brandingCreateObjectV1()**](ObjectBrandingApi.md#brandingCreateObjectV1) | **POST** /1/object/branding | Create a new Branding
-[**brandingEditObjectV1()**](ObjectBrandingApi.md#brandingEditObjectV1) | **PUT** /1/object/branding/{pkiBrandingID} | Edit an existing Branding
-[**brandingGetAutocompleteV1()**](ObjectBrandingApi.md#brandingGetAutocompleteV1) | **GET** /1/object/branding/getAutocomplete/{sSelector} | Retrieve Brandings and IDs
-[**brandingGetListV1()**](ObjectBrandingApi.md#brandingGetListV1) | **GET** /1/object/branding/getList | Retrieve Branding list
-[**brandingGetObjectV1()**](ObjectBrandingApi.md#brandingGetObjectV1) | **GET** /1/object/branding/{pkiBrandingID} | Retrieve an existing Branding
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**brandingCreateObjectV1()**](ObjectBrandingApi.md#brandingCreateObjectV1) | **POST** /1/object/branding | Create a new Branding |
+| [**brandingEditObjectV1()**](ObjectBrandingApi.md#brandingEditObjectV1) | **PUT** /1/object/branding/{pkiBrandingID} | Edit an existing Branding |
+| [**brandingGetAutocompleteV1()**](ObjectBrandingApi.md#brandingGetAutocompleteV1) | **GET** /1/object/branding/getAutocomplete/{sSelector} | Retrieve Brandings and IDs |
+| [**brandingGetAutocompleteV2()**](ObjectBrandingApi.md#brandingGetAutocompleteV2) | **GET** /2/object/branding/getAutocomplete/{sSelector} | Retrieve Brandings and IDs |
+| [**brandingGetListV1()**](ObjectBrandingApi.md#brandingGetListV1) | **GET** /1/object/branding/getList | Retrieve Branding list |
+| [**brandingGetObjectV1()**](ObjectBrandingApi.md#brandingGetObjectV1) | **GET** /1/object/branding/{pkiBrandingID} | Retrieve an existing Branding |
 
 
 ## `brandingCreateObjectV1()`
@@ -52,9 +53,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **brandingCreateObjectV1Request** | [**\eZmaxAPI\Model\BrandingCreateObjectV1Request**](../Model/BrandingCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **brandingCreateObjectV1Request** | [**\eZmaxAPI\Model\BrandingCreateObjectV1Request**](../Model/BrandingCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -115,10 +116,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiBrandingID** | **int**|  |
- **brandingEditObjectV1Request** | [**\eZmaxAPI\Model\BrandingEditObjectV1Request**](../Model/BrandingEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBrandingID** | **int**|  | |
+| **brandingEditObjectV1Request** | [**\eZmaxAPI\Model\BrandingEditObjectV1Request**](../Model/BrandingEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -181,16 +182,84 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sSelector** | **string**| The type of Brandings to return |
- **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
- **sQuery** | **string**| Allow to filter the returned results | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sSelector** | **string**| The type of Brandings to return | |
+| **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
+| **sQuery** | **string**| Allow to filter the returned results | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 
 ### Return type
 
 [**\eZmaxAPI\Model\CommonGetAutocompleteV1Response**](../Model/CommonGetAutocompleteV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `brandingGetAutocompleteV2()`
+
+```php
+brandingGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\BrandingGetAutocompleteV2Response
+```
+
+Retrieve Brandings and IDs
+
+Get the list of Branding to be used in a dropdown or autocomplete control.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBrandingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$sSelector = 'sSelector_example'; // string | The type of Brandings to return
+$eFilterActive = 'Active'; // string | Specify which results we want to display.
+$sQuery = 'sQuery_example'; // string | Allow to filter the returned results
+$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+
+try {
+    $result = $apiInstance->brandingGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBrandingApi->brandingGetAutocompleteV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sSelector** | **string**| The type of Brandings to return | |
+| **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
+| **sQuery** | **string**| Allow to filter the returned results | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\BrandingGetAutocompleteV2Response**](../Model/BrandingGetAutocompleteV2Response.md)
 
 ### Authorization
 
@@ -250,13 +319,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional]
- **iRowMax** | **int**|  | [optional]
- **iRowOffset** | **int**|  | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
- **sFilter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
+| **iRowMax** | **int**|  | [optional] |
+| **iRowOffset** | **int**|  | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **sFilter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -316,9 +385,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiBrandingID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBrandingID** | **int**|  | |
 
 ### Return type
 

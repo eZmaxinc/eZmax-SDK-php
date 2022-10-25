@@ -1,28 +1,28 @@
 # eZmaxAPI\ObjectEzsigndocumentApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsigndocumentApplyEzsigntemplateV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument.
-[**ezsigndocumentApplyEzsigntemplateV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument.
-[**ezsigndocumentCreateObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
-[**ezsigndocumentCreateObjectV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV2) | **POST** /2/object/ezsigndocument | Create a new Ezsigndocument
-[**ezsigndocumentDeleteObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
-[**ezsigndocumentEditEzsignformfieldgroupsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignformfieldgroupsV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups
-[**ezsigndocumentEditEzsignsignaturesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures
-[**ezsigndocumentEndPrematurelyV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEndPrematurelyV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely
-[**ezsigndocumentGetActionableElementsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
-[**ezsigndocumentGetDownloadUrlV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
-[**ezsigndocumentGetEzsignformfieldgroupsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignformfieldgroupsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignformfieldgroups | Retrieve an existing Ezsigndocument&#39;s Ezsignformfieldgroups
-[**ezsigndocumentGetEzsignpagesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignpagesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages
-[**ezsigndocumentGetEzsignsignaturesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignsignaturesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignatures | Retrieve an existing Ezsigndocument&#39;s Ezsignsignatures
-[**ezsigndocumentGetFormDataV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetFormDataV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
-[**ezsigndocumentGetObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
-[**ezsigndocumentGetTemporaryProofV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetTemporaryProofV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof
-[**ezsigndocumentGetWordsPositionsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetWordsPositionsV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
-[**ezsigndocumentPatchObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentPatchObjectV1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument
-[**ezsigndocumentUnsendV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentUnsendV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/unsend | Unsend the Ezsigndocument
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsigndocumentApplyEzsigntemplateV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument. |
+| [**ezsigndocumentApplyEzsigntemplateV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument. |
+| [**ezsigndocumentCreateObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument |
+| [**ezsigndocumentCreateObjectV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV2) | **POST** /2/object/ezsigndocument | Create a new Ezsigndocument |
+| [**ezsigndocumentDeleteObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument |
+| [**ezsigndocumentEditEzsignformfieldgroupsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignformfieldgroupsV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups |
+| [**ezsigndocumentEditEzsignsignaturesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures |
+| [**ezsigndocumentEndPrematurelyV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEndPrematurelyV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely |
+| [**ezsigndocumentGetActionableElementsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
+| [**ezsigndocumentGetDownloadUrlV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents. |
+| [**ezsigndocumentGetEzsignformfieldgroupsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignformfieldgroupsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignformfieldgroups | Retrieve an existing Ezsigndocument&#39;s Ezsignformfieldgroups |
+| [**ezsigndocumentGetEzsignpagesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignpagesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages |
+| [**ezsigndocumentGetEzsignsignaturesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignsignaturesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignatures | Retrieve an existing Ezsigndocument&#39;s Ezsignsignatures |
+| [**ezsigndocumentGetFormDataV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetFormDataV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data |
+| [**ezsigndocumentGetObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument |
+| [**ezsigndocumentGetTemporaryProofV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetTemporaryProofV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof |
+| [**ezsigndocumentGetWordsPositionsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetWordsPositionsV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument |
+| [**ezsigndocumentPatchObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentPatchObjectV1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument |
+| [**ezsigndocumentUnsendV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentUnsendV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/unsend | Unsend the Ezsigndocument |
 
 
 ## `ezsigndocumentApplyEzsigntemplateV1()`
@@ -67,10 +67,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
- **ezsigndocumentApplyEzsigntemplateV1Request** | [**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request**](../Model/EzsigndocumentApplyEzsigntemplateV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentApplyEzsigntemplateV1Request** | [**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Request**](../Model/EzsigndocumentApplyEzsigntemplateV1Request.md)|  | |
 
 ### Return type
 
@@ -131,10 +131,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
- **ezsigndocumentApplyEzsigntemplateV2Request** | [**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV2Request**](../Model/EzsigndocumentApplyEzsigntemplateV2Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentApplyEzsigntemplateV2Request** | [**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV2Request**](../Model/EzsigndocumentApplyEzsigntemplateV2Request.md)|  | |
 
 ### Return type
 
@@ -194,9 +194,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsigndocumentCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigndocumentCreateObjectV1Request[]**](../Model/EzsigndocumentCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigndocumentCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigndocumentCreateObjectV1Request[]**](../Model/EzsigndocumentCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -256,9 +256,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsigndocumentCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsigndocumentCreateObjectV2Request**](../Model/EzsigndocumentCreateObjectV2Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigndocumentCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsigndocumentCreateObjectV2Request**](../Model/EzsigndocumentCreateObjectV2Request.md)|  | |
 
 ### Return type
 
@@ -318,9 +318,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
 
 ### Return type
 
@@ -381,10 +381,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
- **ezsigndocumentEditEzsignformfieldgroupsV1Request** | [**\eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV1Request**](../Model/EzsigndocumentEditEzsignformfieldgroupsV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentEditEzsignformfieldgroupsV1Request** | [**\eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV1Request**](../Model/EzsigndocumentEditEzsignformfieldgroupsV1Request.md)|  | |
 
 ### Return type
 
@@ -445,10 +445,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
- **ezsigndocumentEditEzsignsignaturesV1Request** | [**\eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request**](../Model/EzsigndocumentEditEzsignsignaturesV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentEditEzsignsignaturesV1Request** | [**\eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Request**](../Model/EzsigndocumentEditEzsignsignaturesV1Request.md)|  | |
 
 ### Return type
 
@@ -509,10 +509,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
- **body** | **object**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **body** | **object**|  | |
 
 ### Return type
 
@@ -572,9 +572,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
 
 ### Return type
 
@@ -635,10 +635,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
- **eDocumentType** | **string**| The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **eDocumentType** | **string**| The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. | |
 
 ### Return type
 
@@ -698,9 +698,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
 
 ### Return type
 
@@ -760,9 +760,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
 
 ### Return type
 
@@ -822,9 +822,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
 
 ### Return type
 
@@ -884,9 +884,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
 
 ### Return type
 
@@ -944,9 +944,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
 
 ### Return type
 
@@ -1006,9 +1006,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
 
 ### Return type
 
@@ -1069,10 +1069,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
- **ezsigndocumentGetWordsPositionsV1Request** | [**\eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request**](../Model/EzsigndocumentGetWordsPositionsV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentGetWordsPositionsV1Request** | [**\eZmaxAPI\Model\EzsigndocumentGetWordsPositionsV1Request**](../Model/EzsigndocumentGetWordsPositionsV1Request.md)|  | |
 
 ### Return type
 
@@ -1133,10 +1133,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
- **ezsigndocumentPatchObjectV1Request** | [**\eZmaxAPI\Model\EzsigndocumentPatchObjectV1Request**](../Model/EzsigndocumentPatchObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentPatchObjectV1Request** | [**\eZmaxAPI\Model\EzsigndocumentPatchObjectV1Request**](../Model/EzsigndocumentPatchObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -1197,10 +1197,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **int**|  |
- **body** | **object**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **body** | **object**|  | |
 
 ### Return type
 

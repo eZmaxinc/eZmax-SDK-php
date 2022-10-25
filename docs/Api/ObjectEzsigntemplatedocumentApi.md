@@ -1,19 +1,19 @@
 # eZmaxAPI\ObjectEzsigntemplatedocumentApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsigntemplatedocumentCreateObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentCreateObjectV1) | **POST** /1/object/ezsigntemplatedocument | Create a new Ezsigntemplatedocument
-[**ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups | Edit multiple Ezsigntemplateformfieldgroups
-[**ezsigntemplatedocumentEditEzsigntemplatesignaturesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditEzsigntemplatesignaturesV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures | Edit multiple Ezsigntemplatesignatures
-[**ezsigntemplatedocumentEditObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditObjectV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Edit an existing Ezsigntemplatedocument
-[**ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages
-[**ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups
-[**ezsigntemplatedocumentGetEzsigntemplatesignaturesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplatesignaturesV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures
-[**ezsigntemplatedocumentGetObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetObjectV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Retrieve an existing Ezsigntemplatedocument
-[**ezsigntemplatedocumentGetWordsPositionsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetWordsPositionsV1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigntemplatedocument
-[**ezsigntemplatedocumentPatchObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentPatchObjectV1) | **PATCH** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Patch an existing Ezsigntemplatedocument
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsigntemplatedocumentCreateObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentCreateObjectV1) | **POST** /1/object/ezsigntemplatedocument | Create a new Ezsigntemplatedocument |
+| [**ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups | Edit multiple Ezsigntemplateformfieldgroups |
+| [**ezsigntemplatedocumentEditEzsigntemplatesignaturesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditEzsigntemplatesignaturesV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures | Edit multiple Ezsigntemplatesignatures |
+| [**ezsigntemplatedocumentEditObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditObjectV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Edit an existing Ezsigntemplatedocument |
+| [**ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages |
+| [**ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups |
+| [**ezsigntemplatedocumentGetEzsigntemplatesignaturesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplatesignaturesV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures |
+| [**ezsigntemplatedocumentGetObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetObjectV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Retrieve an existing Ezsigntemplatedocument |
+| [**ezsigntemplatedocumentGetWordsPositionsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetWordsPositionsV1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigntemplatedocument |
+| [**ezsigntemplatedocumentPatchObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentPatchObjectV1) | **PATCH** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Patch an existing Ezsigntemplatedocument |
 
 
 ## `ezsigntemplatedocumentCreateObjectV1()`
@@ -57,9 +57,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsigntemplatedocumentCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Request**](../Model/EzsigntemplatedocumentCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigntemplatedocumentCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Request**](../Model/EzsigntemplatedocumentCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -120,10 +120,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatedocumentID** | **int**|  |
- **ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request**](../Model/EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
+| **ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request**](../Model/EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request.md)|  | |
 
 ### Return type
 
@@ -184,10 +184,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatedocumentID** | **int**|  |
- **ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request**](../Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
+| **ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request**](../Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request.md)|  | |
 
 ### Return type
 
@@ -248,10 +248,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatedocumentID** | **int**|  |
- **ezsigntemplatedocumentEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Request**](../Model/EzsigntemplatedocumentEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
+| **ezsigntemplatedocumentEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Request**](../Model/EzsigntemplatedocumentEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -311,9 +311,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatedocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
 
 ### Return type
 
@@ -373,9 +373,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatedocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
 
 ### Return type
 
@@ -435,9 +435,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatedocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
 
 ### Return type
 
@@ -497,9 +497,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatedocumentID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
 
 ### Return type
 
@@ -560,10 +560,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatedocumentID** | **int**|  |
- **ezsigntemplatedocumentGetWordsPositionsV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Request**](../Model/EzsigntemplatedocumentGetWordsPositionsV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
+| **ezsigntemplatedocumentGetWordsPositionsV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Request**](../Model/EzsigntemplatedocumentGetWordsPositionsV1Request.md)|  | |
 
 ### Return type
 
@@ -624,10 +624,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplatedocumentID** | **int**|  |
- **ezsigntemplatedocumentPatchObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Request**](../Model/EzsigntemplatedocumentPatchObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
+| **ezsigntemplatedocumentPatchObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Request**](../Model/EzsigntemplatedocumentPatchObjectV1Request.md)|  | |
 
 ### Return type
 

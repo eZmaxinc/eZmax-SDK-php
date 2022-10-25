@@ -1,10 +1,10 @@
 # eZmaxAPI\GlobalCustomerApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**globalCustomerGetEndpointV1()**](GlobalCustomerApi.md#globalCustomerGetEndpointV1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**globalCustomerGetEndpointV1()**](GlobalCustomerApi.md#globalCustomerGetEndpointV1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint |
 
 
 ## `globalCustomerGetEndpointV1()`
@@ -49,10 +49,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pksCustomerCode** | **string**|  |
- **sInfrastructureproductCode** | **string**| The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pksCustomerCode** | **string**|  | |
+| **sInfrastructureproductCode** | **string**| The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed | [optional] |
 
 ### Return type
 

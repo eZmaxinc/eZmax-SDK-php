@@ -1,11 +1,11 @@
 # eZmaxAPI\ObjectApikeyApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**apikeyCreateObjectV1()**](ObjectApikeyApi.md#apikeyCreateObjectV1) | **POST** /1/object/apikey | Create a new Apikey
-[**apikeyCreateObjectV2()**](ObjectApikeyApi.md#apikeyCreateObjectV2) | **POST** /2/object/apikey | Create a new Apikey
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**apikeyCreateObjectV1()**](ObjectApikeyApi.md#apikeyCreateObjectV1) | **POST** /1/object/apikey | Create a new Apikey |
+| [**apikeyCreateObjectV2()**](ObjectApikeyApi.md#apikeyCreateObjectV2) | **POST** /2/object/apikey | Create a new Apikey |
 
 
 ## `apikeyCreateObjectV1()`
@@ -49,9 +49,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apikeyCreateObjectV1Request** | [**\eZmaxAPI\Model\ApikeyCreateObjectV1Request[]**](../Model/ApikeyCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **apikeyCreateObjectV1Request** | [**\eZmaxAPI\Model\ApikeyCreateObjectV1Request[]**](../Model/ApikeyCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -111,9 +111,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apikeyCreateObjectV2Request** | [**\eZmaxAPI\Model\ApikeyCreateObjectV2Request**](../Model/ApikeyCreateObjectV2Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **apikeyCreateObjectV2Request** | [**\eZmaxAPI\Model\ApikeyCreateObjectV2Request**](../Model/ApikeyCreateObjectV2Request.md)|  | |
 
 ### Return type
 

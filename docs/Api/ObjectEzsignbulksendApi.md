@@ -1,19 +1,19 @@
 # eZmaxAPI\ObjectEzsignbulksendApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsignbulksendCreateEzsignbulksendtransmissionV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendCreateEzsignbulksendtransmissionV1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission | Create a new Ezsignbulksendtransmission in the Ezsignbulksend
-[**ezsignbulksendCreateObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendCreateObjectV1) | **POST** /1/object/ezsignbulksend | Create a new Ezsignbulksend
-[**ezsignbulksendDeleteObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendDeleteObjectV1) | **DELETE** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Delete an existing Ezsignbulksend
-[**ezsignbulksendEditObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendEditObjectV1) | **PUT** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend
-[**ezsignbulksendGetCsvTemplateV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetCsvTemplateV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getCsvTemplate | Retrieve an existing Ezsignbulksend&#39;s empty Csv template
-[**ezsignbulksendGetEzsignbulksendtransmissionsV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetEzsignbulksendtransmissionsV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignbulksendtransmissions | Retrieve an existing Ezsignbulksend&#39;s Ezsignbulksendtransmissions
-[**ezsignbulksendGetFormsDataV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetFormsDataV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getFormsData | Retrieve an existing Ezsignbulksend&#39;s forms data
-[**ezsignbulksendGetListV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetListV1) | **GET** /1/object/ezsignbulksend/getList | Retrieve Ezsignbulksend list
-[**ezsignbulksendGetObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetObjectV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend
-[**ezsignbulksendReorderV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendReorderV1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder | Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsignbulksendCreateEzsignbulksendtransmissionV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendCreateEzsignbulksendtransmissionV1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission | Create a new Ezsignbulksendtransmission in the Ezsignbulksend |
+| [**ezsignbulksendCreateObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendCreateObjectV1) | **POST** /1/object/ezsignbulksend | Create a new Ezsignbulksend |
+| [**ezsignbulksendDeleteObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendDeleteObjectV1) | **DELETE** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Delete an existing Ezsignbulksend |
+| [**ezsignbulksendEditObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendEditObjectV1) | **PUT** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend |
+| [**ezsignbulksendGetCsvTemplateV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetCsvTemplateV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getCsvTemplate | Retrieve an existing Ezsignbulksend&#39;s empty Csv template |
+| [**ezsignbulksendGetEzsignbulksendtransmissionsV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetEzsignbulksendtransmissionsV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignbulksendtransmissions | Retrieve an existing Ezsignbulksend&#39;s Ezsignbulksendtransmissions |
+| [**ezsignbulksendGetFormsDataV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetFormsDataV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getFormsData | Retrieve an existing Ezsignbulksend&#39;s forms data |
+| [**ezsignbulksendGetListV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetListV1) | **GET** /1/object/ezsignbulksend/getList | Retrieve Ezsignbulksend list |
+| [**ezsignbulksendGetObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetObjectV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend |
+| [**ezsignbulksendReorderV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendReorderV1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder | Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend |
 
 
 ## `ezsignbulksendCreateEzsignbulksendtransmissionV1()`
@@ -56,10 +56,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksendID** | **int**|  |
- **ezsignbulksendCreateEzsignbulksendtransmissionV1Request** | [**\eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV1Request**](../Model/EzsignbulksendCreateEzsignbulksendtransmissionV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendID** | **int**|  | |
+| **ezsignbulksendCreateEzsignbulksendtransmissionV1Request** | [**\eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV1Request**](../Model/EzsignbulksendCreateEzsignbulksendtransmissionV1Request.md)|  | |
 
 ### Return type
 
@@ -119,9 +119,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsignbulksendCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignbulksendCreateObjectV1Request**](../Model/EzsignbulksendCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignbulksendCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignbulksendCreateObjectV1Request**](../Model/EzsignbulksendCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -181,9 +181,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksendID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendID** | **int**|  | |
 
 ### Return type
 
@@ -244,10 +244,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksendID** | **int**|  |
- **ezsignbulksendEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignbulksendEditObjectV1Request**](../Model/EzsignbulksendEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendID** | **int**|  | |
+| **ezsignbulksendEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignbulksendEditObjectV1Request**](../Model/EzsignbulksendEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -308,10 +308,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksendID** | **int**|  |
- **eCsvSeparator** | **string**| Separator that will be used to separate fields |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendID** | **int**|  | |
+| **eCsvSeparator** | **string**| Separator that will be used to separate fields | |
 
 ### Return type
 
@@ -371,9 +371,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksendID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendID** | **int**|  | |
 
 ### Return type
 
@@ -433,9 +433,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksendID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendID** | **int**|  | |
 
 ### Return type
 
@@ -499,13 +499,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional]
- **iRowMax** | **int**|  | [optional]
- **iRowOffset** | **int**|  | [optional]
- **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional]
- **sFilter** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
+| **iRowMax** | **int**|  | [optional] |
+| **iRowOffset** | **int**|  | [optional] |
+| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **sFilter** | **string**|  | [optional] |
 
 ### Return type
 
@@ -565,9 +565,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksendID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendID** | **int**|  | |
 
 ### Return type
 
@@ -626,10 +626,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignbulksendID** | **int**|  |
- **ezsignbulksendReorderV1Request** | [**\eZmaxAPI\Model\EzsignbulksendReorderV1Request**](../Model/EzsignbulksendReorderV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendID** | **int**|  | |
+| **ezsignbulksendReorderV1Request** | [**\eZmaxAPI\Model\EzsignbulksendReorderV1Request**](../Model/EzsignbulksendReorderV1Request.md)|  | |
 
 ### Return type
 

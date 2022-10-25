@@ -1,10 +1,10 @@
 # eZmaxAPI\ObjectActivesessionApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**activesessionGetCurrentV1()**](ObjectActivesessionApi.md#activesessionGetCurrentV1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**activesessionGetCurrentV1()**](ObjectActivesessionApi.md#activesessionGetCurrentV1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession |
 
 
 ## `activesessionGetCurrentV1()`

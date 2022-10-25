@@ -1,13 +1,13 @@
 # eZmaxAPI\ObjectEzsigntemplateformfieldgroupApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsigntemplateformfieldgroupCreateObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupCreateObjectV1) | **POST** /1/object/ezsigntemplateformfieldgroup | Create a new Ezsigntemplateformfieldgroup
-[**ezsigntemplateformfieldgroupDeleteObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupDeleteObjectV1) | **DELETE** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Delete an existing Ezsigntemplateformfieldgroup
-[**ezsigntemplateformfieldgroupEditObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupEditObjectV1) | **PUT** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Edit an existing Ezsigntemplateformfieldgroup
-[**ezsigntemplateformfieldgroupGetObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupGetObjectV1) | **GET** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Retrieve an existing Ezsigntemplateformfieldgroup
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsigntemplateformfieldgroupCreateObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupCreateObjectV1) | **POST** /1/object/ezsigntemplateformfieldgroup | Create a new Ezsigntemplateformfieldgroup |
+| [**ezsigntemplateformfieldgroupDeleteObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupDeleteObjectV1) | **DELETE** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Delete an existing Ezsigntemplateformfieldgroup |
+| [**ezsigntemplateformfieldgroupEditObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupEditObjectV1) | **PUT** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Edit an existing Ezsigntemplateformfieldgroup |
+| [**ezsigntemplateformfieldgroupGetObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupGetObjectV1) | **GET** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Retrieve an existing Ezsigntemplateformfieldgroup |
 
 
 ## `ezsigntemplateformfieldgroupCreateObjectV1()`
@@ -51,9 +51,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsigntemplateformfieldgroupCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplateformfieldgroupCreateObjectV1Request**](../Model/EzsigntemplateformfieldgroupCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigntemplateformfieldgroupCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplateformfieldgroupCreateObjectV1Request**](../Model/EzsigntemplateformfieldgroupCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -113,9 +113,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplateformfieldgroupID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplateformfieldgroupID** | **int**|  | |
 
 ### Return type
 
@@ -176,10 +176,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplateformfieldgroupID** | **int**|  |
- **ezsigntemplateformfieldgroupEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplateformfieldgroupEditObjectV1Request**](../Model/EzsigntemplateformfieldgroupEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplateformfieldgroupID** | **int**|  | |
+| **ezsigntemplateformfieldgroupEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplateformfieldgroupEditObjectV1Request**](../Model/EzsigntemplateformfieldgroupEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -239,9 +239,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigntemplateformfieldgroupID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplateformfieldgroupID** | **int**|  | |
 
 ### Return type
 

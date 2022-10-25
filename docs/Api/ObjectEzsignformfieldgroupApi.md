@@ -1,13 +1,13 @@
 # eZmaxAPI\ObjectEzsignformfieldgroupApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ezsignformfieldgroupCreateObjectV1()**](ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupCreateObjectV1) | **POST** /1/object/ezsignformfieldgroup | Create a new Ezsignformfieldgroup
-[**ezsignformfieldgroupDeleteObjectV1()**](ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupDeleteObjectV1) | **DELETE** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Delete an existing Ezsignformfieldgroup
-[**ezsignformfieldgroupEditObjectV1()**](ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupEditObjectV1) | **PUT** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Edit an existing Ezsignformfieldgroup
-[**ezsignformfieldgroupGetObjectV1()**](ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupGetObjectV1) | **GET** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Retrieve an existing Ezsignformfieldgroup
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**ezsignformfieldgroupCreateObjectV1()**](ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupCreateObjectV1) | **POST** /1/object/ezsignformfieldgroup | Create a new Ezsignformfieldgroup |
+| [**ezsignformfieldgroupDeleteObjectV1()**](ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupDeleteObjectV1) | **DELETE** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Delete an existing Ezsignformfieldgroup |
+| [**ezsignformfieldgroupEditObjectV1()**](ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupEditObjectV1) | **PUT** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Edit an existing Ezsignformfieldgroup |
+| [**ezsignformfieldgroupGetObjectV1()**](ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupGetObjectV1) | **GET** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Retrieve an existing Ezsignformfieldgroup |
 
 
 ## `ezsignformfieldgroupCreateObjectV1()`
@@ -51,9 +51,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ezsignformfieldgroupCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Request**](../Model/EzsignformfieldgroupCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignformfieldgroupCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Request**](../Model/EzsignformfieldgroupCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -113,9 +113,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignformfieldgroupID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignformfieldgroupID** | **int**|  | |
 
 ### Return type
 
@@ -176,10 +176,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignformfieldgroupID** | **int**|  |
- **ezsignformfieldgroupEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Request**](../Model/EzsignformfieldgroupEditObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignformfieldgroupID** | **int**|  | |
+| **ezsignformfieldgroupEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Request**](../Model/EzsignformfieldgroupEditObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -237,9 +237,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsignformfieldgroupID** | **int**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignformfieldgroupID** | **int**|  | |
 
 ### Return type
 

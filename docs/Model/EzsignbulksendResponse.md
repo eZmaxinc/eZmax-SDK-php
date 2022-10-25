@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **fkiEzsignfoldertypeID** | **int** | The unique ID of the Ezsignfoldertype. |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **sLanguageNameX** | **string** | The Name of the Language in the language of the requester |
+**eEzsignfoldertypePrivacylevel** | [**\eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  |
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester |
 **sEzsignbulksendDescription** | **string** | The description of the Ezsignbulksend |
 **tEzsignbulksendNote** | **string** | Note about the Ezsignbulksend |

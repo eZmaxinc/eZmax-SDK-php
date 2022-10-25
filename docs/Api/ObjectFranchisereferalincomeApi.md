@@ -1,11 +1,11 @@
 # eZmaxAPI\ObjectFranchisereferalincomeApi
 
-All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest.
+All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**franchisereferalincomeCreateObjectV1()**](ObjectFranchisereferalincomeApi.md#franchisereferalincomeCreateObjectV1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome
-[**franchisereferalincomeCreateObjectV2()**](ObjectFranchisereferalincomeApi.md#franchisereferalincomeCreateObjectV2) | **POST** /2/object/franchisereferalincome | Create a new Franchisereferalincome
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**franchisereferalincomeCreateObjectV1()**](ObjectFranchisereferalincomeApi.md#franchisereferalincomeCreateObjectV1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome |
+| [**franchisereferalincomeCreateObjectV2()**](ObjectFranchisereferalincomeApi.md#franchisereferalincomeCreateObjectV2) | **POST** /2/object/franchisereferalincome | Create a new Franchisereferalincome |
 
 
 ## `franchisereferalincomeCreateObjectV1()`
@@ -49,9 +49,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **franchisereferalincomeCreateObjectV1Request** | [**\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[]**](../Model/FranchisereferalincomeCreateObjectV1Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **franchisereferalincomeCreateObjectV1Request** | [**\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[]**](../Model/FranchisereferalincomeCreateObjectV1Request.md)|  | |
 
 ### Return type
 
@@ -111,9 +111,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **franchisereferalincomeCreateObjectV2Request** | [**\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request**](../Model/FranchisereferalincomeCreateObjectV2Request.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **franchisereferalincomeCreateObjectV2Request** | [**\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request**](../Model/FranchisereferalincomeCreateObjectV2Request.md)|  | |
 
 ### Return type
 
