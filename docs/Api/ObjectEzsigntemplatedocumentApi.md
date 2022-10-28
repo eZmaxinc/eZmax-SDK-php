@@ -12,6 +12,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups |
 | [**ezsigntemplatedocumentGetEzsigntemplatesignaturesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplatesignaturesV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures |
 | [**ezsigntemplatedocumentGetObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetObjectV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Retrieve an existing Ezsigntemplatedocument |
+| [**ezsigntemplatedocumentGetObjectV2()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetObjectV2) | **GET** /2/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Retrieve an existing Ezsigntemplatedocument |
 | [**ezsigntemplatedocumentGetWordsPositionsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetWordsPositionsV1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigntemplatedocument |
 | [**ezsigntemplatedocumentPatchObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentPatchObjectV1) | **PATCH** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Patch an existing Ezsigntemplatedocument |
 
@@ -504,6 +505,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigntemplatedocumentGetObjectV1Response**](../Model/EzsigntemplatedocumentGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigntemplatedocumentGetObjectV2()`
+
+```php
+ezsigntemplatedocumentGetObjectV2($pkiEzsigntemplatedocumentID): \eZmaxAPI\Model\EzsigntemplatedocumentGetObjectV2Response
+```
+
+Retrieve an existing Ezsigntemplatedocument
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatedocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigntemplatedocumentID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigntemplatedocumentGetObjectV2($pkiEzsigntemplatedocumentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocumentGetObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplatedocumentGetObjectV2Response**](../Model/EzsigntemplatedocumentGetObjectV2Response.md)
 
 ### Authorization
 

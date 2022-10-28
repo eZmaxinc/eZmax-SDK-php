@@ -7,6 +7,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignbulksendtransmissionGetCsvErrorsV1()**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetCsvErrorsV1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getCsvErrors | Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors |
 | [**ezsignbulksendtransmissionGetFormsDataV1()**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetFormsDataV1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getFormsData | Retrieve an existing Ezsignbulksendtransmission&#39;s forms data |
 | [**ezsignbulksendtransmissionGetObjectV1()**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetObjectV1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID} | Retrieve an existing Ezsignbulksendtransmission |
+| [**ezsignbulksendtransmissionGetObjectV2()**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetObjectV2) | **GET** /2/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID} | Retrieve an existing Ezsignbulksendtransmission |
 
 
 ## `ezsignbulksendtransmissionGetCsvErrorsV1()`
@@ -181,6 +182,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV1Response**](../Model/EzsignbulksendtransmissionGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignbulksendtransmissionGetObjectV2()`
+
+```php
+ezsignbulksendtransmissionGetObjectV2($pkiEzsignbulksendtransmissionID): \eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV2Response
+```
+
+Retrieve an existing Ezsignbulksendtransmission
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksendtransmissionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignbulksendtransmissionID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignbulksendtransmissionGetObjectV2($pkiEzsignbulksendtransmissionID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignbulksendtransmissionApi->ezsignbulksendtransmissionGetObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendtransmissionID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV2Response**](../Model/EzsignbulksendtransmissionGetObjectV2Response.md)
 
 ### Authorization
 
