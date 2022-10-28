@@ -8,6 +8,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsigntemplateformfieldgroupDeleteObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupDeleteObjectV1) | **DELETE** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Delete an existing Ezsigntemplateformfieldgroup |
 | [**ezsigntemplateformfieldgroupEditObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupEditObjectV1) | **PUT** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Edit an existing Ezsigntemplateformfieldgroup |
 | [**ezsigntemplateformfieldgroupGetObjectV1()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupGetObjectV1) | **GET** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Retrieve an existing Ezsigntemplateformfieldgroup |
+| [**ezsigntemplateformfieldgroupGetObjectV2()**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupGetObjectV2) | **GET** /2/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Retrieve an existing Ezsigntemplateformfieldgroup |
 
 
 ## `ezsigntemplateformfieldgroupCreateObjectV1()`
@@ -246,6 +247,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigntemplateformfieldgroupGetObjectV1Response**](../Model/EzsigntemplateformfieldgroupGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigntemplateformfieldgroupGetObjectV2()`
+
+```php
+ezsigntemplateformfieldgroupGetObjectV2($pkiEzsigntemplateformfieldgroupID): \eZmaxAPI\Model\EzsigntemplateformfieldgroupGetObjectV2Response
+```
+
+Retrieve an existing Ezsigntemplateformfieldgroup
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateformfieldgroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigntemplateformfieldgroupID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigntemplateformfieldgroupGetObjectV2($pkiEzsigntemplateformfieldgroupID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplateformfieldgroupApi->ezsigntemplateformfieldgroupGetObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplateformfieldgroupID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplateformfieldgroupGetObjectV2Response**](../Model/EzsigntemplateformfieldgroupGetObjectV2Response.md)
 
 ### Authorization
 

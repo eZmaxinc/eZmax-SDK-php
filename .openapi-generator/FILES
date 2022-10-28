@@ -44,6 +44,7 @@ docs/Api/ObjectTaxassignmentApi.md
 docs/Api/ObjectTimezoneApi.md
 docs/Api/ObjectUserApi.md
 docs/Api/ObjectUsergroupApi.md
+docs/Api/ObjectVersionhistoryApi.md
 docs/Api/ObjectWebhookApi.md
 docs/Model/ActivesessionGetCurrentV1Response.md
 docs/Model/ActivesessionGetCurrentV1ResponseAllOf.md
@@ -90,6 +91,9 @@ docs/Model/BrandingGetListV1ResponseMPayloadAllOf.md
 docs/Model/BrandingGetObjectV1Response.md
 docs/Model/BrandingGetObjectV1ResponseAllOf.md
 docs/Model/BrandingGetObjectV1ResponseMPayload.md
+docs/Model/BrandingGetObjectV2Response.md
+docs/Model/BrandingGetObjectV2ResponseAllOf.md
+docs/Model/BrandingGetObjectV2ResponseMPayload.md
 docs/Model/BrandingListElement.md
 docs/Model/BrandingRequest.md
 docs/Model/BrandingRequestCompound.md
@@ -177,6 +181,9 @@ docs/Model/EzmaxinvoicingGetAutocompleteV2ResponseMPayload.md
 docs/Model/EzmaxinvoicingGetObjectV1Response.md
 docs/Model/EzmaxinvoicingGetObjectV1ResponseAllOf.md
 docs/Model/EzmaxinvoicingGetObjectV1ResponseMPayload.md
+docs/Model/EzmaxinvoicingGetObjectV2Response.md
+docs/Model/EzmaxinvoicingGetObjectV2ResponseAllOf.md
+docs/Model/EzmaxinvoicingGetObjectV2ResponseMPayload.md
 docs/Model/EzmaxinvoicingGetProvisionalV1Response.md
 docs/Model/EzmaxinvoicingGetProvisionalV1ResponseAllOf.md
 docs/Model/EzmaxinvoicingGetProvisionalV1ResponseMPayload.md
@@ -236,6 +243,9 @@ docs/Model/EzsignbulksendGetListV1ResponseMPayloadAllOf.md
 docs/Model/EzsignbulksendGetObjectV1Response.md
 docs/Model/EzsignbulksendGetObjectV1ResponseAllOf.md
 docs/Model/EzsignbulksendGetObjectV1ResponseMPayload.md
+docs/Model/EzsignbulksendGetObjectV2Response.md
+docs/Model/EzsignbulksendGetObjectV2ResponseAllOf.md
+docs/Model/EzsignbulksendGetObjectV2ResponseMPayload.md
 docs/Model/EzsignbulksendListElement.md
 docs/Model/EzsignbulksendReorderV1Request.md
 docs/Model/EzsignbulksendReorderV1Response.md
@@ -252,6 +262,9 @@ docs/Model/EzsignbulksenddocumentmappingDeleteObjectV1Response.md
 docs/Model/EzsignbulksenddocumentmappingGetObjectV1Response.md
 docs/Model/EzsignbulksenddocumentmappingGetObjectV1ResponseAllOf.md
 docs/Model/EzsignbulksenddocumentmappingGetObjectV1ResponseMPayload.md
+docs/Model/EzsignbulksenddocumentmappingGetObjectV2Response.md
+docs/Model/EzsignbulksenddocumentmappingGetObjectV2ResponseAllOf.md
+docs/Model/EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload.md
 docs/Model/EzsignbulksenddocumentmappingRequest.md
 docs/Model/EzsignbulksenddocumentmappingRequestCompound.md
 docs/Model/EzsignbulksenddocumentmappingResponse.md
@@ -265,6 +278,9 @@ docs/Model/EzsignbulksendsignermappingDeleteObjectV1Response.md
 docs/Model/EzsignbulksendsignermappingGetObjectV1Response.md
 docs/Model/EzsignbulksendsignermappingGetObjectV1ResponseAllOf.md
 docs/Model/EzsignbulksendsignermappingGetObjectV1ResponseMPayload.md
+docs/Model/EzsignbulksendsignermappingGetObjectV2Response.md
+docs/Model/EzsignbulksendsignermappingGetObjectV2ResponseAllOf.md
+docs/Model/EzsignbulksendsignermappingGetObjectV2ResponseMPayload.md
 docs/Model/EzsignbulksendsignermappingRequest.md
 docs/Model/EzsignbulksendsignermappingRequestCompound.md
 docs/Model/EzsignbulksendsignermappingResponse.md
@@ -275,6 +291,9 @@ docs/Model/EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload.md
 docs/Model/EzsignbulksendtransmissionGetObjectV1Response.md
 docs/Model/EzsignbulksendtransmissionGetObjectV1ResponseAllOf.md
 docs/Model/EzsignbulksendtransmissionGetObjectV1ResponseMPayload.md
+docs/Model/EzsignbulksendtransmissionGetObjectV2Response.md
+docs/Model/EzsignbulksendtransmissionGetObjectV2ResponseAllOf.md
+docs/Model/EzsignbulksendtransmissionGetObjectV2ResponseMPayload.md
 docs/Model/EzsignbulksendtransmissionResponse.md
 docs/Model/EzsignbulksendtransmissionResponseCompound.md
 docs/Model/EzsignbulksendtransmissionResponseCompoundAllOf.md
@@ -321,6 +340,9 @@ docs/Model/EzsigndocumentGetFormDataV1ResponseMPayload.md
 docs/Model/EzsigndocumentGetObjectV1Response.md
 docs/Model/EzsigndocumentGetObjectV1ResponseAllOf.md
 docs/Model/EzsigndocumentGetObjectV1ResponseMPayload.md
+docs/Model/EzsigndocumentGetObjectV2Response.md
+docs/Model/EzsigndocumentGetObjectV2ResponseAllOf.md
+docs/Model/EzsigndocumentGetObjectV2ResponseMPayload.md
 docs/Model/EzsigndocumentGetTemporaryProofV1Response.md
 docs/Model/EzsigndocumentGetTemporaryProofV1ResponseAllOf.md
 docs/Model/EzsigndocumentGetTemporaryProofV1ResponseMPayload.md
@@ -373,6 +395,9 @@ docs/Model/EzsignfolderGetListV1ResponseMPayloadAllOf.md
 docs/Model/EzsignfolderGetObjectV1Response.md
 docs/Model/EzsignfolderGetObjectV1ResponseAllOf.md
 docs/Model/EzsignfolderGetObjectV1ResponseMPayload.md
+docs/Model/EzsignfolderGetObjectV2Response.md
+docs/Model/EzsignfolderGetObjectV2ResponseAllOf.md
+docs/Model/EzsignfolderGetObjectV2ResponseMPayload.md
 docs/Model/EzsignfolderImportEzsignfoldersignerassociationsV1Request.md
 docs/Model/EzsignfolderImportEzsignfoldersignerassociationsV1Response.md
 docs/Model/EzsignfolderImportEzsignfoldersignerassociationsV1ResponseAllOf.md
@@ -411,6 +436,9 @@ docs/Model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.md
 docs/Model/EzsignfoldersignerassociationGetObjectV1Response.md
 docs/Model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.md
 docs/Model/EzsignfoldersignerassociationGetObjectV1ResponseMPayload.md
+docs/Model/EzsignfoldersignerassociationGetObjectV2Response.md
+docs/Model/EzsignfoldersignerassociationGetObjectV2ResponseAllOf.md
+docs/Model/EzsignfoldersignerassociationGetObjectV2ResponseMPayload.md
 docs/Model/EzsignfoldersignerassociationRequest.md
 docs/Model/EzsignfoldersignerassociationRequestCompound.md
 docs/Model/EzsignfoldersignerassociationRequestCompoundAllOf.md
@@ -435,6 +463,9 @@ docs/Model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.md
 docs/Model/EzsignfoldertypeGetObjectV1Response.md
 docs/Model/EzsignfoldertypeGetObjectV1ResponseAllOf.md
 docs/Model/EzsignfoldertypeGetObjectV1ResponseMPayload.md
+docs/Model/EzsignfoldertypeGetObjectV2Response.md
+docs/Model/EzsignfoldertypeGetObjectV2ResponseAllOf.md
+docs/Model/EzsignfoldertypeGetObjectV2ResponseMPayload.md
 docs/Model/EzsignfoldertypeListElement.md
 docs/Model/EzsignfoldertypeRequest.md
 docs/Model/EzsignfoldertypeRequestCompound.md
@@ -455,6 +486,9 @@ docs/Model/EzsignformfieldgroupEditObjectV1Response.md
 docs/Model/EzsignformfieldgroupGetObjectV1Response.md
 docs/Model/EzsignformfieldgroupGetObjectV1ResponseAllOf.md
 docs/Model/EzsignformfieldgroupGetObjectV1ResponseMPayload.md
+docs/Model/EzsignformfieldgroupGetObjectV2Response.md
+docs/Model/EzsignformfieldgroupGetObjectV2ResponseAllOf.md
+docs/Model/EzsignformfieldgroupGetObjectV2ResponseMPayload.md
 docs/Model/EzsignformfieldgroupRequest.md
 docs/Model/EzsignformfieldgroupRequestCompound.md
 docs/Model/EzsignformfieldgroupRequestCompoundAllOf.md
@@ -481,6 +515,9 @@ docs/Model/EzsignsignatureEditObjectV1Response.md
 docs/Model/EzsignsignatureGetObjectV1Response.md
 docs/Model/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/Model/EzsignsignatureGetObjectV1ResponseMPayload.md
+docs/Model/EzsignsignatureGetObjectV2Response.md
+docs/Model/EzsignsignatureGetObjectV2ResponseAllOf.md
+docs/Model/EzsignsignatureGetObjectV2ResponseMPayload.md
 docs/Model/EzsignsignatureRequest.md
 docs/Model/EzsignsignatureRequestCompound.md
 docs/Model/EzsignsignatureRequestCompoundAllOf.md
@@ -520,6 +557,9 @@ docs/Model/EzsigntemplateGetListV1ResponseMPayloadAllOf.md
 docs/Model/EzsigntemplateGetObjectV1Response.md
 docs/Model/EzsigntemplateGetObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplateGetObjectV1ResponseMPayload.md
+docs/Model/EzsigntemplateGetObjectV2Response.md
+docs/Model/EzsigntemplateGetObjectV2ResponseAllOf.md
+docs/Model/EzsigntemplateGetObjectV2ResponseMPayload.md
 docs/Model/EzsigntemplateListElement.md
 docs/Model/EzsigntemplateRequest.md
 docs/Model/EzsigntemplateRequestCompound.md
@@ -553,6 +593,9 @@ docs/Model/EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload.m
 docs/Model/EzsigntemplatedocumentGetObjectV1Response.md
 docs/Model/EzsigntemplatedocumentGetObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplatedocumentGetObjectV1ResponseMPayload.md
+docs/Model/EzsigntemplatedocumentGetObjectV2Response.md
+docs/Model/EzsigntemplatedocumentGetObjectV2ResponseAllOf.md
+docs/Model/EzsigntemplatedocumentGetObjectV2ResponseMPayload.md
 docs/Model/EzsigntemplatedocumentGetWordsPositionsV1Request.md
 docs/Model/EzsigntemplatedocumentGetWordsPositionsV1Response.md
 docs/Model/EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOf.md
@@ -579,6 +622,9 @@ docs/Model/EzsigntemplateformfieldgroupEditObjectV1Response.md
 docs/Model/EzsigntemplateformfieldgroupGetObjectV1Response.md
 docs/Model/EzsigntemplateformfieldgroupGetObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplateformfieldgroupGetObjectV1ResponseMPayload.md
+docs/Model/EzsigntemplateformfieldgroupGetObjectV2Response.md
+docs/Model/EzsigntemplateformfieldgroupGetObjectV2ResponseAllOf.md
+docs/Model/EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload.md
 docs/Model/EzsigntemplateformfieldgroupRequest.md
 docs/Model/EzsigntemplateformfieldgroupRequestCompound.md
 docs/Model/EzsigntemplateformfieldgroupRequestCompoundAllOf.md
@@ -611,6 +657,9 @@ docs/Model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md
 docs/Model/EzsigntemplatepackageGetObjectV1Response.md
 docs/Model/EzsigntemplatepackageGetObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplatepackageGetObjectV1ResponseMPayload.md
+docs/Model/EzsigntemplatepackageGetObjectV2Response.md
+docs/Model/EzsigntemplatepackageGetObjectV2ResponseAllOf.md
+docs/Model/EzsigntemplatepackageGetObjectV2ResponseMPayload.md
 docs/Model/EzsigntemplatepackageListElement.md
 docs/Model/EzsigntemplatepackageRequest.md
 docs/Model/EzsigntemplatepackageRequestCompound.md
@@ -625,6 +674,9 @@ docs/Model/EzsigntemplatepackagemembershipDeleteObjectV1Response.md
 docs/Model/EzsigntemplatepackagemembershipGetObjectV1Response.md
 docs/Model/EzsigntemplatepackagemembershipGetObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplatepackagemembershipGetObjectV1ResponseMPayload.md
+docs/Model/EzsigntemplatepackagemembershipGetObjectV2Response.md
+docs/Model/EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf.md
+docs/Model/EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload.md
 docs/Model/EzsigntemplatepackagemembershipRequest.md
 docs/Model/EzsigntemplatepackagemembershipRequestCompound.md
 docs/Model/EzsigntemplatepackagemembershipResponse.md
@@ -642,6 +694,9 @@ docs/Model/EzsigntemplatepackagesignerEditObjectV1Response.md
 docs/Model/EzsigntemplatepackagesignerGetObjectV1Response.md
 docs/Model/EzsigntemplatepackagesignerGetObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplatepackagesignerGetObjectV1ResponseMPayload.md
+docs/Model/EzsigntemplatepackagesignerGetObjectV2Response.md
+docs/Model/EzsigntemplatepackagesignerGetObjectV2ResponseAllOf.md
+docs/Model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload.md
 docs/Model/EzsigntemplatepackagesignerRequest.md
 docs/Model/EzsigntemplatepackagesignerRequestCompound.md
 docs/Model/EzsigntemplatepackagesignerResponse.md
@@ -656,6 +711,9 @@ docs/Model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload.m
 docs/Model/EzsigntemplatepackagesignermembershipGetObjectV1Response.md
 docs/Model/EzsigntemplatepackagesignermembershipGetObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplatepackagesignermembershipGetObjectV1ResponseMPayload.md
+docs/Model/EzsigntemplatepackagesignermembershipGetObjectV2Response.md
+docs/Model/EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf.md
+docs/Model/EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload.md
 docs/Model/EzsigntemplatepackagesignermembershipRequest.md
 docs/Model/EzsigntemplatepackagesignermembershipRequestCompound.md
 docs/Model/EzsigntemplatepackagesignermembershipResponse.md
@@ -670,6 +728,9 @@ docs/Model/EzsigntemplatesignatureEditObjectV1Response.md
 docs/Model/EzsigntemplatesignatureGetObjectV1Response.md
 docs/Model/EzsigntemplatesignatureGetObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplatesignatureGetObjectV1ResponseMPayload.md
+docs/Model/EzsigntemplatesignatureGetObjectV2Response.md
+docs/Model/EzsigntemplatesignatureGetObjectV2ResponseAllOf.md
+docs/Model/EzsigntemplatesignatureGetObjectV2ResponseMPayload.md
 docs/Model/EzsigntemplatesignatureRequest.md
 docs/Model/EzsigntemplatesignatureRequestCompound.md
 docs/Model/EzsigntemplatesignatureRequestCompoundAllOf.md
@@ -690,6 +751,9 @@ docs/Model/EzsigntemplatesignerEditObjectV1Response.md
 docs/Model/EzsigntemplatesignerGetObjectV1Response.md
 docs/Model/EzsigntemplatesignerGetObjectV1ResponseAllOf.md
 docs/Model/EzsigntemplatesignerGetObjectV1ResponseMPayload.md
+docs/Model/EzsigntemplatesignerGetObjectV2Response.md
+docs/Model/EzsigntemplatesignerGetObjectV2ResponseAllOf.md
+docs/Model/EzsigntemplatesignerGetObjectV2ResponseMPayload.md
 docs/Model/EzsigntemplatesignerRequest.md
 docs/Model/EzsigntemplatesignerRequestCompound.md
 docs/Model/EzsigntemplatesignerResponse.md
@@ -731,6 +795,8 @@ docs/Model/FieldENotificationpreferenceStatus.md
 docs/Model/FieldEPhoneType.md
 docs/Model/FieldEUserEzsignsendreminderfrequency.md
 docs/Model/FieldEUserType.md
+docs/Model/FieldEVersionhistoryType.md
+docs/Model/FieldEVersionhistoryUsertype.md
 docs/Model/FieldEWebhookEzsignevent.md
 docs/Model/FieldEWebhookManagementevent.md
 docs/Model/FieldEWebhookModule.md
@@ -753,6 +819,7 @@ docs/Model/MultilingualEzmaxinvoicingsummaryinternalDescription.md
 docs/Model/MultilingualEzsignfoldertypeName.md
 docs/Model/MultilingualNotificationsubsectionName.md
 docs/Model/MultilingualNotificationtestName.md
+docs/Model/MultilingualVersionhistoryDetail.md
 docs/Model/NotificationsectionGetNotificationtestsV1Response.md
 docs/Model/NotificationsectionGetNotificationtestsV1ResponseAllOf.md
 docs/Model/NotificationsectionGetNotificationtestsV1ResponseMPayload.md
@@ -789,6 +856,11 @@ docs/Model/UsergroupAutocompleteElementResponse.md
 docs/Model/UsergroupGetAutocompleteV2Response.md
 docs/Model/UsergroupGetAutocompleteV2ResponseAllOf.md
 docs/Model/UsergroupGetAutocompleteV2ResponseMPayload.md
+docs/Model/VersionhistoryGetObjectV2Response.md
+docs/Model/VersionhistoryGetObjectV2ResponseAllOf.md
+docs/Model/VersionhistoryGetObjectV2ResponseMPayload.md
+docs/Model/VersionhistoryResponse.md
+docs/Model/VersionhistoryResponseCompound.md
 docs/Model/WebhookCreateObjectV1Request.md
 docs/Model/WebhookCreateObjectV1Response.md
 docs/Model/WebhookCreateObjectV1ResponseAllOf.md
@@ -811,11 +883,15 @@ docs/Model/WebhookGetListV1ResponseMPayloadAllOf.md
 docs/Model/WebhookGetObjectV1Response.md
 docs/Model/WebhookGetObjectV1ResponseAllOf.md
 docs/Model/WebhookGetObjectV1ResponseMPayload.md
+docs/Model/WebhookGetObjectV2Response.md
+docs/Model/WebhookGetObjectV2ResponseAllOf.md
+docs/Model/WebhookGetObjectV2ResponseMPayload.md
 docs/Model/WebhookListElement.md
 docs/Model/WebhookRequest.md
 docs/Model/WebhookRequestCompound.md
 docs/Model/WebhookResponse.md
 docs/Model/WebhookResponseCompound.md
+docs/Model/WebhookResponseCompoundAllOf.md
 docs/Model/WebhookTestV1Response.md
 docs/Model/WebhookUserUserCreated.md
 docs/Model/WebhookUserUserCreatedAllOf.md
@@ -862,6 +938,7 @@ lib/Api/ObjectTaxassignmentApi.php
 lib/Api/ObjectTimezoneApi.php
 lib/Api/ObjectUserApi.php
 lib/Api/ObjectUsergroupApi.php
+lib/Api/ObjectVersionhistoryApi.php
 lib/Api/ObjectWebhookApi.php
 lib/ApiException.php
 lib/Configuration.php
@@ -911,6 +988,9 @@ lib/Model/BrandingGetListV1ResponseMPayloadAllOf.php
 lib/Model/BrandingGetObjectV1Response.php
 lib/Model/BrandingGetObjectV1ResponseAllOf.php
 lib/Model/BrandingGetObjectV1ResponseMPayload.php
+lib/Model/BrandingGetObjectV2Response.php
+lib/Model/BrandingGetObjectV2ResponseAllOf.php
+lib/Model/BrandingGetObjectV2ResponseMPayload.php
 lib/Model/BrandingListElement.php
 lib/Model/BrandingRequest.php
 lib/Model/BrandingRequestCompound.php
@@ -998,6 +1078,9 @@ lib/Model/EzmaxinvoicingGetAutocompleteV2ResponseMPayload.php
 lib/Model/EzmaxinvoicingGetObjectV1Response.php
 lib/Model/EzmaxinvoicingGetObjectV1ResponseAllOf.php
 lib/Model/EzmaxinvoicingGetObjectV1ResponseMPayload.php
+lib/Model/EzmaxinvoicingGetObjectV2Response.php
+lib/Model/EzmaxinvoicingGetObjectV2ResponseAllOf.php
+lib/Model/EzmaxinvoicingGetObjectV2ResponseMPayload.php
 lib/Model/EzmaxinvoicingGetProvisionalV1Response.php
 lib/Model/EzmaxinvoicingGetProvisionalV1ResponseAllOf.php
 lib/Model/EzmaxinvoicingGetProvisionalV1ResponseMPayload.php
@@ -1057,6 +1140,9 @@ lib/Model/EzsignbulksendGetListV1ResponseMPayloadAllOf.php
 lib/Model/EzsignbulksendGetObjectV1Response.php
 lib/Model/EzsignbulksendGetObjectV1ResponseAllOf.php
 lib/Model/EzsignbulksendGetObjectV1ResponseMPayload.php
+lib/Model/EzsignbulksendGetObjectV2Response.php
+lib/Model/EzsignbulksendGetObjectV2ResponseAllOf.php
+lib/Model/EzsignbulksendGetObjectV2ResponseMPayload.php
 lib/Model/EzsignbulksendListElement.php
 lib/Model/EzsignbulksendReorderV1Request.php
 lib/Model/EzsignbulksendReorderV1Response.php
@@ -1073,6 +1159,9 @@ lib/Model/EzsignbulksenddocumentmappingDeleteObjectV1Response.php
 lib/Model/EzsignbulksenddocumentmappingGetObjectV1Response.php
 lib/Model/EzsignbulksenddocumentmappingGetObjectV1ResponseAllOf.php
 lib/Model/EzsignbulksenddocumentmappingGetObjectV1ResponseMPayload.php
+lib/Model/EzsignbulksenddocumentmappingGetObjectV2Response.php
+lib/Model/EzsignbulksenddocumentmappingGetObjectV2ResponseAllOf.php
+lib/Model/EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload.php
 lib/Model/EzsignbulksenddocumentmappingRequest.php
 lib/Model/EzsignbulksenddocumentmappingRequestCompound.php
 lib/Model/EzsignbulksenddocumentmappingResponse.php
@@ -1086,6 +1175,9 @@ lib/Model/EzsignbulksendsignermappingDeleteObjectV1Response.php
 lib/Model/EzsignbulksendsignermappingGetObjectV1Response.php
 lib/Model/EzsignbulksendsignermappingGetObjectV1ResponseAllOf.php
 lib/Model/EzsignbulksendsignermappingGetObjectV1ResponseMPayload.php
+lib/Model/EzsignbulksendsignermappingGetObjectV2Response.php
+lib/Model/EzsignbulksendsignermappingGetObjectV2ResponseAllOf.php
+lib/Model/EzsignbulksendsignermappingGetObjectV2ResponseMPayload.php
 lib/Model/EzsignbulksendsignermappingRequest.php
 lib/Model/EzsignbulksendsignermappingRequestCompound.php
 lib/Model/EzsignbulksendsignermappingResponse.php
@@ -1096,6 +1188,9 @@ lib/Model/EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload.php
 lib/Model/EzsignbulksendtransmissionGetObjectV1Response.php
 lib/Model/EzsignbulksendtransmissionGetObjectV1ResponseAllOf.php
 lib/Model/EzsignbulksendtransmissionGetObjectV1ResponseMPayload.php
+lib/Model/EzsignbulksendtransmissionGetObjectV2Response.php
+lib/Model/EzsignbulksendtransmissionGetObjectV2ResponseAllOf.php
+lib/Model/EzsignbulksendtransmissionGetObjectV2ResponseMPayload.php
 lib/Model/EzsignbulksendtransmissionResponse.php
 lib/Model/EzsignbulksendtransmissionResponseCompound.php
 lib/Model/EzsignbulksendtransmissionResponseCompoundAllOf.php
@@ -1142,6 +1237,9 @@ lib/Model/EzsigndocumentGetFormDataV1ResponseMPayload.php
 lib/Model/EzsigndocumentGetObjectV1Response.php
 lib/Model/EzsigndocumentGetObjectV1ResponseAllOf.php
 lib/Model/EzsigndocumentGetObjectV1ResponseMPayload.php
+lib/Model/EzsigndocumentGetObjectV2Response.php
+lib/Model/EzsigndocumentGetObjectV2ResponseAllOf.php
+lib/Model/EzsigndocumentGetObjectV2ResponseMPayload.php
 lib/Model/EzsigndocumentGetTemporaryProofV1Response.php
 lib/Model/EzsigndocumentGetTemporaryProofV1ResponseAllOf.php
 lib/Model/EzsigndocumentGetTemporaryProofV1ResponseMPayload.php
@@ -1194,6 +1292,9 @@ lib/Model/EzsignfolderGetListV1ResponseMPayloadAllOf.php
 lib/Model/EzsignfolderGetObjectV1Response.php
 lib/Model/EzsignfolderGetObjectV1ResponseAllOf.php
 lib/Model/EzsignfolderGetObjectV1ResponseMPayload.php
+lib/Model/EzsignfolderGetObjectV2Response.php
+lib/Model/EzsignfolderGetObjectV2ResponseAllOf.php
+lib/Model/EzsignfolderGetObjectV2ResponseMPayload.php
 lib/Model/EzsignfolderImportEzsignfoldersignerassociationsV1Request.php
 lib/Model/EzsignfolderImportEzsignfoldersignerassociationsV1Response.php
 lib/Model/EzsignfolderImportEzsignfoldersignerassociationsV1ResponseAllOf.php
@@ -1232,6 +1333,9 @@ lib/Model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.php
 lib/Model/EzsignfoldersignerassociationGetObjectV1Response.php
 lib/Model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.php
 lib/Model/EzsignfoldersignerassociationGetObjectV1ResponseMPayload.php
+lib/Model/EzsignfoldersignerassociationGetObjectV2Response.php
+lib/Model/EzsignfoldersignerassociationGetObjectV2ResponseAllOf.php
+lib/Model/EzsignfoldersignerassociationGetObjectV2ResponseMPayload.php
 lib/Model/EzsignfoldersignerassociationRequest.php
 lib/Model/EzsignfoldersignerassociationRequestCompound.php
 lib/Model/EzsignfoldersignerassociationRequestCompoundAllOf.php
@@ -1256,6 +1360,9 @@ lib/Model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.php
 lib/Model/EzsignfoldertypeGetObjectV1Response.php
 lib/Model/EzsignfoldertypeGetObjectV1ResponseAllOf.php
 lib/Model/EzsignfoldertypeGetObjectV1ResponseMPayload.php
+lib/Model/EzsignfoldertypeGetObjectV2Response.php
+lib/Model/EzsignfoldertypeGetObjectV2ResponseAllOf.php
+lib/Model/EzsignfoldertypeGetObjectV2ResponseMPayload.php
 lib/Model/EzsignfoldertypeListElement.php
 lib/Model/EzsignfoldertypeRequest.php
 lib/Model/EzsignfoldertypeRequestCompound.php
@@ -1276,6 +1383,9 @@ lib/Model/EzsignformfieldgroupEditObjectV1Response.php
 lib/Model/EzsignformfieldgroupGetObjectV1Response.php
 lib/Model/EzsignformfieldgroupGetObjectV1ResponseAllOf.php
 lib/Model/EzsignformfieldgroupGetObjectV1ResponseMPayload.php
+lib/Model/EzsignformfieldgroupGetObjectV2Response.php
+lib/Model/EzsignformfieldgroupGetObjectV2ResponseAllOf.php
+lib/Model/EzsignformfieldgroupGetObjectV2ResponseMPayload.php
 lib/Model/EzsignformfieldgroupRequest.php
 lib/Model/EzsignformfieldgroupRequestCompound.php
 lib/Model/EzsignformfieldgroupRequestCompoundAllOf.php
@@ -1302,6 +1412,9 @@ lib/Model/EzsignsignatureEditObjectV1Response.php
 lib/Model/EzsignsignatureGetObjectV1Response.php
 lib/Model/EzsignsignatureGetObjectV1ResponseAllOf.php
 lib/Model/EzsignsignatureGetObjectV1ResponseMPayload.php
+lib/Model/EzsignsignatureGetObjectV2Response.php
+lib/Model/EzsignsignatureGetObjectV2ResponseAllOf.php
+lib/Model/EzsignsignatureGetObjectV2ResponseMPayload.php
 lib/Model/EzsignsignatureRequest.php
 lib/Model/EzsignsignatureRequestCompound.php
 lib/Model/EzsignsignatureRequestCompoundAllOf.php
@@ -1341,6 +1454,9 @@ lib/Model/EzsigntemplateGetListV1ResponseMPayloadAllOf.php
 lib/Model/EzsigntemplateGetObjectV1Response.php
 lib/Model/EzsigntemplateGetObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplateGetObjectV1ResponseMPayload.php
+lib/Model/EzsigntemplateGetObjectV2Response.php
+lib/Model/EzsigntemplateGetObjectV2ResponseAllOf.php
+lib/Model/EzsigntemplateGetObjectV2ResponseMPayload.php
 lib/Model/EzsigntemplateListElement.php
 lib/Model/EzsigntemplateRequest.php
 lib/Model/EzsigntemplateRequestCompound.php
@@ -1374,6 +1490,9 @@ lib/Model/EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload.ph
 lib/Model/EzsigntemplatedocumentGetObjectV1Response.php
 lib/Model/EzsigntemplatedocumentGetObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplatedocumentGetObjectV1ResponseMPayload.php
+lib/Model/EzsigntemplatedocumentGetObjectV2Response.php
+lib/Model/EzsigntemplatedocumentGetObjectV2ResponseAllOf.php
+lib/Model/EzsigntemplatedocumentGetObjectV2ResponseMPayload.php
 lib/Model/EzsigntemplatedocumentGetWordsPositionsV1Request.php
 lib/Model/EzsigntemplatedocumentGetWordsPositionsV1Response.php
 lib/Model/EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOf.php
@@ -1400,6 +1519,9 @@ lib/Model/EzsigntemplateformfieldgroupEditObjectV1Response.php
 lib/Model/EzsigntemplateformfieldgroupGetObjectV1Response.php
 lib/Model/EzsigntemplateformfieldgroupGetObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplateformfieldgroupGetObjectV1ResponseMPayload.php
+lib/Model/EzsigntemplateformfieldgroupGetObjectV2Response.php
+lib/Model/EzsigntemplateformfieldgroupGetObjectV2ResponseAllOf.php
+lib/Model/EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload.php
 lib/Model/EzsigntemplateformfieldgroupRequest.php
 lib/Model/EzsigntemplateformfieldgroupRequestCompound.php
 lib/Model/EzsigntemplateformfieldgroupRequestCompoundAllOf.php
@@ -1432,6 +1554,9 @@ lib/Model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.php
 lib/Model/EzsigntemplatepackageGetObjectV1Response.php
 lib/Model/EzsigntemplatepackageGetObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplatepackageGetObjectV1ResponseMPayload.php
+lib/Model/EzsigntemplatepackageGetObjectV2Response.php
+lib/Model/EzsigntemplatepackageGetObjectV2ResponseAllOf.php
+lib/Model/EzsigntemplatepackageGetObjectV2ResponseMPayload.php
 lib/Model/EzsigntemplatepackageListElement.php
 lib/Model/EzsigntemplatepackageRequest.php
 lib/Model/EzsigntemplatepackageRequestCompound.php
@@ -1446,6 +1571,9 @@ lib/Model/EzsigntemplatepackagemembershipDeleteObjectV1Response.php
 lib/Model/EzsigntemplatepackagemembershipGetObjectV1Response.php
 lib/Model/EzsigntemplatepackagemembershipGetObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplatepackagemembershipGetObjectV1ResponseMPayload.php
+lib/Model/EzsigntemplatepackagemembershipGetObjectV2Response.php
+lib/Model/EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf.php
+lib/Model/EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload.php
 lib/Model/EzsigntemplatepackagemembershipRequest.php
 lib/Model/EzsigntemplatepackagemembershipRequestCompound.php
 lib/Model/EzsigntemplatepackagemembershipResponse.php
@@ -1463,6 +1591,9 @@ lib/Model/EzsigntemplatepackagesignerEditObjectV1Response.php
 lib/Model/EzsigntemplatepackagesignerGetObjectV1Response.php
 lib/Model/EzsigntemplatepackagesignerGetObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplatepackagesignerGetObjectV1ResponseMPayload.php
+lib/Model/EzsigntemplatepackagesignerGetObjectV2Response.php
+lib/Model/EzsigntemplatepackagesignerGetObjectV2ResponseAllOf.php
+lib/Model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload.php
 lib/Model/EzsigntemplatepackagesignerRequest.php
 lib/Model/EzsigntemplatepackagesignerRequestCompound.php
 lib/Model/EzsigntemplatepackagesignerResponse.php
@@ -1477,6 +1608,9 @@ lib/Model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload.ph
 lib/Model/EzsigntemplatepackagesignermembershipGetObjectV1Response.php
 lib/Model/EzsigntemplatepackagesignermembershipGetObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplatepackagesignermembershipGetObjectV1ResponseMPayload.php
+lib/Model/EzsigntemplatepackagesignermembershipGetObjectV2Response.php
+lib/Model/EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf.php
+lib/Model/EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload.php
 lib/Model/EzsigntemplatepackagesignermembershipRequest.php
 lib/Model/EzsigntemplatepackagesignermembershipRequestCompound.php
 lib/Model/EzsigntemplatepackagesignermembershipResponse.php
@@ -1491,6 +1625,9 @@ lib/Model/EzsigntemplatesignatureEditObjectV1Response.php
 lib/Model/EzsigntemplatesignatureGetObjectV1Response.php
 lib/Model/EzsigntemplatesignatureGetObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplatesignatureGetObjectV1ResponseMPayload.php
+lib/Model/EzsigntemplatesignatureGetObjectV2Response.php
+lib/Model/EzsigntemplatesignatureGetObjectV2ResponseAllOf.php
+lib/Model/EzsigntemplatesignatureGetObjectV2ResponseMPayload.php
 lib/Model/EzsigntemplatesignatureRequest.php
 lib/Model/EzsigntemplatesignatureRequestCompound.php
 lib/Model/EzsigntemplatesignatureRequestCompoundAllOf.php
@@ -1511,6 +1648,9 @@ lib/Model/EzsigntemplatesignerEditObjectV1Response.php
 lib/Model/EzsigntemplatesignerGetObjectV1Response.php
 lib/Model/EzsigntemplatesignerGetObjectV1ResponseAllOf.php
 lib/Model/EzsigntemplatesignerGetObjectV1ResponseMPayload.php
+lib/Model/EzsigntemplatesignerGetObjectV2Response.php
+lib/Model/EzsigntemplatesignerGetObjectV2ResponseAllOf.php
+lib/Model/EzsigntemplatesignerGetObjectV2ResponseMPayload.php
 lib/Model/EzsigntemplatesignerRequest.php
 lib/Model/EzsigntemplatesignerRequestCompound.php
 lib/Model/EzsigntemplatesignerResponse.php
@@ -1552,6 +1692,8 @@ lib/Model/FieldENotificationpreferenceStatus.php
 lib/Model/FieldEPhoneType.php
 lib/Model/FieldEUserEzsignsendreminderfrequency.php
 lib/Model/FieldEUserType.php
+lib/Model/FieldEVersionhistoryType.php
+lib/Model/FieldEVersionhistoryUsertype.php
 lib/Model/FieldEWebhookEzsignevent.php
 lib/Model/FieldEWebhookManagementevent.php
 lib/Model/FieldEWebhookModule.php
@@ -1575,6 +1717,7 @@ lib/Model/MultilingualEzmaxinvoicingsummaryinternalDescription.php
 lib/Model/MultilingualEzsignfoldertypeName.php
 lib/Model/MultilingualNotificationsubsectionName.php
 lib/Model/MultilingualNotificationtestName.php
+lib/Model/MultilingualVersionhistoryDetail.php
 lib/Model/NotificationsectionGetNotificationtestsV1Response.php
 lib/Model/NotificationsectionGetNotificationtestsV1ResponseAllOf.php
 lib/Model/NotificationsectionGetNotificationtestsV1ResponseMPayload.php
@@ -1611,6 +1754,11 @@ lib/Model/UsergroupAutocompleteElementResponse.php
 lib/Model/UsergroupGetAutocompleteV2Response.php
 lib/Model/UsergroupGetAutocompleteV2ResponseAllOf.php
 lib/Model/UsergroupGetAutocompleteV2ResponseMPayload.php
+lib/Model/VersionhistoryGetObjectV2Response.php
+lib/Model/VersionhistoryGetObjectV2ResponseAllOf.php
+lib/Model/VersionhistoryGetObjectV2ResponseMPayload.php
+lib/Model/VersionhistoryResponse.php
+lib/Model/VersionhistoryResponseCompound.php
 lib/Model/WebhookCreateObjectV1Request.php
 lib/Model/WebhookCreateObjectV1Response.php
 lib/Model/WebhookCreateObjectV1ResponseAllOf.php
@@ -1633,11 +1781,15 @@ lib/Model/WebhookGetListV1ResponseMPayloadAllOf.php
 lib/Model/WebhookGetObjectV1Response.php
 lib/Model/WebhookGetObjectV1ResponseAllOf.php
 lib/Model/WebhookGetObjectV1ResponseMPayload.php
+lib/Model/WebhookGetObjectV2Response.php
+lib/Model/WebhookGetObjectV2ResponseAllOf.php
+lib/Model/WebhookGetObjectV2ResponseMPayload.php
 lib/Model/WebhookListElement.php
 lib/Model/WebhookRequest.php
 lib/Model/WebhookRequestCompound.php
 lib/Model/WebhookResponse.php
 lib/Model/WebhookResponseCompound.php
+lib/Model/WebhookResponseCompoundAllOf.php
 lib/Model/WebhookTestV1Response.php
 lib/Model/WebhookUserUserCreated.php
 lib/Model/WebhookUserUserCreatedAllOf.php
@@ -1686,6 +1838,7 @@ test/Api/ObjectTaxassignmentApiTest.php
 test/Api/ObjectTimezoneApiTest.php
 test/Api/ObjectUserApiTest.php
 test/Api/ObjectUsergroupApiTest.php
+test/Api/ObjectVersionhistoryApiTest.php
 test/Api/ObjectWebhookApiTest.php
 test/Model/ActivesessionGetCurrentV1ResponseAllOfTest.php
 test/Model/ActivesessionGetCurrentV1ResponseMPayloadTest.php
@@ -1732,6 +1885,9 @@ test/Model/BrandingGetListV1ResponseTest.php
 test/Model/BrandingGetObjectV1ResponseAllOfTest.php
 test/Model/BrandingGetObjectV1ResponseMPayloadTest.php
 test/Model/BrandingGetObjectV1ResponseTest.php
+test/Model/BrandingGetObjectV2ResponseAllOfTest.php
+test/Model/BrandingGetObjectV2ResponseMPayloadTest.php
+test/Model/BrandingGetObjectV2ResponseTest.php
 test/Model/BrandingListElementTest.php
 test/Model/BrandingRequestCompoundTest.php
 test/Model/BrandingRequestTest.php
@@ -1819,6 +1975,9 @@ test/Model/EzmaxinvoicingGetAutocompleteV2ResponseTest.php
 test/Model/EzmaxinvoicingGetObjectV1ResponseAllOfTest.php
 test/Model/EzmaxinvoicingGetObjectV1ResponseMPayloadTest.php
 test/Model/EzmaxinvoicingGetObjectV1ResponseTest.php
+test/Model/EzmaxinvoicingGetObjectV2ResponseAllOfTest.php
+test/Model/EzmaxinvoicingGetObjectV2ResponseMPayloadTest.php
+test/Model/EzmaxinvoicingGetObjectV2ResponseTest.php
 test/Model/EzmaxinvoicingGetProvisionalV1ResponseAllOfTest.php
 test/Model/EzmaxinvoicingGetProvisionalV1ResponseMPayloadTest.php
 test/Model/EzmaxinvoicingGetProvisionalV1ResponseTest.php
@@ -1878,6 +2037,9 @@ test/Model/EzsignbulksendGetListV1ResponseTest.php
 test/Model/EzsignbulksendGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignbulksendGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignbulksendGetObjectV1ResponseTest.php
+test/Model/EzsignbulksendGetObjectV2ResponseAllOfTest.php
+test/Model/EzsignbulksendGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsignbulksendGetObjectV2ResponseTest.php
 test/Model/EzsignbulksendListElementTest.php
 test/Model/EzsignbulksendReorderV1RequestTest.php
 test/Model/EzsignbulksendReorderV1ResponseTest.php
@@ -1894,6 +2056,9 @@ test/Model/EzsignbulksenddocumentmappingDeleteObjectV1ResponseTest.php
 test/Model/EzsignbulksenddocumentmappingGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignbulksenddocumentmappingGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignbulksenddocumentmappingGetObjectV1ResponseTest.php
+test/Model/EzsignbulksenddocumentmappingGetObjectV2ResponseAllOfTest.php
+test/Model/EzsignbulksenddocumentmappingGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsignbulksenddocumentmappingGetObjectV2ResponseTest.php
 test/Model/EzsignbulksenddocumentmappingRequestCompoundTest.php
 test/Model/EzsignbulksenddocumentmappingRequestTest.php
 test/Model/EzsignbulksenddocumentmappingResponseCompoundAllOfTest.php
@@ -1907,6 +2072,9 @@ test/Model/EzsignbulksendsignermappingDeleteObjectV1ResponseTest.php
 test/Model/EzsignbulksendsignermappingGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignbulksendsignermappingGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignbulksendsignermappingGetObjectV1ResponseTest.php
+test/Model/EzsignbulksendsignermappingGetObjectV2ResponseAllOfTest.php
+test/Model/EzsignbulksendsignermappingGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsignbulksendsignermappingGetObjectV2ResponseTest.php
 test/Model/EzsignbulksendsignermappingRequestCompoundTest.php
 test/Model/EzsignbulksendsignermappingRequestTest.php
 test/Model/EzsignbulksendsignermappingResponseCompoundTest.php
@@ -1917,6 +2085,9 @@ test/Model/EzsignbulksendtransmissionGetFormsDataV1ResponseTest.php
 test/Model/EzsignbulksendtransmissionGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignbulksendtransmissionGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignbulksendtransmissionGetObjectV1ResponseTest.php
+test/Model/EzsignbulksendtransmissionGetObjectV2ResponseAllOfTest.php
+test/Model/EzsignbulksendtransmissionGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsignbulksendtransmissionGetObjectV2ResponseTest.php
 test/Model/EzsignbulksendtransmissionResponseCompoundAllOfTest.php
 test/Model/EzsignbulksendtransmissionResponseCompoundTest.php
 test/Model/EzsignbulksendtransmissionResponseTest.php
@@ -1963,6 +2134,9 @@ test/Model/EzsigndocumentGetFormDataV1ResponseTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetObjectV1ResponseTest.php
+test/Model/EzsigndocumentGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigndocumentGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigndocumentGetObjectV2ResponseTest.php
 test/Model/EzsigndocumentGetTemporaryProofV1ResponseAllOfTest.php
 test/Model/EzsigndocumentGetTemporaryProofV1ResponseMPayloadTest.php
 test/Model/EzsigndocumentGetTemporaryProofV1ResponseTest.php
@@ -2015,6 +2189,9 @@ test/Model/EzsignfolderGetListV1ResponseTest.php
 test/Model/EzsignfolderGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignfolderGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfolderGetObjectV1ResponseTest.php
+test/Model/EzsignfolderGetObjectV2ResponseAllOfTest.php
+test/Model/EzsignfolderGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsignfolderGetObjectV2ResponseTest.php
 test/Model/EzsignfolderImportEzsignfoldersignerassociationsV1RequestTest.php
 test/Model/EzsignfolderImportEzsignfoldersignerassociationsV1ResponseAllOfTest.php
 test/Model/EzsignfolderImportEzsignfoldersignerassociationsV1ResponseMPayloadTest.php
@@ -2053,6 +2230,9 @@ test/Model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseTest.php
 test/Model/EzsignfoldersignerassociationGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfoldersignerassociationGetObjectV1ResponseTest.php
+test/Model/EzsignfoldersignerassociationGetObjectV2ResponseAllOfTest.php
+test/Model/EzsignfoldersignerassociationGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsignfoldersignerassociationGetObjectV2ResponseTest.php
 test/Model/EzsignfoldersignerassociationRequestCompoundAllOfTest.php
 test/Model/EzsignfoldersignerassociationRequestCompoundTest.php
 test/Model/EzsignfoldersignerassociationRequestTest.php
@@ -2077,6 +2257,9 @@ test/Model/EzsignfoldertypeGetListV1ResponseTest.php
 test/Model/EzsignfoldertypeGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignfoldertypeGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignfoldertypeGetObjectV1ResponseTest.php
+test/Model/EzsignfoldertypeGetObjectV2ResponseAllOfTest.php
+test/Model/EzsignfoldertypeGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsignfoldertypeGetObjectV2ResponseTest.php
 test/Model/EzsignfoldertypeListElementTest.php
 test/Model/EzsignfoldertypeRequestCompoundAllOfTest.php
 test/Model/EzsignfoldertypeRequestCompoundTest.php
@@ -2097,6 +2280,9 @@ test/Model/EzsignformfieldgroupEditObjectV1ResponseTest.php
 test/Model/EzsignformfieldgroupGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignformfieldgroupGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignformfieldgroupGetObjectV1ResponseTest.php
+test/Model/EzsignformfieldgroupGetObjectV2ResponseAllOfTest.php
+test/Model/EzsignformfieldgroupGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsignformfieldgroupGetObjectV2ResponseTest.php
 test/Model/EzsignformfieldgroupRequestCompoundAllOfTest.php
 test/Model/EzsignformfieldgroupRequestCompoundTest.php
 test/Model/EzsignformfieldgroupRequestTest.php
@@ -2123,6 +2309,9 @@ test/Model/EzsignsignatureEditObjectV1ResponseTest.php
 test/Model/EzsignsignatureGetObjectV1ResponseAllOfTest.php
 test/Model/EzsignsignatureGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsignsignatureGetObjectV1ResponseTest.php
+test/Model/EzsignsignatureGetObjectV2ResponseAllOfTest.php
+test/Model/EzsignsignatureGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsignsignatureGetObjectV2ResponseTest.php
 test/Model/EzsignsignatureRequestCompoundAllOfTest.php
 test/Model/EzsignsignatureRequestCompoundTest.php
 test/Model/EzsignsignatureRequestTest.php
@@ -2162,6 +2351,9 @@ test/Model/EzsigntemplateGetListV1ResponseTest.php
 test/Model/EzsigntemplateGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplateGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigntemplateGetObjectV1ResponseTest.php
+test/Model/EzsigntemplateGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigntemplateGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigntemplateGetObjectV2ResponseTest.php
 test/Model/EzsigntemplateListElementTest.php
 test/Model/EzsigntemplateRequestCompoundTest.php
 test/Model/EzsigntemplateRequestTest.php
@@ -2195,6 +2387,9 @@ test/Model/EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseTest.php
 test/Model/EzsigntemplatedocumentGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplatedocumentGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatedocumentGetObjectV1ResponseTest.php
+test/Model/EzsigntemplatedocumentGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigntemplatedocumentGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigntemplatedocumentGetObjectV2ResponseTest.php
 test/Model/EzsigntemplatedocumentGetWordsPositionsV1RequestTest.php
 test/Model/EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOfTest.php
 test/Model/EzsigntemplatedocumentGetWordsPositionsV1ResponseTest.php
@@ -2221,6 +2416,9 @@ test/Model/EzsigntemplateformfieldgroupEditObjectV1ResponseTest.php
 test/Model/EzsigntemplateformfieldgroupGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplateformfieldgroupGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigntemplateformfieldgroupGetObjectV1ResponseTest.php
+test/Model/EzsigntemplateformfieldgroupGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigntemplateformfieldgroupGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigntemplateformfieldgroupGetObjectV2ResponseTest.php
 test/Model/EzsigntemplateformfieldgroupRequestCompoundAllOfTest.php
 test/Model/EzsigntemplateformfieldgroupRequestCompoundTest.php
 test/Model/EzsigntemplateformfieldgroupRequestTest.php
@@ -2253,6 +2451,9 @@ test/Model/EzsigntemplatepackageGetListV1ResponseTest.php
 test/Model/EzsigntemplatepackageGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplatepackageGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatepackageGetObjectV1ResponseTest.php
+test/Model/EzsigntemplatepackageGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigntemplatepackageGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigntemplatepackageGetObjectV2ResponseTest.php
 test/Model/EzsigntemplatepackageListElementTest.php
 test/Model/EzsigntemplatepackageRequestCompoundTest.php
 test/Model/EzsigntemplatepackageRequestTest.php
@@ -2267,6 +2468,9 @@ test/Model/EzsigntemplatepackagemembershipDeleteObjectV1ResponseTest.php
 test/Model/EzsigntemplatepackagemembershipGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplatepackagemembershipGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatepackagemembershipGetObjectV1ResponseTest.php
+test/Model/EzsigntemplatepackagemembershipGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigntemplatepackagemembershipGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigntemplatepackagemembershipGetObjectV2ResponseTest.php
 test/Model/EzsigntemplatepackagemembershipRequestCompoundTest.php
 test/Model/EzsigntemplatepackagemembershipRequestTest.php
 test/Model/EzsigntemplatepackagemembershipResponseCompoundAllOfTest.php
@@ -2284,6 +2488,9 @@ test/Model/EzsigntemplatepackagesignerEditObjectV1ResponseTest.php
 test/Model/EzsigntemplatepackagesignerGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplatepackagesignerGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatepackagesignerGetObjectV1ResponseTest.php
+test/Model/EzsigntemplatepackagesignerGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigntemplatepackagesignerGetObjectV2ResponseTest.php
 test/Model/EzsigntemplatepackagesignerRequestCompoundTest.php
 test/Model/EzsigntemplatepackagesignerRequestTest.php
 test/Model/EzsigntemplatepackagesignerResponseCompoundTest.php
@@ -2298,6 +2505,9 @@ test/Model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseTest.php
 test/Model/EzsigntemplatepackagesignermembershipGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplatepackagesignermembershipGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatepackagesignermembershipGetObjectV1ResponseTest.php
+test/Model/EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigntemplatepackagesignermembershipGetObjectV2ResponseTest.php
 test/Model/EzsigntemplatepackagesignermembershipRequestCompoundTest.php
 test/Model/EzsigntemplatepackagesignermembershipRequestTest.php
 test/Model/EzsigntemplatepackagesignermembershipResponseCompoundTest.php
@@ -2312,6 +2522,9 @@ test/Model/EzsigntemplatesignatureEditObjectV1ResponseTest.php
 test/Model/EzsigntemplatesignatureGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplatesignatureGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatesignatureGetObjectV1ResponseTest.php
+test/Model/EzsigntemplatesignatureGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigntemplatesignatureGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigntemplatesignatureGetObjectV2ResponseTest.php
 test/Model/EzsigntemplatesignatureRequestCompoundAllOfTest.php
 test/Model/EzsigntemplatesignatureRequestCompoundTest.php
 test/Model/EzsigntemplatesignatureRequestTest.php
@@ -2332,6 +2545,9 @@ test/Model/EzsigntemplatesignerEditObjectV1ResponseTest.php
 test/Model/EzsigntemplatesignerGetObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplatesignerGetObjectV1ResponseMPayloadTest.php
 test/Model/EzsigntemplatesignerGetObjectV1ResponseTest.php
+test/Model/EzsigntemplatesignerGetObjectV2ResponseAllOfTest.php
+test/Model/EzsigntemplatesignerGetObjectV2ResponseMPayloadTest.php
+test/Model/EzsigntemplatesignerGetObjectV2ResponseTest.php
 test/Model/EzsigntemplatesignerRequestCompoundTest.php
 test/Model/EzsigntemplatesignerRequestTest.php
 test/Model/EzsigntemplatesignerResponseCompoundTest.php
@@ -2373,6 +2589,8 @@ test/Model/FieldENotificationpreferenceStatusTest.php
 test/Model/FieldEPhoneTypeTest.php
 test/Model/FieldEUserEzsignsendreminderfrequencyTest.php
 test/Model/FieldEUserTypeTest.php
+test/Model/FieldEVersionhistoryTypeTest.php
+test/Model/FieldEVersionhistoryUsertypeTest.php
 test/Model/FieldEWebhookEzsigneventTest.php
 test/Model/FieldEWebhookManagementeventTest.php
 test/Model/FieldEWebhookModuleTest.php
@@ -2395,6 +2613,7 @@ test/Model/MultilingualEzmaxinvoicingsummaryinternalDescriptionTest.php
 test/Model/MultilingualEzsignfoldertypeNameTest.php
 test/Model/MultilingualNotificationsubsectionNameTest.php
 test/Model/MultilingualNotificationtestNameTest.php
+test/Model/MultilingualVersionhistoryDetailTest.php
 test/Model/NotificationsectionGetNotificationtestsV1ResponseAllOfTest.php
 test/Model/NotificationsectionGetNotificationtestsV1ResponseMPayloadTest.php
 test/Model/NotificationsectionGetNotificationtestsV1ResponseTest.php
@@ -2431,6 +2650,11 @@ test/Model/UsergroupAutocompleteElementResponseTest.php
 test/Model/UsergroupGetAutocompleteV2ResponseAllOfTest.php
 test/Model/UsergroupGetAutocompleteV2ResponseMPayloadTest.php
 test/Model/UsergroupGetAutocompleteV2ResponseTest.php
+test/Model/VersionhistoryGetObjectV2ResponseAllOfTest.php
+test/Model/VersionhistoryGetObjectV2ResponseMPayloadTest.php
+test/Model/VersionhistoryGetObjectV2ResponseTest.php
+test/Model/VersionhistoryResponseCompoundTest.php
+test/Model/VersionhistoryResponseTest.php
 test/Model/WebhookCreateObjectV1RequestTest.php
 test/Model/WebhookCreateObjectV1ResponseAllOfTest.php
 test/Model/WebhookCreateObjectV1ResponseMPayloadTest.php
@@ -2453,9 +2677,13 @@ test/Model/WebhookGetListV1ResponseTest.php
 test/Model/WebhookGetObjectV1ResponseAllOfTest.php
 test/Model/WebhookGetObjectV1ResponseMPayloadTest.php
 test/Model/WebhookGetObjectV1ResponseTest.php
+test/Model/WebhookGetObjectV2ResponseAllOfTest.php
+test/Model/WebhookGetObjectV2ResponseMPayloadTest.php
+test/Model/WebhookGetObjectV2ResponseTest.php
 test/Model/WebhookListElementTest.php
 test/Model/WebhookRequestCompoundTest.php
 test/Model/WebhookRequestTest.php
+test/Model/WebhookResponseCompoundAllOfTest.php
 test/Model/WebhookResponseCompoundTest.php
 test/Model/WebhookResponseTest.php
 test/Model/WebhookTestV1ResponseTest.php

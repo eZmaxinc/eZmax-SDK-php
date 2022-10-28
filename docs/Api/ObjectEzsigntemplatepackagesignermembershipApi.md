@@ -7,6 +7,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsigntemplatepackagesignermembershipCreateObjectV1()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipCreateObjectV1) | **POST** /1/object/ezsigntemplatepackagesignermembership | Create a new Ezsigntemplatepackagesignermembership |
 | [**ezsigntemplatepackagesignermembershipDeleteObjectV1()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Delete an existing Ezsigntemplatepackagesignermembership |
 | [**ezsigntemplatepackagesignermembershipGetObjectV1()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipGetObjectV1) | **GET** /1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Retrieve an existing Ezsigntemplatepackagesignermembership |
+| [**ezsigntemplatepackagesignermembershipGetObjectV2()**](ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipGetObjectV2) | **GET** /2/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Retrieve an existing Ezsigntemplatepackagesignermembership |
 
 
 ## `ezsigntemplatepackagesignermembershipCreateObjectV1()`
@@ -181,6 +182,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigntemplatepackagesignermembershipGetObjectV1Response**](../Model/EzsigntemplatepackagesignermembershipGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigntemplatepackagesignermembershipGetObjectV2()`
+
+```php
+ezsigntemplatepackagesignermembershipGetObjectV2($pkiEzsigntemplatepackagesignermembershipID): \eZmaxAPI\Model\EzsigntemplatepackagesignermembershipGetObjectV2Response
+```
+
+Retrieve an existing Ezsigntemplatepackagesignermembership
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatepackagesignermembershipApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigntemplatepackagesignermembershipID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigntemplatepackagesignermembershipGetObjectV2($pkiEzsigntemplatepackagesignermembershipID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplatepackagesignermembershipApi->ezsigntemplatepackagesignermembershipGetObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackagesignermembershipID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplatepackagesignermembershipGetObjectV2Response**](../Model/EzsigntemplatepackagesignermembershipGetObjectV2Response.md)
 
 ### Authorization
 
