@@ -254,12 +254,15 @@ Class | Method | HTTP request | Description
 *ObjectEzsigntsarequirementApi* | [**ezsigntsarequirementGetAutocompleteV1**](docs/Api/ObjectEzsigntsarequirementApi.md#ezsigntsarequirementgetautocompletev1) | **GET** /1/object/ezsigntsarequirement/getAutocomplete/{sSelector} | Retrieve Ezsigntsarequirements and IDs
 *ObjectEzsigntsarequirementApi* | [**ezsigntsarequirementGetAutocompleteV2**](docs/Api/ObjectEzsigntsarequirementApi.md#ezsigntsarequirementgetautocompletev2) | **GET** /2/object/ezsigntsarequirement/getAutocomplete/{sSelector} | Retrieve Ezsigntsarequirements and IDs
 *ObjectFranchisebrokerApi* | [**franchisebrokerGetAutocompleteV1**](docs/Api/ObjectFranchisebrokerApi.md#franchisebrokergetautocompletev1) | **GET** /1/object/franchisebroker/getAutocomplete/{sSelector} | Retrieve Franchisebrokers and IDs
+*ObjectFranchisebrokerApi* | [**franchisebrokerGetAutocompleteV2**](docs/Api/ObjectFranchisebrokerApi.md#franchisebrokergetautocompletev2) | **GET** /2/object/franchisebroker/getAutocomplete/{sSelector} | Retrieve Franchisebrokers and IDs
 *ObjectFranchiseofficeApi* | [**franchiseofficeGetAutocompleteV1**](docs/Api/ObjectFranchiseofficeApi.md#franchiseofficegetautocompletev1) | **GET** /1/object/franchiseoffice/getAutocomplete/{sSelector} | Retrieve Franchiseoffices and IDs
+*ObjectFranchiseofficeApi* | [**franchiseofficeGetAutocompleteV2**](docs/Api/ObjectFranchiseofficeApi.md#franchiseofficegetautocompletev2) | **GET** /2/object/franchiseoffice/getAutocomplete/{sSelector} | Retrieve Franchiseoffices and IDs
 *ObjectFranchisereferalincomeApi* | [**franchisereferalincomeCreateObjectV1**](docs/Api/ObjectFranchisereferalincomeApi.md#franchisereferalincomecreateobjectv1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome
 *ObjectFranchisereferalincomeApi* | [**franchisereferalincomeCreateObjectV2**](docs/Api/ObjectFranchisereferalincomeApi.md#franchisereferalincomecreateobjectv2) | **POST** /2/object/franchisereferalincome | Create a new Franchisereferalincome
 *ObjectNotificationsectionApi* | [**notificationsectionGetNotificationtestsV1**](docs/Api/ObjectNotificationsectionApi.md#notificationsectiongetnotificationtestsv1) | **GET** /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests | Retrieve an existing Notificationsection&#39;s Notificationtests
 *ObjectNotificationtestApi* | [**notificationtestGetElementsV1**](docs/Api/ObjectNotificationtestApi.md#notificationtestgetelementsv1) | **GET** /1/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest&#39;s Elements
 *ObjectPeriodApi* | [**periodGetAutocompleteV1**](docs/Api/ObjectPeriodApi.md#periodgetautocompletev1) | **GET** /1/object/period/getAutocomplete/{sSelector} | Retrieve Periods and IDs
+*ObjectPeriodApi* | [**periodGetAutocompleteV2**](docs/Api/ObjectPeriodApi.md#periodgetautocompletev2) | **GET** /2/object/period/getAutocomplete/{sSelector} | Retrieve Periods and IDs
 *ObjectSecretquestionApi* | [**secretquestionGetAutocompleteV1**](docs/Api/ObjectSecretquestionApi.md#secretquestiongetautocompletev1) | **GET** /1/object/secretquestion/getAutocomplete/{sSelector} | Retrieve Secretquestions and IDs
 *ObjectSecretquestionApi* | [**secretquestionGetAutocompleteV2**](docs/Api/ObjectSecretquestionApi.md#secretquestiongetautocompletev2) | **GET** /2/object/secretquestion/getAutocomplete/{sSelector} | Retrieve Secretquestions and IDs
 *ObjectTaxassignmentApi* | [**taxassignmentGetAutocompleteV1**](docs/Api/ObjectTaxassignmentApi.md#taxassignmentgetautocompletev1) | **GET** /1/object/taxassignment/getAutocomplete/{sSelector} | Retrieve Taxassignments and IDs
@@ -762,7 +765,6 @@ Class | Method | HTTP request | Description
 - [EzsignsignatureResponseCompoundAllOf](docs/Model/EzsignsignatureResponseCompoundAllOf.md)
 - [EzsignsignatureSignV1Request](docs/Model/EzsignsignatureSignV1Request.md)
 - [EzsignsignatureSignV1Response](docs/Model/EzsignsignatureSignV1Response.md)
-- [EzsignsignatureSignV1ResponseAllOf](docs/Model/EzsignsignatureSignV1ResponseAllOf.md)
 - [EzsignsignaturecustomdateRequest](docs/Model/EzsignsignaturecustomdateRequest.md)
 - [EzsignsignaturecustomdateRequestCompound](docs/Model/EzsignsignaturecustomdateRequestCompound.md)
 - [EzsignsignaturecustomdateResponse](docs/Model/EzsignsignaturecustomdateResponse.md)
@@ -1036,6 +1038,14 @@ Class | Method | HTTP request | Description
 - [FieldEWebhookEzsignevent](docs/Model/FieldEWebhookEzsignevent.md)
 - [FieldEWebhookManagementevent](docs/Model/FieldEWebhookManagementevent.md)
 - [FieldEWebhookModule](docs/Model/FieldEWebhookModule.md)
+- [FranchisebrokerAutocompleteElementResponse](docs/Model/FranchisebrokerAutocompleteElementResponse.md)
+- [FranchisebrokerGetAutocompleteV2Response](docs/Model/FranchisebrokerGetAutocompleteV2Response.md)
+- [FranchisebrokerGetAutocompleteV2ResponseAllOf](docs/Model/FranchisebrokerGetAutocompleteV2ResponseAllOf.md)
+- [FranchisebrokerGetAutocompleteV2ResponseMPayload](docs/Model/FranchisebrokerGetAutocompleteV2ResponseMPayload.md)
+- [FranchiseofficeAutocompleteElementResponse](docs/Model/FranchiseofficeAutocompleteElementResponse.md)
+- [FranchiseofficeGetAutocompleteV2Response](docs/Model/FranchiseofficeGetAutocompleteV2Response.md)
+- [FranchiseofficeGetAutocompleteV2ResponseAllOf](docs/Model/FranchiseofficeGetAutocompleteV2ResponseAllOf.md)
+- [FranchiseofficeGetAutocompleteV2ResponseMPayload](docs/Model/FranchiseofficeGetAutocompleteV2ResponseMPayload.md)
 - [FranchisereferalincomeCreateObjectV1Request](docs/Model/FranchisereferalincomeCreateObjectV1Request.md)
 - [FranchisereferalincomeCreateObjectV1Response](docs/Model/FranchisereferalincomeCreateObjectV1Response.md)
 - [FranchisereferalincomeCreateObjectV1ResponseAllOf](docs/Model/FranchisereferalincomeCreateObjectV1ResponseAllOf.md)
@@ -1064,6 +1074,10 @@ Class | Method | HTTP request | Description
 - [NotificationtestGetElementsV1ResponseAllOf](docs/Model/NotificationtestGetElementsV1ResponseAllOf.md)
 - [NotificationtestGetElementsV1ResponseMPayload](docs/Model/NotificationtestGetElementsV1ResponseMPayload.md)
 - [NotificationtestResponse](docs/Model/NotificationtestResponse.md)
+- [PeriodAutocompleteElementResponse](docs/Model/PeriodAutocompleteElementResponse.md)
+- [PeriodGetAutocompleteV2Response](docs/Model/PeriodGetAutocompleteV2Response.md)
+- [PeriodGetAutocompleteV2ResponseAllOf](docs/Model/PeriodGetAutocompleteV2ResponseAllOf.md)
+- [PeriodGetAutocompleteV2ResponseMPayload](docs/Model/PeriodGetAutocompleteV2ResponseMPayload.md)
 - [PhoneRequest](docs/Model/PhoneRequest.md)
 - [PhoneRequestCompound](docs/Model/PhoneRequestCompound.md)
 - [SecretquestionAutocompleteElementResponse](docs/Model/SecretquestionAutocompleteElementResponse.md)
@@ -1160,6 +1174,6 @@ support-api@ezmax.ca
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.1.13`
-    - Package version: `1.1.13`
+- API version: `1.1.14`
+    - Package version: `1.1.14`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
