@@ -167,6 +167,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolderReorderV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderreorderv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderSendV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldersendv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 *ObjectEzsignfolderApi* | [**ezsignfolderSendV2**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldersendv2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
+*ObjectEzsignfolderApi* | [**ezsignfolderSendV3**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldersendv3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 *ObjectEzsignfolderApi* | [**ezsignfolderUnsendV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderunsendv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend | Unsend the Ezsignfolder
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateObjectV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateobjectv1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateObjectV2**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateobjectv2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
@@ -176,6 +177,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationGetInPersonLoginUrlV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationgetinpersonloginurlv1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl | Retrieve a Login Url to allow In-Person signing
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationGetObjectV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationgetobjectv1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationGetObjectV2**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationgetobjectv2) | **GET** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
+*ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationPatchObjectV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationpatchobjectv1) | **PATCH** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Patch an existing Ezsignfoldersignerassociation
 *ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeCreateObjectV1**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypecreateobjectv1) | **POST** /1/object/ezsignfoldertype | Create a new Ezsignfoldertype
 *ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeEditObjectV1**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypeeditobjectv1) | **PUT** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype
 *ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeGetAutocompleteV1**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypegetautocompletev1) | **GET** /1/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
@@ -656,6 +658,8 @@ Class | Method | HTTP request | Description
 - [EzsignfolderSendV1Response](docs/Model/EzsignfolderSendV1Response.md)
 - [EzsignfolderSendV2Request](docs/Model/EzsignfolderSendV2Request.md)
 - [EzsignfolderSendV2Response](docs/Model/EzsignfolderSendV2Response.md)
+- [EzsignfolderSendV3Request](docs/Model/EzsignfolderSendV3Request.md)
+- [EzsignfolderSendV3Response](docs/Model/EzsignfolderSendV3Response.md)
 - [EzsignfolderUnsendV1Response](docs/Model/EzsignfolderUnsendV1Response.md)
 - [EzsignfoldersignerassociationCreateObjectV1Request](docs/Model/EzsignfoldersignerassociationCreateObjectV1Request.md)
 - [EzsignfoldersignerassociationCreateObjectV1Response](docs/Model/EzsignfoldersignerassociationCreateObjectV1Response.md)
@@ -678,9 +682,12 @@ Class | Method | HTTP request | Description
 - [EzsignfoldersignerassociationGetObjectV2Response](docs/Model/EzsignfoldersignerassociationGetObjectV2Response.md)
 - [EzsignfoldersignerassociationGetObjectV2ResponseAllOf](docs/Model/EzsignfoldersignerassociationGetObjectV2ResponseAllOf.md)
 - [EzsignfoldersignerassociationGetObjectV2ResponseMPayload](docs/Model/EzsignfoldersignerassociationGetObjectV2ResponseMPayload.md)
+- [EzsignfoldersignerassociationPatchObjectV1Request](docs/Model/EzsignfoldersignerassociationPatchObjectV1Request.md)
+- [EzsignfoldersignerassociationPatchObjectV1Response](docs/Model/EzsignfoldersignerassociationPatchObjectV1Response.md)
 - [EzsignfoldersignerassociationRequest](docs/Model/EzsignfoldersignerassociationRequest.md)
 - [EzsignfoldersignerassociationRequestCompound](docs/Model/EzsignfoldersignerassociationRequestCompound.md)
 - [EzsignfoldersignerassociationRequestCompoundAllOf](docs/Model/EzsignfoldersignerassociationRequestCompoundAllOf.md)
+- [EzsignfoldersignerassociationRequestPatch](docs/Model/EzsignfoldersignerassociationRequestPatch.md)
 - [EzsignfoldersignerassociationResponse](docs/Model/EzsignfoldersignerassociationResponse.md)
 - [EzsignfoldersignerassociationResponseCompound](docs/Model/EzsignfoldersignerassociationResponseCompound.md)
 - [EzsignfoldersignerassociationResponseCompoundAllOf](docs/Model/EzsignfoldersignerassociationResponseCompoundAllOf.md)
@@ -1174,6 +1181,6 @@ support-api@ezmax.ca
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.1.14`
-    - Package version: `1.1.14`
+- API version: `1.1.15`
+    - Package version: `1.1.15`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
