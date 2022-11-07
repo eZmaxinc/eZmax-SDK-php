@@ -15,12 +15,13 @@ Name | Type | Description | Notes
 **tEzsignfolderNote** | **string** | Note about the Ezsignfolder |
 **bEzsignfolderIsdisposable** | **bool** | If the Ezsigndocument can be disposed |
 **eEzsignfolderSendreminderfrequency** | [**\eZmaxAPI\Model\FieldEEzsignfolderSendreminderfrequency**](FieldEEzsignfolderSendreminderfrequency.md) |  |
+**dtEzsignfolderDelayedsenddate** | **string** | The date and time at which the Ezsignfolder will be sent in the future. | [optional]
 **dtEzsignfolderDuedate** | **string** | The maximum date and time at which the Ezsignfolder can be signed. | [optional]
-**dtEzsignfolderSentdate** | **string** | The date and time at which the Ezsign folder was sent the last time. | [optional]
+**dtEzsignfolderSentdate** | **string** | The date and time at which the Ezsignfolder was sent the last time. | [optional]
 **dtEzsignfolderScheduledarchive** | **string** | The scheduled date and time at which the Ezsignfolder should be archived. | [optional]
 **dtEzsignfolderScheduleddispose** | **string** | The scheduled date at which the Ezsignfolder should be Disposed. | [optional]
 **eEzsignfolderStep** | [**\eZmaxAPI\Model\FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |
-**dtEzsignfolderClose** | **string** | The date and time at which the folder was closed. Either by applying the last signature or by completing it prematurely. | [optional]
+**dtEzsignfolderClose** | **string** | The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely. | [optional]
 **tEzsignfolderMessage** | **string** | A custom text message that will be added to the email sent. |
 **objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
 

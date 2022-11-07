@@ -12,6 +12,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignfoldersignerassociationGetInPersonLoginUrlV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetInPersonLoginUrlV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl | Retrieve a Login Url to allow In-Person signing |
 | [**ezsignfoldersignerassociationGetObjectV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociationGetObjectV2()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectV2) | **GET** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation |
+| [**ezsignfoldersignerassociationPatchObjectV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationPatchObjectV1) | **PATCH** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Patch an existing Ezsignfoldersignerassociation |
 
 
 ## `ezsignfoldersignerassociationCreateObjectV1()`
@@ -508,6 +509,68 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfoldersignerassociationPatchObjectV1()`
+
+```php
+ezsignfoldersignerassociationPatchObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request): \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Response
+```
+
+Patch an existing Ezsignfoldersignerassociation
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldersignerassociationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfoldersignerassociationID = 56; // int
+$ezsignfoldersignerassociationPatchObjectV1Request = new \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Request(); // \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Request
+
+try {
+    $result = $apiInstance->ezsignfoldersignerassociationPatchObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociationPatchObjectV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfoldersignerassociationID** | **int**|  | |
+| **ezsignfoldersignerassociationPatchObjectV1Request** | [**\eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Request**](../Model/EzsignfoldersignerassociationPatchObjectV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Response**](../Model/EzsignfoldersignerassociationPatchObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
