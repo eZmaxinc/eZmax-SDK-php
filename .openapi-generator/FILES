@@ -544,6 +544,10 @@ docs/Model/EzsignsignerResponseCompound.md
 docs/Model/EzsignsignerResponseCompoundAllOf.md
 docs/Model/EzsignsignerResponseCompoundContact.md
 docs/Model/EzsigntemplateAutocompleteElementResponse.md
+docs/Model/EzsigntemplateCopyV1Request.md
+docs/Model/EzsigntemplateCopyV1Response.md
+docs/Model/EzsigntemplateCopyV1ResponseAllOf.md
+docs/Model/EzsigntemplateCopyV1ResponseMPayload.md
 docs/Model/EzsigntemplateCreateObjectV1Request.md
 docs/Model/EzsigntemplateCreateObjectV1Response.md
 docs/Model/EzsigntemplateCreateObjectV1ResponseAllOf.md
@@ -1457,6 +1461,10 @@ lib/Model/EzsignsignerResponseCompound.php
 lib/Model/EzsignsignerResponseCompoundAllOf.php
 lib/Model/EzsignsignerResponseCompoundContact.php
 lib/Model/EzsigntemplateAutocompleteElementResponse.php
+lib/Model/EzsigntemplateCopyV1Request.php
+lib/Model/EzsigntemplateCopyV1Response.php
+lib/Model/EzsigntemplateCopyV1ResponseAllOf.php
+lib/Model/EzsigntemplateCopyV1ResponseMPayload.php
 lib/Model/EzsigntemplateCreateObjectV1Request.php
 lib/Model/EzsigntemplateCreateObjectV1Response.php
 lib/Model/EzsigntemplateCreateObjectV1ResponseAllOf.php
@@ -2370,6 +2378,10 @@ test/Model/EzsignsignerResponseCompoundContactTest.php
 test/Model/EzsignsignerResponseCompoundTest.php
 test/Model/EzsignsignerResponseTest.php
 test/Model/EzsigntemplateAutocompleteElementResponseTest.php
+test/Model/EzsigntemplateCopyV1RequestTest.php
+test/Model/EzsigntemplateCopyV1ResponseAllOfTest.php
+test/Model/EzsigntemplateCopyV1ResponseMPayloadTest.php
+test/Model/EzsigntemplateCopyV1ResponseTest.php
 test/Model/EzsigntemplateCreateObjectV1RequestTest.php
 test/Model/EzsigntemplateCreateObjectV1ResponseAllOfTest.php
 test/Model/EzsigntemplateCreateObjectV1ResponseMPayloadTest.php
