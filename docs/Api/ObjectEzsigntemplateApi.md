@@ -4,6 +4,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**ezsigntemplateCopyV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateCopyV1) | **POST** /1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy | Copy the Ezsigntemplate |
 | [**ezsigntemplateCreateObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateCreateObjectV1) | **POST** /1/object/ezsigntemplate | Create a new Ezsigntemplate |
 | [**ezsigntemplateDeleteObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateDeleteObjectV1) | **DELETE** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Delete an existing Ezsigntemplate |
 | [**ezsigntemplateEditObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateEditObjectV1) | **PUT** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate |
@@ -13,6 +14,70 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsigntemplateGetObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV1) | **GET** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate |
 | [**ezsigntemplateGetObjectV2()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV2) | **GET** /2/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate |
 
+
+## `ezsigntemplateCopyV1()`
+
+```php
+ezsigntemplateCopyV1($pkiEzsigntemplateID, $ezsigntemplateCopyV1Request): \eZmaxAPI\Model\EzsigntemplateCopyV1Response
+```
+
+Copy the Ezsigntemplate
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigntemplateID = 56; // int
+$ezsigntemplateCopyV1Request = new \eZmaxAPI\Model\EzsigntemplateCopyV1Request(); // \eZmaxAPI\Model\EzsigntemplateCopyV1Request
+
+try {
+    $result = $apiInstance->ezsigntemplateCopyV1($pkiEzsigntemplateID, $ezsigntemplateCopyV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateCopyV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplateID** | **int**|  | |
+| **ezsigntemplateCopyV1Request** | [**\eZmaxAPI\Model\EzsigntemplateCopyV1Request**](../Model/EzsigntemplateCopyV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplateCopyV1Response**](../Model/EzsigntemplateCopyV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `ezsigntemplateCreateObjectV1()`
 

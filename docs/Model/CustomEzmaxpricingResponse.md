@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiEzmaxpricingID** | **int** | The unique ID of the Ezmaxpricing |
+**dEzmaxpricingRebateezsignallagents** | **string** | The rebate offered when eZsign is taken for all agents |
 **dtEzmaxpricingStart** | **string** | The start date of the Ezmaxpricing |
 **dtEzmaxpricingEnd** | **string** | The end date of the Ezmaxpricing | [optional]
 
