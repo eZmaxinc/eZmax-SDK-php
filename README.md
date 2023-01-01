@@ -81,6 +81,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *GlobalCustomerApi* | [**globalCustomerGetEndpointV1**](docs/Api/GlobalCustomerApi.md#globalcustomergetendpointv1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
+*ModuleCommunicationApi* | [**communicationGetCommunicationCountV1**](docs/Api/ModuleCommunicationApi.md#communicationgetcommunicationcountv1) | **GET** /1/module/communication/getCommunicationCount | Get the number of communication
+*ModuleCommunicationApi* | [**communicationGetCommunicationListV1**](docs/Api/ModuleCommunicationApi.md#communicationgetcommunicationlistv1) | **GET** /1/module/communication/getCommunicationList | Retrieve communication list
 *ModuleEzsignApi* | [**ezsignSuggestSignersV1**](docs/Api/ModuleEzsignApi.md#ezsignsuggestsignersv1) | **GET** /1/module/ezsign/suggestSigners | Suggest signers
 *ModuleEzsignApi* | [**ezsignSuggestTemplatesV1**](docs/Api/ModuleEzsignApi.md#ezsignsuggesttemplatesv1) | **GET** /1/module/ezsign/suggestTemplates | Suggest templates
 *ModuleUserApi* | [**userCreateEzsignuserV1**](docs/Api/ModuleUserApi.md#usercreateezsignuserv1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
@@ -96,6 +98,7 @@ Class | Method | HTTP request | Description
 *ObjectBrandingApi* | [**brandingGetListV1**](docs/Api/ObjectBrandingApi.md#brandinggetlistv1) | **GET** /1/object/branding/getList | Retrieve Branding list
 *ObjectBrandingApi* | [**brandingGetObjectV1**](docs/Api/ObjectBrandingApi.md#brandinggetobjectv1) | **GET** /1/object/branding/{pkiBrandingID} | Retrieve an existing Branding
 *ObjectBrandingApi* | [**brandingGetObjectV2**](docs/Api/ObjectBrandingApi.md#brandinggetobjectv2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding
+*ObjectCommunicationApi* | [**communicationGetObjectV2**](docs/Api/ObjectCommunicationApi.md#communicationgetobjectv2) | **GET** /2/object/communication/{pkiCommunicationID} | Retrieve an existing Communication
 *ObjectDepartmentApi* | [**departmentGetAutocompleteV1**](docs/Api/ObjectDepartmentApi.md#departmentgetautocompletev1) | **GET** /1/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
 *ObjectDepartmentApi* | [**departmentGetAutocompleteV2**](docs/Api/ObjectDepartmentApi.md#departmentgetautocompletev2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
 *ObjectDepartmentApi* | [**departmentGetMembersV1**](docs/Api/ObjectDepartmentApi.md#departmentgetmembersv1) | **GET** /1/object/department/{pkiDepartmentID}/getMembers | Retrieve an existing Department&#39;s members
@@ -364,6 +367,29 @@ Class | Method | HTTP request | Description
 - [CommonResponseRedirectSSecretquestionTextX](docs/Model/CommonResponseRedirectSSecretquestionTextX.md)
 - [CommonResponseWarning](docs/Model/CommonResponseWarning.md)
 - [CommonWebhook](docs/Model/CommonWebhook.md)
+- [CommunicationGetCountV1Response](docs/Model/CommunicationGetCountV1Response.md)
+- [CommunicationGetCountV1ResponseAllOf](docs/Model/CommunicationGetCountV1ResponseAllOf.md)
+- [CommunicationGetCountV1ResponseMPayload](docs/Model/CommunicationGetCountV1ResponseMPayload.md)
+- [CommunicationGetListV1Response](docs/Model/CommunicationGetListV1Response.md)
+- [CommunicationGetListV1ResponseAllOf](docs/Model/CommunicationGetListV1ResponseAllOf.md)
+- [CommunicationGetListV1ResponseMPayload](docs/Model/CommunicationGetListV1ResponseMPayload.md)
+- [CommunicationGetObjectV2Response](docs/Model/CommunicationGetObjectV2Response.md)
+- [CommunicationGetObjectV2ResponseAllOf](docs/Model/CommunicationGetObjectV2ResponseAllOf.md)
+- [CommunicationGetObjectV2ResponseMPayload](docs/Model/CommunicationGetObjectV2ResponseMPayload.md)
+- [CommunicationListElement](docs/Model/CommunicationListElement.md)
+- [CommunicationResponse](docs/Model/CommunicationResponse.md)
+- [CommunicationResponseCompound](docs/Model/CommunicationResponseCompound.md)
+- [CommunicationResponseCompoundAllOf](docs/Model/CommunicationResponseCompoundAllOf.md)
+- [CommunicationattachmentResponse](docs/Model/CommunicationattachmentResponse.md)
+- [CommunicationattachmentResponseCompound](docs/Model/CommunicationattachmentResponseCompound.md)
+- [CommunicationexternalimageResponse](docs/Model/CommunicationexternalimageResponse.md)
+- [CommunicationexternalimageResponseCompound](docs/Model/CommunicationexternalimageResponseCompound.md)
+- [CommunicationexternalrecipientResponse](docs/Model/CommunicationexternalrecipientResponse.md)
+- [CommunicationexternalrecipientResponseCompound](docs/Model/CommunicationexternalrecipientResponseCompound.md)
+- [CommunicationimageResponse](docs/Model/CommunicationimageResponse.md)
+- [CommunicationimageResponseCompound](docs/Model/CommunicationimageResponseCompound.md)
+- [CommunicationrecipientResponse](docs/Model/CommunicationrecipientResponse.md)
+- [CommunicationrecipientResponseCompound](docs/Model/CommunicationrecipientResponseCompound.md)
 - [ContactRequest](docs/Model/ContactRequest.md)
 - [ContactRequestCompound](docs/Model/ContactRequestCompound.md)
 - [ContactRequestCompoundAllOf](docs/Model/ContactRequestCompoundAllOf.md)
@@ -1015,6 +1041,10 @@ Class | Method | HTTP request | Description
 - [FieldEActivesessionUsertype](docs/Model/FieldEActivesessionUsertype.md)
 - [FieldEActivesessionWeekdaystart](docs/Model/FieldEActivesessionWeekdaystart.md)
 - [FieldEBrandingLogo](docs/Model/FieldEBrandingLogo.md)
+- [FieldECommunicationEmailimportance](docs/Model/FieldECommunicationEmailimportance.md)
+- [FieldECommunicationType](docs/Model/FieldECommunicationType.md)
+- [FieldECommunicationexternalrecipientType](docs/Model/FieldECommunicationexternalrecipientType.md)
+- [FieldECommunicationrecipientType](docs/Model/FieldECommunicationrecipientType.md)
 - [FieldEEzmaxinvoicingPaymenttype](docs/Model/FieldEEzmaxinvoicingPaymenttype.md)
 - [FieldEEzmaxinvoicingagentVariationezmax](docs/Model/FieldEEzmaxinvoicingagentVariationezmax.md)
 - [FieldEEzmaxinvoicingagentVariationezsign](docs/Model/FieldEEzmaxinvoicingagentVariationezsign.md)
@@ -1092,6 +1122,8 @@ Class | Method | HTTP request | Description
 - [PeriodGetAutocompleteV2ResponseMPayload](docs/Model/PeriodGetAutocompleteV2ResponseMPayload.md)
 - [PhoneRequest](docs/Model/PhoneRequest.md)
 - [PhoneRequestCompound](docs/Model/PhoneRequestCompound.md)
+- [PhoneResponse](docs/Model/PhoneResponse.md)
+- [PhoneResponseCompound](docs/Model/PhoneResponseCompound.md)
 - [SecretquestionAutocompleteElementResponse](docs/Model/SecretquestionAutocompleteElementResponse.md)
 - [SecretquestionGetAutocompleteV2Response](docs/Model/SecretquestionGetAutocompleteV2Response.md)
 - [SecretquestionGetAutocompleteV2ResponseAllOf](docs/Model/SecretquestionGetAutocompleteV2ResponseAllOf.md)
@@ -1186,6 +1218,6 @@ support-api@ezmax.ca
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.1.16`
-    - Package version: `1.1.16`
+- API version: `1.1.17`
+    - Package version: `1.1.17`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

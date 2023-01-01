@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **sCompanyNameX** | **string** | The Name of the Company in the language of the requester |
 **sDepartmentNameX** | **string** | The Name of the Department in the language of the requester |
 **bActivesessionDebug** | **bool** | Whether the active session is in debug or not |
+**bActivesessionIssuperadmin** | **bool** | Whether the active session is superadmin or not |
 **pksCustomerCode** | **string** | The customer code assigned to your account |
 **fkiSystemconfigurationtypeID** | **int** | The unique ID of the Systemconfigurationtype | [optional]
 **aPkiPermissionID** | **int[]** | An array of permissions granted to the user or api key |
