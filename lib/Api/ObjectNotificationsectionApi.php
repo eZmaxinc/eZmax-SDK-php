@@ -71,7 +71,14 @@ class ObjectNotificationsectionApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'notificationsectionGetNotificationtestsV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -124,14 +131,15 @@ class ObjectNotificationsectionApi
      *
      * @param  int $pkiNotificationsectionID pkiNotificationsectionID (required)
      * @param  bool $bShowHidden Whether or not to return the hidden Notificationtests (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationsectionGetNotificationtestsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\NotificationsectionGetNotificationtestsV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function notificationsectionGetNotificationtestsV1($pkiNotificationsectionID, $bShowHidden)
+    public function notificationsectionGetNotificationtestsV1($pkiNotificationsectionID, $bShowHidden, string $contentType = self::contentTypes['notificationsectionGetNotificationtestsV1'][0])
     {
-        list($response) = $this->notificationsectionGetNotificationtestsV1WithHttpInfo($pkiNotificationsectionID, $bShowHidden);
+        list($response) = $this->notificationsectionGetNotificationtestsV1WithHttpInfo($pkiNotificationsectionID, $bShowHidden, $contentType);
         return $response;
     }
 
@@ -142,14 +150,15 @@ class ObjectNotificationsectionApi
      *
      * @param  int $pkiNotificationsectionID (required)
      * @param  bool $bShowHidden Whether or not to return the hidden Notificationtests (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationsectionGetNotificationtestsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\NotificationsectionGetNotificationtestsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function notificationsectionGetNotificationtestsV1WithHttpInfo($pkiNotificationsectionID, $bShowHidden)
+    public function notificationsectionGetNotificationtestsV1WithHttpInfo($pkiNotificationsectionID, $bShowHidden, string $contentType = self::contentTypes['notificationsectionGetNotificationtestsV1'][0])
     {
-        $request = $this->notificationsectionGetNotificationtestsV1Request($pkiNotificationsectionID, $bShowHidden);
+        $request = $this->notificationsectionGetNotificationtestsV1Request($pkiNotificationsectionID, $bShowHidden, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -265,13 +274,14 @@ class ObjectNotificationsectionApi
      *
      * @param  int $pkiNotificationsectionID (required)
      * @param  bool $bShowHidden Whether or not to return the hidden Notificationtests (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationsectionGetNotificationtestsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function notificationsectionGetNotificationtestsV1Async($pkiNotificationsectionID, $bShowHidden)
+    public function notificationsectionGetNotificationtestsV1Async($pkiNotificationsectionID, $bShowHidden, string $contentType = self::contentTypes['notificationsectionGetNotificationtestsV1'][0])
     {
-        return $this->notificationsectionGetNotificationtestsV1AsyncWithHttpInfo($pkiNotificationsectionID, $bShowHidden)
+        return $this->notificationsectionGetNotificationtestsV1AsyncWithHttpInfo($pkiNotificationsectionID, $bShowHidden, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -286,14 +296,15 @@ class ObjectNotificationsectionApi
      *
      * @param  int $pkiNotificationsectionID (required)
      * @param  bool $bShowHidden Whether or not to return the hidden Notificationtests (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationsectionGetNotificationtestsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function notificationsectionGetNotificationtestsV1AsyncWithHttpInfo($pkiNotificationsectionID, $bShowHidden)
+    public function notificationsectionGetNotificationtestsV1AsyncWithHttpInfo($pkiNotificationsectionID, $bShowHidden, string $contentType = self::contentTypes['notificationsectionGetNotificationtestsV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\NotificationsectionGetNotificationtestsV1Response';
-        $request = $this->notificationsectionGetNotificationtestsV1Request($pkiNotificationsectionID, $bShowHidden);
+        $request = $this->notificationsectionGetNotificationtestsV1Request($pkiNotificationsectionID, $bShowHidden, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -336,11 +347,12 @@ class ObjectNotificationsectionApi
      *
      * @param  int $pkiNotificationsectionID (required)
      * @param  bool $bShowHidden Whether or not to return the hidden Notificationtests (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationsectionGetNotificationtestsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function notificationsectionGetNotificationtestsV1Request($pkiNotificationsectionID, $bShowHidden)
+    public function notificationsectionGetNotificationtestsV1Request($pkiNotificationsectionID, $bShowHidden, string $contentType = self::contentTypes['notificationsectionGetNotificationtestsV1'][0])
     {
 
         // verify the required parameter 'pkiNotificationsectionID' is set
@@ -352,14 +364,14 @@ class ObjectNotificationsectionApi
         if ($pkiNotificationsectionID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiNotificationsectionID" when calling ObjectNotificationsectionApi.notificationsectionGetNotificationtestsV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'bShowHidden' is set
         if ($bShowHidden === null || (is_array($bShowHidden) && count($bShowHidden) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $bShowHidden when calling notificationsectionGetNotificationtestsV1'
             );
         }
+
 
         $resourcePath = '/1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests';
         $formParams = [];
@@ -389,16 +401,11 @@ class ObjectNotificationsectionApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -416,9 +423,9 @@ class ObjectNotificationsectionApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

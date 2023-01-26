@@ -136,6 +136,16 @@ class FranchiseofficeAutocompleteElementResponse implements ModelInterface, Arra
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -328,9 +338,12 @@ class FranchiseofficeAutocompleteElementResponse implements ModelInterface, Arra
     public function setSFranchiseofficeDescription($sFranchiseofficeDescription)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sFranchiseofficeDescription)) {
             //throw new \InvalidArgumentException('non-nullable sFranchiseofficeDescription cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sFranchiseofficeDescription'] = $sFranchiseofficeDescription;
         $this->container['sFranchiseofficeDescription'] = (is_null($sFranchiseofficeDescription) ? null : (string) $sFranchiseofficeDescription);
 
         return $this;
@@ -361,9 +374,12 @@ class FranchiseofficeAutocompleteElementResponse implements ModelInterface, Arra
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiFranchiseofficeID)) {
             //throw new \InvalidArgumentException('non-nullable pkiFranchiseofficeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiFranchiseofficeID'] = $pkiFranchiseofficeID;
         $this->container['pkiFranchiseofficeID'] = (is_null($pkiFranchiseofficeID) ? null : (int) $pkiFranchiseofficeID);
 
         return $this;
@@ -389,9 +405,12 @@ class FranchiseofficeAutocompleteElementResponse implements ModelInterface, Arra
     public function setBFranchiseofficeIsactive($bFranchiseofficeIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bFranchiseofficeIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bFranchiseofficeIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bFranchiseofficeIsactive'] = $bFranchiseofficeIsactive;
         $this->container['bFranchiseofficeIsactive'] = (is_null($bFranchiseofficeIsactive) ? null : (bool) $bFranchiseofficeIsactive);
 
         return $this;

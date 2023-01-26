@@ -136,6 +136,16 @@ class BrandingAutocompleteElementResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -328,9 +338,12 @@ class BrandingAutocompleteElementResponse implements ModelInterface, ArrayAccess
     public function setSBrandingDescriptionX($sBrandingDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBrandingDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sBrandingDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sBrandingDescriptionX'] = $sBrandingDescriptionX;
         $this->container['sBrandingDescriptionX'] = (is_null($sBrandingDescriptionX) ? null : (string) $sBrandingDescriptionX);
 
         return $this;
@@ -361,9 +374,12 @@ class BrandingAutocompleteElementResponse implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiBrandingID)) {
             //throw new \InvalidArgumentException('non-nullable pkiBrandingID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiBrandingID'] = $pkiBrandingID;
         $this->container['pkiBrandingID'] = (is_null($pkiBrandingID) ? null : (int) $pkiBrandingID);
 
         return $this;
@@ -389,9 +405,12 @@ class BrandingAutocompleteElementResponse implements ModelInterface, ArrayAccess
     public function setBBrandingIsactive($bBrandingIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bBrandingIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bBrandingIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bBrandingIsactive'] = $bBrandingIsactive;
         $this->container['bBrandingIsactive'] = (is_null($bBrandingIsactive) ? null : (bool) $bBrandingIsactive);
 
         return $this;

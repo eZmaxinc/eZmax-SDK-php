@@ -71,7 +71,23 @@ class ObjectEzsignbulksenddocumentmappingApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'ezsignbulksenddocumentmappingCreateObjectV1' => [
+            'application/json',
+        ],
+        'ezsignbulksenddocumentmappingDeleteObjectV1' => [
+            'application/json',
+        ],
+        'ezsignbulksenddocumentmappingGetObjectV1' => [
+            'application/json',
+        ],
+        'ezsignbulksenddocumentmappingGetObjectV2' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,14 +139,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Create a new Ezsignbulksenddocumentmapping
      *
      * @param  \eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Request $ezsignbulksenddocumentmappingCreateObjectV1Request ezsignbulksenddocumentmappingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignbulksenddocumentmappingCreateObjectV1($ezsignbulksenddocumentmappingCreateObjectV1Request)
+    public function ezsignbulksenddocumentmappingCreateObjectV1($ezsignbulksenddocumentmappingCreateObjectV1Request, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'][0])
     {
-        list($response) = $this->ezsignbulksenddocumentmappingCreateObjectV1WithHttpInfo($ezsignbulksenddocumentmappingCreateObjectV1Request);
+        list($response) = $this->ezsignbulksenddocumentmappingCreateObjectV1WithHttpInfo($ezsignbulksenddocumentmappingCreateObjectV1Request, $contentType);
         return $response;
     }
 
@@ -140,14 +157,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Create a new Ezsignbulksenddocumentmapping
      *
      * @param  \eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Request $ezsignbulksenddocumentmappingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignbulksenddocumentmappingCreateObjectV1WithHttpInfo($ezsignbulksenddocumentmappingCreateObjectV1Request)
+    public function ezsignbulksenddocumentmappingCreateObjectV1WithHttpInfo($ezsignbulksenddocumentmappingCreateObjectV1Request, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'][0])
     {
-        $request = $this->ezsignbulksenddocumentmappingCreateObjectV1Request($ezsignbulksenddocumentmappingCreateObjectV1Request);
+        $request = $this->ezsignbulksenddocumentmappingCreateObjectV1Request($ezsignbulksenddocumentmappingCreateObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -262,13 +280,14 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Create a new Ezsignbulksenddocumentmapping
      *
      * @param  \eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Request $ezsignbulksenddocumentmappingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksenddocumentmappingCreateObjectV1Async($ezsignbulksenddocumentmappingCreateObjectV1Request)
+    public function ezsignbulksenddocumentmappingCreateObjectV1Async($ezsignbulksenddocumentmappingCreateObjectV1Request, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'][0])
     {
-        return $this->ezsignbulksenddocumentmappingCreateObjectV1AsyncWithHttpInfo($ezsignbulksenddocumentmappingCreateObjectV1Request)
+        return $this->ezsignbulksenddocumentmappingCreateObjectV1AsyncWithHttpInfo($ezsignbulksenddocumentmappingCreateObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -282,14 +301,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Create a new Ezsignbulksenddocumentmapping
      *
      * @param  \eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Request $ezsignbulksenddocumentmappingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksenddocumentmappingCreateObjectV1AsyncWithHttpInfo($ezsignbulksenddocumentmappingCreateObjectV1Request)
+    public function ezsignbulksenddocumentmappingCreateObjectV1AsyncWithHttpInfo($ezsignbulksenddocumentmappingCreateObjectV1Request, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Response';
-        $request = $this->ezsignbulksenddocumentmappingCreateObjectV1Request($ezsignbulksenddocumentmappingCreateObjectV1Request);
+        $request = $this->ezsignbulksenddocumentmappingCreateObjectV1Request($ezsignbulksenddocumentmappingCreateObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -331,11 +351,12 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Create request for operation 'ezsignbulksenddocumentmappingCreateObjectV1'
      *
      * @param  \eZmaxAPI\Model\EzsignbulksenddocumentmappingCreateObjectV1Request $ezsignbulksenddocumentmappingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignbulksenddocumentmappingCreateObjectV1Request($ezsignbulksenddocumentmappingCreateObjectV1Request)
+    public function ezsignbulksenddocumentmappingCreateObjectV1Request($ezsignbulksenddocumentmappingCreateObjectV1Request, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingCreateObjectV1'][0])
     {
 
         // verify the required parameter 'ezsignbulksenddocumentmappingCreateObjectV1Request' is set
@@ -344,6 +365,7 @@ class ObjectEzsignbulksenddocumentmappingApi
                 'Missing the required parameter $ezsignbulksenddocumentmappingCreateObjectV1Request when calling ezsignbulksenddocumentmappingCreateObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignbulksenddocumentmapping';
         $formParams = [];
@@ -356,20 +378,16 @@ class ObjectEzsignbulksenddocumentmappingApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignbulksenddocumentmappingCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignbulksenddocumentmappingCreateObjectV1Request));
             } else {
                 $httpBody = $ezsignbulksenddocumentmappingCreateObjectV1Request;
@@ -389,9 +407,9 @@ class ObjectEzsignbulksenddocumentmappingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -440,14 +458,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Delete an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignbulksenddocumentmappingDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignbulksenddocumentmappingDeleteObjectV1($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingDeleteObjectV1($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'][0])
     {
-        list($response) = $this->ezsignbulksenddocumentmappingDeleteObjectV1WithHttpInfo($pkiEzsignbulksenddocumentmappingID);
+        list($response) = $this->ezsignbulksenddocumentmappingDeleteObjectV1WithHttpInfo($pkiEzsignbulksenddocumentmappingID, $contentType);
         return $response;
     }
 
@@ -457,14 +476,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Delete an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignbulksenddocumentmappingDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignbulksenddocumentmappingDeleteObjectV1WithHttpInfo($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingDeleteObjectV1WithHttpInfo($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'][0])
     {
-        $request = $this->ezsignbulksenddocumentmappingDeleteObjectV1Request($pkiEzsignbulksenddocumentmappingID);
+        $request = $this->ezsignbulksenddocumentmappingDeleteObjectV1Request($pkiEzsignbulksenddocumentmappingID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -579,13 +599,14 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Delete an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksenddocumentmappingDeleteObjectV1Async($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingDeleteObjectV1Async($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'][0])
     {
-        return $this->ezsignbulksenddocumentmappingDeleteObjectV1AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID)
+        return $this->ezsignbulksenddocumentmappingDeleteObjectV1AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -599,14 +620,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Delete an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksenddocumentmappingDeleteObjectV1AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingDeleteObjectV1AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignbulksenddocumentmappingDeleteObjectV1Response';
-        $request = $this->ezsignbulksenddocumentmappingDeleteObjectV1Request($pkiEzsignbulksenddocumentmappingID);
+        $request = $this->ezsignbulksenddocumentmappingDeleteObjectV1Request($pkiEzsignbulksenddocumentmappingID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -648,11 +670,12 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Create request for operation 'ezsignbulksenddocumentmappingDeleteObjectV1'
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignbulksenddocumentmappingDeleteObjectV1Request($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingDeleteObjectV1Request($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingDeleteObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignbulksenddocumentmappingID' is set
@@ -664,7 +687,7 @@ class ObjectEzsignbulksenddocumentmappingApi
         if ($pkiEzsignbulksenddocumentmappingID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignbulksenddocumentmappingID" when calling ObjectEzsignbulksenddocumentmappingApi.ezsignbulksenddocumentmappingDeleteObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID}';
         $formParams = [];
@@ -685,16 +708,11 @@ class ObjectEzsignbulksenddocumentmappingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -712,9 +730,9 @@ class ObjectEzsignbulksenddocumentmappingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -763,15 +781,16 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Retrieve an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignbulksenddocumentmappingGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezsignbulksenddocumentmappingGetObjectV1($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV1($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'][0])
     {
-        list($response) = $this->ezsignbulksenddocumentmappingGetObjectV1WithHttpInfo($pkiEzsignbulksenddocumentmappingID);
+        list($response) = $this->ezsignbulksenddocumentmappingGetObjectV1WithHttpInfo($pkiEzsignbulksenddocumentmappingID, $contentType);
         return $response;
     }
 
@@ -781,15 +800,16 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Retrieve an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignbulksenddocumentmappingGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsignbulksenddocumentmappingGetObjectV1WithHttpInfo($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV1WithHttpInfo($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'][0])
     {
-        $request = $this->ezsignbulksenddocumentmappingGetObjectV1Request($pkiEzsignbulksenddocumentmappingID);
+        $request = $this->ezsignbulksenddocumentmappingGetObjectV1Request($pkiEzsignbulksenddocumentmappingID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -904,14 +924,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Retrieve an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignbulksenddocumentmappingGetObjectV1Async($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV1Async($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'][0])
     {
-        return $this->ezsignbulksenddocumentmappingGetObjectV1AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID)
+        return $this->ezsignbulksenddocumentmappingGetObjectV1AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -925,15 +946,16 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Retrieve an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignbulksenddocumentmappingGetObjectV1AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV1AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignbulksenddocumentmappingGetObjectV1Response';
-        $request = $this->ezsignbulksenddocumentmappingGetObjectV1Request($pkiEzsignbulksenddocumentmappingID);
+        $request = $this->ezsignbulksenddocumentmappingGetObjectV1Request($pkiEzsignbulksenddocumentmappingID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -975,12 +997,13 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Create request for operation 'ezsignbulksenddocumentmappingGetObjectV1'
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsignbulksenddocumentmappingGetObjectV1Request($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV1Request($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignbulksenddocumentmappingID' is set
@@ -992,7 +1015,7 @@ class ObjectEzsignbulksenddocumentmappingApi
         if ($pkiEzsignbulksenddocumentmappingID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignbulksenddocumentmappingID" when calling ObjectEzsignbulksenddocumentmappingApi.ezsignbulksenddocumentmappingGetObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID}';
         $formParams = [];
@@ -1013,16 +1036,11 @@ class ObjectEzsignbulksenddocumentmappingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1040,9 +1058,9 @@ class ObjectEzsignbulksenddocumentmappingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1091,14 +1109,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Retrieve an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignbulksenddocumentmappingGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignbulksenddocumentmappingGetObjectV2($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV2($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'][0])
     {
-        list($response) = $this->ezsignbulksenddocumentmappingGetObjectV2WithHttpInfo($pkiEzsignbulksenddocumentmappingID);
+        list($response) = $this->ezsignbulksenddocumentmappingGetObjectV2WithHttpInfo($pkiEzsignbulksenddocumentmappingID, $contentType);
         return $response;
     }
 
@@ -1108,14 +1127,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Retrieve an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignbulksenddocumentmappingGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignbulksenddocumentmappingGetObjectV2WithHttpInfo($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV2WithHttpInfo($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'][0])
     {
-        $request = $this->ezsignbulksenddocumentmappingGetObjectV2Request($pkiEzsignbulksenddocumentmappingID);
+        $request = $this->ezsignbulksenddocumentmappingGetObjectV2Request($pkiEzsignbulksenddocumentmappingID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1230,13 +1250,14 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Retrieve an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksenddocumentmappingGetObjectV2Async($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV2Async($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'][0])
     {
-        return $this->ezsignbulksenddocumentmappingGetObjectV2AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID)
+        return $this->ezsignbulksenddocumentmappingGetObjectV2AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1250,14 +1271,15 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Retrieve an existing Ezsignbulksenddocumentmapping
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksenddocumentmappingGetObjectV2AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV2AsyncWithHttpInfo($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignbulksenddocumentmappingGetObjectV2Response';
-        $request = $this->ezsignbulksenddocumentmappingGetObjectV2Request($pkiEzsignbulksenddocumentmappingID);
+        $request = $this->ezsignbulksenddocumentmappingGetObjectV2Request($pkiEzsignbulksenddocumentmappingID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1299,11 +1321,12 @@ class ObjectEzsignbulksenddocumentmappingApi
      * Create request for operation 'ezsignbulksenddocumentmappingGetObjectV2'
      *
      * @param  int $pkiEzsignbulksenddocumentmappingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignbulksenddocumentmappingGetObjectV2Request($pkiEzsignbulksenddocumentmappingID)
+    public function ezsignbulksenddocumentmappingGetObjectV2Request($pkiEzsignbulksenddocumentmappingID, string $contentType = self::contentTypes['ezsignbulksenddocumentmappingGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiEzsignbulksenddocumentmappingID' is set
@@ -1315,7 +1338,7 @@ class ObjectEzsignbulksenddocumentmappingApi
         if ($pkiEzsignbulksenddocumentmappingID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignbulksenddocumentmappingID" when calling ObjectEzsignbulksenddocumentmappingApi.ezsignbulksenddocumentmappingGetObjectV2, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/2/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID}';
         $formParams = [];
@@ -1336,16 +1359,11 @@ class ObjectEzsignbulksenddocumentmappingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1363,9 +1381,9 @@ class ObjectEzsignbulksenddocumentmappingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

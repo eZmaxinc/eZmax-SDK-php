@@ -136,6 +136,16 @@ class EzsignfolderSendV2Request implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -324,9 +334,12 @@ class EzsignfolderSendV2Request implements ModelInterface, ArrayAccess, \JsonSer
     public function setTEzsignfolderMessage($tEzsignfolderMessage)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tEzsignfolderMessage)) {
             //throw new \InvalidArgumentException('non-nullable tEzsignfolderMessage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['tEzsignfolderMessage'] = $tEzsignfolderMessage;
         $this->container['tEzsignfolderMessage'] = (is_null($tEzsignfolderMessage) ? null : (string) $tEzsignfolderMessage);
 
         return $this;
@@ -352,9 +365,12 @@ class EzsignfolderSendV2Request implements ModelInterface, ArrayAccess, \JsonSer
     public function setAFkiEzsignfoldersignerassociationID($aFkiEzsignfoldersignerassociationID)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFkiEzsignfoldersignerassociationID)) {
             //throw new \InvalidArgumentException('non-nullable aFkiEzsignfoldersignerassociationID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aFkiEzsignfoldersignerassociationID'] = $aFkiEzsignfoldersignerassociationID;
         $this->container['aFkiEzsignfoldersignerassociationID'] = (is_null($aFkiEzsignfoldersignerassociationID) ? null : $aFkiEzsignfoldersignerassociationID);
 
         return $this;
@@ -380,9 +396,12 @@ class EzsignfolderSendV2Request implements ModelInterface, ArrayAccess, \JsonSer
     public function setAObjEzsignfoldersignerassociationmessage($aObjEzsignfoldersignerassociationmessage)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignfoldersignerassociationmessage)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignfoldersignerassociationmessage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjEzsignfoldersignerassociationmessage'] = $aObjEzsignfoldersignerassociationmessage;
         $this->container['aObjEzsignfoldersignerassociationmessage'] = $aObjEzsignfoldersignerassociationmessage;
 
         return $this;

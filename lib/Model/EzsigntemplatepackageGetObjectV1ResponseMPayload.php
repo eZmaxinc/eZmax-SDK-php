@@ -160,6 +160,16 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -425,9 +435,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplatepackageID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatepackageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsigntemplatepackageID'] = $pkiEzsigntemplatepackageID;
         $this->container['pkiEzsigntemplatepackageID'] = (is_null($pkiEzsigntemplatepackageID) ? null : (int) $pkiEzsigntemplatepackageID);
 
         return $this;
@@ -458,9 +471,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldertypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldertypeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
         $this->container['fkiEzsignfoldertypeID'] = (is_null($fkiEzsignfoldertypeID) ? null : (int) $fkiEzsignfoldertypeID);
 
         return $this;
@@ -494,9 +510,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiLanguageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiLanguageID'] = $fkiLanguageID;
         $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
 
         return $this;
@@ -522,9 +541,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
     public function setSLanguageNameX($sLanguageNameX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sLanguageNameX)) {
             //throw new \InvalidArgumentException('non-nullable sLanguageNameX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sLanguageNameX'] = $sLanguageNameX;
         $this->container['sLanguageNameX'] = (is_null($sLanguageNameX) ? null : (string) $sLanguageNameX);
 
         return $this;
@@ -550,9 +572,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
     public function setSEzsigntemplatepackageDescription($sEzsigntemplatepackageDescription)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplatepackageDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplatepackageDescription cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigntemplatepackageDescription'] = $sEzsigntemplatepackageDescription;
         $this->container['sEzsigntemplatepackageDescription'] = (is_null($sEzsigntemplatepackageDescription) ? null : (string) $sEzsigntemplatepackageDescription);
 
         return $this;
@@ -578,9 +603,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
     public function setBEzsigntemplatepackageAdminonly($bEzsigntemplatepackageAdminonly)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplatepackageAdminonly)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageAdminonly cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigntemplatepackageAdminonly'] = $bEzsigntemplatepackageAdminonly;
         $this->container['bEzsigntemplatepackageAdminonly'] = (is_null($bEzsigntemplatepackageAdminonly) ? null : (bool) $bEzsigntemplatepackageAdminonly);
 
         return $this;
@@ -606,9 +634,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
     public function setBEzsigntemplatepackageNeedvalidation($bEzsigntemplatepackageNeedvalidation)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplatepackageNeedvalidation)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageNeedvalidation cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigntemplatepackageNeedvalidation'] = $bEzsigntemplatepackageNeedvalidation;
         $this->container['bEzsigntemplatepackageNeedvalidation'] = (is_null($bEzsigntemplatepackageNeedvalidation) ? null : (bool) $bEzsigntemplatepackageNeedvalidation);
 
         return $this;
@@ -634,9 +665,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
     public function setBEzsigntemplatepackageIsactive($bEzsigntemplatepackageIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplatepackageIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigntemplatepackageIsactive'] = $bEzsigntemplatepackageIsactive;
         $this->container['bEzsigntemplatepackageIsactive'] = (is_null($bEzsigntemplatepackageIsactive) ? null : (bool) $bEzsigntemplatepackageIsactive);
 
         return $this;
@@ -662,9 +696,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
     public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignfoldertypeNameX)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignfoldertypeNameX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
         $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
 
         return $this;
@@ -690,9 +727,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
     public function setAObjEzsigntemplatepackagesigner($aObjEzsigntemplatepackagesigner)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatepackagesigner)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatepackagesigner cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjEzsigntemplatepackagesigner'] = $aObjEzsigntemplatepackagesigner;
         $this->container['aObjEzsigntemplatepackagesigner'] = $aObjEzsigntemplatepackagesigner;
 
         return $this;
@@ -718,9 +758,12 @@ class EzsigntemplatepackageGetObjectV1ResponseMPayload implements ModelInterface
     public function setAObjEzsigntemplatepackagemembership($aObjEzsigntemplatepackagemembership)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatepackagemembership)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatepackagemembership cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjEzsigntemplatepackagemembership'] = $aObjEzsigntemplatepackagemembership;
         $this->container['aObjEzsigntemplatepackagemembership'] = $aObjEzsigntemplatepackagemembership;
 
         return $this;

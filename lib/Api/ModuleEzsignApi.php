@@ -71,7 +71,17 @@ class ModuleEzsignApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'ezsignSuggestSignersV1' => [
+            'application/json',
+        ],
+        'ezsignSuggestTemplatesV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -122,14 +132,15 @@ class ModuleEzsignApi
      *
      * Suggest signers
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestSignersV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignSuggestSignersV1Response
      */
-    public function ezsignSuggestSignersV1()
+    public function ezsignSuggestSignersV1(string $contentType = self::contentTypes['ezsignSuggestSignersV1'][0])
     {
-        list($response) = $this->ezsignSuggestSignersV1WithHttpInfo();
+        list($response) = $this->ezsignSuggestSignersV1WithHttpInfo($contentType);
         return $response;
     }
 
@@ -138,14 +149,15 @@ class ModuleEzsignApi
      *
      * Suggest signers
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestSignersV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignSuggestSignersV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignSuggestSignersV1WithHttpInfo()
+    public function ezsignSuggestSignersV1WithHttpInfo(string $contentType = self::contentTypes['ezsignSuggestSignersV1'][0])
     {
-        $request = $this->ezsignSuggestSignersV1Request();
+        $request = $this->ezsignSuggestSignersV1Request($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -236,13 +248,14 @@ class ModuleEzsignApi
      *
      * Suggest signers
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestSignersV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignSuggestSignersV1Async()
+    public function ezsignSuggestSignersV1Async(string $contentType = self::contentTypes['ezsignSuggestSignersV1'][0])
     {
-        return $this->ezsignSuggestSignersV1AsyncWithHttpInfo()
+        return $this->ezsignSuggestSignersV1AsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -255,14 +268,15 @@ class ModuleEzsignApi
      *
      * Suggest signers
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestSignersV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignSuggestSignersV1AsyncWithHttpInfo()
+    public function ezsignSuggestSignersV1AsyncWithHttpInfo(string $contentType = self::contentTypes['ezsignSuggestSignersV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignSuggestSignersV1Response';
-        $request = $this->ezsignSuggestSignersV1Request();
+        $request = $this->ezsignSuggestSignersV1Request($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -303,12 +317,14 @@ class ModuleEzsignApi
     /**
      * Create request for operation 'ezsignSuggestSignersV1'
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestSignersV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignSuggestSignersV1Request()
+    public function ezsignSuggestSignersV1Request(string $contentType = self::contentTypes['ezsignSuggestSignersV1'][0])
     {
+
 
         $resourcePath = '/1/module/ezsign/suggestSigners';
         $formParams = [];
@@ -321,16 +337,11 @@ class ModuleEzsignApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -348,9 +359,9 @@ class ModuleEzsignApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -399,14 +410,15 @@ class ModuleEzsignApi
      * Suggest templates
      *
      * @param  int $fkiEzsignfoldertypeID fkiEzsignfoldertypeID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestTemplatesV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignSuggestTemplatesV1Response
      */
-    public function ezsignSuggestTemplatesV1($fkiEzsignfoldertypeID = null)
+    public function ezsignSuggestTemplatesV1($fkiEzsignfoldertypeID = null, string $contentType = self::contentTypes['ezsignSuggestTemplatesV1'][0])
     {
-        list($response) = $this->ezsignSuggestTemplatesV1WithHttpInfo($fkiEzsignfoldertypeID);
+        list($response) = $this->ezsignSuggestTemplatesV1WithHttpInfo($fkiEzsignfoldertypeID, $contentType);
         return $response;
     }
 
@@ -416,14 +428,15 @@ class ModuleEzsignApi
      * Suggest templates
      *
      * @param  int $fkiEzsignfoldertypeID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestTemplatesV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignSuggestTemplatesV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignSuggestTemplatesV1WithHttpInfo($fkiEzsignfoldertypeID = null)
+    public function ezsignSuggestTemplatesV1WithHttpInfo($fkiEzsignfoldertypeID = null, string $contentType = self::contentTypes['ezsignSuggestTemplatesV1'][0])
     {
-        $request = $this->ezsignSuggestTemplatesV1Request($fkiEzsignfoldertypeID);
+        $request = $this->ezsignSuggestTemplatesV1Request($fkiEzsignfoldertypeID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -515,13 +528,14 @@ class ModuleEzsignApi
      * Suggest templates
      *
      * @param  int $fkiEzsignfoldertypeID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestTemplatesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignSuggestTemplatesV1Async($fkiEzsignfoldertypeID = null)
+    public function ezsignSuggestTemplatesV1Async($fkiEzsignfoldertypeID = null, string $contentType = self::contentTypes['ezsignSuggestTemplatesV1'][0])
     {
-        return $this->ezsignSuggestTemplatesV1AsyncWithHttpInfo($fkiEzsignfoldertypeID)
+        return $this->ezsignSuggestTemplatesV1AsyncWithHttpInfo($fkiEzsignfoldertypeID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -535,14 +549,15 @@ class ModuleEzsignApi
      * Suggest templates
      *
      * @param  int $fkiEzsignfoldertypeID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestTemplatesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignSuggestTemplatesV1AsyncWithHttpInfo($fkiEzsignfoldertypeID = null)
+    public function ezsignSuggestTemplatesV1AsyncWithHttpInfo($fkiEzsignfoldertypeID = null, string $contentType = self::contentTypes['ezsignSuggestTemplatesV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignSuggestTemplatesV1Response';
-        $request = $this->ezsignSuggestTemplatesV1Request($fkiEzsignfoldertypeID);
+        $request = $this->ezsignSuggestTemplatesV1Request($fkiEzsignfoldertypeID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -584,17 +599,18 @@ class ModuleEzsignApi
      * Create request for operation 'ezsignSuggestTemplatesV1'
      *
      * @param  int $fkiEzsignfoldertypeID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignSuggestTemplatesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignSuggestTemplatesV1Request($fkiEzsignfoldertypeID = null)
+    public function ezsignSuggestTemplatesV1Request($fkiEzsignfoldertypeID = null, string $contentType = self::contentTypes['ezsignSuggestTemplatesV1'][0])
     {
 
         if ($fkiEzsignfoldertypeID !== null && $fkiEzsignfoldertypeID < 0) {
             throw new \InvalidArgumentException('invalid value for "$fkiEzsignfoldertypeID" when calling ModuleEzsignApi.ezsignSuggestTemplatesV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/module/ezsign/suggestTemplates';
         $formParams = [];
@@ -616,16 +632,11 @@ class ModuleEzsignApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -643,9 +654,9 @@ class ModuleEzsignApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

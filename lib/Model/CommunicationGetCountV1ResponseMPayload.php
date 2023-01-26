@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * CommunicationGetCountV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Payload for GET /1/module/communication/getCount
+ * @description Payload for GET /1/module/communication/getCommunicationCount
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -127,6 +127,16 @@ class CommunicationGetCountV1ResponseMPayload implements ModelInterface, ArrayAc
     private function getOpenAPINullablesSetToNull(): array
     {
         return $this->openAPINullablesSetToNull;
+    }
+
+    /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
     }
 
     /**
@@ -297,16 +307,19 @@ class CommunicationGetCountV1ResponseMPayload implements ModelInterface, ArrayAc
     /**
      * Sets iCommunicationCount
      *
-     * @param int $iCommunicationCount The number of total signatures in the Ezsigntemplate.
+     * @param int $iCommunicationCount The count of Communication.
      *
      * @return self
      */
     public function setICommunicationCount($iCommunicationCount)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iCommunicationCount)) {
             //throw new \InvalidArgumentException('non-nullable iCommunicationCount cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iCommunicationCount'] = $iCommunicationCount;
         $this->container['iCommunicationCount'] = (is_null($iCommunicationCount) ? null : (int) $iCommunicationCount);
 
         return $this;

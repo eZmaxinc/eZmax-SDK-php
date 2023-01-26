@@ -169,6 +169,16 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -508,9 +518,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigndocumentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigndocumentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsigndocumentID'] = $pkiEzsigndocumentID;
         $this->container['pkiEzsigndocumentID'] = (is_null($pkiEzsigndocumentID) ? null : (int) $pkiEzsigndocumentID);
 
         return $this;
@@ -541,9 +554,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfolderID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfolderID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
         $this->container['fkiEzsignfolderID'] = (is_null($fkiEzsignfolderID) ? null : (int) $fkiEzsignfolderID);
 
         return $this;
@@ -574,9 +590,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplateID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplateID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsigntemplateID'] = $fkiEzsigntemplateID;
         $this->container['fkiEzsigntemplateID'] = (is_null($fkiEzsigntemplateID) ? null : (int) $fkiEzsigntemplateID);
 
         return $this;
@@ -607,9 +626,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldersignerassociationID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldersignerassociationID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignfoldersignerassociationID'] = $fkiEzsignfoldersignerassociationID;
         $this->container['fkiEzsignfoldersignerassociationID'] = (is_null($fkiEzsignfoldersignerassociationID) ? null : (int) $fkiEzsignfoldersignerassociationID);
 
         return $this;
@@ -643,9 +665,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiLanguageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiLanguageID'] = $fkiLanguageID;
         $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
 
         return $this;
@@ -681,9 +706,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             );
         }
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsigndocumentSource)) {
             //throw new \InvalidArgumentException('non-nullable eEzsigndocumentSource cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigndocumentSource'] = $eEzsigndocumentSource;
         $this->container['eEzsigndocumentSource'] = (is_null($eEzsigndocumentSource) ? null : (string) $eEzsigndocumentSource);
 
         return $this;
@@ -719,9 +747,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             );
         }
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsigndocumentFormat)) {
             //throw new \InvalidArgumentException('non-nullable eEzsigndocumentFormat cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigndocumentFormat'] = $eEzsigndocumentFormat;
         $this->container['eEzsigndocumentFormat'] = (is_null($eEzsigndocumentFormat) ? null : (string) $eEzsigndocumentFormat);
 
         return $this;
@@ -747,9 +778,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setSEzsigndocumentBase64($sEzsigndocumentBase64)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigndocumentBase64)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigndocumentBase64 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigndocumentBase64'] = $sEzsigndocumentBase64;
         $this->container['sEzsigndocumentBase64'] = (is_null($sEzsigndocumentBase64) ? null : $sEzsigndocumentBase64);
 
         return $this;
@@ -775,9 +809,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setSEzsigndocumentUrl($sEzsigndocumentUrl)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigndocumentUrl)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigndocumentUrl cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigndocumentUrl'] = $sEzsigndocumentUrl;
         $this->container['sEzsigndocumentUrl'] = (is_null($sEzsigndocumentUrl) ? null : (string) $sEzsigndocumentUrl);
 
         return $this;
@@ -803,9 +840,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setBEzsigndocumentForcerepair($bEzsigndocumentForcerepair)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigndocumentForcerepair)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigndocumentForcerepair cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigndocumentForcerepair'] = $bEzsigndocumentForcerepair;
         $this->container['bEzsigndocumentForcerepair'] = (is_null($bEzsigndocumentForcerepair) ? null : (bool) $bEzsigndocumentForcerepair);
 
         return $this;
@@ -831,9 +871,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setSEzsigndocumentPassword($sEzsigndocumentPassword)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigndocumentPassword)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigndocumentPassword cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigndocumentPassword'] = $sEzsigndocumentPassword;
         $this->container['sEzsigndocumentPassword'] = (is_null($sEzsigndocumentPassword) ? null : (string) $sEzsigndocumentPassword);
 
         return $this;
@@ -869,9 +912,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             );
         }
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsigndocumentForm)) {
             //throw new \InvalidArgumentException('non-nullable eEzsigndocumentForm cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigndocumentForm'] = $eEzsigndocumentForm;
         $this->container['eEzsigndocumentForm'] = (is_null($eEzsigndocumentForm) ? null : (string) $eEzsigndocumentForm);
 
         return $this;
@@ -897,9 +943,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setDtEzsigndocumentDuedate($dtEzsigndocumentDuedate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsigndocumentDuedate)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsigndocumentDuedate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
         $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : (string) $dtEzsigndocumentDuedate);
 
         return $this;
@@ -925,9 +974,12 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setSEzsigndocumentName($sEzsigndocumentName)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigndocumentName)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigndocumentName cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
         $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);
 
         return $this;

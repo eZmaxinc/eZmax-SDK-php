@@ -178,4 +178,13 @@ class EzmaxinvoicingsummaryinternaldetailResponseCompoundTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "tEzmaxproductHelpX"
+     */
+    public function testPropertyTEzmaxproductHelpX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

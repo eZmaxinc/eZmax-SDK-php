@@ -133,6 +133,16 @@ class FranchisereferalincomeCreateObjectV1Request implements ModelInterface, Arr
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -308,9 +318,12 @@ class FranchisereferalincomeCreateObjectV1Request implements ModelInterface, Arr
     public function setObjFranchisereferalincome($objFranchisereferalincome)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objFranchisereferalincome)) {
             //throw new \InvalidArgumentException('non-nullable objFranchisereferalincome cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objFranchisereferalincome'] = $objFranchisereferalincome;
         $this->container['objFranchisereferalincome'] = $objFranchisereferalincome;
 
         return $this;
@@ -336,9 +349,12 @@ class FranchisereferalincomeCreateObjectV1Request implements ModelInterface, Arr
     public function setObjFranchisereferalincomeCompound($objFranchisereferalincomeCompound)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objFranchisereferalincomeCompound)) {
             //throw new \InvalidArgumentException('non-nullable objFranchisereferalincomeCompound cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objFranchisereferalincomeCompound'] = $objFranchisereferalincomeCompound;
         $this->container['objFranchisereferalincomeCompound'] = $objFranchisereferalincomeCompound;
 
         return $this;

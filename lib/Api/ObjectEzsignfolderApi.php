@@ -71,7 +71,77 @@ class ObjectEzsignfolderApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'ezsignfolderArchiveV1' => [
+            'application/json',
+        ],
+        'ezsignfolderBatchDownloadV1' => [
+            'application/json',
+        ],
+        'ezsignfolderCreateObjectV1' => [
+            'application/json',
+        ],
+        'ezsignfolderCreateObjectV2' => [
+            'application/json',
+        ],
+        'ezsignfolderDeleteObjectV1' => [
+            'application/json',
+        ],
+        'ezsignfolderDisposeEzsignfoldersV1' => [
+            'application/json',
+        ],
+        'ezsignfolderDisposeV1' => [
+            'application/json',
+        ],
+        'ezsignfolderEditObjectV1' => [
+            'application/json',
+        ],
+        'ezsignfolderGetActionableElementsV1' => [
+            'application/json',
+        ],
+        'ezsignfolderGetEzsigndocumentsV1' => [
+            'application/json',
+        ],
+        'ezsignfolderGetEzsignfoldersignerassociationsV1' => [
+            'application/json',
+        ],
+        'ezsignfolderGetFormsDataV1' => [
+            'application/json',
+        ],
+        'ezsignfolderGetListV1' => [
+            'application/json',
+        ],
+        'ezsignfolderGetObjectV1' => [
+            'application/json',
+        ],
+        'ezsignfolderGetObjectV2' => [
+            'application/json',
+        ],
+        'ezsignfolderImportEzsignfoldersignerassociationsV1' => [
+            'application/json',
+        ],
+        'ezsignfolderImportEzsigntemplatepackageV1' => [
+            'application/json',
+        ],
+        'ezsignfolderReorderV1' => [
+            'application/json',
+        ],
+        'ezsignfolderSendV1' => [
+            'application/json',
+        ],
+        'ezsignfolderSendV2' => [
+            'application/json',
+        ],
+        'ezsignfolderSendV3' => [
+            'application/json',
+        ],
+        'ezsignfolderUnsendV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -124,14 +194,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  object $body body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderArchiveV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderArchiveV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderArchiveV1($pkiEzsignfolderID, $body)
+    public function ezsignfolderArchiveV1($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderArchiveV1'][0])
     {
-        list($response) = $this->ezsignfolderArchiveV1WithHttpInfo($pkiEzsignfolderID, $body);
+        list($response) = $this->ezsignfolderArchiveV1WithHttpInfo($pkiEzsignfolderID, $body, $contentType);
         return $response;
     }
 
@@ -142,14 +213,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderArchiveV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderArchiveV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderArchiveV1WithHttpInfo($pkiEzsignfolderID, $body)
+    public function ezsignfolderArchiveV1WithHttpInfo($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderArchiveV1'][0])
     {
-        $request = $this->ezsignfolderArchiveV1Request($pkiEzsignfolderID, $body);
+        $request = $this->ezsignfolderArchiveV1Request($pkiEzsignfolderID, $body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -288,13 +360,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderArchiveV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderArchiveV1Async($pkiEzsignfolderID, $body)
+    public function ezsignfolderArchiveV1Async($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderArchiveV1'][0])
     {
-        return $this->ezsignfolderArchiveV1AsyncWithHttpInfo($pkiEzsignfolderID, $body)
+        return $this->ezsignfolderArchiveV1AsyncWithHttpInfo($pkiEzsignfolderID, $body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -309,14 +382,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderArchiveV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderArchiveV1AsyncWithHttpInfo($pkiEzsignfolderID, $body)
+    public function ezsignfolderArchiveV1AsyncWithHttpInfo($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderArchiveV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderArchiveV1Response';
-        $request = $this->ezsignfolderArchiveV1Request($pkiEzsignfolderID, $body);
+        $request = $this->ezsignfolderArchiveV1Request($pkiEzsignfolderID, $body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -359,11 +433,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderArchiveV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderArchiveV1Request($pkiEzsignfolderID, $body)
+    public function ezsignfolderArchiveV1Request($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderArchiveV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -375,14 +450,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderArchiveV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $body when calling ezsignfolderArchiveV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/archive';
         $formParams = [];
@@ -403,20 +478,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -436,9 +507,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -488,14 +559,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request ezsignfolderBatchDownloadV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderBatchDownloadV1($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request)
+    public function ezsignfolderBatchDownloadV1($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
-        list($response) = $this->ezsignfolderBatchDownloadV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request);
+        list($response) = $this->ezsignfolderBatchDownloadV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $contentType);
         return $response;
     }
 
@@ -506,14 +578,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderBatchDownloadV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request)
+    public function ezsignfolderBatchDownloadV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
-        $request = $this->ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request);
+        $request = $this->ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -675,13 +748,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderBatchDownloadV1Async($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request)
+    public function ezsignfolderBatchDownloadV1Async($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
-        return $this->ezsignfolderBatchDownloadV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request)
+        return $this->ezsignfolderBatchDownloadV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -696,14 +770,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderBatchDownloadV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request)
+    public function ezsignfolderBatchDownloadV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
         $returnType = '\SplFileObject';
-        $request = $this->ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request);
+        $request = $this->ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -746,11 +821,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request)
+    public function ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -762,14 +838,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderBatchDownloadV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfolderBatchDownloadV1Request' is set
         if ($ezsignfolderBatchDownloadV1Request === null || (is_array($ezsignfolderBatchDownloadV1Request) && count($ezsignfolderBatchDownloadV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfolderBatchDownloadV1Request when calling ezsignfolderBatchDownloadV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/batchDownload';
         $formParams = [];
@@ -790,20 +866,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/zip', 'application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/zip', 'application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/zip', 'application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderBatchDownloadV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderBatchDownloadV1Request));
             } else {
                 $httpBody = $ezsignfolderBatchDownloadV1Request;
@@ -823,9 +895,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -874,15 +946,16 @@ class ObjectEzsignfolderApi
      * Create a new Ezsignfolder
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request ezsignfolderCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderCreateObjectV1Response
      * @deprecated
      */
-    public function ezsignfolderCreateObjectV1($ezsignfolderCreateObjectV1Request)
+    public function ezsignfolderCreateObjectV1($ezsignfolderCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV1'][0])
     {
-        list($response) = $this->ezsignfolderCreateObjectV1WithHttpInfo($ezsignfolderCreateObjectV1Request);
+        list($response) = $this->ezsignfolderCreateObjectV1WithHttpInfo($ezsignfolderCreateObjectV1Request, $contentType);
         return $response;
     }
 
@@ -892,15 +965,16 @@ class ObjectEzsignfolderApi
      * Create a new Ezsignfolder
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsignfolderCreateObjectV1WithHttpInfo($ezsignfolderCreateObjectV1Request)
+    public function ezsignfolderCreateObjectV1WithHttpInfo($ezsignfolderCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV1'][0])
     {
-        $request = $this->ezsignfolderCreateObjectV1Request($ezsignfolderCreateObjectV1Request);
+        $request = $this->ezsignfolderCreateObjectV1Request($ezsignfolderCreateObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -992,14 +1066,15 @@ class ObjectEzsignfolderApi
      * Create a new Ezsignfolder
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfolderCreateObjectV1Async($ezsignfolderCreateObjectV1Request)
+    public function ezsignfolderCreateObjectV1Async($ezsignfolderCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV1'][0])
     {
-        return $this->ezsignfolderCreateObjectV1AsyncWithHttpInfo($ezsignfolderCreateObjectV1Request)
+        return $this->ezsignfolderCreateObjectV1AsyncWithHttpInfo($ezsignfolderCreateObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1013,15 +1088,16 @@ class ObjectEzsignfolderApi
      * Create a new Ezsignfolder
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfolderCreateObjectV1AsyncWithHttpInfo($ezsignfolderCreateObjectV1Request)
+    public function ezsignfolderCreateObjectV1AsyncWithHttpInfo($ezsignfolderCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderCreateObjectV1Response';
-        $request = $this->ezsignfolderCreateObjectV1Request($ezsignfolderCreateObjectV1Request);
+        $request = $this->ezsignfolderCreateObjectV1Request($ezsignfolderCreateObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1063,12 +1139,13 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderCreateObjectV1'
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV1Request[] $ezsignfolderCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsignfolderCreateObjectV1Request($ezsignfolderCreateObjectV1Request)
+    public function ezsignfolderCreateObjectV1Request($ezsignfolderCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV1'][0])
     {
 
         // verify the required parameter 'ezsignfolderCreateObjectV1Request' is set
@@ -1077,6 +1154,7 @@ class ObjectEzsignfolderApi
                 'Missing the required parameter $ezsignfolderCreateObjectV1Request when calling ezsignfolderCreateObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder';
         $formParams = [];
@@ -1089,20 +1167,16 @@ class ObjectEzsignfolderApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderCreateObjectV1Request));
             } else {
                 $httpBody = $ezsignfolderCreateObjectV1Request;
@@ -1122,9 +1196,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1173,14 +1247,15 @@ class ObjectEzsignfolderApi
      * Create a new Ezsignfolder
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV2Request $ezsignfolderCreateObjectV2Request ezsignfolderCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderCreateObjectV2Response
      */
-    public function ezsignfolderCreateObjectV2($ezsignfolderCreateObjectV2Request)
+    public function ezsignfolderCreateObjectV2($ezsignfolderCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV2'][0])
     {
-        list($response) = $this->ezsignfolderCreateObjectV2WithHttpInfo($ezsignfolderCreateObjectV2Request);
+        list($response) = $this->ezsignfolderCreateObjectV2WithHttpInfo($ezsignfolderCreateObjectV2Request, $contentType);
         return $response;
     }
 
@@ -1190,14 +1265,15 @@ class ObjectEzsignfolderApi
      * Create a new Ezsignfolder
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV2Request $ezsignfolderCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderCreateObjectV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderCreateObjectV2WithHttpInfo($ezsignfolderCreateObjectV2Request)
+    public function ezsignfolderCreateObjectV2WithHttpInfo($ezsignfolderCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV2'][0])
     {
-        $request = $this->ezsignfolderCreateObjectV2Request($ezsignfolderCreateObjectV2Request);
+        $request = $this->ezsignfolderCreateObjectV2Request($ezsignfolderCreateObjectV2Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1289,13 +1365,14 @@ class ObjectEzsignfolderApi
      * Create a new Ezsignfolder
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV2Request $ezsignfolderCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderCreateObjectV2Async($ezsignfolderCreateObjectV2Request)
+    public function ezsignfolderCreateObjectV2Async($ezsignfolderCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV2'][0])
     {
-        return $this->ezsignfolderCreateObjectV2AsyncWithHttpInfo($ezsignfolderCreateObjectV2Request)
+        return $this->ezsignfolderCreateObjectV2AsyncWithHttpInfo($ezsignfolderCreateObjectV2Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1309,14 +1386,15 @@ class ObjectEzsignfolderApi
      * Create a new Ezsignfolder
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV2Request $ezsignfolderCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderCreateObjectV2AsyncWithHttpInfo($ezsignfolderCreateObjectV2Request)
+    public function ezsignfolderCreateObjectV2AsyncWithHttpInfo($ezsignfolderCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderCreateObjectV2Response';
-        $request = $this->ezsignfolderCreateObjectV2Request($ezsignfolderCreateObjectV2Request);
+        $request = $this->ezsignfolderCreateObjectV2Request($ezsignfolderCreateObjectV2Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1358,11 +1436,12 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderCreateObjectV2'
      *
      * @param  \eZmaxAPI\Model\EzsignfolderCreateObjectV2Request $ezsignfolderCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderCreateObjectV2Request($ezsignfolderCreateObjectV2Request)
+    public function ezsignfolderCreateObjectV2Request($ezsignfolderCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfolderCreateObjectV2'][0])
     {
 
         // verify the required parameter 'ezsignfolderCreateObjectV2Request' is set
@@ -1371,6 +1450,7 @@ class ObjectEzsignfolderApi
                 'Missing the required parameter $ezsignfolderCreateObjectV2Request when calling ezsignfolderCreateObjectV2'
             );
         }
+
 
         $resourcePath = '/2/object/ezsignfolder';
         $formParams = [];
@@ -1383,20 +1463,16 @@ class ObjectEzsignfolderApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderCreateObjectV2Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderCreateObjectV2Request));
             } else {
                 $httpBody = $ezsignfolderCreateObjectV2Request;
@@ -1416,9 +1492,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1467,14 +1543,15 @@ class ObjectEzsignfolderApi
      * Delete an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderDeleteObjectV1($pkiEzsignfolderID)
+    public function ezsignfolderDeleteObjectV1($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderDeleteObjectV1'][0])
     {
-        list($response) = $this->ezsignfolderDeleteObjectV1WithHttpInfo($pkiEzsignfolderID);
+        list($response) = $this->ezsignfolderDeleteObjectV1WithHttpInfo($pkiEzsignfolderID, $contentType);
         return $response;
     }
 
@@ -1484,14 +1561,15 @@ class ObjectEzsignfolderApi
      * Delete an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderDeleteObjectV1WithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderDeleteObjectV1WithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderDeleteObjectV1'][0])
     {
-        $request = $this->ezsignfolderDeleteObjectV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderDeleteObjectV1Request($pkiEzsignfolderID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1629,13 +1707,14 @@ class ObjectEzsignfolderApi
      * Delete an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderDeleteObjectV1Async($pkiEzsignfolderID)
+    public function ezsignfolderDeleteObjectV1Async($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderDeleteObjectV1'][0])
     {
-        return $this->ezsignfolderDeleteObjectV1AsyncWithHttpInfo($pkiEzsignfolderID)
+        return $this->ezsignfolderDeleteObjectV1AsyncWithHttpInfo($pkiEzsignfolderID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1649,14 +1728,15 @@ class ObjectEzsignfolderApi
      * Delete an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderDeleteObjectV1AsyncWithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderDeleteObjectV1AsyncWithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderDeleteObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response';
-        $request = $this->ezsignfolderDeleteObjectV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderDeleteObjectV1Request($pkiEzsignfolderID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1698,11 +1778,12 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderDeleteObjectV1'
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderDeleteObjectV1Request($pkiEzsignfolderID)
+    public function ezsignfolderDeleteObjectV1Request($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderDeleteObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -1714,7 +1795,7 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderDeleteObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}';
         $formParams = [];
@@ -1735,16 +1816,11 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1762,9 +1838,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1813,14 +1889,15 @@ class ObjectEzsignfolderApi
      * Dispose Ezsignfolders
      *
      * @param  \eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Request $ezsignfolderDisposeEzsignfoldersV1Request ezsignfolderDisposeEzsignfoldersV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderDisposeEzsignfoldersV1($ezsignfolderDisposeEzsignfoldersV1Request)
+    public function ezsignfolderDisposeEzsignfoldersV1($ezsignfolderDisposeEzsignfoldersV1Request, string $contentType = self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'][0])
     {
-        list($response) = $this->ezsignfolderDisposeEzsignfoldersV1WithHttpInfo($ezsignfolderDisposeEzsignfoldersV1Request);
+        list($response) = $this->ezsignfolderDisposeEzsignfoldersV1WithHttpInfo($ezsignfolderDisposeEzsignfoldersV1Request, $contentType);
         return $response;
     }
 
@@ -1830,14 +1907,15 @@ class ObjectEzsignfolderApi
      * Dispose Ezsignfolders
      *
      * @param  \eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Request $ezsignfolderDisposeEzsignfoldersV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderDisposeEzsignfoldersV1WithHttpInfo($ezsignfolderDisposeEzsignfoldersV1Request)
+    public function ezsignfolderDisposeEzsignfoldersV1WithHttpInfo($ezsignfolderDisposeEzsignfoldersV1Request, string $contentType = self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'][0])
     {
-        $request = $this->ezsignfolderDisposeEzsignfoldersV1Request($ezsignfolderDisposeEzsignfoldersV1Request);
+        $request = $this->ezsignfolderDisposeEzsignfoldersV1Request($ezsignfolderDisposeEzsignfoldersV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1975,13 +2053,14 @@ class ObjectEzsignfolderApi
      * Dispose Ezsignfolders
      *
      * @param  \eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Request $ezsignfolderDisposeEzsignfoldersV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderDisposeEzsignfoldersV1Async($ezsignfolderDisposeEzsignfoldersV1Request)
+    public function ezsignfolderDisposeEzsignfoldersV1Async($ezsignfolderDisposeEzsignfoldersV1Request, string $contentType = self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'][0])
     {
-        return $this->ezsignfolderDisposeEzsignfoldersV1AsyncWithHttpInfo($ezsignfolderDisposeEzsignfoldersV1Request)
+        return $this->ezsignfolderDisposeEzsignfoldersV1AsyncWithHttpInfo($ezsignfolderDisposeEzsignfoldersV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1995,14 +2074,15 @@ class ObjectEzsignfolderApi
      * Dispose Ezsignfolders
      *
      * @param  \eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Request $ezsignfolderDisposeEzsignfoldersV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderDisposeEzsignfoldersV1AsyncWithHttpInfo($ezsignfolderDisposeEzsignfoldersV1Request)
+    public function ezsignfolderDisposeEzsignfoldersV1AsyncWithHttpInfo($ezsignfolderDisposeEzsignfoldersV1Request, string $contentType = self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Response';
-        $request = $this->ezsignfolderDisposeEzsignfoldersV1Request($ezsignfolderDisposeEzsignfoldersV1Request);
+        $request = $this->ezsignfolderDisposeEzsignfoldersV1Request($ezsignfolderDisposeEzsignfoldersV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2044,11 +2124,12 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderDisposeEzsignfoldersV1'
      *
      * @param  \eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Request $ezsignfolderDisposeEzsignfoldersV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderDisposeEzsignfoldersV1Request($ezsignfolderDisposeEzsignfoldersV1Request)
+    public function ezsignfolderDisposeEzsignfoldersV1Request($ezsignfolderDisposeEzsignfoldersV1Request, string $contentType = self::contentTypes['ezsignfolderDisposeEzsignfoldersV1'][0])
     {
 
         // verify the required parameter 'ezsignfolderDisposeEzsignfoldersV1Request' is set
@@ -2057,6 +2138,7 @@ class ObjectEzsignfolderApi
                 'Missing the required parameter $ezsignfolderDisposeEzsignfoldersV1Request when calling ezsignfolderDisposeEzsignfoldersV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/disposeEzsignfolders';
         $formParams = [];
@@ -2069,20 +2151,16 @@ class ObjectEzsignfolderApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderDisposeEzsignfoldersV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderDisposeEzsignfoldersV1Request));
             } else {
                 $httpBody = $ezsignfolderDisposeEzsignfoldersV1Request;
@@ -2102,9 +2180,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2154,14 +2232,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  object $body body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderDisposeV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderDisposeV1($pkiEzsignfolderID, $body)
+    public function ezsignfolderDisposeV1($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderDisposeV1'][0])
     {
-        list($response) = $this->ezsignfolderDisposeV1WithHttpInfo($pkiEzsignfolderID, $body);
+        list($response) = $this->ezsignfolderDisposeV1WithHttpInfo($pkiEzsignfolderID, $body, $contentType);
         return $response;
     }
 
@@ -2172,14 +2251,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderDisposeV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderDisposeV1WithHttpInfo($pkiEzsignfolderID, $body)
+    public function ezsignfolderDisposeV1WithHttpInfo($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderDisposeV1'][0])
     {
-        $request = $this->ezsignfolderDisposeV1Request($pkiEzsignfolderID, $body);
+        $request = $this->ezsignfolderDisposeV1Request($pkiEzsignfolderID, $body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2318,13 +2398,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderDisposeV1Async($pkiEzsignfolderID, $body)
+    public function ezsignfolderDisposeV1Async($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderDisposeV1'][0])
     {
-        return $this->ezsignfolderDisposeV1AsyncWithHttpInfo($pkiEzsignfolderID, $body)
+        return $this->ezsignfolderDisposeV1AsyncWithHttpInfo($pkiEzsignfolderID, $body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2339,14 +2420,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderDisposeV1AsyncWithHttpInfo($pkiEzsignfolderID, $body)
+    public function ezsignfolderDisposeV1AsyncWithHttpInfo($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderDisposeV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderDisposeV1Response';
-        $request = $this->ezsignfolderDisposeV1Request($pkiEzsignfolderID, $body);
+        $request = $this->ezsignfolderDisposeV1Request($pkiEzsignfolderID, $body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2389,11 +2471,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderDisposeV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderDisposeV1Request($pkiEzsignfolderID, $body)
+    public function ezsignfolderDisposeV1Request($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderDisposeV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -2405,14 +2488,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderDisposeV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $body when calling ezsignfolderDisposeV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/dispose';
         $formParams = [];
@@ -2433,20 +2516,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -2466,9 +2545,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2518,14 +2597,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request ezsignfolderEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
+    public function ezsignfolderEditObjectV1($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request, string $contentType = self::contentTypes['ezsignfolderEditObjectV1'][0])
     {
-        list($response) = $this->ezsignfolderEditObjectV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request);
+        list($response) = $this->ezsignfolderEditObjectV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request, $contentType);
         return $response;
     }
 
@@ -2536,14 +2616,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderEditObjectV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
+    public function ezsignfolderEditObjectV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request, string $contentType = self::contentTypes['ezsignfolderEditObjectV1'][0])
     {
-        $request = $this->ezsignfolderEditObjectV1Request($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request);
+        $request = $this->ezsignfolderEditObjectV1Request($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2682,13 +2763,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderEditObjectV1Async($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
+    public function ezsignfolderEditObjectV1Async($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request, string $contentType = self::contentTypes['ezsignfolderEditObjectV1'][0])
     {
-        return $this->ezsignfolderEditObjectV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
+        return $this->ezsignfolderEditObjectV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2703,14 +2785,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderEditObjectV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
+    public function ezsignfolderEditObjectV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request, string $contentType = self::contentTypes['ezsignfolderEditObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderEditObjectV1Response';
-        $request = $this->ezsignfolderEditObjectV1Request($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request);
+        $request = $this->ezsignfolderEditObjectV1Request($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2753,11 +2836,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderEditObjectV1Request $ezsignfolderEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderEditObjectV1Request($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request)
+    public function ezsignfolderEditObjectV1Request($pkiEzsignfolderID, $ezsignfolderEditObjectV1Request, string $contentType = self::contentTypes['ezsignfolderEditObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -2769,14 +2853,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderEditObjectV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfolderEditObjectV1Request' is set
         if ($ezsignfolderEditObjectV1Request === null || (is_array($ezsignfolderEditObjectV1Request) && count($ezsignfolderEditObjectV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfolderEditObjectV1Request when calling ezsignfolderEditObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}';
         $formParams = [];
@@ -2797,20 +2881,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderEditObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderEditObjectV1Request));
             } else {
                 $httpBody = $ezsignfolderEditObjectV1Request;
@@ -2830,9 +2910,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2881,14 +2961,15 @@ class ObjectEzsignfolderApi
      * Retrieve actionable elements for the Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetActionableElementsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderGetActionableElementsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderGetActionableElementsV1($pkiEzsignfolderID)
+    public function ezsignfolderGetActionableElementsV1($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetActionableElementsV1'][0])
     {
-        list($response) = $this->ezsignfolderGetActionableElementsV1WithHttpInfo($pkiEzsignfolderID);
+        list($response) = $this->ezsignfolderGetActionableElementsV1WithHttpInfo($pkiEzsignfolderID, $contentType);
         return $response;
     }
 
@@ -2898,14 +2979,15 @@ class ObjectEzsignfolderApi
      * Retrieve actionable elements for the Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetActionableElementsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderGetActionableElementsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderGetActionableElementsV1WithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetActionableElementsV1WithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetActionableElementsV1'][0])
     {
-        $request = $this->ezsignfolderGetActionableElementsV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetActionableElementsV1Request($pkiEzsignfolderID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3043,13 +3125,14 @@ class ObjectEzsignfolderApi
      * Retrieve actionable elements for the Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetActionableElementsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetActionableElementsV1Async($pkiEzsignfolderID)
+    public function ezsignfolderGetActionableElementsV1Async($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetActionableElementsV1'][0])
     {
-        return $this->ezsignfolderGetActionableElementsV1AsyncWithHttpInfo($pkiEzsignfolderID)
+        return $this->ezsignfolderGetActionableElementsV1AsyncWithHttpInfo($pkiEzsignfolderID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3063,14 +3146,15 @@ class ObjectEzsignfolderApi
      * Retrieve actionable elements for the Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetActionableElementsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetActionableElementsV1AsyncWithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetActionableElementsV1AsyncWithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetActionableElementsV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderGetActionableElementsV1Response';
-        $request = $this->ezsignfolderGetActionableElementsV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetActionableElementsV1Request($pkiEzsignfolderID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3112,11 +3196,12 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderGetActionableElementsV1'
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetActionableElementsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderGetActionableElementsV1Request($pkiEzsignfolderID)
+    public function ezsignfolderGetActionableElementsV1Request($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetActionableElementsV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -3128,7 +3213,7 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderGetActionableElementsV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements';
         $formParams = [];
@@ -3149,16 +3234,11 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -3176,9 +3256,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3227,14 +3307,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsigndocumentsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderGetEzsigndocumentsV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderGetEzsigndocumentsV1($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsigndocumentsV1($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsigndocumentsV1'][0])
     {
-        list($response) = $this->ezsignfolderGetEzsigndocumentsV1WithHttpInfo($pkiEzsignfolderID);
+        list($response) = $this->ezsignfolderGetEzsigndocumentsV1WithHttpInfo($pkiEzsignfolderID, $contentType);
         return $response;
     }
 
@@ -3244,14 +3325,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsigndocumentsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderGetEzsigndocumentsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderGetEzsigndocumentsV1WithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsigndocumentsV1WithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsigndocumentsV1'][0])
     {
-        $request = $this->ezsignfolderGetEzsigndocumentsV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetEzsigndocumentsV1Request($pkiEzsignfolderID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3366,13 +3448,14 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsigndocumentsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetEzsigndocumentsV1Async($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsigndocumentsV1Async($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsigndocumentsV1'][0])
     {
-        return $this->ezsignfolderGetEzsigndocumentsV1AsyncWithHttpInfo($pkiEzsignfolderID)
+        return $this->ezsignfolderGetEzsigndocumentsV1AsyncWithHttpInfo($pkiEzsignfolderID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3386,14 +3469,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsigndocumentsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetEzsigndocumentsV1AsyncWithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsigndocumentsV1AsyncWithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsigndocumentsV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderGetEzsigndocumentsV1Response';
-        $request = $this->ezsignfolderGetEzsigndocumentsV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetEzsigndocumentsV1Request($pkiEzsignfolderID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3435,11 +3519,12 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderGetEzsigndocumentsV1'
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsigndocumentsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderGetEzsigndocumentsV1Request($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsigndocumentsV1Request($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsigndocumentsV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -3451,7 +3536,7 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderGetEzsigndocumentsV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments';
         $formParams = [];
@@ -3472,16 +3557,11 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -3499,9 +3579,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3550,14 +3630,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderGetEzsignfoldersignerassociationsV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderGetEzsignfoldersignerassociationsV1($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsignfoldersignerassociationsV1($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'][0])
     {
-        list($response) = $this->ezsignfolderGetEzsignfoldersignerassociationsV1WithHttpInfo($pkiEzsignfolderID);
+        list($response) = $this->ezsignfolderGetEzsignfoldersignerassociationsV1WithHttpInfo($pkiEzsignfolderID, $contentType);
         return $response;
     }
 
@@ -3567,14 +3648,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderGetEzsignfoldersignerassociationsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderGetEzsignfoldersignerassociationsV1WithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsignfoldersignerassociationsV1WithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'][0])
     {
-        $request = $this->ezsignfolderGetEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3689,13 +3771,14 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetEzsignfoldersignerassociationsV1Async($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsignfoldersignerassociationsV1Async($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'][0])
     {
-        return $this->ezsignfolderGetEzsignfoldersignerassociationsV1AsyncWithHttpInfo($pkiEzsignfolderID)
+        return $this->ezsignfolderGetEzsignfoldersignerassociationsV1AsyncWithHttpInfo($pkiEzsignfolderID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3709,14 +3792,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetEzsignfoldersignerassociationsV1AsyncWithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsignfoldersignerassociationsV1AsyncWithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderGetEzsignfoldersignerassociationsV1Response';
-        $request = $this->ezsignfolderGetEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3758,11 +3842,12 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderGetEzsignfoldersignerassociationsV1'
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderGetEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID)
+    public function ezsignfolderGetEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetEzsignfoldersignerassociationsV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -3774,7 +3859,7 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderGetEzsignfoldersignerassociationsV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations';
         $formParams = [];
@@ -3795,16 +3880,11 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -3822,9 +3902,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3873,14 +3953,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s forms data
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderGetFormsDataV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderGetFormsDataV1($pkiEzsignfolderID)
+    public function ezsignfolderGetFormsDataV1($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetFormsDataV1'][0])
     {
-        list($response) = $this->ezsignfolderGetFormsDataV1WithHttpInfo($pkiEzsignfolderID);
+        list($response) = $this->ezsignfolderGetFormsDataV1WithHttpInfo($pkiEzsignfolderID, $contentType);
         return $response;
     }
 
@@ -3890,14 +3971,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s forms data
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderGetFormsDataV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderGetFormsDataV1WithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetFormsDataV1WithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetFormsDataV1'][0])
     {
-        $request = $this->ezsignfolderGetFormsDataV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetFormsDataV1Request($pkiEzsignfolderID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4058,13 +4140,14 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s forms data
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetFormsDataV1Async($pkiEzsignfolderID)
+    public function ezsignfolderGetFormsDataV1Async($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetFormsDataV1'][0])
     {
-        return $this->ezsignfolderGetFormsDataV1AsyncWithHttpInfo($pkiEzsignfolderID)
+        return $this->ezsignfolderGetFormsDataV1AsyncWithHttpInfo($pkiEzsignfolderID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4078,14 +4161,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder&#39;s forms data
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetFormsDataV1AsyncWithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetFormsDataV1AsyncWithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetFormsDataV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderGetFormsDataV1Response';
-        $request = $this->ezsignfolderGetFormsDataV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetFormsDataV1Request($pkiEzsignfolderID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4127,11 +4211,12 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderGetFormsDataV1'
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderGetFormsDataV1Request($pkiEzsignfolderID)
+    public function ezsignfolderGetFormsDataV1Request($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetFormsDataV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -4143,7 +4228,7 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderGetFormsDataV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData';
         $formParams = [];
@@ -4164,16 +4249,11 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/zip']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/zip'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/zip', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -4191,9 +4271,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4246,14 +4326,15 @@ class ObjectEzsignfolderApi
      * @param  int $iRowOffset iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
      * @param  string $sFilter sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetListV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderGetListV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function ezsignfolderGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
-        list($response) = $this->ezsignfolderGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+        list($response) = $this->ezsignfolderGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
         return $response;
     }
 
@@ -4267,14 +4348,15 @@ class ObjectEzsignfolderApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetListV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function ezsignfolderGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
-        $request = $this->ezsignfolderGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+        $request = $this->ezsignfolderGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4393,13 +4475,14 @@ class ObjectEzsignfolderApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetListV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function ezsignfolderGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
-        return $this->ezsignfolderGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter)
+        return $this->ezsignfolderGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4417,14 +4500,15 @@ class ObjectEzsignfolderApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetListV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function ezsignfolderGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderGetListV1Response';
-        $request = $this->ezsignfolderGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+        $request = $this->ezsignfolderGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4470,23 +4554,23 @@ class ObjectEzsignfolderApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetListV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function ezsignfolderGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
 
 
         if ($iRowMax !== null && $iRowMax < 1) {
             throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectEzsignfolderApi.ezsignfolderGetListV1, must be bigger than or equal to 1.');
         }
-
-
+        
         if ($iRowOffset !== null && $iRowOffset < 0) {
             throw new \InvalidArgumentException('invalid value for "$iRowOffset" when calling ObjectEzsignfolderApi.ezsignfolderGetListV1, must be bigger than or equal to 0.');
         }
-
+        
 
 
 
@@ -4541,16 +4625,11 @@ class ObjectEzsignfolderApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -4568,9 +4647,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4619,15 +4698,16 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezsignfolderGetObjectV1($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV1($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV1'][0])
     {
-        list($response) = $this->ezsignfolderGetObjectV1WithHttpInfo($pkiEzsignfolderID);
+        list($response) = $this->ezsignfolderGetObjectV1WithHttpInfo($pkiEzsignfolderID, $contentType);
         return $response;
     }
 
@@ -4637,15 +4717,16 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsignfolderGetObjectV1WithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV1WithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV1'][0])
     {
-        $request = $this->ezsignfolderGetObjectV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetObjectV1Request($pkiEzsignfolderID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4760,14 +4841,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfolderGetObjectV1Async($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV1Async($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV1'][0])
     {
-        return $this->ezsignfolderGetObjectV1AsyncWithHttpInfo($pkiEzsignfolderID)
+        return $this->ezsignfolderGetObjectV1AsyncWithHttpInfo($pkiEzsignfolderID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4781,15 +4863,16 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfolderGetObjectV1AsyncWithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV1AsyncWithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderGetObjectV1Response';
-        $request = $this->ezsignfolderGetObjectV1Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetObjectV1Request($pkiEzsignfolderID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4831,12 +4914,13 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderGetObjectV1'
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsignfolderGetObjectV1Request($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV1Request($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -4848,7 +4932,7 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderGetObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}';
         $formParams = [];
@@ -4869,16 +4953,11 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -4896,9 +4975,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4947,14 +5026,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderGetObjectV2($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV2($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV2'][0])
     {
-        list($response) = $this->ezsignfolderGetObjectV2WithHttpInfo($pkiEzsignfolderID);
+        list($response) = $this->ezsignfolderGetObjectV2WithHttpInfo($pkiEzsignfolderID, $contentType);
         return $response;
     }
 
@@ -4964,14 +5044,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderGetObjectV2WithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV2WithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV2'][0])
     {
-        $request = $this->ezsignfolderGetObjectV2Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetObjectV2Request($pkiEzsignfolderID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5086,13 +5167,14 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetObjectV2Async($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV2Async($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV2'][0])
     {
-        return $this->ezsignfolderGetObjectV2AsyncWithHttpInfo($pkiEzsignfolderID)
+        return $this->ezsignfolderGetObjectV2AsyncWithHttpInfo($pkiEzsignfolderID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5106,14 +5188,15 @@ class ObjectEzsignfolderApi
      * Retrieve an existing Ezsignfolder
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetObjectV2AsyncWithHttpInfo($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV2AsyncWithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderGetObjectV2Response';
-        $request = $this->ezsignfolderGetObjectV2Request($pkiEzsignfolderID);
+        $request = $this->ezsignfolderGetObjectV2Request($pkiEzsignfolderID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5155,11 +5238,12 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderGetObjectV2'
      *
      * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderGetObjectV2Request($pkiEzsignfolderID)
+    public function ezsignfolderGetObjectV2Request($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -5171,7 +5255,7 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderGetObjectV2, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/2/object/ezsignfolder/{pkiEzsignfolderID}';
         $formParams = [];
@@ -5192,16 +5276,11 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -5219,9 +5298,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -5271,14 +5350,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Request $ezsignfolderImportEzsignfoldersignerassociationsV1Request ezsignfolderImportEzsignfoldersignerassociationsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderImportEzsignfoldersignerassociationsV1($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request)
+    public function ezsignfolderImportEzsignfoldersignerassociationsV1($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'][0])
     {
-        list($response) = $this->ezsignfolderImportEzsignfoldersignerassociationsV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request);
+        list($response) = $this->ezsignfolderImportEzsignfoldersignerassociationsV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request, $contentType);
         return $response;
     }
 
@@ -5289,14 +5369,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Request $ezsignfolderImportEzsignfoldersignerassociationsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderImportEzsignfoldersignerassociationsV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request)
+    public function ezsignfolderImportEzsignfoldersignerassociationsV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'][0])
     {
-        $request = $this->ezsignfolderImportEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request);
+        $request = $this->ezsignfolderImportEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5458,13 +5539,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Request $ezsignfolderImportEzsignfoldersignerassociationsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderImportEzsignfoldersignerassociationsV1Async($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request)
+    public function ezsignfolderImportEzsignfoldersignerassociationsV1Async($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'][0])
     {
-        return $this->ezsignfolderImportEzsignfoldersignerassociationsV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request)
+        return $this->ezsignfolderImportEzsignfoldersignerassociationsV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5479,14 +5561,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Request $ezsignfolderImportEzsignfoldersignerassociationsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderImportEzsignfoldersignerassociationsV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request)
+    public function ezsignfolderImportEzsignfoldersignerassociationsV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Response';
-        $request = $this->ezsignfolderImportEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request);
+        $request = $this->ezsignfolderImportEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5529,11 +5612,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsignfoldersignerassociationsV1Request $ezsignfolderImportEzsignfoldersignerassociationsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderImportEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request)
+    public function ezsignfolderImportEzsignfoldersignerassociationsV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsignfoldersignerassociationsV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsignfoldersignerassociationsV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -5545,14 +5629,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderImportEzsignfoldersignerassociationsV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfolderImportEzsignfoldersignerassociationsV1Request' is set
         if ($ezsignfolderImportEzsignfoldersignerassociationsV1Request === null || (is_array($ezsignfolderImportEzsignfoldersignerassociationsV1Request) && count($ezsignfolderImportEzsignfoldersignerassociationsV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfolderImportEzsignfoldersignerassociationsV1Request when calling ezsignfolderImportEzsignfoldersignerassociationsV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsignfoldersignerassociations';
         $formParams = [];
@@ -5573,20 +5657,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderImportEzsignfoldersignerassociationsV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderImportEzsignfoldersignerassociationsV1Request));
             } else {
                 $httpBody = $ezsignfolderImportEzsignfoldersignerassociationsV1Request;
@@ -5606,9 +5686,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -5658,14 +5738,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Request $ezsignfolderImportEzsigntemplatepackageV1Request ezsignfolderImportEzsigntemplatepackageV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderImportEzsigntemplatepackageV1($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request)
+    public function ezsignfolderImportEzsigntemplatepackageV1($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'][0])
     {
-        list($response) = $this->ezsignfolderImportEzsigntemplatepackageV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request);
+        list($response) = $this->ezsignfolderImportEzsigntemplatepackageV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request, $contentType);
         return $response;
     }
 
@@ -5676,14 +5757,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Request $ezsignfolderImportEzsigntemplatepackageV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderImportEzsigntemplatepackageV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request)
+    public function ezsignfolderImportEzsigntemplatepackageV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'][0])
     {
-        $request = $this->ezsignfolderImportEzsigntemplatepackageV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request);
+        $request = $this->ezsignfolderImportEzsigntemplatepackageV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5822,13 +5904,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Request $ezsignfolderImportEzsigntemplatepackageV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderImportEzsigntemplatepackageV1Async($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request)
+    public function ezsignfolderImportEzsigntemplatepackageV1Async($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'][0])
     {
-        return $this->ezsignfolderImportEzsigntemplatepackageV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request)
+        return $this->ezsignfolderImportEzsigntemplatepackageV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5843,14 +5926,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Request $ezsignfolderImportEzsigntemplatepackageV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderImportEzsigntemplatepackageV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request)
+    public function ezsignfolderImportEzsigntemplatepackageV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Response';
-        $request = $this->ezsignfolderImportEzsigntemplatepackageV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request);
+        $request = $this->ezsignfolderImportEzsigntemplatepackageV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5893,11 +5977,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV1Request $ezsignfolderImportEzsigntemplatepackageV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderImportEzsigntemplatepackageV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request)
+    public function ezsignfolderImportEzsigntemplatepackageV1Request($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV1Request, string $contentType = self::contentTypes['ezsignfolderImportEzsigntemplatepackageV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -5909,14 +5994,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderImportEzsigntemplatepackageV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfolderImportEzsigntemplatepackageV1Request' is set
         if ($ezsignfolderImportEzsigntemplatepackageV1Request === null || (is_array($ezsignfolderImportEzsigntemplatepackageV1Request) && count($ezsignfolderImportEzsigntemplatepackageV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfolderImportEzsigntemplatepackageV1Request when calling ezsignfolderImportEzsigntemplatepackageV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage';
         $formParams = [];
@@ -5937,20 +6022,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderImportEzsigntemplatepackageV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderImportEzsigntemplatepackageV1Request));
             } else {
                 $httpBody = $ezsignfolderImportEzsigntemplatepackageV1Request;
@@ -5970,9 +6051,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -6022,14 +6103,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderReorderV1Request $ezsignfolderReorderV1Request ezsignfolderReorderV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderReorderV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderReorderV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderReorderV1($pkiEzsignfolderID, $ezsignfolderReorderV1Request)
+    public function ezsignfolderReorderV1($pkiEzsignfolderID, $ezsignfolderReorderV1Request, string $contentType = self::contentTypes['ezsignfolderReorderV1'][0])
     {
-        list($response) = $this->ezsignfolderReorderV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderReorderV1Request);
+        list($response) = $this->ezsignfolderReorderV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderReorderV1Request, $contentType);
         return $response;
     }
 
@@ -6040,14 +6122,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderReorderV1Request $ezsignfolderReorderV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderReorderV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderReorderV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderReorderV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderReorderV1Request)
+    public function ezsignfolderReorderV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderReorderV1Request, string $contentType = self::contentTypes['ezsignfolderReorderV1'][0])
     {
-        $request = $this->ezsignfolderReorderV1Request($pkiEzsignfolderID, $ezsignfolderReorderV1Request);
+        $request = $this->ezsignfolderReorderV1Request($pkiEzsignfolderID, $ezsignfolderReorderV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6186,13 +6269,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderReorderV1Request $ezsignfolderReorderV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderReorderV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderReorderV1Async($pkiEzsignfolderID, $ezsignfolderReorderV1Request)
+    public function ezsignfolderReorderV1Async($pkiEzsignfolderID, $ezsignfolderReorderV1Request, string $contentType = self::contentTypes['ezsignfolderReorderV1'][0])
     {
-        return $this->ezsignfolderReorderV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderReorderV1Request)
+        return $this->ezsignfolderReorderV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderReorderV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6207,14 +6291,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderReorderV1Request $ezsignfolderReorderV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderReorderV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderReorderV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderReorderV1Request)
+    public function ezsignfolderReorderV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderReorderV1Request, string $contentType = self::contentTypes['ezsignfolderReorderV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderReorderV1Response';
-        $request = $this->ezsignfolderReorderV1Request($pkiEzsignfolderID, $ezsignfolderReorderV1Request);
+        $request = $this->ezsignfolderReorderV1Request($pkiEzsignfolderID, $ezsignfolderReorderV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6257,11 +6342,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderReorderV1Request $ezsignfolderReorderV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderReorderV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderReorderV1Request($pkiEzsignfolderID, $ezsignfolderReorderV1Request)
+    public function ezsignfolderReorderV1Request($pkiEzsignfolderID, $ezsignfolderReorderV1Request, string $contentType = self::contentTypes['ezsignfolderReorderV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -6273,14 +6359,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderReorderV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfolderReorderV1Request' is set
         if ($ezsignfolderReorderV1Request === null || (is_array($ezsignfolderReorderV1Request) && count($ezsignfolderReorderV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfolderReorderV1Request when calling ezsignfolderReorderV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/reorder';
         $formParams = [];
@@ -6301,20 +6387,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderReorderV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderReorderV1Request));
             } else {
                 $httpBody = $ezsignfolderReorderV1Request;
@@ -6334,9 +6416,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -6386,15 +6468,16 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request ezsignfolderSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderSendV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezsignfolderSendV1($pkiEzsignfolderID, $ezsignfolderSendV1Request)
+    public function ezsignfolderSendV1($pkiEzsignfolderID, $ezsignfolderSendV1Request, string $contentType = self::contentTypes['ezsignfolderSendV1'][0])
     {
-        list($response) = $this->ezsignfolderSendV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV1Request);
+        list($response) = $this->ezsignfolderSendV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV1Request, $contentType);
         return $response;
     }
 
@@ -6405,15 +6488,16 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderSendV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsignfolderSendV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV1Request)
+    public function ezsignfolderSendV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV1Request, string $contentType = self::contentTypes['ezsignfolderSendV1'][0])
     {
-        $request = $this->ezsignfolderSendV1Request($pkiEzsignfolderID, $ezsignfolderSendV1Request);
+        $request = $this->ezsignfolderSendV1Request($pkiEzsignfolderID, $ezsignfolderSendV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6552,14 +6636,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfolderSendV1Async($pkiEzsignfolderID, $ezsignfolderSendV1Request)
+    public function ezsignfolderSendV1Async($pkiEzsignfolderID, $ezsignfolderSendV1Request, string $contentType = self::contentTypes['ezsignfolderSendV1'][0])
     {
-        return $this->ezsignfolderSendV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV1Request)
+        return $this->ezsignfolderSendV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6574,15 +6659,16 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfolderSendV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV1Request)
+    public function ezsignfolderSendV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV1Request, string $contentType = self::contentTypes['ezsignfolderSendV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderSendV1Response';
-        $request = $this->ezsignfolderSendV1Request($pkiEzsignfolderID, $ezsignfolderSendV1Request);
+        $request = $this->ezsignfolderSendV1Request($pkiEzsignfolderID, $ezsignfolderSendV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6625,12 +6711,13 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV1Request $ezsignfolderSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsignfolderSendV1Request($pkiEzsignfolderID, $ezsignfolderSendV1Request)
+    public function ezsignfolderSendV1Request($pkiEzsignfolderID, $ezsignfolderSendV1Request, string $contentType = self::contentTypes['ezsignfolderSendV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -6642,14 +6729,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderSendV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfolderSendV1Request' is set
         if ($ezsignfolderSendV1Request === null || (is_array($ezsignfolderSendV1Request) && count($ezsignfolderSendV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfolderSendV1Request when calling ezsignfolderSendV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/send';
         $formParams = [];
@@ -6670,20 +6757,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderSendV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderSendV1Request));
             } else {
                 $httpBody = $ezsignfolderSendV1Request;
@@ -6703,9 +6786,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -6755,15 +6838,16 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV2Request $ezsignfolderSendV2Request ezsignfolderSendV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderSendV2Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezsignfolderSendV2($pkiEzsignfolderID, $ezsignfolderSendV2Request)
+    public function ezsignfolderSendV2($pkiEzsignfolderID, $ezsignfolderSendV2Request, string $contentType = self::contentTypes['ezsignfolderSendV2'][0])
     {
-        list($response) = $this->ezsignfolderSendV2WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV2Request);
+        list($response) = $this->ezsignfolderSendV2WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV2Request, $contentType);
         return $response;
     }
 
@@ -6774,15 +6858,16 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV2Request $ezsignfolderSendV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderSendV2Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsignfolderSendV2WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV2Request)
+    public function ezsignfolderSendV2WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV2Request, string $contentType = self::contentTypes['ezsignfolderSendV2'][0])
     {
-        $request = $this->ezsignfolderSendV2Request($pkiEzsignfolderID, $ezsignfolderSendV2Request);
+        $request = $this->ezsignfolderSendV2Request($pkiEzsignfolderID, $ezsignfolderSendV2Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6921,14 +7006,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV2Request $ezsignfolderSendV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfolderSendV2Async($pkiEzsignfolderID, $ezsignfolderSendV2Request)
+    public function ezsignfolderSendV2Async($pkiEzsignfolderID, $ezsignfolderSendV2Request, string $contentType = self::contentTypes['ezsignfolderSendV2'][0])
     {
-        return $this->ezsignfolderSendV2AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV2Request)
+        return $this->ezsignfolderSendV2AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV2Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6943,15 +7029,16 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV2Request $ezsignfolderSendV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfolderSendV2AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV2Request)
+    public function ezsignfolderSendV2AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV2Request, string $contentType = self::contentTypes['ezsignfolderSendV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderSendV2Response';
-        $request = $this->ezsignfolderSendV2Request($pkiEzsignfolderID, $ezsignfolderSendV2Request);
+        $request = $this->ezsignfolderSendV2Request($pkiEzsignfolderID, $ezsignfolderSendV2Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6994,12 +7081,13 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV2Request $ezsignfolderSendV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsignfolderSendV2Request($pkiEzsignfolderID, $ezsignfolderSendV2Request)
+    public function ezsignfolderSendV2Request($pkiEzsignfolderID, $ezsignfolderSendV2Request, string $contentType = self::contentTypes['ezsignfolderSendV2'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -7011,14 +7099,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderSendV2, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfolderSendV2Request' is set
         if ($ezsignfolderSendV2Request === null || (is_array($ezsignfolderSendV2Request) && count($ezsignfolderSendV2Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfolderSendV2Request when calling ezsignfolderSendV2'
             );
         }
+
 
         $resourcePath = '/2/object/ezsignfolder/{pkiEzsignfolderID}/send';
         $formParams = [];
@@ -7039,20 +7127,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderSendV2Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderSendV2Request));
             } else {
                 $httpBody = $ezsignfolderSendV2Request;
@@ -7072,9 +7156,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -7124,14 +7208,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV3Request $ezsignfolderSendV3Request ezsignfolderSendV3Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV3'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderSendV3Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderSendV3($pkiEzsignfolderID, $ezsignfolderSendV3Request)
+    public function ezsignfolderSendV3($pkiEzsignfolderID, $ezsignfolderSendV3Request, string $contentType = self::contentTypes['ezsignfolderSendV3'][0])
     {
-        list($response) = $this->ezsignfolderSendV3WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV3Request);
+        list($response) = $this->ezsignfolderSendV3WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV3Request, $contentType);
         return $response;
     }
 
@@ -7142,14 +7227,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV3Request $ezsignfolderSendV3Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV3'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderSendV3Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderSendV3WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV3Request)
+    public function ezsignfolderSendV3WithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV3Request, string $contentType = self::contentTypes['ezsignfolderSendV3'][0])
     {
-        $request = $this->ezsignfolderSendV3Request($pkiEzsignfolderID, $ezsignfolderSendV3Request);
+        $request = $this->ezsignfolderSendV3Request($pkiEzsignfolderID, $ezsignfolderSendV3Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7288,13 +7374,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV3Request $ezsignfolderSendV3Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV3'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderSendV3Async($pkiEzsignfolderID, $ezsignfolderSendV3Request)
+    public function ezsignfolderSendV3Async($pkiEzsignfolderID, $ezsignfolderSendV3Request, string $contentType = self::contentTypes['ezsignfolderSendV3'][0])
     {
-        return $this->ezsignfolderSendV3AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV3Request)
+        return $this->ezsignfolderSendV3AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV3Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7309,14 +7396,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV3Request $ezsignfolderSendV3Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV3'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderSendV3AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV3Request)
+    public function ezsignfolderSendV3AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderSendV3Request, string $contentType = self::contentTypes['ezsignfolderSendV3'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderSendV3Response';
-        $request = $this->ezsignfolderSendV3Request($pkiEzsignfolderID, $ezsignfolderSendV3Request);
+        $request = $this->ezsignfolderSendV3Request($pkiEzsignfolderID, $ezsignfolderSendV3Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7359,11 +7447,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderSendV3Request $ezsignfolderSendV3Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderSendV3'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderSendV3Request($pkiEzsignfolderID, $ezsignfolderSendV3Request)
+    public function ezsignfolderSendV3Request($pkiEzsignfolderID, $ezsignfolderSendV3Request, string $contentType = self::contentTypes['ezsignfolderSendV3'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -7375,14 +7464,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderSendV3, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfolderSendV3Request' is set
         if ($ezsignfolderSendV3Request === null || (is_array($ezsignfolderSendV3Request) && count($ezsignfolderSendV3Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfolderSendV3Request when calling ezsignfolderSendV3'
             );
         }
+
 
         $resourcePath = '/3/object/ezsignfolder/{pkiEzsignfolderID}/send';
         $formParams = [];
@@ -7403,20 +7492,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfolderSendV3Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfolderSendV3Request));
             } else {
                 $httpBody = $ezsignfolderSendV3Request;
@@ -7436,9 +7521,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -7488,14 +7573,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  object $body body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderUnsendV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderUnsendV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderUnsendV1($pkiEzsignfolderID, $body)
+    public function ezsignfolderUnsendV1($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderUnsendV1'][0])
     {
-        list($response) = $this->ezsignfolderUnsendV1WithHttpInfo($pkiEzsignfolderID, $body);
+        list($response) = $this->ezsignfolderUnsendV1WithHttpInfo($pkiEzsignfolderID, $body, $contentType);
         return $response;
     }
 
@@ -7506,14 +7592,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderUnsendV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderUnsendV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderUnsendV1WithHttpInfo($pkiEzsignfolderID, $body)
+    public function ezsignfolderUnsendV1WithHttpInfo($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderUnsendV1'][0])
     {
-        $request = $this->ezsignfolderUnsendV1Request($pkiEzsignfolderID, $body);
+        $request = $this->ezsignfolderUnsendV1Request($pkiEzsignfolderID, $body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7652,13 +7739,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderUnsendV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderUnsendV1Async($pkiEzsignfolderID, $body)
+    public function ezsignfolderUnsendV1Async($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderUnsendV1'][0])
     {
-        return $this->ezsignfolderUnsendV1AsyncWithHttpInfo($pkiEzsignfolderID, $body)
+        return $this->ezsignfolderUnsendV1AsyncWithHttpInfo($pkiEzsignfolderID, $body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7673,14 +7761,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderUnsendV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderUnsendV1AsyncWithHttpInfo($pkiEzsignfolderID, $body)
+    public function ezsignfolderUnsendV1AsyncWithHttpInfo($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderUnsendV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderUnsendV1Response';
-        $request = $this->ezsignfolderUnsendV1Request($pkiEzsignfolderID, $body);
+        $request = $this->ezsignfolderUnsendV1Request($pkiEzsignfolderID, $body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7723,11 +7812,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderUnsendV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderUnsendV1Request($pkiEzsignfolderID, $body)
+    public function ezsignfolderUnsendV1Request($pkiEzsignfolderID, $body, string $contentType = self::contentTypes['ezsignfolderUnsendV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -7739,14 +7829,14 @@ class ObjectEzsignfolderApi
         if ($pkiEzsignfolderID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderUnsendV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $body when calling ezsignfolderUnsendV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/unsend';
         $formParams = [];
@@ -7767,20 +7857,16 @@ class ObjectEzsignfolderApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -7800,9 +7886,9 @@ class ObjectEzsignfolderApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

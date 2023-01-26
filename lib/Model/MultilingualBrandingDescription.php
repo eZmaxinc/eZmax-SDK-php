@@ -133,6 +133,16 @@ class MultilingualBrandingDescription implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -308,9 +318,12 @@ class MultilingualBrandingDescription implements ModelInterface, ArrayAccess, \J
     public function setSBrandingDescription1($sBrandingDescription1)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBrandingDescription1)) {
             //throw new \InvalidArgumentException('non-nullable sBrandingDescription1 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sBrandingDescription1'] = $sBrandingDescription1;
         $this->container['sBrandingDescription1'] = (is_null($sBrandingDescription1) ? null : (string) $sBrandingDescription1);
 
         return $this;
@@ -336,9 +349,12 @@ class MultilingualBrandingDescription implements ModelInterface, ArrayAccess, \J
     public function setSBrandingDescription2($sBrandingDescription2)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBrandingDescription2)) {
             //throw new \InvalidArgumentException('non-nullable sBrandingDescription2 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sBrandingDescription2'] = $sBrandingDescription2;
         $this->container['sBrandingDescription2'] = (is_null($sBrandingDescription2) ? null : (string) $sBrandingDescription2);
 
         return $this;

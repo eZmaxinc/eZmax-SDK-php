@@ -136,6 +136,16 @@ class CustomWordPositionOccurenceResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -332,9 +342,12 @@ class CustomWordPositionOccurenceResponse implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iPage)) {
             //throw new \InvalidArgumentException('non-nullable iPage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iPage'] = $iPage;
         $this->container['iPage'] = (is_null($iPage) ? null : (int) $iPage);
 
         return $this;
@@ -365,9 +378,12 @@ class CustomWordPositionOccurenceResponse implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iX)) {
             //throw new \InvalidArgumentException('non-nullable iX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iX'] = $iX;
         $this->container['iX'] = (is_null($iX) ? null : (int) $iX);
 
         return $this;
@@ -398,9 +414,12 @@ class CustomWordPositionOccurenceResponse implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iY)) {
             //throw new \InvalidArgumentException('non-nullable iY cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iY'] = $iY;
         $this->container['iY'] = (is_null($iY) ? null : (int) $iY);
 
         return $this;

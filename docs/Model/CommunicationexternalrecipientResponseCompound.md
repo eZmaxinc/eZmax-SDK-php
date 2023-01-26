@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiCommunicationexternalrecipientID** | **int** | The unique ID of the Communicationexternalrecipient |
-**sEmailAddress** | **string** | The email address. | [optional]
-**objPhoneSms** | [**\eZmaxAPI\Model\PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional]
 **eCommunicationexternalrecipientType** | [**\eZmaxAPI\Model\FieldECommunicationexternalrecipientType**](FieldECommunicationexternalrecipientType.md) |  |
-**sCommunicationexternalrecipientName** | **string** | The Name of the Communicationexternalrecipient |
+**objDescriptionstatic** | [**\eZmaxAPI\Model\DescriptionstaticResponseCompound**](DescriptionstaticResponseCompound.md) |  |
+**objEmailstatic** | [**\eZmaxAPI\Model\EmailstaticResponseCompound**](EmailstaticResponseCompound.md) |  | [optional]
+**objPhonestatic** | [**\eZmaxAPI\Model\PhonestaticResponseCompound**](PhonestaticResponseCompound.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

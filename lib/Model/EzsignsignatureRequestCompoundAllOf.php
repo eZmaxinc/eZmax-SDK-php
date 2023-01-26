@@ -132,6 +132,16 @@ class EzsignsignatureRequestCompoundAllOf implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -307,9 +317,12 @@ class EzsignsignatureRequestCompoundAllOf implements ModelInterface, ArrayAccess
     public function setBEzsignsignatureCustomdate($bEzsignsignatureCustomdate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignsignatureCustomdate)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignsignatureCustomdate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignsignatureCustomdate'] = $bEzsignsignatureCustomdate;
         $this->container['bEzsignsignatureCustomdate'] = (is_null($bEzsignsignatureCustomdate) ? null : (bool) $bEzsignsignatureCustomdate);
 
         return $this;
@@ -335,9 +348,12 @@ class EzsignsignatureRequestCompoundAllOf implements ModelInterface, ArrayAccess
     public function setAObjEzsignsignaturecustomdate($aObjEzsignsignaturecustomdate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignsignaturecustomdate)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignsignaturecustomdate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjEzsignsignaturecustomdate'] = $aObjEzsignsignaturecustomdate;
         $this->container['aObjEzsignsignaturecustomdate'] = $aObjEzsignsignaturecustomdate;
 
         return $this;

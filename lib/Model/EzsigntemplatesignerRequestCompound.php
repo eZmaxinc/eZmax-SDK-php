@@ -136,6 +136,16 @@ class EzsigntemplatesignerRequestCompound implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -334,9 +344,12 @@ class EzsigntemplatesignerRequestCompound implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplatesignerID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatesignerID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsigntemplatesignerID'] = $pkiEzsigntemplatesignerID;
         $this->container['pkiEzsigntemplatesignerID'] = (is_null($pkiEzsigntemplatesignerID) ? null : (int) $pkiEzsigntemplatesignerID);
 
         return $this;
@@ -367,9 +380,12 @@ class EzsigntemplatesignerRequestCompound implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplateID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplateID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsigntemplateID'] = $fkiEzsigntemplateID;
         $this->container['fkiEzsigntemplateID'] = (is_null($fkiEzsigntemplateID) ? null : (int) $fkiEzsigntemplateID);
 
         return $this;
@@ -395,9 +411,12 @@ class EzsigntemplatesignerRequestCompound implements ModelInterface, ArrayAccess
     public function setSEzsigntemplatesignerDescription($sEzsigntemplatesignerDescription)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplatesignerDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplatesignerDescription cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigntemplatesignerDescription'] = $sEzsigntemplatesignerDescription;
         $this->container['sEzsigntemplatesignerDescription'] = (is_null($sEzsigntemplatesignerDescription) ? null : (string) $sEzsigntemplatesignerDescription);
 
         return $this;

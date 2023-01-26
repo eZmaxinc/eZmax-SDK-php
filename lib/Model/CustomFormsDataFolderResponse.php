@@ -136,6 +136,16 @@ class CustomFormsDataFolderResponse implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -333,9 +343,12 @@ class CustomFormsDataFolderResponse implements ModelInterface, ArrayAccess, \Jso
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignfolderID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignfolderID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
         $this->container['pkiEzsignfolderID'] = (is_null($pkiEzsignfolderID) ? null : (int) $pkiEzsignfolderID);
 
         return $this;
@@ -361,9 +374,12 @@ class CustomFormsDataFolderResponse implements ModelInterface, ArrayAccess, \Jso
     public function setSEzsignfolderDescription($sEzsignfolderDescription)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignfolderDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignfolderDescription cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
         $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : (string) $sEzsignfolderDescription);
 
         return $this;
@@ -389,9 +405,12 @@ class CustomFormsDataFolderResponse implements ModelInterface, ArrayAccess, \Jso
     public function setAObjFormDataDocument($aObjFormDataDocument)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjFormDataDocument)) {
             //throw new \InvalidArgumentException('non-nullable aObjFormDataDocument cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjFormDataDocument'] = $aObjFormDataDocument;
         $this->container['aObjFormDataDocument'] = $aObjFormDataDocument;
 
         return $this;

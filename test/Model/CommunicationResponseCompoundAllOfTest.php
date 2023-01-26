@@ -106,22 +106,4 @@ class CommunicationResponseCompoundAllOfTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "aObjCommunicationimage"
-     */
-    public function testPropertyAObjCommunicationimage()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjCommunicationexternalimage"
-     */
-    public function testPropertyAObjCommunicationexternalimage()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
 }

@@ -132,6 +132,16 @@ class FranchisereferalincomeRequestCompoundAllOf implements ModelInterface, Arra
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -310,9 +320,12 @@ class FranchisereferalincomeRequestCompoundAllOf implements ModelInterface, Arra
     public function setObjAddress($objAddress)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objAddress)) {
             //throw new \InvalidArgumentException('non-nullable objAddress cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objAddress'] = $objAddress;
         $this->container['objAddress'] = $objAddress;
 
         return $this;
@@ -338,9 +351,12 @@ class FranchisereferalincomeRequestCompoundAllOf implements ModelInterface, Arra
     public function setAObjContact($aObjContact)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjContact)) {
             //throw new \InvalidArgumentException('non-nullable aObjContact cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjContact'] = $aObjContact;
         $this->container['aObjContact'] = $aObjContact;
 
         return $this;

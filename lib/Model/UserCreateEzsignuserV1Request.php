@@ -151,6 +151,16 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -387,9 +397,12 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiLanguageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiLanguageID'] = $fkiLanguageID;
         $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
 
         return $this;
@@ -415,9 +428,12 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
     public function setSUserFirstname($sUserFirstname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserFirstname)) {
             //throw new \InvalidArgumentException('non-nullable sUserFirstname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserFirstname'] = $sUserFirstname;
         $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : (string) $sUserFirstname);
 
         return $this;
@@ -443,9 +459,12 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
     public function setSUserLastname($sUserLastname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserLastname)) {
             //throw new \InvalidArgumentException('non-nullable sUserLastname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserLastname'] = $sUserLastname;
         $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : (string) $sUserLastname);
 
         return $this;
@@ -471,9 +490,12 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
     public function setSEmailAddress($sEmailAddress)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEmailAddress)) {
             //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEmailAddress'] = $sEmailAddress;
         $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
 
         return $this;
@@ -499,9 +521,12 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
     public function setSPhoneRegion($sPhoneRegion)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneRegion)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneRegion cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sPhoneRegion'] = $sPhoneRegion;
         $this->container['sPhoneRegion'] = (is_null($sPhoneRegion) ? null : (string) $sPhoneRegion);
 
         return $this;
@@ -527,9 +552,12 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
     public function setSPhoneExchange($sPhoneExchange)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneExchange)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneExchange cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sPhoneExchange'] = $sPhoneExchange;
         $this->container['sPhoneExchange'] = (is_null($sPhoneExchange) ? null : (string) $sPhoneExchange);
 
         return $this;
@@ -555,9 +583,12 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
     public function setSPhoneNumber($sPhoneNumber)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneNumber)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneNumber cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sPhoneNumber'] = $sPhoneNumber;
         $this->container['sPhoneNumber'] = (is_null($sPhoneNumber) ? null : (string) $sPhoneNumber);
 
         return $this;
@@ -583,9 +614,12 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
     public function setSPhoneExtension($sPhoneExtension)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneExtension)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneExtension cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sPhoneExtension'] = $sPhoneExtension;
         $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : (string) $sPhoneExtension);
 
         return $this;

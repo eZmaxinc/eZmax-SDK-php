@@ -71,7 +71,17 @@ class ObjectApikeyApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'apikeyCreateObjectV1' => [
+            'application/json',
+        ],
+        'apikeyCreateObjectV2' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,15 +133,16 @@ class ObjectApikeyApi
      * Create a new Apikey
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request apikeyCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\ApikeyCreateObjectV1Response
      * @deprecated
      */
-    public function apikeyCreateObjectV1($apikeyCreateObjectV1Request)
+    public function apikeyCreateObjectV1($apikeyCreateObjectV1Request, string $contentType = self::contentTypes['apikeyCreateObjectV1'][0])
     {
-        list($response) = $this->apikeyCreateObjectV1WithHttpInfo($apikeyCreateObjectV1Request);
+        list($response) = $this->apikeyCreateObjectV1WithHttpInfo($apikeyCreateObjectV1Request, $contentType);
         return $response;
     }
 
@@ -141,15 +152,16 @@ class ObjectApikeyApi
      * Create a new Apikey
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\ApikeyCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function apikeyCreateObjectV1WithHttpInfo($apikeyCreateObjectV1Request)
+    public function apikeyCreateObjectV1WithHttpInfo($apikeyCreateObjectV1Request, string $contentType = self::contentTypes['apikeyCreateObjectV1'][0])
     {
-        $request = $this->apikeyCreateObjectV1Request($apikeyCreateObjectV1Request);
+        $request = $this->apikeyCreateObjectV1Request($apikeyCreateObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -241,14 +253,15 @@ class ObjectApikeyApi
      * Create a new Apikey
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function apikeyCreateObjectV1Async($apikeyCreateObjectV1Request)
+    public function apikeyCreateObjectV1Async($apikeyCreateObjectV1Request, string $contentType = self::contentTypes['apikeyCreateObjectV1'][0])
     {
-        return $this->apikeyCreateObjectV1AsyncWithHttpInfo($apikeyCreateObjectV1Request)
+        return $this->apikeyCreateObjectV1AsyncWithHttpInfo($apikeyCreateObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -262,15 +275,16 @@ class ObjectApikeyApi
      * Create a new Apikey
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function apikeyCreateObjectV1AsyncWithHttpInfo($apikeyCreateObjectV1Request)
+    public function apikeyCreateObjectV1AsyncWithHttpInfo($apikeyCreateObjectV1Request, string $contentType = self::contentTypes['apikeyCreateObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\ApikeyCreateObjectV1Response';
-        $request = $this->apikeyCreateObjectV1Request($apikeyCreateObjectV1Request);
+        $request = $this->apikeyCreateObjectV1Request($apikeyCreateObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -312,12 +326,13 @@ class ObjectApikeyApi
      * Create request for operation 'apikeyCreateObjectV1'
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV1Request[] $apikeyCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function apikeyCreateObjectV1Request($apikeyCreateObjectV1Request)
+    public function apikeyCreateObjectV1Request($apikeyCreateObjectV1Request, string $contentType = self::contentTypes['apikeyCreateObjectV1'][0])
     {
 
         // verify the required parameter 'apikeyCreateObjectV1Request' is set
@@ -326,6 +341,7 @@ class ObjectApikeyApi
                 'Missing the required parameter $apikeyCreateObjectV1Request when calling apikeyCreateObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/apikey';
         $formParams = [];
@@ -338,20 +354,16 @@ class ObjectApikeyApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($apikeyCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($apikeyCreateObjectV1Request));
             } else {
                 $httpBody = $apikeyCreateObjectV1Request;
@@ -371,9 +383,9 @@ class ObjectApikeyApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -422,14 +434,15 @@ class ObjectApikeyApi
      * Create a new Apikey
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV2Request $apikeyCreateObjectV2Request apikeyCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\ApikeyCreateObjectV2Response
      */
-    public function apikeyCreateObjectV2($apikeyCreateObjectV2Request)
+    public function apikeyCreateObjectV2($apikeyCreateObjectV2Request, string $contentType = self::contentTypes['apikeyCreateObjectV2'][0])
     {
-        list($response) = $this->apikeyCreateObjectV2WithHttpInfo($apikeyCreateObjectV2Request);
+        list($response) = $this->apikeyCreateObjectV2WithHttpInfo($apikeyCreateObjectV2Request, $contentType);
         return $response;
     }
 
@@ -439,14 +452,15 @@ class ObjectApikeyApi
      * Create a new Apikey
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV2Request $apikeyCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\ApikeyCreateObjectV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apikeyCreateObjectV2WithHttpInfo($apikeyCreateObjectV2Request)
+    public function apikeyCreateObjectV2WithHttpInfo($apikeyCreateObjectV2Request, string $contentType = self::contentTypes['apikeyCreateObjectV2'][0])
     {
-        $request = $this->apikeyCreateObjectV2Request($apikeyCreateObjectV2Request);
+        $request = $this->apikeyCreateObjectV2Request($apikeyCreateObjectV2Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -538,13 +552,14 @@ class ObjectApikeyApi
      * Create a new Apikey
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV2Request $apikeyCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apikeyCreateObjectV2Async($apikeyCreateObjectV2Request)
+    public function apikeyCreateObjectV2Async($apikeyCreateObjectV2Request, string $contentType = self::contentTypes['apikeyCreateObjectV2'][0])
     {
-        return $this->apikeyCreateObjectV2AsyncWithHttpInfo($apikeyCreateObjectV2Request)
+        return $this->apikeyCreateObjectV2AsyncWithHttpInfo($apikeyCreateObjectV2Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -558,14 +573,15 @@ class ObjectApikeyApi
      * Create a new Apikey
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV2Request $apikeyCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apikeyCreateObjectV2AsyncWithHttpInfo($apikeyCreateObjectV2Request)
+    public function apikeyCreateObjectV2AsyncWithHttpInfo($apikeyCreateObjectV2Request, string $contentType = self::contentTypes['apikeyCreateObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\ApikeyCreateObjectV2Response';
-        $request = $this->apikeyCreateObjectV2Request($apikeyCreateObjectV2Request);
+        $request = $this->apikeyCreateObjectV2Request($apikeyCreateObjectV2Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -607,11 +623,12 @@ class ObjectApikeyApi
      * Create request for operation 'apikeyCreateObjectV2'
      *
      * @param  \eZmaxAPI\Model\ApikeyCreateObjectV2Request $apikeyCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function apikeyCreateObjectV2Request($apikeyCreateObjectV2Request)
+    public function apikeyCreateObjectV2Request($apikeyCreateObjectV2Request, string $contentType = self::contentTypes['apikeyCreateObjectV2'][0])
     {
 
         // verify the required parameter 'apikeyCreateObjectV2Request' is set
@@ -620,6 +637,7 @@ class ObjectApikeyApi
                 'Missing the required parameter $apikeyCreateObjectV2Request when calling apikeyCreateObjectV2'
             );
         }
+
 
         $resourcePath = '/2/object/apikey';
         $formParams = [];
@@ -632,20 +650,16 @@ class ObjectApikeyApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($apikeyCreateObjectV2Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($apikeyCreateObjectV2Request));
             } else {
                 $httpBody = $apikeyCreateObjectV2Request;
@@ -665,9 +679,9 @@ class ObjectApikeyApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

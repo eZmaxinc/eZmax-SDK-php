@@ -130,6 +130,16 @@ class EzsignfoldersignerassociationPatchObjectV1Request implements ModelInterfac
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -304,9 +314,12 @@ class EzsignfoldersignerassociationPatchObjectV1Request implements ModelInterfac
     public function setObjEzsignfoldersignerassociation($objEzsignfoldersignerassociation)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEzsignfoldersignerassociation)) {
             //throw new \InvalidArgumentException('non-nullable objEzsignfoldersignerassociation cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objEzsignfoldersignerassociation'] = $objEzsignfoldersignerassociation;
         $this->container['objEzsignfoldersignerassociation'] = $objEzsignfoldersignerassociation;
 
         return $this;

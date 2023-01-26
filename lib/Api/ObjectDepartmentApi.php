@@ -71,7 +71,20 @@ class ObjectDepartmentApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'departmentGetAutocompleteV1' => [
+            'application/json',
+        ],
+        'departmentGetAutocompleteV2' => [
+            'application/json',
+        ],
+        'departmentGetMembersV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -126,15 +139,16 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\CommonGetAutocompleteV1Response
      * @deprecated
      */
-    public function departmentGetAutocompleteV1($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV1($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV1'][0])
     {
-        list($response) = $this->departmentGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->departmentGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -147,15 +161,16 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\CommonGetAutocompleteV1Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function departmentGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV1'][0])
     {
-        $request = $this->departmentGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->departmentGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -250,14 +265,15 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function departmentGetAutocompleteV1Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV1Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV1'][0])
     {
-        return $this->departmentGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->departmentGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,15 +290,16 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function departmentGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteV1Response';
-        $request = $this->departmentGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->departmentGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -327,12 +344,13 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function departmentGetAutocompleteV1Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV1Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV1'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -341,6 +359,7 @@ class ObjectDepartmentApi
                 'Missing the required parameter $sSelector when calling departmentGetAutocompleteV1'
             );
         }
+
 
 
 
@@ -386,16 +405,11 @@ class ObjectDepartmentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -413,9 +427,9 @@ class ObjectDepartmentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -467,14 +481,15 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\DepartmentGetAutocompleteV2Response
      */
-    public function departmentGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV2'][0])
     {
-        list($response) = $this->departmentGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->departmentGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -487,14 +502,15 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\DepartmentGetAutocompleteV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function departmentGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV2'][0])
     {
-        $request = $this->departmentGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->departmentGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -589,13 +605,14 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function departmentGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV2'][0])
     {
-        return $this->departmentGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->departmentGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -612,14 +629,15 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function departmentGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\DepartmentGetAutocompleteV2Response';
-        $request = $this->departmentGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->departmentGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -664,11 +682,12 @@ class ObjectDepartmentApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function departmentGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function departmentGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['departmentGetAutocompleteV2'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -677,6 +696,7 @@ class ObjectDepartmentApi
                 'Missing the required parameter $sSelector when calling departmentGetAutocompleteV2'
             );
         }
+
 
 
 
@@ -722,16 +742,11 @@ class ObjectDepartmentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -749,9 +764,9 @@ class ObjectDepartmentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -800,14 +815,15 @@ class ObjectDepartmentApi
      * Retrieve an existing Department&#39;s members
      *
      * @param  int $pkiDepartmentID pkiDepartmentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetMembersV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\DepartmentGetMembersV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function departmentGetMembersV1($pkiDepartmentID)
+    public function departmentGetMembersV1($pkiDepartmentID, string $contentType = self::contentTypes['departmentGetMembersV1'][0])
     {
-        list($response) = $this->departmentGetMembersV1WithHttpInfo($pkiDepartmentID);
+        list($response) = $this->departmentGetMembersV1WithHttpInfo($pkiDepartmentID, $contentType);
         return $response;
     }
 
@@ -817,14 +833,15 @@ class ObjectDepartmentApi
      * Retrieve an existing Department&#39;s members
      *
      * @param  int $pkiDepartmentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetMembersV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\DepartmentGetMembersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function departmentGetMembersV1WithHttpInfo($pkiDepartmentID)
+    public function departmentGetMembersV1WithHttpInfo($pkiDepartmentID, string $contentType = self::contentTypes['departmentGetMembersV1'][0])
     {
-        $request = $this->departmentGetMembersV1Request($pkiDepartmentID);
+        $request = $this->departmentGetMembersV1Request($pkiDepartmentID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -939,13 +956,14 @@ class ObjectDepartmentApi
      * Retrieve an existing Department&#39;s members
      *
      * @param  int $pkiDepartmentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetMembersV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function departmentGetMembersV1Async($pkiDepartmentID)
+    public function departmentGetMembersV1Async($pkiDepartmentID, string $contentType = self::contentTypes['departmentGetMembersV1'][0])
     {
-        return $this->departmentGetMembersV1AsyncWithHttpInfo($pkiDepartmentID)
+        return $this->departmentGetMembersV1AsyncWithHttpInfo($pkiDepartmentID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -959,14 +977,15 @@ class ObjectDepartmentApi
      * Retrieve an existing Department&#39;s members
      *
      * @param  int $pkiDepartmentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetMembersV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function departmentGetMembersV1AsyncWithHttpInfo($pkiDepartmentID)
+    public function departmentGetMembersV1AsyncWithHttpInfo($pkiDepartmentID, string $contentType = self::contentTypes['departmentGetMembersV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\DepartmentGetMembersV1Response';
-        $request = $this->departmentGetMembersV1Request($pkiDepartmentID);
+        $request = $this->departmentGetMembersV1Request($pkiDepartmentID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1008,11 +1027,12 @@ class ObjectDepartmentApi
      * Create request for operation 'departmentGetMembersV1'
      *
      * @param  int $pkiDepartmentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['departmentGetMembersV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function departmentGetMembersV1Request($pkiDepartmentID)
+    public function departmentGetMembersV1Request($pkiDepartmentID, string $contentType = self::contentTypes['departmentGetMembersV1'][0])
     {
 
         // verify the required parameter 'pkiDepartmentID' is set
@@ -1024,7 +1044,7 @@ class ObjectDepartmentApi
         if ($pkiDepartmentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiDepartmentID" when calling ObjectDepartmentApi.departmentGetMembersV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/department/{pkiDepartmentID}/getMembers';
         $formParams = [];
@@ -1045,16 +1065,11 @@ class ObjectDepartmentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1072,9 +1087,9 @@ class ObjectDepartmentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

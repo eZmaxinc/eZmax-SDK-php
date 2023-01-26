@@ -243,6 +243,15 @@ class EzmaxinvoicingsummaryglobalResponseCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "tEzmaxproductHelpX"
+     */
+    public function testPropertyTEzmaxproductHelpX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "aObjEzmaxinvoicingcommission"
      */
     public function testPropertyAObjEzmaxinvoicingcommission()

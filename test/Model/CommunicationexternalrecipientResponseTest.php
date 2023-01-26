@@ -90,24 +90,6 @@ class CommunicationexternalrecipientResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "sEmailAddress"
-     */
-    public function testPropertySEmailAddress()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objPhoneSms"
-     */
-    public function testPropertyObjPhoneSms()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "eCommunicationexternalrecipientType"
      */
     public function testPropertyECommunicationexternalrecipientType()
@@ -117,9 +99,27 @@ class CommunicationexternalrecipientResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "sCommunicationexternalrecipientName"
+     * Test attribute "objDescriptionstatic"
      */
-    public function testPropertySCommunicationexternalrecipientName()
+    public function testPropertyObjDescriptionstatic()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objEmailstatic"
+     */
+    public function testPropertyObjEmailstatic()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objPhonestatic"
+     */
+    public function testPropertyObjPhonestatic()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

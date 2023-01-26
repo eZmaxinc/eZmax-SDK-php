@@ -133,6 +133,16 @@ class CommonResponseErrorTooManyRequests implements ModelInterface, ArrayAccess,
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -314,9 +324,12 @@ class CommonResponseErrorTooManyRequests implements ModelInterface, ArrayAccess,
     public function setSErrorMessage($sErrorMessage)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sErrorMessage)) {
             //throw new \InvalidArgumentException('non-nullable sErrorMessage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sErrorMessage'] = $sErrorMessage;
         $this->container['sErrorMessage'] = (is_null($sErrorMessage) ? null : (string) $sErrorMessage);
 
         return $this;
@@ -342,9 +355,12 @@ class CommonResponseErrorTooManyRequests implements ModelInterface, ArrayAccess,
     public function setEErrorCode($eErrorCode)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eErrorCode)) {
             //throw new \InvalidArgumentException('non-nullable eErrorCode cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eErrorCode'] = $eErrorCode;
         $this->container['eErrorCode'] = (is_null($eErrorCode) ? null : (string) $eErrorCode);
 
         return $this;

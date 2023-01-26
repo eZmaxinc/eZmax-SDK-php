@@ -132,6 +132,16 @@ class CustomEzsignfoldersignerassociationActionableElementResponseAllOf implemen
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -310,9 +320,12 @@ class CustomEzsignfoldersignerassociationActionableElementResponseAllOf implemen
     public function setBEzsignfoldersignerassociationHasactionableelementsCurrent($bEzsignfoldersignerassociationHasactionableelementsCurrent)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignfoldersignerassociationHasactionableelementsCurrent)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignfoldersignerassociationHasactionableelementsCurrent cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfoldersignerassociationHasactionableelementsCurrent'] = $bEzsignfoldersignerassociationHasactionableelementsCurrent;
         $this->container['bEzsignfoldersignerassociationHasactionableelementsCurrent'] = (is_null($bEzsignfoldersignerassociationHasactionableelementsCurrent) ? null : (bool) $bEzsignfoldersignerassociationHasactionableelementsCurrent);
 
         return $this;
@@ -338,9 +351,12 @@ class CustomEzsignfoldersignerassociationActionableElementResponseAllOf implemen
     public function setBEzsignfoldersignerassociationHasactionableelementsFuture($bEzsignfoldersignerassociationHasactionableelementsFuture)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignfoldersignerassociationHasactionableelementsFuture)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignfoldersignerassociationHasactionableelementsFuture cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfoldersignerassociationHasactionableelementsFuture'] = $bEzsignfoldersignerassociationHasactionableelementsFuture;
         $this->container['bEzsignfoldersignerassociationHasactionableelementsFuture'] = (is_null($bEzsignfoldersignerassociationHasactionableelementsFuture) ? null : (bool) $bEzsignfoldersignerassociationHasactionableelementsFuture);
 
         return $this;

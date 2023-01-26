@@ -142,6 +142,16 @@ class EzsigntemplatepackagesignermembershipRequest implements ModelInterface, Ar
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -363,9 +373,12 @@ class EzsigntemplatepackagesignermembershipRequest implements ModelInterface, Ar
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplatepackagesignermembershipID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatepackagesignermembershipID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsigntemplatepackagesignermembershipID'] = $pkiEzsigntemplatepackagesignermembershipID;
         $this->container['pkiEzsigntemplatepackagesignermembershipID'] = (is_null($pkiEzsigntemplatepackagesignermembershipID) ? null : (int) $pkiEzsigntemplatepackagesignermembershipID);
 
         return $this;
@@ -396,9 +409,12 @@ class EzsigntemplatepackagesignermembershipRequest implements ModelInterface, Ar
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplatepackagemembershipID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatepackagemembershipID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsigntemplatepackagemembershipID'] = $fkiEzsigntemplatepackagemembershipID;
         $this->container['fkiEzsigntemplatepackagemembershipID'] = (is_null($fkiEzsigntemplatepackagemembershipID) ? null : (int) $fkiEzsigntemplatepackagemembershipID);
 
         return $this;
@@ -429,9 +445,12 @@ class EzsigntemplatepackagesignermembershipRequest implements ModelInterface, Ar
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplatepackagesignerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatepackagesignerID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsigntemplatepackagesignerID'] = $fkiEzsigntemplatepackagesignerID;
         $this->container['fkiEzsigntemplatepackagesignerID'] = (is_null($fkiEzsigntemplatepackagesignerID) ? null : (int) $fkiEzsigntemplatepackagesignerID);
 
         return $this;
@@ -462,9 +481,12 @@ class EzsigntemplatepackagesignermembershipRequest implements ModelInterface, Ar
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplatesignerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatesignerID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsigntemplatesignerID'] = $fkiEzsigntemplatesignerID;
         $this->container['fkiEzsigntemplatesignerID'] = (is_null($fkiEzsigntemplatesignerID) ? null : (int) $fkiEzsigntemplatesignerID);
 
         return $this;
@@ -495,9 +517,12 @@ class EzsigntemplatepackagesignermembershipRequest implements ModelInterface, Ar
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigntemplatepackagesignermembershipCopy)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigntemplatepackagesignermembershipCopy cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsigntemplatepackagesignermembershipCopy'] = $iEzsigntemplatepackagesignermembershipCopy;
         $this->container['iEzsigntemplatepackagesignermembershipCopy'] = (is_null($iEzsigntemplatepackagesignermembershipCopy) ? null : (int) $iEzsigntemplatepackagesignermembershipCopy);
 
         return $this;

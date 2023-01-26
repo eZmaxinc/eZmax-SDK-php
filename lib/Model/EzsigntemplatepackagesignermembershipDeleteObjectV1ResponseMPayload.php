@@ -133,6 +133,16 @@ class EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload implem
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -314,9 +324,12 @@ class EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload implem
     public function setBEzsigntemplatepackageNeedvalidation($bEzsigntemplatepackageNeedvalidation)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplatepackageNeedvalidation)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageNeedvalidation cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigntemplatepackageNeedvalidation'] = $bEzsigntemplatepackageNeedvalidation;
         $this->container['bEzsigntemplatepackageNeedvalidation'] = (is_null($bEzsigntemplatepackageNeedvalidation) ? null : (bool) $bEzsigntemplatepackageNeedvalidation);
 
         return $this;
@@ -342,9 +355,12 @@ class EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload implem
     public function setBEzsignbulksendNeedvalidation($bEzsignbulksendNeedvalidation)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignbulksendNeedvalidation)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignbulksendNeedvalidation cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignbulksendNeedvalidation'] = $bEzsignbulksendNeedvalidation;
         $this->container['bEzsignbulksendNeedvalidation'] = (is_null($bEzsignbulksendNeedvalidation) ? null : (bool) $bEzsignbulksendNeedvalidation);
 
         return $this;

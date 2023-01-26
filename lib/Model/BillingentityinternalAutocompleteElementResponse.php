@@ -136,6 +136,16 @@ class BillingentityinternalAutocompleteElementResponse implements ModelInterface
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -328,9 +338,12 @@ class BillingentityinternalAutocompleteElementResponse implements ModelInterface
     public function setSBillingentityinternalDescriptionX($sBillingentityinternalDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBillingentityinternalDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sBillingentityinternalDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sBillingentityinternalDescriptionX'] = $sBillingentityinternalDescriptionX;
         $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : (string) $sBillingentityinternalDescriptionX);
 
         return $this;
@@ -361,9 +374,12 @@ class BillingentityinternalAutocompleteElementResponse implements ModelInterface
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiBillingentityinternalID)) {
             //throw new \InvalidArgumentException('non-nullable pkiBillingentityinternalID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiBillingentityinternalID'] = $pkiBillingentityinternalID;
         $this->container['pkiBillingentityinternalID'] = (is_null($pkiBillingentityinternalID) ? null : (int) $pkiBillingentityinternalID);
 
         return $this;
@@ -389,9 +405,12 @@ class BillingentityinternalAutocompleteElementResponse implements ModelInterface
     public function setBBillingentityinternalIsactive($bBillingentityinternalIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bBillingentityinternalIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bBillingentityinternalIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bBillingentityinternalIsactive'] = $bBillingentityinternalIsactive;
         $this->container['bBillingentityinternalIsactive'] = (is_null($bBillingentityinternalIsactive) ? null : (bool) $bBillingentityinternalIsactive);
 
         return $this;

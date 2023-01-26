@@ -71,7 +71,26 @@ class ObjectEzsignformfieldgroupApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'ezsignformfieldgroupCreateObjectV1' => [
+            'application/json',
+        ],
+        'ezsignformfieldgroupDeleteObjectV1' => [
+            'application/json',
+        ],
+        'ezsignformfieldgroupEditObjectV1' => [
+            'application/json',
+        ],
+        'ezsignformfieldgroupGetObjectV1' => [
+            'application/json',
+        ],
+        'ezsignformfieldgroupGetObjectV2' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,14 +142,15 @@ class ObjectEzsignformfieldgroupApi
      * Create a new Ezsignformfieldgroup
      *
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Request $ezsignformfieldgroupCreateObjectV1Request ezsignformfieldgroupCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Response
      */
-    public function ezsignformfieldgroupCreateObjectV1($ezsignformfieldgroupCreateObjectV1Request)
+    public function ezsignformfieldgroupCreateObjectV1($ezsignformfieldgroupCreateObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupCreateObjectV1'][0])
     {
-        list($response) = $this->ezsignformfieldgroupCreateObjectV1WithHttpInfo($ezsignformfieldgroupCreateObjectV1Request);
+        list($response) = $this->ezsignformfieldgroupCreateObjectV1WithHttpInfo($ezsignformfieldgroupCreateObjectV1Request, $contentType);
         return $response;
     }
 
@@ -140,14 +160,15 @@ class ObjectEzsignformfieldgroupApi
      * Create a new Ezsignformfieldgroup
      *
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Request $ezsignformfieldgroupCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignformfieldgroupCreateObjectV1WithHttpInfo($ezsignformfieldgroupCreateObjectV1Request)
+    public function ezsignformfieldgroupCreateObjectV1WithHttpInfo($ezsignformfieldgroupCreateObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupCreateObjectV1'][0])
     {
-        $request = $this->ezsignformfieldgroupCreateObjectV1Request($ezsignformfieldgroupCreateObjectV1Request);
+        $request = $this->ezsignformfieldgroupCreateObjectV1Request($ezsignformfieldgroupCreateObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -239,13 +260,14 @@ class ObjectEzsignformfieldgroupApi
      * Create a new Ezsignformfieldgroup
      *
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Request $ezsignformfieldgroupCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignformfieldgroupCreateObjectV1Async($ezsignformfieldgroupCreateObjectV1Request)
+    public function ezsignformfieldgroupCreateObjectV1Async($ezsignformfieldgroupCreateObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupCreateObjectV1'][0])
     {
-        return $this->ezsignformfieldgroupCreateObjectV1AsyncWithHttpInfo($ezsignformfieldgroupCreateObjectV1Request)
+        return $this->ezsignformfieldgroupCreateObjectV1AsyncWithHttpInfo($ezsignformfieldgroupCreateObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -259,14 +281,15 @@ class ObjectEzsignformfieldgroupApi
      * Create a new Ezsignformfieldgroup
      *
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Request $ezsignformfieldgroupCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignformfieldgroupCreateObjectV1AsyncWithHttpInfo($ezsignformfieldgroupCreateObjectV1Request)
+    public function ezsignformfieldgroupCreateObjectV1AsyncWithHttpInfo($ezsignformfieldgroupCreateObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupCreateObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Response';
-        $request = $this->ezsignformfieldgroupCreateObjectV1Request($ezsignformfieldgroupCreateObjectV1Request);
+        $request = $this->ezsignformfieldgroupCreateObjectV1Request($ezsignformfieldgroupCreateObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -308,11 +331,12 @@ class ObjectEzsignformfieldgroupApi
      * Create request for operation 'ezsignformfieldgroupCreateObjectV1'
      *
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupCreateObjectV1Request $ezsignformfieldgroupCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignformfieldgroupCreateObjectV1Request($ezsignformfieldgroupCreateObjectV1Request)
+    public function ezsignformfieldgroupCreateObjectV1Request($ezsignformfieldgroupCreateObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupCreateObjectV1'][0])
     {
 
         // verify the required parameter 'ezsignformfieldgroupCreateObjectV1Request' is set
@@ -321,6 +345,7 @@ class ObjectEzsignformfieldgroupApi
                 'Missing the required parameter $ezsignformfieldgroupCreateObjectV1Request when calling ezsignformfieldgroupCreateObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignformfieldgroup';
         $formParams = [];
@@ -333,20 +358,16 @@ class ObjectEzsignformfieldgroupApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignformfieldgroupCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignformfieldgroupCreateObjectV1Request));
             } else {
                 $httpBody = $ezsignformfieldgroupCreateObjectV1Request;
@@ -366,9 +387,9 @@ class ObjectEzsignformfieldgroupApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -417,14 +438,15 @@ class ObjectEzsignformfieldgroupApi
      * Delete an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignformfieldgroupDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignformfieldgroupDeleteObjectV1($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupDeleteObjectV1($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupDeleteObjectV1'][0])
     {
-        list($response) = $this->ezsignformfieldgroupDeleteObjectV1WithHttpInfo($pkiEzsignformfieldgroupID);
+        list($response) = $this->ezsignformfieldgroupDeleteObjectV1WithHttpInfo($pkiEzsignformfieldgroupID, $contentType);
         return $response;
     }
 
@@ -434,14 +456,15 @@ class ObjectEzsignformfieldgroupApi
      * Delete an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignformfieldgroupDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignformfieldgroupDeleteObjectV1WithHttpInfo($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupDeleteObjectV1WithHttpInfo($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupDeleteObjectV1'][0])
     {
-        $request = $this->ezsignformfieldgroupDeleteObjectV1Request($pkiEzsignformfieldgroupID);
+        $request = $this->ezsignformfieldgroupDeleteObjectV1Request($pkiEzsignformfieldgroupID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -579,13 +602,14 @@ class ObjectEzsignformfieldgroupApi
      * Delete an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignformfieldgroupDeleteObjectV1Async($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupDeleteObjectV1Async($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupDeleteObjectV1'][0])
     {
-        return $this->ezsignformfieldgroupDeleteObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID)
+        return $this->ezsignformfieldgroupDeleteObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -599,14 +623,15 @@ class ObjectEzsignformfieldgroupApi
      * Delete an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignformfieldgroupDeleteObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupDeleteObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupDeleteObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignformfieldgroupDeleteObjectV1Response';
-        $request = $this->ezsignformfieldgroupDeleteObjectV1Request($pkiEzsignformfieldgroupID);
+        $request = $this->ezsignformfieldgroupDeleteObjectV1Request($pkiEzsignformfieldgroupID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -648,11 +673,12 @@ class ObjectEzsignformfieldgroupApi
      * Create request for operation 'ezsignformfieldgroupDeleteObjectV1'
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignformfieldgroupDeleteObjectV1Request($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupDeleteObjectV1Request($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupDeleteObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignformfieldgroupID' is set
@@ -664,7 +690,7 @@ class ObjectEzsignformfieldgroupApi
         if ($pkiEzsignformfieldgroupID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignformfieldgroupID" when calling ObjectEzsignformfieldgroupApi.ezsignformfieldgroupDeleteObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}';
         $formParams = [];
@@ -685,16 +711,11 @@ class ObjectEzsignformfieldgroupApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -712,9 +733,9 @@ class ObjectEzsignformfieldgroupApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -764,14 +785,15 @@ class ObjectEzsignformfieldgroupApi
      *
      * @param  int $pkiEzsignformfieldgroupID pkiEzsignformfieldgroupID (required)
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Request $ezsignformfieldgroupEditObjectV1Request ezsignformfieldgroupEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignformfieldgroupEditObjectV1($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request)
+    public function ezsignformfieldgroupEditObjectV1($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupEditObjectV1'][0])
     {
-        list($response) = $this->ezsignformfieldgroupEditObjectV1WithHttpInfo($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request);
+        list($response) = $this->ezsignformfieldgroupEditObjectV1WithHttpInfo($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request, $contentType);
         return $response;
     }
 
@@ -782,14 +804,15 @@ class ObjectEzsignformfieldgroupApi
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Request $ezsignformfieldgroupEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignformfieldgroupEditObjectV1WithHttpInfo($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request)
+    public function ezsignformfieldgroupEditObjectV1WithHttpInfo($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupEditObjectV1'][0])
     {
-        $request = $this->ezsignformfieldgroupEditObjectV1Request($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request);
+        $request = $this->ezsignformfieldgroupEditObjectV1Request($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -928,13 +951,14 @@ class ObjectEzsignformfieldgroupApi
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Request $ezsignformfieldgroupEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignformfieldgroupEditObjectV1Async($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request)
+    public function ezsignformfieldgroupEditObjectV1Async($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupEditObjectV1'][0])
     {
-        return $this->ezsignformfieldgroupEditObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request)
+        return $this->ezsignformfieldgroupEditObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -949,14 +973,15 @@ class ObjectEzsignformfieldgroupApi
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Request $ezsignformfieldgroupEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignformfieldgroupEditObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request)
+    public function ezsignformfieldgroupEditObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupEditObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Response';
-        $request = $this->ezsignformfieldgroupEditObjectV1Request($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request);
+        $request = $this->ezsignformfieldgroupEditObjectV1Request($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -999,11 +1024,12 @@ class ObjectEzsignformfieldgroupApi
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
      * @param  \eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Request $ezsignformfieldgroupEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignformfieldgroupEditObjectV1Request($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request)
+    public function ezsignformfieldgroupEditObjectV1Request($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request, string $contentType = self::contentTypes['ezsignformfieldgroupEditObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignformfieldgroupID' is set
@@ -1015,14 +1041,14 @@ class ObjectEzsignformfieldgroupApi
         if ($pkiEzsignformfieldgroupID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignformfieldgroupID" when calling ObjectEzsignformfieldgroupApi.ezsignformfieldgroupEditObjectV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignformfieldgroupEditObjectV1Request' is set
         if ($ezsignformfieldgroupEditObjectV1Request === null || (is_array($ezsignformfieldgroupEditObjectV1Request) && count($ezsignformfieldgroupEditObjectV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignformfieldgroupEditObjectV1Request when calling ezsignformfieldgroupEditObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}';
         $formParams = [];
@@ -1043,20 +1069,16 @@ class ObjectEzsignformfieldgroupApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignformfieldgroupEditObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignformfieldgroupEditObjectV1Request));
             } else {
                 $httpBody = $ezsignformfieldgroupEditObjectV1Request;
@@ -1076,9 +1098,9 @@ class ObjectEzsignformfieldgroupApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1127,15 +1149,16 @@ class ObjectEzsignformfieldgroupApi
      * Retrieve an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignformfieldgroupGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezsignformfieldgroupGetObjectV1($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV1($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV1'][0])
     {
-        list($response) = $this->ezsignformfieldgroupGetObjectV1WithHttpInfo($pkiEzsignformfieldgroupID);
+        list($response) = $this->ezsignformfieldgroupGetObjectV1WithHttpInfo($pkiEzsignformfieldgroupID, $contentType);
         return $response;
     }
 
@@ -1145,15 +1168,16 @@ class ObjectEzsignformfieldgroupApi
      * Retrieve an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignformfieldgroupGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsignformfieldgroupGetObjectV1WithHttpInfo($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV1WithHttpInfo($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV1'][0])
     {
-        $request = $this->ezsignformfieldgroupGetObjectV1Request($pkiEzsignformfieldgroupID);
+        $request = $this->ezsignformfieldgroupGetObjectV1Request($pkiEzsignformfieldgroupID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1268,14 +1292,15 @@ class ObjectEzsignformfieldgroupApi
      * Retrieve an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignformfieldgroupGetObjectV1Async($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV1Async($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV1'][0])
     {
-        return $this->ezsignformfieldgroupGetObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID)
+        return $this->ezsignformfieldgroupGetObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1289,15 +1314,16 @@ class ObjectEzsignformfieldgroupApi
      * Retrieve an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignformfieldgroupGetObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV1AsyncWithHttpInfo($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignformfieldgroupGetObjectV1Response';
-        $request = $this->ezsignformfieldgroupGetObjectV1Request($pkiEzsignformfieldgroupID);
+        $request = $this->ezsignformfieldgroupGetObjectV1Request($pkiEzsignformfieldgroupID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1339,12 +1365,13 @@ class ObjectEzsignformfieldgroupApi
      * Create request for operation 'ezsignformfieldgroupGetObjectV1'
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsignformfieldgroupGetObjectV1Request($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV1Request($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignformfieldgroupID' is set
@@ -1356,7 +1383,7 @@ class ObjectEzsignformfieldgroupApi
         if ($pkiEzsignformfieldgroupID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignformfieldgroupID" when calling ObjectEzsignformfieldgroupApi.ezsignformfieldgroupGetObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}';
         $formParams = [];
@@ -1377,16 +1404,11 @@ class ObjectEzsignformfieldgroupApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1404,9 +1426,9 @@ class ObjectEzsignformfieldgroupApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1455,14 +1477,15 @@ class ObjectEzsignformfieldgroupApi
      * Retrieve an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignformfieldgroupGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignformfieldgroupGetObjectV2($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV2($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV2'][0])
     {
-        list($response) = $this->ezsignformfieldgroupGetObjectV2WithHttpInfo($pkiEzsignformfieldgroupID);
+        list($response) = $this->ezsignformfieldgroupGetObjectV2WithHttpInfo($pkiEzsignformfieldgroupID, $contentType);
         return $response;
     }
 
@@ -1472,14 +1495,15 @@ class ObjectEzsignformfieldgroupApi
      * Retrieve an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignformfieldgroupGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignformfieldgroupGetObjectV2WithHttpInfo($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV2WithHttpInfo($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV2'][0])
     {
-        $request = $this->ezsignformfieldgroupGetObjectV2Request($pkiEzsignformfieldgroupID);
+        $request = $this->ezsignformfieldgroupGetObjectV2Request($pkiEzsignformfieldgroupID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1594,13 +1618,14 @@ class ObjectEzsignformfieldgroupApi
      * Retrieve an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignformfieldgroupGetObjectV2Async($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV2Async($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV2'][0])
     {
-        return $this->ezsignformfieldgroupGetObjectV2AsyncWithHttpInfo($pkiEzsignformfieldgroupID)
+        return $this->ezsignformfieldgroupGetObjectV2AsyncWithHttpInfo($pkiEzsignformfieldgroupID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1614,14 +1639,15 @@ class ObjectEzsignformfieldgroupApi
      * Retrieve an existing Ezsignformfieldgroup
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignformfieldgroupGetObjectV2AsyncWithHttpInfo($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV2AsyncWithHttpInfo($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignformfieldgroupGetObjectV2Response';
-        $request = $this->ezsignformfieldgroupGetObjectV2Request($pkiEzsignformfieldgroupID);
+        $request = $this->ezsignformfieldgroupGetObjectV2Request($pkiEzsignformfieldgroupID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1663,11 +1689,12 @@ class ObjectEzsignformfieldgroupApi
      * Create request for operation 'ezsignformfieldgroupGetObjectV2'
      *
      * @param  int $pkiEzsignformfieldgroupID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignformfieldgroupGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignformfieldgroupGetObjectV2Request($pkiEzsignformfieldgroupID)
+    public function ezsignformfieldgroupGetObjectV2Request($pkiEzsignformfieldgroupID, string $contentType = self::contentTypes['ezsignformfieldgroupGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiEzsignformfieldgroupID' is set
@@ -1679,7 +1706,7 @@ class ObjectEzsignformfieldgroupApi
         if ($pkiEzsignformfieldgroupID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignformfieldgroupID" when calling ObjectEzsignformfieldgroupApi.ezsignformfieldgroupGetObjectV2, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/2/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}';
         $formParams = [];
@@ -1700,16 +1727,11 @@ class ObjectEzsignformfieldgroupApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1727,9 +1749,9 @@ class ObjectEzsignformfieldgroupApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

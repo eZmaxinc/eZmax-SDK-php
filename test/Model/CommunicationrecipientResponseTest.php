@@ -90,6 +90,15 @@ class CommunicationrecipientResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "eCommunicationrecipientObjecttype"
+     */
+    public function testPropertyECommunicationrecipientObjecttype()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "fkiAgentID"
      */
     public function testPropertyFkiAgentID()
@@ -162,24 +171,6 @@ class CommunicationrecipientResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "sEmailAddress"
-     */
-    public function testPropertySEmailAddress()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "eCommunicationrecipientType"
-     */
-    public function testPropertyECommunicationrecipientType()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "fkiAgentincorporationID"
      */
     public function testPropertyFkiAgentincorporationID()
@@ -243,9 +234,36 @@ class CommunicationrecipientResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "objPhoneSms"
+     * Test attribute "eCommunicationrecipientType"
      */
-    public function testPropertyObjPhoneSms()
+    public function testPropertyECommunicationrecipientType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objDescriptionstatic"
+     */
+    public function testPropertyObjDescriptionstatic()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objEmailstatic"
+     */
+    public function testPropertyObjEmailstatic()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objPhonestatic"
+     */
+    public function testPropertyObjPhonestatic()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

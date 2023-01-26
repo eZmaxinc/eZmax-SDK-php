@@ -71,7 +71,14 @@ class GlobalCustomerApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'globalCustomerGetEndpointV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -124,14 +131,15 @@ class GlobalCustomerApi
      *
      * @param  string $pksCustomerCode pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['globalCustomerGetEndpointV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\GlobalCustomerGetEndpointV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function globalCustomerGetEndpointV1($pksCustomerCode, $sInfrastructureproductCode = null)
+    public function globalCustomerGetEndpointV1($pksCustomerCode, $sInfrastructureproductCode = null, string $contentType = self::contentTypes['globalCustomerGetEndpointV1'][0])
     {
-        list($response) = $this->globalCustomerGetEndpointV1WithHttpInfo($pksCustomerCode, $sInfrastructureproductCode);
+        list($response) = $this->globalCustomerGetEndpointV1WithHttpInfo($pksCustomerCode, $sInfrastructureproductCode, $contentType);
         return $response;
     }
 
@@ -142,14 +150,15 @@ class GlobalCustomerApi
      *
      * @param  string $pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['globalCustomerGetEndpointV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\GlobalCustomerGetEndpointV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function globalCustomerGetEndpointV1WithHttpInfo($pksCustomerCode, $sInfrastructureproductCode = null)
+    public function globalCustomerGetEndpointV1WithHttpInfo($pksCustomerCode, $sInfrastructureproductCode = null, string $contentType = self::contentTypes['globalCustomerGetEndpointV1'][0])
     {
-        $request = $this->globalCustomerGetEndpointV1Request($pksCustomerCode, $sInfrastructureproductCode);
+        $request = $this->globalCustomerGetEndpointV1Request($pksCustomerCode, $sInfrastructureproductCode, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -265,13 +274,14 @@ class GlobalCustomerApi
      *
      * @param  string $pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['globalCustomerGetEndpointV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function globalCustomerGetEndpointV1Async($pksCustomerCode, $sInfrastructureproductCode = null)
+    public function globalCustomerGetEndpointV1Async($pksCustomerCode, $sInfrastructureproductCode = null, string $contentType = self::contentTypes['globalCustomerGetEndpointV1'][0])
     {
-        return $this->globalCustomerGetEndpointV1AsyncWithHttpInfo($pksCustomerCode, $sInfrastructureproductCode)
+        return $this->globalCustomerGetEndpointV1AsyncWithHttpInfo($pksCustomerCode, $sInfrastructureproductCode, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -286,14 +296,15 @@ class GlobalCustomerApi
      *
      * @param  string $pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['globalCustomerGetEndpointV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function globalCustomerGetEndpointV1AsyncWithHttpInfo($pksCustomerCode, $sInfrastructureproductCode = null)
+    public function globalCustomerGetEndpointV1AsyncWithHttpInfo($pksCustomerCode, $sInfrastructureproductCode = null, string $contentType = self::contentTypes['globalCustomerGetEndpointV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\GlobalCustomerGetEndpointV1Response';
-        $request = $this->globalCustomerGetEndpointV1Request($pksCustomerCode, $sInfrastructureproductCode);
+        $request = $this->globalCustomerGetEndpointV1Request($pksCustomerCode, $sInfrastructureproductCode, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -336,11 +347,12 @@ class GlobalCustomerApi
      *
      * @param  string $pksCustomerCode (required)
      * @param  string $sInfrastructureproductCode The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['globalCustomerGetEndpointV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function globalCustomerGetEndpointV1Request($pksCustomerCode, $sInfrastructureproductCode = null)
+    public function globalCustomerGetEndpointV1Request($pksCustomerCode, $sInfrastructureproductCode = null, string $contentType = self::contentTypes['globalCustomerGetEndpointV1'][0])
     {
 
         // verify the required parameter 'pksCustomerCode' is set
@@ -355,7 +367,7 @@ class GlobalCustomerApi
         if (strlen($pksCustomerCode) < 2) {
             throw new \InvalidArgumentException('invalid length for "$pksCustomerCode" when calling GlobalCustomerApi.globalCustomerGetEndpointV1, must be bigger than or equal to 2.');
         }
-
+        
 
 
         $resourcePath = '/1/customer/{pksCustomerCode}/endpoint';
@@ -386,16 +398,11 @@ class GlobalCustomerApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -413,9 +420,9 @@ class GlobalCustomerApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

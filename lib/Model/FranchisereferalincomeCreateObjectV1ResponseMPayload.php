@@ -130,6 +130,16 @@ class FranchisereferalincomeCreateObjectV1ResponseMPayload implements ModelInter
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -313,9 +323,12 @@ class FranchisereferalincomeCreateObjectV1ResponseMPayload implements ModelInter
             throw new \InvalidArgumentException('invalid length for $aPkiFranchisereferalincomeID when calling FranchisereferalincomeCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
         }
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiFranchisereferalincomeID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiFranchisereferalincomeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aPkiFranchisereferalincomeID'] = $aPkiFranchisereferalincomeID;
         $this->container['aPkiFranchisereferalincomeID'] = (is_null($aPkiFranchisereferalincomeID) ? null : $aPkiFranchisereferalincomeID);
 
         return $this;

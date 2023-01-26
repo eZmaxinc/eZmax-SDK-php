@@ -136,6 +136,16 @@ class WebhookEzsignFolderCompleted implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -324,9 +334,12 @@ class WebhookEzsignFolderCompleted implements ModelInterface, ArrayAccess, \Json
     public function setObjEzsignfolder($objEzsignfolder)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEzsignfolder)) {
             //throw new \InvalidArgumentException('non-nullable objEzsignfolder cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objEzsignfolder'] = $objEzsignfolder;
         $this->container['objEzsignfolder'] = $objEzsignfolder;
 
         return $this;
@@ -352,9 +365,12 @@ class WebhookEzsignFolderCompleted implements ModelInterface, ArrayAccess, \Json
     public function setObjWebhook($objWebhook)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objWebhook)) {
             //throw new \InvalidArgumentException('non-nullable objWebhook cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objWebhook'] = $objWebhook;
         $this->container['objWebhook'] = $objWebhook;
 
         return $this;
@@ -380,9 +396,12 @@ class WebhookEzsignFolderCompleted implements ModelInterface, ArrayAccess, \Json
     public function setAObjAttempt($aObjAttempt)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjAttempt)) {
             //throw new \InvalidArgumentException('non-nullable aObjAttempt cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjAttempt'] = $aObjAttempt;
         $this->container['aObjAttempt'] = $aObjAttempt;
 
         return $this;

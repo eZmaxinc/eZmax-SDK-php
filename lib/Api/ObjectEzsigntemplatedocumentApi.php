@@ -71,7 +71,44 @@ class ObjectEzsigntemplatedocumentApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'ezsigntemplatedocumentCreateObjectV1' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentEditEzsigntemplatesignaturesV1' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentEditObjectV1' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentGetEzsigntemplatesignaturesV1' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentGetObjectV1' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentGetObjectV2' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentGetWordsPositionsV1' => [
+            'application/json',
+        ],
+        'ezsigntemplatedocumentPatchObjectV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,14 +160,15 @@ class ObjectEzsigntemplatedocumentApi
      * Create a new Ezsigntemplatedocument
      *
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Request $ezsigntemplatedocumentCreateObjectV1Request ezsigntemplatedocumentCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Response|\eZmaxAPI\Model\CommonResponseErrorSTemporaryFileUrl
      */
-    public function ezsigntemplatedocumentCreateObjectV1($ezsigntemplatedocumentCreateObjectV1Request)
+    public function ezsigntemplatedocumentCreateObjectV1($ezsigntemplatedocumentCreateObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentCreateObjectV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentCreateObjectV1WithHttpInfo($ezsigntemplatedocumentCreateObjectV1Request);
+        list($response) = $this->ezsigntemplatedocumentCreateObjectV1WithHttpInfo($ezsigntemplatedocumentCreateObjectV1Request, $contentType);
         return $response;
     }
 
@@ -140,14 +178,15 @@ class ObjectEzsigntemplatedocumentApi
      * Create a new Ezsigntemplatedocument
      *
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Request $ezsigntemplatedocumentCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Response|\eZmaxAPI\Model\CommonResponseErrorSTemporaryFileUrl, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentCreateObjectV1WithHttpInfo($ezsigntemplatedocumentCreateObjectV1Request)
+    public function ezsigntemplatedocumentCreateObjectV1WithHttpInfo($ezsigntemplatedocumentCreateObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentCreateObjectV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentCreateObjectV1Request($ezsigntemplatedocumentCreateObjectV1Request);
+        $request = $this->ezsigntemplatedocumentCreateObjectV1Request($ezsigntemplatedocumentCreateObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -262,13 +301,14 @@ class ObjectEzsigntemplatedocumentApi
      * Create a new Ezsigntemplatedocument
      *
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Request $ezsigntemplatedocumentCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentCreateObjectV1Async($ezsigntemplatedocumentCreateObjectV1Request)
+    public function ezsigntemplatedocumentCreateObjectV1Async($ezsigntemplatedocumentCreateObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentCreateObjectV1'][0])
     {
-        return $this->ezsigntemplatedocumentCreateObjectV1AsyncWithHttpInfo($ezsigntemplatedocumentCreateObjectV1Request)
+        return $this->ezsigntemplatedocumentCreateObjectV1AsyncWithHttpInfo($ezsigntemplatedocumentCreateObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -282,14 +322,15 @@ class ObjectEzsigntemplatedocumentApi
      * Create a new Ezsigntemplatedocument
      *
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Request $ezsigntemplatedocumentCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentCreateObjectV1AsyncWithHttpInfo($ezsigntemplatedocumentCreateObjectV1Request)
+    public function ezsigntemplatedocumentCreateObjectV1AsyncWithHttpInfo($ezsigntemplatedocumentCreateObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentCreateObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Response';
-        $request = $this->ezsigntemplatedocumentCreateObjectV1Request($ezsigntemplatedocumentCreateObjectV1Request);
+        $request = $this->ezsigntemplatedocumentCreateObjectV1Request($ezsigntemplatedocumentCreateObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -331,11 +372,12 @@ class ObjectEzsigntemplatedocumentApi
      * Create request for operation 'ezsigntemplatedocumentCreateObjectV1'
      *
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentCreateObjectV1Request $ezsigntemplatedocumentCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentCreateObjectV1Request($ezsigntemplatedocumentCreateObjectV1Request)
+    public function ezsigntemplatedocumentCreateObjectV1Request($ezsigntemplatedocumentCreateObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentCreateObjectV1'][0])
     {
 
         // verify the required parameter 'ezsigntemplatedocumentCreateObjectV1Request' is set
@@ -344,6 +386,7 @@ class ObjectEzsigntemplatedocumentApi
                 'Missing the required parameter $ezsigntemplatedocumentCreateObjectV1Request when calling ezsigntemplatedocumentCreateObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsigntemplatedocument';
         $formParams = [];
@@ -356,20 +399,16 @@ class ObjectEzsigntemplatedocumentApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsigntemplatedocumentCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentCreateObjectV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentCreateObjectV1Request;
@@ -389,9 +428,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -441,14 +480,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request);
+        list($response) = $this->ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request, $contentType);
         return $response;
     }
 
@@ -459,14 +499,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request);
+        $request = $this->ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -605,13 +646,14 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'][0])
     {
-        return $this->ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request)
+        return $this->ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -626,14 +668,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response';
-        $request = $this->ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request);
+        $request = $this->ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -676,11 +719,12 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -692,14 +736,14 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request' is set
         if ($ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request === null || (is_array($ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request) && count($ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request when calling ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups';
         $formParams = [];
@@ -720,20 +764,16 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request;
@@ -753,9 +793,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -805,14 +845,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentEditEzsigntemplatesignaturesV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request);
+        list($response) = $this->ezsigntemplatedocumentEditEzsigntemplatesignaturesV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request, $contentType);
         return $response;
     }
 
@@ -823,14 +864,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request);
+        $request = $this->ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -969,13 +1011,14 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'][0])
     {
-        return $this->ezsigntemplatedocumentEditEzsigntemplatesignaturesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request)
+        return $this->ezsigntemplatedocumentEditEzsigntemplatesignaturesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -990,14 +1033,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response';
-        $request = $this->ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request);
+        $request = $this->ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1040,11 +1084,12 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request)
+    public function ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -1056,14 +1101,14 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentEditEzsigntemplatesignaturesV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request' is set
         if ($ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request === null || (is_array($ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request) && count($ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request when calling ezsigntemplatedocumentEditEzsigntemplatesignaturesV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures';
         $formParams = [];
@@ -1084,20 +1129,16 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request;
@@ -1117,9 +1158,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1169,14 +1210,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Request $ezsigntemplatedocumentEditObjectV1Request ezsigntemplatedocumentEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseErrorSTemporaryFileUrl
      */
-    public function ezsigntemplatedocumentEditObjectV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request)
+    public function ezsigntemplatedocumentEditObjectV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditObjectV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentEditObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request);
+        list($response) = $this->ezsigntemplatedocumentEditObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request, $contentType);
         return $response;
     }
 
@@ -1187,14 +1229,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Request $ezsigntemplatedocumentEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseErrorSTemporaryFileUrl, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentEditObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request)
+    public function ezsigntemplatedocumentEditObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditObjectV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentEditObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request);
+        $request = $this->ezsigntemplatedocumentEditObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1333,13 +1376,14 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Request $ezsigntemplatedocumentEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentEditObjectV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request)
+    public function ezsigntemplatedocumentEditObjectV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditObjectV1'][0])
     {
-        return $this->ezsigntemplatedocumentEditObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request)
+        return $this->ezsigntemplatedocumentEditObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1354,14 +1398,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Request $ezsigntemplatedocumentEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentEditObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request)
+    public function ezsigntemplatedocumentEditObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Response';
-        $request = $this->ezsigntemplatedocumentEditObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request);
+        $request = $this->ezsigntemplatedocumentEditObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1404,11 +1449,12 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentEditObjectV1Request $ezsigntemplatedocumentEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentEditObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request)
+    public function ezsigntemplatedocumentEditObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentEditObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -1420,14 +1466,14 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentEditObjectV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsigntemplatedocumentEditObjectV1Request' is set
         if ($ezsigntemplatedocumentEditObjectV1Request === null || (is_array($ezsigntemplatedocumentEditObjectV1Request) && count($ezsigntemplatedocumentEditObjectV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsigntemplatedocumentEditObjectV1Request when calling ezsigntemplatedocumentEditObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}';
         $formParams = [];
@@ -1448,20 +1494,16 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsigntemplatedocumentEditObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditObjectV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentEditObjectV1Request;
@@ -1481,9 +1523,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1532,14 +1574,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1WithHttpInfo($pkiEzsigntemplatedocumentID);
+        list($response) = $this->ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1WithHttpInfo($pkiEzsigntemplatedocumentID, $contentType);
         return $response;
     }
 
@@ -1549,14 +1592,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1WithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1WithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Request($pkiEzsigntemplatedocumentID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1671,13 +1715,14 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Async($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Async($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'][0])
     {
-        return $this->ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+        return $this->ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1691,14 +1736,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response';
-        $request = $this->ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Request($pkiEzsigntemplatedocumentID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1740,11 +1786,12 @@ class ObjectEzsigntemplatedocumentApi
      * Create request for operation 'ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Request($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Request($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -1756,7 +1803,7 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages';
         $formParams = [];
@@ -1777,16 +1824,11 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1804,9 +1846,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1855,14 +1897,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1WithHttpInfo($pkiEzsigntemplatedocumentID);
+        list($response) = $this->ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1WithHttpInfo($pkiEzsigntemplatedocumentID, $contentType);
         return $response;
     }
 
@@ -1872,14 +1915,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1WithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1WithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2017,13 +2061,14 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Async($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Async($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'][0])
     {
-        return $this->ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+        return $this->ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2037,14 +2082,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response';
-        $request = $this->ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2086,11 +2132,12 @@ class ObjectEzsigntemplatedocumentApi
      * Create request for operation 'ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Request($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -2102,7 +2149,7 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups';
         $formParams = [];
@@ -2123,16 +2170,11 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2150,9 +2192,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2201,14 +2243,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1WithHttpInfo($pkiEzsigntemplatedocumentID);
+        list($response) = $this->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1WithHttpInfo($pkiEzsigntemplatedocumentID, $contentType);
         return $response;
     }
 
@@ -2218,14 +2261,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1WithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1WithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2363,13 +2407,14 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1Async($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1Async($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'][0])
     {
-        return $this->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+        return $this->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2383,14 +2428,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response';
-        $request = $this->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2432,11 +2478,12 @@ class ObjectEzsigntemplatedocumentApi
      * Create request for operation 'ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetEzsigntemplatesignaturesV1Request($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetEzsigntemplatesignaturesV1'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -2448,7 +2495,7 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentGetEzsigntemplatesignaturesV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures';
         $formParams = [];
@@ -2469,16 +2516,11 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2496,9 +2538,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2547,15 +2589,16 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezsigntemplatedocumentGetObjectV1($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV1($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentGetObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID);
+        list($response) = $this->ezsigntemplatedocumentGetObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, $contentType);
         return $response;
     }
 
@@ -2565,15 +2608,16 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsigntemplatedocumentGetObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentGetObjectV1Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetObjectV1Request($pkiEzsigntemplatedocumentID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2688,14 +2732,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsigntemplatedocumentGetObjectV1Async($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV1Async($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV1'][0])
     {
-        return $this->ezsigntemplatedocumentGetObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+        return $this->ezsigntemplatedocumentGetObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2709,15 +2754,16 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsigntemplatedocumentGetObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentGetObjectV1Response';
-        $request = $this->ezsigntemplatedocumentGetObjectV1Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetObjectV1Request($pkiEzsigntemplatedocumentID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2759,12 +2805,13 @@ class ObjectEzsigntemplatedocumentApi
      * Create request for operation 'ezsigntemplatedocumentGetObjectV1'
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsigntemplatedocumentGetObjectV1Request($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV1Request($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -2776,7 +2823,7 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentGetObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}';
         $formParams = [];
@@ -2797,16 +2844,11 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2824,9 +2866,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2875,14 +2917,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsigntemplatedocumentGetObjectV2($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV2($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV2'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentGetObjectV2WithHttpInfo($pkiEzsigntemplatedocumentID);
+        list($response) = $this->ezsigntemplatedocumentGetObjectV2WithHttpInfo($pkiEzsigntemplatedocumentID, $contentType);
         return $response;
     }
 
@@ -2892,14 +2935,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentGetObjectV2WithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV2WithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV2'][0])
     {
-        $request = $this->ezsigntemplatedocumentGetObjectV2Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetObjectV2Request($pkiEzsigntemplatedocumentID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3014,13 +3058,14 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetObjectV2Async($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV2Async($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV2'][0])
     {
-        return $this->ezsigntemplatedocumentGetObjectV2AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+        return $this->ezsigntemplatedocumentGetObjectV2AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3034,14 +3079,15 @@ class ObjectEzsigntemplatedocumentApi
      * Retrieve an existing Ezsigntemplatedocument
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetObjectV2AsyncWithHttpInfo($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV2AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentGetObjectV2Response';
-        $request = $this->ezsigntemplatedocumentGetObjectV2Request($pkiEzsigntemplatedocumentID);
+        $request = $this->ezsigntemplatedocumentGetObjectV2Request($pkiEzsigntemplatedocumentID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3083,11 +3129,12 @@ class ObjectEzsigntemplatedocumentApi
      * Create request for operation 'ezsigntemplatedocumentGetObjectV2'
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentGetObjectV2Request($pkiEzsigntemplatedocumentID)
+    public function ezsigntemplatedocumentGetObjectV2Request($pkiEzsigntemplatedocumentID, string $contentType = self::contentTypes['ezsigntemplatedocumentGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -3099,7 +3146,7 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentGetObjectV2, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/2/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}';
         $formParams = [];
@@ -3120,16 +3167,11 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -3147,9 +3189,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3199,14 +3241,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Request $ezsigntemplatedocumentGetWordsPositionsV1Request ezsigntemplatedocumentGetWordsPositionsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsigntemplatedocumentGetWordsPositionsV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request)
+    public function ezsigntemplatedocumentGetWordsPositionsV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentGetWordsPositionsV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request);
+        list($response) = $this->ezsigntemplatedocumentGetWordsPositionsV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request, $contentType);
         return $response;
     }
 
@@ -3217,14 +3260,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Request $ezsigntemplatedocumentGetWordsPositionsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentGetWordsPositionsV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request)
+    public function ezsigntemplatedocumentGetWordsPositionsV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentGetWordsPositionsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request);
+        $request = $this->ezsigntemplatedocumentGetWordsPositionsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3340,13 +3384,14 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Request $ezsigntemplatedocumentGetWordsPositionsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetWordsPositionsV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request)
+    public function ezsigntemplatedocumentGetWordsPositionsV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'][0])
     {
-        return $this->ezsigntemplatedocumentGetWordsPositionsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request)
+        return $this->ezsigntemplatedocumentGetWordsPositionsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3361,14 +3406,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Request $ezsigntemplatedocumentGetWordsPositionsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentGetWordsPositionsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request)
+    public function ezsigntemplatedocumentGetWordsPositionsV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Response';
-        $request = $this->ezsigntemplatedocumentGetWordsPositionsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request);
+        $request = $this->ezsigntemplatedocumentGetWordsPositionsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3411,11 +3457,12 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentGetWordsPositionsV1Request $ezsigntemplatedocumentGetWordsPositionsV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentGetWordsPositionsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request)
+    public function ezsigntemplatedocumentGetWordsPositionsV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentGetWordsPositionsV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentGetWordsPositionsV1'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -3427,14 +3474,14 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentGetWordsPositionsV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsigntemplatedocumentGetWordsPositionsV1Request' is set
         if ($ezsigntemplatedocumentGetWordsPositionsV1Request === null || (is_array($ezsigntemplatedocumentGetWordsPositionsV1Request) && count($ezsigntemplatedocumentGetWordsPositionsV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsigntemplatedocumentGetWordsPositionsV1Request when calling ezsigntemplatedocumentGetWordsPositionsV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getWordsPositions';
         $formParams = [];
@@ -3455,20 +3502,16 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsigntemplatedocumentGetWordsPositionsV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentGetWordsPositionsV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentGetWordsPositionsV1Request;
@@ -3488,9 +3531,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3540,14 +3583,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Request $ezsigntemplatedocumentPatchObjectV1Request ezsigntemplatedocumentPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsigntemplatedocumentPatchObjectV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request)
+    public function ezsigntemplatedocumentPatchObjectV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentPatchObjectV1'][0])
     {
-        list($response) = $this->ezsigntemplatedocumentPatchObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request);
+        list($response) = $this->ezsigntemplatedocumentPatchObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request, $contentType);
         return $response;
     }
 
@@ -3558,14 +3602,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Request $ezsigntemplatedocumentPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntemplatedocumentPatchObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request)
+    public function ezsigntemplatedocumentPatchObjectV1WithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentPatchObjectV1'][0])
     {
-        $request = $this->ezsigntemplatedocumentPatchObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request);
+        $request = $this->ezsigntemplatedocumentPatchObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3681,13 +3726,14 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Request $ezsigntemplatedocumentPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentPatchObjectV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request)
+    public function ezsigntemplatedocumentPatchObjectV1Async($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentPatchObjectV1'][0])
     {
-        return $this->ezsigntemplatedocumentPatchObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request)
+        return $this->ezsigntemplatedocumentPatchObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3702,14 +3748,15 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Request $ezsigntemplatedocumentPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntemplatedocumentPatchObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request)
+    public function ezsigntemplatedocumentPatchObjectV1AsyncWithHttpInfo($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentPatchObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Response';
-        $request = $this->ezsigntemplatedocumentPatchObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request);
+        $request = $this->ezsigntemplatedocumentPatchObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3752,11 +3799,12 @@ class ObjectEzsigntemplatedocumentApi
      *
      * @param  int $pkiEzsigntemplatedocumentID (required)
      * @param  \eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Request $ezsigntemplatedocumentPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntemplatedocumentPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntemplatedocumentPatchObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request)
+    public function ezsigntemplatedocumentPatchObjectV1Request($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request, string $contentType = self::contentTypes['ezsigntemplatedocumentPatchObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsigntemplatedocumentID' is set
@@ -3768,14 +3816,14 @@ class ObjectEzsigntemplatedocumentApi
         if ($pkiEzsigntemplatedocumentID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsigntemplatedocumentID" when calling ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentPatchObjectV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsigntemplatedocumentPatchObjectV1Request' is set
         if ($ezsigntemplatedocumentPatchObjectV1Request === null || (is_array($ezsigntemplatedocumentPatchObjectV1Request) && count($ezsigntemplatedocumentPatchObjectV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsigntemplatedocumentPatchObjectV1Request when calling ezsigntemplatedocumentPatchObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}';
         $formParams = [];
@@ -3796,20 +3844,16 @@ class ObjectEzsigntemplatedocumentApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsigntemplatedocumentPatchObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentPatchObjectV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentPatchObjectV1Request;
@@ -3829,9 +3873,9 @@ class ObjectEzsigntemplatedocumentApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

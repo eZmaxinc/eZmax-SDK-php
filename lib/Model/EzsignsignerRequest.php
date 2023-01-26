@@ -142,6 +142,16 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -383,9 +393,12 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserlogintypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserlogintypeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiUserlogintypeID'] = $fkiUserlogintypeID;
         $this->container['fkiUserlogintypeID'] = (is_null($fkiUserlogintypeID) ? null : (int) $fkiUserlogintypeID);
 
         return $this;
@@ -419,9 +432,12 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiTaxassignmentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiTaxassignmentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiTaxassignmentID'] = $fkiTaxassignmentID;
         $this->container['fkiTaxassignmentID'] = (is_null($fkiTaxassignmentID) ? null : (int) $fkiTaxassignmentID);
 
         return $this;
@@ -452,9 +468,12 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiSecretquestionID)) {
             //throw new \InvalidArgumentException('non-nullable fkiSecretquestionID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiSecretquestionID'] = $fkiSecretquestionID;
         $this->container['fkiSecretquestionID'] = (is_null($fkiSecretquestionID) ? null : (int) $fkiSecretquestionID);
 
         return $this;
@@ -492,9 +511,12 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
             );
         }
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsignsignerLogintype)) {
             //throw new \InvalidArgumentException('non-nullable eEzsignsignerLogintype cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsignsignerLogintype'] = $eEzsignsignerLogintype;
         $this->container['eEzsignsignerLogintype'] = (is_null($eEzsignsignerLogintype) ? null : (string) $eEzsignsignerLogintype);
 
         return $this;
@@ -520,9 +542,12 @@ class EzsignsignerRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setSEzsignsignerSecretanswer($sEzsignsignerSecretanswer)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignsignerSecretanswer)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignsignerSecretanswer cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsignsignerSecretanswer'] = $sEzsignsignerSecretanswer;
         $this->container['sEzsignsignerSecretanswer'] = (is_null($sEzsignsignerSecretanswer) ? null : (string) $sEzsignsignerSecretanswer);
 
         return $this;

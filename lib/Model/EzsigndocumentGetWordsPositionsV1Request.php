@@ -136,6 +136,16 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -355,9 +365,12 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
             );
         }
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eGet)) {
             //throw new \InvalidArgumentException('non-nullable eGet cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eGet'] = $eGet;
         $this->container['eGet'] = (is_null($eGet) ? null : (string) $eGet);
 
         return $this;
@@ -383,9 +396,12 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
     public function setBWordCaseSensitive($bWordCaseSensitive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bWordCaseSensitive)) {
             //throw new \InvalidArgumentException('non-nullable bWordCaseSensitive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bWordCaseSensitive'] = $bWordCaseSensitive;
         $this->container['bWordCaseSensitive'] = (is_null($bWordCaseSensitive) ? null : (bool) $bWordCaseSensitive);
 
         return $this;
@@ -411,9 +427,12 @@ class EzsigndocumentGetWordsPositionsV1Request implements ModelInterface, ArrayA
     public function setASWord($aSWord)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aSWord)) {
             //throw new \InvalidArgumentException('non-nullable aSWord cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aSWord'] = $aSWord;
         $this->container['aSWord'] = (is_null($aSWord) ? null : $aSWord);
 
         return $this;

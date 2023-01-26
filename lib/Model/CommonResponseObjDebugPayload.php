@@ -136,6 +136,16 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -324,9 +334,12 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     public function setIVersionMin($iVersionMin)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iVersionMin)) {
             //throw new \InvalidArgumentException('non-nullable iVersionMin cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iVersionMin'] = $iVersionMin;
         $this->container['iVersionMin'] = (is_null($iVersionMin) ? null : (int) $iVersionMin);
 
         return $this;
@@ -352,9 +365,12 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     public function setIVersionMax($iVersionMax)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iVersionMax)) {
             //throw new \InvalidArgumentException('non-nullable iVersionMax cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iVersionMax'] = $iVersionMax;
         $this->container['iVersionMax'] = (is_null($iVersionMax) ? null : (int) $iVersionMax);
 
         return $this;
@@ -380,9 +396,12 @@ class CommonResponseObjDebugPayload implements ModelInterface, ArrayAccess, \Jso
     public function setARequiredPermission($aRequiredPermission)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aRequiredPermission)) {
             //throw new \InvalidArgumentException('non-nullable aRequiredPermission cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aRequiredPermission'] = $aRequiredPermission;
         $this->container['aRequiredPermission'] = (is_null($aRequiredPermission) ? null : $aRequiredPermission);
 
         return $this;

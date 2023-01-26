@@ -67,7 +67,8 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         'dEzmaxinvoicingsummaryexternaldetailSubtotal' => 'string',
         'dEzmaxinvoicingsummaryexternaldetailRebate' => 'string',
         'dEzmaxinvoicingsummaryexternaldetailTotal' => 'string',
-        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => 'bool'
+        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => 'bool',
+        'tEzmaxproductHelpX' => 'string'
     ];
 
     /**
@@ -86,7 +87,8 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         'dEzmaxinvoicingsummaryexternaldetailSubtotal' => null,
         'dEzmaxinvoicingsummaryexternaldetailRebate' => null,
         'dEzmaxinvoicingsummaryexternaldetailTotal' => null,
-        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => null
+        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => null,
+        'tEzmaxproductHelpX' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
 		'dEzmaxinvoicingsummaryexternaldetailSubtotal' => false,
 		'dEzmaxinvoicingsummaryexternaldetailRebate' => false,
 		'dEzmaxinvoicingsummaryexternaldetailTotal' => false,
-		'bEzmaxinvoicingsummaryexternaldetailAdjustment' => false
+		'bEzmaxinvoicingsummaryexternaldetailAdjustment' => false,
+		'tEzmaxproductHelpX' => false
     ];
 
     /**
@@ -154,6 +157,16 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -190,7 +203,8 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         'dEzmaxinvoicingsummaryexternaldetailSubtotal' => 'dEzmaxinvoicingsummaryexternaldetailSubtotal',
         'dEzmaxinvoicingsummaryexternaldetailRebate' => 'dEzmaxinvoicingsummaryexternaldetailRebate',
         'dEzmaxinvoicingsummaryexternaldetailTotal' => 'dEzmaxinvoicingsummaryexternaldetailTotal',
-        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => 'bEzmaxinvoicingsummaryexternaldetailAdjustment'
+        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => 'bEzmaxinvoicingsummaryexternaldetailAdjustment',
+        'tEzmaxproductHelpX' => 'tEzmaxproductHelpX'
     ];
 
     /**
@@ -207,7 +221,8 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         'dEzmaxinvoicingsummaryexternaldetailSubtotal' => 'setDEzmaxinvoicingsummaryexternaldetailSubtotal',
         'dEzmaxinvoicingsummaryexternaldetailRebate' => 'setDEzmaxinvoicingsummaryexternaldetailRebate',
         'dEzmaxinvoicingsummaryexternaldetailTotal' => 'setDEzmaxinvoicingsummaryexternaldetailTotal',
-        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => 'setBEzmaxinvoicingsummaryexternaldetailAdjustment'
+        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => 'setBEzmaxinvoicingsummaryexternaldetailAdjustment',
+        'tEzmaxproductHelpX' => 'setTEzmaxproductHelpX'
     ];
 
     /**
@@ -224,7 +239,8 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         'dEzmaxinvoicingsummaryexternaldetailSubtotal' => 'getDEzmaxinvoicingsummaryexternaldetailSubtotal',
         'dEzmaxinvoicingsummaryexternaldetailRebate' => 'getDEzmaxinvoicingsummaryexternaldetailRebate',
         'dEzmaxinvoicingsummaryexternaldetailTotal' => 'getDEzmaxinvoicingsummaryexternaldetailTotal',
-        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => 'getBEzmaxinvoicingsummaryexternaldetailAdjustment'
+        'bEzmaxinvoicingsummaryexternaldetailAdjustment' => 'getBEzmaxinvoicingsummaryexternaldetailAdjustment',
+        'tEzmaxproductHelpX' => 'getTEzmaxproductHelpX'
     ];
 
     /**
@@ -293,6 +309,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         $this->setIfExists('dEzmaxinvoicingsummaryexternaldetailRebate', $data ?? [], null);
         $this->setIfExists('dEzmaxinvoicingsummaryexternaldetailTotal', $data ?? [], null);
         $this->setIfExists('bEzmaxinvoicingsummaryexternaldetailAdjustment', $data ?? [], null);
+        $this->setIfExists('tEzmaxproductHelpX', $data ?? [], null);
     }
 
     /**
@@ -371,6 +388,9 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         if ($this->container['bEzmaxinvoicingsummaryexternaldetailAdjustment'] === null) {
             $invalidProperties[] = "'bEzmaxinvoicingsummaryexternaldetailAdjustment' can't be null";
         }
+        if ($this->container['tEzmaxproductHelpX'] === null) {
+            $invalidProperties[] = "'tEzmaxproductHelpX' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -411,9 +431,12 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzmaxinvoicingsummaryexternaldetailID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzmaxinvoicingsummaryexternaldetailID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzmaxinvoicingsummaryexternaldetailID'] = $pkiEzmaxinvoicingsummaryexternaldetailID;
         $this->container['pkiEzmaxinvoicingsummaryexternaldetailID'] = (is_null($pkiEzmaxinvoicingsummaryexternaldetailID) ? null : (int) $pkiEzmaxinvoicingsummaryexternaldetailID);
 
         return $this;
@@ -444,9 +467,12 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzmaxinvoicingsummaryexternalID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzmaxinvoicingsummaryexternalID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzmaxinvoicingsummaryexternalID'] = $fkiEzmaxinvoicingsummaryexternalID;
         $this->container['fkiEzmaxinvoicingsummaryexternalID'] = (is_null($fkiEzmaxinvoicingsummaryexternalID) ? null : (int) $fkiEzmaxinvoicingsummaryexternalID);
 
         return $this;
@@ -477,9 +503,12 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzmaxproductID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzmaxproductID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzmaxproductID'] = $fkiEzmaxproductID;
         $this->container['fkiEzmaxproductID'] = (is_null($fkiEzmaxproductID) ? null : (int) $fkiEzmaxproductID);
 
         return $this;
@@ -505,9 +534,12 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
     public function setSEzmaxproductDescriptionX($sEzmaxproductDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzmaxproductDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sEzmaxproductDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzmaxproductDescriptionX'] = $sEzmaxproductDescriptionX;
         $this->container['sEzmaxproductDescriptionX'] = (is_null($sEzmaxproductDescriptionX) ? null : (string) $sEzmaxproductDescriptionX);
 
         return $this;
@@ -538,9 +570,12 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryexternaldetailCountreal)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryexternaldetailCountreal cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dEzmaxinvoicingsummaryexternaldetailCountreal'] = $dEzmaxinvoicingsummaryexternaldetailCountreal;
         $this->container['dEzmaxinvoicingsummaryexternaldetailCountreal'] = (is_null($dEzmaxinvoicingsummaryexternaldetailCountreal) ? null : (string) $dEzmaxinvoicingsummaryexternaldetailCountreal);
 
         return $this;
@@ -571,9 +606,12 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryexternaldetailSubtotal)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryexternaldetailSubtotal cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dEzmaxinvoicingsummaryexternaldetailSubtotal'] = $dEzmaxinvoicingsummaryexternaldetailSubtotal;
         $this->container['dEzmaxinvoicingsummaryexternaldetailSubtotal'] = (is_null($dEzmaxinvoicingsummaryexternaldetailSubtotal) ? null : (string) $dEzmaxinvoicingsummaryexternaldetailSubtotal);
 
         return $this;
@@ -604,9 +642,12 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryexternaldetailRebate)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryexternaldetailRebate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dEzmaxinvoicingsummaryexternaldetailRebate'] = $dEzmaxinvoicingsummaryexternaldetailRebate;
         $this->container['dEzmaxinvoicingsummaryexternaldetailRebate'] = (is_null($dEzmaxinvoicingsummaryexternaldetailRebate) ? null : (string) $dEzmaxinvoicingsummaryexternaldetailRebate);
 
         return $this;
@@ -637,9 +678,12 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryexternaldetailTotal)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryexternaldetailTotal cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dEzmaxinvoicingsummaryexternaldetailTotal'] = $dEzmaxinvoicingsummaryexternaldetailTotal;
         $this->container['dEzmaxinvoicingsummaryexternaldetailTotal'] = (is_null($dEzmaxinvoicingsummaryexternaldetailTotal) ? null : (string) $dEzmaxinvoicingsummaryexternaldetailTotal);
 
         return $this;
@@ -665,10 +709,44 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
     public function setBEzmaxinvoicingsummaryexternaldetailAdjustment($bEzmaxinvoicingsummaryexternaldetailAdjustment)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzmaxinvoicingsummaryexternaldetailAdjustment)) {
             //throw new \InvalidArgumentException('non-nullable bEzmaxinvoicingsummaryexternaldetailAdjustment cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzmaxinvoicingsummaryexternaldetailAdjustment'] = $bEzmaxinvoicingsummaryexternaldetailAdjustment;
         $this->container['bEzmaxinvoicingsummaryexternaldetailAdjustment'] = (is_null($bEzmaxinvoicingsummaryexternaldetailAdjustment) ? null : (bool) $bEzmaxinvoicingsummaryexternaldetailAdjustment);
+
+        return $this;
+    }
+
+    /**
+     * Gets tEzmaxproductHelpX
+     *
+     * @return string
+     */
+    public function getTEzmaxproductHelpX()
+    {
+        return $this->container['tEzmaxproductHelpX'];
+    }
+
+    /**
+     * Sets tEzmaxproductHelpX
+     *
+     * @param string $tEzmaxproductHelpX The help message of the Ezmaxproduct in the language of the requester
+     *
+     * @return self
+     */
+    public function setTEzmaxproductHelpX($tEzmaxproductHelpX)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($tEzmaxproductHelpX)) {
+            //throw new \InvalidArgumentException('non-nullable tEzmaxproductHelpX cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['tEzmaxproductHelpX'] = $tEzmaxproductHelpX;
+        $this->container['tEzmaxproductHelpX'] = (is_null($tEzmaxproductHelpX) ? null : (string) $tEzmaxproductHelpX);
 
         return $this;
     }

@@ -139,6 +139,16 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -340,9 +350,12 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiNotificationtestID)) {
             //throw new \InvalidArgumentException('non-nullable pkiNotificationtestID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiNotificationtestID'] = $pkiNotificationtestID;
         $this->container['pkiNotificationtestID'] = (is_null($pkiNotificationtestID) ? null : (int) $pkiNotificationtestID);
 
         return $this;
@@ -368,9 +381,12 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
     public function setSNotificationtestFunction($sNotificationtestFunction)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sNotificationtestFunction)) {
             //throw new \InvalidArgumentException('non-nullable sNotificationtestFunction cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sNotificationtestFunction'] = $sNotificationtestFunction;
         $this->container['sNotificationtestFunction'] = (is_null($sNotificationtestFunction) ? null : (string) $sNotificationtestFunction);
 
         return $this;
@@ -396,9 +412,12 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
     public function setASVariableobjectProperty($aSVariableobjectProperty)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aSVariableobjectProperty)) {
             //throw new \InvalidArgumentException('non-nullable aSVariableobjectProperty cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aSVariableobjectProperty'] = $aSVariableobjectProperty;
         $this->container['aSVariableobjectProperty'] = (is_null($aSVariableobjectProperty) ? null : $aSVariableobjectProperty);
 
         return $this;
@@ -424,9 +443,12 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
     public function setAObjVariableobject($aObjVariableobject)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjVariableobject)) {
             //throw new \InvalidArgumentException('non-nullable aObjVariableobject cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjVariableobject'] = $aObjVariableobject;
         $this->container['aObjVariableobject'] = (is_null($aObjVariableobject) ? null : $aObjVariableobject);
 
         return $this;

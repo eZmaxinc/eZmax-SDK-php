@@ -71,7 +71,32 @@ class ObjectBrandingApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'brandingCreateObjectV1' => [
+            'application/json',
+        ],
+        'brandingEditObjectV1' => [
+            'application/json',
+        ],
+        'brandingGetAutocompleteV1' => [
+            'application/json',
+        ],
+        'brandingGetAutocompleteV2' => [
+            'application/json',
+        ],
+        'brandingGetListV1' => [
+            'application/json',
+        ],
+        'brandingGetObjectV1' => [
+            'application/json',
+        ],
+        'brandingGetObjectV2' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,14 +148,15 @@ class ObjectBrandingApi
      * Create a new Branding
      *
      * @param  \eZmaxAPI\Model\BrandingCreateObjectV1Request $brandingCreateObjectV1Request brandingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\BrandingCreateObjectV1Response
      */
-    public function brandingCreateObjectV1($brandingCreateObjectV1Request)
+    public function brandingCreateObjectV1($brandingCreateObjectV1Request, string $contentType = self::contentTypes['brandingCreateObjectV1'][0])
     {
-        list($response) = $this->brandingCreateObjectV1WithHttpInfo($brandingCreateObjectV1Request);
+        list($response) = $this->brandingCreateObjectV1WithHttpInfo($brandingCreateObjectV1Request, $contentType);
         return $response;
     }
 
@@ -140,14 +166,15 @@ class ObjectBrandingApi
      * Create a new Branding
      *
      * @param  \eZmaxAPI\Model\BrandingCreateObjectV1Request $brandingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\BrandingCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function brandingCreateObjectV1WithHttpInfo($brandingCreateObjectV1Request)
+    public function brandingCreateObjectV1WithHttpInfo($brandingCreateObjectV1Request, string $contentType = self::contentTypes['brandingCreateObjectV1'][0])
     {
-        $request = $this->brandingCreateObjectV1Request($brandingCreateObjectV1Request);
+        $request = $this->brandingCreateObjectV1Request($brandingCreateObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -239,13 +266,14 @@ class ObjectBrandingApi
      * Create a new Branding
      *
      * @param  \eZmaxAPI\Model\BrandingCreateObjectV1Request $brandingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingCreateObjectV1Async($brandingCreateObjectV1Request)
+    public function brandingCreateObjectV1Async($brandingCreateObjectV1Request, string $contentType = self::contentTypes['brandingCreateObjectV1'][0])
     {
-        return $this->brandingCreateObjectV1AsyncWithHttpInfo($brandingCreateObjectV1Request)
+        return $this->brandingCreateObjectV1AsyncWithHttpInfo($brandingCreateObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -259,14 +287,15 @@ class ObjectBrandingApi
      * Create a new Branding
      *
      * @param  \eZmaxAPI\Model\BrandingCreateObjectV1Request $brandingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingCreateObjectV1AsyncWithHttpInfo($brandingCreateObjectV1Request)
+    public function brandingCreateObjectV1AsyncWithHttpInfo($brandingCreateObjectV1Request, string $contentType = self::contentTypes['brandingCreateObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\BrandingCreateObjectV1Response';
-        $request = $this->brandingCreateObjectV1Request($brandingCreateObjectV1Request);
+        $request = $this->brandingCreateObjectV1Request($brandingCreateObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -308,11 +337,12 @@ class ObjectBrandingApi
      * Create request for operation 'brandingCreateObjectV1'
      *
      * @param  \eZmaxAPI\Model\BrandingCreateObjectV1Request $brandingCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function brandingCreateObjectV1Request($brandingCreateObjectV1Request)
+    public function brandingCreateObjectV1Request($brandingCreateObjectV1Request, string $contentType = self::contentTypes['brandingCreateObjectV1'][0])
     {
 
         // verify the required parameter 'brandingCreateObjectV1Request' is set
@@ -321,6 +351,7 @@ class ObjectBrandingApi
                 'Missing the required parameter $brandingCreateObjectV1Request when calling brandingCreateObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/branding';
         $formParams = [];
@@ -333,20 +364,16 @@ class ObjectBrandingApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($brandingCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($brandingCreateObjectV1Request));
             } else {
                 $httpBody = $brandingCreateObjectV1Request;
@@ -366,9 +393,9 @@ class ObjectBrandingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -418,14 +445,15 @@ class ObjectBrandingApi
      *
      * @param  int $pkiBrandingID pkiBrandingID (required)
      * @param  \eZmaxAPI\Model\BrandingEditObjectV1Request $brandingEditObjectV1Request brandingEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\BrandingEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function brandingEditObjectV1($pkiBrandingID, $brandingEditObjectV1Request)
+    public function brandingEditObjectV1($pkiBrandingID, $brandingEditObjectV1Request, string $contentType = self::contentTypes['brandingEditObjectV1'][0])
     {
-        list($response) = $this->brandingEditObjectV1WithHttpInfo($pkiBrandingID, $brandingEditObjectV1Request);
+        list($response) = $this->brandingEditObjectV1WithHttpInfo($pkiBrandingID, $brandingEditObjectV1Request, $contentType);
         return $response;
     }
 
@@ -436,14 +464,15 @@ class ObjectBrandingApi
      *
      * @param  int $pkiBrandingID (required)
      * @param  \eZmaxAPI\Model\BrandingEditObjectV1Request $brandingEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\BrandingEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function brandingEditObjectV1WithHttpInfo($pkiBrandingID, $brandingEditObjectV1Request)
+    public function brandingEditObjectV1WithHttpInfo($pkiBrandingID, $brandingEditObjectV1Request, string $contentType = self::contentTypes['brandingEditObjectV1'][0])
     {
-        $request = $this->brandingEditObjectV1Request($pkiBrandingID, $brandingEditObjectV1Request);
+        $request = $this->brandingEditObjectV1Request($pkiBrandingID, $brandingEditObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -559,13 +588,14 @@ class ObjectBrandingApi
      *
      * @param  int $pkiBrandingID (required)
      * @param  \eZmaxAPI\Model\BrandingEditObjectV1Request $brandingEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingEditObjectV1Async($pkiBrandingID, $brandingEditObjectV1Request)
+    public function brandingEditObjectV1Async($pkiBrandingID, $brandingEditObjectV1Request, string $contentType = self::contentTypes['brandingEditObjectV1'][0])
     {
-        return $this->brandingEditObjectV1AsyncWithHttpInfo($pkiBrandingID, $brandingEditObjectV1Request)
+        return $this->brandingEditObjectV1AsyncWithHttpInfo($pkiBrandingID, $brandingEditObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -580,14 +610,15 @@ class ObjectBrandingApi
      *
      * @param  int $pkiBrandingID (required)
      * @param  \eZmaxAPI\Model\BrandingEditObjectV1Request $brandingEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingEditObjectV1AsyncWithHttpInfo($pkiBrandingID, $brandingEditObjectV1Request)
+    public function brandingEditObjectV1AsyncWithHttpInfo($pkiBrandingID, $brandingEditObjectV1Request, string $contentType = self::contentTypes['brandingEditObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\BrandingEditObjectV1Response';
-        $request = $this->brandingEditObjectV1Request($pkiBrandingID, $brandingEditObjectV1Request);
+        $request = $this->brandingEditObjectV1Request($pkiBrandingID, $brandingEditObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -630,11 +661,12 @@ class ObjectBrandingApi
      *
      * @param  int $pkiBrandingID (required)
      * @param  \eZmaxAPI\Model\BrandingEditObjectV1Request $brandingEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function brandingEditObjectV1Request($pkiBrandingID, $brandingEditObjectV1Request)
+    public function brandingEditObjectV1Request($pkiBrandingID, $brandingEditObjectV1Request, string $contentType = self::contentTypes['brandingEditObjectV1'][0])
     {
 
         // verify the required parameter 'pkiBrandingID' is set
@@ -646,14 +678,14 @@ class ObjectBrandingApi
         if ($pkiBrandingID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiBrandingID" when calling ObjectBrandingApi.brandingEditObjectV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'brandingEditObjectV1Request' is set
         if ($brandingEditObjectV1Request === null || (is_array($brandingEditObjectV1Request) && count($brandingEditObjectV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $brandingEditObjectV1Request when calling brandingEditObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/branding/{pkiBrandingID}';
         $formParams = [];
@@ -674,20 +706,16 @@ class ObjectBrandingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($brandingEditObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($brandingEditObjectV1Request));
             } else {
                 $httpBody = $brandingEditObjectV1Request;
@@ -707,9 +735,9 @@ class ObjectBrandingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -761,15 +789,16 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\CommonGetAutocompleteV1Response
      * @deprecated
      */
-    public function brandingGetAutocompleteV1($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV1($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV1'][0])
     {
-        list($response) = $this->brandingGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->brandingGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -782,15 +811,16 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\CommonGetAutocompleteV1Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function brandingGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV1'][0])
     {
-        $request = $this->brandingGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->brandingGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -885,14 +915,15 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function brandingGetAutocompleteV1Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV1Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV1'][0])
     {
-        return $this->brandingGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->brandingGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -909,15 +940,16 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function brandingGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteV1Response';
-        $request = $this->brandingGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->brandingGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -962,12 +994,13 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function brandingGetAutocompleteV1Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV1Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV1'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -976,6 +1009,7 @@ class ObjectBrandingApi
                 'Missing the required parameter $sSelector when calling brandingGetAutocompleteV1'
             );
         }
+
 
 
 
@@ -1021,16 +1055,11 @@ class ObjectBrandingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1048,9 +1077,9 @@ class ObjectBrandingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1102,14 +1131,15 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\BrandingGetAutocompleteV2Response
      */
-    public function brandingGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV2'][0])
     {
-        list($response) = $this->brandingGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->brandingGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -1122,14 +1152,15 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\BrandingGetAutocompleteV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function brandingGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV2'][0])
     {
-        $request = $this->brandingGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->brandingGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1224,13 +1255,14 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV2'][0])
     {
-        return $this->brandingGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->brandingGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1247,14 +1279,15 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\BrandingGetAutocompleteV2Response';
-        $request = $this->brandingGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->brandingGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1299,11 +1332,12 @@ class ObjectBrandingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function brandingGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function brandingGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['brandingGetAutocompleteV2'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -1312,6 +1346,7 @@ class ObjectBrandingApi
                 'Missing the required parameter $sSelector when calling brandingGetAutocompleteV2'
             );
         }
+
 
 
 
@@ -1357,16 +1392,11 @@ class ObjectBrandingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1384,9 +1414,9 @@ class ObjectBrandingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1439,14 +1469,15 @@ class ObjectBrandingApi
      * @param  int $iRowOffset iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
      * @param  string $sFilter sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetListV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\BrandingGetListV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function brandingGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function brandingGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['brandingGetListV1'][0])
     {
-        list($response) = $this->brandingGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+        list($response) = $this->brandingGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
         return $response;
     }
 
@@ -1460,14 +1491,15 @@ class ObjectBrandingApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetListV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\BrandingGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function brandingGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function brandingGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['brandingGetListV1'][0])
     {
-        $request = $this->brandingGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+        $request = $this->brandingGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1586,13 +1618,14 @@ class ObjectBrandingApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetListV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function brandingGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['brandingGetListV1'][0])
     {
-        return $this->brandingGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter)
+        return $this->brandingGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1610,14 +1643,15 @@ class ObjectBrandingApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetListV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function brandingGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['brandingGetListV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\BrandingGetListV1Response';
-        $request = $this->brandingGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+        $request = $this->brandingGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1663,23 +1697,23 @@ class ObjectBrandingApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetListV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function brandingGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function brandingGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['brandingGetListV1'][0])
     {
 
 
         if ($iRowMax !== null && $iRowMax < 1) {
             throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectBrandingApi.brandingGetListV1, must be bigger than or equal to 1.');
         }
-
-
+        
         if ($iRowOffset !== null && $iRowOffset < 0) {
             throw new \InvalidArgumentException('invalid value for "$iRowOffset" when calling ObjectBrandingApi.brandingGetListV1, must be bigger than or equal to 0.');
         }
-
+        
 
 
 
@@ -1734,16 +1768,11 @@ class ObjectBrandingApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1761,9 +1790,9 @@ class ObjectBrandingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1812,15 +1841,16 @@ class ObjectBrandingApi
      * Retrieve an existing Branding
      *
      * @param  int $pkiBrandingID pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\BrandingGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function brandingGetObjectV1($pkiBrandingID)
+    public function brandingGetObjectV1($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV1'][0])
     {
-        list($response) = $this->brandingGetObjectV1WithHttpInfo($pkiBrandingID);
+        list($response) = $this->brandingGetObjectV1WithHttpInfo($pkiBrandingID, $contentType);
         return $response;
     }
 
@@ -1830,15 +1860,16 @@ class ObjectBrandingApi
      * Retrieve an existing Branding
      *
      * @param  int $pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\BrandingGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function brandingGetObjectV1WithHttpInfo($pkiBrandingID)
+    public function brandingGetObjectV1WithHttpInfo($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV1'][0])
     {
-        $request = $this->brandingGetObjectV1Request($pkiBrandingID);
+        $request = $this->brandingGetObjectV1Request($pkiBrandingID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1953,14 +1984,15 @@ class ObjectBrandingApi
      * Retrieve an existing Branding
      *
      * @param  int $pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function brandingGetObjectV1Async($pkiBrandingID)
+    public function brandingGetObjectV1Async($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV1'][0])
     {
-        return $this->brandingGetObjectV1AsyncWithHttpInfo($pkiBrandingID)
+        return $this->brandingGetObjectV1AsyncWithHttpInfo($pkiBrandingID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1974,15 +2006,16 @@ class ObjectBrandingApi
      * Retrieve an existing Branding
      *
      * @param  int $pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function brandingGetObjectV1AsyncWithHttpInfo($pkiBrandingID)
+    public function brandingGetObjectV1AsyncWithHttpInfo($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\BrandingGetObjectV1Response';
-        $request = $this->brandingGetObjectV1Request($pkiBrandingID);
+        $request = $this->brandingGetObjectV1Request($pkiBrandingID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2024,12 +2057,13 @@ class ObjectBrandingApi
      * Create request for operation 'brandingGetObjectV1'
      *
      * @param  int $pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function brandingGetObjectV1Request($pkiBrandingID)
+    public function brandingGetObjectV1Request($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV1'][0])
     {
 
         // verify the required parameter 'pkiBrandingID' is set
@@ -2041,7 +2075,7 @@ class ObjectBrandingApi
         if ($pkiBrandingID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiBrandingID" when calling ObjectBrandingApi.brandingGetObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/branding/{pkiBrandingID}';
         $formParams = [];
@@ -2062,16 +2096,11 @@ class ObjectBrandingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2089,9 +2118,9 @@ class ObjectBrandingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2140,14 +2169,15 @@ class ObjectBrandingApi
      * Retrieve an existing Branding
      *
      * @param  int $pkiBrandingID pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\BrandingGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function brandingGetObjectV2($pkiBrandingID)
+    public function brandingGetObjectV2($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV2'][0])
     {
-        list($response) = $this->brandingGetObjectV2WithHttpInfo($pkiBrandingID);
+        list($response) = $this->brandingGetObjectV2WithHttpInfo($pkiBrandingID, $contentType);
         return $response;
     }
 
@@ -2157,14 +2187,15 @@ class ObjectBrandingApi
      * Retrieve an existing Branding
      *
      * @param  int $pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\BrandingGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function brandingGetObjectV2WithHttpInfo($pkiBrandingID)
+    public function brandingGetObjectV2WithHttpInfo($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV2'][0])
     {
-        $request = $this->brandingGetObjectV2Request($pkiBrandingID);
+        $request = $this->brandingGetObjectV2Request($pkiBrandingID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2279,13 +2310,14 @@ class ObjectBrandingApi
      * Retrieve an existing Branding
      *
      * @param  int $pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingGetObjectV2Async($pkiBrandingID)
+    public function brandingGetObjectV2Async($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV2'][0])
     {
-        return $this->brandingGetObjectV2AsyncWithHttpInfo($pkiBrandingID)
+        return $this->brandingGetObjectV2AsyncWithHttpInfo($pkiBrandingID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2299,14 +2331,15 @@ class ObjectBrandingApi
      * Retrieve an existing Branding
      *
      * @param  int $pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function brandingGetObjectV2AsyncWithHttpInfo($pkiBrandingID)
+    public function brandingGetObjectV2AsyncWithHttpInfo($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\BrandingGetObjectV2Response';
-        $request = $this->brandingGetObjectV2Request($pkiBrandingID);
+        $request = $this->brandingGetObjectV2Request($pkiBrandingID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2348,11 +2381,12 @@ class ObjectBrandingApi
      * Create request for operation 'brandingGetObjectV2'
      *
      * @param  int $pkiBrandingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['brandingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function brandingGetObjectV2Request($pkiBrandingID)
+    public function brandingGetObjectV2Request($pkiBrandingID, string $contentType = self::contentTypes['brandingGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiBrandingID' is set
@@ -2364,7 +2398,7 @@ class ObjectBrandingApi
         if ($pkiBrandingID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiBrandingID" when calling ObjectBrandingApi.brandingGetObjectV2, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/2/object/branding/{pkiBrandingID}';
         $formParams = [];
@@ -2385,16 +2419,11 @@ class ObjectBrandingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2412,9 +2441,9 @@ class ObjectBrandingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

@@ -136,6 +136,16 @@ class TaxassignmentAutocompleteElementResponse implements ModelInterface, ArrayA
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -332,9 +342,12 @@ class TaxassignmentAutocompleteElementResponse implements ModelInterface, ArrayA
     public function setSTaxassignmentDescriptionX($sTaxassignmentDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sTaxassignmentDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sTaxassignmentDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sTaxassignmentDescriptionX'] = $sTaxassignmentDescriptionX;
         $this->container['sTaxassignmentDescriptionX'] = (is_null($sTaxassignmentDescriptionX) ? null : (string) $sTaxassignmentDescriptionX);
 
         return $this;
@@ -368,9 +381,12 @@ class TaxassignmentAutocompleteElementResponse implements ModelInterface, ArrayA
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiTaxassignmentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiTaxassignmentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiTaxassignmentID'] = $pkiTaxassignmentID;
         $this->container['pkiTaxassignmentID'] = (is_null($pkiTaxassignmentID) ? null : (int) $pkiTaxassignmentID);
 
         return $this;
@@ -396,9 +412,12 @@ class TaxassignmentAutocompleteElementResponse implements ModelInterface, ArrayA
     public function setBTaxassignmentIsactive($bTaxassignmentIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bTaxassignmentIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bTaxassignmentIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bTaxassignmentIsactive'] = $bTaxassignmentIsactive;
         $this->container['bTaxassignmentIsactive'] = (is_null($bTaxassignmentIsactive) ? null : (bool) $bTaxassignmentIsactive);
 
         return $this;

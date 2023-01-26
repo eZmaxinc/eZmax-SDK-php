@@ -90,9 +90,9 @@ class CommunicationResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "eCommunicationEmailimportance"
+     * Test attribute "eCommunicationImportance"
      */
-    public function testPropertyECommunicationEmailimportance()
+    public function testPropertyECommunicationImportance()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -117,9 +117,18 @@ class CommunicationResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "dtCommunicationSentdate"
+     * Test attribute "eCommunicationDirection"
      */
-    public function testPropertyDtCommunicationSentdate()
+    public function testPropertyECommunicationDirection()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iCommunicationrecipientCount"
+     */
+    public function testPropertyICommunicationrecipientCount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -129,6 +138,15 @@ class CommunicationResponseTest extends TestCase
      * Test attribute "objContactFrom"
      */
     public function testPropertyObjContactFrom()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "objAudit"
+     */
+    public function testPropertyObjAudit()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

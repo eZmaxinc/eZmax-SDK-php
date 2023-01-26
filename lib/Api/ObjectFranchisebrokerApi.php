@@ -71,7 +71,17 @@ class ObjectFranchisebrokerApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'franchisebrokerGetAutocompleteV1' => [
+            'application/json',
+        ],
+        'franchisebrokerGetAutocompleteV2' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -126,15 +136,16 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\CommonGetAutocompleteV1Response
      * @deprecated
      */
-    public function franchisebrokerGetAutocompleteV1($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV1($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV1'][0])
     {
-        list($response) = $this->franchisebrokerGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->franchisebrokerGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -147,15 +158,16 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\CommonGetAutocompleteV1Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function franchisebrokerGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV1'][0])
     {
-        $request = $this->franchisebrokerGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->franchisebrokerGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -250,14 +262,15 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function franchisebrokerGetAutocompleteV1Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV1Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV1'][0])
     {
-        return $this->franchisebrokerGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->franchisebrokerGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,15 +287,16 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function franchisebrokerGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteV1Response';
-        $request = $this->franchisebrokerGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->franchisebrokerGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -327,12 +341,13 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function franchisebrokerGetAutocompleteV1Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV1Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV1'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -341,6 +356,7 @@ class ObjectFranchisebrokerApi
                 'Missing the required parameter $sSelector when calling franchisebrokerGetAutocompleteV1'
             );
         }
+
 
 
 
@@ -386,16 +402,11 @@ class ObjectFranchisebrokerApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -413,9 +424,9 @@ class ObjectFranchisebrokerApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -467,14 +478,15 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\FranchisebrokerGetAutocompleteV2Response
      */
-    public function franchisebrokerGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV2'][0])
     {
-        list($response) = $this->franchisebrokerGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->franchisebrokerGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -487,14 +499,15 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\FranchisebrokerGetAutocompleteV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function franchisebrokerGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV2'][0])
     {
-        $request = $this->franchisebrokerGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->franchisebrokerGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -589,13 +602,14 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function franchisebrokerGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV2'][0])
     {
-        return $this->franchisebrokerGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->franchisebrokerGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -612,14 +626,15 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function franchisebrokerGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\FranchisebrokerGetAutocompleteV2Response';
-        $request = $this->franchisebrokerGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->franchisebrokerGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -664,11 +679,12 @@ class ObjectFranchisebrokerApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisebrokerGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function franchisebrokerGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function franchisebrokerGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['franchisebrokerGetAutocompleteV2'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -677,6 +693,7 @@ class ObjectFranchisebrokerApi
                 'Missing the required parameter $sSelector when calling franchisebrokerGetAutocompleteV2'
             );
         }
+
 
 
 
@@ -722,16 +739,11 @@ class ObjectFranchisebrokerApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -749,9 +761,9 @@ class ObjectFranchisebrokerApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

@@ -132,6 +132,16 @@ class CommonResponseObjDebugPayloadGetListAllOf implements ModelInterface, Array
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -313,9 +323,12 @@ class CommonResponseObjDebugPayloadGetListAllOf implements ModelInterface, Array
     public function setAFilter($aFilter)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFilter)) {
             //throw new \InvalidArgumentException('non-nullable aFilter cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aFilter'] = $aFilter;
         $this->container['aFilter'] = $aFilter;
 
         return $this;
@@ -341,9 +354,12 @@ class CommonResponseObjDebugPayloadGetListAllOf implements ModelInterface, Array
     public function setAOrderBy($aOrderBy)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aOrderBy)) {
             //throw new \InvalidArgumentException('non-nullable aOrderBy cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aOrderBy'] = $aOrderBy;
         $this->container['aOrderBy'] = (is_null($aOrderBy) ? null : $aOrderBy);
 
         return $this;

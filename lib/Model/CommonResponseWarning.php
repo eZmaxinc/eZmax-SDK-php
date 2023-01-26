@@ -133,6 +133,16 @@ class CommonResponseWarning implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -314,9 +324,12 @@ class CommonResponseWarning implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setSWarningMessage($sWarningMessage)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sWarningMessage)) {
             //throw new \InvalidArgumentException('non-nullable sWarningMessage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sWarningMessage'] = $sWarningMessage;
         $this->container['sWarningMessage'] = (is_null($sWarningMessage) ? null : (string) $sWarningMessage);
 
         return $this;
@@ -342,9 +355,12 @@ class CommonResponseWarning implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setEWarningCode($eWarningCode)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eWarningCode)) {
             //throw new \InvalidArgumentException('non-nullable eWarningCode cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eWarningCode'] = $eWarningCode;
         $this->container['eWarningCode'] = (is_null($eWarningCode) ? null : (string) $eWarningCode);
 
         return $this;

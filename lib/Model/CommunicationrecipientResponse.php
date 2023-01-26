@@ -60,6 +60,7 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'pkiCommunicationrecipientID' => 'int',
+        'eCommunicationrecipientObjecttype' => '\eZmaxAPI\Model\FieldECommunicationrecipientObjecttype',
         'fkiAgentID' => 'int',
         'fkiBrokerID' => 'int',
         'fkiContactID' => 'int',
@@ -68,8 +69,6 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiEzsignsignerID' => 'int',
         'fkiFranchiseofficeID' => 'int',
         'fkiUserID' => 'int',
-        'sEmailAddress' => 'string',
-        'eCommunicationrecipientType' => '\eZmaxAPI\Model\FieldECommunicationrecipientType',
         'fkiAgentincorporationID' => 'int',
         'fkiAssistantID' => 'int',
         'fkiExternalbrokerID' => 'int',
@@ -77,7 +76,10 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiNotaryID' => 'int',
         'fkiRewardmemberID' => 'int',
         'fkiSupplierID' => 'int',
-        'objPhoneSms' => '\eZmaxAPI\Model\PhoneResponseCompound'
+        'eCommunicationrecipientType' => '\eZmaxAPI\Model\FieldECommunicationrecipientType',
+        'objDescriptionstatic' => '\eZmaxAPI\Model\DescriptionstaticResponseCompound',
+        'objEmailstatic' => '\eZmaxAPI\Model\EmailstaticResponseCompound',
+        'objPhonestatic' => '\eZmaxAPI\Model\PhonestaticResponseCompound'
     ];
 
     /**
@@ -89,6 +91,7 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'pkiCommunicationrecipientID' => null,
+        'eCommunicationrecipientObjecttype' => null,
         'fkiAgentID' => null,
         'fkiBrokerID' => null,
         'fkiContactID' => null,
@@ -97,8 +100,6 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiEzsignsignerID' => null,
         'fkiFranchiseofficeID' => null,
         'fkiUserID' => null,
-        'sEmailAddress' => null,
-        'eCommunicationrecipientType' => null,
         'fkiAgentincorporationID' => null,
         'fkiAssistantID' => null,
         'fkiExternalbrokerID' => null,
@@ -106,7 +107,10 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiNotaryID' => null,
         'fkiRewardmemberID' => null,
         'fkiSupplierID' => null,
-        'objPhoneSms' => null
+        'eCommunicationrecipientType' => null,
+        'objDescriptionstatic' => null,
+        'objEmailstatic' => null,
+        'objPhonestatic' => null
     ];
 
     /**
@@ -116,6 +120,7 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
       */
     protected static array $openAPINullables = [
         'pkiCommunicationrecipientID' => false,
+		'eCommunicationrecipientObjecttype' => false,
 		'fkiAgentID' => false,
 		'fkiBrokerID' => false,
 		'fkiContactID' => false,
@@ -124,8 +129,6 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
 		'fkiEzsignsignerID' => false,
 		'fkiFranchiseofficeID' => false,
 		'fkiUserID' => false,
-		'sEmailAddress' => false,
-		'eCommunicationrecipientType' => false,
 		'fkiAgentincorporationID' => false,
 		'fkiAssistantID' => false,
 		'fkiExternalbrokerID' => false,
@@ -133,7 +136,10 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
 		'fkiNotaryID' => false,
 		'fkiRewardmemberID' => false,
 		'fkiSupplierID' => false,
-		'objPhoneSms' => false
+		'eCommunicationrecipientType' => false,
+		'objDescriptionstatic' => false,
+		'objEmailstatic' => false,
+		'objPhonestatic' => false
     ];
 
     /**
@@ -184,6 +190,16 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -213,6 +229,7 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'pkiCommunicationrecipientID' => 'pkiCommunicationrecipientID',
+        'eCommunicationrecipientObjecttype' => 'eCommunicationrecipientObjecttype',
         'fkiAgentID' => 'fkiAgentID',
         'fkiBrokerID' => 'fkiBrokerID',
         'fkiContactID' => 'fkiContactID',
@@ -221,8 +238,6 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiEzsignsignerID' => 'fkiEzsignsignerID',
         'fkiFranchiseofficeID' => 'fkiFranchiseofficeID',
         'fkiUserID' => 'fkiUserID',
-        'sEmailAddress' => 'sEmailAddress',
-        'eCommunicationrecipientType' => 'eCommunicationrecipientType',
         'fkiAgentincorporationID' => 'fkiAgentincorporationID',
         'fkiAssistantID' => 'fkiAssistantID',
         'fkiExternalbrokerID' => 'fkiExternalbrokerID',
@@ -230,7 +245,10 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiNotaryID' => 'fkiNotaryID',
         'fkiRewardmemberID' => 'fkiRewardmemberID',
         'fkiSupplierID' => 'fkiSupplierID',
-        'objPhoneSms' => 'objPhoneSms'
+        'eCommunicationrecipientType' => 'eCommunicationrecipientType',
+        'objDescriptionstatic' => 'objDescriptionstatic',
+        'objEmailstatic' => 'objEmailstatic',
+        'objPhonestatic' => 'objPhonestatic'
     ];
 
     /**
@@ -240,6 +258,7 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'pkiCommunicationrecipientID' => 'setPkiCommunicationrecipientID',
+        'eCommunicationrecipientObjecttype' => 'setECommunicationrecipientObjecttype',
         'fkiAgentID' => 'setFkiAgentID',
         'fkiBrokerID' => 'setFkiBrokerID',
         'fkiContactID' => 'setFkiContactID',
@@ -248,8 +267,6 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiEzsignsignerID' => 'setFkiEzsignsignerID',
         'fkiFranchiseofficeID' => 'setFkiFranchiseofficeID',
         'fkiUserID' => 'setFkiUserID',
-        'sEmailAddress' => 'setSEmailAddress',
-        'eCommunicationrecipientType' => 'setECommunicationrecipientType',
         'fkiAgentincorporationID' => 'setFkiAgentincorporationID',
         'fkiAssistantID' => 'setFkiAssistantID',
         'fkiExternalbrokerID' => 'setFkiExternalbrokerID',
@@ -257,7 +274,10 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiNotaryID' => 'setFkiNotaryID',
         'fkiRewardmemberID' => 'setFkiRewardmemberID',
         'fkiSupplierID' => 'setFkiSupplierID',
-        'objPhoneSms' => 'setObjPhoneSms'
+        'eCommunicationrecipientType' => 'setECommunicationrecipientType',
+        'objDescriptionstatic' => 'setObjDescriptionstatic',
+        'objEmailstatic' => 'setObjEmailstatic',
+        'objPhonestatic' => 'setObjPhonestatic'
     ];
 
     /**
@@ -267,6 +287,7 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'pkiCommunicationrecipientID' => 'getPkiCommunicationrecipientID',
+        'eCommunicationrecipientObjecttype' => 'getECommunicationrecipientObjecttype',
         'fkiAgentID' => 'getFkiAgentID',
         'fkiBrokerID' => 'getFkiBrokerID',
         'fkiContactID' => 'getFkiContactID',
@@ -275,8 +296,6 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiEzsignsignerID' => 'getFkiEzsignsignerID',
         'fkiFranchiseofficeID' => 'getFkiFranchiseofficeID',
         'fkiUserID' => 'getFkiUserID',
-        'sEmailAddress' => 'getSEmailAddress',
-        'eCommunicationrecipientType' => 'getECommunicationrecipientType',
         'fkiAgentincorporationID' => 'getFkiAgentincorporationID',
         'fkiAssistantID' => 'getFkiAssistantID',
         'fkiExternalbrokerID' => 'getFkiExternalbrokerID',
@@ -284,7 +303,10 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         'fkiNotaryID' => 'getFkiNotaryID',
         'fkiRewardmemberID' => 'getFkiRewardmemberID',
         'fkiSupplierID' => 'getFkiSupplierID',
-        'objPhoneSms' => 'getObjPhoneSms'
+        'eCommunicationrecipientType' => 'getECommunicationrecipientType',
+        'objDescriptionstatic' => 'getObjDescriptionstatic',
+        'objEmailstatic' => 'getObjEmailstatic',
+        'objPhonestatic' => 'getObjPhonestatic'
     ];
 
     /**
@@ -345,6 +367,7 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
     public function __construct(array $data = null)
     {
         $this->setIfExists('pkiCommunicationrecipientID', $data ?? [], null);
+        $this->setIfExists('eCommunicationrecipientObjecttype', $data ?? [], null);
         $this->setIfExists('fkiAgentID', $data ?? [], null);
         $this->setIfExists('fkiBrokerID', $data ?? [], null);
         $this->setIfExists('fkiContactID', $data ?? [], null);
@@ -353,8 +376,6 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('fkiEzsignsignerID', $data ?? [], null);
         $this->setIfExists('fkiFranchiseofficeID', $data ?? [], null);
         $this->setIfExists('fkiUserID', $data ?? [], null);
-        $this->setIfExists('sEmailAddress', $data ?? [], null);
-        $this->setIfExists('eCommunicationrecipientType', $data ?? [], null);
         $this->setIfExists('fkiAgentincorporationID', $data ?? [], null);
         $this->setIfExists('fkiAssistantID', $data ?? [], null);
         $this->setIfExists('fkiExternalbrokerID', $data ?? [], null);
@@ -362,7 +383,10 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('fkiNotaryID', $data ?? [], null);
         $this->setIfExists('fkiRewardmemberID', $data ?? [], null);
         $this->setIfExists('fkiSupplierID', $data ?? [], null);
-        $this->setIfExists('objPhoneSms', $data ?? [], null);
+        $this->setIfExists('eCommunicationrecipientType', $data ?? [], null);
+        $this->setIfExists('objDescriptionstatic', $data ?? [], null);
+        $this->setIfExists('objEmailstatic', $data ?? [], null);
+        $this->setIfExists('objPhonestatic', $data ?? [], null);
     }
 
     /**
@@ -459,6 +483,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'fkiSupplierID', must be bigger than or equal to 0.";
         }
 
+        if ($this->container['eCommunicationrecipientType'] === null) {
+            $invalidProperties[] = "'eCommunicationrecipientType' can't be null";
+        }
+        if ($this->container['objDescriptionstatic'] === null) {
+            $invalidProperties[] = "'objDescriptionstatic' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -499,10 +529,44 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiCommunicationrecipientID)) {
             //throw new \InvalidArgumentException('non-nullable pkiCommunicationrecipientID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiCommunicationrecipientID'] = $pkiCommunicationrecipientID;
         $this->container['pkiCommunicationrecipientID'] = (is_null($pkiCommunicationrecipientID) ? null : (int) $pkiCommunicationrecipientID);
+
+        return $this;
+    }
+
+    /**
+     * Gets eCommunicationrecipientObjecttype
+     *
+     * @return \eZmaxAPI\Model\FieldECommunicationrecipientObjecttype|null
+     */
+    public function getECommunicationrecipientObjecttype()
+    {
+        return $this->container['eCommunicationrecipientObjecttype'];
+    }
+
+    /**
+     * Sets eCommunicationrecipientObjecttype
+     *
+     * @param \eZmaxAPI\Model\FieldECommunicationrecipientObjecttype|null $eCommunicationrecipientObjecttype eCommunicationrecipientObjecttype
+     *
+     * @return self
+     */
+    public function setECommunicationrecipientObjecttype($eCommunicationrecipientObjecttype)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eCommunicationrecipientObjecttype)) {
+            //throw new \InvalidArgumentException('non-nullable eCommunicationrecipientObjecttype cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eCommunicationrecipientObjecttype'] = $eCommunicationrecipientObjecttype;
+        $this->container['eCommunicationrecipientObjecttype'] = $eCommunicationrecipientObjecttype;
 
         return $this;
     }
@@ -532,9 +596,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiAgentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiAgentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiAgentID'] = $fkiAgentID;
         $this->container['fkiAgentID'] = (is_null($fkiAgentID) ? null : (int) $fkiAgentID);
 
         return $this;
@@ -565,9 +632,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiBrokerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiBrokerID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiBrokerID'] = $fkiBrokerID;
         $this->container['fkiBrokerID'] = (is_null($fkiBrokerID) ? null : (int) $fkiBrokerID);
 
         return $this;
@@ -598,9 +668,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiContactID)) {
             //throw new \InvalidArgumentException('non-nullable fkiContactID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiContactID'] = $fkiContactID;
         $this->container['fkiContactID'] = (is_null($fkiContactID) ? null : (int) $fkiContactID);
 
         return $this;
@@ -631,9 +704,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiCustomerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiCustomerID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiCustomerID'] = $fkiCustomerID;
         $this->container['fkiCustomerID'] = (is_null($fkiCustomerID) ? null : (int) $fkiCustomerID);
 
         return $this;
@@ -664,9 +740,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEmployeeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEmployeeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEmployeeID'] = $fkiEmployeeID;
         $this->container['fkiEmployeeID'] = (is_null($fkiEmployeeID) ? null : (int) $fkiEmployeeID);
 
         return $this;
@@ -697,9 +776,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignsignerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignsignerID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignsignerID'] = $fkiEzsignsignerID;
         $this->container['fkiEzsignsignerID'] = (is_null($fkiEzsignsignerID) ? null : (int) $fkiEzsignsignerID);
 
         return $this;
@@ -730,9 +812,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiFranchiseofficeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiFranchiseofficeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiFranchiseofficeID'] = $fkiFranchiseofficeID;
         $this->container['fkiFranchiseofficeID'] = (is_null($fkiFranchiseofficeID) ? null : (int) $fkiFranchiseofficeID);
 
         return $this;
@@ -763,66 +848,13 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiUserID'] = $fkiUserID;
         $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEmailAddress
-     *
-     * @return string|null
-     */
-    public function getSEmailAddress()
-    {
-        return $this->container['sEmailAddress'];
-    }
-
-    /**
-     * Sets sEmailAddress
-     *
-     * @param string|null $sEmailAddress The email address.
-     *
-     * @return self
-     */
-    public function setSEmailAddress($sEmailAddress)
-    {
-
-        //if (is_null($sEmailAddress)) {
-            //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
-        //}
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
-
-        return $this;
-    }
-
-    /**
-     * Gets eCommunicationrecipientType
-     *
-     * @return \eZmaxAPI\Model\FieldECommunicationrecipientType|null
-     */
-    public function getECommunicationrecipientType()
-    {
-        return $this->container['eCommunicationrecipientType'];
-    }
-
-    /**
-     * Sets eCommunicationrecipientType
-     *
-     * @param \eZmaxAPI\Model\FieldECommunicationrecipientType|null $eCommunicationrecipientType eCommunicationrecipientType
-     *
-     * @return self
-     */
-    public function setECommunicationrecipientType($eCommunicationrecipientType)
-    {
-
-        //if (is_null($eCommunicationrecipientType)) {
-            //throw new \InvalidArgumentException('non-nullable eCommunicationrecipientType cannot be null');
-        //}
-        $this->container['eCommunicationrecipientType'] = $eCommunicationrecipientType;
 
         return $this;
     }
@@ -852,9 +884,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiAgentincorporationID)) {
             //throw new \InvalidArgumentException('non-nullable fkiAgentincorporationID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiAgentincorporationID'] = $fkiAgentincorporationID;
         $this->container['fkiAgentincorporationID'] = (is_null($fkiAgentincorporationID) ? null : (int) $fkiAgentincorporationID);
 
         return $this;
@@ -885,9 +920,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiAssistantID)) {
             //throw new \InvalidArgumentException('non-nullable fkiAssistantID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiAssistantID'] = $fkiAssistantID;
         $this->container['fkiAssistantID'] = (is_null($fkiAssistantID) ? null : (int) $fkiAssistantID);
 
         return $this;
@@ -918,9 +956,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiExternalbrokerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiExternalbrokerID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiExternalbrokerID'] = $fkiExternalbrokerID;
         $this->container['fkiExternalbrokerID'] = (is_null($fkiExternalbrokerID) ? null : (int) $fkiExternalbrokerID);
 
         return $this;
@@ -951,9 +992,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzcomagentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzcomagentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzcomagentID'] = $fkiEzcomagentID;
         $this->container['fkiEzcomagentID'] = (is_null($fkiEzcomagentID) ? null : (int) $fkiEzcomagentID);
 
         return $this;
@@ -984,9 +1028,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiNotaryID)) {
             //throw new \InvalidArgumentException('non-nullable fkiNotaryID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiNotaryID'] = $fkiNotaryID;
         $this->container['fkiNotaryID'] = (is_null($fkiNotaryID) ? null : (int) $fkiNotaryID);
 
         return $this;
@@ -1017,9 +1064,12 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiRewardmemberID)) {
             //throw new \InvalidArgumentException('non-nullable fkiRewardmemberID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiRewardmemberID'] = $fkiRewardmemberID;
         $this->container['fkiRewardmemberID'] = (is_null($fkiRewardmemberID) ? null : (int) $fkiRewardmemberID);
 
         return $this;
@@ -1050,38 +1100,137 @@ class CommunicationrecipientResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiSupplierID)) {
             //throw new \InvalidArgumentException('non-nullable fkiSupplierID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiSupplierID'] = $fkiSupplierID;
         $this->container['fkiSupplierID'] = (is_null($fkiSupplierID) ? null : (int) $fkiSupplierID);
 
         return $this;
     }
 
     /**
-     * Gets objPhoneSms
+     * Gets eCommunicationrecipientType
      *
-     * @return \eZmaxAPI\Model\PhoneResponseCompound|null
+     * @return \eZmaxAPI\Model\FieldECommunicationrecipientType
      */
-    public function getObjPhoneSms()
+    public function getECommunicationrecipientType()
     {
-        return $this->container['objPhoneSms'];
+        return $this->container['eCommunicationrecipientType'];
     }
 
     /**
-     * Sets objPhoneSms
+     * Sets eCommunicationrecipientType
      *
-     * @param \eZmaxAPI\Model\PhoneResponseCompound|null $objPhoneSms objPhoneSms
+     * @param \eZmaxAPI\Model\FieldECommunicationrecipientType $eCommunicationrecipientType eCommunicationrecipientType
      *
      * @return self
      */
-    public function setObjPhoneSms($objPhoneSms)
+    public function setECommunicationrecipientType($eCommunicationrecipientType)
     {
 
-        //if (is_null($objPhoneSms)) {
-            //throw new \InvalidArgumentException('non-nullable objPhoneSms cannot be null');
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eCommunicationrecipientType)) {
+            //throw new \InvalidArgumentException('non-nullable eCommunicationrecipientType cannot be null');
         //}
-        $this->container['objPhoneSms'] = $objPhoneSms;
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eCommunicationrecipientType'] = $eCommunicationrecipientType;
+        $this->container['eCommunicationrecipientType'] = $eCommunicationrecipientType;
+
+        return $this;
+    }
+
+    /**
+     * Gets objDescriptionstatic
+     *
+     * @return \eZmaxAPI\Model\DescriptionstaticResponseCompound
+     */
+    public function getObjDescriptionstatic()
+    {
+        return $this->container['objDescriptionstatic'];
+    }
+
+    /**
+     * Sets objDescriptionstatic
+     *
+     * @param \eZmaxAPI\Model\DescriptionstaticResponseCompound $objDescriptionstatic objDescriptionstatic
+     *
+     * @return self
+     */
+    public function setObjDescriptionstatic($objDescriptionstatic)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objDescriptionstatic)) {
+            //throw new \InvalidArgumentException('non-nullable objDescriptionstatic cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objDescriptionstatic'] = $objDescriptionstatic;
+        $this->container['objDescriptionstatic'] = $objDescriptionstatic;
+
+        return $this;
+    }
+
+    /**
+     * Gets objEmailstatic
+     *
+     * @return \eZmaxAPI\Model\EmailstaticResponseCompound|null
+     */
+    public function getObjEmailstatic()
+    {
+        return $this->container['objEmailstatic'];
+    }
+
+    /**
+     * Sets objEmailstatic
+     *
+     * @param \eZmaxAPI\Model\EmailstaticResponseCompound|null $objEmailstatic objEmailstatic
+     *
+     * @return self
+     */
+    public function setObjEmailstatic($objEmailstatic)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objEmailstatic)) {
+            //throw new \InvalidArgumentException('non-nullable objEmailstatic cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objEmailstatic'] = $objEmailstatic;
+        $this->container['objEmailstatic'] = $objEmailstatic;
+
+        return $this;
+    }
+
+    /**
+     * Gets objPhonestatic
+     *
+     * @return \eZmaxAPI\Model\PhonestaticResponseCompound|null
+     */
+    public function getObjPhonestatic()
+    {
+        return $this->container['objPhonestatic'];
+    }
+
+    /**
+     * Sets objPhonestatic
+     *
+     * @param \eZmaxAPI\Model\PhonestaticResponseCompound|null $objPhonestatic objPhonestatic
+     *
+     * @return self
+     */
+    public function setObjPhonestatic($objPhonestatic)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objPhonestatic)) {
+            //throw new \InvalidArgumentException('non-nullable objPhonestatic cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objPhonestatic'] = $objPhonestatic;
+        $this->container['objPhonestatic'] = $objPhonestatic;
 
         return $this;
     }

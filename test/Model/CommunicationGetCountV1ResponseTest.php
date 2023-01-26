@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * CommunicationGetCountV1ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Response for GET /1/module/communication/getCount
+ * @description Response for GET /1/module/communication/getCommunicationCount
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

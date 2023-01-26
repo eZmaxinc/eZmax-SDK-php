@@ -136,6 +136,16 @@ class TimezoneAutocompleteElementResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -328,9 +338,12 @@ class TimezoneAutocompleteElementResponse implements ModelInterface, ArrayAccess
     public function setSTimezoneName($sTimezoneName)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sTimezoneName)) {
             //throw new \InvalidArgumentException('non-nullable sTimezoneName cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sTimezoneName'] = $sTimezoneName;
         $this->container['sTimezoneName'] = (is_null($sTimezoneName) ? null : (string) $sTimezoneName);
 
         return $this;
@@ -361,9 +374,12 @@ class TimezoneAutocompleteElementResponse implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiTimezoneID)) {
             //throw new \InvalidArgumentException('non-nullable pkiTimezoneID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiTimezoneID'] = $pkiTimezoneID;
         $this->container['pkiTimezoneID'] = (is_null($pkiTimezoneID) ? null : (int) $pkiTimezoneID);
 
         return $this;
@@ -389,9 +405,12 @@ class TimezoneAutocompleteElementResponse implements ModelInterface, ArrayAccess
     public function setBTimezoneIsactive($bTimezoneIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bTimezoneIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bTimezoneIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bTimezoneIsactive'] = $bTimezoneIsactive;
         $this->container['bTimezoneIsactive'] = (is_null($bTimezoneIsactive) ? null : (bool) $bTimezoneIsactive);
 
         return $this;

@@ -142,6 +142,16 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -357,9 +367,12 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigndocumentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigndocumentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsigndocumentID'] = $pkiEzsigndocumentID;
         $this->container['pkiEzsigndocumentID'] = (is_null($pkiEzsigndocumentID) ? null : (int) $pkiEzsigndocumentID);
 
         return $this;
@@ -390,9 +403,12 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfolderID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfolderID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
         $this->container['fkiEzsignfolderID'] = (is_null($fkiEzsignfolderID) ? null : (int) $fkiEzsignfolderID);
 
         return $this;
@@ -418,9 +434,12 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
     public function setSEzsigndocumentName($sEzsigndocumentName)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigndocumentName)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigndocumentName cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
         $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);
 
         return $this;
@@ -446,9 +465,12 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
     public function setDtModifiedDate($dtModifiedDate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtModifiedDate)) {
             //throw new \InvalidArgumentException('non-nullable dtModifiedDate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtModifiedDate'] = $dtModifiedDate;
         $this->container['dtModifiedDate'] = (is_null($dtModifiedDate) ? null : (string) $dtModifiedDate);
 
         return $this;
@@ -476,9 +498,12 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
 
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjFormDataSigner)) {
             //throw new \InvalidArgumentException('non-nullable aObjFormDataSigner cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjFormDataSigner'] = $aObjFormDataSigner;
         $this->container['aObjFormDataSigner'] = $aObjFormDataSigner;
 
         return $this;

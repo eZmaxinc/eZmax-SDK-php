@@ -71,7 +71,14 @@ class ObjectNotificationtestApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'notificationtestGetElementsV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,14 +130,15 @@ class ObjectNotificationtestApi
      * Retrieve an existing Notificationtest&#39;s Elements
      *
      * @param  int $pkiNotificationtestID pkiNotificationtestID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationtestGetElementsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\NotificationtestGetElementsV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function notificationtestGetElementsV1($pkiNotificationtestID)
+    public function notificationtestGetElementsV1($pkiNotificationtestID, string $contentType = self::contentTypes['notificationtestGetElementsV1'][0])
     {
-        list($response) = $this->notificationtestGetElementsV1WithHttpInfo($pkiNotificationtestID);
+        list($response) = $this->notificationtestGetElementsV1WithHttpInfo($pkiNotificationtestID, $contentType);
         return $response;
     }
 
@@ -140,14 +148,15 @@ class ObjectNotificationtestApi
      * Retrieve an existing Notificationtest&#39;s Elements
      *
      * @param  int $pkiNotificationtestID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationtestGetElementsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\NotificationtestGetElementsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function notificationtestGetElementsV1WithHttpInfo($pkiNotificationtestID)
+    public function notificationtestGetElementsV1WithHttpInfo($pkiNotificationtestID, string $contentType = self::contentTypes['notificationtestGetElementsV1'][0])
     {
-        $request = $this->notificationtestGetElementsV1Request($pkiNotificationtestID);
+        $request = $this->notificationtestGetElementsV1Request($pkiNotificationtestID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -262,13 +271,14 @@ class ObjectNotificationtestApi
      * Retrieve an existing Notificationtest&#39;s Elements
      *
      * @param  int $pkiNotificationtestID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationtestGetElementsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function notificationtestGetElementsV1Async($pkiNotificationtestID)
+    public function notificationtestGetElementsV1Async($pkiNotificationtestID, string $contentType = self::contentTypes['notificationtestGetElementsV1'][0])
     {
-        return $this->notificationtestGetElementsV1AsyncWithHttpInfo($pkiNotificationtestID)
+        return $this->notificationtestGetElementsV1AsyncWithHttpInfo($pkiNotificationtestID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -282,14 +292,15 @@ class ObjectNotificationtestApi
      * Retrieve an existing Notificationtest&#39;s Elements
      *
      * @param  int $pkiNotificationtestID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationtestGetElementsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function notificationtestGetElementsV1AsyncWithHttpInfo($pkiNotificationtestID)
+    public function notificationtestGetElementsV1AsyncWithHttpInfo($pkiNotificationtestID, string $contentType = self::contentTypes['notificationtestGetElementsV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\NotificationtestGetElementsV1Response';
-        $request = $this->notificationtestGetElementsV1Request($pkiNotificationtestID);
+        $request = $this->notificationtestGetElementsV1Request($pkiNotificationtestID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -331,11 +342,12 @@ class ObjectNotificationtestApi
      * Create request for operation 'notificationtestGetElementsV1'
      *
      * @param  int $pkiNotificationtestID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notificationtestGetElementsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function notificationtestGetElementsV1Request($pkiNotificationtestID)
+    public function notificationtestGetElementsV1Request($pkiNotificationtestID, string $contentType = self::contentTypes['notificationtestGetElementsV1'][0])
     {
 
         // verify the required parameter 'pkiNotificationtestID' is set
@@ -347,7 +359,7 @@ class ObjectNotificationtestApi
         if ($pkiNotificationtestID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiNotificationtestID" when calling ObjectNotificationtestApi.notificationtestGetElementsV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/notificationtest/{pkiNotificationtestID}/getElements';
         $formParams = [];
@@ -368,16 +380,11 @@ class ObjectNotificationtestApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -395,9 +402,9 @@ class ObjectNotificationtestApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

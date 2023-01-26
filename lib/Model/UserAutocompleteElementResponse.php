@@ -139,6 +139,16 @@ class UserAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -338,9 +348,12 @@ class UserAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
     public function setEUserType($eUserType)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eUserType)) {
             //throw new \InvalidArgumentException('non-nullable eUserType cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eUserType'] = $eUserType;
         $this->container['eUserType'] = $eUserType;
 
         return $this;
@@ -366,9 +379,12 @@ class UserAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
     public function setSUserName($sUserName)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserName)) {
             //throw new \InvalidArgumentException('non-nullable sUserName cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserName'] = $sUserName;
         $this->container['sUserName'] = (is_null($sUserName) ? null : (string) $sUserName);
 
         return $this;
@@ -399,9 +415,12 @@ class UserAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable pkiUserID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiUserID'] = $pkiUserID;
         $this->container['pkiUserID'] = (is_null($pkiUserID) ? null : (int) $pkiUserID);
 
         return $this;
@@ -427,9 +446,12 @@ class UserAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
     public function setBUserIsactive($bUserIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bUserIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bUserIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bUserIsactive'] = $bUserIsactive;
         $this->container['bUserIsactive'] = (is_null($bUserIsactive) ? null : (bool) $bUserIsactive);
 
         return $this;

@@ -60,10 +60,10 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
       */
     protected static $openAPITypes = [
         'pkiCommunicationexternalrecipientID' => 'int',
-        'sEmailAddress' => 'string',
-        'objPhoneSms' => '\eZmaxAPI\Model\PhoneResponseCompound',
         'eCommunicationexternalrecipientType' => '\eZmaxAPI\Model\FieldECommunicationexternalrecipientType',
-        'sCommunicationexternalrecipientName' => 'string'
+        'objDescriptionstatic' => '\eZmaxAPI\Model\DescriptionstaticResponseCompound',
+        'objEmailstatic' => '\eZmaxAPI\Model\EmailstaticResponseCompound',
+        'objPhonestatic' => '\eZmaxAPI\Model\PhonestaticResponseCompound'
     ];
 
     /**
@@ -75,10 +75,10 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
       */
     protected static $openAPIFormats = [
         'pkiCommunicationexternalrecipientID' => null,
-        'sEmailAddress' => null,
-        'objPhoneSms' => null,
         'eCommunicationexternalrecipientType' => null,
-        'sCommunicationexternalrecipientName' => null
+        'objDescriptionstatic' => null,
+        'objEmailstatic' => null,
+        'objPhonestatic' => null
     ];
 
     /**
@@ -88,10 +88,10 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
       */
     protected static array $openAPINullables = [
         'pkiCommunicationexternalrecipientID' => false,
-		'sEmailAddress' => false,
-		'objPhoneSms' => false,
 		'eCommunicationexternalrecipientType' => false,
-		'sCommunicationexternalrecipientName' => false
+		'objDescriptionstatic' => false,
+		'objEmailstatic' => false,
+		'objPhonestatic' => false
     ];
 
     /**
@@ -142,6 +142,16 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -171,10 +181,10 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
      */
     protected static $attributeMap = [
         'pkiCommunicationexternalrecipientID' => 'pkiCommunicationexternalrecipientID',
-        'sEmailAddress' => 'sEmailAddress',
-        'objPhoneSms' => 'objPhoneSms',
         'eCommunicationexternalrecipientType' => 'eCommunicationexternalrecipientType',
-        'sCommunicationexternalrecipientName' => 'sCommunicationexternalrecipientName'
+        'objDescriptionstatic' => 'objDescriptionstatic',
+        'objEmailstatic' => 'objEmailstatic',
+        'objPhonestatic' => 'objPhonestatic'
     ];
 
     /**
@@ -184,10 +194,10 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
      */
     protected static $setters = [
         'pkiCommunicationexternalrecipientID' => 'setPkiCommunicationexternalrecipientID',
-        'sEmailAddress' => 'setSEmailAddress',
-        'objPhoneSms' => 'setObjPhoneSms',
         'eCommunicationexternalrecipientType' => 'setECommunicationexternalrecipientType',
-        'sCommunicationexternalrecipientName' => 'setSCommunicationexternalrecipientName'
+        'objDescriptionstatic' => 'setObjDescriptionstatic',
+        'objEmailstatic' => 'setObjEmailstatic',
+        'objPhonestatic' => 'setObjPhonestatic'
     ];
 
     /**
@@ -197,10 +207,10 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
      */
     protected static $getters = [
         'pkiCommunicationexternalrecipientID' => 'getPkiCommunicationexternalrecipientID',
-        'sEmailAddress' => 'getSEmailAddress',
-        'objPhoneSms' => 'getObjPhoneSms',
         'eCommunicationexternalrecipientType' => 'getECommunicationexternalrecipientType',
-        'sCommunicationexternalrecipientName' => 'getSCommunicationexternalrecipientName'
+        'objDescriptionstatic' => 'getObjDescriptionstatic',
+        'objEmailstatic' => 'getObjEmailstatic',
+        'objPhonestatic' => 'getObjPhonestatic'
     ];
 
     /**
@@ -261,10 +271,10 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
     public function __construct(array $data = null)
     {
         $this->setIfExists('pkiCommunicationexternalrecipientID', $data ?? [], null);
-        $this->setIfExists('sEmailAddress', $data ?? [], null);
-        $this->setIfExists('objPhoneSms', $data ?? [], null);
         $this->setIfExists('eCommunicationexternalrecipientType', $data ?? [], null);
-        $this->setIfExists('sCommunicationexternalrecipientName', $data ?? [], null);
+        $this->setIfExists('objDescriptionstatic', $data ?? [], null);
+        $this->setIfExists('objEmailstatic', $data ?? [], null);
+        $this->setIfExists('objPhonestatic', $data ?? [], null);
     }
 
     /**
@@ -300,8 +310,8 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
         if ($this->container['eCommunicationexternalrecipientType'] === null) {
             $invalidProperties[] = "'eCommunicationexternalrecipientType' can't be null";
         }
-        if ($this->container['sCommunicationexternalrecipientName'] === null) {
-            $invalidProperties[] = "'sCommunicationexternalrecipientName' can't be null";
+        if ($this->container['objDescriptionstatic'] === null) {
+            $invalidProperties[] = "'objDescriptionstatic' can't be null";
         }
         return $invalidProperties;
     }
@@ -338,66 +348,13 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
     public function setPkiCommunicationexternalrecipientID($pkiCommunicationexternalrecipientID)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiCommunicationexternalrecipientID)) {
             //throw new \InvalidArgumentException('non-nullable pkiCommunicationexternalrecipientID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiCommunicationexternalrecipientID'] = $pkiCommunicationexternalrecipientID;
         $this->container['pkiCommunicationexternalrecipientID'] = (is_null($pkiCommunicationexternalrecipientID) ? null : (int) $pkiCommunicationexternalrecipientID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEmailAddress
-     *
-     * @return string|null
-     */
-    public function getSEmailAddress()
-    {
-        return $this->container['sEmailAddress'];
-    }
-
-    /**
-     * Sets sEmailAddress
-     *
-     * @param string|null $sEmailAddress The email address.
-     *
-     * @return self
-     */
-    public function setSEmailAddress($sEmailAddress)
-    {
-
-        //if (is_null($sEmailAddress)) {
-            //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
-        //}
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
-
-        return $this;
-    }
-
-    /**
-     * Gets objPhoneSms
-     *
-     * @return \eZmaxAPI\Model\PhoneResponseCompound|null
-     */
-    public function getObjPhoneSms()
-    {
-        return $this->container['objPhoneSms'];
-    }
-
-    /**
-     * Sets objPhoneSms
-     *
-     * @param \eZmaxAPI\Model\PhoneResponseCompound|null $objPhoneSms objPhoneSms
-     *
-     * @return self
-     */
-    public function setObjPhoneSms($objPhoneSms)
-    {
-
-        //if (is_null($objPhoneSms)) {
-            //throw new \InvalidArgumentException('non-nullable objPhoneSms cannot be null');
-        //}
-        $this->container['objPhoneSms'] = $objPhoneSms;
 
         return $this;
     }
@@ -422,38 +379,106 @@ class CommunicationexternalrecipientResponseCompound implements ModelInterface, 
     public function setECommunicationexternalrecipientType($eCommunicationexternalrecipientType)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationexternalrecipientType)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationexternalrecipientType cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eCommunicationexternalrecipientType'] = $eCommunicationexternalrecipientType;
         $this->container['eCommunicationexternalrecipientType'] = $eCommunicationexternalrecipientType;
 
         return $this;
     }
 
     /**
-     * Gets sCommunicationexternalrecipientName
+     * Gets objDescriptionstatic
      *
-     * @return string
+     * @return \eZmaxAPI\Model\DescriptionstaticResponseCompound
      */
-    public function getSCommunicationexternalrecipientName()
+    public function getObjDescriptionstatic()
     {
-        return $this->container['sCommunicationexternalrecipientName'];
+        return $this->container['objDescriptionstatic'];
     }
 
     /**
-     * Sets sCommunicationexternalrecipientName
+     * Sets objDescriptionstatic
      *
-     * @param string $sCommunicationexternalrecipientName The Name of the Communicationexternalrecipient
+     * @param \eZmaxAPI\Model\DescriptionstaticResponseCompound $objDescriptionstatic objDescriptionstatic
      *
      * @return self
      */
-    public function setSCommunicationexternalrecipientName($sCommunicationexternalrecipientName)
+    public function setObjDescriptionstatic($objDescriptionstatic)
     {
 
-        //if (is_null($sCommunicationexternalrecipientName)) {
-            //throw new \InvalidArgumentException('non-nullable sCommunicationexternalrecipientName cannot be null');
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objDescriptionstatic)) {
+            //throw new \InvalidArgumentException('non-nullable objDescriptionstatic cannot be null');
         //}
-        $this->container['sCommunicationexternalrecipientName'] = (is_null($sCommunicationexternalrecipientName) ? null : (string) $sCommunicationexternalrecipientName);
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objDescriptionstatic'] = $objDescriptionstatic;
+        $this->container['objDescriptionstatic'] = $objDescriptionstatic;
+
+        return $this;
+    }
+
+    /**
+     * Gets objEmailstatic
+     *
+     * @return \eZmaxAPI\Model\EmailstaticResponseCompound|null
+     */
+    public function getObjEmailstatic()
+    {
+        return $this->container['objEmailstatic'];
+    }
+
+    /**
+     * Sets objEmailstatic
+     *
+     * @param \eZmaxAPI\Model\EmailstaticResponseCompound|null $objEmailstatic objEmailstatic
+     *
+     * @return self
+     */
+    public function setObjEmailstatic($objEmailstatic)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objEmailstatic)) {
+            //throw new \InvalidArgumentException('non-nullable objEmailstatic cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objEmailstatic'] = $objEmailstatic;
+        $this->container['objEmailstatic'] = $objEmailstatic;
+
+        return $this;
+    }
+
+    /**
+     * Gets objPhonestatic
+     *
+     * @return \eZmaxAPI\Model\PhonestaticResponseCompound|null
+     */
+    public function getObjPhonestatic()
+    {
+        return $this->container['objPhonestatic'];
+    }
+
+    /**
+     * Sets objPhonestatic
+     *
+     * @param \eZmaxAPI\Model\PhonestaticResponseCompound|null $objPhonestatic objPhonestatic
+     *
+     * @return self
+     */
+    public function setObjPhonestatic($objPhonestatic)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objPhonestatic)) {
+            //throw new \InvalidArgumentException('non-nullable objPhonestatic cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objPhonestatic'] = $objPhonestatic;
+        $this->container['objPhonestatic'] = $objPhonestatic;
 
         return $this;
     }

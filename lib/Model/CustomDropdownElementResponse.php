@@ -133,6 +133,16 @@ class CustomDropdownElementResponse implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -314,9 +324,12 @@ class CustomDropdownElementResponse implements ModelInterface, ArrayAccess, \Jso
     public function setSLabel($sLabel)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sLabel)) {
             //throw new \InvalidArgumentException('non-nullable sLabel cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sLabel'] = $sLabel;
         $this->container['sLabel'] = (is_null($sLabel) ? null : (string) $sLabel);
 
         return $this;
@@ -342,9 +355,12 @@ class CustomDropdownElementResponse implements ModelInterface, ArrayAccess, \Jso
     public function setSValue($sValue)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sValue)) {
             //throw new \InvalidArgumentException('non-nullable sValue cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sValue'] = $sValue;
         $this->container['sValue'] = (is_null($sValue) ? null : (string) $sValue);
 
         return $this;

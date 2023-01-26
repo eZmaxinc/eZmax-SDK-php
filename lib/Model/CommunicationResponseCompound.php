@@ -60,16 +60,16 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'pkiCommunicationID' => 'int',
-        'eCommunicationEmailimportance' => '\eZmaxAPI\Model\FieldECommunicationEmailimportance',
+        'eCommunicationImportance' => '\eZmaxAPI\Model\FieldECommunicationImportance',
         'eCommunicationType' => '\eZmaxAPI\Model\FieldECommunicationType',
         'sCommunicationSubject' => 'string',
-        'dtCommunicationSentdate' => 'string',
+        'eCommunicationDirection' => '\eZmaxAPI\Model\ComputedECommunicationDirection',
+        'iCommunicationrecipientCount' => 'int',
         'objContactFrom' => '\eZmaxAPI\Model\CustomContactNameResponse',
+        'objAudit' => '\eZmaxAPI\Model\CommonAudit',
         'aObjCommunicationattachment' => '\eZmaxAPI\Model\CommunicationattachmentResponseCompound[]',
         'aObjCommunicationrecipient' => '\eZmaxAPI\Model\CommunicationrecipientResponseCompound[]',
-        'aObjCommunicationexternalrecipient' => '\eZmaxAPI\Model\CommunicationexternalrecipientResponseCompound[]',
-        'aObjCommunicationimage' => '\eZmaxAPI\Model\CommunicationimageResponseCompound[]',
-        'aObjCommunicationexternalimage' => '\eZmaxAPI\Model\CommunicationexternalimageResponseCompound[]'
+        'aObjCommunicationexternalrecipient' => '\eZmaxAPI\Model\CommunicationexternalrecipientResponseCompound[]'
     ];
 
     /**
@@ -81,16 +81,16 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'pkiCommunicationID' => null,
-        'eCommunicationEmailimportance' => null,
+        'eCommunicationImportance' => null,
         'eCommunicationType' => null,
         'sCommunicationSubject' => null,
-        'dtCommunicationSentdate' => null,
+        'eCommunicationDirection' => null,
+        'iCommunicationrecipientCount' => null,
         'objContactFrom' => null,
+        'objAudit' => null,
         'aObjCommunicationattachment' => null,
         'aObjCommunicationrecipient' => null,
-        'aObjCommunicationexternalrecipient' => null,
-        'aObjCommunicationimage' => null,
-        'aObjCommunicationexternalimage' => null
+        'aObjCommunicationexternalrecipient' => null
     ];
 
     /**
@@ -100,16 +100,16 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
       */
     protected static array $openAPINullables = [
         'pkiCommunicationID' => false,
-		'eCommunicationEmailimportance' => false,
+		'eCommunicationImportance' => false,
 		'eCommunicationType' => false,
 		'sCommunicationSubject' => false,
-		'dtCommunicationSentdate' => false,
+		'eCommunicationDirection' => false,
+		'iCommunicationrecipientCount' => false,
 		'objContactFrom' => false,
+		'objAudit' => false,
 		'aObjCommunicationattachment' => false,
 		'aObjCommunicationrecipient' => false,
-		'aObjCommunicationexternalrecipient' => false,
-		'aObjCommunicationimage' => false,
-		'aObjCommunicationexternalimage' => false
+		'aObjCommunicationexternalrecipient' => false
     ];
 
     /**
@@ -160,6 +160,16 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -189,16 +199,16 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $attributeMap = [
         'pkiCommunicationID' => 'pkiCommunicationID',
-        'eCommunicationEmailimportance' => 'eCommunicationEmailimportance',
+        'eCommunicationImportance' => 'eCommunicationImportance',
         'eCommunicationType' => 'eCommunicationType',
         'sCommunicationSubject' => 'sCommunicationSubject',
-        'dtCommunicationSentdate' => 'dtCommunicationSentdate',
+        'eCommunicationDirection' => 'eCommunicationDirection',
+        'iCommunicationrecipientCount' => 'iCommunicationrecipientCount',
         'objContactFrom' => 'objContactFrom',
+        'objAudit' => 'objAudit',
         'aObjCommunicationattachment' => 'a_objCommunicationattachment',
         'aObjCommunicationrecipient' => 'a_objCommunicationrecipient',
-        'aObjCommunicationexternalrecipient' => 'a_objCommunicationexternalrecipient',
-        'aObjCommunicationimage' => 'a_objCommunicationimage',
-        'aObjCommunicationexternalimage' => 'a_objCommunicationexternalimage'
+        'aObjCommunicationexternalrecipient' => 'a_objCommunicationexternalrecipient'
     ];
 
     /**
@@ -208,16 +218,16 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'pkiCommunicationID' => 'setPkiCommunicationID',
-        'eCommunicationEmailimportance' => 'setECommunicationEmailimportance',
+        'eCommunicationImportance' => 'setECommunicationImportance',
         'eCommunicationType' => 'setECommunicationType',
         'sCommunicationSubject' => 'setSCommunicationSubject',
-        'dtCommunicationSentdate' => 'setDtCommunicationSentdate',
+        'eCommunicationDirection' => 'setECommunicationDirection',
+        'iCommunicationrecipientCount' => 'setICommunicationrecipientCount',
         'objContactFrom' => 'setObjContactFrom',
+        'objAudit' => 'setObjAudit',
         'aObjCommunicationattachment' => 'setAObjCommunicationattachment',
         'aObjCommunicationrecipient' => 'setAObjCommunicationrecipient',
-        'aObjCommunicationexternalrecipient' => 'setAObjCommunicationexternalrecipient',
-        'aObjCommunicationimage' => 'setAObjCommunicationimage',
-        'aObjCommunicationexternalimage' => 'setAObjCommunicationexternalimage'
+        'aObjCommunicationexternalrecipient' => 'setAObjCommunicationexternalrecipient'
     ];
 
     /**
@@ -227,16 +237,16 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'pkiCommunicationID' => 'getPkiCommunicationID',
-        'eCommunicationEmailimportance' => 'getECommunicationEmailimportance',
+        'eCommunicationImportance' => 'getECommunicationImportance',
         'eCommunicationType' => 'getECommunicationType',
         'sCommunicationSubject' => 'getSCommunicationSubject',
-        'dtCommunicationSentdate' => 'getDtCommunicationSentdate',
+        'eCommunicationDirection' => 'getECommunicationDirection',
+        'iCommunicationrecipientCount' => 'getICommunicationrecipientCount',
         'objContactFrom' => 'getObjContactFrom',
+        'objAudit' => 'getObjAudit',
         'aObjCommunicationattachment' => 'getAObjCommunicationattachment',
         'aObjCommunicationrecipient' => 'getAObjCommunicationrecipient',
-        'aObjCommunicationexternalrecipient' => 'getAObjCommunicationexternalrecipient',
-        'aObjCommunicationimage' => 'getAObjCommunicationimage',
-        'aObjCommunicationexternalimage' => 'getAObjCommunicationexternalimage'
+        'aObjCommunicationexternalrecipient' => 'getAObjCommunicationexternalrecipient'
     ];
 
     /**
@@ -297,16 +307,16 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
     public function __construct(array $data = null)
     {
         $this->setIfExists('pkiCommunicationID', $data ?? [], null);
-        $this->setIfExists('eCommunicationEmailimportance', $data ?? [], null);
+        $this->setIfExists('eCommunicationImportance', $data ?? [], null);
         $this->setIfExists('eCommunicationType', $data ?? [], null);
         $this->setIfExists('sCommunicationSubject', $data ?? [], null);
-        $this->setIfExists('dtCommunicationSentdate', $data ?? [], null);
+        $this->setIfExists('eCommunicationDirection', $data ?? [], null);
+        $this->setIfExists('iCommunicationrecipientCount', $data ?? [], null);
         $this->setIfExists('objContactFrom', $data ?? [], null);
+        $this->setIfExists('objAudit', $data ?? [], null);
         $this->setIfExists('aObjCommunicationattachment', $data ?? [], null);
         $this->setIfExists('aObjCommunicationrecipient', $data ?? [], null);
         $this->setIfExists('aObjCommunicationexternalrecipient', $data ?? [], null);
-        $this->setIfExists('aObjCommunicationimage', $data ?? [], null);
-        $this->setIfExists('aObjCommunicationexternalimage', $data ?? [], null);
     }
 
     /**
@@ -343,17 +353,26 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
             $invalidProperties[] = "invalid value for 'pkiCommunicationID', must be bigger than or equal to 0.";
         }
 
+        if ($this->container['eCommunicationImportance'] === null) {
+            $invalidProperties[] = "'eCommunicationImportance' can't be null";
+        }
         if ($this->container['eCommunicationType'] === null) {
             $invalidProperties[] = "'eCommunicationType' can't be null";
         }
         if ($this->container['sCommunicationSubject'] === null) {
             $invalidProperties[] = "'sCommunicationSubject' can't be null";
         }
-        if ($this->container['dtCommunicationSentdate'] === null) {
-            $invalidProperties[] = "'dtCommunicationSentdate' can't be null";
+        if ($this->container['eCommunicationDirection'] === null) {
+            $invalidProperties[] = "'eCommunicationDirection' can't be null";
+        }
+        if ($this->container['iCommunicationrecipientCount'] === null) {
+            $invalidProperties[] = "'iCommunicationrecipientCount' can't be null";
         }
         if ($this->container['objContactFrom'] === null) {
             $invalidProperties[] = "'objContactFrom' can't be null";
+        }
+        if ($this->container['objAudit'] === null) {
+            $invalidProperties[] = "'objAudit' can't be null";
         }
         if ($this->container['aObjCommunicationattachment'] === null) {
             $invalidProperties[] = "'aObjCommunicationattachment' can't be null";
@@ -363,12 +382,6 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
         }
         if ($this->container['aObjCommunicationexternalrecipient'] === null) {
             $invalidProperties[] = "'aObjCommunicationexternalrecipient' can't be null";
-        }
-        if ($this->container['aObjCommunicationimage'] === null) {
-            $invalidProperties[] = "'aObjCommunicationimage' can't be null";
-        }
-        if ($this->container['aObjCommunicationexternalimage'] === null) {
-            $invalidProperties[] = "'aObjCommunicationexternalimage' can't be null";
         }
         return $invalidProperties;
     }
@@ -410,38 +423,44 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiCommunicationID)) {
             //throw new \InvalidArgumentException('non-nullable pkiCommunicationID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiCommunicationID'] = $pkiCommunicationID;
         $this->container['pkiCommunicationID'] = (is_null($pkiCommunicationID) ? null : (int) $pkiCommunicationID);
 
         return $this;
     }
 
     /**
-     * Gets eCommunicationEmailimportance
+     * Gets eCommunicationImportance
      *
-     * @return \eZmaxAPI\Model\FieldECommunicationEmailimportance|null
+     * @return \eZmaxAPI\Model\FieldECommunicationImportance
      */
-    public function getECommunicationEmailimportance()
+    public function getECommunicationImportance()
     {
-        return $this->container['eCommunicationEmailimportance'];
+        return $this->container['eCommunicationImportance'];
     }
 
     /**
-     * Sets eCommunicationEmailimportance
+     * Sets eCommunicationImportance
      *
-     * @param \eZmaxAPI\Model\FieldECommunicationEmailimportance|null $eCommunicationEmailimportance eCommunicationEmailimportance
+     * @param \eZmaxAPI\Model\FieldECommunicationImportance $eCommunicationImportance eCommunicationImportance
      *
      * @return self
      */
-    public function setECommunicationEmailimportance($eCommunicationEmailimportance)
+    public function setECommunicationImportance($eCommunicationImportance)
     {
 
-        //if (is_null($eCommunicationEmailimportance)) {
-            //throw new \InvalidArgumentException('non-nullable eCommunicationEmailimportance cannot be null');
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eCommunicationImportance)) {
+            //throw new \InvalidArgumentException('non-nullable eCommunicationImportance cannot be null');
         //}
-        $this->container['eCommunicationEmailimportance'] = $eCommunicationEmailimportance;
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eCommunicationImportance'] = $eCommunicationImportance;
+        $this->container['eCommunicationImportance'] = $eCommunicationImportance;
 
         return $this;
     }
@@ -466,9 +485,12 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
     public function setECommunicationType($eCommunicationType)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationType)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationType cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eCommunicationType'] = $eCommunicationType;
         $this->container['eCommunicationType'] = $eCommunicationType;
 
         return $this;
@@ -487,45 +509,82 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets sCommunicationSubject
      *
-     * @param string $sCommunicationSubject The Subject of the Communication
+     * @param string $sCommunicationSubject The subject of the Communication
      *
      * @return self
      */
     public function setSCommunicationSubject($sCommunicationSubject)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCommunicationSubject)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationSubject cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sCommunicationSubject'] = $sCommunicationSubject;
         $this->container['sCommunicationSubject'] = (is_null($sCommunicationSubject) ? null : (string) $sCommunicationSubject);
 
         return $this;
     }
 
     /**
-     * Gets dtCommunicationSentdate
+     * Gets eCommunicationDirection
      *
-     * @return string
+     * @return \eZmaxAPI\Model\ComputedECommunicationDirection
      */
-    public function getDtCommunicationSentdate()
+    public function getECommunicationDirection()
     {
-        return $this->container['dtCommunicationSentdate'];
+        return $this->container['eCommunicationDirection'];
     }
 
     /**
-     * Sets dtCommunicationSentdate
+     * Sets eCommunicationDirection
      *
-     * @param string $dtCommunicationSentdate The send date and time at which the Communication was sent.
+     * @param \eZmaxAPI\Model\ComputedECommunicationDirection $eCommunicationDirection eCommunicationDirection
      *
      * @return self
      */
-    public function setDtCommunicationSentdate($dtCommunicationSentdate)
+    public function setECommunicationDirection($eCommunicationDirection)
     {
 
-        //if (is_null($dtCommunicationSentdate)) {
-            //throw new \InvalidArgumentException('non-nullable dtCommunicationSentdate cannot be null');
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eCommunicationDirection)) {
+            //throw new \InvalidArgumentException('non-nullable eCommunicationDirection cannot be null');
         //}
-        $this->container['dtCommunicationSentdate'] = (is_null($dtCommunicationSentdate) ? null : (string) $dtCommunicationSentdate);
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eCommunicationDirection'] = $eCommunicationDirection;
+        $this->container['eCommunicationDirection'] = $eCommunicationDirection;
+
+        return $this;
+    }
+
+    /**
+     * Gets iCommunicationrecipientCount
+     *
+     * @return int
+     */
+    public function getICommunicationrecipientCount()
+    {
+        return $this->container['iCommunicationrecipientCount'];
+    }
+
+    /**
+     * Sets iCommunicationrecipientCount
+     *
+     * @param int $iCommunicationrecipientCount The count of Communicationrecipient
+     *
+     * @return self
+     */
+    public function setICommunicationrecipientCount($iCommunicationrecipientCount)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iCommunicationrecipientCount)) {
+            //throw new \InvalidArgumentException('non-nullable iCommunicationrecipientCount cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iCommunicationrecipientCount'] = $iCommunicationrecipientCount;
+        $this->container['iCommunicationrecipientCount'] = (is_null($iCommunicationrecipientCount) ? null : (int) $iCommunicationrecipientCount);
 
         return $this;
     }
@@ -550,10 +609,44 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
     public function setObjContactFrom($objContactFrom)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objContactFrom)) {
             //throw new \InvalidArgumentException('non-nullable objContactFrom cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objContactFrom'] = $objContactFrom;
         $this->container['objContactFrom'] = $objContactFrom;
+
+        return $this;
+    }
+
+    /**
+     * Gets objAudit
+     *
+     * @return \eZmaxAPI\Model\CommonAudit
+     */
+    public function getObjAudit()
+    {
+        return $this->container['objAudit'];
+    }
+
+    /**
+     * Sets objAudit
+     *
+     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
+     *
+     * @return self
+     */
+    public function setObjAudit($objAudit)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objAudit)) {
+            //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objAudit'] = $objAudit;
+        $this->container['objAudit'] = $objAudit;
 
         return $this;
     }
@@ -578,9 +671,12 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
     public function setAObjCommunicationattachment($aObjCommunicationattachment)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationattachment)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationattachment cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjCommunicationattachment'] = $aObjCommunicationattachment;
         $this->container['aObjCommunicationattachment'] = $aObjCommunicationattachment;
 
         return $this;
@@ -606,9 +702,12 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
     public function setAObjCommunicationrecipient($aObjCommunicationrecipient)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationrecipient)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationrecipient cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjCommunicationrecipient'] = $aObjCommunicationrecipient;
         $this->container['aObjCommunicationrecipient'] = $aObjCommunicationrecipient;
 
         return $this;
@@ -634,66 +733,13 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
     public function setAObjCommunicationexternalrecipient($aObjCommunicationexternalrecipient)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationexternalrecipient)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationexternalrecipient cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjCommunicationexternalrecipient'] = $aObjCommunicationexternalrecipient;
         $this->container['aObjCommunicationexternalrecipient'] = $aObjCommunicationexternalrecipient;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjCommunicationimage
-     *
-     * @return \eZmaxAPI\Model\CommunicationimageResponseCompound[]
-     */
-    public function getAObjCommunicationimage()
-    {
-        return $this->container['aObjCommunicationimage'];
-    }
-
-    /**
-     * Sets aObjCommunicationimage
-     *
-     * @param \eZmaxAPI\Model\CommunicationimageResponseCompound[] $aObjCommunicationimage aObjCommunicationimage
-     *
-     * @return self
-     */
-    public function setAObjCommunicationimage($aObjCommunicationimage)
-    {
-
-        //if (is_null($aObjCommunicationimage)) {
-            //throw new \InvalidArgumentException('non-nullable aObjCommunicationimage cannot be null');
-        //}
-        $this->container['aObjCommunicationimage'] = $aObjCommunicationimage;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjCommunicationexternalimage
-     *
-     * @return \eZmaxAPI\Model\CommunicationexternalimageResponseCompound[]
-     */
-    public function getAObjCommunicationexternalimage()
-    {
-        return $this->container['aObjCommunicationexternalimage'];
-    }
-
-    /**
-     * Sets aObjCommunicationexternalimage
-     *
-     * @param \eZmaxAPI\Model\CommunicationexternalimageResponseCompound[] $aObjCommunicationexternalimage aObjCommunicationexternalimage
-     *
-     * @return self
-     */
-    public function setAObjCommunicationexternalimage($aObjCommunicationexternalimage)
-    {
-
-        //if (is_null($aObjCommunicationexternalimage)) {
-            //throw new \InvalidArgumentException('non-nullable aObjCommunicationexternalimage cannot be null');
-        //}
-        $this->container['aObjCommunicationexternalimage'] = $aObjCommunicationexternalimage;
 
         return $this;
     }

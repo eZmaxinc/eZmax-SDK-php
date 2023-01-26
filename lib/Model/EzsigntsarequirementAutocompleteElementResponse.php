@@ -139,6 +139,16 @@ class EzsigntsarequirementAutocompleteElementResponse implements ModelInterface,
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -342,9 +352,12 @@ class EzsigntsarequirementAutocompleteElementResponse implements ModelInterface,
     public function setSEzsigntsarequirementDescriptionX($sEzsigntsarequirementDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntsarequirementDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntsarequirementDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigntsarequirementDescriptionX'] = $sEzsigntsarequirementDescriptionX;
         $this->container['sEzsigntsarequirementDescriptionX'] = (is_null($sEzsigntsarequirementDescriptionX) ? null : (string) $sEzsigntsarequirementDescriptionX);
 
         return $this;
@@ -378,9 +391,12 @@ class EzsigntsarequirementAutocompleteElementResponse implements ModelInterface,
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntsarequirementID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntsarequirementID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsigntsarequirementID'] = $pkiEzsigntsarequirementID;
         $this->container['pkiEzsigntsarequirementID'] = (is_null($pkiEzsigntsarequirementID) ? null : (int) $pkiEzsigntsarequirementID);
 
         return $this;
@@ -406,9 +422,12 @@ class EzsigntsarequirementAutocompleteElementResponse implements ModelInterface,
     public function setBEzsigntsarequirementIsactive($bEzsigntsarequirementIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntsarequirementIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntsarequirementIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigntsarequirementIsactive'] = $bEzsigntsarequirementIsactive;
         $this->container['bEzsigntsarequirementIsactive'] = (is_null($bEzsigntsarequirementIsactive) ? null : (bool) $bEzsigntsarequirementIsactive);
 
         return $this;
@@ -434,9 +453,12 @@ class EzsigntsarequirementAutocompleteElementResponse implements ModelInterface,
     public function setBDisabled($bDisabled)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bDisabled)) {
             //throw new \InvalidArgumentException('non-nullable bDisabled cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bDisabled'] = $bDisabled;
         $this->container['bDisabled'] = (is_null($bDisabled) ? null : (bool) $bDisabled);
 
         return $this;

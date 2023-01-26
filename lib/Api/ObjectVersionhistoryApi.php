@@ -71,7 +71,14 @@ class ObjectVersionhistoryApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'versionhistoryGetObjectV2' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,14 +130,15 @@ class ObjectVersionhistoryApi
      * Retrieve an existing Versionhistory
      *
      * @param  int $pkiVersionhistoryID pkiVersionhistoryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['versionhistoryGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\VersionhistoryGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function versionhistoryGetObjectV2($pkiVersionhistoryID)
+    public function versionhistoryGetObjectV2($pkiVersionhistoryID, string $contentType = self::contentTypes['versionhistoryGetObjectV2'][0])
     {
-        list($response) = $this->versionhistoryGetObjectV2WithHttpInfo($pkiVersionhistoryID);
+        list($response) = $this->versionhistoryGetObjectV2WithHttpInfo($pkiVersionhistoryID, $contentType);
         return $response;
     }
 
@@ -140,14 +148,15 @@ class ObjectVersionhistoryApi
      * Retrieve an existing Versionhistory
      *
      * @param  int $pkiVersionhistoryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['versionhistoryGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\VersionhistoryGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function versionhistoryGetObjectV2WithHttpInfo($pkiVersionhistoryID)
+    public function versionhistoryGetObjectV2WithHttpInfo($pkiVersionhistoryID, string $contentType = self::contentTypes['versionhistoryGetObjectV2'][0])
     {
-        $request = $this->versionhistoryGetObjectV2Request($pkiVersionhistoryID);
+        $request = $this->versionhistoryGetObjectV2Request($pkiVersionhistoryID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -262,13 +271,14 @@ class ObjectVersionhistoryApi
      * Retrieve an existing Versionhistory
      *
      * @param  int $pkiVersionhistoryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['versionhistoryGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function versionhistoryGetObjectV2Async($pkiVersionhistoryID)
+    public function versionhistoryGetObjectV2Async($pkiVersionhistoryID, string $contentType = self::contentTypes['versionhistoryGetObjectV2'][0])
     {
-        return $this->versionhistoryGetObjectV2AsyncWithHttpInfo($pkiVersionhistoryID)
+        return $this->versionhistoryGetObjectV2AsyncWithHttpInfo($pkiVersionhistoryID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -282,14 +292,15 @@ class ObjectVersionhistoryApi
      * Retrieve an existing Versionhistory
      *
      * @param  int $pkiVersionhistoryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['versionhistoryGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function versionhistoryGetObjectV2AsyncWithHttpInfo($pkiVersionhistoryID)
+    public function versionhistoryGetObjectV2AsyncWithHttpInfo($pkiVersionhistoryID, string $contentType = self::contentTypes['versionhistoryGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\VersionhistoryGetObjectV2Response';
-        $request = $this->versionhistoryGetObjectV2Request($pkiVersionhistoryID);
+        $request = $this->versionhistoryGetObjectV2Request($pkiVersionhistoryID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -331,11 +342,12 @@ class ObjectVersionhistoryApi
      * Create request for operation 'versionhistoryGetObjectV2'
      *
      * @param  int $pkiVersionhistoryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['versionhistoryGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function versionhistoryGetObjectV2Request($pkiVersionhistoryID)
+    public function versionhistoryGetObjectV2Request($pkiVersionhistoryID, string $contentType = self::contentTypes['versionhistoryGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiVersionhistoryID' is set
@@ -347,7 +359,7 @@ class ObjectVersionhistoryApi
         if ($pkiVersionhistoryID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiVersionhistoryID" when calling ObjectVersionhistoryApi.versionhistoryGetObjectV2, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/2/object/versionhistory/{pkiVersionhistoryID}';
         $formParams = [];
@@ -368,16 +380,11 @@ class ObjectVersionhistoryApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -395,9 +402,9 @@ class ObjectVersionhistoryApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

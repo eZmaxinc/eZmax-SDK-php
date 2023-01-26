@@ -142,6 +142,16 @@ class CommunicationattachmentResponseCompound implements ModelInterface, ArrayAc
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -347,9 +357,12 @@ class CommunicationattachmentResponseCompound implements ModelInterface, ArrayAc
     public function setPkiCommunicationattachmentID($pkiCommunicationattachmentID)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiCommunicationattachmentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiCommunicationattachmentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiCommunicationattachmentID'] = $pkiCommunicationattachmentID;
         $this->container['pkiCommunicationattachmentID'] = (is_null($pkiCommunicationattachmentID) ? null : (int) $pkiCommunicationattachmentID);
 
         return $this;
@@ -380,9 +393,12 @@ class CommunicationattachmentResponseCompound implements ModelInterface, ArrayAc
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiAttachmentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiAttachmentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiAttachmentID'] = $fkiAttachmentID;
         $this->container['fkiAttachmentID'] = (is_null($fkiAttachmentID) ? null : (int) $fkiAttachmentID);
 
         return $this;
@@ -413,9 +429,12 @@ class CommunicationattachmentResponseCompound implements ModelInterface, ArrayAc
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiInvoiceID)) {
             //throw new \InvalidArgumentException('non-nullable fkiInvoiceID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiInvoiceID'] = $fkiInvoiceID;
         $this->container['fkiInvoiceID'] = (is_null($fkiInvoiceID) ? null : (int) $fkiInvoiceID);
 
         return $this;
@@ -446,9 +465,12 @@ class CommunicationattachmentResponseCompound implements ModelInterface, ArrayAc
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiSalarypreparationID)) {
             //throw new \InvalidArgumentException('non-nullable fkiSalarypreparationID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiSalarypreparationID'] = $fkiSalarypreparationID;
         $this->container['fkiSalarypreparationID'] = (is_null($fkiSalarypreparationID) ? null : (int) $fkiSalarypreparationID);
 
         return $this;
@@ -474,9 +496,12 @@ class CommunicationattachmentResponseCompound implements ModelInterface, ArrayAc
     public function setSCommunicationattachmentName($sCommunicationattachmentName)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCommunicationattachmentName)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationattachmentName cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sCommunicationattachmentName'] = $sCommunicationattachmentName;
         $this->container['sCommunicationattachmentName'] = (is_null($sCommunicationattachmentName) ? null : (string) $sCommunicationattachmentName);
 
         return $this;

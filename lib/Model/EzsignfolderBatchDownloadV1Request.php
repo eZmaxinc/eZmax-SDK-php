@@ -133,6 +133,16 @@ class EzsignfolderBatchDownloadV1Request implements ModelInterface, ArrayAccess,
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -340,9 +350,12 @@ class EzsignfolderBatchDownloadV1Request implements ModelInterface, ArrayAccess,
             throw new \InvalidArgumentException('invalid length for $aPkiEzsigndocumentID when calling EzsignfolderBatchDownloadV1Request., number of items must be greater than or equal to 1.');
         }
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsigndocumentID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsigndocumentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aPkiEzsigndocumentID'] = $aPkiEzsigndocumentID;
         $this->container['aPkiEzsigndocumentID'] = (is_null($aPkiEzsigndocumentID) ? null : $aPkiEzsigndocumentID);
 
         return $this;
@@ -377,9 +390,12 @@ class EzsignfolderBatchDownloadV1Request implements ModelInterface, ArrayAccess,
             );
         }
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aEDocumentType)) {
             //throw new \InvalidArgumentException('non-nullable aEDocumentType cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aEDocumentType'] = $aEDocumentType;
         $this->container['aEDocumentType'] = (is_null($aEDocumentType) ? null : $aEDocumentType);
 
         return $this;

@@ -145,6 +145,16 @@ class EzsigntemplatepackageRequest implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -372,9 +382,12 @@ class EzsigntemplatepackageRequest implements ModelInterface, ArrayAccess, \Json
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplatepackageID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatepackageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsigntemplatepackageID'] = $pkiEzsigntemplatepackageID;
         $this->container['pkiEzsigntemplatepackageID'] = (is_null($pkiEzsigntemplatepackageID) ? null : (int) $pkiEzsigntemplatepackageID);
 
         return $this;
@@ -405,9 +418,12 @@ class EzsigntemplatepackageRequest implements ModelInterface, ArrayAccess, \Json
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldertypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldertypeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
         $this->container['fkiEzsignfoldertypeID'] = (is_null($fkiEzsignfoldertypeID) ? null : (int) $fkiEzsignfoldertypeID);
 
         return $this;
@@ -441,9 +457,12 @@ class EzsigntemplatepackageRequest implements ModelInterface, ArrayAccess, \Json
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiLanguageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiLanguageID'] = $fkiLanguageID;
         $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
 
         return $this;
@@ -469,9 +488,12 @@ class EzsigntemplatepackageRequest implements ModelInterface, ArrayAccess, \Json
     public function setSEzsigntemplatepackageDescription($sEzsigntemplatepackageDescription)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplatepackageDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplatepackageDescription cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigntemplatepackageDescription'] = $sEzsigntemplatepackageDescription;
         $this->container['sEzsigntemplatepackageDescription'] = (is_null($sEzsigntemplatepackageDescription) ? null : (string) $sEzsigntemplatepackageDescription);
 
         return $this;
@@ -497,9 +519,12 @@ class EzsigntemplatepackageRequest implements ModelInterface, ArrayAccess, \Json
     public function setBEzsigntemplatepackageAdminonly($bEzsigntemplatepackageAdminonly)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplatepackageAdminonly)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageAdminonly cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigntemplatepackageAdminonly'] = $bEzsigntemplatepackageAdminonly;
         $this->container['bEzsigntemplatepackageAdminonly'] = (is_null($bEzsigntemplatepackageAdminonly) ? null : (bool) $bEzsigntemplatepackageAdminonly);
 
         return $this;
@@ -525,9 +550,12 @@ class EzsigntemplatepackageRequest implements ModelInterface, ArrayAccess, \Json
     public function setBEzsigntemplatepackageIsactive($bEzsigntemplatepackageIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplatepackageIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigntemplatepackageIsactive'] = $bEzsigntemplatepackageIsactive;
         $this->container['bEzsigntemplatepackageIsactive'] = (is_null($bEzsigntemplatepackageIsactive) ? null : (bool) $bEzsigntemplatepackageIsactive);
 
         return $this;

@@ -142,6 +142,16 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -344,9 +354,12 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSMemoryUsage($sMemoryUsage)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sMemoryUsage)) {
             //throw new \InvalidArgumentException('non-nullable sMemoryUsage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sMemoryUsage'] = $sMemoryUsage;
         $this->container['sMemoryUsage'] = (is_null($sMemoryUsage) ? null : (string) $sMemoryUsage);
 
         return $this;
@@ -372,9 +385,12 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSRunTime($sRunTime)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sRunTime)) {
             //throw new \InvalidArgumentException('non-nullable sRunTime cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sRunTime'] = $sRunTime;
         $this->container['sRunTime'] = (is_null($sRunTime) ? null : (string) $sRunTime);
 
         return $this;
@@ -400,9 +416,12 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
     public function setISQLSelects($iSQLSelects)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iSQLSelects)) {
             //throw new \InvalidArgumentException('non-nullable iSQLSelects cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iSQLSelects'] = $iSQLSelects;
         $this->container['iSQLSelects'] = (is_null($iSQLSelects) ? null : (int) $iSQLSelects);
 
         return $this;
@@ -428,9 +447,12 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
     public function setISQLQueries($iSQLQueries)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iSQLQueries)) {
             //throw new \InvalidArgumentException('non-nullable iSQLQueries cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iSQLQueries'] = $iSQLQueries;
         $this->container['iSQLQueries'] = (is_null($iSQLQueries) ? null : (int) $iSQLQueries);
 
         return $this;
@@ -456,9 +478,12 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
     public function setAObjSQLQuery($aObjSQLQuery)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjSQLQuery)) {
             //throw new \InvalidArgumentException('non-nullable aObjSQLQuery cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjSQLQuery'] = $aObjSQLQuery;
         $this->container['aObjSQLQuery'] = $aObjSQLQuery;
 
         return $this;

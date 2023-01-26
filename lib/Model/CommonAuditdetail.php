@@ -148,6 +148,16 @@ class CommonAuditdetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -371,9 +381,12 @@ class CommonAuditdetail implements ModelInterface, ArrayAccess, \JsonSerializabl
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiUserID'] = $fkiUserID;
         $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
 
         return $this;
@@ -404,9 +417,12 @@ class CommonAuditdetail implements ModelInterface, ArrayAccess, \JsonSerializabl
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiApikeyID)) {
             //throw new \InvalidArgumentException('non-nullable fkiApikeyID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiApikeyID'] = $fkiApikeyID;
         $this->container['fkiApikeyID'] = (is_null($fkiApikeyID) ? null : (int) $fkiApikeyID);
 
         return $this;
@@ -432,9 +448,12 @@ class CommonAuditdetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSUserLoginname($sUserLoginname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserLoginname)) {
             //throw new \InvalidArgumentException('non-nullable sUserLoginname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserLoginname'] = $sUserLoginname;
         $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : (string) $sUserLoginname);
 
         return $this;
@@ -460,9 +479,12 @@ class CommonAuditdetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSUserLastname($sUserLastname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserLastname)) {
             //throw new \InvalidArgumentException('non-nullable sUserLastname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserLastname'] = $sUserLastname;
         $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : (string) $sUserLastname);
 
         return $this;
@@ -488,9 +510,12 @@ class CommonAuditdetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSUserFirstname($sUserFirstname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserFirstname)) {
             //throw new \InvalidArgumentException('non-nullable sUserFirstname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserFirstname'] = $sUserFirstname;
         $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : (string) $sUserFirstname);
 
         return $this;
@@ -516,9 +541,12 @@ class CommonAuditdetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setSApikeyDescriptionX($sApikeyDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sApikeyDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sApikeyDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sApikeyDescriptionX'] = $sApikeyDescriptionX;
         $this->container['sApikeyDescriptionX'] = (is_null($sApikeyDescriptionX) ? null : (string) $sApikeyDescriptionX);
 
         return $this;
@@ -544,9 +572,12 @@ class CommonAuditdetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setDtAuditdetailDate($dtAuditdetailDate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtAuditdetailDate)) {
             //throw new \InvalidArgumentException('non-nullable dtAuditdetailDate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtAuditdetailDate'] = $dtAuditdetailDate;
         $this->container['dtAuditdetailDate'] = (is_null($dtAuditdetailDate) ? null : (string) $dtAuditdetailDate);
 
         return $this;

@@ -71,7 +71,14 @@ class ObjectActivesessionApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'activesessionGetCurrentV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -122,14 +129,15 @@ class ObjectActivesessionApi
      *
      * Get Current Activesession
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activesessionGetCurrentV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\ActivesessionGetCurrentV1Response|\eZmaxAPI\Model\CommonResponseRedirectSSecretquestionTextX
      */
-    public function activesessionGetCurrentV1()
+    public function activesessionGetCurrentV1(string $contentType = self::contentTypes['activesessionGetCurrentV1'][0])
     {
-        list($response) = $this->activesessionGetCurrentV1WithHttpInfo();
+        list($response) = $this->activesessionGetCurrentV1WithHttpInfo($contentType);
         return $response;
     }
 
@@ -138,14 +146,15 @@ class ObjectActivesessionApi
      *
      * Get Current Activesession
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activesessionGetCurrentV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\ActivesessionGetCurrentV1Response|\eZmaxAPI\Model\CommonResponseRedirectSSecretquestionTextX, HTTP status code, HTTP response headers (array of strings)
      */
-    public function activesessionGetCurrentV1WithHttpInfo()
+    public function activesessionGetCurrentV1WithHttpInfo(string $contentType = self::contentTypes['activesessionGetCurrentV1'][0])
     {
-        $request = $this->activesessionGetCurrentV1Request();
+        $request = $this->activesessionGetCurrentV1Request($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -259,13 +268,14 @@ class ObjectActivesessionApi
      *
      * Get Current Activesession
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activesessionGetCurrentV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function activesessionGetCurrentV1Async()
+    public function activesessionGetCurrentV1Async(string $contentType = self::contentTypes['activesessionGetCurrentV1'][0])
     {
-        return $this->activesessionGetCurrentV1AsyncWithHttpInfo()
+        return $this->activesessionGetCurrentV1AsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -278,14 +288,15 @@ class ObjectActivesessionApi
      *
      * Get Current Activesession
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activesessionGetCurrentV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function activesessionGetCurrentV1AsyncWithHttpInfo()
+    public function activesessionGetCurrentV1AsyncWithHttpInfo(string $contentType = self::contentTypes['activesessionGetCurrentV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\ActivesessionGetCurrentV1Response';
-        $request = $this->activesessionGetCurrentV1Request();
+        $request = $this->activesessionGetCurrentV1Request($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -326,12 +337,14 @@ class ObjectActivesessionApi
     /**
      * Create request for operation 'activesessionGetCurrentV1'
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activesessionGetCurrentV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function activesessionGetCurrentV1Request()
+    public function activesessionGetCurrentV1Request(string $contentType = self::contentTypes['activesessionGetCurrentV1'][0])
     {
+
 
         $resourcePath = '/1/object/activesession/getCurrent';
         $formParams = [];
@@ -344,16 +357,11 @@ class ObjectActivesessionApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -371,9 +379,9 @@ class ObjectActivesessionApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

@@ -187,6 +187,16 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -501,9 +511,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignfolderID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignfolderID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
         $this->container['pkiEzsignfolderID'] = (is_null($pkiEzsignfolderID) ? null : (int) $pkiEzsignfolderID);
 
         return $this;
@@ -534,9 +547,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldertypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldertypeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
         $this->container['fkiEzsignfoldertypeID'] = (is_null($fkiEzsignfoldertypeID) ? null : (int) $fkiEzsignfoldertypeID);
 
         return $this;
@@ -562,9 +578,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignfoldertypeNameX)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignfoldertypeNameX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
         $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
 
         return $this;
@@ -595,9 +614,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiBillingentityinternalID)) {
             //throw new \InvalidArgumentException('non-nullable fkiBillingentityinternalID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiBillingentityinternalID'] = $fkiBillingentityinternalID;
         $this->container['fkiBillingentityinternalID'] = (is_null($fkiBillingentityinternalID) ? null : (int) $fkiBillingentityinternalID);
 
         return $this;
@@ -623,9 +645,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setSBillingentityinternalDescriptionX($sBillingentityinternalDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBillingentityinternalDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sBillingentityinternalDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sBillingentityinternalDescriptionX'] = $sBillingentityinternalDescriptionX;
         $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : (string) $sBillingentityinternalDescriptionX);
 
         return $this;
@@ -659,9 +684,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntsarequirementID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntsarequirementID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsigntsarequirementID'] = $fkiEzsigntsarequirementID;
         $this->container['fkiEzsigntsarequirementID'] = (is_null($fkiEzsigntsarequirementID) ? null : (int) $fkiEzsigntsarequirementID);
 
         return $this;
@@ -687,9 +715,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setSEzsigntsarequirementDescriptionX($sEzsigntsarequirementDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntsarequirementDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntsarequirementDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigntsarequirementDescriptionX'] = $sEzsigntsarequirementDescriptionX;
         $this->container['sEzsigntsarequirementDescriptionX'] = (is_null($sEzsigntsarequirementDescriptionX) ? null : (string) $sEzsigntsarequirementDescriptionX);
 
         return $this;
@@ -715,9 +746,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setSEzsignfolderDescription($sEzsignfolderDescription)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignfolderDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignfolderDescription cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
         $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : (string) $sEzsignfolderDescription);
 
         return $this;
@@ -743,9 +777,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setTEzsignfolderNote($tEzsignfolderNote)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tEzsignfolderNote)) {
             //throw new \InvalidArgumentException('non-nullable tEzsignfolderNote cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['tEzsignfolderNote'] = $tEzsignfolderNote;
         $this->container['tEzsignfolderNote'] = (is_null($tEzsignfolderNote) ? null : (string) $tEzsignfolderNote);
 
         return $this;
@@ -771,9 +808,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setBEzsignfolderIsdisposable($bEzsignfolderIsdisposable)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignfolderIsdisposable)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignfolderIsdisposable cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfolderIsdisposable'] = $bEzsignfolderIsdisposable;
         $this->container['bEzsignfolderIsdisposable'] = (is_null($bEzsignfolderIsdisposable) ? null : (bool) $bEzsignfolderIsdisposable);
 
         return $this;
@@ -799,9 +839,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setEEzsignfolderSendreminderfrequency($eEzsignfolderSendreminderfrequency)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsignfolderSendreminderfrequency)) {
             //throw new \InvalidArgumentException('non-nullable eEzsignfolderSendreminderfrequency cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsignfolderSendreminderfrequency'] = $eEzsignfolderSendreminderfrequency;
         $this->container['eEzsignfolderSendreminderfrequency'] = $eEzsignfolderSendreminderfrequency;
 
         return $this;
@@ -827,9 +870,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setDtEzsignfolderDelayedsenddate($dtEzsignfolderDelayedsenddate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsignfolderDelayedsenddate)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsignfolderDelayedsenddate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsignfolderDelayedsenddate'] = $dtEzsignfolderDelayedsenddate;
         $this->container['dtEzsignfolderDelayedsenddate'] = (is_null($dtEzsignfolderDelayedsenddate) ? null : (string) $dtEzsignfolderDelayedsenddate);
 
         return $this;
@@ -855,9 +901,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setDtEzsignfolderDuedate($dtEzsignfolderDuedate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsignfolderDuedate)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsignfolderDuedate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsignfolderDuedate'] = $dtEzsignfolderDuedate;
         $this->container['dtEzsignfolderDuedate'] = (is_null($dtEzsignfolderDuedate) ? null : (string) $dtEzsignfolderDuedate);
 
         return $this;
@@ -883,9 +932,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setDtEzsignfolderSentdate($dtEzsignfolderSentdate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsignfolderSentdate)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsignfolderSentdate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsignfolderSentdate'] = $dtEzsignfolderSentdate;
         $this->container['dtEzsignfolderSentdate'] = (is_null($dtEzsignfolderSentdate) ? null : (string) $dtEzsignfolderSentdate);
 
         return $this;
@@ -911,9 +963,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setDtEzsignfolderScheduledarchive($dtEzsignfolderScheduledarchive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsignfolderScheduledarchive)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsignfolderScheduledarchive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsignfolderScheduledarchive'] = $dtEzsignfolderScheduledarchive;
         $this->container['dtEzsignfolderScheduledarchive'] = (is_null($dtEzsignfolderScheduledarchive) ? null : (string) $dtEzsignfolderScheduledarchive);
 
         return $this;
@@ -939,9 +994,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setDtEzsignfolderScheduleddispose($dtEzsignfolderScheduleddispose)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsignfolderScheduleddispose)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsignfolderScheduleddispose cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsignfolderScheduleddispose'] = $dtEzsignfolderScheduleddispose;
         $this->container['dtEzsignfolderScheduleddispose'] = (is_null($dtEzsignfolderScheduleddispose) ? null : (string) $dtEzsignfolderScheduleddispose);
 
         return $this;
@@ -967,9 +1025,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setEEzsignfolderStep($eEzsignfolderStep)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsignfolderStep)) {
             //throw new \InvalidArgumentException('non-nullable eEzsignfolderStep cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsignfolderStep'] = $eEzsignfolderStep;
         $this->container['eEzsignfolderStep'] = $eEzsignfolderStep;
 
         return $this;
@@ -995,9 +1056,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setDtEzsignfolderClose($dtEzsignfolderClose)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsignfolderClose)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsignfolderClose cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsignfolderClose'] = $dtEzsignfolderClose;
         $this->container['dtEzsignfolderClose'] = (is_null($dtEzsignfolderClose) ? null : (string) $dtEzsignfolderClose);
 
         return $this;
@@ -1023,9 +1087,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setTEzsignfolderMessage($tEzsignfolderMessage)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tEzsignfolderMessage)) {
             //throw new \InvalidArgumentException('non-nullable tEzsignfolderMessage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['tEzsignfolderMessage'] = $tEzsignfolderMessage;
         $this->container['tEzsignfolderMessage'] = (is_null($tEzsignfolderMessage) ? null : (string) $tEzsignfolderMessage);
 
         return $this;
@@ -1051,9 +1118,12 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     public function setObjAudit($objAudit)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objAudit)) {
             //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objAudit'] = $objAudit;
         $this->container['objAudit'] = $objAudit;
 
         return $this;

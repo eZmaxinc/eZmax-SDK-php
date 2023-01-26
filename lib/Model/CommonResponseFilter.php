@@ -133,6 +133,16 @@ class CommonResponseFilter implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -308,9 +318,12 @@ class CommonResponseFilter implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setAAutoType($aAutoType)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aAutoType)) {
             //throw new \InvalidArgumentException('non-nullable aAutoType cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aAutoType'] = $aAutoType;
         $this->container['aAutoType'] = (is_null($aAutoType) ? null : $aAutoType);
 
         return $this;
@@ -336,9 +349,12 @@ class CommonResponseFilter implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setAEnum($aEnum)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aEnum)) {
             //throw new \InvalidArgumentException('non-nullable aEnum cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aEnum'] = $aEnum;
         $this->container['aEnum'] = (is_null($aEnum) ? null : $aEnum);
 
         return $this;

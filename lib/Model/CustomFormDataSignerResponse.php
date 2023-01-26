@@ -142,6 +142,16 @@ class CustomFormDataSignerResponse implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -354,9 +364,12 @@ class CustomFormDataSignerResponse implements ModelInterface, ArrayAccess, \Json
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldersignerassociationID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldersignerassociationID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignfoldersignerassociationID'] = $fkiEzsignfoldersignerassociationID;
         $this->container['fkiEzsignfoldersignerassociationID'] = (is_null($fkiEzsignfoldersignerassociationID) ? null : (int) $fkiEzsignfoldersignerassociationID);
 
         return $this;
@@ -387,9 +400,12 @@ class CustomFormDataSignerResponse implements ModelInterface, ArrayAccess, \Json
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiUserID'] = $fkiUserID;
         $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
 
         return $this;
@@ -415,9 +431,12 @@ class CustomFormDataSignerResponse implements ModelInterface, ArrayAccess, \Json
     public function setSContactFirstname($sContactFirstname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactFirstname)) {
             //throw new \InvalidArgumentException('non-nullable sContactFirstname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sContactFirstname'] = $sContactFirstname;
         $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : (string) $sContactFirstname);
 
         return $this;
@@ -443,9 +462,12 @@ class CustomFormDataSignerResponse implements ModelInterface, ArrayAccess, \Json
     public function setSContactLastname($sContactLastname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactLastname)) {
             //throw new \InvalidArgumentException('non-nullable sContactLastname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sContactLastname'] = $sContactLastname;
         $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : (string) $sContactLastname);
 
         return $this;
@@ -473,9 +495,12 @@ class CustomFormDataSignerResponse implements ModelInterface, ArrayAccess, \Json
 
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignformfieldgroup)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignformfieldgroup cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjEzsignformfieldgroup'] = $aObjEzsignformfieldgroup;
         $this->container['aObjEzsignformfieldgroup'] = $aObjEzsignformfieldgroup;
 
         return $this;

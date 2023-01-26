@@ -71,7 +71,38 @@ class ObjectEzsignfoldersignerassociationApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'ezsignfoldersignerassociationCreateObjectV1' => [
+            'application/json',
+        ],
+        'ezsignfoldersignerassociationCreateObjectV2' => [
+            'application/json',
+        ],
+        'ezsignfoldersignerassociationDeleteObjectV1' => [
+            'application/json',
+        ],
+        'ezsignfoldersignerassociationEditObjectV1' => [
+            'application/json',
+        ],
+        'ezsignfoldersignerassociationForceDisconnectV1' => [
+            'application/json',
+        ],
+        'ezsignfoldersignerassociationGetInPersonLoginUrlV1' => [
+            'application/json',
+        ],
+        'ezsignfoldersignerassociationGetObjectV1' => [
+            'application/json',
+        ],
+        'ezsignfoldersignerassociationGetObjectV2' => [
+            'application/json',
+        ],
+        'ezsignfoldersignerassociationPatchObjectV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,15 +154,16 @@ class ObjectEzsignfoldersignerassociationApi
      * Create a new Ezsignfoldersignerassociation
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Request[] $ezsignfoldersignerassociationCreateObjectV1Request ezsignfoldersignerassociationCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Response
      * @deprecated
      */
-    public function ezsignfoldersignerassociationCreateObjectV1($ezsignfoldersignerassociationCreateObjectV1Request)
+    public function ezsignfoldersignerassociationCreateObjectV1($ezsignfoldersignerassociationCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'][0])
     {
-        list($response) = $this->ezsignfoldersignerassociationCreateObjectV1WithHttpInfo($ezsignfoldersignerassociationCreateObjectV1Request);
+        list($response) = $this->ezsignfoldersignerassociationCreateObjectV1WithHttpInfo($ezsignfoldersignerassociationCreateObjectV1Request, $contentType);
         return $response;
     }
 
@@ -141,15 +173,16 @@ class ObjectEzsignfoldersignerassociationApi
      * Create a new Ezsignfoldersignerassociation
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Request[] $ezsignfoldersignerassociationCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsignfoldersignerassociationCreateObjectV1WithHttpInfo($ezsignfoldersignerassociationCreateObjectV1Request)
+    public function ezsignfoldersignerassociationCreateObjectV1WithHttpInfo($ezsignfoldersignerassociationCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'][0])
     {
-        $request = $this->ezsignfoldersignerassociationCreateObjectV1Request($ezsignfoldersignerassociationCreateObjectV1Request);
+        $request = $this->ezsignfoldersignerassociationCreateObjectV1Request($ezsignfoldersignerassociationCreateObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -241,14 +274,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Create a new Ezsignfoldersignerassociation
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Request[] $ezsignfoldersignerassociationCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfoldersignerassociationCreateObjectV1Async($ezsignfoldersignerassociationCreateObjectV1Request)
+    public function ezsignfoldersignerassociationCreateObjectV1Async($ezsignfoldersignerassociationCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'][0])
     {
-        return $this->ezsignfoldersignerassociationCreateObjectV1AsyncWithHttpInfo($ezsignfoldersignerassociationCreateObjectV1Request)
+        return $this->ezsignfoldersignerassociationCreateObjectV1AsyncWithHttpInfo($ezsignfoldersignerassociationCreateObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -262,15 +296,16 @@ class ObjectEzsignfoldersignerassociationApi
      * Create a new Ezsignfoldersignerassociation
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Request[] $ezsignfoldersignerassociationCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfoldersignerassociationCreateObjectV1AsyncWithHttpInfo($ezsignfoldersignerassociationCreateObjectV1Request)
+    public function ezsignfoldersignerassociationCreateObjectV1AsyncWithHttpInfo($ezsignfoldersignerassociationCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Response';
-        $request = $this->ezsignfoldersignerassociationCreateObjectV1Request($ezsignfoldersignerassociationCreateObjectV1Request);
+        $request = $this->ezsignfoldersignerassociationCreateObjectV1Request($ezsignfoldersignerassociationCreateObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -312,12 +347,13 @@ class ObjectEzsignfoldersignerassociationApi
      * Create request for operation 'ezsignfoldersignerassociationCreateObjectV1'
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV1Request[] $ezsignfoldersignerassociationCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsignfoldersignerassociationCreateObjectV1Request($ezsignfoldersignerassociationCreateObjectV1Request)
+    public function ezsignfoldersignerassociationCreateObjectV1Request($ezsignfoldersignerassociationCreateObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV1'][0])
     {
 
         // verify the required parameter 'ezsignfoldersignerassociationCreateObjectV1Request' is set
@@ -326,6 +362,7 @@ class ObjectEzsignfoldersignerassociationApi
                 'Missing the required parameter $ezsignfoldersignerassociationCreateObjectV1Request when calling ezsignfoldersignerassociationCreateObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfoldersignerassociation';
         $formParams = [];
@@ -338,20 +375,16 @@ class ObjectEzsignfoldersignerassociationApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfoldersignerassociationCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfoldersignerassociationCreateObjectV1Request));
             } else {
                 $httpBody = $ezsignfoldersignerassociationCreateObjectV1Request;
@@ -371,9 +404,9 @@ class ObjectEzsignfoldersignerassociationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -422,14 +455,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Create a new Ezsignfoldersignerassociation
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV2Request $ezsignfoldersignerassociationCreateObjectV2Request ezsignfoldersignerassociationCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV2Response
      */
-    public function ezsignfoldersignerassociationCreateObjectV2($ezsignfoldersignerassociationCreateObjectV2Request)
+    public function ezsignfoldersignerassociationCreateObjectV2($ezsignfoldersignerassociationCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'][0])
     {
-        list($response) = $this->ezsignfoldersignerassociationCreateObjectV2WithHttpInfo($ezsignfoldersignerassociationCreateObjectV2Request);
+        list($response) = $this->ezsignfoldersignerassociationCreateObjectV2WithHttpInfo($ezsignfoldersignerassociationCreateObjectV2Request, $contentType);
         return $response;
     }
 
@@ -439,14 +473,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Create a new Ezsignfoldersignerassociation
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV2Request $ezsignfoldersignerassociationCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfoldersignerassociationCreateObjectV2WithHttpInfo($ezsignfoldersignerassociationCreateObjectV2Request)
+    public function ezsignfoldersignerassociationCreateObjectV2WithHttpInfo($ezsignfoldersignerassociationCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'][0])
     {
-        $request = $this->ezsignfoldersignerassociationCreateObjectV2Request($ezsignfoldersignerassociationCreateObjectV2Request);
+        $request = $this->ezsignfoldersignerassociationCreateObjectV2Request($ezsignfoldersignerassociationCreateObjectV2Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -538,13 +573,14 @@ class ObjectEzsignfoldersignerassociationApi
      * Create a new Ezsignfoldersignerassociation
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV2Request $ezsignfoldersignerassociationCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationCreateObjectV2Async($ezsignfoldersignerassociationCreateObjectV2Request)
+    public function ezsignfoldersignerassociationCreateObjectV2Async($ezsignfoldersignerassociationCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'][0])
     {
-        return $this->ezsignfoldersignerassociationCreateObjectV2AsyncWithHttpInfo($ezsignfoldersignerassociationCreateObjectV2Request)
+        return $this->ezsignfoldersignerassociationCreateObjectV2AsyncWithHttpInfo($ezsignfoldersignerassociationCreateObjectV2Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -558,14 +594,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Create a new Ezsignfoldersignerassociation
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV2Request $ezsignfoldersignerassociationCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationCreateObjectV2AsyncWithHttpInfo($ezsignfoldersignerassociationCreateObjectV2Request)
+    public function ezsignfoldersignerassociationCreateObjectV2AsyncWithHttpInfo($ezsignfoldersignerassociationCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV2Response';
-        $request = $this->ezsignfoldersignerassociationCreateObjectV2Request($ezsignfoldersignerassociationCreateObjectV2Request);
+        $request = $this->ezsignfoldersignerassociationCreateObjectV2Request($ezsignfoldersignerassociationCreateObjectV2Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -607,11 +644,12 @@ class ObjectEzsignfoldersignerassociationApi
      * Create request for operation 'ezsignfoldersignerassociationCreateObjectV2'
      *
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationCreateObjectV2Request $ezsignfoldersignerassociationCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfoldersignerassociationCreateObjectV2Request($ezsignfoldersignerassociationCreateObjectV2Request)
+    public function ezsignfoldersignerassociationCreateObjectV2Request($ezsignfoldersignerassociationCreateObjectV2Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationCreateObjectV2'][0])
     {
 
         // verify the required parameter 'ezsignfoldersignerassociationCreateObjectV2Request' is set
@@ -620,6 +658,7 @@ class ObjectEzsignfoldersignerassociationApi
                 'Missing the required parameter $ezsignfoldersignerassociationCreateObjectV2Request when calling ezsignfoldersignerassociationCreateObjectV2'
             );
         }
+
 
         $resourcePath = '/2/object/ezsignfoldersignerassociation';
         $formParams = [];
@@ -632,20 +671,16 @@ class ObjectEzsignfoldersignerassociationApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfoldersignerassociationCreateObjectV2Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfoldersignerassociationCreateObjectV2Request));
             } else {
                 $httpBody = $ezsignfoldersignerassociationCreateObjectV2Request;
@@ -665,9 +700,9 @@ class ObjectEzsignfoldersignerassociationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -716,14 +751,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Delete an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfoldersignerassociationDeleteObjectV1($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationDeleteObjectV1($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'][0])
     {
-        list($response) = $this->ezsignfoldersignerassociationDeleteObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID);
+        list($response) = $this->ezsignfoldersignerassociationDeleteObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $contentType);
         return $response;
     }
 
@@ -733,14 +769,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Delete an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfoldersignerassociationDeleteObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationDeleteObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'][0])
     {
-        $request = $this->ezsignfoldersignerassociationDeleteObjectV1Request($pkiEzsignfoldersignerassociationID);
+        $request = $this->ezsignfoldersignerassociationDeleteObjectV1Request($pkiEzsignfoldersignerassociationID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -878,13 +915,14 @@ class ObjectEzsignfoldersignerassociationApi
      * Delete an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationDeleteObjectV1Async($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationDeleteObjectV1Async($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'][0])
     {
-        return $this->ezsignfoldersignerassociationDeleteObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID)
+        return $this->ezsignfoldersignerassociationDeleteObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -898,14 +936,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Delete an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationDeleteObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationDeleteObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response';
-        $request = $this->ezsignfoldersignerassociationDeleteObjectV1Request($pkiEzsignfoldersignerassociationID);
+        $request = $this->ezsignfoldersignerassociationDeleteObjectV1Request($pkiEzsignfoldersignerassociationID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -947,11 +986,12 @@ class ObjectEzsignfoldersignerassociationApi
      * Create request for operation 'ezsignfoldersignerassociationDeleteObjectV1'
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfoldersignerassociationDeleteObjectV1Request($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationDeleteObjectV1Request($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationDeleteObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfoldersignerassociationID' is set
@@ -963,7 +1003,7 @@ class ObjectEzsignfoldersignerassociationApi
         if ($pkiEzsignfoldersignerassociationID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfoldersignerassociationID" when calling ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationDeleteObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}';
         $formParams = [];
@@ -984,16 +1024,11 @@ class ObjectEzsignfoldersignerassociationApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1011,9 +1046,9 @@ class ObjectEzsignfoldersignerassociationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1063,14 +1098,15 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Request $ezsignfoldersignerassociationEditObjectV1Request ezsignfoldersignerassociationEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfoldersignerassociationEditObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request)
+    public function ezsignfoldersignerassociationEditObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationEditObjectV1'][0])
     {
-        list($response) = $this->ezsignfoldersignerassociationEditObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request);
+        list($response) = $this->ezsignfoldersignerassociationEditObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request, $contentType);
         return $response;
     }
 
@@ -1081,14 +1117,15 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Request $ezsignfoldersignerassociationEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfoldersignerassociationEditObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request)
+    public function ezsignfoldersignerassociationEditObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationEditObjectV1'][0])
     {
-        $request = $this->ezsignfoldersignerassociationEditObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request);
+        $request = $this->ezsignfoldersignerassociationEditObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1227,13 +1264,14 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Request $ezsignfoldersignerassociationEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationEditObjectV1Async($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request)
+    public function ezsignfoldersignerassociationEditObjectV1Async($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationEditObjectV1'][0])
     {
-        return $this->ezsignfoldersignerassociationEditObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request)
+        return $this->ezsignfoldersignerassociationEditObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1248,14 +1286,15 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Request $ezsignfoldersignerassociationEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationEditObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request)
+    public function ezsignfoldersignerassociationEditObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationEditObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Response';
-        $request = $this->ezsignfoldersignerassociationEditObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request);
+        $request = $this->ezsignfoldersignerassociationEditObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1298,11 +1337,12 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Request $ezsignfoldersignerassociationEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfoldersignerassociationEditObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request)
+    public function ezsignfoldersignerassociationEditObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationEditObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfoldersignerassociationID' is set
@@ -1314,14 +1354,14 @@ class ObjectEzsignfoldersignerassociationApi
         if ($pkiEzsignfoldersignerassociationID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfoldersignerassociationID" when calling ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationEditObjectV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfoldersignerassociationEditObjectV1Request' is set
         if ($ezsignfoldersignerassociationEditObjectV1Request === null || (is_array($ezsignfoldersignerassociationEditObjectV1Request) && count($ezsignfoldersignerassociationEditObjectV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfoldersignerassociationEditObjectV1Request when calling ezsignfoldersignerassociationEditObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}';
         $formParams = [];
@@ -1342,20 +1382,16 @@ class ObjectEzsignfoldersignerassociationApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfoldersignerassociationEditObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfoldersignerassociationEditObjectV1Request));
             } else {
                 $httpBody = $ezsignfoldersignerassociationEditObjectV1Request;
@@ -1375,9 +1411,9 @@ class ObjectEzsignfoldersignerassociationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1427,14 +1463,15 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID pkiEzsignfoldersignerassociationID (required)
      * @param  object $body body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfoldersignerassociationForceDisconnectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfoldersignerassociationForceDisconnectV1($pkiEzsignfoldersignerassociationID, $body)
+    public function ezsignfoldersignerassociationForceDisconnectV1($pkiEzsignfoldersignerassociationID, $body, string $contentType = self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'][0])
     {
-        list($response) = $this->ezsignfoldersignerassociationForceDisconnectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $body);
+        list($response) = $this->ezsignfoldersignerassociationForceDisconnectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $body, $contentType);
         return $response;
     }
 
@@ -1445,14 +1482,15 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationForceDisconnectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfoldersignerassociationForceDisconnectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $body)
+    public function ezsignfoldersignerassociationForceDisconnectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $body, string $contentType = self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'][0])
     {
-        $request = $this->ezsignfoldersignerassociationForceDisconnectV1Request($pkiEzsignfoldersignerassociationID, $body);
+        $request = $this->ezsignfoldersignerassociationForceDisconnectV1Request($pkiEzsignfoldersignerassociationID, $body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1591,13 +1629,14 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationForceDisconnectV1Async($pkiEzsignfoldersignerassociationID, $body)
+    public function ezsignfoldersignerassociationForceDisconnectV1Async($pkiEzsignfoldersignerassociationID, $body, string $contentType = self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'][0])
     {
-        return $this->ezsignfoldersignerassociationForceDisconnectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $body)
+        return $this->ezsignfoldersignerassociationForceDisconnectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1612,14 +1651,15 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationForceDisconnectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $body)
+    public function ezsignfoldersignerassociationForceDisconnectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $body, string $contentType = self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationForceDisconnectV1Response';
-        $request = $this->ezsignfoldersignerassociationForceDisconnectV1Request($pkiEzsignfoldersignerassociationID, $body);
+        $request = $this->ezsignfoldersignerassociationForceDisconnectV1Request($pkiEzsignfoldersignerassociationID, $body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1662,11 +1702,12 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfoldersignerassociationForceDisconnectV1Request($pkiEzsignfoldersignerassociationID, $body)
+    public function ezsignfoldersignerassociationForceDisconnectV1Request($pkiEzsignfoldersignerassociationID, $body, string $contentType = self::contentTypes['ezsignfoldersignerassociationForceDisconnectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfoldersignerassociationID' is set
@@ -1678,14 +1719,14 @@ class ObjectEzsignfoldersignerassociationApi
         if ($pkiEzsignfoldersignerassociationID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfoldersignerassociationID" when calling ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationForceDisconnectV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $body when calling ezsignfoldersignerassociationForceDisconnectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/forceDisconnect';
         $formParams = [];
@@ -1706,20 +1747,16 @@ class ObjectEzsignfoldersignerassociationApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -1739,9 +1776,9 @@ class ObjectEzsignfoldersignerassociationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1790,14 +1827,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve a Login Url to allow In-Person signing
      *
      * @param  int $pkiEzsignfoldersignerassociationID pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfoldersignerassociationGetInPersonLoginUrlV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'][0])
     {
-        list($response) = $this->ezsignfoldersignerassociationGetInPersonLoginUrlV1WithHttpInfo($pkiEzsignfoldersignerassociationID);
+        list($response) = $this->ezsignfoldersignerassociationGetInPersonLoginUrlV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $contentType);
         return $response;
     }
 
@@ -1807,14 +1845,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve a Login Url to allow In-Person signing
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationGetInPersonLoginUrlV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1WithHttpInfo($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1WithHttpInfo($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'][0])
     {
-        $request = $this->ezsignfoldersignerassociationGetInPersonLoginUrlV1Request($pkiEzsignfoldersignerassociationID);
+        $request = $this->ezsignfoldersignerassociationGetInPersonLoginUrlV1Request($pkiEzsignfoldersignerassociationID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1952,13 +1991,14 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve a Login Url to allow In-Person signing
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1Async($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1Async($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'][0])
     {
-        return $this->ezsignfoldersignerassociationGetInPersonLoginUrlV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID)
+        return $this->ezsignfoldersignerassociationGetInPersonLoginUrlV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1972,14 +2012,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve a Login Url to allow In-Person signing
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationGetInPersonLoginUrlV1Response';
-        $request = $this->ezsignfoldersignerassociationGetInPersonLoginUrlV1Request($pkiEzsignfoldersignerassociationID);
+        $request = $this->ezsignfoldersignerassociationGetInPersonLoginUrlV1Request($pkiEzsignfoldersignerassociationID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2021,11 +2062,12 @@ class ObjectEzsignfoldersignerassociationApi
      * Create request for operation 'ezsignfoldersignerassociationGetInPersonLoginUrlV1'
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1Request($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetInPersonLoginUrlV1Request($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetInPersonLoginUrlV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfoldersignerassociationID' is set
@@ -2037,7 +2079,7 @@ class ObjectEzsignfoldersignerassociationApi
         if ($pkiEzsignfoldersignerassociationID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfoldersignerassociationID" when calling ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationGetInPersonLoginUrlV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl';
         $formParams = [];
@@ -2058,16 +2100,11 @@ class ObjectEzsignfoldersignerassociationApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2085,9 +2122,9 @@ class ObjectEzsignfoldersignerassociationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2136,15 +2173,16 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfoldersignerassociationGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezsignfoldersignerassociationGetObjectV1($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV1($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV1'][0])
     {
-        list($response) = $this->ezsignfoldersignerassociationGetObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID);
+        list($response) = $this->ezsignfoldersignerassociationGetObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $contentType);
         return $response;
     }
 
@@ -2154,15 +2192,16 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsignfoldersignerassociationGetObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV1'][0])
     {
-        $request = $this->ezsignfoldersignerassociationGetObjectV1Request($pkiEzsignfoldersignerassociationID);
+        $request = $this->ezsignfoldersignerassociationGetObjectV1Request($pkiEzsignfoldersignerassociationID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2277,14 +2316,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfoldersignerassociationGetObjectV1Async($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV1Async($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV1'][0])
     {
-        return $this->ezsignfoldersignerassociationGetObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID)
+        return $this->ezsignfoldersignerassociationGetObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2298,15 +2338,16 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignfoldersignerassociationGetObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationGetObjectV1Response';
-        $request = $this->ezsignfoldersignerassociationGetObjectV1Request($pkiEzsignfoldersignerassociationID);
+        $request = $this->ezsignfoldersignerassociationGetObjectV1Request($pkiEzsignfoldersignerassociationID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2348,12 +2389,13 @@ class ObjectEzsignfoldersignerassociationApi
      * Create request for operation 'ezsignfoldersignerassociationGetObjectV1'
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsignfoldersignerassociationGetObjectV1Request($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV1Request($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfoldersignerassociationID' is set
@@ -2365,7 +2407,7 @@ class ObjectEzsignfoldersignerassociationApi
         if ($pkiEzsignfoldersignerassociationID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfoldersignerassociationID" when calling ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationGetObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}';
         $formParams = [];
@@ -2386,16 +2428,11 @@ class ObjectEzsignfoldersignerassociationApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2413,9 +2450,9 @@ class ObjectEzsignfoldersignerassociationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2464,14 +2501,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfoldersignerassociationGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfoldersignerassociationGetObjectV2($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV2($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV2'][0])
     {
-        list($response) = $this->ezsignfoldersignerassociationGetObjectV2WithHttpInfo($pkiEzsignfoldersignerassociationID);
+        list($response) = $this->ezsignfoldersignerassociationGetObjectV2WithHttpInfo($pkiEzsignfoldersignerassociationID, $contentType);
         return $response;
     }
 
@@ -2481,14 +2519,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfoldersignerassociationGetObjectV2WithHttpInfo($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV2WithHttpInfo($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV2'][0])
     {
-        $request = $this->ezsignfoldersignerassociationGetObjectV2Request($pkiEzsignfoldersignerassociationID);
+        $request = $this->ezsignfoldersignerassociationGetObjectV2Request($pkiEzsignfoldersignerassociationID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2603,13 +2642,14 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationGetObjectV2Async($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV2Async($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV2'][0])
     {
-        return $this->ezsignfoldersignerassociationGetObjectV2AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID)
+        return $this->ezsignfoldersignerassociationGetObjectV2AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2623,14 +2663,15 @@ class ObjectEzsignfoldersignerassociationApi
      * Retrieve an existing Ezsignfoldersignerassociation
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationGetObjectV2AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV2AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationGetObjectV2Response';
-        $request = $this->ezsignfoldersignerassociationGetObjectV2Request($pkiEzsignfoldersignerassociationID);
+        $request = $this->ezsignfoldersignerassociationGetObjectV2Request($pkiEzsignfoldersignerassociationID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2672,11 +2713,12 @@ class ObjectEzsignfoldersignerassociationApi
      * Create request for operation 'ezsignfoldersignerassociationGetObjectV2'
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfoldersignerassociationGetObjectV2Request($pkiEzsignfoldersignerassociationID)
+    public function ezsignfoldersignerassociationGetObjectV2Request($pkiEzsignfoldersignerassociationID, string $contentType = self::contentTypes['ezsignfoldersignerassociationGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiEzsignfoldersignerassociationID' is set
@@ -2688,7 +2730,7 @@ class ObjectEzsignfoldersignerassociationApi
         if ($pkiEzsignfoldersignerassociationID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfoldersignerassociationID" when calling ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationGetObjectV2, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}';
         $formParams = [];
@@ -2709,16 +2751,11 @@ class ObjectEzsignfoldersignerassociationApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2736,9 +2773,9 @@ class ObjectEzsignfoldersignerassociationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2788,14 +2825,15 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Request $ezsignfoldersignerassociationPatchObjectV1Request ezsignfoldersignerassociationPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfoldersignerassociationPatchObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request)
+    public function ezsignfoldersignerassociationPatchObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'][0])
     {
-        list($response) = $this->ezsignfoldersignerassociationPatchObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request);
+        list($response) = $this->ezsignfoldersignerassociationPatchObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request, $contentType);
         return $response;
     }
 
@@ -2806,14 +2844,15 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Request $ezsignfoldersignerassociationPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfoldersignerassociationPatchObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request)
+    public function ezsignfoldersignerassociationPatchObjectV1WithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'][0])
     {
-        $request = $this->ezsignfoldersignerassociationPatchObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request);
+        $request = $this->ezsignfoldersignerassociationPatchObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2952,13 +2991,14 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Request $ezsignfoldersignerassociationPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationPatchObjectV1Async($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request)
+    public function ezsignfoldersignerassociationPatchObjectV1Async($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'][0])
     {
-        return $this->ezsignfoldersignerassociationPatchObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request)
+        return $this->ezsignfoldersignerassociationPatchObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2973,14 +3013,15 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Request $ezsignfoldersignerassociationPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfoldersignerassociationPatchObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request)
+    public function ezsignfoldersignerassociationPatchObjectV1AsyncWithHttpInfo($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Response';
-        $request = $this->ezsignfoldersignerassociationPatchObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request);
+        $request = $this->ezsignfoldersignerassociationPatchObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3023,11 +3064,12 @@ class ObjectEzsignfoldersignerassociationApi
      *
      * @param  int $pkiEzsignfoldersignerassociationID (required)
      * @param  \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Request $ezsignfoldersignerassociationPatchObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfoldersignerassociationPatchObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request)
+    public function ezsignfoldersignerassociationPatchObjectV1Request($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request, string $contentType = self::contentTypes['ezsignfoldersignerassociationPatchObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfoldersignerassociationID' is set
@@ -3039,14 +3081,14 @@ class ObjectEzsignfoldersignerassociationApi
         if ($pkiEzsignfoldersignerassociationID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignfoldersignerassociationID" when calling ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationPatchObjectV1, must be bigger than or equal to 0.');
         }
-
-
+        
         // verify the required parameter 'ezsignfoldersignerassociationPatchObjectV1Request' is set
         if ($ezsignfoldersignerassociationPatchObjectV1Request === null || (is_array($ezsignfoldersignerassociationPatchObjectV1Request) && count($ezsignfoldersignerassociationPatchObjectV1Request) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ezsignfoldersignerassociationPatchObjectV1Request when calling ezsignfoldersignerassociationPatchObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}';
         $formParams = [];
@@ -3067,20 +3109,16 @@ class ObjectEzsignfoldersignerassociationApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($ezsignfoldersignerassociationPatchObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($ezsignfoldersignerassociationPatchObjectV1Request));
             } else {
                 $httpBody = $ezsignfoldersignerassociationPatchObjectV1Request;
@@ -3100,9 +3138,9 @@ class ObjectEzsignfoldersignerassociationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

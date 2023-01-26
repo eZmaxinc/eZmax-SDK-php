@@ -139,6 +139,16 @@ class CustomUserResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -343,9 +353,12 @@ class CustomUserResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable pkiUserID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiUserID'] = $pkiUserID;
         $this->container['pkiUserID'] = (is_null($pkiUserID) ? null : (int) $pkiUserID);
 
         return $this;
@@ -371,9 +384,12 @@ class CustomUserResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setSUserLastname($sUserLastname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserLastname)) {
             //throw new \InvalidArgumentException('non-nullable sUserLastname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserLastname'] = $sUserLastname;
         $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : (string) $sUserLastname);
 
         return $this;
@@ -399,9 +415,12 @@ class CustomUserResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setSUserFirstname($sUserFirstname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserFirstname)) {
             //throw new \InvalidArgumentException('non-nullable sUserFirstname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserFirstname'] = $sUserFirstname;
         $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : (string) $sUserFirstname);
 
         return $this;
@@ -427,9 +446,12 @@ class CustomUserResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setSEmailAddress($sEmailAddress)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEmailAddress)) {
             //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEmailAddress'] = $sEmailAddress;
         $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
 
         return $this;

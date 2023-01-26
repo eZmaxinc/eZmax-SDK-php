@@ -71,7 +71,14 @@ class ModuleUserApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'userCreateEzsignuserV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,14 +130,15 @@ class ModuleUserApi
      * Create a new User of type Ezsignuser
      *
      * @param  \eZmaxAPI\Model\UserCreateEzsignuserV1Request[] $userCreateEzsignuserV1Request userCreateEzsignuserV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userCreateEzsignuserV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\UserCreateEzsignuserV1Response
      */
-    public function userCreateEzsignuserV1($userCreateEzsignuserV1Request)
+    public function userCreateEzsignuserV1($userCreateEzsignuserV1Request, string $contentType = self::contentTypes['userCreateEzsignuserV1'][0])
     {
-        list($response) = $this->userCreateEzsignuserV1WithHttpInfo($userCreateEzsignuserV1Request);
+        list($response) = $this->userCreateEzsignuserV1WithHttpInfo($userCreateEzsignuserV1Request, $contentType);
         return $response;
     }
 
@@ -140,14 +148,15 @@ class ModuleUserApi
      * Create a new User of type Ezsignuser
      *
      * @param  \eZmaxAPI\Model\UserCreateEzsignuserV1Request[] $userCreateEzsignuserV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userCreateEzsignuserV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\UserCreateEzsignuserV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function userCreateEzsignuserV1WithHttpInfo($userCreateEzsignuserV1Request)
+    public function userCreateEzsignuserV1WithHttpInfo($userCreateEzsignuserV1Request, string $contentType = self::contentTypes['userCreateEzsignuserV1'][0])
     {
-        $request = $this->userCreateEzsignuserV1Request($userCreateEzsignuserV1Request);
+        $request = $this->userCreateEzsignuserV1Request($userCreateEzsignuserV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -239,13 +248,14 @@ class ModuleUserApi
      * Create a new User of type Ezsignuser
      *
      * @param  \eZmaxAPI\Model\UserCreateEzsignuserV1Request[] $userCreateEzsignuserV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userCreateEzsignuserV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function userCreateEzsignuserV1Async($userCreateEzsignuserV1Request)
+    public function userCreateEzsignuserV1Async($userCreateEzsignuserV1Request, string $contentType = self::contentTypes['userCreateEzsignuserV1'][0])
     {
-        return $this->userCreateEzsignuserV1AsyncWithHttpInfo($userCreateEzsignuserV1Request)
+        return $this->userCreateEzsignuserV1AsyncWithHttpInfo($userCreateEzsignuserV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -259,14 +269,15 @@ class ModuleUserApi
      * Create a new User of type Ezsignuser
      *
      * @param  \eZmaxAPI\Model\UserCreateEzsignuserV1Request[] $userCreateEzsignuserV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userCreateEzsignuserV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function userCreateEzsignuserV1AsyncWithHttpInfo($userCreateEzsignuserV1Request)
+    public function userCreateEzsignuserV1AsyncWithHttpInfo($userCreateEzsignuserV1Request, string $contentType = self::contentTypes['userCreateEzsignuserV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\UserCreateEzsignuserV1Response';
-        $request = $this->userCreateEzsignuserV1Request($userCreateEzsignuserV1Request);
+        $request = $this->userCreateEzsignuserV1Request($userCreateEzsignuserV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -308,11 +319,12 @@ class ModuleUserApi
      * Create request for operation 'userCreateEzsignuserV1'
      *
      * @param  \eZmaxAPI\Model\UserCreateEzsignuserV1Request[] $userCreateEzsignuserV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userCreateEzsignuserV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function userCreateEzsignuserV1Request($userCreateEzsignuserV1Request)
+    public function userCreateEzsignuserV1Request($userCreateEzsignuserV1Request, string $contentType = self::contentTypes['userCreateEzsignuserV1'][0])
     {
 
         // verify the required parameter 'userCreateEzsignuserV1Request' is set
@@ -321,6 +333,7 @@ class ModuleUserApi
                 'Missing the required parameter $userCreateEzsignuserV1Request when calling userCreateEzsignuserV1'
             );
         }
+
 
         $resourcePath = '/1/module/user/createezsignuser';
         $formParams = [];
@@ -333,20 +346,16 @@ class ModuleUserApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($userCreateEzsignuserV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($userCreateEzsignuserV1Request));
             } else {
                 $httpBody = $userCreateEzsignuserV1Request;
@@ -366,9 +375,9 @@ class ModuleUserApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

@@ -60,11 +60,17 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'pkiCommunicationID' => 'int',
-        'eCommunicationEmailimportance' => '\eZmaxAPI\Model\FieldECommunicationEmailimportance',
+        'fkiEzsignfolderID' => 'int',
+        'fkiInscriptionID' => 'int',
+        'fkiInscriptionnotauthenticatedID' => 'int',
+        'dtCreatedDate' => 'string',
+        'eCommunicationDirection' => '\eZmaxAPI\Model\ComputedECommunicationDirection',
+        'eCommunicationImportance' => '\eZmaxAPI\Model\FieldECommunicationImportance',
         'eCommunicationType' => '\eZmaxAPI\Model\FieldECommunicationType',
+        'iCommunicationrecipientCount' => 'int',
         'sCommunicationSubject' => 'string',
-        'dtCommunicationSentdate' => 'string',
-        'objContactFrom' => '\eZmaxAPI\Model\CustomContactNameResponse'
+        'sCommunicationSender' => 'string',
+        'sCommunicationRecipient' => 'string'
     ];
 
     /**
@@ -76,11 +82,17 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPIFormats = [
         'pkiCommunicationID' => null,
-        'eCommunicationEmailimportance' => null,
+        'fkiEzsignfolderID' => null,
+        'fkiInscriptionID' => null,
+        'fkiInscriptionnotauthenticatedID' => null,
+        'dtCreatedDate' => null,
+        'eCommunicationDirection' => null,
+        'eCommunicationImportance' => null,
         'eCommunicationType' => null,
+        'iCommunicationrecipientCount' => null,
         'sCommunicationSubject' => null,
-        'dtCommunicationSentdate' => null,
-        'objContactFrom' => null
+        'sCommunicationSender' => null,
+        'sCommunicationRecipient' => null
     ];
 
     /**
@@ -90,11 +102,17 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPINullables = [
         'pkiCommunicationID' => false,
-		'eCommunicationEmailimportance' => false,
+		'fkiEzsignfolderID' => false,
+		'fkiInscriptionID' => false,
+		'fkiInscriptionnotauthenticatedID' => false,
+		'dtCreatedDate' => false,
+		'eCommunicationDirection' => false,
+		'eCommunicationImportance' => false,
 		'eCommunicationType' => false,
+		'iCommunicationrecipientCount' => false,
 		'sCommunicationSubject' => false,
-		'dtCommunicationSentdate' => false,
-		'objContactFrom' => false
+		'sCommunicationSender' => false,
+		'sCommunicationRecipient' => false
     ];
 
     /**
@@ -145,6 +163,16 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -174,11 +202,17 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $attributeMap = [
         'pkiCommunicationID' => 'pkiCommunicationID',
-        'eCommunicationEmailimportance' => 'eCommunicationEmailimportance',
+        'fkiEzsignfolderID' => 'fkiEzsignfolderID',
+        'fkiInscriptionID' => 'fkiInscriptionID',
+        'fkiInscriptionnotauthenticatedID' => 'fkiInscriptionnotauthenticatedID',
+        'dtCreatedDate' => 'dtCreatedDate',
+        'eCommunicationDirection' => 'eCommunicationDirection',
+        'eCommunicationImportance' => 'eCommunicationImportance',
         'eCommunicationType' => 'eCommunicationType',
+        'iCommunicationrecipientCount' => 'iCommunicationrecipientCount',
         'sCommunicationSubject' => 'sCommunicationSubject',
-        'dtCommunicationSentdate' => 'dtCommunicationSentdate',
-        'objContactFrom' => 'objContactFrom'
+        'sCommunicationSender' => 'sCommunicationSender',
+        'sCommunicationRecipient' => 'sCommunicationRecipient'
     ];
 
     /**
@@ -188,11 +222,17 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $setters = [
         'pkiCommunicationID' => 'setPkiCommunicationID',
-        'eCommunicationEmailimportance' => 'setECommunicationEmailimportance',
+        'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
+        'fkiInscriptionID' => 'setFkiInscriptionID',
+        'fkiInscriptionnotauthenticatedID' => 'setFkiInscriptionnotauthenticatedID',
+        'dtCreatedDate' => 'setDtCreatedDate',
+        'eCommunicationDirection' => 'setECommunicationDirection',
+        'eCommunicationImportance' => 'setECommunicationImportance',
         'eCommunicationType' => 'setECommunicationType',
+        'iCommunicationrecipientCount' => 'setICommunicationrecipientCount',
         'sCommunicationSubject' => 'setSCommunicationSubject',
-        'dtCommunicationSentdate' => 'setDtCommunicationSentdate',
-        'objContactFrom' => 'setObjContactFrom'
+        'sCommunicationSender' => 'setSCommunicationSender',
+        'sCommunicationRecipient' => 'setSCommunicationRecipient'
     ];
 
     /**
@@ -202,11 +242,17 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'pkiCommunicationID' => 'getPkiCommunicationID',
-        'eCommunicationEmailimportance' => 'getECommunicationEmailimportance',
+        'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
+        'fkiInscriptionID' => 'getFkiInscriptionID',
+        'fkiInscriptionnotauthenticatedID' => 'getFkiInscriptionnotauthenticatedID',
+        'dtCreatedDate' => 'getDtCreatedDate',
+        'eCommunicationDirection' => 'getECommunicationDirection',
+        'eCommunicationImportance' => 'getECommunicationImportance',
         'eCommunicationType' => 'getECommunicationType',
+        'iCommunicationrecipientCount' => 'getICommunicationrecipientCount',
         'sCommunicationSubject' => 'getSCommunicationSubject',
-        'dtCommunicationSentdate' => 'getDtCommunicationSentdate',
-        'objContactFrom' => 'getObjContactFrom'
+        'sCommunicationSender' => 'getSCommunicationSender',
+        'sCommunicationRecipient' => 'getSCommunicationRecipient'
     ];
 
     /**
@@ -267,11 +313,17 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
     public function __construct(array $data = null)
     {
         $this->setIfExists('pkiCommunicationID', $data ?? [], null);
-        $this->setIfExists('eCommunicationEmailimportance', $data ?? [], null);
+        $this->setIfExists('fkiEzsignfolderID', $data ?? [], null);
+        $this->setIfExists('fkiInscriptionID', $data ?? [], null);
+        $this->setIfExists('fkiInscriptionnotauthenticatedID', $data ?? [], null);
+        $this->setIfExists('dtCreatedDate', $data ?? [], null);
+        $this->setIfExists('eCommunicationDirection', $data ?? [], null);
+        $this->setIfExists('eCommunicationImportance', $data ?? [], null);
         $this->setIfExists('eCommunicationType', $data ?? [], null);
+        $this->setIfExists('iCommunicationrecipientCount', $data ?? [], null);
         $this->setIfExists('sCommunicationSubject', $data ?? [], null);
-        $this->setIfExists('dtCommunicationSentdate', $data ?? [], null);
-        $this->setIfExists('objContactFrom', $data ?? [], null);
+        $this->setIfExists('sCommunicationSender', $data ?? [], null);
+        $this->setIfExists('sCommunicationRecipient', $data ?? [], null);
     }
 
     /**
@@ -308,17 +360,41 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'pkiCommunicationID', must be bigger than or equal to 0.";
         }
 
+        if (!is_null($this->container['fkiEzsignfolderID']) && ($this->container['fkiEzsignfolderID'] < 0)) {
+            $invalidProperties[] = "invalid value for 'fkiEzsignfolderID', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['fkiInscriptionID']) && ($this->container['fkiInscriptionID'] < 0)) {
+            $invalidProperties[] = "invalid value for 'fkiInscriptionID', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['fkiInscriptionnotauthenticatedID']) && ($this->container['fkiInscriptionnotauthenticatedID'] < 0)) {
+            $invalidProperties[] = "invalid value for 'fkiInscriptionnotauthenticatedID', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['dtCreatedDate'] === null) {
+            $invalidProperties[] = "'dtCreatedDate' can't be null";
+        }
+        if ($this->container['eCommunicationDirection'] === null) {
+            $invalidProperties[] = "'eCommunicationDirection' can't be null";
+        }
+        if ($this->container['eCommunicationImportance'] === null) {
+            $invalidProperties[] = "'eCommunicationImportance' can't be null";
+        }
         if ($this->container['eCommunicationType'] === null) {
             $invalidProperties[] = "'eCommunicationType' can't be null";
+        }
+        if ($this->container['iCommunicationrecipientCount'] === null) {
+            $invalidProperties[] = "'iCommunicationrecipientCount' can't be null";
         }
         if ($this->container['sCommunicationSubject'] === null) {
             $invalidProperties[] = "'sCommunicationSubject' can't be null";
         }
-        if ($this->container['dtCommunicationSentdate'] === null) {
-            $invalidProperties[] = "'dtCommunicationSentdate' can't be null";
+        if ($this->container['sCommunicationSender'] === null) {
+            $invalidProperties[] = "'sCommunicationSender' can't be null";
         }
-        if ($this->container['objContactFrom'] === null) {
-            $invalidProperties[] = "'objContactFrom' can't be null";
+        if ($this->container['sCommunicationRecipient'] === null) {
+            $invalidProperties[] = "'sCommunicationRecipient' can't be null";
         }
         return $invalidProperties;
     }
@@ -360,38 +436,214 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiCommunicationID)) {
             //throw new \InvalidArgumentException('non-nullable pkiCommunicationID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiCommunicationID'] = $pkiCommunicationID;
         $this->container['pkiCommunicationID'] = (is_null($pkiCommunicationID) ? null : (int) $pkiCommunicationID);
 
         return $this;
     }
 
     /**
-     * Gets eCommunicationEmailimportance
+     * Gets fkiEzsignfolderID
      *
-     * @return \eZmaxAPI\Model\FieldECommunicationEmailimportance|null
+     * @return int|null
      */
-    public function getECommunicationEmailimportance()
+    public function getFkiEzsignfolderID()
     {
-        return $this->container['eCommunicationEmailimportance'];
+        return $this->container['fkiEzsignfolderID'];
     }
 
     /**
-     * Sets eCommunicationEmailimportance
+     * Sets fkiEzsignfolderID
      *
-     * @param \eZmaxAPI\Model\FieldECommunicationEmailimportance|null $eCommunicationEmailimportance eCommunicationEmailimportance
+     * @param int|null $fkiEzsignfolderID The unique ID of the Ezsignfolder
      *
      * @return self
      */
-    public function setECommunicationEmailimportance($eCommunicationEmailimportance)
+    public function setFkiEzsignfolderID($fkiEzsignfolderID)
     {
 
-        //if (is_null($eCommunicationEmailimportance)) {
-            //throw new \InvalidArgumentException('non-nullable eCommunicationEmailimportance cannot be null');
+        if (!is_null($fkiEzsignfolderID) && ($fkiEzsignfolderID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsignfolderID when calling CommunicationListElement., must be bigger than or equal to 0.');
+        }
+
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($fkiEzsignfolderID)) {
+            //throw new \InvalidArgumentException('non-nullable fkiEzsignfolderID cannot be null');
         //}
-        $this->container['eCommunicationEmailimportance'] = $eCommunicationEmailimportance;
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
+        $this->container['fkiEzsignfolderID'] = (is_null($fkiEzsignfolderID) ? null : (int) $fkiEzsignfolderID);
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiInscriptionID
+     *
+     * @return int|null
+     */
+    public function getFkiInscriptionID()
+    {
+        return $this->container['fkiInscriptionID'];
+    }
+
+    /**
+     * Sets fkiInscriptionID
+     *
+     * @param int|null $fkiInscriptionID The unique ID of the Inscription.
+     *
+     * @return self
+     */
+    public function setFkiInscriptionID($fkiInscriptionID)
+    {
+
+        if (!is_null($fkiInscriptionID) && ($fkiInscriptionID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiInscriptionID when calling CommunicationListElement., must be bigger than or equal to 0.');
+        }
+
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($fkiInscriptionID)) {
+            //throw new \InvalidArgumentException('non-nullable fkiInscriptionID cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiInscriptionID'] = $fkiInscriptionID;
+        $this->container['fkiInscriptionID'] = (is_null($fkiInscriptionID) ? null : (int) $fkiInscriptionID);
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiInscriptionnotauthenticatedID
+     *
+     * @return int|null
+     */
+    public function getFkiInscriptionnotauthenticatedID()
+    {
+        return $this->container['fkiInscriptionnotauthenticatedID'];
+    }
+
+    /**
+     * Sets fkiInscriptionnotauthenticatedID
+     *
+     * @param int|null $fkiInscriptionnotauthenticatedID The unique ID of the Inscriptionnotauthenticated.
+     *
+     * @return self
+     */
+    public function setFkiInscriptionnotauthenticatedID($fkiInscriptionnotauthenticatedID)
+    {
+
+        if (!is_null($fkiInscriptionnotauthenticatedID) && ($fkiInscriptionnotauthenticatedID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiInscriptionnotauthenticatedID when calling CommunicationListElement., must be bigger than or equal to 0.');
+        }
+
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($fkiInscriptionnotauthenticatedID)) {
+            //throw new \InvalidArgumentException('non-nullable fkiInscriptionnotauthenticatedID cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiInscriptionnotauthenticatedID'] = $fkiInscriptionnotauthenticatedID;
+        $this->container['fkiInscriptionnotauthenticatedID'] = (is_null($fkiInscriptionnotauthenticatedID) ? null : (int) $fkiInscriptionnotauthenticatedID);
+
+        return $this;
+    }
+
+    /**
+     * Gets dtCreatedDate
+     *
+     * @return string
+     */
+    public function getDtCreatedDate()
+    {
+        return $this->container['dtCreatedDate'];
+    }
+
+    /**
+     * Sets dtCreatedDate
+     *
+     * @param string $dtCreatedDate The date and time at which the object was created
+     *
+     * @return self
+     */
+    public function setDtCreatedDate($dtCreatedDate)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($dtCreatedDate)) {
+            //throw new \InvalidArgumentException('non-nullable dtCreatedDate cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtCreatedDate'] = $dtCreatedDate;
+        $this->container['dtCreatedDate'] = (is_null($dtCreatedDate) ? null : (string) $dtCreatedDate);
+
+        return $this;
+    }
+
+    /**
+     * Gets eCommunicationDirection
+     *
+     * @return \eZmaxAPI\Model\ComputedECommunicationDirection
+     */
+    public function getECommunicationDirection()
+    {
+        return $this->container['eCommunicationDirection'];
+    }
+
+    /**
+     * Sets eCommunicationDirection
+     *
+     * @param \eZmaxAPI\Model\ComputedECommunicationDirection $eCommunicationDirection eCommunicationDirection
+     *
+     * @return self
+     */
+    public function setECommunicationDirection($eCommunicationDirection)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eCommunicationDirection)) {
+            //throw new \InvalidArgumentException('non-nullable eCommunicationDirection cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eCommunicationDirection'] = $eCommunicationDirection;
+        $this->container['eCommunicationDirection'] = $eCommunicationDirection;
+
+        return $this;
+    }
+
+    /**
+     * Gets eCommunicationImportance
+     *
+     * @return \eZmaxAPI\Model\FieldECommunicationImportance
+     */
+    public function getECommunicationImportance()
+    {
+        return $this->container['eCommunicationImportance'];
+    }
+
+    /**
+     * Sets eCommunicationImportance
+     *
+     * @param \eZmaxAPI\Model\FieldECommunicationImportance $eCommunicationImportance eCommunicationImportance
+     *
+     * @return self
+     */
+    public function setECommunicationImportance($eCommunicationImportance)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eCommunicationImportance)) {
+            //throw new \InvalidArgumentException('non-nullable eCommunicationImportance cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eCommunicationImportance'] = $eCommunicationImportance;
+        $this->container['eCommunicationImportance'] = $eCommunicationImportance;
 
         return $this;
     }
@@ -416,10 +668,44 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
     public function setECommunicationType($eCommunicationType)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationType)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationType cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eCommunicationType'] = $eCommunicationType;
         $this->container['eCommunicationType'] = $eCommunicationType;
+
+        return $this;
+    }
+
+    /**
+     * Gets iCommunicationrecipientCount
+     *
+     * @return int
+     */
+    public function getICommunicationrecipientCount()
+    {
+        return $this->container['iCommunicationrecipientCount'];
+    }
+
+    /**
+     * Sets iCommunicationrecipientCount
+     *
+     * @param int $iCommunicationrecipientCount The count of Communicationrecipient
+     *
+     * @return self
+     */
+    public function setICommunicationrecipientCount($iCommunicationrecipientCount)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iCommunicationrecipientCount)) {
+            //throw new \InvalidArgumentException('non-nullable iCommunicationrecipientCount cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iCommunicationrecipientCount'] = $iCommunicationrecipientCount;
+        $this->container['iCommunicationrecipientCount'] = (is_null($iCommunicationrecipientCount) ? null : (int) $iCommunicationrecipientCount);
 
         return $this;
     }
@@ -437,73 +723,82 @@ class CommunicationListElement implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets sCommunicationSubject
      *
-     * @param string $sCommunicationSubject The Subject of the Communication
+     * @param string $sCommunicationSubject The subject of the Communication
      *
      * @return self
      */
     public function setSCommunicationSubject($sCommunicationSubject)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCommunicationSubject)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationSubject cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sCommunicationSubject'] = $sCommunicationSubject;
         $this->container['sCommunicationSubject'] = (is_null($sCommunicationSubject) ? null : (string) $sCommunicationSubject);
 
         return $this;
     }
 
     /**
-     * Gets dtCommunicationSentdate
+     * Gets sCommunicationSender
      *
      * @return string
      */
-    public function getDtCommunicationSentdate()
+    public function getSCommunicationSender()
     {
-        return $this->container['dtCommunicationSentdate'];
+        return $this->container['sCommunicationSender'];
     }
 
     /**
-     * Sets dtCommunicationSentdate
+     * Sets sCommunicationSender
      *
-     * @param string $dtCommunicationSentdate The send date and time at which the Communication was sent.
+     * @param string $sCommunicationSender The sender name of the Communication
      *
      * @return self
      */
-    public function setDtCommunicationSentdate($dtCommunicationSentdate)
+    public function setSCommunicationSender($sCommunicationSender)
     {
 
-        //if (is_null($dtCommunicationSentdate)) {
-            //throw new \InvalidArgumentException('non-nullable dtCommunicationSentdate cannot be null');
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sCommunicationSender)) {
+            //throw new \InvalidArgumentException('non-nullable sCommunicationSender cannot be null');
         //}
-        $this->container['dtCommunicationSentdate'] = (is_null($dtCommunicationSentdate) ? null : (string) $dtCommunicationSentdate);
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sCommunicationSender'] = $sCommunicationSender;
+        $this->container['sCommunicationSender'] = (is_null($sCommunicationSender) ? null : (string) $sCommunicationSender);
 
         return $this;
     }
 
     /**
-     * Gets objContactFrom
+     * Gets sCommunicationRecipient
      *
-     * @return \eZmaxAPI\Model\CustomContactNameResponse
+     * @return string
      */
-    public function getObjContactFrom()
+    public function getSCommunicationRecipient()
     {
-        return $this->container['objContactFrom'];
+        return $this->container['sCommunicationRecipient'];
     }
 
     /**
-     * Sets objContactFrom
+     * Sets sCommunicationRecipient
      *
-     * @param \eZmaxAPI\Model\CustomContactNameResponse $objContactFrom objContactFrom
+     * @param string $sCommunicationRecipient The recipients' name of the Communication
      *
      * @return self
      */
-    public function setObjContactFrom($objContactFrom)
+    public function setSCommunicationRecipient($sCommunicationRecipient)
     {
 
-        //if (is_null($objContactFrom)) {
-            //throw new \InvalidArgumentException('non-nullable objContactFrom cannot be null');
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sCommunicationRecipient)) {
+            //throw new \InvalidArgumentException('non-nullable sCommunicationRecipient cannot be null');
         //}
-        $this->container['objContactFrom'] = $objContactFrom;
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sCommunicationRecipient'] = $sCommunicationRecipient;
+        $this->container['sCommunicationRecipient'] = (is_null($sCommunicationRecipient) ? null : (string) $sCommunicationRecipient);
 
         return $this;
     }

@@ -71,7 +71,17 @@ class ObjectEzsigntsarequirementApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'ezsigntsarequirementGetAutocompleteV1' => [
+            'application/json',
+        ],
+        'ezsigntsarequirementGetAutocompleteV2' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -127,15 +137,16 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezsigntsarequirementGetAutocompleteV1($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV1($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV1'][0])
     {
-        list($response) = $this->ezsigntsarequirementGetAutocompleteV1WithHttpInfo($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->ezsigntsarequirementGetAutocompleteV1WithHttpInfo($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -149,15 +160,16 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsigntsarequirementGetAutocompleteV1WithHttpInfo($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV1WithHttpInfo($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV1'][0])
     {
-        $request = $this->ezsigntsarequirementGetAutocompleteV1Request($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->ezsigntsarequirementGetAutocompleteV1Request($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -276,14 +288,15 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsigntsarequirementGetAutocompleteV1Async($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV1Async($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV1'][0])
     {
-        return $this->ezsigntsarequirementGetAutocompleteV1AsyncWithHttpInfo($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->ezsigntsarequirementGetAutocompleteV1AsyncWithHttpInfo($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -301,15 +314,16 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsigntsarequirementGetAutocompleteV1AsyncWithHttpInfo($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV1AsyncWithHttpInfo($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteDisabledV1Response';
-        $request = $this->ezsigntsarequirementGetAutocompleteV1Request($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->ezsigntsarequirementGetAutocompleteV1Request($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -355,12 +369,13 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsigntsarequirementGetAutocompleteV1Request($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV1Request($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV1'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -373,7 +388,7 @@ class ObjectEzsigntsarequirementApi
         if ($fkiEzsignfoldertypeID !== null && $fkiEzsignfoldertypeID < 0) {
             throw new \InvalidArgumentException('invalid value for "$fkiEzsignfoldertypeID" when calling ObjectEzsigntsarequirementApi.ezsigntsarequirementGetAutocompleteV1, must be bigger than or equal to 0.');
         }
-
+        
 
 
 
@@ -428,16 +443,11 @@ class ObjectEzsigntsarequirementApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -455,9 +465,9 @@ class ObjectEzsigntsarequirementApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -510,14 +520,15 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsigntsarequirementGetAutocompleteV2Response
      */
-    public function ezsigntsarequirementGetAutocompleteV2($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV2($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV2'][0])
     {
-        list($response) = $this->ezsigntsarequirementGetAutocompleteV2WithHttpInfo($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->ezsigntsarequirementGetAutocompleteV2WithHttpInfo($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -531,14 +542,15 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsigntsarequirementGetAutocompleteV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsigntsarequirementGetAutocompleteV2WithHttpInfo($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV2WithHttpInfo($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV2'][0])
     {
-        $request = $this->ezsigntsarequirementGetAutocompleteV2Request($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->ezsigntsarequirementGetAutocompleteV2Request($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -634,13 +646,14 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntsarequirementGetAutocompleteV2Async($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV2Async($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV2'][0])
     {
-        return $this->ezsigntsarequirementGetAutocompleteV2AsyncWithHttpInfo($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->ezsigntsarequirementGetAutocompleteV2AsyncWithHttpInfo($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -658,14 +671,15 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsigntsarequirementGetAutocompleteV2AsyncWithHttpInfo($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV2AsyncWithHttpInfo($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsigntsarequirementGetAutocompleteV2Response';
-        $request = $this->ezsigntsarequirementGetAutocompleteV2Request($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->ezsigntsarequirementGetAutocompleteV2Request($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -711,11 +725,12 @@ class ObjectEzsigntsarequirementApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigntsarequirementGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsigntsarequirementGetAutocompleteV2Request($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezsigntsarequirementGetAutocompleteV2Request($sSelector, $fkiEzsignfoldertypeID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezsigntsarequirementGetAutocompleteV2'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -728,7 +743,7 @@ class ObjectEzsigntsarequirementApi
         if ($fkiEzsignfoldertypeID !== null && $fkiEzsignfoldertypeID < 0) {
             throw new \InvalidArgumentException('invalid value for "$fkiEzsignfoldertypeID" when calling ObjectEzsigntsarequirementApi.ezsigntsarequirementGetAutocompleteV2, must be bigger than or equal to 0.');
         }
-
+        
 
 
 
@@ -783,16 +798,11 @@ class ObjectEzsigntsarequirementApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -810,9 +820,9 @@ class ObjectEzsigntsarequirementApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

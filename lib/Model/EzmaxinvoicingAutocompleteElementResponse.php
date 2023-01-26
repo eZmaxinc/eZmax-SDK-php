@@ -136,6 +136,16 @@ class EzmaxinvoicingAutocompleteElementResponse implements ModelInterface, Array
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -336,9 +346,12 @@ class EzmaxinvoicingAutocompleteElementResponse implements ModelInterface, Array
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($yyyymmEzmaxinvoicing)) {
             //throw new \InvalidArgumentException('non-nullable yyyymmEzmaxinvoicing cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['yyyymmEzmaxinvoicing'] = $yyyymmEzmaxinvoicing;
         $this->container['yyyymmEzmaxinvoicing'] = (is_null($yyyymmEzmaxinvoicing) ? null : (string) $yyyymmEzmaxinvoicing);
 
         return $this;
@@ -369,9 +382,12 @@ class EzmaxinvoicingAutocompleteElementResponse implements ModelInterface, Array
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzmaxinvoicingID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzmaxinvoicingID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzmaxinvoicingID'] = $pkiEzmaxinvoicingID;
         $this->container['pkiEzmaxinvoicingID'] = (is_null($pkiEzmaxinvoicingID) ? null : (int) $pkiEzmaxinvoicingID);
 
         return $this;
@@ -397,9 +413,12 @@ class EzmaxinvoicingAutocompleteElementResponse implements ModelInterface, Array
     public function setBEzmaxinvoicingIsactive($bEzmaxinvoicingIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzmaxinvoicingIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bEzmaxinvoicingIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzmaxinvoicingIsactive'] = $bEzmaxinvoicingIsactive;
         $this->container['bEzmaxinvoicingIsactive'] = (is_null($bEzmaxinvoicingIsactive) ? null : (bool) $bEzmaxinvoicingIsactive);
 
         return $this;

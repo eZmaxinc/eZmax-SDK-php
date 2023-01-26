@@ -136,6 +136,16 @@ class EzsignfolderImportEzsigntemplatepackageV1Request implements ModelInterface
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -333,9 +343,12 @@ class EzsignfolderImportEzsigntemplatepackageV1Request implements ModelInterface
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplatepackageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatepackageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsigntemplatepackageID'] = $fkiEzsigntemplatepackageID;
         $this->container['fkiEzsigntemplatepackageID'] = (is_null($fkiEzsigntemplatepackageID) ? null : (int) $fkiEzsigntemplatepackageID);
 
         return $this;
@@ -361,9 +374,12 @@ class EzsignfolderImportEzsigntemplatepackageV1Request implements ModelInterface
     public function setDtEzsigndocumentDuedate($dtEzsigndocumentDuedate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsigndocumentDuedate)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsigndocumentDuedate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
         $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : (string) $dtEzsigndocumentDuedate);
 
         return $this;
@@ -389,9 +405,12 @@ class EzsignfolderImportEzsigntemplatepackageV1Request implements ModelInterface
     public function setAObjImportEzsigntemplatepackageRelation($aObjImportEzsigntemplatepackageRelation)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjImportEzsigntemplatepackageRelation)) {
             //throw new \InvalidArgumentException('non-nullable aObjImportEzsigntemplatepackageRelation cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjImportEzsigntemplatepackageRelation'] = $aObjImportEzsigntemplatepackageRelation;
         $this->container['aObjImportEzsigntemplatepackageRelation'] = $aObjImportEzsigntemplatepackageRelation;
 
         return $this;

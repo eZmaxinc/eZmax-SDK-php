@@ -148,6 +148,16 @@ class EzsignpageResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -393,9 +403,12 @@ class EzsignpageResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignpageID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignpageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsignpageID'] = $pkiEzsignpageID;
         $this->container['pkiEzsignpageID'] = (is_null($pkiEzsignpageID) ? null : (int) $pkiEzsignpageID);
 
         return $this;
@@ -426,9 +439,12 @@ class EzsignpageResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignpageWidthimage)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignpageWidthimage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsignpageWidthimage'] = $iEzsignpageWidthimage;
         $this->container['iEzsignpageWidthimage'] = (is_null($iEzsignpageWidthimage) ? null : (int) $iEzsignpageWidthimage);
 
         return $this;
@@ -459,9 +475,12 @@ class EzsignpageResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignpageHeightimage)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignpageHeightimage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsignpageHeightimage'] = $iEzsignpageHeightimage;
         $this->container['iEzsignpageHeightimage'] = (is_null($iEzsignpageHeightimage) ? null : (int) $iEzsignpageHeightimage);
 
         return $this;
@@ -492,9 +511,12 @@ class EzsignpageResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignpageWidthpdf)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignpageWidthpdf cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsignpageWidthpdf'] = $iEzsignpageWidthpdf;
         $this->container['iEzsignpageWidthpdf'] = (is_null($iEzsignpageWidthpdf) ? null : (int) $iEzsignpageWidthpdf);
 
         return $this;
@@ -525,9 +547,12 @@ class EzsignpageResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignpageHeightpdf)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignpageHeightpdf cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsignpageHeightpdf'] = $iEzsignpageHeightpdf;
         $this->container['iEzsignpageHeightpdf'] = (is_null($iEzsignpageHeightpdf) ? null : (int) $iEzsignpageHeightpdf);
 
         return $this;
@@ -558,9 +583,12 @@ class EzsignpageResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignpagePagenumber)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignpagePagenumber cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsignpagePagenumber'] = $iEzsignpagePagenumber;
         $this->container['iEzsignpagePagenumber'] = (is_null($iEzsignpagePagenumber) ? null : (int) $iEzsignpagePagenumber);
 
         return $this;
@@ -586,9 +614,12 @@ class EzsignpageResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setSComputedImageurl($sComputedImageurl)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sComputedImageurl)) {
             //throw new \InvalidArgumentException('non-nullable sComputedImageurl cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sComputedImageurl'] = $sComputedImageurl;
         $this->container['sComputedImageurl'] = (is_null($sComputedImageurl) ? null : (string) $sComputedImageurl);
 
         return $this;

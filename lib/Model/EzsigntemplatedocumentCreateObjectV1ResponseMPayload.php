@@ -130,6 +130,16 @@ class EzsigntemplatedocumentCreateObjectV1ResponseMPayload implements ModelInter
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -313,9 +323,12 @@ class EzsigntemplatedocumentCreateObjectV1ResponseMPayload implements ModelInter
             throw new \InvalidArgumentException('invalid length for $aPkiEzsigntemplatedocumentID when calling EzsigntemplatedocumentCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
         }
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsigntemplatedocumentID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsigntemplatedocumentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aPkiEzsigntemplatedocumentID'] = $aPkiEzsigntemplatedocumentID;
         $this->container['aPkiEzsigntemplatedocumentID'] = (is_null($aPkiEzsigntemplatedocumentID) ? null : $aPkiEzsigntemplatedocumentID);
 
         return $this;

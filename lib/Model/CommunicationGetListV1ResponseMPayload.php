@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * CommunicationGetListV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Payload for GET /1/module/communication/getList
+ * @description Payload for GET /1/object/communication/getList
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,7 +59,9 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'aObjCommunication' => '\eZmaxAPI\Model\CommunicationListElement[]'
+        'aObjCommunication' => '\eZmaxAPI\Model\CommunicationListElement[]',
+        'iRowReturned' => 'int',
+        'iRowFiltered' => 'int'
     ];
 
     /**
@@ -70,7 +72,9 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'aObjCommunication' => null
+        'aObjCommunication' => null,
+        'iRowReturned' => null,
+        'iRowFiltered' => null
     ];
 
     /**
@@ -79,7 +83,9 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'aObjCommunication' => false
+        'aObjCommunication' => false,
+		'iRowReturned' => false,
+		'iRowFiltered' => false
     ];
 
     /**
@@ -130,6 +136,16 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -158,7 +174,9 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'aObjCommunication' => 'a_objCommunication'
+        'aObjCommunication' => 'a_objCommunication',
+        'iRowReturned' => 'iRowReturned',
+        'iRowFiltered' => 'iRowFiltered'
     ];
 
     /**
@@ -167,7 +185,9 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'aObjCommunication' => 'setAObjCommunication'
+        'aObjCommunication' => 'setAObjCommunication',
+        'iRowReturned' => 'setIRowReturned',
+        'iRowFiltered' => 'setIRowFiltered'
     ];
 
     /**
@@ -176,7 +196,9 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'aObjCommunication' => 'getAObjCommunication'
+        'aObjCommunication' => 'getAObjCommunication',
+        'iRowReturned' => 'getIRowReturned',
+        'iRowFiltered' => 'getIRowFiltered'
     ];
 
     /**
@@ -237,6 +259,8 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
     public function __construct(array $data = null)
     {
         $this->setIfExists('aObjCommunication', $data ?? [], null);
+        $this->setIfExists('iRowReturned', $data ?? [], null);
+        $this->setIfExists('iRowFiltered', $data ?? [], null);
     }
 
     /**
@@ -268,6 +292,12 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
 
         if ($this->container['aObjCommunication'] === null) {
             $invalidProperties[] = "'aObjCommunication' can't be null";
+        }
+        if ($this->container['iRowReturned'] === null) {
+            $invalidProperties[] = "'iRowReturned' can't be null";
+        }
+        if ($this->container['iRowFiltered'] === null) {
+            $invalidProperties[] = "'iRowFiltered' can't be null";
         }
         return $invalidProperties;
     }
@@ -304,10 +334,75 @@ class CommunicationGetListV1ResponseMPayload implements ModelInterface, ArrayAcc
     public function setAObjCommunication($aObjCommunication)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunication)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunication cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjCommunication'] = $aObjCommunication;
         $this->container['aObjCommunication'] = $aObjCommunication;
+
+        return $this;
+    }
+
+    /**
+     * Gets iRowReturned
+     *
+     * @return int
+     */
+    public function getIRowReturned()
+    {
+        return $this->container['iRowReturned'];
+    }
+
+    /**
+     * Sets iRowReturned
+     *
+     * @param int $iRowReturned The number of rows returned
+     *
+     * @return self
+     */
+    public function setIRowReturned($iRowReturned)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iRowReturned)) {
+            //throw new \InvalidArgumentException('non-nullable iRowReturned cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iRowReturned'] = $iRowReturned;
+        $this->container['iRowReturned'] = (is_null($iRowReturned) ? null : (int) $iRowReturned);
+
+        return $this;
+    }
+
+    /**
+     * Gets iRowFiltered
+     *
+     * @return int
+     */
+    public function getIRowFiltered()
+    {
+        return $this->container['iRowFiltered'];
+    }
+
+    /**
+     * Sets iRowFiltered
+     *
+     * @param int $iRowFiltered The number of rows matching your filters (if any) or the total number of rows
+     *
+     * @return self
+     */
+    public function setIRowFiltered($iRowFiltered)
+    {
+
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iRowFiltered)) {
+            //throw new \InvalidArgumentException('non-nullable iRowFiltered cannot be null');
+        //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iRowFiltered'] = $iRowFiltered;
+        $this->container['iRowFiltered'] = (is_null($iRowFiltered) ? null : (int) $iRowFiltered);
 
         return $this;
     }

@@ -133,6 +133,16 @@ class MultilingualVersionhistoryDetail implements ModelInterface, ArrayAccess, \
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -308,9 +318,12 @@ class MultilingualVersionhistoryDetail implements ModelInterface, ArrayAccess, \
     public function setTVersionhistoryDetail1($tVersionhistoryDetail1)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tVersionhistoryDetail1)) {
             //throw new \InvalidArgumentException('non-nullable tVersionhistoryDetail1 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['tVersionhistoryDetail1'] = $tVersionhistoryDetail1;
         $this->container['tVersionhistoryDetail1'] = (is_null($tVersionhistoryDetail1) ? null : (string) $tVersionhistoryDetail1);
 
         return $this;
@@ -336,9 +349,12 @@ class MultilingualVersionhistoryDetail implements ModelInterface, ArrayAccess, \
     public function setTVersionhistoryDetail2($tVersionhistoryDetail2)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tVersionhistoryDetail2)) {
             //throw new \InvalidArgumentException('non-nullable tVersionhistoryDetail2 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['tVersionhistoryDetail2'] = $tVersionhistoryDetail2;
         $this->container['tVersionhistoryDetail2'] = (is_null($tVersionhistoryDetail2) ? null : (string) $tVersionhistoryDetail2);
 
         return $this;

@@ -90,9 +90,54 @@ class CommunicationListElementTest extends TestCase
     }
 
     /**
-     * Test attribute "eCommunicationEmailimportance"
+     * Test attribute "fkiEzsignfolderID"
      */
-    public function testPropertyECommunicationEmailimportance()
+    public function testPropertyFkiEzsignfolderID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fkiInscriptionID"
+     */
+    public function testPropertyFkiInscriptionID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fkiInscriptionnotauthenticatedID"
+     */
+    public function testPropertyFkiInscriptionnotauthenticatedID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "dtCreatedDate"
+     */
+    public function testPropertyDtCreatedDate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eCommunicationDirection"
+     */
+    public function testPropertyECommunicationDirection()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eCommunicationImportance"
+     */
+    public function testPropertyECommunicationImportance()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -108,6 +153,15 @@ class CommunicationListElementTest extends TestCase
     }
 
     /**
+     * Test attribute "iCommunicationrecipientCount"
+     */
+    public function testPropertyICommunicationrecipientCount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sCommunicationSubject"
      */
     public function testPropertySCommunicationSubject()
@@ -117,18 +171,18 @@ class CommunicationListElementTest extends TestCase
     }
 
     /**
-     * Test attribute "dtCommunicationSentdate"
+     * Test attribute "sCommunicationSender"
      */
-    public function testPropertyDtCommunicationSentdate()
+    public function testPropertySCommunicationSender()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "objContactFrom"
+     * Test attribute "sCommunicationRecipient"
      */
-    public function testPropertyObjContactFrom()
+    public function testPropertySCommunicationRecipient()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

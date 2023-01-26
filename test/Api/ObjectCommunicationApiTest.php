@@ -73,6 +73,18 @@ class ObjectCommunicationApiTest extends TestCase
     }
 
     /**
+     * Test case for communicationGetListV1
+     *
+     * Retrieve Communication list.
+     *
+     */
+    public function testCommunicationGetListV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for communicationGetObjectV2
      *
      * Retrieve an existing Communication.

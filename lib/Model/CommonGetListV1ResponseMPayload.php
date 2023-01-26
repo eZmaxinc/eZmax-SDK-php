@@ -133,6 +133,16 @@ class CommonGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -314,9 +324,12 @@ class CommonGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, \J
     public function setIRowReturned($iRowReturned)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iRowReturned)) {
             //throw new \InvalidArgumentException('non-nullable iRowReturned cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iRowReturned'] = $iRowReturned;
         $this->container['iRowReturned'] = (is_null($iRowReturned) ? null : (int) $iRowReturned);
 
         return $this;
@@ -342,9 +355,12 @@ class CommonGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, \J
     public function setIRowFiltered($iRowFiltered)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iRowFiltered)) {
             //throw new \InvalidArgumentException('non-nullable iRowFiltered cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iRowFiltered'] = $iRowFiltered;
         $this->container['iRowFiltered'] = (is_null($iRowFiltered) ? null : (int) $iRowFiltered);
 
         return $this;

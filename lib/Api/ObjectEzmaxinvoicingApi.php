@@ -71,7 +71,26 @@ class ObjectEzmaxinvoicingApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'ezmaxinvoicingGetAutocompleteV1' => [
+            'application/json',
+        ],
+        'ezmaxinvoicingGetAutocompleteV2' => [
+            'application/json',
+        ],
+        'ezmaxinvoicingGetObjectV1' => [
+            'application/json',
+        ],
+        'ezmaxinvoicingGetObjectV2' => [
+            'application/json',
+        ],
+        'ezmaxinvoicingGetProvisionalV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -126,15 +145,16 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. Active is the default value. (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\CommonGetAutocompleteV1Response
      * @deprecated
      */
-    public function ezmaxinvoicingGetAutocompleteV1($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV1($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV1'][0])
     {
-        list($response) = $this->ezmaxinvoicingGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->ezmaxinvoicingGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -147,15 +167,16 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. Active is the default value. (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\CommonGetAutocompleteV1Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezmaxinvoicingGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV1WithHttpInfo($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV1'][0])
     {
-        $request = $this->ezmaxinvoicingGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->ezmaxinvoicingGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -250,14 +271,15 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. Active is the default value. (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezmaxinvoicingGetAutocompleteV1Async($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV1Async($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV1'][0])
     {
-        return $this->ezmaxinvoicingGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->ezmaxinvoicingGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,15 +296,16 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. Active is the default value. (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezmaxinvoicingGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV1AsyncWithHttpInfo($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\CommonGetAutocompleteV1Response';
-        $request = $this->ezmaxinvoicingGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->ezmaxinvoicingGetAutocompleteV1Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -327,12 +350,13 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. Active is the default value. (optional)
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezmaxinvoicingGetAutocompleteV1Request($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV1Request($sSelector, $eFilterActive = null, $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV1'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -341,6 +365,7 @@ class ObjectEzmaxinvoicingApi
                 'Missing the required parameter $sSelector when calling ezmaxinvoicingGetAutocompleteV1'
             );
         }
+
 
 
 
@@ -386,16 +411,11 @@ class ObjectEzmaxinvoicingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -413,9 +433,9 @@ class ObjectEzmaxinvoicingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -467,14 +487,15 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzmaxinvoicingGetAutocompleteV2Response
      */
-    public function ezmaxinvoicingGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV2'][0])
     {
-        list($response) = $this->ezmaxinvoicingGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        list($response) = $this->ezmaxinvoicingGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
@@ -487,14 +508,15 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzmaxinvoicingGetAutocompleteV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezmaxinvoicingGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV2'][0])
     {
-        $request = $this->ezmaxinvoicingGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->ezmaxinvoicingGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -589,13 +611,14 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezmaxinvoicingGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV2'][0])
     {
-        return $this->ezmaxinvoicingGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage)
+        return $this->ezmaxinvoicingGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -612,14 +635,15 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezmaxinvoicingGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzmaxinvoicingGetAutocompleteV2Response';
-        $request = $this->ezmaxinvoicingGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+        $request = $this->ezmaxinvoicingGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -664,11 +688,12 @@ class ObjectEzmaxinvoicingApi
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezmaxinvoicingGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null)
+    public function ezmaxinvoicingGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['ezmaxinvoicingGetAutocompleteV2'][0])
     {
 
         // verify the required parameter 'sSelector' is set
@@ -677,6 +702,7 @@ class ObjectEzmaxinvoicingApi
                 'Missing the required parameter $sSelector when calling ezmaxinvoicingGetAutocompleteV2'
             );
         }
+
 
 
 
@@ -722,16 +748,11 @@ class ObjectEzmaxinvoicingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -749,9 +770,9 @@ class ObjectEzmaxinvoicingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -800,15 +821,16 @@ class ObjectEzmaxinvoicingApi
      * Retrieve an existing Ezmaxinvoicing
      *
      * @param  int $pkiEzmaxinvoicingID pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzmaxinvoicingGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezmaxinvoicingGetObjectV1($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV1($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV1'][0])
     {
-        list($response) = $this->ezmaxinvoicingGetObjectV1WithHttpInfo($pkiEzmaxinvoicingID);
+        list($response) = $this->ezmaxinvoicingGetObjectV1WithHttpInfo($pkiEzmaxinvoicingID, $contentType);
         return $response;
     }
 
@@ -818,15 +840,16 @@ class ObjectEzmaxinvoicingApi
      * Retrieve an existing Ezmaxinvoicing
      *
      * @param  int $pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzmaxinvoicingGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezmaxinvoicingGetObjectV1WithHttpInfo($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV1WithHttpInfo($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV1'][0])
     {
-        $request = $this->ezmaxinvoicingGetObjectV1Request($pkiEzmaxinvoicingID);
+        $request = $this->ezmaxinvoicingGetObjectV1Request($pkiEzmaxinvoicingID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -941,14 +964,15 @@ class ObjectEzmaxinvoicingApi
      * Retrieve an existing Ezmaxinvoicing
      *
      * @param  int $pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezmaxinvoicingGetObjectV1Async($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV1Async($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV1'][0])
     {
-        return $this->ezmaxinvoicingGetObjectV1AsyncWithHttpInfo($pkiEzmaxinvoicingID)
+        return $this->ezmaxinvoicingGetObjectV1AsyncWithHttpInfo($pkiEzmaxinvoicingID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -962,15 +986,16 @@ class ObjectEzmaxinvoicingApi
      * Retrieve an existing Ezmaxinvoicing
      *
      * @param  int $pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezmaxinvoicingGetObjectV1AsyncWithHttpInfo($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV1AsyncWithHttpInfo($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzmaxinvoicingGetObjectV1Response';
-        $request = $this->ezmaxinvoicingGetObjectV1Request($pkiEzmaxinvoicingID);
+        $request = $this->ezmaxinvoicingGetObjectV1Request($pkiEzmaxinvoicingID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1012,12 +1037,13 @@ class ObjectEzmaxinvoicingApi
      * Create request for operation 'ezmaxinvoicingGetObjectV1'
      *
      * @param  int $pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezmaxinvoicingGetObjectV1Request($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV1Request($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzmaxinvoicingID' is set
@@ -1029,7 +1055,7 @@ class ObjectEzmaxinvoicingApi
         if ($pkiEzmaxinvoicingID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzmaxinvoicingID" when calling ObjectEzmaxinvoicingApi.ezmaxinvoicingGetObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezmaxinvoicing/{pkiEzmaxinvoicingID}';
         $formParams = [];
@@ -1050,16 +1076,11 @@ class ObjectEzmaxinvoicingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1077,9 +1098,9 @@ class ObjectEzmaxinvoicingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1128,14 +1149,15 @@ class ObjectEzmaxinvoicingApi
      * Retrieve an existing Ezmaxinvoicing
      *
      * @param  int $pkiEzmaxinvoicingID pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzmaxinvoicingGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezmaxinvoicingGetObjectV2($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV2($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV2'][0])
     {
-        list($response) = $this->ezmaxinvoicingGetObjectV2WithHttpInfo($pkiEzmaxinvoicingID);
+        list($response) = $this->ezmaxinvoicingGetObjectV2WithHttpInfo($pkiEzmaxinvoicingID, $contentType);
         return $response;
     }
 
@@ -1145,14 +1167,15 @@ class ObjectEzmaxinvoicingApi
      * Retrieve an existing Ezmaxinvoicing
      *
      * @param  int $pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzmaxinvoicingGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezmaxinvoicingGetObjectV2WithHttpInfo($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV2WithHttpInfo($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV2'][0])
     {
-        $request = $this->ezmaxinvoicingGetObjectV2Request($pkiEzmaxinvoicingID);
+        $request = $this->ezmaxinvoicingGetObjectV2Request($pkiEzmaxinvoicingID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1267,13 +1290,14 @@ class ObjectEzmaxinvoicingApi
      * Retrieve an existing Ezmaxinvoicing
      *
      * @param  int $pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezmaxinvoicingGetObjectV2Async($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV2Async($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV2'][0])
     {
-        return $this->ezmaxinvoicingGetObjectV2AsyncWithHttpInfo($pkiEzmaxinvoicingID)
+        return $this->ezmaxinvoicingGetObjectV2AsyncWithHttpInfo($pkiEzmaxinvoicingID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1287,14 +1311,15 @@ class ObjectEzmaxinvoicingApi
      * Retrieve an existing Ezmaxinvoicing
      *
      * @param  int $pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezmaxinvoicingGetObjectV2AsyncWithHttpInfo($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV2AsyncWithHttpInfo($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzmaxinvoicingGetObjectV2Response';
-        $request = $this->ezmaxinvoicingGetObjectV2Request($pkiEzmaxinvoicingID);
+        $request = $this->ezmaxinvoicingGetObjectV2Request($pkiEzmaxinvoicingID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1336,11 +1361,12 @@ class ObjectEzmaxinvoicingApi
      * Create request for operation 'ezmaxinvoicingGetObjectV2'
      *
      * @param  int $pkiEzmaxinvoicingID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezmaxinvoicingGetObjectV2Request($pkiEzmaxinvoicingID)
+    public function ezmaxinvoicingGetObjectV2Request($pkiEzmaxinvoicingID, string $contentType = self::contentTypes['ezmaxinvoicingGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiEzmaxinvoicingID' is set
@@ -1352,7 +1378,7 @@ class ObjectEzmaxinvoicingApi
         if ($pkiEzmaxinvoicingID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzmaxinvoicingID" when calling ObjectEzmaxinvoicingApi.ezmaxinvoicingGetObjectV2, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID}';
         $formParams = [];
@@ -1373,16 +1399,11 @@ class ObjectEzmaxinvoicingApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1400,9 +1421,9 @@ class ObjectEzmaxinvoicingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1450,14 +1471,15 @@ class ObjectEzmaxinvoicingApi
      *
      * Retrieve provisional Ezmaxinvoicing
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetProvisionalV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzmaxinvoicingGetProvisionalV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezmaxinvoicingGetProvisionalV1()
+    public function ezmaxinvoicingGetProvisionalV1(string $contentType = self::contentTypes['ezmaxinvoicingGetProvisionalV1'][0])
     {
-        list($response) = $this->ezmaxinvoicingGetProvisionalV1WithHttpInfo();
+        list($response) = $this->ezmaxinvoicingGetProvisionalV1WithHttpInfo($contentType);
         return $response;
     }
 
@@ -1466,14 +1488,15 @@ class ObjectEzmaxinvoicingApi
      *
      * Retrieve provisional Ezmaxinvoicing
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetProvisionalV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzmaxinvoicingGetProvisionalV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezmaxinvoicingGetProvisionalV1WithHttpInfo()
+    public function ezmaxinvoicingGetProvisionalV1WithHttpInfo(string $contentType = self::contentTypes['ezmaxinvoicingGetProvisionalV1'][0])
     {
-        $request = $this->ezmaxinvoicingGetProvisionalV1Request();
+        $request = $this->ezmaxinvoicingGetProvisionalV1Request($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1587,13 +1610,14 @@ class ObjectEzmaxinvoicingApi
      *
      * Retrieve provisional Ezmaxinvoicing
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetProvisionalV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezmaxinvoicingGetProvisionalV1Async()
+    public function ezmaxinvoicingGetProvisionalV1Async(string $contentType = self::contentTypes['ezmaxinvoicingGetProvisionalV1'][0])
     {
-        return $this->ezmaxinvoicingGetProvisionalV1AsyncWithHttpInfo()
+        return $this->ezmaxinvoicingGetProvisionalV1AsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1606,14 +1630,15 @@ class ObjectEzmaxinvoicingApi
      *
      * Retrieve provisional Ezmaxinvoicing
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetProvisionalV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezmaxinvoicingGetProvisionalV1AsyncWithHttpInfo()
+    public function ezmaxinvoicingGetProvisionalV1AsyncWithHttpInfo(string $contentType = self::contentTypes['ezmaxinvoicingGetProvisionalV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzmaxinvoicingGetProvisionalV1Response';
-        $request = $this->ezmaxinvoicingGetProvisionalV1Request();
+        $request = $this->ezmaxinvoicingGetProvisionalV1Request($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1654,12 +1679,14 @@ class ObjectEzmaxinvoicingApi
     /**
      * Create request for operation 'ezmaxinvoicingGetProvisionalV1'
      *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxinvoicingGetProvisionalV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezmaxinvoicingGetProvisionalV1Request()
+    public function ezmaxinvoicingGetProvisionalV1Request(string $contentType = self::contentTypes['ezmaxinvoicingGetProvisionalV1'][0])
     {
+
 
         $resourcePath = '/1/object/ezmaxinvoicing/getProvisional';
         $formParams = [];
@@ -1672,16 +1699,11 @@ class ObjectEzmaxinvoicingApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1699,9 +1721,9 @@ class ObjectEzmaxinvoicingApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

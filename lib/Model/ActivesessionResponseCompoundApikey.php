@@ -133,6 +133,16 @@ class ActivesessionResponseCompoundApikey implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -323,9 +333,12 @@ class ActivesessionResponseCompoundApikey implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiApikeyID)) {
             //throw new \InvalidArgumentException('non-nullable pkiApikeyID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiApikeyID'] = $pkiApikeyID;
         $this->container['pkiApikeyID'] = (is_null($pkiApikeyID) ? null : (int) $pkiApikeyID);
 
         return $this;
@@ -351,9 +364,12 @@ class ActivesessionResponseCompoundApikey implements ModelInterface, ArrayAccess
     public function setSApikeyDescriptionX($sApikeyDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sApikeyDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sApikeyDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sApikeyDescriptionX'] = $sApikeyDescriptionX;
         $this->container['sApikeyDescriptionX'] = (is_null($sApikeyDescriptionX) ? null : (string) $sApikeyDescriptionX);
 
         return $this;

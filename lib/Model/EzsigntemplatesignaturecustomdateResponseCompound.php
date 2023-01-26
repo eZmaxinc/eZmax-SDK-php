@@ -139,6 +139,16 @@ class EzsigntemplatesignaturecustomdateResponseCompound implements ModelInterfac
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -351,9 +361,12 @@ class EzsigntemplatesignaturecustomdateResponseCompound implements ModelInterfac
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplatesignaturecustomdateID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatesignaturecustomdateID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsigntemplatesignaturecustomdateID'] = $pkiEzsigntemplatesignaturecustomdateID;
         $this->container['pkiEzsigntemplatesignaturecustomdateID'] = (is_null($pkiEzsigntemplatesignaturecustomdateID) ? null : (int) $pkiEzsigntemplatesignaturecustomdateID);
 
         return $this;
@@ -384,9 +397,12 @@ class EzsigntemplatesignaturecustomdateResponseCompound implements ModelInterfac
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigntemplatesignaturecustomdateX)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigntemplatesignaturecustomdateX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsigntemplatesignaturecustomdateX'] = $iEzsigntemplatesignaturecustomdateX;
         $this->container['iEzsigntemplatesignaturecustomdateX'] = (is_null($iEzsigntemplatesignaturecustomdateX) ? null : (int) $iEzsigntemplatesignaturecustomdateX);
 
         return $this;
@@ -417,9 +433,12 @@ class EzsigntemplatesignaturecustomdateResponseCompound implements ModelInterfac
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigntemplatesignaturecustomdateY)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigntemplatesignaturecustomdateY cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsigntemplatesignaturecustomdateY'] = $iEzsigntemplatesignaturecustomdateY;
         $this->container['iEzsigntemplatesignaturecustomdateY'] = (is_null($iEzsigntemplatesignaturecustomdateY) ? null : (int) $iEzsigntemplatesignaturecustomdateY);
 
         return $this;
@@ -445,9 +464,12 @@ class EzsigntemplatesignaturecustomdateResponseCompound implements ModelInterfac
     public function setSEzsigntemplatesignaturecustomdateFormat($sEzsigntemplatesignaturecustomdateFormat)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplatesignaturecustomdateFormat)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplatesignaturecustomdateFormat cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigntemplatesignaturecustomdateFormat'] = $sEzsigntemplatesignaturecustomdateFormat;
         $this->container['sEzsigntemplatesignaturecustomdateFormat'] = (is_null($sEzsigntemplatesignaturecustomdateFormat) ? null : (string) $sEzsigntemplatesignaturecustomdateFormat);
 
         return $this;

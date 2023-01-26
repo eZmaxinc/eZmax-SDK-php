@@ -139,6 +139,16 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -344,9 +354,12 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzmaxpricingID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzmaxpricingID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzmaxpricingID'] = $pkiEzmaxpricingID;
         $this->container['pkiEzmaxpricingID'] = (is_null($pkiEzmaxpricingID) ? null : (int) $pkiEzmaxpricingID);
 
         return $this;
@@ -377,9 +390,12 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxpricingRebateezsignallagents)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxpricingRebateezsignallagents cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dEzmaxpricingRebateezsignallagents'] = $dEzmaxpricingRebateezsignallagents;
         $this->container['dEzmaxpricingRebateezsignallagents'] = (is_null($dEzmaxpricingRebateezsignallagents) ? null : (string) $dEzmaxpricingRebateezsignallagents);
 
         return $this;
@@ -405,9 +421,12 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
     public function setDtEzmaxpricingStart($dtEzmaxpricingStart)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzmaxpricingStart)) {
             //throw new \InvalidArgumentException('non-nullable dtEzmaxpricingStart cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzmaxpricingStart'] = $dtEzmaxpricingStart;
         $this->container['dtEzmaxpricingStart'] = (is_null($dtEzmaxpricingStart) ? null : (string) $dtEzmaxpricingStart);
 
         return $this;
@@ -433,9 +452,12 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
     public function setDtEzmaxpricingEnd($dtEzmaxpricingEnd)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzmaxpricingEnd)) {
             //throw new \InvalidArgumentException('non-nullable dtEzmaxpricingEnd cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzmaxpricingEnd'] = $dtEzmaxpricingEnd;
         $this->container['dtEzmaxpricingEnd'] = (is_null($dtEzmaxpricingEnd) ? null : (string) $dtEzmaxpricingEnd);
 
         return $this;

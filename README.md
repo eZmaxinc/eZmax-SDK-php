@@ -81,8 +81,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *GlobalCustomerApi* | [**globalCustomerGetEndpointV1**](docs/Api/GlobalCustomerApi.md#globalcustomergetendpointv1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
-*ModuleCommunicationApi* | [**communicationGetCommunicationCountV1**](docs/Api/ModuleCommunicationApi.md#communicationgetcommunicationcountv1) | **GET** /1/module/communication/getCommunicationCount | Get the number of communication
-*ModuleCommunicationApi* | [**communicationGetCommunicationListV1**](docs/Api/ModuleCommunicationApi.md#communicationgetcommunicationlistv1) | **GET** /1/module/communication/getCommunicationList | Retrieve communication list
+*ModuleCommunicationApi* | [**communicationGetCommunicationCountV1**](docs/Api/ModuleCommunicationApi.md#communicationgetcommunicationcountv1) | **GET** /1/module/communication/getCount | Retrieve Communication count
 *ModuleEzsignApi* | [**ezsignSuggestSignersV1**](docs/Api/ModuleEzsignApi.md#ezsignsuggestsignersv1) | **GET** /1/module/ezsign/suggestSigners | Suggest signers
 *ModuleEzsignApi* | [**ezsignSuggestTemplatesV1**](docs/Api/ModuleEzsignApi.md#ezsignsuggesttemplatesv1) | **GET** /1/module/ezsign/suggestTemplates | Suggest templates
 *ModuleUserApi* | [**userCreateEzsignuserV1**](docs/Api/ModuleUserApi.md#usercreateezsignuserv1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
@@ -98,6 +97,7 @@ Class | Method | HTTP request | Description
 *ObjectBrandingApi* | [**brandingGetListV1**](docs/Api/ObjectBrandingApi.md#brandinggetlistv1) | **GET** /1/object/branding/getList | Retrieve Branding list
 *ObjectBrandingApi* | [**brandingGetObjectV1**](docs/Api/ObjectBrandingApi.md#brandinggetobjectv1) | **GET** /1/object/branding/{pkiBrandingID} | Retrieve an existing Branding
 *ObjectBrandingApi* | [**brandingGetObjectV2**](docs/Api/ObjectBrandingApi.md#brandinggetobjectv2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding
+*ObjectCommunicationApi* | [**communicationGetListV1**](docs/Api/ObjectCommunicationApi.md#communicationgetlistv1) | **GET** /1/object/communication/getList | Retrieve Communication list
 *ObjectCommunicationApi* | [**communicationGetObjectV2**](docs/Api/ObjectCommunicationApi.md#communicationgetobjectv2) | **GET** /2/object/communication/{pkiCommunicationID} | Retrieve an existing Communication
 *ObjectDepartmentApi* | [**departmentGetAutocompleteV1**](docs/Api/ObjectDepartmentApi.md#departmentgetautocompletev1) | **GET** /1/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
 *ObjectDepartmentApi* | [**departmentGetAutocompleteV2**](docs/Api/ObjectDepartmentApi.md#departmentgetautocompletev2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
@@ -267,6 +267,12 @@ Class | Method | HTTP request | Description
 *ObjectFranchisereferalincomeApi* | [**franchisereferalincomeCreateObjectV2**](docs/Api/ObjectFranchisereferalincomeApi.md#franchisereferalincomecreateobjectv2) | **POST** /2/object/franchisereferalincome | Create a new Franchisereferalincome
 *ObjectNotificationsectionApi* | [**notificationsectionGetNotificationtestsV1**](docs/Api/ObjectNotificationsectionApi.md#notificationsectiongetnotificationtestsv1) | **GET** /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests | Retrieve an existing Notificationsection&#39;s Notificationtests
 *ObjectNotificationtestApi* | [**notificationtestGetElementsV1**](docs/Api/ObjectNotificationtestApi.md#notificationtestgetelementsv1) | **GET** /1/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest&#39;s Elements
+*ObjectPaymenttermApi* | [**paymenttermCreateObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermcreateobjectv1) | **POST** /1/object/paymentterm | Create a new Paymentterm
+*ObjectPaymenttermApi* | [**paymenttermDeleteObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermdeleteobjectv1) | **DELETE** /1/object/paymentterm/{pkiPaymenttermID} | Delete an existing Paymentterm
+*ObjectPaymenttermApi* | [**paymenttermEditObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermeditobjectv1) | **PUT** /1/object/paymentterm/{pkiPaymenttermID} | Edit an existing Paymentterm
+*ObjectPaymenttermApi* | [**paymenttermGetAutocompleteV2**](docs/Api/ObjectPaymenttermApi.md#paymenttermgetautocompletev2) | **GET** /2/object/paymentterm/getAutocomplete/{sSelector} | Retrieve Paymentterms and IDs
+*ObjectPaymenttermApi* | [**paymenttermGetListV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermgetlistv1) | **GET** /1/object/paymentterm/getList | Retrieve Paymentterm list
+*ObjectPaymenttermApi* | [**paymenttermGetObjectV2**](docs/Api/ObjectPaymenttermApi.md#paymenttermgetobjectv2) | **GET** /2/object/paymentterm/{pkiPaymenttermID} | Retrieve an existing Paymentterm
 *ObjectPeriodApi* | [**periodGetAutocompleteV1**](docs/Api/ObjectPeriodApi.md#periodgetautocompletev1) | **GET** /1/object/period/getAutocomplete/{sSelector} | Retrieve Periods and IDs
 *ObjectPeriodApi* | [**periodGetAutocompleteV2**](docs/Api/ObjectPeriodApi.md#periodgetautocompletev2) | **GET** /2/object/period/getAutocomplete/{sSelector} | Retrieve Periods and IDs
 *ObjectSecretquestionApi* | [**secretquestionGetAutocompleteV1**](docs/Api/ObjectSecretquestionApi.md#secretquestiongetautocompletev1) | **GET** /1/object/secretquestion/getAutocomplete/{sSelector} | Retrieve Secretquestions and IDs
@@ -373,6 +379,7 @@ Class | Method | HTTP request | Description
 - [CommunicationGetListV1Response](docs/Model/CommunicationGetListV1Response.md)
 - [CommunicationGetListV1ResponseAllOf](docs/Model/CommunicationGetListV1ResponseAllOf.md)
 - [CommunicationGetListV1ResponseMPayload](docs/Model/CommunicationGetListV1ResponseMPayload.md)
+- [CommunicationGetListV1ResponseMPayloadAllOf](docs/Model/CommunicationGetListV1ResponseMPayloadAllOf.md)
 - [CommunicationGetObjectV2Response](docs/Model/CommunicationGetObjectV2Response.md)
 - [CommunicationGetObjectV2ResponseAllOf](docs/Model/CommunicationGetObjectV2ResponseAllOf.md)
 - [CommunicationGetObjectV2ResponseMPayload](docs/Model/CommunicationGetObjectV2ResponseMPayload.md)
@@ -382,14 +389,11 @@ Class | Method | HTTP request | Description
 - [CommunicationResponseCompoundAllOf](docs/Model/CommunicationResponseCompoundAllOf.md)
 - [CommunicationattachmentResponse](docs/Model/CommunicationattachmentResponse.md)
 - [CommunicationattachmentResponseCompound](docs/Model/CommunicationattachmentResponseCompound.md)
-- [CommunicationexternalimageResponse](docs/Model/CommunicationexternalimageResponse.md)
-- [CommunicationexternalimageResponseCompound](docs/Model/CommunicationexternalimageResponseCompound.md)
 - [CommunicationexternalrecipientResponse](docs/Model/CommunicationexternalrecipientResponse.md)
 - [CommunicationexternalrecipientResponseCompound](docs/Model/CommunicationexternalrecipientResponseCompound.md)
-- [CommunicationimageResponse](docs/Model/CommunicationimageResponse.md)
-- [CommunicationimageResponseCompound](docs/Model/CommunicationimageResponseCompound.md)
 - [CommunicationrecipientResponse](docs/Model/CommunicationrecipientResponse.md)
 - [CommunicationrecipientResponseCompound](docs/Model/CommunicationrecipientResponseCompound.md)
+- [ComputedECommunicationDirection](docs/Model/ComputedECommunicationDirection.md)
 - [ContactRequest](docs/Model/ContactRequest.md)
 - [ContactRequestCompound](docs/Model/ContactRequestCompound.md)
 - [ContactRequestCompoundAllOf](docs/Model/ContactRequestCompoundAllOf.md)
@@ -440,8 +444,12 @@ Class | Method | HTTP request | Description
 - [DepartmentGetMembersV1Response](docs/Model/DepartmentGetMembersV1Response.md)
 - [DepartmentGetMembersV1ResponseAllOf](docs/Model/DepartmentGetMembersV1ResponseAllOf.md)
 - [DepartmentGetMembersV1ResponseMPayload](docs/Model/DepartmentGetMembersV1ResponseMPayload.md)
+- [DescriptionstaticResponse](docs/Model/DescriptionstaticResponse.md)
+- [DescriptionstaticResponseCompound](docs/Model/DescriptionstaticResponseCompound.md)
 - [EmailRequest](docs/Model/EmailRequest.md)
 - [EmailRequestCompound](docs/Model/EmailRequestCompound.md)
+- [EmailstaticResponse](docs/Model/EmailstaticResponse.md)
+- [EmailstaticResponseCompound](docs/Model/EmailstaticResponseCompound.md)
 - [EzmaxinvoicingAutocompleteElementResponse](docs/Model/EzmaxinvoicingAutocompleteElementResponse.md)
 - [EzmaxinvoicingGetAutocompleteV2Response](docs/Model/EzmaxinvoicingGetAutocompleteV2Response.md)
 - [EzmaxinvoicingGetAutocompleteV2ResponseAllOf](docs/Model/EzmaxinvoicingGetAutocompleteV2ResponseAllOf.md)
@@ -1041,9 +1049,10 @@ Class | Method | HTTP request | Description
 - [FieldEActivesessionUsertype](docs/Model/FieldEActivesessionUsertype.md)
 - [FieldEActivesessionWeekdaystart](docs/Model/FieldEActivesessionWeekdaystart.md)
 - [FieldEBrandingLogo](docs/Model/FieldEBrandingLogo.md)
-- [FieldECommunicationEmailimportance](docs/Model/FieldECommunicationEmailimportance.md)
+- [FieldECommunicationImportance](docs/Model/FieldECommunicationImportance.md)
 - [FieldECommunicationType](docs/Model/FieldECommunicationType.md)
 - [FieldECommunicationexternalrecipientType](docs/Model/FieldECommunicationexternalrecipientType.md)
+- [FieldECommunicationrecipientObjecttype](docs/Model/FieldECommunicationrecipientObjecttype.md)
 - [FieldECommunicationrecipientType](docs/Model/FieldECommunicationrecipientType.md)
 - [FieldEEzmaxinvoicingPaymenttype](docs/Model/FieldEEzmaxinvoicingPaymenttype.md)
 - [FieldEEzmaxinvoicingagentVariationezmax](docs/Model/FieldEEzmaxinvoicingagentVariationezmax.md)
@@ -1107,6 +1116,7 @@ Class | Method | HTTP request | Description
 - [MultilingualEzsignfoldertypeName](docs/Model/MultilingualEzsignfoldertypeName.md)
 - [MultilingualNotificationsubsectionName](docs/Model/MultilingualNotificationsubsectionName.md)
 - [MultilingualNotificationtestName](docs/Model/MultilingualNotificationtestName.md)
+- [MultilingualPaymenttermDescription](docs/Model/MultilingualPaymenttermDescription.md)
 - [MultilingualVersionhistoryDetail](docs/Model/MultilingualVersionhistoryDetail.md)
 - [NotificationsectionGetNotificationtestsV1Response](docs/Model/NotificationsectionGetNotificationtestsV1Response.md)
 - [NotificationsectionGetNotificationtestsV1ResponseAllOf](docs/Model/NotificationsectionGetNotificationtestsV1ResponseAllOf.md)
@@ -1116,14 +1126,37 @@ Class | Method | HTTP request | Description
 - [NotificationtestGetElementsV1ResponseAllOf](docs/Model/NotificationtestGetElementsV1ResponseAllOf.md)
 - [NotificationtestGetElementsV1ResponseMPayload](docs/Model/NotificationtestGetElementsV1ResponseMPayload.md)
 - [NotificationtestResponse](docs/Model/NotificationtestResponse.md)
+- [PaymenttermAutocompleteElementResponse](docs/Model/PaymenttermAutocompleteElementResponse.md)
+- [PaymenttermCreateObjectV1Request](docs/Model/PaymenttermCreateObjectV1Request.md)
+- [PaymenttermCreateObjectV1Response](docs/Model/PaymenttermCreateObjectV1Response.md)
+- [PaymenttermCreateObjectV1ResponseAllOf](docs/Model/PaymenttermCreateObjectV1ResponseAllOf.md)
+- [PaymenttermCreateObjectV1ResponseMPayload](docs/Model/PaymenttermCreateObjectV1ResponseMPayload.md)
+- [PaymenttermDeleteObjectV1Response](docs/Model/PaymenttermDeleteObjectV1Response.md)
+- [PaymenttermEditObjectV1Request](docs/Model/PaymenttermEditObjectV1Request.md)
+- [PaymenttermEditObjectV1Response](docs/Model/PaymenttermEditObjectV1Response.md)
+- [PaymenttermGetAutocompleteV2Response](docs/Model/PaymenttermGetAutocompleteV2Response.md)
+- [PaymenttermGetAutocompleteV2ResponseAllOf](docs/Model/PaymenttermGetAutocompleteV2ResponseAllOf.md)
+- [PaymenttermGetAutocompleteV2ResponseMPayload](docs/Model/PaymenttermGetAutocompleteV2ResponseMPayload.md)
+- [PaymenttermGetListV1Response](docs/Model/PaymenttermGetListV1Response.md)
+- [PaymenttermGetListV1ResponseAllOf](docs/Model/PaymenttermGetListV1ResponseAllOf.md)
+- [PaymenttermGetListV1ResponseMPayload](docs/Model/PaymenttermGetListV1ResponseMPayload.md)
+- [PaymenttermGetListV1ResponseMPayloadAllOf](docs/Model/PaymenttermGetListV1ResponseMPayloadAllOf.md)
+- [PaymenttermGetObjectV2Response](docs/Model/PaymenttermGetObjectV2Response.md)
+- [PaymenttermGetObjectV2ResponseAllOf](docs/Model/PaymenttermGetObjectV2ResponseAllOf.md)
+- [PaymenttermGetObjectV2ResponseMPayload](docs/Model/PaymenttermGetObjectV2ResponseMPayload.md)
+- [PaymenttermListElement](docs/Model/PaymenttermListElement.md)
+- [PaymenttermRequest](docs/Model/PaymenttermRequest.md)
+- [PaymenttermRequestCompound](docs/Model/PaymenttermRequestCompound.md)
+- [PaymenttermResponse](docs/Model/PaymenttermResponse.md)
+- [PaymenttermResponseCompound](docs/Model/PaymenttermResponseCompound.md)
 - [PeriodAutocompleteElementResponse](docs/Model/PeriodAutocompleteElementResponse.md)
 - [PeriodGetAutocompleteV2Response](docs/Model/PeriodGetAutocompleteV2Response.md)
 - [PeriodGetAutocompleteV2ResponseAllOf](docs/Model/PeriodGetAutocompleteV2ResponseAllOf.md)
 - [PeriodGetAutocompleteV2ResponseMPayload](docs/Model/PeriodGetAutocompleteV2ResponseMPayload.md)
 - [PhoneRequest](docs/Model/PhoneRequest.md)
 - [PhoneRequestCompound](docs/Model/PhoneRequestCompound.md)
-- [PhoneResponse](docs/Model/PhoneResponse.md)
-- [PhoneResponseCompound](docs/Model/PhoneResponseCompound.md)
+- [PhonestaticResponse](docs/Model/PhonestaticResponse.md)
+- [PhonestaticResponseCompound](docs/Model/PhonestaticResponseCompound.md)
 - [SecretquestionAutocompleteElementResponse](docs/Model/SecretquestionAutocompleteElementResponse.md)
 - [SecretquestionGetAutocompleteV2Response](docs/Model/SecretquestionGetAutocompleteV2Response.md)
 - [SecretquestionGetAutocompleteV2ResponseAllOf](docs/Model/SecretquestionGetAutocompleteV2ResponseAllOf.md)

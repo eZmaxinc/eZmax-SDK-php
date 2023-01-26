@@ -71,7 +71,14 @@ class ModuleCommunicationApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'communicationGetCommunicationCountV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -120,36 +127,38 @@ class ModuleCommunicationApi
     /**
      * Operation communicationGetCommunicationCountV1
      *
-     * Get the number of communication
+     * Retrieve Communication count
      *
-     * @param  string $eCommunicationModule Specify the requested module (required)
+     * @param  string $eCommunicationObjecttype The object type for the Communication (required)
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetCommunicationCountV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\CommunicationGetCountV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function communicationGetCommunicationCountV1($eCommunicationModule, $pkiEzsignfolderID = null)
+    public function communicationGetCommunicationCountV1($eCommunicationObjecttype, $pkiEzsignfolderID = null, string $contentType = self::contentTypes['communicationGetCommunicationCountV1'][0])
     {
-        list($response) = $this->communicationGetCommunicationCountV1WithHttpInfo($eCommunicationModule, $pkiEzsignfolderID);
+        list($response) = $this->communicationGetCommunicationCountV1WithHttpInfo($eCommunicationObjecttype, $pkiEzsignfolderID, $contentType);
         return $response;
     }
 
     /**
      * Operation communicationGetCommunicationCountV1WithHttpInfo
      *
-     * Get the number of communication
+     * Retrieve Communication count
      *
-     * @param  string $eCommunicationModule Specify the requested module (required)
+     * @param  string $eCommunicationObjecttype The object type for the Communication (required)
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetCommunicationCountV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\CommunicationGetCountV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function communicationGetCommunicationCountV1WithHttpInfo($eCommunicationModule, $pkiEzsignfolderID = null)
+    public function communicationGetCommunicationCountV1WithHttpInfo($eCommunicationObjecttype, $pkiEzsignfolderID = null, string $contentType = self::contentTypes['communicationGetCommunicationCountV1'][0])
     {
-        $request = $this->communicationGetCommunicationCountV1Request($eCommunicationModule, $pkiEzsignfolderID);
+        $request = $this->communicationGetCommunicationCountV1Request($eCommunicationObjecttype, $pkiEzsignfolderID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -261,17 +270,18 @@ class ModuleCommunicationApi
     /**
      * Operation communicationGetCommunicationCountV1Async
      *
-     * Get the number of communication
+     * Retrieve Communication count
      *
-     * @param  string $eCommunicationModule Specify the requested module (required)
+     * @param  string $eCommunicationObjecttype The object type for the Communication (required)
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetCommunicationCountV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function communicationGetCommunicationCountV1Async($eCommunicationModule, $pkiEzsignfolderID = null)
+    public function communicationGetCommunicationCountV1Async($eCommunicationObjecttype, $pkiEzsignfolderID = null, string $contentType = self::contentTypes['communicationGetCommunicationCountV1'][0])
     {
-        return $this->communicationGetCommunicationCountV1AsyncWithHttpInfo($eCommunicationModule, $pkiEzsignfolderID)
+        return $this->communicationGetCommunicationCountV1AsyncWithHttpInfo($eCommunicationObjecttype, $pkiEzsignfolderID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -282,18 +292,19 @@ class ModuleCommunicationApi
     /**
      * Operation communicationGetCommunicationCountV1AsyncWithHttpInfo
      *
-     * Get the number of communication
+     * Retrieve Communication count
      *
-     * @param  string $eCommunicationModule Specify the requested module (required)
+     * @param  string $eCommunicationObjecttype The object type for the Communication (required)
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetCommunicationCountV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function communicationGetCommunicationCountV1AsyncWithHttpInfo($eCommunicationModule, $pkiEzsignfolderID = null)
+    public function communicationGetCommunicationCountV1AsyncWithHttpInfo($eCommunicationObjecttype, $pkiEzsignfolderID = null, string $contentType = self::contentTypes['communicationGetCommunicationCountV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\CommunicationGetCountV1Response';
-        $request = $this->communicationGetCommunicationCountV1Request($eCommunicationModule, $pkiEzsignfolderID);
+        $request = $this->communicationGetCommunicationCountV1Request($eCommunicationObjecttype, $pkiEzsignfolderID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -334,24 +345,26 @@ class ModuleCommunicationApi
     /**
      * Create request for operation 'communicationGetCommunicationCountV1'
      *
-     * @param  string $eCommunicationModule Specify the requested module (required)
+     * @param  string $eCommunicationObjecttype The object type for the Communication (required)
      * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetCommunicationCountV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function communicationGetCommunicationCountV1Request($eCommunicationModule, $pkiEzsignfolderID = null)
+    public function communicationGetCommunicationCountV1Request($eCommunicationObjecttype, $pkiEzsignfolderID = null, string $contentType = self::contentTypes['communicationGetCommunicationCountV1'][0])
     {
 
-        // verify the required parameter 'eCommunicationModule' is set
-        if ($eCommunicationModule === null || (is_array($eCommunicationModule) && count($eCommunicationModule) === 0)) {
+        // verify the required parameter 'eCommunicationObjecttype' is set
+        if ($eCommunicationObjecttype === null || (is_array($eCommunicationObjecttype) && count($eCommunicationObjecttype) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $eCommunicationModule when calling communicationGetCommunicationCountV1'
+                'Missing the required parameter $eCommunicationObjecttype when calling communicationGetCommunicationCountV1'
             );
         }
 
 
-        $resourcePath = '/1/module/communication/getCommunicationCount';
+
+        $resourcePath = '/1/module/communication/getCount';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -360,8 +373,8 @@ class ModuleCommunicationApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $eCommunicationModule,
-            'eCommunicationModule', // param base name
+            $eCommunicationObjecttype,
+            'eCommunicationObjecttype', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -380,16 +393,11 @@ class ModuleCommunicationApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -407,344 +415,9 @@ class ModuleCommunicationApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-
-        if ($apiKey !== null) {
-            $secret = $this->config->getSecret();
-            if ($secret !== '') {
-                //Let's sign the request
-                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
-            }		
-        }
-
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation communicationGetCommunicationListV1
-     *
-     * Retrieve communication list
-     *
-     * @param  string $eCommunicationModule Specify the requested module (required)
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
-     *
-     * @throws \eZmaxAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\CommunicationGetListV1Response|\eZmaxAPI\Model\CommonResponseError
-     */
-    public function communicationGetCommunicationListV1($eCommunicationModule, $pkiEzsignfolderID = null)
-    {
-        list($response) = $this->communicationGetCommunicationListV1WithHttpInfo($eCommunicationModule, $pkiEzsignfolderID);
-        return $response;
-    }
-
-    /**
-     * Operation communicationGetCommunicationListV1WithHttpInfo
-     *
-     * Retrieve communication list
-     *
-     * @param  string $eCommunicationModule Specify the requested module (required)
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
-     *
-     * @throws \eZmaxAPI\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\CommunicationGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function communicationGetCommunicationListV1WithHttpInfo($eCommunicationModule, $pkiEzsignfolderID = null)
-    {
-        $request = $this->communicationGetCommunicationListV1Request($eCommunicationModule, $pkiEzsignfolderID);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\eZmaxAPI\Model\CommunicationGetListV1Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\eZmaxAPI\Model\CommunicationGetListV1Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommunicationGetListV1Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\eZmaxAPI\Model\CommunicationGetListV1Response';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\eZmaxAPI\Model\CommunicationGetListV1Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\eZmaxAPI\Model\CommonResponseError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation communicationGetCommunicationListV1Async
-     *
-     * Retrieve communication list
-     *
-     * @param  string $eCommunicationModule Specify the requested module (required)
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function communicationGetCommunicationListV1Async($eCommunicationModule, $pkiEzsignfolderID = null)
-    {
-        return $this->communicationGetCommunicationListV1AsyncWithHttpInfo($eCommunicationModule, $pkiEzsignfolderID)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation communicationGetCommunicationListV1AsyncWithHttpInfo
-     *
-     * Retrieve communication list
-     *
-     * @param  string $eCommunicationModule Specify the requested module (required)
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function communicationGetCommunicationListV1AsyncWithHttpInfo($eCommunicationModule, $pkiEzsignfolderID = null)
-    {
-        $returnType = '\eZmaxAPI\Model\CommunicationGetListV1Response';
-        $request = $this->communicationGetCommunicationListV1Request($eCommunicationModule, $pkiEzsignfolderID);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'communicationGetCommunicationListV1'
-     *
-     * @param  string $eCommunicationModule Specify the requested module (required)
-     * @param  int $pkiEzsignfolderID The unique ID of the Ezsignfolder (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function communicationGetCommunicationListV1Request($eCommunicationModule, $pkiEzsignfolderID = null)
-    {
-
-        // verify the required parameter 'eCommunicationModule' is set
-        if ($eCommunicationModule === null || (is_array($eCommunicationModule) && count($eCommunicationModule) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $eCommunicationModule when calling communicationGetCommunicationListV1'
-            );
-        }
-
-
-        $resourcePath = '/1/module/communication/getCommunicationList';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $eCommunicationModule,
-            'eCommunicationModule', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $pkiEzsignfolderID,
-            'pkiEzsignfolderID', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

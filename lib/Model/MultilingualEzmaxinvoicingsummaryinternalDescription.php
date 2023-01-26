@@ -133,6 +133,16 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription implements ModelInter
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -320,9 +330,12 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription implements ModelInter
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzmaxinvoicingsummaryinternalDescription1)) {
             //throw new \InvalidArgumentException('non-nullable sEzmaxinvoicingsummaryinternalDescription1 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzmaxinvoicingsummaryinternalDescription1'] = $sEzmaxinvoicingsummaryinternalDescription1;
         $this->container['sEzmaxinvoicingsummaryinternalDescription1'] = (is_null($sEzmaxinvoicingsummaryinternalDescription1) ? null : (string) $sEzmaxinvoicingsummaryinternalDescription1);
 
         return $this;
@@ -352,9 +365,12 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription implements ModelInter
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzmaxinvoicingsummaryinternalDescription2)) {
             //throw new \InvalidArgumentException('non-nullable sEzmaxinvoicingsummaryinternalDescription2 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzmaxinvoicingsummaryinternalDescription2'] = $sEzmaxinvoicingsummaryinternalDescription2;
         $this->container['sEzmaxinvoicingsummaryinternalDescription2'] = (is_null($sEzmaxinvoicingsummaryinternalDescription2) ? null : (string) $sEzmaxinvoicingsummaryinternalDescription2);
 
         return $this;

@@ -154,6 +154,16 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -401,9 +411,12 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setEActivesessionUsertype($eActivesessionUsertype)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eActivesessionUsertype)) {
             //throw new \InvalidArgumentException('non-nullable eActivesessionUsertype cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eActivesessionUsertype'] = $eActivesessionUsertype;
         $this->container['eActivesessionUsertype'] = $eActivesessionUsertype;
 
         return $this;
@@ -429,9 +442,12 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setEActivesessionWeekdaystart($eActivesessionWeekdaystart)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eActivesessionWeekdaystart)) {
             //throw new \InvalidArgumentException('non-nullable eActivesessionWeekdaystart cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eActivesessionWeekdaystart'] = $eActivesessionWeekdaystart;
         $this->container['eActivesessionWeekdaystart'] = $eActivesessionWeekdaystart;
 
         return $this;
@@ -465,9 +481,12 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiLanguageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiLanguageID'] = $fkiLanguageID;
         $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
 
         return $this;
@@ -493,9 +512,12 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setSCompanyNameX($sCompanyNameX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCompanyNameX)) {
             //throw new \InvalidArgumentException('non-nullable sCompanyNameX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sCompanyNameX'] = $sCompanyNameX;
         $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : (string) $sCompanyNameX);
 
         return $this;
@@ -521,9 +543,12 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setSDepartmentNameX($sDepartmentNameX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sDepartmentNameX)) {
             //throw new \InvalidArgumentException('non-nullable sDepartmentNameX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sDepartmentNameX'] = $sDepartmentNameX;
         $this->container['sDepartmentNameX'] = (is_null($sDepartmentNameX) ? null : (string) $sDepartmentNameX);
 
         return $this;
@@ -549,9 +574,12 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setBActivesessionDebug($bActivesessionDebug)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bActivesessionDebug)) {
             //throw new \InvalidArgumentException('non-nullable bActivesessionDebug cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bActivesessionDebug'] = $bActivesessionDebug;
         $this->container['bActivesessionDebug'] = (is_null($bActivesessionDebug) ? null : (bool) $bActivesessionDebug);
 
         return $this;
@@ -577,9 +605,12 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setBActivesessionIssuperadmin($bActivesessionIssuperadmin)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bActivesessionIssuperadmin)) {
             //throw new \InvalidArgumentException('non-nullable bActivesessionIssuperadmin cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bActivesessionIssuperadmin'] = $bActivesessionIssuperadmin;
         $this->container['bActivesessionIssuperadmin'] = (is_null($bActivesessionIssuperadmin) ? null : (bool) $bActivesessionIssuperadmin);
 
         return $this;
@@ -612,9 +643,12 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pksCustomerCode)) {
             //throw new \InvalidArgumentException('non-nullable pksCustomerCode cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pksCustomerCode'] = $pksCustomerCode;
         $this->container['pksCustomerCode'] = (is_null($pksCustomerCode) ? null : (string) $pksCustomerCode);
 
         return $this;
@@ -645,9 +679,12 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiSystemconfigurationtypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiSystemconfigurationtypeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiSystemconfigurationtypeID'] = $fkiSystemconfigurationtypeID;
         $this->container['fkiSystemconfigurationtypeID'] = (is_null($fkiSystemconfigurationtypeID) ? null : (int) $fkiSystemconfigurationtypeID);
 
         return $this;

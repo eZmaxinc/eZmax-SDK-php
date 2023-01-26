@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * CommunicationGetListV1Response Class Doc Comment
  *
  * @category Class
- * @description Response for GET /1/module/communication/getList
+ * @description Response for GET /1/object/communication/getList
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,7 +60,7 @@ class CommunicationGetListV1Response implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'mPayload' => '\eZmaxAPI\Model\CommunicationGetListV1ResponseMPayload',
-        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
+        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList',
         'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
     ];
 
@@ -133,6 +133,16 @@ class CommunicationGetListV1Response implements ModelInterface, ArrayAccess, \Js
     private function getOpenAPINullablesSetToNull(): array
     {
         return $this->openAPINullablesSetToNull;
+    }
+
+    /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
     }
 
     /**
@@ -318,9 +328,12 @@ class CommunicationGetListV1Response implements ModelInterface, ArrayAccess, \Js
     public function setMPayload($mPayload)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($mPayload)) {
             //throw new \InvalidArgumentException('non-nullable mPayload cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['mPayload'] = $mPayload;
         $this->container['mPayload'] = $mPayload;
 
         return $this;
@@ -329,7 +342,7 @@ class CommunicationGetListV1Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets objDebugPayload
      *
-     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayload|null
+     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null
      */
     public function getObjDebugPayload()
     {
@@ -339,16 +352,19 @@ class CommunicationGetListV1Response implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets objDebugPayload
      *
-     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayload|null $objDebugPayload objDebugPayload
+     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayloadGetList|null $objDebugPayload objDebugPayload
      *
      * @return self
      */
     public function setObjDebugPayload($objDebugPayload)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objDebugPayload)) {
             //throw new \InvalidArgumentException('non-nullable objDebugPayload cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objDebugPayload'] = $objDebugPayload;
         $this->container['objDebugPayload'] = $objDebugPayload;
 
         return $this;
@@ -374,9 +390,12 @@ class CommunicationGetListV1Response implements ModelInterface, ArrayAccess, \Js
     public function setObjDebug($objDebug)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objDebug)) {
             //throw new \InvalidArgumentException('non-nullable objDebug cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objDebug'] = $objDebug;
         $this->container['objDebug'] = $objDebug;
 
         return $this;

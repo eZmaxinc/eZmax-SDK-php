@@ -133,6 +133,16 @@ class MultilingualApikeyDescription implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -308,9 +318,12 @@ class MultilingualApikeyDescription implements ModelInterface, ArrayAccess, \Jso
     public function setSApikeyDescription1($sApikeyDescription1)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sApikeyDescription1)) {
             //throw new \InvalidArgumentException('non-nullable sApikeyDescription1 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sApikeyDescription1'] = $sApikeyDescription1;
         $this->container['sApikeyDescription1'] = (is_null($sApikeyDescription1) ? null : (string) $sApikeyDescription1);
 
         return $this;
@@ -336,9 +349,12 @@ class MultilingualApikeyDescription implements ModelInterface, ArrayAccess, \Jso
     public function setSApikeyDescription2($sApikeyDescription2)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sApikeyDescription2)) {
             //throw new \InvalidArgumentException('non-nullable sApikeyDescription2 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sApikeyDescription2'] = $sApikeyDescription2;
         $this->container['sApikeyDescription2'] = (is_null($sApikeyDescription2) ? null : (string) $sApikeyDescription2);
 
         return $this;

@@ -133,6 +133,16 @@ class EzsigntemplateformfieldgroupsignerRequest implements ModelInterface, Array
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -324,9 +334,12 @@ class EzsigntemplateformfieldgroupsignerRequest implements ModelInterface, Array
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplateformfieldgroupsignerID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplateformfieldgroupsignerID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiEzsigntemplateformfieldgroupsignerID'] = $pkiEzsigntemplateformfieldgroupsignerID;
         $this->container['pkiEzsigntemplateformfieldgroupsignerID'] = (is_null($pkiEzsigntemplateformfieldgroupsignerID) ? null : (int) $pkiEzsigntemplateformfieldgroupsignerID);
 
         return $this;
@@ -357,9 +370,12 @@ class EzsigntemplateformfieldgroupsignerRequest implements ModelInterface, Array
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplatesignerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatesignerID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsigntemplatesignerID'] = $fkiEzsigntemplatesignerID;
         $this->container['fkiEzsigntemplatesignerID'] = (is_null($fkiEzsigntemplatesignerID) ? null : (int) $fkiEzsigntemplatesignerID);
 
         return $this;

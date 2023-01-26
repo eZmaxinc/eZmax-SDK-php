@@ -148,6 +148,16 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -378,9 +388,12 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiContacttitleID)) {
             //throw new \InvalidArgumentException('non-nullable fkiContacttitleID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiContacttitleID'] = $fkiContacttitleID;
         $this->container['fkiContacttitleID'] = (is_null($fkiContacttitleID) ? null : (int) $fkiContacttitleID);
 
         return $this;
@@ -414,9 +427,12 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiLanguageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiLanguageID'] = $fkiLanguageID;
         $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
 
         return $this;
@@ -442,9 +458,12 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSContactFirstname($sContactFirstname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactFirstname)) {
             //throw new \InvalidArgumentException('non-nullable sContactFirstname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sContactFirstname'] = $sContactFirstname;
         $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : (string) $sContactFirstname);
 
         return $this;
@@ -470,9 +489,12 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSContactLastname($sContactLastname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactLastname)) {
             //throw new \InvalidArgumentException('non-nullable sContactLastname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sContactLastname'] = $sContactLastname;
         $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : (string) $sContactLastname);
 
         return $this;
@@ -498,9 +520,12 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
     public function setSContactCompany($sContactCompany)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactCompany)) {
             //throw new \InvalidArgumentException('non-nullable sContactCompany cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sContactCompany'] = $sContactCompany;
         $this->container['sContactCompany'] = (is_null($sContactCompany) ? null : (string) $sContactCompany);
 
         return $this;
@@ -526,9 +551,12 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
     public function setDtContactBirthdate($dtContactBirthdate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtContactBirthdate)) {
             //throw new \InvalidArgumentException('non-nullable dtContactBirthdate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtContactBirthdate'] = $dtContactBirthdate;
         $this->container['dtContactBirthdate'] = (is_null($dtContactBirthdate) ? null : (string) $dtContactBirthdate);
 
         return $this;
@@ -554,9 +582,12 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
     public function setObjContactinformations($objContactinformations)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objContactinformations)) {
             //throw new \InvalidArgumentException('non-nullable objContactinformations cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objContactinformations'] = $objContactinformations;
         $this->container['objContactinformations'] = $objContactinformations;
 
         return $this;

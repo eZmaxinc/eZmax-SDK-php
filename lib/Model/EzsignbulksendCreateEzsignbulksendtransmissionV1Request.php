@@ -148,6 +148,16 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -378,9 +388,12 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserlogintypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserlogintypeID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiUserlogintypeID'] = $fkiUserlogintypeID;
         $this->container['fkiUserlogintypeID'] = (is_null($fkiUserlogintypeID) ? null : (int) $fkiUserlogintypeID);
 
         return $this;
@@ -414,9 +427,12 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntsarequirementID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntsarequirementID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsigntsarequirementID'] = $fkiEzsigntsarequirementID;
         $this->container['fkiEzsigntsarequirementID'] = (is_null($fkiEzsigntsarequirementID) ? null : (int) $fkiEzsigntsarequirementID);
 
         return $this;
@@ -442,9 +458,12 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
     public function setSEzsignbulksendtransmissionDescription($sEzsignbulksendtransmissionDescription)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignbulksendtransmissionDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignbulksendtransmissionDescription cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsignbulksendtransmissionDescription'] = $sEzsignbulksendtransmissionDescription;
         $this->container['sEzsignbulksendtransmissionDescription'] = (is_null($sEzsignbulksendtransmissionDescription) ? null : (string) $sEzsignbulksendtransmissionDescription);
 
         return $this;
@@ -470,9 +489,12 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
     public function setDtEzsigndocumentDuedate($dtEzsigndocumentDuedate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsigndocumentDuedate)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsigndocumentDuedate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
         $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : (string) $dtEzsigndocumentDuedate);
 
         return $this;
@@ -498,9 +520,12 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
     public function setEEzsignfolderSendreminderfrequency($eEzsignfolderSendreminderfrequency)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsignfolderSendreminderfrequency)) {
             //throw new \InvalidArgumentException('non-nullable eEzsignfolderSendreminderfrequency cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsignfolderSendreminderfrequency'] = $eEzsignfolderSendreminderfrequency;
         $this->container['eEzsignfolderSendreminderfrequency'] = $eEzsignfolderSendreminderfrequency;
 
         return $this;
@@ -526,9 +551,12 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
     public function setTExtraMessage($tExtraMessage)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tExtraMessage)) {
             //throw new \InvalidArgumentException('non-nullable tExtraMessage cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['tExtraMessage'] = $tExtraMessage;
         $this->container['tExtraMessage'] = (is_null($tExtraMessage) ? null : (string) $tExtraMessage);
 
         return $this;
@@ -554,9 +582,12 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
     public function setSCsvBase64($sCsvBase64)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCsvBase64)) {
             //throw new \InvalidArgumentException('non-nullable sCsvBase64 cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sCsvBase64'] = $sCsvBase64;
         $this->container['sCsvBase64'] = (is_null($sCsvBase64) ? null : $sCsvBase64);
 
         return $this;

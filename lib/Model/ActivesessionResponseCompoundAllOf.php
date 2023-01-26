@@ -141,6 +141,16 @@ class ActivesessionResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -337,9 +347,12 @@ class ActivesessionResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     public function setAPkiPermissionID($aPkiPermissionID)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiPermissionID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiPermissionID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aPkiPermissionID'] = $aPkiPermissionID;
         $this->container['aPkiPermissionID'] = (is_null($aPkiPermissionID) ? null : $aPkiPermissionID);
 
         return $this;
@@ -365,9 +378,12 @@ class ActivesessionResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     public function setObjUserReal($objUserReal)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objUserReal)) {
             //throw new \InvalidArgumentException('non-nullable objUserReal cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objUserReal'] = $objUserReal;
         $this->container['objUserReal'] = $objUserReal;
 
         return $this;
@@ -393,9 +409,12 @@ class ActivesessionResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     public function setObjUserCloned($objUserCloned)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objUserCloned)) {
             //throw new \InvalidArgumentException('non-nullable objUserCloned cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objUserCloned'] = $objUserCloned;
         $this->container['objUserCloned'] = $objUserCloned;
 
         return $this;
@@ -421,9 +440,12 @@ class ActivesessionResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     public function setObjApikey($objApikey)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objApikey)) {
             //throw new \InvalidArgumentException('non-nullable objApikey cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objApikey'] = $objApikey;
         $this->container['objApikey'] = $objApikey;
 
         return $this;
@@ -449,9 +471,12 @@ class ActivesessionResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     public function setAEModuleInternalname($aEModuleInternalname)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aEModuleInternalname)) {
             //throw new \InvalidArgumentException('non-nullable aEModuleInternalname cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aEModuleInternalname'] = $aEModuleInternalname;
         $this->container['aEModuleInternalname'] = (is_null($aEModuleInternalname) ? null : $aEModuleInternalname);
 
         return $this;

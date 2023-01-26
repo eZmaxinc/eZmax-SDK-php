@@ -142,6 +142,16 @@ class NotificationsubsectionResponse implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -351,9 +361,12 @@ class NotificationsubsectionResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiNotificationsubsectionID)) {
             //throw new \InvalidArgumentException('non-nullable pkiNotificationsubsectionID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiNotificationsubsectionID'] = $pkiNotificationsubsectionID;
         $this->container['pkiNotificationsubsectionID'] = (is_null($pkiNotificationsubsectionID) ? null : (int) $pkiNotificationsubsectionID);
 
         return $this;
@@ -384,9 +397,12 @@ class NotificationsubsectionResponse implements ModelInterface, ArrayAccess, \Js
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiNotificationsectionID)) {
             //throw new \InvalidArgumentException('non-nullable fkiNotificationsectionID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiNotificationsectionID'] = $fkiNotificationsectionID;
         $this->container['fkiNotificationsectionID'] = (is_null($fkiNotificationsectionID) ? null : (int) $fkiNotificationsectionID);
 
         return $this;
@@ -412,9 +428,12 @@ class NotificationsubsectionResponse implements ModelInterface, ArrayAccess, \Js
     public function setObjNotificationsubsectionName($objNotificationsubsectionName)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objNotificationsubsectionName)) {
             //throw new \InvalidArgumentException('non-nullable objNotificationsubsectionName cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objNotificationsubsectionName'] = $objNotificationsubsectionName;
         $this->container['objNotificationsubsectionName'] = $objNotificationsubsectionName;
 
         return $this;
@@ -440,9 +459,12 @@ class NotificationsubsectionResponse implements ModelInterface, ArrayAccess, \Js
     public function setSNotificationsectionNameX($sNotificationsectionNameX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sNotificationsectionNameX)) {
             //throw new \InvalidArgumentException('non-nullable sNotificationsectionNameX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sNotificationsectionNameX'] = $sNotificationsectionNameX;
         $this->container['sNotificationsectionNameX'] = (is_null($sNotificationsectionNameX) ? null : (string) $sNotificationsectionNameX);
 
         return $this;
@@ -468,9 +490,12 @@ class NotificationsubsectionResponse implements ModelInterface, ArrayAccess, \Js
     public function setSNotificationsubsectionNameX($sNotificationsubsectionNameX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sNotificationsubsectionNameX)) {
             //throw new \InvalidArgumentException('non-nullable sNotificationsubsectionNameX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sNotificationsubsectionNameX'] = $sNotificationsubsectionNameX;
         $this->container['sNotificationsubsectionNameX'] = (is_null($sNotificationsubsectionNameX) ? null : (string) $sNotificationsubsectionNameX);
 
         return $this;

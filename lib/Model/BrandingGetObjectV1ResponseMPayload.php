@@ -163,6 +163,16 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -468,9 +478,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiBrandingID)) {
             //throw new \InvalidArgumentException('non-nullable pkiBrandingID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiBrandingID'] = $pkiBrandingID;
         $this->container['pkiBrandingID'] = (is_null($pkiBrandingID) ? null : (int) $pkiBrandingID);
 
         return $this;
@@ -496,9 +509,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
     public function setObjBrandingDescription($objBrandingDescription)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objBrandingDescription)) {
             //throw new \InvalidArgumentException('non-nullable objBrandingDescription cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objBrandingDescription'] = $objBrandingDescription;
         $this->container['objBrandingDescription'] = $objBrandingDescription;
 
         return $this;
@@ -524,9 +540,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
     public function setSBrandingDescriptionX($sBrandingDescriptionX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBrandingDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sBrandingDescriptionX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sBrandingDescriptionX'] = $sBrandingDescriptionX;
         $this->container['sBrandingDescriptionX'] = (is_null($sBrandingDescriptionX) ? null : (string) $sBrandingDescriptionX);
 
         return $this;
@@ -552,9 +571,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
     public function setEBrandingLogo($eBrandingLogo)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eBrandingLogo)) {
             //throw new \InvalidArgumentException('non-nullable eBrandingLogo cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eBrandingLogo'] = $eBrandingLogo;
         $this->container['eBrandingLogo'] = $eBrandingLogo;
 
         return $this;
@@ -588,9 +610,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColortext)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColortext cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iBrandingColortext'] = $iBrandingColortext;
         $this->container['iBrandingColortext'] = (is_null($iBrandingColortext) ? null : (int) $iBrandingColortext);
 
         return $this;
@@ -624,9 +649,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColortextlinkbox)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColortextlinkbox cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iBrandingColortextlinkbox'] = $iBrandingColortextlinkbox;
         $this->container['iBrandingColortextlinkbox'] = (is_null($iBrandingColortextlinkbox) ? null : (int) $iBrandingColortextlinkbox);
 
         return $this;
@@ -660,9 +688,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColortextbutton)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColortextbutton cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iBrandingColortextbutton'] = $iBrandingColortextbutton;
         $this->container['iBrandingColortextbutton'] = (is_null($iBrandingColortextbutton) ? null : (int) $iBrandingColortextbutton);
 
         return $this;
@@ -696,9 +727,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColorbackground)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColorbackground cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iBrandingColorbackground'] = $iBrandingColorbackground;
         $this->container['iBrandingColorbackground'] = (is_null($iBrandingColorbackground) ? null : (int) $iBrandingColorbackground);
 
         return $this;
@@ -732,9 +766,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColorbackgroundbutton)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColorbackgroundbutton cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iBrandingColorbackgroundbutton'] = $iBrandingColorbackgroundbutton;
         $this->container['iBrandingColorbackgroundbutton'] = (is_null($iBrandingColorbackgroundbutton) ? null : (int) $iBrandingColorbackgroundbutton);
 
         return $this;
@@ -768,9 +805,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColorbackgroundsmallbox)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColorbackgroundsmallbox cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iBrandingColorbackgroundsmallbox'] = $iBrandingColorbackgroundsmallbox;
         $this->container['iBrandingColorbackgroundsmallbox'] = (is_null($iBrandingColorbackgroundsmallbox) ? null : (int) $iBrandingColorbackgroundsmallbox);
 
         return $this;
@@ -796,9 +836,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
     public function setBBrandingIsactive($bBrandingIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bBrandingIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bBrandingIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bBrandingIsactive'] = $bBrandingIsactive;
         $this->container['bBrandingIsactive'] = (is_null($bBrandingIsactive) ? null : (bool) $bBrandingIsactive);
 
         return $this;
@@ -824,9 +867,12 @@ class BrandingGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess
     public function setSBrandingLogourl($sBrandingLogourl)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBrandingLogourl)) {
             //throw new \InvalidArgumentException('non-nullable sBrandingLogourl cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sBrandingLogourl'] = $sBrandingLogourl;
         $this->container['sBrandingLogourl'] = (is_null($sBrandingLogourl) ? null : (string) $sBrandingLogourl);
 
         return $this;

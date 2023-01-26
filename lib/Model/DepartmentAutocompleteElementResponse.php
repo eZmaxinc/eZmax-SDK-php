@@ -139,6 +139,16 @@ class DepartmentAutocompleteElementResponse implements ModelInterface, ArrayAcce
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -338,9 +348,12 @@ class DepartmentAutocompleteElementResponse implements ModelInterface, ArrayAcce
     public function setSCompanyNameX($sCompanyNameX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCompanyNameX)) {
             //throw new \InvalidArgumentException('non-nullable sCompanyNameX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sCompanyNameX'] = $sCompanyNameX;
         $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : (string) $sCompanyNameX);
 
         return $this;
@@ -366,9 +379,12 @@ class DepartmentAutocompleteElementResponse implements ModelInterface, ArrayAcce
     public function setSDepartmentNameX($sDepartmentNameX)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sDepartmentNameX)) {
             //throw new \InvalidArgumentException('non-nullable sDepartmentNameX cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sDepartmentNameX'] = $sDepartmentNameX;
         $this->container['sDepartmentNameX'] = (is_null($sDepartmentNameX) ? null : (string) $sDepartmentNameX);
 
         return $this;
@@ -399,9 +415,12 @@ class DepartmentAutocompleteElementResponse implements ModelInterface, ArrayAcce
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiDepartmentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiDepartmentID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['pkiDepartmentID'] = $pkiDepartmentID;
         $this->container['pkiDepartmentID'] = (is_null($pkiDepartmentID) ? null : (int) $pkiDepartmentID);
 
         return $this;
@@ -427,9 +446,12 @@ class DepartmentAutocompleteElementResponse implements ModelInterface, ArrayAcce
     public function setBDepartmentIsactive($bDepartmentIsactive)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bDepartmentIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bDepartmentIsactive cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bDepartmentIsactive'] = $bDepartmentIsactive;
         $this->container['bDepartmentIsactive'] = (is_null($bDepartmentIsactive) ? null : (bool) $bDepartmentIsactive);
 
         return $this;

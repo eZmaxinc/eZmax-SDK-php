@@ -60,9 +60,7 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     protected static $openAPITypes = [
         'aObjCommunicationattachment' => '\eZmaxAPI\Model\CommunicationattachmentResponseCompound[]',
         'aObjCommunicationrecipient' => '\eZmaxAPI\Model\CommunicationrecipientResponseCompound[]',
-        'aObjCommunicationexternalrecipient' => '\eZmaxAPI\Model\CommunicationexternalrecipientResponseCompound[]',
-        'aObjCommunicationimage' => '\eZmaxAPI\Model\CommunicationimageResponseCompound[]',
-        'aObjCommunicationexternalimage' => '\eZmaxAPI\Model\CommunicationexternalimageResponseCompound[]'
+        'aObjCommunicationexternalrecipient' => '\eZmaxAPI\Model\CommunicationexternalrecipientResponseCompound[]'
     ];
 
     /**
@@ -75,9 +73,7 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     protected static $openAPIFormats = [
         'aObjCommunicationattachment' => null,
         'aObjCommunicationrecipient' => null,
-        'aObjCommunicationexternalrecipient' => null,
-        'aObjCommunicationimage' => null,
-        'aObjCommunicationexternalimage' => null
+        'aObjCommunicationexternalrecipient' => null
     ];
 
     /**
@@ -88,9 +84,7 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     protected static array $openAPINullables = [
         'aObjCommunicationattachment' => false,
 		'aObjCommunicationrecipient' => false,
-		'aObjCommunicationexternalrecipient' => false,
-		'aObjCommunicationimage' => false,
-		'aObjCommunicationexternalimage' => false
+		'aObjCommunicationexternalrecipient' => false
     ];
 
     /**
@@ -141,6 +135,16 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -171,9 +175,7 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     protected static $attributeMap = [
         'aObjCommunicationattachment' => 'a_objCommunicationattachment',
         'aObjCommunicationrecipient' => 'a_objCommunicationrecipient',
-        'aObjCommunicationexternalrecipient' => 'a_objCommunicationexternalrecipient',
-        'aObjCommunicationimage' => 'a_objCommunicationimage',
-        'aObjCommunicationexternalimage' => 'a_objCommunicationexternalimage'
+        'aObjCommunicationexternalrecipient' => 'a_objCommunicationexternalrecipient'
     ];
 
     /**
@@ -184,9 +186,7 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     protected static $setters = [
         'aObjCommunicationattachment' => 'setAObjCommunicationattachment',
         'aObjCommunicationrecipient' => 'setAObjCommunicationrecipient',
-        'aObjCommunicationexternalrecipient' => 'setAObjCommunicationexternalrecipient',
-        'aObjCommunicationimage' => 'setAObjCommunicationimage',
-        'aObjCommunicationexternalimage' => 'setAObjCommunicationexternalimage'
+        'aObjCommunicationexternalrecipient' => 'setAObjCommunicationexternalrecipient'
     ];
 
     /**
@@ -197,9 +197,7 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     protected static $getters = [
         'aObjCommunicationattachment' => 'getAObjCommunicationattachment',
         'aObjCommunicationrecipient' => 'getAObjCommunicationrecipient',
-        'aObjCommunicationexternalrecipient' => 'getAObjCommunicationexternalrecipient',
-        'aObjCommunicationimage' => 'getAObjCommunicationimage',
-        'aObjCommunicationexternalimage' => 'getAObjCommunicationexternalimage'
+        'aObjCommunicationexternalrecipient' => 'getAObjCommunicationexternalrecipient'
     ];
 
     /**
@@ -262,8 +260,6 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
         $this->setIfExists('aObjCommunicationattachment', $data ?? [], null);
         $this->setIfExists('aObjCommunicationrecipient', $data ?? [], null);
         $this->setIfExists('aObjCommunicationexternalrecipient', $data ?? [], null);
-        $this->setIfExists('aObjCommunicationimage', $data ?? [], null);
-        $this->setIfExists('aObjCommunicationexternalimage', $data ?? [], null);
     }
 
     /**
@@ -302,12 +298,6 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
         if ($this->container['aObjCommunicationexternalrecipient'] === null) {
             $invalidProperties[] = "'aObjCommunicationexternalrecipient' can't be null";
         }
-        if ($this->container['aObjCommunicationimage'] === null) {
-            $invalidProperties[] = "'aObjCommunicationimage' can't be null";
-        }
-        if ($this->container['aObjCommunicationexternalimage'] === null) {
-            $invalidProperties[] = "'aObjCommunicationexternalimage' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -343,9 +333,12 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     public function setAObjCommunicationattachment($aObjCommunicationattachment)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationattachment)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationattachment cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjCommunicationattachment'] = $aObjCommunicationattachment;
         $this->container['aObjCommunicationattachment'] = $aObjCommunicationattachment;
 
         return $this;
@@ -371,9 +364,12 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     public function setAObjCommunicationrecipient($aObjCommunicationrecipient)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationrecipient)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationrecipient cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjCommunicationrecipient'] = $aObjCommunicationrecipient;
         $this->container['aObjCommunicationrecipient'] = $aObjCommunicationrecipient;
 
         return $this;
@@ -399,66 +395,13 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
     public function setAObjCommunicationexternalrecipient($aObjCommunicationexternalrecipient)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationexternalrecipient)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationexternalrecipient cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjCommunicationexternalrecipient'] = $aObjCommunicationexternalrecipient;
         $this->container['aObjCommunicationexternalrecipient'] = $aObjCommunicationexternalrecipient;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjCommunicationimage
-     *
-     * @return \eZmaxAPI\Model\CommunicationimageResponseCompound[]
-     */
-    public function getAObjCommunicationimage()
-    {
-        return $this->container['aObjCommunicationimage'];
-    }
-
-    /**
-     * Sets aObjCommunicationimage
-     *
-     * @param \eZmaxAPI\Model\CommunicationimageResponseCompound[] $aObjCommunicationimage aObjCommunicationimage
-     *
-     * @return self
-     */
-    public function setAObjCommunicationimage($aObjCommunicationimage)
-    {
-
-        //if (is_null($aObjCommunicationimage)) {
-            //throw new \InvalidArgumentException('non-nullable aObjCommunicationimage cannot be null');
-        //}
-        $this->container['aObjCommunicationimage'] = $aObjCommunicationimage;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjCommunicationexternalimage
-     *
-     * @return \eZmaxAPI\Model\CommunicationexternalimageResponseCompound[]
-     */
-    public function getAObjCommunicationexternalimage()
-    {
-        return $this->container['aObjCommunicationexternalimage'];
-    }
-
-    /**
-     * Sets aObjCommunicationexternalimage
-     *
-     * @param \eZmaxAPI\Model\CommunicationexternalimageResponseCompound[] $aObjCommunicationexternalimage aObjCommunicationexternalimage
-     *
-     * @return self
-     */
-    public function setAObjCommunicationexternalimage($aObjCommunicationexternalimage)
-    {
-
-        //if (is_null($aObjCommunicationexternalimage)) {
-            //throw new \InvalidArgumentException('non-nullable aObjCommunicationexternalimage cannot be null');
-        //}
-        $this->container['aObjCommunicationexternalimage'] = $aObjCommunicationexternalimage;
 
         return $this;
     }

@@ -75,22 +75,10 @@ class ModuleCommunicationApiTest extends TestCase
     /**
      * Test case for communicationGetCommunicationCountV1
      *
-     * Get the number of communication.
+     * Retrieve Communication count.
      *
      */
     public function testCommunicationGetCommunicationCountV1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for communicationGetCommunicationListV1
-     *
-     * Retrieve communication list.
-     *
-     */
-    public function testCommunicationGetCommunicationListV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

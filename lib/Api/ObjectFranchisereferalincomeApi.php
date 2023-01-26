@@ -71,7 +71,17 @@ class ObjectFranchisereferalincomeApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'franchisereferalincomeCreateObjectV1' => [
+            'application/json',
+        ],
+        'franchisereferalincomeCreateObjectV2' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,15 +133,16 @@ class ObjectFranchisereferalincomeApi
      * Create a new Franchisereferalincome
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response
      * @deprecated
      */
-    public function franchisereferalincomeCreateObjectV1($franchisereferalincomeCreateObjectV1Request)
+    public function franchisereferalincomeCreateObjectV1($franchisereferalincomeCreateObjectV1Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV1'][0])
     {
-        list($response) = $this->franchisereferalincomeCreateObjectV1WithHttpInfo($franchisereferalincomeCreateObjectV1Request);
+        list($response) = $this->franchisereferalincomeCreateObjectV1WithHttpInfo($franchisereferalincomeCreateObjectV1Request, $contentType);
         return $response;
     }
 
@@ -141,15 +152,16 @@ class ObjectFranchisereferalincomeApi
      * Create a new Franchisereferalincome
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function franchisereferalincomeCreateObjectV1WithHttpInfo($franchisereferalincomeCreateObjectV1Request)
+    public function franchisereferalincomeCreateObjectV1WithHttpInfo($franchisereferalincomeCreateObjectV1Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV1'][0])
     {
-        $request = $this->franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request);
+        $request = $this->franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -241,14 +253,15 @@ class ObjectFranchisereferalincomeApi
      * Create a new Franchisereferalincome
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function franchisereferalincomeCreateObjectV1Async($franchisereferalincomeCreateObjectV1Request)
+    public function franchisereferalincomeCreateObjectV1Async($franchisereferalincomeCreateObjectV1Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV1'][0])
     {
-        return $this->franchisereferalincomeCreateObjectV1AsyncWithHttpInfo($franchisereferalincomeCreateObjectV1Request)
+        return $this->franchisereferalincomeCreateObjectV1AsyncWithHttpInfo($franchisereferalincomeCreateObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -262,15 +275,16 @@ class ObjectFranchisereferalincomeApi
      * Create a new Franchisereferalincome
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function franchisereferalincomeCreateObjectV1AsyncWithHttpInfo($franchisereferalincomeCreateObjectV1Request)
+    public function franchisereferalincomeCreateObjectV1AsyncWithHttpInfo($franchisereferalincomeCreateObjectV1Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Response';
-        $request = $this->franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request);
+        $request = $this->franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -312,12 +326,13 @@ class ObjectFranchisereferalincomeApi
      * Create request for operation 'franchisereferalincomeCreateObjectV1'
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV1Request[] $franchisereferalincomeCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request)
+    public function franchisereferalincomeCreateObjectV1Request($franchisereferalincomeCreateObjectV1Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV1'][0])
     {
 
         // verify the required parameter 'franchisereferalincomeCreateObjectV1Request' is set
@@ -326,6 +341,7 @@ class ObjectFranchisereferalincomeApi
                 'Missing the required parameter $franchisereferalincomeCreateObjectV1Request when calling franchisereferalincomeCreateObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/franchisereferalincome';
         $formParams = [];
@@ -338,20 +354,16 @@ class ObjectFranchisereferalincomeApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($franchisereferalincomeCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($franchisereferalincomeCreateObjectV1Request));
             } else {
                 $httpBody = $franchisereferalincomeCreateObjectV1Request;
@@ -371,9 +383,9 @@ class ObjectFranchisereferalincomeApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -422,14 +434,15 @@ class ObjectFranchisereferalincomeApi
      * Create a new Franchisereferalincome
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request franchisereferalincomeCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response
      */
-    public function franchisereferalincomeCreateObjectV2($franchisereferalincomeCreateObjectV2Request)
+    public function franchisereferalincomeCreateObjectV2($franchisereferalincomeCreateObjectV2Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV2'][0])
     {
-        list($response) = $this->franchisereferalincomeCreateObjectV2WithHttpInfo($franchisereferalincomeCreateObjectV2Request);
+        list($response) = $this->franchisereferalincomeCreateObjectV2WithHttpInfo($franchisereferalincomeCreateObjectV2Request, $contentType);
         return $response;
     }
 
@@ -439,14 +452,15 @@ class ObjectFranchisereferalincomeApi
      * Create a new Franchisereferalincome
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function franchisereferalincomeCreateObjectV2WithHttpInfo($franchisereferalincomeCreateObjectV2Request)
+    public function franchisereferalincomeCreateObjectV2WithHttpInfo($franchisereferalincomeCreateObjectV2Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV2'][0])
     {
-        $request = $this->franchisereferalincomeCreateObjectV2Request($franchisereferalincomeCreateObjectV2Request);
+        $request = $this->franchisereferalincomeCreateObjectV2Request($franchisereferalincomeCreateObjectV2Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -538,13 +552,14 @@ class ObjectFranchisereferalincomeApi
      * Create a new Franchisereferalincome
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function franchisereferalincomeCreateObjectV2Async($franchisereferalincomeCreateObjectV2Request)
+    public function franchisereferalincomeCreateObjectV2Async($franchisereferalincomeCreateObjectV2Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV2'][0])
     {
-        return $this->franchisereferalincomeCreateObjectV2AsyncWithHttpInfo($franchisereferalincomeCreateObjectV2Request)
+        return $this->franchisereferalincomeCreateObjectV2AsyncWithHttpInfo($franchisereferalincomeCreateObjectV2Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -558,14 +573,15 @@ class ObjectFranchisereferalincomeApi
      * Create a new Franchisereferalincome
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function franchisereferalincomeCreateObjectV2AsyncWithHttpInfo($franchisereferalincomeCreateObjectV2Request)
+    public function franchisereferalincomeCreateObjectV2AsyncWithHttpInfo($franchisereferalincomeCreateObjectV2Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Response';
-        $request = $this->franchisereferalincomeCreateObjectV2Request($franchisereferalincomeCreateObjectV2Request);
+        $request = $this->franchisereferalincomeCreateObjectV2Request($franchisereferalincomeCreateObjectV2Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -607,11 +623,12 @@ class ObjectFranchisereferalincomeApi
      * Create request for operation 'franchisereferalincomeCreateObjectV2'
      *
      * @param  \eZmaxAPI\Model\FranchisereferalincomeCreateObjectV2Request $franchisereferalincomeCreateObjectV2Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['franchisereferalincomeCreateObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function franchisereferalincomeCreateObjectV2Request($franchisereferalincomeCreateObjectV2Request)
+    public function franchisereferalincomeCreateObjectV2Request($franchisereferalincomeCreateObjectV2Request, string $contentType = self::contentTypes['franchisereferalincomeCreateObjectV2'][0])
     {
 
         // verify the required parameter 'franchisereferalincomeCreateObjectV2Request' is set
@@ -620,6 +637,7 @@ class ObjectFranchisereferalincomeApi
                 'Missing the required parameter $franchisereferalincomeCreateObjectV2Request when calling franchisereferalincomeCreateObjectV2'
             );
         }
+
 
         $resourcePath = '/2/object/franchisereferalincome';
         $formParams = [];
@@ -632,20 +650,16 @@ class ObjectFranchisereferalincomeApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($franchisereferalincomeCreateObjectV2Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($franchisereferalincomeCreateObjectV2Request));
             } else {
                 $httpBody = $franchisereferalincomeCreateObjectV2Request;
@@ -665,9 +679,9 @@ class ObjectFranchisereferalincomeApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

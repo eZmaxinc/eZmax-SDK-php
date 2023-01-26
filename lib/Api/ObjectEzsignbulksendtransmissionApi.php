@@ -71,7 +71,23 @@ class ObjectEzsignbulksendtransmissionApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'ezsignbulksendtransmissionGetCsvErrorsV1' => [
+            'application/json',
+        ],
+        'ezsignbulksendtransmissionGetFormsDataV1' => [
+            'application/json',
+        ],
+        'ezsignbulksendtransmissionGetObjectV1' => [
+            'application/json',
+        ],
+        'ezsignbulksendtransmissionGetObjectV2' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,14 +139,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors
      *
      * @param  int $pkiEzsignbulksendtransmissionID pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignbulksendtransmissionGetCsvErrorsV1($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetCsvErrorsV1($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'][0])
     {
-        list($response) = $this->ezsignbulksendtransmissionGetCsvErrorsV1WithHttpInfo($pkiEzsignbulksendtransmissionID);
+        list($response) = $this->ezsignbulksendtransmissionGetCsvErrorsV1WithHttpInfo($pkiEzsignbulksendtransmissionID, $contentType);
         return $response;
     }
 
@@ -140,14 +157,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of string|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignbulksendtransmissionGetCsvErrorsV1WithHttpInfo($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetCsvErrorsV1WithHttpInfo($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'][0])
     {
-        $request = $this->ezsignbulksendtransmissionGetCsvErrorsV1Request($pkiEzsignbulksendtransmissionID);
+        $request = $this->ezsignbulksendtransmissionGetCsvErrorsV1Request($pkiEzsignbulksendtransmissionID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -308,13 +326,14 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksendtransmissionGetCsvErrorsV1Async($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetCsvErrorsV1Async($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'][0])
     {
-        return $this->ezsignbulksendtransmissionGetCsvErrorsV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+        return $this->ezsignbulksendtransmissionGetCsvErrorsV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -328,14 +347,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksendtransmissionGetCsvErrorsV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetCsvErrorsV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'][0])
     {
         $returnType = 'string';
-        $request = $this->ezsignbulksendtransmissionGetCsvErrorsV1Request($pkiEzsignbulksendtransmissionID);
+        $request = $this->ezsignbulksendtransmissionGetCsvErrorsV1Request($pkiEzsignbulksendtransmissionID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -377,11 +397,12 @@ class ObjectEzsignbulksendtransmissionApi
      * Create request for operation 'ezsignbulksendtransmissionGetCsvErrorsV1'
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignbulksendtransmissionGetCsvErrorsV1Request($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetCsvErrorsV1Request($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetCsvErrorsV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignbulksendtransmissionID' is set
@@ -393,7 +414,7 @@ class ObjectEzsignbulksendtransmissionApi
         if ($pkiEzsignbulksendtransmissionID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignbulksendtransmissionID" when calling ObjectEzsignbulksendtransmissionApi.ezsignbulksendtransmissionGetCsvErrorsV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getCsvErrors';
         $formParams = [];
@@ -414,16 +435,11 @@ class ObjectEzsignbulksendtransmissionApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['text/csv', 'application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['text/csv', 'application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['text/csv', 'application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -441,9 +457,9 @@ class ObjectEzsignbulksendtransmissionApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -492,14 +508,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission&#39;s forms data
      *
      * @param  int $pkiEzsignbulksendtransmissionID pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignbulksendtransmissionGetFormsDataV1($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetFormsDataV1($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'][0])
     {
-        list($response) = $this->ezsignbulksendtransmissionGetFormsDataV1WithHttpInfo($pkiEzsignbulksendtransmissionID);
+        list($response) = $this->ezsignbulksendtransmissionGetFormsDataV1WithHttpInfo($pkiEzsignbulksendtransmissionID, $contentType);
         return $response;
     }
 
@@ -509,14 +526,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission&#39;s forms data
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignbulksendtransmissionGetFormsDataV1WithHttpInfo($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetFormsDataV1WithHttpInfo($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'][0])
     {
-        $request = $this->ezsignbulksendtransmissionGetFormsDataV1Request($pkiEzsignbulksendtransmissionID);
+        $request = $this->ezsignbulksendtransmissionGetFormsDataV1Request($pkiEzsignbulksendtransmissionID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -677,13 +695,14 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission&#39;s forms data
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksendtransmissionGetFormsDataV1Async($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetFormsDataV1Async($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'][0])
     {
-        return $this->ezsignbulksendtransmissionGetFormsDataV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+        return $this->ezsignbulksendtransmissionGetFormsDataV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -697,14 +716,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission&#39;s forms data
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksendtransmissionGetFormsDataV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetFormsDataV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignbulksendtransmissionGetFormsDataV1Response';
-        $request = $this->ezsignbulksendtransmissionGetFormsDataV1Request($pkiEzsignbulksendtransmissionID);
+        $request = $this->ezsignbulksendtransmissionGetFormsDataV1Request($pkiEzsignbulksendtransmissionID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -746,11 +766,12 @@ class ObjectEzsignbulksendtransmissionApi
      * Create request for operation 'ezsignbulksendtransmissionGetFormsDataV1'
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignbulksendtransmissionGetFormsDataV1Request($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetFormsDataV1Request($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetFormsDataV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignbulksendtransmissionID' is set
@@ -762,7 +783,7 @@ class ObjectEzsignbulksendtransmissionApi
         if ($pkiEzsignbulksendtransmissionID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignbulksendtransmissionID" when calling ObjectEzsignbulksendtransmissionApi.ezsignbulksendtransmissionGetFormsDataV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getFormsData';
         $formParams = [];
@@ -783,16 +804,11 @@ class ObjectEzsignbulksendtransmissionApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/zip']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/zip'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/zip', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -810,9 +826,9 @@ class ObjectEzsignbulksendtransmissionApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -861,15 +877,16 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission
      *
      * @param  int $pkiEzsignbulksendtransmissionID pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function ezsignbulksendtransmissionGetObjectV1($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV1($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV1'][0])
     {
-        list($response) = $this->ezsignbulksendtransmissionGetObjectV1WithHttpInfo($pkiEzsignbulksendtransmissionID);
+        list($response) = $this->ezsignbulksendtransmissionGetObjectV1WithHttpInfo($pkiEzsignbulksendtransmissionID, $contentType);
         return $response;
     }
 
@@ -879,15 +896,16 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function ezsignbulksendtransmissionGetObjectV1WithHttpInfo($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV1WithHttpInfo($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV1'][0])
     {
-        $request = $this->ezsignbulksendtransmissionGetObjectV1Request($pkiEzsignbulksendtransmissionID);
+        $request = $this->ezsignbulksendtransmissionGetObjectV1Request($pkiEzsignbulksendtransmissionID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1002,14 +1020,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignbulksendtransmissionGetObjectV1Async($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV1Async($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV1'][0])
     {
-        return $this->ezsignbulksendtransmissionGetObjectV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+        return $this->ezsignbulksendtransmissionGetObjectV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1023,15 +1042,16 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function ezsignbulksendtransmissionGetObjectV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV1AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV1Response';
-        $request = $this->ezsignbulksendtransmissionGetObjectV1Request($pkiEzsignbulksendtransmissionID);
+        $request = $this->ezsignbulksendtransmissionGetObjectV1Request($pkiEzsignbulksendtransmissionID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1073,12 +1093,13 @@ class ObjectEzsignbulksendtransmissionApi
      * Create request for operation 'ezsignbulksendtransmissionGetObjectV1'
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function ezsignbulksendtransmissionGetObjectV1Request($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV1Request($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignbulksendtransmissionID' is set
@@ -1090,7 +1111,7 @@ class ObjectEzsignbulksendtransmissionApi
         if ($pkiEzsignbulksendtransmissionID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignbulksendtransmissionID" when calling ObjectEzsignbulksendtransmissionApi.ezsignbulksendtransmissionGetObjectV1, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}';
         $formParams = [];
@@ -1111,16 +1132,11 @@ class ObjectEzsignbulksendtransmissionApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1138,9 +1154,9 @@ class ObjectEzsignbulksendtransmissionApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1189,14 +1205,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission
      *
      * @param  int $pkiEzsignbulksendtransmissionID pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignbulksendtransmissionGetObjectV2($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV2($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV2'][0])
     {
-        list($response) = $this->ezsignbulksendtransmissionGetObjectV2WithHttpInfo($pkiEzsignbulksendtransmissionID);
+        list($response) = $this->ezsignbulksendtransmissionGetObjectV2WithHttpInfo($pkiEzsignbulksendtransmissionID, $contentType);
         return $response;
     }
 
@@ -1206,14 +1223,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignbulksendtransmissionGetObjectV2WithHttpInfo($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV2WithHttpInfo($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV2'][0])
     {
-        $request = $this->ezsignbulksendtransmissionGetObjectV2Request($pkiEzsignbulksendtransmissionID);
+        $request = $this->ezsignbulksendtransmissionGetObjectV2Request($pkiEzsignbulksendtransmissionID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1328,13 +1346,14 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksendtransmissionGetObjectV2Async($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV2Async($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV2'][0])
     {
-        return $this->ezsignbulksendtransmissionGetObjectV2AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+        return $this->ezsignbulksendtransmissionGetObjectV2AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1348,14 +1367,15 @@ class ObjectEzsignbulksendtransmissionApi
      * Retrieve an existing Ezsignbulksendtransmission
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignbulksendtransmissionGetObjectV2AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV2AsyncWithHttpInfo($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignbulksendtransmissionGetObjectV2Response';
-        $request = $this->ezsignbulksendtransmissionGetObjectV2Request($pkiEzsignbulksendtransmissionID);
+        $request = $this->ezsignbulksendtransmissionGetObjectV2Request($pkiEzsignbulksendtransmissionID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1397,11 +1417,12 @@ class ObjectEzsignbulksendtransmissionApi
      * Create request for operation 'ezsignbulksendtransmissionGetObjectV2'
      *
      * @param  int $pkiEzsignbulksendtransmissionID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignbulksendtransmissionGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignbulksendtransmissionGetObjectV2Request($pkiEzsignbulksendtransmissionID)
+    public function ezsignbulksendtransmissionGetObjectV2Request($pkiEzsignbulksendtransmissionID, string $contentType = self::contentTypes['ezsignbulksendtransmissionGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiEzsignbulksendtransmissionID' is set
@@ -1413,7 +1434,7 @@ class ObjectEzsignbulksendtransmissionApi
         if ($pkiEzsignbulksendtransmissionID < 0) {
             throw new \InvalidArgumentException('invalid value for "$pkiEzsignbulksendtransmissionID" when calling ObjectEzsignbulksendtransmissionApi.ezsignbulksendtransmissionGetObjectV2, must be bigger than or equal to 0.');
         }
-
+        
 
         $resourcePath = '/2/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}';
         $formParams = [];
@@ -1434,16 +1455,11 @@ class ObjectEzsignbulksendtransmissionApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1461,9 +1477,9 @@ class ObjectEzsignbulksendtransmissionApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

@@ -144,6 +144,16 @@ class CustomEzmaxinvoicingEzsignfolderResponseAllOf implements ModelInterface, A
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -362,9 +372,12 @@ class CustomEzmaxinvoicingEzsignfolderResponseAllOf implements ModelInterface, A
         }
 
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfolderID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfolderID cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
         $this->container['fkiEzsignfolderID'] = (is_null($fkiEzsignfolderID) ? null : (int) $fkiEzsignfolderID);
 
         return $this;
@@ -390,9 +403,12 @@ class CustomEzmaxinvoicingEzsignfolderResponseAllOf implements ModelInterface, A
     public function setSEzsignfolderDescription($sEzsignfolderDescription)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignfolderDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignfolderDescription cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
         $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : (string) $sEzsignfolderDescription);
 
         return $this;
@@ -418,9 +434,12 @@ class CustomEzmaxinvoicingEzsignfolderResponseAllOf implements ModelInterface, A
     public function setBEzsigntsarequirementBillable($bEzsigntsarequirementBillable)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntsarequirementBillable)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntsarequirementBillable cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigntsarequirementBillable'] = $bEzsigntsarequirementBillable;
         $this->container['bEzsigntsarequirementBillable'] = (is_null($bEzsigntsarequirementBillable) ? null : (bool) $bEzsigntsarequirementBillable);
 
         return $this;
@@ -446,9 +465,12 @@ class CustomEzmaxinvoicingEzsignfolderResponseAllOf implements ModelInterface, A
     public function setBEzsignfolderMfaused($bEzsignfolderMfaused)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignfolderMfaused)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignfolderMfaused cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfolderMfaused'] = $bEzsignfolderMfaused;
         $this->container['bEzsignfolderMfaused'] = (is_null($bEzsignfolderMfaused) ? null : (bool) $bEzsignfolderMfaused);
 
         return $this;
@@ -474,9 +496,12 @@ class CustomEzmaxinvoicingEzsignfolderResponseAllOf implements ModelInterface, A
     public function setBEzsignfolderPaymentused($bEzsignfolderPaymentused)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignfolderPaymentused)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignfolderPaymentused cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfolderPaymentused'] = $bEzsignfolderPaymentused;
         $this->container['bEzsignfolderPaymentused'] = (is_null($bEzsignfolderPaymentused) ? null : (bool) $bEzsignfolderPaymentused);
 
         return $this;
@@ -495,16 +520,19 @@ class CustomEzmaxinvoicingEzsignfolderResponseAllOf implements ModelInterface, A
     /**
      * Sets bEzsignfolderAllowed
      *
-     * @param bool $bEzsignfolderAllowed bEzsignfolderAllowed
+     * @param bool $bEzsignfolderAllowed Whether you have access to the Ezsignfolder or not
      *
      * @return self
      */
     public function setBEzsignfolderAllowed($bEzsignfolderAllowed)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignfolderAllowed)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignfolderAllowed cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfolderAllowed'] = $bEzsignfolderAllowed;
         $this->container['bEzsignfolderAllowed'] = (is_null($bEzsignfolderAllowed) ? null : (bool) $bEzsignfolderAllowed);
 
         return $this;

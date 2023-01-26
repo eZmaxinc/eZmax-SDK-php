@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * CommunicationGetListV1ResponseMPayloadTest Class Doc Comment
  *
  * @category    Class
- * @description Payload for GET /1/module/communication/getList
+ * @description Payload for GET /1/object/communication/getList
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -84,6 +84,24 @@ class CommunicationGetListV1ResponseMPayloadTest extends TestCase
      * Test attribute "aObjCommunication"
      */
     public function testPropertyAObjCommunication()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iRowReturned"
+     */
+    public function testPropertyIRowReturned()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iRowFiltered"
+     */
+    public function testPropertyIRowFiltered()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

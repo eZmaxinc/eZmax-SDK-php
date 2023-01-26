@@ -132,6 +132,16 @@ class CustomWebhooklogResponseAllOf implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -313,9 +323,12 @@ class CustomWebhooklogResponseAllOf implements ModelInterface, ArrayAccess, \Jso
     public function setDtWebhooklogDate($dtWebhooklogDate)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtWebhooklogDate)) {
             //throw new \InvalidArgumentException('non-nullable dtWebhooklogDate cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtWebhooklogDate'] = $dtWebhooklogDate;
         $this->container['dtWebhooklogDate'] = (is_null($dtWebhooklogDate) ? null : (string) $dtWebhooklogDate);
 
         return $this;
@@ -341,9 +354,12 @@ class CustomWebhooklogResponseAllOf implements ModelInterface, ArrayAccess, \Jso
     public function setTWebhooklogJson($tWebhooklogJson)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tWebhooklogJson)) {
             //throw new \InvalidArgumentException('non-nullable tWebhooklogJson cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['tWebhooklogJson'] = $tWebhooklogJson;
         $this->container['tWebhooklogJson'] = (is_null($tWebhooklogJson) ? null : (string) $tWebhooklogJson);
 
         return $this;

@@ -34,7 +34,7 @@ use \eZmaxAPI\ObjectSerializer;
  * FieldECommunicationType Class Doc Comment
  *
  * @category Class
- * @description The Type for the Communication
+ * @description The type of the Communication
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

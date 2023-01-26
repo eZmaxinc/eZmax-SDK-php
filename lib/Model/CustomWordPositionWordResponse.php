@@ -133,6 +133,16 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -314,9 +324,12 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
     public function setSWord($sWord)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sWord)) {
             //throw new \InvalidArgumentException('non-nullable sWord cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sWord'] = $sWord;
         $this->container['sWord'] = (is_null($sWord) ? null : (string) $sWord);
 
         return $this;
@@ -342,9 +355,12 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
     public function setAObjWordPositionOccurence($aObjWordPositionOccurence)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjWordPositionOccurence)) {
             //throw new \InvalidArgumentException('non-nullable aObjWordPositionOccurence cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjWordPositionOccurence'] = $aObjWordPositionOccurence;
         $this->container['aObjWordPositionOccurence'] = $aObjWordPositionOccurence;
 
         return $this;

@@ -130,6 +130,16 @@ class EzsignfoldertypeGetAutocompleteV2ResponseMPayload implements ModelInterfac
     }
 
     /**
+     * Setter - Array of nullable field names deliberately set to null
+     *
+     * @param boolean[] $openAPINullablesSetToNull
+     */
+    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    {
+        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
      * Checks if a property is nullable
      *
      * @param string $property
@@ -304,9 +314,12 @@ class EzsignfoldertypeGetAutocompleteV2ResponseMPayload implements ModelInterfac
     public function setAObjEzsignfoldertype($aObjEzsignfoldertype)
     {
 
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignfoldertype)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignfoldertype cannot be null');
         //}
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjEzsignfoldertype'] = $aObjEzsignfoldertype;
         $this->container['aObjEzsignfoldertype'] = $aObjEzsignfoldertype;
 
         return $this;

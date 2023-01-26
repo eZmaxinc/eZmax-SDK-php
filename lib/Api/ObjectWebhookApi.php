@@ -71,7 +71,35 @@ class ObjectWebhookApi
      */
     protected $hostIndex;
 
-    /**
+    /** @var string[] $contentTypes **/
+    public const contentTypes = [
+        'webhookCreateObjectV1' => [
+            'application/json',
+        ],
+        'webhookDeleteObjectV1' => [
+            'application/json',
+        ],
+        'webhookEditObjectV1' => [
+            'application/json',
+        ],
+        'webhookGetHistoryV1' => [
+            'application/json',
+        ],
+        'webhookGetListV1' => [
+            'application/json',
+        ],
+        'webhookGetObjectV1' => [
+            'application/json',
+        ],
+        'webhookGetObjectV2' => [
+            'application/json',
+        ],
+        'webhookTestV1' => [
+            'application/json',
+        ],
+    ];
+
+/**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -123,14 +151,15 @@ class ObjectWebhookApi
      * Create a new Webhook
      *
      * @param  \eZmaxAPI\Model\WebhookCreateObjectV1Request $webhookCreateObjectV1Request webhookCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\WebhookCreateObjectV1Response
      */
-    public function webhookCreateObjectV1($webhookCreateObjectV1Request)
+    public function webhookCreateObjectV1($webhookCreateObjectV1Request, string $contentType = self::contentTypes['webhookCreateObjectV1'][0])
     {
-        list($response) = $this->webhookCreateObjectV1WithHttpInfo($webhookCreateObjectV1Request);
+        list($response) = $this->webhookCreateObjectV1WithHttpInfo($webhookCreateObjectV1Request, $contentType);
         return $response;
     }
 
@@ -140,14 +169,15 @@ class ObjectWebhookApi
      * Create a new Webhook
      *
      * @param  \eZmaxAPI\Model\WebhookCreateObjectV1Request $webhookCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\WebhookCreateObjectV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookCreateObjectV1WithHttpInfo($webhookCreateObjectV1Request)
+    public function webhookCreateObjectV1WithHttpInfo($webhookCreateObjectV1Request, string $contentType = self::contentTypes['webhookCreateObjectV1'][0])
     {
-        $request = $this->webhookCreateObjectV1Request($webhookCreateObjectV1Request);
+        $request = $this->webhookCreateObjectV1Request($webhookCreateObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -239,13 +269,14 @@ class ObjectWebhookApi
      * Create a new Webhook
      *
      * @param  \eZmaxAPI\Model\WebhookCreateObjectV1Request $webhookCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookCreateObjectV1Async($webhookCreateObjectV1Request)
+    public function webhookCreateObjectV1Async($webhookCreateObjectV1Request, string $contentType = self::contentTypes['webhookCreateObjectV1'][0])
     {
-        return $this->webhookCreateObjectV1AsyncWithHttpInfo($webhookCreateObjectV1Request)
+        return $this->webhookCreateObjectV1AsyncWithHttpInfo($webhookCreateObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -259,14 +290,15 @@ class ObjectWebhookApi
      * Create a new Webhook
      *
      * @param  \eZmaxAPI\Model\WebhookCreateObjectV1Request $webhookCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookCreateObjectV1AsyncWithHttpInfo($webhookCreateObjectV1Request)
+    public function webhookCreateObjectV1AsyncWithHttpInfo($webhookCreateObjectV1Request, string $contentType = self::contentTypes['webhookCreateObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\WebhookCreateObjectV1Response';
-        $request = $this->webhookCreateObjectV1Request($webhookCreateObjectV1Request);
+        $request = $this->webhookCreateObjectV1Request($webhookCreateObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -308,11 +340,12 @@ class ObjectWebhookApi
      * Create request for operation 'webhookCreateObjectV1'
      *
      * @param  \eZmaxAPI\Model\WebhookCreateObjectV1Request $webhookCreateObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreateObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookCreateObjectV1Request($webhookCreateObjectV1Request)
+    public function webhookCreateObjectV1Request($webhookCreateObjectV1Request, string $contentType = self::contentTypes['webhookCreateObjectV1'][0])
     {
 
         // verify the required parameter 'webhookCreateObjectV1Request' is set
@@ -321,6 +354,7 @@ class ObjectWebhookApi
                 'Missing the required parameter $webhookCreateObjectV1Request when calling webhookCreateObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/webhook';
         $formParams = [];
@@ -333,20 +367,16 @@ class ObjectWebhookApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($webhookCreateObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($webhookCreateObjectV1Request));
             } else {
                 $httpBody = $webhookCreateObjectV1Request;
@@ -366,9 +396,9 @@ class ObjectWebhookApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -417,14 +447,15 @@ class ObjectWebhookApi
      * Delete an existing Webhook
      *
      * @param  int $pkiWebhookID pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\WebhookDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function webhookDeleteObjectV1($pkiWebhookID)
+    public function webhookDeleteObjectV1($pkiWebhookID, string $contentType = self::contentTypes['webhookDeleteObjectV1'][0])
     {
-        list($response) = $this->webhookDeleteObjectV1WithHttpInfo($pkiWebhookID);
+        list($response) = $this->webhookDeleteObjectV1WithHttpInfo($pkiWebhookID, $contentType);
         return $response;
     }
 
@@ -434,14 +465,15 @@ class ObjectWebhookApi
      * Delete an existing Webhook
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\WebhookDeleteObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookDeleteObjectV1WithHttpInfo($pkiWebhookID)
+    public function webhookDeleteObjectV1WithHttpInfo($pkiWebhookID, string $contentType = self::contentTypes['webhookDeleteObjectV1'][0])
     {
-        $request = $this->webhookDeleteObjectV1Request($pkiWebhookID);
+        $request = $this->webhookDeleteObjectV1Request($pkiWebhookID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -556,13 +588,14 @@ class ObjectWebhookApi
      * Delete an existing Webhook
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookDeleteObjectV1Async($pkiWebhookID)
+    public function webhookDeleteObjectV1Async($pkiWebhookID, string $contentType = self::contentTypes['webhookDeleteObjectV1'][0])
     {
-        return $this->webhookDeleteObjectV1AsyncWithHttpInfo($pkiWebhookID)
+        return $this->webhookDeleteObjectV1AsyncWithHttpInfo($pkiWebhookID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -576,14 +609,15 @@ class ObjectWebhookApi
      * Delete an existing Webhook
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookDeleteObjectV1AsyncWithHttpInfo($pkiWebhookID)
+    public function webhookDeleteObjectV1AsyncWithHttpInfo($pkiWebhookID, string $contentType = self::contentTypes['webhookDeleteObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\WebhookDeleteObjectV1Response';
-        $request = $this->webhookDeleteObjectV1Request($pkiWebhookID);
+        $request = $this->webhookDeleteObjectV1Request($pkiWebhookID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -625,11 +659,12 @@ class ObjectWebhookApi
      * Create request for operation 'webhookDeleteObjectV1'
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookDeleteObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookDeleteObjectV1Request($pkiWebhookID)
+    public function webhookDeleteObjectV1Request($pkiWebhookID, string $contentType = self::contentTypes['webhookDeleteObjectV1'][0])
     {
 
         // verify the required parameter 'pkiWebhookID' is set
@@ -638,6 +673,7 @@ class ObjectWebhookApi
                 'Missing the required parameter $pkiWebhookID when calling webhookDeleteObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/webhook/{pkiWebhookID}';
         $formParams = [];
@@ -658,16 +694,11 @@ class ObjectWebhookApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -685,9 +716,9 @@ class ObjectWebhookApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -737,14 +768,15 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID pkiWebhookID (required)
      * @param  \eZmaxAPI\Model\WebhookEditObjectV1Request $webhookEditObjectV1Request webhookEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\WebhookEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function webhookEditObjectV1($pkiWebhookID, $webhookEditObjectV1Request)
+    public function webhookEditObjectV1($pkiWebhookID, $webhookEditObjectV1Request, string $contentType = self::contentTypes['webhookEditObjectV1'][0])
     {
-        list($response) = $this->webhookEditObjectV1WithHttpInfo($pkiWebhookID, $webhookEditObjectV1Request);
+        list($response) = $this->webhookEditObjectV1WithHttpInfo($pkiWebhookID, $webhookEditObjectV1Request, $contentType);
         return $response;
     }
 
@@ -755,14 +787,15 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  \eZmaxAPI\Model\WebhookEditObjectV1Request $webhookEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookEditObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\WebhookEditObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookEditObjectV1WithHttpInfo($pkiWebhookID, $webhookEditObjectV1Request)
+    public function webhookEditObjectV1WithHttpInfo($pkiWebhookID, $webhookEditObjectV1Request, string $contentType = self::contentTypes['webhookEditObjectV1'][0])
     {
-        $request = $this->webhookEditObjectV1Request($pkiWebhookID, $webhookEditObjectV1Request);
+        $request = $this->webhookEditObjectV1Request($pkiWebhookID, $webhookEditObjectV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -878,13 +911,14 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  \eZmaxAPI\Model\WebhookEditObjectV1Request $webhookEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookEditObjectV1Async($pkiWebhookID, $webhookEditObjectV1Request)
+    public function webhookEditObjectV1Async($pkiWebhookID, $webhookEditObjectV1Request, string $contentType = self::contentTypes['webhookEditObjectV1'][0])
     {
-        return $this->webhookEditObjectV1AsyncWithHttpInfo($pkiWebhookID, $webhookEditObjectV1Request)
+        return $this->webhookEditObjectV1AsyncWithHttpInfo($pkiWebhookID, $webhookEditObjectV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -899,14 +933,15 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  \eZmaxAPI\Model\WebhookEditObjectV1Request $webhookEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookEditObjectV1AsyncWithHttpInfo($pkiWebhookID, $webhookEditObjectV1Request)
+    public function webhookEditObjectV1AsyncWithHttpInfo($pkiWebhookID, $webhookEditObjectV1Request, string $contentType = self::contentTypes['webhookEditObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\WebhookEditObjectV1Response';
-        $request = $this->webhookEditObjectV1Request($pkiWebhookID, $webhookEditObjectV1Request);
+        $request = $this->webhookEditObjectV1Request($pkiWebhookID, $webhookEditObjectV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -949,11 +984,12 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  \eZmaxAPI\Model\WebhookEditObjectV1Request $webhookEditObjectV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookEditObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookEditObjectV1Request($pkiWebhookID, $webhookEditObjectV1Request)
+    public function webhookEditObjectV1Request($pkiWebhookID, $webhookEditObjectV1Request, string $contentType = self::contentTypes['webhookEditObjectV1'][0])
     {
 
         // verify the required parameter 'pkiWebhookID' is set
@@ -969,6 +1005,7 @@ class ObjectWebhookApi
                 'Missing the required parameter $webhookEditObjectV1Request when calling webhookEditObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/webhook/{pkiWebhookID}';
         $formParams = [];
@@ -989,20 +1026,16 @@ class ObjectWebhookApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($webhookEditObjectV1Request)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($webhookEditObjectV1Request));
             } else {
                 $httpBody = $webhookEditObjectV1Request;
@@ -1022,9 +1055,9 @@ class ObjectWebhookApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1074,14 +1107,15 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID pkiWebhookID (required)
      * @param  string $eWebhookHistoryinterval The number of days to return (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetHistoryV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\WebhookGetHistoryV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseErrorTooManyRequests
      */
-    public function webhookGetHistoryV1($pkiWebhookID, $eWebhookHistoryinterval)
+    public function webhookGetHistoryV1($pkiWebhookID, $eWebhookHistoryinterval, string $contentType = self::contentTypes['webhookGetHistoryV1'][0])
     {
-        list($response) = $this->webhookGetHistoryV1WithHttpInfo($pkiWebhookID, $eWebhookHistoryinterval);
+        list($response) = $this->webhookGetHistoryV1WithHttpInfo($pkiWebhookID, $eWebhookHistoryinterval, $contentType);
         return $response;
     }
 
@@ -1092,14 +1126,15 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  string $eWebhookHistoryinterval The number of days to return (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetHistoryV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\WebhookGetHistoryV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseErrorTooManyRequests, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookGetHistoryV1WithHttpInfo($pkiWebhookID, $eWebhookHistoryinterval)
+    public function webhookGetHistoryV1WithHttpInfo($pkiWebhookID, $eWebhookHistoryinterval, string $contentType = self::contentTypes['webhookGetHistoryV1'][0])
     {
-        $request = $this->webhookGetHistoryV1Request($pkiWebhookID, $eWebhookHistoryinterval);
+        $request = $this->webhookGetHistoryV1Request($pkiWebhookID, $eWebhookHistoryinterval, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1238,13 +1273,14 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  string $eWebhookHistoryinterval The number of days to return (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetHistoryV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookGetHistoryV1Async($pkiWebhookID, $eWebhookHistoryinterval)
+    public function webhookGetHistoryV1Async($pkiWebhookID, $eWebhookHistoryinterval, string $contentType = self::contentTypes['webhookGetHistoryV1'][0])
     {
-        return $this->webhookGetHistoryV1AsyncWithHttpInfo($pkiWebhookID, $eWebhookHistoryinterval)
+        return $this->webhookGetHistoryV1AsyncWithHttpInfo($pkiWebhookID, $eWebhookHistoryinterval, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1259,14 +1295,15 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  string $eWebhookHistoryinterval The number of days to return (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetHistoryV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookGetHistoryV1AsyncWithHttpInfo($pkiWebhookID, $eWebhookHistoryinterval)
+    public function webhookGetHistoryV1AsyncWithHttpInfo($pkiWebhookID, $eWebhookHistoryinterval, string $contentType = self::contentTypes['webhookGetHistoryV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\WebhookGetHistoryV1Response';
-        $request = $this->webhookGetHistoryV1Request($pkiWebhookID, $eWebhookHistoryinterval);
+        $request = $this->webhookGetHistoryV1Request($pkiWebhookID, $eWebhookHistoryinterval, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1309,11 +1346,12 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  string $eWebhookHistoryinterval The number of days to return (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetHistoryV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookGetHistoryV1Request($pkiWebhookID, $eWebhookHistoryinterval)
+    public function webhookGetHistoryV1Request($pkiWebhookID, $eWebhookHistoryinterval, string $contentType = self::contentTypes['webhookGetHistoryV1'][0])
     {
 
         // verify the required parameter 'pkiWebhookID' is set
@@ -1329,6 +1367,7 @@ class ObjectWebhookApi
                 'Missing the required parameter $eWebhookHistoryinterval when calling webhookGetHistoryV1'
             );
         }
+
 
         $resourcePath = '/1/object/webhook/{pkiWebhookID}/getHistory';
         $formParams = [];
@@ -1358,16 +1397,11 @@ class ObjectWebhookApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1385,9 +1419,9 @@ class ObjectWebhookApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1440,14 +1474,15 @@ class ObjectWebhookApi
      * @param  int $iRowOffset iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
      * @param  string $sFilter sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetListV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\WebhookGetListV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function webhookGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function webhookGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['webhookGetListV1'][0])
     {
-        list($response) = $this->webhookGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+        list($response) = $this->webhookGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
         return $response;
     }
 
@@ -1461,14 +1496,15 @@ class ObjectWebhookApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetListV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\WebhookGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function webhookGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['webhookGetListV1'][0])
     {
-        $request = $this->webhookGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+        $request = $this->webhookGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1587,13 +1623,14 @@ class ObjectWebhookApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetListV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function webhookGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['webhookGetListV1'][0])
     {
-        return $this->webhookGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter)
+        return $this->webhookGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1611,14 +1648,15 @@ class ObjectWebhookApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetListV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function webhookGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['webhookGetListV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\WebhookGetListV1Response';
-        $request = $this->webhookGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+        $request = $this->webhookGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1664,23 +1702,23 @@ class ObjectWebhookApi
      * @param  int $iRowOffset (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetListV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null)
+    public function webhookGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = null, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['webhookGetListV1'][0])
     {
 
 
         if ($iRowMax !== null && $iRowMax < 1) {
             throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectWebhookApi.webhookGetListV1, must be bigger than or equal to 1.');
         }
-
-
+        
         if ($iRowOffset !== null && $iRowOffset < 0) {
             throw new \InvalidArgumentException('invalid value for "$iRowOffset" when calling ObjectWebhookApi.webhookGetListV1, must be bigger than or equal to 0.');
         }
-
+        
 
 
 
@@ -1735,16 +1773,11 @@ class ObjectWebhookApi
 
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -1762,9 +1795,9 @@ class ObjectWebhookApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1813,15 +1846,16 @@ class ObjectWebhookApi
      * Retrieve an existing Webhook
      *
      * @param  int $pkiWebhookID pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\WebhookGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError
      * @deprecated
      */
-    public function webhookGetObjectV1($pkiWebhookID)
+    public function webhookGetObjectV1($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV1'][0])
     {
-        list($response) = $this->webhookGetObjectV1WithHttpInfo($pkiWebhookID);
+        list($response) = $this->webhookGetObjectV1WithHttpInfo($pkiWebhookID, $contentType);
         return $response;
     }
 
@@ -1831,15 +1865,16 @@ class ObjectWebhookApi
      * Retrieve an existing Webhook
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\WebhookGetObjectV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function webhookGetObjectV1WithHttpInfo($pkiWebhookID)
+    public function webhookGetObjectV1WithHttpInfo($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV1'][0])
     {
-        $request = $this->webhookGetObjectV1Request($pkiWebhookID);
+        $request = $this->webhookGetObjectV1Request($pkiWebhookID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1954,14 +1989,15 @@ class ObjectWebhookApi
      * Retrieve an existing Webhook
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function webhookGetObjectV1Async($pkiWebhookID)
+    public function webhookGetObjectV1Async($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV1'][0])
     {
-        return $this->webhookGetObjectV1AsyncWithHttpInfo($pkiWebhookID)
+        return $this->webhookGetObjectV1AsyncWithHttpInfo($pkiWebhookID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1975,15 +2011,16 @@ class ObjectWebhookApi
      * Retrieve an existing Webhook
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function webhookGetObjectV1AsyncWithHttpInfo($pkiWebhookID)
+    public function webhookGetObjectV1AsyncWithHttpInfo($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\WebhookGetObjectV1Response';
-        $request = $this->webhookGetObjectV1Request($pkiWebhookID);
+        $request = $this->webhookGetObjectV1Request($pkiWebhookID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2025,12 +2062,13 @@ class ObjectWebhookApi
      * Create request for operation 'webhookGetObjectV1'
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function webhookGetObjectV1Request($pkiWebhookID)
+    public function webhookGetObjectV1Request($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV1'][0])
     {
 
         // verify the required parameter 'pkiWebhookID' is set
@@ -2039,6 +2077,7 @@ class ObjectWebhookApi
                 'Missing the required parameter $pkiWebhookID when calling webhookGetObjectV1'
             );
         }
+
 
         $resourcePath = '/1/object/webhook/{pkiWebhookID}';
         $formParams = [];
@@ -2059,16 +2098,11 @@ class ObjectWebhookApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2086,9 +2120,9 @@ class ObjectWebhookApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2137,14 +2171,15 @@ class ObjectWebhookApi
      * Retrieve an existing Webhook
      *
      * @param  int $pkiWebhookID pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\WebhookGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function webhookGetObjectV2($pkiWebhookID)
+    public function webhookGetObjectV2($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV2'][0])
     {
-        list($response) = $this->webhookGetObjectV2WithHttpInfo($pkiWebhookID);
+        list($response) = $this->webhookGetObjectV2WithHttpInfo($pkiWebhookID, $contentType);
         return $response;
     }
 
@@ -2154,14 +2189,15 @@ class ObjectWebhookApi
      * Retrieve an existing Webhook
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\WebhookGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookGetObjectV2WithHttpInfo($pkiWebhookID)
+    public function webhookGetObjectV2WithHttpInfo($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV2'][0])
     {
-        $request = $this->webhookGetObjectV2Request($pkiWebhookID);
+        $request = $this->webhookGetObjectV2Request($pkiWebhookID, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2276,13 +2312,14 @@ class ObjectWebhookApi
      * Retrieve an existing Webhook
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookGetObjectV2Async($pkiWebhookID)
+    public function webhookGetObjectV2Async($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV2'][0])
     {
-        return $this->webhookGetObjectV2AsyncWithHttpInfo($pkiWebhookID)
+        return $this->webhookGetObjectV2AsyncWithHttpInfo($pkiWebhookID, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2296,14 +2333,15 @@ class ObjectWebhookApi
      * Retrieve an existing Webhook
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookGetObjectV2AsyncWithHttpInfo($pkiWebhookID)
+    public function webhookGetObjectV2AsyncWithHttpInfo($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV2'][0])
     {
         $returnType = '\eZmaxAPI\Model\WebhookGetObjectV2Response';
-        $request = $this->webhookGetObjectV2Request($pkiWebhookID);
+        $request = $this->webhookGetObjectV2Request($pkiWebhookID, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2345,11 +2383,12 @@ class ObjectWebhookApi
      * Create request for operation 'webhookGetObjectV2'
      *
      * @param  int $pkiWebhookID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookGetObjectV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookGetObjectV2Request($pkiWebhookID)
+    public function webhookGetObjectV2Request($pkiWebhookID, string $contentType = self::contentTypes['webhookGetObjectV2'][0])
     {
 
         // verify the required parameter 'pkiWebhookID' is set
@@ -2358,6 +2397,7 @@ class ObjectWebhookApi
                 'Missing the required parameter $pkiWebhookID when calling webhookGetObjectV2'
             );
         }
+
 
         $resourcePath = '/2/object/webhook/{pkiWebhookID}';
         $formParams = [];
@@ -2378,16 +2418,11 @@ class ObjectWebhookApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (count($formParams) > 0) {
@@ -2405,9 +2440,9 @@ class ObjectWebhookApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2457,14 +2492,15 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID pkiWebhookID (required)
      * @param  object $body body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookTestV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\WebhookTestV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function webhookTestV1($pkiWebhookID, $body)
+    public function webhookTestV1($pkiWebhookID, $body, string $contentType = self::contentTypes['webhookTestV1'][0])
     {
-        list($response) = $this->webhookTestV1WithHttpInfo($pkiWebhookID, $body);
+        list($response) = $this->webhookTestV1WithHttpInfo($pkiWebhookID, $body, $contentType);
         return $response;
     }
 
@@ -2475,14 +2511,15 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookTestV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\WebhookTestV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookTestV1WithHttpInfo($pkiWebhookID, $body)
+    public function webhookTestV1WithHttpInfo($pkiWebhookID, $body, string $contentType = self::contentTypes['webhookTestV1'][0])
     {
-        $request = $this->webhookTestV1Request($pkiWebhookID, $body);
+        $request = $this->webhookTestV1Request($pkiWebhookID, $body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2598,13 +2635,14 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookTestV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookTestV1Async($pkiWebhookID, $body)
+    public function webhookTestV1Async($pkiWebhookID, $body, string $contentType = self::contentTypes['webhookTestV1'][0])
     {
-        return $this->webhookTestV1AsyncWithHttpInfo($pkiWebhookID, $body)
+        return $this->webhookTestV1AsyncWithHttpInfo($pkiWebhookID, $body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2619,14 +2657,15 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookTestV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookTestV1AsyncWithHttpInfo($pkiWebhookID, $body)
+    public function webhookTestV1AsyncWithHttpInfo($pkiWebhookID, $body, string $contentType = self::contentTypes['webhookTestV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\WebhookTestV1Response';
-        $request = $this->webhookTestV1Request($pkiWebhookID, $body);
+        $request = $this->webhookTestV1Request($pkiWebhookID, $body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2669,11 +2708,12 @@ class ObjectWebhookApi
      *
      * @param  int $pkiWebhookID (required)
      * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookTestV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookTestV1Request($pkiWebhookID, $body)
+    public function webhookTestV1Request($pkiWebhookID, $body, string $contentType = self::contentTypes['webhookTestV1'][0])
     {
 
         // verify the required parameter 'pkiWebhookID' is set
@@ -2689,6 +2729,7 @@ class ObjectWebhookApi
                 'Missing the required parameter $body when calling webhookTestV1'
             );
         }
+
 
         $resourcePath = '/1/object/webhook/{pkiWebhookID}/test';
         $formParams = [];
@@ -2709,20 +2750,16 @@ class ObjectWebhookApi
         }
 
 
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -2742,9 +2779,9 @@ class ObjectWebhookApi
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\json_encode($formParams);
-
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
