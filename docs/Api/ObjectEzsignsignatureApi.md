@@ -8,7 +8,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignsignatureCreateObjectV2()**](ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV2) | **POST** /2/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignatureDeleteObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature |
 | [**ezsignsignatureEditObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureEditObjectV1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature |
-| [**ezsignsignatureGetObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
+| [**ezsignsignatureGetEzsignsignaturesAutomaticV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetEzsignsignaturesAutomaticV1) | **GET** /1/object/ezsignsignature/getEzsignsignaturesAutomatic | Retrieve all automatic Ezsignsignatures |
 | [**ezsignsignatureGetObjectV2()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV2) | **GET** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
 | [**ezsignsignatureSignV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureSignV1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature |
 
@@ -263,15 +263,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsignsignatureGetObjectV1()`
+## `ezsignsignatureGetEzsignsignaturesAutomaticV1()`
 
 ```php
-ezsignsignatureGetObjectV1($pkiEzsignsignatureID): \eZmaxAPI\Model\EzsignsignatureGetObjectV1Response
+ezsignsignatureGetEzsignsignaturesAutomaticV1(): \eZmaxAPI\Model\EzsignsignatureGetEzsignsignaturesAutomaticV1Response
 ```
 
-Retrieve an existing Ezsignsignature
+Retrieve all automatic Ezsignsignatures
 
-
+Return all the Ezsignsignatures that can be signed by the current user
 
 ### Example
 
@@ -292,25 +292,22 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignsignatureApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiEzsignsignatureID = 56; // int
 
 try {
-    $result = $apiInstance->ezsignsignatureGetObjectV1($pkiEzsignsignatureID);
+    $result = $apiInstance->ezsignsignatureGetEzsignsignaturesAutomaticV1();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignsignatureApi->ezsignsignatureGetObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignsignatureApi->ezsignsignatureGetEzsignsignaturesAutomaticV1: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiEzsignsignatureID** | **int**|  | |
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignsignatureGetObjectV1Response**](../Model/EzsignsignatureGetObjectV1Response.md)
+[**\eZmaxAPI\Model\EzsignsignatureGetEzsignsignaturesAutomaticV1Response**](../Model/EzsignsignatureGetEzsignsignaturesAutomaticV1Response.md)
 
 ### Authorization
 

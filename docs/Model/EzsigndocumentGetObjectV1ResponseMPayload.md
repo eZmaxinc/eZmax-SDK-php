@@ -22,7 +22,9 @@ Name | Type | Description | Notes
 **tEzsigndocumentDeclinedtosignreason** | **string** | A custom text message that will contain the refusal message if the Ezsigndocument is declined to sign | [optional]
 **sEzsigndocumentMD5signed** | **string** | MD5 Hash of the final PDF Document after all signatures were applied to it. |
 **bEzsigndocumentEzsignform** | **bool** | If the Ezsigndocument contains an Ezsignform or not |
+**bEzsigndocumentHassignedsignatures** | **bool** | If the Ezsigndocument contains signed signatures (From internal or external sources) |
 **objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
+**sEzsigndocumentExternalid** | **string** | This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. |
 **iEzsigndocumentStepformtotal** | **int** | The total number of steps in the form filling phase |
 **iEzsigndocumentStepformcurrent** | **int** | The current step in the form filling phase |
 **iEzsigndocumentStepsignaturetotal** | **int** | The total number of steps in the signature filling phase |
