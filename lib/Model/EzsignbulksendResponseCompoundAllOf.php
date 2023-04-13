@@ -322,11 +322,11 @@ class EzsignbulksendResponseCompoundAllOf implements ModelInterface, ArrayAccess
      */
     public function setAObjEzsignbulksenddocumentmapping($aObjEzsignbulksenddocumentmapping)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignbulksenddocumentmapping)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignbulksenddocumentmapping cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignbulksenddocumentmapping'] = $aObjEzsignbulksenddocumentmapping;
         $this->container['aObjEzsignbulksenddocumentmapping'] = $aObjEzsignbulksenddocumentmapping;
@@ -353,11 +353,11 @@ class EzsignbulksendResponseCompoundAllOf implements ModelInterface, ArrayAccess
      */
     public function setAObjEzsignbulksendsignermapping($aObjEzsignbulksendsignermapping)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignbulksendsignermapping)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignbulksendsignermapping cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignbulksendsignermapping'] = $aObjEzsignbulksendsignermapping;
         $this->container['aObjEzsignbulksendsignermapping'] = $aObjEzsignbulksendsignermapping;

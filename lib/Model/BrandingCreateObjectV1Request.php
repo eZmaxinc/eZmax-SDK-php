@@ -279,6 +279,7 @@ class BrandingCreateObjectV1Request implements ModelInterface, ArrayAccess, \Jso
         if ($this->container['aObjBranding'] === null) {
             $invalidProperties[] = "'aObjBranding' can't be null";
         }
+//        if ((count($this->container['aObjBranding']) < 1)) {
         if (!is_null($this->container['aObjBranding']) && (count($this->container['aObjBranding']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjBranding', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class BrandingCreateObjectV1Request implements ModelInterface, ArrayAccess, \Jso
      */
     public function setAObjBranding($aObjBranding)
     {
-
-
-        if ((count($aObjBranding) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjBranding when calling BrandingCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjBranding)) {
             //throw new \InvalidArgumentException('non-nullable aObjBranding cannot be null');
         //}
+
+
+//        if ((count($aObjBranding) < 1)) {
+        if ((count($aObjBranding) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjBranding when calling BrandingCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjBranding'] = $aObjBranding;
         $this->container['aObjBranding'] = $aObjBranding;

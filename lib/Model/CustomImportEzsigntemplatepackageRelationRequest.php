@@ -335,16 +335,17 @@ class CustomImportEzsigntemplatepackageRelationRequest implements ModelInterface
      */
     public function setFkiEzsigntemplatepackagesignerID($fkiEzsigntemplatepackagesignerID)
     {
-
-        if (!is_null($fkiEzsigntemplatepackagesignerID) && ($fkiEzsigntemplatepackagesignerID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatepackagesignerID when calling CustomImportEzsigntemplatepackageRelationRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplatepackagesignerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatepackagesignerID cannot be null');
         //}
+
+//        if (($fkiEzsigntemplatepackagesignerID < 0)) {
+        if (!is_null($fkiEzsigntemplatepackagesignerID) && ($fkiEzsigntemplatepackagesignerID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatepackagesignerID when calling CustomImportEzsigntemplatepackageRelationRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsigntemplatepackagesignerID'] = $fkiEzsigntemplatepackagesignerID;
         $this->container['fkiEzsigntemplatepackagesignerID'] = (is_null($fkiEzsigntemplatepackagesignerID) ? null : (int) $fkiEzsigntemplatepackagesignerID);
@@ -371,16 +372,17 @@ class CustomImportEzsigntemplatepackageRelationRequest implements ModelInterface
      */
     public function setFkiEzsignfoldersignerassociationID($fkiEzsignfoldersignerassociationID)
     {
-
-        if (($fkiEzsignfoldersignerassociationID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldersignerassociationID when calling CustomImportEzsigntemplatepackageRelationRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldersignerassociationID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldersignerassociationID cannot be null');
         //}
+
+//        if (($fkiEzsignfoldersignerassociationID < 0)) {
+        if (($fkiEzsignfoldersignerassociationID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldersignerassociationID when calling CustomImportEzsigntemplatepackageRelationRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsignfoldersignerassociationID'] = $fkiEzsignfoldersignerassociationID;
         $this->container['fkiEzsignfoldersignerassociationID'] = (is_null($fkiEzsignfoldersignerassociationID) ? null : (int) $fkiEzsignfoldersignerassociationID);
@@ -407,11 +409,11 @@ class CustomImportEzsigntemplatepackageRelationRequest implements ModelInterface
      */
     public function setSEzsigntemplatepackagesignerDescription($sEzsigntemplatepackagesignerDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplatepackagesignerDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplatepackagesignerDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatepackagesignerDescription'] = $sEzsigntemplatepackagesignerDescription;
         $this->container['sEzsigntemplatepackagesignerDescription'] = (is_null($sEzsigntemplatepackagesignerDescription) ? null : (string) $sEzsigntemplatepackagesignerDescription);

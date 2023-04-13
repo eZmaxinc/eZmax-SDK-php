@@ -283,10 +283,12 @@ class MultilingualVariableexpenseDescription implements ModelInterface, ArrayAcc
     {
         $invalidProperties = [];
 
+//        if (!is_null($this->container['sVariableexpenseDescription1']) && !preg_match("/^.{0,40}$/", $this->container['sVariableexpenseDescription1'])) {
         if (!is_null($this->container['sVariableexpenseDescription1']) && !preg_match("/^.{0,40}$/", $this->container['sVariableexpenseDescription1'])) {
             $invalidProperties[] = "invalid value for 'sVariableexpenseDescription1', must be conform to the pattern /^.{0,40}$/.";
         }
 
+//        if (!is_null($this->container['sVariableexpenseDescription2']) && !preg_match("/^.{0,40}$/", $this->container['sVariableexpenseDescription2'])) {
         if (!is_null($this->container['sVariableexpenseDescription2']) && !preg_match("/^.{0,40}$/", $this->container['sVariableexpenseDescription2'])) {
             $invalidProperties[] = "invalid value for 'sVariableexpenseDescription2', must be conform to the pattern /^.{0,40}$/.";
         }
@@ -325,16 +327,17 @@ class MultilingualVariableexpenseDescription implements ModelInterface, ArrayAcc
      */
     public function setSVariableexpenseDescription1($sVariableexpenseDescription1)
     {
-
-        if (!is_null($sVariableexpenseDescription1) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescription1))) {
-            throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescription1 when calling MultilingualVariableexpenseDescription., must conform to the pattern /^.{0,40}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sVariableexpenseDescription1)) {
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseDescription1 cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,40}$/", $sVariableexpenseDescription1))) {
+        if (!is_null($sVariableexpenseDescription1) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescription1))) {
+            throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescription1 when calling MultilingualVariableexpenseDescription., must conform to the pattern /^.{0,40}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sVariableexpenseDescription1'] = $sVariableexpenseDescription1;
         $this->container['sVariableexpenseDescription1'] = (is_null($sVariableexpenseDescription1) ? null : (string) $sVariableexpenseDescription1);
@@ -361,16 +364,17 @@ class MultilingualVariableexpenseDescription implements ModelInterface, ArrayAcc
      */
     public function setSVariableexpenseDescription2($sVariableexpenseDescription2)
     {
-
-        if (!is_null($sVariableexpenseDescription2) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescription2))) {
-            throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescription2 when calling MultilingualVariableexpenseDescription., must conform to the pattern /^.{0,40}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sVariableexpenseDescription2)) {
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseDescription2 cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,40}$/", $sVariableexpenseDescription2))) {
+        if (!is_null($sVariableexpenseDescription2) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescription2))) {
+            throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescription2 when calling MultilingualVariableexpenseDescription., must conform to the pattern /^.{0,40}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sVariableexpenseDescription2'] = $sVariableexpenseDescription2;
         $this->container['sVariableexpenseDescription2'] = (is_null($sVariableexpenseDescription2) ? null : (string) $sVariableexpenseDescription2);

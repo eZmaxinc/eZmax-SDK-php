@@ -354,6 +354,10 @@ class EzsigntemplatedocumentGetWordsPositionsV1Request implements ModelInterface
      */
     public function setEGet($eGet)
     {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eGet)) {
+            //throw new \InvalidArgumentException('non-nullable eGet cannot be null');
+        //}
         $allowedValues = $this->getEGetAllowableValues();
         if (!in_array($eGet, $allowedValues, true)) {
             throw new \InvalidArgumentException(
@@ -364,11 +368,7 @@ class EzsigntemplatedocumentGetWordsPositionsV1Request implements ModelInterface
                 )
             );
         }
-
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eGet)) {
-            //throw new \InvalidArgumentException('non-nullable eGet cannot be null');
-        //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eGet'] = $eGet;
         $this->container['eGet'] = (is_null($eGet) ? null : (string) $eGet);
@@ -395,11 +395,11 @@ class EzsigntemplatedocumentGetWordsPositionsV1Request implements ModelInterface
      */
     public function setBWordCaseSensitive($bWordCaseSensitive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bWordCaseSensitive)) {
             //throw new \InvalidArgumentException('non-nullable bWordCaseSensitive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bWordCaseSensitive'] = $bWordCaseSensitive;
         $this->container['bWordCaseSensitive'] = (is_null($bWordCaseSensitive) ? null : (bool) $bWordCaseSensitive);
@@ -426,11 +426,11 @@ class EzsigntemplatedocumentGetWordsPositionsV1Request implements ModelInterface
      */
     public function setASWord($aSWord)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aSWord)) {
             //throw new \InvalidArgumentException('non-nullable aSWord cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aSWord'] = $aSWord;
         $this->container['aSWord'] = (is_null($aSWord) ? null : $aSWord);

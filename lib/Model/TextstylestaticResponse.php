@@ -404,16 +404,17 @@ class TextstylestaticResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setPkiTextstylestaticID($pkiTextstylestaticID)
     {
-
-        if (!is_null($pkiTextstylestaticID) && ($pkiTextstylestaticID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiTextstylestaticID when calling TextstylestaticResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiTextstylestaticID)) {
             //throw new \InvalidArgumentException('non-nullable pkiTextstylestaticID cannot be null');
         //}
+
+//        if (($pkiTextstylestaticID < 0)) {
+        if (!is_null($pkiTextstylestaticID) && ($pkiTextstylestaticID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiTextstylestaticID when calling TextstylestaticResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiTextstylestaticID'] = $pkiTextstylestaticID;
         $this->container['pkiTextstylestaticID'] = (is_null($pkiTextstylestaticID) ? null : (int) $pkiTextstylestaticID);
@@ -440,16 +441,17 @@ class TextstylestaticResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setFkiFontID($fkiFontID)
     {
-
-        if (($fkiFontID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiFontID when calling TextstylestaticResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiFontID)) {
             //throw new \InvalidArgumentException('non-nullable fkiFontID cannot be null');
         //}
+
+//        if (($fkiFontID < 0)) {
+        if (($fkiFontID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiFontID when calling TextstylestaticResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiFontID'] = $fkiFontID;
         $this->container['fkiFontID'] = (is_null($fkiFontID) ? null : (int) $fkiFontID);
@@ -476,11 +478,11 @@ class TextstylestaticResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setBTextstylestaticBold($bTextstylestaticBold)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bTextstylestaticBold)) {
             //throw new \InvalidArgumentException('non-nullable bTextstylestaticBold cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bTextstylestaticBold'] = $bTextstylestaticBold;
         $this->container['bTextstylestaticBold'] = (is_null($bTextstylestaticBold) ? null : (bool) $bTextstylestaticBold);
@@ -507,11 +509,11 @@ class TextstylestaticResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setBTextstylestaticUnderline($bTextstylestaticUnderline)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bTextstylestaticUnderline)) {
             //throw new \InvalidArgumentException('non-nullable bTextstylestaticUnderline cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bTextstylestaticUnderline'] = $bTextstylestaticUnderline;
         $this->container['bTextstylestaticUnderline'] = (is_null($bTextstylestaticUnderline) ? null : (bool) $bTextstylestaticUnderline);
@@ -538,11 +540,11 @@ class TextstylestaticResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setBTextstylestaticItalic($bTextstylestaticItalic)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bTextstylestaticItalic)) {
             //throw new \InvalidArgumentException('non-nullable bTextstylestaticItalic cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bTextstylestaticItalic'] = $bTextstylestaticItalic;
         $this->container['bTextstylestaticItalic'] = (is_null($bTextstylestaticItalic) ? null : (bool) $bTextstylestaticItalic);
@@ -569,11 +571,11 @@ class TextstylestaticResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setBTextstylestaticStrikethrough($bTextstylestaticStrikethrough)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bTextstylestaticStrikethrough)) {
             //throw new \InvalidArgumentException('non-nullable bTextstylestaticStrikethrough cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bTextstylestaticStrikethrough'] = $bTextstylestaticStrikethrough;
         $this->container['bTextstylestaticStrikethrough'] = (is_null($bTextstylestaticStrikethrough) ? null : (bool) $bTextstylestaticStrikethrough);
@@ -600,19 +602,21 @@ class TextstylestaticResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setITextstylestaticFontcolor($iTextstylestaticFontcolor)
     {
-
-        if (($iTextstylestaticFontcolor > 16777215)) {
-            throw new \InvalidArgumentException('invalid value for $iTextstylestaticFontcolor when calling TextstylestaticResponse., must be smaller than or equal to 16777215.');
-        }
-        if (($iTextstylestaticFontcolor < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iTextstylestaticFontcolor when calling TextstylestaticResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iTextstylestaticFontcolor)) {
             //throw new \InvalidArgumentException('non-nullable iTextstylestaticFontcolor cannot be null');
         //}
+
+//        if (($iTextstylestaticFontcolor > 16777215)) {
+        if (($iTextstylestaticFontcolor > 16777215)) {
+            throw new \InvalidArgumentException('invalid value for $iTextstylestaticFontcolor when calling TextstylestaticResponse., must be smaller than or equal to 16777215.');
+        }
+//        if (($iTextstylestaticFontcolor < 0)) {
+        if (($iTextstylestaticFontcolor < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iTextstylestaticFontcolor when calling TextstylestaticResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iTextstylestaticFontcolor'] = $iTextstylestaticFontcolor;
         $this->container['iTextstylestaticFontcolor'] = (is_null($iTextstylestaticFontcolor) ? null : (int) $iTextstylestaticFontcolor);
@@ -639,19 +643,21 @@ class TextstylestaticResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setITextstylestaticSize($iTextstylestaticSize)
     {
-
-        if (($iTextstylestaticSize > 255)) {
-            throw new \InvalidArgumentException('invalid value for $iTextstylestaticSize when calling TextstylestaticResponse., must be smaller than or equal to 255.');
-        }
-        if (($iTextstylestaticSize < 1)) {
-            throw new \InvalidArgumentException('invalid value for $iTextstylestaticSize when calling TextstylestaticResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iTextstylestaticSize)) {
             //throw new \InvalidArgumentException('non-nullable iTextstylestaticSize cannot be null');
         //}
+
+//        if (($iTextstylestaticSize > 255)) {
+        if (($iTextstylestaticSize > 255)) {
+            throw new \InvalidArgumentException('invalid value for $iTextstylestaticSize when calling TextstylestaticResponse., must be smaller than or equal to 255.');
+        }
+//        if (($iTextstylestaticSize < 1)) {
+        if (($iTextstylestaticSize < 1)) {
+            throw new \InvalidArgumentException('invalid value for $iTextstylestaticSize when calling TextstylestaticResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iTextstylestaticSize'] = $iTextstylestaticSize;
         $this->container['iTextstylestaticSize'] = (is_null($iTextstylestaticSize) ? null : (int) $iTextstylestaticSize);

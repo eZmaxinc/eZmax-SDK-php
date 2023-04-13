@@ -331,11 +331,11 @@ class DepartmentGetMembersV1ResponseMPayload implements ModelInterface, ArrayAcc
      */
     public function setAFkiAgentID($aFkiAgentID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFkiAgentID)) {
             //throw new \InvalidArgumentException('non-nullable aFkiAgentID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aFkiAgentID'] = $aFkiAgentID;
         $this->container['aFkiAgentID'] = (is_null($aFkiAgentID) ? null : $aFkiAgentID);
@@ -362,11 +362,11 @@ class DepartmentGetMembersV1ResponseMPayload implements ModelInterface, ArrayAcc
      */
     public function setAFkiBrokerID($aFkiBrokerID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFkiBrokerID)) {
             //throw new \InvalidArgumentException('non-nullable aFkiBrokerID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aFkiBrokerID'] = $aFkiBrokerID;
         $this->container['aFkiBrokerID'] = (is_null($aFkiBrokerID) ? null : $aFkiBrokerID);
@@ -393,11 +393,11 @@ class DepartmentGetMembersV1ResponseMPayload implements ModelInterface, ArrayAcc
      */
     public function setAFkiCustomerID($aFkiCustomerID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFkiCustomerID)) {
             //throw new \InvalidArgumentException('non-nullable aFkiCustomerID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aFkiCustomerID'] = $aFkiCustomerID;
         $this->container['aFkiCustomerID'] = (is_null($aFkiCustomerID) ? null : $aFkiCustomerID);
@@ -424,11 +424,11 @@ class DepartmentGetMembersV1ResponseMPayload implements ModelInterface, ArrayAcc
      */
     public function setAFkiEmployeeID($aFkiEmployeeID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFkiEmployeeID)) {
             //throw new \InvalidArgumentException('non-nullable aFkiEmployeeID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aFkiEmployeeID'] = $aFkiEmployeeID;
         $this->container['aFkiEmployeeID'] = (is_null($aFkiEmployeeID) ? null : $aFkiEmployeeID);

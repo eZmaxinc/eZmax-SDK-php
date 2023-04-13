@@ -283,8 +283,12 @@ class UsergroupRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['pkiUsergroupID']) && ($this->container['pkiUsergroupID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be bigger than or equal to 0.";
+        if (!is_null($this->container['pkiUsergroupID']) && ($this->container['pkiUsergroupID'] > 255)) {
+            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['pkiUsergroupID']) && ($this->container['pkiUsergroupID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be bigger than or equal to 1.";
         }
 
         if ($this->container['objUsergroupName'] === null) {
@@ -324,16 +328,21 @@ class UsergroupRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPkiUsergroupID($pkiUsergroupID)
     {
-
-        if (!is_null($pkiUsergroupID) && ($pkiUsergroupID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiUsergroupID)) {
             //throw new \InvalidArgumentException('non-nullable pkiUsergroupID cannot be null');
         //}
+
+//        if (($pkiUsergroupID > 255)) {
+        if (!is_null($pkiUsergroupID) && ($pkiUsergroupID > 255)) {
+            throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupRequest., must be smaller than or equal to 255.');
+        }
+//        if (($pkiUsergroupID < 1)) {
+        if (!is_null($pkiUsergroupID) && ($pkiUsergroupID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupRequest., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiUsergroupID'] = $pkiUsergroupID;
         $this->container['pkiUsergroupID'] = (is_null($pkiUsergroupID) ? null : (int) $pkiUsergroupID);
@@ -360,11 +369,11 @@ class UsergroupRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setObjUsergroupName($objUsergroupName)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objUsergroupName)) {
             //throw new \InvalidArgumentException('non-nullable objUsergroupName cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objUsergroupName'] = $objUsergroupName;
         $this->container['objUsergroupName'] = $objUsergroupName;

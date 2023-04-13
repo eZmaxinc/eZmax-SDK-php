@@ -357,11 +357,11 @@ class EzsigntemplatepackageAutocompleteElementResponse implements ModelInterface
      */
     public function setEEzsignfoldertypePrivacylevel($eEzsignfoldertypePrivacylevel)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsignfoldertypePrivacylevel)) {
             //throw new \InvalidArgumentException('non-nullable eEzsignfoldertypePrivacylevel cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsignfoldertypePrivacylevel'] = $eEzsignfoldertypePrivacylevel;
         $this->container['eEzsignfoldertypePrivacylevel'] = $eEzsignfoldertypePrivacylevel;
@@ -388,11 +388,11 @@ class EzsigntemplatepackageAutocompleteElementResponse implements ModelInterface
      */
     public function setSEzsigntemplatepackageDescription($sEzsigntemplatepackageDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplatepackageDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplatepackageDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatepackageDescription'] = $sEzsigntemplatepackageDescription;
         $this->container['sEzsigntemplatepackageDescription'] = (is_null($sEzsigntemplatepackageDescription) ? null : (string) $sEzsigntemplatepackageDescription);
@@ -419,16 +419,17 @@ class EzsigntemplatepackageAutocompleteElementResponse implements ModelInterface
      */
     public function setPkiEzsigntemplatepackageID($pkiEzsigntemplatepackageID)
     {
-
-        if (($pkiEzsigntemplatepackageID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplatepackageID when calling EzsigntemplatepackageAutocompleteElementResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplatepackageID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatepackageID cannot be null');
         //}
+
+//        if (($pkiEzsigntemplatepackageID < 0)) {
+        if (($pkiEzsigntemplatepackageID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplatepackageID when calling EzsigntemplatepackageAutocompleteElementResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsigntemplatepackageID'] = $pkiEzsigntemplatepackageID;
         $this->container['pkiEzsigntemplatepackageID'] = (is_null($pkiEzsigntemplatepackageID) ? null : (int) $pkiEzsigntemplatepackageID);
@@ -455,11 +456,11 @@ class EzsigntemplatepackageAutocompleteElementResponse implements ModelInterface
      */
     public function setBEzsigntemplatepackageIsactive($bEzsigntemplatepackageIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplatepackageIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsigntemplatepackageIsactive'] = $bEzsigntemplatepackageIsactive;
         $this->container['bEzsigntemplatepackageIsactive'] = (is_null($bEzsigntemplatepackageIsactive) ? null : (bool) $bEzsigntemplatepackageIsactive);
@@ -486,11 +487,11 @@ class EzsigntemplatepackageAutocompleteElementResponse implements ModelInterface
      */
     public function setBDisabled($bDisabled)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bDisabled)) {
             //throw new \InvalidArgumentException('non-nullable bDisabled cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bDisabled'] = $bDisabled;
         $this->container['bDisabled'] = (is_null($bDisabled) ? null : (bool) $bDisabled);

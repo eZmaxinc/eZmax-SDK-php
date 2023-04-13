@@ -279,6 +279,7 @@ class EzsignformfieldgroupCreateObjectV1ResponseMPayload implements ModelInterfa
         if ($this->container['aPkiEzsignformfieldgroupID'] === null) {
             $invalidProperties[] = "'aPkiEzsignformfieldgroupID' can't be null";
         }
+//        if ((count($this->container['aPkiEzsignformfieldgroupID']) < 1)) {
         if (!is_null($this->container['aPkiEzsignformfieldgroupID']) && (count($this->container['aPkiEzsignformfieldgroupID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiEzsignformfieldgroupID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsignformfieldgroupCreateObjectV1ResponseMPayload implements ModelInterfa
      */
     public function setAPkiEzsignformfieldgroupID($aPkiEzsignformfieldgroupID)
     {
-
-
-        if ((count($aPkiEzsignformfieldgroupID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiEzsignformfieldgroupID when calling EzsignformfieldgroupCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsignformfieldgroupID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsignformfieldgroupID cannot be null');
         //}
+
+
+//        if ((count($aPkiEzsignformfieldgroupID) < 1)) {
+        if ((count($aPkiEzsignformfieldgroupID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiEzsignformfieldgroupID when calling EzsignformfieldgroupCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiEzsignformfieldgroupID'] = $aPkiEzsignformfieldgroupID;
         $this->container['aPkiEzsignformfieldgroupID'] = (is_null($aPkiEzsignformfieldgroupID) ? null : $aPkiEzsignformfieldgroupID);

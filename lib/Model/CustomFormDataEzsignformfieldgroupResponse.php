@@ -331,18 +331,20 @@ class CustomFormDataEzsignformfieldgroupResponse implements ModelInterface, Arra
      */
     public function setSEzsignformfieldgroupLabel($sEzsignformfieldgroupLabel)
     {
-        if ((mb_strlen($sEzsignformfieldgroupLabel) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $sEzsignformfieldgroupLabel when calling CustomFormDataEzsignformfieldgroupResponse., must be smaller than or equal to 50.');
-        }
-        if ((mb_strlen($sEzsignformfieldgroupLabel) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $sEzsignformfieldgroupLabel when calling CustomFormDataEzsignformfieldgroupResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignformfieldgroupLabel)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignformfieldgroupLabel cannot be null');
         //}
+//        if ((mb_strlen($sEzsignformfieldgroupLabel) > 50)) {
+        if ((mb_strlen($sEzsignformfieldgroupLabel) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $sEzsignformfieldgroupLabel when calling CustomFormDataEzsignformfieldgroupResponse., must be smaller than or equal to 50.');
+        }
+//        if ((mb_strlen($sEzsignformfieldgroupLabel) < 1)) {
+        if ((mb_strlen($sEzsignformfieldgroupLabel) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $sEzsignformfieldgroupLabel when calling CustomFormDataEzsignformfieldgroupResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldgroupLabel'] = $sEzsignformfieldgroupLabel;
         $this->container['sEzsignformfieldgroupLabel'] = (is_null($sEzsignformfieldgroupLabel) ? null : (string) $sEzsignformfieldgroupLabel);
@@ -369,11 +371,11 @@ class CustomFormDataEzsignformfieldgroupResponse implements ModelInterface, Arra
      */
     public function setAObjEzsignformfield($aObjEzsignformfield)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignformfield)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignformfield cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignformfield'] = $aObjEzsignformfield;
         $this->container['aObjEzsignformfield'] = $aObjEzsignformfield;

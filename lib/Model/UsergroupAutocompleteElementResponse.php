@@ -293,11 +293,20 @@ class UsergroupAutocompleteElementResponse implements ModelInterface, ArrayAcces
         if ($this->container['sUsergroupNameX'] === null) {
             $invalidProperties[] = "'sUsergroupNameX' can't be null";
         }
+//        if (!preg_match("/^.{0,50}$/", $this->container['sUsergroupNameX'])) {
+        if (!is_null($this->container['sUsergroupNameX']) && !preg_match("/^.{0,50}$/", $this->container['sUsergroupNameX'])) {
+            $invalidProperties[] = "invalid value for 'sUsergroupNameX', must be conform to the pattern /^.{0,50}$/.";
+        }
+
         if ($this->container['pkiUsergroupID'] === null) {
             $invalidProperties[] = "'pkiUsergroupID' can't be null";
         }
-        if (($this->container['pkiUsergroupID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be bigger than or equal to 0.";
+        if (($this->container['pkiUsergroupID'] > 255)) {
+            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be smaller than or equal to 255.";
+        }
+
+        if (($this->container['pkiUsergroupID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be bigger than or equal to 1.";
         }
 
         if ($this->container['bUsergroupIsactive'] === null) {
@@ -337,11 +346,17 @@ class UsergroupAutocompleteElementResponse implements ModelInterface, ArrayAcces
      */
     public function setSUsergroupNameX($sUsergroupNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUsergroupNameX)) {
             //throw new \InvalidArgumentException('non-nullable sUsergroupNameX cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,50}$/", $sUsergroupNameX))) {
+        if (!is_null($sUsergroupNameX) && (!preg_match("/^.{0,50}$/", $sUsergroupNameX))) {
+            throw new \InvalidArgumentException("invalid value for \$sUsergroupNameX when calling UsergroupAutocompleteElementResponse., must conform to the pattern /^.{0,50}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUsergroupNameX'] = $sUsergroupNameX;
         $this->container['sUsergroupNameX'] = (is_null($sUsergroupNameX) ? null : (string) $sUsergroupNameX);
@@ -368,16 +383,21 @@ class UsergroupAutocompleteElementResponse implements ModelInterface, ArrayAcces
      */
     public function setPkiUsergroupID($pkiUsergroupID)
     {
-
-        if (($pkiUsergroupID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupAutocompleteElementResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiUsergroupID)) {
             //throw new \InvalidArgumentException('non-nullable pkiUsergroupID cannot be null');
         //}
+
+//        if (($pkiUsergroupID > 255)) {
+        if (($pkiUsergroupID > 255)) {
+            throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupAutocompleteElementResponse., must be smaller than or equal to 255.');
+        }
+//        if (($pkiUsergroupID < 1)) {
+        if (($pkiUsergroupID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupAutocompleteElementResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiUsergroupID'] = $pkiUsergroupID;
         $this->container['pkiUsergroupID'] = (is_null($pkiUsergroupID) ? null : (int) $pkiUsergroupID);
@@ -404,11 +424,11 @@ class UsergroupAutocompleteElementResponse implements ModelInterface, ArrayAcces
      */
     public function setBUsergroupIsactive($bUsergroupIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bUsergroupIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bUsergroupIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bUsergroupIsactive'] = $bUsergroupIsactive;
         $this->container['bUsergroupIsactive'] = (is_null($bUsergroupIsactive) ? null : (bool) $bUsergroupIsactive);

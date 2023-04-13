@@ -336,16 +336,17 @@ class CustomWordPositionOccurenceResponse implements ModelInterface, ArrayAccess
      */
     public function setIPage($iPage)
     {
-
-        if (!is_null($iPage) && ($iPage < 1)) {
-            throw new \InvalidArgumentException('invalid value for $iPage when calling CustomWordPositionOccurenceResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iPage)) {
             //throw new \InvalidArgumentException('non-nullable iPage cannot be null');
         //}
+
+//        if (($iPage < 1)) {
+        if (!is_null($iPage) && ($iPage < 1)) {
+            throw new \InvalidArgumentException('invalid value for $iPage when calling CustomWordPositionOccurenceResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iPage'] = $iPage;
         $this->container['iPage'] = (is_null($iPage) ? null : (int) $iPage);
@@ -372,16 +373,17 @@ class CustomWordPositionOccurenceResponse implements ModelInterface, ArrayAccess
      */
     public function setIX($iX)
     {
-
-        if (!is_null($iX) && ($iX < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iX when calling CustomWordPositionOccurenceResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iX)) {
             //throw new \InvalidArgumentException('non-nullable iX cannot be null');
         //}
+
+//        if (($iX < 0)) {
+        if (!is_null($iX) && ($iX < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iX when calling CustomWordPositionOccurenceResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iX'] = $iX;
         $this->container['iX'] = (is_null($iX) ? null : (int) $iX);
@@ -408,16 +410,17 @@ class CustomWordPositionOccurenceResponse implements ModelInterface, ArrayAccess
      */
     public function setIY($iY)
     {
-
-        if (!is_null($iY) && ($iY < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iY when calling CustomWordPositionOccurenceResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iY)) {
             //throw new \InvalidArgumentException('non-nullable iY cannot be null');
         //}
+
+//        if (($iY < 0)) {
+        if (!is_null($iY) && ($iY < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iY when calling CustomWordPositionOccurenceResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iY'] = $iY;
         $this->container['iY'] = (is_null($iY) ? null : (int) $iY);

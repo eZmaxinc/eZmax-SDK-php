@@ -423,16 +423,17 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setPkiUserID($pkiUserID)
     {
-
-        if (($pkiUserID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiUserID when calling ActivesessionResponseCompoundUser., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable pkiUserID cannot be null');
         //}
+
+//        if (($pkiUserID < 0)) {
+        if (($pkiUserID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiUserID when calling ActivesessionResponseCompoundUser., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiUserID'] = $pkiUserID;
         $this->container['pkiUserID'] = (is_null($pkiUserID) ? null : (int) $pkiUserID);
@@ -459,16 +460,17 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setFkiTimezoneID($fkiTimezoneID)
     {
-
-        if (($fkiTimezoneID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiTimezoneID when calling ActivesessionResponseCompoundUser., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiTimezoneID)) {
             //throw new \InvalidArgumentException('non-nullable fkiTimezoneID cannot be null');
         //}
+
+//        if (($fkiTimezoneID < 0)) {
+        if (($fkiTimezoneID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiTimezoneID when calling ActivesessionResponseCompoundUser., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiTimezoneID'] = $fkiTimezoneID;
         $this->container['fkiTimezoneID'] = (is_null($fkiTimezoneID) ? null : (int) $fkiTimezoneID);
@@ -495,11 +497,11 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setSAvatarUrl($sAvatarUrl)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sAvatarUrl)) {
             //throw new \InvalidArgumentException('non-nullable sAvatarUrl cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAvatarUrl'] = $sAvatarUrl;
         $this->container['sAvatarUrl'] = (is_null($sAvatarUrl) ? null : (string) $sAvatarUrl);
@@ -526,11 +528,11 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setSUserFirstname($sUserFirstname)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserFirstname)) {
             //throw new \InvalidArgumentException('non-nullable sUserFirstname cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserFirstname'] = $sUserFirstname;
         $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : (string) $sUserFirstname);
@@ -557,11 +559,11 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setSUserLastname($sUserLastname)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserLastname)) {
             //throw new \InvalidArgumentException('non-nullable sUserLastname cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLastname'] = $sUserLastname;
         $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : (string) $sUserLastname);
@@ -588,11 +590,11 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setSEmailAddress($sEmailAddress)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEmailAddress)) {
             //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
         $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
@@ -619,11 +621,11 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setEUserEzsignsendreminderfrequency($eUserEzsignsendreminderfrequency)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eUserEzsignsendreminderfrequency)) {
             //throw new \InvalidArgumentException('non-nullable eUserEzsignsendreminderfrequency cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eUserEzsignsendreminderfrequency'] = $eUserEzsignsendreminderfrequency;
         $this->container['eUserEzsignsendreminderfrequency'] = $eUserEzsignsendreminderfrequency;
@@ -650,16 +652,17 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setIUserInterfacecolor($iUserInterfacecolor)
     {
-
-        if (($iUserInterfacecolor < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iUserInterfacecolor when calling ActivesessionResponseCompoundUser., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iUserInterfacecolor)) {
             //throw new \InvalidArgumentException('non-nullable iUserInterfacecolor cannot be null');
         //}
+
+//        if (($iUserInterfacecolor < 0)) {
+        if (($iUserInterfacecolor < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iUserInterfacecolor when calling ActivesessionResponseCompoundUser., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iUserInterfacecolor'] = $iUserInterfacecolor;
         $this->container['iUserInterfacecolor'] = (is_null($iUserInterfacecolor) ? null : (int) $iUserInterfacecolor);
@@ -686,11 +689,11 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setBUserInterfacedark($bUserInterfacedark)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bUserInterfacedark)) {
             //throw new \InvalidArgumentException('non-nullable bUserInterfacedark cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bUserInterfacedark'] = $bUserInterfacedark;
         $this->container['bUserInterfacedark'] = (is_null($bUserInterfacedark) ? null : (bool) $bUserInterfacedark);
@@ -717,19 +720,21 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function setIUserListresult($iUserListresult)
     {
-
-        if (($iUserListresult > 500)) {
-            throw new \InvalidArgumentException('invalid value for $iUserListresult when calling ActivesessionResponseCompoundUser., must be smaller than or equal to 500.');
-        }
-        if (($iUserListresult < 5)) {
-            throw new \InvalidArgumentException('invalid value for $iUserListresult when calling ActivesessionResponseCompoundUser., must be bigger than or equal to 5.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iUserListresult)) {
             //throw new \InvalidArgumentException('non-nullable iUserListresult cannot be null');
         //}
+
+//        if (($iUserListresult > 500)) {
+        if (($iUserListresult > 500)) {
+            throw new \InvalidArgumentException('invalid value for $iUserListresult when calling ActivesessionResponseCompoundUser., must be smaller than or equal to 500.');
+        }
+//        if (($iUserListresult < 5)) {
+        if (($iUserListresult < 5)) {
+            throw new \InvalidArgumentException('invalid value for $iUserListresult when calling ActivesessionResponseCompoundUser., must be bigger than or equal to 5.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iUserListresult'] = $iUserListresult;
         $this->container['iUserListresult'] = (is_null($iUserListresult) ? null : (int) $iUserListresult);

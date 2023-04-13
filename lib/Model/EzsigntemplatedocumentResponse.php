@@ -375,16 +375,17 @@ class EzsigntemplatedocumentResponse implements ModelInterface, ArrayAccess, \Js
      */
     public function setPkiEzsigntemplatedocumentID($pkiEzsigntemplatedocumentID)
     {
-
-        if (($pkiEzsigntemplatedocumentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplatedocumentID when calling EzsigntemplatedocumentResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplatedocumentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatedocumentID cannot be null');
         //}
+
+//        if (($pkiEzsigntemplatedocumentID < 0)) {
+        if (($pkiEzsigntemplatedocumentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplatedocumentID when calling EzsigntemplatedocumentResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsigntemplatedocumentID'] = $pkiEzsigntemplatedocumentID;
         $this->container['pkiEzsigntemplatedocumentID'] = (is_null($pkiEzsigntemplatedocumentID) ? null : (int) $pkiEzsigntemplatedocumentID);
@@ -411,16 +412,17 @@ class EzsigntemplatedocumentResponse implements ModelInterface, ArrayAccess, \Js
      */
     public function setFkiEzsigntemplateID($fkiEzsigntemplateID)
     {
-
-        if (($fkiEzsigntemplateID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplateID when calling EzsigntemplatedocumentResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplateID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplateID cannot be null');
         //}
+
+//        if (($fkiEzsigntemplateID < 0)) {
+        if (($fkiEzsigntemplateID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplateID when calling EzsigntemplatedocumentResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsigntemplateID'] = $fkiEzsigntemplateID;
         $this->container['fkiEzsigntemplateID'] = (is_null($fkiEzsigntemplateID) ? null : (int) $fkiEzsigntemplateID);
@@ -447,11 +449,11 @@ class EzsigntemplatedocumentResponse implements ModelInterface, ArrayAccess, \Js
      */
     public function setSEzsigntemplatedocumentName($sEzsigntemplatedocumentName)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplatedocumentName)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplatedocumentName cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatedocumentName'] = $sEzsigntemplatedocumentName;
         $this->container['sEzsigntemplatedocumentName'] = (is_null($sEzsigntemplatedocumentName) ? null : (string) $sEzsigntemplatedocumentName);
@@ -478,16 +480,17 @@ class EzsigntemplatedocumentResponse implements ModelInterface, ArrayAccess, \Js
      */
     public function setIEzsigntemplatedocumentPagetotal($iEzsigntemplatedocumentPagetotal)
     {
-
-        if (($iEzsigntemplatedocumentPagetotal < 1)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentPagetotal when calling EzsigntemplatedocumentResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigntemplatedocumentPagetotal)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentPagetotal cannot be null');
         //}
+
+//        if (($iEzsigntemplatedocumentPagetotal < 1)) {
+        if (($iEzsigntemplatedocumentPagetotal < 1)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentPagetotal when calling EzsigntemplatedocumentResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigntemplatedocumentPagetotal'] = $iEzsigntemplatedocumentPagetotal;
         $this->container['iEzsigntemplatedocumentPagetotal'] = (is_null($iEzsigntemplatedocumentPagetotal) ? null : (int) $iEzsigntemplatedocumentPagetotal);
@@ -514,11 +517,11 @@ class EzsigntemplatedocumentResponse implements ModelInterface, ArrayAccess, \Js
      */
     public function setIEzsigntemplatedocumentSignaturetotal($iEzsigntemplatedocumentSignaturetotal)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigntemplatedocumentSignaturetotal)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentSignaturetotal cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigntemplatedocumentSignaturetotal'] = $iEzsigntemplatedocumentSignaturetotal;
         $this->container['iEzsigntemplatedocumentSignaturetotal'] = (is_null($iEzsigntemplatedocumentSignaturetotal) ? null : (int) $iEzsigntemplatedocumentSignaturetotal);
@@ -545,11 +548,11 @@ class EzsigntemplatedocumentResponse implements ModelInterface, ArrayAccess, \Js
      */
     public function setBEzsigntemplatedocumentHassignedsignatures($bEzsigntemplatedocumentHassignedsignatures)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplatedocumentHassignedsignatures)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplatedocumentHassignedsignatures cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsigntemplatedocumentHassignedsignatures'] = $bEzsigntemplatedocumentHassignedsignatures;
         $this->container['bEzsigntemplatedocumentHassignedsignatures'] = (is_null($bEzsigntemplatedocumentHassignedsignatures) ? null : (bool) $bEzsigntemplatedocumentHassignedsignatures);

@@ -337,16 +337,17 @@ class CustomEzsigndocumentEzsignsignaturesAutomaticResponse implements ModelInte
      */
     public function setPkiEzsigndocumentID($pkiEzsigndocumentID)
     {
-
-        if (($pkiEzsigndocumentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsigndocumentID when calling CustomEzsigndocumentEzsignsignaturesAutomaticResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigndocumentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigndocumentID cannot be null');
         //}
+
+//        if (($pkiEzsigndocumentID < 0)) {
+        if (($pkiEzsigndocumentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsigndocumentID when calling CustomEzsigndocumentEzsignsignaturesAutomaticResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsigndocumentID'] = $pkiEzsigndocumentID;
         $this->container['pkiEzsigndocumentID'] = (is_null($pkiEzsigndocumentID) ? null : (int) $pkiEzsigndocumentID);
@@ -373,11 +374,11 @@ class CustomEzsigndocumentEzsignsignaturesAutomaticResponse implements ModelInte
      */
     public function setSEzsigndocumentName($sEzsigndocumentName)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigndocumentName)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigndocumentName cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
         $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);
@@ -404,11 +405,11 @@ class CustomEzsigndocumentEzsignsignaturesAutomaticResponse implements ModelInte
      */
     public function setAObjEzsignsignature($aObjEzsignsignature)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignsignature)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignsignature cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignsignature'] = $aObjEzsignsignature;
         $this->container['aObjEzsignsignature'] = $aObjEzsignsignature;

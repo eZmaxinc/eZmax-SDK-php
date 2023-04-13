@@ -338,16 +338,17 @@ class ApikeyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setPkiApikeyID($pkiApikeyID)
     {
-
-        if (!is_null($pkiApikeyID) && ($pkiApikeyID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiApikeyID when calling ApikeyRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiApikeyID)) {
             //throw new \InvalidArgumentException('non-nullable pkiApikeyID cannot be null');
         //}
+
+//        if (($pkiApikeyID < 0)) {
+        if (!is_null($pkiApikeyID) && ($pkiApikeyID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiApikeyID when calling ApikeyRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiApikeyID'] = $pkiApikeyID;
         $this->container['pkiApikeyID'] = (is_null($pkiApikeyID) ? null : (int) $pkiApikeyID);
@@ -374,16 +375,17 @@ class ApikeyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setFkiUserID($fkiUserID)
     {
-
-        if (($fkiUserID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiUserID when calling ApikeyRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
         //}
+
+//        if (($fkiUserID < 0)) {
+        if (($fkiUserID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiUserID when calling ApikeyRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiUserID'] = $fkiUserID;
         $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
@@ -410,11 +412,11 @@ class ApikeyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setObjApikeyDescription($objApikeyDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objApikeyDescription)) {
             //throw new \InvalidArgumentException('non-nullable objApikeyDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objApikeyDescription'] = $objApikeyDescription;
         $this->container['objApikeyDescription'] = $objApikeyDescription;

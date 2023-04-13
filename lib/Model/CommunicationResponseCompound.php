@@ -435,16 +435,17 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setPkiCommunicationID($pkiCommunicationID)
     {
-
-        if (($pkiCommunicationID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiCommunicationID when calling CommunicationResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiCommunicationID)) {
             //throw new \InvalidArgumentException('non-nullable pkiCommunicationID cannot be null');
         //}
+
+//        if (($pkiCommunicationID < 0)) {
+        if (($pkiCommunicationID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiCommunicationID when calling CommunicationResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiCommunicationID'] = $pkiCommunicationID;
         $this->container['pkiCommunicationID'] = (is_null($pkiCommunicationID) ? null : (int) $pkiCommunicationID);
@@ -471,11 +472,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setECommunicationImportance($eCommunicationImportance)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationImportance)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationImportance cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eCommunicationImportance'] = $eCommunicationImportance;
         $this->container['eCommunicationImportance'] = $eCommunicationImportance;
@@ -502,11 +503,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setECommunicationType($eCommunicationType)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationType)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationType cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eCommunicationType'] = $eCommunicationType;
         $this->container['eCommunicationType'] = $eCommunicationType;
@@ -533,11 +534,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setSCommunicationSubject($sCommunicationSubject)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCommunicationSubject)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationSubject cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCommunicationSubject'] = $sCommunicationSubject;
         $this->container['sCommunicationSubject'] = (is_null($sCommunicationSubject) ? null : (string) $sCommunicationSubject);
@@ -564,11 +565,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setSCommunicationBodyurl($sCommunicationBodyurl)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCommunicationBodyurl)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationBodyurl cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCommunicationBodyurl'] = $sCommunicationBodyurl;
         $this->container['sCommunicationBodyurl'] = (is_null($sCommunicationBodyurl) ? null : (string) $sCommunicationBodyurl);
@@ -595,11 +596,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setECommunicationDirection($eCommunicationDirection)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationDirection)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationDirection cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eCommunicationDirection'] = $eCommunicationDirection;
         $this->container['eCommunicationDirection'] = $eCommunicationDirection;
@@ -626,11 +627,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setICommunicationrecipientCount($iCommunicationrecipientCount)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iCommunicationrecipientCount)) {
             //throw new \InvalidArgumentException('non-nullable iCommunicationrecipientCount cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iCommunicationrecipientCount'] = $iCommunicationrecipientCount;
         $this->container['iCommunicationrecipientCount'] = (is_null($iCommunicationrecipientCount) ? null : (int) $iCommunicationrecipientCount);
@@ -657,11 +658,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setObjDescriptionstaticSender($objDescriptionstaticSender)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objDescriptionstaticSender)) {
             //throw new \InvalidArgumentException('non-nullable objDescriptionstaticSender cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objDescriptionstaticSender'] = $objDescriptionstaticSender;
         $this->container['objDescriptionstaticSender'] = $objDescriptionstaticSender;
@@ -688,11 +689,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setObjEmailstaticSender($objEmailstaticSender)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEmailstaticSender)) {
             //throw new \InvalidArgumentException('non-nullable objEmailstaticSender cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEmailstaticSender'] = $objEmailstaticSender;
         $this->container['objEmailstaticSender'] = $objEmailstaticSender;
@@ -719,11 +720,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setObjPhonestaticSender($objPhonestaticSender)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objPhonestaticSender)) {
             //throw new \InvalidArgumentException('non-nullable objPhonestaticSender cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objPhonestaticSender'] = $objPhonestaticSender;
         $this->container['objPhonestaticSender'] = $objPhonestaticSender;
@@ -750,11 +751,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setObjAudit($objAudit)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objAudit)) {
             //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objAudit'] = $objAudit;
         $this->container['objAudit'] = $objAudit;
@@ -781,11 +782,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setAObjCommunicationattachment($aObjCommunicationattachment)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationattachment)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationattachment cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjCommunicationattachment'] = $aObjCommunicationattachment;
         $this->container['aObjCommunicationattachment'] = $aObjCommunicationattachment;
@@ -812,11 +813,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setAObjCommunicationrecipient($aObjCommunicationrecipient)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationrecipient)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationrecipient cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjCommunicationrecipient'] = $aObjCommunicationrecipient;
         $this->container['aObjCommunicationrecipient'] = $aObjCommunicationrecipient;
@@ -843,11 +844,11 @@ class CommunicationResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function setAObjCommunicationexternalrecipient($aObjCommunicationexternalrecipient)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationexternalrecipient)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationexternalrecipient cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjCommunicationexternalrecipient'] = $aObjCommunicationexternalrecipient;
         $this->container['aObjCommunicationexternalrecipient'] = $aObjCommunicationexternalrecipient;

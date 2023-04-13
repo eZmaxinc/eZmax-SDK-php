@@ -316,11 +316,11 @@ class EzsignfoldertypeRequestCompoundAllOf implements ModelInterface, ArrayAcces
      */
     public function setAFkiUserIDSigned($aFkiUserIDSigned)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFkiUserIDSigned)) {
             //throw new \InvalidArgumentException('non-nullable aFkiUserIDSigned cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aFkiUserIDSigned'] = $aFkiUserIDSigned;
         $this->container['aFkiUserIDSigned'] = (is_null($aFkiUserIDSigned) ? null : $aFkiUserIDSigned);
@@ -347,11 +347,11 @@ class EzsignfoldertypeRequestCompoundAllOf implements ModelInterface, ArrayAcces
      */
     public function setAFkiUserIDSummary($aFkiUserIDSummary)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFkiUserIDSummary)) {
             //throw new \InvalidArgumentException('non-nullable aFkiUserIDSummary cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aFkiUserIDSummary'] = $aFkiUserIDSummary;
         $this->container['aFkiUserIDSummary'] = (is_null($aFkiUserIDSummary) ? null : $aFkiUserIDSummary);

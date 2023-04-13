@@ -329,11 +329,11 @@ class EzsigntemplateformfieldgroupResponseCompoundAllOf implements ModelInterfac
      */
     public function setAObjEzsigntemplateformfieldgroupsigner($aObjEzsigntemplateformfieldgroupsigner)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplateformfieldgroupsigner)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplateformfieldgroupsigner cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplateformfieldgroupsigner'] = $aObjEzsigntemplateformfieldgroupsigner;
         $this->container['aObjEzsigntemplateformfieldgroupsigner'] = $aObjEzsigntemplateformfieldgroupsigner;
@@ -360,11 +360,11 @@ class EzsigntemplateformfieldgroupResponseCompoundAllOf implements ModelInterfac
      */
     public function setAObjDropdownElement($aObjDropdownElement)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjDropdownElement)) {
             //throw new \InvalidArgumentException('non-nullable aObjDropdownElement cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjDropdownElement'] = $aObjDropdownElement;
         $this->container['aObjDropdownElement'] = $aObjDropdownElement;
@@ -391,11 +391,11 @@ class EzsigntemplateformfieldgroupResponseCompoundAllOf implements ModelInterfac
      */
     public function setAObjEzsigntemplateformfield($aObjEzsigntemplateformfield)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplateformfield)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplateformfield cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplateformfield'] = $aObjEzsigntemplateformfield;
         $this->container['aObjEzsigntemplateformfield'] = $aObjEzsigntemplateformfield;

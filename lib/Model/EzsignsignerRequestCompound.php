@@ -397,16 +397,17 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setFkiUserlogintypeID($fkiUserlogintypeID)
     {
-
-        if (!is_null($fkiUserlogintypeID) && ($fkiUserlogintypeID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiUserlogintypeID when calling EzsignsignerRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserlogintypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserlogintypeID cannot be null');
         //}
+
+//        if (($fkiUserlogintypeID < 0)) {
+        if (!is_null($fkiUserlogintypeID) && ($fkiUserlogintypeID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiUserlogintypeID when calling EzsignsignerRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiUserlogintypeID'] = $fkiUserlogintypeID;
         $this->container['fkiUserlogintypeID'] = (is_null($fkiUserlogintypeID) ? null : (int) $fkiUserlogintypeID);
@@ -433,19 +434,21 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setFkiTaxassignmentID($fkiTaxassignmentID)
     {
-
-        if (($fkiTaxassignmentID > 15)) {
-            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerRequestCompound., must be smaller than or equal to 15.');
-        }
-        if (($fkiTaxassignmentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiTaxassignmentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiTaxassignmentID cannot be null');
         //}
+
+//        if (($fkiTaxassignmentID > 15)) {
+        if (($fkiTaxassignmentID > 15)) {
+            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerRequestCompound., must be smaller than or equal to 15.');
+        }
+//        if (($fkiTaxassignmentID < 0)) {
+        if (($fkiTaxassignmentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiTaxassignmentID'] = $fkiTaxassignmentID;
         $this->container['fkiTaxassignmentID'] = (is_null($fkiTaxassignmentID) ? null : (int) $fkiTaxassignmentID);
@@ -472,16 +475,17 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setFkiSecretquestionID($fkiSecretquestionID)
     {
-
-        if (!is_null($fkiSecretquestionID) && ($fkiSecretquestionID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiSecretquestionID when calling EzsignsignerRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiSecretquestionID)) {
             //throw new \InvalidArgumentException('non-nullable fkiSecretquestionID cannot be null');
         //}
+
+//        if (($fkiSecretquestionID < 0)) {
+        if (!is_null($fkiSecretquestionID) && ($fkiSecretquestionID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiSecretquestionID when calling EzsignsignerRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiSecretquestionID'] = $fkiSecretquestionID;
         $this->container['fkiSecretquestionID'] = (is_null($fkiSecretquestionID) ? null : (int) $fkiSecretquestionID);
@@ -510,8 +514,12 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setEEzsignsignerLogintype($eEzsignsignerLogintype)
     {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsignsignerLogintype)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsignsignerLogintype cannot be null');
+        //}
         $allowedValues = $this->getEEzsignsignerLogintypeAllowableValues();
-        if (!is_null($eEzsignsignerLogintype) && !in_array($eEzsignsignerLogintype, $allowedValues, true)) {
+        if (!in_array($eEzsignsignerLogintype, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'eEzsignsignerLogintype', must be one of '%s'",
@@ -520,11 +528,7 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
                 )
             );
         }
-
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignsignerLogintype)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignsignerLogintype cannot be null');
-        //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsignsignerLogintype'] = $eEzsignsignerLogintype;
         $this->container['eEzsignsignerLogintype'] = (is_null($eEzsignsignerLogintype) ? null : (string) $eEzsignsignerLogintype);
@@ -551,11 +555,11 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setSEzsignsignerSecretanswer($sEzsignsignerSecretanswer)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignsignerSecretanswer)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignsignerSecretanswer cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignerSecretanswer'] = $sEzsignsignerSecretanswer;
         $this->container['sEzsignsignerSecretanswer'] = (is_null($sEzsignsignerSecretanswer) ? null : (string) $sEzsignsignerSecretanswer);
@@ -582,11 +586,11 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setObjContact($objContact)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objContact)) {
             //throw new \InvalidArgumentException('non-nullable objContact cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objContact'] = $objContact;
         $this->container['objContact'] = $objContact;

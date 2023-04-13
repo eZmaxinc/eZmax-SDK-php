@@ -97,7 +97,7 @@ class ObjectPaymenttermApi
     public const objEzmaxConfig = [
         'paymenttermCreateObjectV1' => [
             'permissions' => [
-                'All',
+                'Management_PaymentTerms',
             ],
             'usertypeextra' => [
             ],
@@ -106,7 +106,7 @@ class ObjectPaymenttermApi
         ],
         'paymenttermDeleteObjectV1' => [
             'permissions' => [
-                'All',
+                'Management_PaymentTerms',
             ],
             'usertypeextra' => [
             ],
@@ -115,7 +115,7 @@ class ObjectPaymenttermApi
         ],
         'paymenttermEditObjectV1' => [
             'permissions' => [
-                'All',
+                'Management_PaymentTerms',
             ],
             'usertypeextra' => [
             ],
@@ -124,7 +124,7 @@ class ObjectPaymenttermApi
         ],
         'paymenttermGetAutocompleteV2' => [
             'permissions' => [
-                'All',
+                'Management_PaymentTerms',
             ],
             'usertypeextra' => [
             ],
@@ -133,7 +133,7 @@ class ObjectPaymenttermApi
         ],
         'paymenttermGetListV1' => [
             'permissions' => [
-                'All',
+                'Management_PaymentTerms',
             ],
             'usertypeextra' => [
             ],
@@ -142,7 +142,7 @@ class ObjectPaymenttermApi
         ],
         'paymenttermGetObjectV2' => [
             'permissions' => [
-                'All',
+                'Management_PaymentTerms',
             ],
             'usertypeextra' => [
             ],
@@ -451,7 +451,7 @@ class ObjectPaymenttermApi
         if (isset($paymenttermCreateObjectV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($paymenttermCreateObjectV1Request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($paymenttermCreateObjectV1Request));
             } else {
                 $httpBody = $paymenttermCreateObjectV1Request;
             }
@@ -472,7 +472,7 @@ class ObjectPaymenttermApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -815,7 +815,7 @@ class ObjectPaymenttermApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1156,7 +1156,7 @@ class ObjectPaymenttermApi
         if (isset($paymenttermEditObjectV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($paymenttermEditObjectV1Request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($paymenttermEditObjectV1Request));
             } else {
                 $httpBody = $paymenttermEditObjectV1Request;
             }
@@ -1177,7 +1177,7 @@ class ObjectPaymenttermApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1514,7 +1514,7 @@ class ObjectPaymenttermApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1890,7 +1890,7 @@ class ObjectPaymenttermApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2210,7 +2210,7 @@ class ObjectPaymenttermApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

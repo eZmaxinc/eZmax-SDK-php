@@ -317,11 +317,11 @@ class EzsigndocumentCreateObjectV1Request implements ModelInterface, ArrayAccess
      */
     public function setObjEzsigndocument($objEzsigndocument)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEzsigndocument)) {
             //throw new \InvalidArgumentException('non-nullable objEzsigndocument cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsigndocument'] = $objEzsigndocument;
         $this->container['objEzsigndocument'] = $objEzsigndocument;
@@ -348,11 +348,11 @@ class EzsigndocumentCreateObjectV1Request implements ModelInterface, ArrayAccess
      */
     public function setObjEzsigndocumentCompound($objEzsigndocumentCompound)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEzsigndocumentCompound)) {
             //throw new \InvalidArgumentException('non-nullable objEzsigndocumentCompound cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsigndocumentCompound'] = $objEzsigndocumentCompound;
         $this->container['objEzsigndocumentCompound'] = $objEzsigndocumentCompound;

@@ -279,6 +279,7 @@ class EzsigntemplateCopyV1Request implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['aFkiEzsignfoldertypeID'] === null) {
             $invalidProperties[] = "'aFkiEzsignfoldertypeID' can't be null";
         }
+//        if ((count($this->container['aFkiEzsignfoldertypeID']) < 1)) {
         if (!is_null($this->container['aFkiEzsignfoldertypeID']) && (count($this->container['aFkiEzsignfoldertypeID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aFkiEzsignfoldertypeID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigntemplateCopyV1Request implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setAFkiEzsignfoldertypeID($aFkiEzsignfoldertypeID)
     {
-
-
-        if ((count($aFkiEzsignfoldertypeID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aFkiEzsignfoldertypeID when calling EzsigntemplateCopyV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFkiEzsignfoldertypeID)) {
             //throw new \InvalidArgumentException('non-nullable aFkiEzsignfoldertypeID cannot be null');
         //}
+
+
+//        if ((count($aFkiEzsignfoldertypeID) < 1)) {
+        if ((count($aFkiEzsignfoldertypeID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aFkiEzsignfoldertypeID when calling EzsigntemplateCopyV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aFkiEzsignfoldertypeID'] = $aFkiEzsignfoldertypeID;
         $this->container['aFkiEzsignfoldertypeID'] = (is_null($aFkiEzsignfoldertypeID) ? null : $aFkiEzsignfoldertypeID);

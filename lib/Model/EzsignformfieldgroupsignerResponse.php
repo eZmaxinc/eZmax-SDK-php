@@ -331,16 +331,17 @@ class EzsignformfieldgroupsignerResponse implements ModelInterface, ArrayAccess,
      */
     public function setPkiEzsignformfieldgroupsignerID($pkiEzsignformfieldgroupsignerID)
     {
-
-        if (($pkiEzsignformfieldgroupsignerID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsignformfieldgroupsignerID when calling EzsignformfieldgroupsignerResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignformfieldgroupsignerID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignformfieldgroupsignerID cannot be null');
         //}
+
+//        if (($pkiEzsignformfieldgroupsignerID < 0)) {
+        if (($pkiEzsignformfieldgroupsignerID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsignformfieldgroupsignerID when calling EzsignformfieldgroupsignerResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsignformfieldgroupsignerID'] = $pkiEzsignformfieldgroupsignerID;
         $this->container['pkiEzsignformfieldgroupsignerID'] = (is_null($pkiEzsignformfieldgroupsignerID) ? null : (int) $pkiEzsignformfieldgroupsignerID);
@@ -367,16 +368,17 @@ class EzsignformfieldgroupsignerResponse implements ModelInterface, ArrayAccess,
      */
     public function setFkiEzsignfoldersignerassociationID($fkiEzsignfoldersignerassociationID)
     {
-
-        if (($fkiEzsignfoldersignerassociationID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldersignerassociationID when calling EzsignformfieldgroupsignerResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldersignerassociationID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldersignerassociationID cannot be null');
         //}
+
+//        if (($fkiEzsignfoldersignerassociationID < 0)) {
+        if (($fkiEzsignfoldersignerassociationID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldersignerassociationID when calling EzsignformfieldgroupsignerResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsignfoldersignerassociationID'] = $fkiEzsignfoldersignerassociationID;
         $this->container['fkiEzsignfoldersignerassociationID'] = (is_null($fkiEzsignfoldersignerassociationID) ? null : (int) $fkiEzsignfoldersignerassociationID);

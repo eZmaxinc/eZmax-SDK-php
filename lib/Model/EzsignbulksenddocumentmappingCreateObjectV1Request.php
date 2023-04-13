@@ -279,6 +279,7 @@ class EzsignbulksenddocumentmappingCreateObjectV1Request implements ModelInterfa
         if ($this->container['aObjEzsignbulksenddocumentmapping'] === null) {
             $invalidProperties[] = "'aObjEzsignbulksenddocumentmapping' can't be null";
         }
+//        if ((count($this->container['aObjEzsignbulksenddocumentmapping']) < 1)) {
         if (!is_null($this->container['aObjEzsignbulksenddocumentmapping']) && (count($this->container['aObjEzsignbulksenddocumentmapping']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsignbulksenddocumentmapping', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsignbulksenddocumentmappingCreateObjectV1Request implements ModelInterfa
      */
     public function setAObjEzsignbulksenddocumentmapping($aObjEzsignbulksenddocumentmapping)
     {
-
-
-        if ((count($aObjEzsignbulksenddocumentmapping) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsignbulksenddocumentmapping when calling EzsignbulksenddocumentmappingCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignbulksenddocumentmapping)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignbulksenddocumentmapping cannot be null');
         //}
+
+
+//        if ((count($aObjEzsignbulksenddocumentmapping) < 1)) {
+        if ((count($aObjEzsignbulksenddocumentmapping) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsignbulksenddocumentmapping when calling EzsignbulksenddocumentmappingCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignbulksenddocumentmapping'] = $aObjEzsignbulksenddocumentmapping;
         $this->container['aObjEzsignbulksenddocumentmapping'] = $aObjEzsignbulksenddocumentmapping;

@@ -333,11 +333,11 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      */
     public function setAObjEzsignfoldertype($aObjEzsignfoldertype)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignfoldertype)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignfoldertype cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignfoldertype'] = $aObjEzsignfoldertype;
         $this->container['aObjEzsignfoldertype'] = $aObjEzsignfoldertype;
@@ -364,11 +364,11 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      */
     public function setIRowReturned($iRowReturned)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iRowReturned)) {
             //throw new \InvalidArgumentException('non-nullable iRowReturned cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iRowReturned'] = $iRowReturned;
         $this->container['iRowReturned'] = (is_null($iRowReturned) ? null : (int) $iRowReturned);
@@ -395,11 +395,11 @@ class EzsignfoldertypeGetListV1ResponseMPayload implements ModelInterface, Array
      */
     public function setIRowFiltered($iRowFiltered)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iRowFiltered)) {
             //throw new \InvalidArgumentException('non-nullable iRowFiltered cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iRowFiltered'] = $iRowFiltered;
         $this->container['iRowFiltered'] = (is_null($iRowFiltered) ? null : (int) $iRowFiltered);

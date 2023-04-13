@@ -342,11 +342,11 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
      */
     public function setAObjAddress($aObjAddress)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjAddress)) {
             //throw new \InvalidArgumentException('non-nullable aObjAddress cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjAddress'] = $aObjAddress;
         $this->container['aObjAddress'] = $aObjAddress;
@@ -373,11 +373,11 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
      */
     public function setAObjPhone($aObjPhone)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjPhone)) {
             //throw new \InvalidArgumentException('non-nullable aObjPhone cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjPhone'] = $aObjPhone;
         $this->container['aObjPhone'] = $aObjPhone;
@@ -404,11 +404,11 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
      */
     public function setAObjEmail($aObjEmail)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEmail)) {
             //throw new \InvalidArgumentException('non-nullable aObjEmail cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEmail'] = $aObjEmail;
         $this->container['aObjEmail'] = $aObjEmail;
@@ -435,11 +435,11 @@ class ContactinformationsRequestCompoundAllOf implements ModelInterface, ArrayAc
      */
     public function setAObjWebsite($aObjWebsite)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjWebsite)) {
             //throw new \InvalidArgumentException('non-nullable aObjWebsite cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjWebsite'] = $aObjWebsite;
         $this->container['aObjWebsite'] = $aObjWebsite;

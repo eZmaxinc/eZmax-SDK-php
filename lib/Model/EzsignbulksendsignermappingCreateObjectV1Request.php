@@ -279,6 +279,7 @@ class EzsignbulksendsignermappingCreateObjectV1Request implements ModelInterface
         if ($this->container['aObjEzsignbulksendsignermapping'] === null) {
             $invalidProperties[] = "'aObjEzsignbulksendsignermapping' can't be null";
         }
+//        if ((count($this->container['aObjEzsignbulksendsignermapping']) < 1)) {
         if (!is_null($this->container['aObjEzsignbulksendsignermapping']) && (count($this->container['aObjEzsignbulksendsignermapping']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsignbulksendsignermapping', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsignbulksendsignermappingCreateObjectV1Request implements ModelInterface
      */
     public function setAObjEzsignbulksendsignermapping($aObjEzsignbulksendsignermapping)
     {
-
-
-        if ((count($aObjEzsignbulksendsignermapping) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsignbulksendsignermapping when calling EzsignbulksendsignermappingCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignbulksendsignermapping)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignbulksendsignermapping cannot be null');
         //}
+
+
+//        if ((count($aObjEzsignbulksendsignermapping) < 1)) {
+        if ((count($aObjEzsignbulksendsignermapping) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsignbulksendsignermapping when calling EzsignbulksendsignermappingCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignbulksendsignermapping'] = $aObjEzsignbulksendsignermapping;
         $this->container['aObjEzsignbulksendsignermapping'] = $aObjEzsignbulksendsignermapping;

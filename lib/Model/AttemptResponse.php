@@ -333,11 +333,11 @@ class AttemptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDtAttemptStart($dtAttemptStart)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtAttemptStart)) {
             //throw new \InvalidArgumentException('non-nullable dtAttemptStart cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtAttemptStart'] = $dtAttemptStart;
         $this->container['dtAttemptStart'] = (is_null($dtAttemptStart) ? null : (string) $dtAttemptStart);
@@ -364,11 +364,11 @@ class AttemptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSAttemptResult($sAttemptResult)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sAttemptResult)) {
             //throw new \InvalidArgumentException('non-nullable sAttemptResult cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAttemptResult'] = $sAttemptResult;
         $this->container['sAttemptResult'] = (is_null($sAttemptResult) ? null : (string) $sAttemptResult);
@@ -395,11 +395,11 @@ class AttemptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setIAttemptDuration($iAttemptDuration)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iAttemptDuration)) {
             //throw new \InvalidArgumentException('non-nullable iAttemptDuration cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iAttemptDuration'] = $iAttemptDuration;
         $this->container['iAttemptDuration'] = (is_null($iAttemptDuration) ? null : (int) $iAttemptDuration);

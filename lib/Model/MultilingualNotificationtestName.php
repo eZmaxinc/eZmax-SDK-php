@@ -317,11 +317,11 @@ class MultilingualNotificationtestName implements ModelInterface, ArrayAccess, \
      */
     public function setSNotificationtestName1($sNotificationtestName1)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sNotificationtestName1)) {
             //throw new \InvalidArgumentException('non-nullable sNotificationtestName1 cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sNotificationtestName1'] = $sNotificationtestName1;
         $this->container['sNotificationtestName1'] = (is_null($sNotificationtestName1) ? null : (string) $sNotificationtestName1);
@@ -348,11 +348,11 @@ class MultilingualNotificationtestName implements ModelInterface, ArrayAccess, \
      */
     public function setSNotificationtestName2($sNotificationtestName2)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sNotificationtestName2)) {
             //throw new \InvalidArgumentException('non-nullable sNotificationtestName2 cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sNotificationtestName2'] = $sNotificationtestName2;
         $this->container['sNotificationtestName2'] = (is_null($sNotificationtestName2) ? null : (string) $sNotificationtestName2);

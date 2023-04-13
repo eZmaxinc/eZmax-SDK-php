@@ -316,11 +316,11 @@ class EzsigntemplatesignatureResponseCompoundAllOf implements ModelInterface, Ar
      */
     public function setBEzsigntemplatesignatureCustomdate($bEzsigntemplatesignatureCustomdate)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplatesignatureCustomdate)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplatesignatureCustomdate cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsigntemplatesignatureCustomdate'] = $bEzsigntemplatesignatureCustomdate;
         $this->container['bEzsigntemplatesignatureCustomdate'] = (is_null($bEzsigntemplatesignatureCustomdate) ? null : (bool) $bEzsigntemplatesignatureCustomdate);
@@ -347,11 +347,11 @@ class EzsigntemplatesignatureResponseCompoundAllOf implements ModelInterface, Ar
      */
     public function setAObjEzsigntemplatesignaturecustomdate($aObjEzsigntemplatesignaturecustomdate)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatesignaturecustomdate)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatesignaturecustomdate cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatesignaturecustomdate'] = $aObjEzsigntemplatesignaturecustomdate;
         $this->container['aObjEzsigntemplatesignaturecustomdate'] = $aObjEzsigntemplatesignaturecustomdate;

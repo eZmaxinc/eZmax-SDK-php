@@ -337,16 +337,17 @@ class BillingentityexternalAutocompleteElementResponse implements ModelInterface
      */
     public function setPkiBillingentityexternalID($pkiBillingentityexternalID)
     {
-
-        if (($pkiBillingentityexternalID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $pkiBillingentityexternalID when calling BillingentityexternalAutocompleteElementResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiBillingentityexternalID)) {
             //throw new \InvalidArgumentException('non-nullable pkiBillingentityexternalID cannot be null');
         //}
+
+//        if (($pkiBillingentityexternalID < 1)) {
+        if (($pkiBillingentityexternalID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $pkiBillingentityexternalID when calling BillingentityexternalAutocompleteElementResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiBillingentityexternalID'] = $pkiBillingentityexternalID;
         $this->container['pkiBillingentityexternalID'] = (is_null($pkiBillingentityexternalID) ? null : (int) $pkiBillingentityexternalID);
@@ -373,11 +374,11 @@ class BillingentityexternalAutocompleteElementResponse implements ModelInterface
      */
     public function setSBillingentityexternalDescription($sBillingentityexternalDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBillingentityexternalDescription)) {
             //throw new \InvalidArgumentException('non-nullable sBillingentityexternalDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityexternalDescription'] = $sBillingentityexternalDescription;
         $this->container['sBillingentityexternalDescription'] = (is_null($sBillingentityexternalDescription) ? null : (string) $sBillingentityexternalDescription);
@@ -404,11 +405,11 @@ class BillingentityexternalAutocompleteElementResponse implements ModelInterface
      */
     public function setBBillingentityexternalIsactive($bBillingentityexternalIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bBillingentityexternalIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bBillingentityexternalIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bBillingentityexternalIsactive'] = $bBillingentityexternalIsactive;
         $this->container['bBillingentityexternalIsactive'] = (is_null($bBillingentityexternalIsactive) ? null : (bool) $bBillingentityexternalIsactive);

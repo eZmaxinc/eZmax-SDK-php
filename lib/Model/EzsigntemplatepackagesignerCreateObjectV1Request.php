@@ -279,6 +279,7 @@ class EzsigntemplatepackagesignerCreateObjectV1Request implements ModelInterface
         if ($this->container['aObjEzsigntemplatepackagesigner'] === null) {
             $invalidProperties[] = "'aObjEzsigntemplatepackagesigner' can't be null";
         }
+//        if ((count($this->container['aObjEzsigntemplatepackagesigner']) < 1)) {
         if (!is_null($this->container['aObjEzsigntemplatepackagesigner']) && (count($this->container['aObjEzsigntemplatepackagesigner']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsigntemplatepackagesigner', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigntemplatepackagesignerCreateObjectV1Request implements ModelInterface
      */
     public function setAObjEzsigntemplatepackagesigner($aObjEzsigntemplatepackagesigner)
     {
-
-
-        if ((count($aObjEzsigntemplatepackagesigner) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatepackagesigner when calling EzsigntemplatepackagesignerCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatepackagesigner)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatepackagesigner cannot be null');
         //}
+
+
+//        if ((count($aObjEzsigntemplatepackagesigner) < 1)) {
+        if ((count($aObjEzsigntemplatepackagesigner) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatepackagesigner when calling EzsigntemplatepackagesignerCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatepackagesigner'] = $aObjEzsigntemplatepackagesigner;
         $this->container['aObjEzsigntemplatepackagesigner'] = $aObjEzsigntemplatepackagesigner;

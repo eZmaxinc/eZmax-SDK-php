@@ -279,6 +279,7 @@ class EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload implements Model
         if ($this->container['aPkiEzsigntemplatepackagesignerID'] === null) {
             $invalidProperties[] = "'aPkiEzsigntemplatepackagesignerID' can't be null";
         }
+//        if ((count($this->container['aPkiEzsigntemplatepackagesignerID']) < 1)) {
         if (!is_null($this->container['aPkiEzsigntemplatepackagesignerID']) && (count($this->container['aPkiEzsigntemplatepackagesignerID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiEzsigntemplatepackagesignerID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload implements Model
      */
     public function setAPkiEzsigntemplatepackagesignerID($aPkiEzsigntemplatepackagesignerID)
     {
-
-
-        if ((count($aPkiEzsigntemplatepackagesignerID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiEzsigntemplatepackagesignerID when calling EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsigntemplatepackagesignerID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsigntemplatepackagesignerID cannot be null');
         //}
+
+
+//        if ((count($aPkiEzsigntemplatepackagesignerID) < 1)) {
+        if ((count($aPkiEzsigntemplatepackagesignerID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiEzsigntemplatepackagesignerID when calling EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiEzsigntemplatepackagesignerID'] = $aPkiEzsigntemplatepackagesignerID;
         $this->container['aPkiEzsigntemplatepackagesignerID'] = (is_null($aPkiEzsigntemplatepackagesignerID) ? null : $aPkiEzsigntemplatepackagesignerID);

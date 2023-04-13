@@ -352,16 +352,17 @@ class EzsignbulksendsignermappingResponse implements ModelInterface, ArrayAccess
      */
     public function setPkiEzsignbulksendsignermappingID($pkiEzsignbulksendsignermappingID)
     {
-
-        if (($pkiEzsignbulksendsignermappingID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsignbulksendsignermappingID when calling EzsignbulksendsignermappingResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignbulksendsignermappingID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignbulksendsignermappingID cannot be null');
         //}
+
+//        if (($pkiEzsignbulksendsignermappingID < 0)) {
+        if (($pkiEzsignbulksendsignermappingID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsignbulksendsignermappingID when calling EzsignbulksendsignermappingResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsignbulksendsignermappingID'] = $pkiEzsignbulksendsignermappingID;
         $this->container['pkiEzsignbulksendsignermappingID'] = (is_null($pkiEzsignbulksendsignermappingID) ? null : (int) $pkiEzsignbulksendsignermappingID);
@@ -388,16 +389,17 @@ class EzsignbulksendsignermappingResponse implements ModelInterface, ArrayAccess
      */
     public function setFkiEzsignbulksendID($fkiEzsignbulksendID)
     {
-
-        if (($fkiEzsignbulksendID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsignbulksendID when calling EzsignbulksendsignermappingResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignbulksendID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignbulksendID cannot be null');
         //}
+
+//        if (($fkiEzsignbulksendID < 0)) {
+        if (($fkiEzsignbulksendID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsignbulksendID when calling EzsignbulksendsignermappingResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsignbulksendID'] = $fkiEzsignbulksendID;
         $this->container['fkiEzsignbulksendID'] = (is_null($fkiEzsignbulksendID) ? null : (int) $fkiEzsignbulksendID);
@@ -424,16 +426,17 @@ class EzsignbulksendsignermappingResponse implements ModelInterface, ArrayAccess
      */
     public function setFkiUserID($fkiUserID)
     {
-
-        if (!is_null($fkiUserID) && ($fkiUserID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiUserID when calling EzsignbulksendsignermappingResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
         //}
+
+//        if (($fkiUserID < 0)) {
+        if (!is_null($fkiUserID) && ($fkiUserID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiUserID when calling EzsignbulksendsignermappingResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiUserID'] = $fkiUserID;
         $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
@@ -460,11 +463,11 @@ class EzsignbulksendsignermappingResponse implements ModelInterface, ArrayAccess
      */
     public function setSEzsignbulksendsignermappingDescription($sEzsignbulksendsignermappingDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignbulksendsignermappingDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignbulksendsignermappingDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignbulksendsignermappingDescription'] = $sEzsignbulksendsignermappingDescription;
         $this->container['sEzsignbulksendsignermappingDescription'] = (is_null($sEzsignbulksendsignermappingDescription) ? null : (string) $sEzsignbulksendsignermappingDescription);

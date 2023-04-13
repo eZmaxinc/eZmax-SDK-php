@@ -279,6 +279,7 @@ class EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload implements Mod
         if ($this->container['aPkiEzsignbulksenddocumentmappingID'] === null) {
             $invalidProperties[] = "'aPkiEzsignbulksenddocumentmappingID' can't be null";
         }
+//        if ((count($this->container['aPkiEzsignbulksenddocumentmappingID']) < 1)) {
         if (!is_null($this->container['aPkiEzsignbulksenddocumentmappingID']) && (count($this->container['aPkiEzsignbulksenddocumentmappingID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiEzsignbulksenddocumentmappingID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload implements Mod
      */
     public function setAPkiEzsignbulksenddocumentmappingID($aPkiEzsignbulksenddocumentmappingID)
     {
-
-
-        if ((count($aPkiEzsignbulksenddocumentmappingID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiEzsignbulksenddocumentmappingID when calling EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsignbulksenddocumentmappingID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsignbulksenddocumentmappingID cannot be null');
         //}
+
+
+//        if ((count($aPkiEzsignbulksenddocumentmappingID) < 1)) {
+        if ((count($aPkiEzsignbulksenddocumentmappingID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiEzsignbulksenddocumentmappingID when calling EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiEzsignbulksenddocumentmappingID'] = $aPkiEzsignbulksenddocumentmappingID;
         $this->container['aPkiEzsignbulksenddocumentmappingID'] = (is_null($aPkiEzsignbulksenddocumentmappingID) ? null : $aPkiEzsignbulksenddocumentmappingID);

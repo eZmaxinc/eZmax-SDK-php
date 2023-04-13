@@ -317,6 +317,7 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['sPaymenttermCode'] === null) {
             $invalidProperties[] = "'sPaymenttermCode' can't be null";
         }
+//        if (!preg_match("/^[A-Z0-9]{1,4}$/", $this->container['sPaymenttermCode'])) {
         if (!is_null($this->container['sPaymenttermCode']) && !preg_match("/^[A-Z0-9]{1,4}$/", $this->container['sPaymenttermCode'])) {
             $invalidProperties[] = "invalid value for 'sPaymenttermCode', must be conform to the pattern /^[A-Z0-9]{1,4}$/.";
         }
@@ -338,6 +339,7 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['sPaymenttermDescriptionX'] === null) {
             $invalidProperties[] = "'sPaymenttermDescriptionX' can't be null";
         }
+//        if (!preg_match("/^.{1,40}$/", $this->container['sPaymenttermDescriptionX'])) {
         if (!is_null($this->container['sPaymenttermDescriptionX']) && !preg_match("/^.{1,40}$/", $this->container['sPaymenttermDescriptionX'])) {
             $invalidProperties[] = "invalid value for 'sPaymenttermDescriptionX', must be conform to the pattern /^.{1,40}$/.";
         }
@@ -379,11 +381,11 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setPkiPaymenttermID($pkiPaymenttermID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiPaymenttermID)) {
             //throw new \InvalidArgumentException('non-nullable pkiPaymenttermID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiPaymenttermID'] = $pkiPaymenttermID;
         $this->container['pkiPaymenttermID'] = (is_null($pkiPaymenttermID) ? null : (int) $pkiPaymenttermID);
@@ -410,16 +412,17 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setSPaymenttermCode($sPaymenttermCode)
     {
-
-        if (!is_null($sPaymenttermCode) && (!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
-            throw new \InvalidArgumentException("invalid value for \$sPaymenttermCode when calling PaymenttermListElement., must conform to the pattern /^[A-Z0-9]{1,4}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPaymenttermCode)) {
             //throw new \InvalidArgumentException('non-nullable sPaymenttermCode cannot be null');
         //}
+
+//        if ((!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
+        if (!is_null($sPaymenttermCode) && (!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
+            throw new \InvalidArgumentException("invalid value for \$sPaymenttermCode when calling PaymenttermListElement., must conform to the pattern /^[A-Z0-9]{1,4}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermCode'] = $sPaymenttermCode;
         $this->container['sPaymenttermCode'] = (is_null($sPaymenttermCode) ? null : (string) $sPaymenttermCode);
@@ -446,11 +449,11 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setEPaymenttermType($ePaymenttermType)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($ePaymenttermType)) {
             //throw new \InvalidArgumentException('non-nullable ePaymenttermType cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['ePaymenttermType'] = $ePaymenttermType;
         $this->container['ePaymenttermType'] = $ePaymenttermType;
@@ -477,19 +480,21 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setIPaymenttermDay($iPaymenttermDay)
     {
-
-        if (($iPaymenttermDay > 255)) {
-            throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermListElement., must be smaller than or equal to 255.');
-        }
-        if (($iPaymenttermDay < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iPaymenttermDay)) {
             //throw new \InvalidArgumentException('non-nullable iPaymenttermDay cannot be null');
         //}
+
+//        if (($iPaymenttermDay > 255)) {
+        if (($iPaymenttermDay > 255)) {
+            throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermListElement., must be smaller than or equal to 255.');
+        }
+//        if (($iPaymenttermDay < 0)) {
+        if (($iPaymenttermDay < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iPaymenttermDay'] = $iPaymenttermDay;
         $this->container['iPaymenttermDay'] = (is_null($iPaymenttermDay) ? null : (int) $iPaymenttermDay);
@@ -516,16 +521,17 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setSPaymenttermDescriptionX($sPaymenttermDescriptionX)
     {
-
-        if (!is_null($sPaymenttermDescriptionX) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
-            throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescriptionX when calling PaymenttermListElement., must conform to the pattern /^.{1,40}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPaymenttermDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sPaymenttermDescriptionX cannot be null');
         //}
+
+//        if ((!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
+        if (!is_null($sPaymenttermDescriptionX) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
+            throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescriptionX when calling PaymenttermListElement., must conform to the pattern /^.{1,40}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermDescriptionX'] = $sPaymenttermDescriptionX;
         $this->container['sPaymenttermDescriptionX'] = (is_null($sPaymenttermDescriptionX) ? null : (string) $sPaymenttermDescriptionX);
@@ -552,11 +558,11 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setBPaymenttermIsactive($bPaymenttermIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bPaymenttermIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bPaymenttermIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bPaymenttermIsactive'] = $bPaymenttermIsactive;
         $this->container['bPaymenttermIsactive'] = (is_null($bPaymenttermIsactive) ? null : (bool) $bPaymenttermIsactive);

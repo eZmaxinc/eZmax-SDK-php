@@ -372,16 +372,17 @@ class ContactRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFkiContacttitleID($fkiContacttitleID)
     {
-
-        if (($fkiContacttitleID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiContacttitleID when calling ContactRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiContacttitleID)) {
             //throw new \InvalidArgumentException('non-nullable fkiContacttitleID cannot be null');
         //}
+
+//        if (($fkiContacttitleID < 0)) {
+        if (($fkiContacttitleID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiContacttitleID when calling ContactRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiContacttitleID'] = $fkiContacttitleID;
         $this->container['fkiContacttitleID'] = (is_null($fkiContacttitleID) ? null : (int) $fkiContacttitleID);
@@ -408,19 +409,21 @@ class ContactRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFkiLanguageID($fkiLanguageID)
     {
-
-        if (($fkiLanguageID > 2)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ContactRequest., must be smaller than or equal to 2.');
-        }
-        if (($fkiLanguageID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ContactRequest., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiLanguageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
         //}
+
+//        if (($fkiLanguageID > 2)) {
+        if (($fkiLanguageID > 2)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ContactRequest., must be smaller than or equal to 2.');
+        }
+//        if (($fkiLanguageID < 1)) {
+        if (($fkiLanguageID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ContactRequest., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiLanguageID'] = $fkiLanguageID;
         $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
@@ -447,11 +450,11 @@ class ContactRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSContactFirstname($sContactFirstname)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactFirstname)) {
             //throw new \InvalidArgumentException('non-nullable sContactFirstname cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactFirstname'] = $sContactFirstname;
         $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : (string) $sContactFirstname);
@@ -478,11 +481,11 @@ class ContactRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSContactLastname($sContactLastname)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactLastname)) {
             //throw new \InvalidArgumentException('non-nullable sContactLastname cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactLastname'] = $sContactLastname;
         $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : (string) $sContactLastname);
@@ -509,11 +512,11 @@ class ContactRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSContactCompany($sContactCompany)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactCompany)) {
             //throw new \InvalidArgumentException('non-nullable sContactCompany cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactCompany'] = $sContactCompany;
         $this->container['sContactCompany'] = (is_null($sContactCompany) ? null : (string) $sContactCompany);
@@ -540,11 +543,11 @@ class ContactRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setDtContactBirthdate($dtContactBirthdate)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtContactBirthdate)) {
             //throw new \InvalidArgumentException('non-nullable dtContactBirthdate cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtContactBirthdate'] = $dtContactBirthdate;
         $this->container['dtContactBirthdate'] = (is_null($dtContactBirthdate) ? null : (string) $dtContactBirthdate);

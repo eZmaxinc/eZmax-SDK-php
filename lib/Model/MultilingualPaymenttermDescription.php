@@ -283,10 +283,12 @@ class MultilingualPaymenttermDescription implements ModelInterface, ArrayAccess,
     {
         $invalidProperties = [];
 
+//        if (!is_null($this->container['sPaymenttermDescription1']) && !preg_match("/^.{1,40}$/", $this->container['sPaymenttermDescription1'])) {
         if (!is_null($this->container['sPaymenttermDescription1']) && !preg_match("/^.{1,40}$/", $this->container['sPaymenttermDescription1'])) {
             $invalidProperties[] = "invalid value for 'sPaymenttermDescription1', must be conform to the pattern /^.{1,40}$/.";
         }
 
+//        if (!is_null($this->container['sPaymenttermDescription2']) && !preg_match("/^.{1,40}$/", $this->container['sPaymenttermDescription2'])) {
         if (!is_null($this->container['sPaymenttermDescription2']) && !preg_match("/^.{1,40}$/", $this->container['sPaymenttermDescription2'])) {
             $invalidProperties[] = "invalid value for 'sPaymenttermDescription2', must be conform to the pattern /^.{1,40}$/.";
         }
@@ -319,22 +321,23 @@ class MultilingualPaymenttermDescription implements ModelInterface, ArrayAccess,
     /**
      * Sets sPaymenttermDescription1
      *
-     * @param string|null $sPaymenttermDescription1 The description of the Paymentterm in french
+     * @param string|null $sPaymenttermDescription1 The description of the Paymentterm in French
      *
      * @return self
      */
     public function setSPaymenttermDescription1($sPaymenttermDescription1)
     {
-
-        if (!is_null($sPaymenttermDescription1) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescription1))) {
-            throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescription1 when calling MultilingualPaymenttermDescription., must conform to the pattern /^.{1,40}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPaymenttermDescription1)) {
             //throw new \InvalidArgumentException('non-nullable sPaymenttermDescription1 cannot be null');
         //}
+
+//        if ((!preg_match("/^.{1,40}$/", $sPaymenttermDescription1))) {
+        if (!is_null($sPaymenttermDescription1) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescription1))) {
+            throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescription1 when calling MultilingualPaymenttermDescription., must conform to the pattern /^.{1,40}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermDescription1'] = $sPaymenttermDescription1;
         $this->container['sPaymenttermDescription1'] = (is_null($sPaymenttermDescription1) ? null : (string) $sPaymenttermDescription1);
@@ -355,22 +358,23 @@ class MultilingualPaymenttermDescription implements ModelInterface, ArrayAccess,
     /**
      * Sets sPaymenttermDescription2
      *
-     * @param string|null $sPaymenttermDescription2 The description of the Paymentterm in english
+     * @param string|null $sPaymenttermDescription2 The description of the Paymentterm in English
      *
      * @return self
      */
     public function setSPaymenttermDescription2($sPaymenttermDescription2)
     {
-
-        if (!is_null($sPaymenttermDescription2) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescription2))) {
-            throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescription2 when calling MultilingualPaymenttermDescription., must conform to the pattern /^.{1,40}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPaymenttermDescription2)) {
             //throw new \InvalidArgumentException('non-nullable sPaymenttermDescription2 cannot be null');
         //}
+
+//        if ((!preg_match("/^.{1,40}$/", $sPaymenttermDescription2))) {
+        if (!is_null($sPaymenttermDescription2) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescription2))) {
+            throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescription2 when calling MultilingualPaymenttermDescription., must conform to the pattern /^.{1,40}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermDescription2'] = $sPaymenttermDescription2;
         $this->container['sPaymenttermDescription2'] = (is_null($sPaymenttermDescription2) ? null : (string) $sPaymenttermDescription2);

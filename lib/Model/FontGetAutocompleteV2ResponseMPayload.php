@@ -310,11 +310,11 @@ class FontGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayAcce
      */
     public function setAObjFont($aObjFont)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjFont)) {
             //throw new \InvalidArgumentException('non-nullable aObjFont cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjFont'] = $aObjFont;
         $this->container['aObjFont'] = $aObjFont;

@@ -407,16 +407,17 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setPkiVersionhistoryID($pkiVersionhistoryID)
     {
-
-        if (($pkiVersionhistoryID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiVersionhistoryID when calling VersionhistoryResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiVersionhistoryID)) {
             //throw new \InvalidArgumentException('non-nullable pkiVersionhistoryID cannot be null');
         //}
+
+//        if (($pkiVersionhistoryID < 0)) {
+        if (($pkiVersionhistoryID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiVersionhistoryID when calling VersionhistoryResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiVersionhistoryID'] = $pkiVersionhistoryID;
         $this->container['pkiVersionhistoryID'] = (is_null($pkiVersionhistoryID) ? null : (int) $pkiVersionhistoryID);
@@ -443,16 +444,17 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setFkiModuleID($fkiModuleID)
     {
-
-        if (!is_null($fkiModuleID) && ($fkiModuleID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiModuleID when calling VersionhistoryResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiModuleID)) {
             //throw new \InvalidArgumentException('non-nullable fkiModuleID cannot be null');
         //}
+
+//        if (($fkiModuleID < 0)) {
+        if (!is_null($fkiModuleID) && ($fkiModuleID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiModuleID when calling VersionhistoryResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiModuleID'] = $fkiModuleID;
         $this->container['fkiModuleID'] = (is_null($fkiModuleID) ? null : (int) $fkiModuleID);
@@ -479,16 +481,17 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setFkiModulesectionID($fkiModulesectionID)
     {
-
-        if (!is_null($fkiModulesectionID) && ($fkiModulesectionID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiModulesectionID when calling VersionhistoryResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiModulesectionID)) {
             //throw new \InvalidArgumentException('non-nullable fkiModulesectionID cannot be null');
         //}
+
+//        if (($fkiModulesectionID < 0)) {
+        if (!is_null($fkiModulesectionID) && ($fkiModulesectionID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiModulesectionID when calling VersionhistoryResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiModulesectionID'] = $fkiModulesectionID;
         $this->container['fkiModulesectionID'] = (is_null($fkiModulesectionID) ? null : (int) $fkiModulesectionID);
@@ -515,11 +518,11 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setSModuleNameX($sModuleNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sModuleNameX)) {
             //throw new \InvalidArgumentException('non-nullable sModuleNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sModuleNameX'] = $sModuleNameX;
         $this->container['sModuleNameX'] = (is_null($sModuleNameX) ? null : (string) $sModuleNameX);
@@ -546,11 +549,11 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setSModulesectionNameX($sModulesectionNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sModulesectionNameX)) {
             //throw new \InvalidArgumentException('non-nullable sModulesectionNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sModulesectionNameX'] = $sModulesectionNameX;
         $this->container['sModulesectionNameX'] = (is_null($sModulesectionNameX) ? null : (string) $sModulesectionNameX);
@@ -577,11 +580,11 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setEVersionhistoryUsertype($eVersionhistoryUsertype)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eVersionhistoryUsertype)) {
             //throw new \InvalidArgumentException('non-nullable eVersionhistoryUsertype cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eVersionhistoryUsertype'] = $eVersionhistoryUsertype;
         $this->container['eVersionhistoryUsertype'] = $eVersionhistoryUsertype;
@@ -608,11 +611,11 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setObjVersionhistoryDetail($objVersionhistoryDetail)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objVersionhistoryDetail)) {
             //throw new \InvalidArgumentException('non-nullable objVersionhistoryDetail cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objVersionhistoryDetail'] = $objVersionhistoryDetail;
         $this->container['objVersionhistoryDetail'] = $objVersionhistoryDetail;
@@ -639,11 +642,11 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setDtVersionhistoryDate($dtVersionhistoryDate)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtVersionhistoryDate)) {
             //throw new \InvalidArgumentException('non-nullable dtVersionhistoryDate cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtVersionhistoryDate'] = $dtVersionhistoryDate;
         $this->container['dtVersionhistoryDate'] = (is_null($dtVersionhistoryDate) ? null : (string) $dtVersionhistoryDate);
@@ -670,11 +673,11 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setDtVersionhistoryDateend($dtVersionhistoryDateend)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtVersionhistoryDateend)) {
             //throw new \InvalidArgumentException('non-nullable dtVersionhistoryDateend cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtVersionhistoryDateend'] = $dtVersionhistoryDateend;
         $this->container['dtVersionhistoryDateend'] = (is_null($dtVersionhistoryDateend) ? null : (string) $dtVersionhistoryDateend);
@@ -701,11 +704,11 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setEVersionhistoryType($eVersionhistoryType)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eVersionhistoryType)) {
             //throw new \InvalidArgumentException('non-nullable eVersionhistoryType cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eVersionhistoryType'] = $eVersionhistoryType;
         $this->container['eVersionhistoryType'] = $eVersionhistoryType;
@@ -732,11 +735,11 @@ class VersionhistoryResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setBVersionhistoryDraft($bVersionhistoryDraft)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bVersionhistoryDraft)) {
             //throw new \InvalidArgumentException('non-nullable bVersionhistoryDraft cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bVersionhistoryDraft'] = $bVersionhistoryDraft;
         $this->container['bVersionhistoryDraft'] = (is_null($bVersionhistoryDraft) ? null : (bool) $bVersionhistoryDraft);

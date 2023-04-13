@@ -279,6 +279,7 @@ class EzsignfoldersignerassociationCreateObjectV1ResponseMPayload implements Mod
         if ($this->container['aPkiEzsignfoldersignerassociationID'] === null) {
             $invalidProperties[] = "'aPkiEzsignfoldersignerassociationID' can't be null";
         }
+//        if ((count($this->container['aPkiEzsignfoldersignerassociationID']) < 1)) {
         if (!is_null($this->container['aPkiEzsignfoldersignerassociationID']) && (count($this->container['aPkiEzsignfoldersignerassociationID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiEzsignfoldersignerassociationID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsignfoldersignerassociationCreateObjectV1ResponseMPayload implements Mod
      */
     public function setAPkiEzsignfoldersignerassociationID($aPkiEzsignfoldersignerassociationID)
     {
-
-
-        if ((count($aPkiEzsignfoldersignerassociationID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiEzsignfoldersignerassociationID when calling EzsignfoldersignerassociationCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsignfoldersignerassociationID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsignfoldersignerassociationID cannot be null');
         //}
+
+
+//        if ((count($aPkiEzsignfoldersignerassociationID) < 1)) {
+        if ((count($aPkiEzsignfoldersignerassociationID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiEzsignfoldersignerassociationID when calling EzsignfoldersignerassociationCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiEzsignfoldersignerassociationID'] = $aPkiEzsignfoldersignerassociationID;
         $this->container['aPkiEzsignfoldersignerassociationID'] = (is_null($aPkiEzsignfoldersignerassociationID) ? null : $aPkiEzsignfoldersignerassociationID);

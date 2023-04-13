@@ -296,6 +296,7 @@ class PaymenttermAutocompleteElementResponse implements ModelInterface, ArrayAcc
         if ($this->container['sPaymenttermDescriptionX'] === null) {
             $invalidProperties[] = "'sPaymenttermDescriptionX' can't be null";
         }
+//        if (!preg_match("/^.{1,40}$/", $this->container['sPaymenttermDescriptionX'])) {
         if (!is_null($this->container['sPaymenttermDescriptionX']) && !preg_match("/^.{1,40}$/", $this->container['sPaymenttermDescriptionX'])) {
             $invalidProperties[] = "invalid value for 'sPaymenttermDescriptionX', must be conform to the pattern /^.{1,40}$/.";
         }
@@ -337,11 +338,11 @@ class PaymenttermAutocompleteElementResponse implements ModelInterface, ArrayAcc
      */
     public function setPkiPaymenttermID($pkiPaymenttermID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiPaymenttermID)) {
             //throw new \InvalidArgumentException('non-nullable pkiPaymenttermID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiPaymenttermID'] = $pkiPaymenttermID;
         $this->container['pkiPaymenttermID'] = (is_null($pkiPaymenttermID) ? null : (int) $pkiPaymenttermID);
@@ -368,16 +369,17 @@ class PaymenttermAutocompleteElementResponse implements ModelInterface, ArrayAcc
      */
     public function setSPaymenttermDescriptionX($sPaymenttermDescriptionX)
     {
-
-        if (!is_null($sPaymenttermDescriptionX) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
-            throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescriptionX when calling PaymenttermAutocompleteElementResponse., must conform to the pattern /^.{1,40}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPaymenttermDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sPaymenttermDescriptionX cannot be null');
         //}
+
+//        if ((!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
+        if (!is_null($sPaymenttermDescriptionX) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
+            throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescriptionX when calling PaymenttermAutocompleteElementResponse., must conform to the pattern /^.{1,40}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermDescriptionX'] = $sPaymenttermDescriptionX;
         $this->container['sPaymenttermDescriptionX'] = (is_null($sPaymenttermDescriptionX) ? null : (string) $sPaymenttermDescriptionX);
@@ -404,11 +406,11 @@ class PaymenttermAutocompleteElementResponse implements ModelInterface, ArrayAcc
      */
     public function setBPaymenttermIsactive($bPaymenttermIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bPaymenttermIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bPaymenttermIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bPaymenttermIsactive'] = $bPaymenttermIsactive;
         $this->container['bPaymenttermIsactive'] = (is_null($bPaymenttermIsactive) ? null : (bool) $bPaymenttermIsactive);

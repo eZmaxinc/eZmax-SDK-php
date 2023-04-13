@@ -330,18 +330,20 @@ class CustomWebhookResponseAllOf implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setPksCustomerCode($pksCustomerCode)
     {
-        if ((mb_strlen($pksCustomerCode) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling CustomWebhookResponseAllOf., must be smaller than or equal to 6.');
-        }
-        if ((mb_strlen($pksCustomerCode) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling CustomWebhookResponseAllOf., must be bigger than or equal to 2.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pksCustomerCode)) {
             //throw new \InvalidArgumentException('non-nullable pksCustomerCode cannot be null');
         //}
+//        if ((mb_strlen($pksCustomerCode) > 6)) {
+        if ((mb_strlen($pksCustomerCode) > 6)) {
+            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling CustomWebhookResponseAllOf., must be smaller than or equal to 6.');
+        }
+//        if ((mb_strlen($pksCustomerCode) < 2)) {
+        if ((mb_strlen($pksCustomerCode) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling CustomWebhookResponseAllOf., must be bigger than or equal to 2.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pksCustomerCode'] = $pksCustomerCode;
         $this->container['pksCustomerCode'] = (is_null($pksCustomerCode) ? null : (string) $pksCustomerCode);
@@ -368,11 +370,11 @@ class CustomWebhookResponseAllOf implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setBWebhookTest($bWebhookTest)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bWebhookTest)) {
             //throw new \InvalidArgumentException('non-nullable bWebhookTest cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bWebhookTest'] = $bWebhookTest;
         $this->container['bWebhookTest'] = (is_null($bWebhookTest) ? null : (bool) $bWebhookTest);

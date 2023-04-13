@@ -279,6 +279,7 @@ class ApikeyCreateObjectV2ResponseMPayload implements ModelInterface, ArrayAcces
         if ($this->container['aObjApikey'] === null) {
             $invalidProperties[] = "'aObjApikey' can't be null";
         }
+//        if ((count($this->container['aObjApikey']) < 1)) {
         if (!is_null($this->container['aObjApikey']) && (count($this->container['aObjApikey']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjApikey', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class ApikeyCreateObjectV2ResponseMPayload implements ModelInterface, ArrayAcces
      */
     public function setAObjApikey($aObjApikey)
     {
-
-
-        if ((count($aObjApikey) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjApikey when calling ApikeyCreateObjectV2ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjApikey)) {
             //throw new \InvalidArgumentException('non-nullable aObjApikey cannot be null');
         //}
+
+
+//        if ((count($aObjApikey) < 1)) {
+        if ((count($aObjApikey) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjApikey when calling ApikeyCreateObjectV2ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjApikey'] = $aObjApikey;
         $this->container['aObjApikey'] = $aObjApikey;

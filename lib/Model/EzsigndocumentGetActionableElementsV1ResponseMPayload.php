@@ -323,11 +323,11 @@ class EzsigndocumentGetActionableElementsV1ResponseMPayload implements ModelInte
      */
     public function setAObjEzsignsignature($aObjEzsignsignature)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignsignature)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignsignature cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignsignature'] = $aObjEzsignsignature;
         $this->container['aObjEzsignsignature'] = $aObjEzsignsignature;
@@ -354,11 +354,11 @@ class EzsigndocumentGetActionableElementsV1ResponseMPayload implements ModelInte
      */
     public function setAObjEzsignformfieldgroup($aObjEzsignformfieldgroup)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignformfieldgroup)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignformfieldgroup cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignformfieldgroup'] = $aObjEzsignformfieldgroup;
         $this->container['aObjEzsignformfieldgroup'] = $aObjEzsignformfieldgroup;

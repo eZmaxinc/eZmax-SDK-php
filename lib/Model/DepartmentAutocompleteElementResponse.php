@@ -347,11 +347,11 @@ class DepartmentAutocompleteElementResponse implements ModelInterface, ArrayAcce
      */
     public function setSCompanyNameX($sCompanyNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCompanyNameX)) {
             //throw new \InvalidArgumentException('non-nullable sCompanyNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCompanyNameX'] = $sCompanyNameX;
         $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : (string) $sCompanyNameX);
@@ -378,11 +378,11 @@ class DepartmentAutocompleteElementResponse implements ModelInterface, ArrayAcce
      */
     public function setSDepartmentNameX($sDepartmentNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sDepartmentNameX)) {
             //throw new \InvalidArgumentException('non-nullable sDepartmentNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sDepartmentNameX'] = $sDepartmentNameX;
         $this->container['sDepartmentNameX'] = (is_null($sDepartmentNameX) ? null : (string) $sDepartmentNameX);
@@ -409,16 +409,17 @@ class DepartmentAutocompleteElementResponse implements ModelInterface, ArrayAcce
      */
     public function setPkiDepartmentID($pkiDepartmentID)
     {
-
-        if (($pkiDepartmentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiDepartmentID when calling DepartmentAutocompleteElementResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiDepartmentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiDepartmentID cannot be null');
         //}
+
+//        if (($pkiDepartmentID < 0)) {
+        if (($pkiDepartmentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiDepartmentID when calling DepartmentAutocompleteElementResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiDepartmentID'] = $pkiDepartmentID;
         $this->container['pkiDepartmentID'] = (is_null($pkiDepartmentID) ? null : (int) $pkiDepartmentID);
@@ -445,11 +446,11 @@ class DepartmentAutocompleteElementResponse implements ModelInterface, ArrayAcce
      */
     public function setBDepartmentIsactive($bDepartmentIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bDepartmentIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bDepartmentIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bDepartmentIsactive'] = $bDepartmentIsactive;
         $this->container['bDepartmentIsactive'] = (is_null($bDepartmentIsactive) ? null : (bool) $bDepartmentIsactive);

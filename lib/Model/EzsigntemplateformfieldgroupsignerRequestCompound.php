@@ -328,16 +328,17 @@ class EzsigntemplateformfieldgroupsignerRequestCompound implements ModelInterfac
      */
     public function setPkiEzsigntemplateformfieldgroupsignerID($pkiEzsigntemplateformfieldgroupsignerID)
     {
-
-        if (!is_null($pkiEzsigntemplateformfieldgroupsignerID) && ($pkiEzsigntemplateformfieldgroupsignerID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplateformfieldgroupsignerID when calling EzsigntemplateformfieldgroupsignerRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplateformfieldgroupsignerID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplateformfieldgroupsignerID cannot be null');
         //}
+
+//        if (($pkiEzsigntemplateformfieldgroupsignerID < 0)) {
+        if (!is_null($pkiEzsigntemplateformfieldgroupsignerID) && ($pkiEzsigntemplateformfieldgroupsignerID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplateformfieldgroupsignerID when calling EzsigntemplateformfieldgroupsignerRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsigntemplateformfieldgroupsignerID'] = $pkiEzsigntemplateformfieldgroupsignerID;
         $this->container['pkiEzsigntemplateformfieldgroupsignerID'] = (is_null($pkiEzsigntemplateformfieldgroupsignerID) ? null : (int) $pkiEzsigntemplateformfieldgroupsignerID);
@@ -364,16 +365,17 @@ class EzsigntemplateformfieldgroupsignerRequestCompound implements ModelInterfac
      */
     public function setFkiEzsigntemplatesignerID($fkiEzsigntemplatesignerID)
     {
-
-        if (($fkiEzsigntemplatesignerID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatesignerID when calling EzsigntemplateformfieldgroupsignerRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplatesignerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatesignerID cannot be null');
         //}
+
+//        if (($fkiEzsigntemplatesignerID < 0)) {
+        if (($fkiEzsigntemplatesignerID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatesignerID when calling EzsigntemplateformfieldgroupsignerRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsigntemplatesignerID'] = $fkiEzsigntemplatesignerID;
         $this->container['fkiEzsigntemplatesignerID'] = (is_null($fkiEzsigntemplatesignerID) ? null : (int) $fkiEzsigntemplatesignerID);

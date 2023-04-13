@@ -313,11 +313,11 @@ class EzsignfolderGetCommunicationListV1ResponseMPayload implements ModelInterfa
      */
     public function setAObjCommunication($aObjCommunication)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunication)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunication cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjCommunication'] = $aObjCommunication;
         $this->container['aObjCommunication'] = $aObjCommunication;

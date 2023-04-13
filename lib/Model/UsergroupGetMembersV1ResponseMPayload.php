@@ -310,11 +310,11 @@ class UsergroupGetMembersV1ResponseMPayload implements ModelInterface, ArrayAcce
      */
     public function setAFkiUserID($aFkiUserID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aFkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable aFkiUserID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aFkiUserID'] = $aFkiUserID;
         $this->container['aFkiUserID'] = (is_null($aFkiUserID) ? null : $aFkiUserID);

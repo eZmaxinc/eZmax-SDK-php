@@ -300,6 +300,7 @@ class EzsigndocumentApplyEzsigntemplateV1Request implements ModelInterface, Arra
         if ($this->container['aSEzsigntemplatesigner'] === null) {
             $invalidProperties[] = "'aSEzsigntemplatesigner' can't be null";
         }
+//        if ((count($this->container['aSEzsigntemplatesigner']) < 1)) {
         if (!is_null($this->container['aSEzsigntemplatesigner']) && (count($this->container['aSEzsigntemplatesigner']) < 1)) {
             $invalidProperties[] = "invalid value for 'aSEzsigntemplatesigner', number of items must be greater than or equal to 1.";
         }
@@ -307,6 +308,7 @@ class EzsigndocumentApplyEzsigntemplateV1Request implements ModelInterface, Arra
         if ($this->container['aPkiEzsignfoldersignerassociationID'] === null) {
             $invalidProperties[] = "'aPkiEzsignfoldersignerassociationID' can't be null";
         }
+//        if ((count($this->container['aPkiEzsignfoldersignerassociationID']) < 1)) {
         if (!is_null($this->container['aPkiEzsignfoldersignerassociationID']) && (count($this->container['aPkiEzsignfoldersignerassociationID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiEzsignfoldersignerassociationID', number of items must be greater than or equal to 1.";
         }
@@ -345,16 +347,17 @@ class EzsigndocumentApplyEzsigntemplateV1Request implements ModelInterface, Arra
      */
     public function setFkiEzsigntemplateID($fkiEzsigntemplateID)
     {
-
-        if (($fkiEzsigntemplateID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplateID when calling EzsigndocumentApplyEzsigntemplateV1Request., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplateID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplateID cannot be null');
         //}
+
+//        if (($fkiEzsigntemplateID < 0)) {
+        if (($fkiEzsigntemplateID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplateID when calling EzsigndocumentApplyEzsigntemplateV1Request., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsigntemplateID'] = $fkiEzsigntemplateID;
         $this->container['fkiEzsigntemplateID'] = (is_null($fkiEzsigntemplateID) ? null : (int) $fkiEzsigntemplateID);
@@ -381,16 +384,17 @@ class EzsigndocumentApplyEzsigntemplateV1Request implements ModelInterface, Arra
      */
     public function setASEzsigntemplatesigner($aSEzsigntemplatesigner)
     {
-
-
-        if ((count($aSEzsigntemplatesigner) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aSEzsigntemplatesigner when calling EzsigndocumentApplyEzsigntemplateV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aSEzsigntemplatesigner)) {
             //throw new \InvalidArgumentException('non-nullable aSEzsigntemplatesigner cannot be null');
         //}
+
+
+//        if ((count($aSEzsigntemplatesigner) < 1)) {
+        if ((count($aSEzsigntemplatesigner) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aSEzsigntemplatesigner when calling EzsigndocumentApplyEzsigntemplateV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aSEzsigntemplatesigner'] = $aSEzsigntemplatesigner;
         $this->container['aSEzsigntemplatesigner'] = (is_null($aSEzsigntemplatesigner) ? null : $aSEzsigntemplatesigner);
@@ -417,16 +421,17 @@ class EzsigndocumentApplyEzsigntemplateV1Request implements ModelInterface, Arra
      */
     public function setAPkiEzsignfoldersignerassociationID($aPkiEzsignfoldersignerassociationID)
     {
-
-
-        if ((count($aPkiEzsignfoldersignerassociationID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiEzsignfoldersignerassociationID when calling EzsigndocumentApplyEzsigntemplateV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsignfoldersignerassociationID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsignfoldersignerassociationID cannot be null');
         //}
+
+
+//        if ((count($aPkiEzsignfoldersignerassociationID) < 1)) {
+        if ((count($aPkiEzsignfoldersignerassociationID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiEzsignfoldersignerassociationID when calling EzsigndocumentApplyEzsigntemplateV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiEzsignfoldersignerassociationID'] = $aPkiEzsignfoldersignerassociationID;
         $this->container['aPkiEzsignfoldersignerassociationID'] = (is_null($aPkiEzsignfoldersignerassociationID) ? null : $aPkiEzsignfoldersignerassociationID);

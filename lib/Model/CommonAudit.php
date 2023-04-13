@@ -320,11 +320,11 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setObjAuditdetailCreated($objAuditdetailCreated)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objAuditdetailCreated)) {
             //throw new \InvalidArgumentException('non-nullable objAuditdetailCreated cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objAuditdetailCreated'] = $objAuditdetailCreated;
         $this->container['objAuditdetailCreated'] = $objAuditdetailCreated;
@@ -351,11 +351,11 @@ class CommonAudit implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setObjAuditdetailModified($objAuditdetailModified)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objAuditdetailModified)) {
             //throw new \InvalidArgumentException('non-nullable objAuditdetailModified cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objAuditdetailModified'] = $objAuditdetailModified;
         $this->container['objAuditdetailModified'] = $objAuditdetailModified;

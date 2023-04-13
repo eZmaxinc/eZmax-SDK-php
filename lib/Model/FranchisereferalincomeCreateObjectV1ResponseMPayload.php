@@ -279,6 +279,7 @@ class FranchisereferalincomeCreateObjectV1ResponseMPayload implements ModelInter
         if ($this->container['aPkiFranchisereferalincomeID'] === null) {
             $invalidProperties[] = "'aPkiFranchisereferalincomeID' can't be null";
         }
+//        if ((count($this->container['aPkiFranchisereferalincomeID']) < 1)) {
         if (!is_null($this->container['aPkiFranchisereferalincomeID']) && (count($this->container['aPkiFranchisereferalincomeID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiFranchisereferalincomeID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class FranchisereferalincomeCreateObjectV1ResponseMPayload implements ModelInter
      */
     public function setAPkiFranchisereferalincomeID($aPkiFranchisereferalincomeID)
     {
-
-
-        if ((count($aPkiFranchisereferalincomeID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiFranchisereferalincomeID when calling FranchisereferalincomeCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiFranchisereferalincomeID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiFranchisereferalincomeID cannot be null');
         //}
+
+
+//        if ((count($aPkiFranchisereferalincomeID) < 1)) {
+        if ((count($aPkiFranchisereferalincomeID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiFranchisereferalincomeID when calling FranchisereferalincomeCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiFranchisereferalincomeID'] = $aPkiFranchisereferalincomeID;
         $this->container['aPkiFranchisereferalincomeID'] = (is_null($aPkiFranchisereferalincomeID) ? null : $aPkiFranchisereferalincomeID);

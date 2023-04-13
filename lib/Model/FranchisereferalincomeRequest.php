@@ -440,16 +440,17 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setPkiFranchisereferalincomeID($pkiFranchisereferalincomeID)
     {
-
-        if (!is_null($pkiFranchisereferalincomeID) && ($pkiFranchisereferalincomeID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiFranchisereferalincomeID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiFranchisereferalincomeID)) {
             //throw new \InvalidArgumentException('non-nullable pkiFranchisereferalincomeID cannot be null');
         //}
+
+//        if (($pkiFranchisereferalincomeID < 0)) {
+        if (!is_null($pkiFranchisereferalincomeID) && ($pkiFranchisereferalincomeID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiFranchisereferalincomeID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiFranchisereferalincomeID'] = $pkiFranchisereferalincomeID;
         $this->container['pkiFranchisereferalincomeID'] = (is_null($pkiFranchisereferalincomeID) ? null : (int) $pkiFranchisereferalincomeID);
@@ -476,16 +477,17 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setFkiFranchisebrokerID($fkiFranchisebrokerID)
     {
-
-        if (($fkiFranchisebrokerID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiFranchisebrokerID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiFranchisebrokerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiFranchisebrokerID cannot be null');
         //}
+
+//        if (($fkiFranchisebrokerID < 0)) {
+        if (($fkiFranchisebrokerID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiFranchisebrokerID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiFranchisebrokerID'] = $fkiFranchisebrokerID;
         $this->container['fkiFranchisebrokerID'] = (is_null($fkiFranchisebrokerID) ? null : (int) $fkiFranchisebrokerID);
@@ -512,16 +514,17 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setFkiFranchisereferalincomeprogramID($fkiFranchisereferalincomeprogramID)
     {
-
-        if (($fkiFranchisereferalincomeprogramID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiFranchisereferalincomeprogramID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiFranchisereferalincomeprogramID)) {
             //throw new \InvalidArgumentException('non-nullable fkiFranchisereferalincomeprogramID cannot be null');
         //}
+
+//        if (($fkiFranchisereferalincomeprogramID < 0)) {
+        if (($fkiFranchisereferalincomeprogramID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiFranchisereferalincomeprogramID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiFranchisereferalincomeprogramID'] = $fkiFranchisereferalincomeprogramID;
         $this->container['fkiFranchisereferalincomeprogramID'] = (is_null($fkiFranchisereferalincomeprogramID) ? null : (int) $fkiFranchisereferalincomeprogramID);
@@ -548,16 +551,17 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setFkiPeriodID($fkiPeriodID)
     {
-
-        if (($fkiPeriodID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiPeriodID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiPeriodID)) {
             //throw new \InvalidArgumentException('non-nullable fkiPeriodID cannot be null');
         //}
+
+//        if (($fkiPeriodID < 0)) {
+        if (($fkiPeriodID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiPeriodID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiPeriodID'] = $fkiPeriodID;
         $this->container['fkiPeriodID'] = (is_null($fkiPeriodID) ? null : (int) $fkiPeriodID);
@@ -584,11 +588,11 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setDFranchisereferalincomeLoan($dFranchisereferalincomeLoan)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dFranchisereferalincomeLoan)) {
             //throw new \InvalidArgumentException('non-nullable dFranchisereferalincomeLoan cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dFranchisereferalincomeLoan'] = $dFranchisereferalincomeLoan;
         $this->container['dFranchisereferalincomeLoan'] = (is_null($dFranchisereferalincomeLoan) ? null : (string) $dFranchisereferalincomeLoan);
@@ -615,11 +619,11 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setDFranchisereferalincomeFranchiseamount($dFranchisereferalincomeFranchiseamount)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dFranchisereferalincomeFranchiseamount)) {
             //throw new \InvalidArgumentException('non-nullable dFranchisereferalincomeFranchiseamount cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dFranchisereferalincomeFranchiseamount'] = $dFranchisereferalincomeFranchiseamount;
         $this->container['dFranchisereferalincomeFranchiseamount'] = (is_null($dFranchisereferalincomeFranchiseamount) ? null : (string) $dFranchisereferalincomeFranchiseamount);
@@ -646,11 +650,11 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setDFranchisereferalincomeFranchisoramount($dFranchisereferalincomeFranchisoramount)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dFranchisereferalincomeFranchisoramount)) {
             //throw new \InvalidArgumentException('non-nullable dFranchisereferalincomeFranchisoramount cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dFranchisereferalincomeFranchisoramount'] = $dFranchisereferalincomeFranchisoramount;
         $this->container['dFranchisereferalincomeFranchisoramount'] = (is_null($dFranchisereferalincomeFranchisoramount) ? null : (string) $dFranchisereferalincomeFranchisoramount);
@@ -677,11 +681,11 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setDFranchisereferalincomeAgentamount($dFranchisereferalincomeAgentamount)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dFranchisereferalincomeAgentamount)) {
             //throw new \InvalidArgumentException('non-nullable dFranchisereferalincomeAgentamount cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dFranchisereferalincomeAgentamount'] = $dFranchisereferalincomeAgentamount;
         $this->container['dFranchisereferalincomeAgentamount'] = (is_null($dFranchisereferalincomeAgentamount) ? null : (string) $dFranchisereferalincomeAgentamount);
@@ -708,11 +712,11 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setDtFranchisereferalincomeDisbursed($dtFranchisereferalincomeDisbursed)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtFranchisereferalincomeDisbursed)) {
             //throw new \InvalidArgumentException('non-nullable dtFranchisereferalincomeDisbursed cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtFranchisereferalincomeDisbursed'] = $dtFranchisereferalincomeDisbursed;
         $this->container['dtFranchisereferalincomeDisbursed'] = (is_null($dtFranchisereferalincomeDisbursed) ? null : (string) $dtFranchisereferalincomeDisbursed);
@@ -739,11 +743,11 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setTFranchisereferalincomeComment($tFranchisereferalincomeComment)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tFranchisereferalincomeComment)) {
             //throw new \InvalidArgumentException('non-nullable tFranchisereferalincomeComment cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tFranchisereferalincomeComment'] = $tFranchisereferalincomeComment;
         $this->container['tFranchisereferalincomeComment'] = (is_null($tFranchisereferalincomeComment) ? null : (string) $tFranchisereferalincomeComment);
@@ -770,16 +774,17 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setFkiFranchiseofficeID($fkiFranchiseofficeID)
     {
-
-        if (($fkiFranchiseofficeID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiFranchiseofficeID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiFranchiseofficeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiFranchiseofficeID cannot be null');
         //}
+
+//        if (($fkiFranchiseofficeID < 0)) {
+        if (($fkiFranchiseofficeID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiFranchiseofficeID when calling FranchisereferalincomeRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiFranchiseofficeID'] = $fkiFranchiseofficeID;
         $this->container['fkiFranchiseofficeID'] = (is_null($fkiFranchiseofficeID) ? null : (int) $fkiFranchiseofficeID);
@@ -806,11 +811,11 @@ class FranchisereferalincomeRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function setSFranchisereferalincomeRemoteid($sFranchisereferalincomeRemoteid)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sFranchisereferalincomeRemoteid)) {
             //throw new \InvalidArgumentException('non-nullable sFranchisereferalincomeRemoteid cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sFranchisereferalincomeRemoteid'] = $sFranchisereferalincomeRemoteid;
         $this->container['sFranchisereferalincomeRemoteid'] = (is_null($sFranchisereferalincomeRemoteid) ? null : (string) $sFranchisereferalincomeRemoteid);

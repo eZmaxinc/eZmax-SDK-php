@@ -349,10 +349,12 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
             $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
         }
 
+//        if (!is_null($this->container['sPhoneE164']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneE164'])) {
         if (!is_null($this->container['sPhoneE164']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneE164'])) {
             $invalidProperties[] = "invalid value for 'sPhoneE164', must be conform to the pattern /^\\+[1-9]\\d{1,14}$/.";
         }
 
+//        if (!is_null($this->container['sPhoneE164Cell']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneE164Cell'])) {
         if (!is_null($this->container['sPhoneE164Cell']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneE164Cell'])) {
             $invalidProperties[] = "invalid value for 'sPhoneE164Cell', must be conform to the pattern /^\\+[1-9]\\d{1,14}$/.";
         }
@@ -391,11 +393,11 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function setSContactFirstname($sContactFirstname)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactFirstname)) {
             //throw new \InvalidArgumentException('non-nullable sContactFirstname cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactFirstname'] = $sContactFirstname;
         $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : (string) $sContactFirstname);
@@ -422,11 +424,11 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function setSContactLastname($sContactLastname)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactLastname)) {
             //throw new \InvalidArgumentException('non-nullable sContactLastname cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactLastname'] = $sContactLastname;
         $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : (string) $sContactLastname);
@@ -453,19 +455,21 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function setFkiLanguageID($fkiLanguageID)
     {
-
-        if (($fkiLanguageID > 2)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignsignerRequestCompoundContact., must be smaller than or equal to 2.');
-        }
-        if (($fkiLanguageID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignsignerRequestCompoundContact., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiLanguageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
         //}
+
+//        if (($fkiLanguageID > 2)) {
+        if (($fkiLanguageID > 2)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignsignerRequestCompoundContact., must be smaller than or equal to 2.');
+        }
+//        if (($fkiLanguageID < 1)) {
+        if (($fkiLanguageID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignsignerRequestCompoundContact., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiLanguageID'] = $fkiLanguageID;
         $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
@@ -492,11 +496,11 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function setSEmailAddress($sEmailAddress)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEmailAddress)) {
             //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
         $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
@@ -523,16 +527,17 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function setSPhoneE164($sPhoneE164)
     {
-
-        if (!is_null($sPhoneE164) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164))) {
-            throw new \InvalidArgumentException("invalid value for \$sPhoneE164 when calling EzsignsignerRequestCompoundContact., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneE164)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneE164 cannot be null');
         //}
+
+//        if ((!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164))) {
+        if (!is_null($sPhoneE164) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164))) {
+            throw new \InvalidArgumentException("invalid value for \$sPhoneE164 when calling EzsignsignerRequestCompoundContact., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneE164'] = $sPhoneE164;
         $this->container['sPhoneE164'] = (is_null($sPhoneE164) ? null : (string) $sPhoneE164);
@@ -559,11 +564,11 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function setSPhoneExtension($sPhoneExtension)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneExtension)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneExtension cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneExtension'] = $sPhoneExtension;
         $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : (string) $sPhoneExtension);
@@ -590,16 +595,17 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function setSPhoneE164Cell($sPhoneE164Cell)
     {
-
-        if (!is_null($sPhoneE164Cell) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164Cell))) {
-            throw new \InvalidArgumentException("invalid value for \$sPhoneE164Cell when calling EzsignsignerRequestCompoundContact., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneE164Cell)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneE164Cell cannot be null');
         //}
+
+//        if ((!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164Cell))) {
+        if (!is_null($sPhoneE164Cell) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164Cell))) {
+            throw new \InvalidArgumentException("invalid value for \$sPhoneE164Cell when calling EzsignsignerRequestCompoundContact., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneE164Cell'] = $sPhoneE164Cell;
         $this->container['sPhoneE164Cell'] = (is_null($sPhoneE164Cell) ? null : (string) $sPhoneE164Cell);
@@ -628,11 +634,11 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function setSPhoneNumber($sPhoneNumber)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneNumber)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneNumber cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneNumber'] = $sPhoneNumber;
         $this->container['sPhoneNumber'] = (is_null($sPhoneNumber) ? null : (string) $sPhoneNumber);
@@ -661,11 +667,11 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function setSPhoneNumberCell($sPhoneNumberCell)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneNumberCell)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneNumberCell cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneNumberCell'] = $sPhoneNumberCell;
         $this->container['sPhoneNumberCell'] = (is_null($sPhoneNumberCell) ? null : (string) $sPhoneNumberCell);

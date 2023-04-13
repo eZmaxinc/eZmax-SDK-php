@@ -367,6 +367,10 @@ class CustomEzsignsignaturestatusResponse implements ModelInterface, ArrayAccess
      */
     public function setEEzsignsignaturestatusSteptype($eEzsignsignaturestatusSteptype)
     {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsignsignaturestatusSteptype)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsignsignaturestatusSteptype cannot be null');
+        //}
         $allowedValues = $this->getEEzsignsignaturestatusSteptypeAllowableValues();
         if (!in_array($eEzsignsignaturestatusSteptype, $allowedValues, true)) {
             throw new \InvalidArgumentException(
@@ -377,11 +381,7 @@ class CustomEzsignsignaturestatusResponse implements ModelInterface, ArrayAccess
                 )
             );
         }
-
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignsignaturestatusSteptype)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignsignaturestatusSteptype cannot be null');
-        //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsignsignaturestatusSteptype'] = $eEzsignsignaturestatusSteptype;
         $this->container['eEzsignsignaturestatusSteptype'] = (is_null($eEzsignsignaturestatusSteptype) ? null : (string) $eEzsignsignaturestatusSteptype);
@@ -408,11 +408,11 @@ class CustomEzsignsignaturestatusResponse implements ModelInterface, ArrayAccess
      */
     public function setIEzsignsignaturestatusStep($iEzsignsignaturestatusStep)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignsignaturestatusStep)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignsignaturestatusStep cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignsignaturestatusStep'] = $iEzsignsignaturestatusStep;
         $this->container['iEzsignsignaturestatusStep'] = (is_null($iEzsignsignaturestatusStep) ? null : (int) $iEzsignsignaturestatusStep);
@@ -439,11 +439,11 @@ class CustomEzsignsignaturestatusResponse implements ModelInterface, ArrayAccess
      */
     public function setIEzsignsignaturestatusTotal($iEzsignsignaturestatusTotal)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignsignaturestatusTotal)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignsignaturestatusTotal cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignsignaturestatusTotal'] = $iEzsignsignaturestatusTotal;
         $this->container['iEzsignsignaturestatusTotal'] = (is_null($iEzsignsignaturestatusTotal) ? null : (int) $iEzsignsignaturestatusTotal);
@@ -470,11 +470,11 @@ class CustomEzsignsignaturestatusResponse implements ModelInterface, ArrayAccess
      */
     public function setIEzsignsignaturestatusSigned($iEzsignsignaturestatusSigned)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignsignaturestatusSigned)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignsignaturestatusSigned cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignsignaturestatusSigned'] = $iEzsignsignaturestatusSigned;
         $this->container['iEzsignsignaturestatusSigned'] = (is_null($iEzsignsignaturestatusSigned) ? null : (int) $iEzsignsignaturestatusSigned);

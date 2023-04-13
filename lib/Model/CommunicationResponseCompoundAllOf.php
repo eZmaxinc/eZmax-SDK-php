@@ -332,11 +332,11 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
      */
     public function setAObjCommunicationattachment($aObjCommunicationattachment)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationattachment)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationattachment cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjCommunicationattachment'] = $aObjCommunicationattachment;
         $this->container['aObjCommunicationattachment'] = $aObjCommunicationattachment;
@@ -363,11 +363,11 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
      */
     public function setAObjCommunicationrecipient($aObjCommunicationrecipient)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationrecipient)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationrecipient cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjCommunicationrecipient'] = $aObjCommunicationrecipient;
         $this->container['aObjCommunicationrecipient'] = $aObjCommunicationrecipient;
@@ -394,11 +394,11 @@ class CommunicationResponseCompoundAllOf implements ModelInterface, ArrayAccess,
      */
     public function setAObjCommunicationexternalrecipient($aObjCommunicationexternalrecipient)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjCommunicationexternalrecipient)) {
             //throw new \InvalidArgumentException('non-nullable aObjCommunicationexternalrecipient cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjCommunicationexternalrecipient'] = $aObjCommunicationexternalrecipient;
         $this->container['aObjCommunicationexternalrecipient'] = $aObjCommunicationexternalrecipient;

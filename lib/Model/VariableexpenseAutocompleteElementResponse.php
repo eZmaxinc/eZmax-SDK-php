@@ -293,6 +293,7 @@ class VariableexpenseAutocompleteElementResponse implements ModelInterface, Arra
         if ($this->container['sVariableexpenseDescriptionX'] === null) {
             $invalidProperties[] = "'sVariableexpenseDescriptionX' can't be null";
         }
+//        if (!preg_match("/^.{0,40}$/", $this->container['sVariableexpenseDescriptionX'])) {
         if (!is_null($this->container['sVariableexpenseDescriptionX']) && !preg_match("/^.{0,40}$/", $this->container['sVariableexpenseDescriptionX'])) {
             $invalidProperties[] = "invalid value for 'sVariableexpenseDescriptionX', must be conform to the pattern /^.{0,40}$/.";
         }
@@ -345,16 +346,17 @@ class VariableexpenseAutocompleteElementResponse implements ModelInterface, Arra
      */
     public function setSVariableexpenseDescriptionX($sVariableexpenseDescriptionX)
     {
-
-        if (!is_null($sVariableexpenseDescriptionX) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescriptionX))) {
-            throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescriptionX when calling VariableexpenseAutocompleteElementResponse., must conform to the pattern /^.{0,40}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sVariableexpenseDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseDescriptionX cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,40}$/", $sVariableexpenseDescriptionX))) {
+        if (!is_null($sVariableexpenseDescriptionX) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescriptionX))) {
+            throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescriptionX when calling VariableexpenseAutocompleteElementResponse., must conform to the pattern /^.{0,40}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sVariableexpenseDescriptionX'] = $sVariableexpenseDescriptionX;
         $this->container['sVariableexpenseDescriptionX'] = (is_null($sVariableexpenseDescriptionX) ? null : (string) $sVariableexpenseDescriptionX);
@@ -381,19 +383,21 @@ class VariableexpenseAutocompleteElementResponse implements ModelInterface, Arra
      */
     public function setPkiVariableexpenseID($pkiVariableexpenseID)
     {
-
-        if (($pkiVariableexpenseID > 255)) {
-            throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseAutocompleteElementResponse., must be smaller than or equal to 255.');
-        }
-        if (($pkiVariableexpenseID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseAutocompleteElementResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiVariableexpenseID)) {
             //throw new \InvalidArgumentException('non-nullable pkiVariableexpenseID cannot be null');
         //}
+
+//        if (($pkiVariableexpenseID > 255)) {
+        if (($pkiVariableexpenseID > 255)) {
+            throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseAutocompleteElementResponse., must be smaller than or equal to 255.');
+        }
+//        if (($pkiVariableexpenseID < 1)) {
+        if (($pkiVariableexpenseID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseAutocompleteElementResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiVariableexpenseID'] = $pkiVariableexpenseID;
         $this->container['pkiVariableexpenseID'] = (is_null($pkiVariableexpenseID) ? null : (int) $pkiVariableexpenseID);
@@ -420,11 +424,11 @@ class VariableexpenseAutocompleteElementResponse implements ModelInterface, Arra
      */
     public function setBVariableexpenseIsactive($bVariableexpenseIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bVariableexpenseIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bVariableexpenseIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bVariableexpenseIsactive'] = $bVariableexpenseIsactive;
         $this->container['bVariableexpenseIsactive'] = (is_null($bVariableexpenseIsactive) ? null : (bool) $bVariableexpenseIsactive);

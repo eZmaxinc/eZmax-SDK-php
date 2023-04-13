@@ -315,6 +315,7 @@ class VariableexpenseResponse implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'pkiVariableexpenseID', must be bigger than or equal to 1.";
         }
 
+//        if (!is_null($this->container['sVariableexpenseCode']) && !preg_match("/^.{0,5}$/", $this->container['sVariableexpenseCode'])) {
         if (!is_null($this->container['sVariableexpenseCode']) && !preg_match("/^.{0,5}$/", $this->container['sVariableexpenseCode'])) {
             $invalidProperties[] = "invalid value for 'sVariableexpenseCode', must be conform to the pattern /^.{0,5}$/.";
         }
@@ -356,19 +357,21 @@ class VariableexpenseResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setPkiVariableexpenseID($pkiVariableexpenseID)
     {
-
-        if (($pkiVariableexpenseID > 255)) {
-            throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseResponse., must be smaller than or equal to 255.');
-        }
-        if (($pkiVariableexpenseID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiVariableexpenseID)) {
             //throw new \InvalidArgumentException('non-nullable pkiVariableexpenseID cannot be null');
         //}
+
+//        if (($pkiVariableexpenseID > 255)) {
+        if (($pkiVariableexpenseID > 255)) {
+            throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseResponse., must be smaller than or equal to 255.');
+        }
+//        if (($pkiVariableexpenseID < 1)) {
+        if (($pkiVariableexpenseID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiVariableexpenseID'] = $pkiVariableexpenseID;
         $this->container['pkiVariableexpenseID'] = (is_null($pkiVariableexpenseID) ? null : (int) $pkiVariableexpenseID);
@@ -395,16 +398,17 @@ class VariableexpenseResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setSVariableexpenseCode($sVariableexpenseCode)
     {
-
-        if (!is_null($sVariableexpenseCode) && (!preg_match("/^.{0,5}$/", $sVariableexpenseCode))) {
-            throw new \InvalidArgumentException("invalid value for \$sVariableexpenseCode when calling VariableexpenseResponse., must conform to the pattern /^.{0,5}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sVariableexpenseCode)) {
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseCode cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,5}$/", $sVariableexpenseCode))) {
+        if (!is_null($sVariableexpenseCode) && (!preg_match("/^.{0,5}$/", $sVariableexpenseCode))) {
+            throw new \InvalidArgumentException("invalid value for \$sVariableexpenseCode when calling VariableexpenseResponse., must conform to the pattern /^.{0,5}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sVariableexpenseCode'] = $sVariableexpenseCode;
         $this->container['sVariableexpenseCode'] = (is_null($sVariableexpenseCode) ? null : (string) $sVariableexpenseCode);
@@ -431,11 +435,11 @@ class VariableexpenseResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setObjVariableexpenseDescription($objVariableexpenseDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objVariableexpenseDescription)) {
             //throw new \InvalidArgumentException('non-nullable objVariableexpenseDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objVariableexpenseDescription'] = $objVariableexpenseDescription;
         $this->container['objVariableexpenseDescription'] = $objVariableexpenseDescription;
@@ -462,11 +466,11 @@ class VariableexpenseResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setEVariableexpenseTaxable($eVariableexpenseTaxable)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eVariableexpenseTaxable)) {
             //throw new \InvalidArgumentException('non-nullable eVariableexpenseTaxable cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eVariableexpenseTaxable'] = $eVariableexpenseTaxable;
         $this->container['eVariableexpenseTaxable'] = $eVariableexpenseTaxable;
@@ -493,11 +497,11 @@ class VariableexpenseResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setBVariableexpenseIsactive($bVariableexpenseIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bVariableexpenseIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bVariableexpenseIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bVariableexpenseIsactive'] = $bVariableexpenseIsactive;
         $this->container['bVariableexpenseIsactive'] = (is_null($bVariableexpenseIsactive) ? null : (bool) $bVariableexpenseIsactive);

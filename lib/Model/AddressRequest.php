@@ -395,16 +395,17 @@ class AddressRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFkiAddresstypeID($fkiAddresstypeID)
     {
-
-        if (($fkiAddresstypeID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiAddresstypeID when calling AddressRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiAddresstypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiAddresstypeID cannot be null');
         //}
+
+//        if (($fkiAddresstypeID < 0)) {
+        if (($fkiAddresstypeID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiAddresstypeID when calling AddressRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiAddresstypeID'] = $fkiAddresstypeID;
         $this->container['fkiAddresstypeID'] = (is_null($fkiAddresstypeID) ? null : (int) $fkiAddresstypeID);
@@ -431,11 +432,11 @@ class AddressRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSAddressCivic($sAddressCivic)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sAddressCivic)) {
             //throw new \InvalidArgumentException('non-nullable sAddressCivic cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressCivic'] = $sAddressCivic;
         $this->container['sAddressCivic'] = (is_null($sAddressCivic) ? null : (string) $sAddressCivic);
@@ -462,11 +463,11 @@ class AddressRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSAddressStreet($sAddressStreet)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sAddressStreet)) {
             //throw new \InvalidArgumentException('non-nullable sAddressStreet cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressStreet'] = $sAddressStreet;
         $this->container['sAddressStreet'] = (is_null($sAddressStreet) ? null : (string) $sAddressStreet);
@@ -493,11 +494,11 @@ class AddressRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSAddressSuite($sAddressSuite)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sAddressSuite)) {
             //throw new \InvalidArgumentException('non-nullable sAddressSuite cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressSuite'] = $sAddressSuite;
         $this->container['sAddressSuite'] = (is_null($sAddressSuite) ? null : (string) $sAddressSuite);
@@ -524,11 +525,11 @@ class AddressRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSAddressCity($sAddressCity)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sAddressCity)) {
             //throw new \InvalidArgumentException('non-nullable sAddressCity cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressCity'] = $sAddressCity;
         $this->container['sAddressCity'] = (is_null($sAddressCity) ? null : (string) $sAddressCity);
@@ -555,16 +556,17 @@ class AddressRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFkiProvinceID($fkiProvinceID)
     {
-
-        if (($fkiProvinceID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiProvinceID when calling AddressRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiProvinceID)) {
             //throw new \InvalidArgumentException('non-nullable fkiProvinceID cannot be null');
         //}
+
+//        if (($fkiProvinceID < 0)) {
+        if (($fkiProvinceID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiProvinceID when calling AddressRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiProvinceID'] = $fkiProvinceID;
         $this->container['fkiProvinceID'] = (is_null($fkiProvinceID) ? null : (int) $fkiProvinceID);
@@ -591,16 +593,17 @@ class AddressRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFkiCountryID($fkiCountryID)
     {
-
-        if (($fkiCountryID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiCountryID when calling AddressRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiCountryID)) {
             //throw new \InvalidArgumentException('non-nullable fkiCountryID cannot be null');
         //}
+
+//        if (($fkiCountryID < 0)) {
+        if (($fkiCountryID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiCountryID when calling AddressRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiCountryID'] = $fkiCountryID;
         $this->container['fkiCountryID'] = (is_null($fkiCountryID) ? null : (int) $fkiCountryID);
@@ -627,11 +630,11 @@ class AddressRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSAddressZip($sAddressZip)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sAddressZip)) {
             //throw new \InvalidArgumentException('non-nullable sAddressZip cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressZip'] = $sAddressZip;
         $this->container['sAddressZip'] = (is_null($sAddressZip) ? null : (string) $sAddressZip);

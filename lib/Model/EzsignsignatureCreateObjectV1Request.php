@@ -317,11 +317,11 @@ class EzsignsignatureCreateObjectV1Request implements ModelInterface, ArrayAcces
      */
     public function setObjEzsignsignature($objEzsignsignature)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEzsignsignature)) {
             //throw new \InvalidArgumentException('non-nullable objEzsignsignature cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsignsignature'] = $objEzsignsignature;
         $this->container['objEzsignsignature'] = $objEzsignsignature;
@@ -348,11 +348,11 @@ class EzsignsignatureCreateObjectV1Request implements ModelInterface, ArrayAcces
      */
     public function setObjEzsignsignatureCompound($objEzsignsignatureCompound)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEzsignsignatureCompound)) {
             //throw new \InvalidArgumentException('non-nullable objEzsignsignatureCompound cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsignsignatureCompound'] = $objEzsignsignatureCompound;
         $this->container['objEzsignsignatureCompound'] = $objEzsignsignatureCompound;

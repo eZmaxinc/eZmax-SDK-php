@@ -279,6 +279,7 @@ class EzsigntemplatesignerCreateObjectV1Request implements ModelInterface, Array
         if ($this->container['aObjEzsigntemplatesigner'] === null) {
             $invalidProperties[] = "'aObjEzsigntemplatesigner' can't be null";
         }
+//        if ((count($this->container['aObjEzsigntemplatesigner']) < 1)) {
         if (!is_null($this->container['aObjEzsigntemplatesigner']) && (count($this->container['aObjEzsigntemplatesigner']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsigntemplatesigner', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigntemplatesignerCreateObjectV1Request implements ModelInterface, Array
      */
     public function setAObjEzsigntemplatesigner($aObjEzsigntemplatesigner)
     {
-
-
-        if ((count($aObjEzsigntemplatesigner) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatesigner when calling EzsigntemplatesignerCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatesigner)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatesigner cannot be null');
         //}
+
+
+//        if ((count($aObjEzsigntemplatesigner) < 1)) {
+        if ((count($aObjEzsigntemplatesigner) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatesigner when calling EzsigntemplatesignerCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatesigner'] = $aObjEzsigntemplatesigner;
         $this->container['aObjEzsigntemplatesigner'] = $aObjEzsigntemplatesigner;

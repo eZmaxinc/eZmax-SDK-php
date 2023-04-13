@@ -303,6 +303,7 @@ class EzsignfolderBatchDownloadV1Request implements ModelInterface, ArrayAccess,
         if ($this->container['aPkiEzsigndocumentID'] === null) {
             $invalidProperties[] = "'aPkiEzsigndocumentID' can't be null";
         }
+//        if ((count($this->container['aPkiEzsigndocumentID']) < 1)) {
         if (!is_null($this->container['aPkiEzsigndocumentID']) && (count($this->container['aPkiEzsigndocumentID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiEzsigndocumentID', number of items must be greater than or equal to 1.";
         }
@@ -344,16 +345,17 @@ class EzsignfolderBatchDownloadV1Request implements ModelInterface, ArrayAccess,
      */
     public function setAPkiEzsigndocumentID($aPkiEzsigndocumentID)
     {
-
-
-        if ((count($aPkiEzsigndocumentID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiEzsigndocumentID when calling EzsignfolderBatchDownloadV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsigndocumentID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsigndocumentID cannot be null');
         //}
+
+
+//        if ((count($aPkiEzsigndocumentID) < 1)) {
+        if ((count($aPkiEzsigndocumentID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiEzsigndocumentID when calling EzsignfolderBatchDownloadV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiEzsigndocumentID'] = $aPkiEzsigndocumentID;
         $this->container['aPkiEzsigndocumentID'] = (is_null($aPkiEzsigndocumentID) ? null : $aPkiEzsigndocumentID);
@@ -380,6 +382,10 @@ class EzsignfolderBatchDownloadV1Request implements ModelInterface, ArrayAccess,
      */
     public function setAEDocumentType($aEDocumentType)
     {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($aEDocumentType)) {
+            //throw new \InvalidArgumentException('non-nullable aEDocumentType cannot be null');
+        //}
         $allowedValues = $this->getAEDocumentTypeAllowableValues();
         if (array_diff($aEDocumentType, $allowedValues)) {
             throw new \InvalidArgumentException(
@@ -389,11 +395,7 @@ class EzsignfolderBatchDownloadV1Request implements ModelInterface, ArrayAccess,
                 )
             );
         }
-
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($aEDocumentType)) {
-            //throw new \InvalidArgumentException('non-nullable aEDocumentType cannot be null');
-        //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aEDocumentType'] = $aEDocumentType;
         $this->container['aEDocumentType'] = (is_null($aEDocumentType) ? null : $aEDocumentType);

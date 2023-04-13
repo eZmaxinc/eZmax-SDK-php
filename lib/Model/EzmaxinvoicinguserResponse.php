@@ -407,16 +407,17 @@ class EzmaxinvoicinguserResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setPkiEzmaxinvoicinguserID($pkiEzmaxinvoicinguserID)
     {
-
-        if (!is_null($pkiEzmaxinvoicinguserID) && ($pkiEzmaxinvoicinguserID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzmaxinvoicinguserID when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzmaxinvoicinguserID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzmaxinvoicinguserID cannot be null');
         //}
+
+//        if (($pkiEzmaxinvoicinguserID < 0)) {
+        if (!is_null($pkiEzmaxinvoicinguserID) && ($pkiEzmaxinvoicinguserID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzmaxinvoicinguserID when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzmaxinvoicinguserID'] = $pkiEzmaxinvoicinguserID;
         $this->container['pkiEzmaxinvoicinguserID'] = (is_null($pkiEzmaxinvoicinguserID) ? null : (int) $pkiEzmaxinvoicinguserID);
@@ -443,16 +444,17 @@ class EzmaxinvoicinguserResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setFkiEzmaxinvoicingID($fkiEzmaxinvoicingID)
     {
-
-        if (!is_null($fkiEzmaxinvoicingID) && ($fkiEzmaxinvoicingID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzmaxinvoicingID when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzmaxinvoicingID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzmaxinvoicingID cannot be null');
         //}
+
+//        if (($fkiEzmaxinvoicingID < 0)) {
+        if (!is_null($fkiEzmaxinvoicingID) && ($fkiEzmaxinvoicingID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzmaxinvoicingID when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzmaxinvoicingID'] = $fkiEzmaxinvoicingID;
         $this->container['fkiEzmaxinvoicingID'] = (is_null($fkiEzmaxinvoicingID) ? null : (int) $fkiEzmaxinvoicingID);
@@ -479,16 +481,17 @@ class EzmaxinvoicinguserResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setFkiBillingentityinternalID($fkiBillingentityinternalID)
     {
-
-        if (($fkiBillingentityinternalID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiBillingentityinternalID when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiBillingentityinternalID)) {
             //throw new \InvalidArgumentException('non-nullable fkiBillingentityinternalID cannot be null');
         //}
+
+//        if (($fkiBillingentityinternalID < 0)) {
+        if (($fkiBillingentityinternalID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiBillingentityinternalID when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiBillingentityinternalID'] = $fkiBillingentityinternalID;
         $this->container['fkiBillingentityinternalID'] = (is_null($fkiBillingentityinternalID) ? null : (int) $fkiBillingentityinternalID);
@@ -515,11 +518,11 @@ class EzmaxinvoicinguserResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setSBillingentityinternalDescriptionX($sBillingentityinternalDescriptionX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBillingentityinternalDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sBillingentityinternalDescriptionX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityinternalDescriptionX'] = $sBillingentityinternalDescriptionX;
         $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : (string) $sBillingentityinternalDescriptionX);
@@ -546,16 +549,17 @@ class EzmaxinvoicinguserResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setFkiUserID($fkiUserID)
     {
-
-        if (($fkiUserID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiUserID when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
         //}
+
+//        if (($fkiUserID < 0)) {
+        if (($fkiUserID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiUserID when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiUserID'] = $fkiUserID;
         $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
@@ -582,16 +586,17 @@ class EzmaxinvoicinguserResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setIEzmaxinvoicinguserEzsigndocument($iEzmaxinvoicinguserEzsigndocument)
     {
-
-        if (($iEzmaxinvoicinguserEzsigndocument < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzmaxinvoicinguserEzsigndocument when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzmaxinvoicinguserEzsigndocument)) {
             //throw new \InvalidArgumentException('non-nullable iEzmaxinvoicinguserEzsigndocument cannot be null');
         //}
+
+//        if (($iEzmaxinvoicinguserEzsigndocument < 0)) {
+        if (($iEzmaxinvoicinguserEzsigndocument < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzmaxinvoicinguserEzsigndocument when calling EzmaxinvoicinguserResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzmaxinvoicinguserEzsigndocument'] = $iEzmaxinvoicinguserEzsigndocument;
         $this->container['iEzmaxinvoicinguserEzsigndocument'] = (is_null($iEzmaxinvoicinguserEzsigndocument) ? null : (int) $iEzmaxinvoicinguserEzsigndocument);
@@ -618,11 +623,11 @@ class EzmaxinvoicinguserResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setBEzmaxinvoicinguserEzsignaccount($bEzmaxinvoicinguserEzsignaccount)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzmaxinvoicinguserEzsignaccount)) {
             //throw new \InvalidArgumentException('non-nullable bEzmaxinvoicinguserEzsignaccount cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzmaxinvoicinguserEzsignaccount'] = $bEzmaxinvoicinguserEzsignaccount;
         $this->container['bEzmaxinvoicinguserEzsignaccount'] = (is_null($bEzmaxinvoicinguserEzsignaccount) ? null : (bool) $bEzmaxinvoicinguserEzsignaccount);
@@ -649,11 +654,11 @@ class EzmaxinvoicinguserResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setBEzmaxinvoicinguserBillableezsign($bEzmaxinvoicinguserBillableezsign)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzmaxinvoicinguserBillableezsign)) {
             //throw new \InvalidArgumentException('non-nullable bEzmaxinvoicinguserBillableezsign cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzmaxinvoicinguserBillableezsign'] = $bEzmaxinvoicinguserBillableezsign;
         $this->container['bEzmaxinvoicinguserBillableezsign'] = (is_null($bEzmaxinvoicinguserBillableezsign) ? null : (bool) $bEzmaxinvoicinguserBillableezsign);
@@ -680,11 +685,11 @@ class EzmaxinvoicinguserResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setEEzmaxinvoicinguserVariationezsign($eEzmaxinvoicinguserVariationezsign)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzmaxinvoicinguserVariationezsign)) {
             //throw new \InvalidArgumentException('non-nullable eEzmaxinvoicinguserVariationezsign cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzmaxinvoicinguserVariationezsign'] = $eEzmaxinvoicinguserVariationezsign;
         $this->container['eEzmaxinvoicinguserVariationezsign'] = $eEzmaxinvoicinguserVariationezsign;

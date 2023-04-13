@@ -401,6 +401,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         if ($this->container['sActivesessionLoginname'] === null) {
             $invalidProperties[] = "'sActivesessionLoginname' can't be null";
         }
+//        if (!preg_match("/^.{0,32}$/", $this->container['sActivesessionLoginname'])) {
         if (!is_null($this->container['sActivesessionLoginname']) && !preg_match("/^.{0,32}$/", $this->container['sActivesessionLoginname'])) {
             $invalidProperties[] = "invalid value for 'sActivesessionLoginname', must be conform to the pattern /^.{0,32}$/.";
         }
@@ -408,6 +409,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         if ($this->container['sComputerDescription'] === null) {
             $invalidProperties[] = "'sComputerDescription' can't be null";
         }
+//        if (!preg_match("/^.{0,50}$/", $this->container['sComputerDescription'])) {
         if (!is_null($this->container['sComputerDescription']) && !preg_match("/^.{0,50}$/", $this->container['sComputerDescription'])) {
             $invalidProperties[] = "invalid value for 'sComputerDescription', must be conform to the pattern /^.{0,50}$/.";
         }
@@ -415,6 +417,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         if ($this->container['dtActivesessionFirsthit'] === null) {
             $invalidProperties[] = "'dtActivesessionFirsthit' can't be null";
         }
+//        if (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $this->container['dtActivesessionFirsthit'])) {
         if (!is_null($this->container['dtActivesessionFirsthit']) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $this->container['dtActivesessionFirsthit'])) {
             $invalidProperties[] = "invalid value for 'dtActivesessionFirsthit', must be conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/.";
         }
@@ -422,6 +425,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         if ($this->container['dtActivesessionLasthit'] === null) {
             $invalidProperties[] = "'dtActivesessionLasthit' can't be null";
         }
+//        if (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $this->container['dtActivesessionLasthit'])) {
         if (!is_null($this->container['dtActivesessionLasthit']) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $this->container['dtActivesessionLasthit'])) {
             $invalidProperties[] = "invalid value for 'dtActivesessionLasthit', must be conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/.";
         }
@@ -463,11 +467,11 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setPkiActivesessionID($pkiActivesessionID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiActivesessionID)) {
             //throw new \InvalidArgumentException('non-nullable pkiActivesessionID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiActivesessionID'] = $pkiActivesessionID;
         $this->container['pkiActivesessionID'] = (is_null($pkiActivesessionID) ? null : (int) $pkiActivesessionID);
@@ -494,16 +498,17 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setFkiUserID($fkiUserID)
     {
-
-        if (($fkiUserID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiUserID when calling ActivesessionListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
         //}
+
+//        if (($fkiUserID < 0)) {
+        if (($fkiUserID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiUserID when calling ActivesessionListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiUserID'] = $fkiUserID;
         $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
@@ -530,19 +535,21 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setFkiComputerID($fkiComputerID)
     {
-
-        if (($fkiComputerID > 65535)) {
-            throw new \InvalidArgumentException('invalid value for $fkiComputerID when calling ActivesessionListElement., must be smaller than or equal to 65535.');
-        }
-        if (($fkiComputerID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiComputerID when calling ActivesessionListElement., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiComputerID)) {
             //throw new \InvalidArgumentException('non-nullable fkiComputerID cannot be null');
         //}
+
+//        if (($fkiComputerID > 65535)) {
+        if (($fkiComputerID > 65535)) {
+            throw new \InvalidArgumentException('invalid value for $fkiComputerID when calling ActivesessionListElement., must be smaller than or equal to 65535.');
+        }
+//        if (($fkiComputerID < 1)) {
+        if (($fkiComputerID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiComputerID when calling ActivesessionListElement., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiComputerID'] = $fkiComputerID;
         $this->container['fkiComputerID'] = (is_null($fkiComputerID) ? null : (int) $fkiComputerID);
@@ -569,19 +576,21 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setFkiCompanyID($fkiCompanyID)
     {
-
-        if (($fkiCompanyID > 255)) {
-            throw new \InvalidArgumentException('invalid value for $fkiCompanyID when calling ActivesessionListElement., must be smaller than or equal to 255.');
-        }
-        if (($fkiCompanyID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiCompanyID when calling ActivesessionListElement., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiCompanyID)) {
             //throw new \InvalidArgumentException('non-nullable fkiCompanyID cannot be null');
         //}
+
+//        if (($fkiCompanyID > 255)) {
+        if (($fkiCompanyID > 255)) {
+            throw new \InvalidArgumentException('invalid value for $fkiCompanyID when calling ActivesessionListElement., must be smaller than or equal to 255.');
+        }
+//        if (($fkiCompanyID < 1)) {
+        if (($fkiCompanyID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiCompanyID when calling ActivesessionListElement., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiCompanyID'] = $fkiCompanyID;
         $this->container['fkiCompanyID'] = (is_null($fkiCompanyID) ? null : (int) $fkiCompanyID);
@@ -608,16 +617,17 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setFkiDepartmentID($fkiDepartmentID)
     {
-
-        if (($fkiDepartmentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiDepartmentID when calling ActivesessionListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiDepartmentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiDepartmentID cannot be null');
         //}
+
+//        if (($fkiDepartmentID < 0)) {
+        if (($fkiDepartmentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiDepartmentID when calling ActivesessionListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiDepartmentID'] = $fkiDepartmentID;
         $this->container['fkiDepartmentID'] = (is_null($fkiDepartmentID) ? null : (int) $fkiDepartmentID);
@@ -644,11 +654,11 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setSCompanyNameX($sCompanyNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCompanyNameX)) {
             //throw new \InvalidArgumentException('non-nullable sCompanyNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCompanyNameX'] = $sCompanyNameX;
         $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : (string) $sCompanyNameX);
@@ -675,11 +685,11 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setSDepartmentNameX($sDepartmentNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sDepartmentNameX)) {
             //throw new \InvalidArgumentException('non-nullable sDepartmentNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sDepartmentNameX'] = $sDepartmentNameX;
         $this->container['sDepartmentNameX'] = (is_null($sDepartmentNameX) ? null : (string) $sDepartmentNameX);
@@ -706,16 +716,17 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setSActivesessionLoginname($sActivesessionLoginname)
     {
-
-        if (!is_null($sActivesessionLoginname) && (!preg_match("/^.{0,32}$/", $sActivesessionLoginname))) {
-            throw new \InvalidArgumentException("invalid value for \$sActivesessionLoginname when calling ActivesessionListElement., must conform to the pattern /^.{0,32}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sActivesessionLoginname)) {
             //throw new \InvalidArgumentException('non-nullable sActivesessionLoginname cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,32}$/", $sActivesessionLoginname))) {
+        if (!is_null($sActivesessionLoginname) && (!preg_match("/^.{0,32}$/", $sActivesessionLoginname))) {
+            throw new \InvalidArgumentException("invalid value for \$sActivesessionLoginname when calling ActivesessionListElement., must conform to the pattern /^.{0,32}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sActivesessionLoginname'] = $sActivesessionLoginname;
         $this->container['sActivesessionLoginname'] = (is_null($sActivesessionLoginname) ? null : (string) $sActivesessionLoginname);
@@ -742,16 +753,17 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setSComputerDescription($sComputerDescription)
     {
-
-        if (!is_null($sComputerDescription) && (!preg_match("/^.{0,50}$/", $sComputerDescription))) {
-            throw new \InvalidArgumentException("invalid value for \$sComputerDescription when calling ActivesessionListElement., must conform to the pattern /^.{0,50}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sComputerDescription)) {
             //throw new \InvalidArgumentException('non-nullable sComputerDescription cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,50}$/", $sComputerDescription))) {
+        if (!is_null($sComputerDescription) && (!preg_match("/^.{0,50}$/", $sComputerDescription))) {
+            throw new \InvalidArgumentException("invalid value for \$sComputerDescription when calling ActivesessionListElement., must conform to the pattern /^.{0,50}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sComputerDescription'] = $sComputerDescription;
         $this->container['sComputerDescription'] = (is_null($sComputerDescription) ? null : (string) $sComputerDescription);
@@ -778,16 +790,17 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setDtActivesessionFirsthit($dtActivesessionFirsthit)
     {
-
-        if (!is_null($dtActivesessionFirsthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $dtActivesessionFirsthit))) {
-            throw new \InvalidArgumentException("invalid value for \$dtActivesessionFirsthit when calling ActivesessionListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtActivesessionFirsthit)) {
             //throw new \InvalidArgumentException('non-nullable dtActivesessionFirsthit cannot be null');
         //}
+
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $dtActivesessionFirsthit))) {
+        if (!is_null($dtActivesessionFirsthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $dtActivesessionFirsthit))) {
+            throw new \InvalidArgumentException("invalid value for \$dtActivesessionFirsthit when calling ActivesessionListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtActivesessionFirsthit'] = $dtActivesessionFirsthit;
         $this->container['dtActivesessionFirsthit'] = (is_null($dtActivesessionFirsthit) ? null : (string) $dtActivesessionFirsthit);
@@ -814,16 +827,17 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setDtActivesessionLasthit($dtActivesessionLasthit)
     {
-
-        if (!is_null($dtActivesessionLasthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $dtActivesessionLasthit))) {
-            throw new \InvalidArgumentException("invalid value for \$dtActivesessionLasthit when calling ActivesessionListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtActivesessionLasthit)) {
             //throw new \InvalidArgumentException('non-nullable dtActivesessionLasthit cannot be null');
         //}
+
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $dtActivesessionLasthit))) {
+        if (!is_null($dtActivesessionLasthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/", $dtActivesessionLasthit))) {
+            throw new \InvalidArgumentException("invalid value for \$dtActivesessionLasthit when calling ActivesessionListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (0[1-9]|1[0-9]|2[0-4]):(0[1-9]|[1-5][0-9]|6[0]):(0[1-9]|[1-5][0-9]|6[0])$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtActivesessionLasthit'] = $dtActivesessionLasthit;
         $this->container['dtActivesessionLasthit'] = (is_null($dtActivesessionLasthit) ? null : (string) $dtActivesessionLasthit);
@@ -850,11 +864,11 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setSActivesessionIP($sActivesessionIP)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sActivesessionIP)) {
             //throw new \InvalidArgumentException('non-nullable sActivesessionIP cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sActivesessionIP'] = $sActivesessionIP;
         $this->container['sActivesessionIP'] = (is_null($sActivesessionIP) ? null : (string) $sActivesessionIP);

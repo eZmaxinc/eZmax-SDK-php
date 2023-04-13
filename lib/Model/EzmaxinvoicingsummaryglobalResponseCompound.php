@@ -443,6 +443,7 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
         if ($this->container['dEzmaxinvoicingsummaryglobalCountreal'] === null) {
             $invalidProperties[] = "'dEzmaxinvoicingsummaryglobalCountreal' can't be null";
         }
+//        if (!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalCountreal'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalCountreal']) && !preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalCountreal'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalCountreal', must be conform to the pattern /^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/.";
         }
@@ -450,6 +451,7 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
         if ($this->container['dEzmaxinvoicingsummaryglobalCountbilled'] === null) {
             $invalidProperties[] = "'dEzmaxinvoicingsummaryglobalCountbilled' can't be null";
         }
+//        if (!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalCountbilled'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalCountbilled']) && !preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalCountbilled'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalCountbilled', must be conform to the pattern /^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/.";
         }
@@ -457,6 +459,7 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
         if ($this->container['dEzmaxinvoicingsummaryglobalSubtotal'] === null) {
             $invalidProperties[] = "'dEzmaxinvoicingsummaryglobalSubtotal' can't be null";
         }
+//        if (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalSubtotal'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalSubtotal']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalSubtotal'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalSubtotal', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
         }
@@ -464,6 +467,7 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
         if ($this->container['dEzmaxinvoicingsummaryglobalRebateamount'] === null) {
             $invalidProperties[] = "'dEzmaxinvoicingsummaryglobalRebateamount' can't be null";
         }
+//        if (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalRebateamount'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalRebateamount']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalRebateamount'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalRebateamount', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
         }
@@ -471,6 +475,7 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
         if ($this->container['dEzmaxinvoicingsummaryglobalRebatepercent'] === null) {
             $invalidProperties[] = "'dEzmaxinvoicingsummaryglobalRebatepercent' can't be null";
         }
+//        if (!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalRebatepercent'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalRebatepercent']) && !preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalRebatepercent'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalRebatepercent', must be conform to the pattern /^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/.";
         }
@@ -478,6 +483,7 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
         if ($this->container['dEzmaxinvoicingsummaryglobalRebatetotal'] === null) {
             $invalidProperties[] = "'dEzmaxinvoicingsummaryglobalRebatetotal' can't be null";
         }
+//        if (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalRebatetotal'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalRebatetotal']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalRebatetotal'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalRebatetotal', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
         }
@@ -485,18 +491,22 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
         if ($this->container['dEzmaxinvoicingsummaryglobalTotal'] === null) {
             $invalidProperties[] = "'dEzmaxinvoicingsummaryglobalTotal' can't be null";
         }
+//        if (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalTotal'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalTotal']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalTotal'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalTotal', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
         }
 
+//        if (!is_null($this->container['dEzmaxinvoicingsummaryglobalRepresentative']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalRepresentative'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalRepresentative']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalRepresentative'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalRepresentative', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
         }
 
+//        if (!is_null($this->container['dEzmaxinvoicingsummaryglobalPartner']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalPartner'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalPartner']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalPartner'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalPartner', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
         }
 
+//        if (!is_null($this->container['dEzmaxinvoicingsummaryglobalNet']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalNet'])) {
         if (!is_null($this->container['dEzmaxinvoicingsummaryglobalNet']) && !preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingsummaryglobalNet'])) {
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingsummaryglobalNet', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
         }
@@ -541,16 +551,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setPkiEzmaxinvoicingsummaryglobalID($pkiEzmaxinvoicingsummaryglobalID)
     {
-
-        if (!is_null($pkiEzmaxinvoicingsummaryglobalID) && ($pkiEzmaxinvoicingsummaryglobalID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzmaxinvoicingsummaryglobalID when calling EzmaxinvoicingsummaryglobalResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzmaxinvoicingsummaryglobalID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzmaxinvoicingsummaryglobalID cannot be null');
         //}
+
+//        if (($pkiEzmaxinvoicingsummaryglobalID < 0)) {
+        if (!is_null($pkiEzmaxinvoicingsummaryglobalID) && ($pkiEzmaxinvoicingsummaryglobalID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzmaxinvoicingsummaryglobalID when calling EzmaxinvoicingsummaryglobalResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzmaxinvoicingsummaryglobalID'] = $pkiEzmaxinvoicingsummaryglobalID;
         $this->container['pkiEzmaxinvoicingsummaryglobalID'] = (is_null($pkiEzmaxinvoicingsummaryglobalID) ? null : (int) $pkiEzmaxinvoicingsummaryglobalID);
@@ -577,16 +588,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setFkiEzmaxinvoicingID($fkiEzmaxinvoicingID)
     {
-
-        if (!is_null($fkiEzmaxinvoicingID) && ($fkiEzmaxinvoicingID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzmaxinvoicingID when calling EzmaxinvoicingsummaryglobalResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzmaxinvoicingID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzmaxinvoicingID cannot be null');
         //}
+
+//        if (($fkiEzmaxinvoicingID < 0)) {
+        if (!is_null($fkiEzmaxinvoicingID) && ($fkiEzmaxinvoicingID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzmaxinvoicingID when calling EzmaxinvoicingsummaryglobalResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzmaxinvoicingID'] = $fkiEzmaxinvoicingID;
         $this->container['fkiEzmaxinvoicingID'] = (is_null($fkiEzmaxinvoicingID) ? null : (int) $fkiEzmaxinvoicingID);
@@ -613,16 +625,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setFkiEzmaxproductID($fkiEzmaxproductID)
     {
-
-        if (($fkiEzmaxproductID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzmaxproductID when calling EzmaxinvoicingsummaryglobalResponseCompound., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzmaxproductID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzmaxproductID cannot be null');
         //}
+
+//        if (($fkiEzmaxproductID < 1)) {
+        if (($fkiEzmaxproductID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzmaxproductID when calling EzmaxinvoicingsummaryglobalResponseCompound., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzmaxproductID'] = $fkiEzmaxproductID;
         $this->container['fkiEzmaxproductID'] = (is_null($fkiEzmaxproductID) ? null : (int) $fkiEzmaxproductID);
@@ -649,11 +662,11 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setSEzmaxproductDescriptionX($sEzmaxproductDescriptionX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzmaxproductDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sEzmaxproductDescriptionX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxproductDescriptionX'] = $sEzmaxproductDescriptionX;
         $this->container['sEzmaxproductDescriptionX'] = (is_null($sEzmaxproductDescriptionX) ? null : (string) $sEzmaxproductDescriptionX);
@@ -680,11 +693,11 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDtEzmaxinvoicingsummaryglobalStart($dtEzmaxinvoicingsummaryglobalStart)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzmaxinvoicingsummaryglobalStart)) {
             //throw new \InvalidArgumentException('non-nullable dtEzmaxinvoicingsummaryglobalStart cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxinvoicingsummaryglobalStart'] = $dtEzmaxinvoicingsummaryglobalStart;
         $this->container['dtEzmaxinvoicingsummaryglobalStart'] = (is_null($dtEzmaxinvoicingsummaryglobalStart) ? null : (string) $dtEzmaxinvoicingsummaryglobalStart);
@@ -711,11 +724,11 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDtEzmaxinvoicingsummaryglobalEnd($dtEzmaxinvoicingsummaryglobalEnd)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzmaxinvoicingsummaryglobalEnd)) {
             //throw new \InvalidArgumentException('non-nullable dtEzmaxinvoicingsummaryglobalEnd cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxinvoicingsummaryglobalEnd'] = $dtEzmaxinvoicingsummaryglobalEnd;
         $this->container['dtEzmaxinvoicingsummaryglobalEnd'] = (is_null($dtEzmaxinvoicingsummaryglobalEnd) ? null : (string) $dtEzmaxinvoicingsummaryglobalEnd);
@@ -742,16 +755,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setIEzmaxinvoicingsummaryglobalDays($iEzmaxinvoicingsummaryglobalDays)
     {
-
-        if (($iEzmaxinvoicingsummaryglobalDays < 1)) {
-            throw new \InvalidArgumentException('invalid value for $iEzmaxinvoicingsummaryglobalDays when calling EzmaxinvoicingsummaryglobalResponseCompound., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzmaxinvoicingsummaryglobalDays)) {
             //throw new \InvalidArgumentException('non-nullable iEzmaxinvoicingsummaryglobalDays cannot be null');
         //}
+
+//        if (($iEzmaxinvoicingsummaryglobalDays < 1)) {
+        if (($iEzmaxinvoicingsummaryglobalDays < 1)) {
+            throw new \InvalidArgumentException('invalid value for $iEzmaxinvoicingsummaryglobalDays when calling EzmaxinvoicingsummaryglobalResponseCompound., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzmaxinvoicingsummaryglobalDays'] = $iEzmaxinvoicingsummaryglobalDays;
         $this->container['iEzmaxinvoicingsummaryglobalDays'] = (is_null($iEzmaxinvoicingsummaryglobalDays) ? null : (int) $iEzmaxinvoicingsummaryglobalDays);
@@ -778,16 +792,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalCountreal($dEzmaxinvoicingsummaryglobalCountreal)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalCountreal) && (!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalCountreal))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalCountreal when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalCountreal)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalCountreal cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalCountreal))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalCountreal) && (!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalCountreal))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalCountreal when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalCountreal'] = $dEzmaxinvoicingsummaryglobalCountreal;
         $this->container['dEzmaxinvoicingsummaryglobalCountreal'] = (is_null($dEzmaxinvoicingsummaryglobalCountreal) ? null : (string) $dEzmaxinvoicingsummaryglobalCountreal);
@@ -814,16 +829,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalCountbilled($dEzmaxinvoicingsummaryglobalCountbilled)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalCountbilled) && (!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalCountbilled))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalCountbilled when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalCountbilled)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalCountbilled cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalCountbilled))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalCountbilled) && (!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalCountbilled))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalCountbilled when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalCountbilled'] = $dEzmaxinvoicingsummaryglobalCountbilled;
         $this->container['dEzmaxinvoicingsummaryglobalCountbilled'] = (is_null($dEzmaxinvoicingsummaryglobalCountbilled) ? null : (string) $dEzmaxinvoicingsummaryglobalCountbilled);
@@ -850,16 +866,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalSubtotal($dEzmaxinvoicingsummaryglobalSubtotal)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalSubtotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalSubtotal))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalSubtotal when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalSubtotal)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalSubtotal cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalSubtotal))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalSubtotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalSubtotal))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalSubtotal when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalSubtotal'] = $dEzmaxinvoicingsummaryglobalSubtotal;
         $this->container['dEzmaxinvoicingsummaryglobalSubtotal'] = (is_null($dEzmaxinvoicingsummaryglobalSubtotal) ? null : (string) $dEzmaxinvoicingsummaryglobalSubtotal);
@@ -886,16 +903,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalRebateamount($dEzmaxinvoicingsummaryglobalRebateamount)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalRebateamount) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRebateamount))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalRebateamount when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalRebateamount)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalRebateamount cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRebateamount))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalRebateamount) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRebateamount))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalRebateamount when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalRebateamount'] = $dEzmaxinvoicingsummaryglobalRebateamount;
         $this->container['dEzmaxinvoicingsummaryglobalRebateamount'] = (is_null($dEzmaxinvoicingsummaryglobalRebateamount) ? null : (string) $dEzmaxinvoicingsummaryglobalRebateamount);
@@ -922,16 +940,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalRebatepercent($dEzmaxinvoicingsummaryglobalRebatepercent)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalRebatepercent) && (!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRebatepercent))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalRebatepercent when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalRebatepercent)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalRebatepercent cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRebatepercent))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalRebatepercent) && (!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRebatepercent))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalRebatepercent when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalRebatepercent'] = $dEzmaxinvoicingsummaryglobalRebatepercent;
         $this->container['dEzmaxinvoicingsummaryglobalRebatepercent'] = (is_null($dEzmaxinvoicingsummaryglobalRebatepercent) ? null : (string) $dEzmaxinvoicingsummaryglobalRebatepercent);
@@ -958,16 +977,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalRebatetotal($dEzmaxinvoicingsummaryglobalRebatetotal)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalRebatetotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRebatetotal))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalRebatetotal when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalRebatetotal)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalRebatetotal cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRebatetotal))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalRebatetotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRebatetotal))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalRebatetotal when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalRebatetotal'] = $dEzmaxinvoicingsummaryglobalRebatetotal;
         $this->container['dEzmaxinvoicingsummaryglobalRebatetotal'] = (is_null($dEzmaxinvoicingsummaryglobalRebatetotal) ? null : (string) $dEzmaxinvoicingsummaryglobalRebatetotal);
@@ -994,16 +1014,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalTotal($dEzmaxinvoicingsummaryglobalTotal)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalTotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalTotal))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalTotal when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalTotal)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalTotal cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalTotal))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalTotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalTotal))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalTotal when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalTotal'] = $dEzmaxinvoicingsummaryglobalTotal;
         $this->container['dEzmaxinvoicingsummaryglobalTotal'] = (is_null($dEzmaxinvoicingsummaryglobalTotal) ? null : (string) $dEzmaxinvoicingsummaryglobalTotal);
@@ -1030,16 +1051,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalRepresentative($dEzmaxinvoicingsummaryglobalRepresentative)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalRepresentative) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRepresentative))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalRepresentative when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalRepresentative)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalRepresentative cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRepresentative))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalRepresentative) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalRepresentative))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalRepresentative when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalRepresentative'] = $dEzmaxinvoicingsummaryglobalRepresentative;
         $this->container['dEzmaxinvoicingsummaryglobalRepresentative'] = (is_null($dEzmaxinvoicingsummaryglobalRepresentative) ? null : (string) $dEzmaxinvoicingsummaryglobalRepresentative);
@@ -1066,16 +1088,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalPartner($dEzmaxinvoicingsummaryglobalPartner)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalPartner) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalPartner))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalPartner when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalPartner)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalPartner cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalPartner))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalPartner) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalPartner))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalPartner when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalPartner'] = $dEzmaxinvoicingsummaryglobalPartner;
         $this->container['dEzmaxinvoicingsummaryglobalPartner'] = (is_null($dEzmaxinvoicingsummaryglobalPartner) ? null : (string) $dEzmaxinvoicingsummaryglobalPartner);
@@ -1102,16 +1125,17 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setDEzmaxinvoicingsummaryglobalNet($dEzmaxinvoicingsummaryglobalNet)
     {
-
-        if (!is_null($dEzmaxinvoicingsummaryglobalNet) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalNet))) {
-            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalNet when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dEzmaxinvoicingsummaryglobalNet)) {
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryglobalNet cannot be null');
         //}
+
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalNet))) {
+        if (!is_null($dEzmaxinvoicingsummaryglobalNet) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryglobalNet))) {
+            throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryglobalNet when calling EzmaxinvoicingsummaryglobalResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalNet'] = $dEzmaxinvoicingsummaryglobalNet;
         $this->container['dEzmaxinvoicingsummaryglobalNet'] = (is_null($dEzmaxinvoicingsummaryglobalNet) ? null : (string) $dEzmaxinvoicingsummaryglobalNet);
@@ -1138,11 +1162,11 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setBEzmaxinvoicingsummaryglobalAdjustment($bEzmaxinvoicingsummaryglobalAdjustment)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzmaxinvoicingsummaryglobalAdjustment)) {
             //throw new \InvalidArgumentException('non-nullable bEzmaxinvoicingsummaryglobalAdjustment cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzmaxinvoicingsummaryglobalAdjustment'] = $bEzmaxinvoicingsummaryglobalAdjustment;
         $this->container['bEzmaxinvoicingsummaryglobalAdjustment'] = (is_null($bEzmaxinvoicingsummaryglobalAdjustment) ? null : (bool) $bEzmaxinvoicingsummaryglobalAdjustment);
@@ -1169,11 +1193,11 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setTEzmaxproductHelpX($tEzmaxproductHelpX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tEzmaxproductHelpX)) {
             //throw new \InvalidArgumentException('non-nullable tEzmaxproductHelpX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzmaxproductHelpX'] = $tEzmaxproductHelpX;
         $this->container['tEzmaxproductHelpX'] = (is_null($tEzmaxproductHelpX) ? null : (string) $tEzmaxproductHelpX);
@@ -1200,11 +1224,11 @@ class EzmaxinvoicingsummaryglobalResponseCompound implements ModelInterface, Arr
      */
     public function setAObjEzmaxinvoicingcommission($aObjEzmaxinvoicingcommission)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzmaxinvoicingcommission)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzmaxinvoicingcommission cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzmaxinvoicingcommission'] = $aObjEzmaxinvoicingcommission;
         $this->container['aObjEzmaxinvoicingcommission'] = $aObjEzmaxinvoicingcommission;

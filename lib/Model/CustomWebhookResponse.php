@@ -430,18 +430,20 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setPksCustomerCode($pksCustomerCode)
     {
-        if ((mb_strlen($pksCustomerCode) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling CustomWebhookResponse., must be smaller than or equal to 6.');
-        }
-        if ((mb_strlen($pksCustomerCode) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling CustomWebhookResponse., must be bigger than or equal to 2.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pksCustomerCode)) {
             //throw new \InvalidArgumentException('non-nullable pksCustomerCode cannot be null');
         //}
+//        if ((mb_strlen($pksCustomerCode) > 6)) {
+        if ((mb_strlen($pksCustomerCode) > 6)) {
+            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling CustomWebhookResponse., must be smaller than or equal to 6.');
+        }
+//        if ((mb_strlen($pksCustomerCode) < 2)) {
+        if ((mb_strlen($pksCustomerCode) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling CustomWebhookResponse., must be bigger than or equal to 2.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pksCustomerCode'] = $pksCustomerCode;
         $this->container['pksCustomerCode'] = (is_null($pksCustomerCode) ? null : (string) $pksCustomerCode);
@@ -468,11 +470,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setBWebhookTest($bWebhookTest)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bWebhookTest)) {
             //throw new \InvalidArgumentException('non-nullable bWebhookTest cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bWebhookTest'] = $bWebhookTest;
         $this->container['bWebhookTest'] = (is_null($bWebhookTest) ? null : (bool) $bWebhookTest);
@@ -499,11 +501,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setPkiWebhookID($pkiWebhookID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiWebhookID)) {
             //throw new \InvalidArgumentException('non-nullable pkiWebhookID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiWebhookID'] = $pkiWebhookID;
         $this->container['pkiWebhookID'] = (is_null($pkiWebhookID) ? null : (int) $pkiWebhookID);
@@ -530,11 +532,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setSWebhookDescription($sWebhookDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sWebhookDescription)) {
             //throw new \InvalidArgumentException('non-nullable sWebhookDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookDescription'] = $sWebhookDescription;
         $this->container['sWebhookDescription'] = (is_null($sWebhookDescription) ? null : (string) $sWebhookDescription);
@@ -561,16 +563,17 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setFkiEzsignfoldertypeID($fkiEzsignfoldertypeID)
     {
-
-        if (!is_null($fkiEzsignfoldertypeID) && ($fkiEzsignfoldertypeID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling CustomWebhookResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldertypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldertypeID cannot be null');
         //}
+
+//        if (($fkiEzsignfoldertypeID < 0)) {
+        if (!is_null($fkiEzsignfoldertypeID) && ($fkiEzsignfoldertypeID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling CustomWebhookResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
         $this->container['fkiEzsignfoldertypeID'] = (is_null($fkiEzsignfoldertypeID) ? null : (int) $fkiEzsignfoldertypeID);
@@ -597,11 +600,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignfoldertypeNameX)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignfoldertypeNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
         $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
@@ -628,11 +631,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setEWebhookModule($eWebhookModule)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eWebhookModule)) {
             //throw new \InvalidArgumentException('non-nullable eWebhookModule cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eWebhookModule'] = $eWebhookModule;
         $this->container['eWebhookModule'] = $eWebhookModule;
@@ -659,11 +662,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setEWebhookEzsignevent($eWebhookEzsignevent)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eWebhookEzsignevent)) {
             //throw new \InvalidArgumentException('non-nullable eWebhookEzsignevent cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eWebhookEzsignevent'] = $eWebhookEzsignevent;
         $this->container['eWebhookEzsignevent'] = $eWebhookEzsignevent;
@@ -690,11 +693,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setEWebhookManagementevent($eWebhookManagementevent)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eWebhookManagementevent)) {
             //throw new \InvalidArgumentException('non-nullable eWebhookManagementevent cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eWebhookManagementevent'] = $eWebhookManagementevent;
         $this->container['eWebhookManagementevent'] = $eWebhookManagementevent;
@@ -721,11 +724,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setSWebhookUrl($sWebhookUrl)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sWebhookUrl)) {
             //throw new \InvalidArgumentException('non-nullable sWebhookUrl cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookUrl'] = $sWebhookUrl;
         $this->container['sWebhookUrl'] = (is_null($sWebhookUrl) ? null : (string) $sWebhookUrl);
@@ -752,11 +755,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setSWebhookEmailfailed($sWebhookEmailfailed)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sWebhookEmailfailed)) {
             //throw new \InvalidArgumentException('non-nullable sWebhookEmailfailed cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookEmailfailed'] = $sWebhookEmailfailed;
         $this->container['sWebhookEmailfailed'] = (is_null($sWebhookEmailfailed) ? null : (string) $sWebhookEmailfailed);
@@ -783,11 +786,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setBWebhookIsactive($bWebhookIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bWebhookIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bWebhookIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bWebhookIsactive'] = $bWebhookIsactive;
         $this->container['bWebhookIsactive'] = (is_null($bWebhookIsactive) ? null : (bool) $bWebhookIsactive);
@@ -814,11 +817,11 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function setBWebhookSkipsslvalidation($bWebhookSkipsslvalidation)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bWebhookSkipsslvalidation)) {
             //throw new \InvalidArgumentException('non-nullable bWebhookSkipsslvalidation cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bWebhookSkipsslvalidation'] = $bWebhookSkipsslvalidation;
         $this->container['bWebhookSkipsslvalidation'] = (is_null($bWebhookSkipsslvalidation) ? null : (bool) $bWebhookSkipsslvalidation);

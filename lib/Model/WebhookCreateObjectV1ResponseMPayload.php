@@ -279,6 +279,7 @@ class WebhookCreateObjectV1ResponseMPayload implements ModelInterface, ArrayAcce
         if ($this->container['aPkiWebhookID'] === null) {
             $invalidProperties[] = "'aPkiWebhookID' can't be null";
         }
+//        if ((count($this->container['aPkiWebhookID']) < 1)) {
         if (!is_null($this->container['aPkiWebhookID']) && (count($this->container['aPkiWebhookID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiWebhookID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class WebhookCreateObjectV1ResponseMPayload implements ModelInterface, ArrayAcce
      */
     public function setAPkiWebhookID($aPkiWebhookID)
     {
-
-
-        if ((count($aPkiWebhookID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiWebhookID when calling WebhookCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiWebhookID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiWebhookID cannot be null');
         //}
+
+
+//        if ((count($aPkiWebhookID) < 1)) {
+        if ((count($aPkiWebhookID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiWebhookID when calling WebhookCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiWebhookID'] = $aPkiWebhookID;
         $this->container['aPkiWebhookID'] = (is_null($aPkiWebhookID) ? null : $aPkiWebhookID);

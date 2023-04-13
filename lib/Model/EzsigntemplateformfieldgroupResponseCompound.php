@@ -494,16 +494,17 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setPkiEzsigntemplateformfieldgroupID($pkiEzsigntemplateformfieldgroupID)
     {
-
-        if (($pkiEzsigntemplateformfieldgroupID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplateformfieldgroupID when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsigntemplateformfieldgroupID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplateformfieldgroupID cannot be null');
         //}
+
+//        if (($pkiEzsigntemplateformfieldgroupID < 0)) {
+        if (($pkiEzsigntemplateformfieldgroupID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplateformfieldgroupID when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsigntemplateformfieldgroupID'] = $pkiEzsigntemplateformfieldgroupID;
         $this->container['pkiEzsigntemplateformfieldgroupID'] = (is_null($pkiEzsigntemplateformfieldgroupID) ? null : (int) $pkiEzsigntemplateformfieldgroupID);
@@ -530,16 +531,17 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setFkiEzsigntemplatedocumentID($fkiEzsigntemplatedocumentID)
     {
-
-        if (($fkiEzsigntemplatedocumentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatedocumentID when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplatedocumentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatedocumentID cannot be null');
         //}
+
+//        if (($fkiEzsigntemplatedocumentID < 0)) {
+        if (($fkiEzsigntemplatedocumentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatedocumentID when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsigntemplatedocumentID'] = $fkiEzsigntemplatedocumentID;
         $this->container['fkiEzsigntemplatedocumentID'] = (is_null($fkiEzsigntemplatedocumentID) ? null : (int) $fkiEzsigntemplatedocumentID);
@@ -566,11 +568,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setEEzsigntemplateformfieldgroupType($eEzsigntemplateformfieldgroupType)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsigntemplateformfieldgroupType)) {
             //throw new \InvalidArgumentException('non-nullable eEzsigntemplateformfieldgroupType cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigntemplateformfieldgroupType'] = $eEzsigntemplateformfieldgroupType;
         $this->container['eEzsigntemplateformfieldgroupType'] = $eEzsigntemplateformfieldgroupType;
@@ -597,11 +599,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setEEzsigntemplateformfieldgroupSignerrequirement($eEzsigntemplateformfieldgroupSignerrequirement)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsigntemplateformfieldgroupSignerrequirement)) {
             //throw new \InvalidArgumentException('non-nullable eEzsigntemplateformfieldgroupSignerrequirement cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigntemplateformfieldgroupSignerrequirement'] = $eEzsigntemplateformfieldgroupSignerrequirement;
         $this->container['eEzsigntemplateformfieldgroupSignerrequirement'] = $eEzsigntemplateformfieldgroupSignerrequirement;
@@ -628,18 +630,20 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setSEzsigntemplateformfieldgroupLabel($sEzsigntemplateformfieldgroupLabel)
     {
-        if ((mb_strlen($sEzsigntemplateformfieldgroupLabel) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $sEzsigntemplateformfieldgroupLabel when calling EzsigntemplateformfieldgroupResponseCompound., must be smaller than or equal to 50.');
-        }
-        if ((mb_strlen($sEzsigntemplateformfieldgroupLabel) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $sEzsigntemplateformfieldgroupLabel when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplateformfieldgroupLabel)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplateformfieldgroupLabel cannot be null');
         //}
+//        if ((mb_strlen($sEzsigntemplateformfieldgroupLabel) > 50)) {
+        if ((mb_strlen($sEzsigntemplateformfieldgroupLabel) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $sEzsigntemplateformfieldgroupLabel when calling EzsigntemplateformfieldgroupResponseCompound., must be smaller than or equal to 50.');
+        }
+//        if ((mb_strlen($sEzsigntemplateformfieldgroupLabel) < 1)) {
+        if ((mb_strlen($sEzsigntemplateformfieldgroupLabel) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $sEzsigntemplateformfieldgroupLabel when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateformfieldgroupLabel'] = $sEzsigntemplateformfieldgroupLabel;
         $this->container['sEzsigntemplateformfieldgroupLabel'] = (is_null($sEzsigntemplateformfieldgroupLabel) ? null : (string) $sEzsigntemplateformfieldgroupLabel);
@@ -666,16 +670,17 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setIEzsigntemplateformfieldgroupStep($iEzsigntemplateformfieldgroupStep)
     {
-
-        if (($iEzsigntemplateformfieldgroupStep < 1)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldgroupStep when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigntemplateformfieldgroupStep)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigntemplateformfieldgroupStep cannot be null');
         //}
+
+//        if (($iEzsigntemplateformfieldgroupStep < 1)) {
+        if (($iEzsigntemplateformfieldgroupStep < 1)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldgroupStep when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigntemplateformfieldgroupStep'] = $iEzsigntemplateformfieldgroupStep;
         $this->container['iEzsigntemplateformfieldgroupStep'] = (is_null($iEzsigntemplateformfieldgroupStep) ? null : (int) $iEzsigntemplateformfieldgroupStep);
@@ -702,11 +707,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setSEzsigntemplateformfieldgroupDefaultvalue($sEzsigntemplateformfieldgroupDefaultvalue)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplateformfieldgroupDefaultvalue)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplateformfieldgroupDefaultvalue cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateformfieldgroupDefaultvalue'] = $sEzsigntemplateformfieldgroupDefaultvalue;
         $this->container['sEzsigntemplateformfieldgroupDefaultvalue'] = (is_null($sEzsigntemplateformfieldgroupDefaultvalue) ? null : (string) $sEzsigntemplateformfieldgroupDefaultvalue);
@@ -733,16 +738,17 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setIEzsigntemplateformfieldgroupFilledmin($iEzsigntemplateformfieldgroupFilledmin)
     {
-
-        if (($iEzsigntemplateformfieldgroupFilledmin < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldgroupFilledmin when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigntemplateformfieldgroupFilledmin)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigntemplateformfieldgroupFilledmin cannot be null');
         //}
+
+//        if (($iEzsigntemplateformfieldgroupFilledmin < 0)) {
+        if (($iEzsigntemplateformfieldgroupFilledmin < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldgroupFilledmin when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigntemplateformfieldgroupFilledmin'] = $iEzsigntemplateformfieldgroupFilledmin;
         $this->container['iEzsigntemplateformfieldgroupFilledmin'] = (is_null($iEzsigntemplateformfieldgroupFilledmin) ? null : (int) $iEzsigntemplateformfieldgroupFilledmin);
@@ -769,16 +775,17 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setIEzsigntemplateformfieldgroupFilledmax($iEzsigntemplateformfieldgroupFilledmax)
     {
-
-        if (($iEzsigntemplateformfieldgroupFilledmax < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldgroupFilledmax when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigntemplateformfieldgroupFilledmax)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigntemplateformfieldgroupFilledmax cannot be null');
         //}
+
+//        if (($iEzsigntemplateformfieldgroupFilledmax < 0)) {
+        if (($iEzsigntemplateformfieldgroupFilledmax < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldgroupFilledmax when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigntemplateformfieldgroupFilledmax'] = $iEzsigntemplateformfieldgroupFilledmax;
         $this->container['iEzsigntemplateformfieldgroupFilledmax'] = (is_null($iEzsigntemplateformfieldgroupFilledmax) ? null : (int) $iEzsigntemplateformfieldgroupFilledmax);
@@ -805,11 +812,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setBEzsigntemplateformfieldgroupReadonly($bEzsigntemplateformfieldgroupReadonly)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplateformfieldgroupReadonly)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplateformfieldgroupReadonly cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsigntemplateformfieldgroupReadonly'] = $bEzsigntemplateformfieldgroupReadonly;
         $this->container['bEzsigntemplateformfieldgroupReadonly'] = (is_null($bEzsigntemplateformfieldgroupReadonly) ? null : (bool) $bEzsigntemplateformfieldgroupReadonly);
@@ -836,16 +843,17 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setIEzsigntemplateformfieldgroupMaxlength($iEzsigntemplateformfieldgroupMaxlength)
     {
-
-        if (!is_null($iEzsigntemplateformfieldgroupMaxlength) && ($iEzsigntemplateformfieldgroupMaxlength < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldgroupMaxlength when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigntemplateformfieldgroupMaxlength)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigntemplateformfieldgroupMaxlength cannot be null');
         //}
+
+//        if (($iEzsigntemplateformfieldgroupMaxlength < 0)) {
+        if (!is_null($iEzsigntemplateformfieldgroupMaxlength) && ($iEzsigntemplateformfieldgroupMaxlength < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldgroupMaxlength when calling EzsigntemplateformfieldgroupResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigntemplateformfieldgroupMaxlength'] = $iEzsigntemplateformfieldgroupMaxlength;
         $this->container['iEzsigntemplateformfieldgroupMaxlength'] = (is_null($iEzsigntemplateformfieldgroupMaxlength) ? null : (int) $iEzsigntemplateformfieldgroupMaxlength);
@@ -872,11 +880,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setBEzsigntemplateformfieldgroupEncrypted($bEzsigntemplateformfieldgroupEncrypted)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsigntemplateformfieldgroupEncrypted)) {
             //throw new \InvalidArgumentException('non-nullable bEzsigntemplateformfieldgroupEncrypted cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsigntemplateformfieldgroupEncrypted'] = $bEzsigntemplateformfieldgroupEncrypted;
         $this->container['bEzsigntemplateformfieldgroupEncrypted'] = (is_null($bEzsigntemplateformfieldgroupEncrypted) ? null : (bool) $bEzsigntemplateformfieldgroupEncrypted);
@@ -903,11 +911,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setSEzsigntemplateformfieldgroupRegexp($sEzsigntemplateformfieldgroupRegexp)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigntemplateformfieldgroupRegexp)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplateformfieldgroupRegexp cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateformfieldgroupRegexp'] = $sEzsigntemplateformfieldgroupRegexp;
         $this->container['sEzsigntemplateformfieldgroupRegexp'] = (is_null($sEzsigntemplateformfieldgroupRegexp) ? null : (string) $sEzsigntemplateformfieldgroupRegexp);
@@ -934,11 +942,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setTEzsigntemplateformfieldgroupTooltip($tEzsigntemplateformfieldgroupTooltip)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tEzsigntemplateformfieldgroupTooltip)) {
             //throw new \InvalidArgumentException('non-nullable tEzsigntemplateformfieldgroupTooltip cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsigntemplateformfieldgroupTooltip'] = $tEzsigntemplateformfieldgroupTooltip;
         $this->container['tEzsigntemplateformfieldgroupTooltip'] = (is_null($tEzsigntemplateformfieldgroupTooltip) ? null : (string) $tEzsigntemplateformfieldgroupTooltip);
@@ -965,11 +973,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setEEzsigntemplateformfieldgroupTooltipposition($eEzsigntemplateformfieldgroupTooltipposition)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsigntemplateformfieldgroupTooltipposition)) {
             //throw new \InvalidArgumentException('non-nullable eEzsigntemplateformfieldgroupTooltipposition cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigntemplateformfieldgroupTooltipposition'] = $eEzsigntemplateformfieldgroupTooltipposition;
         $this->container['eEzsigntemplateformfieldgroupTooltipposition'] = $eEzsigntemplateformfieldgroupTooltipposition;
@@ -996,11 +1004,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setAObjEzsigntemplateformfieldgroupsigner($aObjEzsigntemplateformfieldgroupsigner)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplateformfieldgroupsigner)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplateformfieldgroupsigner cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplateformfieldgroupsigner'] = $aObjEzsigntemplateformfieldgroupsigner;
         $this->container['aObjEzsigntemplateformfieldgroupsigner'] = $aObjEzsigntemplateformfieldgroupsigner;
@@ -1027,11 +1035,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setAObjDropdownElement($aObjDropdownElement)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjDropdownElement)) {
             //throw new \InvalidArgumentException('non-nullable aObjDropdownElement cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjDropdownElement'] = $aObjDropdownElement;
         $this->container['aObjDropdownElement'] = $aObjDropdownElement;
@@ -1058,11 +1066,11 @@ class EzsigntemplateformfieldgroupResponseCompound implements ModelInterface, Ar
      */
     public function setAObjEzsigntemplateformfield($aObjEzsigntemplateformfield)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplateformfield)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplateformfield cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplateformfield'] = $aObjEzsigntemplateformfield;
         $this->container['aObjEzsigntemplateformfield'] = $aObjEzsigntemplateformfield;

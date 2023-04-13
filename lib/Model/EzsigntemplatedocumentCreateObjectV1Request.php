@@ -279,6 +279,7 @@ class EzsigntemplatedocumentCreateObjectV1Request implements ModelInterface, Arr
         if ($this->container['aObjEzsigntemplatedocument'] === null) {
             $invalidProperties[] = "'aObjEzsigntemplatedocument' can't be null";
         }
+//        if ((count($this->container['aObjEzsigntemplatedocument']) < 1)) {
         if (!is_null($this->container['aObjEzsigntemplatedocument']) && (count($this->container['aObjEzsigntemplatedocument']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsigntemplatedocument', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigntemplatedocumentCreateObjectV1Request implements ModelInterface, Arr
      */
     public function setAObjEzsigntemplatedocument($aObjEzsigntemplatedocument)
     {
-
-
-        if ((count($aObjEzsigntemplatedocument) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatedocument when calling EzsigntemplatedocumentCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatedocument)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatedocument cannot be null');
         //}
+
+
+//        if ((count($aObjEzsigntemplatedocument) < 1)) {
+        if ((count($aObjEzsigntemplatedocument) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatedocument when calling EzsigntemplatedocumentCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatedocument'] = $aObjEzsigntemplatedocument;
         $this->container['aObjEzsigntemplatedocument'] = $aObjEzsigntemplatedocument;

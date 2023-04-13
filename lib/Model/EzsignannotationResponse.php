@@ -422,11 +422,11 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setPkiEzsignannotationID($pkiEzsignannotationID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignannotationID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignannotationID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsignannotationID'] = $pkiEzsignannotationID;
         $this->container['pkiEzsignannotationID'] = (is_null($pkiEzsignannotationID) ? null : (int) $pkiEzsignannotationID);
@@ -453,16 +453,17 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setFkiEzsigndocumentID($fkiEzsigndocumentID)
     {
-
-        if (($fkiEzsigndocumentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigndocumentID when calling EzsignannotationResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigndocumentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigndocumentID cannot be null');
         //}
+
+//        if (($fkiEzsigndocumentID < 0)) {
+        if (($fkiEzsigndocumentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigndocumentID when calling EzsignannotationResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsigndocumentID'] = $fkiEzsigndocumentID;
         $this->container['fkiEzsigndocumentID'] = (is_null($fkiEzsigndocumentID) ? null : (int) $fkiEzsigndocumentID);
@@ -489,11 +490,11 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setEEzsignannotationHorizontalalignment($eEzsignannotationHorizontalalignment)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsignannotationHorizontalalignment)) {
             //throw new \InvalidArgumentException('non-nullable eEzsignannotationHorizontalalignment cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsignannotationHorizontalalignment'] = $eEzsignannotationHorizontalalignment;
         $this->container['eEzsignannotationHorizontalalignment'] = $eEzsignannotationHorizontalalignment;
@@ -520,11 +521,11 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setEEzsignannotationVerticalalignment($eEzsignannotationVerticalalignment)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsignannotationVerticalalignment)) {
             //throw new \InvalidArgumentException('non-nullable eEzsignannotationVerticalalignment cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsignannotationVerticalalignment'] = $eEzsignannotationVerticalalignment;
         $this->container['eEzsignannotationVerticalalignment'] = $eEzsignannotationVerticalalignment;
@@ -551,11 +552,11 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setEEzsignannotationType($eEzsignannotationType)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsignannotationType)) {
             //throw new \InvalidArgumentException('non-nullable eEzsignannotationType cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsignannotationType'] = $eEzsignannotationType;
         $this->container['eEzsignannotationType'] = $eEzsignannotationType;
@@ -582,16 +583,17 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setIEzsignannotationX($iEzsignannotationX)
     {
-
-        if (($iEzsignannotationX < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignannotationX when calling EzsignannotationResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignannotationX)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignannotationX cannot be null');
         //}
+
+//        if (($iEzsignannotationX < 0)) {
+        if (($iEzsignannotationX < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignannotationX when calling EzsignannotationResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignannotationX'] = $iEzsignannotationX;
         $this->container['iEzsignannotationX'] = (is_null($iEzsignannotationX) ? null : (int) $iEzsignannotationX);
@@ -618,16 +620,17 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setIEzsignannotationY($iEzsignannotationY)
     {
-
-        if (($iEzsignannotationY < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignannotationY when calling EzsignannotationResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignannotationY)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignannotationY cannot be null');
         //}
+
+//        if (($iEzsignannotationY < 0)) {
+        if (($iEzsignannotationY < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignannotationY when calling EzsignannotationResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignannotationY'] = $iEzsignannotationY;
         $this->container['iEzsignannotationY'] = (is_null($iEzsignannotationY) ? null : (int) $iEzsignannotationY);
@@ -654,16 +657,17 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setIEzsignannotationWidth($iEzsignannotationWidth)
     {
-
-        if (!is_null($iEzsignannotationWidth) && ($iEzsignannotationWidth < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignannotationWidth when calling EzsignannotationResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignannotationWidth)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignannotationWidth cannot be null');
         //}
+
+//        if (($iEzsignannotationWidth < 0)) {
+        if (!is_null($iEzsignannotationWidth) && ($iEzsignannotationWidth < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignannotationWidth when calling EzsignannotationResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignannotationWidth'] = $iEzsignannotationWidth;
         $this->container['iEzsignannotationWidth'] = (is_null($iEzsignannotationWidth) ? null : (int) $iEzsignannotationWidth);
@@ -690,16 +694,17 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setIEzsignannotationHeight($iEzsignannotationHeight)
     {
-
-        if (!is_null($iEzsignannotationHeight) && ($iEzsignannotationHeight < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignannotationHeight when calling EzsignannotationResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignannotationHeight)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignannotationHeight cannot be null');
         //}
+
+//        if (($iEzsignannotationHeight < 0)) {
+        if (!is_null($iEzsignannotationHeight) && ($iEzsignannotationHeight < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignannotationHeight when calling EzsignannotationResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignannotationHeight'] = $iEzsignannotationHeight;
         $this->container['iEzsignannotationHeight'] = (is_null($iEzsignannotationHeight) ? null : (int) $iEzsignannotationHeight);
@@ -726,11 +731,11 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setSEzsignannotationText($sEzsignannotationText)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignannotationText)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignannotationText cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignannotationText'] = $sEzsignannotationText;
         $this->container['sEzsignannotationText'] = (is_null($sEzsignannotationText) ? null : (string) $sEzsignannotationText);
@@ -757,16 +762,17 @@ class EzsignannotationResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function setIEzsignpagePagenumber($iEzsignpagePagenumber)
     {
-
-        if (($iEzsignpagePagenumber < 1)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignpagePagenumber when calling EzsignannotationResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignpagePagenumber)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignpagePagenumber cannot be null');
         //}
+
+//        if (($iEzsignpagePagenumber < 1)) {
+        if (($iEzsignpagePagenumber < 1)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignpagePagenumber when calling EzsignannotationResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignpagePagenumber'] = $iEzsignpagePagenumber;
         $this->container['iEzsignpagePagenumber'] = (is_null($iEzsignpagePagenumber) ? null : (int) $iEzsignpagePagenumber);

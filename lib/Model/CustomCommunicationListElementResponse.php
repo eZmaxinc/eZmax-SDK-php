@@ -397,16 +397,17 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function setPkiCommunicationID($pkiCommunicationID)
     {
-
-        if (($pkiCommunicationID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiCommunicationID when calling CustomCommunicationListElementResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiCommunicationID)) {
             //throw new \InvalidArgumentException('non-nullable pkiCommunicationID cannot be null');
         //}
+
+//        if (($pkiCommunicationID < 0)) {
+        if (($pkiCommunicationID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiCommunicationID when calling CustomCommunicationListElementResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiCommunicationID'] = $pkiCommunicationID;
         $this->container['pkiCommunicationID'] = (is_null($pkiCommunicationID) ? null : (int) $pkiCommunicationID);
@@ -433,11 +434,11 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function setDtCreatedDate($dtCreatedDate)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtCreatedDate)) {
             //throw new \InvalidArgumentException('non-nullable dtCreatedDate cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtCreatedDate'] = $dtCreatedDate;
         $this->container['dtCreatedDate'] = (is_null($dtCreatedDate) ? null : (string) $dtCreatedDate);
@@ -464,11 +465,11 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function setECommunicationDirection($eCommunicationDirection)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationDirection)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationDirection cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eCommunicationDirection'] = $eCommunicationDirection;
         $this->container['eCommunicationDirection'] = $eCommunicationDirection;
@@ -495,11 +496,11 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function setECommunicationImportance($eCommunicationImportance)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationImportance)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationImportance cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eCommunicationImportance'] = $eCommunicationImportance;
         $this->container['eCommunicationImportance'] = $eCommunicationImportance;
@@ -526,11 +527,11 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function setECommunicationType($eCommunicationType)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationType)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationType cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eCommunicationType'] = $eCommunicationType;
         $this->container['eCommunicationType'] = $eCommunicationType;
@@ -557,11 +558,11 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function setICommunicationrecipientCount($iCommunicationrecipientCount)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iCommunicationrecipientCount)) {
             //throw new \InvalidArgumentException('non-nullable iCommunicationrecipientCount cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iCommunicationrecipientCount'] = $iCommunicationrecipientCount;
         $this->container['iCommunicationrecipientCount'] = (is_null($iCommunicationrecipientCount) ? null : (int) $iCommunicationrecipientCount);
@@ -588,11 +589,11 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function setSCommunicationSubject($sCommunicationSubject)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCommunicationSubject)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationSubject cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCommunicationSubject'] = $sCommunicationSubject;
         $this->container['sCommunicationSubject'] = (is_null($sCommunicationSubject) ? null : (string) $sCommunicationSubject);
@@ -619,11 +620,11 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function setSCommunicationSender($sCommunicationSender)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCommunicationSender)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationSender cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCommunicationSender'] = $sCommunicationSender;
         $this->container['sCommunicationSender'] = (is_null($sCommunicationSender) ? null : (string) $sCommunicationSender);
@@ -650,11 +651,11 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function setSCommunicationRecipient($sCommunicationRecipient)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCommunicationRecipient)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationRecipient cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCommunicationRecipient'] = $sCommunicationRecipient;
         $this->container['sCommunicationRecipient'] = (is_null($sCommunicationRecipient) ? null : (string) $sCommunicationRecipient);

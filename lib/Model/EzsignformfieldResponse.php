@@ -418,16 +418,17 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setPkiEzsignformfieldID($pkiEzsignformfieldID)
     {
-
-        if (($pkiEzsignformfieldID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsignformfieldID when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignformfieldID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignformfieldID cannot be null');
         //}
+
+//        if (($pkiEzsignformfieldID < 0)) {
+        if (($pkiEzsignformfieldID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsignformfieldID when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsignformfieldID'] = $pkiEzsignformfieldID;
         $this->container['pkiEzsignformfieldID'] = (is_null($pkiEzsignformfieldID) ? null : (int) $pkiEzsignformfieldID);
@@ -454,16 +455,17 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setIEzsignpagePagenumber($iEzsignpagePagenumber)
     {
-
-        if (($iEzsignpagePagenumber < 1)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignpagePagenumber when calling EzsignformfieldResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignpagePagenumber)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignpagePagenumber cannot be null');
         //}
+
+//        if (($iEzsignpagePagenumber < 1)) {
+        if (($iEzsignpagePagenumber < 1)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignpagePagenumber when calling EzsignformfieldResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignpagePagenumber'] = $iEzsignpagePagenumber;
         $this->container['iEzsignpagePagenumber'] = (is_null($iEzsignpagePagenumber) ? null : (int) $iEzsignpagePagenumber);
@@ -490,11 +492,11 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setSEzsignformfieldLabel($sEzsignformfieldLabel)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignformfieldLabel)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignformfieldLabel cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldLabel'] = $sEzsignformfieldLabel;
         $this->container['sEzsignformfieldLabel'] = (is_null($sEzsignformfieldLabel) ? null : (string) $sEzsignformfieldLabel);
@@ -521,11 +523,11 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setSEzsignformfieldValue($sEzsignformfieldValue)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignformfieldValue)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignformfieldValue cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldValue'] = $sEzsignformfieldValue;
         $this->container['sEzsignformfieldValue'] = (is_null($sEzsignformfieldValue) ? null : (string) $sEzsignformfieldValue);
@@ -552,16 +554,17 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setIEzsignformfieldX($iEzsignformfieldX)
     {
-
-        if (($iEzsignformfieldX < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignformfieldX when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignformfieldX)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignformfieldX cannot be null');
         //}
+
+//        if (($iEzsignformfieldX < 0)) {
+        if (($iEzsignformfieldX < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignformfieldX when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignformfieldX'] = $iEzsignformfieldX;
         $this->container['iEzsignformfieldX'] = (is_null($iEzsignformfieldX) ? null : (int) $iEzsignformfieldX);
@@ -588,16 +591,17 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setIEzsignformfieldY($iEzsignformfieldY)
     {
-
-        if (($iEzsignformfieldY < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignformfieldY when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignformfieldY)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignformfieldY cannot be null');
         //}
+
+//        if (($iEzsignformfieldY < 0)) {
+        if (($iEzsignformfieldY < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignformfieldY when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignformfieldY'] = $iEzsignformfieldY;
         $this->container['iEzsignformfieldY'] = (is_null($iEzsignformfieldY) ? null : (int) $iEzsignformfieldY);
@@ -624,16 +628,17 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setIEzsignformfieldWidth($iEzsignformfieldWidth)
     {
-
-        if (($iEzsignformfieldWidth < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignformfieldWidth when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignformfieldWidth)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignformfieldWidth cannot be null');
         //}
+
+//        if (($iEzsignformfieldWidth < 0)) {
+        if (($iEzsignformfieldWidth < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignformfieldWidth when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignformfieldWidth'] = $iEzsignformfieldWidth;
         $this->container['iEzsignformfieldWidth'] = (is_null($iEzsignformfieldWidth) ? null : (int) $iEzsignformfieldWidth);
@@ -660,16 +665,17 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setIEzsignformfieldHeight($iEzsignformfieldHeight)
     {
-
-        if (($iEzsignformfieldHeight < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignformfieldHeight when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignformfieldHeight)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignformfieldHeight cannot be null');
         //}
+
+//        if (($iEzsignformfieldHeight < 0)) {
+        if (($iEzsignformfieldHeight < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignformfieldHeight when calling EzsignformfieldResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignformfieldHeight'] = $iEzsignformfieldHeight;
         $this->container['iEzsignformfieldHeight'] = (is_null($iEzsignformfieldHeight) ? null : (int) $iEzsignformfieldHeight);
@@ -696,11 +702,11 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setBEzsignformfieldSelected($bEzsignformfieldSelected)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignformfieldSelected)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignformfieldSelected cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsignformfieldSelected'] = $bEzsignformfieldSelected;
         $this->container['bEzsignformfieldSelected'] = (is_null($bEzsignformfieldSelected) ? null : (bool) $bEzsignformfieldSelected);
@@ -727,11 +733,11 @@ class EzsignformfieldResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setSEzsignformfieldEnteredvalue($sEzsignformfieldEnteredvalue)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignformfieldEnteredvalue)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignformfieldEnteredvalue cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldEnteredvalue'] = $sEzsignformfieldEnteredvalue;
         $this->container['sEzsignformfieldEnteredvalue'] = (is_null($sEzsignformfieldEnteredvalue) ? null : (string) $sEzsignformfieldEnteredvalue);

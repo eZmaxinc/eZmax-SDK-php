@@ -324,11 +324,11 @@ class CustomContactNameResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setSContactFirstname($sContactFirstname)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactFirstname)) {
             //throw new \InvalidArgumentException('non-nullable sContactFirstname cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactFirstname'] = $sContactFirstname;
         $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : (string) $sContactFirstname);
@@ -355,11 +355,11 @@ class CustomContactNameResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setSContactLastname($sContactLastname)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactLastname)) {
             //throw new \InvalidArgumentException('non-nullable sContactLastname cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactLastname'] = $sContactLastname;
         $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : (string) $sContactLastname);
@@ -386,11 +386,11 @@ class CustomContactNameResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setSContactCompany($sContactCompany)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sContactCompany)) {
             //throw new \InvalidArgumentException('non-nullable sContactCompany cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactCompany'] = $sContactCompany;
         $this->container['sContactCompany'] = (is_null($sContactCompany) ? null : (string) $sContactCompany);

@@ -323,11 +323,11 @@ class EzsignSuggestTemplatesV1ResponseMPayload implements ModelInterface, ArrayA
      */
     public function setAObjEzsigntemplate($aObjEzsigntemplate)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplate)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplate cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplate'] = $aObjEzsigntemplate;
         $this->container['aObjEzsigntemplate'] = $aObjEzsigntemplate;
@@ -354,11 +354,11 @@ class EzsignSuggestTemplatesV1ResponseMPayload implements ModelInterface, ArrayA
      */
     public function setAObjEzsigntemplatepackage($aObjEzsigntemplatepackage)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatepackage)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatepackage cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatepackage'] = $aObjEzsigntemplatepackage;
         $this->container['aObjEzsigntemplatepackage'] = $aObjEzsigntemplatepackage;

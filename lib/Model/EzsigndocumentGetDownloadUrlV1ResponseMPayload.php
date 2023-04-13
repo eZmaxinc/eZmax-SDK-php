@@ -313,11 +313,11 @@ class EzsigndocumentGetDownloadUrlV1ResponseMPayload implements ModelInterface, 
      */
     public function setSDownloadUrl($sDownloadUrl)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sDownloadUrl)) {
             //throw new \InvalidArgumentException('non-nullable sDownloadUrl cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sDownloadUrl'] = $sDownloadUrl;
         $this->container['sDownloadUrl'] = (is_null($sDownloadUrl) ? null : (string) $sDownloadUrl);

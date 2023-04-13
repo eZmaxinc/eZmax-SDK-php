@@ -429,16 +429,17 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setPkiEzsignbulksendID($pkiEzsignbulksendID)
     {
-
-        if (($pkiEzsignbulksendID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsignbulksendID when calling EzsignbulksendResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignbulksendID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignbulksendID cannot be null');
         //}
+
+//        if (($pkiEzsignbulksendID < 0)) {
+        if (($pkiEzsignbulksendID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsignbulksendID when calling EzsignbulksendResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsignbulksendID'] = $pkiEzsignbulksendID;
         $this->container['pkiEzsignbulksendID'] = (is_null($pkiEzsignbulksendID) ? null : (int) $pkiEzsignbulksendID);
@@ -465,16 +466,17 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setFkiEzsignfoldertypeID($fkiEzsignfoldertypeID)
     {
-
-        if (($fkiEzsignfoldertypeID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling EzsignbulksendResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldertypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldertypeID cannot be null');
         //}
+
+//        if (($fkiEzsignfoldertypeID < 0)) {
+        if (($fkiEzsignfoldertypeID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling EzsignbulksendResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
         $this->container['fkiEzsignfoldertypeID'] = (is_null($fkiEzsignfoldertypeID) ? null : (int) $fkiEzsignfoldertypeID);
@@ -501,19 +503,21 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setFkiLanguageID($fkiLanguageID)
     {
-
-        if (($fkiLanguageID > 2)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignbulksendResponse., must be smaller than or equal to 2.');
-        }
-        if (($fkiLanguageID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignbulksendResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiLanguageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
         //}
+
+//        if (($fkiLanguageID > 2)) {
+        if (($fkiLanguageID > 2)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignbulksendResponse., must be smaller than or equal to 2.');
+        }
+//        if (($fkiLanguageID < 1)) {
+        if (($fkiLanguageID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsignbulksendResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiLanguageID'] = $fkiLanguageID;
         $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
@@ -540,11 +544,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setSLanguageNameX($sLanguageNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sLanguageNameX)) {
             //throw new \InvalidArgumentException('non-nullable sLanguageNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sLanguageNameX'] = $sLanguageNameX;
         $this->container['sLanguageNameX'] = (is_null($sLanguageNameX) ? null : (string) $sLanguageNameX);
@@ -571,11 +575,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setEEzsignfoldertypePrivacylevel($eEzsignfoldertypePrivacylevel)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eEzsignfoldertypePrivacylevel)) {
             //throw new \InvalidArgumentException('non-nullable eEzsignfoldertypePrivacylevel cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsignfoldertypePrivacylevel'] = $eEzsignfoldertypePrivacylevel;
         $this->container['eEzsignfoldertypePrivacylevel'] = $eEzsignfoldertypePrivacylevel;
@@ -602,11 +606,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignfoldertypeNameX)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignfoldertypeNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
         $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
@@ -633,11 +637,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setSEzsignbulksendDescription($sEzsignbulksendDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignbulksendDescription)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignbulksendDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignbulksendDescription'] = $sEzsignbulksendDescription;
         $this->container['sEzsignbulksendDescription'] = (is_null($sEzsignbulksendDescription) ? null : (string) $sEzsignbulksendDescription);
@@ -664,11 +668,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setTEzsignbulksendNote($tEzsignbulksendNote)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tEzsignbulksendNote)) {
             //throw new \InvalidArgumentException('non-nullable tEzsignbulksendNote cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignbulksendNote'] = $tEzsignbulksendNote;
         $this->container['tEzsignbulksendNote'] = (is_null($tEzsignbulksendNote) ? null : (string) $tEzsignbulksendNote);
@@ -695,11 +699,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setBEzsignbulksendNeedvalidation($bEzsignbulksendNeedvalidation)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignbulksendNeedvalidation)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignbulksendNeedvalidation cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsignbulksendNeedvalidation'] = $bEzsignbulksendNeedvalidation;
         $this->container['bEzsignbulksendNeedvalidation'] = (is_null($bEzsignbulksendNeedvalidation) ? null : (bool) $bEzsignbulksendNeedvalidation);
@@ -726,11 +730,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setBEzsignbulksendIsactive($bEzsignbulksendIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzsignbulksendIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bEzsignbulksendIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsignbulksendIsactive'] = $bEzsignbulksendIsactive;
         $this->container['bEzsignbulksendIsactive'] = (is_null($bEzsignbulksendIsactive) ? null : (bool) $bEzsignbulksendIsactive);
@@ -757,11 +761,11 @@ class EzsignbulksendResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function setObjAudit($objAudit)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objAudit)) {
             //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objAudit'] = $objAudit;
         $this->container['objAudit'] = $objAudit;

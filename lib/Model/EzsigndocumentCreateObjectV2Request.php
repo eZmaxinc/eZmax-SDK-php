@@ -279,6 +279,7 @@ class EzsigndocumentCreateObjectV2Request implements ModelInterface, ArrayAccess
         if ($this->container['aObjEzsigndocument'] === null) {
             $invalidProperties[] = "'aObjEzsigndocument' can't be null";
         }
+//        if ((count($this->container['aObjEzsigndocument']) < 1)) {
         if (!is_null($this->container['aObjEzsigndocument']) && (count($this->container['aObjEzsigndocument']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsigndocument', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigndocumentCreateObjectV2Request implements ModelInterface, ArrayAccess
      */
     public function setAObjEzsigndocument($aObjEzsigndocument)
     {
-
-
-        if ((count($aObjEzsigndocument) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsigndocument when calling EzsigndocumentCreateObjectV2Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigndocument)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigndocument cannot be null');
         //}
+
+
+//        if ((count($aObjEzsigndocument) < 1)) {
+        if ((count($aObjEzsigndocument) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsigndocument when calling EzsigndocumentCreateObjectV2Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigndocument'] = $aObjEzsigndocument;
         $this->container['aObjEzsigndocument'] = $aObjEzsigndocument;

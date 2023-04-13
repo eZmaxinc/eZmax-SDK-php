@@ -327,16 +327,17 @@ class BillingentityinternalResponseCompound implements ModelInterface, ArrayAcce
      */
     public function setPkiBillingentityinternalID($pkiBillingentityinternalID)
     {
-
-        if (($pkiBillingentityinternalID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiBillingentityinternalID when calling BillingentityinternalResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiBillingentityinternalID)) {
             //throw new \InvalidArgumentException('non-nullable pkiBillingentityinternalID cannot be null');
         //}
+
+//        if (($pkiBillingentityinternalID < 0)) {
+        if (($pkiBillingentityinternalID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiBillingentityinternalID when calling BillingentityinternalResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiBillingentityinternalID'] = $pkiBillingentityinternalID;
         $this->container['pkiBillingentityinternalID'] = (is_null($pkiBillingentityinternalID) ? null : (int) $pkiBillingentityinternalID);
@@ -363,11 +364,11 @@ class BillingentityinternalResponseCompound implements ModelInterface, ArrayAcce
      */
     public function setObjBillingentityinternalDescription($objBillingentityinternalDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objBillingentityinternalDescription)) {
             //throw new \InvalidArgumentException('non-nullable objBillingentityinternalDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objBillingentityinternalDescription'] = $objBillingentityinternalDescription;
         $this->container['objBillingentityinternalDescription'] = $objBillingentityinternalDescription;

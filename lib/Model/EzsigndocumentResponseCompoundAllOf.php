@@ -352,11 +352,11 @@ class EzsigndocumentResponseCompoundAllOf implements ModelInterface, ArrayAccess
      */
     public function setIEzsigndocumentStepformtotal($iEzsigndocumentStepformtotal)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigndocumentStepformtotal)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigndocumentStepformtotal cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigndocumentStepformtotal'] = $iEzsigndocumentStepformtotal;
         $this->container['iEzsigndocumentStepformtotal'] = (is_null($iEzsigndocumentStepformtotal) ? null : (int) $iEzsigndocumentStepformtotal);
@@ -383,11 +383,11 @@ class EzsigndocumentResponseCompoundAllOf implements ModelInterface, ArrayAccess
      */
     public function setIEzsigndocumentStepformcurrent($iEzsigndocumentStepformcurrent)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigndocumentStepformcurrent)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigndocumentStepformcurrent cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigndocumentStepformcurrent'] = $iEzsigndocumentStepformcurrent;
         $this->container['iEzsigndocumentStepformcurrent'] = (is_null($iEzsigndocumentStepformcurrent) ? null : (int) $iEzsigndocumentStepformcurrent);
@@ -414,11 +414,11 @@ class EzsigndocumentResponseCompoundAllOf implements ModelInterface, ArrayAccess
      */
     public function setIEzsigndocumentStepsignaturetotal($iEzsigndocumentStepsignaturetotal)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigndocumentStepsignaturetotal)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigndocumentStepsignaturetotal cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigndocumentStepsignaturetotal'] = $iEzsigndocumentStepsignaturetotal;
         $this->container['iEzsigndocumentStepsignaturetotal'] = (is_null($iEzsigndocumentStepsignaturetotal) ? null : (int) $iEzsigndocumentStepsignaturetotal);
@@ -445,11 +445,11 @@ class EzsigndocumentResponseCompoundAllOf implements ModelInterface, ArrayAccess
      */
     public function setIEzsigndocumentStepsignatureCurrent($iEzsigndocumentStepsignatureCurrent)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsigndocumentStepsignatureCurrent)) {
             //throw new \InvalidArgumentException('non-nullable iEzsigndocumentStepsignatureCurrent cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigndocumentStepsignatureCurrent'] = $iEzsigndocumentStepsignatureCurrent;
         $this->container['iEzsigndocumentStepsignatureCurrent'] = (is_null($iEzsigndocumentStepsignatureCurrent) ? null : (int) $iEzsigndocumentStepsignatureCurrent);
@@ -476,11 +476,11 @@ class EzsigndocumentResponseCompoundAllOf implements ModelInterface, ArrayAccess
      */
     public function setAObjEzsignfoldersignerassociationstatus($aObjEzsignfoldersignerassociationstatus)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignfoldersignerassociationstatus)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignfoldersignerassociationstatus cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignfoldersignerassociationstatus'] = $aObjEzsignfoldersignerassociationstatus;
         $this->container['aObjEzsignfoldersignerassociationstatus'] = $aObjEzsignfoldersignerassociationstatus;

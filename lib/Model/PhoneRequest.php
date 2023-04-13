@@ -328,6 +328,7 @@ class PhoneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['ePhoneType'] === null) {
             $invalidProperties[] = "'ePhoneType' can't be null";
         }
+//        if (!is_null($this->container['sPhoneInternational']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneInternational'])) {
         if (!is_null($this->container['sPhoneInternational']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneInternational'])) {
             $invalidProperties[] = "invalid value for 'sPhoneInternational', must be conform to the pattern /^\\+[1-9]\\d{1,14}$/.";
         }
@@ -366,16 +367,17 @@ class PhoneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setFkiPhonetypeID($fkiPhonetypeID)
     {
-
-        if (($fkiPhonetypeID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiPhonetypeID when calling PhoneRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiPhonetypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiPhonetypeID cannot be null');
         //}
+
+//        if (($fkiPhonetypeID < 0)) {
+        if (($fkiPhonetypeID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiPhonetypeID when calling PhoneRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiPhonetypeID'] = $fkiPhonetypeID;
         $this->container['fkiPhonetypeID'] = (is_null($fkiPhonetypeID) ? null : (int) $fkiPhonetypeID);
@@ -402,11 +404,11 @@ class PhoneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setEPhoneType($ePhoneType)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($ePhoneType)) {
             //throw new \InvalidArgumentException('non-nullable ePhoneType cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['ePhoneType'] = $ePhoneType;
         $this->container['ePhoneType'] = $ePhoneType;
@@ -433,11 +435,11 @@ class PhoneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSPhoneRegion($sPhoneRegion)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneRegion)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneRegion cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneRegion'] = $sPhoneRegion;
         $this->container['sPhoneRegion'] = (is_null($sPhoneRegion) ? null : (string) $sPhoneRegion);
@@ -464,11 +466,11 @@ class PhoneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSPhoneExchange($sPhoneExchange)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneExchange)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneExchange cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneExchange'] = $sPhoneExchange;
         $this->container['sPhoneExchange'] = (is_null($sPhoneExchange) ? null : (string) $sPhoneExchange);
@@ -495,11 +497,11 @@ class PhoneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSPhoneNumber($sPhoneNumber)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneNumber)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneNumber cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneNumber'] = $sPhoneNumber;
         $this->container['sPhoneNumber'] = (is_null($sPhoneNumber) ? null : (string) $sPhoneNumber);
@@ -526,16 +528,17 @@ class PhoneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSPhoneInternational($sPhoneInternational)
     {
-
-        if (!is_null($sPhoneInternational) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneInternational))) {
-            throw new \InvalidArgumentException("invalid value for \$sPhoneInternational when calling PhoneRequest., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneInternational)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneInternational cannot be null');
         //}
+
+//        if ((!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneInternational))) {
+        if (!is_null($sPhoneInternational) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneInternational))) {
+            throw new \InvalidArgumentException("invalid value for \$sPhoneInternational when calling PhoneRequest., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneInternational'] = $sPhoneInternational;
         $this->container['sPhoneInternational'] = (is_null($sPhoneInternational) ? null : (string) $sPhoneInternational);
@@ -562,11 +565,11 @@ class PhoneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSPhoneExtension($sPhoneExtension)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhoneExtension)) {
             //throw new \InvalidArgumentException('non-nullable sPhoneExtension cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneExtension'] = $sPhoneExtension;
         $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : (string) $sPhoneExtension);

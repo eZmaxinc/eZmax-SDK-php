@@ -313,11 +313,11 @@ class VariableexpenseCreateObjectV1ResponseMPayload implements ModelInterface, A
      */
     public function setAPkiVariableexpenseID($aPkiVariableexpenseID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiVariableexpenseID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiVariableexpenseID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiVariableexpenseID'] = $aPkiVariableexpenseID;
         $this->container['aPkiVariableexpenseID'] = (is_null($aPkiVariableexpenseID) ? null : $aPkiVariableexpenseID);

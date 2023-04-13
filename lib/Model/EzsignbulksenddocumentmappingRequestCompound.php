@@ -350,16 +350,17 @@ class EzsignbulksenddocumentmappingRequestCompound implements ModelInterface, Ar
      */
     public function setPkiEzsignbulksenddocumentmappingID($pkiEzsignbulksenddocumentmappingID)
     {
-
-        if (!is_null($pkiEzsignbulksenddocumentmappingID) && ($pkiEzsignbulksenddocumentmappingID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsignbulksenddocumentmappingID when calling EzsignbulksenddocumentmappingRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignbulksenddocumentmappingID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignbulksenddocumentmappingID cannot be null');
         //}
+
+//        if (($pkiEzsignbulksenddocumentmappingID < 0)) {
+        if (!is_null($pkiEzsignbulksenddocumentmappingID) && ($pkiEzsignbulksenddocumentmappingID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsignbulksenddocumentmappingID when calling EzsignbulksenddocumentmappingRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsignbulksenddocumentmappingID'] = $pkiEzsignbulksenddocumentmappingID;
         $this->container['pkiEzsignbulksenddocumentmappingID'] = (is_null($pkiEzsignbulksenddocumentmappingID) ? null : (int) $pkiEzsignbulksenddocumentmappingID);
@@ -386,16 +387,17 @@ class EzsignbulksenddocumentmappingRequestCompound implements ModelInterface, Ar
      */
     public function setFkiEzsignbulksendID($fkiEzsignbulksendID)
     {
-
-        if (($fkiEzsignbulksendID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsignbulksendID when calling EzsignbulksenddocumentmappingRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignbulksendID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignbulksendID cannot be null');
         //}
+
+//        if (($fkiEzsignbulksendID < 0)) {
+        if (($fkiEzsignbulksendID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsignbulksendID when calling EzsignbulksenddocumentmappingRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsignbulksendID'] = $fkiEzsignbulksendID;
         $this->container['fkiEzsignbulksendID'] = (is_null($fkiEzsignbulksendID) ? null : (int) $fkiEzsignbulksendID);
@@ -422,16 +424,17 @@ class EzsignbulksenddocumentmappingRequestCompound implements ModelInterface, Ar
      */
     public function setFkiEzsigntemplatepackageID($fkiEzsigntemplatepackageID)
     {
-
-        if (!is_null($fkiEzsigntemplatepackageID) && ($fkiEzsigntemplatepackageID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatepackageID when calling EzsignbulksenddocumentmappingRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplatepackageID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatepackageID cannot be null');
         //}
+
+//        if (($fkiEzsigntemplatepackageID < 0)) {
+        if (!is_null($fkiEzsigntemplatepackageID) && ($fkiEzsigntemplatepackageID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatepackageID when calling EzsignbulksenddocumentmappingRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsigntemplatepackageID'] = $fkiEzsigntemplatepackageID;
         $this->container['fkiEzsigntemplatepackageID'] = (is_null($fkiEzsigntemplatepackageID) ? null : (int) $fkiEzsigntemplatepackageID);
@@ -458,16 +461,17 @@ class EzsignbulksenddocumentmappingRequestCompound implements ModelInterface, Ar
      */
     public function setFkiEzsigntemplateID($fkiEzsigntemplateID)
     {
-
-        if (!is_null($fkiEzsigntemplateID) && ($fkiEzsigntemplateID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplateID when calling EzsignbulksenddocumentmappingRequestCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsigntemplateID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplateID cannot be null');
         //}
+
+//        if (($fkiEzsigntemplateID < 0)) {
+        if (!is_null($fkiEzsigntemplateID) && ($fkiEzsigntemplateID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplateID when calling EzsignbulksenddocumentmappingRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsigntemplateID'] = $fkiEzsigntemplateID;
         $this->container['fkiEzsigntemplateID'] = (is_null($fkiEzsigntemplateID) ? null : (int) $fkiEzsigntemplateID);

@@ -313,11 +313,11 @@ class EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload implements ModelIn
      */
     public function setObjEzsigntemplateformfieldgroup($objEzsigntemplateformfieldgroup)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEzsigntemplateformfieldgroup)) {
             //throw new \InvalidArgumentException('non-nullable objEzsigntemplateformfieldgroup cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsigntemplateformfieldgroup'] = $objEzsigntemplateformfieldgroup;
         $this->container['objEzsigntemplateformfieldgroup'] = $objEzsigntemplateformfieldgroup;

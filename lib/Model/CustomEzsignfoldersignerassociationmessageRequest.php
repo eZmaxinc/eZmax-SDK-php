@@ -324,16 +324,17 @@ class CustomEzsignfoldersignerassociationmessageRequest implements ModelInterfac
      */
     public function setFkiEzsignfoldersignerassociationID($fkiEzsignfoldersignerassociationID)
     {
-
-        if (($fkiEzsignfoldersignerassociationID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldersignerassociationID when calling CustomEzsignfoldersignerassociationmessageRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiEzsignfoldersignerassociationID)) {
             //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldersignerassociationID cannot be null');
         //}
+
+//        if (($fkiEzsignfoldersignerassociationID < 0)) {
+        if (($fkiEzsignfoldersignerassociationID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldersignerassociationID when calling CustomEzsignfoldersignerassociationmessageRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsignfoldersignerassociationID'] = $fkiEzsignfoldersignerassociationID;
         $this->container['fkiEzsignfoldersignerassociationID'] = (is_null($fkiEzsignfoldersignerassociationID) ? null : (int) $fkiEzsignfoldersignerassociationID);
@@ -360,11 +361,11 @@ class CustomEzsignfoldersignerassociationmessageRequest implements ModelInterfac
      */
     public function setTEzsignfoldersignerassociationMessage($tEzsignfoldersignerassociationMessage)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($tEzsignfoldersignerassociationMessage)) {
             //throw new \InvalidArgumentException('non-nullable tEzsignfoldersignerassociationMessage cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignfoldersignerassociationMessage'] = $tEzsignfoldersignerassociationMessage;
         $this->container['tEzsignfoldersignerassociationMessage'] = (is_null($tEzsignfoldersignerassociationMessage) ? null : (string) $tEzsignfoldersignerassociationMessage);

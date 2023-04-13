@@ -279,6 +279,7 @@ class EzsignsignatureCreateObjectV1ResponseMPayload implements ModelInterface, A
         if ($this->container['aPkiEzsignsignatureID'] === null) {
             $invalidProperties[] = "'aPkiEzsignsignatureID' can't be null";
         }
+//        if ((count($this->container['aPkiEzsignsignatureID']) < 1)) {
         if (!is_null($this->container['aPkiEzsignsignatureID']) && (count($this->container['aPkiEzsignsignatureID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiEzsignsignatureID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsignsignatureCreateObjectV1ResponseMPayload implements ModelInterface, A
      */
     public function setAPkiEzsignsignatureID($aPkiEzsignsignatureID)
     {
-
-
-        if ((count($aPkiEzsignsignatureID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiEzsignsignatureID when calling EzsignsignatureCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsignsignatureID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsignsignatureID cannot be null');
         //}
+
+
+//        if ((count($aPkiEzsignsignatureID) < 1)) {
+        if ((count($aPkiEzsignsignatureID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiEzsignsignatureID when calling EzsignsignatureCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiEzsignsignatureID'] = $aPkiEzsignsignatureID;
         $this->container['aPkiEzsignsignatureID'] = (is_null($aPkiEzsignsignatureID) ? null : $aPkiEzsignsignatureID);

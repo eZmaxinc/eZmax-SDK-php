@@ -279,6 +279,7 @@ class BrandingCreateObjectV1ResponseMPayload implements ModelInterface, ArrayAcc
         if ($this->container['aPkiBrandingID'] === null) {
             $invalidProperties[] = "'aPkiBrandingID' can't be null";
         }
+//        if ((count($this->container['aPkiBrandingID']) < 1)) {
         if (!is_null($this->container['aPkiBrandingID']) && (count($this->container['aPkiBrandingID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiBrandingID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class BrandingCreateObjectV1ResponseMPayload implements ModelInterface, ArrayAcc
      */
     public function setAPkiBrandingID($aPkiBrandingID)
     {
-
-
-        if ((count($aPkiBrandingID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiBrandingID when calling BrandingCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiBrandingID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiBrandingID cannot be null');
         //}
+
+
+//        if ((count($aPkiBrandingID) < 1)) {
+        if ((count($aPkiBrandingID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiBrandingID when calling BrandingCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiBrandingID'] = $aPkiBrandingID;
         $this->container['aPkiBrandingID'] = (is_null($aPkiBrandingID) ? null : $aPkiBrandingID);

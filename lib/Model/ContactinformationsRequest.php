@@ -343,11 +343,11 @@ class ContactinformationsRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setIAddressDefault($iAddressDefault)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iAddressDefault)) {
             //throw new \InvalidArgumentException('non-nullable iAddressDefault cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iAddressDefault'] = $iAddressDefault;
         $this->container['iAddressDefault'] = (is_null($iAddressDefault) ? null : (int) $iAddressDefault);
@@ -374,11 +374,11 @@ class ContactinformationsRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setIPhoneDefault($iPhoneDefault)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iPhoneDefault)) {
             //throw new \InvalidArgumentException('non-nullable iPhoneDefault cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iPhoneDefault'] = $iPhoneDefault;
         $this->container['iPhoneDefault'] = (is_null($iPhoneDefault) ? null : (int) $iPhoneDefault);
@@ -405,11 +405,11 @@ class ContactinformationsRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setIEmailDefault($iEmailDefault)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEmailDefault)) {
             //throw new \InvalidArgumentException('non-nullable iEmailDefault cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEmailDefault'] = $iEmailDefault;
         $this->container['iEmailDefault'] = (is_null($iEmailDefault) ? null : (int) $iEmailDefault);
@@ -436,11 +436,11 @@ class ContactinformationsRequest implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setIWebsiteDefault($iWebsiteDefault)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iWebsiteDefault)) {
             //throw new \InvalidArgumentException('non-nullable iWebsiteDefault cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iWebsiteDefault'] = $iWebsiteDefault;
         $this->container['iWebsiteDefault'] = (is_null($iWebsiteDefault) ? null : (int) $iWebsiteDefault);

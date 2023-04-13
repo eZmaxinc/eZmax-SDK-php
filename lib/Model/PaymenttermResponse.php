@@ -324,6 +324,7 @@ class PaymenttermResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['sPaymenttermCode'] === null) {
             $invalidProperties[] = "'sPaymenttermCode' can't be null";
         }
+//        if (!preg_match("/^[A-Z0-9]{1,4}$/", $this->container['sPaymenttermCode'])) {
         if (!is_null($this->container['sPaymenttermCode']) && !preg_match("/^[A-Z0-9]{1,4}$/", $this->container['sPaymenttermCode'])) {
             $invalidProperties[] = "invalid value for 'sPaymenttermCode', must be conform to the pattern /^[A-Z0-9]{1,4}$/.";
         }
@@ -385,11 +386,11 @@ class PaymenttermResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setPkiPaymenttermID($pkiPaymenttermID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiPaymenttermID)) {
             //throw new \InvalidArgumentException('non-nullable pkiPaymenttermID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiPaymenttermID'] = $pkiPaymenttermID;
         $this->container['pkiPaymenttermID'] = (is_null($pkiPaymenttermID) ? null : (int) $pkiPaymenttermID);
@@ -416,16 +417,17 @@ class PaymenttermResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setSPaymenttermCode($sPaymenttermCode)
     {
-
-        if (!is_null($sPaymenttermCode) && (!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
-            throw new \InvalidArgumentException("invalid value for \$sPaymenttermCode when calling PaymenttermResponse., must conform to the pattern /^[A-Z0-9]{1,4}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPaymenttermCode)) {
             //throw new \InvalidArgumentException('non-nullable sPaymenttermCode cannot be null');
         //}
+
+//        if ((!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
+        if (!is_null($sPaymenttermCode) && (!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
+            throw new \InvalidArgumentException("invalid value for \$sPaymenttermCode when calling PaymenttermResponse., must conform to the pattern /^[A-Z0-9]{1,4}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermCode'] = $sPaymenttermCode;
         $this->container['sPaymenttermCode'] = (is_null($sPaymenttermCode) ? null : (string) $sPaymenttermCode);
@@ -452,11 +454,11 @@ class PaymenttermResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setEPaymenttermType($ePaymenttermType)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($ePaymenttermType)) {
             //throw new \InvalidArgumentException('non-nullable ePaymenttermType cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['ePaymenttermType'] = $ePaymenttermType;
         $this->container['ePaymenttermType'] = $ePaymenttermType;
@@ -483,19 +485,21 @@ class PaymenttermResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setIPaymenttermDay($iPaymenttermDay)
     {
-
-        if (($iPaymenttermDay > 255)) {
-            throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermResponse., must be smaller than or equal to 255.');
-        }
-        if (($iPaymenttermDay < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iPaymenttermDay)) {
             //throw new \InvalidArgumentException('non-nullable iPaymenttermDay cannot be null');
         //}
+
+//        if (($iPaymenttermDay > 255)) {
+        if (($iPaymenttermDay > 255)) {
+            throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermResponse., must be smaller than or equal to 255.');
+        }
+//        if (($iPaymenttermDay < 0)) {
+        if (($iPaymenttermDay < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iPaymenttermDay'] = $iPaymenttermDay;
         $this->container['iPaymenttermDay'] = (is_null($iPaymenttermDay) ? null : (int) $iPaymenttermDay);
@@ -522,11 +526,11 @@ class PaymenttermResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setObjPaymenttermDescription($objPaymenttermDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objPaymenttermDescription)) {
             //throw new \InvalidArgumentException('non-nullable objPaymenttermDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objPaymenttermDescription'] = $objPaymenttermDescription;
         $this->container['objPaymenttermDescription'] = $objPaymenttermDescription;
@@ -553,11 +557,11 @@ class PaymenttermResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setBPaymenttermIsactive($bPaymenttermIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bPaymenttermIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bPaymenttermIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bPaymenttermIsactive'] = $bPaymenttermIsactive;
         $this->container['bPaymenttermIsactive'] = (is_null($bPaymenttermIsactive) ? null : (bool) $bPaymenttermIsactive);
@@ -584,11 +588,11 @@ class PaymenttermResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setObjAudit($objAudit)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objAudit)) {
             //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objAudit'] = $objAudit;
         $this->container['objAudit'] = $objAudit;

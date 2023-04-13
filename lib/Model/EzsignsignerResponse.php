@@ -370,16 +370,17 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setPkiEzsignsignerID($pkiEzsignsignerID)
     {
-
-        if (($pkiEzsignsignerID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsignsignerID when calling EzsignsignerResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignsignerID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignsignerID cannot be null');
         //}
+
+//        if (($pkiEzsignsignerID < 0)) {
+        if (($pkiEzsignsignerID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsignsignerID when calling EzsignsignerResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsignsignerID'] = $pkiEzsignsignerID;
         $this->container['pkiEzsignsignerID'] = (is_null($pkiEzsignsignerID) ? null : (int) $pkiEzsignsignerID);
@@ -406,19 +407,21 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setFkiTaxassignmentID($fkiTaxassignmentID)
     {
-
-        if (($fkiTaxassignmentID > 15)) {
-            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerResponse., must be smaller than or equal to 15.');
-        }
-        if (($fkiTaxassignmentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiTaxassignmentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiTaxassignmentID cannot be null');
         //}
+
+//        if (($fkiTaxassignmentID > 15)) {
+        if (($fkiTaxassignmentID > 15)) {
+            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerResponse., must be smaller than or equal to 15.');
+        }
+//        if (($fkiTaxassignmentID < 0)) {
+        if (($fkiTaxassignmentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiTaxassignmentID'] = $fkiTaxassignmentID;
         $this->container['fkiTaxassignmentID'] = (is_null($fkiTaxassignmentID) ? null : (int) $fkiTaxassignmentID);
@@ -445,16 +448,17 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setFkiSecretquestionID($fkiSecretquestionID)
     {
-
-        if (!is_null($fkiSecretquestionID) && ($fkiSecretquestionID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiSecretquestionID when calling EzsignsignerResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiSecretquestionID)) {
             //throw new \InvalidArgumentException('non-nullable fkiSecretquestionID cannot be null');
         //}
+
+//        if (($fkiSecretquestionID < 0)) {
+        if (!is_null($fkiSecretquestionID) && ($fkiSecretquestionID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiSecretquestionID when calling EzsignsignerResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiSecretquestionID'] = $fkiSecretquestionID;
         $this->container['fkiSecretquestionID'] = (is_null($fkiSecretquestionID) ? null : (int) $fkiSecretquestionID);
@@ -481,16 +485,17 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setFkiUserlogintypeID($fkiUserlogintypeID)
     {
-
-        if (($fkiUserlogintypeID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiUserlogintypeID when calling EzsignsignerResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiUserlogintypeID)) {
             //throw new \InvalidArgumentException('non-nullable fkiUserlogintypeID cannot be null');
         //}
+
+//        if (($fkiUserlogintypeID < 0)) {
+        if (($fkiUserlogintypeID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiUserlogintypeID when calling EzsignsignerResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiUserlogintypeID'] = $fkiUserlogintypeID;
         $this->container['fkiUserlogintypeID'] = (is_null($fkiUserlogintypeID) ? null : (int) $fkiUserlogintypeID);
@@ -517,11 +522,11 @@ class EzsignsignerResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function setSUserlogintypeDescriptionX($sUserlogintypeDescriptionX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUserlogintypeDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sUserlogintypeDescriptionX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserlogintypeDescriptionX'] = $sUserlogintypeDescriptionX;
         $this->container['sUserlogintypeDescriptionX'] = (is_null($sUserlogintypeDescriptionX) ? null : (string) $sUserlogintypeDescriptionX);

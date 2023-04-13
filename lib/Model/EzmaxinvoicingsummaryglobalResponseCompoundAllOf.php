@@ -309,11 +309,11 @@ class EzmaxinvoicingsummaryglobalResponseCompoundAllOf implements ModelInterface
      */
     public function setAObjEzmaxinvoicingcommission($aObjEzmaxinvoicingcommission)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzmaxinvoicingcommission)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzmaxinvoicingcommission cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzmaxinvoicingcommission'] = $aObjEzmaxinvoicingcommission;
         $this->container['aObjEzmaxinvoicingcommission'] = $aObjEzmaxinvoicingcommission;

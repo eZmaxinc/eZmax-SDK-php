@@ -279,6 +279,7 @@ class EzsignfolderCreateObjectV2Request implements ModelInterface, ArrayAccess, 
         if ($this->container['aObjEzsignfolder'] === null) {
             $invalidProperties[] = "'aObjEzsignfolder' can't be null";
         }
+//        if ((count($this->container['aObjEzsignfolder']) < 1)) {
         if (!is_null($this->container['aObjEzsignfolder']) && (count($this->container['aObjEzsignfolder']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsignfolder', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsignfolderCreateObjectV2Request implements ModelInterface, ArrayAccess, 
      */
     public function setAObjEzsignfolder($aObjEzsignfolder)
     {
-
-
-        if ((count($aObjEzsignfolder) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsignfolder when calling EzsignfolderCreateObjectV2Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsignfolder)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsignfolder cannot be null');
         //}
+
+
+//        if ((count($aObjEzsignfolder) < 1)) {
+        if ((count($aObjEzsignfolder) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsignfolder when calling EzsignfolderCreateObjectV2Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsignfolder'] = $aObjEzsignfolder;
         $this->container['aObjEzsignfolder'] = $aObjEzsignfolder;

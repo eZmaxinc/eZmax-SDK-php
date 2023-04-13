@@ -341,11 +341,11 @@ class TaxassignmentAutocompleteElementResponse implements ModelInterface, ArrayA
      */
     public function setSTaxassignmentDescriptionX($sTaxassignmentDescriptionX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sTaxassignmentDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sTaxassignmentDescriptionX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sTaxassignmentDescriptionX'] = $sTaxassignmentDescriptionX;
         $this->container['sTaxassignmentDescriptionX'] = (is_null($sTaxassignmentDescriptionX) ? null : (string) $sTaxassignmentDescriptionX);
@@ -372,19 +372,21 @@ class TaxassignmentAutocompleteElementResponse implements ModelInterface, ArrayA
      */
     public function setPkiTaxassignmentID($pkiTaxassignmentID)
     {
-
-        if (($pkiTaxassignmentID > 15)) {
-            throw new \InvalidArgumentException('invalid value for $pkiTaxassignmentID when calling TaxassignmentAutocompleteElementResponse., must be smaller than or equal to 15.');
-        }
-        if (($pkiTaxassignmentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiTaxassignmentID when calling TaxassignmentAutocompleteElementResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiTaxassignmentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiTaxassignmentID cannot be null');
         //}
+
+//        if (($pkiTaxassignmentID > 15)) {
+        if (($pkiTaxassignmentID > 15)) {
+            throw new \InvalidArgumentException('invalid value for $pkiTaxassignmentID when calling TaxassignmentAutocompleteElementResponse., must be smaller than or equal to 15.');
+        }
+//        if (($pkiTaxassignmentID < 0)) {
+        if (($pkiTaxassignmentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiTaxassignmentID when calling TaxassignmentAutocompleteElementResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiTaxassignmentID'] = $pkiTaxassignmentID;
         $this->container['pkiTaxassignmentID'] = (is_null($pkiTaxassignmentID) ? null : (int) $pkiTaxassignmentID);
@@ -411,11 +413,11 @@ class TaxassignmentAutocompleteElementResponse implements ModelInterface, ArrayA
      */
     public function setBTaxassignmentIsactive($bTaxassignmentIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bTaxassignmentIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bTaxassignmentIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bTaxassignmentIsactive'] = $bTaxassignmentIsactive;
         $this->container['bTaxassignmentIsactive'] = (is_null($bTaxassignmentIsactive) ? null : (bool) $bTaxassignmentIsactive);

@@ -317,11 +317,11 @@ class EzsigndocumentRequestPatch implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setDtEzsigndocumentDuedate($dtEzsigndocumentDuedate)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($dtEzsigndocumentDuedate)) {
             //throw new \InvalidArgumentException('non-nullable dtEzsigndocumentDuedate cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
         $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : (string) $dtEzsigndocumentDuedate);
@@ -348,11 +348,11 @@ class EzsigndocumentRequestPatch implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function setSEzsigndocumentName($sEzsigndocumentName)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsigndocumentName)) {
             //throw new \InvalidArgumentException('non-nullable sEzsigndocumentName cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
         $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);

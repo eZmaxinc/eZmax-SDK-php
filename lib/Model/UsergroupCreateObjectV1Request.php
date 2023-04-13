@@ -279,6 +279,7 @@ class UsergroupCreateObjectV1Request implements ModelInterface, ArrayAccess, \Js
         if ($this->container['aObjUsergroup'] === null) {
             $invalidProperties[] = "'aObjUsergroup' can't be null";
         }
+//        if ((count($this->container['aObjUsergroup']) < 1)) {
         if (!is_null($this->container['aObjUsergroup']) && (count($this->container['aObjUsergroup']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjUsergroup', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class UsergroupCreateObjectV1Request implements ModelInterface, ArrayAccess, \Js
      */
     public function setAObjUsergroup($aObjUsergroup)
     {
-
-
-        if ((count($aObjUsergroup) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjUsergroup when calling UsergroupCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjUsergroup)) {
             //throw new \InvalidArgumentException('non-nullable aObjUsergroup cannot be null');
         //}
+
+
+//        if ((count($aObjUsergroup) < 1)) {
+        if ((count($aObjUsergroup) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjUsergroup when calling UsergroupCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjUsergroup'] = $aObjUsergroup;
         $this->container['aObjUsergroup'] = $aObjUsergroup;

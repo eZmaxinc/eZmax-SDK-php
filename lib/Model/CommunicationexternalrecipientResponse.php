@@ -347,11 +347,11 @@ class CommunicationexternalrecipientResponse implements ModelInterface, ArrayAcc
      */
     public function setPkiCommunicationexternalrecipientID($pkiCommunicationexternalrecipientID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiCommunicationexternalrecipientID)) {
             //throw new \InvalidArgumentException('non-nullable pkiCommunicationexternalrecipientID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiCommunicationexternalrecipientID'] = $pkiCommunicationexternalrecipientID;
         $this->container['pkiCommunicationexternalrecipientID'] = (is_null($pkiCommunicationexternalrecipientID) ? null : (int) $pkiCommunicationexternalrecipientID);
@@ -378,11 +378,11 @@ class CommunicationexternalrecipientResponse implements ModelInterface, ArrayAcc
      */
     public function setECommunicationexternalrecipientType($eCommunicationexternalrecipientType)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($eCommunicationexternalrecipientType)) {
             //throw new \InvalidArgumentException('non-nullable eCommunicationexternalrecipientType cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eCommunicationexternalrecipientType'] = $eCommunicationexternalrecipientType;
         $this->container['eCommunicationexternalrecipientType'] = $eCommunicationexternalrecipientType;
@@ -409,11 +409,11 @@ class CommunicationexternalrecipientResponse implements ModelInterface, ArrayAcc
      */
     public function setObjDescriptionstatic($objDescriptionstatic)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objDescriptionstatic)) {
             //throw new \InvalidArgumentException('non-nullable objDescriptionstatic cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objDescriptionstatic'] = $objDescriptionstatic;
         $this->container['objDescriptionstatic'] = $objDescriptionstatic;
@@ -440,11 +440,11 @@ class CommunicationexternalrecipientResponse implements ModelInterface, ArrayAcc
      */
     public function setObjEmailstatic($objEmailstatic)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEmailstatic)) {
             //throw new \InvalidArgumentException('non-nullable objEmailstatic cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEmailstatic'] = $objEmailstatic;
         $this->container['objEmailstatic'] = $objEmailstatic;
@@ -471,11 +471,11 @@ class CommunicationexternalrecipientResponse implements ModelInterface, ArrayAcc
      */
     public function setObjPhonestatic($objPhonestatic)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objPhonestatic)) {
             //throw new \InvalidArgumentException('non-nullable objPhonestatic cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objPhonestatic'] = $objPhonestatic;
         $this->container['objPhonestatic'] = $objPhonestatic;

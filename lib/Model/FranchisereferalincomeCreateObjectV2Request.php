@@ -279,6 +279,7 @@ class FranchisereferalincomeCreateObjectV2Request implements ModelInterface, Arr
         if ($this->container['aObjFranchisereferalincome'] === null) {
             $invalidProperties[] = "'aObjFranchisereferalincome' can't be null";
         }
+//        if ((count($this->container['aObjFranchisereferalincome']) < 1)) {
         if (!is_null($this->container['aObjFranchisereferalincome']) && (count($this->container['aObjFranchisereferalincome']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjFranchisereferalincome', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class FranchisereferalincomeCreateObjectV2Request implements ModelInterface, Arr
      */
     public function setAObjFranchisereferalincome($aObjFranchisereferalincome)
     {
-
-
-        if ((count($aObjFranchisereferalincome) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjFranchisereferalincome when calling FranchisereferalincomeCreateObjectV2Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjFranchisereferalincome)) {
             //throw new \InvalidArgumentException('non-nullable aObjFranchisereferalincome cannot be null');
         //}
+
+
+//        if ((count($aObjFranchisereferalincome) < 1)) {
+        if ((count($aObjFranchisereferalincome) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjFranchisereferalincome when calling FranchisereferalincomeCreateObjectV2Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjFranchisereferalincome'] = $aObjFranchisereferalincome;
         $this->container['aObjFranchisereferalincome'] = $aObjFranchisereferalincome;

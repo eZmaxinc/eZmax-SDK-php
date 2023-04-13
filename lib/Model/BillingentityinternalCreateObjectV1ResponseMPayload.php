@@ -313,11 +313,11 @@ class BillingentityinternalCreateObjectV1ResponseMPayload implements ModelInterf
      */
     public function setAPkiBillingentityinternalID($aPkiBillingentityinternalID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiBillingentityinternalID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiBillingentityinternalID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiBillingentityinternalID'] = $aPkiBillingentityinternalID;
         $this->container['aPkiBillingentityinternalID'] = (is_null($aPkiBillingentityinternalID) ? null : $aPkiBillingentityinternalID);

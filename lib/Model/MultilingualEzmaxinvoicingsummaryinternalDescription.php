@@ -319,21 +319,22 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription implements ModelInter
     /**
      * Sets sEzmaxinvoicingsummaryinternalDescription1
      *
-     * @param string|null $sEzmaxinvoicingsummaryinternalDescription1 The Ezmaxinvoicingsummaryinternal description in french
+     * @param string|null $sEzmaxinvoicingsummaryinternalDescription1 The Ezmaxinvoicingsummaryinternal description in French
      *
      * @return self
      */
     public function setSEzmaxinvoicingsummaryinternalDescription1($sEzmaxinvoicingsummaryinternalDescription1)
     {
-        if (!is_null($sEzmaxinvoicingsummaryinternalDescription1) && (mb_strlen($sEzmaxinvoicingsummaryinternalDescription1) > 70)) {
-            throw new \InvalidArgumentException('invalid length for $sEzmaxinvoicingsummaryinternalDescription1 when calling MultilingualEzmaxinvoicingsummaryinternalDescription., must be smaller than or equal to 70.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzmaxinvoicingsummaryinternalDescription1)) {
             //throw new \InvalidArgumentException('non-nullable sEzmaxinvoicingsummaryinternalDescription1 cannot be null');
         //}
+//        if ((mb_strlen($sEzmaxinvoicingsummaryinternalDescription1) > 70)) {
+        if (!is_null($sEzmaxinvoicingsummaryinternalDescription1) && (mb_strlen($sEzmaxinvoicingsummaryinternalDescription1) > 70)) {
+            throw new \InvalidArgumentException('invalid length for $sEzmaxinvoicingsummaryinternalDescription1 when calling MultilingualEzmaxinvoicingsummaryinternalDescription., must be smaller than or equal to 70.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxinvoicingsummaryinternalDescription1'] = $sEzmaxinvoicingsummaryinternalDescription1;
         $this->container['sEzmaxinvoicingsummaryinternalDescription1'] = (is_null($sEzmaxinvoicingsummaryinternalDescription1) ? null : (string) $sEzmaxinvoicingsummaryinternalDescription1);
@@ -354,21 +355,22 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription implements ModelInter
     /**
      * Sets sEzmaxinvoicingsummaryinternalDescription2
      *
-     * @param string|null $sEzmaxinvoicingsummaryinternalDescription2 The Ezmaxinvoicingsummaryinternal description in english
+     * @param string|null $sEzmaxinvoicingsummaryinternalDescription2 The Ezmaxinvoicingsummaryinternal description in English
      *
      * @return self
      */
     public function setSEzmaxinvoicingsummaryinternalDescription2($sEzmaxinvoicingsummaryinternalDescription2)
     {
-        if (!is_null($sEzmaxinvoicingsummaryinternalDescription2) && (mb_strlen($sEzmaxinvoicingsummaryinternalDescription2) > 70)) {
-            throw new \InvalidArgumentException('invalid length for $sEzmaxinvoicingsummaryinternalDescription2 when calling MultilingualEzmaxinvoicingsummaryinternalDescription., must be smaller than or equal to 70.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzmaxinvoicingsummaryinternalDescription2)) {
             //throw new \InvalidArgumentException('non-nullable sEzmaxinvoicingsummaryinternalDescription2 cannot be null');
         //}
+//        if ((mb_strlen($sEzmaxinvoicingsummaryinternalDescription2) > 70)) {
+        if (!is_null($sEzmaxinvoicingsummaryinternalDescription2) && (mb_strlen($sEzmaxinvoicingsummaryinternalDescription2) > 70)) {
+            throw new \InvalidArgumentException('invalid length for $sEzmaxinvoicingsummaryinternalDescription2 when calling MultilingualEzmaxinvoicingsummaryinternalDescription., must be smaller than or equal to 70.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxinvoicingsummaryinternalDescription2'] = $sEzmaxinvoicingsummaryinternalDescription2;
         $this->container['sEzmaxinvoicingsummaryinternalDescription2'] = (is_null($sEzmaxinvoicingsummaryinternalDescription2) ? null : (string) $sEzmaxinvoicingsummaryinternalDescription2);

@@ -279,6 +279,7 @@ class EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload implements Mode
         if ($this->container['aPkiEzsigntemplateformfieldgroupID'] === null) {
             $invalidProperties[] = "'aPkiEzsigntemplateformfieldgroupID' can't be null";
         }
+//        if ((count($this->container['aPkiEzsigntemplateformfieldgroupID']) < 1)) {
         if (!is_null($this->container['aPkiEzsigntemplateformfieldgroupID']) && (count($this->container['aPkiEzsigntemplateformfieldgroupID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiEzsigntemplateformfieldgroupID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload implements Mode
      */
     public function setAPkiEzsigntemplateformfieldgroupID($aPkiEzsigntemplateformfieldgroupID)
     {
-
-
-        if ((count($aPkiEzsigntemplateformfieldgroupID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiEzsigntemplateformfieldgroupID when calling EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsigntemplateformfieldgroupID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsigntemplateformfieldgroupID cannot be null');
         //}
+
+
+//        if ((count($aPkiEzsigntemplateformfieldgroupID) < 1)) {
+        if ((count($aPkiEzsigntemplateformfieldgroupID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiEzsigntemplateformfieldgroupID when calling EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiEzsigntemplateformfieldgroupID'] = $aPkiEzsigntemplateformfieldgroupID;
         $this->container['aPkiEzsigntemplateformfieldgroupID'] = (is_null($aPkiEzsigntemplateformfieldgroupID) ? null : $aPkiEzsigntemplateformfieldgroupID);

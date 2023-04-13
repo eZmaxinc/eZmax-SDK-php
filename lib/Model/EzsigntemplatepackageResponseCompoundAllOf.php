@@ -322,11 +322,11 @@ class EzsigntemplatepackageResponseCompoundAllOf implements ModelInterface, Arra
      */
     public function setAObjEzsigntemplatepackagesigner($aObjEzsigntemplatepackagesigner)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatepackagesigner)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatepackagesigner cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatepackagesigner'] = $aObjEzsigntemplatepackagesigner;
         $this->container['aObjEzsigntemplatepackagesigner'] = $aObjEzsigntemplatepackagesigner;
@@ -353,11 +353,11 @@ class EzsigntemplatepackageResponseCompoundAllOf implements ModelInterface, Arra
      */
     public function setAObjEzsigntemplatepackagemembership($aObjEzsigntemplatepackagemembership)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatepackagemembership)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatepackagemembership cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatepackagemembership'] = $aObjEzsigntemplatepackagemembership;
         $this->container['aObjEzsigntemplatepackagemembership'] = $aObjEzsigntemplatepackagemembership;

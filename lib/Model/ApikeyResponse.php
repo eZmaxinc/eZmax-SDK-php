@@ -344,11 +344,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setObjApikeyDescription($objApikeyDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objApikeyDescription)) {
             //throw new \InvalidArgumentException('non-nullable objApikeyDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objApikeyDescription'] = $objApikeyDescription;
         $this->container['objApikeyDescription'] = $objApikeyDescription;
@@ -375,11 +375,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setSComputedToken($sComputedToken)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sComputedToken)) {
             //throw new \InvalidArgumentException('non-nullable sComputedToken cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sComputedToken'] = $sComputedToken;
         $this->container['sComputedToken'] = (is_null($sComputedToken) ? null : (string) $sComputedToken);
@@ -406,16 +406,17 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setPkiApikeyID($pkiApikeyID)
     {
-
-        if (($pkiApikeyID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiApikeyID when calling ApikeyResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiApikeyID)) {
             //throw new \InvalidArgumentException('non-nullable pkiApikeyID cannot be null');
         //}
+
+//        if (($pkiApikeyID < 0)) {
+        if (($pkiApikeyID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiApikeyID when calling ApikeyResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiApikeyID'] = $pkiApikeyID;
         $this->container['pkiApikeyID'] = (is_null($pkiApikeyID) ? null : (int) $pkiApikeyID);
@@ -442,11 +443,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setObjAudit($objAudit)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objAudit)) {
             //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objAudit'] = $objAudit;
         $this->container['objAudit'] = $objAudit;

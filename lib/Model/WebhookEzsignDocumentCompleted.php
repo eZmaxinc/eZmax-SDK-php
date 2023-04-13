@@ -333,11 +333,11 @@ class WebhookEzsignDocumentCompleted implements ModelInterface, ArrayAccess, \Js
      */
     public function setObjEzsigndocument($objEzsigndocument)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEzsigndocument)) {
             //throw new \InvalidArgumentException('non-nullable objEzsigndocument cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsigndocument'] = $objEzsigndocument;
         $this->container['objEzsigndocument'] = $objEzsigndocument;
@@ -364,11 +364,11 @@ class WebhookEzsignDocumentCompleted implements ModelInterface, ArrayAccess, \Js
      */
     public function setObjWebhook($objWebhook)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objWebhook)) {
             //throw new \InvalidArgumentException('non-nullable objWebhook cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objWebhook'] = $objWebhook;
         $this->container['objWebhook'] = $objWebhook;
@@ -395,11 +395,11 @@ class WebhookEzsignDocumentCompleted implements ModelInterface, ArrayAccess, \Js
      */
     public function setAObjAttempt($aObjAttempt)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjAttempt)) {
             //throw new \InvalidArgumentException('non-nullable aObjAttempt cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjAttempt'] = $aObjAttempt;
         $this->container['aObjAttempt'] = $aObjAttempt;

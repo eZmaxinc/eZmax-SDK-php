@@ -323,11 +323,11 @@ class CustomFormDataEzsignformfieldResponse implements ModelInterface, ArrayAcce
      */
     public function setSEzsignformfieldLabel($sEzsignformfieldLabel)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignformfieldLabel)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignformfieldLabel cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldLabel'] = $sEzsignformfieldLabel;
         $this->container['sEzsignformfieldLabel'] = (is_null($sEzsignformfieldLabel) ? null : (string) $sEzsignformfieldLabel);
@@ -354,11 +354,11 @@ class CustomFormDataEzsignformfieldResponse implements ModelInterface, ArrayAcce
      */
     public function setSEzsignformfieldValue($sEzsignformfieldValue)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignformfieldValue)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignformfieldValue cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldValue'] = $sEzsignformfieldValue;
         $this->container['sEzsignformfieldValue'] = (is_null($sEzsignformfieldValue) ? null : (string) $sEzsignformfieldValue);

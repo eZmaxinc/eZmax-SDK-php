@@ -337,11 +337,11 @@ class SecretquestionAutocompleteElementResponse implements ModelInterface, Array
      */
     public function setSSecretquestionTextX($sSecretquestionTextX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sSecretquestionTextX)) {
             //throw new \InvalidArgumentException('non-nullable sSecretquestionTextX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSecretquestionTextX'] = $sSecretquestionTextX;
         $this->container['sSecretquestionTextX'] = (is_null($sSecretquestionTextX) ? null : (string) $sSecretquestionTextX);
@@ -368,16 +368,17 @@ class SecretquestionAutocompleteElementResponse implements ModelInterface, Array
      */
     public function setPkiSecretquestionID($pkiSecretquestionID)
     {
-
-        if (($pkiSecretquestionID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiSecretquestionID when calling SecretquestionAutocompleteElementResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiSecretquestionID)) {
             //throw new \InvalidArgumentException('non-nullable pkiSecretquestionID cannot be null');
         //}
+
+//        if (($pkiSecretquestionID < 0)) {
+        if (($pkiSecretquestionID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiSecretquestionID when calling SecretquestionAutocompleteElementResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiSecretquestionID'] = $pkiSecretquestionID;
         $this->container['pkiSecretquestionID'] = (is_null($pkiSecretquestionID) ? null : (int) $pkiSecretquestionID);
@@ -404,11 +405,11 @@ class SecretquestionAutocompleteElementResponse implements ModelInterface, Array
      */
     public function setBSecretquestionIsactive($bSecretquestionIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bSecretquestionIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bSecretquestionIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bSecretquestionIsactive'] = $bSecretquestionIsactive;
         $this->container['bSecretquestionIsactive'] = (is_null($bSecretquestionIsactive) ? null : (bool) $bSecretquestionIsactive);

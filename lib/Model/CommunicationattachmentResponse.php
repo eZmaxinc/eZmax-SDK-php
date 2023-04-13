@@ -356,11 +356,11 @@ class CommunicationattachmentResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setPkiCommunicationattachmentID($pkiCommunicationattachmentID)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiCommunicationattachmentID)) {
             //throw new \InvalidArgumentException('non-nullable pkiCommunicationattachmentID cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiCommunicationattachmentID'] = $pkiCommunicationattachmentID;
         $this->container['pkiCommunicationattachmentID'] = (is_null($pkiCommunicationattachmentID) ? null : (int) $pkiCommunicationattachmentID);
@@ -387,16 +387,17 @@ class CommunicationattachmentResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setFkiAttachmentID($fkiAttachmentID)
     {
-
-        if (!is_null($fkiAttachmentID) && ($fkiAttachmentID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiAttachmentID when calling CommunicationattachmentResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiAttachmentID)) {
             //throw new \InvalidArgumentException('non-nullable fkiAttachmentID cannot be null');
         //}
+
+//        if (($fkiAttachmentID < 0)) {
+        if (!is_null($fkiAttachmentID) && ($fkiAttachmentID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiAttachmentID when calling CommunicationattachmentResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiAttachmentID'] = $fkiAttachmentID;
         $this->container['fkiAttachmentID'] = (is_null($fkiAttachmentID) ? null : (int) $fkiAttachmentID);
@@ -423,16 +424,17 @@ class CommunicationattachmentResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setFkiInvoiceID($fkiInvoiceID)
     {
-
-        if (!is_null($fkiInvoiceID) && ($fkiInvoiceID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiInvoiceID when calling CommunicationattachmentResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiInvoiceID)) {
             //throw new \InvalidArgumentException('non-nullable fkiInvoiceID cannot be null');
         //}
+
+//        if (($fkiInvoiceID < 0)) {
+        if (!is_null($fkiInvoiceID) && ($fkiInvoiceID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiInvoiceID when calling CommunicationattachmentResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiInvoiceID'] = $fkiInvoiceID;
         $this->container['fkiInvoiceID'] = (is_null($fkiInvoiceID) ? null : (int) $fkiInvoiceID);
@@ -459,16 +461,17 @@ class CommunicationattachmentResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setFkiSalarypreparationID($fkiSalarypreparationID)
     {
-
-        if (!is_null($fkiSalarypreparationID) && ($fkiSalarypreparationID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiSalarypreparationID when calling CommunicationattachmentResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiSalarypreparationID)) {
             //throw new \InvalidArgumentException('non-nullable fkiSalarypreparationID cannot be null');
         //}
+
+//        if (($fkiSalarypreparationID < 0)) {
+        if (!is_null($fkiSalarypreparationID) && ($fkiSalarypreparationID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiSalarypreparationID when calling CommunicationattachmentResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiSalarypreparationID'] = $fkiSalarypreparationID;
         $this->container['fkiSalarypreparationID'] = (is_null($fkiSalarypreparationID) ? null : (int) $fkiSalarypreparationID);
@@ -495,11 +498,11 @@ class CommunicationattachmentResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setSCommunicationattachmentName($sCommunicationattachmentName)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sCommunicationattachmentName)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationattachmentName cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCommunicationattachmentName'] = $sCommunicationattachmentName;
         $this->container['sCommunicationattachmentName'] = (is_null($sCommunicationattachmentName) ? null : (string) $sCommunicationattachmentName);

@@ -327,16 +327,17 @@ class DescriptionstaticResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setPkiDescriptionstaticID($pkiDescriptionstaticID)
     {
-
-        if (($pkiDescriptionstaticID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiDescriptionstaticID when calling DescriptionstaticResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiDescriptionstaticID)) {
             //throw new \InvalidArgumentException('non-nullable pkiDescriptionstaticID cannot be null');
         //}
+
+//        if (($pkiDescriptionstaticID < 0)) {
+        if (($pkiDescriptionstaticID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiDescriptionstaticID when calling DescriptionstaticResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiDescriptionstaticID'] = $pkiDescriptionstaticID;
         $this->container['pkiDescriptionstaticID'] = (is_null($pkiDescriptionstaticID) ? null : (int) $pkiDescriptionstaticID);
@@ -363,11 +364,11 @@ class DescriptionstaticResponse implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setSDescriptionstaticDescription($sDescriptionstaticDescription)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sDescriptionstaticDescription)) {
             //throw new \InvalidArgumentException('non-nullable sDescriptionstaticDescription cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sDescriptionstaticDescription'] = $sDescriptionstaticDescription;
         $this->container['sDescriptionstaticDescription'] = (is_null($sDescriptionstaticDescription) ? null : (string) $sDescriptionstaticDescription);

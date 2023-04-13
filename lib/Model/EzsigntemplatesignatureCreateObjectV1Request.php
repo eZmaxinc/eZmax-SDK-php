@@ -279,6 +279,7 @@ class EzsigntemplatesignatureCreateObjectV1Request implements ModelInterface, Ar
         if ($this->container['aObjEzsigntemplatesignature'] === null) {
             $invalidProperties[] = "'aObjEzsigntemplatesignature' can't be null";
         }
+//        if ((count($this->container['aObjEzsigntemplatesignature']) < 1)) {
         if (!is_null($this->container['aObjEzsigntemplatesignature']) && (count($this->container['aObjEzsigntemplatesignature']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsigntemplatesignature', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigntemplatesignatureCreateObjectV1Request implements ModelInterface, Ar
      */
     public function setAObjEzsigntemplatesignature($aObjEzsigntemplatesignature)
     {
-
-
-        if ((count($aObjEzsigntemplatesignature) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatesignature when calling EzsigntemplatesignatureCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatesignature)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatesignature cannot be null');
         //}
+
+
+//        if ((count($aObjEzsigntemplatesignature) < 1)) {
+        if ((count($aObjEzsigntemplatesignature) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatesignature when calling EzsigntemplatesignatureCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatesignature'] = $aObjEzsigntemplatesignature;
         $this->container['aObjEzsigntemplatesignature'] = $aObjEzsigntemplatesignature;

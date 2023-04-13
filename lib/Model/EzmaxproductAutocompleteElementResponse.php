@@ -337,16 +337,17 @@ class EzmaxproductAutocompleteElementResponse implements ModelInterface, ArrayAc
      */
     public function setPkiEzmaxproductID($pkiEzmaxproductID)
     {
-
-        if (($pkiEzmaxproductID < 1)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzmaxproductID when calling EzmaxproductAutocompleteElementResponse., must be bigger than or equal to 1.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzmaxproductID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzmaxproductID cannot be null');
         //}
+
+//        if (($pkiEzmaxproductID < 1)) {
+        if (($pkiEzmaxproductID < 1)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzmaxproductID when calling EzmaxproductAutocompleteElementResponse., must be bigger than or equal to 1.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzmaxproductID'] = $pkiEzmaxproductID;
         $this->container['pkiEzmaxproductID'] = (is_null($pkiEzmaxproductID) ? null : (int) $pkiEzmaxproductID);
@@ -373,11 +374,11 @@ class EzmaxproductAutocompleteElementResponse implements ModelInterface, ArrayAc
      */
     public function setSEzmaxproductDescriptionX($sEzmaxproductDescriptionX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzmaxproductDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sEzmaxproductDescriptionX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxproductDescriptionX'] = $sEzmaxproductDescriptionX;
         $this->container['sEzmaxproductDescriptionX'] = (is_null($sEzmaxproductDescriptionX) ? null : (string) $sEzmaxproductDescriptionX);
@@ -404,11 +405,11 @@ class EzmaxproductAutocompleteElementResponse implements ModelInterface, ArrayAc
      */
     public function setBEzmaxproductIsactive($bEzmaxproductIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bEzmaxproductIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bEzmaxproductIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzmaxproductIsactive'] = $bEzmaxproductIsactive;
         $this->container['bEzmaxproductIsactive'] = (is_null($bEzmaxproductIsactive) ? null : (bool) $bEzmaxproductIsactive);

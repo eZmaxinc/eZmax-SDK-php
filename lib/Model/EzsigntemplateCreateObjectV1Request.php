@@ -279,6 +279,7 @@ class EzsigntemplateCreateObjectV1Request implements ModelInterface, ArrayAccess
         if ($this->container['aObjEzsigntemplate'] === null) {
             $invalidProperties[] = "'aObjEzsigntemplate' can't be null";
         }
+//        if ((count($this->container['aObjEzsigntemplate']) < 1)) {
         if (!is_null($this->container['aObjEzsigntemplate']) && (count($this->container['aObjEzsigntemplate']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsigntemplate', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigntemplateCreateObjectV1Request implements ModelInterface, ArrayAccess
      */
     public function setAObjEzsigntemplate($aObjEzsigntemplate)
     {
-
-
-        if ((count($aObjEzsigntemplate) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplate when calling EzsigntemplateCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplate)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplate cannot be null');
         //}
+
+
+//        if ((count($aObjEzsigntemplate) < 1)) {
+        if ((count($aObjEzsigntemplate) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplate when calling EzsigntemplateCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplate'] = $aObjEzsigntemplate;
         $this->container['aObjEzsigntemplate'] = $aObjEzsigntemplate;

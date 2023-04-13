@@ -440,7 +440,7 @@ class ObjectUsergroupApi
         if (isset($usergroupCreateObjectV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($usergroupCreateObjectV1Request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($usergroupCreateObjectV1Request));
             } else {
                 $httpBody = $usergroupCreateObjectV1Request;
             }
@@ -461,7 +461,7 @@ class ObjectUsergroupApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -736,8 +736,11 @@ class ObjectUsergroupApi
                 'Missing the required parameter $pkiUsergroupID when calling usergroupDeleteObjectV1'
             );
         }
-        if ($pkiUsergroupID < 0) {
-            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupDeleteObjectV1, must be bigger than or equal to 0.');
+        if ($pkiUsergroupID > 255) {
+            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupDeleteObjectV1, must be smaller than or equal to 255.');
+        }
+        if ($pkiUsergroupID < 1) {
+            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupDeleteObjectV1, must be bigger than or equal to 1.');
         }
         
 
@@ -784,7 +787,7 @@ class ObjectUsergroupApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1087,8 +1090,11 @@ class ObjectUsergroupApi
                 'Missing the required parameter $pkiUsergroupID when calling usergroupEditObjectV1'
             );
         }
-        if ($pkiUsergroupID < 0) {
-            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupEditObjectV1, must be bigger than or equal to 0.');
+        if ($pkiUsergroupID > 255) {
+            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupEditObjectV1, must be smaller than or equal to 255.');
+        }
+        if ($pkiUsergroupID < 1) {
+            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupEditObjectV1, must be bigger than or equal to 1.');
         }
         
         // verify the required parameter 'usergroupEditObjectV1Request' is set
@@ -1128,7 +1134,7 @@ class ObjectUsergroupApi
         if (isset($usergroupEditObjectV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($usergroupEditObjectV1Request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($usergroupEditObjectV1Request));
             } else {
                 $httpBody = $usergroupEditObjectV1Request;
             }
@@ -1149,7 +1155,7 @@ class ObjectUsergroupApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1486,7 +1492,7 @@ class ObjectUsergroupApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1862,7 +1868,7 @@ class ObjectUsergroupApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2137,8 +2143,11 @@ class ObjectUsergroupApi
                 'Missing the required parameter $pkiUsergroupID when calling usergroupGetMembersV1'
             );
         }
-        if ($pkiUsergroupID < 0) {
-            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupGetMembersV1, must be bigger than or equal to 0.');
+        if ($pkiUsergroupID > 255) {
+            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupGetMembersV1, must be smaller than or equal to 255.');
+        }
+        if ($pkiUsergroupID < 1) {
+            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupGetMembersV1, must be bigger than or equal to 1.');
         }
         
 
@@ -2185,7 +2194,7 @@ class ObjectUsergroupApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2460,8 +2469,11 @@ class ObjectUsergroupApi
                 'Missing the required parameter $pkiUsergroupID when calling usergroupGetObjectV2'
             );
         }
-        if ($pkiUsergroupID < 0) {
-            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupGetObjectV2, must be bigger than or equal to 0.');
+        if ($pkiUsergroupID > 255) {
+            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupGetObjectV2, must be smaller than or equal to 255.');
+        }
+        if ($pkiUsergroupID < 1) {
+            throw new \InvalidArgumentException('invalid value for "$pkiUsergroupID" when calling ObjectUsergroupApi.usergroupGetObjectV2, must be bigger than or equal to 1.');
         }
         
 
@@ -2508,7 +2520,7 @@ class ObjectUsergroupApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

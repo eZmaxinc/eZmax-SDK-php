@@ -279,6 +279,7 @@ class EzsigntemplatepackagesignermembershipCreateObjectV1Request implements Mode
         if ($this->container['aObjEzsigntemplatepackagesignermembership'] === null) {
             $invalidProperties[] = "'aObjEzsigntemplatepackagesignermembership' can't be null";
         }
+//        if ((count($this->container['aObjEzsigntemplatepackagesignermembership']) < 1)) {
         if (!is_null($this->container['aObjEzsigntemplatepackagesignermembership']) && (count($this->container['aObjEzsigntemplatepackagesignermembership']) < 1)) {
             $invalidProperties[] = "invalid value for 'aObjEzsigntemplatepackagesignermembership', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsigntemplatepackagesignermembershipCreateObjectV1Request implements Mode
      */
     public function setAObjEzsigntemplatepackagesignermembership($aObjEzsigntemplatepackagesignermembership)
     {
-
-
-        if ((count($aObjEzsigntemplatepackagesignermembership) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatepackagesignermembership when calling EzsigntemplatepackagesignermembershipCreateObjectV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjEzsigntemplatepackagesignermembership)) {
             //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplatepackagesignermembership cannot be null');
         //}
+
+
+//        if ((count($aObjEzsigntemplatepackagesignermembership) < 1)) {
+        if ((count($aObjEzsigntemplatepackagesignermembership) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aObjEzsigntemplatepackagesignermembership when calling EzsigntemplatepackagesignermembershipCreateObjectV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatepackagesignermembership'] = $aObjEzsigntemplatepackagesignermembership;
         $this->container['aObjEzsigntemplatepackagesignermembership'] = $aObjEzsigntemplatepackagesignermembership;

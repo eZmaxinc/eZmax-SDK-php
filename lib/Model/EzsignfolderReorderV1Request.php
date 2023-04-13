@@ -279,6 +279,7 @@ class EzsignfolderReorderV1Request implements ModelInterface, ArrayAccess, \Json
         if ($this->container['aPkiEzsigndocumentID'] === null) {
             $invalidProperties[] = "'aPkiEzsigndocumentID' can't be null";
         }
+//        if ((count($this->container['aPkiEzsigndocumentID']) < 1)) {
         if (!is_null($this->container['aPkiEzsigndocumentID']) && (count($this->container['aPkiEzsigndocumentID']) < 1)) {
             $invalidProperties[] = "invalid value for 'aPkiEzsigndocumentID', number of items must be greater than or equal to 1.";
         }
@@ -317,16 +318,17 @@ class EzsignfolderReorderV1Request implements ModelInterface, ArrayAccess, \Json
      */
     public function setAPkiEzsigndocumentID($aPkiEzsigndocumentID)
     {
-
-
-        if ((count($aPkiEzsigndocumentID) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aPkiEzsigndocumentID when calling EzsignfolderReorderV1Request., number of items must be greater than or equal to 1.');
-        }
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aPkiEzsigndocumentID)) {
             //throw new \InvalidArgumentException('non-nullable aPkiEzsigndocumentID cannot be null');
         //}
+
+
+//        if ((count($aPkiEzsigndocumentID) < 1)) {
+        if ((count($aPkiEzsigndocumentID) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $aPkiEzsigndocumentID when calling EzsignfolderReorderV1Request., number of items must be greater than or equal to 1.');
+        }
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aPkiEzsigndocumentID'] = $aPkiEzsigndocumentID;
         $this->container['aPkiEzsigndocumentID'] = (is_null($aPkiEzsigndocumentID) ? null : $aPkiEzsigndocumentID);

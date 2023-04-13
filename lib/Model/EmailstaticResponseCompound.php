@@ -327,16 +327,17 @@ class EmailstaticResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setPkiEmailstaticID($pkiEmailstaticID)
     {
-
-        if (($pkiEmailstaticID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEmailstaticID when calling EmailstaticResponseCompound., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEmailstaticID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEmailstaticID cannot be null');
         //}
+
+//        if (($pkiEmailstaticID < 0)) {
+        if (($pkiEmailstaticID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEmailstaticID when calling EmailstaticResponseCompound., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEmailstaticID'] = $pkiEmailstaticID;
         $this->container['pkiEmailstaticID'] = (is_null($pkiEmailstaticID) ? null : (int) $pkiEmailstaticID);
@@ -363,11 +364,11 @@ class EmailstaticResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setSEmailstaticAddress($sEmailstaticAddress)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEmailstaticAddress)) {
             //throw new \InvalidArgumentException('non-nullable sEmailstaticAddress cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailstaticAddress'] = $sEmailstaticAddress;
         $this->container['sEmailstaticAddress'] = (is_null($sEmailstaticAddress) ? null : (string) $sEmailstaticAddress);

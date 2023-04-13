@@ -337,11 +337,11 @@ class PeriodAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      */
     public function setSPeriodYYYYMM($sPeriodYYYYMM)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPeriodYYYYMM)) {
             //throw new \InvalidArgumentException('non-nullable sPeriodYYYYMM cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPeriodYYYYMM'] = $sPeriodYYYYMM;
         $this->container['sPeriodYYYYMM'] = (is_null($sPeriodYYYYMM) ? null : (string) $sPeriodYYYYMM);
@@ -368,16 +368,17 @@ class PeriodAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      */
     public function setPkiPeriodID($pkiPeriodID)
     {
-
-        if (($pkiPeriodID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiPeriodID when calling PeriodAutocompleteElementResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiPeriodID)) {
             //throw new \InvalidArgumentException('non-nullable pkiPeriodID cannot be null');
         //}
+
+//        if (($pkiPeriodID < 0)) {
+        if (($pkiPeriodID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiPeriodID when calling PeriodAutocompleteElementResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiPeriodID'] = $pkiPeriodID;
         $this->container['pkiPeriodID'] = (is_null($pkiPeriodID) ? null : (int) $pkiPeriodID);
@@ -404,11 +405,11 @@ class PeriodAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      */
     public function setBPeriodIsactive($bPeriodIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bPeriodIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bPeriodIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bPeriodIsactive'] = $bPeriodIsactive;
         $this->container['bPeriodIsactive'] = (is_null($bPeriodIsactive) ? null : (bool) $bPeriodIsactive);

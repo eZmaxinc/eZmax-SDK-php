@@ -365,16 +365,17 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function setPkiNotificationsubsectionID($pkiNotificationsubsectionID)
     {
-
-        if (($pkiNotificationsubsectionID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiNotificationsubsectionID when calling CustomNotificationsubsectiongetnotificationtestsResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiNotificationsubsectionID)) {
             //throw new \InvalidArgumentException('non-nullable pkiNotificationsubsectionID cannot be null');
         //}
+
+//        if (($pkiNotificationsubsectionID < 0)) {
+        if (($pkiNotificationsubsectionID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiNotificationsubsectionID when calling CustomNotificationsubsectiongetnotificationtestsResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiNotificationsubsectionID'] = $pkiNotificationsubsectionID;
         $this->container['pkiNotificationsubsectionID'] = (is_null($pkiNotificationsubsectionID) ? null : (int) $pkiNotificationsubsectionID);
@@ -401,16 +402,17 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function setFkiNotificationsectionID($fkiNotificationsectionID)
     {
-
-        if (($fkiNotificationsectionID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiNotificationsectionID when calling CustomNotificationsubsectiongetnotificationtestsResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fkiNotificationsectionID)) {
             //throw new \InvalidArgumentException('non-nullable fkiNotificationsectionID cannot be null');
         //}
+
+//        if (($fkiNotificationsectionID < 0)) {
+        if (($fkiNotificationsectionID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiNotificationsectionID when calling CustomNotificationsubsectiongetnotificationtestsResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiNotificationsectionID'] = $fkiNotificationsectionID;
         $this->container['fkiNotificationsectionID'] = (is_null($fkiNotificationsectionID) ? null : (int) $fkiNotificationsectionID);
@@ -437,11 +439,11 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function setObjNotificationsubsectionName($objNotificationsubsectionName)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objNotificationsubsectionName)) {
             //throw new \InvalidArgumentException('non-nullable objNotificationsubsectionName cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objNotificationsubsectionName'] = $objNotificationsubsectionName;
         $this->container['objNotificationsubsectionName'] = $objNotificationsubsectionName;
@@ -468,11 +470,11 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function setSNotificationsectionNameX($sNotificationsectionNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sNotificationsectionNameX)) {
             //throw new \InvalidArgumentException('non-nullable sNotificationsectionNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sNotificationsectionNameX'] = $sNotificationsectionNameX;
         $this->container['sNotificationsectionNameX'] = (is_null($sNotificationsectionNameX) ? null : (string) $sNotificationsectionNameX);
@@ -499,11 +501,11 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function setSNotificationsubsectionNameX($sNotificationsubsectionNameX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sNotificationsubsectionNameX)) {
             //throw new \InvalidArgumentException('non-nullable sNotificationsubsectionNameX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sNotificationsubsectionNameX'] = $sNotificationsubsectionNameX;
         $this->container['sNotificationsubsectionNameX'] = (is_null($sNotificationsubsectionNameX) ? null : (string) $sNotificationsubsectionNameX);
@@ -530,11 +532,11 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function setAObjNotificationtest($aObjNotificationtest)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($aObjNotificationtest)) {
             //throw new \InvalidArgumentException('non-nullable aObjNotificationtest cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjNotificationtest'] = $aObjNotificationtest;
         $this->container['aObjNotificationtest'] = $aObjNotificationtest;

@@ -297,10 +297,12 @@ class PhonestaticResponse implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'pkiPhonestaticID', must be bigger than or equal to 0.";
         }
 
+//        if (!is_null($this->container['sPhonestaticE164']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhonestaticE164'])) {
         if (!is_null($this->container['sPhonestaticE164']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhonestaticE164'])) {
             $invalidProperties[] = "invalid value for 'sPhonestaticE164', must be conform to the pattern /^\\+[1-9]\\d{1,14}$/.";
         }
 
+//        if (!is_null($this->container['sPhonestaticExtension']) && !preg_match("/^\\d/", $this->container['sPhonestaticExtension'])) {
         if (!is_null($this->container['sPhonestaticExtension']) && !preg_match("/^\\d/", $this->container['sPhonestaticExtension'])) {
             $invalidProperties[] = "invalid value for 'sPhonestaticExtension', must be conform to the pattern /^\\d/.";
         }
@@ -339,16 +341,17 @@ class PhonestaticResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setPkiPhonestaticID($pkiPhonestaticID)
     {
-
-        if (($pkiPhonestaticID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiPhonestaticID when calling PhonestaticResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiPhonestaticID)) {
             //throw new \InvalidArgumentException('non-nullable pkiPhonestaticID cannot be null');
         //}
+
+//        if (($pkiPhonestaticID < 0)) {
+        if (($pkiPhonestaticID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiPhonestaticID when calling PhonestaticResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiPhonestaticID'] = $pkiPhonestaticID;
         $this->container['pkiPhonestaticID'] = (is_null($pkiPhonestaticID) ? null : (int) $pkiPhonestaticID);
@@ -375,16 +378,17 @@ class PhonestaticResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setSPhonestaticE164($sPhonestaticE164)
     {
-
-        if (!is_null($sPhonestaticE164) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhonestaticE164))) {
-            throw new \InvalidArgumentException("invalid value for \$sPhonestaticE164 when calling PhonestaticResponse., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhonestaticE164)) {
             //throw new \InvalidArgumentException('non-nullable sPhonestaticE164 cannot be null');
         //}
+
+//        if ((!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhonestaticE164))) {
+        if (!is_null($sPhonestaticE164) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhonestaticE164))) {
+            throw new \InvalidArgumentException("invalid value for \$sPhonestaticE164 when calling PhonestaticResponse., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhonestaticE164'] = $sPhonestaticE164;
         $this->container['sPhonestaticE164'] = (is_null($sPhonestaticE164) ? null : (string) $sPhonestaticE164);
@@ -411,16 +415,17 @@ class PhonestaticResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setSPhonestaticExtension($sPhonestaticExtension)
     {
-
-        if (!is_null($sPhonestaticExtension) && (!preg_match("/^\\d/", $sPhonestaticExtension))) {
-            throw new \InvalidArgumentException("invalid value for \$sPhonestaticExtension when calling PhonestaticResponse., must conform to the pattern /^\\d/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sPhonestaticExtension)) {
             //throw new \InvalidArgumentException('non-nullable sPhonestaticExtension cannot be null');
         //}
+
+//        if ((!preg_match("/^\\d/", $sPhonestaticExtension))) {
+        if (!is_null($sPhonestaticExtension) && (!preg_match("/^\\d/", $sPhonestaticExtension))) {
+            throw new \InvalidArgumentException("invalid value for \$sPhonestaticExtension when calling PhonestaticResponse., must conform to the pattern /^\\d/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhonestaticExtension'] = $sPhonestaticExtension;
         $this->container['sPhonestaticExtension'] = (is_null($sPhonestaticExtension) ? null : (string) $sPhonestaticExtension);

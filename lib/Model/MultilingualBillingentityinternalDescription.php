@@ -283,10 +283,12 @@ class MultilingualBillingentityinternalDescription implements ModelInterface, Ar
     {
         $invalidProperties = [];
 
+//        if (!is_null($this->container['sBillingentityinternalDescription1']) && !preg_match("/^.{0,70}$/", $this->container['sBillingentityinternalDescription1'])) {
         if (!is_null($this->container['sBillingentityinternalDescription1']) && !preg_match("/^.{0,70}$/", $this->container['sBillingentityinternalDescription1'])) {
             $invalidProperties[] = "invalid value for 'sBillingentityinternalDescription1', must be conform to the pattern /^.{0,70}$/.";
         }
 
+//        if (!is_null($this->container['sBillingentityinternalDescription2']) && !preg_match("/^.{0,70}$/", $this->container['sBillingentityinternalDescription2'])) {
         if (!is_null($this->container['sBillingentityinternalDescription2']) && !preg_match("/^.{0,70}$/", $this->container['sBillingentityinternalDescription2'])) {
             $invalidProperties[] = "invalid value for 'sBillingentityinternalDescription2', must be conform to the pattern /^.{0,70}$/.";
         }
@@ -325,16 +327,17 @@ class MultilingualBillingentityinternalDescription implements ModelInterface, Ar
      */
     public function setSBillingentityinternalDescription1($sBillingentityinternalDescription1)
     {
-
-        if (!is_null($sBillingentityinternalDescription1) && (!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription1))) {
-            throw new \InvalidArgumentException("invalid value for \$sBillingentityinternalDescription1 when calling MultilingualBillingentityinternalDescription., must conform to the pattern /^.{0,70}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBillingentityinternalDescription1)) {
             //throw new \InvalidArgumentException('non-nullable sBillingentityinternalDescription1 cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription1))) {
+        if (!is_null($sBillingentityinternalDescription1) && (!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription1))) {
+            throw new \InvalidArgumentException("invalid value for \$sBillingentityinternalDescription1 when calling MultilingualBillingentityinternalDescription., must conform to the pattern /^.{0,70}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityinternalDescription1'] = $sBillingentityinternalDescription1;
         $this->container['sBillingentityinternalDescription1'] = (is_null($sBillingentityinternalDescription1) ? null : (string) $sBillingentityinternalDescription1);
@@ -361,16 +364,17 @@ class MultilingualBillingentityinternalDescription implements ModelInterface, Ar
      */
     public function setSBillingentityinternalDescription2($sBillingentityinternalDescription2)
     {
-
-        if (!is_null($sBillingentityinternalDescription2) && (!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription2))) {
-            throw new \InvalidArgumentException("invalid value for \$sBillingentityinternalDescription2 when calling MultilingualBillingentityinternalDescription., must conform to the pattern /^.{0,70}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBillingentityinternalDescription2)) {
             //throw new \InvalidArgumentException('non-nullable sBillingentityinternalDescription2 cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription2))) {
+        if (!is_null($sBillingentityinternalDescription2) && (!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription2))) {
+            throw new \InvalidArgumentException("invalid value for \$sBillingentityinternalDescription2 when calling MultilingualBillingentityinternalDescription., must conform to the pattern /^.{0,70}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityinternalDescription2'] = $sBillingentityinternalDescription2;
         $this->container['sBillingentityinternalDescription2'] = (is_null($sBillingentityinternalDescription2) ? null : (string) $sBillingentityinternalDescription2);

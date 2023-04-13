@@ -352,16 +352,17 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
      */
     public function setPkiEzsignsignaturecustomdateID($pkiEzsignsignaturecustomdateID)
     {
-
-        if (!is_null($pkiEzsignsignaturecustomdateID) && ($pkiEzsignsignaturecustomdateID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiEzsignsignaturecustomdateID when calling EzsignsignaturecustomdateRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiEzsignsignaturecustomdateID)) {
             //throw new \InvalidArgumentException('non-nullable pkiEzsignsignaturecustomdateID cannot be null');
         //}
+
+//        if (($pkiEzsignsignaturecustomdateID < 0)) {
+        if (!is_null($pkiEzsignsignaturecustomdateID) && ($pkiEzsignsignaturecustomdateID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiEzsignsignaturecustomdateID when calling EzsignsignaturecustomdateRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsignsignaturecustomdateID'] = $pkiEzsignsignaturecustomdateID;
         $this->container['pkiEzsignsignaturecustomdateID'] = (is_null($pkiEzsignsignaturecustomdateID) ? null : (int) $pkiEzsignsignaturecustomdateID);
@@ -388,16 +389,17 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
      */
     public function setIEzsignsignaturecustomdateX($iEzsignsignaturecustomdateX)
     {
-
-        if (($iEzsignsignaturecustomdateX < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignsignaturecustomdateX when calling EzsignsignaturecustomdateRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignsignaturecustomdateX)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignsignaturecustomdateX cannot be null');
         //}
+
+//        if (($iEzsignsignaturecustomdateX < 0)) {
+        if (($iEzsignsignaturecustomdateX < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignsignaturecustomdateX when calling EzsignsignaturecustomdateRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignsignaturecustomdateX'] = $iEzsignsignaturecustomdateX;
         $this->container['iEzsignsignaturecustomdateX'] = (is_null($iEzsignsignaturecustomdateX) ? null : (int) $iEzsignsignaturecustomdateX);
@@ -424,16 +426,17 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
      */
     public function setIEzsignsignaturecustomdateY($iEzsignsignaturecustomdateY)
     {
-
-        if (($iEzsignsignaturecustomdateY < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iEzsignsignaturecustomdateY when calling EzsignsignaturecustomdateRequest., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iEzsignsignaturecustomdateY)) {
             //throw new \InvalidArgumentException('non-nullable iEzsignsignaturecustomdateY cannot be null');
         //}
+
+//        if (($iEzsignsignaturecustomdateY < 0)) {
+        if (($iEzsignsignaturecustomdateY < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsignsignaturecustomdateY when calling EzsignsignaturecustomdateRequest., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignsignaturecustomdateY'] = $iEzsignsignaturecustomdateY;
         $this->container['iEzsignsignaturecustomdateY'] = (is_null($iEzsignsignaturecustomdateY) ? null : (int) $iEzsignsignaturecustomdateY);
@@ -460,11 +463,11 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
      */
     public function setSEzsignsignaturecustomdateFormat($sEzsignsignaturecustomdateFormat)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sEzsignsignaturecustomdateFormat)) {
             //throw new \InvalidArgumentException('non-nullable sEzsignsignaturecustomdateFormat cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignaturecustomdateFormat'] = $sEzsignsignaturecustomdateFormat;
         $this->container['sEzsignsignaturecustomdateFormat'] = (is_null($sEzsignsignaturecustomdateFormat) ? null : (string) $sEzsignsignaturecustomdateFormat);

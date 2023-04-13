@@ -327,16 +327,17 @@ class ActivesessionResponseCompoundApikey implements ModelInterface, ArrayAccess
      */
     public function setPkiApikeyID($pkiApikeyID)
     {
-
-        if (($pkiApikeyID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiApikeyID when calling ActivesessionResponseCompoundApikey., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiApikeyID)) {
             //throw new \InvalidArgumentException('non-nullable pkiApikeyID cannot be null');
         //}
+
+//        if (($pkiApikeyID < 0)) {
+        if (($pkiApikeyID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiApikeyID when calling ActivesessionResponseCompoundApikey., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiApikeyID'] = $pkiApikeyID;
         $this->container['pkiApikeyID'] = (is_null($pkiApikeyID) ? null : (int) $pkiApikeyID);
@@ -363,11 +364,11 @@ class ActivesessionResponseCompoundApikey implements ModelInterface, ArrayAccess
      */
     public function setSApikeyDescriptionX($sApikeyDescriptionX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sApikeyDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sApikeyDescriptionX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sApikeyDescriptionX'] = $sApikeyDescriptionX;
         $this->container['sApikeyDescriptionX'] = (is_null($sApikeyDescriptionX) ? null : (string) $sApikeyDescriptionX);

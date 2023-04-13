@@ -283,10 +283,12 @@ class MultilingualUsergroupName implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
+//        if (!is_null($this->container['sUsergroupName1']) && !preg_match("/^.{0,50}$/", $this->container['sUsergroupName1'])) {
         if (!is_null($this->container['sUsergroupName1']) && !preg_match("/^.{0,50}$/", $this->container['sUsergroupName1'])) {
             $invalidProperties[] = "invalid value for 'sUsergroupName1', must be conform to the pattern /^.{0,50}$/.";
         }
 
+//        if (!is_null($this->container['sUsergroupName2']) && !preg_match("/^.{0,50}$/", $this->container['sUsergroupName2'])) {
         if (!is_null($this->container['sUsergroupName2']) && !preg_match("/^.{0,50}$/", $this->container['sUsergroupName2'])) {
             $invalidProperties[] = "invalid value for 'sUsergroupName2', must be conform to the pattern /^.{0,50}$/.";
         }
@@ -325,16 +327,17 @@ class MultilingualUsergroupName implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setSUsergroupName1($sUsergroupName1)
     {
-
-        if (!is_null($sUsergroupName1) && (!preg_match("/^.{0,50}$/", $sUsergroupName1))) {
-            throw new \InvalidArgumentException("invalid value for \$sUsergroupName1 when calling MultilingualUsergroupName., must conform to the pattern /^.{0,50}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUsergroupName1)) {
             //throw new \InvalidArgumentException('non-nullable sUsergroupName1 cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,50}$/", $sUsergroupName1))) {
+        if (!is_null($sUsergroupName1) && (!preg_match("/^.{0,50}$/", $sUsergroupName1))) {
+            throw new \InvalidArgumentException("invalid value for \$sUsergroupName1 when calling MultilingualUsergroupName., must conform to the pattern /^.{0,50}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUsergroupName1'] = $sUsergroupName1;
         $this->container['sUsergroupName1'] = (is_null($sUsergroupName1) ? null : (string) $sUsergroupName1);
@@ -361,16 +364,17 @@ class MultilingualUsergroupName implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setSUsergroupName2($sUsergroupName2)
     {
-
-        if (!is_null($sUsergroupName2) && (!preg_match("/^.{0,50}$/", $sUsergroupName2))) {
-            throw new \InvalidArgumentException("invalid value for \$sUsergroupName2 when calling MultilingualUsergroupName., must conform to the pattern /^.{0,50}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sUsergroupName2)) {
             //throw new \InvalidArgumentException('non-nullable sUsergroupName2 cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,50}$/", $sUsergroupName2))) {
+        if (!is_null($sUsergroupName2) && (!preg_match("/^.{0,50}$/", $sUsergroupName2))) {
+            throw new \InvalidArgumentException("invalid value for \$sUsergroupName2 when calling MultilingualUsergroupName., must conform to the pattern /^.{0,50}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUsergroupName2'] = $sUsergroupName2;
         $this->container['sUsergroupName2'] = (is_null($sUsergroupName2) ? null : (string) $sUsergroupName2);

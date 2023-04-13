@@ -293,6 +293,7 @@ class FontAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
         if ($this->container['sFontName'] === null) {
             $invalidProperties[] = "'sFontName' can't be null";
         }
+//        if (!preg_match("/^.{0,50}$/", $this->container['sFontName'])) {
         if (!is_null($this->container['sFontName']) && !preg_match("/^.{0,50}$/", $this->container['sFontName'])) {
             $invalidProperties[] = "invalid value for 'sFontName', must be conform to the pattern /^.{0,50}$/.";
         }
@@ -341,16 +342,17 @@ class FontAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setSFontName($sFontName)
     {
-
-        if (!is_null($sFontName) && (!preg_match("/^.{0,50}$/", $sFontName))) {
-            throw new \InvalidArgumentException("invalid value for \$sFontName when calling FontAutocompleteElementResponse., must conform to the pattern /^.{0,50}$/.");
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sFontName)) {
             //throw new \InvalidArgumentException('non-nullable sFontName cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,50}$/", $sFontName))) {
+        if (!is_null($sFontName) && (!preg_match("/^.{0,50}$/", $sFontName))) {
+            throw new \InvalidArgumentException("invalid value for \$sFontName when calling FontAutocompleteElementResponse., must conform to the pattern /^.{0,50}$/.");
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sFontName'] = $sFontName;
         $this->container['sFontName'] = (is_null($sFontName) ? null : (string) $sFontName);
@@ -377,16 +379,17 @@ class FontAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setPkiFontID($pkiFontID)
     {
-
-        if (($pkiFontID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiFontID when calling FontAutocompleteElementResponse., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiFontID)) {
             //throw new \InvalidArgumentException('non-nullable pkiFontID cannot be null');
         //}
+
+//        if (($pkiFontID < 0)) {
+        if (($pkiFontID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiFontID when calling FontAutocompleteElementResponse., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiFontID'] = $pkiFontID;
         $this->container['pkiFontID'] = (is_null($pkiFontID) ? null : (int) $pkiFontID);
@@ -413,11 +416,11 @@ class FontAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
      */
     public function setBFontIsactive($bFontIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bFontIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bFontIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bFontIsactive'] = $bFontIsactive;
         $this->container['bFontIsactive'] = (is_null($bFontIsactive) ? null : (bool) $bFontIsactive);

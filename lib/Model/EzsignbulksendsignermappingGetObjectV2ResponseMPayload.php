@@ -313,11 +313,11 @@ class EzsignbulksendsignermappingGetObjectV2ResponseMPayload implements ModelInt
      */
     public function setObjEzsignbulksendsignermapping($objEzsignbulksendsignermapping)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($objEzsignbulksendsignermapping)) {
             //throw new \InvalidArgumentException('non-nullable objEzsignbulksendsignermapping cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsignbulksendsignermapping'] = $objEzsignbulksendsignermapping;
         $this->container['objEzsignbulksendsignermapping'] = $objEzsignbulksendsignermapping;

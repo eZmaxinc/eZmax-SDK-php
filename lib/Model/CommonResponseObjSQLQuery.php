@@ -323,11 +323,11 @@ class CommonResponseObjSQLQuery implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setSQuery($sQuery)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sQuery)) {
             //throw new \InvalidArgumentException('non-nullable sQuery cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sQuery'] = $sQuery;
         $this->container['sQuery'] = (is_null($sQuery) ? null : (string) $sQuery);
@@ -354,11 +354,11 @@ class CommonResponseObjSQLQuery implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function setFDuration($fDuration)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($fDuration)) {
             //throw new \InvalidArgumentException('non-nullable fDuration cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fDuration'] = $fDuration;
         $this->container['fDuration'] = (is_null($fDuration) ? null : (float) $fDuration);

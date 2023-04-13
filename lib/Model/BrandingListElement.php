@@ -445,16 +445,17 @@ class BrandingListElement implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setPkiBrandingID($pkiBrandingID)
     {
-
-        if (($pkiBrandingID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $pkiBrandingID when calling BrandingListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($pkiBrandingID)) {
             //throw new \InvalidArgumentException('non-nullable pkiBrandingID cannot be null');
         //}
+
+//        if (($pkiBrandingID < 0)) {
+        if (($pkiBrandingID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pkiBrandingID when calling BrandingListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiBrandingID'] = $pkiBrandingID;
         $this->container['pkiBrandingID'] = (is_null($pkiBrandingID) ? null : (int) $pkiBrandingID);
@@ -481,11 +482,11 @@ class BrandingListElement implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setSBrandingDescriptionX($sBrandingDescriptionX)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($sBrandingDescriptionX)) {
             //throw new \InvalidArgumentException('non-nullable sBrandingDescriptionX cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBrandingDescriptionX'] = $sBrandingDescriptionX;
         $this->container['sBrandingDescriptionX'] = (is_null($sBrandingDescriptionX) ? null : (string) $sBrandingDescriptionX);
@@ -512,19 +513,21 @@ class BrandingListElement implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setIBrandingColortext($iBrandingColortext)
     {
-
-        if (($iBrandingColortext > 16777215)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColortext when calling BrandingListElement., must be smaller than or equal to 16777215.');
-        }
-        if (($iBrandingColortext < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColortext when calling BrandingListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColortext)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColortext cannot be null');
         //}
+
+//        if (($iBrandingColortext > 16777215)) {
+        if (($iBrandingColortext > 16777215)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColortext when calling BrandingListElement., must be smaller than or equal to 16777215.');
+        }
+//        if (($iBrandingColortext < 0)) {
+        if (($iBrandingColortext < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColortext when calling BrandingListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iBrandingColortext'] = $iBrandingColortext;
         $this->container['iBrandingColortext'] = (is_null($iBrandingColortext) ? null : (int) $iBrandingColortext);
@@ -551,19 +554,21 @@ class BrandingListElement implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setIBrandingColortextlinkbox($iBrandingColortextlinkbox)
     {
-
-        if (($iBrandingColortextlinkbox > 16777215)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColortextlinkbox when calling BrandingListElement., must be smaller than or equal to 16777215.');
-        }
-        if (($iBrandingColortextlinkbox < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColortextlinkbox when calling BrandingListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColortextlinkbox)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColortextlinkbox cannot be null');
         //}
+
+//        if (($iBrandingColortextlinkbox > 16777215)) {
+        if (($iBrandingColortextlinkbox > 16777215)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColortextlinkbox when calling BrandingListElement., must be smaller than or equal to 16777215.');
+        }
+//        if (($iBrandingColortextlinkbox < 0)) {
+        if (($iBrandingColortextlinkbox < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColortextlinkbox when calling BrandingListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iBrandingColortextlinkbox'] = $iBrandingColortextlinkbox;
         $this->container['iBrandingColortextlinkbox'] = (is_null($iBrandingColortextlinkbox) ? null : (int) $iBrandingColortextlinkbox);
@@ -590,19 +595,21 @@ class BrandingListElement implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setIBrandingColortextbutton($iBrandingColortextbutton)
     {
-
-        if (($iBrandingColortextbutton > 16777215)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColortextbutton when calling BrandingListElement., must be smaller than or equal to 16777215.');
-        }
-        if (($iBrandingColortextbutton < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColortextbutton when calling BrandingListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColortextbutton)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColortextbutton cannot be null');
         //}
+
+//        if (($iBrandingColortextbutton > 16777215)) {
+        if (($iBrandingColortextbutton > 16777215)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColortextbutton when calling BrandingListElement., must be smaller than or equal to 16777215.');
+        }
+//        if (($iBrandingColortextbutton < 0)) {
+        if (($iBrandingColortextbutton < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColortextbutton when calling BrandingListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iBrandingColortextbutton'] = $iBrandingColortextbutton;
         $this->container['iBrandingColortextbutton'] = (is_null($iBrandingColortextbutton) ? null : (int) $iBrandingColortextbutton);
@@ -629,19 +636,21 @@ class BrandingListElement implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setIBrandingColorbackground($iBrandingColorbackground)
     {
-
-        if (($iBrandingColorbackground > 16777215)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackground when calling BrandingListElement., must be smaller than or equal to 16777215.');
-        }
-        if (($iBrandingColorbackground < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackground when calling BrandingListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColorbackground)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColorbackground cannot be null');
         //}
+
+//        if (($iBrandingColorbackground > 16777215)) {
+        if (($iBrandingColorbackground > 16777215)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackground when calling BrandingListElement., must be smaller than or equal to 16777215.');
+        }
+//        if (($iBrandingColorbackground < 0)) {
+        if (($iBrandingColorbackground < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackground when calling BrandingListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iBrandingColorbackground'] = $iBrandingColorbackground;
         $this->container['iBrandingColorbackground'] = (is_null($iBrandingColorbackground) ? null : (int) $iBrandingColorbackground);
@@ -668,19 +677,21 @@ class BrandingListElement implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setIBrandingColorbackgroundbutton($iBrandingColorbackgroundbutton)
     {
-
-        if (($iBrandingColorbackgroundbutton > 16777215)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackgroundbutton when calling BrandingListElement., must be smaller than or equal to 16777215.');
-        }
-        if (($iBrandingColorbackgroundbutton < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackgroundbutton when calling BrandingListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColorbackgroundbutton)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColorbackgroundbutton cannot be null');
         //}
+
+//        if (($iBrandingColorbackgroundbutton > 16777215)) {
+        if (($iBrandingColorbackgroundbutton > 16777215)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackgroundbutton when calling BrandingListElement., must be smaller than or equal to 16777215.');
+        }
+//        if (($iBrandingColorbackgroundbutton < 0)) {
+        if (($iBrandingColorbackgroundbutton < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackgroundbutton when calling BrandingListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iBrandingColorbackgroundbutton'] = $iBrandingColorbackgroundbutton;
         $this->container['iBrandingColorbackgroundbutton'] = (is_null($iBrandingColorbackgroundbutton) ? null : (int) $iBrandingColorbackgroundbutton);
@@ -707,19 +718,21 @@ class BrandingListElement implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setIBrandingColorbackgroundsmallbox($iBrandingColorbackgroundsmallbox)
     {
-
-        if (($iBrandingColorbackgroundsmallbox > 16777215)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackgroundsmallbox when calling BrandingListElement., must be smaller than or equal to 16777215.');
-        }
-        if (($iBrandingColorbackgroundsmallbox < 0)) {
-            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackgroundsmallbox when calling BrandingListElement., must be bigger than or equal to 0.');
-        }
-
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($iBrandingColorbackgroundsmallbox)) {
             //throw new \InvalidArgumentException('non-nullable iBrandingColorbackgroundsmallbox cannot be null');
         //}
+
+//        if (($iBrandingColorbackgroundsmallbox > 16777215)) {
+        if (($iBrandingColorbackgroundsmallbox > 16777215)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackgroundsmallbox when calling BrandingListElement., must be smaller than or equal to 16777215.');
+        }
+//        if (($iBrandingColorbackgroundsmallbox < 0)) {
+        if (($iBrandingColorbackgroundsmallbox < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iBrandingColorbackgroundsmallbox when calling BrandingListElement., must be bigger than or equal to 0.');
+        }
+
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iBrandingColorbackgroundsmallbox'] = $iBrandingColorbackgroundsmallbox;
         $this->container['iBrandingColorbackgroundsmallbox'] = (is_null($iBrandingColorbackgroundsmallbox) ? null : (int) $iBrandingColorbackgroundsmallbox);
@@ -746,11 +759,11 @@ class BrandingListElement implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function setBBrandingIsactive($bBrandingIsactive)
     {
-
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
         //if (is_null($bBrandingIsactive)) {
             //throw new \InvalidArgumentException('non-nullable bBrandingIsactive cannot be null');
         //}
+        
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bBrandingIsactive'] = $bBrandingIsactive;
         $this->container['bBrandingIsactive'] = (is_null($bBrandingIsactive) ? null : (bool) $bBrandingIsactive);
