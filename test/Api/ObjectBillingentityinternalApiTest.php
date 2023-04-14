@@ -85,18 +85,6 @@ class ObjectBillingentityinternalApiTest extends TestCase
     }
 
     /**
-     * Test case for billingentityinternalDeleteObjectV1
-     *
-     * Delete an existing Billingentityinternal.
-     *
-     */
-    public function testBillingentityinternalDeleteObjectV1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for billingentityinternalEditObjectV1
      *
      * Edit an existing Billingentityinternal.

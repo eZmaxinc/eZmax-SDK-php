@@ -85,18 +85,6 @@ class ObjectPaymenttermApiTest extends TestCase
     }
 
     /**
-     * Test case for paymenttermDeleteObjectV1
-     *
-     * Delete an existing Paymentterm.
-     *
-     */
-    public function testPaymenttermDeleteObjectV1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for paymenttermEditObjectV1
      *
      * Edit an existing Paymentterm.

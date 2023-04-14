@@ -90,7 +90,6 @@ Class | Method | HTTP request | Description
 *ObjectApikeyApi* | [**apikeyCreateObjectV2**](docs/Api/ObjectApikeyApi.md#apikeycreateobjectv2) | **POST** /2/object/apikey | Create a new Apikey
 *ObjectBillingentityexternalApi* | [**billingentityexternalGetAutocompleteV2**](docs/Api/ObjectBillingentityexternalApi.md#billingentityexternalgetautocompletev2) | **GET** /2/object/billingentityexternal/getAutocomplete/{sSelector} | Retrieve Billingentityexternals and IDs
 *ObjectBillingentityinternalApi* | [**billingentityinternalCreateObjectV1**](docs/Api/ObjectBillingentityinternalApi.md#billingentityinternalcreateobjectv1) | **POST** /1/object/billingentityinternal | Create a new Billingentityinternal
-*ObjectBillingentityinternalApi* | [**billingentityinternalDeleteObjectV1**](docs/Api/ObjectBillingentityinternalApi.md#billingentityinternaldeleteobjectv1) | **DELETE** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Delete an existing Billingentityinternal
 *ObjectBillingentityinternalApi* | [**billingentityinternalEditObjectV1**](docs/Api/ObjectBillingentityinternalApi.md#billingentityinternaleditobjectv1) | **PUT** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Edit an existing Billingentityinternal
 *ObjectBillingentityinternalApi* | [**billingentityinternalGetAutocompleteV2**](docs/Api/ObjectBillingentityinternalApi.md#billingentityinternalgetautocompletev2) | **GET** /2/object/billingentityinternal/getAutocomplete/{sSelector} | Retrieve Billingentityinternals and IDs
 *ObjectBillingentityinternalApi* | [**billingentityinternalGetListV1**](docs/Api/ObjectBillingentityinternalApi.md#billingentityinternalgetlistv1) | **GET** /1/object/billingentityinternal/getList | Retrieve Billingentityinternal list
@@ -102,7 +101,6 @@ Class | Method | HTTP request | Description
 *ObjectBrandingApi* | [**brandingGetObjectV2**](docs/Api/ObjectBrandingApi.md#brandinggetobjectv2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding
 *ObjectCommunicationApi* | [**communicationGetObjectV2**](docs/Api/ObjectCommunicationApi.md#communicationgetobjectv2) | **GET** /2/object/communication/{pkiCommunicationID} | Retrieve an existing Communication
 *ObjectDepartmentApi* | [**departmentGetAutocompleteV2**](docs/Api/ObjectDepartmentApi.md#departmentgetautocompletev2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
-*ObjectDepartmentApi* | [**departmentGetMembersV1**](docs/Api/ObjectDepartmentApi.md#departmentgetmembersv1) | **GET** /1/object/department/{pkiDepartmentID}/getMembers | Retrieve an existing Department&#39;s members
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicingGetAutocompleteV1**](docs/Api/ObjectEzmaxinvoicingApi.md#ezmaxinvoicinggetautocompletev1) | **GET** /1/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicingGetAutocompleteV2**](docs/Api/ObjectEzmaxinvoicingApi.md#ezmaxinvoicinggetautocompletev2) | **GET** /2/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicingGetObjectV2**](docs/Api/ObjectEzmaxinvoicingApi.md#ezmaxinvoicinggetobjectv2) | **GET** /2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID} | Retrieve an existing Ezmaxinvoicing
@@ -261,7 +259,6 @@ Class | Method | HTTP request | Description
 *ObjectNotificationsectionApi* | [**notificationsectionGetNotificationtestsV1**](docs/Api/ObjectNotificationsectionApi.md#notificationsectiongetnotificationtestsv1) | **GET** /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests | Retrieve an existing Notificationsection&#39;s Notificationtests
 *ObjectNotificationtestApi* | [**notificationtestGetElementsV1**](docs/Api/ObjectNotificationtestApi.md#notificationtestgetelementsv1) | **GET** /1/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest&#39;s Elements
 *ObjectPaymenttermApi* | [**paymenttermCreateObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermcreateobjectv1) | **POST** /1/object/paymentterm | Create a new Paymentterm
-*ObjectPaymenttermApi* | [**paymenttermDeleteObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermdeleteobjectv1) | **DELETE** /1/object/paymentterm/{pkiPaymenttermID} | Delete an existing Paymentterm
 *ObjectPaymenttermApi* | [**paymenttermEditObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermeditobjectv1) | **PUT** /1/object/paymentterm/{pkiPaymenttermID} | Edit an existing Paymentterm
 *ObjectPaymenttermApi* | [**paymenttermGetAutocompleteV2**](docs/Api/ObjectPaymenttermApi.md#paymenttermgetautocompletev2) | **GET** /2/object/paymentterm/getAutocomplete/{sSelector} | Retrieve Paymentterms and IDs
 *ObjectPaymenttermApi* | [**paymenttermGetListV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermgetlistv1) | **GET** /1/object/paymentterm/getList | Retrieve Paymentterm list
@@ -273,14 +270,11 @@ Class | Method | HTTP request | Description
 *ObjectTimezoneApi* | [**timezoneGetAutocompleteV2**](docs/Api/ObjectTimezoneApi.md#timezonegetautocompletev2) | **GET** /2/object/timezone/getAutocomplete/{sSelector} | Retrieve Timezones and IDs
 *ObjectUserApi* | [**userGetAutocompleteV2**](docs/Api/ObjectUserApi.md#usergetautocompletev2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs
 *ObjectUsergroupApi* | [**usergroupCreateObjectV1**](docs/Api/ObjectUsergroupApi.md#usergroupcreateobjectv1) | **POST** /1/object/usergroup | Create a new Usergroup
-*ObjectUsergroupApi* | [**usergroupDeleteObjectV1**](docs/Api/ObjectUsergroupApi.md#usergroupdeleteobjectv1) | **DELETE** /1/object/usergroup/{pkiUsergroupID} | Delete an existing Usergroup
 *ObjectUsergroupApi* | [**usergroupEditObjectV1**](docs/Api/ObjectUsergroupApi.md#usergroupeditobjectv1) | **PUT** /1/object/usergroup/{pkiUsergroupID} | Edit an existing Usergroup
 *ObjectUsergroupApi* | [**usergroupGetAutocompleteV2**](docs/Api/ObjectUsergroupApi.md#usergroupgetautocompletev2) | **GET** /2/object/usergroup/getAutocomplete/{sSelector} | Retrieve Usergroups and IDs
 *ObjectUsergroupApi* | [**usergroupGetListV1**](docs/Api/ObjectUsergroupApi.md#usergroupgetlistv1) | **GET** /1/object/usergroup/getList | Retrieve Usergroup list
-*ObjectUsergroupApi* | [**usergroupGetMembersV1**](docs/Api/ObjectUsergroupApi.md#usergroupgetmembersv1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getMembers | Retrieve an existing Usergroup&#39;s members
 *ObjectUsergroupApi* | [**usergroupGetObjectV2**](docs/Api/ObjectUsergroupApi.md#usergroupgetobjectv2) | **GET** /2/object/usergroup/{pkiUsergroupID} | Retrieve an existing Usergroup
 *ObjectVariableexpenseApi* | [**variableexpenseCreateObjectV1**](docs/Api/ObjectVariableexpenseApi.md#variableexpensecreateobjectv1) | **POST** /1/object/variableexpense | Create a new Variableexpense
-*ObjectVariableexpenseApi* | [**variableexpenseDeleteObjectV1**](docs/Api/ObjectVariableexpenseApi.md#variableexpensedeleteobjectv1) | **DELETE** /1/object/variableexpense/{pkiVariableexpenseID} | Delete an existing Variableexpense
 *ObjectVariableexpenseApi* | [**variableexpenseEditObjectV1**](docs/Api/ObjectVariableexpenseApi.md#variableexpenseeditobjectv1) | **PUT** /1/object/variableexpense/{pkiVariableexpenseID} | Edit an existing Variableexpense
 *ObjectVariableexpenseApi* | [**variableexpenseGetAutocompleteV2**](docs/Api/ObjectVariableexpenseApi.md#variableexpensegetautocompletev2) | **GET** /2/object/variableexpense/getAutocomplete/{sSelector} | Retrieve Variableexpenses and IDs
 *ObjectVariableexpenseApi* | [**variableexpenseGetListV1**](docs/Api/ObjectVariableexpenseApi.md#variableexpensegetlistv1) | **GET** /1/object/variableexpense/getList | Retrieve Variableexpense list
@@ -330,7 +324,6 @@ Class | Method | HTTP request | Description
 - [BillingentityinternalCreateObjectV1Response](docs/Model/BillingentityinternalCreateObjectV1Response.md)
 - [BillingentityinternalCreateObjectV1ResponseAllOf](docs/Model/BillingentityinternalCreateObjectV1ResponseAllOf.md)
 - [BillingentityinternalCreateObjectV1ResponseMPayload](docs/Model/BillingentityinternalCreateObjectV1ResponseMPayload.md)
-- [BillingentityinternalDeleteObjectV1Response](docs/Model/BillingentityinternalDeleteObjectV1Response.md)
 - [BillingentityinternalEditObjectV1Request](docs/Model/BillingentityinternalEditObjectV1Request.md)
 - [BillingentityinternalEditObjectV1Response](docs/Model/BillingentityinternalEditObjectV1Response.md)
 - [BillingentityinternalGetAutocompleteV2Response](docs/Model/BillingentityinternalGetAutocompleteV2Response.md)
@@ -453,9 +446,6 @@ Class | Method | HTTP request | Description
 - [DepartmentGetAutocompleteV2Response](docs/Model/DepartmentGetAutocompleteV2Response.md)
 - [DepartmentGetAutocompleteV2ResponseAllOf](docs/Model/DepartmentGetAutocompleteV2ResponseAllOf.md)
 - [DepartmentGetAutocompleteV2ResponseMPayload](docs/Model/DepartmentGetAutocompleteV2ResponseMPayload.md)
-- [DepartmentGetMembersV1Response](docs/Model/DepartmentGetMembersV1Response.md)
-- [DepartmentGetMembersV1ResponseAllOf](docs/Model/DepartmentGetMembersV1ResponseAllOf.md)
-- [DepartmentGetMembersV1ResponseMPayload](docs/Model/DepartmentGetMembersV1ResponseMPayload.md)
 - [DescriptionstaticResponse](docs/Model/DescriptionstaticResponse.md)
 - [DescriptionstaticResponseCompound](docs/Model/DescriptionstaticResponseCompound.md)
 - [EmailRequest](docs/Model/EmailRequest.md)
@@ -1143,7 +1133,6 @@ Class | Method | HTTP request | Description
 - [PaymenttermCreateObjectV1Response](docs/Model/PaymenttermCreateObjectV1Response.md)
 - [PaymenttermCreateObjectV1ResponseAllOf](docs/Model/PaymenttermCreateObjectV1ResponseAllOf.md)
 - [PaymenttermCreateObjectV1ResponseMPayload](docs/Model/PaymenttermCreateObjectV1ResponseMPayload.md)
-- [PaymenttermDeleteObjectV1Response](docs/Model/PaymenttermDeleteObjectV1Response.md)
 - [PaymenttermEditObjectV1Request](docs/Model/PaymenttermEditObjectV1Request.md)
 - [PaymenttermEditObjectV1Response](docs/Model/PaymenttermEditObjectV1Response.md)
 - [PaymenttermGetAutocompleteV2Response](docs/Model/PaymenttermGetAutocompleteV2Response.md)
@@ -1198,7 +1187,6 @@ Class | Method | HTTP request | Description
 - [UsergroupCreateObjectV1Response](docs/Model/UsergroupCreateObjectV1Response.md)
 - [UsergroupCreateObjectV1ResponseAllOf](docs/Model/UsergroupCreateObjectV1ResponseAllOf.md)
 - [UsergroupCreateObjectV1ResponseMPayload](docs/Model/UsergroupCreateObjectV1ResponseMPayload.md)
-- [UsergroupDeleteObjectV1Response](docs/Model/UsergroupDeleteObjectV1Response.md)
 - [UsergroupEditObjectV1Request](docs/Model/UsergroupEditObjectV1Request.md)
 - [UsergroupEditObjectV1Response](docs/Model/UsergroupEditObjectV1Response.md)
 - [UsergroupGetAutocompleteV2Response](docs/Model/UsergroupGetAutocompleteV2Response.md)
@@ -1208,9 +1196,6 @@ Class | Method | HTTP request | Description
 - [UsergroupGetListV1ResponseAllOf](docs/Model/UsergroupGetListV1ResponseAllOf.md)
 - [UsergroupGetListV1ResponseMPayload](docs/Model/UsergroupGetListV1ResponseMPayload.md)
 - [UsergroupGetListV1ResponseMPayloadAllOf](docs/Model/UsergroupGetListV1ResponseMPayloadAllOf.md)
-- [UsergroupGetMembersV1Response](docs/Model/UsergroupGetMembersV1Response.md)
-- [UsergroupGetMembersV1ResponseAllOf](docs/Model/UsergroupGetMembersV1ResponseAllOf.md)
-- [UsergroupGetMembersV1ResponseMPayload](docs/Model/UsergroupGetMembersV1ResponseMPayload.md)
 - [UsergroupGetObjectV2Response](docs/Model/UsergroupGetObjectV2Response.md)
 - [UsergroupGetObjectV2ResponseAllOf](docs/Model/UsergroupGetObjectV2ResponseAllOf.md)
 - [UsergroupGetObjectV2ResponseMPayload](docs/Model/UsergroupGetObjectV2ResponseMPayload.md)
@@ -1224,7 +1209,6 @@ Class | Method | HTTP request | Description
 - [VariableexpenseCreateObjectV1Response](docs/Model/VariableexpenseCreateObjectV1Response.md)
 - [VariableexpenseCreateObjectV1ResponseAllOf](docs/Model/VariableexpenseCreateObjectV1ResponseAllOf.md)
 - [VariableexpenseCreateObjectV1ResponseMPayload](docs/Model/VariableexpenseCreateObjectV1ResponseMPayload.md)
-- [VariableexpenseDeleteObjectV1Response](docs/Model/VariableexpenseDeleteObjectV1Response.md)
 - [VariableexpenseEditObjectV1Request](docs/Model/VariableexpenseEditObjectV1Request.md)
 - [VariableexpenseEditObjectV1Response](docs/Model/VariableexpenseEditObjectV1Response.md)
 - [VariableexpenseGetAutocompleteV2Response](docs/Model/VariableexpenseGetAutocompleteV2Response.md)

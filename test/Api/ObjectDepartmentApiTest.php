@@ -83,16 +83,4 @@ class ObjectDepartmentApiTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test case for departmentGetMembersV1
-     *
-     * Retrieve an existing Department's members.
-     *
-     */
-    public function testDepartmentGetMembersV1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
 }

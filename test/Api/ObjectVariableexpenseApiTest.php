@@ -85,18 +85,6 @@ class ObjectVariableexpenseApiTest extends TestCase
     }
 
     /**
-     * Test case for variableexpenseDeleteObjectV1
-     *
-     * Delete an existing Variableexpense.
-     *
-     */
-    public function testVariableexpenseDeleteObjectV1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for variableexpenseEditObjectV1
      *
      * Edit an existing Variableexpense.

@@ -91,7 +91,7 @@ class ObjectEzmaxinvoicingApi
     public const objEzmaxConfig = [
         'ezmaxinvoicingGetAutocompleteV1' => [
             'permissions' => [
-                'All',
+                'Management_Billingentities',
             ],
             'usertypeextra' => [
             ],
@@ -100,7 +100,7 @@ class ObjectEzmaxinvoicingApi
         ],
         'ezmaxinvoicingGetAutocompleteV2' => [
             'permissions' => [
-                'All',
+                'Management_Billingentities',
             ],
             'usertypeextra' => [
             ],
@@ -109,7 +109,7 @@ class ObjectEzmaxinvoicingApi
         ],
         'ezmaxinvoicingGetObjectV2' => [
             'permissions' => [
-                'All',
+                'EzmaxInvoicing_Access',
             ],
             'usertypeextra' => [
             ],
@@ -118,7 +118,7 @@ class ObjectEzmaxinvoicingApi
         ],
         'ezmaxinvoicingGetProvisionalV1' => [
             'permissions' => [
-                'All',
+                'EzmaxInvoicing_Access',
             ],
             'usertypeextra' => [
             ],

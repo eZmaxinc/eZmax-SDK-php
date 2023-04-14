@@ -5,7 +5,6 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**departmentGetAutocompleteV2()**](ObjectDepartmentApi.md#departmentGetAutocompleteV2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs |
-| [**departmentGetMembersV1()**](ObjectDepartmentApi.md#departmentGetMembersV1) | **GET** /1/object/department/{pkiDepartmentID}/getMembers | Retrieve an existing Department&#39;s members |
 
 
 ## `departmentGetAutocompleteV2()`
@@ -62,68 +61,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\DepartmentGetAutocompleteV2Response**](../Model/DepartmentGetAutocompleteV2Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `departmentGetMembersV1()`
-
-```php
-departmentGetMembersV1($pkiDepartmentID): \eZmaxAPI\Model\DepartmentGetMembersV1Response
-```
-
-Retrieve an existing Department's members
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectDepartmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiDepartmentID = 56; // int
-
-try {
-    $result = $apiInstance->departmentGetMembersV1($pkiDepartmentID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectDepartmentApi->departmentGetMembersV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiDepartmentID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\DepartmentGetMembersV1Response**](../Model/DepartmentGetMembersV1Response.md)
 
 ### Authorization
 

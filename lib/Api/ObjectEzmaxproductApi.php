@@ -82,7 +82,8 @@ class ObjectEzmaxproductApi
     public const objEzmaxConfig = [
         'ezmaxproductGetAutocompleteV2' => [
             'permissions' => [
-                'All',
+                'EzmaxInvoicing_Access',
+                'Management_Billingentities',
             ],
             'usertypeextra' => [
             ],

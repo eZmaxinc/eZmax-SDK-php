@@ -82,7 +82,7 @@ class ObjectBillingentityexternalApi
     public const objEzmaxConfig = [
         'billingentityexternalGetAutocompleteV2' => [
             'permissions' => [
-                'All',
+                'EzmaxInvoicing_Access',
             ],
             'usertypeextra' => [
             ],

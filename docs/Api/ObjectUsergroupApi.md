@@ -5,11 +5,9 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**usergroupCreateObjectV1()**](ObjectUsergroupApi.md#usergroupCreateObjectV1) | **POST** /1/object/usergroup | Create a new Usergroup |
-| [**usergroupDeleteObjectV1()**](ObjectUsergroupApi.md#usergroupDeleteObjectV1) | **DELETE** /1/object/usergroup/{pkiUsergroupID} | Delete an existing Usergroup |
 | [**usergroupEditObjectV1()**](ObjectUsergroupApi.md#usergroupEditObjectV1) | **PUT** /1/object/usergroup/{pkiUsergroupID} | Edit an existing Usergroup |
 | [**usergroupGetAutocompleteV2()**](ObjectUsergroupApi.md#usergroupGetAutocompleteV2) | **GET** /2/object/usergroup/getAutocomplete/{sSelector} | Retrieve Usergroups and IDs |
 | [**usergroupGetListV1()**](ObjectUsergroupApi.md#usergroupGetListV1) | **GET** /1/object/usergroup/getList | Retrieve Usergroup list |
-| [**usergroupGetMembersV1()**](ObjectUsergroupApi.md#usergroupGetMembersV1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getMembers | Retrieve an existing Usergroup&#39;s members |
 | [**usergroupGetObjectV2()**](ObjectUsergroupApi.md#usergroupGetObjectV2) | **GET** /2/object/usergroup/{pkiUsergroupID} | Retrieve an existing Usergroup |
 
 
@@ -69,68 +67,6 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `usergroupDeleteObjectV1()`
-
-```php
-usergroupDeleteObjectV1($pkiUsergroupID): \eZmaxAPI\Model\UsergroupDeleteObjectV1Response
-```
-
-Delete an existing Usergroup
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectUsergroupApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiUsergroupID = 56; // int | The unique ID of the Usergroup
-
-try {
-    $result = $apiInstance->usergroupDeleteObjectV1($pkiUsergroupID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectUsergroupApi->usergroupDeleteObjectV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiUsergroupID** | **int**| The unique ID of the Usergroup | |
-
-### Return type
-
-[**\eZmaxAPI\Model\UsergroupDeleteObjectV1Response**](../Model/UsergroupDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -334,66 +270,6 @@ try {
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `usergroupGetMembersV1()`
-
-```php
-usergroupGetMembersV1($pkiUsergroupID): \eZmaxAPI\Model\UsergroupGetMembersV1Response
-```
-
-Retrieve an existing Usergroup's members
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectUsergroupApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiUsergroupID = 56; // int | The unique ID of the Usergroup
-
-try {
-    $result = $apiInstance->usergroupGetMembersV1($pkiUsergroupID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectUsergroupApi->usergroupGetMembersV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiUsergroupID** | **int**| The unique ID of the Usergroup | |
-
-### Return type
-
-[**\eZmaxAPI\Model\UsergroupGetMembersV1Response**](../Model/UsergroupGetMembersV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

@@ -87,7 +87,6 @@ docs/Model/BillingentityinternalCreateObjectV1Request.md
 docs/Model/BillingentityinternalCreateObjectV1Response.md
 docs/Model/BillingentityinternalCreateObjectV1ResponseAllOf.md
 docs/Model/BillingentityinternalCreateObjectV1ResponseMPayload.md
-docs/Model/BillingentityinternalDeleteObjectV1Response.md
 docs/Model/BillingentityinternalEditObjectV1Request.md
 docs/Model/BillingentityinternalEditObjectV1Response.md
 docs/Model/BillingentityinternalGetAutocompleteV2Response.md
@@ -210,9 +209,6 @@ docs/Model/DepartmentAutocompleteElementResponse.md
 docs/Model/DepartmentGetAutocompleteV2Response.md
 docs/Model/DepartmentGetAutocompleteV2ResponseAllOf.md
 docs/Model/DepartmentGetAutocompleteV2ResponseMPayload.md
-docs/Model/DepartmentGetMembersV1Response.md
-docs/Model/DepartmentGetMembersV1ResponseAllOf.md
-docs/Model/DepartmentGetMembersV1ResponseMPayload.md
 docs/Model/DescriptionstaticResponse.md
 docs/Model/DescriptionstaticResponseCompound.md
 docs/Model/EmailRequest.md
@@ -900,7 +896,6 @@ docs/Model/PaymenttermCreateObjectV1Request.md
 docs/Model/PaymenttermCreateObjectV1Response.md
 docs/Model/PaymenttermCreateObjectV1ResponseAllOf.md
 docs/Model/PaymenttermCreateObjectV1ResponseMPayload.md
-docs/Model/PaymenttermDeleteObjectV1Response.md
 docs/Model/PaymenttermEditObjectV1Request.md
 docs/Model/PaymenttermEditObjectV1Response.md
 docs/Model/PaymenttermGetAutocompleteV2Response.md
@@ -955,7 +950,6 @@ docs/Model/UsergroupCreateObjectV1Request.md
 docs/Model/UsergroupCreateObjectV1Response.md
 docs/Model/UsergroupCreateObjectV1ResponseAllOf.md
 docs/Model/UsergroupCreateObjectV1ResponseMPayload.md
-docs/Model/UsergroupDeleteObjectV1Response.md
 docs/Model/UsergroupEditObjectV1Request.md
 docs/Model/UsergroupEditObjectV1Response.md
 docs/Model/UsergroupGetAutocompleteV2Response.md
@@ -965,9 +959,6 @@ docs/Model/UsergroupGetListV1Response.md
 docs/Model/UsergroupGetListV1ResponseAllOf.md
 docs/Model/UsergroupGetListV1ResponseMPayload.md
 docs/Model/UsergroupGetListV1ResponseMPayloadAllOf.md
-docs/Model/UsergroupGetMembersV1Response.md
-docs/Model/UsergroupGetMembersV1ResponseAllOf.md
-docs/Model/UsergroupGetMembersV1ResponseMPayload.md
 docs/Model/UsergroupGetObjectV2Response.md
 docs/Model/UsergroupGetObjectV2ResponseAllOf.md
 docs/Model/UsergroupGetObjectV2ResponseMPayload.md
@@ -981,7 +972,6 @@ docs/Model/VariableexpenseCreateObjectV1Request.md
 docs/Model/VariableexpenseCreateObjectV1Response.md
 docs/Model/VariableexpenseCreateObjectV1ResponseAllOf.md
 docs/Model/VariableexpenseCreateObjectV1ResponseMPayload.md
-docs/Model/VariableexpenseDeleteObjectV1Response.md
 docs/Model/VariableexpenseEditObjectV1Request.md
 docs/Model/VariableexpenseEditObjectV1Response.md
 docs/Model/VariableexpenseGetAutocompleteV2Response.md
@@ -1124,7 +1114,6 @@ lib/Model/BillingentityinternalCreateObjectV1Request.php
 lib/Model/BillingentityinternalCreateObjectV1Response.php
 lib/Model/BillingentityinternalCreateObjectV1ResponseAllOf.php
 lib/Model/BillingentityinternalCreateObjectV1ResponseMPayload.php
-lib/Model/BillingentityinternalDeleteObjectV1Response.php
 lib/Model/BillingentityinternalEditObjectV1Request.php
 lib/Model/BillingentityinternalEditObjectV1Response.php
 lib/Model/BillingentityinternalGetAutocompleteV2Response.php
@@ -1247,9 +1236,6 @@ lib/Model/DepartmentAutocompleteElementResponse.php
 lib/Model/DepartmentGetAutocompleteV2Response.php
 lib/Model/DepartmentGetAutocompleteV2ResponseAllOf.php
 lib/Model/DepartmentGetAutocompleteV2ResponseMPayload.php
-lib/Model/DepartmentGetMembersV1Response.php
-lib/Model/DepartmentGetMembersV1ResponseAllOf.php
-lib/Model/DepartmentGetMembersV1ResponseMPayload.php
 lib/Model/DescriptionstaticResponse.php
 lib/Model/DescriptionstaticResponseCompound.php
 lib/Model/EmailRequest.php
@@ -1938,7 +1924,6 @@ lib/Model/PaymenttermCreateObjectV1Request.php
 lib/Model/PaymenttermCreateObjectV1Response.php
 lib/Model/PaymenttermCreateObjectV1ResponseAllOf.php
 lib/Model/PaymenttermCreateObjectV1ResponseMPayload.php
-lib/Model/PaymenttermDeleteObjectV1Response.php
 lib/Model/PaymenttermEditObjectV1Request.php
 lib/Model/PaymenttermEditObjectV1Response.php
 lib/Model/PaymenttermGetAutocompleteV2Response.php
@@ -1993,7 +1978,6 @@ lib/Model/UsergroupCreateObjectV1Request.php
 lib/Model/UsergroupCreateObjectV1Response.php
 lib/Model/UsergroupCreateObjectV1ResponseAllOf.php
 lib/Model/UsergroupCreateObjectV1ResponseMPayload.php
-lib/Model/UsergroupDeleteObjectV1Response.php
 lib/Model/UsergroupEditObjectV1Request.php
 lib/Model/UsergroupEditObjectV1Response.php
 lib/Model/UsergroupGetAutocompleteV2Response.php
@@ -2003,9 +1987,6 @@ lib/Model/UsergroupGetListV1Response.php
 lib/Model/UsergroupGetListV1ResponseAllOf.php
 lib/Model/UsergroupGetListV1ResponseMPayload.php
 lib/Model/UsergroupGetListV1ResponseMPayloadAllOf.php
-lib/Model/UsergroupGetMembersV1Response.php
-lib/Model/UsergroupGetMembersV1ResponseAllOf.php
-lib/Model/UsergroupGetMembersV1ResponseMPayload.php
 lib/Model/UsergroupGetObjectV2Response.php
 lib/Model/UsergroupGetObjectV2ResponseAllOf.php
 lib/Model/UsergroupGetObjectV2ResponseMPayload.php
@@ -2019,7 +2000,6 @@ lib/Model/VariableexpenseCreateObjectV1Request.php
 lib/Model/VariableexpenseCreateObjectV1Response.php
 lib/Model/VariableexpenseCreateObjectV1ResponseAllOf.php
 lib/Model/VariableexpenseCreateObjectV1ResponseMPayload.php
-lib/Model/VariableexpenseDeleteObjectV1Response.php
 lib/Model/VariableexpenseEditObjectV1Request.php
 lib/Model/VariableexpenseEditObjectV1Response.php
 lib/Model/VariableexpenseGetAutocompleteV2Response.php
@@ -2161,7 +2141,6 @@ test/Model/BillingentityinternalCreateObjectV1RequestTest.php
 test/Model/BillingentityinternalCreateObjectV1ResponseAllOfTest.php
 test/Model/BillingentityinternalCreateObjectV1ResponseMPayloadTest.php
 test/Model/BillingentityinternalCreateObjectV1ResponseTest.php
-test/Model/BillingentityinternalDeleteObjectV1ResponseTest.php
 test/Model/BillingentityinternalEditObjectV1RequestTest.php
 test/Model/BillingentityinternalEditObjectV1ResponseTest.php
 test/Model/BillingentityinternalGetAutocompleteV2ResponseAllOfTest.php
@@ -2284,9 +2263,6 @@ test/Model/DepartmentAutocompleteElementResponseTest.php
 test/Model/DepartmentGetAutocompleteV2ResponseAllOfTest.php
 test/Model/DepartmentGetAutocompleteV2ResponseMPayloadTest.php
 test/Model/DepartmentGetAutocompleteV2ResponseTest.php
-test/Model/DepartmentGetMembersV1ResponseAllOfTest.php
-test/Model/DepartmentGetMembersV1ResponseMPayloadTest.php
-test/Model/DepartmentGetMembersV1ResponseTest.php
 test/Model/DescriptionstaticResponseCompoundTest.php
 test/Model/DescriptionstaticResponseTest.php
 test/Model/EmailRequestCompoundTest.php
@@ -2974,7 +2950,6 @@ test/Model/PaymenttermCreateObjectV1RequestTest.php
 test/Model/PaymenttermCreateObjectV1ResponseAllOfTest.php
 test/Model/PaymenttermCreateObjectV1ResponseMPayloadTest.php
 test/Model/PaymenttermCreateObjectV1ResponseTest.php
-test/Model/PaymenttermDeleteObjectV1ResponseTest.php
 test/Model/PaymenttermEditObjectV1RequestTest.php
 test/Model/PaymenttermEditObjectV1ResponseTest.php
 test/Model/PaymenttermGetAutocompleteV2ResponseAllOfTest.php
@@ -3029,7 +3004,6 @@ test/Model/UsergroupCreateObjectV1RequestTest.php
 test/Model/UsergroupCreateObjectV1ResponseAllOfTest.php
 test/Model/UsergroupCreateObjectV1ResponseMPayloadTest.php
 test/Model/UsergroupCreateObjectV1ResponseTest.php
-test/Model/UsergroupDeleteObjectV1ResponseTest.php
 test/Model/UsergroupEditObjectV1RequestTest.php
 test/Model/UsergroupEditObjectV1ResponseTest.php
 test/Model/UsergroupGetAutocompleteV2ResponseAllOfTest.php
@@ -3039,9 +3013,6 @@ test/Model/UsergroupGetListV1ResponseAllOfTest.php
 test/Model/UsergroupGetListV1ResponseMPayloadAllOfTest.php
 test/Model/UsergroupGetListV1ResponseMPayloadTest.php
 test/Model/UsergroupGetListV1ResponseTest.php
-test/Model/UsergroupGetMembersV1ResponseAllOfTest.php
-test/Model/UsergroupGetMembersV1ResponseMPayloadTest.php
-test/Model/UsergroupGetMembersV1ResponseTest.php
 test/Model/UsergroupGetObjectV2ResponseAllOfTest.php
 test/Model/UsergroupGetObjectV2ResponseMPayloadTest.php
 test/Model/UsergroupGetObjectV2ResponseTest.php
@@ -3055,7 +3026,6 @@ test/Model/VariableexpenseCreateObjectV1RequestTest.php
 test/Model/VariableexpenseCreateObjectV1ResponseAllOfTest.php
 test/Model/VariableexpenseCreateObjectV1ResponseMPayloadTest.php
 test/Model/VariableexpenseCreateObjectV1ResponseTest.php
-test/Model/VariableexpenseDeleteObjectV1ResponseTest.php
 test/Model/VariableexpenseEditObjectV1RequestTest.php
 test/Model/VariableexpenseEditObjectV1ResponseTest.php
 test/Model/VariableexpenseGetAutocompleteV2ResponseAllOfTest.php

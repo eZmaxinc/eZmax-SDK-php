@@ -85,18 +85,6 @@ class ObjectUsergroupApiTest extends TestCase
     }
 
     /**
-     * Test case for usergroupDeleteObjectV1
-     *
-     * Delete an existing Usergroup.
-     *
-     */
-    public function testUsergroupDeleteObjectV1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for usergroupEditObjectV1
      *
      * Edit an existing Usergroup.
@@ -127,18 +115,6 @@ class ObjectUsergroupApiTest extends TestCase
      *
      */
     public function testUsergroupGetListV1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for usergroupGetMembersV1
-     *
-     * Retrieve an existing Usergroup's members.
-     *
-     */
-    public function testUsergroupGetMembersV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
