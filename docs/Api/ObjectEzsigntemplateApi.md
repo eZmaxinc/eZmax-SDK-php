@@ -8,7 +8,6 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsigntemplateCreateObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateCreateObjectV1) | **POST** /1/object/ezsigntemplate | Create a new Ezsigntemplate |
 | [**ezsigntemplateDeleteObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateDeleteObjectV1) | **DELETE** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Delete an existing Ezsigntemplate |
 | [**ezsigntemplateEditObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateEditObjectV1) | **PUT** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate |
-| [**ezsigntemplateGetAutocompleteV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetAutocompleteV1) | **GET** /1/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplate and IDs |
 | [**ezsigntemplateGetAutocompleteV2()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetAutocompleteV2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs |
 | [**ezsigntemplateGetListV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetListV1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list |
 | [**ezsigntemplateGetObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV1) | **GET** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate |
@@ -267,74 +266,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsigntemplateGetAutocompleteV1()`
-
-```php
-ezsigntemplateGetAutocompleteV1($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
-```
-
-Retrieve Ezsigntemplate and IDs
-
-Get the list of Ezsigntemplate to be used in a dropdown or autocomplete control.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$sSelector = 'sSelector_example'; // string | The type of Ezsigntemplate to return
-$eFilterActive = 'Active'; // string | Specify which results we want to display.
-$sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
-
-try {
-    $result = $apiInstance->ezsigntemplateGetAutocompleteV1($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateGetAutocompleteV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **sSelector** | **string**| The type of Ezsigntemplate to return | |
-| **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
-| **sQuery** | **string**| Allow to filter the returned results | [optional] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\CommonGetAutocompleteV1Response**](../Model/CommonGetAutocompleteV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `ezsigntemplateGetAutocompleteV2()`
 
 ```php
@@ -433,8 +364,8 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
     $config
 );
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
-$iRowMax = 56; // int
-$iRowOffset = 56; // int
+$iRowMax = 10000; // int
+$iRowOffset = 0; // int
 $acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
@@ -451,8 +382,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
-| **iRowMax** | **int**|  | [optional] |
-| **iRowOffset** | **int**|  | [optional] |
+| **iRowMax** | **int**|  | [optional] [default to 10000] |
+| **iRowOffset** | **int**|  | [optional] [default to 0] |
 | **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
