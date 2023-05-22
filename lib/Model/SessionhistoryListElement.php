@@ -342,8 +342,8 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['pkiSessionhistoryID'] === null) {
             $invalidProperties[] = "'pkiSessionhistoryID' can't be null";
         }
-        if (($this->container['pkiSessionhistoryID'] > 4294967295)) {
-            $invalidProperties[] = "invalid value for 'pkiSessionhistoryID', must be smaller than or equal to 4294967295.";
+        if (($this->container['pkiSessionhistoryID'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'pkiSessionhistoryID', must be smaller than or equal to 2147483647.";
         }
 
         if (($this->container['pkiSessionhistoryID'] < 1)) {
@@ -436,9 +436,9 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable pkiSessionhistoryID cannot be null');
         //}
 
-//        if (($pkiSessionhistoryID > 4294967295)) {
-        if (($pkiSessionhistoryID > 4294967295)) {
-            throw new \InvalidArgumentException('invalid value for $pkiSessionhistoryID when calling SessionhistoryListElement., must be smaller than or equal to 4294967295.');
+//        if (($pkiSessionhistoryID > 2147483647)) {
+        if (($pkiSessionhistoryID > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $pkiSessionhistoryID when calling SessionhistoryListElement., must be smaller than or equal to 2147483647.');
         }
 //        if (($pkiSessionhistoryID < 1)) {
         if (($pkiSessionhistoryID < 1)) {
