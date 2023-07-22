@@ -552,7 +552,7 @@ class SubnetResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iSubnetNetwork'] = $iSubnetNetwork;
-        $this->container['iSubnetNetwork'] = (is_null($iSubnetNetwork) ? null : $iSubnetNetwork);
+        $this->container['iSubnetNetwork'] = (is_null($iSubnetNetwork) ? null : (int) $iSubnetNetwork);
 
         return $this;
     }
@@ -593,7 +593,7 @@ class SubnetResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iSubnetMask'] = $iSubnetMask;
-        $this->container['iSubnetMask'] = (is_null($iSubnetMask) ? null : $iSubnetMask);
+        $this->container['iSubnetMask'] = (is_null($iSubnetMask) ? null : (int) $iSubnetMask);
 
         return $this;
     }
