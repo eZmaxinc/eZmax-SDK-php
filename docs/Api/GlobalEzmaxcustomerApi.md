@@ -24,17 +24,11 @@ Retrieve the ezmaxcustomer's specific configuration. This will help locate the p
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 
 $apiInstance = new eZmaxAPI\Api\GlobalEzmaxcustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $pksEzmaxcustomerCode = 'pksEzmaxcustomerCode_example'; // string
 
@@ -58,7 +52,7 @@ try {
 
 ### Authorization
 
-[Authorization](../../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 

@@ -4,11 +4,76 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**userstagedCreateUserV1()**](ObjectUserstagedApi.md#userstagedCreateUserV1) | **POST** /1/object/userstaged/{pkiUserstagedID}/createUser | Create a User from a Userstaged and then map it |
 | [**userstagedDeleteObjectV1()**](ObjectUserstagedApi.md#userstagedDeleteObjectV1) | **DELETE** /1/object/userstaged/{pkiUserstagedID} | Delete an existing Userstaged |
 | [**userstagedGetListV1()**](ObjectUserstagedApi.md#userstagedGetListV1) | **GET** /1/object/userstaged/getList | Retrieve Userstaged list |
 | [**userstagedGetObjectV2()**](ObjectUserstagedApi.md#userstagedGetObjectV2) | **GET** /2/object/userstaged/{pkiUserstagedID} | Retrieve an existing Userstaged |
 | [**userstagedMapV1()**](ObjectUserstagedApi.md#userstagedMapV1) | **POST** /1/object/userstaged/{pkiUserstagedID}/map | Map the Userstaged to an existing user |
 
+
+## `userstagedCreateUserV1()`
+
+```php
+userstagedCreateUserV1($pkiUserstagedID, $body): \eZmaxAPI\Model\UserstagedCreateUserV1Response
+```
+
+Create a User from a Userstaged and then map it
+
+Default values will be used while creating the User. If you need to change those values, you should use the route to edit a User.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectUserstagedApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiUserstagedID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->userstagedCreateUserV1($pkiUserstagedID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectUserstagedApi->userstagedCreateUserV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiUserstagedID** | **int**|  | |
+| **body** | **object**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\UserstagedCreateUserV1Response**](../Model/UserstagedCreateUserV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `userstagedDeleteObjectV1()`
 
@@ -39,7 +104,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectUserstagedApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiUserstagedID = 56; // int | The unique ID of the Userstaged
+$pkiUserstagedID = 56; // int
 
 try {
     $result = $apiInstance->userstagedDeleteObjectV1($pkiUserstagedID);
@@ -53,7 +118,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pkiUserstagedID** | **int**| The unique ID of the Userstaged | |
+| **pkiUserstagedID** | **int**|  | |
 
 ### Return type
 
@@ -171,7 +236,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectUserstagedApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiUserstagedID = 56; // int | The unique ID of the Userstaged
+$pkiUserstagedID = 56; // int
 
 try {
     $result = $apiInstance->userstagedGetObjectV2($pkiUserstagedID);
@@ -185,7 +250,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pkiUserstagedID** | **int**| The unique ID of the Userstaged | |
+| **pkiUserstagedID** | **int**|  | |
 
 ### Return type
 
@@ -233,7 +298,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectUserstagedApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiUserstagedID = 56; // int | The unique ID of the Userstaged
+$pkiUserstagedID = 56; // int
 $userstagedMapV1Request = new \eZmaxAPI\Model\UserstagedMapV1Request(); // \eZmaxAPI\Model\UserstagedMapV1Request
 
 try {
@@ -248,7 +313,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pkiUserstagedID** | **int**| The unique ID of the Userstaged | |
+| **pkiUserstagedID** | **int**|  | |
 | **userstagedMapV1Request** | [**\eZmaxAPI\Model\UserstagedMapV1Request**](../Model/UserstagedMapV1Request.md)|  | |
 
 ### Return type
