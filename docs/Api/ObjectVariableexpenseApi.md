@@ -102,7 +102,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectVariableexpenseApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiVariableexpenseID = 56; // int | The unique ID of the Variableexpense
+$pkiVariableexpenseID = 56; // int
 $variableexpenseEditObjectV1Request = new \eZmaxAPI\Model\VariableexpenseEditObjectV1Request(); // \eZmaxAPI\Model\VariableexpenseEditObjectV1Request
 
 try {
@@ -117,7 +117,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pkiVariableexpenseID** | **int**| The unique ID of the Variableexpense | |
+| **pkiVariableexpenseID** | **int**|  | |
 | **variableexpenseEditObjectV1Request** | [**\eZmaxAPI\Model\VariableexpenseEditObjectV1Request**](../Model/VariableexpenseEditObjectV1Request.md)|  | |
 
 ### Return type
@@ -304,7 +304,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectVariableexpenseApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiVariableexpenseID = 56; // int | The unique ID of the Variableexpense
+$pkiVariableexpenseID = 56; // int
 
 try {
     $result = $apiInstance->variableexpenseGetObjectV2($pkiVariableexpenseID);
@@ -318,7 +318,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pkiVariableexpenseID** | **int**| The unique ID of the Variableexpense | |
+| **pkiVariableexpenseID** | **int**|  | |
 
 ### Return type
 

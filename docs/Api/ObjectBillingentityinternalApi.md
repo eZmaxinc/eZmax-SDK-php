@@ -102,7 +102,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectBillingentityinternalApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiBillingentityinternalID = 56; // int | The unique ID of the Billingentityinternal
+$pkiBillingentityinternalID = 56; // int
 $billingentityinternalEditObjectV1Request = new \eZmaxAPI\Model\BillingentityinternalEditObjectV1Request(); // \eZmaxAPI\Model\BillingentityinternalEditObjectV1Request
 
 try {
@@ -117,7 +117,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pkiBillingentityinternalID** | **int**| The unique ID of the Billingentityinternal | |
+| **pkiBillingentityinternalID** | **int**|  | |
 | **billingentityinternalEditObjectV1Request** | [**\eZmaxAPI\Model\BillingentityinternalEditObjectV1Request**](../Model/BillingentityinternalEditObjectV1Request.md)|  | |
 
 ### Return type
@@ -304,7 +304,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectBillingentityinternalApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiBillingentityinternalID = 56; // int | The unique ID of the Billingentityinternal
+$pkiBillingentityinternalID = 56; // int
 
 try {
     $result = $apiInstance->billingentityinternalGetObjectV2($pkiBillingentityinternalID);
@@ -318,7 +318,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pkiBillingentityinternalID** | **int**| The unique ID of the Billingentityinternal | |
+| **pkiBillingentityinternalID** | **int**|  | |
 
 ### Return type
 

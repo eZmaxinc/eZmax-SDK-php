@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **sComputerDescription** | **string** | The description of the Computer | [optional]
 **sSessionhistoryDuration** | **string** | The duration of the session |
 **sSessionhistoryIP** | **string** | Represent an IP address. |
-**sUserLoginname** | **string** | The Login name of the User. | [optional]
+**sUserLoginname** | **string** | The login name of the User. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

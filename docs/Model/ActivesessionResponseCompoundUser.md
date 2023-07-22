@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **pkiUserID** | **int** | The unique ID of the User |
 **fkiTimezoneID** | **int** | The unique ID of the Timezone |
 **sAvatarUrl** | **string** | The url of the picture used as avatar |
-**sUserFirstname** | **string** | The First name of the user |
-**sUserLastname** | **string** | The Last name of the user |
+**sUserFirstname** | **string** | The first name of the user |
+**sUserLastname** | **string** | The last name of the user |
 **sEmailAddress** | **string** | The email address. |
 **eUserEzsignsendreminderfrequency** | [**\eZmaxAPI\Model\FieldEUserEzsignsendreminderfrequency**](FieldEUserEzsignsendreminderfrequency.md) |  |
 **iUserInterfacecolor** | **int** | The int32 representation of the interface color. For example, RGB color #39435B would be 3752795 |

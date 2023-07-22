@@ -28,8 +28,8 @@ namespace eZmaxAPI;
  */
 class RequestSignature
 {
-	public static function getFingerprintV1 ($sAuthorization, $dtDate, $sMethod, $sURL, $sBody = '') {
-		$sContentToHash = "$sMethod\n$sURL\n$sBody\n$sAuthorization\n$dtDate";
+	public static function getFingerprintV1 ($sAuthorization, $dtDate, $sMethod, $sURL, $sBody = '', $iExpiration = null) {
+		$sContentToHash = "$sMethod\n$sURL\n$sBody\n$sAuthorization\n$dtDate" . (is_null($iExpiration) ? '' : "\n$iExpiration");
 		return 'v1='.hash('sha256', $sContentToHash);
 	}
 
@@ -38,18 +38,22 @@ class RequestSignature
 		return 'v1='.hash_hmac('sha256', $sContentToSign, $sSecret);
 	}
 
-	public static function getHeadersV1 ($sAuthorization, $sSecret, $sMethod, $sURL, $sBody = '') {
+	public static function getHeadersV1 ($sAuthorization, $sSecret, $sMethod, $sURL, $sBody = '', $iExpiration = null) {
 	    $dtDate = gmdate('Y-m-d\TH:i:s\Z');
-		$sFingerprint = self::getFingerprintV1 ($sAuthorization, $dtDate, $sMethod, $sURL, $sBody);
+		$sFingerprint = self::getFingerprintV1 ($sAuthorization, $dtDate, $sMethod, $sURL, $sBody, $iExpiration);
 		$sSignature = self::getSignatureV1 ($sAuthorization, $dtDate, $sFingerprint, $sSecret);
 		
-		return [
+		$a_Return = [
 			'Ezmax-Date' => $dtDate,
 			'Ezmax-Fingerprint' => $sFingerprint,
 			'Ezmax-Signature' => $sSignature
 		];
+
+		if (!is_null($iExpiration)) {
+			$a_Return['Ezmax-Expiration'] = $iExpiration;
+		}
+
+		return $a_Return;
 	}
 	
 }
-
-?>

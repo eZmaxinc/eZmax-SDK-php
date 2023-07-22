@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **sCommunicationBodyurl** | **string** | The url of the body used as body in the Communication | [optional]
 **eCommunicationDirection** | [**\eZmaxAPI\Model\ComputedECommunicationDirection**](ComputedECommunicationDirection.md) |  |
 **iCommunicationrecipientCount** | **int** | The count of Communicationrecipient |
+**bCommunicationPrivate** | **bool** | Whether the Communication is private or not |
 **objDescriptionstaticSender** | [**\eZmaxAPI\Model\DescriptionstaticResponse**](DescriptionstaticResponse.md) |  | [optional]
 **objEmailstaticSender** | [**\eZmaxAPI\Model\EmailstaticResponse**](EmailstaticResponse.md) |  | [optional]
 **objPhonestaticSender** | [**\eZmaxAPI\Model\PhonestaticResponse**](PhonestaticResponse.md) |  | [optional]

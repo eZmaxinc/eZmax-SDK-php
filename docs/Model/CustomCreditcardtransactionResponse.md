@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sCreditcardtypeCodename** | **string** | The codename of the Creditcardtype |
+**eCreditcardtypeCodename** | [**\eZmaxAPI\Model\FieldECreditcardtypeCodename**](FieldECreditcardtypeCodename.md) |  | [optional]
 **dCreditcardtransactionAmount** | **string** | The amount of the Creditcardtransaction |
 **sCreditcardtransactionPartiallydecryptednumber** | **string** | The partially decrypted credit card number used in the Creditcardtransaction |
 **sCreditcardtransactionReferencenumber** | **string** | The reference number on the creditcard service for the Creditcardtransaction |

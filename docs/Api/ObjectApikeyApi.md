@@ -5,6 +5,11 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**apikeyCreateObjectV2()**](ObjectApikeyApi.md#apikeyCreateObjectV2) | **POST** /2/object/apikey | Create a new Apikey |
+| [**apikeyEditObjectV1()**](ObjectApikeyApi.md#apikeyEditObjectV1) | **PUT** /1/object/apikey/{pkiApikeyID} | Edit an existing Apikey |
+| [**apikeyEditPermissionsV1()**](ObjectApikeyApi.md#apikeyEditPermissionsV1) | **PUT** /1/object/apikey/{pkiApikeyID}/editPermissions | Edit multiple Permissions |
+| [**apikeyGetObjectV2()**](ObjectApikeyApi.md#apikeyGetObjectV2) | **GET** /2/object/apikey/{pkiApikeyID} | Retrieve an existing Apikey |
+| [**apikeyGetPermissionsV1()**](ObjectApikeyApi.md#apikeyGetPermissionsV1) | **GET** /1/object/apikey/{pkiApikeyID}/getPermissions | Retrieve an existing Apikey&#39;s Permissions |
+| [**apikeyGetSubnetsV1()**](ObjectApikeyApi.md#apikeyGetSubnetsV1) | **GET** /1/object/apikey/{pkiApikeyID}/getSubnets | Retrieve an existing Apikey&#39;s subnets |
 
 
 ## `apikeyCreateObjectV2()`
@@ -63,6 +68,316 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `apikeyEditObjectV1()`
+
+```php
+apikeyEditObjectV1($pkiApikeyID, $apikeyEditObjectV1Request): \eZmaxAPI\Model\ApikeyEditObjectV1Response
+```
+
+Edit an existing Apikey
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectApikeyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiApikeyID = 56; // int | The unique ID of the Apikey
+$apikeyEditObjectV1Request = new \eZmaxAPI\Model\ApikeyEditObjectV1Request(); // \eZmaxAPI\Model\ApikeyEditObjectV1Request
+
+try {
+    $result = $apiInstance->apikeyEditObjectV1($pkiApikeyID, $apikeyEditObjectV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectApikeyApi->apikeyEditObjectV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiApikeyID** | **int**| The unique ID of the Apikey | |
+| **apikeyEditObjectV1Request** | [**\eZmaxAPI\Model\ApikeyEditObjectV1Request**](../Model/ApikeyEditObjectV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\ApikeyEditObjectV1Response**](../Model/ApikeyEditObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `apikeyEditPermissionsV1()`
+
+```php
+apikeyEditPermissionsV1($pkiApikeyID, $apikeyEditPermissionsV1Request): \eZmaxAPI\Model\ApikeyEditPermissionsV1Response
+```
+
+Edit multiple Permissions
+
+Using this endpoint, you can edit multiple Permissions at the same time.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectApikeyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiApikeyID = 56; // int
+$apikeyEditPermissionsV1Request = new \eZmaxAPI\Model\ApikeyEditPermissionsV1Request(); // \eZmaxAPI\Model\ApikeyEditPermissionsV1Request
+
+try {
+    $result = $apiInstance->apikeyEditPermissionsV1($pkiApikeyID, $apikeyEditPermissionsV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectApikeyApi->apikeyEditPermissionsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiApikeyID** | **int**|  | |
+| **apikeyEditPermissionsV1Request** | [**\eZmaxAPI\Model\ApikeyEditPermissionsV1Request**](../Model/ApikeyEditPermissionsV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\ApikeyEditPermissionsV1Response**](../Model/ApikeyEditPermissionsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `apikeyGetObjectV2()`
+
+```php
+apikeyGetObjectV2($pkiApikeyID): \eZmaxAPI\Model\ApikeyGetObjectV2Response
+```
+
+Retrieve an existing Apikey
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectApikeyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiApikeyID = 56; // int | The unique ID of the Apikey
+
+try {
+    $result = $apiInstance->apikeyGetObjectV2($pkiApikeyID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectApikeyApi->apikeyGetObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiApikeyID** | **int**| The unique ID of the Apikey | |
+
+### Return type
+
+[**\eZmaxAPI\Model\ApikeyGetObjectV2Response**](../Model/ApikeyGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `apikeyGetPermissionsV1()`
+
+```php
+apikeyGetPermissionsV1($pkiApikeyID): \eZmaxAPI\Model\ApikeyGetPermissionsV1Response
+```
+
+Retrieve an existing Apikey's Permissions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectApikeyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiApikeyID = 56; // int
+
+try {
+    $result = $apiInstance->apikeyGetPermissionsV1($pkiApikeyID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectApikeyApi->apikeyGetPermissionsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiApikeyID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\ApikeyGetPermissionsV1Response**](../Model/ApikeyGetPermissionsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `apikeyGetSubnetsV1()`
+
+```php
+apikeyGetSubnetsV1($pkiApikeyID): \eZmaxAPI\Model\ApikeyGetSubnetsV1Response
+```
+
+Retrieve an existing Apikey's subnets
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectApikeyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiApikeyID = 56; // int
+
+try {
+    $result = $apiInstance->apikeyGetSubnetsV1($pkiApikeyID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectApikeyApi->apikeyGetSubnetsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiApikeyID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\ApikeyGetSubnetsV1Response**](../Model/ApikeyGetSubnetsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
