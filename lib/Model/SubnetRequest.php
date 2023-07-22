@@ -79,8 +79,8 @@ class SubnetRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'fkiUserID' => null,
         'fkiApikeyID' => null,
         'objSubnetDescription' => null,
-        'iSubnetNetwork' => null,
-        'iSubnetMask' => null
+        'iSubnetNetwork' => 'int64',
+        'iSubnetMask' => 'int64'
     ];
 
     /**
@@ -549,7 +549,7 @@ class SubnetRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iSubnetNetwork'] = $iSubnetNetwork;
-        $this->container['iSubnetNetwork'] = (is_null($iSubnetNetwork) ? null : (int) $iSubnetNetwork);
+        $this->container['iSubnetNetwork'] = (is_null($iSubnetNetwork) ? null : $iSubnetNetwork);
 
         return $this;
     }
@@ -590,7 +590,7 @@ class SubnetRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iSubnetMask'] = $iSubnetMask;
-        $this->container['iSubnetMask'] = (is_null($iSubnetMask) ? null : (int) $iSubnetMask);
+        $this->container['iSubnetMask'] = (is_null($iSubnetMask) ? null : $iSubnetMask);
 
         return $this;
     }
