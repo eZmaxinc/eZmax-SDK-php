@@ -108,9 +108,27 @@ class ApikeyResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "sComputedToken"
+     * Test attribute "objContactName"
      */
-    public function testPropertySComputedToken()
+    public function testPropertyObjContactName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sApikeyApikey"
+     */
+    public function testPropertySApikeyApikey()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sApikeySecret"
+     */
+    public function testPropertySApikeySecret()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -120,6 +138,15 @@ class ApikeyResponseTest extends TestCase
      * Test attribute "bApikeyIsactive"
      */
     public function testPropertyBApikeyIsactive()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bApikeyIssigned"
+     */
+    public function testPropertyBApikeyIssigned()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -60,7 +60,6 @@ class EzsignfoldersignerassociationResponseCompoundAllOf implements ModelInterfa
     protected static $openAPITypes = [
         'objEzsignsignergroup' => '\eZmaxAPI\Model\EzsignsignergroupResponseCompound',
         'objUser' => '\eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser',
-        'objUsergroup' => '\eZmaxAPI\Model\UsergroupResponseCompound',
         'objEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerResponseCompound'
     ];
 
@@ -74,7 +73,6 @@ class EzsignfoldersignerassociationResponseCompoundAllOf implements ModelInterfa
     protected static $openAPIFormats = [
         'objEzsignsignergroup' => null,
         'objUser' => null,
-        'objUsergroup' => null,
         'objEzsignsigner' => null
     ];
 
@@ -86,7 +84,6 @@ class EzsignfoldersignerassociationResponseCompoundAllOf implements ModelInterfa
     protected static array $openAPINullables = [
         'objEzsignsignergroup' => false,
 		'objUser' => false,
-		'objUsergroup' => false,
 		'objEzsignsigner' => false
     ];
 
@@ -178,7 +175,6 @@ class EzsignfoldersignerassociationResponseCompoundAllOf implements ModelInterfa
     protected static $attributeMap = [
         'objEzsignsignergroup' => 'objEzsignsignergroup',
         'objUser' => 'objUser',
-        'objUsergroup' => 'objUsergroup',
         'objEzsignsigner' => 'objEzsignsigner'
     ];
 
@@ -190,7 +186,6 @@ class EzsignfoldersignerassociationResponseCompoundAllOf implements ModelInterfa
     protected static $setters = [
         'objEzsignsignergroup' => 'setObjEzsignsignergroup',
         'objUser' => 'setObjUser',
-        'objUsergroup' => 'setObjUsergroup',
         'objEzsignsigner' => 'setObjEzsignsigner'
     ];
 
@@ -202,7 +197,6 @@ class EzsignfoldersignerassociationResponseCompoundAllOf implements ModelInterfa
     protected static $getters = [
         'objEzsignsignergroup' => 'getObjEzsignsignergroup',
         'objUser' => 'getObjUser',
-        'objUsergroup' => 'getObjUsergroup',
         'objEzsignsigner' => 'getObjEzsignsigner'
     ];
 
@@ -265,7 +259,6 @@ class EzsignfoldersignerassociationResponseCompoundAllOf implements ModelInterfa
     {
         $this->setIfExists('objEzsignsignergroup', $data ?? [], null);
         $this->setIfExists('objUser', $data ?? [], null);
-        $this->setIfExists('objUsergroup', $data ?? [], null);
         $this->setIfExists('objEzsignsigner', $data ?? [], null);
     }
 
@@ -369,37 +362,6 @@ class EzsignfoldersignerassociationResponseCompoundAllOf implements ModelInterfa
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objUser'] = $objUser;
         $this->container['objUser'] = $objUser;
-
-        return $this;
-    }
-
-    /**
-     * Gets objUsergroup
-     *
-     * @return \eZmaxAPI\Model\UsergroupResponseCompound|null
-     */
-    public function getObjUsergroup()
-    {
-        return $this->container['objUsergroup'];
-    }
-
-    /**
-     * Sets objUsergroup
-     *
-     * @param \eZmaxAPI\Model\UsergroupResponseCompound|null $objUsergroup objUsergroup
-     *
-     * @return self
-     */
-    public function setObjUsergroup($objUsergroup)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objUsergroup)) {
-            //throw new \InvalidArgumentException('non-nullable objUsergroup cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objUsergroup'] = $objUsergroup;
-        $this->container['objUsergroup'] = $objUsergroup;
 
         return $this;
     }

@@ -87,7 +87,6 @@ class ObjectSessionhistoryApi
                 'Management_UsersAttendance',
                 'Management_UsersEmployee',
                 'Management_UsersEzcom',
-                'Management_UsersEzsignSigner',
                 'Management_UsersEzsignUser',
                 'Management_UsersNormal',
                 'Management_UsersRewardMember',

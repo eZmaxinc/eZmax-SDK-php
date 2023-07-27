@@ -93,7 +93,6 @@ class ObjectSignatureApi
             'permissions' => [
                 'Management_UsersNormal',
                 'Management_UsersAgentBroker',
-                'Management_UsersEzsignSigner',
                 'Management_UsersEzsignUser',
             ],
             'usertypeextra' => [
@@ -110,7 +109,6 @@ class ObjectSignatureApi
             'permissions' => [
                 'Management_UsersNormal',
                 'Management_UsersAgentBroker',
-                'Management_UsersEzsignSigner',
                 'Management_UsersEzsignUser',
             ],
             'usertypeextra' => [
@@ -127,7 +125,6 @@ class ObjectSignatureApi
             'permissions' => [
                 'Management_UsersNormal',
                 'Management_UsersAgentBroker',
-                'Management_UsersEzsignSigner',
                 'Management_UsersEzsignUser',
             ],
             'usertypeextra' => [
@@ -144,7 +141,6 @@ class ObjectSignatureApi
             'permissions' => [
                 'Management_UsersNormal',
                 'Management_UsersAgentBroker',
-                'Management_UsersEzsignSigner',
                 'Management_UsersEzsignUser',
             ],
             'usertypeextra' => [

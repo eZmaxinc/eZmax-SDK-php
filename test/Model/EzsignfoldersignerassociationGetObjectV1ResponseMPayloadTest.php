@@ -144,15 +144,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest extends TestC
     }
 
     /**
-     * Test attribute "objUsergroup"
-     */
-    public function testPropertyObjUsergroup()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "objEzsignsigner"
      */
     public function testPropertyObjEzsignsigner()

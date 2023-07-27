@@ -82,6 +82,12 @@ class ObjectApikeyApi
         'apikeyEditPermissionsV1' => [
             'application/json',
         ],
+        'apikeyGetCorsV1' => [
+            'application/json',
+        ],
+        'apikeyGetListV1' => [
+            'application/json',
+        ],
         'apikeyGetObjectV2' => [
             'application/json',
         ],
@@ -89,6 +95,9 @@ class ObjectApikeyApi
             'application/json',
         ],
         'apikeyGetSubnetsV1' => [
+            'application/json',
+        ],
+        'apikeyRegenerateV1' => [
             'application/json',
         ],
     ];
@@ -132,6 +141,31 @@ class ObjectApikeyApi
             ],
             'deprecated' => false,
         ],
+        'apikeyGetCorsV1' => [
+            'permissions' => [
+                'Management_UsersEzsignUser',
+                'Management_UsersNormal',
+            ],
+            'usertypeextra' => [
+            ],
+            'apikeyrequire' => true,
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'apikeyGetListV1' => [
+            'permissions' => [
+                'Management_APIKeyGeneration',
+            ],
+            'usertypeextra' => [
+            ],
+            'apikeyrequire' => true,
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
         'apikeyGetObjectV2' => [
             'permissions' => [
                 'Management_APIKeyGeneration',
@@ -161,6 +195,18 @@ class ObjectApikeyApi
             'permissions' => [
                 'Management_UsersEzsignUser',
                 'Management_UsersNormal',
+            ],
+            'usertypeextra' => [
+            ],
+            'apikeyrequire' => true,
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'apikeyRegenerateV1' => [
+            'permissions' => [
+                'Management_APIKeyGeneration',
             ],
             'usertypeextra' => [
             ],
@@ -1244,6 +1290,708 @@ class ObjectApikeyApi
     }
 
     /**
+     * Operation apikeyGetCorsV1
+     *
+     * Retrieve an existing Apikey&#39;s cors
+     *
+     * @param  int $pkiApikeyID pkiApikeyID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetCorsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\ApikeyGetCorsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function apikeyGetCorsV1($pkiApikeyID, string $contentType = self::contentTypes['apikeyGetCorsV1'][0])
+    {
+        list($response) = $this->apikeyGetCorsV1WithHttpInfo($pkiApikeyID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apikeyGetCorsV1WithHttpInfo
+     *
+     * Retrieve an existing Apikey&#39;s cors
+     *
+     * @param  int $pkiApikeyID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetCorsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\ApikeyGetCorsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apikeyGetCorsV1WithHttpInfo($pkiApikeyID, string $contentType = self::contentTypes['apikeyGetCorsV1'][0])
+    {
+        $request = $this->apikeyGetCorsV1Request($pkiApikeyID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\ApikeyGetCorsV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\ApikeyGetCorsV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\ApikeyGetCorsV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\ApikeyGetCorsV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\ApikeyGetCorsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apikeyGetCorsV1Async
+     *
+     * Retrieve an existing Apikey&#39;s cors
+     *
+     * @param  int $pkiApikeyID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetCorsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apikeyGetCorsV1Async($pkiApikeyID, string $contentType = self::contentTypes['apikeyGetCorsV1'][0])
+    {
+        return $this->apikeyGetCorsV1AsyncWithHttpInfo($pkiApikeyID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apikeyGetCorsV1AsyncWithHttpInfo
+     *
+     * Retrieve an existing Apikey&#39;s cors
+     *
+     * @param  int $pkiApikeyID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetCorsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apikeyGetCorsV1AsyncWithHttpInfo($pkiApikeyID, string $contentType = self::contentTypes['apikeyGetCorsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\ApikeyGetCorsV1Response';
+        $request = $this->apikeyGetCorsV1Request($pkiApikeyID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apikeyGetCorsV1'
+     *
+     * @param  int $pkiApikeyID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetCorsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apikeyGetCorsV1Request($pkiApikeyID, string $contentType = self::contentTypes['apikeyGetCorsV1'][0])
+    {
+
+        // verify the required parameter 'pkiApikeyID' is set
+        if ($pkiApikeyID === null || (is_array($pkiApikeyID) && count($pkiApikeyID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiApikeyID when calling apikeyGetCorsV1'
+            );
+        }
+        if ($pkiApikeyID < 0) {
+            throw new \InvalidArgumentException('invalid value for "$pkiApikeyID" when calling ObjectApikeyApi.apikeyGetCorsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/apikey/{pkiApikeyID}/getCors';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiApikeyID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiApikeyID' . '}',
+                ObjectSerializer::toPathValue($pkiApikeyID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apikeyGetListV1
+     *
+     * Retrieve Apikey list
+     *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax iRowMax (optional, default to 10000)
+     * @param  int $iRowOffset iRowOffset (optional, default to 0)
+     * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
+     * @param  string $sFilter sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\ApikeyGetListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function apikeyGetListV1($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['apikeyGetListV1'][0])
+    {
+        list($response) = $this->apikeyGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apikeyGetListV1WithHttpInfo
+     *
+     * Retrieve Apikey list
+     *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax (optional, default to 10000)
+     * @param  int $iRowOffset (optional, default to 0)
+     * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\ApikeyGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apikeyGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['apikeyGetListV1'][0])
+    {
+        $request = $this->apikeyGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\ApikeyGetListV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\ApikeyGetListV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\ApikeyGetListV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 406:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\ApikeyGetListV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\ApikeyGetListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apikeyGetListV1Async
+     *
+     * Retrieve Apikey list
+     *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax (optional, default to 10000)
+     * @param  int $iRowOffset (optional, default to 0)
+     * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apikeyGetListV1Async($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['apikeyGetListV1'][0])
+    {
+        return $this->apikeyGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apikeyGetListV1AsyncWithHttpInfo
+     *
+     * Retrieve Apikey list
+     *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax (optional, default to 10000)
+     * @param  int $iRowOffset (optional, default to 0)
+     * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apikeyGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['apikeyGetListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\ApikeyGetListV1Response';
+        $request = $this->apikeyGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apikeyGetListV1'
+     *
+     * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int $iRowMax (optional, default to 10000)
+     * @param  int $iRowOffset (optional, default to 0)
+     * @param  HeaderAcceptLanguage $acceptLanguage (optional)
+     * @param  string $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apikeyGetListV1Request($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['apikeyGetListV1'][0])
+    {
+
+
+        if ($iRowMax !== null && $iRowMax > 10000) {
+            throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectApikeyApi.apikeyGetListV1, must be smaller than or equal to 10000.');
+        }
+        if ($iRowMax !== null && $iRowMax < 1) {
+            throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectApikeyApi.apikeyGetListV1, must be bigger than or equal to 1.');
+        }
+        
+        if ($iRowOffset !== null && $iRowOffset < 0) {
+            throw new \InvalidArgumentException('invalid value for "$iRowOffset" when calling ObjectApikeyApi.apikeyGetListV1, must be bigger than or equal to 0.');
+        }
+        
+
+
+
+        $resourcePath = '/1/object/apikey/getList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eOrderBy,
+            'eOrderBy', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowMax,
+            'iRowMax', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowOffset,
+            'iRowOffset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sFilter,
+            'sFilter', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($acceptLanguage !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($acceptLanguage);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation apikeyGetObjectV2
      *
      * Retrieve an existing Apikey
@@ -2206,6 +2954,348 @@ class ObjectApikeyApi
 
         return new Request(
             'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apikeyRegenerateV1
+     *
+     * Regenerate the Apikey
+     *
+     * @param  int $pkiApikeyID pkiApikeyID (required)
+     * @param  \eZmaxAPI\Model\ApikeyRegenerateV1Request $apikeyRegenerateV1Request apikeyRegenerateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyRegenerateV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\ApikeyRegenerateV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function apikeyRegenerateV1($pkiApikeyID, $apikeyRegenerateV1Request, string $contentType = self::contentTypes['apikeyRegenerateV1'][0])
+    {
+        list($response) = $this->apikeyRegenerateV1WithHttpInfo($pkiApikeyID, $apikeyRegenerateV1Request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation apikeyRegenerateV1WithHttpInfo
+     *
+     * Regenerate the Apikey
+     *
+     * @param  int $pkiApikeyID (required)
+     * @param  \eZmaxAPI\Model\ApikeyRegenerateV1Request $apikeyRegenerateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyRegenerateV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\ApikeyRegenerateV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apikeyRegenerateV1WithHttpInfo($pkiApikeyID, $apikeyRegenerateV1Request, string $contentType = self::contentTypes['apikeyRegenerateV1'][0])
+    {
+        $request = $this->apikeyRegenerateV1Request($pkiApikeyID, $apikeyRegenerateV1Request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\ApikeyRegenerateV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\ApikeyRegenerateV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\ApikeyRegenerateV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\ApikeyRegenerateV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\ApikeyRegenerateV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apikeyRegenerateV1Async
+     *
+     * Regenerate the Apikey
+     *
+     * @param  int $pkiApikeyID (required)
+     * @param  \eZmaxAPI\Model\ApikeyRegenerateV1Request $apikeyRegenerateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyRegenerateV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apikeyRegenerateV1Async($pkiApikeyID, $apikeyRegenerateV1Request, string $contentType = self::contentTypes['apikeyRegenerateV1'][0])
+    {
+        return $this->apikeyRegenerateV1AsyncWithHttpInfo($pkiApikeyID, $apikeyRegenerateV1Request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apikeyRegenerateV1AsyncWithHttpInfo
+     *
+     * Regenerate the Apikey
+     *
+     * @param  int $pkiApikeyID (required)
+     * @param  \eZmaxAPI\Model\ApikeyRegenerateV1Request $apikeyRegenerateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyRegenerateV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apikeyRegenerateV1AsyncWithHttpInfo($pkiApikeyID, $apikeyRegenerateV1Request, string $contentType = self::contentTypes['apikeyRegenerateV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\ApikeyRegenerateV1Response';
+        $request = $this->apikeyRegenerateV1Request($pkiApikeyID, $apikeyRegenerateV1Request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apikeyRegenerateV1'
+     *
+     * @param  int $pkiApikeyID (required)
+     * @param  \eZmaxAPI\Model\ApikeyRegenerateV1Request $apikeyRegenerateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apikeyRegenerateV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function apikeyRegenerateV1Request($pkiApikeyID, $apikeyRegenerateV1Request, string $contentType = self::contentTypes['apikeyRegenerateV1'][0])
+    {
+
+        // verify the required parameter 'pkiApikeyID' is set
+        if ($pkiApikeyID === null || (is_array($pkiApikeyID) && count($pkiApikeyID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiApikeyID when calling apikeyRegenerateV1'
+            );
+        }
+        if ($pkiApikeyID < 0) {
+            throw new \InvalidArgumentException('invalid value for "$pkiApikeyID" when calling ObjectApikeyApi.apikeyRegenerateV1, must be bigger than or equal to 0.');
+        }
+        
+        // verify the required parameter 'apikeyRegenerateV1Request' is set
+        if ($apikeyRegenerateV1Request === null || (is_array($apikeyRegenerateV1Request) && count($apikeyRegenerateV1Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $apikeyRegenerateV1Request when calling apikeyRegenerateV1'
+            );
+        }
+
+
+        $resourcePath = '/1/object/apikey/{pkiApikeyID}/regenerate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiApikeyID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiApikeyID' . '}',
+                ObjectSerializer::toPathValue($pkiApikeyID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($apikeyRegenerateV1Request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($apikeyRegenerateV1Request));
+            } else {
+                $httpBody = $apikeyRegenerateV1Request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

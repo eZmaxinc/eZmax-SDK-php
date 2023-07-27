@@ -109,6 +109,30 @@ class ObjectApikeyApiTest extends TestCase
     }
 
     /**
+     * Test case for apikeyGetCorsV1
+     *
+     * Retrieve an existing Apikey's cors.
+     *
+     */
+    public function testApikeyGetCorsV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for apikeyGetListV1
+     *
+     * Retrieve Apikey list.
+     *
+     */
+    public function testApikeyGetListV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for apikeyGetObjectV2
      *
      * Retrieve an existing Apikey.
@@ -139,6 +163,18 @@ class ObjectApikeyApiTest extends TestCase
      *
      */
     public function testApikeyGetSubnetsV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for apikeyRegenerateV1
+     *
+     * Regenerate the Apikey.
+     *
+     */
+    public function testApikeyRegenerateV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

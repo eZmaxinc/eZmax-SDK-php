@@ -66,7 +66,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
         'tEzsignfoldersignerassociationMessage' => 'string',
         'objEzsignsignergroup' => '\eZmaxAPI\Model\EzsignsignergroupResponseCompound',
         'objUser' => '\eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser',
-        'objUsergroup' => '\eZmaxAPI\Model\UsergroupResponseCompound',
         'objEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerResponseCompound',
         'bEzsignfoldersignerassociationHasactionableelementsCurrent' => 'bool',
         'bEzsignfoldersignerassociationHasactionableelementsFuture' => 'bool'
@@ -87,7 +86,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
         'tEzsignfoldersignerassociationMessage' => null,
         'objEzsignsignergroup' => null,
         'objUser' => null,
-        'objUsergroup' => null,
         'objEzsignsigner' => null,
         'bEzsignfoldersignerassociationHasactionableelementsCurrent' => null,
         'bEzsignfoldersignerassociationHasactionableelementsFuture' => null
@@ -106,7 +104,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
 		'tEzsignfoldersignerassociationMessage' => false,
 		'objEzsignsignergroup' => false,
 		'objUser' => false,
-		'objUsergroup' => false,
 		'objEzsignsigner' => false,
 		'bEzsignfoldersignerassociationHasactionableelementsCurrent' => false,
 		'bEzsignfoldersignerassociationHasactionableelementsFuture' => false
@@ -205,7 +202,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
         'tEzsignfoldersignerassociationMessage' => 'tEzsignfoldersignerassociationMessage',
         'objEzsignsignergroup' => 'objEzsignsignergroup',
         'objUser' => 'objUser',
-        'objUsergroup' => 'objUsergroup',
         'objEzsignsigner' => 'objEzsignsigner',
         'bEzsignfoldersignerassociationHasactionableelementsCurrent' => 'bEzsignfoldersignerassociationHasactionableelementsCurrent',
         'bEzsignfoldersignerassociationHasactionableelementsFuture' => 'bEzsignfoldersignerassociationHasactionableelementsFuture'
@@ -224,7 +220,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
         'tEzsignfoldersignerassociationMessage' => 'setTEzsignfoldersignerassociationMessage',
         'objEzsignsignergroup' => 'setObjEzsignsignergroup',
         'objUser' => 'setObjUser',
-        'objUsergroup' => 'setObjUsergroup',
         'objEzsignsigner' => 'setObjEzsignsigner',
         'bEzsignfoldersignerassociationHasactionableelementsCurrent' => 'setBEzsignfoldersignerassociationHasactionableelementsCurrent',
         'bEzsignfoldersignerassociationHasactionableelementsFuture' => 'setBEzsignfoldersignerassociationHasactionableelementsFuture'
@@ -243,7 +238,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
         'tEzsignfoldersignerassociationMessage' => 'getTEzsignfoldersignerassociationMessage',
         'objEzsignsignergroup' => 'getObjEzsignsignergroup',
         'objUser' => 'getObjUser',
-        'objUsergroup' => 'getObjUsergroup',
         'objEzsignsigner' => 'getObjEzsignsigner',
         'bEzsignfoldersignerassociationHasactionableelementsCurrent' => 'getBEzsignfoldersignerassociationHasactionableelementsCurrent',
         'bEzsignfoldersignerassociationHasactionableelementsFuture' => 'getBEzsignfoldersignerassociationHasactionableelementsFuture'
@@ -313,7 +307,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
         $this->setIfExists('tEzsignfoldersignerassociationMessage', $data ?? [], null);
         $this->setIfExists('objEzsignsignergroup', $data ?? [], null);
         $this->setIfExists('objUser', $data ?? [], null);
-        $this->setIfExists('objUsergroup', $data ?? [], null);
         $this->setIfExists('objEzsignsigner', $data ?? [], null);
         $this->setIfExists('bEzsignfoldersignerassociationHasactionableelementsCurrent', $data ?? [], null);
         $this->setIfExists('bEzsignfoldersignerassociationHasactionableelementsFuture', $data ?? [], null);
@@ -612,37 +605,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objUser'] = $objUser;
         $this->container['objUser'] = $objUser;
-
-        return $this;
-    }
-
-    /**
-     * Gets objUsergroup
-     *
-     * @return \eZmaxAPI\Model\UsergroupResponseCompound|null
-     */
-    public function getObjUsergroup()
-    {
-        return $this->container['objUsergroup'];
-    }
-
-    /**
-     * Sets objUsergroup
-     *
-     * @param \eZmaxAPI\Model\UsergroupResponseCompound|null $objUsergroup objUsergroup
-     *
-     * @return self
-     */
-    public function setObjUsergroup($objUsergroup)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objUsergroup)) {
-            //throw new \InvalidArgumentException('non-nullable objUsergroup cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objUsergroup'] = $objUsergroup;
-        $this->container['objUsergroup'] = $objUsergroup;
 
         return $this;
     }

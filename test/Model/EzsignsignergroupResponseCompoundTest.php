@@ -88,4 +88,22 @@ class EzsignsignergroupResponseCompoundTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "objEzsignsignergroupDescription"
+     */
+    public function testPropertyObjEzsignsignergroupDescription()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsignsignergroupDescriptionX"
+     */
+    public function testPropertySEzsignsignergroupDescriptionX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

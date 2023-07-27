@@ -61,7 +61,6 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     protected static $openAPITypes = [
         'pkiEzsignfoldersignerassociationID' => 'int',
         'fkiUserID' => 'int',
-        'fkiUsergroupID' => 'int',
         'fkiEzsignsignergroupID' => 'int',
         'fkiEzsignfolderID' => 'int',
         'bEzsignfoldersignerassociationReceivecopy' => 'bool',
@@ -79,7 +78,6 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     protected static $openAPIFormats = [
         'pkiEzsignfoldersignerassociationID' => null,
         'fkiUserID' => null,
-        'fkiUsergroupID' => null,
         'fkiEzsignsignergroupID' => null,
         'fkiEzsignfolderID' => null,
         'bEzsignfoldersignerassociationReceivecopy' => null,
@@ -95,7 +93,6 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     protected static array $openAPINullables = [
         'pkiEzsignfoldersignerassociationID' => false,
 		'fkiUserID' => false,
-		'fkiUsergroupID' => false,
 		'fkiEzsignsignergroupID' => false,
 		'fkiEzsignfolderID' => false,
 		'bEzsignfoldersignerassociationReceivecopy' => false,
@@ -191,7 +188,6 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     protected static $attributeMap = [
         'pkiEzsignfoldersignerassociationID' => 'pkiEzsignfoldersignerassociationID',
         'fkiUserID' => 'fkiUserID',
-        'fkiUsergroupID' => 'fkiUsergroupID',
         'fkiEzsignsignergroupID' => 'fkiEzsignsignergroupID',
         'fkiEzsignfolderID' => 'fkiEzsignfolderID',
         'bEzsignfoldersignerassociationReceivecopy' => 'bEzsignfoldersignerassociationReceivecopy',
@@ -207,7 +203,6 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     protected static $setters = [
         'pkiEzsignfoldersignerassociationID' => 'setPkiEzsignfoldersignerassociationID',
         'fkiUserID' => 'setFkiUserID',
-        'fkiUsergroupID' => 'setFkiUsergroupID',
         'fkiEzsignsignergroupID' => 'setFkiEzsignsignergroupID',
         'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
         'bEzsignfoldersignerassociationReceivecopy' => 'setBEzsignfoldersignerassociationReceivecopy',
@@ -223,7 +218,6 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     protected static $getters = [
         'pkiEzsignfoldersignerassociationID' => 'getPkiEzsignfoldersignerassociationID',
         'fkiUserID' => 'getFkiUserID',
-        'fkiUsergroupID' => 'getFkiUsergroupID',
         'fkiEzsignsignergroupID' => 'getFkiEzsignsignergroupID',
         'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
         'bEzsignfoldersignerassociationReceivecopy' => 'getBEzsignfoldersignerassociationReceivecopy',
@@ -290,7 +284,6 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
     {
         $this->setIfExists('pkiEzsignfoldersignerassociationID', $data ?? [], null);
         $this->setIfExists('fkiUserID', $data ?? [], null);
-        $this->setIfExists('fkiUsergroupID', $data ?? [], null);
         $this->setIfExists('fkiEzsignsignergroupID', $data ?? [], null);
         $this->setIfExists('fkiEzsignfolderID', $data ?? [], null);
         $this->setIfExists('bEzsignfoldersignerassociationReceivecopy', $data ?? [], null);
@@ -331,14 +324,6 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
 
         if (!is_null($this->container['fkiUserID']) && ($this->container['fkiUserID'] < 0)) {
             $invalidProperties[] = "invalid value for 'fkiUserID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiUsergroupID']) && ($this->container['fkiUsergroupID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'fkiUsergroupID', must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['fkiUsergroupID']) && ($this->container['fkiUsergroupID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUsergroupID', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['fkiEzsignsignergroupID']) && ($this->container['fkiEzsignsignergroupID'] > 65535)) {
@@ -441,47 +426,6 @@ class EzsignfoldersignerassociationRequestCompound implements ModelInterface, Ar
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiUserID'] = $fkiUserID;
         $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUsergroupID
-     *
-     * @return int|null
-     */
-    public function getFkiUsergroupID()
-    {
-        return $this->container['fkiUsergroupID'];
-    }
-
-    /**
-     * Sets fkiUsergroupID
-     *
-     * @param int|null $fkiUsergroupID The unique ID of the Usergroup
-     *
-     * @return self
-     */
-    public function setFkiUsergroupID($fkiUsergroupID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUsergroupID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUsergroupID cannot be null');
-        //}
-
-//        if (($fkiUsergroupID > 255)) {
-        if (!is_null($fkiUsergroupID) && ($fkiUsergroupID > 255)) {
-            throw new \InvalidArgumentException('invalid value for $fkiUsergroupID when calling EzsignfoldersignerassociationRequestCompound., must be smaller than or equal to 255.');
-        }
-//        if (($fkiUsergroupID < 0)) {
-        if (!is_null($fkiUsergroupID) && ($fkiUsergroupID < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fkiUsergroupID when calling EzsignfoldersignerassociationRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUsergroupID'] = $fkiUsergroupID;
-        $this->container['fkiUsergroupID'] = (is_null($fkiUsergroupID) ? null : (int) $fkiUsergroupID);
 
         return $this;
     }

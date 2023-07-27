@@ -229,6 +229,18 @@ class ObjectEzsignfolderApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignfolderGetEzsignfoldersignerassociationsmineV1
+     *
+     * Retrieve your own Ezsignfoldersignerassociations from an existing Ezsignfolder.
+     *
+     */
+    public function testEzsignfolderGetEzsignfoldersignerassociationsmineV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignfolderGetEzsignsignaturesAutomaticV1
      *
      * Retrieve an existing Ezsignfolder's automatic Ezsignsignatures.

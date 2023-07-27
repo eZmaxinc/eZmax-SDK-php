@@ -62,8 +62,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'pkiApikeyID' => 'int',
         'fkiUserID' => 'int',
         'objApikeyDescription' => '\eZmaxAPI\Model\MultilingualApikeyDescription',
-        'sComputedToken' => 'string',
+        'objContactName' => '\eZmaxAPI\Model\CustomContactNameResponse',
+        'sApikeyApikey' => 'string',
+        'sApikeySecret' => 'string',
         'bApikeyIsactive' => 'bool',
+        'bApikeyIssigned' => 'bool',
         'objAudit' => '\eZmaxAPI\Model\CommonAudit'
     ];
 
@@ -78,8 +81,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'pkiApikeyID' => null,
         'fkiUserID' => null,
         'objApikeyDescription' => null,
-        'sComputedToken' => null,
+        'objContactName' => null,
+        'sApikeyApikey' => null,
+        'sApikeySecret' => null,
         'bApikeyIsactive' => null,
+        'bApikeyIssigned' => null,
         'objAudit' => null
     ];
 
@@ -92,8 +98,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'pkiApikeyID' => false,
 		'fkiUserID' => false,
 		'objApikeyDescription' => false,
-		'sComputedToken' => false,
+		'objContactName' => false,
+		'sApikeyApikey' => false,
+		'sApikeySecret' => false,
 		'bApikeyIsactive' => false,
+		'bApikeyIssigned' => false,
 		'objAudit' => false
     ];
 
@@ -186,8 +195,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'pkiApikeyID' => 'pkiApikeyID',
         'fkiUserID' => 'fkiUserID',
         'objApikeyDescription' => 'objApikeyDescription',
-        'sComputedToken' => 'sComputedToken',
+        'objContactName' => 'objContactName',
+        'sApikeyApikey' => 'sApikeyApikey',
+        'sApikeySecret' => 'sApikeySecret',
         'bApikeyIsactive' => 'bApikeyIsactive',
+        'bApikeyIssigned' => 'bApikeyIssigned',
         'objAudit' => 'objAudit'
     ];
 
@@ -200,8 +212,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'pkiApikeyID' => 'setPkiApikeyID',
         'fkiUserID' => 'setFkiUserID',
         'objApikeyDescription' => 'setObjApikeyDescription',
-        'sComputedToken' => 'setSComputedToken',
+        'objContactName' => 'setObjContactName',
+        'sApikeyApikey' => 'setSApikeyApikey',
+        'sApikeySecret' => 'setSApikeySecret',
         'bApikeyIsactive' => 'setBApikeyIsactive',
+        'bApikeyIssigned' => 'setBApikeyIssigned',
         'objAudit' => 'setObjAudit'
     ];
 
@@ -214,8 +229,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'pkiApikeyID' => 'getPkiApikeyID',
         'fkiUserID' => 'getFkiUserID',
         'objApikeyDescription' => 'getObjApikeyDescription',
-        'sComputedToken' => 'getSComputedToken',
+        'objContactName' => 'getObjContactName',
+        'sApikeyApikey' => 'getSApikeyApikey',
+        'sApikeySecret' => 'getSApikeySecret',
         'bApikeyIsactive' => 'getBApikeyIsactive',
+        'bApikeyIssigned' => 'getBApikeyIssigned',
         'objAudit' => 'getObjAudit'
     ];
 
@@ -279,8 +297,11 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('pkiApikeyID', $data ?? [], null);
         $this->setIfExists('fkiUserID', $data ?? [], null);
         $this->setIfExists('objApikeyDescription', $data ?? [], null);
-        $this->setIfExists('sComputedToken', $data ?? [], null);
+        $this->setIfExists('objContactName', $data ?? [], null);
+        $this->setIfExists('sApikeyApikey', $data ?? [], null);
+        $this->setIfExists('sApikeySecret', $data ?? [], null);
         $this->setIfExists('bApikeyIsactive', $data ?? [], null);
+        $this->setIfExists('bApikeyIssigned', $data ?? [], null);
         $this->setIfExists('objAudit', $data ?? [], null);
     }
 
@@ -327,6 +348,9 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['objApikeyDescription'] === null) {
             $invalidProperties[] = "'objApikeyDescription' can't be null";
+        }
+        if ($this->container['objContactName'] === null) {
+            $invalidProperties[] = "'objContactName' can't be null";
         }
         if ($this->container['bApikeyIsactive'] === null) {
             $invalidProperties[] = "'bApikeyIsactive' can't be null";
@@ -455,32 +479,94 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets sComputedToken
+     * Gets objContactName
      *
-     * @return string|null
+     * @return \eZmaxAPI\Model\CustomContactNameResponse
      */
-    public function getSComputedToken()
+    public function getObjContactName()
     {
-        return $this->container['sComputedToken'];
+        return $this->container['objContactName'];
     }
 
     /**
-     * Sets sComputedToken
+     * Sets objContactName
      *
-     * @param string|null $sComputedToken The secret token for the API key.  This will be returned only on creation.
+     * @param \eZmaxAPI\Model\CustomContactNameResponse $objContactName objContactName
      *
      * @return self
      */
-    public function setSComputedToken($sComputedToken)
+    public function setObjContactName($objContactName)
     {
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sComputedToken)) {
-            //throw new \InvalidArgumentException('non-nullable sComputedToken cannot be null');
+        //if (is_null($objContactName)) {
+            //throw new \InvalidArgumentException('non-nullable objContactName cannot be null');
         //}
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sComputedToken'] = $sComputedToken;
-        $this->container['sComputedToken'] = (is_null($sComputedToken) ? null : (string) $sComputedToken);
+	//$this->container['objContactName'] = $objContactName;
+        $this->container['objContactName'] = $objContactName;
+
+        return $this;
+    }
+
+    /**
+     * Gets sApikeyApikey
+     *
+     * @return string|null
+     */
+    public function getSApikeyApikey()
+    {
+        return $this->container['sApikeyApikey'];
+    }
+
+    /**
+     * Sets sApikeyApikey
+     *
+     * @param string|null $sApikeyApikey The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     *
+     * @return self
+     */
+    public function setSApikeyApikey($sApikeyApikey)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sApikeyApikey)) {
+            //throw new \InvalidArgumentException('non-nullable sApikeyApikey cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sApikeyApikey'] = $sApikeyApikey;
+        $this->container['sApikeyApikey'] = (is_null($sApikeyApikey) ? null : (string) $sApikeyApikey);
+
+        return $this;
+    }
+
+    /**
+     * Gets sApikeySecret
+     *
+     * @return string|null
+     */
+    public function getSApikeySecret()
+    {
+        return $this->container['sApikeySecret'];
+    }
+
+    /**
+     * Sets sApikeySecret
+     *
+     * @param string|null $sApikeySecret The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     *
+     * @return self
+     */
+    public function setSApikeySecret($sApikeySecret)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sApikeySecret)) {
+            //throw new \InvalidArgumentException('non-nullable sApikeySecret cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sApikeySecret'] = $sApikeySecret;
+        $this->container['sApikeySecret'] = (is_null($sApikeySecret) ? null : (string) $sApikeySecret);
 
         return $this;
     }
@@ -512,6 +598,37 @@ class ApikeyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bApikeyIsactive'] = $bApikeyIsactive;
         $this->container['bApikeyIsactive'] = (is_null($bApikeyIsactive) ? null : (bool) $bApikeyIsactive);
+
+        return $this;
+    }
+
+    /**
+     * Gets bApikeyIssigned
+     *
+     * @return bool|null
+     */
+    public function getBApikeyIssigned()
+    {
+        return $this->container['bApikeyIssigned'];
+    }
+
+    /**
+     * Sets bApikeyIssigned
+     *
+     * @param bool|null $bApikeyIssigned Whether the apikey is signed or not
+     *
+     * @return self
+     */
+    public function setBApikeyIssigned($bApikeyIssigned)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bApikeyIssigned)) {
+            //throw new \InvalidArgumentException('non-nullable bApikeyIssigned cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bApikeyIssigned'] = $bApikeyIssigned;
+        $this->container['bApikeyIssigned'] = (is_null($bApikeyIssigned) ? null : (bool) $bApikeyIssigned);
 
         return $this;
     }

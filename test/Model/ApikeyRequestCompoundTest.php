@@ -115,4 +115,13 @@ class ApikeyRequestCompoundTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "bApikeyIssigned"
+     */
+    public function testPropertyBApikeyIssigned()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

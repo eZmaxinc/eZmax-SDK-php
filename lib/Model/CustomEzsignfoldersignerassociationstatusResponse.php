@@ -62,6 +62,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         'fkiEzsignfoldersignerassociationID' => 'int',
         'sEzsignfoldersignerassociationstatusLastname' => 'string',
         'sEzsignfoldersignerassociationstatusFirstname' => 'string',
+        'sEzsignfoldersignerassociationstatusDescriptionX' => 'string',
         'aObjEzsignsignaturestatus' => '\eZmaxAPI\Model\CustomEzsignsignaturestatusResponse[]'
     ];
 
@@ -76,6 +77,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         'fkiEzsignfoldersignerassociationID' => null,
         'sEzsignfoldersignerassociationstatusLastname' => null,
         'sEzsignfoldersignerassociationstatusFirstname' => null,
+        'sEzsignfoldersignerassociationstatusDescriptionX' => null,
         'aObjEzsignsignaturestatus' => null
     ];
 
@@ -88,6 +90,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         'fkiEzsignfoldersignerassociationID' => false,
 		'sEzsignfoldersignerassociationstatusLastname' => false,
 		'sEzsignfoldersignerassociationstatusFirstname' => false,
+		'sEzsignfoldersignerassociationstatusDescriptionX' => false,
 		'aObjEzsignsignaturestatus' => false
     ];
 
@@ -180,6 +183,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         'fkiEzsignfoldersignerassociationID' => 'fkiEzsignfoldersignerassociationID',
         'sEzsignfoldersignerassociationstatusLastname' => 'sEzsignfoldersignerassociationstatusLastname',
         'sEzsignfoldersignerassociationstatusFirstname' => 'sEzsignfoldersignerassociationstatusFirstname',
+        'sEzsignfoldersignerassociationstatusDescriptionX' => 'sEzsignfoldersignerassociationstatusDescriptionX',
         'aObjEzsignsignaturestatus' => 'a_objEzsignsignaturestatus'
     ];
 
@@ -192,6 +196,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         'fkiEzsignfoldersignerassociationID' => 'setFkiEzsignfoldersignerassociationID',
         'sEzsignfoldersignerassociationstatusLastname' => 'setSEzsignfoldersignerassociationstatusLastname',
         'sEzsignfoldersignerassociationstatusFirstname' => 'setSEzsignfoldersignerassociationstatusFirstname',
+        'sEzsignfoldersignerassociationstatusDescriptionX' => 'setSEzsignfoldersignerassociationstatusDescriptionX',
         'aObjEzsignsignaturestatus' => 'setAObjEzsignsignaturestatus'
     ];
 
@@ -204,6 +209,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         'fkiEzsignfoldersignerassociationID' => 'getFkiEzsignfoldersignerassociationID',
         'sEzsignfoldersignerassociationstatusLastname' => 'getSEzsignfoldersignerassociationstatusLastname',
         'sEzsignfoldersignerassociationstatusFirstname' => 'getSEzsignfoldersignerassociationstatusFirstname',
+        'sEzsignfoldersignerassociationstatusDescriptionX' => 'getSEzsignfoldersignerassociationstatusDescriptionX',
         'aObjEzsignsignaturestatus' => 'getAObjEzsignsignaturestatus'
     ];
 
@@ -267,6 +273,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         $this->setIfExists('fkiEzsignfoldersignerassociationID', $data ?? [], null);
         $this->setIfExists('sEzsignfoldersignerassociationstatusLastname', $data ?? [], null);
         $this->setIfExists('sEzsignfoldersignerassociationstatusFirstname', $data ?? [], null);
+        $this->setIfExists('sEzsignfoldersignerassociationstatusDescriptionX', $data ?? [], null);
         $this->setIfExists('aObjEzsignsignaturestatus', $data ?? [], null);
     }
 
@@ -363,6 +370,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
      * Gets sEzsignfoldersignerassociationstatusLastname
      *
      * @return string|null
+     * @deprecated
      */
     public function getSEzsignfoldersignerassociationstatusLastname()
     {
@@ -375,6 +383,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
      * @param string|null $sEzsignfoldersignerassociationstatusLastname The last name of the Ezsignsigner
      *
      * @return self
+     * @deprecated
      */
     public function setSEzsignfoldersignerassociationstatusLastname($sEzsignfoldersignerassociationstatusLastname)
     {
@@ -394,6 +403,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
      * Gets sEzsignfoldersignerassociationstatusFirstname
      *
      * @return string|null
+     * @deprecated
      */
     public function getSEzsignfoldersignerassociationstatusFirstname()
     {
@@ -406,6 +416,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
      * @param string|null $sEzsignfoldersignerassociationstatusFirstname The first name of the Ezsignsigner
      *
      * @return self
+     * @deprecated
      */
     public function setSEzsignfoldersignerassociationstatusFirstname($sEzsignfoldersignerassociationstatusFirstname)
     {
@@ -417,6 +428,37 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldersignerassociationstatusFirstname'] = $sEzsignfoldersignerassociationstatusFirstname;
         $this->container['sEzsignfoldersignerassociationstatusFirstname'] = (is_null($sEzsignfoldersignerassociationstatusFirstname) ? null : (string) $sEzsignfoldersignerassociationstatusFirstname);
+
+        return $this;
+    }
+
+    /**
+     * Gets sEzsignfoldersignerassociationstatusDescriptionX
+     *
+     * @return string|null
+     */
+    public function getSEzsignfoldersignerassociationstatusDescriptionX()
+    {
+        return $this->container['sEzsignfoldersignerassociationstatusDescriptionX'];
+    }
+
+    /**
+     * Sets sEzsignfoldersignerassociationstatusDescriptionX
+     *
+     * @param string|null $sEzsignfoldersignerassociationstatusDescriptionX The description of the Ezsignsigner
+     *
+     * @return self
+     */
+    public function setSEzsignfoldersignerassociationstatusDescriptionX($sEzsignfoldersignerassociationstatusDescriptionX)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sEzsignfoldersignerassociationstatusDescriptionX)) {
+            //throw new \InvalidArgumentException('non-nullable sEzsignfoldersignerassociationstatusDescriptionX cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsignfoldersignerassociationstatusDescriptionX'] = $sEzsignfoldersignerassociationstatusDescriptionX;
+        $this->container['sEzsignfoldersignerassociationstatusDescriptionX'] = (is_null($sEzsignfoldersignerassociationstatusDescriptionX) ? null : (string) $sEzsignfoldersignerassociationstatusDescriptionX);
 
         return $this;
     }

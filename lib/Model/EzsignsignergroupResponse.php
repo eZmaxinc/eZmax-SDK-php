@@ -59,7 +59,9 @@ class EzsignsignergroupResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignsignergroupID' => 'int'
+        'pkiEzsignsignergroupID' => 'int',
+        'objEzsignsignergroupDescription' => '\eZmaxAPI\Model\MultilingualEzsignsignergroupDescription',
+        'sEzsignsignergroupDescriptionX' => 'string'
     ];
 
     /**
@@ -70,7 +72,9 @@ class EzsignsignergroupResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignsignergroupID' => null
+        'pkiEzsignsignergroupID' => null,
+        'objEzsignsignergroupDescription' => null,
+        'sEzsignsignergroupDescriptionX' => null
     ];
 
     /**
@@ -79,7 +83,9 @@ class EzsignsignergroupResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsignsignergroupID' => false
+        'pkiEzsignsignergroupID' => false,
+		'objEzsignsignergroupDescription' => false,
+		'sEzsignsignergroupDescriptionX' => false
     ];
 
     /**
@@ -168,7 +174,9 @@ class EzsignsignergroupResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignsignergroupID' => 'pkiEzsignsignergroupID'
+        'pkiEzsignsignergroupID' => 'pkiEzsignsignergroupID',
+        'objEzsignsignergroupDescription' => 'objEzsignsignergroupDescription',
+        'sEzsignsignergroupDescriptionX' => 'sEzsignsignergroupDescriptionX'
     ];
 
     /**
@@ -177,7 +185,9 @@ class EzsignsignergroupResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignsignergroupID' => 'setPkiEzsignsignergroupID'
+        'pkiEzsignsignergroupID' => 'setPkiEzsignsignergroupID',
+        'objEzsignsignergroupDescription' => 'setObjEzsignsignergroupDescription',
+        'sEzsignsignergroupDescriptionX' => 'setSEzsignsignergroupDescriptionX'
     ];
 
     /**
@@ -186,7 +196,9 @@ class EzsignsignergroupResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignsignergroupID' => 'getPkiEzsignsignergroupID'
+        'pkiEzsignsignergroupID' => 'getPkiEzsignsignergroupID',
+        'objEzsignsignergroupDescription' => 'getObjEzsignsignergroupDescription',
+        'sEzsignsignergroupDescriptionX' => 'getSEzsignsignergroupDescriptionX'
     ];
 
     /**
@@ -247,6 +259,8 @@ class EzsignsignergroupResponse implements ModelInterface, ArrayAccess, \JsonSer
     public function __construct(array $data = null)
     {
         $this->setIfExists('pkiEzsignsignergroupID', $data ?? [], null);
+        $this->setIfExists('objEzsignsignergroupDescription', $data ?? [], null);
+        $this->setIfExists('sEzsignsignergroupDescriptionX', $data ?? [], null);
     }
 
     /**
@@ -287,6 +301,9 @@ class EzsignsignergroupResponse implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = "invalid value for 'pkiEzsignsignergroupID', must be bigger than or equal to 0.";
         }
 
+        if ($this->container['objEzsignsignergroupDescription'] === null) {
+            $invalidProperties[] = "'objEzsignsignergroupDescription' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -339,6 +356,68 @@ class EzsignsignergroupResponse implements ModelInterface, ArrayAccess, \JsonSer
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsignsignergroupID'] = $pkiEzsignsignergroupID;
         $this->container['pkiEzsignsignergroupID'] = (is_null($pkiEzsignsignergroupID) ? null : (int) $pkiEzsignsignergroupID);
+
+        return $this;
+    }
+
+    /**
+     * Gets objEzsignsignergroupDescription
+     *
+     * @return \eZmaxAPI\Model\MultilingualEzsignsignergroupDescription
+     */
+    public function getObjEzsignsignergroupDescription()
+    {
+        return $this->container['objEzsignsignergroupDescription'];
+    }
+
+    /**
+     * Sets objEzsignsignergroupDescription
+     *
+     * @param \eZmaxAPI\Model\MultilingualEzsignsignergroupDescription $objEzsignsignergroupDescription objEzsignsignergroupDescription
+     *
+     * @return self
+     */
+    public function setObjEzsignsignergroupDescription($objEzsignsignergroupDescription)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objEzsignsignergroupDescription)) {
+            //throw new \InvalidArgumentException('non-nullable objEzsignsignergroupDescription cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objEzsignsignergroupDescription'] = $objEzsignsignergroupDescription;
+        $this->container['objEzsignsignergroupDescription'] = $objEzsignsignergroupDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets sEzsignsignergroupDescriptionX
+     *
+     * @return string|null
+     */
+    public function getSEzsignsignergroupDescriptionX()
+    {
+        return $this->container['sEzsignsignergroupDescriptionX'];
+    }
+
+    /**
+     * Sets sEzsignsignergroupDescriptionX
+     *
+     * @param string|null $sEzsignsignergroupDescriptionX The Description of the Ezsignsignergroup in the language of the requester
+     *
+     * @return self
+     */
+    public function setSEzsignsignergroupDescriptionX($sEzsignsignergroupDescriptionX)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sEzsignsignergroupDescriptionX)) {
+            //throw new \InvalidArgumentException('non-nullable sEzsignsignergroupDescriptionX cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsignsignergroupDescriptionX'] = $sEzsignsignergroupDescriptionX;
+        $this->container['sEzsignsignergroupDescriptionX'] = (is_null($sEzsignsignergroupDescriptionX) ? null : (string) $sEzsignsignergroupDescriptionX);
 
         return $this;
     }

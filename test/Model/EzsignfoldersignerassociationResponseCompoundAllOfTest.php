@@ -99,15 +99,6 @@ class EzsignfoldersignerassociationResponseCompoundAllOfTest extends TestCase
     }
 
     /**
-     * Test attribute "objUsergroup"
-     */
-    public function testPropertyObjUsergroup()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "objEzsignsigner"
      */
     public function testPropertyObjEzsignsigner()

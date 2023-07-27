@@ -108,6 +108,15 @@ class CustomEzsignfoldersignerassociationstatusResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "sEzsignfoldersignerassociationstatusDescriptionX"
+     */
+    public function testPropertySEzsignfoldersignerassociationstatusDescriptionX()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "aObjEzsignsignaturestatus"
      */
     public function testPropertyAObjEzsignsignaturestatus()

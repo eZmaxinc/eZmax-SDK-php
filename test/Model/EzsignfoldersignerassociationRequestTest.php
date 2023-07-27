@@ -99,15 +99,6 @@ class EzsignfoldersignerassociationRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "fkiUsergroupID"
-     */
-    public function testPropertyFkiUsergroupID()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "fkiEzsignsignergroupID"
      */
     public function testPropertyFkiEzsignsignergroupID()
