@@ -1,9 +1,0 @@
-# # WebhookUserstagedUserstagedCreatedAllOf
-
-## Properties
-
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**objUserstaged** | [**\eZmaxAPI\Model\UserstagedResponseCompound**](UserstagedResponseCompound.md) |  |
-
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

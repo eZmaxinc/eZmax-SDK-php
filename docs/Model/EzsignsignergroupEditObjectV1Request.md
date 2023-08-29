@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objBranding** | [**\eZmaxAPI\Model\EzsignsignergroupRequestCompound**](EzsignsignergroupRequestCompound.md) |  | [optional]
+**objEzsignsignergroup** | [**\eZmaxAPI\Model\EzsignsignergroupRequestCompound**](EzsignsignergroupRequestCompound.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
