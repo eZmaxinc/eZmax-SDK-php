@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **eEzsignsignatureTextvalidation** | [**\eZmaxAPI\Model\EnumTextvalidation**](EnumTextvalidation.md) |  | [optional]
 **sEzsignsignatureRegexp** | **string** | A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom** | [optional]
 **objContactName** | [**\eZmaxAPI\Model\CustomContactNameResponse**](CustomContactNameResponse.md) |  |
+**objContactNameDelegation** | [**\eZmaxAPI\Model\CustomContactNameResponse**](CustomContactNameResponse.md) |  | [optional]
 **objSignature** | [**\eZmaxAPI\Model\SignatureResponseCompound**](SignatureResponseCompound.md) |  | [optional]
 **bEzsignsignatureCustomdate** | **bool** | Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**) | [optional]
 **aObjEzsignsignaturecustomdate** | [**\eZmaxAPI\Model\EzsignsignaturecustomdateResponseCompound[]**](EzsignsignaturecustomdateResponseCompound.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional]

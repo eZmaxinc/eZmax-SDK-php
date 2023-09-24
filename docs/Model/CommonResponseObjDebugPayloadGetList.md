@@ -10,5 +10,7 @@ Name | Type | Description | Notes
 **bVersionDeprecated** | **bool** | Wheter the current route is deprecated or not |
 **aFilter** | [**\eZmaxAPI\Model\CommonResponseFilter**](CommonResponseFilter.md) |  |
 **aOrderBy** | **array<string,string>** | List of available values for *eOrderBy* |
+**iRowMax** | **int** | The maximum numbers of results to be returned | [default to 10000]
+**iRowOffset** | **int** | The starting element from where to start retrieving the results. For example if you started at iRowOffset&#x3D;0 and asked for iRowMax&#x3D;100, to get the next 100 results, you could specify iRowOffset&#x3D;100&amp;iRowMax&#x3D;100, | [default to 0]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

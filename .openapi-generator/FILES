@@ -238,6 +238,7 @@ docs/Model/CustomEzsignfoldersignerassociationmineResponse.md
 docs/Model/CustomEzsignfoldersignerassociationstatusResponse.md
 docs/Model/CustomEzsignfoldertransmissionResponse.md
 docs/Model/CustomEzsignfoldertransmissionSignerResponse.md
+docs/Model/CustomEzsignfoldertypeResponse.md
 docs/Model/CustomEzsignformfieldRequest.md
 docs/Model/CustomEzsignformfielderrorResponse.md
 docs/Model/CustomEzsignformfielderrortestResponse.md
@@ -1362,6 +1363,7 @@ lib/Model/CustomEzsignfoldersignerassociationmineResponse.php
 lib/Model/CustomEzsignfoldersignerassociationstatusResponse.php
 lib/Model/CustomEzsignfoldertransmissionResponse.php
 lib/Model/CustomEzsignfoldertransmissionSignerResponse.php
+lib/Model/CustomEzsignfoldertypeResponse.php
 lib/Model/CustomEzsignformfieldRequest.php
 lib/Model/CustomEzsignformfielderrorResponse.php
 lib/Model/CustomEzsignformfielderrortestResponse.php
@@ -2486,6 +2488,7 @@ test/Model/CustomEzsignfoldersignerassociationmineResponseTest.php
 test/Model/CustomEzsignfoldersignerassociationstatusResponseTest.php
 test/Model/CustomEzsignfoldertransmissionResponseTest.php
 test/Model/CustomEzsignfoldertransmissionSignerResponseTest.php
+test/Model/CustomEzsignfoldertypeResponseTest.php
 test/Model/CustomEzsignformfieldRequestTest.php
 test/Model/CustomEzsignformfielderrorResponseTest.php
 test/Model/CustomEzsignformfielderrortestResponseTest.php
