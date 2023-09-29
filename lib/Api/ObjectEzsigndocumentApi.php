@@ -4746,7 +4746,7 @@ class ObjectEzsigndocumentApi
      * Retrieve a URL to download documents.
      *
      * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -4765,7 +4765,7 @@ class ObjectEzsigndocumentApi
      * Retrieve a URL to download documents.
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -4912,7 +4912,7 @@ class ObjectEzsigndocumentApi
      * Retrieve a URL to download documents.
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4934,7 +4934,7 @@ class ObjectEzsigndocumentApi
      * Retrieve a URL to download documents.
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4985,7 +4985,7 @@ class ObjectEzsigndocumentApi
      * Create request for operation 'ezsigndocumentGetDownloadUrlV1'
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

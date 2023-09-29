@@ -318,15 +318,6 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'pkiEzsignfoldertypeID', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['sEzsignfoldertypeNameX'] === null) {
-            $invalidProperties[] = "'sEzsignfoldertypeNameX' can't be null";
-        }
-        if ($this->container['bEzsignfoldertypeIncludeproofsigner'] === null) {
-            $invalidProperties[] = "'bEzsignfoldertypeIncludeproofsigner' can't be null";
-        }
-        if ($this->container['bEzsignfoldertypeIncludeproofuser'] === null) {
-            $invalidProperties[] = "'bEzsignfoldertypeIncludeproofuser' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -382,7 +373,7 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets sEzsignfoldertypeNameX
      *
-     * @return string
+     * @return string|null
      */
     public function getSEzsignfoldertypeNameX()
     {
@@ -392,7 +383,7 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets sEzsignfoldertypeNameX
      *
-     * @param string $sEzsignfoldertypeNameX The name of the Ezsignfoldertype in the language of the requester
+     * @param string|null $sEzsignfoldertypeNameX The name of the Ezsignfoldertype in the language of the requester
      *
      * @return self
      */
@@ -413,7 +404,7 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets bEzsignfoldertypeIncludeproofsigner
      *
-     * @return bool
+     * @return bool|null
      */
     public function getBEzsignfoldertypeIncludeproofsigner()
     {
@@ -423,7 +414,7 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets bEzsignfoldertypeIncludeproofsigner
      *
-     * @param bool $bEzsignfoldertypeIncludeproofsigner Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+     * @param bool|null $bEzsignfoldertypeIncludeproofsigner Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
      *
      * @return self
      */
@@ -444,7 +435,7 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets bEzsignfoldertypeIncludeproofuser
      *
-     * @return bool
+     * @return bool|null
      */
     public function getBEzsignfoldertypeIncludeproofuser()
     {
@@ -454,7 +445,7 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets bEzsignfoldertypeIncludeproofuser
      *
-     * @param bool $bEzsignfoldertypeIncludeproofuser Whether we include the proof with the signed Ezsigndocument for users
+     * @param bool|null $bEzsignfoldertypeIncludeproofuser Whether we include the proof with the signed Ezsigndocument for users
      *
      * @return self
      */

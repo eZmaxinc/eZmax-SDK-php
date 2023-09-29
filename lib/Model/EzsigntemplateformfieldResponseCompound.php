@@ -67,6 +67,7 @@ class EzsigntemplateformfieldResponseCompound implements ModelInterface, ArrayAc
         'iEzsigntemplateformfieldY' => 'int',
         'iEzsigntemplateformfieldWidth' => 'int',
         'iEzsigntemplateformfieldHeight' => 'int',
+        'bEzsigntemplateformfieldAutocomplete' => 'bool',
         'bEzsigntemplateformfieldSelected' => 'bool'
     ];
 
@@ -86,6 +87,7 @@ class EzsigntemplateformfieldResponseCompound implements ModelInterface, ArrayAc
         'iEzsigntemplateformfieldY' => null,
         'iEzsigntemplateformfieldWidth' => null,
         'iEzsigntemplateformfieldHeight' => null,
+        'bEzsigntemplateformfieldAutocomplete' => null,
         'bEzsigntemplateformfieldSelected' => null
     ];
 
@@ -103,6 +105,7 @@ class EzsigntemplateformfieldResponseCompound implements ModelInterface, ArrayAc
 		'iEzsigntemplateformfieldY' => false,
 		'iEzsigntemplateformfieldWidth' => false,
 		'iEzsigntemplateformfieldHeight' => false,
+		'bEzsigntemplateformfieldAutocomplete' => false,
 		'bEzsigntemplateformfieldSelected' => false
     ];
 
@@ -200,6 +203,7 @@ class EzsigntemplateformfieldResponseCompound implements ModelInterface, ArrayAc
         'iEzsigntemplateformfieldY' => 'iEzsigntemplateformfieldY',
         'iEzsigntemplateformfieldWidth' => 'iEzsigntemplateformfieldWidth',
         'iEzsigntemplateformfieldHeight' => 'iEzsigntemplateformfieldHeight',
+        'bEzsigntemplateformfieldAutocomplete' => 'bEzsigntemplateformfieldAutocomplete',
         'bEzsigntemplateformfieldSelected' => 'bEzsigntemplateformfieldSelected'
     ];
 
@@ -217,6 +221,7 @@ class EzsigntemplateformfieldResponseCompound implements ModelInterface, ArrayAc
         'iEzsigntemplateformfieldY' => 'setIEzsigntemplateformfieldY',
         'iEzsigntemplateformfieldWidth' => 'setIEzsigntemplateformfieldWidth',
         'iEzsigntemplateformfieldHeight' => 'setIEzsigntemplateformfieldHeight',
+        'bEzsigntemplateformfieldAutocomplete' => 'setBEzsigntemplateformfieldAutocomplete',
         'bEzsigntemplateformfieldSelected' => 'setBEzsigntemplateformfieldSelected'
     ];
 
@@ -234,6 +239,7 @@ class EzsigntemplateformfieldResponseCompound implements ModelInterface, ArrayAc
         'iEzsigntemplateformfieldY' => 'getIEzsigntemplateformfieldY',
         'iEzsigntemplateformfieldWidth' => 'getIEzsigntemplateformfieldWidth',
         'iEzsigntemplateformfieldHeight' => 'getIEzsigntemplateformfieldHeight',
+        'bEzsigntemplateformfieldAutocomplete' => 'getBEzsigntemplateformfieldAutocomplete',
         'bEzsigntemplateformfieldSelected' => 'getBEzsigntemplateformfieldSelected'
     ];
 
@@ -302,6 +308,7 @@ class EzsigntemplateformfieldResponseCompound implements ModelInterface, ArrayAc
         $this->setIfExists('iEzsigntemplateformfieldY', $data ?? [], null);
         $this->setIfExists('iEzsigntemplateformfieldWidth', $data ?? [], null);
         $this->setIfExists('iEzsigntemplateformfieldHeight', $data ?? [], null);
+        $this->setIfExists('bEzsigntemplateformfieldAutocomplete', $data ?? [], null);
         $this->setIfExists('bEzsigntemplateformfieldSelected', $data ?? [], null);
     }
 
@@ -672,6 +679,37 @@ class EzsigntemplateformfieldResponseCompound implements ModelInterface, ArrayAc
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigntemplateformfieldHeight'] = $iEzsigntemplateformfieldHeight;
         $this->container['iEzsigntemplateformfieldHeight'] = (is_null($iEzsigntemplateformfieldHeight) ? null : (int) $iEzsigntemplateformfieldHeight);
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsigntemplateformfieldAutocomplete
+     *
+     * @return bool|null
+     */
+    public function getBEzsigntemplateformfieldAutocomplete()
+    {
+        return $this->container['bEzsigntemplateformfieldAutocomplete'];
+    }
+
+    /**
+     * Sets bEzsigntemplateformfieldAutocomplete
+     *
+     * @param bool|null $bEzsigntemplateformfieldAutocomplete Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**
+     *
+     * @return self
+     */
+    public function setBEzsigntemplateformfieldAutocomplete($bEzsigntemplateformfieldAutocomplete)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bEzsigntemplateformfieldAutocomplete)) {
+            //throw new \InvalidArgumentException('non-nullable bEzsigntemplateformfieldAutocomplete cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsigntemplateformfieldAutocomplete'] = $bEzsigntemplateformfieldAutocomplete;
+        $this->container['bEzsigntemplateformfieldAutocomplete'] = (is_null($bEzsigntemplateformfieldAutocomplete) ? null : (bool) $bEzsigntemplateformfieldAutocomplete);
 
         return $this;
     }

@@ -416,9 +416,6 @@ class EzsignformfieldgroupRequest implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'iEzsignformfieldgroupStep', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['sEzsignformfieldgroupDefaultvalue'] === null) {
-            $invalidProperties[] = "'sEzsignformfieldgroupDefaultvalue' can't be null";
-        }
         if ($this->container['iEzsignformfieldgroupFilledmin'] === null) {
             $invalidProperties[] = "'iEzsignformfieldgroupFilledmin' can't be null";
         }
@@ -680,7 +677,7 @@ class EzsignformfieldgroupRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets sEzsignformfieldgroupDefaultvalue
      *
-     * @return string
+     * @return string|null
      */
     public function getSEzsignformfieldgroupDefaultvalue()
     {
@@ -690,7 +687,7 @@ class EzsignformfieldgroupRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets sEzsignformfieldgroupDefaultvalue
      *
-     * @param string $sEzsignformfieldgroupDefaultvalue The default value for the Ezsignformfieldgroup
+     * @param string|null $sEzsignformfieldgroupDefaultvalue The default value for the Ezsignformfieldgroup
      *
      * @return self
      */

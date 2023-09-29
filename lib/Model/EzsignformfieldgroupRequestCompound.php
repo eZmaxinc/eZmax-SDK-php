@@ -437,9 +437,6 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'iEzsignformfieldgroupStep', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['sEzsignformfieldgroupDefaultvalue'] === null) {
-            $invalidProperties[] = "'sEzsignformfieldgroupDefaultvalue' can't be null";
-        }
         if ($this->container['iEzsignformfieldgroupFilledmin'] === null) {
             $invalidProperties[] = "'iEzsignformfieldgroupFilledmin' can't be null";
         }
@@ -707,7 +704,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
     /**
      * Gets sEzsignformfieldgroupDefaultvalue
      *
-     * @return string
+     * @return string|null
      */
     public function getSEzsignformfieldgroupDefaultvalue()
     {
@@ -717,7 +714,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
     /**
      * Sets sEzsignformfieldgroupDefaultvalue
      *
-     * @param string $sEzsignformfieldgroupDefaultvalue The default value for the Ezsignformfieldgroup
+     * @param string|null $sEzsignformfieldgroupDefaultvalue The default value for the Ezsignformfieldgroup
      *
      * @return self
      */

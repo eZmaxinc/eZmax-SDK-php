@@ -153,6 +153,15 @@ class EzsignformfieldRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "bEzsignformfieldAutocomplete"
+     */
+    public function testPropertyBEzsignformfieldAutocomplete()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "bEzsignformfieldSelected"
      */
     public function testPropertyBEzsignformfieldSelected()

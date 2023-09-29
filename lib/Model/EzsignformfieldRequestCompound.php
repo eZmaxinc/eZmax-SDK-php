@@ -67,6 +67,7 @@ class EzsignformfieldRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignformfieldY' => 'int',
         'iEzsignformfieldWidth' => 'int',
         'iEzsignformfieldHeight' => 'int',
+        'bEzsignformfieldAutocomplete' => 'bool',
         'bEzsignformfieldSelected' => 'bool',
         'sEzsignformfieldEnteredvalue' => 'string'
     ];
@@ -87,6 +88,7 @@ class EzsignformfieldRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignformfieldY' => null,
         'iEzsignformfieldWidth' => null,
         'iEzsignformfieldHeight' => null,
+        'bEzsignformfieldAutocomplete' => null,
         'bEzsignformfieldSelected' => null,
         'sEzsignformfieldEnteredvalue' => null
     ];
@@ -105,6 +107,7 @@ class EzsignformfieldRequestCompound implements ModelInterface, ArrayAccess, \Js
 		'iEzsignformfieldY' => false,
 		'iEzsignformfieldWidth' => false,
 		'iEzsignformfieldHeight' => false,
+		'bEzsignformfieldAutocomplete' => false,
 		'bEzsignformfieldSelected' => false,
 		'sEzsignformfieldEnteredvalue' => false
     ];
@@ -203,6 +206,7 @@ class EzsignformfieldRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignformfieldY' => 'iEzsignformfieldY',
         'iEzsignformfieldWidth' => 'iEzsignformfieldWidth',
         'iEzsignformfieldHeight' => 'iEzsignformfieldHeight',
+        'bEzsignformfieldAutocomplete' => 'bEzsignformfieldAutocomplete',
         'bEzsignformfieldSelected' => 'bEzsignformfieldSelected',
         'sEzsignformfieldEnteredvalue' => 'sEzsignformfieldEnteredvalue'
     ];
@@ -221,6 +225,7 @@ class EzsignformfieldRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignformfieldY' => 'setIEzsignformfieldY',
         'iEzsignformfieldWidth' => 'setIEzsignformfieldWidth',
         'iEzsignformfieldHeight' => 'setIEzsignformfieldHeight',
+        'bEzsignformfieldAutocomplete' => 'setBEzsignformfieldAutocomplete',
         'bEzsignformfieldSelected' => 'setBEzsignformfieldSelected',
         'sEzsignformfieldEnteredvalue' => 'setSEzsignformfieldEnteredvalue'
     ];
@@ -239,6 +244,7 @@ class EzsignformfieldRequestCompound implements ModelInterface, ArrayAccess, \Js
         'iEzsignformfieldY' => 'getIEzsignformfieldY',
         'iEzsignformfieldWidth' => 'getIEzsignformfieldWidth',
         'iEzsignformfieldHeight' => 'getIEzsignformfieldHeight',
+        'bEzsignformfieldAutocomplete' => 'getBEzsignformfieldAutocomplete',
         'bEzsignformfieldSelected' => 'getBEzsignformfieldSelected',
         'sEzsignformfieldEnteredvalue' => 'getSEzsignformfieldEnteredvalue'
     ];
@@ -308,6 +314,7 @@ class EzsignformfieldRequestCompound implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('iEzsignformfieldY', $data ?? [], null);
         $this->setIfExists('iEzsignformfieldWidth', $data ?? [], null);
         $this->setIfExists('iEzsignformfieldHeight', $data ?? [], null);
+        $this->setIfExists('bEzsignformfieldAutocomplete', $data ?? [], null);
         $this->setIfExists('bEzsignformfieldSelected', $data ?? [], null);
         $this->setIfExists('sEzsignformfieldEnteredvalue', $data ?? [], null);
     }
@@ -676,6 +683,37 @@ class EzsignformfieldRequestCompound implements ModelInterface, ArrayAccess, \Js
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignformfieldHeight'] = $iEzsignformfieldHeight;
         $this->container['iEzsignformfieldHeight'] = (is_null($iEzsignformfieldHeight) ? null : (int) $iEzsignformfieldHeight);
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsignformfieldAutocomplete
+     *
+     * @return bool|null
+     */
+    public function getBEzsignformfieldAutocomplete()
+    {
+        return $this->container['bEzsignformfieldAutocomplete'];
+    }
+
+    /**
+     * Sets bEzsignformfieldAutocomplete
+     *
+     * @param bool|null $bEzsignformfieldAutocomplete Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**
+     *
+     * @return self
+     */
+    public function setBEzsignformfieldAutocomplete($bEzsignformfieldAutocomplete)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bEzsignformfieldAutocomplete)) {
+            //throw new \InvalidArgumentException('non-nullable bEzsignformfieldAutocomplete cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignformfieldAutocomplete'] = $bEzsignformfieldAutocomplete;
+        $this->container['bEzsignformfieldAutocomplete'] = (is_null($bEzsignformfieldAutocomplete) ? null : (bool) $bEzsignformfieldAutocomplete);
 
         return $this;
     }
