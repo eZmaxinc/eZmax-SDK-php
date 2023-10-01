@@ -1104,8 +1104,8 @@ class EzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \JsonSeri
             //throw new \InvalidArgumentException('non-nullable sUsergroupNameX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sUsergroupNameX))) {
-        if (!is_null($sUsergroupNameX) && (!preg_match("/^.{0,50}$/", $sUsergroupNameX))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
+        if (!is_null($sUsergroupNameX) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
             throw new \InvalidArgumentException("invalid value for \$sUsergroupNameX when calling EzsignfoldertypeResponse., must conform to the pattern /^.{0,50}$/.");
         }
 
@@ -1141,8 +1141,8 @@ class EzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \JsonSeri
             //throw new \InvalidArgumentException('non-nullable sUsergroupNameXRestricted cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sUsergroupNameXRestricted))) {
-        if (!is_null($sUsergroupNameXRestricted) && (!preg_match("/^.{0,50}$/", $sUsergroupNameXRestricted))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameXRestricted)))) {
+        if (!is_null($sUsergroupNameXRestricted) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameXRestricted)))) {
             throw new \InvalidArgumentException("invalid value for \$sUsergroupNameXRestricted when calling EzsignfoldertypeResponse., must conform to the pattern /^.{0,50}$/.");
         }
 

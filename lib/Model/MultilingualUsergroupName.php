@@ -332,8 +332,8 @@ class MultilingualUsergroupName implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable sUsergroupName1 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sUsergroupName1))) {
-        if (!is_null($sUsergroupName1) && (!preg_match("/^.{0,50}$/", $sUsergroupName1))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupName1)))) {
+        if (!is_null($sUsergroupName1) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupName1)))) {
             throw new \InvalidArgumentException("invalid value for \$sUsergroupName1 when calling MultilingualUsergroupName., must conform to the pattern /^.{0,50}$/.");
         }
 
@@ -369,8 +369,8 @@ class MultilingualUsergroupName implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable sUsergroupName2 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sUsergroupName2))) {
-        if (!is_null($sUsergroupName2) && (!preg_match("/^.{0,50}$/", $sUsergroupName2))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupName2)))) {
+        if (!is_null($sUsergroupName2) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupName2)))) {
             throw new \InvalidArgumentException("invalid value for \$sUsergroupName2 when calling MultilingualUsergroupName., must conform to the pattern /^.{0,50}$/.");
         }
 

@@ -422,8 +422,8 @@ class PaymenttermResponse implements ModelInterface, ArrayAccess, \JsonSerializa
             //throw new \InvalidArgumentException('non-nullable sPaymenttermCode cannot be null');
         //}
 
-//        if ((!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
-        if (!is_null($sPaymenttermCode) && (!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
+//        if ((!preg_match("/^[A-Z0-9]{1,4}$/", ObjectSerializer::toString($sPaymenttermCode)))) {
+        if (!is_null($sPaymenttermCode) && (!preg_match("/^[A-Z0-9]{1,4}$/", ObjectSerializer::toString($sPaymenttermCode)))) {
             throw new \InvalidArgumentException("invalid value for \$sPaymenttermCode when calling PaymenttermResponse., must conform to the pattern /^[A-Z0-9]{1,4}$/.");
         }
 

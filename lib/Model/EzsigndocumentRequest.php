@@ -1039,8 +1039,8 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             //throw new \InvalidArgumentException('non-nullable sEzsigndocumentExternalid cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,64}$/", $sEzsigndocumentExternalid))) {
-        if (!is_null($sEzsigndocumentExternalid) && (!preg_match("/^.{0,64}$/", $sEzsigndocumentExternalid))) {
+//        if ((!preg_match("/^.{0,64}$/", ObjectSerializer::toString($sEzsigndocumentExternalid)))) {
+        if (!is_null($sEzsigndocumentExternalid) && (!preg_match("/^.{0,64}$/", ObjectSerializer::toString($sEzsigndocumentExternalid)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsigndocumentExternalid when calling EzsigndocumentRequest., must conform to the pattern /^.{0,64}$/.");
         }
 

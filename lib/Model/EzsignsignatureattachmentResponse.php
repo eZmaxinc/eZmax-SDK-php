@@ -484,8 +484,8 @@ class EzsignsignatureattachmentResponse implements ModelInterface, ArrayAccess, 
             //throw new \InvalidArgumentException('non-nullable sEzsignsignatureattachmentName cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,75}$/", $sEzsignsignatureattachmentName))) {
-        if (!is_null($sEzsignsignatureattachmentName) && (!preg_match("/^.{0,75}$/", $sEzsignsignatureattachmentName))) {
+//        if ((!preg_match("/^.{0,75}$/", ObjectSerializer::toString($sEzsignsignatureattachmentName)))) {
+        if (!is_null($sEzsignsignatureattachmentName) && (!preg_match("/^.{0,75}$/", ObjectSerializer::toString($sEzsignsignatureattachmentName)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsignsignatureattachmentName when calling EzsignsignatureattachmentResponse., must conform to the pattern /^.{0,75}$/.");
         }
 

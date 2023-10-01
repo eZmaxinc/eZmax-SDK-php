@@ -1174,8 +1174,8 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
             //throw new \InvalidArgumentException('non-nullable sEzsignfolderExternalid cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,64}$/", $sEzsignfolderExternalid))) {
-        if (!is_null($sEzsignfolderExternalid) && (!preg_match("/^.{0,64}$/", $sEzsignfolderExternalid))) {
+//        if ((!preg_match("/^.{0,64}$/", ObjectSerializer::toString($sEzsignfolderExternalid)))) {
+        if (!is_null($sEzsignfolderExternalid) && (!preg_match("/^.{0,64}$/", ObjectSerializer::toString($sEzsignfolderExternalid)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsignfolderExternalid when calling EzsignfolderResponseCompound., must conform to the pattern /^.{0,64}$/.");
         }
 

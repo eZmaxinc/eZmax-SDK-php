@@ -276,6 +276,9 @@ class CompanyGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayA
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjCompany'] === null) {
+            $invalidProperties[] = "'aObjCompany' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class CompanyGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayA
     /**
      * Gets aObjCompany
      *
-     * @return \eZmaxAPI\Model\CompanyAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\CompanyAutocompleteElementResponse[]
      */
     public function getAObjCompany()
     {
@@ -304,7 +307,7 @@ class CompanyGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayA
     /**
      * Sets aObjCompany
      *
-     * @param \eZmaxAPI\Model\CompanyAutocompleteElementResponse[]|null $aObjCompany An array of Company autocomplete element response.
+     * @param \eZmaxAPI\Model\CompanyAutocompleteElementResponse[] $aObjCompany An array of Company autocomplete element response.
      *
      * @return self
      */

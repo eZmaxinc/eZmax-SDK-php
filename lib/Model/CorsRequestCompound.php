@@ -430,8 +430,8 @@ class CorsRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializa
             //throw new \InvalidArgumentException('non-nullable sCorsEntryurl cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,2048}$/", $sCorsEntryurl))) {
-        if (!is_null($sCorsEntryurl) && (!preg_match("/^.{0,2048}$/", $sCorsEntryurl))) {
+//        if ((!preg_match("/^.{0,2048}$/", ObjectSerializer::toString($sCorsEntryurl)))) {
+        if (!is_null($sCorsEntryurl) && (!preg_match("/^.{0,2048}$/", ObjectSerializer::toString($sCorsEntryurl)))) {
             throw new \InvalidArgumentException("invalid value for \$sCorsEntryurl when calling CorsRequestCompound., must conform to the pattern /^.{0,2048}$/.");
         }
 

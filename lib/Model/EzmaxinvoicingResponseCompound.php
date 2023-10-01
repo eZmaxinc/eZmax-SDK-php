@@ -843,8 +843,8 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingRebatepaymenttype cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", $dEzmaxinvoicingRebatepaymenttype))) {
-        if (!is_null($dEzmaxinvoicingRebatepaymenttype) && (!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", $dEzmaxinvoicingRebatepaymenttype))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingRebatepaymenttype)))) {
+        if (!is_null($dEzmaxinvoicingRebatepaymenttype) && (!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingRebatepaymenttype)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingRebatepaymenttype when calling EzmaxinvoicingResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/.");
         }
 
@@ -917,8 +917,8 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingRebatecontractlength cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", $dEzmaxinvoicingRebatecontractlength))) {
-        if (!is_null($dEzmaxinvoicingRebatecontractlength) && (!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", $dEzmaxinvoicingRebatecontractlength))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingRebatecontractlength)))) {
+        if (!is_null($dEzmaxinvoicingRebatecontractlength) && (!preg_match("/^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingRebatecontractlength)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingRebatecontractlength when calling EzmaxinvoicingResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,3}?\\.[\\d]{2}$/.");
         }
 

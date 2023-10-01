@@ -384,8 +384,8 @@ class EmailtypeAutocompleteElementResponse implements ModelInterface, ArrayAcces
             //throw new \InvalidArgumentException('non-nullable sEmailtypeNameX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,15}$/", $sEmailtypeNameX))) {
-        if (!is_null($sEmailtypeNameX) && (!preg_match("/^.{0,15}$/", $sEmailtypeNameX))) {
+//        if ((!preg_match("/^.{0,15}$/", ObjectSerializer::toString($sEmailtypeNameX)))) {
+        if (!is_null($sEmailtypeNameX) && (!preg_match("/^.{0,15}$/", ObjectSerializer::toString($sEmailtypeNameX)))) {
             throw new \InvalidArgumentException("invalid value for \$sEmailtypeNameX when calling EmailtypeAutocompleteElementResponse., must conform to the pattern /^.{0,15}$/.");
         }
 

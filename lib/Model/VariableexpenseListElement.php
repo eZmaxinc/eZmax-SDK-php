@@ -405,8 +405,8 @@ class VariableexpenseListElement implements ModelInterface, ArrayAccess, \JsonSe
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseCode cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,5}$/", $sVariableexpenseCode))) {
-        if (!is_null($sVariableexpenseCode) && (!preg_match("/^.{0,5}$/", $sVariableexpenseCode))) {
+//        if ((!preg_match("/^.{0,5}$/", ObjectSerializer::toString($sVariableexpenseCode)))) {
+        if (!is_null($sVariableexpenseCode) && (!preg_match("/^.{0,5}$/", ObjectSerializer::toString($sVariableexpenseCode)))) {
             throw new \InvalidArgumentException("invalid value for \$sVariableexpenseCode when calling VariableexpenseListElement., must conform to the pattern /^.{0,5}$/.");
         }
 
@@ -442,8 +442,8 @@ class VariableexpenseListElement implements ModelInterface, ArrayAccess, \JsonSe
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseDescriptionX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,40}$/", $sVariableexpenseDescriptionX))) {
-        if (!is_null($sVariableexpenseDescriptionX) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescriptionX))) {
+//        if ((!preg_match("/^.{0,40}$/", ObjectSerializer::toString($sVariableexpenseDescriptionX)))) {
+        if (!is_null($sVariableexpenseDescriptionX) && (!preg_match("/^.{0,40}$/", ObjectSerializer::toString($sVariableexpenseDescriptionX)))) {
             throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescriptionX when calling VariableexpenseListElement., must conform to the pattern /^.{0,40}$/.");
         }
 

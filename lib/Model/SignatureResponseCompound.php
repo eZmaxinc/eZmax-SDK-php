@@ -382,8 +382,8 @@ class SignatureResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable sSignatureUrl cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,2048}$/", $sSignatureUrl))) {
-        if (!is_null($sSignatureUrl) && (!preg_match("/^.{0,2048}$/", $sSignatureUrl))) {
+//        if ((!preg_match("/^.{0,2048}$/", ObjectSerializer::toString($sSignatureUrl)))) {
+        if (!is_null($sSignatureUrl) && (!preg_match("/^.{0,2048}$/", ObjectSerializer::toString($sSignatureUrl)))) {
             throw new \InvalidArgumentException("invalid value for \$sSignatureUrl when calling SignatureResponseCompound., must conform to the pattern /^.{0,2048}$/.");
         }
 

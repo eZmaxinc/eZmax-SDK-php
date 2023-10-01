@@ -668,8 +668,8 @@ class EzmaxinvoicingsummaryinternaldetailResponse implements ModelInterface, Arr
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryinternaldetailCountreal cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryinternaldetailCountreal))) {
-        if (!is_null($dEzmaxinvoicingsummaryinternaldetailCountreal) && (!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryinternaldetailCountreal))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingsummaryinternaldetailCountreal)))) {
+        if (!is_null($dEzmaxinvoicingsummaryinternaldetailCountreal) && (!preg_match("/^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingsummaryinternaldetailCountreal)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryinternaldetailCountreal when calling EzmaxinvoicingsummaryinternaldetailResponse., must conform to the pattern /^-{0,1}[\\d]{1,6}?\\.[\\d]{2}$/.");
         }
 
@@ -705,8 +705,8 @@ class EzmaxinvoicingsummaryinternaldetailResponse implements ModelInterface, Arr
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryinternaldetailSubtotal cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryinternaldetailSubtotal))) {
-        if (!is_null($dEzmaxinvoicingsummaryinternaldetailSubtotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryinternaldetailSubtotal))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingsummaryinternaldetailSubtotal)))) {
+        if (!is_null($dEzmaxinvoicingsummaryinternaldetailSubtotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingsummaryinternaldetailSubtotal)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryinternaldetailSubtotal when calling EzmaxinvoicingsummaryinternaldetailResponse., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
         }
 
@@ -742,8 +742,8 @@ class EzmaxinvoicingsummaryinternaldetailResponse implements ModelInterface, Arr
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryinternaldetailRebate cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryinternaldetailRebate))) {
-        if (!is_null($dEzmaxinvoicingsummaryinternaldetailRebate) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryinternaldetailRebate))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingsummaryinternaldetailRebate)))) {
+        if (!is_null($dEzmaxinvoicingsummaryinternaldetailRebate) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingsummaryinternaldetailRebate)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryinternaldetailRebate when calling EzmaxinvoicingsummaryinternaldetailResponse., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
         }
 
@@ -779,8 +779,8 @@ class EzmaxinvoicingsummaryinternaldetailResponse implements ModelInterface, Arr
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingsummaryinternaldetailTotal cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryinternaldetailTotal))) {
-        if (!is_null($dEzmaxinvoicingsummaryinternaldetailTotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingsummaryinternaldetailTotal))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingsummaryinternaldetailTotal)))) {
+        if (!is_null($dEzmaxinvoicingsummaryinternaldetailTotal) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingsummaryinternaldetailTotal)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingsummaryinternaldetailTotal when calling EzmaxinvoicingsummaryinternaldetailResponse., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
         }
 

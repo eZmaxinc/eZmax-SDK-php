@@ -400,8 +400,8 @@ class UsergroupListElement implements ModelInterface, ArrayAccess, \JsonSerializ
             //throw new \InvalidArgumentException('non-nullable sUsergroupNameX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sUsergroupNameX))) {
-        if (!is_null($sUsergroupNameX) && (!preg_match("/^.{0,50}$/", $sUsergroupNameX))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
+        if (!is_null($sUsergroupNameX) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
             throw new \InvalidArgumentException("invalid value for \$sUsergroupNameX when calling UsergroupListElement., must conform to the pattern /^.{0,50}$/.");
         }
 

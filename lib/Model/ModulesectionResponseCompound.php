@@ -324,9 +324,6 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
         if ($this->container['sModulesectionNameX'] === null) {
             $invalidProperties[] = "'sModulesectionNameX' can't be null";
         }
-        if ($this->container['aObjPermission'] === null) {
-            $invalidProperties[] = "'aObjPermission' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -481,7 +478,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets aObjPermission
      *
-     * @return \eZmaxAPI\Model\PermissionResponseCompound[]
+     * @return \eZmaxAPI\Model\PermissionResponseCompound[]|null
      */
     public function getAObjPermission()
     {
@@ -491,7 +488,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets aObjPermission
      *
-     * @param \eZmaxAPI\Model\PermissionResponseCompound[] $aObjPermission aObjPermission
+     * @param \eZmaxAPI\Model\PermissionResponseCompound[]|null $aObjPermission aObjPermission
      *
      * @return self
      */

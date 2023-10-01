@@ -583,8 +583,8 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingcontractLicense cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingcontractLicense))) {
-        if (!is_null($dEzmaxinvoicingcontractLicense) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingcontractLicense))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcontractLicense)))) {
+        if (!is_null($dEzmaxinvoicingcontractLicense) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcontractLicense)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingcontractLicense when calling EzmaxinvoicingcontractResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
         }
 
@@ -620,8 +620,8 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingcontract121qa cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingcontract121qa))) {
-        if (!is_null($dEzmaxinvoicingcontract121qa) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingcontract121qa))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcontract121qa)))) {
+        if (!is_null($dEzmaxinvoicingcontract121qa) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcontract121qa)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingcontract121qa when calling EzmaxinvoicingcontractResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
         }
 

@@ -512,8 +512,8 @@ class UserstagedResponse implements ModelInterface, ArrayAccess, \JsonSerializab
             //throw new \InvalidArgumentException('non-nullable sUserstagedFirstname cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,20}$/", $sUserstagedFirstname))) {
-        if (!is_null($sUserstagedFirstname) && (!preg_match("/^.{0,20}$/", $sUserstagedFirstname))) {
+//        if ((!preg_match("/^.{0,20}$/", ObjectSerializer::toString($sUserstagedFirstname)))) {
+        if (!is_null($sUserstagedFirstname) && (!preg_match("/^.{0,20}$/", ObjectSerializer::toString($sUserstagedFirstname)))) {
             throw new \InvalidArgumentException("invalid value for \$sUserstagedFirstname when calling UserstagedResponse., must conform to the pattern /^.{0,20}$/.");
         }
 
@@ -549,8 +549,8 @@ class UserstagedResponse implements ModelInterface, ArrayAccess, \JsonSerializab
             //throw new \InvalidArgumentException('non-nullable sUserstagedLastname cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,25}$/", $sUserstagedLastname))) {
-        if (!is_null($sUserstagedLastname) && (!preg_match("/^.{0,25}$/", $sUserstagedLastname))) {
+//        if ((!preg_match("/^.{0,25}$/", ObjectSerializer::toString($sUserstagedLastname)))) {
+        if (!is_null($sUserstagedLastname) && (!preg_match("/^.{0,25}$/", ObjectSerializer::toString($sUserstagedLastname)))) {
             throw new \InvalidArgumentException("invalid value for \$sUserstagedLastname when calling UserstagedResponse., must conform to the pattern /^.{0,25}$/.");
         }
 
@@ -586,8 +586,8 @@ class UserstagedResponse implements ModelInterface, ArrayAccess, \JsonSerializab
             //throw new \InvalidArgumentException('non-nullable sUserstagedExternalid cannot be null');
         //}
 
-//        if ((!preg_match("/^.{1,60}$/", $sUserstagedExternalid))) {
-        if (!is_null($sUserstagedExternalid) && (!preg_match("/^.{1,60}$/", $sUserstagedExternalid))) {
+//        if ((!preg_match("/^.{1,60}$/", ObjectSerializer::toString($sUserstagedExternalid)))) {
+        if (!is_null($sUserstagedExternalid) && (!preg_match("/^.{1,60}$/", ObjectSerializer::toString($sUserstagedExternalid)))) {
             throw new \InvalidArgumentException("invalid value for \$sUserstagedExternalid when calling UserstagedResponse., must conform to the pattern /^.{1,60}$/.");
         }
 

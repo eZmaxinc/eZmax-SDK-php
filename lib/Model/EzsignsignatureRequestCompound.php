@@ -1223,8 +1223,8 @@ class EzsignsignatureRequestCompound implements ModelInterface, ArrayAccess, \Js
             //throw new \InvalidArgumentException('non-nullable sEzsignsignatureRegexp cannot be null');
         //}
 
-//        if ((!preg_match("/^\\^.*\\$$|^$/", $sEzsignsignatureRegexp))) {
-        if (!is_null($sEzsignsignatureRegexp) && (!preg_match("/^\\^.*\\$$|^$/", $sEzsignsignatureRegexp))) {
+//        if ((!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignsignatureRegexp)))) {
+        if (!is_null($sEzsignsignatureRegexp) && (!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignsignatureRegexp)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsignsignatureRegexp when calling EzsignsignatureRequestCompound., must conform to the pattern /^\\^.*\\$$|^$/.");
         }
 

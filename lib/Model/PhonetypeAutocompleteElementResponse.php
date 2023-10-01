@@ -384,8 +384,8 @@ class PhonetypeAutocompleteElementResponse implements ModelInterface, ArrayAcces
             //throw new \InvalidArgumentException('non-nullable sPhonetypeNameX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,20}$/", $sPhonetypeNameX))) {
-        if (!is_null($sPhonetypeNameX) && (!preg_match("/^.{0,20}$/", $sPhonetypeNameX))) {
+//        if ((!preg_match("/^.{0,20}$/", ObjectSerializer::toString($sPhonetypeNameX)))) {
+        if (!is_null($sPhonetypeNameX) && (!preg_match("/^.{0,20}$/", ObjectSerializer::toString($sPhonetypeNameX)))) {
             throw new \InvalidArgumentException("invalid value for \$sPhonetypeNameX when calling PhonetypeAutocompleteElementResponse., must conform to the pattern /^.{0,20}$/.");
         }
 

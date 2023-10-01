@@ -367,8 +367,8 @@ class ScimGroup implements ModelInterface, ArrayAccess, \JsonSerializable
             //throw new \InvalidArgumentException('non-nullable displayName cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $displayName))) {
-        if (!is_null($displayName) && (!preg_match("/^.{0,50}$/", $displayName))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($displayName)))) {
+        if (!is_null($displayName) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($displayName)))) {
             throw new \InvalidArgumentException("invalid value for \$displayName when calling ScimGroup., must conform to the pattern /^.{0,50}$/.");
         }
 

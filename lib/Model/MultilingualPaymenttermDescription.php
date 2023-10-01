@@ -332,8 +332,8 @@ class MultilingualPaymenttermDescription implements ModelInterface, ArrayAccess,
             //throw new \InvalidArgumentException('non-nullable sPaymenttermDescription1 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{1,40}$/", $sPaymenttermDescription1))) {
-        if (!is_null($sPaymenttermDescription1) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescription1))) {
+//        if ((!preg_match("/^.{1,40}$/", ObjectSerializer::toString($sPaymenttermDescription1)))) {
+        if (!is_null($sPaymenttermDescription1) && (!preg_match("/^.{1,40}$/", ObjectSerializer::toString($sPaymenttermDescription1)))) {
             throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescription1 when calling MultilingualPaymenttermDescription., must conform to the pattern /^.{1,40}$/.");
         }
 
@@ -369,8 +369,8 @@ class MultilingualPaymenttermDescription implements ModelInterface, ArrayAccess,
             //throw new \InvalidArgumentException('non-nullable sPaymenttermDescription2 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{1,40}$/", $sPaymenttermDescription2))) {
-        if (!is_null($sPaymenttermDescription2) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescription2))) {
+//        if ((!preg_match("/^.{1,40}$/", ObjectSerializer::toString($sPaymenttermDescription2)))) {
+        if (!is_null($sPaymenttermDescription2) && (!preg_match("/^.{1,40}$/", ObjectSerializer::toString($sPaymenttermDescription2)))) {
             throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescription2 when calling MultilingualPaymenttermDescription., must conform to the pattern /^.{1,40}$/.");
         }
 

@@ -36,6 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * CommonResponseErrorEzsignformValidation Class Doc Comment
  *
  * @category Class
+ * @description Generic Error Message
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -342,8 +343,8 @@ class CommonResponseErrorEzsignformValidation implements ModelInterface, ArrayAc
             //throw new \InvalidArgumentException('non-nullable sErrorMessage cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,500}$/", $sErrorMessage))) {
-        if (!is_null($sErrorMessage) && (!preg_match("/^.{0,500}$/", $sErrorMessage))) {
+//        if ((!preg_match("/^.{0,500}$/", ObjectSerializer::toString($sErrorMessage)))) {
+        if (!is_null($sErrorMessage) && (!preg_match("/^.{0,500}$/", ObjectSerializer::toString($sErrorMessage)))) {
             throw new \InvalidArgumentException("invalid value for \$sErrorMessage when calling CommonResponseErrorEzsignformValidation., must conform to the pattern /^.{0,500}$/.");
         }
 

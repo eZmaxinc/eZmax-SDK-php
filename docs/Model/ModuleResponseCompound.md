@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **sModuleNameX** | **string** | The Name of the Module in the language of the requester |
 **bModuleRegistered** | **bool** | Whether the Module is registered or not |
 **bModuleRegisteredapi** | **bool** | Whether the Module is registered or not for api use |
-**aObjModulesection** | [**\eZmaxAPI\Model\ModulesectionResponseCompound[]**](ModulesectionResponseCompound.md) |  |
+**aObjModulesection** | [**\eZmaxAPI\Model\ModulesectionResponseCompound[]**](ModulesectionResponseCompound.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

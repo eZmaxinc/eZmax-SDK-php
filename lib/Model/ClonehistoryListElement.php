@@ -566,8 +566,8 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable dtClonehistoryFirsthit cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtClonehistoryFirsthit))) {
-        if (!is_null($dtClonehistoryFirsthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtClonehistoryFirsthit))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtClonehistoryFirsthit)))) {
+        if (!is_null($dtClonehistoryFirsthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtClonehistoryFirsthit)))) {
             throw new \InvalidArgumentException("invalid value for \$dtClonehistoryFirsthit when calling ClonehistoryListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.");
         }
 
@@ -603,8 +603,8 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable dtClonehistoryLasthit cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtClonehistoryLasthit))) {
-        if (!is_null($dtClonehistoryLasthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtClonehistoryLasthit))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtClonehistoryLasthit)))) {
+        if (!is_null($dtClonehistoryLasthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtClonehistoryLasthit)))) {
             throw new \InvalidArgumentException("invalid value for \$dtClonehistoryLasthit when calling ClonehistoryListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.");
         }
 
@@ -640,8 +640,8 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable sUserLoginnameCloning cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginnameCloning))) {
-        if (!is_null($sUserLoginnameCloning) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginnameCloning))) {
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
+        if (!is_null($sUserLoginnameCloning) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
             throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloning when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
         }
 
@@ -739,8 +739,8 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable sUserLoginnameCloned cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginnameCloned))) {
-        if (!is_null($sUserLoginnameCloned) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginnameCloned))) {
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
+        if (!is_null($sUserLoginnameCloned) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
             throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloned when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
         }
 

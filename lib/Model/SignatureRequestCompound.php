@@ -379,8 +379,8 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
             //throw new \InvalidArgumentException('non-nullable tSignatureSvg cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,32767}$/", $tSignatureSvg))) {
-        if (!is_null($tSignatureSvg) && (!preg_match("/^.{0,32767}$/", $tSignatureSvg))) {
+//        if ((!preg_match("/^.{0,32767}$/", ObjectSerializer::toString($tSignatureSvg)))) {
+        if (!is_null($tSignatureSvg) && (!preg_match("/^.{0,32767}$/", ObjectSerializer::toString($tSignatureSvg)))) {
             throw new \InvalidArgumentException("invalid value for \$tSignatureSvg when calling SignatureRequestCompound., must conform to the pattern /^.{0,32767}$/.");
         }
 

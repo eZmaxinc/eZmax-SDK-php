@@ -596,8 +596,8 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
             //throw new \InvalidArgumentException('non-nullable sUserLoginname cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginname))) {
-        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginname))) {
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
             throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling UsergroupmembershipResponse., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
         }
 
@@ -664,8 +664,8 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
             //throw new \InvalidArgumentException('non-nullable sUsergroupNameX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sUsergroupNameX))) {
-        if (!is_null($sUsergroupNameX) && (!preg_match("/^.{0,50}$/", $sUsergroupNameX))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
+        if (!is_null($sUsergroupNameX) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
             throw new \InvalidArgumentException("invalid value for \$sUsergroupNameX when calling UsergroupmembershipResponse., must conform to the pattern /^.{0,50}$/.");
         }
 

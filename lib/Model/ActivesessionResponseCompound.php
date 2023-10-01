@@ -424,7 +424,10 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
             $invalidProperties[] = "invalid value for 'pksCustomerCode', the character length must be bigger than or equal to 2.";
         }
 
-        if (!is_null($this->container['fkiSystemconfigurationtypeID']) && ($this->container['fkiSystemconfigurationtypeID'] < 1)) {
+        if ($this->container['fkiSystemconfigurationtypeID'] === null) {
+            $invalidProperties[] = "'fkiSystemconfigurationtypeID' can't be null";
+        }
+        if (($this->container['fkiSystemconfigurationtypeID'] < 1)) {
             $invalidProperties[] = "invalid value for 'fkiSystemconfigurationtypeID', must be bigger than or equal to 1.";
         }
 
@@ -761,7 +764,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets fkiSystemconfigurationtypeID
      *
-     * @return int|null
+     * @return int
      */
     public function getFkiSystemconfigurationtypeID()
     {
@@ -771,7 +774,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets fkiSystemconfigurationtypeID
      *
-     * @param int|null $fkiSystemconfigurationtypeID The unique ID of the Systemconfigurationtype
+     * @param int $fkiSystemconfigurationtypeID The unique ID of the Systemconfigurationtype
      *
      * @return self
      */
@@ -783,7 +786,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
         //}
 
 //        if (($fkiSystemconfigurationtypeID < 1)) {
-        if (!is_null($fkiSystemconfigurationtypeID) && ($fkiSystemconfigurationtypeID < 1)) {
+        if (($fkiSystemconfigurationtypeID < 1)) {
             throw new \InvalidArgumentException('invalid value for $fkiSystemconfigurationtypeID when calling ActivesessionResponseCompound., must be bigger than or equal to 1.');
         }
 

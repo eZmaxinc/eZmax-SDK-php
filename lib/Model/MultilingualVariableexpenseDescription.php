@@ -332,8 +332,8 @@ class MultilingualVariableexpenseDescription implements ModelInterface, ArrayAcc
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseDescription1 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,40}$/", $sVariableexpenseDescription1))) {
-        if (!is_null($sVariableexpenseDescription1) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescription1))) {
+//        if ((!preg_match("/^.{0,40}$/", ObjectSerializer::toString($sVariableexpenseDescription1)))) {
+        if (!is_null($sVariableexpenseDescription1) && (!preg_match("/^.{0,40}$/", ObjectSerializer::toString($sVariableexpenseDescription1)))) {
             throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescription1 when calling MultilingualVariableexpenseDescription., must conform to the pattern /^.{0,40}$/.");
         }
 
@@ -369,8 +369,8 @@ class MultilingualVariableexpenseDescription implements ModelInterface, ArrayAcc
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseDescription2 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,40}$/", $sVariableexpenseDescription2))) {
-        if (!is_null($sVariableexpenseDescription2) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescription2))) {
+//        if ((!preg_match("/^.{0,40}$/", ObjectSerializer::toString($sVariableexpenseDescription2)))) {
+        if (!is_null($sVariableexpenseDescription2) && (!preg_match("/^.{0,40}$/", ObjectSerializer::toString($sVariableexpenseDescription2)))) {
             throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescription2 when calling MultilingualVariableexpenseDescription., must conform to the pattern /^.{0,40}$/.");
         }
 

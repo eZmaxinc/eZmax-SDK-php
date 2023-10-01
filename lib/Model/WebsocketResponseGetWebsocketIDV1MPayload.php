@@ -323,8 +323,8 @@ class WebsocketResponseGetWebsocketIDV1MPayload implements ModelInterface, Array
             //throw new \InvalidArgumentException('non-nullable sWebsocketID cannot be null');
         //}
 
-//        if ((!preg_match("/^[a-zA-Z0-9_-]{15}=$/", $sWebsocketID))) {
-        if (!is_null($sWebsocketID) && (!preg_match("/^[a-zA-Z0-9_-]{15}=$/", $sWebsocketID))) {
+//        if ((!preg_match("/^[a-zA-Z0-9_-]{15}=$/", ObjectSerializer::toString($sWebsocketID)))) {
+        if (!is_null($sWebsocketID) && (!preg_match("/^[a-zA-Z0-9_-]{15}=$/", ObjectSerializer::toString($sWebsocketID)))) {
             throw new \InvalidArgumentException("invalid value for \$sWebsocketID when calling WebsocketResponseGetWebsocketIDV1MPayload., must conform to the pattern /^[a-zA-Z0-9_-]{15}=$/.");
         }
 

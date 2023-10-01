@@ -933,8 +933,8 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
             //throw new \InvalidArgumentException('non-nullable sEzsignformfieldgroupRegexp cannot be null');
         //}
 
-//        if ((!preg_match("/^\\^.*\\$$|^$/", $sEzsignformfieldgroupRegexp))) {
-        if (!is_null($sEzsignformfieldgroupRegexp) && (!preg_match("/^\\^.*\\$$|^$/", $sEzsignformfieldgroupRegexp))) {
+//        if ((!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignformfieldgroupRegexp)))) {
+        if (!is_null($sEzsignformfieldgroupRegexp) && (!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignformfieldgroupRegexp)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsignformfieldgroupRegexp when calling EzsignformfieldgroupRequestCompound., must conform to the pattern /^\\^.*\\$$|^$/.");
         }
 

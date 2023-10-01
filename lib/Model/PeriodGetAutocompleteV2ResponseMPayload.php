@@ -276,6 +276,9 @@ class PeriodGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjPeriod'] === null) {
+            $invalidProperties[] = "'aObjPeriod' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class PeriodGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayAc
     /**
      * Gets aObjPeriod
      *
-     * @return \eZmaxAPI\Model\PeriodAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\PeriodAutocompleteElementResponse[]
      */
     public function getAObjPeriod()
     {
@@ -304,7 +307,7 @@ class PeriodGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayAc
     /**
      * Sets aObjPeriod
      *
-     * @param \eZmaxAPI\Model\PeriodAutocompleteElementResponse[]|null $aObjPeriod An array of Period autocomplete element response.
+     * @param \eZmaxAPI\Model\PeriodAutocompleteElementResponse[] $aObjPeriod An array of Period autocomplete element response.
      *
      * @return self
      */

@@ -485,8 +485,8 @@ class EzsignsignatureSignV1Request implements ModelInterface, ArrayAccess, \Json
             //throw new \InvalidArgumentException('non-nullable sSvg cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,32767}$/", $sSvg))) {
-        if (!is_null($sSvg) && (!preg_match("/^.{0,32767}$/", $sSvg))) {
+//        if ((!preg_match("/^.{0,32767}$/", ObjectSerializer::toString($sSvg)))) {
+        if (!is_null($sSvg) && (!preg_match("/^.{0,32767}$/", ObjectSerializer::toString($sSvg)))) {
             throw new \InvalidArgumentException("invalid value for \$sSvg when calling EzsignsignatureSignV1Request., must conform to the pattern /^.{0,32767}$/.");
         }
 

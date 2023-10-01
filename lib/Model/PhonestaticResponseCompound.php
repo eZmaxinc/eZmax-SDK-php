@@ -383,8 +383,8 @@ class PhonestaticResponseCompound implements ModelInterface, ArrayAccess, \JsonS
             //throw new \InvalidArgumentException('non-nullable sPhonestaticE164 cannot be null');
         //}
 
-//        if ((!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhonestaticE164))) {
-        if (!is_null($sPhonestaticE164) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhonestaticE164))) {
+//        if ((!preg_match("/^\\+[1-9]\\d{1,14}$/", ObjectSerializer::toString($sPhonestaticE164)))) {
+        if (!is_null($sPhonestaticE164) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", ObjectSerializer::toString($sPhonestaticE164)))) {
             throw new \InvalidArgumentException("invalid value for \$sPhonestaticE164 when calling PhonestaticResponseCompound., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
         }
 
@@ -420,8 +420,8 @@ class PhonestaticResponseCompound implements ModelInterface, ArrayAccess, \JsonS
             //throw new \InvalidArgumentException('non-nullable sPhonestaticExtension cannot be null');
         //}
 
-//        if ((!preg_match("/^\\d$/", $sPhonestaticExtension))) {
-        if (!is_null($sPhonestaticExtension) && (!preg_match("/^\\d$/", $sPhonestaticExtension))) {
+//        if ((!preg_match("/^\\d$/", ObjectSerializer::toString($sPhonestaticExtension)))) {
+        if (!is_null($sPhonestaticExtension) && (!preg_match("/^\\d$/", ObjectSerializer::toString($sPhonestaticExtension)))) {
             throw new \InvalidArgumentException("invalid value for \$sPhonestaticExtension when calling PhonestaticResponseCompound., must conform to the pattern /^\\d$/.");
         }
 

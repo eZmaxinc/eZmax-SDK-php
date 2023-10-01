@@ -560,8 +560,8 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable dtSessionhistoryFirsthit cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtSessionhistoryFirsthit))) {
-        if (!is_null($dtSessionhistoryFirsthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtSessionhistoryFirsthit))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtSessionhistoryFirsthit)))) {
+        if (!is_null($dtSessionhistoryFirsthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtSessionhistoryFirsthit)))) {
             throw new \InvalidArgumentException("invalid value for \$dtSessionhistoryFirsthit when calling SessionhistoryListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.");
         }
 
@@ -597,8 +597,8 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable dtSessionhistoryLasthit cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtSessionhistoryLasthit))) {
-        if (!is_null($dtSessionhistoryLasthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtSessionhistoryLasthit))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtSessionhistoryLasthit)))) {
+        if (!is_null($dtSessionhistoryLasthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtSessionhistoryLasthit)))) {
             throw new \InvalidArgumentException("invalid value for \$dtSessionhistoryLasthit when calling SessionhistoryListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.");
         }
 
@@ -665,8 +665,8 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable sComputerDescription cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sComputerDescription))) {
-        if (!is_null($sComputerDescription) && (!preg_match("/^.{0,50}$/", $sComputerDescription))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sComputerDescription)))) {
+        if (!is_null($sComputerDescription) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sComputerDescription)))) {
             throw new \InvalidArgumentException("invalid value for \$sComputerDescription when calling SessionhistoryListElement., must conform to the pattern /^.{0,50}$/.");
         }
 
@@ -702,8 +702,8 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable sSessionhistoryDuration cannot be null');
         //}
 
-//        if ((!preg_match("/^(0[0-9]{1}|\\d{2,}):([0-5][0-9]):([0-5][0-9])$/", $sSessionhistoryDuration))) {
-        if (!is_null($sSessionhistoryDuration) && (!preg_match("/^(0[0-9]{1}|\\d{2,}):([0-5][0-9]):([0-5][0-9])$/", $sSessionhistoryDuration))) {
+//        if ((!preg_match("/^(0[0-9]{1}|\\d{2,}):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($sSessionhistoryDuration)))) {
+        if (!is_null($sSessionhistoryDuration) && (!preg_match("/^(0[0-9]{1}|\\d{2,}):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($sSessionhistoryDuration)))) {
             throw new \InvalidArgumentException("invalid value for \$sSessionhistoryDuration when calling SessionhistoryListElement., must conform to the pattern /^(0[0-9]{1}|\\d{2,}):([0-5][0-9]):([0-5][0-9])$/.");
         }
 
@@ -770,8 +770,8 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable sUserLoginname cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginname))) {
-        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginname))) {
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
             throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling SessionhistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
         }
 

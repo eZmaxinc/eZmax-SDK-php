@@ -307,6 +307,9 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
         if ($this->container['sNotificationtestFunction'] === null) {
             $invalidProperties[] = "'sNotificationtestFunction' can't be null";
         }
+        if ($this->container['aSVariableobjectProperty'] === null) {
+            $invalidProperties[] = "'aSVariableobjectProperty' can't be null";
+        }
         if ($this->container['aObjVariableobject'] === null) {
             $invalidProperties[] = "'aObjVariableobject' can't be null";
         }
@@ -396,7 +399,7 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
     /**
      * Gets aSVariableobjectProperty
      *
-     * @return string[]|null
+     * @return string[]
      */
     public function getASVariableobjectProperty()
     {
@@ -406,7 +409,7 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
     /**
      * Sets aSVariableobjectProperty
      *
-     * @param string[]|null $aSVariableobjectProperty aSVariableobjectProperty
+     * @param string[] $aSVariableobjectProperty aSVariableobjectProperty
      *
      * @return self
      */

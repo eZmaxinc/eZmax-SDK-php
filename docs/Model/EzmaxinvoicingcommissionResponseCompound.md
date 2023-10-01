@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **dtEzmaxinvoicingcommissionEnd** | **string** | The end date for the Ezmaxinvoicingcommission |
 **iEzmaxinvoicingcommissionDays** | **int** | This is the number of days during the month on which the Ezmaxinvoigcommission applies |
 **dEzmaxinvoicingcommissionAmount** | **string** | The amount of Ezmaxinvoicingcommission |
-**objContactName** | [**\eZmaxAPI\Model\CustomContactNameResponse**](CustomContactNameResponse.md) |  |
+**objContactName** | [**\eZmaxAPI\Model\CustomContactNameResponse**](CustomContactNameResponse.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

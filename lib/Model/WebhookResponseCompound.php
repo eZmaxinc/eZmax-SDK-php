@@ -375,9 +375,6 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['bWebhookSkipsslvalidation'] === null) {
             $invalidProperties[] = "'bWebhookSkipsslvalidation' can't be null";
         }
-        if ($this->container['sWebhookEvent'] === null) {
-            $invalidProperties[] = "'sWebhookEvent' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -743,7 +740,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sWebhookEvent
      *
-     * @return string
+     * @return string|null
      */
     public function getSWebhookEvent()
     {
@@ -753,7 +750,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sWebhookEvent
      *
-     * @param string $sWebhookEvent The concatenated string to describe the Webhook event
+     * @param string|null $sWebhookEvent The concatenated string to describe the Webhook event
      *
      * @return self
      */

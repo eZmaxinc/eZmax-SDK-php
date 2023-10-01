@@ -638,8 +638,8 @@ class EzmaxinvoicingcommissionResponse implements ModelInterface, ArrayAccess, \
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingcommissionAmount cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingcommissionAmount))) {
-        if (!is_null($dEzmaxinvoicingcommissionAmount) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingcommissionAmount))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcommissionAmount)))) {
+        if (!is_null($dEzmaxinvoicingcommissionAmount) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcommissionAmount)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingcommissionAmount when calling EzmaxinvoicingcommissionResponse., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
         }
 

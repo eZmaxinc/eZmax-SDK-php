@@ -729,8 +729,8 @@ class SystemconfigurationResponse implements ModelInterface, ArrayAccess, \JsonS
             //throw new \InvalidArgumentException('non-nullable dtSystemconfigurationReadonlyexpirationstart cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $dtSystemconfigurationReadonlyexpirationstart))) {
-        if (!is_null($dtSystemconfigurationReadonlyexpirationstart) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $dtSystemconfigurationReadonlyexpirationstart))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtSystemconfigurationReadonlyexpirationstart)))) {
+        if (!is_null($dtSystemconfigurationReadonlyexpirationstart) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtSystemconfigurationReadonlyexpirationstart)))) {
             throw new \InvalidArgumentException("invalid value for \$dtSystemconfigurationReadonlyexpirationstart when calling SystemconfigurationResponse., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
         }
 
@@ -766,8 +766,8 @@ class SystemconfigurationResponse implements ModelInterface, ArrayAccess, \JsonS
             //throw new \InvalidArgumentException('non-nullable dtSystemconfigurationReadonlyexpirationend cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $dtSystemconfigurationReadonlyexpirationend))) {
-        if (!is_null($dtSystemconfigurationReadonlyexpirationend) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $dtSystemconfigurationReadonlyexpirationend))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtSystemconfigurationReadonlyexpirationend)))) {
+        if (!is_null($dtSystemconfigurationReadonlyexpirationend) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtSystemconfigurationReadonlyexpirationend)))) {
             throw new \InvalidArgumentException("invalid value for \$dtSystemconfigurationReadonlyexpirationend when calling SystemconfigurationResponse., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
         }
 

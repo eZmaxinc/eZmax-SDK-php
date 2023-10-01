@@ -276,6 +276,9 @@ class VariableexpenseGetAutocompleteV2ResponseMPayload implements ModelInterface
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjVariableexpense'] === null) {
+            $invalidProperties[] = "'aObjVariableexpense' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class VariableexpenseGetAutocompleteV2ResponseMPayload implements ModelInterface
     /**
      * Gets aObjVariableexpense
      *
-     * @return \eZmaxAPI\Model\VariableexpenseAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\VariableexpenseAutocompleteElementResponse[]
      */
     public function getAObjVariableexpense()
     {
@@ -304,7 +307,7 @@ class VariableexpenseGetAutocompleteV2ResponseMPayload implements ModelInterface
     /**
      * Sets aObjVariableexpense
      *
-     * @param \eZmaxAPI\Model\VariableexpenseAutocompleteElementResponse[]|null $aObjVariableexpense An array of Variableexpense autocomplete element response.
+     * @param \eZmaxAPI\Model\VariableexpenseAutocompleteElementResponse[] $aObjVariableexpense An array of Variableexpense autocomplete element response.
      *
      * @return self
      */

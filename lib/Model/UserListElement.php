@@ -518,8 +518,8 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
             //throw new \InvalidArgumentException('non-nullable sUserLoginname cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginname))) {
-        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $sUserLoginname))) {
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
             throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling UserListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
         }
 
@@ -679,8 +679,8 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
             //throw new \InvalidArgumentException('non-nullable dtUserEzsignprepaidexpiration cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $dtUserEzsignprepaidexpiration))) {
-        if (!is_null($dtUserEzsignprepaidexpiration) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $dtUserEzsignprepaidexpiration))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtUserEzsignprepaidexpiration)))) {
+        if (!is_null($dtUserEzsignprepaidexpiration) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtUserEzsignprepaidexpiration)))) {
             throw new \InvalidArgumentException("invalid value for \$dtUserEzsignprepaidexpiration when calling UserListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
         }
 

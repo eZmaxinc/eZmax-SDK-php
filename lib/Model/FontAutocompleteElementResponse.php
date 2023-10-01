@@ -347,8 +347,8 @@ class FontAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
             //throw new \InvalidArgumentException('non-nullable sFontName cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sFontName))) {
-        if (!is_null($sFontName) && (!preg_match("/^.{0,50}$/", $sFontName))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sFontName)))) {
+        if (!is_null($sFontName) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sFontName)))) {
             throw new \InvalidArgumentException("invalid value for \$sFontName when calling FontAutocompleteElementResponse., must conform to the pattern /^.{0,50}$/.");
         }
 

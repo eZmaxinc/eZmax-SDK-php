@@ -276,6 +276,9 @@ class FranchisebrokerGetAutocompleteV2ResponseMPayload implements ModelInterface
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjFranchisebroker'] === null) {
+            $invalidProperties[] = "'aObjFranchisebroker' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class FranchisebrokerGetAutocompleteV2ResponseMPayload implements ModelInterface
     /**
      * Gets aObjFranchisebroker
      *
-     * @return \eZmaxAPI\Model\FranchisebrokerAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\FranchisebrokerAutocompleteElementResponse[]
      */
     public function getAObjFranchisebroker()
     {
@@ -304,7 +307,7 @@ class FranchisebrokerGetAutocompleteV2ResponseMPayload implements ModelInterface
     /**
      * Sets aObjFranchisebroker
      *
-     * @param \eZmaxAPI\Model\FranchisebrokerAutocompleteElementResponse[]|null $aObjFranchisebroker An array of Franchisebroker autocomplete element response.
+     * @param \eZmaxAPI\Model\FranchisebrokerAutocompleteElementResponse[] $aObjFranchisebroker An array of Franchisebroker autocomplete element response.
      *
      * @return self
      */

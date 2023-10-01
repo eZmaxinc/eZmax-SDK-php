@@ -391,8 +391,8 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
             //throw new \InvalidArgumentException('non-nullable dEzmaxpricingRebateezsignallagents cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxpricingRebateezsignallagents))) {
-        if (!is_null($dEzmaxpricingRebateezsignallagents) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxpricingRebateezsignallagents))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxpricingRebateezsignallagents)))) {
+        if (!is_null($dEzmaxpricingRebateezsignallagents) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxpricingRebateezsignallagents)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxpricingRebateezsignallagents when calling CustomEzmaxpricingResponse., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
         }
 

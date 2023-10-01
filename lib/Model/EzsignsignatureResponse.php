@@ -1190,8 +1190,8 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable dtEzsignsignatureDate cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtEzsignsignatureDate))) {
-        if (!is_null($dtEzsignsignatureDate) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtEzsignsignatureDate))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtEzsignsignatureDate)))) {
+        if (!is_null($dtEzsignsignatureDate) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtEzsignsignatureDate)))) {
             throw new \InvalidArgumentException("invalid value for \$dtEzsignsignatureDate when calling EzsignsignatureResponse., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.");
         }
 
@@ -1361,8 +1361,8 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable sEzsignsignatureRegexp cannot be null');
         //}
 
-//        if ((!preg_match("/^\\^.*\\$$|^$/", $sEzsignsignatureRegexp))) {
-        if (!is_null($sEzsignsignatureRegexp) && (!preg_match("/^\\^.*\\$$|^$/", $sEzsignsignatureRegexp))) {
+//        if ((!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignsignatureRegexp)))) {
+        if (!is_null($sEzsignsignatureRegexp) && (!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignsignatureRegexp)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsignsignatureRegexp when calling EzsignsignatureResponse., must conform to the pattern /^\\^.*\\$$|^$/.");
         }
 

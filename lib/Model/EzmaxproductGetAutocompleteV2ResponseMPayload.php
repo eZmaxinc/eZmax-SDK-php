@@ -276,6 +276,9 @@ class EzmaxproductGetAutocompleteV2ResponseMPayload implements ModelInterface, A
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjEzmaxproduct'] === null) {
+            $invalidProperties[] = "'aObjEzmaxproduct' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class EzmaxproductGetAutocompleteV2ResponseMPayload implements ModelInterface, A
     /**
      * Gets aObjEzmaxproduct
      *
-     * @return \eZmaxAPI\Model\EzmaxproductAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\EzmaxproductAutocompleteElementResponse[]
      */
     public function getAObjEzmaxproduct()
     {
@@ -304,7 +307,7 @@ class EzmaxproductGetAutocompleteV2ResponseMPayload implements ModelInterface, A
     /**
      * Sets aObjEzmaxproduct
      *
-     * @param \eZmaxAPI\Model\EzmaxproductAutocompleteElementResponse[]|null $aObjEzmaxproduct An array of Ezmaxproduct autocomplete element response.
+     * @param \eZmaxAPI\Model\EzmaxproductAutocompleteElementResponse[] $aObjEzmaxproduct An array of Ezmaxproduct autocomplete element response.
      *
      * @return self
      */

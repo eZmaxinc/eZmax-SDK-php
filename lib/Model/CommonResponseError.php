@@ -333,8 +333,8 @@ class CommonResponseError implements ModelInterface, ArrayAccess, \JsonSerializa
             //throw new \InvalidArgumentException('non-nullable sErrorMessage cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,500}$/", $sErrorMessage))) {
-        if (!is_null($sErrorMessage) && (!preg_match("/^.{0,500}$/", $sErrorMessage))) {
+//        if ((!preg_match("/^.{0,500}$/", ObjectSerializer::toString($sErrorMessage)))) {
+        if (!is_null($sErrorMessage) && (!preg_match("/^.{0,500}$/", ObjectSerializer::toString($sErrorMessage)))) {
             throw new \InvalidArgumentException("invalid value for \$sErrorMessage when calling CommonResponseError., must conform to the pattern /^.{0,500}$/.");
         }
 

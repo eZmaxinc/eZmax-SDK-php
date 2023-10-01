@@ -651,8 +651,8 @@ class BrandingResponseCompound implements ModelInterface, ArrayAccess, \JsonSeri
             //throw new \InvalidArgumentException('non-nullable sBrandingName cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,55}$/", $sBrandingName))) {
-        if (!is_null($sBrandingName) && (!preg_match("/^.{0,55}$/", $sBrandingName))) {
+//        if ((!preg_match("/^.{0,55}$/", ObjectSerializer::toString($sBrandingName)))) {
+        if (!is_null($sBrandingName) && (!preg_match("/^.{0,55}$/", ObjectSerializer::toString($sBrandingName)))) {
             throw new \InvalidArgumentException("invalid value for \$sBrandingName when calling BrandingResponseCompound., must conform to the pattern /^.{0,55}$/.");
         }
 

@@ -276,6 +276,9 @@ class PaymenttermGetAutocompleteV2ResponseMPayload implements ModelInterface, Ar
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjPaymentterm'] === null) {
+            $invalidProperties[] = "'aObjPaymentterm' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class PaymenttermGetAutocompleteV2ResponseMPayload implements ModelInterface, Ar
     /**
      * Gets aObjPaymentterm
      *
-     * @return \eZmaxAPI\Model\PaymenttermAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\PaymenttermAutocompleteElementResponse[]
      */
     public function getAObjPaymentterm()
     {
@@ -304,7 +307,7 @@ class PaymenttermGetAutocompleteV2ResponseMPayload implements ModelInterface, Ar
     /**
      * Sets aObjPaymentterm
      *
-     * @param \eZmaxAPI\Model\PaymenttermAutocompleteElementResponse[]|null $aObjPaymentterm An array of Paymentterm autocomplete element response.
+     * @param \eZmaxAPI\Model\PaymenttermAutocompleteElementResponse[] $aObjPaymentterm An array of Paymentterm autocomplete element response.
      *
      * @return self
      */

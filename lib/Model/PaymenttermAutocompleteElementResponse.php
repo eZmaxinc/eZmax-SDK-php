@@ -374,8 +374,8 @@ class PaymenttermAutocompleteElementResponse implements ModelInterface, ArrayAcc
             //throw new \InvalidArgumentException('non-nullable sPaymenttermDescriptionX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
-        if (!is_null($sPaymenttermDescriptionX) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
+//        if ((!preg_match("/^.{1,40}$/", ObjectSerializer::toString($sPaymenttermDescriptionX)))) {
+        if (!is_null($sPaymenttermDescriptionX) && (!preg_match("/^.{1,40}$/", ObjectSerializer::toString($sPaymenttermDescriptionX)))) {
             throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescriptionX when calling PaymenttermAutocompleteElementResponse., must conform to the pattern /^.{1,40}$/.");
         }
 

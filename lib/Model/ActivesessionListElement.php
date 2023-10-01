@@ -721,8 +721,8 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
             //throw new \InvalidArgumentException('non-nullable sActivesessionLoginname cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,32}$/", $sActivesessionLoginname))) {
-        if (!is_null($sActivesessionLoginname) && (!preg_match("/^.{0,32}$/", $sActivesessionLoginname))) {
+//        if ((!preg_match("/^.{0,32}$/", ObjectSerializer::toString($sActivesessionLoginname)))) {
+        if (!is_null($sActivesessionLoginname) && (!preg_match("/^.{0,32}$/", ObjectSerializer::toString($sActivesessionLoginname)))) {
             throw new \InvalidArgumentException("invalid value for \$sActivesessionLoginname when calling ActivesessionListElement., must conform to the pattern /^.{0,32}$/.");
         }
 
@@ -758,8 +758,8 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
             //throw new \InvalidArgumentException('non-nullable sComputerDescription cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sComputerDescription))) {
-        if (!is_null($sComputerDescription) && (!preg_match("/^.{0,50}$/", $sComputerDescription))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sComputerDescription)))) {
+        if (!is_null($sComputerDescription) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sComputerDescription)))) {
             throw new \InvalidArgumentException("invalid value for \$sComputerDescription when calling ActivesessionListElement., must conform to the pattern /^.{0,50}$/.");
         }
 
@@ -795,8 +795,8 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
             //throw new \InvalidArgumentException('non-nullable dtActivesessionFirsthit cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtActivesessionFirsthit))) {
-        if (!is_null($dtActivesessionFirsthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtActivesessionFirsthit))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtActivesessionFirsthit)))) {
+        if (!is_null($dtActivesessionFirsthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtActivesessionFirsthit)))) {
             throw new \InvalidArgumentException("invalid value for \$dtActivesessionFirsthit when calling ActivesessionListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.");
         }
 
@@ -832,8 +832,8 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
             //throw new \InvalidArgumentException('non-nullable dtActivesessionLasthit cannot be null');
         //}
 
-//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtActivesessionLasthit))) {
-        if (!is_null($dtActivesessionLasthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $dtActivesessionLasthit))) {
+//        if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtActivesessionLasthit)))) {
+        if (!is_null($dtActivesessionLasthit) && (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtActivesessionLasthit)))) {
             throw new \InvalidArgumentException("invalid value for \$dtActivesessionLasthit when calling ActivesessionListElement., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.");
         }
 

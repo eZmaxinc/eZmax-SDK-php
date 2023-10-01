@@ -382,8 +382,8 @@ class ModulegroupResponse implements ModelInterface, ArrayAccess, \JsonSerializa
             //throw new \InvalidArgumentException('non-nullable sModulegroupNameX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,25}$/", $sModulegroupNameX))) {
-        if (!is_null($sModulegroupNameX) && (!preg_match("/^.{0,25}$/", $sModulegroupNameX))) {
+//        if ((!preg_match("/^.{0,25}$/", ObjectSerializer::toString($sModulegroupNameX)))) {
+        if (!is_null($sModulegroupNameX) && (!preg_match("/^.{0,25}$/", ObjectSerializer::toString($sModulegroupNameX)))) {
             throw new \InvalidArgumentException("invalid value for \$sModulegroupNameX when calling ModulegroupResponse., must conform to the pattern /^.{0,25}$/.");
         }
 

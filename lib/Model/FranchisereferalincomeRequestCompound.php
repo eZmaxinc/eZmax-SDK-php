@@ -420,9 +420,6 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         if ($this->container['sFranchisereferalincomeRemoteid'] === null) {
             $invalidProperties[] = "'sFranchisereferalincomeRemoteid' can't be null";
         }
-        if ($this->container['objAddress'] === null) {
-            $invalidProperties[] = "'objAddress' can't be null";
-        }
         if ($this->container['aObjContact'] === null) {
             $invalidProperties[] = "'aObjContact' can't be null";
         }
@@ -846,7 +843,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     /**
      * Gets objAddress
      *
-     * @return \eZmaxAPI\Model\AddressRequest
+     * @return \eZmaxAPI\Model\AddressRequest|null
      */
     public function getObjAddress()
     {
@@ -856,7 +853,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
     /**
      * Sets objAddress
      *
-     * @param \eZmaxAPI\Model\AddressRequest $objAddress objAddress
+     * @param \eZmaxAPI\Model\AddressRequest|null $objAddress objAddress
      *
      * @return self
      */

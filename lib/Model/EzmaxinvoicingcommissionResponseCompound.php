@@ -365,9 +365,6 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
             $invalidProperties[] = "invalid value for 'dEzmaxinvoicingcommissionAmount', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
         }
 
-        if ($this->container['objContactName'] === null) {
-            $invalidProperties[] = "'objContactName' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -648,8 +645,8 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
             //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingcommissionAmount cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingcommissionAmount))) {
-        if (!is_null($dEzmaxinvoicingcommissionAmount) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dEzmaxinvoicingcommissionAmount))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcommissionAmount)))) {
+        if (!is_null($dEzmaxinvoicingcommissionAmount) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcommissionAmount)))) {
             throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingcommissionAmount when calling EzmaxinvoicingcommissionResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
         }
 
@@ -664,7 +661,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
     /**
      * Gets objContactName
      *
-     * @return \eZmaxAPI\Model\CustomContactNameResponse
+     * @return \eZmaxAPI\Model\CustomContactNameResponse|null
      */
     public function getObjContactName()
     {
@@ -674,7 +671,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
     /**
      * Sets objContactName
      *
-     * @param \eZmaxAPI\Model\CustomContactNameResponse $objContactName objContactName
+     * @param \eZmaxAPI\Model\CustomContactNameResponse|null $objContactName objContactName
      *
      * @return self
      */

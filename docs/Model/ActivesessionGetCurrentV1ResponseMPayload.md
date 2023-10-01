@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **bActivesessionDebug** | **bool** | Whether the active session is in debug or not |
 **bActivesessionIssuperadmin** | **bool** | Whether the active session is superadmin or not |
 **pksCustomerCode** | **string** | The customer code assigned to your account |
-**fkiSystemconfigurationtypeID** | **int** | The unique ID of the Systemconfigurationtype | [optional]
+**fkiSystemconfigurationtypeID** | **int** | The unique ID of the Systemconfigurationtype |
 **fkiSignatureID** | **int** | The unique ID of the Signature | [optional]
 **aPkiPermissionID** | **int[]** | An array of permissions granted to the user or api key |
 **objUserReal** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  |

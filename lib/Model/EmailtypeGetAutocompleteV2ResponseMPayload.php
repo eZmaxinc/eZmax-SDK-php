@@ -276,6 +276,9 @@ class EmailtypeGetAutocompleteV2ResponseMPayload implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjEmailtype'] === null) {
+            $invalidProperties[] = "'aObjEmailtype' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class EmailtypeGetAutocompleteV2ResponseMPayload implements ModelInterface, Arra
     /**
      * Gets aObjEmailtype
      *
-     * @return \eZmaxAPI\Model\EmailtypeAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\EmailtypeAutocompleteElementResponse[]
      */
     public function getAObjEmailtype()
     {
@@ -304,7 +307,7 @@ class EmailtypeGetAutocompleteV2ResponseMPayload implements ModelInterface, Arra
     /**
      * Sets aObjEmailtype
      *
-     * @param \eZmaxAPI\Model\EmailtypeAutocompleteElementResponse[]|null $aObjEmailtype An array of Emailtype autocomplete element response.
+     * @param \eZmaxAPI\Model\EmailtypeAutocompleteElementResponse[] $aObjEmailtype An array of Emailtype autocomplete element response.
      *
      * @return self
      */

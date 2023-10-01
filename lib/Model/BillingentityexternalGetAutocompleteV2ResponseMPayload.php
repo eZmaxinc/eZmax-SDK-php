@@ -276,6 +276,9 @@ class BillingentityexternalGetAutocompleteV2ResponseMPayload implements ModelInt
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjBillingentityexternal'] === null) {
+            $invalidProperties[] = "'aObjBillingentityexternal' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class BillingentityexternalGetAutocompleteV2ResponseMPayload implements ModelInt
     /**
      * Gets aObjBillingentityexternal
      *
-     * @return \eZmaxAPI\Model\BillingentityexternalAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\BillingentityexternalAutocompleteElementResponse[]
      */
     public function getAObjBillingentityexternal()
     {
@@ -304,7 +307,7 @@ class BillingentityexternalGetAutocompleteV2ResponseMPayload implements ModelInt
     /**
      * Sets aObjBillingentityexternal
      *
-     * @param \eZmaxAPI\Model\BillingentityexternalAutocompleteElementResponse[]|null $aObjBillingentityexternal An array of Billingentityexternal autocomplete element response.
+     * @param \eZmaxAPI\Model\BillingentityexternalAutocompleteElementResponse[] $aObjBillingentityexternal An array of Billingentityexternal autocomplete element response.
      *
      * @return self
      */

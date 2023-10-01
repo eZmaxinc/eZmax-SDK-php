@@ -351,8 +351,8 @@ class VariableexpenseAutocompleteElementResponse implements ModelInterface, Arra
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseDescriptionX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,40}$/", $sVariableexpenseDescriptionX))) {
-        if (!is_null($sVariableexpenseDescriptionX) && (!preg_match("/^.{0,40}$/", $sVariableexpenseDescriptionX))) {
+//        if ((!preg_match("/^.{0,40}$/", ObjectSerializer::toString($sVariableexpenseDescriptionX)))) {
+        if (!is_null($sVariableexpenseDescriptionX) && (!preg_match("/^.{0,40}$/", ObjectSerializer::toString($sVariableexpenseDescriptionX)))) {
             throw new \InvalidArgumentException("invalid value for \$sVariableexpenseDescriptionX when calling VariableexpenseAutocompleteElementResponse., must conform to the pattern /^.{0,40}$/.");
         }
 

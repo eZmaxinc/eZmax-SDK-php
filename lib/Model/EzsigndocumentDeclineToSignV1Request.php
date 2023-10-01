@@ -323,8 +323,8 @@ class EzsigndocumentDeclineToSignV1Request implements ModelInterface, ArrayAcces
             //throw new \InvalidArgumentException('non-nullable sReason cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,65535}$/", $sReason))) {
-        if (!is_null($sReason) && (!preg_match("/^.{0,65535}$/", $sReason))) {
+//        if ((!preg_match("/^.{0,65535}$/", ObjectSerializer::toString($sReason)))) {
+        if (!is_null($sReason) && (!preg_match("/^.{0,65535}$/", ObjectSerializer::toString($sReason)))) {
             throw new \InvalidArgumentException("invalid value for \$sReason when calling EzsigndocumentDeclineToSignV1Request., must conform to the pattern /^.{0,65535}$/.");
         }
 

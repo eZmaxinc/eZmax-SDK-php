@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * CommonResponseErrorEzsignformValidationTest Class Doc Comment
  *
  * @category    Class
- * @description CommonResponseErrorEzsignformValidation
+ * @description Generic Error Message
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

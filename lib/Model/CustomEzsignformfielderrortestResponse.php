@@ -338,8 +338,8 @@ class CustomEzsignformfielderrortestResponse implements ModelInterface, ArrayAcc
             //throw new \InvalidArgumentException('non-nullable sEzsignformfielderrortestName cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sEzsignformfielderrortestName))) {
-        if (!is_null($sEzsignformfielderrortestName) && (!preg_match("/^.{0,50}$/", $sEzsignformfielderrortestName))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sEzsignformfielderrortestName)))) {
+        if (!is_null($sEzsignformfielderrortestName) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sEzsignformfielderrortestName)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsignformfielderrortestName when calling CustomEzsignformfielderrortestResponse., must conform to the pattern /^.{0,50}$/.");
         }
 
@@ -375,8 +375,8 @@ class CustomEzsignformfielderrortestResponse implements ModelInterface, ArrayAcc
             //throw new \InvalidArgumentException('non-nullable sEzsignformfielderrortestDetail cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,255}$/", $sEzsignformfielderrortestDetail))) {
-        if (!is_null($sEzsignformfielderrortestDetail) && (!preg_match("/^.{0,255}$/", $sEzsignformfielderrortestDetail))) {
+//        if ((!preg_match("/^.{0,255}$/", ObjectSerializer::toString($sEzsignformfielderrortestDetail)))) {
+        if (!is_null($sEzsignformfielderrortestDetail) && (!preg_match("/^.{0,255}$/", ObjectSerializer::toString($sEzsignformfielderrortestDetail)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsignformfielderrortestDetail when calling CustomEzsignformfielderrortestResponse., must conform to the pattern /^.{0,255}$/.");
         }
 

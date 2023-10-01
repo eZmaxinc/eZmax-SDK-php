@@ -276,6 +276,9 @@ class FranchiseofficeGetAutocompleteV2ResponseMPayload implements ModelInterface
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjFranchiseoffice'] === null) {
+            $invalidProperties[] = "'aObjFranchiseoffice' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class FranchiseofficeGetAutocompleteV2ResponseMPayload implements ModelInterface
     /**
      * Gets aObjFranchiseoffice
      *
-     * @return \eZmaxAPI\Model\FranchiseofficeAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\FranchiseofficeAutocompleteElementResponse[]
      */
     public function getAObjFranchiseoffice()
     {
@@ -304,7 +307,7 @@ class FranchiseofficeGetAutocompleteV2ResponseMPayload implements ModelInterface
     /**
      * Sets aObjFranchiseoffice
      *
-     * @param \eZmaxAPI\Model\FranchiseofficeAutocompleteElementResponse[]|null $aObjFranchiseoffice An array of Franchiseoffice autocomplete element response.
+     * @param \eZmaxAPI\Model\FranchiseofficeAutocompleteElementResponse[] $aObjFranchiseoffice An array of Franchiseoffice autocomplete element response.
      *
      * @return self
      */

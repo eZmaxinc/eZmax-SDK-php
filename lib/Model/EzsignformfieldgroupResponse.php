@@ -940,8 +940,8 @@ class EzsignformfieldgroupResponse implements ModelInterface, ArrayAccess, \Json
             //throw new \InvalidArgumentException('non-nullable sEzsignformfieldgroupRegexp cannot be null');
         //}
 
-//        if ((!preg_match("/^\\^.*\\$$|^$/", $sEzsignformfieldgroupRegexp))) {
-        if (!is_null($sEzsignformfieldgroupRegexp) && (!preg_match("/^\\^.*\\$$|^$/", $sEzsignformfieldgroupRegexp))) {
+//        if ((!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignformfieldgroupRegexp)))) {
+        if (!is_null($sEzsignformfieldgroupRegexp) && (!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignformfieldgroupRegexp)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsignformfieldgroupRegexp when calling EzsignformfieldgroupResponse., must conform to the pattern /^\\^.*\\$$|^$/.");
         }
 

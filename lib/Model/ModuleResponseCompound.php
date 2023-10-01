@@ -348,9 +348,6 @@ class ModuleResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['bModuleRegisteredapi'] === null) {
             $invalidProperties[] = "'bModuleRegisteredapi' can't be null";
         }
-        if ($this->container['aObjModulesection'] === null) {
-            $invalidProperties[] = "'aObjModulesection' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -571,7 +568,7 @@ class ModuleResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets aObjModulesection
      *
-     * @return \eZmaxAPI\Model\ModulesectionResponseCompound[]
+     * @return \eZmaxAPI\Model\ModulesectionResponseCompound[]|null
      */
     public function getAObjModulesection()
     {
@@ -581,7 +578,7 @@ class ModuleResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets aObjModulesection
      *
-     * @param \eZmaxAPI\Model\ModulesectionResponseCompound[] $aObjModulesection aObjModulesection
+     * @param \eZmaxAPI\Model\ModulesectionResponseCompound[]|null $aObjModulesection aObjModulesection
      *
      * @return self
      */

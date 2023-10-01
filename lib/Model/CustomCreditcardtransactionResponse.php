@@ -297,6 +297,9 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['eCreditcardtypeCodename'] === null) {
+            $invalidProperties[] = "'eCreditcardtypeCodename' can't be null";
+        }
         if ($this->container['dCreditcardtransactionAmount'] === null) {
             $invalidProperties[] = "'dCreditcardtransactionAmount' can't be null";
         }
@@ -339,7 +342,7 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
     /**
      * Gets eCreditcardtypeCodename
      *
-     * @return \eZmaxAPI\Model\FieldECreditcardtypeCodename|null
+     * @return \eZmaxAPI\Model\FieldECreditcardtypeCodename
      */
     public function getECreditcardtypeCodename()
     {
@@ -349,7 +352,7 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
     /**
      * Sets eCreditcardtypeCodename
      *
-     * @param \eZmaxAPI\Model\FieldECreditcardtypeCodename|null $eCreditcardtypeCodename eCreditcardtypeCodename
+     * @param \eZmaxAPI\Model\FieldECreditcardtypeCodename $eCreditcardtypeCodename eCreditcardtypeCodename
      *
      * @return self
      */
@@ -391,8 +394,8 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
             //throw new \InvalidArgumentException('non-nullable dCreditcardtransactionAmount cannot be null');
         //}
 
-//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dCreditcardtransactionAmount))) {
-        if (!is_null($dCreditcardtransactionAmount) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $dCreditcardtransactionAmount))) {
+//        if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dCreditcardtransactionAmount)))) {
+        if (!is_null($dCreditcardtransactionAmount) && (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dCreditcardtransactionAmount)))) {
             throw new \InvalidArgumentException("invalid value for \$dCreditcardtransactionAmount when calling CustomCreditcardtransactionResponse., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
         }
 
@@ -428,8 +431,8 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
             //throw new \InvalidArgumentException('non-nullable sCreditcardtransactionPartiallydecryptednumber cannot be null');
         //}
 
-//        if ((!preg_match("/^([X]{4}[ ]){3}(\\d){4}$/", $sCreditcardtransactionPartiallydecryptednumber))) {
-        if (!is_null($sCreditcardtransactionPartiallydecryptednumber) && (!preg_match("/^([X]{4}[ ]){3}(\\d){4}$/", $sCreditcardtransactionPartiallydecryptednumber))) {
+//        if ((!preg_match("/^([X]{4}[ ]){3}(\\d){4}$/", ObjectSerializer::toString($sCreditcardtransactionPartiallydecryptednumber)))) {
+        if (!is_null($sCreditcardtransactionPartiallydecryptednumber) && (!preg_match("/^([X]{4}[ ]){3}(\\d){4}$/", ObjectSerializer::toString($sCreditcardtransactionPartiallydecryptednumber)))) {
             throw new \InvalidArgumentException("invalid value for \$sCreditcardtransactionPartiallydecryptednumber when calling CustomCreditcardtransactionResponse., must conform to the pattern /^([X]{4}[ ]){3}(\\d){4}$/.");
         }
 
@@ -465,8 +468,8 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
             //throw new \InvalidArgumentException('non-nullable sCreditcardtransactionReferencenumber cannot be null');
         //}
 
-//        if ((!preg_match("/^[\\d]{18}$/", $sCreditcardtransactionReferencenumber))) {
-        if (!is_null($sCreditcardtransactionReferencenumber) && (!preg_match("/^[\\d]{18}$/", $sCreditcardtransactionReferencenumber))) {
+//        if ((!preg_match("/^[\\d]{18}$/", ObjectSerializer::toString($sCreditcardtransactionReferencenumber)))) {
+        if (!is_null($sCreditcardtransactionReferencenumber) && (!preg_match("/^[\\d]{18}$/", ObjectSerializer::toString($sCreditcardtransactionReferencenumber)))) {
             throw new \InvalidArgumentException("invalid value for \$sCreditcardtransactionReferencenumber when calling CustomCreditcardtransactionResponse., must conform to the pattern /^[\\d]{18}$/.");
         }
 

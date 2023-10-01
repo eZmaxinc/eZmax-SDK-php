@@ -276,6 +276,9 @@ class PhonetypeGetAutocompleteV2ResponseMPayload implements ModelInterface, Arra
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjPhonetype'] === null) {
+            $invalidProperties[] = "'aObjPhonetype' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class PhonetypeGetAutocompleteV2ResponseMPayload implements ModelInterface, Arra
     /**
      * Gets aObjPhonetype
      *
-     * @return \eZmaxAPI\Model\PhonetypeAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\PhonetypeAutocompleteElementResponse[]
      */
     public function getAObjPhonetype()
     {
@@ -304,7 +307,7 @@ class PhonetypeGetAutocompleteV2ResponseMPayload implements ModelInterface, Arra
     /**
      * Sets aObjPhonetype
      *
-     * @param \eZmaxAPI\Model\PhonetypeAutocompleteElementResponse[]|null $aObjPhonetype An array of Phonetype autocomplete element response.
+     * @param \eZmaxAPI\Model\PhonetypeAutocompleteElementResponse[] $aObjPhonetype An array of Phonetype autocomplete element response.
      *
      * @return self
      */

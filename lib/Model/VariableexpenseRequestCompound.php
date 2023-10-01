@@ -409,8 +409,8 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
             //throw new \InvalidArgumentException('non-nullable sVariableexpenseCode cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,5}$/", $sVariableexpenseCode))) {
-        if (!is_null($sVariableexpenseCode) && (!preg_match("/^.{0,5}$/", $sVariableexpenseCode))) {
+//        if ((!preg_match("/^.{0,5}$/", ObjectSerializer::toString($sVariableexpenseCode)))) {
+        if (!is_null($sVariableexpenseCode) && (!preg_match("/^.{0,5}$/", ObjectSerializer::toString($sVariableexpenseCode)))) {
             throw new \InvalidArgumentException("invalid value for \$sVariableexpenseCode when calling VariableexpenseRequestCompound., must conform to the pattern /^.{0,5}$/.");
         }
 

@@ -417,8 +417,8 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
             //throw new \InvalidArgumentException('non-nullable sPaymenttermCode cannot be null');
         //}
 
-//        if ((!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
-        if (!is_null($sPaymenttermCode) && (!preg_match("/^[A-Z0-9]{1,4}$/", $sPaymenttermCode))) {
+//        if ((!preg_match("/^[A-Z0-9]{1,4}$/", ObjectSerializer::toString($sPaymenttermCode)))) {
+        if (!is_null($sPaymenttermCode) && (!preg_match("/^[A-Z0-9]{1,4}$/", ObjectSerializer::toString($sPaymenttermCode)))) {
             throw new \InvalidArgumentException("invalid value for \$sPaymenttermCode when calling PaymenttermListElement., must conform to the pattern /^[A-Z0-9]{1,4}$/.");
         }
 
@@ -526,8 +526,8 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
             //throw new \InvalidArgumentException('non-nullable sPaymenttermDescriptionX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
-        if (!is_null($sPaymenttermDescriptionX) && (!preg_match("/^.{1,40}$/", $sPaymenttermDescriptionX))) {
+//        if ((!preg_match("/^.{1,40}$/", ObjectSerializer::toString($sPaymenttermDescriptionX)))) {
+        if (!is_null($sPaymenttermDescriptionX) && (!preg_match("/^.{1,40}$/", ObjectSerializer::toString($sPaymenttermDescriptionX)))) {
             throw new \InvalidArgumentException("invalid value for \$sPaymenttermDescriptionX when calling PaymenttermListElement., must conform to the pattern /^.{1,40}$/.");
         }
 

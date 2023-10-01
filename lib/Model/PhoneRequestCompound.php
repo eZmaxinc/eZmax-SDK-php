@@ -657,8 +657,8 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
             //throw new \InvalidArgumentException('non-nullable sPhoneE164 cannot be null');
         //}
 
-//        if ((!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164))) {
-        if (!is_null($sPhoneE164) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", $sPhoneE164))) {
+//        if ((!preg_match("/^\\+[1-9]\\d{1,14}$/", ObjectSerializer::toString($sPhoneE164)))) {
+        if (!is_null($sPhoneE164) && (!preg_match("/^\\+[1-9]\\d{1,14}$/", ObjectSerializer::toString($sPhoneE164)))) {
             throw new \InvalidArgumentException("invalid value for \$sPhoneE164 when calling PhoneRequestCompound., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
         }
 

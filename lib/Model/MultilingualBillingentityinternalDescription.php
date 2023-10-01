@@ -332,8 +332,8 @@ class MultilingualBillingentityinternalDescription implements ModelInterface, Ar
             //throw new \InvalidArgumentException('non-nullable sBillingentityinternalDescription1 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription1))) {
-        if (!is_null($sBillingentityinternalDescription1) && (!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription1))) {
+//        if ((!preg_match("/^.{0,70}$/", ObjectSerializer::toString($sBillingentityinternalDescription1)))) {
+        if (!is_null($sBillingentityinternalDescription1) && (!preg_match("/^.{0,70}$/", ObjectSerializer::toString($sBillingentityinternalDescription1)))) {
             throw new \InvalidArgumentException("invalid value for \$sBillingentityinternalDescription1 when calling MultilingualBillingentityinternalDescription., must conform to the pattern /^.{0,70}$/.");
         }
 
@@ -369,8 +369,8 @@ class MultilingualBillingentityinternalDescription implements ModelInterface, Ar
             //throw new \InvalidArgumentException('non-nullable sBillingentityinternalDescription2 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription2))) {
-        if (!is_null($sBillingentityinternalDescription2) && (!preg_match("/^.{0,70}$/", $sBillingentityinternalDescription2))) {
+//        if ((!preg_match("/^.{0,70}$/", ObjectSerializer::toString($sBillingentityinternalDescription2)))) {
+        if (!is_null($sBillingentityinternalDescription2) && (!preg_match("/^.{0,70}$/", ObjectSerializer::toString($sBillingentityinternalDescription2)))) {
             throw new \InvalidArgumentException("invalid value for \$sBillingentityinternalDescription2 when calling MultilingualBillingentityinternalDescription., must conform to the pattern /^.{0,70}$/.");
         }
 

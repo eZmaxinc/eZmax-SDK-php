@@ -309,9 +309,6 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'sModulegroupNameX', must be conform to the pattern /^.{0,25}$/.";
         }
 
-        if ($this->container['aObjModule'] === null) {
-            $invalidProperties[] = "'aObjModule' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -392,8 +389,8 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
             //throw new \InvalidArgumentException('non-nullable sModulegroupNameX cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,25}$/", $sModulegroupNameX))) {
-        if (!is_null($sModulegroupNameX) && (!preg_match("/^.{0,25}$/", $sModulegroupNameX))) {
+//        if ((!preg_match("/^.{0,25}$/", ObjectSerializer::toString($sModulegroupNameX)))) {
+        if (!is_null($sModulegroupNameX) && (!preg_match("/^.{0,25}$/", ObjectSerializer::toString($sModulegroupNameX)))) {
             throw new \InvalidArgumentException("invalid value for \$sModulegroupNameX when calling ModulegroupResponseCompound., must conform to the pattern /^.{0,25}$/.");
         }
 
@@ -408,7 +405,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets aObjModule
      *
-     * @return \eZmaxAPI\Model\ModuleResponseCompound[]
+     * @return \eZmaxAPI\Model\ModuleResponseCompound[]|null
      */
     public function getAObjModule()
     {
@@ -418,7 +415,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets aObjModule
      *
-     * @param \eZmaxAPI\Model\ModuleResponseCompound[] $aObjModule aObjModule
+     * @param \eZmaxAPI\Model\ModuleResponseCompound[]|null $aObjModule aObjModule
      *
      * @return self
      */

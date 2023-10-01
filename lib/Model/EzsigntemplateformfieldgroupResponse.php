@@ -909,8 +909,8 @@ class EzsigntemplateformfieldgroupResponse implements ModelInterface, ArrayAcces
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplateformfieldgroupRegexp cannot be null');
         //}
 
-//        if ((!preg_match("/^\\^.*\\$$|^$/", $sEzsigntemplateformfieldgroupRegexp))) {
-        if (!is_null($sEzsigntemplateformfieldgroupRegexp) && (!preg_match("/^\\^.*\\$$|^$/", $sEzsigntemplateformfieldgroupRegexp))) {
+//        if ((!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsigntemplateformfieldgroupRegexp)))) {
+        if (!is_null($sEzsigntemplateformfieldgroupRegexp) && (!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsigntemplateformfieldgroupRegexp)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsigntemplateformfieldgroupRegexp when calling EzsigntemplateformfieldgroupResponse., must conform to the pattern /^\\^.*\\$$|^$/.");
         }
 

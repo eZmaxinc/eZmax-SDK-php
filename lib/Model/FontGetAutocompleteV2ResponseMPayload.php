@@ -276,6 +276,9 @@ class FontGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayAcce
     {
         $invalidProperties = [];
 
+        if ($this->container['aObjFont'] === null) {
+            $invalidProperties[] = "'aObjFont' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,7 +297,7 @@ class FontGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayAcce
     /**
      * Gets aObjFont
      *
-     * @return \eZmaxAPI\Model\FontAutocompleteElementResponse[]|null
+     * @return \eZmaxAPI\Model\FontAutocompleteElementResponse[]
      */
     public function getAObjFont()
     {
@@ -304,7 +307,7 @@ class FontGetAutocompleteV2ResponseMPayload implements ModelInterface, ArrayAcce
     /**
      * Sets aObjFont
      *
-     * @param \eZmaxAPI\Model\FontAutocompleteElementResponse[]|null $aObjFont An array of Font autocomplete element response.
+     * @param \eZmaxAPI\Model\FontAutocompleteElementResponse[] $aObjFont An array of Font autocomplete element response.
      *
      * @return self
      */

@@ -332,8 +332,8 @@ class MultilingualSubnetDescription implements ModelInterface, ArrayAccess, \Jso
             //throw new \InvalidArgumentException('non-nullable sSubnetDescription1 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sSubnetDescription1))) {
-        if (!is_null($sSubnetDescription1) && (!preg_match("/^.{0,50}$/", $sSubnetDescription1))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sSubnetDescription1)))) {
+        if (!is_null($sSubnetDescription1) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sSubnetDescription1)))) {
             throw new \InvalidArgumentException("invalid value for \$sSubnetDescription1 when calling MultilingualSubnetDescription., must conform to the pattern /^.{0,50}$/.");
         }
 
@@ -369,8 +369,8 @@ class MultilingualSubnetDescription implements ModelInterface, ArrayAccess, \Jso
             //throw new \InvalidArgumentException('non-nullable sSubnetDescription2 cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,50}$/", $sSubnetDescription2))) {
-        if (!is_null($sSubnetDescription2) && (!preg_match("/^.{0,50}$/", $sSubnetDescription2))) {
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sSubnetDescription2)))) {
+        if (!is_null($sSubnetDescription2) && (!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sSubnetDescription2)))) {
             throw new \InvalidArgumentException("invalid value for \$sSubnetDescription2 when calling MultilingualSubnetDescription., must conform to the pattern /^.{0,50}$/.");
         }
 

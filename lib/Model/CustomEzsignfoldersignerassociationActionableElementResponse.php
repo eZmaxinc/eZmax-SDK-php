@@ -365,6 +365,9 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
         if ($this->container['bEzsignfoldersignerassociationHasactionableelementsCurrent'] === null) {
             $invalidProperties[] = "'bEzsignfoldersignerassociationHasactionableelementsCurrent' can't be null";
         }
+        if ($this->container['bEzsignfoldersignerassociationHasactionableelementsFuture'] === null) {
+            $invalidProperties[] = "'bEzsignfoldersignerassociationHasactionableelementsFuture' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -674,7 +677,7 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
     /**
      * Gets bEzsignfoldersignerassociationHasactionableelementsFuture
      *
-     * @return bool|null
+     * @return bool
      */
     public function getBEzsignfoldersignerassociationHasactionableelementsFuture()
     {
@@ -684,7 +687,7 @@ class CustomEzsignfoldersignerassociationActionableElementResponse implements Mo
     /**
      * Sets bEzsignfoldersignerassociationHasactionableelementsFuture
      *
-     * @param bool|null $bEzsignfoldersignerassociationHasactionableelementsFuture Indicates if the Ezsignfoldersignerassociation has actionable elements in a future step
+     * @param bool $bEzsignfoldersignerassociationHasactionableelementsFuture Indicates if the Ezsignfoldersignerassociation has actionable elements in a future step
      *
      * @return self
      */

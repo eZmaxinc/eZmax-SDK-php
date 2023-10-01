@@ -1191,8 +1191,8 @@ class EzsigntemplatesignatureResponse implements ModelInterface, ArrayAccess, \J
             //throw new \InvalidArgumentException('non-nullable sEzsigntemplatesignatureRegexp cannot be null');
         //}
 
-//        if ((!preg_match("/^\\^.*\\$$|^$/", $sEzsigntemplatesignatureRegexp))) {
-        if (!is_null($sEzsigntemplatesignatureRegexp) && (!preg_match("/^\\^.*\\$$|^$/", $sEzsigntemplatesignatureRegexp))) {
+//        if ((!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsigntemplatesignatureRegexp)))) {
+        if (!is_null($sEzsigntemplatesignatureRegexp) && (!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsigntemplatesignatureRegexp)))) {
             throw new \InvalidArgumentException("invalid value for \$sEzsigntemplatesignatureRegexp when calling EzsigntemplatesignatureResponse., must conform to the pattern /^\\^.*\\$$|^$/.");
         }
 
