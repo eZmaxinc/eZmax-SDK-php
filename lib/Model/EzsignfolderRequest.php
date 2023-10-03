@@ -340,9 +340,6 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['sEzsignfolderDescription'] === null) {
             $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
         }
-        if ($this->container['tEzsignfolderNote'] === null) {
-            $invalidProperties[] = "'tEzsignfolderNote' can't be null";
-        }
         if ($this->container['eEzsignfolderSendreminderfrequency'] === null) {
             $invalidProperties[] = "'eEzsignfolderSendreminderfrequency' can't be null";
         }
@@ -515,7 +512,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets tEzsignfolderNote
      *
-     * @return string
+     * @return string|null
      */
     public function getTEzsignfolderNote()
     {
@@ -525,7 +522,7 @@ class EzsignfolderRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tEzsignfolderNote
      *
-     * @param string $tEzsignfolderNote Note about the Ezsignfolder
+     * @param string|null $tEzsignfolderNote Note about the Ezsignfolder
      *
      * @return self
      */

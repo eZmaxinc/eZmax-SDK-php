@@ -290,9 +290,6 @@ class EzsignfolderSendV3Request implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['tEzsignfolderMessage'] === null) {
-            $invalidProperties[] = "'tEzsignfolderMessage' can't be null";
-        }
         if ($this->container['aFkiEzsignfoldersignerassociationID'] === null) {
             $invalidProperties[] = "'aFkiEzsignfoldersignerassociationID' can't be null";
         }
@@ -314,7 +311,7 @@ class EzsignfolderSendV3Request implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets tEzsignfolderMessage
      *
-     * @return string
+     * @return string|null
      */
     public function getTEzsignfolderMessage()
     {
@@ -324,7 +321,7 @@ class EzsignfolderSendV3Request implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets tEzsignfolderMessage
      *
-     * @param string $tEzsignfolderMessage A custom text message that will be added to the email sent.
+     * @param string|null $tEzsignfolderMessage A custom text message that will be added to the email sent.
      *
      * @return self
      */
