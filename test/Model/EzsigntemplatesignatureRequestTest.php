@@ -268,4 +268,13 @@ class EzsigntemplatesignatureRequestTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "eEzsigntemplatesignatureDependencyrequirement"
+     */
+    public function testPropertyEEzsigntemplatesignatureDependencyrequirement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

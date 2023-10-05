@@ -178,4 +178,22 @@ class EzsignformfieldRequestCompoundTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "eEzsignformfieldDependencyrequirement"
+     */
+    public function testPropertyEEzsignformfieldDependencyrequirement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjEzsignelementdependency"
+     */
+    public function testPropertyAObjEzsignelementdependency()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

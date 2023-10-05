@@ -79,7 +79,8 @@ class EzsigntemplatesignatureResponse implements ModelInterface, ArrayAccess, \J
         'bEzsigntemplatesignatureRequired' => 'bool',
         'iEzsigntemplatesignatureMaxlength' => 'int',
         'sEzsigntemplatesignatureRegexp' => 'string',
-        'eEzsigntemplatesignatureTextvalidation' => '\eZmaxAPI\Model\EnumTextvalidation'
+        'eEzsigntemplatesignatureTextvalidation' => '\eZmaxAPI\Model\EnumTextvalidation',
+        'eEzsigntemplatesignatureDependencyrequirement' => '\eZmaxAPI\Model\FieldEEzsigntemplatesignatureDependencyrequirement'
     ];
 
     /**
@@ -110,7 +111,8 @@ class EzsigntemplatesignatureResponse implements ModelInterface, ArrayAccess, \J
         'bEzsigntemplatesignatureRequired' => null,
         'iEzsigntemplatesignatureMaxlength' => null,
         'sEzsigntemplatesignatureRegexp' => null,
-        'eEzsigntemplatesignatureTextvalidation' => null
+        'eEzsigntemplatesignatureTextvalidation' => null,
+        'eEzsigntemplatesignatureDependencyrequirement' => null
     ];
 
     /**
@@ -139,7 +141,8 @@ class EzsigntemplatesignatureResponse implements ModelInterface, ArrayAccess, \J
 		'bEzsigntemplatesignatureRequired' => false,
 		'iEzsigntemplatesignatureMaxlength' => false,
 		'sEzsigntemplatesignatureRegexp' => false,
-		'eEzsigntemplatesignatureTextvalidation' => false
+		'eEzsigntemplatesignatureTextvalidation' => false,
+		'eEzsigntemplatesignatureDependencyrequirement' => false
     ];
 
     /**
@@ -248,7 +251,8 @@ class EzsigntemplatesignatureResponse implements ModelInterface, ArrayAccess, \J
         'bEzsigntemplatesignatureRequired' => 'bEzsigntemplatesignatureRequired',
         'iEzsigntemplatesignatureMaxlength' => 'iEzsigntemplatesignatureMaxlength',
         'sEzsigntemplatesignatureRegexp' => 'sEzsigntemplatesignatureRegexp',
-        'eEzsigntemplatesignatureTextvalidation' => 'eEzsigntemplatesignatureTextvalidation'
+        'eEzsigntemplatesignatureTextvalidation' => 'eEzsigntemplatesignatureTextvalidation',
+        'eEzsigntemplatesignatureDependencyrequirement' => 'eEzsigntemplatesignatureDependencyrequirement'
     ];
 
     /**
@@ -277,7 +281,8 @@ class EzsigntemplatesignatureResponse implements ModelInterface, ArrayAccess, \J
         'bEzsigntemplatesignatureRequired' => 'setBEzsigntemplatesignatureRequired',
         'iEzsigntemplatesignatureMaxlength' => 'setIEzsigntemplatesignatureMaxlength',
         'sEzsigntemplatesignatureRegexp' => 'setSEzsigntemplatesignatureRegexp',
-        'eEzsigntemplatesignatureTextvalidation' => 'setEEzsigntemplatesignatureTextvalidation'
+        'eEzsigntemplatesignatureTextvalidation' => 'setEEzsigntemplatesignatureTextvalidation',
+        'eEzsigntemplatesignatureDependencyrequirement' => 'setEEzsigntemplatesignatureDependencyrequirement'
     ];
 
     /**
@@ -306,7 +311,8 @@ class EzsigntemplatesignatureResponse implements ModelInterface, ArrayAccess, \J
         'bEzsigntemplatesignatureRequired' => 'getBEzsigntemplatesignatureRequired',
         'iEzsigntemplatesignatureMaxlength' => 'getIEzsigntemplatesignatureMaxlength',
         'sEzsigntemplatesignatureRegexp' => 'getSEzsigntemplatesignatureRegexp',
-        'eEzsigntemplatesignatureTextvalidation' => 'getEEzsigntemplatesignatureTextvalidation'
+        'eEzsigntemplatesignatureTextvalidation' => 'getEEzsigntemplatesignatureTextvalidation',
+        'eEzsigntemplatesignatureDependencyrequirement' => 'getEEzsigntemplatesignatureDependencyrequirement'
     ];
 
     /**
@@ -387,6 +393,7 @@ class EzsigntemplatesignatureResponse implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('iEzsigntemplatesignatureMaxlength', $data ?? [], null);
         $this->setIfExists('sEzsigntemplatesignatureRegexp', $data ?? [], null);
         $this->setIfExists('eEzsigntemplatesignatureTextvalidation', $data ?? [], null);
+        $this->setIfExists('eEzsigntemplatesignatureDependencyrequirement', $data ?? [], null);
     }
 
     /**
@@ -1231,6 +1238,37 @@ class EzsigntemplatesignatureResponse implements ModelInterface, ArrayAccess, \J
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigntemplatesignatureTextvalidation'] = $eEzsigntemplatesignatureTextvalidation;
         $this->container['eEzsigntemplatesignatureTextvalidation'] = $eEzsigntemplatesignatureTextvalidation;
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsigntemplatesignatureDependencyrequirement
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsigntemplatesignatureDependencyrequirement|null
+     */
+    public function getEEzsigntemplatesignatureDependencyrequirement()
+    {
+        return $this->container['eEzsigntemplatesignatureDependencyrequirement'];
+    }
+
+    /**
+     * Sets eEzsigntemplatesignatureDependencyrequirement
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsigntemplatesignatureDependencyrequirement|null $eEzsigntemplatesignatureDependencyrequirement eEzsigntemplatesignatureDependencyrequirement
+     *
+     * @return self
+     */
+    public function setEEzsigntemplatesignatureDependencyrequirement($eEzsigntemplatesignatureDependencyrequirement)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsigntemplatesignatureDependencyrequirement)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsigntemplatesignatureDependencyrequirement cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigntemplatesignatureDependencyrequirement'] = $eEzsigntemplatesignatureDependencyrequirement;
+        $this->container['eEzsigntemplatesignatureDependencyrequirement'] = $eEzsigntemplatesignatureDependencyrequirement;
 
         return $this;
     }

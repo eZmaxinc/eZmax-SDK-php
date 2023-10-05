@@ -96,6 +96,8 @@ class FieldEEzsigndocumentlogType
 
     public const REGENERATE_PAGE_FORM = 'RegeneratePageForm';
 
+    public const REASSIGN = 'Reassign';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -128,7 +130,8 @@ class FieldEEzsigndocumentlogType
             self::DECLINED_TO_SIGN,
             self::DELAYED_SEND_EMAIL,
             self::REGENERATE_PAGE,
-            self::REGENERATE_PAGE_FORM
+            self::REGENERATE_PAGE_FORM,
+            self::REASSIGN
         ];
     }
 }

@@ -80,8 +80,10 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplatesignatureMaxlength' => 'int',
         'sEzsigntemplatesignatureRegexp' => 'string',
         'eEzsigntemplatesignatureTextvalidation' => '\eZmaxAPI\Model\EnumTextvalidation',
+        'eEzsigntemplatesignatureDependencyrequirement' => '\eZmaxAPI\Model\FieldEEzsigntemplatesignatureDependencyrequirement',
         'bEzsigntemplatesignatureCustomdate' => 'bool',
-        'aObjEzsigntemplatesignaturecustomdate' => '\eZmaxAPI\Model\EzsigntemplatesignaturecustomdateRequestCompound[]'
+        'aObjEzsigntemplatesignaturecustomdate' => '\eZmaxAPI\Model\EzsigntemplatesignaturecustomdateRequestCompound[]',
+        'aObjEzsigntemplateelementdependency' => '\eZmaxAPI\Model\EzsigntemplateelementdependencyRequestCompound[]'
     ];
 
     /**
@@ -113,8 +115,10 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplatesignatureMaxlength' => null,
         'sEzsigntemplatesignatureRegexp' => null,
         'eEzsigntemplatesignatureTextvalidation' => null,
+        'eEzsigntemplatesignatureDependencyrequirement' => null,
         'bEzsigntemplatesignatureCustomdate' => null,
-        'aObjEzsigntemplatesignaturecustomdate' => null
+        'aObjEzsigntemplatesignaturecustomdate' => null,
+        'aObjEzsigntemplateelementdependency' => null
     ];
 
     /**
@@ -144,8 +148,10 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
 		'iEzsigntemplatesignatureMaxlength' => false,
 		'sEzsigntemplatesignatureRegexp' => false,
 		'eEzsigntemplatesignatureTextvalidation' => false,
+		'eEzsigntemplatesignatureDependencyrequirement' => false,
 		'bEzsigntemplatesignatureCustomdate' => false,
-		'aObjEzsigntemplatesignaturecustomdate' => false
+		'aObjEzsigntemplatesignaturecustomdate' => false,
+		'aObjEzsigntemplateelementdependency' => false
     ];
 
     /**
@@ -255,8 +261,10 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplatesignatureMaxlength' => 'iEzsigntemplatesignatureMaxlength',
         'sEzsigntemplatesignatureRegexp' => 'sEzsigntemplatesignatureRegexp',
         'eEzsigntemplatesignatureTextvalidation' => 'eEzsigntemplatesignatureTextvalidation',
+        'eEzsigntemplatesignatureDependencyrequirement' => 'eEzsigntemplatesignatureDependencyrequirement',
         'bEzsigntemplatesignatureCustomdate' => 'bEzsigntemplatesignatureCustomdate',
-        'aObjEzsigntemplatesignaturecustomdate' => 'a_objEzsigntemplatesignaturecustomdate'
+        'aObjEzsigntemplatesignaturecustomdate' => 'a_objEzsigntemplatesignaturecustomdate',
+        'aObjEzsigntemplateelementdependency' => 'a_objEzsigntemplateelementdependency'
     ];
 
     /**
@@ -286,8 +294,10 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplatesignatureMaxlength' => 'setIEzsigntemplatesignatureMaxlength',
         'sEzsigntemplatesignatureRegexp' => 'setSEzsigntemplatesignatureRegexp',
         'eEzsigntemplatesignatureTextvalidation' => 'setEEzsigntemplatesignatureTextvalidation',
+        'eEzsigntemplatesignatureDependencyrequirement' => 'setEEzsigntemplatesignatureDependencyrequirement',
         'bEzsigntemplatesignatureCustomdate' => 'setBEzsigntemplatesignatureCustomdate',
-        'aObjEzsigntemplatesignaturecustomdate' => 'setAObjEzsigntemplatesignaturecustomdate'
+        'aObjEzsigntemplatesignaturecustomdate' => 'setAObjEzsigntemplatesignaturecustomdate',
+        'aObjEzsigntemplateelementdependency' => 'setAObjEzsigntemplateelementdependency'
     ];
 
     /**
@@ -317,8 +327,10 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplatesignatureMaxlength' => 'getIEzsigntemplatesignatureMaxlength',
         'sEzsigntemplatesignatureRegexp' => 'getSEzsigntemplatesignatureRegexp',
         'eEzsigntemplatesignatureTextvalidation' => 'getEEzsigntemplatesignatureTextvalidation',
+        'eEzsigntemplatesignatureDependencyrequirement' => 'getEEzsigntemplatesignatureDependencyrequirement',
         'bEzsigntemplatesignatureCustomdate' => 'getBEzsigntemplatesignatureCustomdate',
-        'aObjEzsigntemplatesignaturecustomdate' => 'getAObjEzsigntemplatesignaturecustomdate'
+        'aObjEzsigntemplatesignaturecustomdate' => 'getAObjEzsigntemplatesignaturecustomdate',
+        'aObjEzsigntemplateelementdependency' => 'getAObjEzsigntemplateelementdependency'
     ];
 
     /**
@@ -399,8 +411,10 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
         $this->setIfExists('iEzsigntemplatesignatureMaxlength', $data ?? [], null);
         $this->setIfExists('sEzsigntemplatesignatureRegexp', $data ?? [], null);
         $this->setIfExists('eEzsigntemplatesignatureTextvalidation', $data ?? [], null);
+        $this->setIfExists('eEzsigntemplatesignatureDependencyrequirement', $data ?? [], null);
         $this->setIfExists('bEzsigntemplatesignatureCustomdate', $data ?? [], null);
         $this->setIfExists('aObjEzsigntemplatesignaturecustomdate', $data ?? [], null);
+        $this->setIfExists('aObjEzsigntemplateelementdependency', $data ?? [], null);
     }
 
     /**
@@ -1247,6 +1261,37 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
     }
 
     /**
+     * Gets eEzsigntemplatesignatureDependencyrequirement
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsigntemplatesignatureDependencyrequirement|null
+     */
+    public function getEEzsigntemplatesignatureDependencyrequirement()
+    {
+        return $this->container['eEzsigntemplatesignatureDependencyrequirement'];
+    }
+
+    /**
+     * Sets eEzsigntemplatesignatureDependencyrequirement
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsigntemplatesignatureDependencyrequirement|null $eEzsigntemplatesignatureDependencyrequirement eEzsigntemplatesignatureDependencyrequirement
+     *
+     * @return self
+     */
+    public function setEEzsigntemplatesignatureDependencyrequirement($eEzsigntemplatesignatureDependencyrequirement)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsigntemplatesignatureDependencyrequirement)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsigntemplatesignatureDependencyrequirement cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigntemplatesignatureDependencyrequirement'] = $eEzsigntemplatesignatureDependencyrequirement;
+        $this->container['eEzsigntemplatesignatureDependencyrequirement'] = $eEzsigntemplatesignatureDependencyrequirement;
+
+        return $this;
+    }
+
+    /**
      * Gets bEzsigntemplatesignatureCustomdate
      *
      * @return bool|null
@@ -1304,6 +1349,37 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['aObjEzsigntemplatesignaturecustomdate'] = $aObjEzsigntemplatesignaturecustomdate;
         $this->container['aObjEzsigntemplatesignaturecustomdate'] = $aObjEzsigntemplatesignaturecustomdate;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjEzsigntemplateelementdependency
+     *
+     * @return \eZmaxAPI\Model\EzsigntemplateelementdependencyRequestCompound[]|null
+     */
+    public function getAObjEzsigntemplateelementdependency()
+    {
+        return $this->container['aObjEzsigntemplateelementdependency'];
+    }
+
+    /**
+     * Sets aObjEzsigntemplateelementdependency
+     *
+     * @param \eZmaxAPI\Model\EzsigntemplateelementdependencyRequestCompound[]|null $aObjEzsigntemplateelementdependency aObjEzsigntemplateelementdependency
+     *
+     * @return self
+     */
+    public function setAObjEzsigntemplateelementdependency($aObjEzsigntemplateelementdependency)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($aObjEzsigntemplateelementdependency)) {
+            //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplateelementdependency cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjEzsigntemplateelementdependency'] = $aObjEzsigntemplateelementdependency;
+        $this->container['aObjEzsigntemplateelementdependency'] = $aObjEzsigntemplateelementdependency;
 
         return $this;
     }

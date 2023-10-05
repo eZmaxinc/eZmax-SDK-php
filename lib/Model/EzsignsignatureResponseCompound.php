@@ -82,13 +82,15 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'sEzsignsignatureDescription' => 'string',
         'iEzsignsignatureMaxlength' => 'int',
         'eEzsignsignatureTextvalidation' => '\eZmaxAPI\Model\EnumTextvalidation',
+        'eEzsignsignatureDependencyrequirement' => '\eZmaxAPI\Model\FieldEEzsignsignatureDependencyrequirement',
         'sEzsignsignatureRegexp' => 'string',
         'objContactName' => '\eZmaxAPI\Model\CustomContactNameResponse',
         'objContactNameDelegation' => '\eZmaxAPI\Model\CustomContactNameResponse',
         'objSignature' => '\eZmaxAPI\Model\SignatureResponseCompound',
         'bEzsignsignatureCustomdate' => 'bool',
         'aObjEzsignsignaturecustomdate' => '\eZmaxAPI\Model\EzsignsignaturecustomdateResponseCompound[]',
-        'objCreditcardtransaction' => '\eZmaxAPI\Model\CustomCreditcardtransactionResponse'
+        'objCreditcardtransaction' => '\eZmaxAPI\Model\CustomCreditcardtransactionResponse',
+        'aObjEzsignelementdependency' => '\eZmaxAPI\Model\EzsignelementdependencyResponseCompound[]'
     ];
 
     /**
@@ -122,13 +124,15 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'sEzsignsignatureDescription' => null,
         'iEzsignsignatureMaxlength' => null,
         'eEzsignsignatureTextvalidation' => null,
+        'eEzsignsignatureDependencyrequirement' => null,
         'sEzsignsignatureRegexp' => null,
         'objContactName' => null,
         'objContactNameDelegation' => null,
         'objSignature' => null,
         'bEzsignsignatureCustomdate' => null,
         'aObjEzsignsignaturecustomdate' => null,
-        'objCreditcardtransaction' => null
+        'objCreditcardtransaction' => null,
+        'aObjEzsignelementdependency' => null
     ];
 
     /**
@@ -160,13 +164,15 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
 		'sEzsignsignatureDescription' => false,
 		'iEzsignsignatureMaxlength' => false,
 		'eEzsignsignatureTextvalidation' => false,
+		'eEzsignsignatureDependencyrequirement' => false,
 		'sEzsignsignatureRegexp' => false,
 		'objContactName' => false,
 		'objContactNameDelegation' => false,
 		'objSignature' => false,
 		'bEzsignsignatureCustomdate' => false,
 		'aObjEzsignsignaturecustomdate' => false,
-		'objCreditcardtransaction' => false
+		'objCreditcardtransaction' => false,
+		'aObjEzsignelementdependency' => false
     ];
 
     /**
@@ -278,13 +284,15 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'sEzsignsignatureDescription' => 'sEzsignsignatureDescription',
         'iEzsignsignatureMaxlength' => 'iEzsignsignatureMaxlength',
         'eEzsignsignatureTextvalidation' => 'eEzsignsignatureTextvalidation',
+        'eEzsignsignatureDependencyrequirement' => 'eEzsignsignatureDependencyrequirement',
         'sEzsignsignatureRegexp' => 'sEzsignsignatureRegexp',
         'objContactName' => 'objContactName',
         'objContactNameDelegation' => 'objContactNameDelegation',
         'objSignature' => 'objSignature',
         'bEzsignsignatureCustomdate' => 'bEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
-        'objCreditcardtransaction' => 'objCreditcardtransaction'
+        'objCreditcardtransaction' => 'objCreditcardtransaction',
+        'aObjEzsignelementdependency' => 'a_objEzsignelementdependency'
     ];
 
     /**
@@ -316,13 +324,15 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'sEzsignsignatureDescription' => 'setSEzsignsignatureDescription',
         'iEzsignsignatureMaxlength' => 'setIEzsignsignatureMaxlength',
         'eEzsignsignatureTextvalidation' => 'setEEzsignsignatureTextvalidation',
+        'eEzsignsignatureDependencyrequirement' => 'setEEzsignsignatureDependencyrequirement',
         'sEzsignsignatureRegexp' => 'setSEzsignsignatureRegexp',
         'objContactName' => 'setObjContactName',
         'objContactNameDelegation' => 'setObjContactNameDelegation',
         'objSignature' => 'setObjSignature',
         'bEzsignsignatureCustomdate' => 'setBEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'setAObjEzsignsignaturecustomdate',
-        'objCreditcardtransaction' => 'setObjCreditcardtransaction'
+        'objCreditcardtransaction' => 'setObjCreditcardtransaction',
+        'aObjEzsignelementdependency' => 'setAObjEzsignelementdependency'
     ];
 
     /**
@@ -354,13 +364,15 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'sEzsignsignatureDescription' => 'getSEzsignsignatureDescription',
         'iEzsignsignatureMaxlength' => 'getIEzsignsignatureMaxlength',
         'eEzsignsignatureTextvalidation' => 'getEEzsignsignatureTextvalidation',
+        'eEzsignsignatureDependencyrequirement' => 'getEEzsignsignatureDependencyrequirement',
         'sEzsignsignatureRegexp' => 'getSEzsignsignatureRegexp',
         'objContactName' => 'getObjContactName',
         'objContactNameDelegation' => 'getObjContactNameDelegation',
         'objSignature' => 'getObjSignature',
         'bEzsignsignatureCustomdate' => 'getBEzsignsignatureCustomdate',
         'aObjEzsignsignaturecustomdate' => 'getAObjEzsignsignaturecustomdate',
-        'objCreditcardtransaction' => 'getObjCreditcardtransaction'
+        'objCreditcardtransaction' => 'getObjCreditcardtransaction',
+        'aObjEzsignelementdependency' => 'getAObjEzsignelementdependency'
     ];
 
     /**
@@ -443,6 +455,7 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('sEzsignsignatureDescription', $data ?? [], null);
         $this->setIfExists('iEzsignsignatureMaxlength', $data ?? [], null);
         $this->setIfExists('eEzsignsignatureTextvalidation', $data ?? [], null);
+        $this->setIfExists('eEzsignsignatureDependencyrequirement', $data ?? [], null);
         $this->setIfExists('sEzsignsignatureRegexp', $data ?? [], null);
         $this->setIfExists('objContactName', $data ?? [], null);
         $this->setIfExists('objContactNameDelegation', $data ?? [], null);
@@ -450,6 +463,7 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('bEzsignsignatureCustomdate', $data ?? [], null);
         $this->setIfExists('aObjEzsignsignaturecustomdate', $data ?? [], null);
         $this->setIfExists('objCreditcardtransaction', $data ?? [], null);
+        $this->setIfExists('aObjEzsignelementdependency', $data ?? [], null);
     }
 
     /**
@@ -1359,6 +1373,37 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
     }
 
     /**
+     * Gets eEzsignsignatureDependencyrequirement
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignsignatureDependencyrequirement|null
+     */
+    public function getEEzsignsignatureDependencyrequirement()
+    {
+        return $this->container['eEzsignsignatureDependencyrequirement'];
+    }
+
+    /**
+     * Sets eEzsignsignatureDependencyrequirement
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignsignatureDependencyrequirement|null $eEzsignsignatureDependencyrequirement eEzsignsignatureDependencyrequirement
+     *
+     * @return self
+     */
+    public function setEEzsignsignatureDependencyrequirement($eEzsignsignatureDependencyrequirement)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsignsignatureDependencyrequirement)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsignsignatureDependencyrequirement cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsignsignatureDependencyrequirement'] = $eEzsignsignatureDependencyrequirement;
+        $this->container['eEzsignsignatureDependencyrequirement'] = $eEzsignsignatureDependencyrequirement;
+
+        return $this;
+    }
+
+    /**
      * Gets sEzsignsignatureRegexp
      *
      * @return string|null
@@ -1577,6 +1622,37 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objCreditcardtransaction'] = $objCreditcardtransaction;
         $this->container['objCreditcardtransaction'] = $objCreditcardtransaction;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjEzsignelementdependency
+     *
+     * @return \eZmaxAPI\Model\EzsignelementdependencyResponseCompound[]|null
+     */
+    public function getAObjEzsignelementdependency()
+    {
+        return $this->container['aObjEzsignelementdependency'];
+    }
+
+    /**
+     * Sets aObjEzsignelementdependency
+     *
+     * @param \eZmaxAPI\Model\EzsignelementdependencyResponseCompound[]|null $aObjEzsignelementdependency aObjEzsignelementdependency
+     *
+     * @return self
+     */
+    public function setAObjEzsignelementdependency($aObjEzsignelementdependency)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($aObjEzsignelementdependency)) {
+            //throw new \InvalidArgumentException('non-nullable aObjEzsignelementdependency cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjEzsignelementdependency'] = $aObjEzsignelementdependency;
+        $this->container['aObjEzsignelementdependency'] = $aObjEzsignelementdependency;
 
         return $this;
     }

@@ -288,6 +288,15 @@ class EzsignsignatureResponseCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "eEzsignsignatureDependencyrequirement"
+     */
+    public function testPropertyEEzsignsignatureDependencyrequirement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsignsignatureRegexp"
      */
     public function testPropertySEzsignsignatureRegexp()
@@ -345,6 +354,15 @@ class EzsignsignatureResponseCompoundTest extends TestCase
      * Test attribute "objCreditcardtransaction"
      */
     public function testPropertyObjCreditcardtransaction()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjEzsignelementdependency"
+     */
+    public function testPropertyAObjEzsignelementdependency()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

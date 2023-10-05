@@ -68,7 +68,9 @@ class EzsigntemplateformfieldRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplateformfieldWidth' => 'int',
         'iEzsigntemplateformfieldHeight' => 'int',
         'bEzsigntemplateformfieldAutocomplete' => 'bool',
-        'bEzsigntemplateformfieldSelected' => 'bool'
+        'bEzsigntemplateformfieldSelected' => 'bool',
+        'eEzsigntemplateformfieldDependencyrequirement' => '\eZmaxAPI\Model\FieldEEzsigntemplateformfieldDependencyrequirement',
+        'aObjEzsigntemplateelementdependency' => '\eZmaxAPI\Model\EzsigntemplateelementdependencyRequestCompound[]'
     ];
 
     /**
@@ -88,7 +90,9 @@ class EzsigntemplateformfieldRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplateformfieldWidth' => null,
         'iEzsigntemplateformfieldHeight' => null,
         'bEzsigntemplateformfieldAutocomplete' => null,
-        'bEzsigntemplateformfieldSelected' => null
+        'bEzsigntemplateformfieldSelected' => null,
+        'eEzsigntemplateformfieldDependencyrequirement' => null,
+        'aObjEzsigntemplateelementdependency' => null
     ];
 
     /**
@@ -106,7 +110,9 @@ class EzsigntemplateformfieldRequestCompound implements ModelInterface, ArrayAcc
 		'iEzsigntemplateformfieldWidth' => false,
 		'iEzsigntemplateformfieldHeight' => false,
 		'bEzsigntemplateformfieldAutocomplete' => false,
-		'bEzsigntemplateformfieldSelected' => false
+		'bEzsigntemplateformfieldSelected' => false,
+		'eEzsigntemplateformfieldDependencyrequirement' => false,
+		'aObjEzsigntemplateelementdependency' => false
     ];
 
     /**
@@ -204,7 +210,9 @@ class EzsigntemplateformfieldRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplateformfieldWidth' => 'iEzsigntemplateformfieldWidth',
         'iEzsigntemplateformfieldHeight' => 'iEzsigntemplateformfieldHeight',
         'bEzsigntemplateformfieldAutocomplete' => 'bEzsigntemplateformfieldAutocomplete',
-        'bEzsigntemplateformfieldSelected' => 'bEzsigntemplateformfieldSelected'
+        'bEzsigntemplateformfieldSelected' => 'bEzsigntemplateformfieldSelected',
+        'eEzsigntemplateformfieldDependencyrequirement' => 'eEzsigntemplateformfieldDependencyrequirement',
+        'aObjEzsigntemplateelementdependency' => 'a_objEzsigntemplateelementdependency'
     ];
 
     /**
@@ -222,7 +230,9 @@ class EzsigntemplateformfieldRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplateformfieldWidth' => 'setIEzsigntemplateformfieldWidth',
         'iEzsigntemplateformfieldHeight' => 'setIEzsigntemplateformfieldHeight',
         'bEzsigntemplateformfieldAutocomplete' => 'setBEzsigntemplateformfieldAutocomplete',
-        'bEzsigntemplateformfieldSelected' => 'setBEzsigntemplateformfieldSelected'
+        'bEzsigntemplateformfieldSelected' => 'setBEzsigntemplateformfieldSelected',
+        'eEzsigntemplateformfieldDependencyrequirement' => 'setEEzsigntemplateformfieldDependencyrequirement',
+        'aObjEzsigntemplateelementdependency' => 'setAObjEzsigntemplateelementdependency'
     ];
 
     /**
@@ -240,7 +250,9 @@ class EzsigntemplateformfieldRequestCompound implements ModelInterface, ArrayAcc
         'iEzsigntemplateformfieldWidth' => 'getIEzsigntemplateformfieldWidth',
         'iEzsigntemplateformfieldHeight' => 'getIEzsigntemplateformfieldHeight',
         'bEzsigntemplateformfieldAutocomplete' => 'getBEzsigntemplateformfieldAutocomplete',
-        'bEzsigntemplateformfieldSelected' => 'getBEzsigntemplateformfieldSelected'
+        'bEzsigntemplateformfieldSelected' => 'getBEzsigntemplateformfieldSelected',
+        'eEzsigntemplateformfieldDependencyrequirement' => 'getEEzsigntemplateformfieldDependencyrequirement',
+        'aObjEzsigntemplateelementdependency' => 'getAObjEzsigntemplateelementdependency'
     ];
 
     /**
@@ -310,6 +322,8 @@ class EzsigntemplateformfieldRequestCompound implements ModelInterface, ArrayAcc
         $this->setIfExists('iEzsigntemplateformfieldHeight', $data ?? [], null);
         $this->setIfExists('bEzsigntemplateformfieldAutocomplete', $data ?? [], null);
         $this->setIfExists('bEzsigntemplateformfieldSelected', $data ?? [], null);
+        $this->setIfExists('eEzsigntemplateformfieldDependencyrequirement', $data ?? [], null);
+        $this->setIfExists('aObjEzsigntemplateelementdependency', $data ?? [], null);
     }
 
     /**
@@ -738,6 +752,68 @@ class EzsigntemplateformfieldRequestCompound implements ModelInterface, ArrayAcc
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsigntemplateformfieldSelected'] = $bEzsigntemplateformfieldSelected;
         $this->container['bEzsigntemplateformfieldSelected'] = (is_null($bEzsigntemplateformfieldSelected) ? null : (bool) $bEzsigntemplateformfieldSelected);
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsigntemplateformfieldDependencyrequirement
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsigntemplateformfieldDependencyrequirement|null
+     */
+    public function getEEzsigntemplateformfieldDependencyrequirement()
+    {
+        return $this->container['eEzsigntemplateformfieldDependencyrequirement'];
+    }
+
+    /**
+     * Sets eEzsigntemplateformfieldDependencyrequirement
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsigntemplateformfieldDependencyrequirement|null $eEzsigntemplateformfieldDependencyrequirement eEzsigntemplateformfieldDependencyrequirement
+     *
+     * @return self
+     */
+    public function setEEzsigntemplateformfieldDependencyrequirement($eEzsigntemplateformfieldDependencyrequirement)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsigntemplateformfieldDependencyrequirement)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsigntemplateformfieldDependencyrequirement cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigntemplateformfieldDependencyrequirement'] = $eEzsigntemplateformfieldDependencyrequirement;
+        $this->container['eEzsigntemplateformfieldDependencyrequirement'] = $eEzsigntemplateformfieldDependencyrequirement;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjEzsigntemplateelementdependency
+     *
+     * @return \eZmaxAPI\Model\EzsigntemplateelementdependencyRequestCompound[]|null
+     */
+    public function getAObjEzsigntemplateelementdependency()
+    {
+        return $this->container['aObjEzsigntemplateelementdependency'];
+    }
+
+    /**
+     * Sets aObjEzsigntemplateelementdependency
+     *
+     * @param \eZmaxAPI\Model\EzsigntemplateelementdependencyRequestCompound[]|null $aObjEzsigntemplateelementdependency aObjEzsigntemplateelementdependency
+     *
+     * @return self
+     */
+    public function setAObjEzsigntemplateelementdependency($aObjEzsigntemplateelementdependency)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($aObjEzsigntemplateelementdependency)) {
+            //throw new \InvalidArgumentException('non-nullable aObjEzsigntemplateelementdependency cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjEzsigntemplateelementdependency'] = $aObjEzsigntemplateelementdependency;
+        $this->container['aObjEzsigntemplateelementdependency'] = $aObjEzsigntemplateelementdependency;
 
         return $this;
     }

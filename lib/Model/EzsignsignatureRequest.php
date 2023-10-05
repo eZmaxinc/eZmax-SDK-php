@@ -79,7 +79,8 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsignsignatureValidationstep' => 'int',
         'iEzsignsignatureMaxlength' => 'int',
         'eEzsignsignatureTextvalidation' => '\eZmaxAPI\Model\EnumTextvalidation',
-        'sEzsignsignatureRegexp' => 'string'
+        'sEzsignsignatureRegexp' => 'string',
+        'eEzsignsignatureDependencyrequirement' => '\eZmaxAPI\Model\FieldEEzsignsignatureDependencyrequirement'
     ];
 
     /**
@@ -110,7 +111,8 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsignsignatureValidationstep' => null,
         'iEzsignsignatureMaxlength' => null,
         'eEzsignsignatureTextvalidation' => null,
-        'sEzsignsignatureRegexp' => null
+        'sEzsignsignatureRegexp' => null,
+        'eEzsignsignatureDependencyrequirement' => null
     ];
 
     /**
@@ -139,7 +141,8 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
 		'iEzsignsignatureValidationstep' => false,
 		'iEzsignsignatureMaxlength' => false,
 		'eEzsignsignatureTextvalidation' => false,
-		'sEzsignsignatureRegexp' => false
+		'sEzsignsignatureRegexp' => false,
+		'eEzsignsignatureDependencyrequirement' => false
     ];
 
     /**
@@ -248,7 +251,8 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsignsignatureValidationstep' => 'iEzsignsignatureValidationstep',
         'iEzsignsignatureMaxlength' => 'iEzsignsignatureMaxlength',
         'eEzsignsignatureTextvalidation' => 'eEzsignsignatureTextvalidation',
-        'sEzsignsignatureRegexp' => 'sEzsignsignatureRegexp'
+        'sEzsignsignatureRegexp' => 'sEzsignsignatureRegexp',
+        'eEzsignsignatureDependencyrequirement' => 'eEzsignsignatureDependencyrequirement'
     ];
 
     /**
@@ -277,7 +281,8 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsignsignatureValidationstep' => 'setIEzsignsignatureValidationstep',
         'iEzsignsignatureMaxlength' => 'setIEzsignsignatureMaxlength',
         'eEzsignsignatureTextvalidation' => 'setEEzsignsignatureTextvalidation',
-        'sEzsignsignatureRegexp' => 'setSEzsignsignatureRegexp'
+        'sEzsignsignatureRegexp' => 'setSEzsignsignatureRegexp',
+        'eEzsignsignatureDependencyrequirement' => 'setEEzsignsignatureDependencyrequirement'
     ];
 
     /**
@@ -306,7 +311,8 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
         'iEzsignsignatureValidationstep' => 'getIEzsignsignatureValidationstep',
         'iEzsignsignatureMaxlength' => 'getIEzsignsignatureMaxlength',
         'eEzsignsignatureTextvalidation' => 'getEEzsignsignatureTextvalidation',
-        'sEzsignsignatureRegexp' => 'getSEzsignsignatureRegexp'
+        'sEzsignsignatureRegexp' => 'getSEzsignsignatureRegexp',
+        'eEzsignsignatureDependencyrequirement' => 'getEEzsignsignatureDependencyrequirement'
     ];
 
     /**
@@ -387,6 +393,7 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('iEzsignsignatureMaxlength', $data ?? [], null);
         $this->setIfExists('eEzsignsignatureTextvalidation', $data ?? [], null);
         $this->setIfExists('sEzsignsignatureRegexp', $data ?? [], null);
+        $this->setIfExists('eEzsignsignatureDependencyrequirement', $data ?? [], null);
     }
 
     /**
@@ -1218,6 +1225,37 @@ class EzsignsignatureRequest implements ModelInterface, ArrayAccess, \JsonSerial
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignatureRegexp'] = $sEzsignsignatureRegexp;
         $this->container['sEzsignsignatureRegexp'] = (is_null($sEzsignsignatureRegexp) ? null : (string) $sEzsignsignatureRegexp);
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsignsignatureDependencyrequirement
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignsignatureDependencyrequirement|null
+     */
+    public function getEEzsignsignatureDependencyrequirement()
+    {
+        return $this->container['eEzsignsignatureDependencyrequirement'];
+    }
+
+    /**
+     * Sets eEzsignsignatureDependencyrequirement
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignsignatureDependencyrequirement|null $eEzsignsignatureDependencyrequirement eEzsignsignatureDependencyrequirement
+     *
+     * @return self
+     */
+    public function setEEzsignsignatureDependencyrequirement($eEzsignsignatureDependencyrequirement)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsignsignatureDependencyrequirement)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsignsignatureDependencyrequirement cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsignsignatureDependencyrequirement'] = $eEzsignsignatureDependencyrequirement;
+        $this->container['eEzsignsignatureDependencyrequirement'] = $eEzsignsignatureDependencyrequirement;
 
         return $this;
     }

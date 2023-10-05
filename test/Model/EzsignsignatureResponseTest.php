@@ -288,6 +288,15 @@ class EzsignsignatureResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "eEzsignsignatureDependencyrequirement"
+     */
+    public function testPropertyEEzsignsignatureDependencyrequirement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsignsignatureRegexp"
      */
     public function testPropertySEzsignsignatureRegexp()

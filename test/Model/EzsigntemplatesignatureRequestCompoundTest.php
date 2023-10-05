@@ -270,6 +270,15 @@ class EzsigntemplatesignatureRequestCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "eEzsigntemplatesignatureDependencyrequirement"
+     */
+    public function testPropertyEEzsigntemplatesignatureDependencyrequirement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "bEzsigntemplatesignatureCustomdate"
      */
     public function testPropertyBEzsigntemplatesignatureCustomdate()
@@ -282,6 +291,15 @@ class EzsigntemplatesignatureRequestCompoundTest extends TestCase
      * Test attribute "aObjEzsigntemplatesignaturecustomdate"
      */
     public function testPropertyAObjEzsigntemplatesignaturecustomdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "aObjEzsigntemplateelementdependency"
+     */
+    public function testPropertyAObjEzsigntemplateelementdependency()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
