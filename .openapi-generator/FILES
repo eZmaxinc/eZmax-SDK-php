@@ -50,6 +50,7 @@ docs/Api/ObjectFontApi.md
 docs/Api/ObjectFranchisebrokerApi.md
 docs/Api/ObjectFranchiseofficeApi.md
 docs/Api/ObjectFranchisereferalincomeApi.md
+docs/Api/ObjectLanguageApi.md
 docs/Api/ObjectModulegroupApi.md
 docs/Api/ObjectNotificationsectionApi.md
 docs/Api/ObjectNotificationtestApi.md
@@ -857,6 +858,9 @@ docs/Model/GlobalCustomerGetEndpointV1Response.md
 docs/Model/GlobalEzmaxclientVersionV1Response.md
 docs/Model/GlobalEzmaxcustomerGetConfigurationV1Response.md
 docs/Model/HeaderAcceptLanguage.md
+docs/Model/LanguageAutocompleteElementResponse.md
+docs/Model/LanguageGetAutocompleteV2Response.md
+docs/Model/LanguageGetAutocompleteV2ResponseMPayload.md
 docs/Model/ModuleResponse.md
 docs/Model/ModuleResponseCompound.md
 docs/Model/ModulegroupGetAllV1Response.md
@@ -1185,6 +1189,7 @@ lib/Api/ObjectFontApi.php
 lib/Api/ObjectFranchisebrokerApi.php
 lib/Api/ObjectFranchiseofficeApi.php
 lib/Api/ObjectFranchisereferalincomeApi.php
+lib/Api/ObjectLanguageApi.php
 lib/Api/ObjectModulegroupApi.php
 lib/Api/ObjectNotificationsectionApi.php
 lib/Api/ObjectNotificationtestApi.php
@@ -1995,6 +2000,9 @@ lib/Model/GlobalCustomerGetEndpointV1Response.php
 lib/Model/GlobalEzmaxclientVersionV1Response.php
 lib/Model/GlobalEzmaxcustomerGetConfigurationV1Response.php
 lib/Model/HeaderAcceptLanguage.php
+lib/Model/LanguageAutocompleteElementResponse.php
+lib/Model/LanguageGetAutocompleteV2Response.php
+lib/Model/LanguageGetAutocompleteV2ResponseMPayload.php
 lib/Model/ModelInterface.php
 lib/Model/ModuleResponse.php
 lib/Model/ModuleResponseCompound.php
@@ -2326,6 +2334,7 @@ test/Api/ObjectFontApiTest.php
 test/Api/ObjectFranchisebrokerApiTest.php
 test/Api/ObjectFranchiseofficeApiTest.php
 test/Api/ObjectFranchisereferalincomeApiTest.php
+test/Api/ObjectLanguageApiTest.php
 test/Api/ObjectModulegroupApiTest.php
 test/Api/ObjectNotificationsectionApiTest.php
 test/Api/ObjectNotificationtestApiTest.php
@@ -3133,6 +3142,9 @@ test/Model/GlobalCustomerGetEndpointV1ResponseTest.php
 test/Model/GlobalEzmaxclientVersionV1ResponseTest.php
 test/Model/GlobalEzmaxcustomerGetConfigurationV1ResponseTest.php
 test/Model/HeaderAcceptLanguageTest.php
+test/Model/LanguageAutocompleteElementResponseTest.php
+test/Model/LanguageGetAutocompleteV2ResponseMPayloadTest.php
+test/Model/LanguageGetAutocompleteV2ResponseTest.php
 test/Model/ModuleResponseCompoundTest.php
 test/Model/ModuleResponseTest.php
 test/Model/ModulegroupGetAllV1ResponseMPayloadTest.php
