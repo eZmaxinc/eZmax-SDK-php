@@ -54,6 +54,10 @@ class FieldEEzsigndocumentlogType
 
     public const GOODCODE = 'Goodcode';
 
+    public const BADRESPONSE = 'Badresponse';
+
+    public const GOODRESPONSE = 'Goodresponse';
+
     public const AUTHENTICATION = 'Authentication';
 
     public const CREATEPAGE = 'Createpage';
@@ -92,6 +96,10 @@ class FieldEEzsigndocumentlogType
 
     public const DELAYED_SEND_EMAIL = 'DelayedSendEmail';
 
+    public const ANNOTATION_ADDED = 'AnnotationAdded';
+
+    public const FLATTEN = 'Flatten';
+
     public const REGENERATE_PAGE = 'RegeneratePage';
 
     public const REGENERATE_PAGE_FORM = 'RegeneratePageForm';
@@ -110,6 +118,8 @@ class FieldEEzsigndocumentlogType
             self::SENDCODE,
             self::BADCODE,
             self::GOODCODE,
+            self::BADRESPONSE,
+            self::GOODRESPONSE,
             self::AUTHENTICATION,
             self::CREATEPAGE,
             self::DOWNLOAD,
@@ -129,6 +139,8 @@ class FieldEEzsigndocumentlogType
             self::SIGNATURE_ATTACHMENT_DELETED,
             self::DECLINED_TO_SIGN,
             self::DELAYED_SEND_EMAIL,
+            self::ANNOTATION_ADDED,
+            self::FLATTEN,
             self::REGENERATE_PAGE,
             self::REGENERATE_PAGE_FORM,
             self::REASSIGN

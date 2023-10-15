@@ -1,6 +1,6 @@
 <?php
 /**
- * ObjectLanguageApi
+ * ObjectUserlogintypeApi
  * PHP version 7.4
  *
  * @category Class
@@ -42,14 +42,14 @@ use eZmaxAPI\ObjectSerializer;
 use eZmaxAPI\RequestSignature;
 
 /**
- * ObjectLanguageApi Class Doc Comment
+ * ObjectUserlogintypeApi Class Doc Comment
  *
  * @category Class
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ObjectLanguageApi
+class ObjectUserlogintypeApi
 {
     /**
      * @var ClientInterface
@@ -73,14 +73,14 @@ class ObjectLanguageApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'languageGetAutocompleteV2' => [
+        'userlogintypeGetAutocompleteV2' => [
             'application/json',
         ],
     ];
 
     /** @var array[] $objEzmaxConfig **/
     public const objEzmaxConfig = [
-        'languageGetAutocompleteV2' => [
+        'userlogintypeGetAutocompleteV2' => [
             'permissions' => [
                 'All',
             ],
@@ -139,44 +139,44 @@ class ObjectLanguageApi
     }
 
     /**
-     * Operation languageGetAutocompleteV2
+     * Operation userlogintypeGetAutocompleteV2
      *
-     * Retrieve Languages and IDs
+     * Retrieve Userlogintypes and IDs
      *
-     * @param  string $sSelector The type of Languages to return (required)
+     * @param  string $sSelector The type of Userlogintypes to return (required)
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['languageGetAutocompleteV2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userlogintypeGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\LanguageGetAutocompleteV2Response
+     * @return \eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response
      */
-    public function languageGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['languageGetAutocompleteV2'][0])
+    public function userlogintypeGetAutocompleteV2($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['userlogintypeGetAutocompleteV2'][0])
     {
-        list($response) = $this->languageGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
+        list($response) = $this->userlogintypeGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
         return $response;
     }
 
     /**
-     * Operation languageGetAutocompleteV2WithHttpInfo
+     * Operation userlogintypeGetAutocompleteV2WithHttpInfo
      *
-     * Retrieve Languages and IDs
+     * Retrieve Userlogintypes and IDs
      *
-     * @param  string $sSelector The type of Languages to return (required)
+     * @param  string $sSelector The type of Userlogintypes to return (required)
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['languageGetAutocompleteV2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userlogintypeGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\LanguageGetAutocompleteV2Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function languageGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['languageGetAutocompleteV2'][0])
+    public function userlogintypeGetAutocompleteV2WithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['userlogintypeGetAutocompleteV2'][0])
     {
-        $request = $this->languageGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
+        $request = $this->userlogintypeGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -215,23 +215,23 @@ class ObjectLanguageApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\eZmaxAPI\Model\LanguageGetAutocompleteV2Response' === '\SplFileObject') {
+                    if ('\eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\eZmaxAPI\Model\LanguageGetAutocompleteV2Response' !== 'string') {
+                        if ('\eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\LanguageGetAutocompleteV2Response', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\eZmaxAPI\Model\LanguageGetAutocompleteV2Response';
+            $returnType = '\eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -252,7 +252,7 @@ class ObjectLanguageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Model\LanguageGetAutocompleteV2Response',
+                        '\eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -263,22 +263,22 @@ class ObjectLanguageApi
     }
 
     /**
-     * Operation languageGetAutocompleteV2Async
+     * Operation userlogintypeGetAutocompleteV2Async
      *
-     * Retrieve Languages and IDs
+     * Retrieve Userlogintypes and IDs
      *
-     * @param  string $sSelector The type of Languages to return (required)
+     * @param  string $sSelector The type of Userlogintypes to return (required)
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['languageGetAutocompleteV2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userlogintypeGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function languageGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['languageGetAutocompleteV2'][0])
+    public function userlogintypeGetAutocompleteV2Async($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['userlogintypeGetAutocompleteV2'][0])
     {
-        return $this->languageGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
+        return $this->userlogintypeGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -287,23 +287,23 @@ class ObjectLanguageApi
     }
 
     /**
-     * Operation languageGetAutocompleteV2AsyncWithHttpInfo
+     * Operation userlogintypeGetAutocompleteV2AsyncWithHttpInfo
      *
-     * Retrieve Languages and IDs
+     * Retrieve Userlogintypes and IDs
      *
-     * @param  string $sSelector The type of Languages to return (required)
+     * @param  string $sSelector The type of Userlogintypes to return (required)
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['languageGetAutocompleteV2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userlogintypeGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function languageGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['languageGetAutocompleteV2'][0])
+    public function userlogintypeGetAutocompleteV2AsyncWithHttpInfo($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['userlogintypeGetAutocompleteV2'][0])
     {
-        $returnType = '\eZmaxAPI\Model\LanguageGetAutocompleteV2Response';
-        $request = $this->languageGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
+        $returnType = '\eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response';
+        $request = $this->userlogintypeGetAutocompleteV2Request($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -342,24 +342,24 @@ class ObjectLanguageApi
     }
 
     /**
-     * Create request for operation 'languageGetAutocompleteV2'
+     * Create request for operation 'userlogintypeGetAutocompleteV2'
      *
-     * @param  string $sSelector The type of Languages to return (required)
+     * @param  string $sSelector The type of Userlogintypes to return (required)
      * @param  string $eFilterActive Specify which results we want to display. (optional, default to 'Active')
      * @param  string $sQuery Allow to filter the returned results (optional)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['languageGetAutocompleteV2'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['userlogintypeGetAutocompleteV2'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function languageGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['languageGetAutocompleteV2'][0])
+    public function userlogintypeGetAutocompleteV2Request($sSelector, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['userlogintypeGetAutocompleteV2'][0])
     {
 
         // verify the required parameter 'sSelector' is set
         if ($sSelector === null || (is_array($sSelector) && count($sSelector) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sSelector when calling languageGetAutocompleteV2'
+                'Missing the required parameter $sSelector when calling userlogintypeGetAutocompleteV2'
             );
         }
 
@@ -367,7 +367,7 @@ class ObjectLanguageApi
 
 
 
-        $resourcePath = '/2/object/language/getAutocomplete/{sSelector}';
+        $resourcePath = '/2/object/userlogintype/getAutocomplete/{sSelector}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -69,6 +69,7 @@ docs/Api/ObjectUserApi.md
 docs/Api/ObjectUsergroupApi.md
 docs/Api/ObjectUsergroupdelegationApi.md
 docs/Api/ObjectUsergroupmembershipApi.md
+docs/Api/ObjectUserlogintypeApi.md
 docs/Api/ObjectUserstagedApi.md
 docs/Api/ObjectVariableexpenseApi.md
 docs/Api/ObjectVersionhistoryApi.md
@@ -1076,6 +1077,9 @@ docs/Model/UsergroupmembershipRequest.md
 docs/Model/UsergroupmembershipRequestCompound.md
 docs/Model/UsergroupmembershipResponse.md
 docs/Model/UsergroupmembershipResponseCompound.md
+docs/Model/UserlogintypeAutocompleteElementResponse.md
+docs/Model/UserlogintypeGetAutocompleteV2Response.md
+docs/Model/UserlogintypeGetAutocompleteV2ResponseMPayload.md
 docs/Model/UserstagedCreateUserV1Response.md
 docs/Model/UserstagedCreateUserV1ResponseMPayload.md
 docs/Model/UserstagedDeleteObjectV1Response.md
@@ -1208,6 +1212,7 @@ lib/Api/ObjectUserApi.php
 lib/Api/ObjectUsergroupApi.php
 lib/Api/ObjectUsergroupdelegationApi.php
 lib/Api/ObjectUsergroupmembershipApi.php
+lib/Api/ObjectUserlogintypeApi.php
 lib/Api/ObjectUserstagedApi.php
 lib/Api/ObjectVariableexpenseApi.php
 lib/Api/ObjectVersionhistoryApi.php
@@ -2219,6 +2224,9 @@ lib/Model/UsergroupmembershipRequest.php
 lib/Model/UsergroupmembershipRequestCompound.php
 lib/Model/UsergroupmembershipResponse.php
 lib/Model/UsergroupmembershipResponseCompound.php
+lib/Model/UserlogintypeAutocompleteElementResponse.php
+lib/Model/UserlogintypeGetAutocompleteV2Response.php
+lib/Model/UserlogintypeGetAutocompleteV2ResponseMPayload.php
 lib/Model/UserstagedCreateUserV1Response.php
 lib/Model/UserstagedCreateUserV1ResponseMPayload.php
 lib/Model/UserstagedDeleteObjectV1Response.php
@@ -2353,6 +2361,7 @@ test/Api/ObjectUserApiTest.php
 test/Api/ObjectUsergroupApiTest.php
 test/Api/ObjectUsergroupdelegationApiTest.php
 test/Api/ObjectUsergroupmembershipApiTest.php
+test/Api/ObjectUserlogintypeApiTest.php
 test/Api/ObjectUserstagedApiTest.php
 test/Api/ObjectVariableexpenseApiTest.php
 test/Api/ObjectVersionhistoryApiTest.php
@@ -3360,6 +3369,9 @@ test/Model/UsergroupmembershipRequestCompoundTest.php
 test/Model/UsergroupmembershipRequestTest.php
 test/Model/UsergroupmembershipResponseCompoundTest.php
 test/Model/UsergroupmembershipResponseTest.php
+test/Model/UserlogintypeAutocompleteElementResponseTest.php
+test/Model/UserlogintypeGetAutocompleteV2ResponseMPayloadTest.php
+test/Model/UserlogintypeGetAutocompleteV2ResponseTest.php
 test/Model/UserstagedCreateUserV1ResponseMPayloadTest.php
 test/Model/UserstagedCreateUserV1ResponseTest.php
 test/Model/UserstagedDeleteObjectV1ResponseTest.php
