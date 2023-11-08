@@ -397,9 +397,9 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['sSessionhistoryIP'] === null) {
             $invalidProperties[] = "'sSessionhistoryIP' can't be null";
         }
-//        if (!is_null($this->container['sUserLoginname']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
-        if (!is_null($this->container['sUserLoginname']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
-            $invalidProperties[] = "invalid value for 'sUserLoginname', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.";
+//        if (!is_null($this->container['sUserLoginname']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
+        if (!is_null($this->container['sUserLoginname']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
+            $invalidProperties[] = "invalid value for 'sUserLoginname', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.";
         }
 
         return $invalidProperties;
@@ -543,7 +543,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getDtSessionhistoryFirsthit()
     {
-        return $this->container['dtSessionhistoryFirsthit'];
+        return is_null($this->container['dtSessionhistoryFirsthit']) ? null : trim($this->container['dtSessionhistoryFirsthit']);
     }
 
     /**
@@ -568,7 +568,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtSessionhistoryFirsthit'] = $dtSessionhistoryFirsthit;
-        $this->container['dtSessionhistoryFirsthit'] = (is_null($dtSessionhistoryFirsthit) ? null : (string) $dtSessionhistoryFirsthit);
+        $this->container['dtSessionhistoryFirsthit'] = (is_null($dtSessionhistoryFirsthit) ? null : trim((string) $dtSessionhistoryFirsthit));
 
         return $this;
     }
@@ -580,7 +580,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getDtSessionhistoryLasthit()
     {
-        return $this->container['dtSessionhistoryLasthit'];
+        return is_null($this->container['dtSessionhistoryLasthit']) ? null : trim($this->container['dtSessionhistoryLasthit']);
     }
 
     /**
@@ -605,7 +605,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtSessionhistoryLasthit'] = $dtSessionhistoryLasthit;
-        $this->container['dtSessionhistoryLasthit'] = (is_null($dtSessionhistoryLasthit) ? null : (string) $dtSessionhistoryLasthit);
+        $this->container['dtSessionhistoryLasthit'] = (is_null($dtSessionhistoryLasthit) ? null : trim((string) $dtSessionhistoryLasthit));
 
         return $this;
     }
@@ -648,7 +648,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getSComputerDescription()
     {
-        return $this->container['sComputerDescription'];
+        return is_null($this->container['sComputerDescription']) ? null : trim($this->container['sComputerDescription']);
     }
 
     /**
@@ -673,7 +673,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sComputerDescription'] = $sComputerDescription;
-        $this->container['sComputerDescription'] = (is_null($sComputerDescription) ? null : (string) $sComputerDescription);
+        $this->container['sComputerDescription'] = (is_null($sComputerDescription) ? null : trim((string) $sComputerDescription));
 
         return $this;
     }
@@ -685,7 +685,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getSSessionhistoryDuration()
     {
-        return $this->container['sSessionhistoryDuration'];
+        return is_null($this->container['sSessionhistoryDuration']) ? null : trim($this->container['sSessionhistoryDuration']);
     }
 
     /**
@@ -710,7 +710,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSessionhistoryDuration'] = $sSessionhistoryDuration;
-        $this->container['sSessionhistoryDuration'] = (is_null($sSessionhistoryDuration) ? null : (string) $sSessionhistoryDuration);
+        $this->container['sSessionhistoryDuration'] = (is_null($sSessionhistoryDuration) ? null : trim((string) $sSessionhistoryDuration));
 
         return $this;
     }
@@ -722,7 +722,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getSSessionhistoryIP()
     {
-        return $this->container['sSessionhistoryIP'];
+        return is_null($this->container['sSessionhistoryIP']) ? null : trim($this->container['sSessionhistoryIP']);
     }
 
     /**
@@ -741,7 +741,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSessionhistoryIP'] = $sSessionhistoryIP;
-        $this->container['sSessionhistoryIP'] = (is_null($sSessionhistoryIP) ? null : (string) $sSessionhistoryIP);
+        $this->container['sSessionhistoryIP'] = (is_null($sSessionhistoryIP) ? null : trim((string) $sSessionhistoryIP));
 
         return $this;
     }
@@ -753,7 +753,7 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getSUserLoginname()
     {
-        return $this->container['sUserLoginname'];
+        return is_null($this->container['sUserLoginname']) ? null : trim($this->container['sUserLoginname']);
     }
 
     /**
@@ -770,15 +770,15 @@ class SessionhistoryListElement implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable sUserLoginname cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
-        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
-            throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling SessionhistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+            throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling SessionhistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.");
         }
 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLoginname'] = $sUserLoginname;
-        $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : (string) $sUserLoginname);
+        $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : trim((string) $sUserLoginname));
 
         return $this;
     }

@@ -106,6 +106,12 @@ class ObjectEzsignfolderApi
         'ezsignfolderGetCommunicationListV1' => [
             'application/json',
         ],
+        'ezsignfolderGetCommunicationrecipientsV1' => [
+            'application/json',
+        ],
+        'ezsignfolderGetCommunicationsendersV1' => [
+            'application/json',
+        ],
         'ezsignfolderGetEzsigndocumentsV1' => [
             'application/json',
         ],
@@ -263,6 +269,28 @@ class ObjectEzsignfolderApi
             'deprecated' => false,
         ],
         'ezsignfolderGetCommunicationListV1' => [
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'ezsignfolderGetCommunicationrecipientsV1' => [
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'ezsignfolderGetCommunicationsendersV1' => [
             'permissions' => [
                 'All',
             ],
@@ -4237,6 +4265,652 @@ class ObjectEzsignfolderApi
     }
 
     /**
+     * Operation ezsignfolderGetCommunicationrecipientsV1
+     *
+     * Retrieve Ezsignfolder&#39;s Communicationrecipient
+     *
+     * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsignfolderGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsignfolderGetCommunicationrecipientsV1($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'][0])
+    {
+        list($response) = $this->ezsignfolderGetCommunicationrecipientsV1WithHttpInfo($pkiEzsignfolderID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation ezsignfolderGetCommunicationrecipientsV1WithHttpInfo
+     *
+     * Retrieve Ezsignfolder&#39;s Communicationrecipient
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsignfolderGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsignfolderGetCommunicationrecipientsV1WithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'][0])
+    {
+        $request = $this->ezsignfolderGetCommunicationrecipientsV1Request($pkiEzsignfolderID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsignfolderGetCommunicationrecipientsV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsignfolderGetCommunicationrecipientsV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsignfolderGetCommunicationrecipientsV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsignfolderGetCommunicationrecipientsV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsignfolderGetCommunicationrecipientsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsignfolderGetCommunicationrecipientsV1Async
+     *
+     * Retrieve Ezsignfolder&#39;s Communicationrecipient
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignfolderGetCommunicationrecipientsV1Async($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'][0])
+    {
+        return $this->ezsignfolderGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiEzsignfolderID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsignfolderGetCommunicationrecipientsV1AsyncWithHttpInfo
+     *
+     * Retrieve Ezsignfolder&#39;s Communicationrecipient
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignfolderGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\EzsignfolderGetCommunicationrecipientsV1Response';
+        $request = $this->ezsignfolderGetCommunicationrecipientsV1Request($pkiEzsignfolderID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsignfolderGetCommunicationrecipientsV1'
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsignfolderGetCommunicationrecipientsV1Request($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationrecipientsV1'][0])
+    {
+
+        // verify the required parameter 'pkiEzsignfolderID' is set
+        if ($pkiEzsignfolderID === null || (is_array($pkiEzsignfolderID) && count($pkiEzsignfolderID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsignfolderID when calling ezsignfolderGetCommunicationrecipientsV1'
+            );
+        }
+        if ($pkiEzsignfolderID < 0) {
+            throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsignfolderID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsignfolderID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsignfolderID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsignfolderGetCommunicationsendersV1
+     *
+     * Retrieve Ezsignfolder&#39;s Communicationsender
+     *
+     * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsignfolderGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsignfolderGetCommunicationsendersV1($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationsendersV1'][0])
+    {
+        list($response) = $this->ezsignfolderGetCommunicationsendersV1WithHttpInfo($pkiEzsignfolderID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation ezsignfolderGetCommunicationsendersV1WithHttpInfo
+     *
+     * Retrieve Ezsignfolder&#39;s Communicationsender
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsignfolderGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsignfolderGetCommunicationsendersV1WithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationsendersV1'][0])
+    {
+        $request = $this->ezsignfolderGetCommunicationsendersV1Request($pkiEzsignfolderID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsignfolderGetCommunicationsendersV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsignfolderGetCommunicationsendersV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsignfolderGetCommunicationsendersV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsignfolderGetCommunicationsendersV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsignfolderGetCommunicationsendersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsignfolderGetCommunicationsendersV1Async
+     *
+     * Retrieve Ezsignfolder&#39;s Communicationsender
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignfolderGetCommunicationsendersV1Async($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationsendersV1'][0])
+    {
+        return $this->ezsignfolderGetCommunicationsendersV1AsyncWithHttpInfo($pkiEzsignfolderID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsignfolderGetCommunicationsendersV1AsyncWithHttpInfo
+     *
+     * Retrieve Ezsignfolder&#39;s Communicationsender
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsignfolderGetCommunicationsendersV1AsyncWithHttpInfo($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationsendersV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\EzsignfolderGetCommunicationsendersV1Response';
+        $request = $this->ezsignfolderGetCommunicationsendersV1Request($pkiEzsignfolderID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsignfolderGetCommunicationsendersV1'
+     *
+     * @param  int $pkiEzsignfolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsignfolderGetCommunicationsendersV1Request($pkiEzsignfolderID, string $contentType = self::contentTypes['ezsignfolderGetCommunicationsendersV1'][0])
+    {
+
+        // verify the required parameter 'pkiEzsignfolderID' is set
+        if ($pkiEzsignfolderID === null || (is_array($pkiEzsignfolderID) && count($pkiEzsignfolderID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsignfolderID when calling ezsignfolderGetCommunicationsendersV1'
+            );
+        }
+        if ($pkiEzsignfolderID < 0) {
+            throw new \InvalidArgumentException('invalid value for "$pkiEzsignfolderID" when calling ObjectEzsignfolderApi.ezsignfolderGetCommunicationsendersV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationsenders';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsignfolderID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsignfolderID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsignfolderID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation ezsignfolderGetEzsigndocumentsV1
      *
      * Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
@@ -5580,7 +6254,7 @@ class ObjectEzsignfolderApi
      * Retrieve Ezsignfolder list
      *
      * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
-     * @param  int $iRowMax iRowMax (optional, default to 10000)
+     * @param  int $iRowMax iRowMax (optional)
      * @param  int $iRowOffset iRowOffset (optional, default to 0)
      * @param  HeaderAcceptLanguage $acceptLanguage acceptLanguage (optional)
      * @param  string $sFilter sFilter (optional)
@@ -5590,7 +6264,7 @@ class ObjectEzsignfolderApi
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\EzsignfolderGetListV1Response|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderGetListV1($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
+    public function ezsignfolderGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
         list($response) = $this->ezsignfolderGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
         return $response;
@@ -5602,7 +6276,7 @@ class ObjectEzsignfolderApi
      * Retrieve Ezsignfolder list
      *
      * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
-     * @param  int $iRowMax (optional, default to 10000)
+     * @param  int $iRowMax (optional)
      * @param  int $iRowOffset (optional, default to 0)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
@@ -5612,7 +6286,7 @@ class ObjectEzsignfolderApi
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\EzsignfolderGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
+    public function ezsignfolderGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
         $request = $this->ezsignfolderGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
 
@@ -5729,7 +6403,7 @@ class ObjectEzsignfolderApi
      * Retrieve Ezsignfolder list
      *
      * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
-     * @param  int $iRowMax (optional, default to 10000)
+     * @param  int $iRowMax (optional)
      * @param  int $iRowOffset (optional, default to 0)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
@@ -5738,7 +6412,7 @@ class ObjectEzsignfolderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetListV1Async($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
+    public function ezsignfolderGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
         return $this->ezsignfolderGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType)
             ->then(
@@ -5754,7 +6428,7 @@ class ObjectEzsignfolderApi
      * Retrieve Ezsignfolder list
      *
      * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
-     * @param  int $iRowMax (optional, default to 10000)
+     * @param  int $iRowMax (optional)
      * @param  int $iRowOffset (optional, default to 0)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
@@ -5763,7 +6437,7 @@ class ObjectEzsignfolderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
+    public function ezsignfolderGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
         $returnType = '\eZmaxAPI\Model\EzsignfolderGetListV1Response';
         $request = $this->ezsignfolderGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
@@ -5808,7 +6482,7 @@ class ObjectEzsignfolderApi
      * Create request for operation 'ezsignfolderGetListV1'
      *
      * @param  string $eOrderBy Specify how you want the results to be sorted (optional)
-     * @param  int $iRowMax (optional, default to 10000)
+     * @param  int $iRowMax (optional)
      * @param  int $iRowOffset (optional, default to 0)
      * @param  HeaderAcceptLanguage $acceptLanguage (optional)
      * @param  string $sFilter (optional)
@@ -5817,7 +6491,7 @@ class ObjectEzsignfolderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderGetListV1Request($eOrderBy = null, $iRowMax = 10000, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
+    public function ezsignfolderGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['ezsignfolderGetListV1'][0])
     {
 
 

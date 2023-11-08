@@ -504,7 +504,7 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
      */
     public function getDtEzmaxinvoicingcontractStart()
     {
-        return $this->container['dtEzmaxinvoicingcontractStart'];
+        return is_null($this->container['dtEzmaxinvoicingcontractStart']) ? null : trim($this->container['dtEzmaxinvoicingcontractStart']);
     }
 
     /**
@@ -523,7 +523,7 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxinvoicingcontractStart'] = $dtEzmaxinvoicingcontractStart;
-        $this->container['dtEzmaxinvoicingcontractStart'] = (is_null($dtEzmaxinvoicingcontractStart) ? null : (string) $dtEzmaxinvoicingcontractStart);
+        $this->container['dtEzmaxinvoicingcontractStart'] = (is_null($dtEzmaxinvoicingcontractStart) ? null : trim((string) $dtEzmaxinvoicingcontractStart));
 
         return $this;
     }
@@ -535,7 +535,7 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
      */
     public function getDtEzmaxinvoicingcontractEnd()
     {
-        return $this->container['dtEzmaxinvoicingcontractEnd'];
+        return is_null($this->container['dtEzmaxinvoicingcontractEnd']) ? null : trim($this->container['dtEzmaxinvoicingcontractEnd']);
     }
 
     /**
@@ -554,7 +554,7 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxinvoicingcontractEnd'] = $dtEzmaxinvoicingcontractEnd;
-        $this->container['dtEzmaxinvoicingcontractEnd'] = (is_null($dtEzmaxinvoicingcontractEnd) ? null : (string) $dtEzmaxinvoicingcontractEnd);
+        $this->container['dtEzmaxinvoicingcontractEnd'] = (is_null($dtEzmaxinvoicingcontractEnd) ? null : trim((string) $dtEzmaxinvoicingcontractEnd));
 
         return $this;
     }
@@ -566,7 +566,7 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
      */
     public function getDEzmaxinvoicingcontractLicense()
     {
-        return $this->container['dEzmaxinvoicingcontractLicense'];
+        return is_null($this->container['dEzmaxinvoicingcontractLicense']) ? null : trim($this->container['dEzmaxinvoicingcontractLicense']);
     }
 
     /**
@@ -591,7 +591,7 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingcontractLicense'] = $dEzmaxinvoicingcontractLicense;
-        $this->container['dEzmaxinvoicingcontractLicense'] = (is_null($dEzmaxinvoicingcontractLicense) ? null : (string) $dEzmaxinvoicingcontractLicense);
+        $this->container['dEzmaxinvoicingcontractLicense'] = (is_null($dEzmaxinvoicingcontractLicense) ? null : trim((string) $dEzmaxinvoicingcontractLicense));
 
         return $this;
     }
@@ -603,7 +603,7 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
      */
     public function getDEzmaxinvoicingcontract121qa()
     {
-        return $this->container['dEzmaxinvoicingcontract121qa'];
+        return is_null($this->container['dEzmaxinvoicingcontract121qa']) ? null : trim($this->container['dEzmaxinvoicingcontract121qa']);
     }
 
     /**
@@ -628,7 +628,7 @@ class EzmaxinvoicingcontractResponseCompound implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingcontract121qa'] = $dEzmaxinvoicingcontract121qa;
-        $this->container['dEzmaxinvoicingcontract121qa'] = (is_null($dEzmaxinvoicingcontract121qa) ? null : (string) $dEzmaxinvoicingcontract121qa);
+        $this->container['dEzmaxinvoicingcontract121qa'] = (is_null($dEzmaxinvoicingcontract121qa) ? null : trim((string) $dEzmaxinvoicingcontract121qa));
 
         return $this;
     }

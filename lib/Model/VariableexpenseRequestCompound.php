@@ -392,7 +392,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSVariableexpenseCode()
     {
-        return $this->container['sVariableexpenseCode'];
+        return is_null($this->container['sVariableexpenseCode']) ? null : trim($this->container['sVariableexpenseCode']);
     }
 
     /**
@@ -417,7 +417,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sVariableexpenseCode'] = $sVariableexpenseCode;
-        $this->container['sVariableexpenseCode'] = (is_null($sVariableexpenseCode) ? null : (string) $sVariableexpenseCode);
+        $this->container['sVariableexpenseCode'] = (is_null($sVariableexpenseCode) ? null : trim((string) $sVariableexpenseCode));
 
         return $this;
     }

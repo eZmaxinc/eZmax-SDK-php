@@ -489,7 +489,7 @@ class EzsignbulksendRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSEzsignbulksendDescription()
     {
-        return $this->container['sEzsignbulksendDescription'];
+        return is_null($this->container['sEzsignbulksendDescription']) ? null : trim($this->container['sEzsignbulksendDescription']);
     }
 
     /**
@@ -508,7 +508,7 @@ class EzsignbulksendRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignbulksendDescription'] = $sEzsignbulksendDescription;
-        $this->container['sEzsignbulksendDescription'] = (is_null($sEzsignbulksendDescription) ? null : (string) $sEzsignbulksendDescription);
+        $this->container['sEzsignbulksendDescription'] = (is_null($sEzsignbulksendDescription) ? null : trim((string) $sEzsignbulksendDescription));
 
         return $this;
     }
@@ -520,7 +520,7 @@ class EzsignbulksendRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getTEzsignbulksendNote()
     {
-        return $this->container['tEzsignbulksendNote'];
+        return is_null($this->container['tEzsignbulksendNote']) ? null : trim($this->container['tEzsignbulksendNote']);
     }
 
     /**
@@ -539,7 +539,7 @@ class EzsignbulksendRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignbulksendNote'] = $tEzsignbulksendNote;
-        $this->container['tEzsignbulksendNote'] = (is_null($tEzsignbulksendNote) ? null : (string) $tEzsignbulksendNote);
+        $this->container['tEzsignbulksendNote'] = (is_null($tEzsignbulksendNote) ? null : trim((string) $tEzsignbulksendNote));
 
         return $this;
     }

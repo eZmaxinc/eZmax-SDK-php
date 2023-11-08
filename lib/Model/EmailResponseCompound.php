@@ -411,7 +411,7 @@ class EmailResponseCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -430,7 +430,7 @@ class EmailResponseCompound implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }

@@ -582,7 +582,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getSEzsignfoldertypeNameX()
     {
-        return $this->container['sEzsignfoldertypeNameX'];
+        return is_null($this->container['sEzsignfoldertypeNameX']) ? null : trim($this->container['sEzsignfoldertypeNameX']);
     }
 
     /**
@@ -602,7 +602,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
-        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
+        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : trim((string) $sEzsignfoldertypeNameX));
 
         return $this;
     }
@@ -651,7 +651,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getSBillingentityinternalDescriptionX()
     {
-        return $this->container['sBillingentityinternalDescriptionX'];
+        return is_null($this->container['sBillingentityinternalDescriptionX']) ? null : trim($this->container['sBillingentityinternalDescriptionX']);
     }
 
     /**
@@ -670,7 +670,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityinternalDescriptionX'] = $sBillingentityinternalDescriptionX;
-        $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : (string) $sBillingentityinternalDescriptionX);
+        $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : trim((string) $sBillingentityinternalDescriptionX));
 
         return $this;
     }
@@ -723,7 +723,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getSEzsigntsarequirementDescriptionX()
     {
-        return $this->container['sEzsigntsarequirementDescriptionX'];
+        return is_null($this->container['sEzsigntsarequirementDescriptionX']) ? null : trim($this->container['sEzsigntsarequirementDescriptionX']);
     }
 
     /**
@@ -742,7 +742,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntsarequirementDescriptionX'] = $sEzsigntsarequirementDescriptionX;
-        $this->container['sEzsigntsarequirementDescriptionX'] = (is_null($sEzsigntsarequirementDescriptionX) ? null : (string) $sEzsigntsarequirementDescriptionX);
+        $this->container['sEzsigntsarequirementDescriptionX'] = (is_null($sEzsigntsarequirementDescriptionX) ? null : trim((string) $sEzsigntsarequirementDescriptionX));
 
         return $this;
     }
@@ -754,7 +754,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getSEzsignfolderDescription()
     {
-        return $this->container['sEzsignfolderDescription'];
+        return is_null($this->container['sEzsignfolderDescription']) ? null : trim($this->container['sEzsignfolderDescription']);
     }
 
     /**
@@ -773,7 +773,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
-        $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : (string) $sEzsignfolderDescription);
+        $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : trim((string) $sEzsignfolderDescription));
 
         return $this;
     }
@@ -785,7 +785,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getTEzsignfolderNote()
     {
-        return $this->container['tEzsignfolderNote'];
+        return is_null($this->container['tEzsignfolderNote']) ? null : trim($this->container['tEzsignfolderNote']);
     }
 
     /**
@@ -804,7 +804,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignfolderNote'] = $tEzsignfolderNote;
-        $this->container['tEzsignfolderNote'] = (is_null($tEzsignfolderNote) ? null : (string) $tEzsignfolderNote);
+        $this->container['tEzsignfolderNote'] = (is_null($tEzsignfolderNote) ? null : trim((string) $tEzsignfolderNote));
 
         return $this;
     }
@@ -878,7 +878,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getDtEzsignfolderDelayedsenddate()
     {
-        return $this->container['dtEzsignfolderDelayedsenddate'];
+        return is_null($this->container['dtEzsignfolderDelayedsenddate']) ? null : trim($this->container['dtEzsignfolderDelayedsenddate']);
     }
 
     /**
@@ -897,7 +897,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsignfolderDelayedsenddate'] = $dtEzsignfolderDelayedsenddate;
-        $this->container['dtEzsignfolderDelayedsenddate'] = (is_null($dtEzsignfolderDelayedsenddate) ? null : (string) $dtEzsignfolderDelayedsenddate);
+        $this->container['dtEzsignfolderDelayedsenddate'] = (is_null($dtEzsignfolderDelayedsenddate) ? null : trim((string) $dtEzsignfolderDelayedsenddate));
 
         return $this;
     }
@@ -909,7 +909,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getDtEzsignfolderDuedate()
     {
-        return $this->container['dtEzsignfolderDuedate'];
+        return is_null($this->container['dtEzsignfolderDuedate']) ? null : trim($this->container['dtEzsignfolderDuedate']);
     }
 
     /**
@@ -928,7 +928,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsignfolderDuedate'] = $dtEzsignfolderDuedate;
-        $this->container['dtEzsignfolderDuedate'] = (is_null($dtEzsignfolderDuedate) ? null : (string) $dtEzsignfolderDuedate);
+        $this->container['dtEzsignfolderDuedate'] = (is_null($dtEzsignfolderDuedate) ? null : trim((string) $dtEzsignfolderDuedate));
 
         return $this;
     }
@@ -940,7 +940,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getDtEzsignfolderSentdate()
     {
-        return $this->container['dtEzsignfolderSentdate'];
+        return is_null($this->container['dtEzsignfolderSentdate']) ? null : trim($this->container['dtEzsignfolderSentdate']);
     }
 
     /**
@@ -959,7 +959,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsignfolderSentdate'] = $dtEzsignfolderSentdate;
-        $this->container['dtEzsignfolderSentdate'] = (is_null($dtEzsignfolderSentdate) ? null : (string) $dtEzsignfolderSentdate);
+        $this->container['dtEzsignfolderSentdate'] = (is_null($dtEzsignfolderSentdate) ? null : trim((string) $dtEzsignfolderSentdate));
 
         return $this;
     }
@@ -971,7 +971,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getDtEzsignfolderScheduledarchive()
     {
-        return $this->container['dtEzsignfolderScheduledarchive'];
+        return is_null($this->container['dtEzsignfolderScheduledarchive']) ? null : trim($this->container['dtEzsignfolderScheduledarchive']);
     }
 
     /**
@@ -990,7 +990,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsignfolderScheduledarchive'] = $dtEzsignfolderScheduledarchive;
-        $this->container['dtEzsignfolderScheduledarchive'] = (is_null($dtEzsignfolderScheduledarchive) ? null : (string) $dtEzsignfolderScheduledarchive);
+        $this->container['dtEzsignfolderScheduledarchive'] = (is_null($dtEzsignfolderScheduledarchive) ? null : trim((string) $dtEzsignfolderScheduledarchive));
 
         return $this;
     }
@@ -1002,7 +1002,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getDtEzsignfolderScheduleddispose()
     {
-        return $this->container['dtEzsignfolderScheduleddispose'];
+        return is_null($this->container['dtEzsignfolderScheduleddispose']) ? null : trim($this->container['dtEzsignfolderScheduleddispose']);
     }
 
     /**
@@ -1021,7 +1021,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsignfolderScheduleddispose'] = $dtEzsignfolderScheduleddispose;
-        $this->container['dtEzsignfolderScheduleddispose'] = (is_null($dtEzsignfolderScheduleddispose) ? null : (string) $dtEzsignfolderScheduleddispose);
+        $this->container['dtEzsignfolderScheduleddispose'] = (is_null($dtEzsignfolderScheduleddispose) ? null : trim((string) $dtEzsignfolderScheduleddispose));
 
         return $this;
     }
@@ -1064,7 +1064,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getDtEzsignfolderClose()
     {
-        return $this->container['dtEzsignfolderClose'];
+        return is_null($this->container['dtEzsignfolderClose']) ? null : trim($this->container['dtEzsignfolderClose']);
     }
 
     /**
@@ -1083,7 +1083,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsignfolderClose'] = $dtEzsignfolderClose;
-        $this->container['dtEzsignfolderClose'] = (is_null($dtEzsignfolderClose) ? null : (string) $dtEzsignfolderClose);
+        $this->container['dtEzsignfolderClose'] = (is_null($dtEzsignfolderClose) ? null : trim((string) $dtEzsignfolderClose));
 
         return $this;
     }
@@ -1095,7 +1095,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getTEzsignfolderMessage()
     {
-        return $this->container['tEzsignfolderMessage'];
+        return is_null($this->container['tEzsignfolderMessage']) ? null : trim($this->container['tEzsignfolderMessage']);
     }
 
     /**
@@ -1114,7 +1114,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignfolderMessage'] = $tEzsignfolderMessage;
-        $this->container['tEzsignfolderMessage'] = (is_null($tEzsignfolderMessage) ? null : (string) $tEzsignfolderMessage);
+        $this->container['tEzsignfolderMessage'] = (is_null($tEzsignfolderMessage) ? null : trim((string) $tEzsignfolderMessage));
 
         return $this;
     }
@@ -1157,7 +1157,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function getSEzsignfolderExternalid()
     {
-        return $this->container['sEzsignfolderExternalid'];
+        return is_null($this->container['sEzsignfolderExternalid']) ? null : trim($this->container['sEzsignfolderExternalid']);
     }
 
     /**
@@ -1182,7 +1182,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfolderExternalid'] = $sEzsignfolderExternalid;
-        $this->container['sEzsignfolderExternalid'] = (is_null($sEzsignfolderExternalid) ? null : (string) $sEzsignfolderExternalid);
+        $this->container['sEzsignfolderExternalid'] = (is_null($sEzsignfolderExternalid) ? null : trim((string) $sEzsignfolderExternalid));
 
         return $this;
     }

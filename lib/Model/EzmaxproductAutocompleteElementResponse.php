@@ -362,7 +362,7 @@ class EzmaxproductAutocompleteElementResponse implements ModelInterface, ArrayAc
      */
     public function getSEzmaxproductDescriptionX()
     {
-        return $this->container['sEzmaxproductDescriptionX'];
+        return is_null($this->container['sEzmaxproductDescriptionX']) ? null : trim($this->container['sEzmaxproductDescriptionX']);
     }
 
     /**
@@ -381,7 +381,7 @@ class EzmaxproductAutocompleteElementResponse implements ModelInterface, ArrayAc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxproductDescriptionX'] = $sEzmaxproductDescriptionX;
-        $this->container['sEzmaxproductDescriptionX'] = (is_null($sEzmaxproductDescriptionX) ? null : (string) $sEzmaxproductDescriptionX);
+        $this->container['sEzmaxproductDescriptionX'] = (is_null($sEzmaxproductDescriptionX) ? null : trim((string) $sEzmaxproductDescriptionX));
 
         return $this;
     }

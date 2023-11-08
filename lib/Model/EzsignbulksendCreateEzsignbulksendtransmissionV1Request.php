@@ -448,7 +448,7 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
      */
     public function getSEzsignbulksendtransmissionDescription()
     {
-        return $this->container['sEzsignbulksendtransmissionDescription'];
+        return is_null($this->container['sEzsignbulksendtransmissionDescription']) ? null : trim($this->container['sEzsignbulksendtransmissionDescription']);
     }
 
     /**
@@ -467,7 +467,7 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignbulksendtransmissionDescription'] = $sEzsignbulksendtransmissionDescription;
-        $this->container['sEzsignbulksendtransmissionDescription'] = (is_null($sEzsignbulksendtransmissionDescription) ? null : (string) $sEzsignbulksendtransmissionDescription);
+        $this->container['sEzsignbulksendtransmissionDescription'] = (is_null($sEzsignbulksendtransmissionDescription) ? null : trim((string) $sEzsignbulksendtransmissionDescription));
 
         return $this;
     }
@@ -479,7 +479,7 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
      */
     public function getDtEzsigndocumentDuedate()
     {
-        return $this->container['dtEzsigndocumentDuedate'];
+        return is_null($this->container['dtEzsigndocumentDuedate']) ? null : trim($this->container['dtEzsigndocumentDuedate']);
     }
 
     /**
@@ -498,7 +498,7 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
-        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : (string) $dtEzsigndocumentDuedate);
+        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : trim((string) $dtEzsigndocumentDuedate));
 
         return $this;
     }
@@ -541,7 +541,7 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
      */
     public function getTExtraMessage()
     {
-        return $this->container['tExtraMessage'];
+        return is_null($this->container['tExtraMessage']) ? null : trim($this->container['tExtraMessage']);
     }
 
     /**
@@ -560,7 +560,7 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Request implements ModelIn
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tExtraMessage'] = $tExtraMessage;
-        $this->container['tExtraMessage'] = (is_null($tExtraMessage) ? null : (string) $tExtraMessage);
+        $this->container['tExtraMessage'] = (is_null($tExtraMessage) ? null : trim((string) $tExtraMessage));
 
         return $this;
     }

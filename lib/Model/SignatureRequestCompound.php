@@ -362,7 +362,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getTSignatureSvg()
     {
-        return $this->container['tSignatureSvg'];
+        return is_null($this->container['tSignatureSvg']) ? null : trim($this->container['tSignatureSvg']);
     }
 
     /**
@@ -387,7 +387,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tSignatureSvg'] = $tSignatureSvg;
-        $this->container['tSignatureSvg'] = (is_null($tSignatureSvg) ? null : (string) $tSignatureSvg);
+        $this->container['tSignatureSvg'] = (is_null($tSignatureSvg) ? null : trim((string) $tSignatureSvg));
 
         return $this;
     }

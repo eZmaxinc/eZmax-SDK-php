@@ -305,7 +305,7 @@ class EzsigndocumentRequestPatch implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getDtEzsigndocumentDuedate()
     {
-        return $this->container['dtEzsigndocumentDuedate'];
+        return is_null($this->container['dtEzsigndocumentDuedate']) ? null : trim($this->container['dtEzsigndocumentDuedate']);
     }
 
     /**
@@ -324,7 +324,7 @@ class EzsigndocumentRequestPatch implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
-        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : (string) $dtEzsigndocumentDuedate);
+        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : trim((string) $dtEzsigndocumentDuedate));
 
         return $this;
     }
@@ -336,7 +336,7 @@ class EzsigndocumentRequestPatch implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getSEzsigndocumentName()
     {
-        return $this->container['sEzsigndocumentName'];
+        return is_null($this->container['sEzsigndocumentName']) ? null : trim($this->container['sEzsigndocumentName']);
     }
 
     /**
@@ -355,7 +355,7 @@ class EzsigndocumentRequestPatch implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
-        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);
+        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : trim((string) $sEzsigndocumentName));
 
         return $this;
     }

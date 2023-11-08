@@ -387,9 +387,9 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['sUserLoginnameCloning'] === null) {
             $invalidProperties[] = "'sUserLoginnameCloning' can't be null";
         }
-//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloning'])) {
-        if (!is_null($this->container['sUserLoginnameCloning']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloning'])) {
-            $invalidProperties[] = "invalid value for 'sUserLoginnameCloning', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.";
+//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloning'])) {
+        if (!is_null($this->container['sUserLoginnameCloning']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloning'])) {
+            $invalidProperties[] = "invalid value for 'sUserLoginnameCloning', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.";
         }
 
         if ($this->container['sUserFirstnameCloning'] === null) {
@@ -401,9 +401,9 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['sUserLoginnameCloned'] === null) {
             $invalidProperties[] = "'sUserLoginnameCloned' can't be null";
         }
-//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloned'])) {
-        if (!is_null($this->container['sUserLoginnameCloned']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloned'])) {
-            $invalidProperties[] = "invalid value for 'sUserLoginnameCloned', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.";
+//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloned'])) {
+        if (!is_null($this->container['sUserLoginnameCloned']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloned'])) {
+            $invalidProperties[] = "invalid value for 'sUserLoginnameCloned', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.";
         }
 
         if ($this->container['sUserFirstnameCloned'] === null) {
@@ -549,7 +549,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getDtClonehistoryFirsthit()
     {
-        return $this->container['dtClonehistoryFirsthit'];
+        return is_null($this->container['dtClonehistoryFirsthit']) ? null : trim($this->container['dtClonehistoryFirsthit']);
     }
 
     /**
@@ -574,7 +574,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtClonehistoryFirsthit'] = $dtClonehistoryFirsthit;
-        $this->container['dtClonehistoryFirsthit'] = (is_null($dtClonehistoryFirsthit) ? null : (string) $dtClonehistoryFirsthit);
+        $this->container['dtClonehistoryFirsthit'] = (is_null($dtClonehistoryFirsthit) ? null : trim((string) $dtClonehistoryFirsthit));
 
         return $this;
     }
@@ -586,7 +586,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getDtClonehistoryLasthit()
     {
-        return $this->container['dtClonehistoryLasthit'];
+        return is_null($this->container['dtClonehistoryLasthit']) ? null : trim($this->container['dtClonehistoryLasthit']);
     }
 
     /**
@@ -611,7 +611,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtClonehistoryLasthit'] = $dtClonehistoryLasthit;
-        $this->container['dtClonehistoryLasthit'] = (is_null($dtClonehistoryLasthit) ? null : (string) $dtClonehistoryLasthit);
+        $this->container['dtClonehistoryLasthit'] = (is_null($dtClonehistoryLasthit) ? null : trim((string) $dtClonehistoryLasthit));
 
         return $this;
     }
@@ -623,7 +623,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSUserLoginnameCloning()
     {
-        return $this->container['sUserLoginnameCloning'];
+        return is_null($this->container['sUserLoginnameCloning']) ? null : trim($this->container['sUserLoginnameCloning']);
     }
 
     /**
@@ -640,15 +640,15 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable sUserLoginnameCloning cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
-        if (!is_null($sUserLoginnameCloning) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
-            throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloning when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
+        if (!is_null($sUserLoginnameCloning) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
+            throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloning when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.");
         }
 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLoginnameCloning'] = $sUserLoginnameCloning;
-        $this->container['sUserLoginnameCloning'] = (is_null($sUserLoginnameCloning) ? null : (string) $sUserLoginnameCloning);
+        $this->container['sUserLoginnameCloning'] = (is_null($sUserLoginnameCloning) ? null : trim((string) $sUserLoginnameCloning));
 
         return $this;
     }
@@ -660,7 +660,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSUserFirstnameCloning()
     {
-        return $this->container['sUserFirstnameCloning'];
+        return is_null($this->container['sUserFirstnameCloning']) ? null : trim($this->container['sUserFirstnameCloning']);
     }
 
     /**
@@ -679,7 +679,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserFirstnameCloning'] = $sUserFirstnameCloning;
-        $this->container['sUserFirstnameCloning'] = (is_null($sUserFirstnameCloning) ? null : (string) $sUserFirstnameCloning);
+        $this->container['sUserFirstnameCloning'] = (is_null($sUserFirstnameCloning) ? null : trim((string) $sUserFirstnameCloning));
 
         return $this;
     }
@@ -691,7 +691,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSUserLastnameCloning()
     {
-        return $this->container['sUserLastnameCloning'];
+        return is_null($this->container['sUserLastnameCloning']) ? null : trim($this->container['sUserLastnameCloning']);
     }
 
     /**
@@ -710,7 +710,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLastnameCloning'] = $sUserLastnameCloning;
-        $this->container['sUserLastnameCloning'] = (is_null($sUserLastnameCloning) ? null : (string) $sUserLastnameCloning);
+        $this->container['sUserLastnameCloning'] = (is_null($sUserLastnameCloning) ? null : trim((string) $sUserLastnameCloning));
 
         return $this;
     }
@@ -722,7 +722,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSUserLoginnameCloned()
     {
-        return $this->container['sUserLoginnameCloned'];
+        return is_null($this->container['sUserLoginnameCloned']) ? null : trim($this->container['sUserLoginnameCloned']);
     }
 
     /**
@@ -739,15 +739,15 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable sUserLoginnameCloned cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
-        if (!is_null($sUserLoginnameCloned) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
-            throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloned when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
+        if (!is_null($sUserLoginnameCloned) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
+            throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloned when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.");
         }
 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLoginnameCloned'] = $sUserLoginnameCloned;
-        $this->container['sUserLoginnameCloned'] = (is_null($sUserLoginnameCloned) ? null : (string) $sUserLoginnameCloned);
+        $this->container['sUserLoginnameCloned'] = (is_null($sUserLoginnameCloned) ? null : trim((string) $sUserLoginnameCloned));
 
         return $this;
     }
@@ -759,7 +759,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSUserFirstnameCloned()
     {
-        return $this->container['sUserFirstnameCloned'];
+        return is_null($this->container['sUserFirstnameCloned']) ? null : trim($this->container['sUserFirstnameCloned']);
     }
 
     /**
@@ -778,7 +778,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserFirstnameCloned'] = $sUserFirstnameCloned;
-        $this->container['sUserFirstnameCloned'] = (is_null($sUserFirstnameCloned) ? null : (string) $sUserFirstnameCloned);
+        $this->container['sUserFirstnameCloned'] = (is_null($sUserFirstnameCloned) ? null : trim((string) $sUserFirstnameCloned));
 
         return $this;
     }
@@ -790,7 +790,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSUserLastnameCloned()
     {
-        return $this->container['sUserLastnameCloned'];
+        return is_null($this->container['sUserLastnameCloned']) ? null : trim($this->container['sUserLastnameCloned']);
     }
 
     /**
@@ -809,7 +809,7 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLastnameCloned'] = $sUserLastnameCloned;
-        $this->container['sUserLastnameCloned'] = (is_null($sUserLastnameCloned) ? null : (string) $sUserLastnameCloned);
+        $this->container['sUserLastnameCloned'] = (is_null($sUserLastnameCloned) ? null : trim((string) $sUserLastnameCloned));
 
         return $this;
     }

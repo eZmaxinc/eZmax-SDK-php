@@ -458,7 +458,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function getSNotificationsectionNameX()
     {
-        return $this->container['sNotificationsectionNameX'];
+        return is_null($this->container['sNotificationsectionNameX']) ? null : trim($this->container['sNotificationsectionNameX']);
     }
 
     /**
@@ -477,7 +477,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sNotificationsectionNameX'] = $sNotificationsectionNameX;
-        $this->container['sNotificationsectionNameX'] = (is_null($sNotificationsectionNameX) ? null : (string) $sNotificationsectionNameX);
+        $this->container['sNotificationsectionNameX'] = (is_null($sNotificationsectionNameX) ? null : trim((string) $sNotificationsectionNameX));
 
         return $this;
     }
@@ -489,7 +489,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function getSNotificationsubsectionNameX()
     {
-        return $this->container['sNotificationsubsectionNameX'];
+        return is_null($this->container['sNotificationsubsectionNameX']) ? null : trim($this->container['sNotificationsubsectionNameX']);
     }
 
     /**
@@ -508,7 +508,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sNotificationsubsectionNameX'] = $sNotificationsubsectionNameX;
-        $this->container['sNotificationsubsectionNameX'] = (is_null($sNotificationsubsectionNameX) ? null : (string) $sNotificationsubsectionNameX);
+        $this->container['sNotificationsubsectionNameX'] = (is_null($sNotificationsubsectionNameX) ? null : trim((string) $sNotificationsubsectionNameX));
 
         return $this;
     }

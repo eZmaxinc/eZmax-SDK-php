@@ -677,7 +677,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getDtEzsigndocumentDuedate()
     {
-        return $this->container['dtEzsigndocumentDuedate'];
+        return is_null($this->container['dtEzsigndocumentDuedate']) ? null : trim($this->container['dtEzsigndocumentDuedate']);
     }
 
     /**
@@ -696,7 +696,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
-        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : (string) $dtEzsigndocumentDuedate);
+        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : trim((string) $dtEzsigndocumentDuedate));
 
         return $this;
     }
@@ -708,7 +708,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getDtEzsignformCompleted()
     {
-        return $this->container['dtEzsignformCompleted'];
+        return is_null($this->container['dtEzsignformCompleted']) ? null : trim($this->container['dtEzsignformCompleted']);
     }
 
     /**
@@ -727,7 +727,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsignformCompleted'] = $dtEzsignformCompleted;
-        $this->container['dtEzsignformCompleted'] = (is_null($dtEzsignformCompleted) ? null : (string) $dtEzsignformCompleted);
+        $this->container['dtEzsignformCompleted'] = (is_null($dtEzsignformCompleted) ? null : trim((string) $dtEzsignformCompleted));
 
         return $this;
     }
@@ -780,7 +780,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSEzsigndocumentName()
     {
-        return $this->container['sEzsigndocumentName'];
+        return is_null($this->container['sEzsigndocumentName']) ? null : trim($this->container['sEzsigndocumentName']);
     }
 
     /**
@@ -799,7 +799,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
-        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);
+        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : trim((string) $sEzsigndocumentName));
 
         return $this;
     }
@@ -842,7 +842,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getDtEzsigndocumentFirstsend()
     {
-        return $this->container['dtEzsigndocumentFirstsend'];
+        return is_null($this->container['dtEzsigndocumentFirstsend']) ? null : trim($this->container['dtEzsigndocumentFirstsend']);
     }
 
     /**
@@ -861,7 +861,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsigndocumentFirstsend'] = $dtEzsigndocumentFirstsend;
-        $this->container['dtEzsigndocumentFirstsend'] = (is_null($dtEzsigndocumentFirstsend) ? null : (string) $dtEzsigndocumentFirstsend);
+        $this->container['dtEzsigndocumentFirstsend'] = (is_null($dtEzsigndocumentFirstsend) ? null : trim((string) $dtEzsigndocumentFirstsend));
 
         return $this;
     }
@@ -873,7 +873,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getDtEzsigndocumentLastsend()
     {
-        return $this->container['dtEzsigndocumentLastsend'];
+        return is_null($this->container['dtEzsigndocumentLastsend']) ? null : trim($this->container['dtEzsigndocumentLastsend']);
     }
 
     /**
@@ -892,7 +892,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsigndocumentLastsend'] = $dtEzsigndocumentLastsend;
-        $this->container['dtEzsigndocumentLastsend'] = (is_null($dtEzsigndocumentLastsend) ? null : (string) $dtEzsigndocumentLastsend);
+        $this->container['dtEzsigndocumentLastsend'] = (is_null($dtEzsigndocumentLastsend) ? null : trim((string) $dtEzsigndocumentLastsend));
 
         return $this;
     }
@@ -1052,7 +1052,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSEzsigndocumentMD5initial()
     {
-        return $this->container['sEzsigndocumentMD5initial'];
+        return is_null($this->container['sEzsigndocumentMD5initial']) ? null : trim($this->container['sEzsigndocumentMD5initial']);
     }
 
     /**
@@ -1071,7 +1071,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentMD5initial'] = $sEzsigndocumentMD5initial;
-        $this->container['sEzsigndocumentMD5initial'] = (is_null($sEzsigndocumentMD5initial) ? null : (string) $sEzsigndocumentMD5initial);
+        $this->container['sEzsigndocumentMD5initial'] = (is_null($sEzsigndocumentMD5initial) ? null : trim((string) $sEzsigndocumentMD5initial));
 
         return $this;
     }
@@ -1083,7 +1083,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getTEzsigndocumentDeclinedtosignreason()
     {
-        return $this->container['tEzsigndocumentDeclinedtosignreason'];
+        return is_null($this->container['tEzsigndocumentDeclinedtosignreason']) ? null : trim($this->container['tEzsigndocumentDeclinedtosignreason']);
     }
 
     /**
@@ -1102,7 +1102,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsigndocumentDeclinedtosignreason'] = $tEzsigndocumentDeclinedtosignreason;
-        $this->container['tEzsigndocumentDeclinedtosignreason'] = (is_null($tEzsigndocumentDeclinedtosignreason) ? null : (string) $tEzsigndocumentDeclinedtosignreason);
+        $this->container['tEzsigndocumentDeclinedtosignreason'] = (is_null($tEzsigndocumentDeclinedtosignreason) ? null : trim((string) $tEzsigndocumentDeclinedtosignreason));
 
         return $this;
     }
@@ -1114,7 +1114,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSEzsigndocumentMD5signed()
     {
-        return $this->container['sEzsigndocumentMD5signed'];
+        return is_null($this->container['sEzsigndocumentMD5signed']) ? null : trim($this->container['sEzsigndocumentMD5signed']);
     }
 
     /**
@@ -1133,7 +1133,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentMD5signed'] = $sEzsigndocumentMD5signed;
-        $this->container['sEzsigndocumentMD5signed'] = (is_null($sEzsigndocumentMD5signed) ? null : (string) $sEzsigndocumentMD5signed);
+        $this->container['sEzsigndocumentMD5signed'] = (is_null($sEzsigndocumentMD5signed) ? null : trim((string) $sEzsigndocumentMD5signed));
 
         return $this;
     }
@@ -1238,7 +1238,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSEzsigndocumentExternalid()
     {
-        return $this->container['sEzsigndocumentExternalid'];
+        return is_null($this->container['sEzsigndocumentExternalid']) ? null : trim($this->container['sEzsigndocumentExternalid']);
     }
 
     /**
@@ -1263,7 +1263,7 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentExternalid'] = $sEzsigndocumentExternalid;
-        $this->container['sEzsigndocumentExternalid'] = (is_null($sEzsigndocumentExternalid) ? null : (string) $sEzsigndocumentExternalid);
+        $this->container['sEzsigndocumentExternalid'] = (is_null($sEzsigndocumentExternalid) ? null : trim((string) $sEzsigndocumentExternalid));
 
         return $this;
     }

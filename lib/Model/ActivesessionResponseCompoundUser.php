@@ -485,7 +485,7 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function getSAvatarUrl()
     {
-        return $this->container['sAvatarUrl'];
+        return is_null($this->container['sAvatarUrl']) ? null : trim($this->container['sAvatarUrl']);
     }
 
     /**
@@ -504,7 +504,7 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAvatarUrl'] = $sAvatarUrl;
-        $this->container['sAvatarUrl'] = (is_null($sAvatarUrl) ? null : (string) $sAvatarUrl);
+        $this->container['sAvatarUrl'] = (is_null($sAvatarUrl) ? null : trim((string) $sAvatarUrl));
 
         return $this;
     }
@@ -516,7 +516,7 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function getSUserFirstname()
     {
-        return $this->container['sUserFirstname'];
+        return is_null($this->container['sUserFirstname']) ? null : trim($this->container['sUserFirstname']);
     }
 
     /**
@@ -535,7 +535,7 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserFirstname'] = $sUserFirstname;
-        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : (string) $sUserFirstname);
+        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : trim((string) $sUserFirstname));
 
         return $this;
     }
@@ -547,7 +547,7 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function getSUserLastname()
     {
-        return $this->container['sUserLastname'];
+        return is_null($this->container['sUserLastname']) ? null : trim($this->container['sUserLastname']);
     }
 
     /**
@@ -566,7 +566,7 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLastname'] = $sUserLastname;
-        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : (string) $sUserLastname);
+        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : trim((string) $sUserLastname));
 
         return $this;
     }
@@ -578,7 +578,7 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -597,7 +597,7 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }

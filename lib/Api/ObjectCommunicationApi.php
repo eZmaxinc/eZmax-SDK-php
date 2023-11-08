@@ -73,18 +73,19 @@ class ObjectCommunicationApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'communicationGetObjectV2' => [
+        'communicationSendV1' => [
             'application/json',
         ],
     ];
 
     /** @var array[] $objEzmaxConfig **/
     public const objEzmaxConfig = [
-        'communicationGetObjectV2' => [
+        'communicationSendV1' => [
             'permissions' => [
                 'All',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',
@@ -139,38 +140,38 @@ class ObjectCommunicationApi
     }
 
     /**
-     * Operation communicationGetObjectV2
+     * Operation communicationSendV1
      *
-     * Retrieve an existing Communication
+     * Send a new Communication
      *
-     * @param  int $pkiCommunicationID pkiCommunicationID (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetObjectV2'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\CommunicationSendV1Request $communicationSendV1Request communicationSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationSendV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\CommunicationGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError
+     * @return \eZmaxAPI\Model\CommunicationSendV1Response
      */
-    public function communicationGetObjectV2($pkiCommunicationID, string $contentType = self::contentTypes['communicationGetObjectV2'][0])
+    public function communicationSendV1($communicationSendV1Request, string $contentType = self::contentTypes['communicationSendV1'][0])
     {
-        list($response) = $this->communicationGetObjectV2WithHttpInfo($pkiCommunicationID, $contentType);
+        list($response) = $this->communicationSendV1WithHttpInfo($communicationSendV1Request, $contentType);
         return $response;
     }
 
     /**
-     * Operation communicationGetObjectV2WithHttpInfo
+     * Operation communicationSendV1WithHttpInfo
      *
-     * Retrieve an existing Communication
+     * Send a new Communication
      *
-     * @param  int $pkiCommunicationID (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetObjectV2'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\CommunicationSendV1Request $communicationSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationSendV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\CommunicationGetObjectV2Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\CommunicationSendV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function communicationGetObjectV2WithHttpInfo($pkiCommunicationID, string $contentType = self::contentTypes['communicationGetObjectV2'][0])
+    public function communicationSendV1WithHttpInfo($communicationSendV1Request, string $contentType = self::contentTypes['communicationSendV1'][0])
     {
-        $request = $this->communicationGetObjectV2Request($pkiCommunicationID, $contentType);
+        $request = $this->communicationSendV1Request($communicationSendV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -208,39 +209,24 @@ class ObjectCommunicationApi
             }
 
             switch($statusCode) {
-                case 200:
-                    if ('\eZmaxAPI\Model\CommunicationGetObjectV2Response' === '\SplFileObject') {
+                case 201:
+                    if ('\eZmaxAPI\Model\CommunicationSendV1Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\eZmaxAPI\Model\CommunicationGetObjectV2Response' !== 'string') {
+                        if ('\eZmaxAPI\Model\CommunicationSendV1Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommunicationGetObjectV2Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommunicationSendV1Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\eZmaxAPI\Model\CommunicationGetObjectV2Response';
+            $returnType = '\eZmaxAPI\Model\CommunicationSendV1Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -258,18 +244,10 @@ class ObjectCommunicationApi
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
+                case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Model\CommunicationGetObjectV2Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\eZmaxAPI\Model\CommonResponseError',
+                        '\eZmaxAPI\Model\CommunicationSendV1Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -280,19 +258,19 @@ class ObjectCommunicationApi
     }
 
     /**
-     * Operation communicationGetObjectV2Async
+     * Operation communicationSendV1Async
      *
-     * Retrieve an existing Communication
+     * Send a new Communication
      *
-     * @param  int $pkiCommunicationID (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetObjectV2'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\CommunicationSendV1Request $communicationSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationSendV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function communicationGetObjectV2Async($pkiCommunicationID, string $contentType = self::contentTypes['communicationGetObjectV2'][0])
+    public function communicationSendV1Async($communicationSendV1Request, string $contentType = self::contentTypes['communicationSendV1'][0])
     {
-        return $this->communicationGetObjectV2AsyncWithHttpInfo($pkiCommunicationID, $contentType)
+        return $this->communicationSendV1AsyncWithHttpInfo($communicationSendV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -301,20 +279,20 @@ class ObjectCommunicationApi
     }
 
     /**
-     * Operation communicationGetObjectV2AsyncWithHttpInfo
+     * Operation communicationSendV1AsyncWithHttpInfo
      *
-     * Retrieve an existing Communication
+     * Send a new Communication
      *
-     * @param  int $pkiCommunicationID (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetObjectV2'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\CommunicationSendV1Request $communicationSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationSendV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function communicationGetObjectV2AsyncWithHttpInfo($pkiCommunicationID, string $contentType = self::contentTypes['communicationGetObjectV2'][0])
+    public function communicationSendV1AsyncWithHttpInfo($communicationSendV1Request, string $contentType = self::contentTypes['communicationSendV1'][0])
     {
-        $returnType = '\eZmaxAPI\Model\CommunicationGetObjectV2Response';
-        $request = $this->communicationGetObjectV2Request($pkiCommunicationID, $contentType);
+        $returnType = '\eZmaxAPI\Model\CommunicationSendV1Response';
+        $request = $this->communicationSendV1Request($communicationSendV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -353,29 +331,26 @@ class ObjectCommunicationApi
     }
 
     /**
-     * Create request for operation 'communicationGetObjectV2'
+     * Create request for operation 'communicationSendV1'
      *
-     * @param  int $pkiCommunicationID (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationGetObjectV2'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\CommunicationSendV1Request $communicationSendV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['communicationSendV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function communicationGetObjectV2Request($pkiCommunicationID, string $contentType = self::contentTypes['communicationGetObjectV2'][0])
+    public function communicationSendV1Request($communicationSendV1Request, string $contentType = self::contentTypes['communicationSendV1'][0])
     {
 
-        // verify the required parameter 'pkiCommunicationID' is set
-        if ($pkiCommunicationID === null || (is_array($pkiCommunicationID) && count($pkiCommunicationID) === 0)) {
+        // verify the required parameter 'communicationSendV1Request' is set
+        if ($communicationSendV1Request === null || (is_array($communicationSendV1Request) && count($communicationSendV1Request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $pkiCommunicationID when calling communicationGetObjectV2'
+                'Missing the required parameter $communicationSendV1Request when calling communicationSendV1'
             );
         }
-        if ($pkiCommunicationID < 0) {
-            throw new \InvalidArgumentException('invalid value for "$pkiCommunicationID" when calling ObjectCommunicationApi.communicationGetObjectV2, must be bigger than or equal to 0.');
-        }
-        
 
-        $resourcePath = '/2/object/communication/{pkiCommunicationID}';
+
+        $resourcePath = '/1/object/communication/send';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -384,14 +359,6 @@ class ObjectCommunicationApi
 
 
 
-        // path params
-        if ($pkiCommunicationID !== null) {
-            $resourcePath = str_replace(
-                '{' . 'pkiCommunicationID' . '}',
-                ObjectSerializer::toPathValue($pkiCommunicationID),
-                $resourcePath
-            );
-        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -401,7 +368,14 @@ class ObjectCommunicationApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($communicationSendV1Request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($communicationSendV1Request));
+            } else {
+                $httpBody = $communicationSendV1Request;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -449,12 +423,12 @@ class ObjectCommunicationApi
             $secret = $this->config->getSecret();
             if ($secret !== '') {
                 //Let's sign the request
-                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
             }		
         }
 
         return new Request(
-            'GET',
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

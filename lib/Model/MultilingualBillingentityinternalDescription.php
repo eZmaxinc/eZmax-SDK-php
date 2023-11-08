@@ -315,7 +315,7 @@ class MultilingualBillingentityinternalDescription implements ModelInterface, Ar
      */
     public function getSBillingentityinternalDescription1()
     {
-        return $this->container['sBillingentityinternalDescription1'];
+        return is_null($this->container['sBillingentityinternalDescription1']) ? null : trim($this->container['sBillingentityinternalDescription1']);
     }
 
     /**
@@ -340,7 +340,7 @@ class MultilingualBillingentityinternalDescription implements ModelInterface, Ar
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityinternalDescription1'] = $sBillingentityinternalDescription1;
-        $this->container['sBillingentityinternalDescription1'] = (is_null($sBillingentityinternalDescription1) ? null : (string) $sBillingentityinternalDescription1);
+        $this->container['sBillingentityinternalDescription1'] = (is_null($sBillingentityinternalDescription1) ? null : trim((string) $sBillingentityinternalDescription1));
 
         return $this;
     }
@@ -352,7 +352,7 @@ class MultilingualBillingentityinternalDescription implements ModelInterface, Ar
      */
     public function getSBillingentityinternalDescription2()
     {
-        return $this->container['sBillingentityinternalDescription2'];
+        return is_null($this->container['sBillingentityinternalDescription2']) ? null : trim($this->container['sBillingentityinternalDescription2']);
     }
 
     /**
@@ -377,7 +377,7 @@ class MultilingualBillingentityinternalDescription implements ModelInterface, Ar
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityinternalDescription2'] = $sBillingentityinternalDescription2;
-        $this->container['sBillingentityinternalDescription2'] = (is_null($sBillingentityinternalDescription2) ? null : (string) $sBillingentityinternalDescription2);
+        $this->container['sBillingentityinternalDescription2'] = (is_null($sBillingentityinternalDescription2) ? null : trim((string) $sBillingentityinternalDescription2));
 
         return $this;
     }

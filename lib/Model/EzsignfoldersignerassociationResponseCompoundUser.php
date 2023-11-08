@@ -431,7 +431,7 @@ class EzsignfoldersignerassociationResponseCompoundUser implements ModelInterfac
      */
     public function getSUserFirstname()
     {
-        return $this->container['sUserFirstname'];
+        return is_null($this->container['sUserFirstname']) ? null : trim($this->container['sUserFirstname']);
     }
 
     /**
@@ -450,7 +450,7 @@ class EzsignfoldersignerassociationResponseCompoundUser implements ModelInterfac
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserFirstname'] = $sUserFirstname;
-        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : (string) $sUserFirstname);
+        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : trim((string) $sUserFirstname));
 
         return $this;
     }
@@ -462,7 +462,7 @@ class EzsignfoldersignerassociationResponseCompoundUser implements ModelInterfac
      */
     public function getSUserLastname()
     {
-        return $this->container['sUserLastname'];
+        return is_null($this->container['sUserLastname']) ? null : trim($this->container['sUserLastname']);
     }
 
     /**
@@ -481,7 +481,7 @@ class EzsignfoldersignerassociationResponseCompoundUser implements ModelInterfac
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLastname'] = $sUserLastname;
-        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : (string) $sUserLastname);
+        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : trim((string) $sUserLastname));
 
         return $this;
     }
@@ -493,7 +493,7 @@ class EzsignfoldersignerassociationResponseCompoundUser implements ModelInterfac
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -512,7 +512,7 @@ class EzsignfoldersignerassociationResponseCompoundUser implements ModelInterfac
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }

@@ -374,7 +374,7 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getDEzmaxpricingRebateezsignallagents()
     {
-        return $this->container['dEzmaxpricingRebateezsignallagents'];
+        return is_null($this->container['dEzmaxpricingRebateezsignallagents']) ? null : trim($this->container['dEzmaxpricingRebateezsignallagents']);
     }
 
     /**
@@ -399,7 +399,7 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxpricingRebateezsignallagents'] = $dEzmaxpricingRebateezsignallagents;
-        $this->container['dEzmaxpricingRebateezsignallagents'] = (is_null($dEzmaxpricingRebateezsignallagents) ? null : (string) $dEzmaxpricingRebateezsignallagents);
+        $this->container['dEzmaxpricingRebateezsignallagents'] = (is_null($dEzmaxpricingRebateezsignallagents) ? null : trim((string) $dEzmaxpricingRebateezsignallagents));
 
         return $this;
     }
@@ -411,7 +411,7 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getDtEzmaxpricingStart()
     {
-        return $this->container['dtEzmaxpricingStart'];
+        return is_null($this->container['dtEzmaxpricingStart']) ? null : trim($this->container['dtEzmaxpricingStart']);
     }
 
     /**
@@ -430,7 +430,7 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxpricingStart'] = $dtEzmaxpricingStart;
-        $this->container['dtEzmaxpricingStart'] = (is_null($dtEzmaxpricingStart) ? null : (string) $dtEzmaxpricingStart);
+        $this->container['dtEzmaxpricingStart'] = (is_null($dtEzmaxpricingStart) ? null : trim((string) $dtEzmaxpricingStart));
 
         return $this;
     }
@@ -442,7 +442,7 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getDtEzmaxpricingEnd()
     {
-        return $this->container['dtEzmaxpricingEnd'];
+        return is_null($this->container['dtEzmaxpricingEnd']) ? null : trim($this->container['dtEzmaxpricingEnd']);
     }
 
     /**
@@ -461,7 +461,7 @@ class CustomEzmaxpricingResponse implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxpricingEnd'] = $dtEzmaxpricingEnd;
-        $this->container['dtEzmaxpricingEnd'] = (is_null($dtEzmaxpricingEnd) ? null : (string) $dtEzmaxpricingEnd);
+        $this->container['dtEzmaxpricingEnd'] = (is_null($dtEzmaxpricingEnd) ? null : trim((string) $dtEzmaxpricingEnd));
 
         return $this;
     }

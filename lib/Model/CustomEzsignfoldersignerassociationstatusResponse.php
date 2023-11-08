@@ -374,7 +374,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
      */
     public function getSEzsignfoldersignerassociationstatusLastname()
     {
-        return $this->container['sEzsignfoldersignerassociationstatusLastname'];
+        return is_null($this->container['sEzsignfoldersignerassociationstatusLastname']) ? null : trim($this->container['sEzsignfoldersignerassociationstatusLastname']);
     }
 
     /**
@@ -394,7 +394,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldersignerassociationstatusLastname'] = $sEzsignfoldersignerassociationstatusLastname;
-        $this->container['sEzsignfoldersignerassociationstatusLastname'] = (is_null($sEzsignfoldersignerassociationstatusLastname) ? null : (string) $sEzsignfoldersignerassociationstatusLastname);
+        $this->container['sEzsignfoldersignerassociationstatusLastname'] = (is_null($sEzsignfoldersignerassociationstatusLastname) ? null : trim((string) $sEzsignfoldersignerassociationstatusLastname));
 
         return $this;
     }
@@ -407,7 +407,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
      */
     public function getSEzsignfoldersignerassociationstatusFirstname()
     {
-        return $this->container['sEzsignfoldersignerassociationstatusFirstname'];
+        return is_null($this->container['sEzsignfoldersignerassociationstatusFirstname']) ? null : trim($this->container['sEzsignfoldersignerassociationstatusFirstname']);
     }
 
     /**
@@ -427,7 +427,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldersignerassociationstatusFirstname'] = $sEzsignfoldersignerassociationstatusFirstname;
-        $this->container['sEzsignfoldersignerassociationstatusFirstname'] = (is_null($sEzsignfoldersignerassociationstatusFirstname) ? null : (string) $sEzsignfoldersignerassociationstatusFirstname);
+        $this->container['sEzsignfoldersignerassociationstatusFirstname'] = (is_null($sEzsignfoldersignerassociationstatusFirstname) ? null : trim((string) $sEzsignfoldersignerassociationstatusFirstname));
 
         return $this;
     }
@@ -439,7 +439,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
      */
     public function getSEzsignfoldersignerassociationstatusDescriptionX()
     {
-        return $this->container['sEzsignfoldersignerassociationstatusDescriptionX'];
+        return is_null($this->container['sEzsignfoldersignerassociationstatusDescriptionX']) ? null : trim($this->container['sEzsignfoldersignerassociationstatusDescriptionX']);
     }
 
     /**
@@ -458,7 +458,7 @@ class CustomEzsignfoldersignerassociationstatusResponse implements ModelInterfac
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldersignerassociationstatusDescriptionX'] = $sEzsignfoldersignerassociationstatusDescriptionX;
-        $this->container['sEzsignfoldersignerassociationstatusDescriptionX'] = (is_null($sEzsignfoldersignerassociationstatusDescriptionX) ? null : (string) $sEzsignfoldersignerassociationstatusDescriptionX);
+        $this->container['sEzsignfoldersignerassociationstatusDescriptionX'] = (is_null($sEzsignfoldersignerassociationstatusDescriptionX) ? null : trim((string) $sEzsignfoldersignerassociationstatusDescriptionX));
 
         return $this;
     }

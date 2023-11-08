@@ -464,7 +464,7 @@ class UserstagedResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -483,7 +483,7 @@ class UserstagedResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }
@@ -495,7 +495,7 @@ class UserstagedResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getSUserstagedFirstname()
     {
-        return $this->container['sUserstagedFirstname'];
+        return is_null($this->container['sUserstagedFirstname']) ? null : trim($this->container['sUserstagedFirstname']);
     }
 
     /**
@@ -520,7 +520,7 @@ class UserstagedResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserstagedFirstname'] = $sUserstagedFirstname;
-        $this->container['sUserstagedFirstname'] = (is_null($sUserstagedFirstname) ? null : (string) $sUserstagedFirstname);
+        $this->container['sUserstagedFirstname'] = (is_null($sUserstagedFirstname) ? null : trim((string) $sUserstagedFirstname));
 
         return $this;
     }
@@ -532,7 +532,7 @@ class UserstagedResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getSUserstagedLastname()
     {
-        return $this->container['sUserstagedLastname'];
+        return is_null($this->container['sUserstagedLastname']) ? null : trim($this->container['sUserstagedLastname']);
     }
 
     /**
@@ -557,7 +557,7 @@ class UserstagedResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserstagedLastname'] = $sUserstagedLastname;
-        $this->container['sUserstagedLastname'] = (is_null($sUserstagedLastname) ? null : (string) $sUserstagedLastname);
+        $this->container['sUserstagedLastname'] = (is_null($sUserstagedLastname) ? null : trim((string) $sUserstagedLastname));
 
         return $this;
     }
@@ -569,7 +569,7 @@ class UserstagedResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getSUserstagedExternalid()
     {
-        return $this->container['sUserstagedExternalid'];
+        return is_null($this->container['sUserstagedExternalid']) ? null : trim($this->container['sUserstagedExternalid']);
     }
 
     /**
@@ -594,7 +594,7 @@ class UserstagedResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserstagedExternalid'] = $sUserstagedExternalid;
-        $this->container['sUserstagedExternalid'] = (is_null($sUserstagedExternalid) ? null : (string) $sUserstagedExternalid);
+        $this->container['sUserstagedExternalid'] = (is_null($sUserstagedExternalid) ? null : trim((string) $sUserstagedExternalid));
 
         return $this;
     }

@@ -321,7 +321,7 @@ class AttemptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getDtAttemptStart()
     {
-        return $this->container['dtAttemptStart'];
+        return is_null($this->container['dtAttemptStart']) ? null : trim($this->container['dtAttemptStart']);
     }
 
     /**
@@ -340,7 +340,7 @@ class AttemptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtAttemptStart'] = $dtAttemptStart;
-        $this->container['dtAttemptStart'] = (is_null($dtAttemptStart) ? null : (string) $dtAttemptStart);
+        $this->container['dtAttemptStart'] = (is_null($dtAttemptStart) ? null : trim((string) $dtAttemptStart));
 
         return $this;
     }
@@ -352,7 +352,7 @@ class AttemptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getSAttemptResult()
     {
-        return $this->container['sAttemptResult'];
+        return is_null($this->container['sAttemptResult']) ? null : trim($this->container['sAttemptResult']);
     }
 
     /**
@@ -371,7 +371,7 @@ class AttemptResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAttemptResult'] = $sAttemptResult;
-        $this->container['sAttemptResult'] = (is_null($sAttemptResult) ? null : (string) $sAttemptResult);
+        $this->container['sAttemptResult'] = (is_null($sAttemptResult) ? null : trim((string) $sAttemptResult));
 
         return $this;
     }

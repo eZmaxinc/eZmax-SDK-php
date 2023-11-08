@@ -462,7 +462,7 @@ class EzmaxinvoicingsummaryexternalResponse implements ModelInterface, ArrayAcce
      */
     public function getSBillingentityexternalDescription()
     {
-        return $this->container['sBillingentityexternalDescription'];
+        return is_null($this->container['sBillingentityexternalDescription']) ? null : trim($this->container['sBillingentityexternalDescription']);
     }
 
     /**
@@ -481,7 +481,7 @@ class EzmaxinvoicingsummaryexternalResponse implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityexternalDescription'] = $sBillingentityexternalDescription;
-        $this->container['sBillingentityexternalDescription'] = (is_null($sBillingentityexternalDescription) ? null : (string) $sBillingentityexternalDescription);
+        $this->container['sBillingentityexternalDescription'] = (is_null($sBillingentityexternalDescription) ? null : trim((string) $sBillingentityexternalDescription));
 
         return $this;
     }
@@ -493,7 +493,7 @@ class EzmaxinvoicingsummaryexternalResponse implements ModelInterface, ArrayAcce
      */
     public function getSEzmaxinvoicingsummaryexternalDescription()
     {
-        return $this->container['sEzmaxinvoicingsummaryexternalDescription'];
+        return is_null($this->container['sEzmaxinvoicingsummaryexternalDescription']) ? null : trim($this->container['sEzmaxinvoicingsummaryexternalDescription']);
     }
 
     /**
@@ -517,7 +517,7 @@ class EzmaxinvoicingsummaryexternalResponse implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxinvoicingsummaryexternalDescription'] = $sEzmaxinvoicingsummaryexternalDescription;
-        $this->container['sEzmaxinvoicingsummaryexternalDescription'] = (is_null($sEzmaxinvoicingsummaryexternalDescription) ? null : (string) $sEzmaxinvoicingsummaryexternalDescription);
+        $this->container['sEzmaxinvoicingsummaryexternalDescription'] = (is_null($sEzmaxinvoicingsummaryexternalDescription) ? null : trim((string) $sEzmaxinvoicingsummaryexternalDescription));
 
         return $this;
     }

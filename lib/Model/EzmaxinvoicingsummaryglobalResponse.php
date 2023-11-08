@@ -643,7 +643,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getSEzmaxproductDescriptionX()
     {
-        return $this->container['sEzmaxproductDescriptionX'];
+        return is_null($this->container['sEzmaxproductDescriptionX']) ? null : trim($this->container['sEzmaxproductDescriptionX']);
     }
 
     /**
@@ -662,7 +662,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxproductDescriptionX'] = $sEzmaxproductDescriptionX;
-        $this->container['sEzmaxproductDescriptionX'] = (is_null($sEzmaxproductDescriptionX) ? null : (string) $sEzmaxproductDescriptionX);
+        $this->container['sEzmaxproductDescriptionX'] = (is_null($sEzmaxproductDescriptionX) ? null : trim((string) $sEzmaxproductDescriptionX));
 
         return $this;
     }
@@ -674,7 +674,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDtEzmaxinvoicingsummaryglobalStart()
     {
-        return $this->container['dtEzmaxinvoicingsummaryglobalStart'];
+        return is_null($this->container['dtEzmaxinvoicingsummaryglobalStart']) ? null : trim($this->container['dtEzmaxinvoicingsummaryglobalStart']);
     }
 
     /**
@@ -693,7 +693,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxinvoicingsummaryglobalStart'] = $dtEzmaxinvoicingsummaryglobalStart;
-        $this->container['dtEzmaxinvoicingsummaryglobalStart'] = (is_null($dtEzmaxinvoicingsummaryglobalStart) ? null : (string) $dtEzmaxinvoicingsummaryglobalStart);
+        $this->container['dtEzmaxinvoicingsummaryglobalStart'] = (is_null($dtEzmaxinvoicingsummaryglobalStart) ? null : trim((string) $dtEzmaxinvoicingsummaryglobalStart));
 
         return $this;
     }
@@ -705,7 +705,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDtEzmaxinvoicingsummaryglobalEnd()
     {
-        return $this->container['dtEzmaxinvoicingsummaryglobalEnd'];
+        return is_null($this->container['dtEzmaxinvoicingsummaryglobalEnd']) ? null : trim($this->container['dtEzmaxinvoicingsummaryglobalEnd']);
     }
 
     /**
@@ -724,7 +724,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxinvoicingsummaryglobalEnd'] = $dtEzmaxinvoicingsummaryglobalEnd;
-        $this->container['dtEzmaxinvoicingsummaryglobalEnd'] = (is_null($dtEzmaxinvoicingsummaryglobalEnd) ? null : (string) $dtEzmaxinvoicingsummaryglobalEnd);
+        $this->container['dtEzmaxinvoicingsummaryglobalEnd'] = (is_null($dtEzmaxinvoicingsummaryglobalEnd) ? null : trim((string) $dtEzmaxinvoicingsummaryglobalEnd));
 
         return $this;
     }
@@ -773,7 +773,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalCountreal()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalCountreal'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalCountreal']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalCountreal']);
     }
 
     /**
@@ -798,7 +798,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalCountreal'] = $dEzmaxinvoicingsummaryglobalCountreal;
-        $this->container['dEzmaxinvoicingsummaryglobalCountreal'] = (is_null($dEzmaxinvoicingsummaryglobalCountreal) ? null : (string) $dEzmaxinvoicingsummaryglobalCountreal);
+        $this->container['dEzmaxinvoicingsummaryglobalCountreal'] = (is_null($dEzmaxinvoicingsummaryglobalCountreal) ? null : trim((string) $dEzmaxinvoicingsummaryglobalCountreal));
 
         return $this;
     }
@@ -810,7 +810,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalCountbilled()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalCountbilled'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalCountbilled']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalCountbilled']);
     }
 
     /**
@@ -835,7 +835,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalCountbilled'] = $dEzmaxinvoicingsummaryglobalCountbilled;
-        $this->container['dEzmaxinvoicingsummaryglobalCountbilled'] = (is_null($dEzmaxinvoicingsummaryglobalCountbilled) ? null : (string) $dEzmaxinvoicingsummaryglobalCountbilled);
+        $this->container['dEzmaxinvoicingsummaryglobalCountbilled'] = (is_null($dEzmaxinvoicingsummaryglobalCountbilled) ? null : trim((string) $dEzmaxinvoicingsummaryglobalCountbilled));
 
         return $this;
     }
@@ -847,7 +847,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalSubtotal()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalSubtotal'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalSubtotal']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalSubtotal']);
     }
 
     /**
@@ -872,7 +872,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalSubtotal'] = $dEzmaxinvoicingsummaryglobalSubtotal;
-        $this->container['dEzmaxinvoicingsummaryglobalSubtotal'] = (is_null($dEzmaxinvoicingsummaryglobalSubtotal) ? null : (string) $dEzmaxinvoicingsummaryglobalSubtotal);
+        $this->container['dEzmaxinvoicingsummaryglobalSubtotal'] = (is_null($dEzmaxinvoicingsummaryglobalSubtotal) ? null : trim((string) $dEzmaxinvoicingsummaryglobalSubtotal));
 
         return $this;
     }
@@ -884,7 +884,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalRebateamount()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalRebateamount'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalRebateamount']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalRebateamount']);
     }
 
     /**
@@ -909,7 +909,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalRebateamount'] = $dEzmaxinvoicingsummaryglobalRebateamount;
-        $this->container['dEzmaxinvoicingsummaryglobalRebateamount'] = (is_null($dEzmaxinvoicingsummaryglobalRebateamount) ? null : (string) $dEzmaxinvoicingsummaryglobalRebateamount);
+        $this->container['dEzmaxinvoicingsummaryglobalRebateamount'] = (is_null($dEzmaxinvoicingsummaryglobalRebateamount) ? null : trim((string) $dEzmaxinvoicingsummaryglobalRebateamount));
 
         return $this;
     }
@@ -921,7 +921,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalRebatepercent()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalRebatepercent'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalRebatepercent']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalRebatepercent']);
     }
 
     /**
@@ -946,7 +946,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalRebatepercent'] = $dEzmaxinvoicingsummaryglobalRebatepercent;
-        $this->container['dEzmaxinvoicingsummaryglobalRebatepercent'] = (is_null($dEzmaxinvoicingsummaryglobalRebatepercent) ? null : (string) $dEzmaxinvoicingsummaryglobalRebatepercent);
+        $this->container['dEzmaxinvoicingsummaryglobalRebatepercent'] = (is_null($dEzmaxinvoicingsummaryglobalRebatepercent) ? null : trim((string) $dEzmaxinvoicingsummaryglobalRebatepercent));
 
         return $this;
     }
@@ -958,7 +958,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalRebatetotal()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalRebatetotal'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalRebatetotal']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalRebatetotal']);
     }
 
     /**
@@ -983,7 +983,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalRebatetotal'] = $dEzmaxinvoicingsummaryglobalRebatetotal;
-        $this->container['dEzmaxinvoicingsummaryglobalRebatetotal'] = (is_null($dEzmaxinvoicingsummaryglobalRebatetotal) ? null : (string) $dEzmaxinvoicingsummaryglobalRebatetotal);
+        $this->container['dEzmaxinvoicingsummaryglobalRebatetotal'] = (is_null($dEzmaxinvoicingsummaryglobalRebatetotal) ? null : trim((string) $dEzmaxinvoicingsummaryglobalRebatetotal));
 
         return $this;
     }
@@ -995,7 +995,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalTotal()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalTotal'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalTotal']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalTotal']);
     }
 
     /**
@@ -1020,7 +1020,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalTotal'] = $dEzmaxinvoicingsummaryglobalTotal;
-        $this->container['dEzmaxinvoicingsummaryglobalTotal'] = (is_null($dEzmaxinvoicingsummaryglobalTotal) ? null : (string) $dEzmaxinvoicingsummaryglobalTotal);
+        $this->container['dEzmaxinvoicingsummaryglobalTotal'] = (is_null($dEzmaxinvoicingsummaryglobalTotal) ? null : trim((string) $dEzmaxinvoicingsummaryglobalTotal));
 
         return $this;
     }
@@ -1032,7 +1032,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalRepresentative()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalRepresentative'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalRepresentative']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalRepresentative']);
     }
 
     /**
@@ -1057,7 +1057,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalRepresentative'] = $dEzmaxinvoicingsummaryglobalRepresentative;
-        $this->container['dEzmaxinvoicingsummaryglobalRepresentative'] = (is_null($dEzmaxinvoicingsummaryglobalRepresentative) ? null : (string) $dEzmaxinvoicingsummaryglobalRepresentative);
+        $this->container['dEzmaxinvoicingsummaryglobalRepresentative'] = (is_null($dEzmaxinvoicingsummaryglobalRepresentative) ? null : trim((string) $dEzmaxinvoicingsummaryglobalRepresentative));
 
         return $this;
     }
@@ -1069,7 +1069,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalPartner()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalPartner'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalPartner']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalPartner']);
     }
 
     /**
@@ -1094,7 +1094,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalPartner'] = $dEzmaxinvoicingsummaryglobalPartner;
-        $this->container['dEzmaxinvoicingsummaryglobalPartner'] = (is_null($dEzmaxinvoicingsummaryglobalPartner) ? null : (string) $dEzmaxinvoicingsummaryglobalPartner);
+        $this->container['dEzmaxinvoicingsummaryglobalPartner'] = (is_null($dEzmaxinvoicingsummaryglobalPartner) ? null : trim((string) $dEzmaxinvoicingsummaryglobalPartner));
 
         return $this;
     }
@@ -1106,7 +1106,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getDEzmaxinvoicingsummaryglobalNet()
     {
-        return $this->container['dEzmaxinvoicingsummaryglobalNet'];
+        return is_null($this->container['dEzmaxinvoicingsummaryglobalNet']) ? null : trim($this->container['dEzmaxinvoicingsummaryglobalNet']);
     }
 
     /**
@@ -1131,7 +1131,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryglobalNet'] = $dEzmaxinvoicingsummaryglobalNet;
-        $this->container['dEzmaxinvoicingsummaryglobalNet'] = (is_null($dEzmaxinvoicingsummaryglobalNet) ? null : (string) $dEzmaxinvoicingsummaryglobalNet);
+        $this->container['dEzmaxinvoicingsummaryglobalNet'] = (is_null($dEzmaxinvoicingsummaryglobalNet) ? null : trim((string) $dEzmaxinvoicingsummaryglobalNet));
 
         return $this;
     }
@@ -1174,7 +1174,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
      */
     public function getTEzmaxproductHelpX()
     {
-        return $this->container['tEzmaxproductHelpX'];
+        return is_null($this->container['tEzmaxproductHelpX']) ? null : trim($this->container['tEzmaxproductHelpX']);
     }
 
     /**
@@ -1193,7 +1193,7 @@ class EzmaxinvoicingsummaryglobalResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzmaxproductHelpX'] = $tEzmaxproductHelpX;
-        $this->container['tEzmaxproductHelpX'] = (is_null($tEzmaxproductHelpX) ? null : (string) $tEzmaxproductHelpX);
+        $this->container['tEzmaxproductHelpX'] = (is_null($tEzmaxproductHelpX) ? null : trim((string) $tEzmaxproductHelpX));
 
         return $this;
     }

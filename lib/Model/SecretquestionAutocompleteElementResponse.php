@@ -325,7 +325,7 @@ class SecretquestionAutocompleteElementResponse implements ModelInterface, Array
      */
     public function getSSecretquestionTextX()
     {
-        return $this->container['sSecretquestionTextX'];
+        return is_null($this->container['sSecretquestionTextX']) ? null : trim($this->container['sSecretquestionTextX']);
     }
 
     /**
@@ -344,7 +344,7 @@ class SecretquestionAutocompleteElementResponse implements ModelInterface, Array
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSecretquestionTextX'] = $sSecretquestionTextX;
-        $this->container['sSecretquestionTextX'] = (is_null($sSecretquestionTextX) ? null : (string) $sSecretquestionTextX);
+        $this->container['sSecretquestionTextX'] = (is_null($sSecretquestionTextX) ? null : trim((string) $sSecretquestionTextX));
 
         return $this;
     }
@@ -362,7 +362,7 @@ class SecretquestionAutocompleteElementResponse implements ModelInterface, Array
     /**
      * Sets pkiSecretquestionID
      *
-     * @param int $pkiSecretquestionID The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father's middle name| |15|Your mother's maiden name| |16|Name of your eldest child| |17|Your spouse's middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat's name| |22|Date of Birth (YYYY-MM-DD)|
+     * @param int $pkiSecretquestionID The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father's middle name| |15|Your mother's maiden name| |16|Name of your eldest child| |17|Your spouse's middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat's name| |22|Date of Birth (YYYY-MM-DD)| |22|Secret Code| |22|Your reference code|
      *
      * @return self
      */

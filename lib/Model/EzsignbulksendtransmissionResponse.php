@@ -427,7 +427,7 @@ class EzsignbulksendtransmissionResponse implements ModelInterface, ArrayAccess,
      */
     public function getSEzsignbulksendtransmissionDescription()
     {
-        return $this->container['sEzsignbulksendtransmissionDescription'];
+        return is_null($this->container['sEzsignbulksendtransmissionDescription']) ? null : trim($this->container['sEzsignbulksendtransmissionDescription']);
     }
 
     /**
@@ -446,7 +446,7 @@ class EzsignbulksendtransmissionResponse implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignbulksendtransmissionDescription'] = $sEzsignbulksendtransmissionDescription;
-        $this->container['sEzsignbulksendtransmissionDescription'] = (is_null($sEzsignbulksendtransmissionDescription) ? null : (string) $sEzsignbulksendtransmissionDescription);
+        $this->container['sEzsignbulksendtransmissionDescription'] = (is_null($sEzsignbulksendtransmissionDescription) ? null : trim((string) $sEzsignbulksendtransmissionDescription));
 
         return $this;
     }

@@ -388,7 +388,7 @@ class VariableexpenseListElement implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getSVariableexpenseCode()
     {
-        return $this->container['sVariableexpenseCode'];
+        return is_null($this->container['sVariableexpenseCode']) ? null : trim($this->container['sVariableexpenseCode']);
     }
 
     /**
@@ -413,7 +413,7 @@ class VariableexpenseListElement implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sVariableexpenseCode'] = $sVariableexpenseCode;
-        $this->container['sVariableexpenseCode'] = (is_null($sVariableexpenseCode) ? null : (string) $sVariableexpenseCode);
+        $this->container['sVariableexpenseCode'] = (is_null($sVariableexpenseCode) ? null : trim((string) $sVariableexpenseCode));
 
         return $this;
     }
@@ -425,7 +425,7 @@ class VariableexpenseListElement implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getSVariableexpenseDescriptionX()
     {
-        return $this->container['sVariableexpenseDescriptionX'];
+        return is_null($this->container['sVariableexpenseDescriptionX']) ? null : trim($this->container['sVariableexpenseDescriptionX']);
     }
 
     /**
@@ -450,7 +450,7 @@ class VariableexpenseListElement implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sVariableexpenseDescriptionX'] = $sVariableexpenseDescriptionX;
-        $this->container['sVariableexpenseDescriptionX'] = (is_null($sVariableexpenseDescriptionX) ? null : (string) $sVariableexpenseDescriptionX);
+        $this->container['sVariableexpenseDescriptionX'] = (is_null($sVariableexpenseDescriptionX) ? null : trim((string) $sVariableexpenseDescriptionX));
 
         return $this;
     }

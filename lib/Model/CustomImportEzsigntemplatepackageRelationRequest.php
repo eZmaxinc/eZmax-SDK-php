@@ -397,7 +397,7 @@ class CustomImportEzsigntemplatepackageRelationRequest implements ModelInterface
      */
     public function getSEzsigntemplatepackagesignerDescription()
     {
-        return $this->container['sEzsigntemplatepackagesignerDescription'];
+        return is_null($this->container['sEzsigntemplatepackagesignerDescription']) ? null : trim($this->container['sEzsigntemplatepackagesignerDescription']);
     }
 
     /**
@@ -416,7 +416,7 @@ class CustomImportEzsigntemplatepackageRelationRequest implements ModelInterface
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatepackagesignerDescription'] = $sEzsigntemplatepackagesignerDescription;
-        $this->container['sEzsigntemplatepackagesignerDescription'] = (is_null($sEzsigntemplatepackagesignerDescription) ? null : (string) $sEzsigntemplatepackagesignerDescription);
+        $this->container['sEzsigntemplatepackagesignerDescription'] = (is_null($sEzsigntemplatepackagesignerDescription) ? null : trim((string) $sEzsigntemplatepackagesignerDescription));
 
         return $this;
     }

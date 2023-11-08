@@ -631,7 +631,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
      */
     public function getSEzsignformfieldgroupLabel()
     {
-        return $this->container['sEzsignformfieldgroupLabel'];
+        return is_null($this->container['sEzsignformfieldgroupLabel']) ? null : trim($this->container['sEzsignformfieldgroupLabel']);
     }
 
     /**
@@ -659,7 +659,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldgroupLabel'] = $sEzsignformfieldgroupLabel;
-        $this->container['sEzsignformfieldgroupLabel'] = (is_null($sEzsignformfieldgroupLabel) ? null : (string) $sEzsignformfieldgroupLabel);
+        $this->container['sEzsignformfieldgroupLabel'] = (is_null($sEzsignformfieldgroupLabel) ? null : trim((string) $sEzsignformfieldgroupLabel));
 
         return $this;
     }
@@ -708,7 +708,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
      */
     public function getSEzsignformfieldgroupDefaultvalue()
     {
-        return $this->container['sEzsignformfieldgroupDefaultvalue'];
+        return is_null($this->container['sEzsignformfieldgroupDefaultvalue']) ? null : trim($this->container['sEzsignformfieldgroupDefaultvalue']);
     }
 
     /**
@@ -727,7 +727,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldgroupDefaultvalue'] = $sEzsignformfieldgroupDefaultvalue;
-        $this->container['sEzsignformfieldgroupDefaultvalue'] = (is_null($sEzsignformfieldgroupDefaultvalue) ? null : (string) $sEzsignformfieldgroupDefaultvalue);
+        $this->container['sEzsignformfieldgroupDefaultvalue'] = (is_null($sEzsignformfieldgroupDefaultvalue) ? null : trim((string) $sEzsignformfieldgroupDefaultvalue));
 
         return $this;
     }
@@ -916,7 +916,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
      */
     public function getSEzsignformfieldgroupRegexp()
     {
-        return $this->container['sEzsignformfieldgroupRegexp'];
+        return is_null($this->container['sEzsignformfieldgroupRegexp']) ? null : trim($this->container['sEzsignformfieldgroupRegexp']);
     }
 
     /**
@@ -941,7 +941,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldgroupRegexp'] = $sEzsignformfieldgroupRegexp;
-        $this->container['sEzsignformfieldgroupRegexp'] = (is_null($sEzsignformfieldgroupRegexp) ? null : (string) $sEzsignformfieldgroupRegexp);
+        $this->container['sEzsignformfieldgroupRegexp'] = (is_null($sEzsignformfieldgroupRegexp) ? null : trim((string) $sEzsignformfieldgroupRegexp));
 
         return $this;
     }
@@ -953,7 +953,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
      */
     public function getTEzsignformfieldgroupTooltip()
     {
-        return $this->container['tEzsignformfieldgroupTooltip'];
+        return is_null($this->container['tEzsignformfieldgroupTooltip']) ? null : trim($this->container['tEzsignformfieldgroupTooltip']);
     }
 
     /**
@@ -972,7 +972,7 @@ class EzsignformfieldgroupRequestCompound implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignformfieldgroupTooltip'] = $tEzsignformfieldgroupTooltip;
-        $this->container['tEzsignformfieldgroupTooltip'] = (is_null($tEzsignformfieldgroupTooltip) ? null : (string) $tEzsignformfieldgroupTooltip);
+        $this->container['tEzsignformfieldgroupTooltip'] = (is_null($tEzsignformfieldgroupTooltip) ? null : trim((string) $tEzsignformfieldgroupTooltip));
 
         return $this;
     }

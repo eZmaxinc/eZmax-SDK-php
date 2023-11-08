@@ -333,7 +333,7 @@ class WebsocketResponseErrorV1 implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getEWebsocketMessagetype()
     {
-        return $this->container['eWebsocketMessagetype'];
+        return is_null($this->container['eWebsocketMessagetype']) ? null : trim($this->container['eWebsocketMessagetype']);
     }
 
     /**
@@ -362,7 +362,7 @@ class WebsocketResponseErrorV1 implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eWebsocketMessagetype'] = $eWebsocketMessagetype;
-        $this->container['eWebsocketMessagetype'] = (is_null($eWebsocketMessagetype) ? null : (string) $eWebsocketMessagetype);
+        $this->container['eWebsocketMessagetype'] = (is_null($eWebsocketMessagetype) ? null : trim((string) $eWebsocketMessagetype));
 
         return $this;
     }

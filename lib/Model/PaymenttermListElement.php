@@ -400,7 +400,7 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSPaymenttermCode()
     {
-        return $this->container['sPaymenttermCode'];
+        return is_null($this->container['sPaymenttermCode']) ? null : trim($this->container['sPaymenttermCode']);
     }
 
     /**
@@ -425,7 +425,7 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermCode'] = $sPaymenttermCode;
-        $this->container['sPaymenttermCode'] = (is_null($sPaymenttermCode) ? null : (string) $sPaymenttermCode);
+        $this->container['sPaymenttermCode'] = (is_null($sPaymenttermCode) ? null : trim((string) $sPaymenttermCode));
 
         return $this;
     }
@@ -509,7 +509,7 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSPaymenttermDescriptionX()
     {
-        return $this->container['sPaymenttermDescriptionX'];
+        return is_null($this->container['sPaymenttermDescriptionX']) ? null : trim($this->container['sPaymenttermDescriptionX']);
     }
 
     /**
@@ -534,7 +534,7 @@ class PaymenttermListElement implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermDescriptionX'] = $sPaymenttermDescriptionX;
-        $this->container['sPaymenttermDescriptionX'] = (is_null($sPaymenttermDescriptionX) ? null : (string) $sPaymenttermDescriptionX);
+        $this->container['sPaymenttermDescriptionX'] = (is_null($sPaymenttermDescriptionX) ? null : trim((string) $sPaymenttermDescriptionX));
 
         return $this;
     }

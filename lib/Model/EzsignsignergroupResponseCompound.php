@@ -398,7 +398,7 @@ class EzsignsignergroupResponseCompound implements ModelInterface, ArrayAccess, 
      */
     public function getSEzsignsignergroupDescriptionX()
     {
-        return $this->container['sEzsignsignergroupDescriptionX'];
+        return is_null($this->container['sEzsignsignergroupDescriptionX']) ? null : trim($this->container['sEzsignsignergroupDescriptionX']);
     }
 
     /**
@@ -417,7 +417,7 @@ class EzsignsignergroupResponseCompound implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignergroupDescriptionX'] = $sEzsignsignergroupDescriptionX;
-        $this->container['sEzsignsignergroupDescriptionX'] = (is_null($sEzsignsignergroupDescriptionX) ? null : (string) $sEzsignsignergroupDescriptionX);
+        $this->container['sEzsignsignergroupDescriptionX'] = (is_null($sEzsignsignergroupDescriptionX) ? null : trim((string) $sEzsignsignergroupDescriptionX));
 
         return $this;
     }

@@ -593,7 +593,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      */
     public function getDFranchisereferalincomeLoan()
     {
-        return $this->container['dFranchisereferalincomeLoan'];
+        return is_null($this->container['dFranchisereferalincomeLoan']) ? null : trim($this->container['dFranchisereferalincomeLoan']);
     }
 
     /**
@@ -612,7 +612,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dFranchisereferalincomeLoan'] = $dFranchisereferalincomeLoan;
-        $this->container['dFranchisereferalincomeLoan'] = (is_null($dFranchisereferalincomeLoan) ? null : (string) $dFranchisereferalincomeLoan);
+        $this->container['dFranchisereferalincomeLoan'] = (is_null($dFranchisereferalincomeLoan) ? null : trim((string) $dFranchisereferalincomeLoan));
 
         return $this;
     }
@@ -624,7 +624,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      */
     public function getDFranchisereferalincomeFranchiseamount()
     {
-        return $this->container['dFranchisereferalincomeFranchiseamount'];
+        return is_null($this->container['dFranchisereferalincomeFranchiseamount']) ? null : trim($this->container['dFranchisereferalincomeFranchiseamount']);
     }
 
     /**
@@ -643,7 +643,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dFranchisereferalincomeFranchiseamount'] = $dFranchisereferalincomeFranchiseamount;
-        $this->container['dFranchisereferalincomeFranchiseamount'] = (is_null($dFranchisereferalincomeFranchiseamount) ? null : (string) $dFranchisereferalincomeFranchiseamount);
+        $this->container['dFranchisereferalincomeFranchiseamount'] = (is_null($dFranchisereferalincomeFranchiseamount) ? null : trim((string) $dFranchisereferalincomeFranchiseamount));
 
         return $this;
     }
@@ -655,7 +655,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      */
     public function getDFranchisereferalincomeFranchisoramount()
     {
-        return $this->container['dFranchisereferalincomeFranchisoramount'];
+        return is_null($this->container['dFranchisereferalincomeFranchisoramount']) ? null : trim($this->container['dFranchisereferalincomeFranchisoramount']);
     }
 
     /**
@@ -674,7 +674,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dFranchisereferalincomeFranchisoramount'] = $dFranchisereferalincomeFranchisoramount;
-        $this->container['dFranchisereferalincomeFranchisoramount'] = (is_null($dFranchisereferalincomeFranchisoramount) ? null : (string) $dFranchisereferalincomeFranchisoramount);
+        $this->container['dFranchisereferalincomeFranchisoramount'] = (is_null($dFranchisereferalincomeFranchisoramount) ? null : trim((string) $dFranchisereferalincomeFranchisoramount));
 
         return $this;
     }
@@ -686,7 +686,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      */
     public function getDFranchisereferalincomeAgentamount()
     {
-        return $this->container['dFranchisereferalincomeAgentamount'];
+        return is_null($this->container['dFranchisereferalincomeAgentamount']) ? null : trim($this->container['dFranchisereferalincomeAgentamount']);
     }
 
     /**
@@ -705,7 +705,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dFranchisereferalincomeAgentamount'] = $dFranchisereferalincomeAgentamount;
-        $this->container['dFranchisereferalincomeAgentamount'] = (is_null($dFranchisereferalincomeAgentamount) ? null : (string) $dFranchisereferalincomeAgentamount);
+        $this->container['dFranchisereferalincomeAgentamount'] = (is_null($dFranchisereferalincomeAgentamount) ? null : trim((string) $dFranchisereferalincomeAgentamount));
 
         return $this;
     }
@@ -717,7 +717,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      */
     public function getDtFranchisereferalincomeDisbursed()
     {
-        return $this->container['dtFranchisereferalincomeDisbursed'];
+        return is_null($this->container['dtFranchisereferalincomeDisbursed']) ? null : trim($this->container['dtFranchisereferalincomeDisbursed']);
     }
 
     /**
@@ -736,7 +736,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtFranchisereferalincomeDisbursed'] = $dtFranchisereferalincomeDisbursed;
-        $this->container['dtFranchisereferalincomeDisbursed'] = (is_null($dtFranchisereferalincomeDisbursed) ? null : (string) $dtFranchisereferalincomeDisbursed);
+        $this->container['dtFranchisereferalincomeDisbursed'] = (is_null($dtFranchisereferalincomeDisbursed) ? null : trim((string) $dtFranchisereferalincomeDisbursed));
 
         return $this;
     }
@@ -748,7 +748,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      */
     public function getTFranchisereferalincomeComment()
     {
-        return $this->container['tFranchisereferalincomeComment'];
+        return is_null($this->container['tFranchisereferalincomeComment']) ? null : trim($this->container['tFranchisereferalincomeComment']);
     }
 
     /**
@@ -767,7 +767,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tFranchisereferalincomeComment'] = $tFranchisereferalincomeComment;
-        $this->container['tFranchisereferalincomeComment'] = (is_null($tFranchisereferalincomeComment) ? null : (string) $tFranchisereferalincomeComment);
+        $this->container['tFranchisereferalincomeComment'] = (is_null($tFranchisereferalincomeComment) ? null : trim((string) $tFranchisereferalincomeComment));
 
         return $this;
     }
@@ -816,7 +816,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
      */
     public function getSFranchisereferalincomeRemoteid()
     {
-        return $this->container['sFranchisereferalincomeRemoteid'];
+        return is_null($this->container['sFranchisereferalincomeRemoteid']) ? null : trim($this->container['sFranchisereferalincomeRemoteid']);
     }
 
     /**
@@ -835,7 +835,7 @@ class FranchisereferalincomeRequestCompound implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sFranchisereferalincomeRemoteid'] = $sFranchisereferalincomeRemoteid;
-        $this->container['sFranchisereferalincomeRemoteid'] = (is_null($sFranchisereferalincomeRemoteid) ? null : (string) $sFranchisereferalincomeRemoteid);
+        $this->container['sFranchisereferalincomeRemoteid'] = (is_null($sFranchisereferalincomeRemoteid) ? null : trim((string) $sFranchisereferalincomeRemoteid));
 
         return $this;
     }

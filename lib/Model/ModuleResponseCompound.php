@@ -448,7 +448,7 @@ class ModuleResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getEModuleInternalname()
     {
-        return $this->container['eModuleInternalname'];
+        return is_null($this->container['eModuleInternalname']) ? null : trim($this->container['eModuleInternalname']);
     }
 
     /**
@@ -467,7 +467,7 @@ class ModuleResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eModuleInternalname'] = $eModuleInternalname;
-        $this->container['eModuleInternalname'] = (is_null($eModuleInternalname) ? null : (string) $eModuleInternalname);
+        $this->container['eModuleInternalname'] = (is_null($eModuleInternalname) ? null : trim((string) $eModuleInternalname));
 
         return $this;
     }
@@ -479,7 +479,7 @@ class ModuleResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSModuleNameX()
     {
-        return $this->container['sModuleNameX'];
+        return is_null($this->container['sModuleNameX']) ? null : trim($this->container['sModuleNameX']);
     }
 
     /**
@@ -498,7 +498,7 @@ class ModuleResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sModuleNameX'] = $sModuleNameX;
-        $this->container['sModuleNameX'] = (is_null($sModuleNameX) ? null : (string) $sModuleNameX);
+        $this->container['sModuleNameX'] = (is_null($sModuleNameX) ? null : trim((string) $sModuleNameX));
 
         return $this;
     }

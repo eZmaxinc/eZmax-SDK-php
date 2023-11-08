@@ -941,7 +941,7 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
      */
     public function getTEzsigntemplatesignatureTooltip()
     {
-        return $this->container['tEzsigntemplatesignatureTooltip'];
+        return is_null($this->container['tEzsigntemplatesignatureTooltip']) ? null : trim($this->container['tEzsigntemplatesignatureTooltip']);
     }
 
     /**
@@ -960,7 +960,7 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsigntemplatesignatureTooltip'] = $tEzsigntemplatesignatureTooltip;
-        $this->container['tEzsigntemplatesignatureTooltip'] = (is_null($tEzsigntemplatesignatureTooltip) ? null : (string) $tEzsigntemplatesignatureTooltip);
+        $this->container['tEzsigntemplatesignatureTooltip'] = (is_null($tEzsigntemplatesignatureTooltip) ? null : trim((string) $tEzsigntemplatesignatureTooltip));
 
         return $this;
     }
@@ -1096,7 +1096,7 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
      */
     public function getSEzsigntemplatesignatureAttachmentdescription()
     {
-        return $this->container['sEzsigntemplatesignatureAttachmentdescription'];
+        return is_null($this->container['sEzsigntemplatesignatureAttachmentdescription']) ? null : trim($this->container['sEzsigntemplatesignatureAttachmentdescription']);
     }
 
     /**
@@ -1115,7 +1115,7 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatesignatureAttachmentdescription'] = $sEzsigntemplatesignatureAttachmentdescription;
-        $this->container['sEzsigntemplatesignatureAttachmentdescription'] = (is_null($sEzsigntemplatesignatureAttachmentdescription) ? null : (string) $sEzsigntemplatesignatureAttachmentdescription);
+        $this->container['sEzsigntemplatesignatureAttachmentdescription'] = (is_null($sEzsigntemplatesignatureAttachmentdescription) ? null : trim((string) $sEzsigntemplatesignatureAttachmentdescription));
 
         return $this;
     }
@@ -1199,7 +1199,7 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
      */
     public function getSEzsigntemplatesignatureRegexp()
     {
-        return $this->container['sEzsigntemplatesignatureRegexp'];
+        return is_null($this->container['sEzsigntemplatesignatureRegexp']) ? null : trim($this->container['sEzsigntemplatesignatureRegexp']);
     }
 
     /**
@@ -1224,7 +1224,7 @@ class EzsigntemplatesignatureRequestCompound implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatesignatureRegexp'] = $sEzsigntemplatesignatureRegexp;
-        $this->container['sEzsigntemplatesignatureRegexp'] = (is_null($sEzsigntemplatesignatureRegexp) ? null : (string) $sEzsigntemplatesignatureRegexp);
+        $this->container['sEzsigntemplatesignatureRegexp'] = (is_null($sEzsigntemplatesignatureRegexp) ? null : trim((string) $sEzsigntemplatesignatureRegexp));
 
         return $this;
     }

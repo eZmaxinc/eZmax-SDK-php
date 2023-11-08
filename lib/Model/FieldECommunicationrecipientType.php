@@ -34,7 +34,7 @@ use \eZmaxAPI\ObjectSerializer;
  * FieldECommunicationrecipientType Class Doc Comment
  *
  * @category Class
- * @description The type for the Communicationrecipient
+ * @description The type for the Communicationrecipient.  Only used when eCommunicationType is **Email**
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

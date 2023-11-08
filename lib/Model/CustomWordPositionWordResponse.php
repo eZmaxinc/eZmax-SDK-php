@@ -311,7 +311,7 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
      */
     public function getSWord()
     {
-        return $this->container['sWord'];
+        return is_null($this->container['sWord']) ? null : trim($this->container['sWord']);
     }
 
     /**
@@ -330,7 +330,7 @@ class CustomWordPositionWordResponse implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWord'] = $sWord;
-        $this->container['sWord'] = (is_null($sWord) ? null : (string) $sWord);
+        $this->container['sWord'] = (is_null($sWord) ? null : trim((string) $sWord));
 
         return $this;
     }

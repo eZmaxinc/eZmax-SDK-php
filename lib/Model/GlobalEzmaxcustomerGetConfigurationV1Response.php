@@ -338,7 +338,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
      */
     public function getSInfrastructureregionCode()
     {
-        return $this->container['sInfrastructureregionCode'];
+        return is_null($this->container['sInfrastructureregionCode']) ? null : trim($this->container['sInfrastructureregionCode']);
     }
 
     /**
@@ -357,7 +357,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sInfrastructureregionCode'] = $sInfrastructureregionCode;
-        $this->container['sInfrastructureregionCode'] = (is_null($sInfrastructureregionCode) ? null : (string) $sInfrastructureregionCode);
+        $this->container['sInfrastructureregionCode'] = (is_null($sInfrastructureregionCode) ? null : trim((string) $sInfrastructureregionCode));
 
         return $this;
     }
@@ -369,7 +369,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
      */
     public function getSInfrastructureregionCodeWeb()
     {
-        return $this->container['sInfrastructureregionCodeWeb'];
+        return is_null($this->container['sInfrastructureregionCodeWeb']) ? null : trim($this->container['sInfrastructureregionCodeWeb']);
     }
 
     /**
@@ -388,7 +388,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sInfrastructureregionCodeWeb'] = $sInfrastructureregionCodeWeb;
-        $this->container['sInfrastructureregionCodeWeb'] = (is_null($sInfrastructureregionCodeWeb) ? null : (string) $sInfrastructureregionCodeWeb);
+        $this->container['sInfrastructureregionCodeWeb'] = (is_null($sInfrastructureregionCodeWeb) ? null : trim((string) $sInfrastructureregionCodeWeb));
 
         return $this;
     }
@@ -400,7 +400,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
      */
     public function getSInfrastructureenvironmenttypeDescription()
     {
-        return $this->container['sInfrastructureenvironmenttypeDescription'];
+        return is_null($this->container['sInfrastructureenvironmenttypeDescription']) ? null : trim($this->container['sInfrastructureenvironmenttypeDescription']);
     }
 
     /**
@@ -419,7 +419,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sInfrastructureenvironmenttypeDescription'] = $sInfrastructureenvironmenttypeDescription;
-        $this->container['sInfrastructureenvironmenttypeDescription'] = (is_null($sInfrastructureenvironmenttypeDescription) ? null : (string) $sInfrastructureenvironmenttypeDescription);
+        $this->container['sInfrastructureenvironmenttypeDescription'] = (is_null($sInfrastructureenvironmenttypeDescription) ? null : trim((string) $sInfrastructureenvironmenttypeDescription));
 
         return $this;
     }
@@ -431,7 +431,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
      */
     public function getSCognitoClientIDExternal()
     {
-        return $this->container['sCognitoClientIDExternal'];
+        return is_null($this->container['sCognitoClientIDExternal']) ? null : trim($this->container['sCognitoClientIDExternal']);
     }
 
     /**
@@ -450,7 +450,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCognitoClientIDExternal'] = $sCognitoClientIDExternal;
-        $this->container['sCognitoClientIDExternal'] = (is_null($sCognitoClientIDExternal) ? null : (string) $sCognitoClientIDExternal);
+        $this->container['sCognitoClientIDExternal'] = (is_null($sCognitoClientIDExternal) ? null : trim((string) $sCognitoClientIDExternal));
 
         return $this;
     }
@@ -462,7 +462,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
      */
     public function getSCognitoClientIDEzmaxpublic()
     {
-        return $this->container['sCognitoClientIDEzmaxpublic'];
+        return is_null($this->container['sCognitoClientIDEzmaxpublic']) ? null : trim($this->container['sCognitoClientIDEzmaxpublic']);
     }
 
     /**
@@ -481,7 +481,7 @@ class GlobalEzmaxcustomerGetConfigurationV1Response implements ModelInterface, A
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCognitoClientIDEzmaxpublic'] = $sCognitoClientIDEzmaxpublic;
-        $this->container['sCognitoClientIDEzmaxpublic'] = (is_null($sCognitoClientIDEzmaxpublic) ? null : (string) $sCognitoClientIDEzmaxpublic);
+        $this->container['sCognitoClientIDEzmaxpublic'] = (is_null($sCognitoClientIDEzmaxpublic) ? null : trim((string) $sCognitoClientIDEzmaxpublic));
 
         return $this;
     }

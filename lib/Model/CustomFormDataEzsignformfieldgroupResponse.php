@@ -319,7 +319,7 @@ class CustomFormDataEzsignformfieldgroupResponse implements ModelInterface, Arra
      */
     public function getSEzsignformfieldgroupLabel()
     {
-        return $this->container['sEzsignformfieldgroupLabel'];
+        return is_null($this->container['sEzsignformfieldgroupLabel']) ? null : trim($this->container['sEzsignformfieldgroupLabel']);
     }
 
     /**
@@ -347,7 +347,7 @@ class CustomFormDataEzsignformfieldgroupResponse implements ModelInterface, Arra
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldgroupLabel'] = $sEzsignformfieldgroupLabel;
-        $this->container['sEzsignformfieldgroupLabel'] = (is_null($sEzsignformfieldgroupLabel) ? null : (string) $sEzsignformfieldgroupLabel);
+        $this->container['sEzsignformfieldgroupLabel'] = (is_null($sEzsignformfieldgroupLabel) ? null : trim((string) $sEzsignformfieldgroupLabel));
 
         return $this;
     }

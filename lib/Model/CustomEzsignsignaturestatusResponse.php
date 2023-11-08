@@ -355,7 +355,7 @@ class CustomEzsignsignaturestatusResponse implements ModelInterface, ArrayAccess
      */
     public function getEEzsignsignaturestatusSteptype()
     {
-        return $this->container['eEzsignsignaturestatusSteptype'];
+        return is_null($this->container['eEzsignsignaturestatusSteptype']) ? null : trim($this->container['eEzsignsignaturestatusSteptype']);
     }
 
     /**
@@ -384,7 +384,7 @@ class CustomEzsignsignaturestatusResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsignsignaturestatusSteptype'] = $eEzsignsignaturestatusSteptype;
-        $this->container['eEzsignsignaturestatusSteptype'] = (is_null($eEzsignsignaturestatusSteptype) ? null : (string) $eEzsignsignaturestatusSteptype);
+        $this->container['eEzsignsignaturestatusSteptype'] = (is_null($eEzsignsignaturestatusSteptype) ? null : trim((string) $eEzsignsignaturestatusSteptype));
 
         return $this;
     }

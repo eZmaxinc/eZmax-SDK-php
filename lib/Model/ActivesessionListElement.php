@@ -642,7 +642,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getSCompanyNameX()
     {
-        return $this->container['sCompanyNameX'];
+        return is_null($this->container['sCompanyNameX']) ? null : trim($this->container['sCompanyNameX']);
     }
 
     /**
@@ -661,7 +661,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCompanyNameX'] = $sCompanyNameX;
-        $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : (string) $sCompanyNameX);
+        $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : trim((string) $sCompanyNameX));
 
         return $this;
     }
@@ -673,7 +673,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getSDepartmentNameX()
     {
-        return $this->container['sDepartmentNameX'];
+        return is_null($this->container['sDepartmentNameX']) ? null : trim($this->container['sDepartmentNameX']);
     }
 
     /**
@@ -692,7 +692,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sDepartmentNameX'] = $sDepartmentNameX;
-        $this->container['sDepartmentNameX'] = (is_null($sDepartmentNameX) ? null : (string) $sDepartmentNameX);
+        $this->container['sDepartmentNameX'] = (is_null($sDepartmentNameX) ? null : trim((string) $sDepartmentNameX));
 
         return $this;
     }
@@ -704,7 +704,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getSActivesessionLoginname()
     {
-        return $this->container['sActivesessionLoginname'];
+        return is_null($this->container['sActivesessionLoginname']) ? null : trim($this->container['sActivesessionLoginname']);
     }
 
     /**
@@ -729,7 +729,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sActivesessionLoginname'] = $sActivesessionLoginname;
-        $this->container['sActivesessionLoginname'] = (is_null($sActivesessionLoginname) ? null : (string) $sActivesessionLoginname);
+        $this->container['sActivesessionLoginname'] = (is_null($sActivesessionLoginname) ? null : trim((string) $sActivesessionLoginname));
 
         return $this;
     }
@@ -741,7 +741,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getSComputerDescription()
     {
-        return $this->container['sComputerDescription'];
+        return is_null($this->container['sComputerDescription']) ? null : trim($this->container['sComputerDescription']);
     }
 
     /**
@@ -766,7 +766,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sComputerDescription'] = $sComputerDescription;
-        $this->container['sComputerDescription'] = (is_null($sComputerDescription) ? null : (string) $sComputerDescription);
+        $this->container['sComputerDescription'] = (is_null($sComputerDescription) ? null : trim((string) $sComputerDescription));
 
         return $this;
     }
@@ -778,7 +778,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getDtActivesessionFirsthit()
     {
-        return $this->container['dtActivesessionFirsthit'];
+        return is_null($this->container['dtActivesessionFirsthit']) ? null : trim($this->container['dtActivesessionFirsthit']);
     }
 
     /**
@@ -803,7 +803,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtActivesessionFirsthit'] = $dtActivesessionFirsthit;
-        $this->container['dtActivesessionFirsthit'] = (is_null($dtActivesessionFirsthit) ? null : (string) $dtActivesessionFirsthit);
+        $this->container['dtActivesessionFirsthit'] = (is_null($dtActivesessionFirsthit) ? null : trim((string) $dtActivesessionFirsthit));
 
         return $this;
     }
@@ -815,7 +815,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getDtActivesessionLasthit()
     {
-        return $this->container['dtActivesessionLasthit'];
+        return is_null($this->container['dtActivesessionLasthit']) ? null : trim($this->container['dtActivesessionLasthit']);
     }
 
     /**
@@ -840,7 +840,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtActivesessionLasthit'] = $dtActivesessionLasthit;
-        $this->container['dtActivesessionLasthit'] = (is_null($dtActivesessionLasthit) ? null : (string) $dtActivesessionLasthit);
+        $this->container['dtActivesessionLasthit'] = (is_null($dtActivesessionLasthit) ? null : trim((string) $dtActivesessionLasthit));
 
         return $this;
     }
@@ -852,7 +852,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getSActivesessionIP()
     {
-        return $this->container['sActivesessionIP'];
+        return is_null($this->container['sActivesessionIP']) ? null : trim($this->container['sActivesessionIP']);
     }
 
     /**
@@ -871,7 +871,7 @@ class ActivesessionListElement implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sActivesessionIP'] = $sActivesessionIP;
-        $this->container['sActivesessionIP'] = (is_null($sActivesessionIP) ? null : (string) $sActivesessionIP);
+        $this->container['sActivesessionIP'] = (is_null($sActivesessionIP) ? null : trim((string) $sActivesessionIP));
 
         return $this;
     }

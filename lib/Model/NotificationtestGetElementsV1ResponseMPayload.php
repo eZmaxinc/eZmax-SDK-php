@@ -372,7 +372,7 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
      */
     public function getSNotificationtestFunction()
     {
-        return $this->container['sNotificationtestFunction'];
+        return is_null($this->container['sNotificationtestFunction']) ? null : trim($this->container['sNotificationtestFunction']);
     }
 
     /**
@@ -391,7 +391,7 @@ class NotificationtestGetElementsV1ResponseMPayload implements ModelInterface, A
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sNotificationtestFunction'] = $sNotificationtestFunction;
-        $this->container['sNotificationtestFunction'] = (is_null($sNotificationtestFunction) ? null : (string) $sNotificationtestFunction);
+        $this->container['sNotificationtestFunction'] = (is_null($sNotificationtestFunction) ? null : trim((string) $sNotificationtestFunction));
 
         return $this;
     }

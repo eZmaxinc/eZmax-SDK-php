@@ -691,7 +691,7 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSSystemconfigurationtypeDescriptionX()
     {
-        return $this->container['sSystemconfigurationtypeDescriptionX'];
+        return is_null($this->container['sSystemconfigurationtypeDescriptionX']) ? null : trim($this->container['sSystemconfigurationtypeDescriptionX']);
     }
 
     /**
@@ -710,7 +710,7 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSystemconfigurationtypeDescriptionX'] = $sSystemconfigurationtypeDescriptionX;
-        $this->container['sSystemconfigurationtypeDescriptionX'] = (is_null($sSystemconfigurationtypeDescriptionX) ? null : (string) $sSystemconfigurationtypeDescriptionX);
+        $this->container['sSystemconfigurationtypeDescriptionX'] = (is_null($sSystemconfigurationtypeDescriptionX) ? null : trim((string) $sSystemconfigurationtypeDescriptionX));
 
         return $this;
     }
@@ -722,7 +722,7 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getYyyymmEzmaxinvoicing()
     {
-        return $this->container['yyyymmEzmaxinvoicing'];
+        return is_null($this->container['yyyymmEzmaxinvoicing']) ? null : trim($this->container['yyyymmEzmaxinvoicing']);
     }
 
     /**
@@ -746,7 +746,7 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['yyyymmEzmaxinvoicing'] = $yyyymmEzmaxinvoicing;
-        $this->container['yyyymmEzmaxinvoicing'] = (is_null($yyyymmEzmaxinvoicing) ? null : (string) $yyyymmEzmaxinvoicing);
+        $this->container['yyyymmEzmaxinvoicing'] = (is_null($yyyymmEzmaxinvoicing) ? null : trim((string) $yyyymmEzmaxinvoicing));
 
         return $this;
     }
@@ -826,7 +826,7 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getDEzmaxinvoicingRebatepaymenttype()
     {
-        return $this->container['dEzmaxinvoicingRebatepaymenttype'];
+        return is_null($this->container['dEzmaxinvoicingRebatepaymenttype']) ? null : trim($this->container['dEzmaxinvoicingRebatepaymenttype']);
     }
 
     /**
@@ -851,7 +851,7 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingRebatepaymenttype'] = $dEzmaxinvoicingRebatepaymenttype;
-        $this->container['dEzmaxinvoicingRebatepaymenttype'] = (is_null($dEzmaxinvoicingRebatepaymenttype) ? null : (string) $dEzmaxinvoicingRebatepaymenttype);
+        $this->container['dEzmaxinvoicingRebatepaymenttype'] = (is_null($dEzmaxinvoicingRebatepaymenttype) ? null : trim((string) $dEzmaxinvoicingRebatepaymenttype));
 
         return $this;
     }
@@ -900,7 +900,7 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getDEzmaxinvoicingRebatecontractlength()
     {
-        return $this->container['dEzmaxinvoicingRebatecontractlength'];
+        return is_null($this->container['dEzmaxinvoicingRebatecontractlength']) ? null : trim($this->container['dEzmaxinvoicingRebatecontractlength']);
     }
 
     /**
@@ -925,7 +925,7 @@ class EzmaxinvoicingResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingRebatecontractlength'] = $dEzmaxinvoicingRebatecontractlength;
-        $this->container['dEzmaxinvoicingRebatecontractlength'] = (is_null($dEzmaxinvoicingRebatecontractlength) ? null : (string) $dEzmaxinvoicingRebatecontractlength);
+        $this->container['dEzmaxinvoicingRebatecontractlength'] = (is_null($dEzmaxinvoicingRebatecontractlength) ? null : trim((string) $dEzmaxinvoicingRebatecontractlength));
 
         return $this;
     }

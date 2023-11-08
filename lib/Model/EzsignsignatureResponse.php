@@ -926,7 +926,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getTEzsignsignatureTooltip()
     {
-        return $this->container['tEzsignsignatureTooltip'];
+        return is_null($this->container['tEzsignsignatureTooltip']) ? null : trim($this->container['tEzsignsignatureTooltip']);
     }
 
     /**
@@ -945,7 +945,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignsignatureTooltip'] = $tEzsignsignatureTooltip;
-        $this->container['tEzsignsignatureTooltip'] = (is_null($tEzsignsignatureTooltip) ? null : (string) $tEzsignsignatureTooltip);
+        $this->container['tEzsignsignatureTooltip'] = (is_null($tEzsignsignatureTooltip) ? null : trim((string) $tEzsignsignatureTooltip));
 
         return $this;
     }
@@ -1050,7 +1050,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSEzsignsignatureAttachmentdescription()
     {
-        return $this->container['sEzsignsignatureAttachmentdescription'];
+        return is_null($this->container['sEzsignsignatureAttachmentdescription']) ? null : trim($this->container['sEzsignsignatureAttachmentdescription']);
     }
 
     /**
@@ -1069,7 +1069,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignatureAttachmentdescription'] = $sEzsignsignatureAttachmentdescription;
-        $this->container['sEzsignsignatureAttachmentdescription'] = (is_null($sEzsignsignatureAttachmentdescription) ? null : (string) $sEzsignsignatureAttachmentdescription);
+        $this->container['sEzsignsignatureAttachmentdescription'] = (is_null($sEzsignsignatureAttachmentdescription) ? null : trim((string) $sEzsignsignatureAttachmentdescription));
 
         return $this;
     }
@@ -1180,7 +1180,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getDtEzsignsignatureDate()
     {
-        return $this->container['dtEzsignsignatureDate'];
+        return is_null($this->container['dtEzsignsignatureDate']) ? null : trim($this->container['dtEzsignsignatureDate']);
     }
 
     /**
@@ -1205,7 +1205,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsignsignatureDate'] = $dtEzsignsignatureDate;
-        $this->container['dtEzsignsignatureDate'] = (is_null($dtEzsignsignatureDate) ? null : (string) $dtEzsignsignatureDate);
+        $this->container['dtEzsignsignatureDate'] = (is_null($dtEzsignsignatureDate) ? null : trim((string) $dtEzsignsignatureDate));
 
         return $this;
     }
@@ -1248,7 +1248,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSEzsignsignatureDescription()
     {
-        return $this->container['sEzsignsignatureDescription'];
+        return is_null($this->container['sEzsignsignatureDescription']) ? null : trim($this->container['sEzsignsignatureDescription']);
     }
 
     /**
@@ -1267,7 +1267,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignatureDescription'] = $sEzsignsignatureDescription;
-        $this->container['sEzsignsignatureDescription'] = (is_null($sEzsignsignatureDescription) ? null : (string) $sEzsignsignatureDescription);
+        $this->container['sEzsignsignatureDescription'] = (is_null($sEzsignsignatureDescription) ? null : trim((string) $sEzsignsignatureDescription));
 
         return $this;
     }
@@ -1382,7 +1382,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSEzsignsignatureRegexp()
     {
-        return $this->container['sEzsignsignatureRegexp'];
+        return is_null($this->container['sEzsignsignatureRegexp']) ? null : trim($this->container['sEzsignsignatureRegexp']);
     }
 
     /**
@@ -1407,7 +1407,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignatureRegexp'] = $sEzsignsignatureRegexp;
-        $this->container['sEzsignsignatureRegexp'] = (is_null($sEzsignsignatureRegexp) ? null : (string) $sEzsignsignatureRegexp);
+        $this->container['sEzsignsignatureRegexp'] = (is_null($sEzsignsignatureRegexp) ? null : trim((string) $sEzsignsignatureRegexp));
 
         return $this;
     }

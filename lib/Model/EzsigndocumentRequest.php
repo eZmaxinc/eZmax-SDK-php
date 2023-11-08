@@ -713,7 +713,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getEEzsigndocumentSource()
     {
-        return $this->container['eEzsigndocumentSource'];
+        return is_null($this->container['eEzsigndocumentSource']) ? null : trim($this->container['eEzsigndocumentSource']);
     }
 
     /**
@@ -742,7 +742,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigndocumentSource'] = $eEzsigndocumentSource;
-        $this->container['eEzsigndocumentSource'] = (is_null($eEzsigndocumentSource) ? null : (string) $eEzsigndocumentSource);
+        $this->container['eEzsigndocumentSource'] = (is_null($eEzsigndocumentSource) ? null : trim((string) $eEzsigndocumentSource));
 
         return $this;
     }
@@ -754,7 +754,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getEEzsigndocumentFormat()
     {
-        return $this->container['eEzsigndocumentFormat'];
+        return is_null($this->container['eEzsigndocumentFormat']) ? null : trim($this->container['eEzsigndocumentFormat']);
     }
 
     /**
@@ -783,7 +783,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigndocumentFormat'] = $eEzsigndocumentFormat;
-        $this->container['eEzsigndocumentFormat'] = (is_null($eEzsigndocumentFormat) ? null : (string) $eEzsigndocumentFormat);
+        $this->container['eEzsigndocumentFormat'] = (is_null($eEzsigndocumentFormat) ? null : trim((string) $eEzsigndocumentFormat));
 
         return $this;
     }
@@ -826,7 +826,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSEzsigndocumentUrl()
     {
-        return $this->container['sEzsigndocumentUrl'];
+        return is_null($this->container['sEzsigndocumentUrl']) ? null : trim($this->container['sEzsigndocumentUrl']);
     }
 
     /**
@@ -845,7 +845,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentUrl'] = $sEzsigndocumentUrl;
-        $this->container['sEzsigndocumentUrl'] = (is_null($sEzsigndocumentUrl) ? null : (string) $sEzsigndocumentUrl);
+        $this->container['sEzsigndocumentUrl'] = (is_null($sEzsigndocumentUrl) ? null : trim((string) $sEzsigndocumentUrl));
 
         return $this;
     }
@@ -888,7 +888,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSEzsigndocumentPassword()
     {
-        return $this->container['sEzsigndocumentPassword'];
+        return is_null($this->container['sEzsigndocumentPassword']) ? null : trim($this->container['sEzsigndocumentPassword']);
     }
 
     /**
@@ -907,7 +907,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentPassword'] = $sEzsigndocumentPassword;
-        $this->container['sEzsigndocumentPassword'] = (is_null($sEzsigndocumentPassword) ? null : (string) $sEzsigndocumentPassword);
+        $this->container['sEzsigndocumentPassword'] = (is_null($sEzsigndocumentPassword) ? null : trim((string) $sEzsigndocumentPassword));
 
         return $this;
     }
@@ -919,7 +919,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getEEzsigndocumentForm()
     {
-        return $this->container['eEzsigndocumentForm'];
+        return is_null($this->container['eEzsigndocumentForm']) ? null : trim($this->container['eEzsigndocumentForm']);
     }
 
     /**
@@ -948,7 +948,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigndocumentForm'] = $eEzsigndocumentForm;
-        $this->container['eEzsigndocumentForm'] = (is_null($eEzsigndocumentForm) ? null : (string) $eEzsigndocumentForm);
+        $this->container['eEzsigndocumentForm'] = (is_null($eEzsigndocumentForm) ? null : trim((string) $eEzsigndocumentForm));
 
         return $this;
     }
@@ -960,7 +960,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getDtEzsigndocumentDuedate()
     {
-        return $this->container['dtEzsigndocumentDuedate'];
+        return is_null($this->container['dtEzsigndocumentDuedate']) ? null : trim($this->container['dtEzsigndocumentDuedate']);
     }
 
     /**
@@ -979,7 +979,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
-        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : (string) $dtEzsigndocumentDuedate);
+        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : trim((string) $dtEzsigndocumentDuedate));
 
         return $this;
     }
@@ -991,7 +991,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSEzsigndocumentName()
     {
-        return $this->container['sEzsigndocumentName'];
+        return is_null($this->container['sEzsigndocumentName']) ? null : trim($this->container['sEzsigndocumentName']);
     }
 
     /**
@@ -1010,7 +1010,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
-        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);
+        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : trim((string) $sEzsigndocumentName));
 
         return $this;
     }
@@ -1022,7 +1022,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSEzsigndocumentExternalid()
     {
-        return $this->container['sEzsigndocumentExternalid'];
+        return is_null($this->container['sEzsigndocumentExternalid']) ? null : trim($this->container['sEzsigndocumentExternalid']);
     }
 
     /**
@@ -1047,7 +1047,7 @@ class EzsigndocumentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentExternalid'] = $sEzsigndocumentExternalid;
-        $this->container['sEzsigndocumentExternalid'] = (is_null($sEzsigndocumentExternalid) ? null : (string) $sEzsigndocumentExternalid);
+        $this->container['sEzsigndocumentExternalid'] = (is_null($sEzsigndocumentExternalid) ? null : trim((string) $sEzsigndocumentExternalid));
 
         return $this;
     }

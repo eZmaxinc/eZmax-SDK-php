@@ -365,7 +365,7 @@ class SignatureResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function getSSignatureUrl()
     {
-        return $this->container['sSignatureUrl'];
+        return is_null($this->container['sSignatureUrl']) ? null : trim($this->container['sSignatureUrl']);
     }
 
     /**
@@ -390,7 +390,7 @@ class SignatureResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSignatureUrl'] = $sSignatureUrl;
-        $this->container['sSignatureUrl'] = (is_null($sSignatureUrl) ? null : (string) $sSignatureUrl);
+        $this->container['sSignatureUrl'] = (is_null($sSignatureUrl) ? null : trim((string) $sSignatureUrl));
 
         return $this;
     }

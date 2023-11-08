@@ -363,9 +363,9 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['sUserLoginname'] === null) {
             $invalidProperties[] = "'sUserLoginname' can't be null";
         }
-//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
-        if (!is_null($this->container['sUserLoginname']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
-            $invalidProperties[] = "invalid value for 'sUserLoginname', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.";
+//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
+        if (!is_null($this->container['sUserLoginname']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
+            $invalidProperties[] = "invalid value for 'sUserLoginname', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.";
         }
 
         if ($this->container['sUsergroupNameX'] === null) {
@@ -517,7 +517,7 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     public function getSUserFirstname()
     {
-        return $this->container['sUserFirstname'];
+        return is_null($this->container['sUserFirstname']) ? null : trim($this->container['sUserFirstname']);
     }
 
     /**
@@ -536,7 +536,7 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserFirstname'] = $sUserFirstname;
-        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : (string) $sUserFirstname);
+        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : trim((string) $sUserFirstname));
 
         return $this;
     }
@@ -548,7 +548,7 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     public function getSUserLastname()
     {
-        return $this->container['sUserLastname'];
+        return is_null($this->container['sUserLastname']) ? null : trim($this->container['sUserLastname']);
     }
 
     /**
@@ -567,7 +567,7 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLastname'] = $sUserLastname;
-        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : (string) $sUserLastname);
+        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : trim((string) $sUserLastname));
 
         return $this;
     }
@@ -579,7 +579,7 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     public function getSUserLoginname()
     {
-        return $this->container['sUserLoginname'];
+        return is_null($this->container['sUserLoginname']) ? null : trim($this->container['sUserLoginname']);
     }
 
     /**
@@ -596,15 +596,15 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
             //throw new \InvalidArgumentException('non-nullable sUserLoginname cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
-        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
-            throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling UsergroupmembershipResponse., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+            throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling UsergroupmembershipResponse., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.");
         }
 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLoginname'] = $sUserLoginname;
-        $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : (string) $sUserLoginname);
+        $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : trim((string) $sUserLoginname));
 
         return $this;
     }
@@ -616,7 +616,7 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -635,7 +635,7 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }
@@ -647,7 +647,7 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     public function getSUsergroupNameX()
     {
-        return $this->container['sUsergroupNameX'];
+        return is_null($this->container['sUsergroupNameX']) ? null : trim($this->container['sUsergroupNameX']);
     }
 
     /**
@@ -672,7 +672,7 @@ class UsergroupmembershipResponse implements ModelInterface, ArrayAccess, \JsonS
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUsergroupNameX'] = $sUsergroupNameX;
-        $this->container['sUsergroupNameX'] = (is_null($sUsergroupNameX) ? null : (string) $sUsergroupNameX);
+        $this->container['sUsergroupNameX'] = (is_null($sUsergroupNameX) ? null : trim((string) $sUsergroupNameX));
 
         return $this;
     }

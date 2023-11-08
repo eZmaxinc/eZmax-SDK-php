@@ -842,7 +842,7 @@ class BrandingRequestCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSBrandingName()
     {
-        return $this->container['sBrandingName'];
+        return is_null($this->container['sBrandingName']) ? null : trim($this->container['sBrandingName']);
     }
 
     /**
@@ -867,7 +867,7 @@ class BrandingRequestCompound implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBrandingName'] = $sBrandingName;
-        $this->container['sBrandingName'] = (is_null($sBrandingName) ? null : (string) $sBrandingName);
+        $this->container['sBrandingName'] = (is_null($sBrandingName) ? null : trim((string) $sBrandingName));
 
         return $this;
     }
@@ -879,7 +879,7 @@ class BrandingRequestCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -898,7 +898,7 @@ class BrandingRequestCompound implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }

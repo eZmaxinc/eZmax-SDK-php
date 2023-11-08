@@ -656,7 +656,7 @@ class EzmaxinvoicingagentResponseCompound implements ModelInterface, ArrayAccess
      */
     public function getSBillingentityinternalDescriptionX()
     {
-        return $this->container['sBillingentityinternalDescriptionX'];
+        return is_null($this->container['sBillingentityinternalDescriptionX']) ? null : trim($this->container['sBillingentityinternalDescriptionX']);
     }
 
     /**
@@ -675,7 +675,7 @@ class EzmaxinvoicingagentResponseCompound implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityinternalDescriptionX'] = $sBillingentityinternalDescriptionX;
-        $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : (string) $sBillingentityinternalDescriptionX);
+        $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : trim((string) $sBillingentityinternalDescriptionX));
 
         return $this;
     }

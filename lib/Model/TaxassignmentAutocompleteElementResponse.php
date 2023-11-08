@@ -329,7 +329,7 @@ class TaxassignmentAutocompleteElementResponse implements ModelInterface, ArrayA
      */
     public function getSTaxassignmentDescriptionX()
     {
-        return $this->container['sTaxassignmentDescriptionX'];
+        return is_null($this->container['sTaxassignmentDescriptionX']) ? null : trim($this->container['sTaxassignmentDescriptionX']);
     }
 
     /**
@@ -348,7 +348,7 @@ class TaxassignmentAutocompleteElementResponse implements ModelInterface, ArrayA
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sTaxassignmentDescriptionX'] = $sTaxassignmentDescriptionX;
-        $this->container['sTaxassignmentDescriptionX'] = (is_null($sTaxassignmentDescriptionX) ? null : (string) $sTaxassignmentDescriptionX);
+        $this->container['sTaxassignmentDescriptionX'] = (is_null($sTaxassignmentDescriptionX) ? null : trim((string) $sTaxassignmentDescriptionX));
 
         return $this;
     }

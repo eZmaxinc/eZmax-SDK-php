@@ -413,7 +413,7 @@ class CorsRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function getSCorsEntryurl()
     {
-        return $this->container['sCorsEntryurl'];
+        return is_null($this->container['sCorsEntryurl']) ? null : trim($this->container['sCorsEntryurl']);
     }
 
     /**
@@ -438,7 +438,7 @@ class CorsRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializa
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCorsEntryurl'] = $sCorsEntryurl;
-        $this->container['sCorsEntryurl'] = (is_null($sCorsEntryurl) ? null : (string) $sCorsEntryurl);
+        $this->container['sCorsEntryurl'] = (is_null($sCorsEntryurl) ? null : trim((string) $sCorsEntryurl));
 
         return $this;
     }

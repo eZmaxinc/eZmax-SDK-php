@@ -560,7 +560,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSCompanyNameX()
     {
-        return $this->container['sCompanyNameX'];
+        return is_null($this->container['sCompanyNameX']) ? null : trim($this->container['sCompanyNameX']);
     }
 
     /**
@@ -579,7 +579,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCompanyNameX'] = $sCompanyNameX;
-        $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : (string) $sCompanyNameX);
+        $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : trim((string) $sCompanyNameX));
 
         return $this;
     }
@@ -591,7 +591,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSDepartmentNameX()
     {
-        return $this->container['sDepartmentNameX'];
+        return is_null($this->container['sDepartmentNameX']) ? null : trim($this->container['sDepartmentNameX']);
     }
 
     /**
@@ -610,7 +610,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sDepartmentNameX'] = $sDepartmentNameX;
-        $this->container['sDepartmentNameX'] = (is_null($sDepartmentNameX) ? null : (string) $sDepartmentNameX);
+        $this->container['sDepartmentNameX'] = (is_null($sDepartmentNameX) ? null : trim((string) $sDepartmentNameX));
 
         return $this;
     }
@@ -684,7 +684,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getPksCustomerCode()
     {
-        return $this->container['pksCustomerCode'];
+        return is_null($this->container['pksCustomerCode']) ? null : trim($this->container['pksCustomerCode']);
     }
 
     /**
@@ -712,7 +712,7 @@ class ActivesessionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pksCustomerCode'] = $pksCustomerCode;
-        $this->container['pksCustomerCode'] = (is_null($pksCustomerCode) ? null : (string) $pksCustomerCode);
+        $this->container['pksCustomerCode'] = (is_null($pksCustomerCode) ? null : trim((string) $pksCustomerCode));
 
         return $this;
     }

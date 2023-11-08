@@ -323,7 +323,7 @@ class CommonResponseErrorSTemporaryFileUrl implements ModelInterface, ArrayAcces
      */
     public function getSErrorMessage()
     {
-        return $this->container['sErrorMessage'];
+        return is_null($this->container['sErrorMessage']) ? null : trim($this->container['sErrorMessage']);
     }
 
     /**
@@ -348,7 +348,7 @@ class CommonResponseErrorSTemporaryFileUrl implements ModelInterface, ArrayAcces
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sErrorMessage'] = $sErrorMessage;
-        $this->container['sErrorMessage'] = (is_null($sErrorMessage) ? null : (string) $sErrorMessage);
+        $this->container['sErrorMessage'] = (is_null($sErrorMessage) ? null : trim((string) $sErrorMessage));
 
         return $this;
     }
@@ -391,7 +391,7 @@ class CommonResponseErrorSTemporaryFileUrl implements ModelInterface, ArrayAcces
      */
     public function getSTemporaryFileUrl()
     {
-        return $this->container['sTemporaryFileUrl'];
+        return is_null($this->container['sTemporaryFileUrl']) ? null : trim($this->container['sTemporaryFileUrl']);
     }
 
     /**
@@ -410,7 +410,7 @@ class CommonResponseErrorSTemporaryFileUrl implements ModelInterface, ArrayAcces
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sTemporaryFileUrl'] = $sTemporaryFileUrl;
-        $this->container['sTemporaryFileUrl'] = (is_null($sTemporaryFileUrl) ? null : (string) $sTemporaryFileUrl);
+        $this->container['sTemporaryFileUrl'] = (is_null($sTemporaryFileUrl) ? null : trim((string) $sTemporaryFileUrl));
 
         return $this;
     }

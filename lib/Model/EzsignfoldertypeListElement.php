@@ -403,7 +403,7 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
      */
     public function getSEzsignfoldertypeNameX()
     {
-        return $this->container['sEzsignfoldertypeNameX'];
+        return is_null($this->container['sEzsignfoldertypeNameX']) ? null : trim($this->container['sEzsignfoldertypeNameX']);
     }
 
     /**
@@ -422,7 +422,7 @@ class EzsignfoldertypeListElement implements ModelInterface, ArrayAccess, \JsonS
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
-        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
+        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : trim((string) $sEzsignfoldertypeNameX));
 
         return $this;
     }

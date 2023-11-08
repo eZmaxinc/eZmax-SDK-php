@@ -337,7 +337,7 @@ class CommonReportsubsectionpart implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function getEReportsubsectionpartType()
     {
-        return $this->container['eReportsubsectionpartType'];
+        return is_null($this->container['eReportsubsectionpartType']) ? null : trim($this->container['eReportsubsectionpartType']);
     }
 
     /**
@@ -366,7 +366,7 @@ class CommonReportsubsectionpart implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eReportsubsectionpartType'] = $eReportsubsectionpartType;
-        $this->container['eReportsubsectionpartType'] = (is_null($eReportsubsectionpartType) ? null : (string) $eReportsubsectionpartType);
+        $this->container['eReportsubsectionpartType'] = (is_null($eReportsubsectionpartType) ? null : trim((string) $eReportsubsectionpartType));
 
         return $this;
     }

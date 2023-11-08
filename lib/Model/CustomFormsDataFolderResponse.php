@@ -362,7 +362,7 @@ class CustomFormsDataFolderResponse implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSEzsignfolderDescription()
     {
-        return $this->container['sEzsignfolderDescription'];
+        return is_null($this->container['sEzsignfolderDescription']) ? null : trim($this->container['sEzsignfolderDescription']);
     }
 
     /**
@@ -381,7 +381,7 @@ class CustomFormsDataFolderResponse implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
-        $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : (string) $sEzsignfolderDescription);
+        $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : trim((string) $sEzsignfolderDescription));
 
         return $this;
     }

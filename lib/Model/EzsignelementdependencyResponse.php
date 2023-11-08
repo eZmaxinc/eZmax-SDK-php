@@ -671,7 +671,7 @@ class EzsignelementdependencyResponse implements ModelInterface, ArrayAccess, \J
      */
     public function getSEzsignelementdependencyValue()
     {
-        return $this->container['sEzsignelementdependencyValue'];
+        return is_null($this->container['sEzsignelementdependencyValue']) ? null : trim($this->container['sEzsignelementdependencyValue']);
     }
 
     /**
@@ -696,7 +696,7 @@ class EzsignelementdependencyResponse implements ModelInterface, ArrayAccess, \J
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignelementdependencyValue'] = $sEzsignelementdependencyValue;
-        $this->container['sEzsignelementdependencyValue'] = (is_null($sEzsignelementdependencyValue) ? null : (string) $sEzsignelementdependencyValue);
+        $this->container['sEzsignelementdependencyValue'] = (is_null($sEzsignelementdependencyValue) ? null : trim((string) $sEzsignelementdependencyValue));
 
         return $this;
     }

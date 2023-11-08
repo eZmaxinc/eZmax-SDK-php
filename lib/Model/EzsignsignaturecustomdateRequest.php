@@ -451,7 +451,7 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
      */
     public function getSEzsignsignaturecustomdateFormat()
     {
-        return $this->container['sEzsignsignaturecustomdateFormat'];
+        return is_null($this->container['sEzsignsignaturecustomdateFormat']) ? null : trim($this->container['sEzsignsignaturecustomdateFormat']);
     }
 
     /**
@@ -470,7 +470,7 @@ class EzsignsignaturecustomdateRequest implements ModelInterface, ArrayAccess, \
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignaturecustomdateFormat'] = $sEzsignsignaturecustomdateFormat;
-        $this->container['sEzsignsignaturecustomdateFormat'] = (is_null($sEzsignsignaturecustomdateFormat) ? null : (string) $sEzsignsignaturecustomdateFormat);
+        $this->container['sEzsignsignaturecustomdateFormat'] = (is_null($sEzsignsignaturecustomdateFormat) ? null : trim((string) $sEzsignsignaturecustomdateFormat));
 
         return $this;
     }

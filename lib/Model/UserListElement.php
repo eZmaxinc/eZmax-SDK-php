@@ -355,9 +355,9 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['sUserLoginname'] === null) {
             $invalidProperties[] = "'sUserLoginname' can't be null";
         }
-//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
-        if (!is_null($this->container['sUserLoginname']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
-            $invalidProperties[] = "invalid value for 'sUserLoginname', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.";
+//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
+        if (!is_null($this->container['sUserLoginname']) && !preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
+            $invalidProperties[] = "invalid value for 'sUserLoginname', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.";
         }
 
         if ($this->container['bUserIsactive'] === null) {
@@ -439,7 +439,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getSUserFirstname()
     {
-        return $this->container['sUserFirstname'];
+        return is_null($this->container['sUserFirstname']) ? null : trim($this->container['sUserFirstname']);
     }
 
     /**
@@ -458,7 +458,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserFirstname'] = $sUserFirstname;
-        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : (string) $sUserFirstname);
+        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : trim((string) $sUserFirstname));
 
         return $this;
     }
@@ -470,7 +470,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getSUserLastname()
     {
-        return $this->container['sUserLastname'];
+        return is_null($this->container['sUserLastname']) ? null : trim($this->container['sUserLastname']);
     }
 
     /**
@@ -489,7 +489,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLastname'] = $sUserLastname;
-        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : (string) $sUserLastname);
+        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : trim((string) $sUserLastname));
 
         return $this;
     }
@@ -501,7 +501,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getSUserLoginname()
     {
-        return $this->container['sUserLoginname'];
+        return is_null($this->container['sUserLoginname']) ? null : trim($this->container['sUserLoginname']);
     }
 
     /**
@@ -518,15 +518,15 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
             //throw new \InvalidArgumentException('non-nullable sUserLoginname cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
-        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
-            throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling UserListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4})|([a-zA-Z0-9]){1,32})$/.");
+//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+        if (!is_null($sUserLoginname) && (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+            throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling UserListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.");
         }
 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLoginname'] = $sUserLoginname;
-        $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : (string) $sUserLoginname);
+        $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : trim((string) $sUserLoginname));
 
         return $this;
     }
@@ -662,7 +662,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getDtUserEzsignprepaidexpiration()
     {
-        return $this->container['dtUserEzsignprepaidexpiration'];
+        return is_null($this->container['dtUserEzsignprepaidexpiration']) ? null : trim($this->container['dtUserEzsignprepaidexpiration']);
     }
 
     /**
@@ -687,7 +687,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtUserEzsignprepaidexpiration'] = $dtUserEzsignprepaidexpiration;
-        $this->container['dtUserEzsignprepaidexpiration'] = (is_null($dtUserEzsignprepaidexpiration) ? null : (string) $dtUserEzsignprepaidexpiration);
+        $this->container['dtUserEzsignprepaidexpiration'] = (is_null($dtUserEzsignprepaidexpiration) ? null : trim((string) $dtUserEzsignprepaidexpiration));
 
         return $this;
     }
@@ -699,7 +699,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -718,7 +718,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }

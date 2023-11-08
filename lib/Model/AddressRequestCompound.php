@@ -420,7 +420,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSAddressCivic()
     {
-        return $this->container['sAddressCivic'];
+        return is_null($this->container['sAddressCivic']) ? null : trim($this->container['sAddressCivic']);
     }
 
     /**
@@ -439,7 +439,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressCivic'] = $sAddressCivic;
-        $this->container['sAddressCivic'] = (is_null($sAddressCivic) ? null : (string) $sAddressCivic);
+        $this->container['sAddressCivic'] = (is_null($sAddressCivic) ? null : trim((string) $sAddressCivic));
 
         return $this;
     }
@@ -451,7 +451,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSAddressStreet()
     {
-        return $this->container['sAddressStreet'];
+        return is_null($this->container['sAddressStreet']) ? null : trim($this->container['sAddressStreet']);
     }
 
     /**
@@ -470,7 +470,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressStreet'] = $sAddressStreet;
-        $this->container['sAddressStreet'] = (is_null($sAddressStreet) ? null : (string) $sAddressStreet);
+        $this->container['sAddressStreet'] = (is_null($sAddressStreet) ? null : trim((string) $sAddressStreet));
 
         return $this;
     }
@@ -482,7 +482,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSAddressSuite()
     {
-        return $this->container['sAddressSuite'];
+        return is_null($this->container['sAddressSuite']) ? null : trim($this->container['sAddressSuite']);
     }
 
     /**
@@ -501,7 +501,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressSuite'] = $sAddressSuite;
-        $this->container['sAddressSuite'] = (is_null($sAddressSuite) ? null : (string) $sAddressSuite);
+        $this->container['sAddressSuite'] = (is_null($sAddressSuite) ? null : trim((string) $sAddressSuite));
 
         return $this;
     }
@@ -513,7 +513,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSAddressCity()
     {
-        return $this->container['sAddressCity'];
+        return is_null($this->container['sAddressCity']) ? null : trim($this->container['sAddressCity']);
     }
 
     /**
@@ -532,7 +532,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressCity'] = $sAddressCity;
-        $this->container['sAddressCity'] = (is_null($sAddressCity) ? null : (string) $sAddressCity);
+        $this->container['sAddressCity'] = (is_null($sAddressCity) ? null : trim((string) $sAddressCity));
 
         return $this;
     }
@@ -618,7 +618,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSAddressZip()
     {
-        return $this->container['sAddressZip'];
+        return is_null($this->container['sAddressZip']) ? null : trim($this->container['sAddressZip']);
     }
 
     /**
@@ -637,7 +637,7 @@ class AddressRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAddressZip'] = $sAddressZip;
-        $this->container['sAddressZip'] = (is_null($sAddressZip) ? null : (string) $sAddressZip);
+        $this->container['sAddressZip'] = (is_null($sAddressZip) ? null : trim((string) $sAddressZip));
 
         return $this;
     }

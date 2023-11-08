@@ -305,7 +305,7 @@ class MultilingualEzsignsignergroupDescription implements ModelInterface, ArrayA
      */
     public function getSEzsignsignergroupDescription1()
     {
-        return $this->container['sEzsignsignergroupDescription1'];
+        return is_null($this->container['sEzsignsignergroupDescription1']) ? null : trim($this->container['sEzsignsignergroupDescription1']);
     }
 
     /**
@@ -324,7 +324,7 @@ class MultilingualEzsignsignergroupDescription implements ModelInterface, ArrayA
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignergroupDescription1'] = $sEzsignsignergroupDescription1;
-        $this->container['sEzsignsignergroupDescription1'] = (is_null($sEzsignsignergroupDescription1) ? null : (string) $sEzsignsignergroupDescription1);
+        $this->container['sEzsignsignergroupDescription1'] = (is_null($sEzsignsignergroupDescription1) ? null : trim((string) $sEzsignsignergroupDescription1));
 
         return $this;
     }
@@ -336,7 +336,7 @@ class MultilingualEzsignsignergroupDescription implements ModelInterface, ArrayA
      */
     public function getSEzsignsignergroupDescription2()
     {
-        return $this->container['sEzsignsignergroupDescription2'];
+        return is_null($this->container['sEzsignsignergroupDescription2']) ? null : trim($this->container['sEzsignsignergroupDescription2']);
     }
 
     /**
@@ -355,7 +355,7 @@ class MultilingualEzsignsignergroupDescription implements ModelInterface, ArrayA
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignergroupDescription2'] = $sEzsignsignergroupDescription2;
-        $this->container['sEzsignsignergroupDescription2'] = (is_null($sEzsignsignergroupDescription2) ? null : (string) $sEzsignsignergroupDescription2);
+        $this->container['sEzsignsignergroupDescription2'] = (is_null($sEzsignsignergroupDescription2) ? null : trim((string) $sEzsignsignergroupDescription2));
 
         return $this;
     }

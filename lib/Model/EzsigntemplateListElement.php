@@ -507,7 +507,7 @@ class EzsigntemplateListElement implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getSEzsigntemplateDescription()
     {
-        return $this->container['sEzsigntemplateDescription'];
+        return is_null($this->container['sEzsigntemplateDescription']) ? null : trim($this->container['sEzsigntemplateDescription']);
     }
 
     /**
@@ -526,7 +526,7 @@ class EzsigntemplateListElement implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateDescription'] = $sEzsigntemplateDescription;
-        $this->container['sEzsigntemplateDescription'] = (is_null($sEzsigntemplateDescription) ? null : (string) $sEzsigntemplateDescription);
+        $this->container['sEzsigntemplateDescription'] = (is_null($sEzsigntemplateDescription) ? null : trim((string) $sEzsigntemplateDescription));
 
         return $this;
     }
@@ -668,7 +668,7 @@ class EzsigntemplateListElement implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getSEzsignfoldertypeNameX()
     {
-        return $this->container['sEzsignfoldertypeNameX'];
+        return is_null($this->container['sEzsignfoldertypeNameX']) ? null : trim($this->container['sEzsignfoldertypeNameX']);
     }
 
     /**
@@ -687,7 +687,7 @@ class EzsigntemplateListElement implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
-        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
+        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : trim((string) $sEzsignfoldertypeNameX));
 
         return $this;
     }

@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * EzsignfolderSendV1Response Class Doc Comment
  *
  * @category Class
- * @description Response for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/send
+ * @description Response for GET /1/object/attachment/{pkiAttachmentID}/download
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

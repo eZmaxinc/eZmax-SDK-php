@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * FieldECommunicationexternalrecipientTypeTest Class Doc Comment
  *
  * @category    Class
- * @description The type of Communicationexternalrecipient
+ * @description The type of Communicationexternalrecipient.  Only used when eCommunicationType is **Email**
  * @package     eZmaxAPI
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

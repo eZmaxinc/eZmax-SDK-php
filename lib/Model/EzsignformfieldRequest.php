@@ -491,7 +491,7 @@ class EzsignformfieldRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSEzsignformfieldLabel()
     {
-        return $this->container['sEzsignformfieldLabel'];
+        return is_null($this->container['sEzsignformfieldLabel']) ? null : trim($this->container['sEzsignformfieldLabel']);
     }
 
     /**
@@ -510,7 +510,7 @@ class EzsignformfieldRequest implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldLabel'] = $sEzsignformfieldLabel;
-        $this->container['sEzsignformfieldLabel'] = (is_null($sEzsignformfieldLabel) ? null : (string) $sEzsignformfieldLabel);
+        $this->container['sEzsignformfieldLabel'] = (is_null($sEzsignformfieldLabel) ? null : trim((string) $sEzsignformfieldLabel));
 
         return $this;
     }
@@ -522,7 +522,7 @@ class EzsignformfieldRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSEzsignformfieldValue()
     {
-        return $this->container['sEzsignformfieldValue'];
+        return is_null($this->container['sEzsignformfieldValue']) ? null : trim($this->container['sEzsignformfieldValue']);
     }
 
     /**
@@ -541,7 +541,7 @@ class EzsignformfieldRequest implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldValue'] = $sEzsignformfieldValue;
-        $this->container['sEzsignformfieldValue'] = (is_null($sEzsignformfieldValue) ? null : (string) $sEzsignformfieldValue);
+        $this->container['sEzsignformfieldValue'] = (is_null($sEzsignformfieldValue) ? null : trim((string) $sEzsignformfieldValue));
 
         return $this;
     }
@@ -763,7 +763,7 @@ class EzsignformfieldRequest implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSEzsignformfieldEnteredvalue()
     {
-        return $this->container['sEzsignformfieldEnteredvalue'];
+        return is_null($this->container['sEzsignformfieldEnteredvalue']) ? null : trim($this->container['sEzsignformfieldEnteredvalue']);
     }
 
     /**
@@ -782,7 +782,7 @@ class EzsignformfieldRequest implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldEnteredvalue'] = $sEzsignformfieldEnteredvalue;
-        $this->container['sEzsignformfieldEnteredvalue'] = (is_null($sEzsignformfieldEnteredvalue) ? null : (string) $sEzsignformfieldEnteredvalue);
+        $this->container['sEzsignformfieldEnteredvalue'] = (is_null($sEzsignformfieldEnteredvalue) ? null : trim((string) $sEzsignformfieldEnteredvalue));
 
         return $this;
     }

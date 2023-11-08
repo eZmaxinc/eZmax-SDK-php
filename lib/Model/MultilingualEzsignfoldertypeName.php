@@ -305,7 +305,7 @@ class MultilingualEzsignfoldertypeName implements ModelInterface, ArrayAccess, \
      */
     public function getSEzsignfoldertypeName1()
     {
-        return $this->container['sEzsignfoldertypeName1'];
+        return is_null($this->container['sEzsignfoldertypeName1']) ? null : trim($this->container['sEzsignfoldertypeName1']);
     }
 
     /**
@@ -324,7 +324,7 @@ class MultilingualEzsignfoldertypeName implements ModelInterface, ArrayAccess, \
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeName1'] = $sEzsignfoldertypeName1;
-        $this->container['sEzsignfoldertypeName1'] = (is_null($sEzsignfoldertypeName1) ? null : (string) $sEzsignfoldertypeName1);
+        $this->container['sEzsignfoldertypeName1'] = (is_null($sEzsignfoldertypeName1) ? null : trim((string) $sEzsignfoldertypeName1));
 
         return $this;
     }
@@ -336,7 +336,7 @@ class MultilingualEzsignfoldertypeName implements ModelInterface, ArrayAccess, \
      */
     public function getSEzsignfoldertypeName2()
     {
-        return $this->container['sEzsignfoldertypeName2'];
+        return is_null($this->container['sEzsignfoldertypeName2']) ? null : trim($this->container['sEzsignfoldertypeName2']);
     }
 
     /**
@@ -355,7 +355,7 @@ class MultilingualEzsignfoldertypeName implements ModelInterface, ArrayAccess, \
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeName2'] = $sEzsignfoldertypeName2;
-        $this->container['sEzsignfoldertypeName2'] = (is_null($sEzsignfoldertypeName2) ? null : (string) $sEzsignfoldertypeName2);
+        $this->container['sEzsignfoldertypeName2'] = (is_null($sEzsignfoldertypeName2) ? null : trim((string) $sEzsignfoldertypeName2));
 
         return $this;
     }

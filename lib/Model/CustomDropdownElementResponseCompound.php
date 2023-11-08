@@ -311,7 +311,7 @@ class CustomDropdownElementResponseCompound implements ModelInterface, ArrayAcce
      */
     public function getSLabel()
     {
-        return $this->container['sLabel'];
+        return is_null($this->container['sLabel']) ? null : trim($this->container['sLabel']);
     }
 
     /**
@@ -330,7 +330,7 @@ class CustomDropdownElementResponseCompound implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sLabel'] = $sLabel;
-        $this->container['sLabel'] = (is_null($sLabel) ? null : (string) $sLabel);
+        $this->container['sLabel'] = (is_null($sLabel) ? null : trim((string) $sLabel));
 
         return $this;
     }
@@ -342,7 +342,7 @@ class CustomDropdownElementResponseCompound implements ModelInterface, ArrayAcce
      */
     public function getSValue()
     {
-        return $this->container['sValue'];
+        return is_null($this->container['sValue']) ? null : trim($this->container['sValue']);
     }
 
     /**
@@ -361,7 +361,7 @@ class CustomDropdownElementResponseCompound implements ModelInterface, ArrayAcce
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sValue'] = $sValue;
-        $this->container['sValue'] = (is_null($sValue) ? null : (string) $sValue);
+        $this->container['sValue'] = (is_null($sValue) ? null : trim((string) $sValue));
 
         return $this;
     }

@@ -318,7 +318,7 @@ class ScimGroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getValue()
     {
-        return $this->container['value'];
+        return is_null($this->container['value']) ? null : trim($this->container['value']);
     }
 
     /**
@@ -337,7 +337,7 @@ class ScimGroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['value'] = $value;
-        $this->container['value'] = (is_null($value) ? null : (string) $value);
+        $this->container['value'] = (is_null($value) ? null : trim((string) $value));
 
         return $this;
     }
@@ -349,7 +349,7 @@ class ScimGroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getDisplay()
     {
-        return $this->container['display'];
+        return is_null($this->container['display']) ? null : trim($this->container['display']);
     }
 
     /**
@@ -368,7 +368,7 @@ class ScimGroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['display'] = $display;
-        $this->container['display'] = (is_null($display) ? null : (string) $display);
+        $this->container['display'] = (is_null($display) ? null : trim((string) $display));
 
         return $this;
     }
@@ -380,7 +380,7 @@ class ScimGroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getType()
     {
-        return $this->container['type'];
+        return is_null($this->container['type']) ? null : trim($this->container['type']);
     }
 
     /**
@@ -399,7 +399,7 @@ class ScimGroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['type'] = $type;
-        $this->container['type'] = (is_null($type) ? null : (string) $type);
+        $this->container['type'] = (is_null($type) ? null : trim((string) $type));
 
         return $this;
     }
@@ -411,7 +411,7 @@ class ScimGroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getRef()
     {
-        return $this->container['ref'];
+        return is_null($this->container['ref']) ? null : trim($this->container['ref']);
     }
 
     /**
@@ -430,7 +430,7 @@ class ScimGroupMember implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['ref'] = $ref;
-        $this->container['ref'] = (is_null($ref) ? null : (string) $ref);
+        $this->container['ref'] = (is_null($ref) ? null : trim((string) $ref));
 
         return $this;
     }

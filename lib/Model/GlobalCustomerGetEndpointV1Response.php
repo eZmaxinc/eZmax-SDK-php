@@ -301,7 +301,7 @@ class GlobalCustomerGetEndpointV1Response implements ModelInterface, ArrayAccess
      */
     public function getSEndpointURL()
     {
-        return $this->container['sEndpointURL'];
+        return is_null($this->container['sEndpointURL']) ? null : trim($this->container['sEndpointURL']);
     }
 
     /**
@@ -320,7 +320,7 @@ class GlobalCustomerGetEndpointV1Response implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEndpointURL'] = $sEndpointURL;
-        $this->container['sEndpointURL'] = (is_null($sEndpointURL) ? null : (string) $sEndpointURL);
+        $this->container['sEndpointURL'] = (is_null($sEndpointURL) ? null : trim((string) $sEndpointURL));
 
         return $this;
     }

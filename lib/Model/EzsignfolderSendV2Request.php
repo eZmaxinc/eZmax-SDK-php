@@ -321,7 +321,7 @@ class EzsignfolderSendV2Request implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getTEzsignfolderMessage()
     {
-        return $this->container['tEzsignfolderMessage'];
+        return is_null($this->container['tEzsignfolderMessage']) ? null : trim($this->container['tEzsignfolderMessage']);
     }
 
     /**
@@ -340,7 +340,7 @@ class EzsignfolderSendV2Request implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignfolderMessage'] = $tEzsignfolderMessage;
-        $this->container['tEzsignfolderMessage'] = (is_null($tEzsignfolderMessage) ? null : (string) $tEzsignfolderMessage);
+        $this->container['tEzsignfolderMessage'] = (is_null($tEzsignfolderMessage) ? null : trim((string) $tEzsignfolderMessage));
 
         return $this;
     }

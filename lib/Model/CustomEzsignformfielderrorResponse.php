@@ -311,7 +311,7 @@ class CustomEzsignformfielderrorResponse implements ModelInterface, ArrayAccess,
      */
     public function getSEzsignformfieldLabel()
     {
-        return $this->container['sEzsignformfieldLabel'];
+        return is_null($this->container['sEzsignformfieldLabel']) ? null : trim($this->container['sEzsignformfieldLabel']);
     }
 
     /**
@@ -330,7 +330,7 @@ class CustomEzsignformfielderrorResponse implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfieldLabel'] = $sEzsignformfieldLabel;
-        $this->container['sEzsignformfieldLabel'] = (is_null($sEzsignformfieldLabel) ? null : (string) $sEzsignformfieldLabel);
+        $this->container['sEzsignformfieldLabel'] = (is_null($sEzsignformfieldLabel) ? null : trim((string) $sEzsignformfieldLabel));
 
         return $this;
     }

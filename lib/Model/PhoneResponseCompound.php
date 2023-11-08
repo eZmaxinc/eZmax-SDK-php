@@ -452,7 +452,7 @@ class PhoneResponseCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSPhoneE164()
     {
-        return $this->container['sPhoneE164'];
+        return is_null($this->container['sPhoneE164']) ? null : trim($this->container['sPhoneE164']);
     }
 
     /**
@@ -477,7 +477,7 @@ class PhoneResponseCompound implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneE164'] = $sPhoneE164;
-        $this->container['sPhoneE164'] = (is_null($sPhoneE164) ? null : (string) $sPhoneE164);
+        $this->container['sPhoneE164'] = (is_null($sPhoneE164) ? null : trim((string) $sPhoneE164));
 
         return $this;
     }
@@ -489,7 +489,7 @@ class PhoneResponseCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSPhoneExtension()
     {
-        return $this->container['sPhoneExtension'];
+        return is_null($this->container['sPhoneExtension']) ? null : trim($this->container['sPhoneExtension']);
     }
 
     /**
@@ -508,7 +508,7 @@ class PhoneResponseCompound implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneExtension'] = $sPhoneExtension;
-        $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : (string) $sPhoneExtension);
+        $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : trim((string) $sPhoneExtension));
 
         return $this;
     }

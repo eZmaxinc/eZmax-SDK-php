@@ -607,7 +607,7 @@ class EzsigntemplatedocumentpageResponseCompound implements ModelInterface, Arra
      */
     public function getSComputedImageurl()
     {
-        return $this->container['sComputedImageurl'];
+        return is_null($this->container['sComputedImageurl']) ? null : trim($this->container['sComputedImageurl']);
     }
 
     /**
@@ -626,7 +626,7 @@ class EzsigntemplatedocumentpageResponseCompound implements ModelInterface, Arra
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sComputedImageurl'] = $sComputedImageurl;
-        $this->container['sComputedImageurl'] = (is_null($sComputedImageurl) ? null : (string) $sComputedImageurl);
+        $this->container['sComputedImageurl'] = (is_null($sComputedImageurl) ? null : trim((string) $sComputedImageurl));
 
         return $this;
     }

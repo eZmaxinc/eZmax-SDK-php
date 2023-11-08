@@ -502,7 +502,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      */
     public function getSEzsigntemplatepackageDescription()
     {
-        return $this->container['sEzsigntemplatepackageDescription'];
+        return is_null($this->container['sEzsigntemplatepackageDescription']) ? null : trim($this->container['sEzsigntemplatepackageDescription']);
     }
 
     /**
@@ -521,7 +521,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatepackageDescription'] = $sEzsigntemplatepackageDescription;
-        $this->container['sEzsigntemplatepackageDescription'] = (is_null($sEzsigntemplatepackageDescription) ? null : (string) $sEzsigntemplatepackageDescription);
+        $this->container['sEzsigntemplatepackageDescription'] = (is_null($sEzsigntemplatepackageDescription) ? null : trim((string) $sEzsigntemplatepackageDescription));
 
         return $this;
     }
@@ -595,7 +595,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
      */
     public function getSEzsignfoldertypeNameX()
     {
-        return $this->container['sEzsignfoldertypeNameX'];
+        return is_null($this->container['sEzsignfoldertypeNameX']) ? null : trim($this->container['sEzsignfoldertypeNameX']);
     }
 
     /**
@@ -614,7 +614,7 @@ class EzsigntemplatepackageListElement implements ModelInterface, ArrayAccess, \
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
-        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
+        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : trim((string) $sEzsignfoldertypeNameX));
 
         return $this;
     }

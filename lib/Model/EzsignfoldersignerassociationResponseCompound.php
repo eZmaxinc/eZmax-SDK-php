@@ -506,7 +506,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
      */
     public function getTEzsignfoldersignerassociationMessage()
     {
-        return $this->container['tEzsignfoldersignerassociationMessage'];
+        return is_null($this->container['tEzsignfoldersignerassociationMessage']) ? null : trim($this->container['tEzsignfoldersignerassociationMessage']);
     }
 
     /**
@@ -525,7 +525,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignfoldersignerassociationMessage'] = $tEzsignfoldersignerassociationMessage;
-        $this->container['tEzsignfoldersignerassociationMessage'] = (is_null($tEzsignfoldersignerassociationMessage) ? null : (string) $tEzsignfoldersignerassociationMessage);
+        $this->container['tEzsignfoldersignerassociationMessage'] = (is_null($tEzsignfoldersignerassociationMessage) ? null : trim((string) $tEzsignfoldersignerassociationMessage));
 
         return $this;
     }

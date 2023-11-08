@@ -439,7 +439,7 @@ class EzmaxinvoicingsummaryinternalResponseCompound implements ModelInterface, A
      */
     public function getSEzmaxinvoicingsummaryinternalDescriptionX()
     {
-        return $this->container['sEzmaxinvoicingsummaryinternalDescriptionX'];
+        return is_null($this->container['sEzmaxinvoicingsummaryinternalDescriptionX']) ? null : trim($this->container['sEzmaxinvoicingsummaryinternalDescriptionX']);
     }
 
     /**
@@ -463,7 +463,7 @@ class EzmaxinvoicingsummaryinternalResponseCompound implements ModelInterface, A
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxinvoicingsummaryinternalDescriptionX'] = $sEzmaxinvoicingsummaryinternalDescriptionX;
-        $this->container['sEzmaxinvoicingsummaryinternalDescriptionX'] = (is_null($sEzmaxinvoicingsummaryinternalDescriptionX) ? null : (string) $sEzmaxinvoicingsummaryinternalDescriptionX);
+        $this->container['sEzmaxinvoicingsummaryinternalDescriptionX'] = (is_null($sEzmaxinvoicingsummaryinternalDescriptionX) ? null : trim((string) $sEzmaxinvoicingsummaryinternalDescriptionX));
 
         return $this;
     }
@@ -549,7 +549,7 @@ class EzmaxinvoicingsummaryinternalResponseCompound implements ModelInterface, A
      */
     public function getSBillingentityinternalDescriptionX()
     {
-        return $this->container['sBillingentityinternalDescriptionX'];
+        return is_null($this->container['sBillingentityinternalDescriptionX']) ? null : trim($this->container['sBillingentityinternalDescriptionX']);
     }
 
     /**
@@ -568,7 +568,7 @@ class EzmaxinvoicingsummaryinternalResponseCompound implements ModelInterface, A
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityinternalDescriptionX'] = $sBillingentityinternalDescriptionX;
-        $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : (string) $sBillingentityinternalDescriptionX);
+        $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : trim((string) $sBillingentityinternalDescriptionX));
 
         return $this;
     }

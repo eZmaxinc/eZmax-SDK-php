@@ -506,7 +506,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSModuleNameX()
     {
-        return $this->container['sModuleNameX'];
+        return is_null($this->container['sModuleNameX']) ? null : trim($this->container['sModuleNameX']);
     }
 
     /**
@@ -525,7 +525,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sModuleNameX'] = $sModuleNameX;
-        $this->container['sModuleNameX'] = (is_null($sModuleNameX) ? null : (string) $sModuleNameX);
+        $this->container['sModuleNameX'] = (is_null($sModuleNameX) ? null : trim((string) $sModuleNameX));
 
         return $this;
     }
@@ -537,7 +537,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSModulesectionNameX()
     {
-        return $this->container['sModulesectionNameX'];
+        return is_null($this->container['sModulesectionNameX']) ? null : trim($this->container['sModulesectionNameX']);
     }
 
     /**
@@ -556,7 +556,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sModulesectionNameX'] = $sModulesectionNameX;
-        $this->container['sModulesectionNameX'] = (is_null($sModulesectionNameX) ? null : (string) $sModulesectionNameX);
+        $this->container['sModulesectionNameX'] = (is_null($sModulesectionNameX) ? null : trim((string) $sModulesectionNameX));
 
         return $this;
     }
@@ -630,7 +630,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getDtVersionhistoryDate()
     {
-        return $this->container['dtVersionhistoryDate'];
+        return is_null($this->container['dtVersionhistoryDate']) ? null : trim($this->container['dtVersionhistoryDate']);
     }
 
     /**
@@ -649,7 +649,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtVersionhistoryDate'] = $dtVersionhistoryDate;
-        $this->container['dtVersionhistoryDate'] = (is_null($dtVersionhistoryDate) ? null : (string) $dtVersionhistoryDate);
+        $this->container['dtVersionhistoryDate'] = (is_null($dtVersionhistoryDate) ? null : trim((string) $dtVersionhistoryDate));
 
         return $this;
     }
@@ -661,7 +661,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getDtVersionhistoryDateend()
     {
-        return $this->container['dtVersionhistoryDateend'];
+        return is_null($this->container['dtVersionhistoryDateend']) ? null : trim($this->container['dtVersionhistoryDateend']);
     }
 
     /**
@@ -680,7 +680,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtVersionhistoryDateend'] = $dtVersionhistoryDateend;
-        $this->container['dtVersionhistoryDateend'] = (is_null($dtVersionhistoryDateend) ? null : (string) $dtVersionhistoryDateend);
+        $this->container['dtVersionhistoryDateend'] = (is_null($dtVersionhistoryDateend) ? null : trim((string) $dtVersionhistoryDateend));
 
         return $this;
     }

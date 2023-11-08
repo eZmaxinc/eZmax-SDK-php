@@ -528,7 +528,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
      */
     public function getSEzmaxproductDescriptionX()
     {
-        return $this->container['sEzmaxproductDescriptionX'];
+        return is_null($this->container['sEzmaxproductDescriptionX']) ? null : trim($this->container['sEzmaxproductDescriptionX']);
     }
 
     /**
@@ -547,7 +547,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxproductDescriptionX'] = $sEzmaxproductDescriptionX;
-        $this->container['sEzmaxproductDescriptionX'] = (is_null($sEzmaxproductDescriptionX) ? null : (string) $sEzmaxproductDescriptionX);
+        $this->container['sEzmaxproductDescriptionX'] = (is_null($sEzmaxproductDescriptionX) ? null : trim((string) $sEzmaxproductDescriptionX));
 
         return $this;
     }
@@ -559,7 +559,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
      */
     public function getDEzmaxinvoicingsummaryexternaldetailCountreal()
     {
-        return $this->container['dEzmaxinvoicingsummaryexternaldetailCountreal'];
+        return is_null($this->container['dEzmaxinvoicingsummaryexternaldetailCountreal']) ? null : trim($this->container['dEzmaxinvoicingsummaryexternaldetailCountreal']);
     }
 
     /**
@@ -584,7 +584,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryexternaldetailCountreal'] = $dEzmaxinvoicingsummaryexternaldetailCountreal;
-        $this->container['dEzmaxinvoicingsummaryexternaldetailCountreal'] = (is_null($dEzmaxinvoicingsummaryexternaldetailCountreal) ? null : (string) $dEzmaxinvoicingsummaryexternaldetailCountreal);
+        $this->container['dEzmaxinvoicingsummaryexternaldetailCountreal'] = (is_null($dEzmaxinvoicingsummaryexternaldetailCountreal) ? null : trim((string) $dEzmaxinvoicingsummaryexternaldetailCountreal));
 
         return $this;
     }
@@ -596,7 +596,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
      */
     public function getDEzmaxinvoicingsummaryexternaldetailSubtotal()
     {
-        return $this->container['dEzmaxinvoicingsummaryexternaldetailSubtotal'];
+        return is_null($this->container['dEzmaxinvoicingsummaryexternaldetailSubtotal']) ? null : trim($this->container['dEzmaxinvoicingsummaryexternaldetailSubtotal']);
     }
 
     /**
@@ -621,7 +621,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryexternaldetailSubtotal'] = $dEzmaxinvoicingsummaryexternaldetailSubtotal;
-        $this->container['dEzmaxinvoicingsummaryexternaldetailSubtotal'] = (is_null($dEzmaxinvoicingsummaryexternaldetailSubtotal) ? null : (string) $dEzmaxinvoicingsummaryexternaldetailSubtotal);
+        $this->container['dEzmaxinvoicingsummaryexternaldetailSubtotal'] = (is_null($dEzmaxinvoicingsummaryexternaldetailSubtotal) ? null : trim((string) $dEzmaxinvoicingsummaryexternaldetailSubtotal));
 
         return $this;
     }
@@ -633,7 +633,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
      */
     public function getDEzmaxinvoicingsummaryexternaldetailRebate()
     {
-        return $this->container['dEzmaxinvoicingsummaryexternaldetailRebate'];
+        return is_null($this->container['dEzmaxinvoicingsummaryexternaldetailRebate']) ? null : trim($this->container['dEzmaxinvoicingsummaryexternaldetailRebate']);
     }
 
     /**
@@ -658,7 +658,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryexternaldetailRebate'] = $dEzmaxinvoicingsummaryexternaldetailRebate;
-        $this->container['dEzmaxinvoicingsummaryexternaldetailRebate'] = (is_null($dEzmaxinvoicingsummaryexternaldetailRebate) ? null : (string) $dEzmaxinvoicingsummaryexternaldetailRebate);
+        $this->container['dEzmaxinvoicingsummaryexternaldetailRebate'] = (is_null($dEzmaxinvoicingsummaryexternaldetailRebate) ? null : trim((string) $dEzmaxinvoicingsummaryexternaldetailRebate));
 
         return $this;
     }
@@ -670,7 +670,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
      */
     public function getDEzmaxinvoicingsummaryexternaldetailTotal()
     {
-        return $this->container['dEzmaxinvoicingsummaryexternaldetailTotal'];
+        return is_null($this->container['dEzmaxinvoicingsummaryexternaldetailTotal']) ? null : trim($this->container['dEzmaxinvoicingsummaryexternaldetailTotal']);
     }
 
     /**
@@ -695,7 +695,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingsummaryexternaldetailTotal'] = $dEzmaxinvoicingsummaryexternaldetailTotal;
-        $this->container['dEzmaxinvoicingsummaryexternaldetailTotal'] = (is_null($dEzmaxinvoicingsummaryexternaldetailTotal) ? null : (string) $dEzmaxinvoicingsummaryexternaldetailTotal);
+        $this->container['dEzmaxinvoicingsummaryexternaldetailTotal'] = (is_null($dEzmaxinvoicingsummaryexternaldetailTotal) ? null : trim((string) $dEzmaxinvoicingsummaryexternaldetailTotal));
 
         return $this;
     }
@@ -738,7 +738,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
      */
     public function getTEzmaxproductHelpX()
     {
-        return $this->container['tEzmaxproductHelpX'];
+        return is_null($this->container['tEzmaxproductHelpX']) ? null : trim($this->container['tEzmaxproductHelpX']);
     }
 
     /**
@@ -757,7 +757,7 @@ class EzmaxinvoicingsummaryexternaldetailResponse implements ModelInterface, Arr
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzmaxproductHelpX'] = $tEzmaxproductHelpX;
-        $this->container['tEzmaxproductHelpX'] = (is_null($tEzmaxproductHelpX) ? null : (string) $tEzmaxproductHelpX);
+        $this->container['tEzmaxproductHelpX'] = (is_null($tEzmaxproductHelpX) ? null : trim((string) $tEzmaxproductHelpX));
 
         return $this;
     }

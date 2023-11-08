@@ -479,7 +479,7 @@ class EzsigntemplatepackageRequest implements ModelInterface, ArrayAccess, \Json
      */
     public function getSEzsigntemplatepackageDescription()
     {
-        return $this->container['sEzsigntemplatepackageDescription'];
+        return is_null($this->container['sEzsigntemplatepackageDescription']) ? null : trim($this->container['sEzsigntemplatepackageDescription']);
     }
 
     /**
@@ -498,7 +498,7 @@ class EzsigntemplatepackageRequest implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatepackageDescription'] = $sEzsigntemplatepackageDescription;
-        $this->container['sEzsigntemplatepackageDescription'] = (is_null($sEzsigntemplatepackageDescription) ? null : (string) $sEzsigntemplatepackageDescription);
+        $this->container['sEzsigntemplatepackageDescription'] = (is_null($sEzsigntemplatepackageDescription) ? null : trim((string) $sEzsigntemplatepackageDescription));
 
         return $this;
     }

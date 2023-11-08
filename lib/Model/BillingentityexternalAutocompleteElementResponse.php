@@ -362,7 +362,7 @@ class BillingentityexternalAutocompleteElementResponse implements ModelInterface
      */
     public function getSBillingentityexternalDescription()
     {
-        return $this->container['sBillingentityexternalDescription'];
+        return is_null($this->container['sBillingentityexternalDescription']) ? null : trim($this->container['sBillingentityexternalDescription']);
     }
 
     /**
@@ -381,7 +381,7 @@ class BillingentityexternalAutocompleteElementResponse implements ModelInterface
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBillingentityexternalDescription'] = $sBillingentityexternalDescription;
-        $this->container['sBillingentityexternalDescription'] = (is_null($sBillingentityexternalDescription) ? null : (string) $sBillingentityexternalDescription);
+        $this->container['sBillingentityexternalDescription'] = (is_null($sBillingentityexternalDescription) ? null : trim((string) $sBillingentityexternalDescription));
 
         return $this;
     }

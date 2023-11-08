@@ -478,7 +478,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function getSPhoneRegion()
     {
-        return $this->container['sPhoneRegion'];
+        return is_null($this->container['sPhoneRegion']) ? null : trim($this->container['sPhoneRegion']);
     }
 
     /**
@@ -498,7 +498,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneRegion'] = $sPhoneRegion;
-        $this->container['sPhoneRegion'] = (is_null($sPhoneRegion) ? null : (string) $sPhoneRegion);
+        $this->container['sPhoneRegion'] = (is_null($sPhoneRegion) ? null : trim((string) $sPhoneRegion));
 
         return $this;
     }
@@ -511,7 +511,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function getSPhoneExchange()
     {
-        return $this->container['sPhoneExchange'];
+        return is_null($this->container['sPhoneExchange']) ? null : trim($this->container['sPhoneExchange']);
     }
 
     /**
@@ -531,7 +531,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneExchange'] = $sPhoneExchange;
-        $this->container['sPhoneExchange'] = (is_null($sPhoneExchange) ? null : (string) $sPhoneExchange);
+        $this->container['sPhoneExchange'] = (is_null($sPhoneExchange) ? null : trim((string) $sPhoneExchange));
 
         return $this;
     }
@@ -544,7 +544,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function getSPhoneNumber()
     {
-        return $this->container['sPhoneNumber'];
+        return is_null($this->container['sPhoneNumber']) ? null : trim($this->container['sPhoneNumber']);
     }
 
     /**
@@ -564,7 +564,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneNumber'] = $sPhoneNumber;
-        $this->container['sPhoneNumber'] = (is_null($sPhoneNumber) ? null : (string) $sPhoneNumber);
+        $this->container['sPhoneNumber'] = (is_null($sPhoneNumber) ? null : trim((string) $sPhoneNumber));
 
         return $this;
     }
@@ -577,7 +577,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function getSPhoneInternational()
     {
-        return $this->container['sPhoneInternational'];
+        return is_null($this->container['sPhoneInternational']) ? null : trim($this->container['sPhoneInternational']);
     }
 
     /**
@@ -597,7 +597,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneInternational'] = $sPhoneInternational;
-        $this->container['sPhoneInternational'] = (is_null($sPhoneInternational) ? null : (string) $sPhoneInternational);
+        $this->container['sPhoneInternational'] = (is_null($sPhoneInternational) ? null : trim((string) $sPhoneInternational));
 
         return $this;
     }
@@ -609,7 +609,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function getSPhoneExtension()
     {
-        return $this->container['sPhoneExtension'];
+        return is_null($this->container['sPhoneExtension']) ? null : trim($this->container['sPhoneExtension']);
     }
 
     /**
@@ -628,7 +628,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneExtension'] = $sPhoneExtension;
-        $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : (string) $sPhoneExtension);
+        $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : trim((string) $sPhoneExtension));
 
         return $this;
     }
@@ -640,7 +640,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function getSPhoneE164()
     {
-        return $this->container['sPhoneE164'];
+        return is_null($this->container['sPhoneE164']) ? null : trim($this->container['sPhoneE164']);
     }
 
     /**
@@ -665,7 +665,7 @@ class PhoneRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneE164'] = $sPhoneE164;
-        $this->container['sPhoneE164'] = (is_null($sPhoneE164) ? null : (string) $sPhoneE164);
+        $this->container['sPhoneE164'] = (is_null($sPhoneE164) ? null : trim((string) $sPhoneE164));
 
         return $this;
     }

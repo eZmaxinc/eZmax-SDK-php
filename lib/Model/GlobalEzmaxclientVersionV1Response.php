@@ -301,7 +301,7 @@ class GlobalEzmaxclientVersionV1Response implements ModelInterface, ArrayAccess,
      */
     public function getSEzmaxclientVersion()
     {
-        return $this->container['sEzmaxclientVersion'];
+        return is_null($this->container['sEzmaxclientVersion']) ? null : trim($this->container['sEzmaxclientVersion']);
     }
 
     /**
@@ -320,7 +320,7 @@ class GlobalEzmaxclientVersionV1Response implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxclientVersion'] = $sEzmaxclientVersion;
-        $this->container['sEzmaxclientVersion'] = (is_null($sEzmaxclientVersion) ? null : (string) $sEzmaxclientVersion);
+        $this->container['sEzmaxclientVersion'] = (is_null($sEzmaxclientVersion) ? null : trim((string) $sEzmaxclientVersion));
 
         return $this;
     }

@@ -370,7 +370,7 @@ class LanguageAutocompleteElementResponse implements ModelInterface, ArrayAccess
      */
     public function getSLanguageNameX()
     {
-        return $this->container['sLanguageNameX'];
+        return is_null($this->container['sLanguageNameX']) ? null : trim($this->container['sLanguageNameX']);
     }
 
     /**
@@ -389,7 +389,7 @@ class LanguageAutocompleteElementResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sLanguageNameX'] = $sLanguageNameX;
-        $this->container['sLanguageNameX'] = (is_null($sLanguageNameX) ? null : (string) $sLanguageNameX);
+        $this->container['sLanguageNameX'] = (is_null($sLanguageNameX) ? null : trim((string) $sLanguageNameX));
 
         return $this;
     }

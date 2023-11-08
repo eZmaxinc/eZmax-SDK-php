@@ -403,7 +403,7 @@ class EzsigntemplatesignerResponseCompound implements ModelInterface, ArrayAcces
      */
     public function getSEzsigntemplatesignerDescription()
     {
-        return $this->container['sEzsigntemplatesignerDescription'];
+        return is_null($this->container['sEzsigntemplatesignerDescription']) ? null : trim($this->container['sEzsigntemplatesignerDescription']);
     }
 
     /**
@@ -422,7 +422,7 @@ class EzsigntemplatesignerResponseCompound implements ModelInterface, ArrayAcces
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatesignerDescription'] = $sEzsigntemplatesignerDescription;
-        $this->container['sEzsigntemplatesignerDescription'] = (is_null($sEzsigntemplatesignerDescription) ? null : (string) $sEzsigntemplatesignerDescription);
+        $this->container['sEzsigntemplatesignerDescription'] = (is_null($sEzsigntemplatesignerDescription) ? null : trim((string) $sEzsigntemplatesignerDescription));
 
         return $this;
     }

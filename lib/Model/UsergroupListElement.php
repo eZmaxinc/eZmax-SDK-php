@@ -383,7 +383,7 @@ class UsergroupListElement implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function getSUsergroupNameX()
     {
-        return $this->container['sUsergroupNameX'];
+        return is_null($this->container['sUsergroupNameX']) ? null : trim($this->container['sUsergroupNameX']);
     }
 
     /**
@@ -408,7 +408,7 @@ class UsergroupListElement implements ModelInterface, ArrayAccess, \JsonSerializ
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUsergroupNameX'] = $sUsergroupNameX;
-        $this->container['sUsergroupNameX'] = (is_null($sUsergroupNameX) ? null : (string) $sUsergroupNameX);
+        $this->container['sUsergroupNameX'] = (is_null($sUsergroupNameX) ? null : trim((string) $sUsergroupNameX));
 
         return $this;
     }

@@ -484,7 +484,7 @@ class EzsigntemplateformfieldRequest implements ModelInterface, ArrayAccess, \Js
      */
     public function getSEzsigntemplateformfieldLabel()
     {
-        return $this->container['sEzsigntemplateformfieldLabel'];
+        return is_null($this->container['sEzsigntemplateformfieldLabel']) ? null : trim($this->container['sEzsigntemplateformfieldLabel']);
     }
 
     /**
@@ -503,7 +503,7 @@ class EzsigntemplateformfieldRequest implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateformfieldLabel'] = $sEzsigntemplateformfieldLabel;
-        $this->container['sEzsigntemplateformfieldLabel'] = (is_null($sEzsigntemplateformfieldLabel) ? null : (string) $sEzsigntemplateformfieldLabel);
+        $this->container['sEzsigntemplateformfieldLabel'] = (is_null($sEzsigntemplateformfieldLabel) ? null : trim((string) $sEzsigntemplateformfieldLabel));
 
         return $this;
     }
@@ -515,7 +515,7 @@ class EzsigntemplateformfieldRequest implements ModelInterface, ArrayAccess, \Js
      */
     public function getSEzsigntemplateformfieldValue()
     {
-        return $this->container['sEzsigntemplateformfieldValue'];
+        return is_null($this->container['sEzsigntemplateformfieldValue']) ? null : trim($this->container['sEzsigntemplateformfieldValue']);
     }
 
     /**
@@ -534,7 +534,7 @@ class EzsigntemplateformfieldRequest implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateformfieldValue'] = $sEzsigntemplateformfieldValue;
-        $this->container['sEzsigntemplateformfieldValue'] = (is_null($sEzsigntemplateformfieldValue) ? null : (string) $sEzsigntemplateformfieldValue);
+        $this->container['sEzsigntemplateformfieldValue'] = (is_null($sEzsigntemplateformfieldValue) ? null : trim((string) $sEzsigntemplateformfieldValue));
 
         return $this;
     }

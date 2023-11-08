@@ -366,7 +366,7 @@ class UserAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
      */
     public function getSUserName()
     {
-        return $this->container['sUserName'];
+        return is_null($this->container['sUserName']) ? null : trim($this->container['sUserName']);
     }
 
     /**
@@ -385,7 +385,7 @@ class UserAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserName'] = $sUserName;
-        $this->container['sUserName'] = (is_null($sUserName) ? null : (string) $sUserName);
+        $this->container['sUserName'] = (is_null($sUserName) ? null : trim((string) $sUserName));
 
         return $this;
     }

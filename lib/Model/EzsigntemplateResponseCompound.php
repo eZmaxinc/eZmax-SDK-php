@@ -567,7 +567,7 @@ class EzsigntemplateResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSLanguageNameX()
     {
-        return $this->container['sLanguageNameX'];
+        return is_null($this->container['sLanguageNameX']) ? null : trim($this->container['sLanguageNameX']);
     }
 
     /**
@@ -586,7 +586,7 @@ class EzsigntemplateResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sLanguageNameX'] = $sLanguageNameX;
-        $this->container['sLanguageNameX'] = (is_null($sLanguageNameX) ? null : (string) $sLanguageNameX);
+        $this->container['sLanguageNameX'] = (is_null($sLanguageNameX) ? null : trim((string) $sLanguageNameX));
 
         return $this;
     }
@@ -598,7 +598,7 @@ class EzsigntemplateResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSEzsigntemplateDescription()
     {
-        return $this->container['sEzsigntemplateDescription'];
+        return is_null($this->container['sEzsigntemplateDescription']) ? null : trim($this->container['sEzsigntemplateDescription']);
     }
 
     /**
@@ -617,7 +617,7 @@ class EzsigntemplateResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateDescription'] = $sEzsigntemplateDescription;
-        $this->container['sEzsigntemplateDescription'] = (is_null($sEzsigntemplateDescription) ? null : (string) $sEzsigntemplateDescription);
+        $this->container['sEzsigntemplateDescription'] = (is_null($sEzsigntemplateDescription) ? null : trim((string) $sEzsigntemplateDescription));
 
         return $this;
     }
@@ -660,7 +660,7 @@ class EzsigntemplateResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function getSEzsignfoldertypeNameX()
     {
-        return $this->container['sEzsignfoldertypeNameX'];
+        return is_null($this->container['sEzsignfoldertypeNameX']) ? null : trim($this->container['sEzsignfoldertypeNameX']);
     }
 
     /**
@@ -679,7 +679,7 @@ class EzsigntemplateResponseCompound implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
-        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
+        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : trim((string) $sEzsignfoldertypeNameX));
 
         return $this;
     }

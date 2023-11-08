@@ -529,7 +529,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public function getDtEzmaxinvoicingcommissionStart()
     {
-        return $this->container['dtEzmaxinvoicingcommissionStart'];
+        return is_null($this->container['dtEzmaxinvoicingcommissionStart']) ? null : trim($this->container['dtEzmaxinvoicingcommissionStart']);
     }
 
     /**
@@ -548,7 +548,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxinvoicingcommissionStart'] = $dtEzmaxinvoicingcommissionStart;
-        $this->container['dtEzmaxinvoicingcommissionStart'] = (is_null($dtEzmaxinvoicingcommissionStart) ? null : (string) $dtEzmaxinvoicingcommissionStart);
+        $this->container['dtEzmaxinvoicingcommissionStart'] = (is_null($dtEzmaxinvoicingcommissionStart) ? null : trim((string) $dtEzmaxinvoicingcommissionStart));
 
         return $this;
     }
@@ -560,7 +560,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public function getDtEzmaxinvoicingcommissionEnd()
     {
-        return $this->container['dtEzmaxinvoicingcommissionEnd'];
+        return is_null($this->container['dtEzmaxinvoicingcommissionEnd']) ? null : trim($this->container['dtEzmaxinvoicingcommissionEnd']);
     }
 
     /**
@@ -579,7 +579,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzmaxinvoicingcommissionEnd'] = $dtEzmaxinvoicingcommissionEnd;
-        $this->container['dtEzmaxinvoicingcommissionEnd'] = (is_null($dtEzmaxinvoicingcommissionEnd) ? null : (string) $dtEzmaxinvoicingcommissionEnd);
+        $this->container['dtEzmaxinvoicingcommissionEnd'] = (is_null($dtEzmaxinvoicingcommissionEnd) ? null : trim((string) $dtEzmaxinvoicingcommissionEnd));
 
         return $this;
     }
@@ -628,7 +628,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public function getDEzmaxinvoicingcommissionAmount()
     {
-        return $this->container['dEzmaxinvoicingcommissionAmount'];
+        return is_null($this->container['dEzmaxinvoicingcommissionAmount']) ? null : trim($this->container['dEzmaxinvoicingcommissionAmount']);
     }
 
     /**
@@ -653,7 +653,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dEzmaxinvoicingcommissionAmount'] = $dEzmaxinvoicingcommissionAmount;
-        $this->container['dEzmaxinvoicingcommissionAmount'] = (is_null($dEzmaxinvoicingcommissionAmount) ? null : (string) $dEzmaxinvoicingcommissionAmount);
+        $this->container['dEzmaxinvoicingcommissionAmount'] = (is_null($dEzmaxinvoicingcommissionAmount) ? null : trim((string) $dEzmaxinvoicingcommissionAmount));
 
         return $this;
     }

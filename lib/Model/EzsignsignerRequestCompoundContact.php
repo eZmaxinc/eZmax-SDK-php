@@ -381,7 +381,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function getSContactFirstname()
     {
-        return $this->container['sContactFirstname'];
+        return is_null($this->container['sContactFirstname']) ? null : trim($this->container['sContactFirstname']);
     }
 
     /**
@@ -400,7 +400,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactFirstname'] = $sContactFirstname;
-        $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : (string) $sContactFirstname);
+        $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : trim((string) $sContactFirstname));
 
         return $this;
     }
@@ -412,7 +412,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function getSContactLastname()
     {
-        return $this->container['sContactLastname'];
+        return is_null($this->container['sContactLastname']) ? null : trim($this->container['sContactLastname']);
     }
 
     /**
@@ -431,7 +431,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactLastname'] = $sContactLastname;
-        $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : (string) $sContactLastname);
+        $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : trim((string) $sContactLastname));
 
         return $this;
     }
@@ -484,7 +484,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -503,7 +503,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }
@@ -515,7 +515,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function getSPhoneE164()
     {
-        return $this->container['sPhoneE164'];
+        return is_null($this->container['sPhoneE164']) ? null : trim($this->container['sPhoneE164']);
     }
 
     /**
@@ -540,7 +540,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneE164'] = $sPhoneE164;
-        $this->container['sPhoneE164'] = (is_null($sPhoneE164) ? null : (string) $sPhoneE164);
+        $this->container['sPhoneE164'] = (is_null($sPhoneE164) ? null : trim((string) $sPhoneE164));
 
         return $this;
     }
@@ -552,7 +552,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function getSPhoneExtension()
     {
-        return $this->container['sPhoneExtension'];
+        return is_null($this->container['sPhoneExtension']) ? null : trim($this->container['sPhoneExtension']);
     }
 
     /**
@@ -571,7 +571,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneExtension'] = $sPhoneExtension;
-        $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : (string) $sPhoneExtension);
+        $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : trim((string) $sPhoneExtension));
 
         return $this;
     }
@@ -583,7 +583,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function getSPhoneE164Cell()
     {
-        return $this->container['sPhoneE164Cell'];
+        return is_null($this->container['sPhoneE164Cell']) ? null : trim($this->container['sPhoneE164Cell']);
     }
 
     /**
@@ -608,7 +608,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneE164Cell'] = $sPhoneE164Cell;
-        $this->container['sPhoneE164Cell'] = (is_null($sPhoneE164Cell) ? null : (string) $sPhoneE164Cell);
+        $this->container['sPhoneE164Cell'] = (is_null($sPhoneE164Cell) ? null : trim((string) $sPhoneE164Cell));
 
         return $this;
     }
@@ -621,7 +621,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function getSPhoneNumber()
     {
-        return $this->container['sPhoneNumber'];
+        return is_null($this->container['sPhoneNumber']) ? null : trim($this->container['sPhoneNumber']);
     }
 
     /**
@@ -641,7 +641,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneNumber'] = $sPhoneNumber;
-        $this->container['sPhoneNumber'] = (is_null($sPhoneNumber) ? null : (string) $sPhoneNumber);
+        $this->container['sPhoneNumber'] = (is_null($sPhoneNumber) ? null : trim((string) $sPhoneNumber));
 
         return $this;
     }
@@ -654,7 +654,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
      */
     public function getSPhoneNumberCell()
     {
-        return $this->container['sPhoneNumberCell'];
+        return is_null($this->container['sPhoneNumberCell']) ? null : trim($this->container['sPhoneNumberCell']);
     }
 
     /**
@@ -674,7 +674,7 @@ class EzsignsignerRequestCompoundContact implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneNumberCell'] = $sPhoneNumberCell;
-        $this->container['sPhoneNumberCell'] = (is_null($sPhoneNumberCell) ? null : (string) $sPhoneNumberCell);
+        $this->container['sPhoneNumberCell'] = (is_null($sPhoneNumberCell) ? null : trim((string) $sPhoneNumberCell));
 
         return $this;
     }

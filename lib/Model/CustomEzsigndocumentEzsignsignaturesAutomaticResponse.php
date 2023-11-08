@@ -362,7 +362,7 @@ class CustomEzsigndocumentEzsignsignaturesAutomaticResponse implements ModelInte
      */
     public function getSEzsigndocumentName()
     {
-        return $this->container['sEzsigndocumentName'];
+        return is_null($this->container['sEzsigndocumentName']) ? null : trim($this->container['sEzsigndocumentName']);
     }
 
     /**
@@ -381,7 +381,7 @@ class CustomEzsigndocumentEzsignsignaturesAutomaticResponse implements ModelInte
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
-        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);
+        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : trim((string) $sEzsigndocumentName));
 
         return $this;
     }

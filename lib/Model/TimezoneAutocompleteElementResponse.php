@@ -325,7 +325,7 @@ class TimezoneAutocompleteElementResponse implements ModelInterface, ArrayAccess
      */
     public function getSTimezoneName()
     {
-        return $this->container['sTimezoneName'];
+        return is_null($this->container['sTimezoneName']) ? null : trim($this->container['sTimezoneName']);
     }
 
     /**
@@ -344,7 +344,7 @@ class TimezoneAutocompleteElementResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sTimezoneName'] = $sTimezoneName;
-        $this->container['sTimezoneName'] = (is_null($sTimezoneName) ? null : (string) $sTimezoneName);
+        $this->container['sTimezoneName'] = (is_null($sTimezoneName) ? null : trim((string) $sTimezoneName));
 
         return $this;
     }

@@ -315,7 +315,7 @@ class MultilingualUsergroupName implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getSUsergroupName1()
     {
-        return $this->container['sUsergroupName1'];
+        return is_null($this->container['sUsergroupName1']) ? null : trim($this->container['sUsergroupName1']);
     }
 
     /**
@@ -340,7 +340,7 @@ class MultilingualUsergroupName implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUsergroupName1'] = $sUsergroupName1;
-        $this->container['sUsergroupName1'] = (is_null($sUsergroupName1) ? null : (string) $sUsergroupName1);
+        $this->container['sUsergroupName1'] = (is_null($sUsergroupName1) ? null : trim((string) $sUsergroupName1));
 
         return $this;
     }
@@ -352,7 +352,7 @@ class MultilingualUsergroupName implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function getSUsergroupName2()
     {
-        return $this->container['sUsergroupName2'];
+        return is_null($this->container['sUsergroupName2']) ? null : trim($this->container['sUsergroupName2']);
     }
 
     /**
@@ -377,7 +377,7 @@ class MultilingualUsergroupName implements ModelInterface, ArrayAccess, \JsonSer
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUsergroupName2'] = $sUsergroupName2;
-        $this->container['sUsergroupName2'] = (is_null($sUsergroupName2) ? null : (string) $sUsergroupName2);
+        $this->container['sUsergroupName2'] = (is_null($sUsergroupName2) ? null : trim((string) $sUsergroupName2));
 
         return $this;
     }

@@ -315,7 +315,7 @@ class MultilingualSubnetDescription implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSSubnetDescription1()
     {
-        return $this->container['sSubnetDescription1'];
+        return is_null($this->container['sSubnetDescription1']) ? null : trim($this->container['sSubnetDescription1']);
     }
 
     /**
@@ -340,7 +340,7 @@ class MultilingualSubnetDescription implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSubnetDescription1'] = $sSubnetDescription1;
-        $this->container['sSubnetDescription1'] = (is_null($sSubnetDescription1) ? null : (string) $sSubnetDescription1);
+        $this->container['sSubnetDescription1'] = (is_null($sSubnetDescription1) ? null : trim((string) $sSubnetDescription1));
 
         return $this;
     }
@@ -352,7 +352,7 @@ class MultilingualSubnetDescription implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSSubnetDescription2()
     {
-        return $this->container['sSubnetDescription2'];
+        return is_null($this->container['sSubnetDescription2']) ? null : trim($this->container['sSubnetDescription2']);
     }
 
     /**
@@ -377,7 +377,7 @@ class MultilingualSubnetDescription implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSubnetDescription2'] = $sSubnetDescription2;
-        $this->container['sSubnetDescription2'] = (is_null($sSubnetDescription2) ? null : (string) $sSubnetDescription2);
+        $this->container['sSubnetDescription2'] = (is_null($sSubnetDescription2) ? null : trim((string) $sSubnetDescription2));
 
         return $this;
     }

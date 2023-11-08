@@ -315,7 +315,7 @@ class MultilingualVariableexpenseDescription implements ModelInterface, ArrayAcc
      */
     public function getSVariableexpenseDescription1()
     {
-        return $this->container['sVariableexpenseDescription1'];
+        return is_null($this->container['sVariableexpenseDescription1']) ? null : trim($this->container['sVariableexpenseDescription1']);
     }
 
     /**
@@ -340,7 +340,7 @@ class MultilingualVariableexpenseDescription implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sVariableexpenseDescription1'] = $sVariableexpenseDescription1;
-        $this->container['sVariableexpenseDescription1'] = (is_null($sVariableexpenseDescription1) ? null : (string) $sVariableexpenseDescription1);
+        $this->container['sVariableexpenseDescription1'] = (is_null($sVariableexpenseDescription1) ? null : trim((string) $sVariableexpenseDescription1));
 
         return $this;
     }
@@ -352,7 +352,7 @@ class MultilingualVariableexpenseDescription implements ModelInterface, ArrayAcc
      */
     public function getSVariableexpenseDescription2()
     {
-        return $this->container['sVariableexpenseDescription2'];
+        return is_null($this->container['sVariableexpenseDescription2']) ? null : trim($this->container['sVariableexpenseDescription2']);
     }
 
     /**
@@ -377,7 +377,7 @@ class MultilingualVariableexpenseDescription implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sVariableexpenseDescription2'] = $sVariableexpenseDescription2;
-        $this->container['sVariableexpenseDescription2'] = (is_null($sVariableexpenseDescription2) ? null : (string) $sVariableexpenseDescription2);
+        $this->container['sVariableexpenseDescription2'] = (is_null($sVariableexpenseDescription2) ? null : trim((string) $sVariableexpenseDescription2));
 
         return $this;
     }

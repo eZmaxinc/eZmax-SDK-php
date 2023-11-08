@@ -329,7 +329,7 @@ class EzmaxinvoicingAutocompleteElementResponse implements ModelInterface, Array
      */
     public function getYyyymmEzmaxinvoicing()
     {
-        return $this->container['yyyymmEzmaxinvoicing'];
+        return is_null($this->container['yyyymmEzmaxinvoicing']) ? null : trim($this->container['yyyymmEzmaxinvoicing']);
     }
 
     /**
@@ -353,7 +353,7 @@ class EzmaxinvoicingAutocompleteElementResponse implements ModelInterface, Array
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['yyyymmEzmaxinvoicing'] = $yyyymmEzmaxinvoicing;
-        $this->container['yyyymmEzmaxinvoicing'] = (is_null($yyyymmEzmaxinvoicing) ? null : (string) $yyyymmEzmaxinvoicing);
+        $this->container['yyyymmEzmaxinvoicing'] = (is_null($yyyymmEzmaxinvoicing) ? null : trim((string) $yyyymmEzmaxinvoicing));
 
         return $this;
     }

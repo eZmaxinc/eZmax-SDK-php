@@ -325,7 +325,7 @@ class PeriodAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      */
     public function getSPeriodYYYYMM()
     {
-        return $this->container['sPeriodYYYYMM'];
+        return is_null($this->container['sPeriodYYYYMM']) ? null : trim($this->container['sPeriodYYYYMM']);
     }
 
     /**
@@ -344,7 +344,7 @@ class PeriodAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPeriodYYYYMM'] = $sPeriodYYYYMM;
-        $this->container['sPeriodYYYYMM'] = (is_null($sPeriodYYYYMM) ? null : (string) $sPeriodYYYYMM);
+        $this->container['sPeriodYYYYMM'] = (is_null($sPeriodYYYYMM) ? null : trim((string) $sPeriodYYYYMM));
 
         return $this;
     }

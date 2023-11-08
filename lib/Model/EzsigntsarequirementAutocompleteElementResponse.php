@@ -339,7 +339,7 @@ class EzsigntsarequirementAutocompleteElementResponse implements ModelInterface,
      */
     public function getSEzsigntsarequirementDescriptionX()
     {
-        return $this->container['sEzsigntsarequirementDescriptionX'];
+        return is_null($this->container['sEzsigntsarequirementDescriptionX']) ? null : trim($this->container['sEzsigntsarequirementDescriptionX']);
     }
 
     /**
@@ -358,7 +358,7 @@ class EzsigntsarequirementAutocompleteElementResponse implements ModelInterface,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntsarequirementDescriptionX'] = $sEzsigntsarequirementDescriptionX;
-        $this->container['sEzsigntsarequirementDescriptionX'] = (is_null($sEzsigntsarequirementDescriptionX) ? null : (string) $sEzsigntsarequirementDescriptionX);
+        $this->container['sEzsigntsarequirementDescriptionX'] = (is_null($sEzsigntsarequirementDescriptionX) ? null : trim((string) $sEzsigntsarequirementDescriptionX));
 
         return $this;
     }

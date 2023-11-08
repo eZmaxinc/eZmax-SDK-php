@@ -359,7 +359,7 @@ class CustomEzsignfoldertransmissionSignerResponse implements ModelInterface, Ar
      */
     public function getSContactFirstname()
     {
-        return $this->container['sContactFirstname'];
+        return is_null($this->container['sContactFirstname']) ? null : trim($this->container['sContactFirstname']);
     }
 
     /**
@@ -378,7 +378,7 @@ class CustomEzsignfoldertransmissionSignerResponse implements ModelInterface, Ar
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactFirstname'] = $sContactFirstname;
-        $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : (string) $sContactFirstname);
+        $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : trim((string) $sContactFirstname));
 
         return $this;
     }
@@ -390,7 +390,7 @@ class CustomEzsignfoldertransmissionSignerResponse implements ModelInterface, Ar
      */
     public function getSContactLastname()
     {
-        return $this->container['sContactLastname'];
+        return is_null($this->container['sContactLastname']) ? null : trim($this->container['sContactLastname']);
     }
 
     /**
@@ -409,7 +409,7 @@ class CustomEzsignfoldertransmissionSignerResponse implements ModelInterface, Ar
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactLastname'] = $sContactLastname;
-        $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : (string) $sContactLastname);
+        $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : trim((string) $sContactLastname));
 
         return $this;
     }

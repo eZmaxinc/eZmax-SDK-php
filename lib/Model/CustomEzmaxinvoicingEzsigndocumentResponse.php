@@ -382,7 +382,7 @@ class CustomEzmaxinvoicingEzsigndocumentResponse implements ModelInterface, Arra
      */
     public function getSName()
     {
-        return $this->container['sName'];
+        return is_null($this->container['sName']) ? null : trim($this->container['sName']);
     }
 
     /**
@@ -401,7 +401,7 @@ class CustomEzmaxinvoicingEzsigndocumentResponse implements ModelInterface, Arra
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sName'] = $sName;
-        $this->container['sName'] = (is_null($sName) ? null : (string) $sName);
+        $this->container['sName'] = (is_null($sName) ? null : trim((string) $sName));
 
         return $this;
     }
@@ -413,7 +413,7 @@ class CustomEzmaxinvoicingEzsigndocumentResponse implements ModelInterface, Arra
      */
     public function getSEzsignfolderDescription()
     {
-        return $this->container['sEzsignfolderDescription'];
+        return is_null($this->container['sEzsignfolderDescription']) ? null : trim($this->container['sEzsignfolderDescription']);
     }
 
     /**
@@ -432,7 +432,7 @@ class CustomEzmaxinvoicingEzsigndocumentResponse implements ModelInterface, Arra
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
-        $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : (string) $sEzsignfolderDescription);
+        $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : trim((string) $sEzsignfolderDescription));
 
         return $this;
     }
@@ -444,7 +444,7 @@ class CustomEzmaxinvoicingEzsigndocumentResponse implements ModelInterface, Arra
      */
     public function getSEzsigndocumentName()
     {
-        return $this->container['sEzsigndocumentName'];
+        return is_null($this->container['sEzsigndocumentName']) ? null : trim($this->container['sEzsigndocumentName']);
     }
 
     /**
@@ -463,7 +463,7 @@ class CustomEzmaxinvoicingEzsigndocumentResponse implements ModelInterface, Arra
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
-        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);
+        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : trim((string) $sEzsigndocumentName));
 
         return $this;
     }

@@ -341,7 +341,7 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSMemoryUsage()
     {
-        return $this->container['sMemoryUsage'];
+        return is_null($this->container['sMemoryUsage']) ? null : trim($this->container['sMemoryUsage']);
     }
 
     /**
@@ -360,7 +360,7 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sMemoryUsage'] = $sMemoryUsage;
-        $this->container['sMemoryUsage'] = (is_null($sMemoryUsage) ? null : (string) $sMemoryUsage);
+        $this->container['sMemoryUsage'] = (is_null($sMemoryUsage) ? null : trim((string) $sMemoryUsage));
 
         return $this;
     }
@@ -372,7 +372,7 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSRunTime()
     {
-        return $this->container['sRunTime'];
+        return is_null($this->container['sRunTime']) ? null : trim($this->container['sRunTime']);
     }
 
     /**
@@ -391,7 +391,7 @@ class CommonResponseObjDebug implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sRunTime'] = $sRunTime;
-        $this->container['sRunTime'] = (is_null($sRunTime) ? null : (string) $sRunTime);
+        $this->container['sRunTime'] = (is_null($sRunTime) ? null : trim((string) $sRunTime));
 
         return $this;
     }

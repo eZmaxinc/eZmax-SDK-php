@@ -305,7 +305,7 @@ class MultilingualBrandingDescription implements ModelInterface, ArrayAccess, \J
      */
     public function getSBrandingDescription1()
     {
-        return $this->container['sBrandingDescription1'];
+        return is_null($this->container['sBrandingDescription1']) ? null : trim($this->container['sBrandingDescription1']);
     }
 
     /**
@@ -324,7 +324,7 @@ class MultilingualBrandingDescription implements ModelInterface, ArrayAccess, \J
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBrandingDescription1'] = $sBrandingDescription1;
-        $this->container['sBrandingDescription1'] = (is_null($sBrandingDescription1) ? null : (string) $sBrandingDescription1);
+        $this->container['sBrandingDescription1'] = (is_null($sBrandingDescription1) ? null : trim((string) $sBrandingDescription1));
 
         return $this;
     }
@@ -336,7 +336,7 @@ class MultilingualBrandingDescription implements ModelInterface, ArrayAccess, \J
      */
     public function getSBrandingDescription2()
     {
-        return $this->container['sBrandingDescription2'];
+        return is_null($this->container['sBrandingDescription2']) ? null : trim($this->container['sBrandingDescription2']);
     }
 
     /**
@@ -355,7 +355,7 @@ class MultilingualBrandingDescription implements ModelInterface, ArrayAccess, \J
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBrandingDescription2'] = $sBrandingDescription2;
-        $this->container['sBrandingDescription2'] = (is_null($sBrandingDescription2) ? null : (string) $sBrandingDescription2);
+        $this->container['sBrandingDescription2'] = (is_null($sBrandingDescription2) ? null : trim((string) $sBrandingDescription2));
 
         return $this;
     }

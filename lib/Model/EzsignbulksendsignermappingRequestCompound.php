@@ -448,7 +448,7 @@ class EzsignbulksendsignermappingRequestCompound implements ModelInterface, Arra
      */
     public function getSEzsignbulksendsignermappingDescription()
     {
-        return $this->container['sEzsignbulksendsignermappingDescription'];
+        return is_null($this->container['sEzsignbulksendsignermappingDescription']) ? null : trim($this->container['sEzsignbulksendsignermappingDescription']);
     }
 
     /**
@@ -467,7 +467,7 @@ class EzsignbulksendsignermappingRequestCompound implements ModelInterface, Arra
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignbulksendsignermappingDescription'] = $sEzsignbulksendsignermappingDescription;
-        $this->container['sEzsignbulksendsignermappingDescription'] = (is_null($sEzsignbulksendsignermappingDescription) ? null : (string) $sEzsignbulksendsignermappingDescription);
+        $this->container['sEzsignbulksendsignermappingDescription'] = (is_null($sEzsignbulksendsignermappingDescription) ? null : trim((string) $sEzsignbulksendsignermappingDescription));
 
         return $this;
     }

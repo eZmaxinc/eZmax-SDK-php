@@ -365,7 +365,7 @@ class EzsignsignatureSignV1Request implements ModelInterface, ArrayAccess, \Json
      */
     public function getSValue()
     {
-        return $this->container['sValue'];
+        return is_null($this->container['sValue']) ? null : trim($this->container['sValue']);
     }
 
     /**
@@ -384,7 +384,7 @@ class EzsignsignatureSignV1Request implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sValue'] = $sValue;
-        $this->container['sValue'] = (is_null($sValue) ? null : (string) $sValue);
+        $this->container['sValue'] = (is_null($sValue) ? null : trim((string) $sValue));
 
         return $this;
     }
@@ -396,7 +396,7 @@ class EzsignsignatureSignV1Request implements ModelInterface, ArrayAccess, \Json
      */
     public function getEAttachmentsConfirmationDecision()
     {
-        return $this->container['eAttachmentsConfirmationDecision'];
+        return is_null($this->container['eAttachmentsConfirmationDecision']) ? null : trim($this->container['eAttachmentsConfirmationDecision']);
     }
 
     /**
@@ -425,7 +425,7 @@ class EzsignsignatureSignV1Request implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eAttachmentsConfirmationDecision'] = $eAttachmentsConfirmationDecision;
-        $this->container['eAttachmentsConfirmationDecision'] = (is_null($eAttachmentsConfirmationDecision) ? null : (string) $eAttachmentsConfirmationDecision);
+        $this->container['eAttachmentsConfirmationDecision'] = (is_null($eAttachmentsConfirmationDecision) ? null : trim((string) $eAttachmentsConfirmationDecision));
 
         return $this;
     }
@@ -437,7 +437,7 @@ class EzsignsignatureSignV1Request implements ModelInterface, ArrayAccess, \Json
      */
     public function getSAttachmentsRefusalReason()
     {
-        return $this->container['sAttachmentsRefusalReason'];
+        return is_null($this->container['sAttachmentsRefusalReason']) ? null : trim($this->container['sAttachmentsRefusalReason']);
     }
 
     /**
@@ -456,7 +456,7 @@ class EzsignsignatureSignV1Request implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAttachmentsRefusalReason'] = $sAttachmentsRefusalReason;
-        $this->container['sAttachmentsRefusalReason'] = (is_null($sAttachmentsRefusalReason) ? null : (string) $sAttachmentsRefusalReason);
+        $this->container['sAttachmentsRefusalReason'] = (is_null($sAttachmentsRefusalReason) ? null : trim((string) $sAttachmentsRefusalReason));
 
         return $this;
     }
@@ -468,7 +468,7 @@ class EzsignsignatureSignV1Request implements ModelInterface, ArrayAccess, \Json
      */
     public function getSSvg()
     {
-        return $this->container['sSvg'];
+        return is_null($this->container['sSvg']) ? null : trim($this->container['sSvg']);
     }
 
     /**
@@ -493,7 +493,7 @@ class EzsignsignatureSignV1Request implements ModelInterface, ArrayAccess, \Json
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSvg'] = $sSvg;
-        $this->container['sSvg'] = (is_null($sSvg) ? null : (string) $sSvg);
+        $this->container['sSvg'] = (is_null($sSvg) ? null : trim((string) $sSvg));
 
         return $this;
     }

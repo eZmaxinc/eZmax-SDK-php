@@ -367,7 +367,7 @@ class PhonetypeAutocompleteElementResponse implements ModelInterface, ArrayAcces
      */
     public function getSPhonetypeNameX()
     {
-        return $this->container['sPhonetypeNameX'];
+        return is_null($this->container['sPhonetypeNameX']) ? null : trim($this->container['sPhonetypeNameX']);
     }
 
     /**
@@ -392,7 +392,7 @@ class PhonetypeAutocompleteElementResponse implements ModelInterface, ArrayAcces
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhonetypeNameX'] = $sPhonetypeNameX;
-        $this->container['sPhonetypeNameX'] = (is_null($sPhonetypeNameX) ? null : (string) $sPhonetypeNameX);
+        $this->container['sPhonetypeNameX'] = (is_null($sPhonetypeNameX) ? null : trim((string) $sPhonetypeNameX));
 
         return $this;
     }

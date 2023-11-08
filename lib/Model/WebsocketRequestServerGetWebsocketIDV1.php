@@ -323,7 +323,7 @@ class WebsocketRequestServerGetWebsocketIDV1 implements ModelInterface, ArrayAcc
      */
     public function getEWebsocketMessagetype()
     {
-        return $this->container['eWebsocketMessagetype'];
+        return is_null($this->container['eWebsocketMessagetype']) ? null : trim($this->container['eWebsocketMessagetype']);
     }
 
     /**
@@ -352,7 +352,7 @@ class WebsocketRequestServerGetWebsocketIDV1 implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eWebsocketMessagetype'] = $eWebsocketMessagetype;
-        $this->container['eWebsocketMessagetype'] = (is_null($eWebsocketMessagetype) ? null : (string) $eWebsocketMessagetype);
+        $this->container['eWebsocketMessagetype'] = (is_null($eWebsocketMessagetype) ? null : trim((string) $eWebsocketMessagetype));
 
         return $this;
     }

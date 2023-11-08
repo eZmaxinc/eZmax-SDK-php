@@ -352,7 +352,7 @@ class ActivesessionResponseCompoundApikey implements ModelInterface, ArrayAccess
      */
     public function getSApikeyDescriptionX()
     {
-        return $this->container['sApikeyDescriptionX'];
+        return is_null($this->container['sApikeyDescriptionX']) ? null : trim($this->container['sApikeyDescriptionX']);
     }
 
     /**
@@ -371,7 +371,7 @@ class ActivesessionResponseCompoundApikey implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sApikeyDescriptionX'] = $sApikeyDescriptionX;
-        $this->container['sApikeyDescriptionX'] = (is_null($sApikeyDescriptionX) ? null : (string) $sApikeyDescriptionX);
+        $this->container['sApikeyDescriptionX'] = (is_null($sApikeyDescriptionX) ? null : trim((string) $sApikeyDescriptionX));
 
         return $this;
     }

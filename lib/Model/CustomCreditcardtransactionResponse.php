@@ -377,7 +377,7 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
      */
     public function getDCreditcardtransactionAmount()
     {
-        return $this->container['dCreditcardtransactionAmount'];
+        return is_null($this->container['dCreditcardtransactionAmount']) ? null : trim($this->container['dCreditcardtransactionAmount']);
     }
 
     /**
@@ -402,7 +402,7 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dCreditcardtransactionAmount'] = $dCreditcardtransactionAmount;
-        $this->container['dCreditcardtransactionAmount'] = (is_null($dCreditcardtransactionAmount) ? null : (string) $dCreditcardtransactionAmount);
+        $this->container['dCreditcardtransactionAmount'] = (is_null($dCreditcardtransactionAmount) ? null : trim((string) $dCreditcardtransactionAmount));
 
         return $this;
     }
@@ -414,7 +414,7 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
      */
     public function getSCreditcardtransactionPartiallydecryptednumber()
     {
-        return $this->container['sCreditcardtransactionPartiallydecryptednumber'];
+        return is_null($this->container['sCreditcardtransactionPartiallydecryptednumber']) ? null : trim($this->container['sCreditcardtransactionPartiallydecryptednumber']);
     }
 
     /**
@@ -439,7 +439,7 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCreditcardtransactionPartiallydecryptednumber'] = $sCreditcardtransactionPartiallydecryptednumber;
-        $this->container['sCreditcardtransactionPartiallydecryptednumber'] = (is_null($sCreditcardtransactionPartiallydecryptednumber) ? null : (string) $sCreditcardtransactionPartiallydecryptednumber);
+        $this->container['sCreditcardtransactionPartiallydecryptednumber'] = (is_null($sCreditcardtransactionPartiallydecryptednumber) ? null : trim((string) $sCreditcardtransactionPartiallydecryptednumber));
 
         return $this;
     }
@@ -451,7 +451,7 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
      */
     public function getSCreditcardtransactionReferencenumber()
     {
-        return $this->container['sCreditcardtransactionReferencenumber'];
+        return is_null($this->container['sCreditcardtransactionReferencenumber']) ? null : trim($this->container['sCreditcardtransactionReferencenumber']);
     }
 
     /**
@@ -476,7 +476,7 @@ class CustomCreditcardtransactionResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCreditcardtransactionReferencenumber'] = $sCreditcardtransactionReferencenumber;
-        $this->container['sCreditcardtransactionReferencenumber'] = (is_null($sCreditcardtransactionReferencenumber) ? null : (string) $sCreditcardtransactionReferencenumber);
+        $this->container['sCreditcardtransactionReferencenumber'] = (is_null($sCreditcardtransactionReferencenumber) ? null : trim((string) $sCreditcardtransactionReferencenumber));
 
         return $this;
     }

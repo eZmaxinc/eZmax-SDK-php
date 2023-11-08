@@ -616,7 +616,7 @@ class PermissionResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function getSCompanyNameX()
     {
-        return $this->container['sCompanyNameX'];
+        return is_null($this->container['sCompanyNameX']) ? null : trim($this->container['sCompanyNameX']);
     }
 
     /**
@@ -635,7 +635,7 @@ class PermissionResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCompanyNameX'] = $sCompanyNameX;
-        $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : (string) $sCompanyNameX);
+        $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : trim((string) $sCompanyNameX));
 
         return $this;
     }

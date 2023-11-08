@@ -205,6 +205,30 @@ class ObjectEzsignfolderApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsignfolderGetCommunicationrecipientsV1
+     *
+     * Retrieve Ezsignfolder's Communicationrecipient.
+     *
+     */
+    public function testEzsignfolderGetCommunicationrecipientsV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsignfolderGetCommunicationsendersV1
+     *
+     * Retrieve Ezsignfolder's Communicationsender.
+     *
+     */
+    public function testEzsignfolderGetCommunicationsendersV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsignfolderGetEzsigndocumentsV1
      *
      * Retrieve an existing Ezsignfolder's Ezsigndocuments.

@@ -315,7 +315,7 @@ class MultilingualPaymenttermDescription implements ModelInterface, ArrayAccess,
      */
     public function getSPaymenttermDescription1()
     {
-        return $this->container['sPaymenttermDescription1'];
+        return is_null($this->container['sPaymenttermDescription1']) ? null : trim($this->container['sPaymenttermDescription1']);
     }
 
     /**
@@ -340,7 +340,7 @@ class MultilingualPaymenttermDescription implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermDescription1'] = $sPaymenttermDescription1;
-        $this->container['sPaymenttermDescription1'] = (is_null($sPaymenttermDescription1) ? null : (string) $sPaymenttermDescription1);
+        $this->container['sPaymenttermDescription1'] = (is_null($sPaymenttermDescription1) ? null : trim((string) $sPaymenttermDescription1));
 
         return $this;
     }
@@ -352,7 +352,7 @@ class MultilingualPaymenttermDescription implements ModelInterface, ArrayAccess,
      */
     public function getSPaymenttermDescription2()
     {
-        return $this->container['sPaymenttermDescription2'];
+        return is_null($this->container['sPaymenttermDescription2']) ? null : trim($this->container['sPaymenttermDescription2']);
     }
 
     /**
@@ -377,7 +377,7 @@ class MultilingualPaymenttermDescription implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermDescription2'] = $sPaymenttermDescription2;
-        $this->container['sPaymenttermDescription2'] = (is_null($sPaymenttermDescription2) ? null : (string) $sPaymenttermDescription2);
+        $this->container['sPaymenttermDescription2'] = (is_null($sPaymenttermDescription2) ? null : trim((string) $sPaymenttermDescription2));
 
         return $this;
     }

@@ -342,7 +342,7 @@ class EzsigntemplatedocumentGetWordsPositionsV1Request implements ModelInterface
      */
     public function getEGet()
     {
-        return $this->container['eGet'];
+        return is_null($this->container['eGet']) ? null : trim($this->container['eGet']);
     }
 
     /**
@@ -371,7 +371,7 @@ class EzsigntemplatedocumentGetWordsPositionsV1Request implements ModelInterface
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eGet'] = $eGet;
-        $this->container['eGet'] = (is_null($eGet) ? null : (string) $eGet);
+        $this->container['eGet'] = (is_null($eGet) ? null : trim((string) $eGet));
 
         return $this;
     }

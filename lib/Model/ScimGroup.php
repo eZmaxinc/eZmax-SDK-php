@@ -319,7 +319,7 @@ class ScimGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getId()
     {
-        return $this->container['id'];
+        return is_null($this->container['id']) ? null : trim($this->container['id']);
     }
 
     /**
@@ -338,7 +338,7 @@ class ScimGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['id'] = $id;
-        $this->container['id'] = (is_null($id) ? null : (string) $id);
+        $this->container['id'] = (is_null($id) ? null : trim((string) $id));
 
         return $this;
     }
@@ -350,7 +350,7 @@ class ScimGroup implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getDisplayName()
     {
-        return $this->container['displayName'];
+        return is_null($this->container['displayName']) ? null : trim($this->container['displayName']);
     }
 
     /**
@@ -375,7 +375,7 @@ class ScimGroup implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['displayName'] = $displayName;
-        $this->container['displayName'] = (is_null($displayName) ? null : (string) $displayName);
+        $this->container['displayName'] = (is_null($displayName) ? null : trim((string) $displayName));
 
         return $this;
     }

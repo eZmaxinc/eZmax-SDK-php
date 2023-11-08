@@ -392,7 +392,7 @@ class PaymenttermRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function getSPaymenttermCode()
     {
-        return $this->container['sPaymenttermCode'];
+        return is_null($this->container['sPaymenttermCode']) ? null : trim($this->container['sPaymenttermCode']);
     }
 
     /**
@@ -417,7 +417,7 @@ class PaymenttermRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermCode'] = $sPaymenttermCode;
-        $this->container['sPaymenttermCode'] = (is_null($sPaymenttermCode) ? null : (string) $sPaymenttermCode);
+        $this->container['sPaymenttermCode'] = (is_null($sPaymenttermCode) ? null : trim((string) $sPaymenttermCode));
 
         return $this;
     }

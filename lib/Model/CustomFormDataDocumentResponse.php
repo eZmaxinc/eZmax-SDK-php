@@ -423,7 +423,7 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
      */
     public function getSEzsigndocumentName()
     {
-        return $this->container['sEzsigndocumentName'];
+        return is_null($this->container['sEzsigndocumentName']) ? null : trim($this->container['sEzsigndocumentName']);
     }
 
     /**
@@ -442,7 +442,7 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigndocumentName'] = $sEzsigndocumentName;
-        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : (string) $sEzsigndocumentName);
+        $this->container['sEzsigndocumentName'] = (is_null($sEzsigndocumentName) ? null : trim((string) $sEzsigndocumentName));
 
         return $this;
     }
@@ -454,7 +454,7 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
      */
     public function getDtModifiedDate()
     {
-        return $this->container['dtModifiedDate'];
+        return is_null($this->container['dtModifiedDate']) ? null : trim($this->container['dtModifiedDate']);
     }
 
     /**
@@ -473,7 +473,7 @@ class CustomFormDataDocumentResponse implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtModifiedDate'] = $dtModifiedDate;
-        $this->container['dtModifiedDate'] = (is_null($dtModifiedDate) ? null : (string) $dtModifiedDate);
+        $this->container['dtModifiedDate'] = (is_null($dtModifiedDate) ? null : trim((string) $dtModifiedDate));
 
         return $this;
     }

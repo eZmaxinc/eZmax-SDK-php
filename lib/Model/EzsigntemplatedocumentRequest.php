@@ -632,7 +632,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSEzsigntemplatedocumentName()
     {
-        return $this->container['sEzsigntemplatedocumentName'];
+        return is_null($this->container['sEzsigntemplatedocumentName']) ? null : trim($this->container['sEzsigntemplatedocumentName']);
     }
 
     /**
@@ -651,7 +651,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatedocumentName'] = $sEzsigntemplatedocumentName;
-        $this->container['sEzsigntemplatedocumentName'] = (is_null($sEzsigntemplatedocumentName) ? null : (string) $sEzsigntemplatedocumentName);
+        $this->container['sEzsigntemplatedocumentName'] = (is_null($sEzsigntemplatedocumentName) ? null : trim((string) $sEzsigntemplatedocumentName));
 
         return $this;
     }
@@ -663,7 +663,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function getEEzsigntemplatedocumentSource()
     {
-        return $this->container['eEzsigntemplatedocumentSource'];
+        return is_null($this->container['eEzsigntemplatedocumentSource']) ? null : trim($this->container['eEzsigntemplatedocumentSource']);
     }
 
     /**
@@ -692,7 +692,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigntemplatedocumentSource'] = $eEzsigntemplatedocumentSource;
-        $this->container['eEzsigntemplatedocumentSource'] = (is_null($eEzsigntemplatedocumentSource) ? null : (string) $eEzsigntemplatedocumentSource);
+        $this->container['eEzsigntemplatedocumentSource'] = (is_null($eEzsigntemplatedocumentSource) ? null : trim((string) $eEzsigntemplatedocumentSource));
 
         return $this;
     }
@@ -704,7 +704,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function getEEzsigntemplatedocumentFormat()
     {
-        return $this->container['eEzsigntemplatedocumentFormat'];
+        return is_null($this->container['eEzsigntemplatedocumentFormat']) ? null : trim($this->container['eEzsigntemplatedocumentFormat']);
     }
 
     /**
@@ -733,7 +733,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigntemplatedocumentFormat'] = $eEzsigntemplatedocumentFormat;
-        $this->container['eEzsigntemplatedocumentFormat'] = (is_null($eEzsigntemplatedocumentFormat) ? null : (string) $eEzsigntemplatedocumentFormat);
+        $this->container['eEzsigntemplatedocumentFormat'] = (is_null($eEzsigntemplatedocumentFormat) ? null : trim((string) $eEzsigntemplatedocumentFormat));
 
         return $this;
     }
@@ -776,7 +776,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSEzsigntemplatedocumentUrl()
     {
-        return $this->container['sEzsigntemplatedocumentUrl'];
+        return is_null($this->container['sEzsigntemplatedocumentUrl']) ? null : trim($this->container['sEzsigntemplatedocumentUrl']);
     }
 
     /**
@@ -795,7 +795,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatedocumentUrl'] = $sEzsigntemplatedocumentUrl;
-        $this->container['sEzsigntemplatedocumentUrl'] = (is_null($sEzsigntemplatedocumentUrl) ? null : (string) $sEzsigntemplatedocumentUrl);
+        $this->container['sEzsigntemplatedocumentUrl'] = (is_null($sEzsigntemplatedocumentUrl) ? null : trim((string) $sEzsigntemplatedocumentUrl));
 
         return $this;
     }
@@ -838,7 +838,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function getEEzsigntemplatedocumentForm()
     {
-        return $this->container['eEzsigntemplatedocumentForm'];
+        return is_null($this->container['eEzsigntemplatedocumentForm']) ? null : trim($this->container['eEzsigntemplatedocumentForm']);
     }
 
     /**
@@ -867,7 +867,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigntemplatedocumentForm'] = $eEzsigntemplatedocumentForm;
-        $this->container['eEzsigntemplatedocumentForm'] = (is_null($eEzsigntemplatedocumentForm) ? null : (string) $eEzsigntemplatedocumentForm);
+        $this->container['eEzsigntemplatedocumentForm'] = (is_null($eEzsigntemplatedocumentForm) ? null : trim((string) $eEzsigntemplatedocumentForm));
 
         return $this;
     }
@@ -879,7 +879,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSEzsigntemplatedocumentPassword()
     {
-        return $this->container['sEzsigntemplatedocumentPassword'];
+        return is_null($this->container['sEzsigntemplatedocumentPassword']) ? null : trim($this->container['sEzsigntemplatedocumentPassword']);
     }
 
     /**
@@ -898,7 +898,7 @@ class EzsigntemplatedocumentRequest implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatedocumentPassword'] = $sEzsigntemplatedocumentPassword;
-        $this->container['sEzsigntemplatedocumentPassword'] = (is_null($sEzsigntemplatedocumentPassword) ? null : (string) $sEzsigntemplatedocumentPassword);
+        $this->container['sEzsigntemplatedocumentPassword'] = (is_null($sEzsigntemplatedocumentPassword) ? null : trim((string) $sEzsigntemplatedocumentPassword));
 
         return $this;
     }

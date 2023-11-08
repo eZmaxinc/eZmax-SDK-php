@@ -370,7 +370,7 @@ class CompanyAutocompleteElementResponse implements ModelInterface, ArrayAccess,
      */
     public function getSCompanyNameX()
     {
-        return $this->container['sCompanyNameX'];
+        return is_null($this->container['sCompanyNameX']) ? null : trim($this->container['sCompanyNameX']);
     }
 
     /**
@@ -389,7 +389,7 @@ class CompanyAutocompleteElementResponse implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCompanyNameX'] = $sCompanyNameX;
-        $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : (string) $sCompanyNameX);
+        $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : trim((string) $sCompanyNameX));
 
         return $this;
     }

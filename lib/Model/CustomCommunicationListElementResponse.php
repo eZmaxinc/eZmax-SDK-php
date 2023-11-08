@@ -357,6 +357,11 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
         if ($this->container['sCommunicationSubject'] === null) {
             $invalidProperties[] = "'sCommunicationSubject' can't be null";
         }
+//        if (!preg_match("/^.{0,150}$/", $this->container['sCommunicationSubject'])) {
+        if (!is_null($this->container['sCommunicationSubject']) && !preg_match("/^.{0,150}$/", $this->container['sCommunicationSubject'])) {
+            $invalidProperties[] = "invalid value for 'sCommunicationSubject', must be conform to the pattern /^.{0,150}$/.";
+        }
+
         if ($this->container['sCommunicationSender'] === null) {
             $invalidProperties[] = "'sCommunicationSender' can't be null";
         }
@@ -422,7 +427,7 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function getDtCreatedDate()
     {
-        return $this->container['dtCreatedDate'];
+        return is_null($this->container['dtCreatedDate']) ? null : trim($this->container['dtCreatedDate']);
     }
 
     /**
@@ -441,7 +446,7 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtCreatedDate'] = $dtCreatedDate;
-        $this->container['dtCreatedDate'] = (is_null($dtCreatedDate) ? null : (string) $dtCreatedDate);
+        $this->container['dtCreatedDate'] = (is_null($dtCreatedDate) ? null : trim((string) $dtCreatedDate));
 
         return $this;
     }
@@ -577,7 +582,7 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function getSCommunicationSubject()
     {
-        return $this->container['sCommunicationSubject'];
+        return is_null($this->container['sCommunicationSubject']) ? null : trim($this->container['sCommunicationSubject']);
     }
 
     /**
@@ -593,10 +598,16 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
         //if (is_null($sCommunicationSubject)) {
             //throw new \InvalidArgumentException('non-nullable sCommunicationSubject cannot be null');
         //}
+
+//        if ((!preg_match("/^.{0,150}$/", ObjectSerializer::toString($sCommunicationSubject)))) {
+        if (!is_null($sCommunicationSubject) && (!preg_match("/^.{0,150}$/", ObjectSerializer::toString($sCommunicationSubject)))) {
+            throw new \InvalidArgumentException("invalid value for \$sCommunicationSubject when calling CustomCommunicationListElementResponse., must conform to the pattern /^.{0,150}$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCommunicationSubject'] = $sCommunicationSubject;
-        $this->container['sCommunicationSubject'] = (is_null($sCommunicationSubject) ? null : (string) $sCommunicationSubject);
+        $this->container['sCommunicationSubject'] = (is_null($sCommunicationSubject) ? null : trim((string) $sCommunicationSubject));
 
         return $this;
     }
@@ -608,7 +619,7 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function getSCommunicationSender()
     {
-        return $this->container['sCommunicationSender'];
+        return is_null($this->container['sCommunicationSender']) ? null : trim($this->container['sCommunicationSender']);
     }
 
     /**
@@ -627,7 +638,7 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCommunicationSender'] = $sCommunicationSender;
-        $this->container['sCommunicationSender'] = (is_null($sCommunicationSender) ? null : (string) $sCommunicationSender);
+        $this->container['sCommunicationSender'] = (is_null($sCommunicationSender) ? null : trim((string) $sCommunicationSender));
 
         return $this;
     }
@@ -639,7 +650,7 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
      */
     public function getSCommunicationRecipient()
     {
-        return $this->container['sCommunicationRecipient'];
+        return is_null($this->container['sCommunicationRecipient']) ? null : trim($this->container['sCommunicationRecipient']);
     }
 
     /**
@@ -658,7 +669,7 @@ class CustomCommunicationListElementResponse implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCommunicationRecipient'] = $sCommunicationRecipient;
-        $this->container['sCommunicationRecipient'] = (is_null($sCommunicationRecipient) ? null : (string) $sCommunicationRecipient);
+        $this->container['sCommunicationRecipient'] = (is_null($sCommunicationRecipient) ? null : trim((string) $sCommunicationRecipient));
 
         return $this;
     }

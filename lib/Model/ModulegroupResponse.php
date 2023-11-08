@@ -365,7 +365,7 @@ class ModulegroupResponse implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function getSModulegroupNameX()
     {
-        return $this->container['sModulegroupNameX'];
+        return is_null($this->container['sModulegroupNameX']) ? null : trim($this->container['sModulegroupNameX']);
     }
 
     /**
@@ -390,7 +390,7 @@ class ModulegroupResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sModulegroupNameX'] = $sModulegroupNameX;
-        $this->container['sModulegroupNameX'] = (is_null($sModulegroupNameX) ? null : (string) $sModulegroupNameX);
+        $this->container['sModulegroupNameX'] = (is_null($sModulegroupNameX) ? null : trim((string) $sModulegroupNameX));
 
         return $this;
     }

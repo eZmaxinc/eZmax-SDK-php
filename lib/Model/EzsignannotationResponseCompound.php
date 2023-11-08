@@ -726,7 +726,7 @@ class EzsignannotationResponseCompound implements ModelInterface, ArrayAccess, \
      */
     public function getSEzsignannotationText()
     {
-        return $this->container['sEzsignannotationText'];
+        return is_null($this->container['sEzsignannotationText']) ? null : trim($this->container['sEzsignannotationText']);
     }
 
     /**
@@ -745,7 +745,7 @@ class EzsignannotationResponseCompound implements ModelInterface, ArrayAccess, \
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignannotationText'] = $sEzsignannotationText;
-        $this->container['sEzsignannotationText'] = (is_null($sEzsignannotationText) ? null : (string) $sEzsignannotationText);
+        $this->container['sEzsignannotationText'] = (is_null($sEzsignannotationText) ? null : trim((string) $sEzsignannotationText));
 
         return $this;
     }

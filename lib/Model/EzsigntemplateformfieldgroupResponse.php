@@ -607,7 +607,7 @@ class EzsigntemplateformfieldgroupResponse implements ModelInterface, ArrayAcces
      */
     public function getSEzsigntemplateformfieldgroupLabel()
     {
-        return $this->container['sEzsigntemplateformfieldgroupLabel'];
+        return is_null($this->container['sEzsigntemplateformfieldgroupLabel']) ? null : trim($this->container['sEzsigntemplateformfieldgroupLabel']);
     }
 
     /**
@@ -635,7 +635,7 @@ class EzsigntemplateformfieldgroupResponse implements ModelInterface, ArrayAcces
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateformfieldgroupLabel'] = $sEzsigntemplateformfieldgroupLabel;
-        $this->container['sEzsigntemplateformfieldgroupLabel'] = (is_null($sEzsigntemplateformfieldgroupLabel) ? null : (string) $sEzsigntemplateformfieldgroupLabel);
+        $this->container['sEzsigntemplateformfieldgroupLabel'] = (is_null($sEzsigntemplateformfieldgroupLabel) ? null : trim((string) $sEzsigntemplateformfieldgroupLabel));
 
         return $this;
     }
@@ -684,7 +684,7 @@ class EzsigntemplateformfieldgroupResponse implements ModelInterface, ArrayAcces
      */
     public function getSEzsigntemplateformfieldgroupDefaultvalue()
     {
-        return $this->container['sEzsigntemplateformfieldgroupDefaultvalue'];
+        return is_null($this->container['sEzsigntemplateformfieldgroupDefaultvalue']) ? null : trim($this->container['sEzsigntemplateformfieldgroupDefaultvalue']);
     }
 
     /**
@@ -703,7 +703,7 @@ class EzsigntemplateformfieldgroupResponse implements ModelInterface, ArrayAcces
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateformfieldgroupDefaultvalue'] = $sEzsigntemplateformfieldgroupDefaultvalue;
-        $this->container['sEzsigntemplateformfieldgroupDefaultvalue'] = (is_null($sEzsigntemplateformfieldgroupDefaultvalue) ? null : (string) $sEzsigntemplateformfieldgroupDefaultvalue);
+        $this->container['sEzsigntemplateformfieldgroupDefaultvalue'] = (is_null($sEzsigntemplateformfieldgroupDefaultvalue) ? null : trim((string) $sEzsigntemplateformfieldgroupDefaultvalue));
 
         return $this;
     }
@@ -892,7 +892,7 @@ class EzsigntemplateformfieldgroupResponse implements ModelInterface, ArrayAcces
      */
     public function getSEzsigntemplateformfieldgroupRegexp()
     {
-        return $this->container['sEzsigntemplateformfieldgroupRegexp'];
+        return is_null($this->container['sEzsigntemplateformfieldgroupRegexp']) ? null : trim($this->container['sEzsigntemplateformfieldgroupRegexp']);
     }
 
     /**
@@ -917,7 +917,7 @@ class EzsigntemplateformfieldgroupResponse implements ModelInterface, ArrayAcces
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateformfieldgroupRegexp'] = $sEzsigntemplateformfieldgroupRegexp;
-        $this->container['sEzsigntemplateformfieldgroupRegexp'] = (is_null($sEzsigntemplateformfieldgroupRegexp) ? null : (string) $sEzsigntemplateformfieldgroupRegexp);
+        $this->container['sEzsigntemplateformfieldgroupRegexp'] = (is_null($sEzsigntemplateformfieldgroupRegexp) ? null : trim((string) $sEzsigntemplateformfieldgroupRegexp));
 
         return $this;
     }
@@ -960,7 +960,7 @@ class EzsigntemplateformfieldgroupResponse implements ModelInterface, ArrayAcces
      */
     public function getTEzsigntemplateformfieldgroupTooltip()
     {
-        return $this->container['tEzsigntemplateformfieldgroupTooltip'];
+        return is_null($this->container['tEzsigntemplateformfieldgroupTooltip']) ? null : trim($this->container['tEzsigntemplateformfieldgroupTooltip']);
     }
 
     /**
@@ -979,7 +979,7 @@ class EzsigntemplateformfieldgroupResponse implements ModelInterface, ArrayAcces
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsigntemplateformfieldgroupTooltip'] = $tEzsigntemplateformfieldgroupTooltip;
-        $this->container['tEzsigntemplateformfieldgroupTooltip'] = (is_null($tEzsigntemplateformfieldgroupTooltip) ? null : (string) $tEzsigntemplateformfieldgroupTooltip);
+        $this->container['tEzsigntemplateformfieldgroupTooltip'] = (is_null($tEzsigntemplateformfieldgroupTooltip) ? null : trim((string) $tEzsigntemplateformfieldgroupTooltip));
 
         return $this;
     }

@@ -301,7 +301,7 @@ class WebsocketResponseInformationV1MPayload implements ModelInterface, ArrayAcc
      */
     public function getSInformationMessage()
     {
-        return $this->container['sInformationMessage'];
+        return is_null($this->container['sInformationMessage']) ? null : trim($this->container['sInformationMessage']);
     }
 
     /**
@@ -320,7 +320,7 @@ class WebsocketResponseInformationV1MPayload implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sInformationMessage'] = $sInformationMessage;
-        $this->container['sInformationMessage'] = (is_null($sInformationMessage) ? null : (string) $sInformationMessage);
+        $this->container['sInformationMessage'] = (is_null($sInformationMessage) ? null : trim((string) $sInformationMessage));
 
         return $this;
     }

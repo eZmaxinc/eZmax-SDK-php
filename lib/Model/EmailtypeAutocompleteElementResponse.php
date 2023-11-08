@@ -367,7 +367,7 @@ class EmailtypeAutocompleteElementResponse implements ModelInterface, ArrayAcces
      */
     public function getSEmailtypeNameX()
     {
-        return $this->container['sEmailtypeNameX'];
+        return is_null($this->container['sEmailtypeNameX']) ? null : trim($this->container['sEmailtypeNameX']);
     }
 
     /**
@@ -392,7 +392,7 @@ class EmailtypeAutocompleteElementResponse implements ModelInterface, ArrayAcces
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailtypeNameX'] = $sEmailtypeNameX;
-        $this->container['sEmailtypeNameX'] = (is_null($sEmailtypeNameX) ? null : (string) $sEmailtypeNameX);
+        $this->container['sEmailtypeNameX'] = (is_null($sEmailtypeNameX) ? null : trim((string) $sEmailtypeNameX));
 
         return $this;
     }

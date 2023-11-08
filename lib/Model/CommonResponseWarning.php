@@ -311,7 +311,7 @@ class CommonResponseWarning implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSWarningMessage()
     {
-        return $this->container['sWarningMessage'];
+        return is_null($this->container['sWarningMessage']) ? null : trim($this->container['sWarningMessage']);
     }
 
     /**
@@ -330,7 +330,7 @@ class CommonResponseWarning implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWarningMessage'] = $sWarningMessage;
-        $this->container['sWarningMessage'] = (is_null($sWarningMessage) ? null : (string) $sWarningMessage);
+        $this->container['sWarningMessage'] = (is_null($sWarningMessage) ? null : trim((string) $sWarningMessage));
 
         return $this;
     }
@@ -342,7 +342,7 @@ class CommonResponseWarning implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getEWarningCode()
     {
-        return $this->container['eWarningCode'];
+        return is_null($this->container['eWarningCode']) ? null : trim($this->container['eWarningCode']);
     }
 
     /**
@@ -361,7 +361,7 @@ class CommonResponseWarning implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eWarningCode'] = $eWarningCode;
-        $this->container['eWarningCode'] = (is_null($eWarningCode) ? null : (string) $eWarningCode);
+        $this->container['eWarningCode'] = (is_null($eWarningCode) ? null : trim((string) $eWarningCode));
 
         return $this;
     }

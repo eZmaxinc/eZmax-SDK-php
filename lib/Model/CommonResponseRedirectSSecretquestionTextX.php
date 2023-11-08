@@ -301,7 +301,7 @@ class CommonResponseRedirectSSecretquestionTextX implements ModelInterface, Arra
      */
     public function getSSecretquestionTextX()
     {
-        return $this->container['sSecretquestionTextX'];
+        return is_null($this->container['sSecretquestionTextX']) ? null : trim($this->container['sSecretquestionTextX']);
     }
 
     /**
@@ -320,7 +320,7 @@ class CommonResponseRedirectSSecretquestionTextX implements ModelInterface, Arra
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSecretquestionTextX'] = $sSecretquestionTextX;
-        $this->container['sSecretquestionTextX'] = (is_null($sSecretquestionTextX) ? null : (string) $sSecretquestionTextX);
+        $this->container['sSecretquestionTextX'] = (is_null($sSecretquestionTextX) ? null : trim((string) $sSecretquestionTextX));
 
         return $this;
     }

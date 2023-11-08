@@ -362,7 +362,7 @@ class UserlogintypeAutocompleteElementResponse implements ModelInterface, ArrayA
      */
     public function getSUserlogintypeDescriptionX()
     {
-        return $this->container['sUserlogintypeDescriptionX'];
+        return is_null($this->container['sUserlogintypeDescriptionX']) ? null : trim($this->container['sUserlogintypeDescriptionX']);
     }
 
     /**
@@ -381,7 +381,7 @@ class UserlogintypeAutocompleteElementResponse implements ModelInterface, ArrayA
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserlogintypeDescriptionX'] = $sUserlogintypeDescriptionX;
-        $this->container['sUserlogintypeDescriptionX'] = (is_null($sUserlogintypeDescriptionX) ? null : (string) $sUserlogintypeDescriptionX);
+        $this->container['sUserlogintypeDescriptionX'] = (is_null($sUserlogintypeDescriptionX) ? null : trim((string) $sUserlogintypeDescriptionX));
 
         return $this;
     }

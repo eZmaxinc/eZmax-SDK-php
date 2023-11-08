@@ -596,7 +596,7 @@ class BrandingResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getSBrandingDescriptionX()
     {
-        return $this->container['sBrandingDescriptionX'];
+        return is_null($this->container['sBrandingDescriptionX']) ? null : trim($this->container['sBrandingDescriptionX']);
     }
 
     /**
@@ -615,7 +615,7 @@ class BrandingResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBrandingDescriptionX'] = $sBrandingDescriptionX;
-        $this->container['sBrandingDescriptionX'] = (is_null($sBrandingDescriptionX) ? null : (string) $sBrandingDescriptionX);
+        $this->container['sBrandingDescriptionX'] = (is_null($sBrandingDescriptionX) ? null : trim((string) $sBrandingDescriptionX));
 
         return $this;
     }
@@ -627,7 +627,7 @@ class BrandingResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getSBrandingName()
     {
-        return $this->container['sBrandingName'];
+        return is_null($this->container['sBrandingName']) ? null : trim($this->container['sBrandingName']);
     }
 
     /**
@@ -652,7 +652,7 @@ class BrandingResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBrandingName'] = $sBrandingName;
-        $this->container['sBrandingName'] = (is_null($sBrandingName) ? null : (string) $sBrandingName);
+        $this->container['sBrandingName'] = (is_null($sBrandingName) ? null : trim((string) $sBrandingName));
 
         return $this;
     }
@@ -664,7 +664,7 @@ class BrandingResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -683,7 +683,7 @@ class BrandingResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }

@@ -417,7 +417,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSUserFirstname()
     {
-        return $this->container['sUserFirstname'];
+        return is_null($this->container['sUserFirstname']) ? null : trim($this->container['sUserFirstname']);
     }
 
     /**
@@ -436,7 +436,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserFirstname'] = $sUserFirstname;
-        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : (string) $sUserFirstname);
+        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : trim((string) $sUserFirstname));
 
         return $this;
     }
@@ -448,7 +448,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSUserLastname()
     {
-        return $this->container['sUserLastname'];
+        return is_null($this->container['sUserLastname']) ? null : trim($this->container['sUserLastname']);
     }
 
     /**
@@ -467,7 +467,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLastname'] = $sUserLastname;
-        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : (string) $sUserLastname);
+        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : trim((string) $sUserLastname));
 
         return $this;
     }
@@ -479,7 +479,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSEmailAddress()
     {
-        return $this->container['sEmailAddress'];
+        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
     }
 
     /**
@@ -498,7 +498,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : (string) $sEmailAddress);
+        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
 
         return $this;
     }
@@ -511,7 +511,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSPhoneRegion()
     {
-        return $this->container['sPhoneRegion'];
+        return is_null($this->container['sPhoneRegion']) ? null : trim($this->container['sPhoneRegion']);
     }
 
     /**
@@ -531,7 +531,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneRegion'] = $sPhoneRegion;
-        $this->container['sPhoneRegion'] = (is_null($sPhoneRegion) ? null : (string) $sPhoneRegion);
+        $this->container['sPhoneRegion'] = (is_null($sPhoneRegion) ? null : trim((string) $sPhoneRegion));
 
         return $this;
     }
@@ -544,7 +544,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSPhoneExchange()
     {
-        return $this->container['sPhoneExchange'];
+        return is_null($this->container['sPhoneExchange']) ? null : trim($this->container['sPhoneExchange']);
     }
 
     /**
@@ -564,7 +564,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneExchange'] = $sPhoneExchange;
-        $this->container['sPhoneExchange'] = (is_null($sPhoneExchange) ? null : (string) $sPhoneExchange);
+        $this->container['sPhoneExchange'] = (is_null($sPhoneExchange) ? null : trim((string) $sPhoneExchange));
 
         return $this;
     }
@@ -577,7 +577,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSPhoneNumber()
     {
-        return $this->container['sPhoneNumber'];
+        return is_null($this->container['sPhoneNumber']) ? null : trim($this->container['sPhoneNumber']);
     }
 
     /**
@@ -597,7 +597,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneNumber'] = $sPhoneNumber;
-        $this->container['sPhoneNumber'] = (is_null($sPhoneNumber) ? null : (string) $sPhoneNumber);
+        $this->container['sPhoneNumber'] = (is_null($sPhoneNumber) ? null : trim((string) $sPhoneNumber));
 
         return $this;
     }
@@ -609,7 +609,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSPhoneExtension()
     {
-        return $this->container['sPhoneExtension'];
+        return is_null($this->container['sPhoneExtension']) ? null : trim($this->container['sPhoneExtension']);
     }
 
     /**
@@ -628,7 +628,7 @@ class UserCreateEzsignuserV1Request implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPhoneExtension'] = $sPhoneExtension;
-        $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : (string) $sPhoneExtension);
+        $this->container['sPhoneExtension'] = (is_null($sPhoneExtension) ? null : trim((string) $sPhoneExtension));
 
         return $this;
     }

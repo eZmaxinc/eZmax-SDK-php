@@ -313,7 +313,7 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription implements ModelInter
      */
     public function getSEzmaxinvoicingsummaryinternalDescription1()
     {
-        return $this->container['sEzmaxinvoicingsummaryinternalDescription1'];
+        return is_null($this->container['sEzmaxinvoicingsummaryinternalDescription1']) ? null : trim($this->container['sEzmaxinvoicingsummaryinternalDescription1']);
     }
 
     /**
@@ -337,7 +337,7 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription implements ModelInter
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxinvoicingsummaryinternalDescription1'] = $sEzmaxinvoicingsummaryinternalDescription1;
-        $this->container['sEzmaxinvoicingsummaryinternalDescription1'] = (is_null($sEzmaxinvoicingsummaryinternalDescription1) ? null : (string) $sEzmaxinvoicingsummaryinternalDescription1);
+        $this->container['sEzmaxinvoicingsummaryinternalDescription1'] = (is_null($sEzmaxinvoicingsummaryinternalDescription1) ? null : trim((string) $sEzmaxinvoicingsummaryinternalDescription1));
 
         return $this;
     }
@@ -349,7 +349,7 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription implements ModelInter
      */
     public function getSEzmaxinvoicingsummaryinternalDescription2()
     {
-        return $this->container['sEzmaxinvoicingsummaryinternalDescription2'];
+        return is_null($this->container['sEzmaxinvoicingsummaryinternalDescription2']) ? null : trim($this->container['sEzmaxinvoicingsummaryinternalDescription2']);
     }
 
     /**
@@ -373,7 +373,7 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription implements ModelInter
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzmaxinvoicingsummaryinternalDescription2'] = $sEzmaxinvoicingsummaryinternalDescription2;
-        $this->container['sEzmaxinvoicingsummaryinternalDescription2'] = (is_null($sEzmaxinvoicingsummaryinternalDescription2) ? null : (string) $sEzmaxinvoicingsummaryinternalDescription2);
+        $this->container['sEzmaxinvoicingsummaryinternalDescription2'] = (is_null($sEzmaxinvoicingsummaryinternalDescription2) ? null : trim((string) $sEzmaxinvoicingsummaryinternalDescription2));
 
         return $this;
     }

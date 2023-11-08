@@ -451,7 +451,7 @@ class WebhookRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSWebhookDescription()
     {
-        return $this->container['sWebhookDescription'];
+        return is_null($this->container['sWebhookDescription']) ? null : trim($this->container['sWebhookDescription']);
     }
 
     /**
@@ -470,7 +470,7 @@ class WebhookRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookDescription'] = $sWebhookDescription;
-        $this->container['sWebhookDescription'] = (is_null($sWebhookDescription) ? null : (string) $sWebhookDescription);
+        $this->container['sWebhookDescription'] = (is_null($sWebhookDescription) ? null : trim((string) $sWebhookDescription));
 
         return $this;
     }
@@ -575,7 +575,7 @@ class WebhookRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSWebhookUrl()
     {
-        return $this->container['sWebhookUrl'];
+        return is_null($this->container['sWebhookUrl']) ? null : trim($this->container['sWebhookUrl']);
     }
 
     /**
@@ -594,7 +594,7 @@ class WebhookRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookUrl'] = $sWebhookUrl;
-        $this->container['sWebhookUrl'] = (is_null($sWebhookUrl) ? null : (string) $sWebhookUrl);
+        $this->container['sWebhookUrl'] = (is_null($sWebhookUrl) ? null : trim((string) $sWebhookUrl));
 
         return $this;
     }
@@ -606,7 +606,7 @@ class WebhookRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSWebhookEmailfailed()
     {
-        return $this->container['sWebhookEmailfailed'];
+        return is_null($this->container['sWebhookEmailfailed']) ? null : trim($this->container['sWebhookEmailfailed']);
     }
 
     /**
@@ -625,7 +625,7 @@ class WebhookRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookEmailfailed'] = $sWebhookEmailfailed;
-        $this->container['sWebhookEmailfailed'] = (is_null($sWebhookEmailfailed) ? null : (string) $sWebhookEmailfailed);
+        $this->container['sWebhookEmailfailed'] = (is_null($sWebhookEmailfailed) ? null : trim((string) $sWebhookEmailfailed));
 
         return $this;
     }

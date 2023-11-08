@@ -305,7 +305,7 @@ class MultilingualApikeyDescription implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSApikeyDescription1()
     {
-        return $this->container['sApikeyDescription1'];
+        return is_null($this->container['sApikeyDescription1']) ? null : trim($this->container['sApikeyDescription1']);
     }
 
     /**
@@ -324,7 +324,7 @@ class MultilingualApikeyDescription implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sApikeyDescription1'] = $sApikeyDescription1;
-        $this->container['sApikeyDescription1'] = (is_null($sApikeyDescription1) ? null : (string) $sApikeyDescription1);
+        $this->container['sApikeyDescription1'] = (is_null($sApikeyDescription1) ? null : trim((string) $sApikeyDescription1));
 
         return $this;
     }
@@ -336,7 +336,7 @@ class MultilingualApikeyDescription implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSApikeyDescription2()
     {
-        return $this->container['sApikeyDescription2'];
+        return is_null($this->container['sApikeyDescription2']) ? null : trim($this->container['sApikeyDescription2']);
     }
 
     /**
@@ -355,7 +355,7 @@ class MultilingualApikeyDescription implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sApikeyDescription2'] = $sApikeyDescription2;
-        $this->container['sApikeyDescription2'] = (is_null($sApikeyDescription2) ? null : (string) $sApikeyDescription2);
+        $this->container['sApikeyDescription2'] = (is_null($sApikeyDescription2) ? null : trim((string) $sApikeyDescription2));
 
         return $this;
     }

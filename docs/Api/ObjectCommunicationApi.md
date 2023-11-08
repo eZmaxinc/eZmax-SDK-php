@@ -4,18 +4,18 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**communicationGetObjectV2()**](ObjectCommunicationApi.md#communicationGetObjectV2) | **GET** /2/object/communication/{pkiCommunicationID} | Retrieve an existing Communication |
+| [**communicationSendV1()**](ObjectCommunicationApi.md#communicationSendV1) | **POST** /1/object/communication/send | Send a new Communication |
 
 
-## `communicationGetObjectV2()`
+## `communicationSendV1()`
 
 ```php
-communicationGetObjectV2($pkiCommunicationID): \eZmaxAPI\Model\CommunicationGetObjectV2Response
+communicationSendV1($communicationSendV1Request): \eZmaxAPI\Model\CommunicationSendV1Response
 ```
 
-Retrieve an existing Communication
+Send a new Communication
 
-
+The endpoint allows to send one or many elements at once.
 
 ### Example
 
@@ -36,13 +36,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectCommunicationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pkiCommunicationID = 56; // int
+$communicationSendV1Request = new \eZmaxAPI\Model\CommunicationSendV1Request(); // \eZmaxAPI\Model\CommunicationSendV1Request
 
 try {
-    $result = $apiInstance->communicationGetObjectV2($pkiCommunicationID);
+    $result = $apiInstance->communicationSendV1($communicationSendV1Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectCommunicationApi->communicationGetObjectV2: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectCommunicationApi->communicationSendV1: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -50,11 +50,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pkiCommunicationID** | **int**|  | |
+| **communicationSendV1Request** | [**\eZmaxAPI\Model\CommunicationSendV1Request**](../Model/CommunicationSendV1Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommunicationGetObjectV2Response**](../Model/CommunicationGetObjectV2Response.md)
+[**\eZmaxAPI\Model\CommunicationSendV1Response**](../Model/CommunicationSendV1Response.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

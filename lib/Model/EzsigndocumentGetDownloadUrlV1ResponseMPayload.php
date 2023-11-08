@@ -301,7 +301,7 @@ class EzsigndocumentGetDownloadUrlV1ResponseMPayload implements ModelInterface, 
      */
     public function getSDownloadUrl()
     {
-        return $this->container['sDownloadUrl'];
+        return is_null($this->container['sDownloadUrl']) ? null : trim($this->container['sDownloadUrl']);
     }
 
     /**
@@ -320,7 +320,7 @@ class EzsigndocumentGetDownloadUrlV1ResponseMPayload implements ModelInterface, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sDownloadUrl'] = $sDownloadUrl;
-        $this->container['sDownloadUrl'] = (is_null($sDownloadUrl) ? null : (string) $sDownloadUrl);
+        $this->container['sDownloadUrl'] = (is_null($sDownloadUrl) ? null : trim((string) $sDownloadUrl));
 
         return $this;
     }

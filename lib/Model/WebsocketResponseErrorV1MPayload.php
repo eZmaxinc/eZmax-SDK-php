@@ -316,7 +316,7 @@ class WebsocketResponseErrorV1MPayload implements ModelInterface, ArrayAccess, \
      */
     public function getSErrorMessage()
     {
-        return $this->container['sErrorMessage'];
+        return is_null($this->container['sErrorMessage']) ? null : trim($this->container['sErrorMessage']);
     }
 
     /**
@@ -341,7 +341,7 @@ class WebsocketResponseErrorV1MPayload implements ModelInterface, ArrayAccess, \
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sErrorMessage'] = $sErrorMessage;
-        $this->container['sErrorMessage'] = (is_null($sErrorMessage) ? null : (string) $sErrorMessage);
+        $this->container['sErrorMessage'] = (is_null($sErrorMessage) ? null : trim((string) $sErrorMessage));
 
         return $this;
     }

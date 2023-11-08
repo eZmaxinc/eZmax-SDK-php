@@ -420,7 +420,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSModulesectionInternalname()
     {
-        return $this->container['sModulesectionInternalname'];
+        return is_null($this->container['sModulesectionInternalname']) ? null : trim($this->container['sModulesectionInternalname']);
     }
 
     /**
@@ -439,7 +439,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sModulesectionInternalname'] = $sModulesectionInternalname;
-        $this->container['sModulesectionInternalname'] = (is_null($sModulesectionInternalname) ? null : (string) $sModulesectionInternalname);
+        $this->container['sModulesectionInternalname'] = (is_null($sModulesectionInternalname) ? null : trim((string) $sModulesectionInternalname));
 
         return $this;
     }
@@ -451,7 +451,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function getSModulesectionNameX()
     {
-        return $this->container['sModulesectionNameX'];
+        return is_null($this->container['sModulesectionNameX']) ? null : trim($this->container['sModulesectionNameX']);
     }
 
     /**
@@ -470,7 +470,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sModulesectionNameX'] = $sModulesectionNameX;
-        $this->container['sModulesectionNameX'] = (is_null($sModulesectionNameX) ? null : (string) $sModulesectionNameX);
+        $this->container['sModulesectionNameX'] = (is_null($sModulesectionNameX) ? null : trim((string) $sModulesectionNameX));
 
         return $this;
     }

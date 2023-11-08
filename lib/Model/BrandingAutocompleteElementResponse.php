@@ -325,7 +325,7 @@ class BrandingAutocompleteElementResponse implements ModelInterface, ArrayAccess
      */
     public function getSBrandingDescriptionX()
     {
-        return $this->container['sBrandingDescriptionX'];
+        return is_null($this->container['sBrandingDescriptionX']) ? null : trim($this->container['sBrandingDescriptionX']);
     }
 
     /**
@@ -344,7 +344,7 @@ class BrandingAutocompleteElementResponse implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBrandingDescriptionX'] = $sBrandingDescriptionX;
-        $this->container['sBrandingDescriptionX'] = (is_null($sBrandingDescriptionX) ? null : (string) $sBrandingDescriptionX);
+        $this->container['sBrandingDescriptionX'] = (is_null($sBrandingDescriptionX) ? null : trim((string) $sBrandingDescriptionX));
 
         return $this;
     }

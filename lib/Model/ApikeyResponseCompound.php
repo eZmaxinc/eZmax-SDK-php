@@ -516,7 +516,7 @@ class ApikeyResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSApikeyApikey()
     {
-        return $this->container['sApikeyApikey'];
+        return is_null($this->container['sApikeyApikey']) ? null : trim($this->container['sApikeyApikey']);
     }
 
     /**
@@ -535,7 +535,7 @@ class ApikeyResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sApikeyApikey'] = $sApikeyApikey;
-        $this->container['sApikeyApikey'] = (is_null($sApikeyApikey) ? null : (string) $sApikeyApikey);
+        $this->container['sApikeyApikey'] = (is_null($sApikeyApikey) ? null : trim((string) $sApikeyApikey));
 
         return $this;
     }
@@ -547,7 +547,7 @@ class ApikeyResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSApikeySecret()
     {
-        return $this->container['sApikeySecret'];
+        return is_null($this->container['sApikeySecret']) ? null : trim($this->container['sApikeySecret']);
     }
 
     /**
@@ -566,7 +566,7 @@ class ApikeyResponseCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sApikeySecret'] = $sApikeySecret;
-        $this->container['sApikeySecret'] = (is_null($sApikeySecret) ? null : (string) $sApikeySecret);
+        $this->container['sApikeySecret'] = (is_null($sApikeySecret) ? null : trim((string) $sApikeySecret));
 
         return $this;
     }

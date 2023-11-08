@@ -306,7 +306,7 @@ class WebsocketResponseGetWebsocketIDV1MPayload implements ModelInterface, Array
      */
     public function getSWebsocketID()
     {
-        return $this->container['sWebsocketID'];
+        return is_null($this->container['sWebsocketID']) ? null : trim($this->container['sWebsocketID']);
     }
 
     /**
@@ -331,7 +331,7 @@ class WebsocketResponseGetWebsocketIDV1MPayload implements ModelInterface, Array
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebsocketID'] = $sWebsocketID;
-        $this->container['sWebsocketID'] = (is_null($sWebsocketID) ? null : (string) $sWebsocketID);
+        $this->container['sWebsocketID'] = (is_null($sWebsocketID) ? null : trim((string) $sWebsocketID));
 
         return $this;
     }

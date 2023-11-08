@@ -495,7 +495,7 @@ class SystemconfigurationResponseCompound implements ModelInterface, ArrayAccess
      */
     public function getSSystemconfigurationtypeDescriptionX()
     {
-        return $this->container['sSystemconfigurationtypeDescriptionX'];
+        return is_null($this->container['sSystemconfigurationtypeDescriptionX']) ? null : trim($this->container['sSystemconfigurationtypeDescriptionX']);
     }
 
     /**
@@ -514,7 +514,7 @@ class SystemconfigurationResponseCompound implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sSystemconfigurationtypeDescriptionX'] = $sSystemconfigurationtypeDescriptionX;
-        $this->container['sSystemconfigurationtypeDescriptionX'] = (is_null($sSystemconfigurationtypeDescriptionX) ? null : (string) $sSystemconfigurationtypeDescriptionX);
+        $this->container['sSystemconfigurationtypeDescriptionX'] = (is_null($sSystemconfigurationtypeDescriptionX) ? null : trim((string) $sSystemconfigurationtypeDescriptionX));
 
         return $this;
     }
@@ -712,7 +712,7 @@ class SystemconfigurationResponseCompound implements ModelInterface, ArrayAccess
      */
     public function getDtSystemconfigurationReadonlyexpirationstart()
     {
-        return $this->container['dtSystemconfigurationReadonlyexpirationstart'];
+        return is_null($this->container['dtSystemconfigurationReadonlyexpirationstart']) ? null : trim($this->container['dtSystemconfigurationReadonlyexpirationstart']);
     }
 
     /**
@@ -737,7 +737,7 @@ class SystemconfigurationResponseCompound implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtSystemconfigurationReadonlyexpirationstart'] = $dtSystemconfigurationReadonlyexpirationstart;
-        $this->container['dtSystemconfigurationReadonlyexpirationstart'] = (is_null($dtSystemconfigurationReadonlyexpirationstart) ? null : (string) $dtSystemconfigurationReadonlyexpirationstart);
+        $this->container['dtSystemconfigurationReadonlyexpirationstart'] = (is_null($dtSystemconfigurationReadonlyexpirationstart) ? null : trim((string) $dtSystemconfigurationReadonlyexpirationstart));
 
         return $this;
     }
@@ -749,7 +749,7 @@ class SystemconfigurationResponseCompound implements ModelInterface, ArrayAccess
      */
     public function getDtSystemconfigurationReadonlyexpirationend()
     {
-        return $this->container['dtSystemconfigurationReadonlyexpirationend'];
+        return is_null($this->container['dtSystemconfigurationReadonlyexpirationend']) ? null : trim($this->container['dtSystemconfigurationReadonlyexpirationend']);
     }
 
     /**
@@ -774,7 +774,7 @@ class SystemconfigurationResponseCompound implements ModelInterface, ArrayAccess
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtSystemconfigurationReadonlyexpirationend'] = $dtSystemconfigurationReadonlyexpirationend;
-        $this->container['dtSystemconfigurationReadonlyexpirationend'] = (is_null($dtSystemconfigurationReadonlyexpirationend) ? null : (string) $dtSystemconfigurationReadonlyexpirationend);
+        $this->container['dtSystemconfigurationReadonlyexpirationend'] = (is_null($dtSystemconfigurationReadonlyexpirationend) ? null : trim((string) $dtSystemconfigurationReadonlyexpirationend));
 
         return $this;
     }

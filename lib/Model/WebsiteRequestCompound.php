@@ -352,7 +352,7 @@ class WebsiteRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSWebsiteAddress()
     {
-        return $this->container['sWebsiteAddress'];
+        return is_null($this->container['sWebsiteAddress']) ? null : trim($this->container['sWebsiteAddress']);
     }
 
     /**
@@ -371,7 +371,7 @@ class WebsiteRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebsiteAddress'] = $sWebsiteAddress;
-        $this->container['sWebsiteAddress'] = (is_null($sWebsiteAddress) ? null : (string) $sWebsiteAddress);
+        $this->container['sWebsiteAddress'] = (is_null($sWebsiteAddress) ? null : trim((string) $sWebsiteAddress));
 
         return $this;
     }

@@ -301,7 +301,7 @@ class EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload impleme
      */
     public function getSLoginUrl()
     {
-        return $this->container['sLoginUrl'];
+        return is_null($this->container['sLoginUrl']) ? null : trim($this->container['sLoginUrl']);
     }
 
     /**
@@ -320,7 +320,7 @@ class EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload impleme
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sLoginUrl'] = $sLoginUrl;
-        $this->container['sLoginUrl'] = (is_null($sLoginUrl) ? null : (string) $sLoginUrl);
+        $this->container['sLoginUrl'] = (is_null($sLoginUrl) ? null : trim((string) $sLoginUrl));
 
         return $this;
     }

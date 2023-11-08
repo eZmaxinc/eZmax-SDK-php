@@ -330,7 +330,7 @@ class FontAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
      */
     public function getSFontName()
     {
-        return $this->container['sFontName'];
+        return is_null($this->container['sFontName']) ? null : trim($this->container['sFontName']);
     }
 
     /**
@@ -355,7 +355,7 @@ class FontAutocompleteElementResponse implements ModelInterface, ArrayAccess, \J
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sFontName'] = $sFontName;
-        $this->container['sFontName'] = (is_null($sFontName) ? null : (string) $sFontName);
+        $this->container['sFontName'] = (is_null($sFontName) ? null : trim((string) $sFontName));
 
         return $this;
     }

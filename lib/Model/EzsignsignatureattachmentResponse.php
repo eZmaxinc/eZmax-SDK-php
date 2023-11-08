@@ -436,7 +436,7 @@ class EzsignsignatureattachmentResponse implements ModelInterface, ArrayAccess, 
      */
     public function getBinEzsignsignatureattachmentMD5()
     {
-        return $this->container['binEzsignsignatureattachmentMD5'];
+        return is_null($this->container['binEzsignsignatureattachmentMD5']) ? null : trim($this->container['binEzsignsignatureattachmentMD5']);
     }
 
     /**
@@ -455,7 +455,7 @@ class EzsignsignatureattachmentResponse implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['binEzsignsignatureattachmentMD5'] = $binEzsignsignatureattachmentMD5;
-        $this->container['binEzsignsignatureattachmentMD5'] = (is_null($binEzsignsignatureattachmentMD5) ? null : (string) $binEzsignsignatureattachmentMD5);
+        $this->container['binEzsignsignatureattachmentMD5'] = (is_null($binEzsignsignatureattachmentMD5) ? null : trim((string) $binEzsignsignatureattachmentMD5));
 
         return $this;
     }
@@ -467,7 +467,7 @@ class EzsignsignatureattachmentResponse implements ModelInterface, ArrayAccess, 
      */
     public function getSEzsignsignatureattachmentName()
     {
-        return $this->container['sEzsignsignatureattachmentName'];
+        return is_null($this->container['sEzsignsignatureattachmentName']) ? null : trim($this->container['sEzsignsignatureattachmentName']);
     }
 
     /**
@@ -492,7 +492,7 @@ class EzsignsignatureattachmentResponse implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignatureattachmentName'] = $sEzsignsignatureattachmentName;
-        $this->container['sEzsignsignatureattachmentName'] = (is_null($sEzsignsignatureattachmentName) ? null : (string) $sEzsignsignatureattachmentName);
+        $this->container['sEzsignsignatureattachmentName'] = (is_null($sEzsignsignatureattachmentName) ? null : trim((string) $sEzsignsignatureattachmentName));
 
         return $this;
     }
@@ -504,7 +504,7 @@ class EzsignsignatureattachmentResponse implements ModelInterface, ArrayAccess, 
      */
     public function getSDownloadUrl()
     {
-        return $this->container['sDownloadUrl'];
+        return is_null($this->container['sDownloadUrl']) ? null : trim($this->container['sDownloadUrl']);
     }
 
     /**
@@ -523,7 +523,7 @@ class EzsignsignatureattachmentResponse implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sDownloadUrl'] = $sDownloadUrl;
-        $this->container['sDownloadUrl'] = (is_null($sDownloadUrl) ? null : (string) $sDownloadUrl);
+        $this->container['sDownloadUrl'] = (is_null($sDownloadUrl) ? null : trim((string) $sDownloadUrl));
 
         return $this;
     }

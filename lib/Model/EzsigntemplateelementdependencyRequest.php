@@ -501,7 +501,7 @@ class EzsigntemplateelementdependencyRequest implements ModelInterface, ArrayAcc
      */
     public function getSEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel()
     {
-        return $this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel'];
+        return is_null($this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel']) ? null : trim($this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel']);
     }
 
     /**
@@ -529,7 +529,7 @@ class EzsigntemplateelementdependencyRequest implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel'] = $sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel;
-        $this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel'] = (is_null($sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel) ? null : (string) $sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel);
+        $this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel'] = (is_null($sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel) ? null : trim((string) $sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel));
 
         return $this;
     }
@@ -541,7 +541,7 @@ class EzsigntemplateelementdependencyRequest implements ModelInterface, ArrayAcc
      */
     public function getSEzsigntemplateelementdependencyEzsigntemplateformfieldlabel()
     {
-        return $this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel'];
+        return is_null($this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel']) ? null : trim($this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel']);
     }
 
     /**
@@ -560,7 +560,7 @@ class EzsigntemplateelementdependencyRequest implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel'] = $sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel;
-        $this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel'] = (is_null($sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel) ? null : (string) $sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel);
+        $this->container['sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel'] = (is_null($sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel) ? null : trim((string) $sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel));
 
         return $this;
     }
@@ -665,7 +665,7 @@ class EzsigntemplateelementdependencyRequest implements ModelInterface, ArrayAcc
      */
     public function getSEzsigntemplateelementdependencyValue()
     {
-        return $this->container['sEzsigntemplateelementdependencyValue'];
+        return is_null($this->container['sEzsigntemplateelementdependencyValue']) ? null : trim($this->container['sEzsigntemplateelementdependencyValue']);
     }
 
     /**
@@ -690,7 +690,7 @@ class EzsigntemplateelementdependencyRequest implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateelementdependencyValue'] = $sEzsigntemplateelementdependencyValue;
-        $this->container['sEzsigntemplateelementdependencyValue'] = (is_null($sEzsigntemplateelementdependencyValue) ? null : (string) $sEzsigntemplateelementdependencyValue);
+        $this->container['sEzsigntemplateelementdependencyValue'] = (is_null($sEzsigntemplateelementdependencyValue) ? null : trim((string) $sEzsigntemplateelementdependencyValue));
 
         return $this;
     }

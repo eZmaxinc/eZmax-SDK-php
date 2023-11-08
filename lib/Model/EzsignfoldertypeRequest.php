@@ -881,7 +881,7 @@ class EzsignfoldertypeRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSEmailAddressSigned()
     {
-        return $this->container['sEmailAddressSigned'];
+        return is_null($this->container['sEmailAddressSigned']) ? null : trim($this->container['sEmailAddressSigned']);
     }
 
     /**
@@ -900,7 +900,7 @@ class EzsignfoldertypeRequest implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddressSigned'] = $sEmailAddressSigned;
-        $this->container['sEmailAddressSigned'] = (is_null($sEmailAddressSigned) ? null : (string) $sEmailAddressSigned);
+        $this->container['sEmailAddressSigned'] = (is_null($sEmailAddressSigned) ? null : trim((string) $sEmailAddressSigned));
 
         return $this;
     }
@@ -912,7 +912,7 @@ class EzsignfoldertypeRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function getSEmailAddressSummary()
     {
-        return $this->container['sEmailAddressSummary'];
+        return is_null($this->container['sEmailAddressSummary']) ? null : trim($this->container['sEmailAddressSummary']);
     }
 
     /**
@@ -931,7 +931,7 @@ class EzsignfoldertypeRequest implements ModelInterface, ArrayAccess, \JsonSeria
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddressSummary'] = $sEmailAddressSummary;
-        $this->container['sEmailAddressSummary'] = (is_null($sEmailAddressSummary) ? null : (string) $sEmailAddressSummary);
+        $this->container['sEmailAddressSummary'] = (is_null($sEmailAddressSummary) ? null : trim((string) $sEmailAddressSummary));
 
         return $this;
     }

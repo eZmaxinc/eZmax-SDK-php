@@ -469,7 +469,7 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets fkiSecretquestionID
      *
-     * @param int|null $fkiSecretquestionID The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father's middle name| |15|Your mother's maiden name| |16|Name of your eldest child| |17|Your spouse's middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat's name| |22|Date of Birth (YYYY-MM-DD)|
+     * @param int|null $fkiSecretquestionID The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father's middle name| |15|Your mother's maiden name| |16|Name of your eldest child| |17|Your spouse's middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat's name| |22|Date of Birth (YYYY-MM-DD)| |22|Secret Code| |22|Your reference code|
      *
      * @return self
      */
@@ -501,7 +501,7 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function getEEzsignsignerLogintype()
     {
-        return $this->container['eEzsignsignerLogintype'];
+        return is_null($this->container['eEzsignsignerLogintype']) ? null : trim($this->container['eEzsignsignerLogintype']);
     }
 
     /**
@@ -531,7 +531,7 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsignsignerLogintype'] = $eEzsignsignerLogintype;
-        $this->container['eEzsignsignerLogintype'] = (is_null($eEzsignsignerLogintype) ? null : (string) $eEzsignsignerLogintype);
+        $this->container['eEzsignsignerLogintype'] = (is_null($eEzsignsignerLogintype) ? null : trim((string) $eEzsignsignerLogintype));
 
         return $this;
     }
@@ -543,7 +543,7 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function getSEzsignsignerSecretanswer()
     {
-        return $this->container['sEzsignsignerSecretanswer'];
+        return is_null($this->container['sEzsignsignerSecretanswer']) ? null : trim($this->container['sEzsignsignerSecretanswer']);
     }
 
     /**
@@ -562,7 +562,7 @@ class EzsignsignerRequestCompound implements ModelInterface, ArrayAccess, \JsonS
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignsignerSecretanswer'] = $sEzsignsignerSecretanswer;
-        $this->container['sEzsignsignerSecretanswer'] = (is_null($sEzsignsignerSecretanswer) ? null : (string) $sEzsignsignerSecretanswer);
+        $this->container['sEzsignsignerSecretanswer'] = (is_null($sEzsignsignerSecretanswer) ? null : trim((string) $sEzsignsignerSecretanswer));
 
         return $this;
     }

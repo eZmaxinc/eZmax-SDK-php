@@ -379,6 +379,9 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['sWebhookEmailfailed'] === null) {
             $invalidProperties[] = "'sWebhookEmailfailed' can't be null";
         }
+        if ($this->container['bWebhookIsactive'] === null) {
+            $invalidProperties[] = "'bWebhookIsactive' can't be null";
+        }
         if ($this->container['bWebhookSkipsslvalidation'] === null) {
             $invalidProperties[] = "'bWebhookSkipsslvalidation' can't be null";
         }
@@ -449,7 +452,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSWebhookDescription()
     {
-        return $this->container['sWebhookDescription'];
+        return is_null($this->container['sWebhookDescription']) ? null : trim($this->container['sWebhookDescription']);
     }
 
     /**
@@ -468,7 +471,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookDescription'] = $sWebhookDescription;
-        $this->container['sWebhookDescription'] = (is_null($sWebhookDescription) ? null : (string) $sWebhookDescription);
+        $this->container['sWebhookDescription'] = (is_null($sWebhookDescription) ? null : trim((string) $sWebhookDescription));
 
         return $this;
     }
@@ -517,7 +520,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSEzsignfoldertypeNameX()
     {
-        return $this->container['sEzsignfoldertypeNameX'];
+        return is_null($this->container['sEzsignfoldertypeNameX']) ? null : trim($this->container['sEzsignfoldertypeNameX']);
     }
 
     /**
@@ -536,7 +539,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
-        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : (string) $sEzsignfoldertypeNameX);
+        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : trim((string) $sEzsignfoldertypeNameX));
 
         return $this;
     }
@@ -641,7 +644,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSWebhookUrl()
     {
-        return $this->container['sWebhookUrl'];
+        return is_null($this->container['sWebhookUrl']) ? null : trim($this->container['sWebhookUrl']);
     }
 
     /**
@@ -660,7 +663,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookUrl'] = $sWebhookUrl;
-        $this->container['sWebhookUrl'] = (is_null($sWebhookUrl) ? null : (string) $sWebhookUrl);
+        $this->container['sWebhookUrl'] = (is_null($sWebhookUrl) ? null : trim((string) $sWebhookUrl));
 
         return $this;
     }
@@ -672,7 +675,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getSWebhookEmailfailed()
     {
-        return $this->container['sWebhookEmailfailed'];
+        return is_null($this->container['sWebhookEmailfailed']) ? null : trim($this->container['sWebhookEmailfailed']);
     }
 
     /**
@@ -691,7 +694,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookEmailfailed'] = $sWebhookEmailfailed;
-        $this->container['sWebhookEmailfailed'] = (is_null($sWebhookEmailfailed) ? null : (string) $sWebhookEmailfailed);
+        $this->container['sWebhookEmailfailed'] = (is_null($sWebhookEmailfailed) ? null : trim((string) $sWebhookEmailfailed));
 
         return $this;
     }
@@ -699,7 +702,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets bWebhookIsactive
      *
-     * @return bool|null
+     * @return bool
      */
     public function getBWebhookIsactive()
     {
@@ -709,7 +712,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets bWebhookIsactive
      *
-     * @param bool|null $bWebhookIsactive Whether the Webhook is active or not
+     * @param bool $bWebhookIsactive Whether the Webhook is active or not
      *
      * @return self
      */
@@ -765,7 +768,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getPksCustomerCode()
     {
-        return $this->container['pksCustomerCode'];
+        return is_null($this->container['pksCustomerCode']) ? null : trim($this->container['pksCustomerCode']);
     }
 
     /**
@@ -793,7 +796,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pksCustomerCode'] = $pksCustomerCode;
-        $this->container['pksCustomerCode'] = (is_null($pksCustomerCode) ? null : (string) $pksCustomerCode);
+        $this->container['pksCustomerCode'] = (is_null($pksCustomerCode) ? null : trim((string) $pksCustomerCode));
 
         return $this;
     }

@@ -362,7 +362,7 @@ class EzsignfolderImportEzsigntemplatepackageV1Request implements ModelInterface
      */
     public function getDtEzsigndocumentDuedate()
     {
-        return $this->container['dtEzsigndocumentDuedate'];
+        return is_null($this->container['dtEzsigndocumentDuedate']) ? null : trim($this->container['dtEzsigndocumentDuedate']);
     }
 
     /**
@@ -381,7 +381,7 @@ class EzsignfolderImportEzsigntemplatepackageV1Request implements ModelInterface
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtEzsigndocumentDuedate'] = $dtEzsigndocumentDuedate;
-        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : (string) $dtEzsigndocumentDuedate);
+        $this->container['dtEzsigndocumentDuedate'] = (is_null($dtEzsigndocumentDuedate) ? null : trim((string) $dtEzsigndocumentDuedate));
 
         return $this;
     }

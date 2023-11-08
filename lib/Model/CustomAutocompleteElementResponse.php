@@ -338,7 +338,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      */
     public function getSCategory()
     {
-        return $this->container['sCategory'];
+        return is_null($this->container['sCategory']) ? null : trim($this->container['sCategory']);
     }
 
     /**
@@ -357,7 +357,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sCategory'] = $sCategory;
-        $this->container['sCategory'] = (is_null($sCategory) ? null : (string) $sCategory);
+        $this->container['sCategory'] = (is_null($sCategory) ? null : trim((string) $sCategory));
 
         return $this;
     }
@@ -369,7 +369,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      */
     public function getSLabel()
     {
-        return $this->container['sLabel'];
+        return is_null($this->container['sLabel']) ? null : trim($this->container['sLabel']);
     }
 
     /**
@@ -388,7 +388,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sLabel'] = $sLabel;
-        $this->container['sLabel'] = (is_null($sLabel) ? null : (string) $sLabel);
+        $this->container['sLabel'] = (is_null($sLabel) ? null : trim((string) $sLabel));
 
         return $this;
     }
@@ -400,7 +400,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      */
     public function getSValue()
     {
-        return $this->container['sValue'];
+        return is_null($this->container['sValue']) ? null : trim($this->container['sValue']);
     }
 
     /**
@@ -419,7 +419,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sValue'] = $sValue;
-        $this->container['sValue'] = (is_null($sValue) ? null : (string) $sValue);
+        $this->container['sValue'] = (is_null($sValue) ? null : trim((string) $sValue));
 
         return $this;
     }
@@ -432,7 +432,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
      */
     public function getMValue()
     {
-        return $this->container['mValue'];
+        return is_null($this->container['mValue']) ? null : trim($this->container['mValue']);
     }
 
     /**
@@ -452,7 +452,7 @@ class CustomAutocompleteElementResponse implements ModelInterface, ArrayAccess, 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['mValue'] = $mValue;
-        $this->container['mValue'] = (is_null($mValue) ? null : (string) $mValue);
+        $this->container['mValue'] = (is_null($mValue) ? null : trim((string) $mValue));
 
         return $this;
     }

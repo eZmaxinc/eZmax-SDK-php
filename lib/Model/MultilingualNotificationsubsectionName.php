@@ -305,7 +305,7 @@ class MultilingualNotificationsubsectionName implements ModelInterface, ArrayAcc
      */
     public function getSNotificationsubsectionName1()
     {
-        return $this->container['sNotificationsubsectionName1'];
+        return is_null($this->container['sNotificationsubsectionName1']) ? null : trim($this->container['sNotificationsubsectionName1']);
     }
 
     /**
@@ -324,7 +324,7 @@ class MultilingualNotificationsubsectionName implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sNotificationsubsectionName1'] = $sNotificationsubsectionName1;
-        $this->container['sNotificationsubsectionName1'] = (is_null($sNotificationsubsectionName1) ? null : (string) $sNotificationsubsectionName1);
+        $this->container['sNotificationsubsectionName1'] = (is_null($sNotificationsubsectionName1) ? null : trim((string) $sNotificationsubsectionName1));
 
         return $this;
     }
@@ -336,7 +336,7 @@ class MultilingualNotificationsubsectionName implements ModelInterface, ArrayAcc
      */
     public function getSNotificationsubsectionName2()
     {
-        return $this->container['sNotificationsubsectionName2'];
+        return is_null($this->container['sNotificationsubsectionName2']) ? null : trim($this->container['sNotificationsubsectionName2']);
     }
 
     /**
@@ -355,7 +355,7 @@ class MultilingualNotificationsubsectionName implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sNotificationsubsectionName2'] = $sNotificationsubsectionName2;
-        $this->container['sNotificationsubsectionName2'] = (is_null($sNotificationsubsectionName2) ? null : (string) $sNotificationsubsectionName2);
+        $this->container['sNotificationsubsectionName2'] = (is_null($sNotificationsubsectionName2) ? null : trim((string) $sNotificationsubsectionName2));
 
         return $this;
     }

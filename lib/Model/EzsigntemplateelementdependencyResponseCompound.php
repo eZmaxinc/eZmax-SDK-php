@@ -671,7 +671,7 @@ class EzsigntemplateelementdependencyResponseCompound implements ModelInterface,
      */
     public function getSEzsigntemplateelementdependencyValue()
     {
-        return $this->container['sEzsigntemplateelementdependencyValue'];
+        return is_null($this->container['sEzsigntemplateelementdependencyValue']) ? null : trim($this->container['sEzsigntemplateelementdependencyValue']);
     }
 
     /**
@@ -696,7 +696,7 @@ class EzsigntemplateelementdependencyResponseCompound implements ModelInterface,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplateelementdependencyValue'] = $sEzsigntemplateelementdependencyValue;
-        $this->container['sEzsigntemplateelementdependencyValue'] = (is_null($sEzsigntemplateelementdependencyValue) ? null : (string) $sEzsigntemplateelementdependencyValue);
+        $this->container['sEzsigntemplateelementdependencyValue'] = (is_null($sEzsigntemplateelementdependencyValue) ? null : trim((string) $sEzsigntemplateelementdependencyValue));
 
         return $this;
     }

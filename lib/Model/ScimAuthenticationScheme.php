@@ -350,7 +350,7 @@ class ScimAuthenticationScheme implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getDescription()
     {
-        return $this->container['description'];
+        return is_null($this->container['description']) ? null : trim($this->container['description']);
     }
 
     /**
@@ -369,7 +369,7 @@ class ScimAuthenticationScheme implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['description'] = $description;
-        $this->container['description'] = (is_null($description) ? null : (string) $description);
+        $this->container['description'] = (is_null($description) ? null : trim((string) $description));
 
         return $this;
     }
@@ -381,7 +381,7 @@ class ScimAuthenticationScheme implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getName()
     {
-        return $this->container['name'];
+        return is_null($this->container['name']) ? null : trim($this->container['name']);
     }
 
     /**
@@ -400,7 +400,7 @@ class ScimAuthenticationScheme implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['name'] = $name;
-        $this->container['name'] = (is_null($name) ? null : (string) $name);
+        $this->container['name'] = (is_null($name) ? null : trim((string) $name));
 
         return $this;
     }
@@ -412,7 +412,7 @@ class ScimAuthenticationScheme implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getType()
     {
-        return $this->container['type'];
+        return is_null($this->container['type']) ? null : trim($this->container['type']);
     }
 
     /**
@@ -441,7 +441,7 @@ class ScimAuthenticationScheme implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['type'] = $type;
-        $this->container['type'] = (is_null($type) ? null : (string) $type);
+        $this->container['type'] = (is_null($type) ? null : trim((string) $type));
 
         return $this;
     }

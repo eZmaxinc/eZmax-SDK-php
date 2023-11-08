@@ -298,7 +298,7 @@ class EzsigntemplatedocumentRequestPatch implements ModelInterface, ArrayAccess,
      */
     public function getSEzsigntemplatedocumentName()
     {
-        return $this->container['sEzsigntemplatedocumentName'];
+        return is_null($this->container['sEzsigntemplatedocumentName']) ? null : trim($this->container['sEzsigntemplatedocumentName']);
     }
 
     /**
@@ -317,7 +317,7 @@ class EzsigntemplatedocumentRequestPatch implements ModelInterface, ArrayAccess,
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsigntemplatedocumentName'] = $sEzsigntemplatedocumentName;
-        $this->container['sEzsigntemplatedocumentName'] = (is_null($sEzsigntemplatedocumentName) ? null : (string) $sEzsigntemplatedocumentName);
+        $this->container['sEzsigntemplatedocumentName'] = (is_null($sEzsigntemplatedocumentName) ? null : trim((string) $sEzsigntemplatedocumentName));
 
         return $this;
     }

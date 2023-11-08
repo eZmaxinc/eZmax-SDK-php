@@ -448,7 +448,7 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSContactFirstname()
     {
-        return $this->container['sContactFirstname'];
+        return is_null($this->container['sContactFirstname']) ? null : trim($this->container['sContactFirstname']);
     }
 
     /**
@@ -467,7 +467,7 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactFirstname'] = $sContactFirstname;
-        $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : (string) $sContactFirstname);
+        $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : trim((string) $sContactFirstname));
 
         return $this;
     }
@@ -479,7 +479,7 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSContactLastname()
     {
-        return $this->container['sContactLastname'];
+        return is_null($this->container['sContactLastname']) ? null : trim($this->container['sContactLastname']);
     }
 
     /**
@@ -498,7 +498,7 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactLastname'] = $sContactLastname;
-        $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : (string) $sContactLastname);
+        $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : trim((string) $sContactLastname));
 
         return $this;
     }
@@ -510,7 +510,7 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getSContactCompany()
     {
-        return $this->container['sContactCompany'];
+        return is_null($this->container['sContactCompany']) ? null : trim($this->container['sContactCompany']);
     }
 
     /**
@@ -529,7 +529,7 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sContactCompany'] = $sContactCompany;
-        $this->container['sContactCompany'] = (is_null($sContactCompany) ? null : (string) $sContactCompany);
+        $this->container['sContactCompany'] = (is_null($sContactCompany) ? null : trim((string) $sContactCompany));
 
         return $this;
     }
@@ -541,7 +541,7 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function getDtContactBirthdate()
     {
-        return $this->container['dtContactBirthdate'];
+        return is_null($this->container['dtContactBirthdate']) ? null : trim($this->container['dtContactBirthdate']);
     }
 
     /**
@@ -560,7 +560,7 @@ class ContactRequestCompound implements ModelInterface, ArrayAccess, \JsonSerial
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtContactBirthdate'] = $dtContactBirthdate;
-        $this->container['dtContactBirthdate'] = (is_null($dtContactBirthdate) ? null : (string) $dtContactBirthdate);
+        $this->container['dtContactBirthdate'] = (is_null($dtContactBirthdate) ? null : trim((string) $dtContactBirthdate));
 
         return $this;
     }

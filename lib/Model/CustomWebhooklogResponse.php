@@ -311,7 +311,7 @@ class CustomWebhooklogResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getDtWebhooklogDate()
     {
-        return $this->container['dtWebhooklogDate'];
+        return is_null($this->container['dtWebhooklogDate']) ? null : trim($this->container['dtWebhooklogDate']);
     }
 
     /**
@@ -330,7 +330,7 @@ class CustomWebhooklogResponse implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtWebhooklogDate'] = $dtWebhooklogDate;
-        $this->container['dtWebhooklogDate'] = (is_null($dtWebhooklogDate) ? null : (string) $dtWebhooklogDate);
+        $this->container['dtWebhooklogDate'] = (is_null($dtWebhooklogDate) ? null : trim((string) $dtWebhooklogDate));
 
         return $this;
     }
@@ -342,7 +342,7 @@ class CustomWebhooklogResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getTWebhooklogJson()
     {
-        return $this->container['tWebhooklogJson'];
+        return is_null($this->container['tWebhooklogJson']) ? null : trim($this->container['tWebhooklogJson']);
     }
 
     /**
@@ -361,7 +361,7 @@ class CustomWebhooklogResponse implements ModelInterface, ArrayAccess, \JsonSeri
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tWebhooklogJson'] = $tWebhooklogJson;
-        $this->container['tWebhooklogJson'] = (is_null($tWebhooklogJson) ? null : (string) $tWebhooklogJson);
+        $this->container['tWebhooklogJson'] = (is_null($tWebhooklogJson) ? null : trim((string) $tWebhooklogJson));
 
         return $this;
     }

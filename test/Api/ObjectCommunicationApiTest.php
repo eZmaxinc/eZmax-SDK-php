@@ -73,12 +73,12 @@ class ObjectCommunicationApiTest extends TestCase
     }
 
     /**
-     * Test case for communicationGetObjectV2
+     * Test case for communicationSendV1
      *
-     * Retrieve an existing Communication.
+     * Send a new Communication.
      *
      */
-    public function testCommunicationGetObjectV2()
+    public function testCommunicationSendV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

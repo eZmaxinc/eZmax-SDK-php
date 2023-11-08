@@ -321,7 +321,7 @@ class CustomEzsignformfielderrortestResponse implements ModelInterface, ArrayAcc
      */
     public function getSEzsignformfielderrortestName()
     {
-        return $this->container['sEzsignformfielderrortestName'];
+        return is_null($this->container['sEzsignformfielderrortestName']) ? null : trim($this->container['sEzsignformfielderrortestName']);
     }
 
     /**
@@ -346,7 +346,7 @@ class CustomEzsignformfielderrortestResponse implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfielderrortestName'] = $sEzsignformfielderrortestName;
-        $this->container['sEzsignformfielderrortestName'] = (is_null($sEzsignformfielderrortestName) ? null : (string) $sEzsignformfielderrortestName);
+        $this->container['sEzsignformfielderrortestName'] = (is_null($sEzsignformfielderrortestName) ? null : trim((string) $sEzsignformfielderrortestName));
 
         return $this;
     }
@@ -358,7 +358,7 @@ class CustomEzsignformfielderrortestResponse implements ModelInterface, ArrayAcc
      */
     public function getSEzsignformfielderrortestDetail()
     {
-        return $this->container['sEzsignformfielderrortestDetail'];
+        return is_null($this->container['sEzsignformfielderrortestDetail']) ? null : trim($this->container['sEzsignformfielderrortestDetail']);
     }
 
     /**
@@ -383,7 +383,7 @@ class CustomEzsignformfielderrortestResponse implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEzsignformfielderrortestDetail'] = $sEzsignformfielderrortestDetail;
-        $this->container['sEzsignformfielderrortestDetail'] = (is_null($sEzsignformfielderrortestDetail) ? null : (string) $sEzsignformfielderrortestDetail);
+        $this->container['sEzsignformfielderrortestDetail'] = (is_null($sEzsignformfielderrortestDetail) ? null : trim((string) $sEzsignformfielderrortestDetail));
 
         return $this;
     }

@@ -325,7 +325,7 @@ class FranchiseofficeAutocompleteElementResponse implements ModelInterface, Arra
      */
     public function getSFranchiseofficeDescription()
     {
-        return $this->container['sFranchiseofficeDescription'];
+        return is_null($this->container['sFranchiseofficeDescription']) ? null : trim($this->container['sFranchiseofficeDescription']);
     }
 
     /**
@@ -344,7 +344,7 @@ class FranchiseofficeAutocompleteElementResponse implements ModelInterface, Arra
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sFranchiseofficeDescription'] = $sFranchiseofficeDescription;
-        $this->container['sFranchiseofficeDescription'] = (is_null($sFranchiseofficeDescription) ? null : (string) $sFranchiseofficeDescription);
+        $this->container['sFranchiseofficeDescription'] = (is_null($sFranchiseofficeDescription) ? null : trim((string) $sFranchiseofficeDescription));
 
         return $this;
     }

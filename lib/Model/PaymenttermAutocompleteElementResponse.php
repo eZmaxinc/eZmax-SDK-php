@@ -357,7 +357,7 @@ class PaymenttermAutocompleteElementResponse implements ModelInterface, ArrayAcc
      */
     public function getSPaymenttermDescriptionX()
     {
-        return $this->container['sPaymenttermDescriptionX'];
+        return is_null($this->container['sPaymenttermDescriptionX']) ? null : trim($this->container['sPaymenttermDescriptionX']);
     }
 
     /**
@@ -382,7 +382,7 @@ class PaymenttermAutocompleteElementResponse implements ModelInterface, ArrayAcc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sPaymenttermDescriptionX'] = $sPaymenttermDescriptionX;
-        $this->container['sPaymenttermDescriptionX'] = (is_null($sPaymenttermDescriptionX) ? null : (string) $sPaymenttermDescriptionX);
+        $this->container['sPaymenttermDescriptionX'] = (is_null($sPaymenttermDescriptionX) ? null : trim((string) $sPaymenttermDescriptionX));
 
         return $this;
     }

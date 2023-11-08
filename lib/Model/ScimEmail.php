@@ -304,7 +304,7 @@ class ScimEmail implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getValue()
     {
-        return $this->container['value'];
+        return is_null($this->container['value']) ? null : trim($this->container['value']);
     }
 
     /**
@@ -323,7 +323,7 @@ class ScimEmail implements ModelInterface, ArrayAccess, \JsonSerializable
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['value'] = $value;
-        $this->container['value'] = (is_null($value) ? null : (string) $value);
+        $this->container['value'] = (is_null($value) ? null : trim((string) $value));
 
         return $this;
     }
