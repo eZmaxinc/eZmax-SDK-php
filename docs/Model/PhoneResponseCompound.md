@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **ePhoneType** | [**\eZmaxAPI\Model\FieldEPhoneType**](FieldEPhoneType.md) |  | [optional]
 **sPhoneE164** | **string** | A phone number in E.164 Format | [optional]
 **sPhoneExtension** | **string** | The extension of the phone number.  The extension is the \&quot;123\&quot; section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers | [optional]
+**bPhoneInternational** | **bool** | Indicate the phone number is an international phone number. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

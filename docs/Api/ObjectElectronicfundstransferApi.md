@@ -4,13 +4,13 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**eletronicfundstransferGetCommunicationListV1()**](ObjectElectronicfundstransferApi.md#eletronicfundstransferGetCommunicationListV1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list |
+| [**electronicfundstransferGetCommunicationListV1()**](ObjectElectronicfundstransferApi.md#electronicfundstransferGetCommunicationListV1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list |
 
 
-## `eletronicfundstransferGetCommunicationListV1()`
+## `electronicfundstransferGetCommunicationListV1()`
 
 ```php
-eletronicfundstransferGetCommunicationListV1($pkiElectronicfundstransferID): \eZmaxAPI\Model\ElectronicfundstransferGetCommunicationListV1Response
+electronicfundstransferGetCommunicationListV1($pkiElectronicfundstransferID): \eZmaxAPI\Model\ElectronicfundstransferGetCommunicationListV1Response
 ```
 
 Retrieve Communication list
@@ -39,10 +39,10 @@ $apiInstance = new eZmaxAPI\Api\ObjectElectronicfundstransferApi(
 $pkiElectronicfundstransferID = 56; // int
 
 try {
-    $result = $apiInstance->eletronicfundstransferGetCommunicationListV1($pkiElectronicfundstransferID);
+    $result = $apiInstance->electronicfundstransferGetCommunicationListV1($pkiElectronicfundstransferID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectElectronicfundstransferApi->eletronicfundstransferGetCommunicationListV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectElectronicfundstransferApi->electronicfundstransferGetCommunicationListV1: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

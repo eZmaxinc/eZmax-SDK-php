@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **pksCustomerCode** | **string** | The customer code assigned to your account |
 **fkiSystemconfigurationtypeID** | **int** | The unique ID of the Systemconfigurationtype |
 **fkiSignatureID** | **int** | The unique ID of the Signature | [optional]
+**eUserEzsignaccess** | [**\eZmaxAPI\Model\FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |
+**eUserEzsignprepaid** | [**\eZmaxAPI\Model\FieldEUserEzsignprepaid**](FieldEUserEzsignprepaid.md) |  | [optional]
+**dtUserEzsignprepaidexpiration** | **string** | The eZsign prepaid expiration date | [optional]
 **aPkiPermissionID** | **int[]** | An array of permissions granted to the user or api key |
 **objUserReal** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  |
 **objUserCloned** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional]
