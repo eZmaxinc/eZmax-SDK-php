@@ -17,10 +17,13 @@ Name | Type | Description | Notes
 **eEzsignfoldertypeSendreminderfrequency** | [**\eZmaxAPI\Model\FieldEEzsignfoldertypeSendreminderfrequency**](FieldEEzsignfoldertypeSendreminderfrequency.md) |  | [optional]
 **iEzsignfoldertypeArchivaldays** | **int** | The number of days before the archival of Ezsignfolders created using this Ezsignfoldertype |
 **eEzsignfoldertypeDisposal** | [**\eZmaxAPI\Model\FieldEEzsignfoldertypeDisposal**](FieldEEzsignfoldertypeDisposal.md) |  |
+**eEzsignfoldertypeCompletion** | [**\eZmaxAPI\Model\FieldEEzsignfoldertypeCompletion**](FieldEEzsignfoldertypeCompletion.md) |  | [optional]
 **iEzsignfoldertypeDisposaldays** | **int** | The number of days after the archival before the disposal of the Ezsignfolder | [optional]
 **iEzsignfoldertypeDeadlinedays** | **int** | The number of days to get all Ezsignsignatures |
 **bEzsignfoldertypeDelegate** | **bool** | Wheter if delegation of signature is allowed to another user or not | [optional]
 **bEzsignfoldertypeReassign** | **bool** | Wheter if Reassignment of signature is allowed to another signatory or not | [optional]
+**bEzsignfoldertypeReassignezsignsigner** | **bool** | Wheter if Reassignment of signature is allowed by a signatory to another signatory or not | [optional]
+**bEzsignfoldertypeReassignuser** | **bool** | Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not | [optional]
 **bEzsignfoldertypeSendattatchmentsigner** | **bool** | THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email | [optional]
 **bEzsignfoldertypeSendsignedtoezsignsigner** | **bool** | Whether we send an email to Ezsignsigner  when document is completed | [optional]
 **bEzsignfoldertypeSendsignedtouser** | **bool** | Whether we send an email to User who signed when document is completed | [optional]

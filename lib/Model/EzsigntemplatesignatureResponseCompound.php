@@ -63,6 +63,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'fkiEzsigntemplatedocumentID' => 'int',
         'fkiEzsigntemplatesignerID' => 'int',
         'fkiEzsigntemplatesignerIDValidation' => 'int',
+        'eEzsigntemplatesignaturePositioning' => '\eZmaxAPI\Model\FieldEEzsigntemplatesignaturePositioning',
         'iEzsigntemplatedocumentpagePagenumber' => 'int',
         'iEzsigntemplatesignatureX' => 'int',
         'iEzsigntemplatesignatureY' => 'int',
@@ -81,6 +82,10 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'sEzsigntemplatesignatureRegexp' => 'string',
         'eEzsigntemplatesignatureTextvalidation' => '\eZmaxAPI\Model\EnumTextvalidation',
         'eEzsigntemplatesignatureDependencyrequirement' => '\eZmaxAPI\Model\FieldEEzsigntemplatesignatureDependencyrequirement',
+        'sEzsigntemplatesignaturePositioningpattern' => 'string',
+        'iEzsigntemplatesignaturePositioningoffsetx' => 'int',
+        'iEzsigntemplatesignaturePositioningoffsety' => 'int',
+        'eEzsigntemplatesignaturePositioningoccurence' => '\eZmaxAPI\Model\FieldEEzsigntemplatesignaturePositioningoccurence',
         'bEzsigntemplatesignatureCustomdate' => 'bool',
         'aObjEzsigntemplatesignaturecustomdate' => '\eZmaxAPI\Model\EzsigntemplatesignaturecustomdateResponseCompound[]',
         'aObjEzsigntemplateelementdependency' => '\eZmaxAPI\Model\EzsigntemplateelementdependencyResponseCompound[]'
@@ -98,6 +103,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'fkiEzsigntemplatedocumentID' => null,
         'fkiEzsigntemplatesignerID' => null,
         'fkiEzsigntemplatesignerIDValidation' => null,
+        'eEzsigntemplatesignaturePositioning' => null,
         'iEzsigntemplatedocumentpagePagenumber' => null,
         'iEzsigntemplatesignatureX' => null,
         'iEzsigntemplatesignatureY' => null,
@@ -116,6 +122,10 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'sEzsigntemplatesignatureRegexp' => null,
         'eEzsigntemplatesignatureTextvalidation' => null,
         'eEzsigntemplatesignatureDependencyrequirement' => null,
+        'sEzsigntemplatesignaturePositioningpattern' => null,
+        'iEzsigntemplatesignaturePositioningoffsetx' => null,
+        'iEzsigntemplatesignaturePositioningoffsety' => null,
+        'eEzsigntemplatesignaturePositioningoccurence' => null,
         'bEzsigntemplatesignatureCustomdate' => null,
         'aObjEzsigntemplatesignaturecustomdate' => null,
         'aObjEzsigntemplateelementdependency' => null
@@ -131,6 +141,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
 		'fkiEzsigntemplatedocumentID' => false,
 		'fkiEzsigntemplatesignerID' => false,
 		'fkiEzsigntemplatesignerIDValidation' => false,
+		'eEzsigntemplatesignaturePositioning' => false,
 		'iEzsigntemplatedocumentpagePagenumber' => false,
 		'iEzsigntemplatesignatureX' => false,
 		'iEzsigntemplatesignatureY' => false,
@@ -149,6 +160,10 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
 		'sEzsigntemplatesignatureRegexp' => false,
 		'eEzsigntemplatesignatureTextvalidation' => false,
 		'eEzsigntemplatesignatureDependencyrequirement' => false,
+		'sEzsigntemplatesignaturePositioningpattern' => false,
+		'iEzsigntemplatesignaturePositioningoffsetx' => false,
+		'iEzsigntemplatesignaturePositioningoffsety' => false,
+		'eEzsigntemplatesignaturePositioningoccurence' => false,
 		'bEzsigntemplatesignatureCustomdate' => false,
 		'aObjEzsigntemplatesignaturecustomdate' => false,
 		'aObjEzsigntemplateelementdependency' => false
@@ -244,6 +259,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'fkiEzsigntemplatedocumentID' => 'fkiEzsigntemplatedocumentID',
         'fkiEzsigntemplatesignerID' => 'fkiEzsigntemplatesignerID',
         'fkiEzsigntemplatesignerIDValidation' => 'fkiEzsigntemplatesignerIDValidation',
+        'eEzsigntemplatesignaturePositioning' => 'eEzsigntemplatesignaturePositioning',
         'iEzsigntemplatedocumentpagePagenumber' => 'iEzsigntemplatedocumentpagePagenumber',
         'iEzsigntemplatesignatureX' => 'iEzsigntemplatesignatureX',
         'iEzsigntemplatesignatureY' => 'iEzsigntemplatesignatureY',
@@ -262,6 +278,10 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'sEzsigntemplatesignatureRegexp' => 'sEzsigntemplatesignatureRegexp',
         'eEzsigntemplatesignatureTextvalidation' => 'eEzsigntemplatesignatureTextvalidation',
         'eEzsigntemplatesignatureDependencyrequirement' => 'eEzsigntemplatesignatureDependencyrequirement',
+        'sEzsigntemplatesignaturePositioningpattern' => 'sEzsigntemplatesignaturePositioningpattern',
+        'iEzsigntemplatesignaturePositioningoffsetx' => 'iEzsigntemplatesignaturePositioningoffsetx',
+        'iEzsigntemplatesignaturePositioningoffsety' => 'iEzsigntemplatesignaturePositioningoffsety',
+        'eEzsigntemplatesignaturePositioningoccurence' => 'eEzsigntemplatesignaturePositioningoccurence',
         'bEzsigntemplatesignatureCustomdate' => 'bEzsigntemplatesignatureCustomdate',
         'aObjEzsigntemplatesignaturecustomdate' => 'a_objEzsigntemplatesignaturecustomdate',
         'aObjEzsigntemplateelementdependency' => 'a_objEzsigntemplateelementdependency'
@@ -277,6 +297,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'fkiEzsigntemplatedocumentID' => 'setFkiEzsigntemplatedocumentID',
         'fkiEzsigntemplatesignerID' => 'setFkiEzsigntemplatesignerID',
         'fkiEzsigntemplatesignerIDValidation' => 'setFkiEzsigntemplatesignerIDValidation',
+        'eEzsigntemplatesignaturePositioning' => 'setEEzsigntemplatesignaturePositioning',
         'iEzsigntemplatedocumentpagePagenumber' => 'setIEzsigntemplatedocumentpagePagenumber',
         'iEzsigntemplatesignatureX' => 'setIEzsigntemplatesignatureX',
         'iEzsigntemplatesignatureY' => 'setIEzsigntemplatesignatureY',
@@ -295,6 +316,10 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'sEzsigntemplatesignatureRegexp' => 'setSEzsigntemplatesignatureRegexp',
         'eEzsigntemplatesignatureTextvalidation' => 'setEEzsigntemplatesignatureTextvalidation',
         'eEzsigntemplatesignatureDependencyrequirement' => 'setEEzsigntemplatesignatureDependencyrequirement',
+        'sEzsigntemplatesignaturePositioningpattern' => 'setSEzsigntemplatesignaturePositioningpattern',
+        'iEzsigntemplatesignaturePositioningoffsetx' => 'setIEzsigntemplatesignaturePositioningoffsetx',
+        'iEzsigntemplatesignaturePositioningoffsety' => 'setIEzsigntemplatesignaturePositioningoffsety',
+        'eEzsigntemplatesignaturePositioningoccurence' => 'setEEzsigntemplatesignaturePositioningoccurence',
         'bEzsigntemplatesignatureCustomdate' => 'setBEzsigntemplatesignatureCustomdate',
         'aObjEzsigntemplatesignaturecustomdate' => 'setAObjEzsigntemplatesignaturecustomdate',
         'aObjEzsigntemplateelementdependency' => 'setAObjEzsigntemplateelementdependency'
@@ -310,6 +335,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'fkiEzsigntemplatedocumentID' => 'getFkiEzsigntemplatedocumentID',
         'fkiEzsigntemplatesignerID' => 'getFkiEzsigntemplatesignerID',
         'fkiEzsigntemplatesignerIDValidation' => 'getFkiEzsigntemplatesignerIDValidation',
+        'eEzsigntemplatesignaturePositioning' => 'getEEzsigntemplatesignaturePositioning',
         'iEzsigntemplatedocumentpagePagenumber' => 'getIEzsigntemplatedocumentpagePagenumber',
         'iEzsigntemplatesignatureX' => 'getIEzsigntemplatesignatureX',
         'iEzsigntemplatesignatureY' => 'getIEzsigntemplatesignatureY',
@@ -328,6 +354,10 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         'sEzsigntemplatesignatureRegexp' => 'getSEzsigntemplatesignatureRegexp',
         'eEzsigntemplatesignatureTextvalidation' => 'getEEzsigntemplatesignatureTextvalidation',
         'eEzsigntemplatesignatureDependencyrequirement' => 'getEEzsigntemplatesignatureDependencyrequirement',
+        'sEzsigntemplatesignaturePositioningpattern' => 'getSEzsigntemplatesignaturePositioningpattern',
+        'iEzsigntemplatesignaturePositioningoffsetx' => 'getIEzsigntemplatesignaturePositioningoffsetx',
+        'iEzsigntemplatesignaturePositioningoffsety' => 'getIEzsigntemplatesignaturePositioningoffsety',
+        'eEzsigntemplatesignaturePositioningoccurence' => 'getEEzsigntemplatesignaturePositioningoccurence',
         'bEzsigntemplatesignatureCustomdate' => 'getBEzsigntemplatesignatureCustomdate',
         'aObjEzsigntemplatesignaturecustomdate' => 'getAObjEzsigntemplatesignaturecustomdate',
         'aObjEzsigntemplateelementdependency' => 'getAObjEzsigntemplateelementdependency'
@@ -394,6 +424,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         $this->setIfExists('fkiEzsigntemplatedocumentID', $data ?? [], null);
         $this->setIfExists('fkiEzsigntemplatesignerID', $data ?? [], null);
         $this->setIfExists('fkiEzsigntemplatesignerIDValidation', $data ?? [], null);
+        $this->setIfExists('eEzsigntemplatesignaturePositioning', $data ?? [], null);
         $this->setIfExists('iEzsigntemplatedocumentpagePagenumber', $data ?? [], null);
         $this->setIfExists('iEzsigntemplatesignatureX', $data ?? [], null);
         $this->setIfExists('iEzsigntemplatesignatureY', $data ?? [], null);
@@ -412,6 +443,10 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         $this->setIfExists('sEzsigntemplatesignatureRegexp', $data ?? [], null);
         $this->setIfExists('eEzsigntemplatesignatureTextvalidation', $data ?? [], null);
         $this->setIfExists('eEzsigntemplatesignatureDependencyrequirement', $data ?? [], null);
+        $this->setIfExists('sEzsigntemplatesignaturePositioningpattern', $data ?? [], null);
+        $this->setIfExists('iEzsigntemplatesignaturePositioningoffsetx', $data ?? [], null);
+        $this->setIfExists('iEzsigntemplatesignaturePositioningoffsety', $data ?? [], null);
+        $this->setIfExists('eEzsigntemplatesignaturePositioningoccurence', $data ?? [], null);
         $this->setIfExists('bEzsigntemplatesignatureCustomdate', $data ?? [], null);
         $this->setIfExists('aObjEzsigntemplatesignaturecustomdate', $data ?? [], null);
         $this->setIfExists('aObjEzsigntemplateelementdependency', $data ?? [], null);
@@ -476,17 +511,11 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
             $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagePagenumber', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['iEzsigntemplatesignatureX'] === null) {
-            $invalidProperties[] = "'iEzsigntemplatesignatureX' can't be null";
-        }
-        if (($this->container['iEzsigntemplatesignatureX'] < 0)) {
+        if (!is_null($this->container['iEzsigntemplatesignatureX']) && ($this->container['iEzsigntemplatesignatureX'] < 0)) {
             $invalidProperties[] = "invalid value for 'iEzsigntemplatesignatureX', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['iEzsigntemplatesignatureY'] === null) {
-            $invalidProperties[] = "'iEzsigntemplatesignatureY' can't be null";
-        }
-        if (($this->container['iEzsigntemplatesignatureY'] < 0)) {
+        if (!is_null($this->container['iEzsigntemplatesignatureY']) && ($this->container['iEzsigntemplatesignatureY'] < 0)) {
             $invalidProperties[] = "invalid value for 'iEzsigntemplatesignatureY', must be bigger than or equal to 0.";
         }
 
@@ -519,6 +548,11 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
 //        if (!is_null($this->container['sEzsigntemplatesignatureRegexp']) && !preg_match("/^\\^.*\\$$|^$/", $this->container['sEzsigntemplatesignatureRegexp'])) {
         if (!is_null($this->container['sEzsigntemplatesignatureRegexp']) && !preg_match("/(*UTF8)^\\^.*\\$$|^$/", $this->container['sEzsigntemplatesignatureRegexp'])) {
             $invalidProperties[] = "invalid value for 'sEzsigntemplatesignatureRegexp', must be conform to the pattern /^\\^.*\\$$|^$/.";
+        }
+
+//        if (!is_null($this->container['sEzsigntemplatesignaturePositioningpattern']) && !preg_match("/^.{0,30}$/", $this->container['sEzsigntemplatesignaturePositioningpattern'])) {
+        if (!is_null($this->container['sEzsigntemplatesignaturePositioningpattern']) && !preg_match("/(*UTF8)^.{0,30}$/", $this->container['sEzsigntemplatesignaturePositioningpattern'])) {
+            $invalidProperties[] = "invalid value for 'sEzsigntemplatesignaturePositioningpattern', must be conform to the pattern /^.{0,30}$/.";
         }
 
         return $invalidProperties;
@@ -685,6 +719,37 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
     }
 
     /**
+     * Gets eEzsigntemplatesignaturePositioning
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsigntemplatesignaturePositioning|null
+     */
+    public function getEEzsigntemplatesignaturePositioning()
+    {
+        return $this->container['eEzsigntemplatesignaturePositioning'];
+    }
+
+    /**
+     * Sets eEzsigntemplatesignaturePositioning
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsigntemplatesignaturePositioning|null $eEzsigntemplatesignaturePositioning eEzsigntemplatesignaturePositioning
+     *
+     * @return self
+     */
+    public function setEEzsigntemplatesignaturePositioning($eEzsigntemplatesignaturePositioning)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsigntemplatesignaturePositioning)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsigntemplatesignaturePositioning cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigntemplatesignaturePositioning'] = $eEzsigntemplatesignaturePositioning;
+        $this->container['eEzsigntemplatesignaturePositioning'] = $eEzsigntemplatesignaturePositioning;
+
+        return $this;
+    }
+
+    /**
      * Gets iEzsigntemplatedocumentpagePagenumber
      *
      * @return int
@@ -724,7 +789,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
     /**
      * Gets iEzsigntemplatesignatureX
      *
-     * @return int
+     * @return int|null
      */
     public function getIEzsigntemplatesignatureX()
     {
@@ -734,7 +799,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
     /**
      * Sets iEzsigntemplatesignatureX
      *
-     * @param int $iEzsigntemplatesignatureX The X coordinate (Horizontal) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * @param int|null $iEzsigntemplatesignatureX The X coordinate (Horizontal) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      *
      * @return self
      */
@@ -746,7 +811,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         //}
 
 //        if (($iEzsigntemplatesignatureX < 0)) {
-        if (($iEzsigntemplatesignatureX < 0)) {
+        if (!is_null($iEzsigntemplatesignatureX) && ($iEzsigntemplatesignatureX < 0)) {
             throw new \InvalidArgumentException('invalid value for $iEzsigntemplatesignatureX when calling EzsigntemplatesignatureResponseCompound., must be bigger than or equal to 0.');
         }
 
@@ -761,7 +826,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
     /**
      * Gets iEzsigntemplatesignatureY
      *
-     * @return int
+     * @return int|null
      */
     public function getIEzsigntemplatesignatureY()
     {
@@ -771,7 +836,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
     /**
      * Sets iEzsigntemplatesignatureY
      *
-     * @param int $iEzsigntemplatesignatureY The Y coordinate (Vertical) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param int|null $iEzsigntemplatesignatureY The Y coordinate (Vertical) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      *
      * @return self
      */
@@ -783,7 +848,7 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
         //}
 
 //        if (($iEzsigntemplatesignatureY < 0)) {
-        if (($iEzsigntemplatesignatureY < 0)) {
+        if (!is_null($iEzsigntemplatesignatureY) && ($iEzsigntemplatesignatureY < 0)) {
             throw new \InvalidArgumentException('invalid value for $iEzsigntemplatesignatureY when calling EzsigntemplatesignatureResponseCompound., must be bigger than or equal to 0.');
         }
 
@@ -1290,6 +1355,136 @@ class EzsigntemplatesignatureResponseCompound implements ModelInterface, ArrayAc
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigntemplatesignatureDependencyrequirement'] = $eEzsigntemplatesignatureDependencyrequirement;
         $this->container['eEzsigntemplatesignatureDependencyrequirement'] = $eEzsigntemplatesignatureDependencyrequirement;
+
+        return $this;
+    }
+
+    /**
+     * Gets sEzsigntemplatesignaturePositioningpattern
+     *
+     * @return string|null
+     */
+    public function getSEzsigntemplatesignaturePositioningpattern()
+    {
+        return is_null($this->container['sEzsigntemplatesignaturePositioningpattern']) ? null : trim($this->container['sEzsigntemplatesignaturePositioningpattern']);
+    }
+
+    /**
+     * Sets sEzsigntemplatesignaturePositioningpattern
+     *
+     * @param string|null $sEzsigntemplatesignaturePositioningpattern The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     *
+     * @return self
+     */
+    public function setSEzsigntemplatesignaturePositioningpattern($sEzsigntemplatesignaturePositioningpattern)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sEzsigntemplatesignaturePositioningpattern)) {
+            //throw new \InvalidArgumentException('non-nullable sEzsigntemplatesignaturePositioningpattern cannot be null');
+        //}
+
+//        if ((!preg_match("/^.{0,30}$/", ObjectSerializer::toString($sEzsigntemplatesignaturePositioningpattern)))) {
+        if (!is_null($sEzsigntemplatesignaturePositioningpattern) && (!preg_match("/(*UTF8)^.{0,30}$/", ObjectSerializer::toString($sEzsigntemplatesignaturePositioningpattern)))) {
+            throw new \InvalidArgumentException("invalid value for \$sEzsigntemplatesignaturePositioningpattern when calling EzsigntemplatesignatureResponseCompound., must conform to the pattern /^.{0,30}$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigntemplatesignaturePositioningpattern'] = $sEzsigntemplatesignaturePositioningpattern;
+        $this->container['sEzsigntemplatesignaturePositioningpattern'] = (is_null($sEzsigntemplatesignaturePositioningpattern) ? null : trim((string) $sEzsigntemplatesignaturePositioningpattern));
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigntemplatesignaturePositioningoffsetx
+     *
+     * @return int|null
+     */
+    public function getIEzsigntemplatesignaturePositioningoffsetx()
+    {
+        return $this->container['iEzsigntemplatesignaturePositioningoffsetx'];
+    }
+
+    /**
+     * Sets iEzsigntemplatesignaturePositioningoffsetx
+     *
+     * @param int|null $iEzsigntemplatesignaturePositioningoffsetx The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     *
+     * @return self
+     */
+    public function setIEzsigntemplatesignaturePositioningoffsetx($iEzsigntemplatesignaturePositioningoffsetx)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iEzsigntemplatesignaturePositioningoffsetx)) {
+            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatesignaturePositioningoffsetx cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsigntemplatesignaturePositioningoffsetx'] = $iEzsigntemplatesignaturePositioningoffsetx;
+        $this->container['iEzsigntemplatesignaturePositioningoffsetx'] = (is_null($iEzsigntemplatesignaturePositioningoffsetx) ? null : (int) $iEzsigntemplatesignaturePositioningoffsetx);
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigntemplatesignaturePositioningoffsety
+     *
+     * @return int|null
+     */
+    public function getIEzsigntemplatesignaturePositioningoffsety()
+    {
+        return $this->container['iEzsigntemplatesignaturePositioningoffsety'];
+    }
+
+    /**
+     * Sets iEzsigntemplatesignaturePositioningoffsety
+     *
+     * @param int|null $iEzsigntemplatesignaturePositioningoffsety The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     *
+     * @return self
+     */
+    public function setIEzsigntemplatesignaturePositioningoffsety($iEzsigntemplatesignaturePositioningoffsety)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iEzsigntemplatesignaturePositioningoffsety)) {
+            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatesignaturePositioningoffsety cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsigntemplatesignaturePositioningoffsety'] = $iEzsigntemplatesignaturePositioningoffsety;
+        $this->container['iEzsigntemplatesignaturePositioningoffsety'] = (is_null($iEzsigntemplatesignaturePositioningoffsety) ? null : (int) $iEzsigntemplatesignaturePositioningoffsety);
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsigntemplatesignaturePositioningoccurence
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsigntemplatesignaturePositioningoccurence|null
+     */
+    public function getEEzsigntemplatesignaturePositioningoccurence()
+    {
+        return $this->container['eEzsigntemplatesignaturePositioningoccurence'];
+    }
+
+    /**
+     * Sets eEzsigntemplatesignaturePositioningoccurence
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsigntemplatesignaturePositioningoccurence|null $eEzsigntemplatesignaturePositioningoccurence eEzsigntemplatesignaturePositioningoccurence
+     *
+     * @return self
+     */
+    public function setEEzsigntemplatesignaturePositioningoccurence($eEzsigntemplatesignaturePositioningoccurence)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsigntemplatesignaturePositioningoccurence)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsigntemplatesignaturePositioningoccurence cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigntemplatesignaturePositioningoccurence'] = $eEzsigntemplatesignaturePositioningoccurence;
+        $this->container['eEzsigntemplatesignaturePositioningoccurence'] = $eEzsigntemplatesignaturePositioningoccurence;
 
         return $this;
     }

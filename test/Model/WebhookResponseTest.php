@@ -205,4 +205,13 @@ class WebhookResponseTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "objAudit"
+     */
+    public function testPropertyObjAudit()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

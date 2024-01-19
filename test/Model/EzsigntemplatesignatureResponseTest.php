@@ -117,6 +117,15 @@ class EzsigntemplatesignatureResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "eEzsigntemplatesignaturePositioning"
+     */
+    public function testPropertyEEzsigntemplatesignaturePositioning()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "iEzsigntemplatedocumentpagePagenumber"
      */
     public function testPropertyIEzsigntemplatedocumentpagePagenumber()
@@ -273,6 +282,42 @@ class EzsigntemplatesignatureResponseTest extends TestCase
      * Test attribute "eEzsigntemplatesignatureDependencyrequirement"
      */
     public function testPropertyEEzsigntemplatesignatureDependencyrequirement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsigntemplatesignaturePositioningpattern"
+     */
+    public function testPropertySEzsigntemplatesignaturePositioningpattern()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsigntemplatesignaturePositioningoffsetx"
+     */
+    public function testPropertyIEzsigntemplatesignaturePositioningoffsetx()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsigntemplatesignaturePositioningoffsety"
+     */
+    public function testPropertyIEzsigntemplatesignaturePositioningoffsety()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eEzsigntemplatesignaturePositioningoccurence"
+     */
+    public function testPropertyEEzsigntemplatesignaturePositioningoccurence()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

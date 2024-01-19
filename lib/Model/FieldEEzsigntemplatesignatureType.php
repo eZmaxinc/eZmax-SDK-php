@@ -62,6 +62,8 @@ class FieldEEzsigntemplatesignatureType
 
     public const FIELD_TEXTAREA = 'FieldTextarea';
 
+    public const CONSULTATION = 'Consultation';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -77,7 +79,8 @@ class FieldEEzsigntemplatesignatureType
             self::NAME_REASON,
             self::ATTACHMENTS,
             self::FIELD_TEXT,
-            self::FIELD_TEXTAREA
+            self::FIELD_TEXTAREA,
+            self::CONSULTATION
         ];
     }
 }

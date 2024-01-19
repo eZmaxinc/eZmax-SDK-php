@@ -60,6 +60,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'pkiEzsigntemplateformfieldID' => 'int',
+        'eEzsigntemplateformfieldPositioning' => '\eZmaxAPI\Model\FieldEEzsigntemplateformfieldPositioning',
         'iEzsigntemplatedocumentpagePagenumber' => 'int',
         'sEzsigntemplateformfieldLabel' => 'string',
         'sEzsigntemplateformfieldValue' => 'string',
@@ -69,7 +70,11 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         'iEzsigntemplateformfieldHeight' => 'int',
         'bEzsigntemplateformfieldAutocomplete' => 'bool',
         'bEzsigntemplateformfieldSelected' => 'bool',
-        'eEzsigntemplateformfieldDependencyrequirement' => '\eZmaxAPI\Model\FieldEEzsigntemplateformfieldDependencyrequirement'
+        'eEzsigntemplateformfieldDependencyrequirement' => '\eZmaxAPI\Model\FieldEEzsigntemplateformfieldDependencyrequirement',
+        'sEzsigntemplateformfieldPositioningpattern' => 'string',
+        'iEzsigntemplateformfieldPositioningoffsetx' => 'int',
+        'iEzsigntemplateformfieldPositioningoffsety' => 'int',
+        'eEzsigntemplateformfieldPositioningoccurence' => '\eZmaxAPI\Model\FieldEEzsigntemplateformfieldPositioningoccurence'
     ];
 
     /**
@@ -81,6 +86,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPIFormats = [
         'pkiEzsigntemplateformfieldID' => null,
+        'eEzsigntemplateformfieldPositioning' => null,
         'iEzsigntemplatedocumentpagePagenumber' => null,
         'sEzsigntemplateformfieldLabel' => null,
         'sEzsigntemplateformfieldValue' => null,
@@ -90,7 +96,11 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         'iEzsigntemplateformfieldHeight' => null,
         'bEzsigntemplateformfieldAutocomplete' => null,
         'bEzsigntemplateformfieldSelected' => null,
-        'eEzsigntemplateformfieldDependencyrequirement' => null
+        'eEzsigntemplateformfieldDependencyrequirement' => null,
+        'sEzsigntemplateformfieldPositioningpattern' => null,
+        'iEzsigntemplateformfieldPositioningoffsetx' => null,
+        'iEzsigntemplateformfieldPositioningoffsety' => null,
+        'eEzsigntemplateformfieldPositioningoccurence' => null
     ];
 
     /**
@@ -100,6 +110,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
       */
     protected static array $openAPINullables = [
         'pkiEzsigntemplateformfieldID' => false,
+		'eEzsigntemplateformfieldPositioning' => false,
 		'iEzsigntemplatedocumentpagePagenumber' => false,
 		'sEzsigntemplateformfieldLabel' => false,
 		'sEzsigntemplateformfieldValue' => false,
@@ -109,7 +120,11 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
 		'iEzsigntemplateformfieldHeight' => false,
 		'bEzsigntemplateformfieldAutocomplete' => false,
 		'bEzsigntemplateformfieldSelected' => false,
-		'eEzsigntemplateformfieldDependencyrequirement' => false
+		'eEzsigntemplateformfieldDependencyrequirement' => false,
+		'sEzsigntemplateformfieldPositioningpattern' => false,
+		'iEzsigntemplateformfieldPositioningoffsetx' => false,
+		'iEzsigntemplateformfieldPositioningoffsety' => false,
+		'eEzsigntemplateformfieldPositioningoccurence' => false
     ];
 
     /**
@@ -199,6 +214,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
      */
     protected static $attributeMap = [
         'pkiEzsigntemplateformfieldID' => 'pkiEzsigntemplateformfieldID',
+        'eEzsigntemplateformfieldPositioning' => 'eEzsigntemplateformfieldPositioning',
         'iEzsigntemplatedocumentpagePagenumber' => 'iEzsigntemplatedocumentpagePagenumber',
         'sEzsigntemplateformfieldLabel' => 'sEzsigntemplateformfieldLabel',
         'sEzsigntemplateformfieldValue' => 'sEzsigntemplateformfieldValue',
@@ -208,7 +224,11 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         'iEzsigntemplateformfieldHeight' => 'iEzsigntemplateformfieldHeight',
         'bEzsigntemplateformfieldAutocomplete' => 'bEzsigntemplateformfieldAutocomplete',
         'bEzsigntemplateformfieldSelected' => 'bEzsigntemplateformfieldSelected',
-        'eEzsigntemplateformfieldDependencyrequirement' => 'eEzsigntemplateformfieldDependencyrequirement'
+        'eEzsigntemplateformfieldDependencyrequirement' => 'eEzsigntemplateformfieldDependencyrequirement',
+        'sEzsigntemplateformfieldPositioningpattern' => 'sEzsigntemplateformfieldPositioningpattern',
+        'iEzsigntemplateformfieldPositioningoffsetx' => 'iEzsigntemplateformfieldPositioningoffsetx',
+        'iEzsigntemplateformfieldPositioningoffsety' => 'iEzsigntemplateformfieldPositioningoffsety',
+        'eEzsigntemplateformfieldPositioningoccurence' => 'eEzsigntemplateformfieldPositioningoccurence'
     ];
 
     /**
@@ -218,6 +238,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
      */
     protected static $setters = [
         'pkiEzsigntemplateformfieldID' => 'setPkiEzsigntemplateformfieldID',
+        'eEzsigntemplateformfieldPositioning' => 'setEEzsigntemplateformfieldPositioning',
         'iEzsigntemplatedocumentpagePagenumber' => 'setIEzsigntemplatedocumentpagePagenumber',
         'sEzsigntemplateformfieldLabel' => 'setSEzsigntemplateformfieldLabel',
         'sEzsigntemplateformfieldValue' => 'setSEzsigntemplateformfieldValue',
@@ -227,7 +248,11 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         'iEzsigntemplateformfieldHeight' => 'setIEzsigntemplateformfieldHeight',
         'bEzsigntemplateformfieldAutocomplete' => 'setBEzsigntemplateformfieldAutocomplete',
         'bEzsigntemplateformfieldSelected' => 'setBEzsigntemplateformfieldSelected',
-        'eEzsigntemplateformfieldDependencyrequirement' => 'setEEzsigntemplateformfieldDependencyrequirement'
+        'eEzsigntemplateformfieldDependencyrequirement' => 'setEEzsigntemplateformfieldDependencyrequirement',
+        'sEzsigntemplateformfieldPositioningpattern' => 'setSEzsigntemplateformfieldPositioningpattern',
+        'iEzsigntemplateformfieldPositioningoffsetx' => 'setIEzsigntemplateformfieldPositioningoffsetx',
+        'iEzsigntemplateformfieldPositioningoffsety' => 'setIEzsigntemplateformfieldPositioningoffsety',
+        'eEzsigntemplateformfieldPositioningoccurence' => 'setEEzsigntemplateformfieldPositioningoccurence'
     ];
 
     /**
@@ -237,6 +262,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
      */
     protected static $getters = [
         'pkiEzsigntemplateformfieldID' => 'getPkiEzsigntemplateformfieldID',
+        'eEzsigntemplateformfieldPositioning' => 'getEEzsigntemplateformfieldPositioning',
         'iEzsigntemplatedocumentpagePagenumber' => 'getIEzsigntemplatedocumentpagePagenumber',
         'sEzsigntemplateformfieldLabel' => 'getSEzsigntemplateformfieldLabel',
         'sEzsigntemplateformfieldValue' => 'getSEzsigntemplateformfieldValue',
@@ -246,7 +272,11 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         'iEzsigntemplateformfieldHeight' => 'getIEzsigntemplateformfieldHeight',
         'bEzsigntemplateformfieldAutocomplete' => 'getBEzsigntemplateformfieldAutocomplete',
         'bEzsigntemplateformfieldSelected' => 'getBEzsigntemplateformfieldSelected',
-        'eEzsigntemplateformfieldDependencyrequirement' => 'getEEzsigntemplateformfieldDependencyrequirement'
+        'eEzsigntemplateformfieldDependencyrequirement' => 'getEEzsigntemplateformfieldDependencyrequirement',
+        'sEzsigntemplateformfieldPositioningpattern' => 'getSEzsigntemplateformfieldPositioningpattern',
+        'iEzsigntemplateformfieldPositioningoffsetx' => 'getIEzsigntemplateformfieldPositioningoffsetx',
+        'iEzsigntemplateformfieldPositioningoffsety' => 'getIEzsigntemplateformfieldPositioningoffsety',
+        'eEzsigntemplateformfieldPositioningoccurence' => 'getEEzsigntemplateformfieldPositioningoccurence'
     ];
 
     /**
@@ -307,6 +337,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
     public function __construct(array $data = null)
     {
         $this->setIfExists('pkiEzsigntemplateformfieldID', $data ?? [], null);
+        $this->setIfExists('eEzsigntemplateformfieldPositioning', $data ?? [], null);
         $this->setIfExists('iEzsigntemplatedocumentpagePagenumber', $data ?? [], null);
         $this->setIfExists('sEzsigntemplateformfieldLabel', $data ?? [], null);
         $this->setIfExists('sEzsigntemplateformfieldValue', $data ?? [], null);
@@ -317,6 +348,10 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('bEzsigntemplateformfieldAutocomplete', $data ?? [], null);
         $this->setIfExists('bEzsigntemplateformfieldSelected', $data ?? [], null);
         $this->setIfExists('eEzsigntemplateformfieldDependencyrequirement', $data ?? [], null);
+        $this->setIfExists('sEzsigntemplateformfieldPositioningpattern', $data ?? [], null);
+        $this->setIfExists('iEzsigntemplateformfieldPositioningoffsetx', $data ?? [], null);
+        $this->setIfExists('iEzsigntemplateformfieldPositioningoffsety', $data ?? [], null);
+        $this->setIfExists('eEzsigntemplateformfieldPositioningoccurence', $data ?? [], null);
     }
 
     /**
@@ -363,17 +398,11 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         if ($this->container['sEzsigntemplateformfieldLabel'] === null) {
             $invalidProperties[] = "'sEzsigntemplateformfieldLabel' can't be null";
         }
-        if ($this->container['iEzsigntemplateformfieldX'] === null) {
-            $invalidProperties[] = "'iEzsigntemplateformfieldX' can't be null";
-        }
-        if (($this->container['iEzsigntemplateformfieldX'] < 0)) {
+        if (!is_null($this->container['iEzsigntemplateformfieldX']) && ($this->container['iEzsigntemplateformfieldX'] < 0)) {
             $invalidProperties[] = "invalid value for 'iEzsigntemplateformfieldX', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['iEzsigntemplateformfieldY'] === null) {
-            $invalidProperties[] = "'iEzsigntemplateformfieldY' can't be null";
-        }
-        if (($this->container['iEzsigntemplateformfieldY'] < 0)) {
+        if (!is_null($this->container['iEzsigntemplateformfieldY']) && ($this->container['iEzsigntemplateformfieldY'] < 0)) {
             $invalidProperties[] = "invalid value for 'iEzsigntemplateformfieldY', must be bigger than or equal to 0.";
         }
 
@@ -389,6 +418,11 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         }
         if (($this->container['iEzsigntemplateformfieldHeight'] < 0)) {
             $invalidProperties[] = "invalid value for 'iEzsigntemplateformfieldHeight', must be bigger than or equal to 0.";
+        }
+
+//        if (!is_null($this->container['sEzsigntemplateformfieldPositioningpattern']) && !preg_match("/^.{0,30}$/", $this->container['sEzsigntemplateformfieldPositioningpattern'])) {
+        if (!is_null($this->container['sEzsigntemplateformfieldPositioningpattern']) && !preg_match("/(*UTF8)^.{0,30}$/", $this->container['sEzsigntemplateformfieldPositioningpattern'])) {
+            $invalidProperties[] = "invalid value for 'sEzsigntemplateformfieldPositioningpattern', must be conform to the pattern /^.{0,30}$/.";
         }
 
         return $invalidProperties;
@@ -439,6 +473,37 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['pkiEzsigntemplateformfieldID'] = $pkiEzsigntemplateformfieldID;
         $this->container['pkiEzsigntemplateformfieldID'] = (is_null($pkiEzsigntemplateformfieldID) ? null : (int) $pkiEzsigntemplateformfieldID);
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsigntemplateformfieldPositioning
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsigntemplateformfieldPositioning|null
+     */
+    public function getEEzsigntemplateformfieldPositioning()
+    {
+        return $this->container['eEzsigntemplateformfieldPositioning'];
+    }
+
+    /**
+     * Sets eEzsigntemplateformfieldPositioning
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsigntemplateformfieldPositioning|null $eEzsigntemplateformfieldPositioning eEzsigntemplateformfieldPositioning
+     *
+     * @return self
+     */
+    public function setEEzsigntemplateformfieldPositioning($eEzsigntemplateformfieldPositioning)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsigntemplateformfieldPositioning)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsigntemplateformfieldPositioning cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigntemplateformfieldPositioning'] = $eEzsigntemplateformfieldPositioning;
+        $this->container['eEzsigntemplateformfieldPositioning'] = $eEzsigntemplateformfieldPositioning;
 
         return $this;
     }
@@ -545,7 +610,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Gets iEzsigntemplateformfieldX
      *
-     * @return int
+     * @return int|null
      */
     public function getIEzsigntemplateformfieldX()
     {
@@ -555,7 +620,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Sets iEzsigntemplateformfieldX
      *
-     * @param int $iEzsigntemplateformfieldX The X coordinate (Horizontal) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * @param int|null $iEzsigntemplateformfieldX The X coordinate (Horizontal) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      *
      * @return self
      */
@@ -567,7 +632,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         //}
 
 //        if (($iEzsigntemplateformfieldX < 0)) {
-        if (($iEzsigntemplateformfieldX < 0)) {
+        if (!is_null($iEzsigntemplateformfieldX) && ($iEzsigntemplateformfieldX < 0)) {
             throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldX when calling EzsigntemplateformfieldResponse., must be bigger than or equal to 0.');
         }
 
@@ -582,7 +647,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Gets iEzsigntemplateformfieldY
      *
-     * @return int
+     * @return int|null
      */
     public function getIEzsigntemplateformfieldY()
     {
@@ -592,7 +657,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Sets iEzsigntemplateformfieldY
      *
-     * @param int $iEzsigntemplateformfieldY The Y coordinate (Vertical) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param int|null $iEzsigntemplateformfieldY The Y coordinate (Vertical) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      *
      * @return self
      */
@@ -604,7 +669,7 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
         //}
 
 //        if (($iEzsigntemplateformfieldY < 0)) {
-        if (($iEzsigntemplateformfieldY < 0)) {
+        if (!is_null($iEzsigntemplateformfieldY) && ($iEzsigntemplateformfieldY < 0)) {
             throw new \InvalidArgumentException('invalid value for $iEzsigntemplateformfieldY when calling EzsigntemplateformfieldResponse., must be bigger than or equal to 0.');
         }
 
@@ -779,6 +844,136 @@ class EzsigntemplateformfieldResponse implements ModelInterface, ArrayAccess, \J
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['eEzsigntemplateformfieldDependencyrequirement'] = $eEzsigntemplateformfieldDependencyrequirement;
         $this->container['eEzsigntemplateformfieldDependencyrequirement'] = $eEzsigntemplateformfieldDependencyrequirement;
+
+        return $this;
+    }
+
+    /**
+     * Gets sEzsigntemplateformfieldPositioningpattern
+     *
+     * @return string|null
+     */
+    public function getSEzsigntemplateformfieldPositioningpattern()
+    {
+        return is_null($this->container['sEzsigntemplateformfieldPositioningpattern']) ? null : trim($this->container['sEzsigntemplateformfieldPositioningpattern']);
+    }
+
+    /**
+     * Sets sEzsigntemplateformfieldPositioningpattern
+     *
+     * @param string|null $sEzsigntemplateformfieldPositioningpattern The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     *
+     * @return self
+     */
+    public function setSEzsigntemplateformfieldPositioningpattern($sEzsigntemplateformfieldPositioningpattern)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sEzsigntemplateformfieldPositioningpattern)) {
+            //throw new \InvalidArgumentException('non-nullable sEzsigntemplateformfieldPositioningpattern cannot be null');
+        //}
+
+//        if ((!preg_match("/^.{0,30}$/", ObjectSerializer::toString($sEzsigntemplateformfieldPositioningpattern)))) {
+        if (!is_null($sEzsigntemplateformfieldPositioningpattern) && (!preg_match("/(*UTF8)^.{0,30}$/", ObjectSerializer::toString($sEzsigntemplateformfieldPositioningpattern)))) {
+            throw new \InvalidArgumentException("invalid value for \$sEzsigntemplateformfieldPositioningpattern when calling EzsigntemplateformfieldResponse., must conform to the pattern /^.{0,30}$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sEzsigntemplateformfieldPositioningpattern'] = $sEzsigntemplateformfieldPositioningpattern;
+        $this->container['sEzsigntemplateformfieldPositioningpattern'] = (is_null($sEzsigntemplateformfieldPositioningpattern) ? null : trim((string) $sEzsigntemplateformfieldPositioningpattern));
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigntemplateformfieldPositioningoffsetx
+     *
+     * @return int|null
+     */
+    public function getIEzsigntemplateformfieldPositioningoffsetx()
+    {
+        return $this->container['iEzsigntemplateformfieldPositioningoffsetx'];
+    }
+
+    /**
+     * Sets iEzsigntemplateformfieldPositioningoffsetx
+     *
+     * @param int|null $iEzsigntemplateformfieldPositioningoffsetx The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     *
+     * @return self
+     */
+    public function setIEzsigntemplateformfieldPositioningoffsetx($iEzsigntemplateformfieldPositioningoffsetx)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iEzsigntemplateformfieldPositioningoffsetx)) {
+            //throw new \InvalidArgumentException('non-nullable iEzsigntemplateformfieldPositioningoffsetx cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsigntemplateformfieldPositioningoffsetx'] = $iEzsigntemplateformfieldPositioningoffsetx;
+        $this->container['iEzsigntemplateformfieldPositioningoffsetx'] = (is_null($iEzsigntemplateformfieldPositioningoffsetx) ? null : (int) $iEzsigntemplateformfieldPositioningoffsetx);
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigntemplateformfieldPositioningoffsety
+     *
+     * @return int|null
+     */
+    public function getIEzsigntemplateformfieldPositioningoffsety()
+    {
+        return $this->container['iEzsigntemplateformfieldPositioningoffsety'];
+    }
+
+    /**
+     * Sets iEzsigntemplateformfieldPositioningoffsety
+     *
+     * @param int|null $iEzsigntemplateformfieldPositioningoffsety The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     *
+     * @return self
+     */
+    public function setIEzsigntemplateformfieldPositioningoffsety($iEzsigntemplateformfieldPositioningoffsety)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iEzsigntemplateformfieldPositioningoffsety)) {
+            //throw new \InvalidArgumentException('non-nullable iEzsigntemplateformfieldPositioningoffsety cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsigntemplateformfieldPositioningoffsety'] = $iEzsigntemplateformfieldPositioningoffsety;
+        $this->container['iEzsigntemplateformfieldPositioningoffsety'] = (is_null($iEzsigntemplateformfieldPositioningoffsety) ? null : (int) $iEzsigntemplateformfieldPositioningoffsety);
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsigntemplateformfieldPositioningoccurence
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsigntemplateformfieldPositioningoccurence|null
+     */
+    public function getEEzsigntemplateformfieldPositioningoccurence()
+    {
+        return $this->container['eEzsigntemplateformfieldPositioningoccurence'];
+    }
+
+    /**
+     * Sets eEzsigntemplateformfieldPositioningoccurence
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsigntemplateformfieldPositioningoccurence|null $eEzsigntemplateformfieldPositioningoccurence eEzsigntemplateformfieldPositioningoccurence
+     *
+     * @return self
+     */
+    public function setEEzsigntemplateformfieldPositioningoccurence($eEzsigntemplateformfieldPositioningoccurence)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsigntemplateformfieldPositioningoccurence)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsigntemplateformfieldPositioningoccurence cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsigntemplateformfieldPositioningoccurence'] = $eEzsigntemplateformfieldPositioningoccurence;
+        $this->container['eEzsigntemplateformfieldPositioningoccurence'] = $eEzsigntemplateformfieldPositioningoccurence;
 
         return $this;
     }

@@ -86,6 +86,7 @@ class UserResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         'sUserFirstname' => 'string',
         'sUserLastname' => 'string',
         'sUserLoginname' => 'string',
+        'sUserJobtitle' => 'string',
         'eUserEzsignaccess' => '\eZmaxAPI\Model\FieldEUserEzsignaccess',
         'dtUserLastlogondate' => 'string',
         'dtUserPasswordchanged' => 'string',
@@ -133,6 +134,7 @@ class UserResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         'sUserFirstname' => null,
         'sUserLastname' => null,
         'sUserLoginname' => null,
+        'sUserJobtitle' => null,
         'eUserEzsignaccess' => null,
         'dtUserLastlogondate' => null,
         'dtUserPasswordchanged' => null,
@@ -178,6 +180,7 @@ class UserResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
 		'sUserFirstname' => false,
 		'sUserLastname' => false,
 		'sUserLoginname' => false,
+		'sUserJobtitle' => false,
 		'eUserEzsignaccess' => false,
 		'dtUserLastlogondate' => false,
 		'dtUserPasswordchanged' => false,
@@ -303,6 +306,7 @@ class UserResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         'sUserFirstname' => 'sUserFirstname',
         'sUserLastname' => 'sUserLastname',
         'sUserLoginname' => 'sUserLoginname',
+        'sUserJobtitle' => 'sUserJobtitle',
         'eUserEzsignaccess' => 'eUserEzsignaccess',
         'dtUserLastlogondate' => 'dtUserLastlogondate',
         'dtUserPasswordchanged' => 'dtUserPasswordchanged',
@@ -348,6 +352,7 @@ class UserResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         'sUserFirstname' => 'setSUserFirstname',
         'sUserLastname' => 'setSUserLastname',
         'sUserLoginname' => 'setSUserLoginname',
+        'sUserJobtitle' => 'setSUserJobtitle',
         'eUserEzsignaccess' => 'setEUserEzsignaccess',
         'dtUserLastlogondate' => 'setDtUserLastlogondate',
         'dtUserPasswordchanged' => 'setDtUserPasswordchanged',
@@ -393,6 +398,7 @@ class UserResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         'sUserFirstname' => 'getSUserFirstname',
         'sUserLastname' => 'getSUserLastname',
         'sUserLoginname' => 'getSUserLoginname',
+        'sUserJobtitle' => 'getSUserJobtitle',
         'eUserEzsignaccess' => 'getEUserEzsignaccess',
         'dtUserLastlogondate' => 'getDtUserLastlogondate',
         'dtUserPasswordchanged' => 'getDtUserPasswordchanged',
@@ -489,6 +495,7 @@ class UserResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('sUserFirstname', $data ?? [], null);
         $this->setIfExists('sUserLastname', $data ?? [], null);
         $this->setIfExists('sUserLoginname', $data ?? [], null);
+        $this->setIfExists('sUserJobtitle', $data ?? [], null);
         $this->setIfExists('eUserEzsignaccess', $data ?? [], null);
         $this->setIfExists('dtUserLastlogondate', $data ?? [], null);
         $this->setIfExists('dtUserPasswordchanged', $data ?? [], null);
@@ -641,6 +648,11 @@ class UserResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
 //        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
         if (!is_null($this->container['sUserLoginname']) && !preg_match("/(*UTF8)^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
             $invalidProperties[] = "invalid value for 'sUserLoginname', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.";
+        }
+
+//        if (!is_null($this->container['sUserJobtitle']) && !preg_match("/^.{0,50}$/", $this->container['sUserJobtitle'])) {
+        if (!is_null($this->container['sUserJobtitle']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sUserJobtitle'])) {
+            $invalidProperties[] = "invalid value for 'sUserJobtitle', must be conform to the pattern /^.{0,50}$/.";
         }
 
         if ($this->container['eUserEzsignaccess'] === null) {
@@ -1604,6 +1616,43 @@ class UserResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sUserLoginname'] = $sUserLoginname;
         $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : trim((string) $sUserLoginname));
+
+        return $this;
+    }
+
+    /**
+     * Gets sUserJobtitle
+     *
+     * @return string|null
+     */
+    public function getSUserJobtitle()
+    {
+        return is_null($this->container['sUserJobtitle']) ? null : trim($this->container['sUserJobtitle']);
+    }
+
+    /**
+     * Sets sUserJobtitle
+     *
+     * @param string|null $sUserJobtitle The job title of the user
+     *
+     * @return self
+     */
+    public function setSUserJobtitle($sUserJobtitle)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sUserJobtitle)) {
+            //throw new \InvalidArgumentException('non-nullable sUserJobtitle cannot be null');
+        //}
+
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUserJobtitle)))) {
+        if (!is_null($sUserJobtitle) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sUserJobtitle)))) {
+            throw new \InvalidArgumentException("invalid value for \$sUserJobtitle when calling UserResponseCompound., must conform to the pattern /^.{0,50}$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserJobtitle'] = $sUserJobtitle;
+        $this->container['sUserJobtitle'] = (is_null($sUserJobtitle) ? null : trim((string) $sUserJobtitle));
 
         return $this;
     }

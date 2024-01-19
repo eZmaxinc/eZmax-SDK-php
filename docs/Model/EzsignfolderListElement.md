@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **sEzsignfolderDescription** | **string** | The description of the Ezsignfolder |
 **eEzsignfolderStep** | [**\eZmaxAPI\Model\FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |
 **dtCreatedDate** | **string** | The date and time at which the object was created |
+**dtEzsignfolderDelayedsenddate** | **string** | The date and time at which the Ezsignfolder will be sent in the future. | [optional]
 **dtEzsignfolderSentdate** | **string** | The date and time at which the Ezsignfolder was sent the last time. | [optional]
 **dtEzsignfolderDuedate** | **string** | The maximum date and time at which the Ezsignfolder can be signed. | [optional]
 **iEzsigndocument** | **int** | The total number of Ezsigndocument in the folder |

@@ -79,6 +79,9 @@ class ObjectEzsigndocumentApi
         'ezsigndocumentApplyEzsigntemplateV2' => [
             'application/json',
         ],
+        'ezsigndocumentCreateEzsignelementsPositionedByWordV1' => [
+            'application/json',
+        ],
         'ezsigndocumentCreateObjectV1' => [
             'application/json',
         ],
@@ -116,6 +119,9 @@ class ObjectEzsigndocumentApi
             'application/json',
         ],
         'ezsigndocumentGetEzsignannotationsV1' => [
+            'application/json',
+        ],
+        'ezsigndocumentGetEzsigndiscussionsV1' => [
             'application/json',
         ],
         'ezsigndocumentGetEzsignformfieldgroupsV1' => [
@@ -180,6 +186,17 @@ class ObjectEzsigndocumentApi
             ],
             'deprecated' => false,
         ],
+        'ezsigndocumentCreateEzsignelementsPositionedByWordV1' => [
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
         'ezsigndocumentCreateObjectV1' => [
             'permissions' => [
                 'All',
@@ -320,6 +337,18 @@ class ObjectEzsigndocumentApi
             'deprecated' => false,
         ],
         'ezsigndocumentGetEzsignannotationsV1' => [
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
+                'EzsignSigner',
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'ezsigndocumentGetEzsigndiscussionsV1' => [
             'permissions' => [
                 'All',
             ],
@@ -1188,6 +1217,371 @@ class ObjectEzsigndocumentApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigndocumentApplyEzsigntemplateV2Request));
             } else {
                 $httpBody = $ezsigndocumentApplyEzsigntemplateV2Request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsigndocumentCreateEzsignelementsPositionedByWordV1
+     *
+     * Create multiple Ezsignsignatures/Ezsignformfieldgroups
+     *
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Request $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request ezsigndocumentCreateEzsignelementsPositionedByWordV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsigndocumentCreateEzsignelementsPositionedByWordV1($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, string $contentType = self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'][0])
+    {
+        list($response) = $this->ezsigndocumentCreateEzsignelementsPositionedByWordV1WithHttpInfo($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigndocumentCreateEzsignelementsPositionedByWordV1WithHttpInfo
+     *
+     * Create multiple Ezsignsignatures/Ezsignformfieldgroups
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Request $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigndocumentCreateEzsignelementsPositionedByWordV1WithHttpInfo($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, string $contentType = self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'][0])
+    {
+        $request = $this->ezsigndocumentCreateEzsignelementsPositionedByWordV1Request($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigndocumentCreateEzsignelementsPositionedByWordV1Async
+     *
+     * Create multiple Ezsignsignatures/Ezsignformfieldgroups
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Request $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigndocumentCreateEzsignelementsPositionedByWordV1Async($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, string $contentType = self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'][0])
+    {
+        return $this->ezsigndocumentCreateEzsignelementsPositionedByWordV1AsyncWithHttpInfo($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigndocumentCreateEzsignelementsPositionedByWordV1AsyncWithHttpInfo
+     *
+     * Create multiple Ezsignsignatures/Ezsignformfieldgroups
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Request $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigndocumentCreateEzsignelementsPositionedByWordV1AsyncWithHttpInfo($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, string $contentType = self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Response';
+        $request = $this->ezsigndocumentCreateEzsignelementsPositionedByWordV1Request($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigndocumentCreateEzsignelementsPositionedByWordV1'
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Request $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigndocumentCreateEzsignelementsPositionedByWordV1Request($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, string $contentType = self::contentTypes['ezsigndocumentCreateEzsignelementsPositionedByWordV1'][0])
+    {
+
+        // verify the required parameter 'pkiEzsigndocumentID' is set
+        if ($pkiEzsigndocumentID === null || (is_array($pkiEzsigndocumentID) && count($pkiEzsigndocumentID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsigndocumentID when calling ezsigndocumentCreateEzsignelementsPositionedByWordV1'
+            );
+        }
+        if ($pkiEzsigndocumentID < 0) {
+            throw new \InvalidArgumentException('invalid value for "$pkiEzsigndocumentID" when calling ObjectEzsigndocumentApi.ezsigndocumentCreateEzsignelementsPositionedByWordV1, must be bigger than or equal to 0.');
+        }
+        
+        // verify the required parameter 'ezsigndocumentCreateEzsignelementsPositionedByWordV1Request' is set
+        if ($ezsigndocumentCreateEzsignelementsPositionedByWordV1Request === null || (is_array($ezsigndocumentCreateEzsignelementsPositionedByWordV1Request) && count($ezsigndocumentCreateEzsignelementsPositionedByWordV1Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request when calling ezsigndocumentCreateEzsignelementsPositionedByWordV1'
+            );
+        }
+
+
+        $resourcePath = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsigndocumentID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsigndocumentID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsigndocumentID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($ezsigndocumentCreateEzsignelementsPositionedByWordV1Request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigndocumentCreateEzsignelementsPositionedByWordV1Request));
+            } else {
+                $httpBody = $ezsigndocumentCreateEzsignelementsPositionedByWordV1Request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5084,7 +5478,7 @@ class ObjectEzsigndocumentApi
      * Retrieve a URL to download documents.
      *
      * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -5103,7 +5497,7 @@ class ObjectEzsigndocumentApi
      * Retrieve a URL to download documents.
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response
@@ -5250,7 +5644,7 @@ class ObjectEzsigndocumentApi
      * Retrieve a URL to download documents.
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5272,7 +5666,7 @@ class ObjectEzsigndocumentApi
      * Retrieve a URL to download documents.
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5323,7 +5717,7 @@ class ObjectEzsigndocumentApi
      * Create request for operation 'ezsigndocumentGetDownloadUrlV1'
      *
      * @param  int $pkiEzsigndocumentID (required)
-     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
+     * @param  string $eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetDownloadUrlV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5705,6 +6099,352 @@ class ObjectEzsigndocumentApi
         
 
         $resourcePath = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignannotations';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiEzsigndocumentID !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pkiEzsigndocumentID' . '}',
+                ObjectSerializer::toPathValue($pkiEzsigndocumentID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsigndocumentGetEzsigndiscussionsV1
+     *
+     * Retrieve an existing Ezsigndocument&#39;s Ezsigndiscussions
+     *
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsigndocumentGetEzsigndiscussionsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsigndocumentGetEzsigndiscussionsV1($pkiEzsigndocumentID, string $contentType = self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'][0])
+    {
+        list($response) = $this->ezsigndocumentGetEzsigndiscussionsV1WithHttpInfo($pkiEzsigndocumentID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigndocumentGetEzsigndiscussionsV1WithHttpInfo
+     *
+     * Retrieve an existing Ezsigndocument&#39;s Ezsigndiscussions
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsigndocumentGetEzsigndiscussionsV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigndocumentGetEzsigndiscussionsV1WithHttpInfo($pkiEzsigndocumentID, string $contentType = self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'][0])
+    {
+        $request = $this->ezsigndocumentGetEzsigndiscussionsV1Request($pkiEzsigndocumentID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\eZmaxAPI\Model\EzsigndocumentGetEzsigndiscussionsV1Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\EzsigndocumentGetEzsigndiscussionsV1Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\EzsigndocumentGetEzsigndiscussionsV1Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\eZmaxAPI\Model\CommonResponseError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\eZmaxAPI\Model\CommonResponseError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\eZmaxAPI\Model\CommonResponseError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\eZmaxAPI\Model\EzsigndocumentGetEzsigndiscussionsV1Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsigndocumentGetEzsigndiscussionsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigndocumentGetEzsigndiscussionsV1Async
+     *
+     * Retrieve an existing Ezsigndocument&#39;s Ezsigndiscussions
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigndocumentGetEzsigndiscussionsV1Async($pkiEzsigndocumentID, string $contentType = self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'][0])
+    {
+        return $this->ezsigndocumentGetEzsigndiscussionsV1AsyncWithHttpInfo($pkiEzsigndocumentID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigndocumentGetEzsigndiscussionsV1AsyncWithHttpInfo
+     *
+     * Retrieve an existing Ezsigndocument&#39;s Ezsigndiscussions
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigndocumentGetEzsigndiscussionsV1AsyncWithHttpInfo($pkiEzsigndocumentID, string $contentType = self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\EzsigndocumentGetEzsigndiscussionsV1Response';
+        $request = $this->ezsigndocumentGetEzsigndiscussionsV1Request($pkiEzsigndocumentID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigndocumentGetEzsigndiscussionsV1'
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigndocumentGetEzsigndiscussionsV1Request($pkiEzsigndocumentID, string $contentType = self::contentTypes['ezsigndocumentGetEzsigndiscussionsV1'][0])
+    {
+
+        // verify the required parameter 'pkiEzsigndocumentID' is set
+        if ($pkiEzsigndocumentID === null || (is_array($pkiEzsigndocumentID) && count($pkiEzsigndocumentID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsigndocumentID when calling ezsigndocumentGetEzsigndiscussionsV1'
+            );
+        }
+        if ($pkiEzsigndocumentID < 0) {
+            throw new \InvalidArgumentException('invalid value for "$pkiEzsigndocumentID" when calling ObjectEzsigndocumentApi.ezsigndocumentGetEzsigndiscussionsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsigndiscussions';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

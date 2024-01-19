@@ -73,6 +73,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         'bWebhookIsactive' => 'bool',
         'bWebhookIssigned' => 'bool',
         'bWebhookSkipsslvalidation' => 'bool',
+        'objAudit' => '\eZmaxAPI\Model\CommonAudit',
         'sWebhookEvent' => 'string'
     ];
 
@@ -98,6 +99,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         'bWebhookIsactive' => null,
         'bWebhookIssigned' => null,
         'bWebhookSkipsslvalidation' => null,
+        'objAudit' => null,
         'sWebhookEvent' => null
     ];
 
@@ -121,6 +123,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
 		'bWebhookIsactive' => false,
 		'bWebhookIssigned' => false,
 		'bWebhookSkipsslvalidation' => false,
+		'objAudit' => false,
 		'sWebhookEvent' => false
     ];
 
@@ -224,6 +227,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         'bWebhookIsactive' => 'bWebhookIsactive',
         'bWebhookIssigned' => 'bWebhookIssigned',
         'bWebhookSkipsslvalidation' => 'bWebhookSkipsslvalidation',
+        'objAudit' => 'objAudit',
         'sWebhookEvent' => 'sWebhookEvent'
     ];
 
@@ -247,6 +251,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         'bWebhookIsactive' => 'setBWebhookIsactive',
         'bWebhookIssigned' => 'setBWebhookIssigned',
         'bWebhookSkipsslvalidation' => 'setBWebhookSkipsslvalidation',
+        'objAudit' => 'setObjAudit',
         'sWebhookEvent' => 'setSWebhookEvent'
     ];
 
@@ -270,6 +275,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         'bWebhookIsactive' => 'getBWebhookIsactive',
         'bWebhookIssigned' => 'getBWebhookIssigned',
         'bWebhookSkipsslvalidation' => 'getBWebhookSkipsslvalidation',
+        'objAudit' => 'getObjAudit',
         'sWebhookEvent' => 'getSWebhookEvent'
     ];
 
@@ -344,6 +350,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('bWebhookIsactive', $data ?? [], null);
         $this->setIfExists('bWebhookIssigned', $data ?? [], null);
         $this->setIfExists('bWebhookSkipsslvalidation', $data ?? [], null);
+        $this->setIfExists('objAudit', $data ?? [], null);
         $this->setIfExists('sWebhookEvent', $data ?? [], null);
     }
 
@@ -401,6 +408,9 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if ($this->container['bWebhookSkipsslvalidation'] === null) {
             $invalidProperties[] = "'bWebhookSkipsslvalidation' can't be null";
+        }
+        if ($this->container['objAudit'] === null) {
+            $invalidProperties[] = "'objAudit' can't be null";
         }
         return $invalidProperties;
     }
@@ -853,6 +863,37 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bWebhookSkipsslvalidation'] = $bWebhookSkipsslvalidation;
         $this->container['bWebhookSkipsslvalidation'] = (is_null($bWebhookSkipsslvalidation) ? null : (bool) $bWebhookSkipsslvalidation);
+
+        return $this;
+    }
+
+    /**
+     * Gets objAudit
+     *
+     * @return \eZmaxAPI\Model\CommonAudit
+     */
+    public function getObjAudit()
+    {
+        return $this->container['objAudit'];
+    }
+
+    /**
+     * Sets objAudit
+     *
+     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
+     *
+     * @return self
+     */
+    public function setObjAudit($objAudit)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objAudit)) {
+            //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objAudit'] = $objAudit;
+        $this->container['objAudit'] = $objAudit;
 
         return $this;
     }

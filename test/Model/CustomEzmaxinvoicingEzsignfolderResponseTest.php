@@ -90,6 +90,15 @@ class CustomEzmaxinvoicingEzsignfolderResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "fkiBillingentityinternalID"
+     */
+    public function testPropertyFkiBillingentityinternalID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsignfolderDescription"
      */
     public function testPropertySEzsignfolderDescription()

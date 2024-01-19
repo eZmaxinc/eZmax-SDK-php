@@ -62,6 +62,8 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
         'pkiEzsigntemplatesignaturecustomdateID' => 'int',
         'iEzsigntemplatesignaturecustomdateX' => 'int',
         'iEzsigntemplatesignaturecustomdateY' => 'int',
+        'iEzsigntemplatesignaturecustomdateOffsetx' => 'int',
+        'iEzsigntemplatesignaturecustomdateOffsety' => 'int',
         'sEzsigntemplatesignaturecustomdateFormat' => 'string'
     ];
 
@@ -76,6 +78,8 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
         'pkiEzsigntemplatesignaturecustomdateID' => null,
         'iEzsigntemplatesignaturecustomdateX' => null,
         'iEzsigntemplatesignaturecustomdateY' => null,
+        'iEzsigntemplatesignaturecustomdateOffsetx' => null,
+        'iEzsigntemplatesignaturecustomdateOffsety' => null,
         'sEzsigntemplatesignaturecustomdateFormat' => null
     ];
 
@@ -88,6 +92,8 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
         'pkiEzsigntemplatesignaturecustomdateID' => false,
 		'iEzsigntemplatesignaturecustomdateX' => false,
 		'iEzsigntemplatesignaturecustomdateY' => false,
+		'iEzsigntemplatesignaturecustomdateOffsetx' => false,
+		'iEzsigntemplatesignaturecustomdateOffsety' => false,
 		'sEzsigntemplatesignaturecustomdateFormat' => false
     ];
 
@@ -180,6 +186,8 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
         'pkiEzsigntemplatesignaturecustomdateID' => 'pkiEzsigntemplatesignaturecustomdateID',
         'iEzsigntemplatesignaturecustomdateX' => 'iEzsigntemplatesignaturecustomdateX',
         'iEzsigntemplatesignaturecustomdateY' => 'iEzsigntemplatesignaturecustomdateY',
+        'iEzsigntemplatesignaturecustomdateOffsetx' => 'iEzsigntemplatesignaturecustomdateOffsetx',
+        'iEzsigntemplatesignaturecustomdateOffsety' => 'iEzsigntemplatesignaturecustomdateOffsety',
         'sEzsigntemplatesignaturecustomdateFormat' => 'sEzsigntemplatesignaturecustomdateFormat'
     ];
 
@@ -192,6 +200,8 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
         'pkiEzsigntemplatesignaturecustomdateID' => 'setPkiEzsigntemplatesignaturecustomdateID',
         'iEzsigntemplatesignaturecustomdateX' => 'setIEzsigntemplatesignaturecustomdateX',
         'iEzsigntemplatesignaturecustomdateY' => 'setIEzsigntemplatesignaturecustomdateY',
+        'iEzsigntemplatesignaturecustomdateOffsetx' => 'setIEzsigntemplatesignaturecustomdateOffsetx',
+        'iEzsigntemplatesignaturecustomdateOffsety' => 'setIEzsigntemplatesignaturecustomdateOffsety',
         'sEzsigntemplatesignaturecustomdateFormat' => 'setSEzsigntemplatesignaturecustomdateFormat'
     ];
 
@@ -204,6 +214,8 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
         'pkiEzsigntemplatesignaturecustomdateID' => 'getPkiEzsigntemplatesignaturecustomdateID',
         'iEzsigntemplatesignaturecustomdateX' => 'getIEzsigntemplatesignaturecustomdateX',
         'iEzsigntemplatesignaturecustomdateY' => 'getIEzsigntemplatesignaturecustomdateY',
+        'iEzsigntemplatesignaturecustomdateOffsetx' => 'getIEzsigntemplatesignaturecustomdateOffsetx',
+        'iEzsigntemplatesignaturecustomdateOffsety' => 'getIEzsigntemplatesignaturecustomdateOffsety',
         'sEzsigntemplatesignaturecustomdateFormat' => 'getSEzsigntemplatesignaturecustomdateFormat'
     ];
 
@@ -267,6 +279,8 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
         $this->setIfExists('pkiEzsigntemplatesignaturecustomdateID', $data ?? [], null);
         $this->setIfExists('iEzsigntemplatesignaturecustomdateX', $data ?? [], null);
         $this->setIfExists('iEzsigntemplatesignaturecustomdateY', $data ?? [], null);
+        $this->setIfExists('iEzsigntemplatesignaturecustomdateOffsetx', $data ?? [], null);
+        $this->setIfExists('iEzsigntemplatesignaturecustomdateOffsety', $data ?? [], null);
         $this->setIfExists('sEzsigntemplatesignaturecustomdateFormat', $data ?? [], null);
     }
 
@@ -301,18 +315,20 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
             $invalidProperties[] = "invalid value for 'pkiEzsigntemplatesignaturecustomdateID', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['iEzsigntemplatesignaturecustomdateX'] === null) {
-            $invalidProperties[] = "'iEzsigntemplatesignaturecustomdateX' can't be null";
-        }
-        if (($this->container['iEzsigntemplatesignaturecustomdateX'] < 0)) {
+        if (!is_null($this->container['iEzsigntemplatesignaturecustomdateX']) && ($this->container['iEzsigntemplatesignaturecustomdateX'] < 0)) {
             $invalidProperties[] = "invalid value for 'iEzsigntemplatesignaturecustomdateX', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['iEzsigntemplatesignaturecustomdateY'] === null) {
-            $invalidProperties[] = "'iEzsigntemplatesignaturecustomdateY' can't be null";
-        }
-        if (($this->container['iEzsigntemplatesignaturecustomdateY'] < 0)) {
+        if (!is_null($this->container['iEzsigntemplatesignaturecustomdateY']) && ($this->container['iEzsigntemplatesignaturecustomdateY'] < 0)) {
             $invalidProperties[] = "invalid value for 'iEzsigntemplatesignaturecustomdateY', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['iEzsigntemplatesignaturecustomdateOffsetx']) && ($this->container['iEzsigntemplatesignaturecustomdateOffsetx'] < 0)) {
+            $invalidProperties[] = "invalid value for 'iEzsigntemplatesignaturecustomdateOffsetx', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['iEzsigntemplatesignaturecustomdateOffsety']) && ($this->container['iEzsigntemplatesignaturecustomdateOffsety'] < 0)) {
+            $invalidProperties[] = "invalid value for 'iEzsigntemplatesignaturecustomdateOffsety', must be bigger than or equal to 0.";
         }
 
         if ($this->container['sEzsigntemplatesignaturecustomdateFormat'] === null) {
@@ -373,7 +389,8 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
     /**
      * Gets iEzsigntemplatesignaturecustomdateX
      *
-     * @return int
+     * @return int|null
+     * @deprecated
      */
     public function getIEzsigntemplatesignaturecustomdateX()
     {
@@ -383,9 +400,10 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
     /**
      * Sets iEzsigntemplatesignaturecustomdateX
      *
-     * @param int $iEzsigntemplatesignaturecustomdateX The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * @param int|null $iEzsigntemplatesignaturecustomdateX The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      *
      * @return self
+     * @deprecated
      */
     public function setIEzsigntemplatesignaturecustomdateX($iEzsigntemplatesignaturecustomdateX)
     {
@@ -395,7 +413,7 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
         //}
 
 //        if (($iEzsigntemplatesignaturecustomdateX < 0)) {
-        if (($iEzsigntemplatesignaturecustomdateX < 0)) {
+        if (!is_null($iEzsigntemplatesignaturecustomdateX) && ($iEzsigntemplatesignaturecustomdateX < 0)) {
             throw new \InvalidArgumentException('invalid value for $iEzsigntemplatesignaturecustomdateX when calling EzsigntemplatesignaturecustomdateRequestCompound., must be bigger than or equal to 0.');
         }
 
@@ -410,7 +428,8 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
     /**
      * Gets iEzsigntemplatesignaturecustomdateY
      *
-     * @return int
+     * @return int|null
+     * @deprecated
      */
     public function getIEzsigntemplatesignaturecustomdateY()
     {
@@ -420,9 +439,10 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
     /**
      * Sets iEzsigntemplatesignaturecustomdateY
      *
-     * @param int $iEzsigntemplatesignaturecustomdateY The Y coordinate (Vertical) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param int|null $iEzsigntemplatesignaturecustomdateY The Y coordinate (Vertical) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      *
      * @return self
+     * @deprecated
      */
     public function setIEzsigntemplatesignaturecustomdateY($iEzsigntemplatesignaturecustomdateY)
     {
@@ -432,7 +452,7 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
         //}
 
 //        if (($iEzsigntemplatesignaturecustomdateY < 0)) {
-        if (($iEzsigntemplatesignaturecustomdateY < 0)) {
+        if (!is_null($iEzsigntemplatesignaturecustomdateY) && ($iEzsigntemplatesignaturecustomdateY < 0)) {
             throw new \InvalidArgumentException('invalid value for $iEzsigntemplatesignaturecustomdateY when calling EzsigntemplatesignaturecustomdateRequestCompound., must be bigger than or equal to 0.');
         }
 
@@ -440,6 +460,80 @@ class EzsigntemplatesignaturecustomdateRequestCompound implements ModelInterface
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsigntemplatesignaturecustomdateY'] = $iEzsigntemplatesignaturecustomdateY;
         $this->container['iEzsigntemplatesignaturecustomdateY'] = (is_null($iEzsigntemplatesignaturecustomdateY) ? null : (int) $iEzsigntemplatesignaturecustomdateY);
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigntemplatesignaturecustomdateOffsetx
+     *
+     * @return int|null
+     */
+    public function getIEzsigntemplatesignaturecustomdateOffsetx()
+    {
+        return $this->container['iEzsigntemplatesignaturecustomdateOffsetx'];
+    }
+
+    /**
+     * Sets iEzsigntemplatesignaturecustomdateOffsetx
+     *
+     * @param int|null $iEzsigntemplatesignaturecustomdateOffsetx The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the left of the signature, you would use \"200\" for the X coordinate.
+     *
+     * @return self
+     */
+    public function setIEzsigntemplatesignaturecustomdateOffsetx($iEzsigntemplatesignaturecustomdateOffsetx)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iEzsigntemplatesignaturecustomdateOffsetx)) {
+            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatesignaturecustomdateOffsetx cannot be null');
+        //}
+
+//        if (($iEzsigntemplatesignaturecustomdateOffsetx < 0)) {
+        if (!is_null($iEzsigntemplatesignaturecustomdateOffsetx) && ($iEzsigntemplatesignaturecustomdateOffsetx < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsigntemplatesignaturecustomdateOffsetx when calling EzsigntemplatesignaturecustomdateRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsigntemplatesignaturecustomdateOffsetx'] = $iEzsigntemplatesignaturecustomdateOffsetx;
+        $this->container['iEzsigntemplatesignaturecustomdateOffsetx'] = (is_null($iEzsigntemplatesignaturecustomdateOffsetx) ? null : (int) $iEzsigntemplatesignaturecustomdateOffsetx);
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsigntemplatesignaturecustomdateOffsety
+     *
+     * @return int|null
+     */
+    public function getIEzsigntemplatesignaturecustomdateOffsety()
+    {
+        return $this->container['iEzsigntemplatesignaturecustomdateOffsety'];
+    }
+
+    /**
+     * Sets iEzsigntemplatesignaturecustomdateOffsety
+     *
+     * @param int|null $iEzsigntemplatesignaturecustomdateOffsety The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the top of the signature, you would use \"200\" for the Y coordinate.
+     *
+     * @return self
+     */
+    public function setIEzsigntemplatesignaturecustomdateOffsety($iEzsigntemplatesignaturecustomdateOffsety)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iEzsigntemplatesignaturecustomdateOffsety)) {
+            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatesignaturecustomdateOffsety cannot be null');
+        //}
+
+//        if (($iEzsigntemplatesignaturecustomdateOffsety < 0)) {
+        if (!is_null($iEzsigntemplatesignaturecustomdateOffsety) && ($iEzsigntemplatesignaturecustomdateOffsety < 0)) {
+            throw new \InvalidArgumentException('invalid value for $iEzsigntemplatesignaturecustomdateOffsety when calling EzsigntemplatesignaturecustomdateRequestCompound., must be bigger than or equal to 0.');
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsigntemplatesignaturecustomdateOffsety'] = $iEzsigntemplatesignaturecustomdateOffsety;
+        $this->container['iEzsigntemplatesignaturecustomdateOffsety'] = (is_null($iEzsigntemplatesignaturecustomdateOffsety) ? null : (int) $iEzsigntemplatesignaturecustomdateOffsety);
 
         return $this;
     }

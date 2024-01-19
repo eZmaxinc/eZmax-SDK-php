@@ -73,6 +73,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'bWebhookIsactive' => 'bool',
         'bWebhookIssigned' => 'bool',
         'bWebhookSkipsslvalidation' => 'bool',
+        'objAudit' => '\eZmaxAPI\Model\CommonAudit',
         'pksCustomerCode' => 'string',
         'bWebhookTest' => 'bool'
     ];
@@ -99,6 +100,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'bWebhookIsactive' => null,
         'bWebhookIssigned' => null,
         'bWebhookSkipsslvalidation' => null,
+        'objAudit' => null,
         'pksCustomerCode' => null,
         'bWebhookTest' => null
     ];
@@ -123,6 +125,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
 		'bWebhookIsactive' => false,
 		'bWebhookIssigned' => false,
 		'bWebhookSkipsslvalidation' => false,
+		'objAudit' => false,
 		'pksCustomerCode' => false,
 		'bWebhookTest' => false
     ];
@@ -227,6 +230,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'bWebhookIsactive' => 'bWebhookIsactive',
         'bWebhookIssigned' => 'bWebhookIssigned',
         'bWebhookSkipsslvalidation' => 'bWebhookSkipsslvalidation',
+        'objAudit' => 'objAudit',
         'pksCustomerCode' => 'pksCustomerCode',
         'bWebhookTest' => 'bWebhookTest'
     ];
@@ -251,6 +255,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'bWebhookIsactive' => 'setBWebhookIsactive',
         'bWebhookIssigned' => 'setBWebhookIssigned',
         'bWebhookSkipsslvalidation' => 'setBWebhookSkipsslvalidation',
+        'objAudit' => 'setObjAudit',
         'pksCustomerCode' => 'setPksCustomerCode',
         'bWebhookTest' => 'setBWebhookTest'
     ];
@@ -275,6 +280,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'bWebhookIsactive' => 'getBWebhookIsactive',
         'bWebhookIssigned' => 'getBWebhookIssigned',
         'bWebhookSkipsslvalidation' => 'getBWebhookSkipsslvalidation',
+        'objAudit' => 'getObjAudit',
         'pksCustomerCode' => 'getPksCustomerCode',
         'bWebhookTest' => 'getBWebhookTest'
     ];
@@ -350,6 +356,7 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('bWebhookIsactive', $data ?? [], null);
         $this->setIfExists('bWebhookIssigned', $data ?? [], null);
         $this->setIfExists('bWebhookSkipsslvalidation', $data ?? [], null);
+        $this->setIfExists('objAudit', $data ?? [], null);
         $this->setIfExists('pksCustomerCode', $data ?? [], null);
         $this->setIfExists('bWebhookTest', $data ?? [], null);
     }
@@ -408,6 +415,9 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         }
         if ($this->container['bWebhookSkipsslvalidation'] === null) {
             $invalidProperties[] = "'bWebhookSkipsslvalidation' can't be null";
+        }
+        if ($this->container['objAudit'] === null) {
+            $invalidProperties[] = "'objAudit' can't be null";
         }
         if ($this->container['pksCustomerCode'] === null) {
             $invalidProperties[] = "'pksCustomerCode' can't be null";
@@ -874,6 +884,37 @@ class CustomWebhookResponse implements ModelInterface, ArrayAccess, \JsonSeriali
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bWebhookSkipsslvalidation'] = $bWebhookSkipsslvalidation;
         $this->container['bWebhookSkipsslvalidation'] = (is_null($bWebhookSkipsslvalidation) ? null : (bool) $bWebhookSkipsslvalidation);
+
+        return $this;
+    }
+
+    /**
+     * Gets objAudit
+     *
+     * @return \eZmaxAPI\Model\CommonAudit
+     */
+    public function getObjAudit()
+    {
+        return $this->container['objAudit'];
+    }
+
+    /**
+     * Sets objAudit
+     *
+     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
+     *
+     * @return self
+     */
+    public function setObjAudit($objAudit)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objAudit)) {
+            //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['objAudit'] = $objAudit;
+        $this->container['objAudit'] = $objAudit;
 
         return $this;
     }

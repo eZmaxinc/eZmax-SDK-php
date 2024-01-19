@@ -68,7 +68,8 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         'eUserOrigin' => '\eZmaxAPI\Model\FieldEUserOrigin',
         'eUserEzsignaccess' => '\eZmaxAPI\Model\FieldEUserEzsignaccess',
         'dtUserEzsignprepaidexpiration' => 'string',
-        'sEmailAddress' => 'string'
+        'sEmailAddress' => 'string',
+        'sUserJobtitle' => 'string'
     ];
 
     /**
@@ -88,7 +89,8 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         'eUserOrigin' => null,
         'eUserEzsignaccess' => null,
         'dtUserEzsignprepaidexpiration' => null,
-        'sEmailAddress' => null
+        'sEmailAddress' => null,
+        'sUserJobtitle' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
 		'eUserOrigin' => false,
 		'eUserEzsignaccess' => false,
 		'dtUserEzsignprepaidexpiration' => false,
-		'sEmailAddress' => false
+		'sEmailAddress' => false,
+		'sUserJobtitle' => false
     ];
 
     /**
@@ -204,7 +207,8 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         'eUserOrigin' => 'eUserOrigin',
         'eUserEzsignaccess' => 'eUserEzsignaccess',
         'dtUserEzsignprepaidexpiration' => 'dtUserEzsignprepaidexpiration',
-        'sEmailAddress' => 'sEmailAddress'
+        'sEmailAddress' => 'sEmailAddress',
+        'sUserJobtitle' => 'sUserJobtitle'
     ];
 
     /**
@@ -222,7 +226,8 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         'eUserOrigin' => 'setEUserOrigin',
         'eUserEzsignaccess' => 'setEUserEzsignaccess',
         'dtUserEzsignprepaidexpiration' => 'setDtUserEzsignprepaidexpiration',
-        'sEmailAddress' => 'setSEmailAddress'
+        'sEmailAddress' => 'setSEmailAddress',
+        'sUserJobtitle' => 'setSUserJobtitle'
     ];
 
     /**
@@ -240,7 +245,8 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         'eUserOrigin' => 'getEUserOrigin',
         'eUserEzsignaccess' => 'getEUserEzsignaccess',
         'dtUserEzsignprepaidexpiration' => 'getDtUserEzsignprepaidexpiration',
-        'sEmailAddress' => 'getSEmailAddress'
+        'sEmailAddress' => 'getSEmailAddress',
+        'sUserJobtitle' => 'getSUserJobtitle'
     ];
 
     /**
@@ -310,6 +316,7 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('eUserEzsignaccess', $data ?? [], null);
         $this->setIfExists('dtUserEzsignprepaidexpiration', $data ?? [], null);
         $this->setIfExists('sEmailAddress', $data ?? [], null);
+        $this->setIfExists('sUserJobtitle', $data ?? [], null);
     }
 
     /**
@@ -380,6 +387,11 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['sEmailAddress'] === null) {
             $invalidProperties[] = "'sEmailAddress' can't be null";
         }
+//        if (!is_null($this->container['sUserJobtitle']) && !preg_match("/^.{0,50}$/", $this->container['sUserJobtitle'])) {
+        if (!is_null($this->container['sUserJobtitle']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sUserJobtitle'])) {
+            $invalidProperties[] = "invalid value for 'sUserJobtitle', must be conform to the pattern /^.{0,50}$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -719,6 +731,43 @@ class UserListElement implements ModelInterface, ArrayAccess, \JsonSerializable
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
         $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
+
+        return $this;
+    }
+
+    /**
+     * Gets sUserJobtitle
+     *
+     * @return string|null
+     */
+    public function getSUserJobtitle()
+    {
+        return is_null($this->container['sUserJobtitle']) ? null : trim($this->container['sUserJobtitle']);
+    }
+
+    /**
+     * Sets sUserJobtitle
+     *
+     * @param string|null $sUserJobtitle The job title of the user
+     *
+     * @return self
+     */
+    public function setSUserJobtitle($sUserJobtitle)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sUserJobtitle)) {
+            //throw new \InvalidArgumentException('non-nullable sUserJobtitle cannot be null');
+        //}
+
+//        if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUserJobtitle)))) {
+        if (!is_null($sUserJobtitle) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sUserJobtitle)))) {
+            throw new \InvalidArgumentException("invalid value for \$sUserJobtitle when calling UserListElement., must conform to the pattern /^.{0,50}$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['sUserJobtitle'] = $sUserJobtitle;
+        $this->container['sUserJobtitle'] = (is_null($sUserJobtitle) ? null : trim((string) $sUserJobtitle));
 
         return $this;
     }

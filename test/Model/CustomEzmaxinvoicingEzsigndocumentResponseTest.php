@@ -90,6 +90,15 @@ class CustomEzmaxinvoicingEzsigndocumentResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "fkiBillingentityinternalID"
+     */
+    public function testPropertyFkiBillingentityinternalID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sName"
      */
     public function testPropertySName()

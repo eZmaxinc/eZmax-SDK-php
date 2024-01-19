@@ -108,6 +108,15 @@ class EzsignfolderResponseCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "eEzsignfolderCompletion"
+     */
+    public function testPropertyEEzsignfolderCompletion()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsignfoldertypeNameX"
      */
     public function testPropertySEzsignfoldertypeNameX()

@@ -169,4 +169,13 @@ class UserListElementTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "sUserJobtitle"
+     */
+    public function testPropertySUserJobtitle()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

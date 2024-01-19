@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **sUserFirstname** | **string** | The first name of the user |
 **sUserLastname** | **string** | The last name of the user |
 **sUserLoginname** | **string** | The login name of the User. |
+**sUserJobtitle** | **string** | The job title of the user | [optional]
 **eUserEzsignaccess** | [**\eZmaxAPI\Model\FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |
 **dtUserLastlogondate** | **string** | The last logon date of the User | [optional]
 **dtUserPasswordchanged** | **string** | The date at which the User&#39;s password was last changed | [optional]

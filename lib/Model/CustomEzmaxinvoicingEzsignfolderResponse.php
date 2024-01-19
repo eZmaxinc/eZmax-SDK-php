@@ -60,6 +60,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse implements ModelInterface, ArrayA
       */
     protected static $openAPITypes = [
         'fkiEzsignfolderID' => 'int',
+        'fkiBillingentityinternalID' => 'int',
         'sEzsignfolderDescription' => 'string',
         'bEzsigntsarequirementBillable' => 'bool',
         'bEzsignfolderMfaused' => 'bool',
@@ -76,6 +77,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse implements ModelInterface, ArrayA
       */
     protected static $openAPIFormats = [
         'fkiEzsignfolderID' => null,
+        'fkiBillingentityinternalID' => null,
         'sEzsignfolderDescription' => null,
         'bEzsigntsarequirementBillable' => null,
         'bEzsignfolderMfaused' => null,
@@ -90,6 +92,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse implements ModelInterface, ArrayA
       */
     protected static array $openAPINullables = [
         'fkiEzsignfolderID' => false,
+		'fkiBillingentityinternalID' => false,
 		'sEzsignfolderDescription' => false,
 		'bEzsigntsarequirementBillable' => false,
 		'bEzsignfolderMfaused' => false,
@@ -184,6 +187,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse implements ModelInterface, ArrayA
      */
     protected static $attributeMap = [
         'fkiEzsignfolderID' => 'fkiEzsignfolderID',
+        'fkiBillingentityinternalID' => 'fkiBillingentityinternalID',
         'sEzsignfolderDescription' => 'sEzsignfolderDescription',
         'bEzsigntsarequirementBillable' => 'bEzsigntsarequirementBillable',
         'bEzsignfolderMfaused' => 'bEzsignfolderMfaused',
@@ -198,6 +202,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse implements ModelInterface, ArrayA
      */
     protected static $setters = [
         'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
+        'fkiBillingentityinternalID' => 'setFkiBillingentityinternalID',
         'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
         'bEzsigntsarequirementBillable' => 'setBEzsigntsarequirementBillable',
         'bEzsignfolderMfaused' => 'setBEzsignfolderMfaused',
@@ -212,6 +217,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse implements ModelInterface, ArrayA
      */
     protected static $getters = [
         'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
+        'fkiBillingentityinternalID' => 'getFkiBillingentityinternalID',
         'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
         'bEzsigntsarequirementBillable' => 'getBEzsigntsarequirementBillable',
         'bEzsignfolderMfaused' => 'getBEzsignfolderMfaused',
@@ -277,6 +283,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse implements ModelInterface, ArrayA
     public function __construct(array $data = null)
     {
         $this->setIfExists('fkiEzsignfolderID', $data ?? [], null);
+        $this->setIfExists('fkiBillingentityinternalID', $data ?? [], null);
         $this->setIfExists('sEzsignfolderDescription', $data ?? [], null);
         $this->setIfExists('bEzsigntsarequirementBillable', $data ?? [], null);
         $this->setIfExists('bEzsignfolderMfaused', $data ?? [], null);
@@ -316,6 +323,10 @@ class CustomEzmaxinvoicingEzsignfolderResponse implements ModelInterface, ArrayA
         }
         if (($this->container['fkiEzsignfolderID'] < 0)) {
             $invalidProperties[] = "invalid value for 'fkiEzsignfolderID', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['fkiBillingentityinternalID']) && ($this->container['fkiBillingentityinternalID'] < 0)) {
+            $invalidProperties[] = "invalid value for 'fkiBillingentityinternalID', must be bigger than or equal to 0.";
         }
 
         if ($this->container['sEzsignfolderDescription'] === null) {
@@ -381,6 +392,43 @@ class CustomEzmaxinvoicingEzsignfolderResponse implements ModelInterface, ArrayA
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
         $this->container['fkiEzsignfolderID'] = (is_null($fkiEzsignfolderID) ? null : (int) $fkiEzsignfolderID);
+
+        return $this;
+    }
+
+    /**
+     * Gets fkiBillingentityinternalID
+     *
+     * @return int|null
+     */
+    public function getFkiBillingentityinternalID()
+    {
+        return $this->container['fkiBillingentityinternalID'];
+    }
+
+    /**
+     * Sets fkiBillingentityinternalID
+     *
+     * @param int|null $fkiBillingentityinternalID The unique ID of the Billingentityinternal.
+     *
+     * @return self
+     */
+    public function setFkiBillingentityinternalID($fkiBillingentityinternalID)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($fkiBillingentityinternalID)) {
+            //throw new \InvalidArgumentException('non-nullable fkiBillingentityinternalID cannot be null');
+        //}
+
+//        if (($fkiBillingentityinternalID < 0)) {
+        if (!is_null($fkiBillingentityinternalID) && ($fkiBillingentityinternalID < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fkiBillingentityinternalID when calling CustomEzmaxinvoicingEzsignfolderResponse., must be bigger than or equal to 0.');
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['fkiBillingentityinternalID'] = $fkiBillingentityinternalID;
+        $this->container['fkiBillingentityinternalID'] = (is_null($fkiBillingentityinternalID) ? null : (int) $fkiBillingentityinternalID);
 
         return $this;
     }

@@ -97,6 +97,18 @@ class ObjectEzsigndocumentApiTest extends TestCase
     }
 
     /**
+     * Test case for ezsigndocumentCreateEzsignelementsPositionedByWordV1
+     *
+     * Create multiple Ezsignsignatures/Ezsignformfieldgroups.
+     *
+     */
+    public function testEzsigndocumentCreateEzsignelementsPositionedByWordV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for ezsigndocumentCreateObjectV1
      *
      * Create a new Ezsigndocument.
@@ -247,6 +259,18 @@ class ObjectEzsigndocumentApiTest extends TestCase
      *
      */
     public function testEzsigndocumentGetEzsignannotationsV1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for ezsigndocumentGetEzsigndiscussionsV1
+     *
+     * Retrieve an existing Ezsigndocument's Ezsigndiscussions.
+     *
+     */
+    public function testEzsigndocumentGetEzsigndiscussionsV1()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

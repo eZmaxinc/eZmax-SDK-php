@@ -77,10 +77,13 @@ class EzsignfoldertypeResponseCompound implements ModelInterface, ArrayAccess, \
         'eEzsignfoldertypeSendreminderfrequency' => '\eZmaxAPI\Model\FieldEEzsignfoldertypeSendreminderfrequency',
         'iEzsignfoldertypeArchivaldays' => 'int',
         'eEzsignfoldertypeDisposal' => '\eZmaxAPI\Model\FieldEEzsignfoldertypeDisposal',
+        'eEzsignfoldertypeCompletion' => '\eZmaxAPI\Model\FieldEEzsignfoldertypeCompletion',
         'iEzsignfoldertypeDisposaldays' => 'int',
         'iEzsignfoldertypeDeadlinedays' => 'int',
         'bEzsignfoldertypeDelegate' => 'bool',
         'bEzsignfoldertypeReassign' => 'bool',
+        'bEzsignfoldertypeReassignezsignsigner' => 'bool',
+        'bEzsignfoldertypeReassignuser' => 'bool',
         'bEzsignfoldertypeSendattatchmentsigner' => 'bool',
         'bEzsignfoldertypeSendsignedtoezsignsigner' => 'bool',
         'bEzsignfoldertypeSendsignedtouser' => 'bool',
@@ -135,10 +138,13 @@ class EzsignfoldertypeResponseCompound implements ModelInterface, ArrayAccess, \
         'eEzsignfoldertypeSendreminderfrequency' => null,
         'iEzsignfoldertypeArchivaldays' => null,
         'eEzsignfoldertypeDisposal' => null,
+        'eEzsignfoldertypeCompletion' => null,
         'iEzsignfoldertypeDisposaldays' => null,
         'iEzsignfoldertypeDeadlinedays' => null,
         'bEzsignfoldertypeDelegate' => null,
         'bEzsignfoldertypeReassign' => null,
+        'bEzsignfoldertypeReassignezsignsigner' => null,
+        'bEzsignfoldertypeReassignuser' => null,
         'bEzsignfoldertypeSendattatchmentsigner' => null,
         'bEzsignfoldertypeSendsignedtoezsignsigner' => null,
         'bEzsignfoldertypeSendsignedtouser' => null,
@@ -191,10 +197,13 @@ class EzsignfoldertypeResponseCompound implements ModelInterface, ArrayAccess, \
 		'eEzsignfoldertypeSendreminderfrequency' => false,
 		'iEzsignfoldertypeArchivaldays' => false,
 		'eEzsignfoldertypeDisposal' => false,
+		'eEzsignfoldertypeCompletion' => false,
 		'iEzsignfoldertypeDisposaldays' => false,
 		'iEzsignfoldertypeDeadlinedays' => false,
 		'bEzsignfoldertypeDelegate' => false,
 		'bEzsignfoldertypeReassign' => false,
+		'bEzsignfoldertypeReassignezsignsigner' => false,
+		'bEzsignfoldertypeReassignuser' => false,
 		'bEzsignfoldertypeSendattatchmentsigner' => false,
 		'bEzsignfoldertypeSendsignedtoezsignsigner' => false,
 		'bEzsignfoldertypeSendsignedtouser' => false,
@@ -327,10 +336,13 @@ class EzsignfoldertypeResponseCompound implements ModelInterface, ArrayAccess, \
         'eEzsignfoldertypeSendreminderfrequency' => 'eEzsignfoldertypeSendreminderfrequency',
         'iEzsignfoldertypeArchivaldays' => 'iEzsignfoldertypeArchivaldays',
         'eEzsignfoldertypeDisposal' => 'eEzsignfoldertypeDisposal',
+        'eEzsignfoldertypeCompletion' => 'eEzsignfoldertypeCompletion',
         'iEzsignfoldertypeDisposaldays' => 'iEzsignfoldertypeDisposaldays',
         'iEzsignfoldertypeDeadlinedays' => 'iEzsignfoldertypeDeadlinedays',
         'bEzsignfoldertypeDelegate' => 'bEzsignfoldertypeDelegate',
         'bEzsignfoldertypeReassign' => 'bEzsignfoldertypeReassign',
+        'bEzsignfoldertypeReassignezsignsigner' => 'bEzsignfoldertypeReassignezsignsigner',
+        'bEzsignfoldertypeReassignuser' => 'bEzsignfoldertypeReassignuser',
         'bEzsignfoldertypeSendattatchmentsigner' => 'bEzsignfoldertypeSendattatchmentsigner',
         'bEzsignfoldertypeSendsignedtoezsignsigner' => 'bEzsignfoldertypeSendsignedtoezsignsigner',
         'bEzsignfoldertypeSendsignedtouser' => 'bEzsignfoldertypeSendsignedtouser',
@@ -383,10 +395,13 @@ class EzsignfoldertypeResponseCompound implements ModelInterface, ArrayAccess, \
         'eEzsignfoldertypeSendreminderfrequency' => 'setEEzsignfoldertypeSendreminderfrequency',
         'iEzsignfoldertypeArchivaldays' => 'setIEzsignfoldertypeArchivaldays',
         'eEzsignfoldertypeDisposal' => 'setEEzsignfoldertypeDisposal',
+        'eEzsignfoldertypeCompletion' => 'setEEzsignfoldertypeCompletion',
         'iEzsignfoldertypeDisposaldays' => 'setIEzsignfoldertypeDisposaldays',
         'iEzsignfoldertypeDeadlinedays' => 'setIEzsignfoldertypeDeadlinedays',
         'bEzsignfoldertypeDelegate' => 'setBEzsignfoldertypeDelegate',
         'bEzsignfoldertypeReassign' => 'setBEzsignfoldertypeReassign',
+        'bEzsignfoldertypeReassignezsignsigner' => 'setBEzsignfoldertypeReassignezsignsigner',
+        'bEzsignfoldertypeReassignuser' => 'setBEzsignfoldertypeReassignuser',
         'bEzsignfoldertypeSendattatchmentsigner' => 'setBEzsignfoldertypeSendattatchmentsigner',
         'bEzsignfoldertypeSendsignedtoezsignsigner' => 'setBEzsignfoldertypeSendsignedtoezsignsigner',
         'bEzsignfoldertypeSendsignedtouser' => 'setBEzsignfoldertypeSendsignedtouser',
@@ -439,10 +454,13 @@ class EzsignfoldertypeResponseCompound implements ModelInterface, ArrayAccess, \
         'eEzsignfoldertypeSendreminderfrequency' => 'getEEzsignfoldertypeSendreminderfrequency',
         'iEzsignfoldertypeArchivaldays' => 'getIEzsignfoldertypeArchivaldays',
         'eEzsignfoldertypeDisposal' => 'getEEzsignfoldertypeDisposal',
+        'eEzsignfoldertypeCompletion' => 'getEEzsignfoldertypeCompletion',
         'iEzsignfoldertypeDisposaldays' => 'getIEzsignfoldertypeDisposaldays',
         'iEzsignfoldertypeDeadlinedays' => 'getIEzsignfoldertypeDeadlinedays',
         'bEzsignfoldertypeDelegate' => 'getBEzsignfoldertypeDelegate',
         'bEzsignfoldertypeReassign' => 'getBEzsignfoldertypeReassign',
+        'bEzsignfoldertypeReassignezsignsigner' => 'getBEzsignfoldertypeReassignezsignsigner',
+        'bEzsignfoldertypeReassignuser' => 'getBEzsignfoldertypeReassignuser',
         'bEzsignfoldertypeSendattatchmentsigner' => 'getBEzsignfoldertypeSendattatchmentsigner',
         'bEzsignfoldertypeSendsignedtoezsignsigner' => 'getBEzsignfoldertypeSendsignedtoezsignsigner',
         'bEzsignfoldertypeSendsignedtouser' => 'getBEzsignfoldertypeSendsignedtouser',
@@ -546,10 +564,13 @@ class EzsignfoldertypeResponseCompound implements ModelInterface, ArrayAccess, \
         $this->setIfExists('eEzsignfoldertypeSendreminderfrequency', $data ?? [], null);
         $this->setIfExists('iEzsignfoldertypeArchivaldays', $data ?? [], null);
         $this->setIfExists('eEzsignfoldertypeDisposal', $data ?? [], null);
+        $this->setIfExists('eEzsignfoldertypeCompletion', $data ?? [], null);
         $this->setIfExists('iEzsignfoldertypeDisposaldays', $data ?? [], null);
         $this->setIfExists('iEzsignfoldertypeDeadlinedays', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeDelegate', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeReassign', $data ?? [], null);
+        $this->setIfExists('bEzsignfoldertypeReassignezsignsigner', $data ?? [], null);
+        $this->setIfExists('bEzsignfoldertypeReassignuser', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeSendattatchmentsigner', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeSendsignedtoezsignsigner', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeSendsignedtouser', $data ?? [], null);
@@ -1367,6 +1388,37 @@ class EzsignfoldertypeResponseCompound implements ModelInterface, ArrayAccess, \
     }
 
     /**
+     * Gets eEzsignfoldertypeCompletion
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignfoldertypeCompletion|null
+     */
+    public function getEEzsignfoldertypeCompletion()
+    {
+        return $this->container['eEzsignfoldertypeCompletion'];
+    }
+
+    /**
+     * Sets eEzsignfoldertypeCompletion
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignfoldertypeCompletion|null $eEzsignfoldertypeCompletion eEzsignfoldertypeCompletion
+     *
+     * @return self
+     */
+    public function setEEzsignfoldertypeCompletion($eEzsignfoldertypeCompletion)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsignfoldertypeCompletion)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsignfoldertypeCompletion cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsignfoldertypeCompletion'] = $eEzsignfoldertypeCompletion;
+        $this->container['eEzsignfoldertypeCompletion'] = $eEzsignfoldertypeCompletion;
+
+        return $this;
+    }
+
+    /**
      * Gets iEzsignfoldertypeDisposaldays
      *
      * @return int|null
@@ -1506,6 +1558,68 @@ class EzsignfoldertypeResponseCompound implements ModelInterface, ArrayAccess, \
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsignfoldertypeReassign'] = $bEzsignfoldertypeReassign;
         $this->container['bEzsignfoldertypeReassign'] = (is_null($bEzsignfoldertypeReassign) ? null : (bool) $bEzsignfoldertypeReassign);
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsignfoldertypeReassignezsignsigner
+     *
+     * @return bool|null
+     */
+    public function getBEzsignfoldertypeReassignezsignsigner()
+    {
+        return $this->container['bEzsignfoldertypeReassignezsignsigner'];
+    }
+
+    /**
+     * Sets bEzsignfoldertypeReassignezsignsigner
+     *
+     * @param bool|null $bEzsignfoldertypeReassignezsignsigner Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     *
+     * @return self
+     */
+    public function setBEzsignfoldertypeReassignezsignsigner($bEzsignfoldertypeReassignezsignsigner)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bEzsignfoldertypeReassignezsignsigner)) {
+            //throw new \InvalidArgumentException('non-nullable bEzsignfoldertypeReassignezsignsigner cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfoldertypeReassignezsignsigner'] = $bEzsignfoldertypeReassignezsignsigner;
+        $this->container['bEzsignfoldertypeReassignezsignsigner'] = (is_null($bEzsignfoldertypeReassignezsignsigner) ? null : (bool) $bEzsignfoldertypeReassignezsignsigner);
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsignfoldertypeReassignuser
+     *
+     * @return bool|null
+     */
+    public function getBEzsignfoldertypeReassignuser()
+    {
+        return $this->container['bEzsignfoldertypeReassignuser'];
+    }
+
+    /**
+     * Sets bEzsignfoldertypeReassignuser
+     *
+     * @param bool|null $bEzsignfoldertypeReassignuser Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     *
+     * @return self
+     */
+    public function setBEzsignfoldertypeReassignuser($bEzsignfoldertypeReassignuser)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bEzsignfoldertypeReassignuser)) {
+            //throw new \InvalidArgumentException('non-nullable bEzsignfoldertypeReassignuser cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfoldertypeReassignuser'] = $bEzsignfoldertypeReassignuser;
+        $this->container['bEzsignfoldertypeReassignuser'] = (is_null($bEzsignfoldertypeReassignuser) ? null : (bool) $bEzsignfoldertypeReassignuser);
 
         return $this;
     }

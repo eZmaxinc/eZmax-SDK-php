@@ -67,7 +67,9 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
         'bEzsignfoldertypeAllowdownloadattachmentezsignsigner' => 'bool',
         'bEzsignfoldertypeAllowdownloadproofezsignsigner' => 'bool',
         'bEzsignfoldertypeDelegate' => 'bool',
-        'bEzsignfoldertypeReassign' => 'bool'
+        'bEzsignfoldertypeReassign' => 'bool',
+        'bEzsignfoldertypeReassignezsignsigner' => 'bool',
+        'bEzsignfoldertypeReassignuser' => 'bool'
     ];
 
     /**
@@ -86,7 +88,9 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
         'bEzsignfoldertypeAllowdownloadattachmentezsignsigner' => null,
         'bEzsignfoldertypeAllowdownloadproofezsignsigner' => null,
         'bEzsignfoldertypeDelegate' => null,
-        'bEzsignfoldertypeReassign' => null
+        'bEzsignfoldertypeReassign' => null,
+        'bEzsignfoldertypeReassignezsignsigner' => null,
+        'bEzsignfoldertypeReassignuser' => null
     ];
 
     /**
@@ -103,7 +107,9 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
 		'bEzsignfoldertypeAllowdownloadattachmentezsignsigner' => false,
 		'bEzsignfoldertypeAllowdownloadproofezsignsigner' => false,
 		'bEzsignfoldertypeDelegate' => false,
-		'bEzsignfoldertypeReassign' => false
+		'bEzsignfoldertypeReassign' => false,
+		'bEzsignfoldertypeReassignezsignsigner' => false,
+		'bEzsignfoldertypeReassignuser' => false
     ];
 
     /**
@@ -200,7 +206,9 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
         'bEzsignfoldertypeAllowdownloadattachmentezsignsigner' => 'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
         'bEzsignfoldertypeAllowdownloadproofezsignsigner' => 'bEzsignfoldertypeAllowdownloadproofezsignsigner',
         'bEzsignfoldertypeDelegate' => 'bEzsignfoldertypeDelegate',
-        'bEzsignfoldertypeReassign' => 'bEzsignfoldertypeReassign'
+        'bEzsignfoldertypeReassign' => 'bEzsignfoldertypeReassign',
+        'bEzsignfoldertypeReassignezsignsigner' => 'bEzsignfoldertypeReassignezsignsigner',
+        'bEzsignfoldertypeReassignuser' => 'bEzsignfoldertypeReassignuser'
     ];
 
     /**
@@ -217,7 +225,9 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
         'bEzsignfoldertypeAllowdownloadattachmentezsignsigner' => 'setBEzsignfoldertypeAllowdownloadattachmentezsignsigner',
         'bEzsignfoldertypeAllowdownloadproofezsignsigner' => 'setBEzsignfoldertypeAllowdownloadproofezsignsigner',
         'bEzsignfoldertypeDelegate' => 'setBEzsignfoldertypeDelegate',
-        'bEzsignfoldertypeReassign' => 'setBEzsignfoldertypeReassign'
+        'bEzsignfoldertypeReassign' => 'setBEzsignfoldertypeReassign',
+        'bEzsignfoldertypeReassignezsignsigner' => 'setBEzsignfoldertypeReassignezsignsigner',
+        'bEzsignfoldertypeReassignuser' => 'setBEzsignfoldertypeReassignuser'
     ];
 
     /**
@@ -234,7 +244,9 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
         'bEzsignfoldertypeAllowdownloadattachmentezsignsigner' => 'getBEzsignfoldertypeAllowdownloadattachmentezsignsigner',
         'bEzsignfoldertypeAllowdownloadproofezsignsigner' => 'getBEzsignfoldertypeAllowdownloadproofezsignsigner',
         'bEzsignfoldertypeDelegate' => 'getBEzsignfoldertypeDelegate',
-        'bEzsignfoldertypeReassign' => 'getBEzsignfoldertypeReassign'
+        'bEzsignfoldertypeReassign' => 'getBEzsignfoldertypeReassign',
+        'bEzsignfoldertypeReassignezsignsigner' => 'getBEzsignfoldertypeReassignezsignsigner',
+        'bEzsignfoldertypeReassignuser' => 'getBEzsignfoldertypeReassignuser'
     ];
 
     /**
@@ -303,6 +315,8 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('bEzsignfoldertypeAllowdownloadproofezsignsigner', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeDelegate', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeReassign', $data ?? [], null);
+        $this->setIfExists('bEzsignfoldertypeReassignezsignsigner', $data ?? [], null);
+        $this->setIfExists('bEzsignfoldertypeReassignuser', $data ?? [], null);
     }
 
     /**
@@ -635,6 +649,68 @@ class CustomEzsignfoldertypeResponse implements ModelInterface, ArrayAccess, \Js
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsignfoldertypeReassign'] = $bEzsignfoldertypeReassign;
         $this->container['bEzsignfoldertypeReassign'] = (is_null($bEzsignfoldertypeReassign) ? null : (bool) $bEzsignfoldertypeReassign);
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsignfoldertypeReassignezsignsigner
+     *
+     * @return bool|null
+     */
+    public function getBEzsignfoldertypeReassignezsignsigner()
+    {
+        return $this->container['bEzsignfoldertypeReassignezsignsigner'];
+    }
+
+    /**
+     * Sets bEzsignfoldertypeReassignezsignsigner
+     *
+     * @param bool|null $bEzsignfoldertypeReassignezsignsigner Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     *
+     * @return self
+     */
+    public function setBEzsignfoldertypeReassignezsignsigner($bEzsignfoldertypeReassignezsignsigner)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bEzsignfoldertypeReassignezsignsigner)) {
+            //throw new \InvalidArgumentException('non-nullable bEzsignfoldertypeReassignezsignsigner cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfoldertypeReassignezsignsigner'] = $bEzsignfoldertypeReassignezsignsigner;
+        $this->container['bEzsignfoldertypeReassignezsignsigner'] = (is_null($bEzsignfoldertypeReassignezsignsigner) ? null : (bool) $bEzsignfoldertypeReassignezsignsigner);
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsignfoldertypeReassignuser
+     *
+     * @return bool|null
+     */
+    public function getBEzsignfoldertypeReassignuser()
+    {
+        return $this->container['bEzsignfoldertypeReassignuser'];
+    }
+
+    /**
+     * Sets bEzsignfoldertypeReassignuser
+     *
+     * @param bool|null $bEzsignfoldertypeReassignuser Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     *
+     * @return self
+     */
+    public function setBEzsignfoldertypeReassignuser($bEzsignfoldertypeReassignuser)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bEzsignfoldertypeReassignuser)) {
+            //throw new \InvalidArgumentException('non-nullable bEzsignfoldertypeReassignuser cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfoldertypeReassignuser'] = $bEzsignfoldertypeReassignuser;
+        $this->container['bEzsignfoldertypeReassignuser'] = (is_null($bEzsignfoldertypeReassignuser) ? null : (bool) $bEzsignfoldertypeReassignuser);
 
         return $this;
     }

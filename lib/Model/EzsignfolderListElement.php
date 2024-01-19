@@ -66,6 +66,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'sEzsignfolderDescription' => 'string',
         'eEzsignfolderStep' => '\eZmaxAPI\Model\FieldEEzsignfolderStep',
         'dtCreatedDate' => 'string',
+        'dtEzsignfolderDelayedsenddate' => 'string',
         'dtEzsignfolderSentdate' => 'string',
         'dtEzsignfolderDuedate' => 'string',
         'iEzsigndocument' => 'int',
@@ -89,6 +90,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'sEzsignfolderDescription' => null,
         'eEzsignfolderStep' => null,
         'dtCreatedDate' => null,
+        'dtEzsignfolderDelayedsenddate' => null,
         'dtEzsignfolderSentdate' => null,
         'dtEzsignfolderDuedate' => null,
         'iEzsigndocument' => null,
@@ -110,6 +112,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
 		'sEzsignfolderDescription' => false,
 		'eEzsignfolderStep' => false,
 		'dtCreatedDate' => false,
+		'dtEzsignfolderDelayedsenddate' => false,
 		'dtEzsignfolderSentdate' => false,
 		'dtEzsignfolderDuedate' => false,
 		'iEzsigndocument' => false,
@@ -211,6 +214,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'sEzsignfolderDescription' => 'sEzsignfolderDescription',
         'eEzsignfolderStep' => 'eEzsignfolderStep',
         'dtCreatedDate' => 'dtCreatedDate',
+        'dtEzsignfolderDelayedsenddate' => 'dtEzsignfolderDelayedsenddate',
         'dtEzsignfolderSentdate' => 'dtEzsignfolderSentdate',
         'dtEzsignfolderDuedate' => 'dtEzsignfolderDuedate',
         'iEzsigndocument' => 'iEzsigndocument',
@@ -232,6 +236,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
         'eEzsignfolderStep' => 'setEEzsignfolderStep',
         'dtCreatedDate' => 'setDtCreatedDate',
+        'dtEzsignfolderDelayedsenddate' => 'setDtEzsignfolderDelayedsenddate',
         'dtEzsignfolderSentdate' => 'setDtEzsignfolderSentdate',
         'dtEzsignfolderDuedate' => 'setDtEzsignfolderDuedate',
         'iEzsigndocument' => 'setIEzsigndocument',
@@ -253,6 +258,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
         'eEzsignfolderStep' => 'getEEzsignfolderStep',
         'dtCreatedDate' => 'getDtCreatedDate',
+        'dtEzsignfolderDelayedsenddate' => 'getDtEzsignfolderDelayedsenddate',
         'dtEzsignfolderSentdate' => 'getDtEzsignfolderSentdate',
         'dtEzsignfolderDuedate' => 'getDtEzsignfolderDuedate',
         'iEzsigndocument' => 'getIEzsigndocument',
@@ -325,6 +331,7 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('sEzsignfolderDescription', $data ?? [], null);
         $this->setIfExists('eEzsignfolderStep', $data ?? [], null);
         $this->setIfExists('dtCreatedDate', $data ?? [], null);
+        $this->setIfExists('dtEzsignfolderDelayedsenddate', $data ?? [], null);
         $this->setIfExists('dtEzsignfolderSentdate', $data ?? [], null);
         $this->setIfExists('dtEzsignfolderDuedate', $data ?? [], null);
         $this->setIfExists('iEzsigndocument', $data ?? [], null);
@@ -641,6 +648,37 @@ class EzsignfolderListElement implements ModelInterface, ArrayAccess, \JsonSeria
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['dtCreatedDate'] = $dtCreatedDate;
         $this->container['dtCreatedDate'] = (is_null($dtCreatedDate) ? null : trim((string) $dtCreatedDate));
+
+        return $this;
+    }
+
+    /**
+     * Gets dtEzsignfolderDelayedsenddate
+     *
+     * @return string|null
+     */
+    public function getDtEzsignfolderDelayedsenddate()
+    {
+        return is_null($this->container['dtEzsignfolderDelayedsenddate']) ? null : trim($this->container['dtEzsignfolderDelayedsenddate']);
+    }
+
+    /**
+     * Sets dtEzsignfolderDelayedsenddate
+     *
+     * @param string|null $dtEzsignfolderDelayedsenddate The date and time at which the Ezsignfolder will be sent in the future.
+     *
+     * @return self
+     */
+    public function setDtEzsignfolderDelayedsenddate($dtEzsignfolderDelayedsenddate)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($dtEzsignfolderDelayedsenddate)) {
+            //throw new \InvalidArgumentException('non-nullable dtEzsignfolderDelayedsenddate cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtEzsignfolderDelayedsenddate'] = $dtEzsignfolderDelayedsenddate;
+        $this->container['dtEzsignfolderDelayedsenddate'] = (is_null($dtEzsignfolderDelayedsenddate) ? null : trim((string) $dtEzsignfolderDelayedsenddate));
 
         return $this;
     }

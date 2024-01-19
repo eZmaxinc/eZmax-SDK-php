@@ -60,7 +60,8 @@ class EzsigndocumentApplyEzsigntemplateV2Response implements ModelInterface, Arr
       */
     protected static $openAPITypes = [
         'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
-        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug'
+        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug',
+        'aObjWarning' => '\eZmaxAPI\Model\CommonResponseWarning[]'
     ];
 
     /**
@@ -72,7 +73,8 @@ class EzsigndocumentApplyEzsigntemplateV2Response implements ModelInterface, Arr
       */
     protected static $openAPIFormats = [
         'objDebugPayload' => null,
-        'objDebug' => null
+        'objDebug' => null,
+        'aObjWarning' => null
     ];
 
     /**
@@ -82,7 +84,8 @@ class EzsigndocumentApplyEzsigntemplateV2Response implements ModelInterface, Arr
       */
     protected static array $openAPINullables = [
         'objDebugPayload' => false,
-		'objDebug' => false
+		'objDebug' => false,
+		'aObjWarning' => false
     ];
 
     /**
@@ -172,7 +175,8 @@ class EzsigndocumentApplyEzsigntemplateV2Response implements ModelInterface, Arr
      */
     protected static $attributeMap = [
         'objDebugPayload' => 'objDebugPayload',
-        'objDebug' => 'objDebug'
+        'objDebug' => 'objDebug',
+        'aObjWarning' => 'a_objWarning'
     ];
 
     /**
@@ -182,7 +186,8 @@ class EzsigndocumentApplyEzsigntemplateV2Response implements ModelInterface, Arr
      */
     protected static $setters = [
         'objDebugPayload' => 'setObjDebugPayload',
-        'objDebug' => 'setObjDebug'
+        'objDebug' => 'setObjDebug',
+        'aObjWarning' => 'setAObjWarning'
     ];
 
     /**
@@ -192,7 +197,8 @@ class EzsigndocumentApplyEzsigntemplateV2Response implements ModelInterface, Arr
      */
     protected static $getters = [
         'objDebugPayload' => 'getObjDebugPayload',
-        'objDebug' => 'getObjDebug'
+        'objDebug' => 'getObjDebug',
+        'aObjWarning' => 'getAObjWarning'
     ];
 
     /**
@@ -254,6 +260,7 @@ class EzsigndocumentApplyEzsigntemplateV2Response implements ModelInterface, Arr
     {
         $this->setIfExists('objDebugPayload', $data ?? [], null);
         $this->setIfExists('objDebug', $data ?? [], null);
+        $this->setIfExists('aObjWarning', $data ?? [], null);
     }
 
     /**
@@ -359,6 +366,37 @@ class EzsigndocumentApplyEzsigntemplateV2Response implements ModelInterface, Arr
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objDebug'] = $objDebug;
         $this->container['objDebug'] = $objDebug;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjWarning
+     *
+     * @return \eZmaxAPI\Model\CommonResponseWarning[]|null
+     */
+    public function getAObjWarning()
+    {
+        return $this->container['aObjWarning'];
+    }
+
+    /**
+     * Sets aObjWarning
+     *
+     * @param \eZmaxAPI\Model\CommonResponseWarning[]|null $aObjWarning aObjWarning
+     *
+     * @return self
+     */
+    public function setAObjWarning($aObjWarning)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($aObjWarning)) {
+            //throw new \InvalidArgumentException('non-nullable aObjWarning cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['aObjWarning'] = $aObjWarning;
+        $this->container['aObjWarning'] = $aObjWarning;
 
         return $this;
     }

@@ -70,6 +70,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'iEzsignsignatureHeight' => 'int',
         'iEzsignsignatureWidth' => 'int',
         'iEzsignsignatureStep' => 'int',
+        'iEzsignsignatureStepadjusted' => 'int',
         'eEzsignsignatureType' => '\eZmaxAPI\Model\FieldEEzsignsignatureType',
         'tEzsignsignatureTooltip' => 'string',
         'eEzsignsignatureTooltipposition' => '\eZmaxAPI\Model\FieldEEzsignsignatureTooltipposition',
@@ -110,6 +111,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'iEzsignsignatureHeight' => null,
         'iEzsignsignatureWidth' => null,
         'iEzsignsignatureStep' => null,
+        'iEzsignsignatureStepadjusted' => null,
         'eEzsignsignatureType' => null,
         'tEzsignsignatureTooltip' => null,
         'eEzsignsignatureTooltipposition' => null,
@@ -148,6 +150,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
 		'iEzsignsignatureHeight' => false,
 		'iEzsignsignatureWidth' => false,
 		'iEzsignsignatureStep' => false,
+		'iEzsignsignatureStepadjusted' => false,
 		'eEzsignsignatureType' => false,
 		'tEzsignsignatureTooltip' => false,
 		'eEzsignsignatureTooltipposition' => false,
@@ -266,6 +269,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'iEzsignsignatureHeight' => 'iEzsignsignatureHeight',
         'iEzsignsignatureWidth' => 'iEzsignsignatureWidth',
         'iEzsignsignatureStep' => 'iEzsignsignatureStep',
+        'iEzsignsignatureStepadjusted' => 'iEzsignsignatureStepadjusted',
         'eEzsignsignatureType' => 'eEzsignsignatureType',
         'tEzsignsignatureTooltip' => 'tEzsignsignatureTooltip',
         'eEzsignsignatureTooltipposition' => 'eEzsignsignatureTooltipposition',
@@ -304,6 +308,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'iEzsignsignatureHeight' => 'setIEzsignsignatureHeight',
         'iEzsignsignatureWidth' => 'setIEzsignsignatureWidth',
         'iEzsignsignatureStep' => 'setIEzsignsignatureStep',
+        'iEzsignsignatureStepadjusted' => 'setIEzsignsignatureStepadjusted',
         'eEzsignsignatureType' => 'setEEzsignsignatureType',
         'tEzsignsignatureTooltip' => 'setTEzsignsignatureTooltip',
         'eEzsignsignatureTooltipposition' => 'setEEzsignsignatureTooltipposition',
@@ -342,6 +347,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         'iEzsignsignatureHeight' => 'getIEzsignsignatureHeight',
         'iEzsignsignatureWidth' => 'getIEzsignsignatureWidth',
         'iEzsignsignatureStep' => 'getIEzsignsignatureStep',
+        'iEzsignsignatureStepadjusted' => 'getIEzsignsignatureStepadjusted',
         'eEzsignsignatureType' => 'getEEzsignsignatureType',
         'tEzsignsignatureTooltip' => 'getTEzsignsignatureTooltip',
         'eEzsignsignatureTooltipposition' => 'getEEzsignsignatureTooltipposition',
@@ -431,6 +437,7 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('iEzsignsignatureHeight', $data ?? [], null);
         $this->setIfExists('iEzsignsignatureWidth', $data ?? [], null);
         $this->setIfExists('iEzsignsignatureStep', $data ?? [], null);
+        $this->setIfExists('iEzsignsignatureStepadjusted', $data ?? [], null);
         $this->setIfExists('eEzsignsignatureType', $data ?? [], null);
         $this->setIfExists('tEzsignsignatureTooltip', $data ?? [], null);
         $this->setIfExists('eEzsignsignatureTooltipposition', $data ?? [], null);
@@ -989,6 +996,37 @@ class EzsignsignatureResponse implements ModelInterface, ArrayAccess, \JsonSeria
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['iEzsignsignatureStep'] = $iEzsignsignatureStep;
         $this->container['iEzsignsignatureStep'] = (is_null($iEzsignsignatureStep) ? null : (int) $iEzsignsignatureStep);
+
+        return $this;
+    }
+
+    /**
+     * Gets iEzsignsignatureStepadjusted
+     *
+     * @return int|null
+     */
+    public function getIEzsignsignatureStepadjusted()
+    {
+        return $this->container['iEzsignsignatureStepadjusted'];
+    }
+
+    /**
+     * Sets iEzsignsignatureStepadjusted
+     *
+     * @param int|null $iEzsignsignatureStepadjusted The step when the Ezsignsigner will be invited to sign
+     *
+     * @return self
+     */
+    public function setIEzsignsignatureStepadjusted($iEzsignsignatureStepadjusted)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($iEzsignsignatureStepadjusted)) {
+            //throw new \InvalidArgumentException('non-nullable iEzsignsignatureStepadjusted cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['iEzsignsignatureStepadjusted'] = $iEzsignsignatureStepadjusted;
+        $this->container['iEzsignsignatureStepadjusted'] = (is_null($iEzsignsignatureStepadjusted) ? null : (int) $iEzsignsignatureStepadjusted);
 
         return $this;
     }

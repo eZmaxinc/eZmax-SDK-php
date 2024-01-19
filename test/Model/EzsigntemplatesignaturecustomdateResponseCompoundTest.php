@@ -108,6 +108,24 @@ class EzsigntemplatesignaturecustomdateResponseCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "iEzsigntemplatesignaturecustomdateOffsetx"
+     */
+    public function testPropertyIEzsigntemplatesignaturecustomdateOffsetx()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsigntemplatesignaturecustomdateOffsety"
+     */
+    public function testPropertyIEzsigntemplatesignaturecustomdateOffsety()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "sEzsigntemplatesignaturecustomdateFormat"
      */
     public function testPropertySEzsigntemplatesignaturecustomdateFormat()

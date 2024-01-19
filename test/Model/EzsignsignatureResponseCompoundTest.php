@@ -180,6 +180,15 @@ class EzsignsignatureResponseCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "iEzsignsignatureStepadjusted"
+     */
+    public function testPropertyIEzsignsignatureStepadjusted()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "eEzsignsignatureType"
      */
     public function testPropertyEEzsignsignatureType()

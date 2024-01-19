@@ -324,6 +324,15 @@ class UserResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "sUserJobtitle"
+     */
+    public function testPropertySUserJobtitle()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "eUserEzsignaccess"
      */
     public function testPropertyEUserEzsignaccess()

@@ -198,6 +198,15 @@ class EzsignfoldertypeRequestCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "eEzsignfoldertypeCompletion"
+     */
+    public function testPropertyEEzsignfoldertypeCompletion()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "iEzsignfoldertypeDisposaldays"
      */
     public function testPropertyIEzsignfoldertypeDisposaldays()
@@ -228,6 +237,24 @@ class EzsignfoldertypeRequestCompoundTest extends TestCase
      * Test attribute "bEzsignfoldertypeReassign"
      */
     public function testPropertyBEzsignfoldertypeReassign()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignfoldertypeReassignezsignsigner"
+     */
+    public function testPropertyBEzsignfoldertypeReassignezsignsigner()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignfoldertypeReassignuser"
+     */
+    public function testPropertyBEzsignfoldertypeReassignuser()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

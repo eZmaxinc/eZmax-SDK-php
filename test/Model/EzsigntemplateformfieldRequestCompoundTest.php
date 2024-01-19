@@ -90,6 +90,15 @@ class EzsigntemplateformfieldRequestCompoundTest extends TestCase
     }
 
     /**
+     * Test attribute "eEzsigntemplateformfieldPositioning"
+     */
+    public function testPropertyEEzsigntemplateformfieldPositioning()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "iEzsigntemplatedocumentpagePagenumber"
      */
     public function testPropertyIEzsigntemplatedocumentpagePagenumber()
@@ -174,6 +183,42 @@ class EzsigntemplateformfieldRequestCompoundTest extends TestCase
      * Test attribute "eEzsigntemplateformfieldDependencyrequirement"
      */
     public function testPropertyEEzsigntemplateformfieldDependencyrequirement()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sEzsigntemplateformfieldPositioningpattern"
+     */
+    public function testPropertySEzsigntemplateformfieldPositioningpattern()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsigntemplateformfieldPositioningoffsetx"
+     */
+    public function testPropertyIEzsigntemplateformfieldPositioningoffsetx()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "iEzsigntemplateformfieldPositioningoffsety"
+     */
+    public function testPropertyIEzsigntemplateformfieldPositioningoffsety()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "eEzsigntemplateformfieldPositioningoccurence"
+     */
+    public function testPropertyEEzsigntemplateformfieldPositioningoccurence()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

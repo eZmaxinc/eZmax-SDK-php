@@ -144,6 +144,15 @@ class EzsignfolderListElementTest extends TestCase
     }
 
     /**
+     * Test attribute "dtEzsignfolderDelayedsenddate"
+     */
+    public function testPropertyDtEzsignfolderDelayedsenddate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "dtEzsignfolderSentdate"
      */
     public function testPropertyDtEzsignfolderSentdate()

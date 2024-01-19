@@ -62,6 +62,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         'pkiEzsignfolderID' => 'int',
         'fkiEzsignfoldertypeID' => 'int',
         'objEzsignfoldertype' => '\eZmaxAPI\Model\CustomEzsignfoldertypeResponse',
+        'eEzsignfolderCompletion' => '\eZmaxAPI\Model\FieldEEzsignfolderCompletion',
         'sEzsignfoldertypeNameX' => 'string',
         'fkiBillingentityinternalID' => 'int',
         'sBillingentityinternalDescriptionX' => 'string',
@@ -94,6 +95,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         'pkiEzsignfolderID' => null,
         'fkiEzsignfoldertypeID' => null,
         'objEzsignfoldertype' => null,
+        'eEzsignfolderCompletion' => null,
         'sEzsignfoldertypeNameX' => null,
         'fkiBillingentityinternalID' => null,
         'sBillingentityinternalDescriptionX' => null,
@@ -124,6 +126,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         'pkiEzsignfolderID' => false,
 		'fkiEzsignfoldertypeID' => false,
 		'objEzsignfoldertype' => false,
+		'eEzsignfolderCompletion' => false,
 		'sEzsignfoldertypeNameX' => false,
 		'fkiBillingentityinternalID' => false,
 		'sBillingentityinternalDescriptionX' => false,
@@ -234,6 +237,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         'pkiEzsignfolderID' => 'pkiEzsignfolderID',
         'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
         'objEzsignfoldertype' => 'objEzsignfoldertype',
+        'eEzsignfolderCompletion' => 'eEzsignfolderCompletion',
         'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX',
         'fkiBillingentityinternalID' => 'fkiBillingentityinternalID',
         'sBillingentityinternalDescriptionX' => 'sBillingentityinternalDescriptionX',
@@ -264,6 +268,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
         'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
         'objEzsignfoldertype' => 'setObjEzsignfoldertype',
+        'eEzsignfolderCompletion' => 'setEEzsignfolderCompletion',
         'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX',
         'fkiBillingentityinternalID' => 'setFkiBillingentityinternalID',
         'sBillingentityinternalDescriptionX' => 'setSBillingentityinternalDescriptionX',
@@ -294,6 +299,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
         'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
         'objEzsignfoldertype' => 'getObjEzsignfoldertype',
+        'eEzsignfolderCompletion' => 'getEEzsignfolderCompletion',
         'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX',
         'fkiBillingentityinternalID' => 'getFkiBillingentityinternalID',
         'sBillingentityinternalDescriptionX' => 'getSBillingentityinternalDescriptionX',
@@ -375,6 +381,7 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('pkiEzsignfolderID', $data ?? [], null);
         $this->setIfExists('fkiEzsignfoldertypeID', $data ?? [], null);
         $this->setIfExists('objEzsignfoldertype', $data ?? [], null);
+        $this->setIfExists('eEzsignfolderCompletion', $data ?? [], null);
         $this->setIfExists('sEzsignfoldertypeNameX', $data ?? [], null);
         $this->setIfExists('fkiBillingentityinternalID', $data ?? [], null);
         $this->setIfExists('sBillingentityinternalDescriptionX', $data ?? [], null);
@@ -570,6 +577,37 @@ class EzsignfolderResponseCompound implements ModelInterface, ArrayAccess, \Json
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsignfoldertype'] = $objEzsignfoldertype;
         $this->container['objEzsignfoldertype'] = $objEzsignfoldertype;
+
+        return $this;
+    }
+
+    /**
+     * Gets eEzsignfolderCompletion
+     *
+     * @return \eZmaxAPI\Model\FieldEEzsignfolderCompletion|null
+     */
+    public function getEEzsignfolderCompletion()
+    {
+        return $this->container['eEzsignfolderCompletion'];
+    }
+
+    /**
+     * Sets eEzsignfolderCompletion
+     *
+     * @param \eZmaxAPI\Model\FieldEEzsignfolderCompletion|null $eEzsignfolderCompletion eEzsignfolderCompletion
+     *
+     * @return self
+     */
+    public function setEEzsignfolderCompletion($eEzsignfolderCompletion)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($eEzsignfolderCompletion)) {
+            //throw new \InvalidArgumentException('non-nullable eEzsignfolderCompletion cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['eEzsignfolderCompletion'] = $eEzsignfolderCompletion;
+        $this->container['eEzsignfolderCompletion'] = $eEzsignfolderCompletion;
 
         return $this;
     }

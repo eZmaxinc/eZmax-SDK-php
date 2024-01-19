@@ -207,6 +207,15 @@ class CustomWebhookResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "objAudit"
+     */
+    public function testPropertyObjAudit()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "pksCustomerCode"
      */
     public function testPropertyPksCustomerCode()

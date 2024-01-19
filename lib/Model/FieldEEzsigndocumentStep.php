@@ -54,6 +54,8 @@ class FieldEEzsigndocumentStep
 
     public const PREMATURELY_ENDED = 'PrematurelyEnded';
 
+    public const PENDING_COMPLETION = 'PendingCompletion';
+
     public const COMPLETED = 'Completed';
 
     public const DISPOSED = 'Disposed';
@@ -70,6 +72,7 @@ class FieldEEzsigndocumentStep
             self::PARTIALLY_SIGNED,
             self::DECLINED_TO_SIGN,
             self::PREMATURELY_ENDED,
+            self::PENDING_COMPLETION,
             self::COMPLETED,
             self::DISPOSED
         ];

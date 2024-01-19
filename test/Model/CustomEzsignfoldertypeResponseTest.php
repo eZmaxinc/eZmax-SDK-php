@@ -160,4 +160,22 @@ class CustomEzsignfoldertypeResponseTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "bEzsignfoldertypeReassignezsignsigner"
+     */
+    public function testPropertyBEzsignfoldertypeReassignezsignsigner()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bEzsignfoldertypeReassignuser"
+     */
+    public function testPropertyBEzsignfoldertypeReassignuser()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

@@ -97,4 +97,13 @@ class EzsigndocumentApplyEzsigntemplateV2ResponseTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "aObjWarning"
+     */
+    public function testPropertyAObjWarning()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }
