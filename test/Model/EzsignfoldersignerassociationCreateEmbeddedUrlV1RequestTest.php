@@ -99,9 +99,9 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1RequestTest extends TestCa
     }
 
     /**
-     * Test attribute "bIsiframe"
+     * Test attribute "bIsIframe"
      */
-    public function testPropertyBIsiframe()
+    public function testPropertyBIsIframe()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

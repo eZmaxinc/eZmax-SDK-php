@@ -61,7 +61,7 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
     protected static $openAPITypes = [
         'sReturnUrl' => 'string',
         'sIframedomain' => 'string',
-        'bIsiframe' => 'bool'
+        'bIsIframe' => 'bool'
     ];
 
     /**
@@ -74,7 +74,7 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
     protected static $openAPIFormats = [
         'sReturnUrl' => null,
         'sIframedomain' => null,
-        'bIsiframe' => null
+        'bIsIframe' => null
     ];
 
     /**
@@ -85,7 +85,7 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
     protected static array $openAPINullables = [
         'sReturnUrl' => false,
 		'sIframedomain' => false,
-		'bIsiframe' => false
+		'bIsIframe' => false
     ];
 
     /**
@@ -176,7 +176,7 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
     protected static $attributeMap = [
         'sReturnUrl' => 'sReturnUrl',
         'sIframedomain' => 'sIframedomain',
-        'bIsiframe' => 'bIsiframe'
+        'bIsIframe' => 'bIsIframe'
     ];
 
     /**
@@ -187,7 +187,7 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
     protected static $setters = [
         'sReturnUrl' => 'setSReturnUrl',
         'sIframedomain' => 'setSIframedomain',
-        'bIsiframe' => 'setBIsiframe'
+        'bIsIframe' => 'setBIsIframe'
     ];
 
     /**
@@ -198,7 +198,7 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
     protected static $getters = [
         'sReturnUrl' => 'getSReturnUrl',
         'sIframedomain' => 'getSIframedomain',
-        'bIsiframe' => 'getBIsiframe'
+        'bIsIframe' => 'getBIsIframe'
     ];
 
     /**
@@ -260,7 +260,7 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
     {
         $this->setIfExists('sReturnUrl', $data ?? [], null);
         $this->setIfExists('sIframedomain', $data ?? [], null);
-        $this->setIfExists('bIsiframe', $data ?? [], null);
+        $this->setIfExists('bIsIframe', $data ?? [], null);
     }
 
     /**
@@ -390,32 +390,32 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
     }
 
     /**
-     * Gets bIsiframe
+     * Gets bIsIframe
      *
      * @return bool|null
      */
-    public function getBIsiframe()
+    public function getBIsIframe()
     {
-        return $this->container['bIsiframe'];
+        return $this->container['bIsIframe'];
     }
 
     /**
-     * Sets bIsiframe
+     * Sets bIsIframe
      *
-     * @param bool|null $bIsiframe Whether the url would be in an iFrame or not
+     * @param bool|null $bIsIframe Whether the url would be in an iFrame or not
      *
      * @return self
      */
-    public function setBIsiframe($bIsiframe)
+    public function setBIsIframe($bIsIframe)
     {
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bIsiframe)) {
-            //throw new \InvalidArgumentException('non-nullable bIsiframe cannot be null');
+        //if (is_null($bIsIframe)) {
+            //throw new \InvalidArgumentException('non-nullable bIsIframe cannot be null');
         //}
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bIsiframe'] = $bIsiframe;
-        $this->container['bIsiframe'] = (is_null($bIsiframe) ? null : (bool) $bIsiframe);
+	//$this->container['bIsIframe'] = $bIsIframe;
+        $this->container['bIsIframe'] = (is_null($bIsIframe) ? null : (bool) $bIsIframe);
 
         return $this;
     }
