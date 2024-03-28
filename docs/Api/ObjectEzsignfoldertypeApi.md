@@ -4,18 +4,19 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ezsignfoldertypeCreateObjectV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeCreateObjectV1) | **POST** /1/object/ezsignfoldertype | Create a new Ezsignfoldertype |
+| [**ezsignfoldertypeCreateObjectV2()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeCreateObjectV2) | **POST** /2/object/ezsignfoldertype | Create a new Ezsignfoldertype |
 | [**ezsignfoldertypeEditObjectV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeEditObjectV1) | **PUT** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype |
-| [**ezsignfoldertypeGetAutocompleteV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetAutocompleteV1) | **GET** /1/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs |
+| [**ezsignfoldertypeEditObjectV2()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeEditObjectV2) | **PUT** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype |
 | [**ezsignfoldertypeGetAutocompleteV2()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetAutocompleteV2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs |
 | [**ezsignfoldertypeGetListV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetListV1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list |
 | [**ezsignfoldertypeGetObjectV2()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetObjectV2) | **GET** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype |
+| [**ezsignfoldertypeGetObjectV3()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetObjectV3) | **GET** /3/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype |
 
 
-## `ezsignfoldertypeCreateObjectV1()`
+## `ezsignfoldertypeCreateObjectV2()`
 
 ```php
-ezsignfoldertypeCreateObjectV1($ezsignfoldertypeCreateObjectV1Request): \eZmaxAPI\Model\EzsignfoldertypeCreateObjectV1Response
+ezsignfoldertypeCreateObjectV2($ezsignfoldertypeCreateObjectV2Request): \eZmaxAPI\Model\EzsignfoldertypeCreateObjectV2Response
 ```
 
 Create a new Ezsignfoldertype
@@ -41,13 +42,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldertypeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ezsignfoldertypeCreateObjectV1Request = new \eZmaxAPI\Model\EzsignfoldertypeCreateObjectV1Request(); // \eZmaxAPI\Model\EzsignfoldertypeCreateObjectV1Request
+$ezsignfoldertypeCreateObjectV2Request = new \eZmaxAPI\Model\EzsignfoldertypeCreateObjectV2Request(); // \eZmaxAPI\Model\EzsignfoldertypeCreateObjectV2Request
 
 try {
-    $result = $apiInstance->ezsignfoldertypeCreateObjectV1($ezsignfoldertypeCreateObjectV1Request);
+    $result = $apiInstance->ezsignfoldertypeCreateObjectV2($ezsignfoldertypeCreateObjectV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeCreateObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeCreateObjectV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -55,11 +56,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ezsignfoldertypeCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsignfoldertypeCreateObjectV1Request**](../Model/EzsignfoldertypeCreateObjectV1Request.md)|  | |
+| **ezsignfoldertypeCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsignfoldertypeCreateObjectV2Request**](../Model/EzsignfoldertypeCreateObjectV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignfoldertypeCreateObjectV1Response**](../Model/EzsignfoldertypeCreateObjectV1Response.md)
+[**\eZmaxAPI\Model\EzsignfoldertypeCreateObjectV2Response**](../Model/EzsignfoldertypeCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -138,15 +139,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsignfoldertypeGetAutocompleteV1()`
+## `ezsignfoldertypeEditObjectV2()`
 
 ```php
-ezsignfoldertypeGetAutocompleteV1($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\CommonGetAutocompleteV1Response
+ezsignfoldertypeEditObjectV2($pkiEzsignfoldertypeID, $ezsignfoldertypeEditObjectV2Request): \eZmaxAPI\Model\EzsignfoldertypeEditObjectV2Response
 ```
 
-Retrieve Ezsignfoldertypes and IDs
+Edit an existing Ezsignfoldertype
 
-Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
+
 
 ### Example
 
@@ -167,16 +168,14 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldertypeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$sSelector = 'sSelector_example'; // string | The type of Ezsignfoldertypes to return
-$eFilterActive = 'Active'; // string | Specify which results we want to display.
-$sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$pkiEzsignfoldertypeID = 56; // int
+$ezsignfoldertypeEditObjectV2Request = new \eZmaxAPI\Model\EzsignfoldertypeEditObjectV2Request(); // \eZmaxAPI\Model\EzsignfoldertypeEditObjectV2Request
 
 try {
-    $result = $apiInstance->ezsignfoldertypeGetAutocompleteV1($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+    $result = $apiInstance->ezsignfoldertypeEditObjectV2($pkiEzsignfoldertypeID, $ezsignfoldertypeEditObjectV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeGetAutocompleteV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeEditObjectV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -184,14 +183,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **sSelector** | **string**| The type of Ezsignfoldertypes to return | |
-| **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
-| **sQuery** | **string**| Allow to filter the returned results | [optional] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **pkiEzsignfoldertypeID** | **int**|  | |
+| **ezsignfoldertypeEditObjectV2Request** | [**\eZmaxAPI\Model\EzsignfoldertypeEditObjectV2Request**](../Model/EzsignfoldertypeEditObjectV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonGetAutocompleteV1Response**](../Model/CommonGetAutocompleteV1Response.md)
+[**\eZmaxAPI\Model\EzsignfoldertypeEditObjectV2Response**](../Model/EzsignfoldertypeEditObjectV2Response.md)
 
 ### Authorization
 
@@ -199,7 +196,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -392,6 +389,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignfoldertypeGetObjectV2Response**](../Model/EzsignfoldertypeGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfoldertypeGetObjectV3()`
+
+```php
+ezsignfoldertypeGetObjectV3($pkiEzsignfoldertypeID): \eZmaxAPI\Model\EzsignfoldertypeGetObjectV3Response
+```
+
+Retrieve an existing Ezsignfoldertype
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldertypeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfoldertypeID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignfoldertypeGetObjectV3($pkiEzsignfoldertypeID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeGetObjectV3: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfoldertypeID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfoldertypeGetObjectV3Response**](../Model/EzsignfoldertypeGetObjectV3Response.md)
 
 ### Authorization
 

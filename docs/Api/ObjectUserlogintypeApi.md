@@ -10,7 +10,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 ## `userlogintypeGetAutocompleteV2()`
 
 ```php
-userlogintypeGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response
+userlogintypeGetAutocompleteV2($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\UserlogintypeGetAutocompleteV2Response
 ```
 
 Retrieve Userlogintypes and IDs
@@ -37,12 +37,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectUserlogintypeApi(
     $config
 );
 $sSelector = 'sSelector_example'; // string | The type of Userlogintypes to return
+$fkiEzsignfoldertypeID = 56; // int
 $eFilterActive = 'Active'; // string | Specify which results we want to display.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
 $acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 
 try {
-    $result = $apiInstance->userlogintypeGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+    $result = $apiInstance->userlogintypeGetAutocompleteV2($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectUserlogintypeApi->userlogintypeGetAutocompleteV2: ', $e->getMessage(), PHP_EOL;
@@ -54,6 +55,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sSelector** | **string**| The type of Userlogintypes to return | |
+| **fkiEzsignfoldertypeID** | **int**|  | [optional] |
 | **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
 | **sQuery** | **string**| Allow to filter the returned results | [optional] |
 | **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |

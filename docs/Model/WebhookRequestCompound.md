@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **bWebhookIsactive** | **bool** | Whether the Webhook is active or not |
 **bWebhookIssigned** | **bool** | Whether the requests will be signed or not | [optional]
 **bWebhookSkipsslvalidation** | **bool** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |
+**aObjWebhookheader** | [**\eZmaxAPI\Model\WebhookheaderRequestCompound[]**](WebhookheaderRequestCompound.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -4,7 +4,6 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**webhookCreateObjectV1()**](ObjectWebhookApi.md#webhookCreateObjectV1) | **POST** /1/object/webhook | Create a new Webhook |
 | [**webhookCreateObjectV2()**](ObjectWebhookApi.md#webhookCreateObjectV2) | **POST** /2/object/webhook | Create a new Webhook |
 | [**webhookDeleteObjectV1()**](ObjectWebhookApi.md#webhookDeleteObjectV1) | **DELETE** /1/object/webhook/{pkiWebhookID} | Delete an existing Webhook |
 | [**webhookEditObjectV1()**](ObjectWebhookApi.md#webhookEditObjectV1) | **PUT** /1/object/webhook/{pkiWebhookID} | Edit an existing Webhook |
@@ -14,68 +13,6 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**webhookRegenerateApikeyV1()**](ObjectWebhookApi.md#webhookRegenerateApikeyV1) | **POST** /1/object/webhook/{pkiWebhookID}/regenerateApikey | Regenerate the Apikey |
 | [**webhookTestV1()**](ObjectWebhookApi.md#webhookTestV1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url |
 
-
-## `webhookCreateObjectV1()`
-
-```php
-webhookCreateObjectV1($webhookCreateObjectV1Request): \eZmaxAPI\Model\WebhookCreateObjectV1Response
-```
-
-Create a new Webhook
-
-The endpoint allows to create one or many elements at once.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectWebhookApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$webhookCreateObjectV1Request = new \eZmaxAPI\Model\WebhookCreateObjectV1Request(); // \eZmaxAPI\Model\WebhookCreateObjectV1Request
-
-try {
-    $result = $apiInstance->webhookCreateObjectV1($webhookCreateObjectV1Request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectWebhookApi->webhookCreateObjectV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **webhookCreateObjectV1Request** | [**\eZmaxAPI\Model\WebhookCreateObjectV1Request**](../Model/WebhookCreateObjectV1Request.md)|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\WebhookCreateObjectV1Response**](../Model/WebhookCreateObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
 
 ## `webhookCreateObjectV2()`
 

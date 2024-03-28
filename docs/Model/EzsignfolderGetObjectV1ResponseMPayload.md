@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **pkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder |
 **fkiEzsignfoldertypeID** | **int** | The unique ID of the Ezsignfoldertype. | [optional]
 **objEzsignfoldertype** | [**\eZmaxAPI\Model\CustomEzsignfoldertypeResponse**](CustomEzsignfoldertypeResponse.md) |  | [optional]
-**eEzsignfolderCompletion** | [**\eZmaxAPI\Model\FieldEEzsignfolderCompletion**](FieldEEzsignfolderCompletion.md) |  | [optional]
+**eEzsignfolderCompletion** | [**\eZmaxAPI\Model\FieldEEzsignfolderCompletion**](FieldEEzsignfolderCompletion.md) |  |
 **sEzsignfoldertypeNameX** | **string** |  | [optional]
 **fkiBillingentityinternalID** | **int** | The unique ID of the Billingentityinternal. | [optional]
 **sBillingentityinternalDescriptionX** | **string** | The description of the Billingentityinternal in the language of the requester | [optional]

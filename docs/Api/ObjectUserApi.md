@@ -5,6 +5,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**userCreateObjectV1()**](ObjectUserApi.md#userCreateObjectV1) | **POST** /1/object/user | Create a new User |
+| [**userCreateObjectV2()**](ObjectUserApi.md#userCreateObjectV2) | **POST** /2/object/user | Create a new User |
 | [**userEditObjectV1()**](ObjectUserApi.md#userEditObjectV1) | **PUT** /1/object/user/{pkiUserID} | Edit an existing User |
 | [**userEditPermissionsV1()**](ObjectUserApi.md#userEditPermissionsV1) | **PUT** /1/object/user/{pkiUserID}/editPermissions | Edit multiple Permissions |
 | [**userGetApikeysV1()**](ObjectUserApi.md#userGetApikeysV1) | **GET** /1/object/user/{pkiUserID}/getApikeys | Retrieve an existing User&#39;s Apikeys |
@@ -14,6 +15,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**userGetObjectV2()**](ObjectUserApi.md#userGetObjectV2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User |
 | [**userGetPermissionsV1()**](ObjectUserApi.md#userGetPermissionsV1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User&#39;s Permissions |
 | [**userGetSubnetsV1()**](ObjectUserApi.md#userGetSubnetsV1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User&#39;s Subnets |
+| [**userGetUsergroupexternalsV1()**](ObjectUserApi.md#userGetUsergroupexternalsV1) | **GET** /1/object/user/{pkiUserID}/getUsergroupexternals | Get User&#39;s Usergroupexternals |
+| [**userGetUsergroupsV1()**](ObjectUserApi.md#userGetUsergroupsV1) | **GET** /1/object/user/{pkiUserID}/getUsergroups | Get User&#39;s Usergroups |
 | [**userSendPasswordResetV1()**](ObjectUserApi.md#userSendPasswordResetV1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset |
 
 
@@ -65,6 +68,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\UserCreateObjectV1Response**](../Model/UserCreateObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `userCreateObjectV2()`
+
+```php
+userCreateObjectV2($userCreateObjectV2Request): \eZmaxAPI\Model\UserCreateObjectV2Response
+```
+
+Create a new User
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectUserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$userCreateObjectV2Request = new \eZmaxAPI\Model\UserCreateObjectV2Request(); // \eZmaxAPI\Model\UserCreateObjectV2Request
+
+try {
+    $result = $apiInstance->userCreateObjectV2($userCreateObjectV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectUserApi->userCreateObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userCreateObjectV2Request** | [**\eZmaxAPI\Model\UserCreateObjectV2Request**](../Model/UserCreateObjectV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\UserCreateObjectV2Response**](../Model/UserCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -635,6 +700,126 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\UserGetSubnetsV1Response**](../Model/UserGetSubnetsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `userGetUsergroupexternalsV1()`
+
+```php
+userGetUsergroupexternalsV1($pkiUserID): \eZmaxAPI\Model\UserGetUsergroupexternalsV1Response
+```
+
+Get User's Usergroupexternals
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectUserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiUserID = 56; // int
+
+try {
+    $result = $apiInstance->userGetUsergroupexternalsV1($pkiUserID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectUserApi->userGetUsergroupexternalsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiUserID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\UserGetUsergroupexternalsV1Response**](../Model/UserGetUsergroupexternalsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `userGetUsergroupsV1()`
+
+```php
+userGetUsergroupsV1($pkiUserID): \eZmaxAPI\Model\UserGetUsergroupsV1Response
+```
+
+Get User's Usergroups
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectUserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiUserID = 56; // int
+
+try {
+    $result = $apiInstance->userGetUsergroupsV1($pkiUserID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectUserApi->userGetUsergroupsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiUserID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\UserGetUsergroupsV1Response**](../Model/UserGetUsergroupsV1Response.md)
 
 ### Authorization
 

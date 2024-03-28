@@ -6,8 +6,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | ------------- | ------------- | ------------- |
 | [**ezsigntemplateCopyV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateCopyV1) | **POST** /1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy | Copy the Ezsigntemplate |
 | [**ezsigntemplateCreateObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateCreateObjectV1) | **POST** /1/object/ezsigntemplate | Create a new Ezsigntemplate |
+| [**ezsigntemplateCreateObjectV2()**](ObjectEzsigntemplateApi.md#ezsigntemplateCreateObjectV2) | **POST** /2/object/ezsigntemplate | Create a new Ezsigntemplate |
 | [**ezsigntemplateDeleteObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateDeleteObjectV1) | **DELETE** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Delete an existing Ezsigntemplate |
 | [**ezsigntemplateEditObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateEditObjectV1) | **PUT** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate |
+| [**ezsigntemplateEditObjectV2()**](ObjectEzsigntemplateApi.md#ezsigntemplateEditObjectV2) | **PUT** /2/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate |
 | [**ezsigntemplateGetAutocompleteV2()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetAutocompleteV2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs |
 | [**ezsigntemplateGetListV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetListV1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list |
 | [**ezsigntemplateGetObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV1) | **GET** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate |
@@ -140,6 +142,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigntemplateCreateObjectV2()`
+
+```php
+ezsigntemplateCreateObjectV2($ezsigntemplateCreateObjectV2Request): \eZmaxAPI\Model\EzsigntemplateCreateObjectV2Response
+```
+
+Create a new Ezsigntemplate
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ezsigntemplateCreateObjectV2Request = new \eZmaxAPI\Model\EzsigntemplateCreateObjectV2Request(); // \eZmaxAPI\Model\EzsigntemplateCreateObjectV2Request
+
+try {
+    $result = $apiInstance->ezsigntemplateCreateObjectV2($ezsigntemplateCreateObjectV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateCreateObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigntemplateCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsigntemplateCreateObjectV2Request**](../Model/EzsigntemplateCreateObjectV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplateCreateObjectV2Response**](../Model/EzsigntemplateCreateObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `ezsigntemplateDeleteObjectV1()`
 
 ```php
@@ -252,6 +316,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigntemplateEditObjectV1Response**](../Model/EzsigntemplateEditObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigntemplateEditObjectV2()`
+
+```php
+ezsigntemplateEditObjectV2($pkiEzsigntemplateID, $ezsigntemplateEditObjectV2Request): \eZmaxAPI\Model\EzsigntemplateEditObjectV2Response
+```
+
+Edit an existing Ezsigntemplate
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigntemplateID = 56; // int
+$ezsigntemplateEditObjectV2Request = new \eZmaxAPI\Model\EzsigntemplateEditObjectV2Request(); // \eZmaxAPI\Model\EzsigntemplateEditObjectV2Request
+
+try {
+    $result = $apiInstance->ezsigntemplateEditObjectV2($pkiEzsigntemplateID, $ezsigntemplateEditObjectV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateEditObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplateID** | **int**|  | |
+| **ezsigntemplateEditObjectV2Request** | [**\eZmaxAPI\Model\EzsigntemplateEditObjectV2Request**](../Model/EzsigntemplateEditObjectV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplateEditObjectV2Response**](../Model/EzsigntemplateEditObjectV2Response.md)
 
 ### Authorization
 

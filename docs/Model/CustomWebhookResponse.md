@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **bWebhookIssigned** | **bool** | Whether the requests will be signed or not |
 **bWebhookSkipsslvalidation** | **bool** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |
 **objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
+**sWebhookEvent** | **string** | The concatenated string to describe the Webhook event | [optional]
+**aObjWebhookheader** | [**\eZmaxAPI\Model\WebhookheaderResponseCompound[]**](WebhookheaderResponseCompound.md) |  | [optional]
 **pksCustomerCode** | **string** | The customer code assigned to your account |
 **bWebhookTest** | **bool** | Wheter the webhook received is a manual test or a real event |
 
