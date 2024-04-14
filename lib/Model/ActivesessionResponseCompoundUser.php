@@ -353,12 +353,22 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
             $invalidProperties[] = "invalid value for 'fkiTimezoneID', must be bigger than or equal to 0.";
         }
 
+//        if (!is_null($this->container['sAvatarUrl']) && !preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sAvatarUrl'])) {
+        if (!is_null($this->container['sAvatarUrl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sAvatarUrl'])) {
+            $invalidProperties[] = "invalid value for 'sAvatarUrl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
+        }
+
         if ($this->container['sUserFirstname'] === null) {
             $invalidProperties[] = "'sUserFirstname' can't be null";
         }
         if ($this->container['sUserLastname'] === null) {
             $invalidProperties[] = "'sUserLastname' can't be null";
         }
+//        if (!is_null($this->container['sEmailAddress']) && !preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddress'])) {
+        if (!is_null($this->container['sEmailAddress']) && !preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddress'])) {
+            $invalidProperties[] = "invalid value for 'sEmailAddress', must be conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.";
+        }
+
         if ($this->container['eUserEzsignsendreminderfrequency'] === null) {
             $invalidProperties[] = "'eUserEzsignsendreminderfrequency' can't be null";
         }
@@ -495,6 +505,12 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
         //if (is_null($sAvatarUrl)) {
             //throw new \InvalidArgumentException('non-nullable sAvatarUrl cannot be null');
         //}
+
+//        if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sAvatarUrl)))) {
+        if (!is_null($sAvatarUrl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sAvatarUrl)))) {
+            throw new \InvalidArgumentException("invalid value for \$sAvatarUrl when calling ActivesessionResponseCompoundUser., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sAvatarUrl'] = $sAvatarUrl;
@@ -588,6 +604,12 @@ class ActivesessionResponseCompoundUser implements ModelInterface, ArrayAccess, 
         //if (is_null($sEmailAddress)) {
             //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
         //}
+
+//        if ((!preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddress)))) {
+        if (!is_null($sEmailAddress) && (!preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddress)))) {
+            throw new \InvalidArgumentException("invalid value for \$sEmailAddress when calling ActivesessionResponseCompoundUser., must conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;

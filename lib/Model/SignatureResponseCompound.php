@@ -297,9 +297,9 @@ class SignatureResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['sSignatureUrl'] === null) {
             $invalidProperties[] = "'sSignatureUrl' can't be null";
         }
-//        if (!preg_match("/^.{0,2048}$/", $this->container['sSignatureUrl'])) {
-        if (!is_null($this->container['sSignatureUrl']) && !preg_match("/(*UTF8)^.{0,2048}$/", $this->container['sSignatureUrl'])) {
-            $invalidProperties[] = "invalid value for 'sSignatureUrl', must be conform to the pattern /^.{0,2048}$/.";
+//        if (!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sSignatureUrl'])) {
+        if (!is_null($this->container['sSignatureUrl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sSignatureUrl'])) {
+            $invalidProperties[] = "invalid value for 'sSignatureUrl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
         }
 
         return $invalidProperties;
@@ -382,9 +382,9 @@ class SignatureResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
             //throw new \InvalidArgumentException('non-nullable sSignatureUrl cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,2048}$/", ObjectSerializer::toString($sSignatureUrl)))) {
-        if (!is_null($sSignatureUrl) && (!preg_match("/(*UTF8)^.{0,2048}$/", ObjectSerializer::toString($sSignatureUrl)))) {
-            throw new \InvalidArgumentException("invalid value for \$sSignatureUrl when calling SignatureResponseCompound., must conform to the pattern /^.{0,2048}$/.");
+//        if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sSignatureUrl)))) {
+        if (!is_null($sSignatureUrl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sSignatureUrl)))) {
+            throw new \InvalidArgumentException("invalid value for \$sSignatureUrl when calling SignatureResponseCompound., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
         }
 
         

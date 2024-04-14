@@ -282,6 +282,11 @@ class ScimEmail implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+//        if (!is_null($this->container['value']) && !preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['value'])) {
+        if (!is_null($this->container['value']) && !preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['value'])) {
+            $invalidProperties[] = "invalid value for 'value', must be conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -320,6 +325,12 @@ class ScimEmail implements ModelInterface, ArrayAccess, \JsonSerializable
         //if (is_null($value)) {
             //throw new \InvalidArgumentException('non-nullable value cannot be null');
         //}
+
+//        if ((!preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($value)))) {
+        if (!is_null($value) && (!preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($value)))) {
+            throw new \InvalidArgumentException("invalid value for \$value when calling ScimEmail., must conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['value'] = $value;

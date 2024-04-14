@@ -301,6 +301,11 @@ class CommonResponseErrorSTemporaryFileUrl implements ModelInterface, ArrayAcces
         if ($this->container['eErrorCode'] === null) {
             $invalidProperties[] = "'eErrorCode' can't be null";
         }
+//        if (!is_null($this->container['sTemporaryFileUrl']) && !preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sTemporaryFileUrl'])) {
+        if (!is_null($this->container['sTemporaryFileUrl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sTemporaryFileUrl'])) {
+            $invalidProperties[] = "invalid value for 'sTemporaryFileUrl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -407,6 +412,12 @@ class CommonResponseErrorSTemporaryFileUrl implements ModelInterface, ArrayAcces
         //if (is_null($sTemporaryFileUrl)) {
             //throw new \InvalidArgumentException('non-nullable sTemporaryFileUrl cannot be null');
         //}
+
+//        if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sTemporaryFileUrl)))) {
+        if (!is_null($sTemporaryFileUrl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sTemporaryFileUrl)))) {
+            throw new \InvalidArgumentException("invalid value for \$sTemporaryFileUrl when calling CommonResponseErrorSTemporaryFileUrl., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sTemporaryFileUrl'] = $sTemporaryFileUrl;

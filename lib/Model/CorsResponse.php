@@ -311,9 +311,9 @@ class CorsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['sCorsEntryurl'] === null) {
             $invalidProperties[] = "'sCorsEntryurl' can't be null";
         }
-//        if (!preg_match("/^.{0,2048}$/", $this->container['sCorsEntryurl'])) {
-        if (!is_null($this->container['sCorsEntryurl']) && !preg_match("/(*UTF8)^.{0,2048}$/", $this->container['sCorsEntryurl'])) {
-            $invalidProperties[] = "invalid value for 'sCorsEntryurl', must be conform to the pattern /^.{0,2048}$/.";
+//        if (!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sCorsEntryurl'])) {
+        if (!is_null($this->container['sCorsEntryurl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sCorsEntryurl'])) {
+            $invalidProperties[] = "invalid value for 'sCorsEntryurl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
         }
 
         return $invalidProperties;
@@ -433,9 +433,9 @@ class CorsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             //throw new \InvalidArgumentException('non-nullable sCorsEntryurl cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,2048}$/", ObjectSerializer::toString($sCorsEntryurl)))) {
-        if (!is_null($sCorsEntryurl) && (!preg_match("/(*UTF8)^.{0,2048}$/", ObjectSerializer::toString($sCorsEntryurl)))) {
-            throw new \InvalidArgumentException("invalid value for \$sCorsEntryurl when calling CorsResponse., must conform to the pattern /^.{0,2048}$/.");
+//        if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sCorsEntryurl)))) {
+        if (!is_null($sCorsEntryurl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sCorsEntryurl)))) {
+            throw new \InvalidArgumentException("invalid value for \$sCorsEntryurl when calling CorsResponse., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
         }
 
         

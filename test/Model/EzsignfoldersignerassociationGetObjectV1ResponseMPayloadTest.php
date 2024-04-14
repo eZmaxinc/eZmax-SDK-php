@@ -126,6 +126,15 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayloadTest extends TestC
     }
 
     /**
+     * Test attribute "bEzsignfoldersignerassociationAllowsigninginperson"
+     */
+    public function testPropertyBEzsignfoldersignerassociationAllowsigninginperson()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "objEzsignsignergroup"
      */
     public function testPropertyObjEzsignsignergroup()

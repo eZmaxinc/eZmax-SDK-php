@@ -627,6 +627,16 @@ class EzsignfoldertypeResponseV3 implements ModelInterface, ArrayAccess, \JsonSe
         if ($this->container['sBrandingDescriptionX'] === null) {
             $invalidProperties[] = "'sBrandingDescriptionX' can't be null";
         }
+//        if (!is_null($this->container['sEmailAddressSigned']) && !preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddressSigned'])) {
+        if (!is_null($this->container['sEmailAddressSigned']) && !preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddressSigned'])) {
+            $invalidProperties[] = "invalid value for 'sEmailAddressSigned', must be conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.";
+        }
+
+//        if (!is_null($this->container['sEmailAddressSummary']) && !preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddressSummary'])) {
+        if (!is_null($this->container['sEmailAddressSummary']) && !preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddressSummary'])) {
+            $invalidProperties[] = "invalid value for 'sEmailAddressSummary', must be conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.";
+        }
+
         if ($this->container['eEzsignfoldertypePrivacylevel'] === null) {
             $invalidProperties[] = "'eEzsignfoldertypePrivacylevel' can't be null";
         }
@@ -1008,6 +1018,12 @@ class EzsignfoldertypeResponseV3 implements ModelInterface, ArrayAccess, \JsonSe
         //if (is_null($sEmailAddressSigned)) {
             //throw new \InvalidArgumentException('non-nullable sEmailAddressSigned cannot be null');
         //}
+
+//        if ((!preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddressSigned)))) {
+        if (!is_null($sEmailAddressSigned) && (!preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddressSigned)))) {
+            throw new \InvalidArgumentException("invalid value for \$sEmailAddressSigned when calling EzsignfoldertypeResponseV3., must conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddressSigned'] = $sEmailAddressSigned;
@@ -1039,6 +1055,12 @@ class EzsignfoldertypeResponseV3 implements ModelInterface, ArrayAccess, \JsonSe
         //if (is_null($sEmailAddressSummary)) {
             //throw new \InvalidArgumentException('non-nullable sEmailAddressSummary cannot be null');
         //}
+
+//        if ((!preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddressSummary)))) {
+        if (!is_null($sEmailAddressSummary) && (!preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddressSummary)))) {
+            throw new \InvalidArgumentException("invalid value for \$sEmailAddressSummary when calling EzsignfoldertypeResponseV3., must conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddressSummary'] = $sEmailAddressSummary;

@@ -117,6 +117,15 @@ class CommonResponseObjDebugPayloadGetListTest extends TestCase
     }
 
     /**
+     * Test attribute "dtResponseDate"
+     */
+    public function testPropertyDtResponseDate()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "aFilter"
      */
     public function testPropertyAFilter()

@@ -63,6 +63,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
         'iVersionMax' => 'int',
         'aRequiredPermission' => 'int[]',
         'bVersionDeprecated' => 'bool',
+        'dtResponseDate' => 'string',
         'aFilter' => '\eZmaxAPI\Model\CommonResponseFilter',
         'aOrderBy' => 'array<string,string>',
         'iRowMax' => 'int',
@@ -81,6 +82,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
         'iVersionMax' => null,
         'aRequiredPermission' => null,
         'bVersionDeprecated' => null,
+        'dtResponseDate' => null,
         'aFilter' => null,
         'aOrderBy' => null,
         'iRowMax' => null,
@@ -97,6 +99,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
 		'iVersionMax' => false,
 		'aRequiredPermission' => false,
 		'bVersionDeprecated' => false,
+		'dtResponseDate' => false,
 		'aFilter' => false,
 		'aOrderBy' => false,
 		'iRowMax' => false,
@@ -193,6 +196,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
         'iVersionMax' => 'iVersionMax',
         'aRequiredPermission' => 'a_RequiredPermission',
         'bVersionDeprecated' => 'bVersionDeprecated',
+        'dtResponseDate' => 'dtResponseDate',
         'aFilter' => 'a_Filter',
         'aOrderBy' => 'a_OrderBy',
         'iRowMax' => 'iRowMax',
@@ -209,6 +213,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
         'iVersionMax' => 'setIVersionMax',
         'aRequiredPermission' => 'setARequiredPermission',
         'bVersionDeprecated' => 'setBVersionDeprecated',
+        'dtResponseDate' => 'setDtResponseDate',
         'aFilter' => 'setAFilter',
         'aOrderBy' => 'setAOrderBy',
         'iRowMax' => 'setIRowMax',
@@ -225,6 +230,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
         'iVersionMax' => 'getIVersionMax',
         'aRequiredPermission' => 'getARequiredPermission',
         'bVersionDeprecated' => 'getBVersionDeprecated',
+        'dtResponseDate' => 'getDtResponseDate',
         'aFilter' => 'getAFilter',
         'aOrderBy' => 'getAOrderBy',
         'iRowMax' => 'getIRowMax',
@@ -292,6 +298,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
         $this->setIfExists('iVersionMax', $data ?? [], null);
         $this->setIfExists('aRequiredPermission', $data ?? [], null);
         $this->setIfExists('bVersionDeprecated', $data ?? [], null);
+        $this->setIfExists('dtResponseDate', $data ?? [], null);
         $this->setIfExists('aFilter', $data ?? [], null);
         $this->setIfExists('aOrderBy', $data ?? [], null);
         $this->setIfExists('iRowMax', $data ?? [], null);
@@ -336,6 +343,9 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
         }
         if ($this->container['bVersionDeprecated'] === null) {
             $invalidProperties[] = "'bVersionDeprecated' can't be null";
+        }
+        if ($this->container['dtResponseDate'] === null) {
+            $invalidProperties[] = "'dtResponseDate' can't be null";
         }
         if ($this->container['aFilter'] === null) {
             $invalidProperties[] = "'aFilter' can't be null";
@@ -496,6 +506,37 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bVersionDeprecated'] = $bVersionDeprecated;
         $this->container['bVersionDeprecated'] = (is_null($bVersionDeprecated) ? null : (bool) $bVersionDeprecated);
+
+        return $this;
+    }
+
+    /**
+     * Gets dtResponseDate
+     *
+     * @return string
+     */
+    public function getDtResponseDate()
+    {
+        return is_null($this->container['dtResponseDate']) ? null : trim($this->container['dtResponseDate']);
+    }
+
+    /**
+     * Sets dtResponseDate
+     *
+     * @param string $dtResponseDate Represent a Date Time. The timezone is the one configured in the User's profile.
+     *
+     * @return self
+     */
+    public function setDtResponseDate($dtResponseDate)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($dtResponseDate)) {
+            //throw new \InvalidArgumentException('non-nullable dtResponseDate cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['dtResponseDate'] = $dtResponseDate;
+        $this->container['dtResponseDate'] = (is_null($dtResponseDate) ? null : trim((string) $dtResponseDate));
 
         return $this;
     }

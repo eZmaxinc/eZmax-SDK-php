@@ -348,6 +348,11 @@ class WebhookListElement implements ModelInterface, ArrayAccess, \JsonSerializab
         if ($this->container['sWebhookUrl'] === null) {
             $invalidProperties[] = "'sWebhookUrl' can't be null";
         }
+//        if (!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sWebhookUrl'])) {
+        if (!is_null($this->container['sWebhookUrl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sWebhookUrl'])) {
+            $invalidProperties[] = "invalid value for 'sWebhookUrl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
+        }
+
         if ($this->container['sWebhookEvent'] === null) {
             $invalidProperties[] = "'sWebhookEvent' can't be null";
         }
@@ -463,6 +468,12 @@ class WebhookListElement implements ModelInterface, ArrayAccess, \JsonSerializab
         //if (is_null($sWebhookUrl)) {
             //throw new \InvalidArgumentException('non-nullable sWebhookUrl cannot be null');
         //}
+
+//        if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sWebhookUrl)))) {
+        if (!is_null($sWebhookUrl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sWebhookUrl)))) {
+            throw new \InvalidArgumentException("invalid value for \$sWebhookUrl when calling WebhookListElement., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sWebhookUrl'] = $sWebhookUrl;

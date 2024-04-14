@@ -421,6 +421,11 @@ class BrandingResponseCompound implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'sBrandingName', must be conform to the pattern /^.{0,55}$/.";
         }
 
+//        if (!is_null($this->container['sEmailAddress']) && !preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddress'])) {
+        if (!is_null($this->container['sEmailAddress']) && !preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddress'])) {
+            $invalidProperties[] = "invalid value for 'sEmailAddress', must be conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.";
+        }
+
         if ($this->container['eBrandingLogo'] === null) {
             $invalidProperties[] = "'eBrandingLogo' can't be null";
         }
@@ -501,6 +506,16 @@ class BrandingResponseCompound implements ModelInterface, ArrayAccess, \JsonSeri
         if ($this->container['bBrandingIsactive'] === null) {
             $invalidProperties[] = "'bBrandingIsactive' can't be null";
         }
+//        if (!is_null($this->container['sBrandingLogourl']) && !preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sBrandingLogourl'])) {
+        if (!is_null($this->container['sBrandingLogourl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sBrandingLogourl'])) {
+            $invalidProperties[] = "invalid value for 'sBrandingLogourl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
+        }
+
+//        if (!is_null($this->container['sBrandingLogointerfaceurl']) && !preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sBrandingLogointerfaceurl'])) {
+        if (!is_null($this->container['sBrandingLogointerfaceurl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sBrandingLogointerfaceurl'])) {
+            $invalidProperties[] = "invalid value for 'sBrandingLogointerfaceurl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -716,6 +731,12 @@ class BrandingResponseCompound implements ModelInterface, ArrayAccess, \JsonSeri
         //if (is_null($sEmailAddress)) {
             //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
         //}
+
+//        if ((!preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddress)))) {
+        if (!is_null($sEmailAddress) && (!preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddress)))) {
+            throw new \InvalidArgumentException("invalid value for \$sEmailAddress when calling BrandingResponseCompound., must conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sEmailAddress'] = $sEmailAddress;
@@ -1127,6 +1148,12 @@ class BrandingResponseCompound implements ModelInterface, ArrayAccess, \JsonSeri
         //if (is_null($sBrandingLogourl)) {
             //throw new \InvalidArgumentException('non-nullable sBrandingLogourl cannot be null');
         //}
+
+//        if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sBrandingLogourl)))) {
+        if (!is_null($sBrandingLogourl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sBrandingLogourl)))) {
+            throw new \InvalidArgumentException("invalid value for \$sBrandingLogourl when calling BrandingResponseCompound., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBrandingLogourl'] = $sBrandingLogourl;
@@ -1158,6 +1185,12 @@ class BrandingResponseCompound implements ModelInterface, ArrayAccess, \JsonSeri
         //if (is_null($sBrandingLogointerfaceurl)) {
             //throw new \InvalidArgumentException('non-nullable sBrandingLogointerfaceurl cannot be null');
         //}
+
+//        if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sBrandingLogointerfaceurl)))) {
+        if (!is_null($sBrandingLogointerfaceurl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sBrandingLogointerfaceurl)))) {
+            throw new \InvalidArgumentException("invalid value for \$sBrandingLogointerfaceurl when calling BrandingResponseCompound., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sBrandingLogointerfaceurl'] = $sBrandingLogointerfaceurl;

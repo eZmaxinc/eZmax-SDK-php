@@ -535,9 +535,9 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'iEzsigndocumentSignaturetotal', must be bigger than or equal to 0.";
         }
 
-//        if (!is_null($this->container['sEzsigndocumentExternalid']) && !preg_match("/^.{0,64}$/", $this->container['sEzsigndocumentExternalid'])) {
-        if (!is_null($this->container['sEzsigndocumentExternalid']) && !preg_match("/(*UTF8)^.{0,64}$/", $this->container['sEzsigndocumentExternalid'])) {
-            $invalidProperties[] = "invalid value for 'sEzsigndocumentExternalid', must be conform to the pattern /^.{0,64}$/.";
+//        if (!is_null($this->container['sEzsigndocumentExternalid']) && !preg_match("/^.{0,128}$/", $this->container['sEzsigndocumentExternalid'])) {
+        if (!is_null($this->container['sEzsigndocumentExternalid']) && !preg_match("/(*UTF8)^.{0,128}$/", $this->container['sEzsigndocumentExternalid'])) {
+            $invalidProperties[] = "invalid value for 'sEzsigndocumentExternalid', must be conform to the pattern /^.{0,128}$/.";
         }
 
         if ($this->container['iEzsigndocumentEzsignsignatureattachmenttotal'] === null) {
@@ -1279,9 +1279,9 @@ class EzsigndocumentResponseCompound implements ModelInterface, ArrayAccess, \Js
             //throw new \InvalidArgumentException('non-nullable sEzsigndocumentExternalid cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,64}$/", ObjectSerializer::toString($sEzsigndocumentExternalid)))) {
-        if (!is_null($sEzsigndocumentExternalid) && (!preg_match("/(*UTF8)^.{0,64}$/", ObjectSerializer::toString($sEzsigndocumentExternalid)))) {
-            throw new \InvalidArgumentException("invalid value for \$sEzsigndocumentExternalid when calling EzsigndocumentResponseCompound., must conform to the pattern /^.{0,64}$/.");
+//        if ((!preg_match("/^.{0,128}$/", ObjectSerializer::toString($sEzsigndocumentExternalid)))) {
+        if (!is_null($sEzsigndocumentExternalid) && (!preg_match("/(*UTF8)^.{0,128}$/", ObjectSerializer::toString($sEzsigndocumentExternalid)))) {
+            throw new \InvalidArgumentException("invalid value for \$sEzsigndocumentExternalid when calling EzsigndocumentResponseCompound., must conform to the pattern /^.{0,128}$/.");
         }
 
         

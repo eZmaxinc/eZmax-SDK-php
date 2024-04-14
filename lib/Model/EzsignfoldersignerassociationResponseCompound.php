@@ -64,6 +64,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
         'bEzsignfoldersignerassociationDelayedsend' => 'bool',
         'bEzsignfoldersignerassociationReceivecopy' => 'bool',
         'tEzsignfoldersignerassociationMessage' => 'string',
+        'bEzsignfoldersignerassociationAllowsigninginperson' => 'bool',
         'objEzsignsignergroup' => '\eZmaxAPI\Model\EzsignsignergroupResponseCompound',
         'objUser' => '\eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser',
         'objEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerResponseCompound'
@@ -82,6 +83,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
         'bEzsignfoldersignerassociationDelayedsend' => null,
         'bEzsignfoldersignerassociationReceivecopy' => null,
         'tEzsignfoldersignerassociationMessage' => null,
+        'bEzsignfoldersignerassociationAllowsigninginperson' => null,
         'objEzsignsignergroup' => null,
         'objUser' => null,
         'objEzsignsigner' => null
@@ -98,6 +100,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
 		'bEzsignfoldersignerassociationDelayedsend' => false,
 		'bEzsignfoldersignerassociationReceivecopy' => false,
 		'tEzsignfoldersignerassociationMessage' => false,
+		'bEzsignfoldersignerassociationAllowsigninginperson' => false,
 		'objEzsignsignergroup' => false,
 		'objUser' => false,
 		'objEzsignsigner' => false
@@ -194,6 +197,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
         'bEzsignfoldersignerassociationDelayedsend' => 'bEzsignfoldersignerassociationDelayedsend',
         'bEzsignfoldersignerassociationReceivecopy' => 'bEzsignfoldersignerassociationReceivecopy',
         'tEzsignfoldersignerassociationMessage' => 'tEzsignfoldersignerassociationMessage',
+        'bEzsignfoldersignerassociationAllowsigninginperson' => 'bEzsignfoldersignerassociationAllowsigninginperson',
         'objEzsignsignergroup' => 'objEzsignsignergroup',
         'objUser' => 'objUser',
         'objEzsignsigner' => 'objEzsignsigner'
@@ -210,6 +214,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
         'bEzsignfoldersignerassociationDelayedsend' => 'setBEzsignfoldersignerassociationDelayedsend',
         'bEzsignfoldersignerassociationReceivecopy' => 'setBEzsignfoldersignerassociationReceivecopy',
         'tEzsignfoldersignerassociationMessage' => 'setTEzsignfoldersignerassociationMessage',
+        'bEzsignfoldersignerassociationAllowsigninginperson' => 'setBEzsignfoldersignerassociationAllowsigninginperson',
         'objEzsignsignergroup' => 'setObjEzsignsignergroup',
         'objUser' => 'setObjUser',
         'objEzsignsigner' => 'setObjEzsignsigner'
@@ -226,6 +231,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
         'bEzsignfoldersignerassociationDelayedsend' => 'getBEzsignfoldersignerassociationDelayedsend',
         'bEzsignfoldersignerassociationReceivecopy' => 'getBEzsignfoldersignerassociationReceivecopy',
         'tEzsignfoldersignerassociationMessage' => 'getTEzsignfoldersignerassociationMessage',
+        'bEzsignfoldersignerassociationAllowsigninginperson' => 'getBEzsignfoldersignerassociationAllowsigninginperson',
         'objEzsignsignergroup' => 'getObjEzsignsignergroup',
         'objUser' => 'getObjUser',
         'objEzsignsigner' => 'getObjEzsignsigner'
@@ -293,6 +299,7 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
         $this->setIfExists('bEzsignfoldersignerassociationDelayedsend', $data ?? [], null);
         $this->setIfExists('bEzsignfoldersignerassociationReceivecopy', $data ?? [], null);
         $this->setIfExists('tEzsignfoldersignerassociationMessage', $data ?? [], null);
+        $this->setIfExists('bEzsignfoldersignerassociationAllowsigninginperson', $data ?? [], null);
         $this->setIfExists('objEzsignsignergroup', $data ?? [], null);
         $this->setIfExists('objUser', $data ?? [], null);
         $this->setIfExists('objEzsignsigner', $data ?? [], null);
@@ -347,6 +354,9 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
         }
         if ($this->container['tEzsignfoldersignerassociationMessage'] === null) {
             $invalidProperties[] = "'tEzsignfoldersignerassociationMessage' can't be null";
+        }
+        if ($this->container['bEzsignfoldersignerassociationAllowsigninginperson'] === null) {
+            $invalidProperties[] = "'bEzsignfoldersignerassociationAllowsigninginperson' can't be null";
         }
         return $invalidProperties;
     }
@@ -526,6 +536,37 @@ class EzsignfoldersignerassociationResponseCompound implements ModelInterface, A
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['tEzsignfoldersignerassociationMessage'] = $tEzsignfoldersignerassociationMessage;
         $this->container['tEzsignfoldersignerassociationMessage'] = (is_null($tEzsignfoldersignerassociationMessage) ? null : trim((string) $tEzsignfoldersignerassociationMessage));
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsignfoldersignerassociationAllowsigninginperson
+     *
+     * @return bool
+     */
+    public function getBEzsignfoldersignerassociationAllowsigninginperson()
+    {
+        return $this->container['bEzsignfoldersignerassociationAllowsigninginperson'];
+    }
+
+    /**
+     * Sets bEzsignfoldersignerassociationAllowsigninginperson
+     *
+     * @param bool $bEzsignfoldersignerassociationAllowsigninginperson If the Ezsignfoldersignerassociation is allowed to sign in person or not
+     *
+     * @return self
+     */
+    public function setBEzsignfoldersignerassociationAllowsigninginperson($bEzsignfoldersignerassociationAllowsigninginperson)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bEzsignfoldersignerassociationAllowsigninginperson)) {
+            //throw new \InvalidArgumentException('non-nullable bEzsignfoldersignerassociationAllowsigninginperson cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfoldersignerassociationAllowsigninginperson'] = $bEzsignfoldersignerassociationAllowsigninginperson;
+        $this->container['bEzsignfoldersignerassociationAllowsigninginperson'] = (is_null($bEzsignfoldersignerassociationAllowsigninginperson) ? null : (bool) $bEzsignfoldersignerassociationAllowsigninginperson);
 
         return $this;
     }

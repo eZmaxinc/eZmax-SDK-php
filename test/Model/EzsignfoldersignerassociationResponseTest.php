@@ -124,4 +124,13 @@ class EzsignfoldersignerassociationResponseTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "bEzsignfoldersignerassociationAllowsigninginperson"
+     */
+    public function testPropertyBEzsignfoldersignerassociationAllowsigninginperson()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

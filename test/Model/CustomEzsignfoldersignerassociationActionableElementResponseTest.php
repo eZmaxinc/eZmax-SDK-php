@@ -126,6 +126,15 @@ class CustomEzsignfoldersignerassociationActionableElementResponseTest extends T
     }
 
     /**
+     * Test attribute "bEzsignfoldersignerassociationAllowsigninginperson"
+     */
+    public function testPropertyBEzsignfoldersignerassociationAllowsigninginperson()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "objEzsignsignergroup"
      */
     public function testPropertyObjEzsignsignergroup()

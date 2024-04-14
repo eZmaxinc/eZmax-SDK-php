@@ -111,7 +111,7 @@ class ObjectEzsignfoldertypeApi
         ],
         'ezsignfoldertypeEditObjectV1' => [
             'permissions' => [
-                'ElectronicSignature_CreationModificationFolderTypes',
+                'All',
             ],
             'usertypeextra' => [
             ],
@@ -122,7 +122,7 @@ class ObjectEzsignfoldertypeApi
         ],
         'ezsignfoldertypeEditObjectV2' => [
             'permissions' => [
-                'ElectronicSignature_CreationModificationFolderTypes',
+                'All',
             ],
             'usertypeextra' => [
             ],
@@ -144,7 +144,7 @@ class ObjectEzsignfoldertypeApi
         ],
         'ezsignfoldertypeGetListV1' => [
             'permissions' => [
-                'ElectronicSignature_CreationModificationFolderTypes',
+                'All',
             ],
             'usertypeextra' => [
             ],

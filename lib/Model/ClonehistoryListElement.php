@@ -387,9 +387,9 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['sUserLoginnameCloning'] === null) {
             $invalidProperties[] = "'sUserLoginnameCloning' can't be null";
         }
-//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloning'])) {
-        if (!is_null($this->container['sUserLoginnameCloning']) && !preg_match("/(*UTF8)^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloning'])) {
-            $invalidProperties[] = "invalid value for 'sUserLoginnameCloning', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.";
+//        if (!preg_match("/^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloning'])) {
+        if (!is_null($this->container['sUserLoginnameCloning']) && !preg_match("/(*UTF8)^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloning'])) {
+            $invalidProperties[] = "invalid value for 'sUserLoginnameCloning', must be conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.";
         }
 
         if ($this->container['sUserFirstnameCloning'] === null) {
@@ -401,9 +401,9 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['sUserLoginnameCloned'] === null) {
             $invalidProperties[] = "'sUserLoginnameCloned' can't be null";
         }
-//        if (!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloned'])) {
-        if (!is_null($this->container['sUserLoginnameCloned']) && !preg_match("/(*UTF8)^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloned'])) {
-            $invalidProperties[] = "invalid value for 'sUserLoginnameCloned', must be conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.";
+//        if (!preg_match("/^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloned'])) {
+        if (!is_null($this->container['sUserLoginnameCloned']) && !preg_match("/(*UTF8)^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginnameCloned'])) {
+            $invalidProperties[] = "invalid value for 'sUserLoginnameCloned', must be conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.";
         }
 
         if ($this->container['sUserFirstnameCloned'] === null) {
@@ -640,9 +640,9 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable sUserLoginnameCloning cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
-        if (!is_null($sUserLoginnameCloning) && (!preg_match("/(*UTF8)^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
-            throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloning when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.");
+//        if ((!preg_match("/^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
+        if (!is_null($sUserLoginnameCloning) && (!preg_match("/(*UTF8)^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloning)))) {
+            throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloning when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
         }
 
         
@@ -739,9 +739,9 @@ class ClonehistoryListElement implements ModelInterface, ArrayAccess, \JsonSeria
             //throw new \InvalidArgumentException('non-nullable sUserLoginnameCloned cannot be null');
         //}
 
-//        if ((!preg_match("/^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
-        if (!is_null($sUserLoginnameCloned) && (!preg_match("/(*UTF8)^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
-            throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloned when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w\\.-]+@[\\w\\.-]+\\.\\w{2,20})|([a-zA-Z0-9]){1,32})$/.");
+//        if ((!preg_match("/^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
+        if (!is_null($sUserLoginnameCloned) && (!preg_match("/(*UTF8)^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginnameCloned)))) {
+            throw new \InvalidArgumentException("invalid value for \$sUserLoginnameCloned when calling ClonehistoryListElement., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
         }
 
         

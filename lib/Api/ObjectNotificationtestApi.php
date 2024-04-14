@@ -85,6 +85,7 @@ class ObjectNotificationtestApi
                 'All',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',

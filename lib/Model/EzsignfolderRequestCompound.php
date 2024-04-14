@@ -347,9 +347,9 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['eEzsignfolderSendreminderfrequency'] === null) {
             $invalidProperties[] = "'eEzsignfolderSendreminderfrequency' can't be null";
         }
-//        if (!is_null($this->container['sEzsignfolderExternalid']) && !preg_match("/^.{0,64}$/", $this->container['sEzsignfolderExternalid'])) {
-        if (!is_null($this->container['sEzsignfolderExternalid']) && !preg_match("/(*UTF8)^.{0,64}$/", $this->container['sEzsignfolderExternalid'])) {
-            $invalidProperties[] = "invalid value for 'sEzsignfolderExternalid', must be conform to the pattern /^.{0,64}$/.";
+//        if (!is_null($this->container['sEzsignfolderExternalid']) && !preg_match("/^.{0,128}$/", $this->container['sEzsignfolderExternalid'])) {
+        if (!is_null($this->container['sEzsignfolderExternalid']) && !preg_match("/(*UTF8)^.{0,128}$/", $this->container['sEzsignfolderExternalid'])) {
+            $invalidProperties[] = "invalid value for 'sEzsignfolderExternalid', must be conform to the pattern /^.{0,128}$/.";
         }
 
         return $invalidProperties;
@@ -603,9 +603,9 @@ class EzsignfolderRequestCompound implements ModelInterface, ArrayAccess, \JsonS
             //throw new \InvalidArgumentException('non-nullable sEzsignfolderExternalid cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,64}$/", ObjectSerializer::toString($sEzsignfolderExternalid)))) {
-        if (!is_null($sEzsignfolderExternalid) && (!preg_match("/(*UTF8)^.{0,64}$/", ObjectSerializer::toString($sEzsignfolderExternalid)))) {
-            throw new \InvalidArgumentException("invalid value for \$sEzsignfolderExternalid when calling EzsignfolderRequestCompound., must conform to the pattern /^.{0,64}$/.");
+//        if ((!preg_match("/^.{0,128}$/", ObjectSerializer::toString($sEzsignfolderExternalid)))) {
+        if (!is_null($sEzsignfolderExternalid) && (!preg_match("/(*UTF8)^.{0,128}$/", ObjectSerializer::toString($sEzsignfolderExternalid)))) {
+            throw new \InvalidArgumentException("invalid value for \$sEzsignfolderExternalid when calling EzsignfolderRequestCompound., must conform to the pattern /^.{0,128}$/.");
         }
 
         

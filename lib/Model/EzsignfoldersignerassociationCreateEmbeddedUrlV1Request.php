@@ -290,14 +290,9 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
     {
         $invalidProperties = [];
 
-//        if (!is_null($this->container['sReturnUrl']) && !preg_match("/^.{0,2048}$/", $this->container['sReturnUrl'])) {
-        if (!is_null($this->container['sReturnUrl']) && !preg_match("/(*UTF8)^.{0,2048}$/", $this->container['sReturnUrl'])) {
-            $invalidProperties[] = "invalid value for 'sReturnUrl', must be conform to the pattern /^.{0,2048}$/.";
-        }
-
-//        if (!is_null($this->container['sIframedomain']) && !preg_match("/^.{0,2048}$/", $this->container['sIframedomain'])) {
-        if (!is_null($this->container['sIframedomain']) && !preg_match("/(*UTF8)^.{0,2048}$/", $this->container['sIframedomain'])) {
-            $invalidProperties[] = "invalid value for 'sIframedomain', must be conform to the pattern /^.{0,2048}$/.";
+//        if (!is_null($this->container['sReturnUrl']) && !preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sReturnUrl'])) {
+        if (!is_null($this->container['sReturnUrl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sReturnUrl'])) {
+            $invalidProperties[] = "invalid value for 'sReturnUrl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
         }
 
         return $invalidProperties;
@@ -339,9 +334,9 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
             //throw new \InvalidArgumentException('non-nullable sReturnUrl cannot be null');
         //}
 
-//        if ((!preg_match("/^.{0,2048}$/", ObjectSerializer::toString($sReturnUrl)))) {
-        if (!is_null($sReturnUrl) && (!preg_match("/(*UTF8)^.{0,2048}$/", ObjectSerializer::toString($sReturnUrl)))) {
-            throw new \InvalidArgumentException("invalid value for \$sReturnUrl when calling EzsignfoldersignerassociationCreateEmbeddedUrlV1Request., must conform to the pattern /^.{0,2048}$/.");
+//        if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sReturnUrl)))) {
+        if (!is_null($sReturnUrl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sReturnUrl)))) {
+            throw new \InvalidArgumentException("invalid value for \$sReturnUrl when calling EzsignfoldersignerassociationCreateEmbeddedUrlV1Request., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
         }
 
         
@@ -375,12 +370,6 @@ class EzsignfoldersignerassociationCreateEmbeddedUrlV1Request implements ModelIn
         //if (is_null($sIframedomain)) {
             //throw new \InvalidArgumentException('non-nullable sIframedomain cannot be null');
         //}
-
-//        if ((!preg_match("/^.{0,2048}$/", ObjectSerializer::toString($sIframedomain)))) {
-        if (!is_null($sIframedomain) && (!preg_match("/(*UTF8)^.{0,2048}$/", ObjectSerializer::toString($sIframedomain)))) {
-            throw new \InvalidArgumentException("invalid value for \$sIframedomain when calling EzsignfoldersignerassociationCreateEmbeddedUrlV1Request., must conform to the pattern /^.{0,2048}$/.");
-        }
-
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['sIframedomain'] = $sIframedomain;
