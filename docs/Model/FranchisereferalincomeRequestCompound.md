@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **tFranchisereferalincomeComment** | **string** | Comment about the transaction |
 **fkiFranchiseofficeID** | **int** | The unique ID of the Franchisereoffice |
 **sFranchisereferalincomeRemoteid** | **string** |  |
-**objAddress** | [**\eZmaxAPI\Model\AddressRequest**](AddressRequest.md) |  |
+**objAddress** | [**\eZmaxAPI\Model\AddressRequest**](AddressRequest.md) |  | [optional]
 **aObjContact** | [**\eZmaxAPI\Model\ContactRequestCompound[]**](ContactRequestCompound.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

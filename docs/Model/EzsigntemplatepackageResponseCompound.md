@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **bEzsigntemplatepackageNeedvalidation** | **bool** | Whether the Ezsignbulksend was automatically modified and needs a manual validation |
 **bEzsigntemplatepackageIsactive** | **bool** | Whether the Ezsigntemplatepackage is active or not |
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester |
+**bEzsigntemplatepackageEditallowed** | **bool** | Whether the Ezsigntemplatepackage if allowed to edit or not |
 **aObjEzsigntemplatepackagesigner** | [**\eZmaxAPI\Model\EzsigntemplatepackagesignerResponseCompound[]**](EzsigntemplatepackagesignerResponseCompound.md) |  |
 **aObjEzsigntemplatepackagemembership** | [**\eZmaxAPI\Model\EzsigntemplatepackagemembershipResponseCompound[]**](EzsigntemplatepackagemembershipResponseCompound.md) |  |
 

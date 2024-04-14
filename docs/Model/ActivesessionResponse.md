@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **bActivesessionDebug** | **bool** | Whether the active session is in debug or not |
 **bActivesessionIssuperadmin** | **bool** | Whether the active session is superadmin or not |
 **pksCustomerCode** | **string** | The customer code assigned to your account |
-**fkiSystemconfigurationtypeID** | **int** | The unique ID of the Systemconfigurationtype | [optional]
+**fkiSystemconfigurationtypeID** | **int** | The unique ID of the Systemconfigurationtype |
 **fkiSignatureID** | **int** | The unique ID of the Signature | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

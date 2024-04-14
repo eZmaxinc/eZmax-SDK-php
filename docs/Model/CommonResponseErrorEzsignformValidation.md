@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aObjEzsignformfielderror** | [**\eZmaxAPI\Model\CustomEzsignformfielderrorResponse[]**](CustomEzsignformfielderrorResponse.md) |  |
 **sErrorMessage** | **string** | The message giving details about the error |
 **eErrorCode** | [**\eZmaxAPI\Model\FieldEErrorCode**](FieldEErrorCode.md) |  |
+**aObjEzsignformfielderror** | [**\eZmaxAPI\Model\CustomEzsignformfielderrorResponse[]**](CustomEzsignformfielderrorResponse.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

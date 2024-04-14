@@ -4,19 +4,20 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**webhookCreateObjectV1()**](ObjectWebhookApi.md#webhookCreateObjectV1) | **POST** /1/object/webhook | Create a new Webhook |
+| [**webhookCreateObjectV2()**](ObjectWebhookApi.md#webhookCreateObjectV2) | **POST** /2/object/webhook | Create a new Webhook |
 | [**webhookDeleteObjectV1()**](ObjectWebhookApi.md#webhookDeleteObjectV1) | **DELETE** /1/object/webhook/{pkiWebhookID} | Delete an existing Webhook |
 | [**webhookEditObjectV1()**](ObjectWebhookApi.md#webhookEditObjectV1) | **PUT** /1/object/webhook/{pkiWebhookID} | Edit an existing Webhook |
 | [**webhookGetHistoryV1()**](ObjectWebhookApi.md#webhookGetHistoryV1) | **GET** /1/object/webhook/{pkiWebhookID}/getHistory | Retrieve the logs for recent Webhook calls |
 | [**webhookGetListV1()**](ObjectWebhookApi.md#webhookGetListV1) | **GET** /1/object/webhook/getList | Retrieve Webhook list |
 | [**webhookGetObjectV2()**](ObjectWebhookApi.md#webhookGetObjectV2) | **GET** /2/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook |
+| [**webhookRegenerateApikeyV1()**](ObjectWebhookApi.md#webhookRegenerateApikeyV1) | **POST** /1/object/webhook/{pkiWebhookID}/regenerateApikey | Regenerate the Apikey |
 | [**webhookTestV1()**](ObjectWebhookApi.md#webhookTestV1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url |
 
 
-## `webhookCreateObjectV1()`
+## `webhookCreateObjectV2()`
 
 ```php
-webhookCreateObjectV1($webhookCreateObjectV1Request): \eZmaxAPI\Model\WebhookCreateObjectV1Response
+webhookCreateObjectV2($webhookCreateObjectV2Request): \eZmaxAPI\Model\WebhookCreateObjectV2Response
 ```
 
 Create a new Webhook
@@ -42,13 +43,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectWebhookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$webhookCreateObjectV1Request = new \eZmaxAPI\Model\WebhookCreateObjectV1Request(); // \eZmaxAPI\Model\WebhookCreateObjectV1Request
+$webhookCreateObjectV2Request = new \eZmaxAPI\Model\WebhookCreateObjectV2Request(); // \eZmaxAPI\Model\WebhookCreateObjectV2Request
 
 try {
-    $result = $apiInstance->webhookCreateObjectV1($webhookCreateObjectV1Request);
+    $result = $apiInstance->webhookCreateObjectV2($webhookCreateObjectV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectWebhookApi->webhookCreateObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectWebhookApi->webhookCreateObjectV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -56,11 +57,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **webhookCreateObjectV1Request** | [**\eZmaxAPI\Model\WebhookCreateObjectV1Request**](../Model/WebhookCreateObjectV1Request.md)|  | |
+| **webhookCreateObjectV2Request** | [**\eZmaxAPI\Model\WebhookCreateObjectV2Request**](../Model/WebhookCreateObjectV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\WebhookCreateObjectV1Response**](../Model/WebhookCreateObjectV1Response.md)
+[**\eZmaxAPI\Model\WebhookCreateObjectV2Response**](../Model/WebhookCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -295,7 +296,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectWebhookApi(
     $config
 );
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
-$iRowMax = 10000; // int
+$iRowMax = 56; // int
 $iRowOffset = 0; // int
 $acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
@@ -313,7 +314,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
-| **iRowMax** | **int**|  | [optional] [default to 10000] |
+| **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
 | **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
@@ -391,6 +392,70 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `webhookRegenerateApikeyV1()`
+
+```php
+webhookRegenerateApikeyV1($pkiWebhookID, $webhookRegenerateApikeyV1Request): \eZmaxAPI\Model\WebhookRegenerateApikeyV1Response
+```
+
+Regenerate the Apikey
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectWebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiWebhookID = 56; // int
+$webhookRegenerateApikeyV1Request = new \eZmaxAPI\Model\WebhookRegenerateApikeyV1Request(); // \eZmaxAPI\Model\WebhookRegenerateApikeyV1Request
+
+try {
+    $result = $apiInstance->webhookRegenerateApikeyV1($pkiWebhookID, $webhookRegenerateApikeyV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectWebhookApi->webhookRegenerateApikeyV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiWebhookID** | **int**|  | |
+| **webhookRegenerateApikeyV1Request** | [**\eZmaxAPI\Model\WebhookRegenerateApikeyV1Request**](../Model/WebhookRegenerateApikeyV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\WebhookRegenerateApikeyV1Response**](../Model/WebhookRegenerateApikeyV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

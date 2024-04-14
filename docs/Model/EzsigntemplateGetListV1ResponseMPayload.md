@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aObjEzsigntemplate** | [**\eZmaxAPI\Model\EzsigntemplateListElement[]**](EzsigntemplateListElement.md) |  |
 **iRowReturned** | **int** | The number of rows returned |
 **iRowFiltered** | **int** | The number of rows matching your filters (if any) or the total number of rows |
+**aObjEzsigntemplate** | [**\eZmaxAPI\Model\EzsigntemplateListElement[]**](EzsigntemplateListElement.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -233,7 +233,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectPaymenttermApi(
     $config
 );
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
-$iRowMax = 10000; // int
+$iRowMax = 56; // int
 $iRowOffset = 0; // int
 $acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
@@ -251,7 +251,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
-| **iRowMax** | **int**|  | [optional] [default to 10000] |
+| **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
 | **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |

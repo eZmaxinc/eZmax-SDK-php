@@ -13,7 +13,11 @@ Name | Type | Description | Notes
 **eWebhookManagementevent** | [**\eZmaxAPI\Model\FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional]
 **sWebhookUrl** | **string** | The URL of the Webhook callback |
 **sWebhookEmailfailed** | **string** | The email that will receive the Webhook in case all attempts fail |
-**bWebhookIsactive** | **bool** | Whether the Webhook is active or not | [optional]
+**sWebhookApikey** | **string** | The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey. | [optional]
+**sWebhookSecret** | **string** | The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey. | [optional]
+**bWebhookIsactive** | **bool** | Whether the Webhook is active or not |
+**bWebhookIssigned** | **bool** | Whether the requests will be signed or not |
 **bWebhookSkipsslvalidation** | **bool** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |
+**objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

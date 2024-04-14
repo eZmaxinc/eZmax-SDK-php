@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **sWebhookUrl** | **string** | The URL of the Webhook callback |
 **sWebhookEmailfailed** | **string** | The email that will receive the Webhook in case all attempts fail |
 **bWebhookIsactive** | **bool** | Whether the Webhook is active or not |
+**bWebhookIssigned** | **bool** | Whether the requests will be signed or not | [optional]
 **bWebhookSkipsslvalidation** | **bool** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |
+**aObjWebhookheader** | [**\eZmaxAPI\Model\WebhookheaderRequestCompound[]**](WebhookheaderRequestCompound.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

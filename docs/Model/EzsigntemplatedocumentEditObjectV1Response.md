@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objDebugPayload** | [**\eZmaxAPI\Model\CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional]
+**objDebugPayload** | [**\eZmaxAPI\Model\CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  |
 **objDebug** | [**\eZmaxAPI\Model\CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional]
 **aObjWarning** | [**\eZmaxAPI\Model\CommonResponseWarning[]**](CommonResponseWarning.md) |  | [optional]
 

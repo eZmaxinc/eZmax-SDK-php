@@ -13,8 +13,13 @@ Name | Type | Description | Notes
 **bActivesessionDebug** | **bool** | Whether the active session is in debug or not |
 **bActivesessionIssuperadmin** | **bool** | Whether the active session is superadmin or not |
 **pksCustomerCode** | **string** | The customer code assigned to your account |
-**fkiSystemconfigurationtypeID** | **int** | The unique ID of the Systemconfigurationtype | [optional]
+**fkiSystemconfigurationtypeID** | **int** | The unique ID of the Systemconfigurationtype |
 **fkiSignatureID** | **int** | The unique ID of the Signature | [optional]
+**bSystemconfigurationEzsignpaidbyoffice** | **bool** | Whether if Ezsign is paid by the company or not | [optional]
+**eSystemconfigurationEzsignofficeplan** | [**\eZmaxAPI\Model\FieldESystemconfigurationEzsignofficeplan**](FieldESystemconfigurationEzsignofficeplan.md) |  | [optional]
+**eUserEzsignaccess** | [**\eZmaxAPI\Model\FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |
+**eUserEzsignprepaid** | [**\eZmaxAPI\Model\FieldEUserEzsignprepaid**](FieldEUserEzsignprepaid.md) |  | [optional]
+**dtUserEzsignprepaidexpiration** | **string** | The eZsign prepaid expiration date | [optional]
 **aPkiPermissionID** | **int[]** | An array of permissions granted to the user or api key |
 **objUserReal** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  |
 **objUserCloned** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional]
