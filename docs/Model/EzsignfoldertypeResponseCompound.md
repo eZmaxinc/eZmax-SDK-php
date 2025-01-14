@@ -25,10 +25,12 @@ Name | Type | Description | Notes
 **eEzsignfoldertypeCompletion** | [**\eZmaxAPI\Model\FieldEEzsignfoldertypeCompletion**](FieldEEzsignfoldertypeCompletion.md) |  |
 **iEzsignfoldertypeDisposaldays** | **int** | The number of days after the archival before the disposal of the Ezsignfolder | [optional]
 **iEzsignfoldertypeDeadlinedays** | **int** | The number of days to get all Ezsignsignatures |
+**bEzsignfoldertypeAutomaticsignature** | **bool** | Whether we allow the automatic signature by an User | [optional]
 **bEzsignfoldertypeDelegate** | **bool** | Wheter if delegation of signature is allowed to another user or not | [optional]
 **bEzsignfoldertypeDiscussion** | **bool** | Wheter if creating a new Discussion is allowed or not | [optional]
 **bEzsignfoldertypeReassignezsignsigner** | **bool** | Wheter if Reassignment of signature is allowed by a signatory to another signatory or not | [optional]
 **bEzsignfoldertypeReassignuser** | **bool** | Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not | [optional]
+**bEzsignfoldertypeReassigngroup** | **bool** | Wheter if Reassignment of signatures of the groups to which the user belongs is authorized by a user to himself | [optional]
 **bEzsignfoldertypeSendsignedtoezsignsigner** | **bool** | Whether we send an email to Ezsignsigner  when document is completed | [optional]
 **bEzsignfoldertypeSendsignedtouser** | **bool** | Whether we send an email to User who signed when document is completed | [optional]
 **bEzsignfoldertypeSendattachmentezsignsigner** | **bool** | Whether we send the Ezsigndocument in the email to Ezsignsigner | [optional]

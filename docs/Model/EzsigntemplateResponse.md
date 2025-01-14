@@ -8,8 +8,11 @@ Name | Type | Description | Notes
 **fkiEzsigntemplatedocumentID** | **int** | The unique ID of the Ezsigntemplatedocument | [optional]
 **fkiEzsignfoldertypeID** | **int** | The unique ID of the Ezsignfoldertype. | [optional]
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
+**fkiEzdoctemplatedocumentID** | **int** | The unique ID of the Ezdoctemplatedocument | [optional]
 **sLanguageNameX** | **string** | The Name of the Language in the language of the requester |
 **sEzsigntemplateDescription** | **string** | The description of the Ezsigntemplate |
+**sEzsigntemplateExternaldescription** | **string** | The external description of the Ezsigntemplate | [optional]
+**tEzsigntemplateComment** | **string** | The comment of the Ezsigntemplate | [optional]
 **sEzsigntemplateFilenamepattern** | **string** | The filename pattern of the Ezsigntemplate | [optional]
 **bEzsigntemplateAdminonly** | **bool** | Whether the Ezsigntemplate can be accessed by admin users only (eUserType&#x3D;Normal) |
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester | [optional]

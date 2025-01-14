@@ -14,6 +14,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignfoldersignerassociationGetObjectV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociationGetObjectV2()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectV2) | **GET** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociationPatchObjectV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationPatchObjectV1) | **PATCH** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Patch an existing Ezsignfoldersignerassociation |
+| [**ezsignfoldersignerassociationReassignV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationReassignV1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign | Reassign remaining unsigned signatures and forms |
 
 
 ## `ezsignfoldersignerassociationCreateEmbeddedUrlV1()`
@@ -24,7 +25,7 @@ ezsignfoldersignerassociationCreateEmbeddedUrlV1($pkiEzsignfoldersignerassociati
 
 Creates an Url to allow embedded signing
 
-This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  There will be a list to retrieve informations after the signing happens in the embedded version. To do so, there is a list of parameter to add to your sReturnUrl.  In example: https://www.example.com/sReturl?sParameter1&sParameter2. The sParameter1 et sParameter2 will be replace when we will redirect on the url.
+This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
 
 ### Example
 
@@ -628,6 +629,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Response**](../Model/EzsignfoldersignerassociationPatchObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfoldersignerassociationReassignV1()`
+
+```php
+ezsignfoldersignerassociationReassignV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationReassignV1Request): \eZmaxAPI\Model\EzsignfoldersignerassociationReassignV1Response
+```
+
+Reassign remaining unsigned signatures and forms
+
+Reassign remaining unsigned signatures and forms
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldersignerassociationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfoldersignerassociationID = 56; // int
+$ezsignfoldersignerassociationReassignV1Request = new \eZmaxAPI\Model\EzsignfoldersignerassociationReassignV1Request(); // \eZmaxAPI\Model\EzsignfoldersignerassociationReassignV1Request
+
+try {
+    $result = $apiInstance->ezsignfoldersignerassociationReassignV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationReassignV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociationReassignV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfoldersignerassociationID** | **int**|  | |
+| **ezsignfoldersignerassociationReassignV1Request** | [**\eZmaxAPI\Model\EzsignfoldersignerassociationReassignV1Request**](../Model/EzsignfoldersignerassociationReassignV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfoldersignerassociationReassignV1Response**](../Model/EzsignfoldersignerassociationReassignV1Response.md)
 
 ### Authorization
 

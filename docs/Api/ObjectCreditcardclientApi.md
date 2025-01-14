@@ -10,6 +10,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**creditcardclientGetAutocompleteV2()**](ObjectCreditcardclientApi.md#creditcardclientGetAutocompleteV2) | **GET** /2/object/creditcardclient/getAutocomplete/{sSelector} | Retrieve Creditcardclients and IDs |
 | [**creditcardclientGetListV1()**](ObjectCreditcardclientApi.md#creditcardclientGetListV1) | **GET** /1/object/creditcardclient/getList | Retrieve Creditcardclient list |
 | [**creditcardclientGetObjectV2()**](ObjectCreditcardclientApi.md#creditcardclientGetObjectV2) | **GET** /2/object/creditcardclient/{pkiCreditcardclientID} | Retrieve an existing Creditcardclient |
+| [**creditcardclientPatchObjectV1()**](ObjectCreditcardclientApi.md#creditcardclientPatchObjectV1) | **PATCH** /1/object/creditcardclient/{pkiCreditcardclientID} | Patch an existing Creditcardclient |
 
 
 ## `creditcardclientCreateObjectV1()`
@@ -232,7 +233,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectCreditcardclientApi(
 $sSelector = 'sSelector_example'; // string | The type of Creditcardclients to return
 $eFilterActive = 'Active'; // string | Specify which results we want to display.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 
 try {
     $result = $apiInstance->creditcardclientGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
@@ -249,7 +250,7 @@ try {
 | **sSelector** | **string**| The type of Creditcardclients to return | |
 | **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
 | **sQuery** | **string**| Allow to filter the returned results | [optional] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 
 ### Return type
 
@@ -300,7 +301,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectCreditcardclientApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 0; // int
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -318,7 +319,7 @@ try {
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
 | **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
 ### Return type
@@ -394,6 +395,70 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `creditcardclientPatchObjectV1()`
+
+```php
+creditcardclientPatchObjectV1($pkiCreditcardclientID, $creditcardclientPatchObjectV1Request): \eZmaxAPI\Model\CreditcardclientPatchObjectV1Response
+```
+
+Patch an existing Creditcardclient
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectCreditcardclientApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiCreditcardclientID = 56; // int | The unique ID of the Creditcardclient
+$creditcardclientPatchObjectV1Request = new \eZmaxAPI\Model\CreditcardclientPatchObjectV1Request(); // \eZmaxAPI\Model\CreditcardclientPatchObjectV1Request
+
+try {
+    $result = $apiInstance->creditcardclientPatchObjectV1($pkiCreditcardclientID, $creditcardclientPatchObjectV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectCreditcardclientApi->creditcardclientPatchObjectV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiCreditcardclientID** | **int**| The unique ID of the Creditcardclient | |
+| **creditcardclientPatchObjectV1Request** | [**\eZmaxAPI\Model\CreditcardclientPatchObjectV1Request**](../Model/CreditcardclientPatchObjectV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\CreditcardclientPatchObjectV1Response**](../Model/CreditcardclientPatchObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

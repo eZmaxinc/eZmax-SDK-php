@@ -5,15 +5,12 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**ezsigntemplateCopyV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateCopyV1) | **POST** /1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy | Copy the Ezsigntemplate |
-| [**ezsigntemplateCreateObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateCreateObjectV1) | **POST** /1/object/ezsigntemplate | Create a new Ezsigntemplate |
-| [**ezsigntemplateCreateObjectV2()**](ObjectEzsigntemplateApi.md#ezsigntemplateCreateObjectV2) | **POST** /2/object/ezsigntemplate | Create a new Ezsigntemplate |
+| [**ezsigntemplateCreateObjectV3()**](ObjectEzsigntemplateApi.md#ezsigntemplateCreateObjectV3) | **POST** /3/object/ezsigntemplate | Create a new Ezsigntemplate |
 | [**ezsigntemplateDeleteObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateDeleteObjectV1) | **DELETE** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Delete an existing Ezsigntemplate |
-| [**ezsigntemplateEditObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateEditObjectV1) | **PUT** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate |
-| [**ezsigntemplateEditObjectV2()**](ObjectEzsigntemplateApi.md#ezsigntemplateEditObjectV2) | **PUT** /2/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate |
+| [**ezsigntemplateEditObjectV3()**](ObjectEzsigntemplateApi.md#ezsigntemplateEditObjectV3) | **PUT** /3/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate |
 | [**ezsigntemplateGetAutocompleteV2()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetAutocompleteV2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs |
 | [**ezsigntemplateGetListV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetListV1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list |
-| [**ezsigntemplateGetObjectV1()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV1) | **GET** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate |
-| [**ezsigntemplateGetObjectV2()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV2) | **GET** /2/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate |
+| [**ezsigntemplateGetObjectV3()**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV3) | **GET** /3/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate |
 
 
 ## `ezsigntemplateCopyV1()`
@@ -80,10 +77,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsigntemplateCreateObjectV1()`
+## `ezsigntemplateCreateObjectV3()`
 
 ```php
-ezsigntemplateCreateObjectV1($ezsigntemplateCreateObjectV1Request): \eZmaxAPI\Model\EzsigntemplateCreateObjectV1Response
+ezsigntemplateCreateObjectV3($ezsigntemplateCreateObjectV3Request): \eZmaxAPI\Model\EzsigntemplateCreateObjectV3Response
 ```
 
 Create a new Ezsigntemplate
@@ -109,13 +106,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ezsigntemplateCreateObjectV1Request = new \eZmaxAPI\Model\EzsigntemplateCreateObjectV1Request(); // \eZmaxAPI\Model\EzsigntemplateCreateObjectV1Request
+$ezsigntemplateCreateObjectV3Request = new \eZmaxAPI\Model\EzsigntemplateCreateObjectV3Request(); // \eZmaxAPI\Model\EzsigntemplateCreateObjectV3Request
 
 try {
-    $result = $apiInstance->ezsigntemplateCreateObjectV1($ezsigntemplateCreateObjectV1Request);
+    $result = $apiInstance->ezsigntemplateCreateObjectV3($ezsigntemplateCreateObjectV3Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateCreateObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateCreateObjectV3: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -123,73 +120,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ezsigntemplateCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplateCreateObjectV1Request**](../Model/EzsigntemplateCreateObjectV1Request.md)|  | |
+| **ezsigntemplateCreateObjectV3Request** | [**\eZmaxAPI\Model\EzsigntemplateCreateObjectV3Request**](../Model/EzsigntemplateCreateObjectV3Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigntemplateCreateObjectV1Response**](../Model/EzsigntemplateCreateObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `ezsigntemplateCreateObjectV2()`
-
-```php
-ezsigntemplateCreateObjectV2($ezsigntemplateCreateObjectV2Request): \eZmaxAPI\Model\EzsigntemplateCreateObjectV2Response
-```
-
-Create a new Ezsigntemplate
-
-The endpoint allows to create one or many elements at once.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$ezsigntemplateCreateObjectV2Request = new \eZmaxAPI\Model\EzsigntemplateCreateObjectV2Request(); // \eZmaxAPI\Model\EzsigntemplateCreateObjectV2Request
-
-try {
-    $result = $apiInstance->ezsigntemplateCreateObjectV2($ezsigntemplateCreateObjectV2Request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateCreateObjectV2: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **ezsigntemplateCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsigntemplateCreateObjectV2Request**](../Model/EzsigntemplateCreateObjectV2Request.md)|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\EzsigntemplateCreateObjectV2Response**](../Model/EzsigntemplateCreateObjectV2Response.md)
+[**\eZmaxAPI\Model\EzsigntemplateCreateObjectV3Response**](../Model/EzsigntemplateCreateObjectV3Response.md)
 
 ### Authorization
 
@@ -266,10 +201,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsigntemplateEditObjectV1()`
+## `ezsigntemplateEditObjectV3()`
 
 ```php
-ezsigntemplateEditObjectV1($pkiEzsigntemplateID, $ezsigntemplateEditObjectV1Request): \eZmaxAPI\Model\EzsigntemplateEditObjectV1Response
+ezsigntemplateEditObjectV3($pkiEzsigntemplateID, $ezsigntemplateEditObjectV3Request): \eZmaxAPI\Model\EzsigntemplateEditObjectV3Response
 ```
 
 Edit an existing Ezsigntemplate
@@ -296,13 +231,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
     $config
 );
 $pkiEzsigntemplateID = 56; // int
-$ezsigntemplateEditObjectV1Request = new \eZmaxAPI\Model\EzsigntemplateEditObjectV1Request(); // \eZmaxAPI\Model\EzsigntemplateEditObjectV1Request
+$ezsigntemplateEditObjectV3Request = new \eZmaxAPI\Model\EzsigntemplateEditObjectV3Request(); // \eZmaxAPI\Model\EzsigntemplateEditObjectV3Request
 
 try {
-    $result = $apiInstance->ezsigntemplateEditObjectV1($pkiEzsigntemplateID, $ezsigntemplateEditObjectV1Request);
+    $result = $apiInstance->ezsigntemplateEditObjectV3($pkiEzsigntemplateID, $ezsigntemplateEditObjectV3Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateEditObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateEditObjectV3: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -311,75 +246,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pkiEzsigntemplateID** | **int**|  | |
-| **ezsigntemplateEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplateEditObjectV1Request**](../Model/EzsigntemplateEditObjectV1Request.md)|  | |
+| **ezsigntemplateEditObjectV3Request** | [**\eZmaxAPI\Model\EzsigntemplateEditObjectV3Request**](../Model/EzsigntemplateEditObjectV3Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigntemplateEditObjectV1Response**](../Model/EzsigntemplateEditObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `ezsigntemplateEditObjectV2()`
-
-```php
-ezsigntemplateEditObjectV2($pkiEzsigntemplateID, $ezsigntemplateEditObjectV2Request): \eZmaxAPI\Model\EzsigntemplateEditObjectV2Response
-```
-
-Edit an existing Ezsigntemplate
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiEzsigntemplateID = 56; // int
-$ezsigntemplateEditObjectV2Request = new \eZmaxAPI\Model\EzsigntemplateEditObjectV2Request(); // \eZmaxAPI\Model\EzsigntemplateEditObjectV2Request
-
-try {
-    $result = $apiInstance->ezsigntemplateEditObjectV2($pkiEzsigntemplateID, $ezsigntemplateEditObjectV2Request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateEditObjectV2: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiEzsigntemplateID** | **int**|  | |
-| **ezsigntemplateEditObjectV2Request** | [**\eZmaxAPI\Model\EzsigntemplateEditObjectV2Request**](../Model/EzsigntemplateEditObjectV2Request.md)|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\EzsigntemplateEditObjectV2Response**](../Model/EzsigntemplateEditObjectV2Response.md)
+[**\eZmaxAPI\Model\EzsigntemplateEditObjectV3Response**](../Model/EzsigntemplateEditObjectV3Response.md)
 
 ### Authorization
 
@@ -397,7 +268,7 @@ try {
 ## `ezsigntemplateGetAutocompleteV2()`
 
 ```php
-ezsigntemplateGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\EzsigntemplateGetAutocompleteV2Response
+ezsigntemplateGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $fkiEzsignfoldertypeID): \eZmaxAPI\Model\EzsigntemplateGetAutocompleteV2Response
 ```
 
 Retrieve Ezsigntemplates and IDs
@@ -426,10 +297,11 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
 $sSelector = 'sSelector_example'; // string | The type of Ezsigntemplates to return
 $eFilterActive = 'Active'; // string | Specify which results we want to display.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$fkiEzsignfoldertypeID = 56; // int | The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic
 
 try {
-    $result = $apiInstance->ezsigntemplateGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+    $result = $apiInstance->ezsigntemplateGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $fkiEzsignfoldertypeID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateGetAutocompleteV2: ', $e->getMessage(), PHP_EOL;
@@ -443,7 +315,8 @@ try {
 | **sSelector** | **string**| The type of Ezsigntemplates to return | |
 | **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
 | **sQuery** | **string**| Allow to filter the returned results | [optional] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **fkiEzsignfoldertypeID** | **int**| The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic | [optional] |
 
 ### Return type
 
@@ -494,7 +367,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 0; // int
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -512,7 +385,7 @@ try {
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
 | **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
 ### Return type
@@ -532,10 +405,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsigntemplateGetObjectV1()`
+## `ezsigntemplateGetObjectV3()`
 
 ```php
-ezsigntemplateGetObjectV1($pkiEzsigntemplateID): \eZmaxAPI\Model\EzsigntemplateGetObjectV1Response
+ezsigntemplateGetObjectV3($pkiEzsigntemplateID): \eZmaxAPI\Model\EzsigntemplateGetObjectV3Response
 ```
 
 Retrieve an existing Ezsigntemplate
@@ -564,10 +437,10 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
 $pkiEzsigntemplateID = 56; // int
 
 try {
-    $result = $apiInstance->ezsigntemplateGetObjectV1($pkiEzsigntemplateID);
+    $result = $apiInstance->ezsigntemplateGetObjectV3($pkiEzsigntemplateID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateGetObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateGetObjectV3: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -579,69 +452,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigntemplateGetObjectV1Response**](../Model/EzsigntemplateGetObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `ezsigntemplateGetObjectV2()`
-
-```php
-ezsigntemplateGetObjectV2($pkiEzsigntemplateID): \eZmaxAPI\Model\EzsigntemplateGetObjectV2Response
-```
-
-Retrieve an existing Ezsigntemplate
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplateApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiEzsigntemplateID = 56; // int
-
-try {
-    $result = $apiInstance->ezsigntemplateGetObjectV2($pkiEzsigntemplateID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplateApi->ezsigntemplateGetObjectV2: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiEzsigntemplateID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\EzsigntemplateGetObjectV2Response**](../Model/EzsigntemplateGetObjectV2Response.md)
+[**\eZmaxAPI\Model\EzsigntemplateGetObjectV3Response**](../Model/EzsigntemplateGetObjectV3Response.md)
 
 ### Authorization
 

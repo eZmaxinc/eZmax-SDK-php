@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiWebhookID** | **int** | The unique ID of the Webhook |
+**fkiAuthenticationexternalID** | **int** | The unique ID of the Authenticationexternal | [optional]
 **sWebhookDescription** | **string** | The description of the Webhook |
 **fkiEzsignfoldertypeID** | **int** | The unique ID of the Ezsignfoldertype. | [optional]
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester | [optional]
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 **bWebhookIsactive** | **bool** | Whether the Webhook is active or not |
 **bWebhookIssigned** | **bool** | Whether the requests will be signed or not |
 **bWebhookSkipsslvalidation** | **bool** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |
+**sAuthenticationexternalDescription** | **string** | The description of the Authenticationexternal | [optional]
 **objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
 **sWebhookEvent** | **string** | The concatenated string to describe the Webhook event | [optional]
 **aObjWebhookheader** | [**\eZmaxAPI\Model\WebhookheaderResponseCompound[]**](WebhookheaderResponseCompound.md) |  | [optional]

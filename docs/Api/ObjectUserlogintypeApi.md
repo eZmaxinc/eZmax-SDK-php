@@ -40,7 +40,7 @@ $sSelector = 'sSelector_example'; // string | The type of Userlogintypes to retu
 $fkiEzsignfoldertypeID = 56; // int
 $eFilterActive = 'Active'; // string | Specify which results we want to display.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 
 try {
     $result = $apiInstance->userlogintypeGetAutocompleteV2($sSelector, $fkiEzsignfoldertypeID, $eFilterActive, $sQuery, $acceptLanguage);
@@ -58,7 +58,7 @@ try {
 | **fkiEzsignfoldertypeID** | **int**|  | [optional] |
 | **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
 | **sQuery** | **string**| Allow to filter the returned results | [optional] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 
 ### Return type
 

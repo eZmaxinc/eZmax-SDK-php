@@ -37,7 +37,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectSessionhistoryApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 0; // int
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -55,7 +55,7 @@ try {
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
 | **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
 ### Return type

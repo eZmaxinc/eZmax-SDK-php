@@ -30,7 +30,7 @@ $apiInstance = new eZmaxAPI\Api\GlobalEzmaxclientApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$pksEzmaxclientOs = new \eZmaxAPI\Model\FieldPksEzmaxclientOs(); // FieldPksEzmaxclientOs
+$pksEzmaxclientOs = new \eZmaxAPI\Model\\eZmaxAPI\Model\FieldPksEzmaxclientOs(); // \eZmaxAPI\Model\FieldPksEzmaxclientOs
 
 try {
     $result = $apiInstance->globalEzmaxclientVersionV1($pksEzmaxclientOs);
@@ -44,7 +44,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pksEzmaxclientOs** | [**FieldPksEzmaxclientOs**](../Model/.md)|  | |
+| **pksEzmaxclientOs** | [**\eZmaxAPI\Model\FieldPksEzmaxclientOs**](../Model/.md)|  | |
 
 ### Return type
 

@@ -6,10 +6,12 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | ------------- | ------------- | ------------- |
 | [**userCreateObjectV1()**](ObjectUserApi.md#userCreateObjectV1) | **POST** /1/object/user | Create a new User |
 | [**userCreateObjectV2()**](ObjectUserApi.md#userCreateObjectV2) | **POST** /2/object/user | Create a new User |
+| [**userEditColleaguesV2()**](ObjectUserApi.md#userEditColleaguesV2) | **PUT** /2/object/user/{pkiUserID}/editColleagues | Edit multiple Colleagues |
 | [**userEditObjectV1()**](ObjectUserApi.md#userEditObjectV1) | **PUT** /1/object/user/{pkiUserID} | Edit an existing User |
 | [**userEditPermissionsV1()**](ObjectUserApi.md#userEditPermissionsV1) | **PUT** /1/object/user/{pkiUserID}/editPermissions | Edit multiple Permissions |
 | [**userGetApikeysV1()**](ObjectUserApi.md#userGetApikeysV1) | **GET** /1/object/user/{pkiUserID}/getApikeys | Retrieve an existing User&#39;s Apikeys |
 | [**userGetAutocompleteV2()**](ObjectUserApi.md#userGetAutocompleteV2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs |
+| [**userGetColleaguesV2()**](ObjectUserApi.md#userGetColleaguesV2) | **GET** /2/object/user/{pkiUserID}/getColleagues | Retrieve an existing User&#39;s Colleagues |
 | [**userGetEffectivePermissionsV1()**](ObjectUserApi.md#userGetEffectivePermissionsV1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User&#39;s Effective Permissions |
 | [**userGetListV1()**](ObjectUserApi.md#userGetListV1) | **GET** /1/object/user/getList | Retrieve User list |
 | [**userGetObjectV2()**](ObjectUserApi.md#userGetObjectV2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User |
@@ -130,6 +132,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\UserCreateObjectV2Response**](../Model/UserCreateObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `userEditColleaguesV2()`
+
+```php
+userEditColleaguesV2($pkiUserID, $userEditColleaguesV2Request): \eZmaxAPI\Model\UserEditColleaguesV2Response
+```
+
+Edit multiple Colleagues
+
+Using this endpoint, you can edit multiple Colleagues at the same time.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectUserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiUserID = 56; // int
+$userEditColleaguesV2Request = new \eZmaxAPI\Model\UserEditColleaguesV2Request(); // \eZmaxAPI\Model\UserEditColleaguesV2Request
+
+try {
+    $result = $apiInstance->userEditColleaguesV2($pkiUserID, $userEditColleaguesV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectUserApi->userEditColleaguesV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiUserID** | **int**|  | |
+| **userEditColleaguesV2Request** | [**\eZmaxAPI\Model\UserEditColleaguesV2Request**](../Model/UserEditColleaguesV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\UserEditColleaguesV2Response**](../Model/UserEditColleaguesV2Response.md)
 
 ### Authorization
 
@@ -364,7 +430,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectUserApi(
 $sSelector = 'sSelector_example'; // string | The type of Users to return
 $eFilterActive = 'Active'; // string | Specify which results we want to display.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 
 try {
     $result = $apiInstance->userGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
@@ -381,11 +447,71 @@ try {
 | **sSelector** | **string**| The type of Users to return | |
 | **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
 | **sQuery** | **string**| Allow to filter the returned results | [optional] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 
 ### Return type
 
 [**\eZmaxAPI\Model\UserGetAutocompleteV2Response**](../Model/UserGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `userGetColleaguesV2()`
+
+```php
+userGetColleaguesV2($pkiUserID): \eZmaxAPI\Model\UserGetColleaguesV2Response
+```
+
+Retrieve an existing User's Colleagues
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectUserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiUserID = 56; // int
+
+try {
+    $result = $apiInstance->userGetColleaguesV2($pkiUserID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectUserApi->userGetColleaguesV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiUserID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\UserGetColleaguesV2Response**](../Model/UserGetColleaguesV2Response.md)
 
 ### Authorization
 
@@ -494,7 +620,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectUserApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 0; // int
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -512,7 +638,7 @@ try {
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
 | **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
 ### Return type

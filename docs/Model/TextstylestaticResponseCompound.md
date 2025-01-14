@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiTextstylestaticID** | **int** | The unique ID of the Textstylestatic | [optional]
 **fkiFontID** | **int** | The unique ID of the Font |
+**sFontName** | **string** | The name of the Font |
 **bTextstylestaticBold** | **bool** | Whether the Textstylestatic is Bold or not |
 **bTextstylestaticUnderline** | **bool** | Whether the Textstylestatic is Underline or not |
 **bTextstylestaticItalic** | **bool** | Whether the Textstylestatic is Italic or not |

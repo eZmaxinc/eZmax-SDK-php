@@ -6,11 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiCreditcardclientID** | **int** | The unique ID of the Creditcardclient |
 **fkiCreditcarddetailID** | **int** | The unique ID of the Creditcarddetail |
-**bCreditcardclientrelationIsdefault** | **bool** | Whether if it&#39;s an relationisdefault |
+**bCreditcardclientrelationIsdefault** | **bool** | Whether if it&#39;s the creditcardclient is the default one |
 **sCreditcardclientDescription** | **string** | The description of the Creditcardclient |
-**bCreditcardclientIsactive** | **bool** | Whether the creditcardclient is active or not |
-**bCreditcardclientAllowedagencypayment** | **bool** | Whether if it&#39;s an allowedagencypayment |
-**bCreditcardclientAllowedroyallepageprotection** | **bool** | Whether if it&#39;s an allowedroyallepageprotection |
+**bCreditcardclientAllowedcompanypayment** | **bool** | Whether if it&#39;s an allowedagencypayment |
 **bCreditcardclientAllowedtranquillit** | **bool** | Whether if it&#39;s an allowedtranquillit |
 **objCreditcarddetail** | [**\eZmaxAPI\Model\CreditcarddetailResponseCompound**](CreditcarddetailResponseCompound.md) |  |
 

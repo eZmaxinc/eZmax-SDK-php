@@ -4,7 +4,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ezsignbulksendCreateEzsignbulksendtransmissionV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendCreateEzsignbulksendtransmissionV1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission | Create a new Ezsignbulksendtransmission in the Ezsignbulksend |
+| [**ezsignbulksendCreateEzsignbulksendtransmissionV2()**](ObjectEzsignbulksendApi.md#ezsignbulksendCreateEzsignbulksendtransmissionV2) | **POST** /2/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission | Create a new Ezsignbulksendtransmission in the Ezsignbulksend |
 | [**ezsignbulksendCreateObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendCreateObjectV1) | **POST** /1/object/ezsignbulksend | Create a new Ezsignbulksend |
 | [**ezsignbulksendDeleteObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendDeleteObjectV1) | **DELETE** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Delete an existing Ezsignbulksend |
 | [**ezsignbulksendEditObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendEditObjectV1) | **PUT** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend |
@@ -17,10 +17,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignbulksendReorderV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendReorderV1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder | Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend |
 
 
-## `ezsignbulksendCreateEzsignbulksendtransmissionV1()`
+## `ezsignbulksendCreateEzsignbulksendtransmissionV2()`
 
 ```php
-ezsignbulksendCreateEzsignbulksendtransmissionV1($pkiEzsignbulksendID, $ezsignbulksendCreateEzsignbulksendtransmissionV1Request): \eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV1Response
+ezsignbulksendCreateEzsignbulksendtransmissionV2($pkiEzsignbulksendID, $ezsignbulksendCreateEzsignbulksendtransmissionV2Request): \eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV2Response
 ```
 
 Create a new Ezsignbulksendtransmission in the Ezsignbulksend
@@ -45,13 +45,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksendApi(
     $config
 );
 $pkiEzsignbulksendID = 56; // int
-$ezsignbulksendCreateEzsignbulksendtransmissionV1Request = new \eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV1Request(); // \eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV1Request
+$ezsignbulksendCreateEzsignbulksendtransmissionV2Request = new \eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV2Request(); // \eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV2Request
 
 try {
-    $result = $apiInstance->ezsignbulksendCreateEzsignbulksendtransmissionV1($pkiEzsignbulksendID, $ezsignbulksendCreateEzsignbulksendtransmissionV1Request);
+    $result = $apiInstance->ezsignbulksendCreateEzsignbulksendtransmissionV2($pkiEzsignbulksendID, $ezsignbulksendCreateEzsignbulksendtransmissionV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignbulksendApi->ezsignbulksendCreateEzsignbulksendtransmissionV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignbulksendApi->ezsignbulksendCreateEzsignbulksendtransmissionV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -60,11 +60,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pkiEzsignbulksendID** | **int**|  | |
-| **ezsignbulksendCreateEzsignbulksendtransmissionV1Request** | [**\eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV1Request**](../Model/EzsignbulksendCreateEzsignbulksendtransmissionV1Request.md)|  | |
+| **ezsignbulksendCreateEzsignbulksendtransmissionV2Request** | [**\eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV2Request**](../Model/EzsignbulksendCreateEzsignbulksendtransmissionV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV1Response**](../Model/EzsignbulksendCreateEzsignbulksendtransmissionV1Response.md)
+[**\eZmaxAPI\Model\EzsignbulksendCreateEzsignbulksendtransmissionV2Response**](../Model/EzsignbulksendCreateEzsignbulksendtransmissionV2Response.md)
 
 ### Authorization
 
@@ -549,7 +549,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksendApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 0; // int
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -567,7 +567,7 @@ try {
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
 | **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
 ### Return type

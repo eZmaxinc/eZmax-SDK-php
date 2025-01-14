@@ -4,17 +4,17 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**brandingCreateObjectV1()**](ObjectBrandingApi.md#brandingCreateObjectV1) | **POST** /1/object/branding | Create a new Branding |
-| [**brandingEditObjectV1()**](ObjectBrandingApi.md#brandingEditObjectV1) | **PUT** /1/object/branding/{pkiBrandingID} | Edit an existing Branding |
+| [**brandingCreateObjectV2()**](ObjectBrandingApi.md#brandingCreateObjectV2) | **POST** /2/object/branding | Create a new Branding |
+| [**brandingEditObjectV2()**](ObjectBrandingApi.md#brandingEditObjectV2) | **PUT** /2/object/branding/{pkiBrandingID} | Edit an existing Branding |
 | [**brandingGetAutocompleteV2()**](ObjectBrandingApi.md#brandingGetAutocompleteV2) | **GET** /2/object/branding/getAutocomplete/{sSelector} | Retrieve Brandings and IDs |
 | [**brandingGetListV1()**](ObjectBrandingApi.md#brandingGetListV1) | **GET** /1/object/branding/getList | Retrieve Branding list |
-| [**brandingGetObjectV2()**](ObjectBrandingApi.md#brandingGetObjectV2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding |
+| [**brandingGetObjectV3()**](ObjectBrandingApi.md#brandingGetObjectV3) | **GET** /3/object/branding/{pkiBrandingID} | Retrieve an existing Branding |
 
 
-## `brandingCreateObjectV1()`
+## `brandingCreateObjectV2()`
 
 ```php
-brandingCreateObjectV1($brandingCreateObjectV1Request): \eZmaxAPI\Model\BrandingCreateObjectV1Response
+brandingCreateObjectV2($brandingCreateObjectV2Request): \eZmaxAPI\Model\BrandingCreateObjectV2Response
 ```
 
 Create a new Branding
@@ -40,13 +40,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectBrandingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$brandingCreateObjectV1Request = new \eZmaxAPI\Model\BrandingCreateObjectV1Request(); // \eZmaxAPI\Model\BrandingCreateObjectV1Request
+$brandingCreateObjectV2Request = new \eZmaxAPI\Model\BrandingCreateObjectV2Request(); // \eZmaxAPI\Model\BrandingCreateObjectV2Request
 
 try {
-    $result = $apiInstance->brandingCreateObjectV1($brandingCreateObjectV1Request);
+    $result = $apiInstance->brandingCreateObjectV2($brandingCreateObjectV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectBrandingApi->brandingCreateObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectBrandingApi->brandingCreateObjectV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -54,11 +54,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **brandingCreateObjectV1Request** | [**\eZmaxAPI\Model\BrandingCreateObjectV1Request**](../Model/BrandingCreateObjectV1Request.md)|  | |
+| **brandingCreateObjectV2Request** | [**\eZmaxAPI\Model\BrandingCreateObjectV2Request**](../Model/BrandingCreateObjectV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\BrandingCreateObjectV1Response**](../Model/BrandingCreateObjectV1Response.md)
+[**\eZmaxAPI\Model\BrandingCreateObjectV2Response**](../Model/BrandingCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -73,10 +73,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `brandingEditObjectV1()`
+## `brandingEditObjectV2()`
 
 ```php
-brandingEditObjectV1($pkiBrandingID, $brandingEditObjectV1Request): \eZmaxAPI\Model\BrandingEditObjectV1Response
+brandingEditObjectV2($pkiBrandingID, $brandingEditObjectV2Request): \eZmaxAPI\Model\BrandingEditObjectV2Response
 ```
 
 Edit an existing Branding
@@ -103,13 +103,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectBrandingApi(
     $config
 );
 $pkiBrandingID = 56; // int
-$brandingEditObjectV1Request = new \eZmaxAPI\Model\BrandingEditObjectV1Request(); // \eZmaxAPI\Model\BrandingEditObjectV1Request
+$brandingEditObjectV2Request = new \eZmaxAPI\Model\BrandingEditObjectV2Request(); // \eZmaxAPI\Model\BrandingEditObjectV2Request
 
 try {
-    $result = $apiInstance->brandingEditObjectV1($pkiBrandingID, $brandingEditObjectV1Request);
+    $result = $apiInstance->brandingEditObjectV2($pkiBrandingID, $brandingEditObjectV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectBrandingApi->brandingEditObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectBrandingApi->brandingEditObjectV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -118,11 +118,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pkiBrandingID** | **int**|  | |
-| **brandingEditObjectV1Request** | [**\eZmaxAPI\Model\BrandingEditObjectV1Request**](../Model/BrandingEditObjectV1Request.md)|  | |
+| **brandingEditObjectV2Request** | [**\eZmaxAPI\Model\BrandingEditObjectV2Request**](../Model/BrandingEditObjectV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\BrandingEditObjectV1Response**](../Model/BrandingEditObjectV1Response.md)
+[**\eZmaxAPI\Model\BrandingEditObjectV2Response**](../Model/BrandingEditObjectV2Response.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectBrandingApi(
 $sSelector = 'sSelector_example'; // string | The type of Brandings to return
 $eFilterActive = 'Active'; // string | Specify which results we want to display.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 
 try {
     $result = $apiInstance->brandingGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
@@ -186,7 +186,7 @@ try {
 | **sSelector** | **string**| The type of Brandings to return | |
 | **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
 | **sQuery** | **string**| Allow to filter the returned results | [optional] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 
 ### Return type
 
@@ -237,7 +237,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectBrandingApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 0; // int
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -255,7 +255,7 @@ try {
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
 | **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
 ### Return type
@@ -275,10 +275,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `brandingGetObjectV2()`
+## `brandingGetObjectV3()`
 
 ```php
-brandingGetObjectV2($pkiBrandingID): \eZmaxAPI\Model\BrandingGetObjectV2Response
+brandingGetObjectV3($pkiBrandingID): \eZmaxAPI\Model\BrandingGetObjectV3Response
 ```
 
 Retrieve an existing Branding
@@ -307,10 +307,10 @@ $apiInstance = new eZmaxAPI\Api\ObjectBrandingApi(
 $pkiBrandingID = 56; // int
 
 try {
-    $result = $apiInstance->brandingGetObjectV2($pkiBrandingID);
+    $result = $apiInstance->brandingGetObjectV3($pkiBrandingID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectBrandingApi->brandingGetObjectV2: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectBrandingApi->brandingGetObjectV3: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -322,7 +322,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\BrandingGetObjectV2Response**](../Model/BrandingGetObjectV2Response.md)
+[**\eZmaxAPI\Model\BrandingGetObjectV3Response**](../Model/BrandingGetObjectV3Response.md)
 
 ### Authorization
 

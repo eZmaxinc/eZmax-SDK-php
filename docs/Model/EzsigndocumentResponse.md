@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **iEzsigndocumentPagetotal** | **int** | The number of pages in the Ezsigndocument. |
 **iEzsigndocumentSignaturesigned** | **int** | The number of signatures that were signed in the document. |
 **iEzsigndocumentSignaturetotal** | **int** | The number of total signatures that were requested in the Ezsigndocument. |
+**iEzsigndocumentFormfieldtotal** | **int** | The number of total Ezsignformfield that were requested in the Ezsigndocument. |
 **sEzsigndocumentMD5initial** | **string** | MD5 Hash of the initial PDF Document before signatures were applied to it. | [optional]
 **tEzsigndocumentDeclinedtosignreason** | **string** | A custom text message that will contain the refusal message if the Ezsigndocument is declined to sign | [optional]
 **sEzsigndocumentMD5signed** | **string** | MD5 Hash of the final PDF Document after all signatures were applied to it. | [optional]

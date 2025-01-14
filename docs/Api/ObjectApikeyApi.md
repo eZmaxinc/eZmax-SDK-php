@@ -7,6 +7,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**apikeyCreateObjectV2()**](ObjectApikeyApi.md#apikeyCreateObjectV2) | **POST** /2/object/apikey | Create a new Apikey |
 | [**apikeyEditObjectV1()**](ObjectApikeyApi.md#apikeyEditObjectV1) | **PUT** /1/object/apikey/{pkiApikeyID} | Edit an existing Apikey |
 | [**apikeyEditPermissionsV1()**](ObjectApikeyApi.md#apikeyEditPermissionsV1) | **PUT** /1/object/apikey/{pkiApikeyID}/editPermissions | Edit multiple Permissions |
+| [**apikeyGenerateDelegatedCredentialsV1()**](ObjectApikeyApi.md#apikeyGenerateDelegatedCredentialsV1) | **POST** /1/object/apikey/generateDelegatedCredentials | Generate a delegated credentials |
 | [**apikeyGetCorsV1()**](ObjectApikeyApi.md#apikeyGetCorsV1) | **GET** /1/object/apikey/{pkiApikeyID}/getCors | Retrieve an existing Apikey&#39;s cors |
 | [**apikeyGetListV1()**](ObjectApikeyApi.md#apikeyGetListV1) | **GET** /1/object/apikey/getList | Retrieve Apikey list |
 | [**apikeyGetObjectV2()**](ObjectApikeyApi.md#apikeyGetObjectV2) | **GET** /2/object/apikey/{pkiApikeyID} | Retrieve an existing Apikey |
@@ -205,6 +206,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `apikeyGenerateDelegatedCredentialsV1()`
+
+```php
+apikeyGenerateDelegatedCredentialsV1($apikeyGenerateDelegatedCredentialsV1Request): \eZmaxAPI\Model\ApikeyGenerateDelegatedCredentialsV1Response
+```
+
+Generate a delegated credentials
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectApikeyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$apikeyGenerateDelegatedCredentialsV1Request = new \eZmaxAPI\Model\ApikeyGenerateDelegatedCredentialsV1Request(); // \eZmaxAPI\Model\ApikeyGenerateDelegatedCredentialsV1Request
+
+try {
+    $result = $apiInstance->apikeyGenerateDelegatedCredentialsV1($apikeyGenerateDelegatedCredentialsV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectApikeyApi->apikeyGenerateDelegatedCredentialsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **apikeyGenerateDelegatedCredentialsV1Request** | [**\eZmaxAPI\Model\ApikeyGenerateDelegatedCredentialsV1Request**](../Model/ApikeyGenerateDelegatedCredentialsV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\ApikeyGenerateDelegatedCredentialsV1Response**](../Model/ApikeyGenerateDelegatedCredentialsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `apikeyGetCorsV1()`
 
 ```php
@@ -297,7 +360,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectApikeyApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 0; // int
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -315,7 +378,7 @@ try {
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
 | **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
 ### Return type
