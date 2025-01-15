@@ -82,7 +82,7 @@ try {
 ## `usergroupEditObjectV1()`
 
 ```php
-usergroupEditObjectV1($pkiUsergroupID, $usergroupEditObjectV1Request): \eZmaxAPI\Model\UsergroupEditObjectV1Response
+usergroupEditObjectV1($pkiUsergroupID, $usergroupEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Usergroup
@@ -128,7 +128,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UsergroupEditObjectV1Response**](../Model/UsergroupEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

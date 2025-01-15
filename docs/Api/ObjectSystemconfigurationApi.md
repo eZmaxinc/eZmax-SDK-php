@@ -11,7 +11,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 ## `systemconfigurationEditObjectV1()`
 
 ```php
-systemconfigurationEditObjectV1($pkiSystemconfigurationID, $systemconfigurationEditObjectV1Request): \eZmaxAPI\Model\SystemconfigurationEditObjectV1Response
+systemconfigurationEditObjectV1($pkiSystemconfigurationID, $systemconfigurationEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Systemconfiguration
@@ -57,7 +57,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\SystemconfigurationEditObjectV1Response**](../Model/SystemconfigurationEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

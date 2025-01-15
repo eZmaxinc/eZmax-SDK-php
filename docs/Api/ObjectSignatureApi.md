@@ -78,7 +78,7 @@ try {
 ## `signatureDeleteObjectV1()`
 
 ```php
-signatureDeleteObjectV1($pkiSignatureID): \eZmaxAPI\Model\SignatureDeleteObjectV1Response
+signatureDeleteObjectV1($pkiSignatureID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Signature
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\SignatureDeleteObjectV1Response**](../Model/SignatureDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ try {
 ## `signatureEditObjectV1()`
 
 ```php
-signatureEditObjectV1($pkiSignatureID, $signatureEditObjectV1Request): \eZmaxAPI\Model\SignatureEditObjectV1Response
+signatureEditObjectV1($pkiSignatureID, $signatureEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Signature
@@ -186,7 +186,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\SignatureEditObjectV1Response**](../Model/SignatureEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

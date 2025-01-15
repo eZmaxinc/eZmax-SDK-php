@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aObjApikey** | [**\eZmaxAPI\Model\ApikeyResponseCompound[]**](ApikeyResponseCompound.md) |  |
+**aObjApikey** | [**\eZmaxAPI\Model\ApikeyResponseCompound[]**](ApikeyResponse.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -75,7 +75,7 @@ try {
 ## `usergroupdelegationDeleteObjectV1()`
 
 ```php
-usergroupdelegationDeleteObjectV1($pkiUsergroupdelegationID): \eZmaxAPI\Model\UsergroupdelegationDeleteObjectV1Response
+usergroupdelegationDeleteObjectV1($pkiUsergroupdelegationID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Usergroupdelegation
@@ -119,7 +119,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UsergroupdelegationDeleteObjectV1Response**](../Model/UsergroupdelegationDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ try {
 ## `usergroupdelegationEditObjectV1()`
 
 ```php
-usergroupdelegationEditObjectV1($pkiUsergroupdelegationID, $usergroupdelegationEditObjectV1Request): \eZmaxAPI\Model\UsergroupdelegationEditObjectV1Response
+usergroupdelegationEditObjectV1($pkiUsergroupdelegationID, $usergroupdelegationEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Usergroupdelegation
@@ -183,7 +183,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UsergroupdelegationEditObjectV1Response**](../Model/UsergroupdelegationEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

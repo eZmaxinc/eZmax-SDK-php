@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **fkiWebsiteIDDefault** | **int** | The unique ID of the Website Default | [optional]
 **eContactinformationsType** | [**\eZmaxAPI\Model\FieldEContactinformationsType**](FieldEContactinformationsType.md) |  |
 **sContactinformationsUrl** | **string** | The url of the Contactinformations | [optional]
-**objAddressDefault** | [**\eZmaxAPI\Model\AddressResponseCompound**](AddressResponseCompound.md) |  | [optional]
+**objAddressDefault** | [**\eZmaxAPI\Model\AddressResponse**](AddressResponse.md) | An Address Object and children to create a complete structure | [optional]
 **objPhoneDefault** | [**\eZmaxAPI\Model\PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional]
-**objEmailDefault** | [**\eZmaxAPI\Model\EmailResponseCompound**](EmailResponseCompound.md) |  | [optional]
-**objWebsiteDefault** | [**\eZmaxAPI\Model\WebsiteResponseCompound**](WebsiteResponseCompound.md) |  | [optional]
+**objEmailDefault** | [**\eZmaxAPI\Model\EmailResponse**](EmailResponse.md) | An Email Object and children to create a complete structure | [optional]
+**objWebsiteDefault** | [**\eZmaxAPI\Model\WebsiteResponse**](WebsiteResponse.md) | A Website Object and children to create a complete structure | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

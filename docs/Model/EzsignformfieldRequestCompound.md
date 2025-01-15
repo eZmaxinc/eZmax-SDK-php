@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **eEzsignformfieldDependencyrequirement** | [**\eZmaxAPI\Model\FieldEEzsignformfieldDependencyrequirement**](FieldEEzsignformfieldDependencyrequirement.md) |  | [optional]
 **eEzsignformfieldHorizontalalignment** | [**\eZmaxAPI\Model\EnumHorizontalalignment**](EnumHorizontalalignment.md) |  | [optional]
 **objTextstylestatic** | [**\eZmaxAPI\Model\TextstylestaticRequestCompound**](TextstylestaticRequestCompound.md) |  | [optional]
-**aObjEzsignelementdependency** | [**\eZmaxAPI\Model\EzsignelementdependencyRequestCompound[]**](EzsignelementdependencyRequestCompound.md) |  | [optional]
+**aObjEzsignelementdependency** | [**\eZmaxAPI\Model\EzsignelementdependencyRequestCompound[]**](EzsignelementdependencyRequest.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

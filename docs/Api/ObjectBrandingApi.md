@@ -76,7 +76,7 @@ try {
 ## `brandingEditObjectV2()`
 
 ```php
-brandingEditObjectV2($pkiBrandingID, $brandingEditObjectV2Request): \eZmaxAPI\Model\BrandingEditObjectV2Response
+brandingEditObjectV2($pkiBrandingID, $brandingEditObjectV2Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Branding
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\BrandingEditObjectV2Response**](../Model/BrandingEditObjectV2Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

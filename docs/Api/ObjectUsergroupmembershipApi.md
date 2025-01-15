@@ -75,7 +75,7 @@ try {
 ## `usergroupmembershipDeleteObjectV1()`
 
 ```php
-usergroupmembershipDeleteObjectV1($pkiUsergroupmembershipID): \eZmaxAPI\Model\UsergroupmembershipDeleteObjectV1Response
+usergroupmembershipDeleteObjectV1($pkiUsergroupmembershipID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Usergroupmembership
@@ -119,7 +119,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UsergroupmembershipDeleteObjectV1Response**](../Model/UsergroupmembershipDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ try {
 ## `usergroupmembershipEditObjectV1()`
 
 ```php
-usergroupmembershipEditObjectV1($pkiUsergroupmembershipID, $usergroupmembershipEditObjectV1Request): \eZmaxAPI\Model\UsergroupmembershipEditObjectV1Response
+usergroupmembershipEditObjectV1($pkiUsergroupmembershipID, $usergroupmembershipEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Usergroupmembership
@@ -183,7 +183,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UsergroupmembershipEditObjectV1Response**](../Model/UsergroupmembershipEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

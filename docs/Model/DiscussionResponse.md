@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **dtDiscussionLastread** | **string** | The date the Discussion was last read | [optional]
 **iDiscussionmessageCount** | **int** | The count of Attachment. |
 **iDiscussionmessageCountunread** | **int** | The count of Attachment. |
-**objDiscussionconfiguration** | [**\eZmaxAPI\Model\CustomDiscussionconfigurationResponse**](CustomDiscussionconfigurationResponse.md) |  | [optional]
+**objDiscussionconfiguration** | **object** | A Custom Discussionconfiguration Object | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

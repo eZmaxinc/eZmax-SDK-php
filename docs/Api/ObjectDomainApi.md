@@ -75,7 +75,7 @@ try {
 ## `domainDeleteObjectV1()`
 
 ```php
-domainDeleteObjectV1($pkiDomainID): \eZmaxAPI\Model\DomainDeleteObjectV1Response
+domainDeleteObjectV1($pkiDomainID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Domain
@@ -119,7 +119,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\DomainDeleteObjectV1Response**](../Model/DomainDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

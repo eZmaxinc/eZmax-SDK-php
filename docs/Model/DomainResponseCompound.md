@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **bDomainValidmailfrom** | **bool** | Whether the mail from is valid or not |
 **bDomainValidcustomer** | **bool** | Whether the customer has access to it or not |
 **objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
-**aObjDnsrecord** | [**\eZmaxAPI\Model\CustomDnsrecordResponse[]**](CustomDnsrecordResponse.md) |  |
+**aObjDnsrecord** | **\eZmaxAPI\Model\CustomDnsrecordResponse[]** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

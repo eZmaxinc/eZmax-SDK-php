@@ -11,7 +11,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 ## `ezsignuserEditObjectV1()`
 
 ```php
-ezsignuserEditObjectV1($pkiEzsignuserID, $ezsignuserEditObjectV1Request): \eZmaxAPI\Model\EzsignuserEditObjectV1Response
+ezsignuserEditObjectV1($pkiEzsignuserID, $ezsignuserEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Ezsignuser
@@ -57,7 +57,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignuserEditObjectV1Response**](../Model/EzsignuserEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
