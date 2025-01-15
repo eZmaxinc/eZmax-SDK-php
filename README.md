@@ -81,6 +81,7 @@ Class | Method | HTTP request | Description
 *ModuleUserApi* | [**userCreateEzsignuserV1**](docs/Api/ModuleUserApi.md#usercreateezsignuserv1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
 *ObjectActivesessionApi* | [**activesessionGenerateFederationTokenV1**](docs/Api/ObjectActivesessionApi.md#activesessiongeneratefederationtokenv1) | **POST** /1/object/activesession/generateFederationToken | Generate a federation token
 *ObjectActivesessionApi* | [**activesessionGetCurrentV1**](docs/Api/ObjectActivesessionApi.md#activesessiongetcurrentv1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+*ObjectActivesessionApi* | [**activesessionGetCurrentV2**](docs/Api/ObjectActivesessionApi.md#activesessiongetcurrentv2) | **GET** /2/object/activesession/getCurrent | Get Current Activesession
 *ObjectActivesessionApi* | [**activesessionGetListV1**](docs/Api/ObjectActivesessionApi.md#activesessiongetlistv1) | **GET** /1/object/activesession/getList | Retrieve Activesession list
 *ObjectApikeyApi* | [**apikeyCreateObjectV2**](docs/Api/ObjectApikeyApi.md#apikeycreateobjectv2) | **POST** /2/object/apikey | Create a new Apikey
 *ObjectApikeyApi* | [**apikeyEditObjectV1**](docs/Api/ObjectApikeyApi.md#apikeyeditobjectv1) | **PUT** /1/object/apikey/{pkiApikeyID} | Edit an existing Apikey
@@ -537,6 +538,8 @@ Class | Method | HTTP request | Description
 - [ActivesessionGenerateFederationTokenV1ResponseMPayload](docs/Model/ActivesessionGenerateFederationTokenV1ResponseMPayload.md)
 - [ActivesessionGetCurrentV1Response](docs/Model/ActivesessionGetCurrentV1Response.md)
 - [ActivesessionGetCurrentV1ResponseMPayload](docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md)
+- [ActivesessionGetCurrentV2Response](docs/Model/ActivesessionGetCurrentV2Response.md)
+- [ActivesessionGetCurrentV2ResponseMPayload](docs/Model/ActivesessionGetCurrentV2ResponseMPayload.md)
 - [ActivesessionGetListV1Response](docs/Model/ActivesessionGetListV1Response.md)
 - [ActivesessionGetListV1ResponseMPayload](docs/Model/ActivesessionGetListV1ResponseMPayload.md)
 - [ActivesessionListElement](docs/Model/ActivesessionListElement.md)

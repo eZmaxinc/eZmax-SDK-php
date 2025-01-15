@@ -118,6 +118,8 @@ docs/Model/ActivesessionGenerateFederationTokenV1Response.md
 docs/Model/ActivesessionGenerateFederationTokenV1ResponseMPayload.md
 docs/Model/ActivesessionGetCurrentV1Response.md
 docs/Model/ActivesessionGetCurrentV1ResponseMPayload.md
+docs/Model/ActivesessionGetCurrentV2Response.md
+docs/Model/ActivesessionGetCurrentV2ResponseMPayload.md
 docs/Model/ActivesessionGetListV1Response.md
 docs/Model/ActivesessionGetListV1ResponseMPayload.md
 docs/Model/ActivesessionListElement.md
@@ -1866,6 +1868,8 @@ lib/Model/ActivesessionGenerateFederationTokenV1Response.php
 lib/Model/ActivesessionGenerateFederationTokenV1ResponseMPayload.php
 lib/Model/ActivesessionGetCurrentV1Response.php
 lib/Model/ActivesessionGetCurrentV1ResponseMPayload.php
+lib/Model/ActivesessionGetCurrentV2Response.php
+lib/Model/ActivesessionGetCurrentV2ResponseMPayload.php
 lib/Model/ActivesessionGetListV1Response.php
 lib/Model/ActivesessionGetListV1ResponseMPayload.php
 lib/Model/ActivesessionListElement.php
@@ -3614,6 +3618,8 @@ test/Model/ActivesessionGenerateFederationTokenV1ResponseMPayloadTest.php
 test/Model/ActivesessionGenerateFederationTokenV1ResponseTest.php
 test/Model/ActivesessionGetCurrentV1ResponseMPayloadTest.php
 test/Model/ActivesessionGetCurrentV1ResponseTest.php
+test/Model/ActivesessionGetCurrentV2ResponseMPayloadTest.php
+test/Model/ActivesessionGetCurrentV2ResponseTest.php
 test/Model/ActivesessionGetListV1ResponseMPayloadTest.php
 test/Model/ActivesessionGetListV1ResponseTest.php
 test/Model/ActivesessionListElementTest.php

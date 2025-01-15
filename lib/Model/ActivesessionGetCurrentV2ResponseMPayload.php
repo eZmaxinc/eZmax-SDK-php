@@ -1,6 +1,6 @@
 <?php
 /**
- * WebhookGetHistoryV1Response
+ * ActivesessionGetCurrentV2ResponseMPayload
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * WebhookGetHistoryV1Response Class Doc Comment
+ * ActivesessionGetCurrentV2ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Response for GET /1/object/webhook/{pkiWebhookID}/getHistory
+ * @description Payload for GET /1/object/activesession/getCurrent
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class ActivesessionGetCurrentV2ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'webhook-getHistory-v1-Response';
+    protected static $openAPIModelName = 'activesession-getCurrent-v2-Response-mPayload';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
-        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug',
-        'mPayload' => '\eZmaxAPI\Model\WebhookGetHistoryV1ResponseMPayload'
+        'objActivesession' => '\eZmaxAPI\Model\ActivesessionResponseCompound'
     ];
 
     /**
@@ -72,9 +70,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objDebugPayload' => null,
-        'objDebug' => null,
-        'mPayload' => null
+        'objActivesession' => null
     ];
 
     /**
@@ -83,9 +79,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'objDebugPayload' => false,
-		'objDebug' => false,
-		'mPayload' => false
+        'objActivesession' => false
     ];
 
     /**
@@ -174,9 +168,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'objDebugPayload' => 'objDebugPayload',
-        'objDebug' => 'objDebug',
-        'mPayload' => 'mPayload'
+        'objActivesession' => 'objActivesession'
     ];
 
     /**
@@ -185,9 +177,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'objDebugPayload' => 'setObjDebugPayload',
-        'objDebug' => 'setObjDebug',
-        'mPayload' => 'setMPayload'
+        'objActivesession' => 'setObjActivesession'
     ];
 
     /**
@@ -196,9 +186,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'objDebugPayload' => 'getObjDebugPayload',
-        'objDebug' => 'getObjDebug',
-        'mPayload' => 'getMPayload'
+        'objActivesession' => 'getObjActivesession'
     ];
 
     /**
@@ -258,9 +246,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('objDebugPayload', $data ?? [], null);
-        $this->setIfExists('objDebug', $data ?? [], null);
-        $this->setIfExists('mPayload', $data ?? [], null);
+        $this->setIfExists('objActivesession', $data ?? [], null);
     }
 
     /**
@@ -290,11 +276,8 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['objDebugPayload'] === null) {
-            $invalidProperties[] = "'objDebugPayload' can't be null";
-        }
-        if ($this->container['mPayload'] === null) {
-            $invalidProperties[] = "'mPayload' can't be null";
+        if ($this->container['objActivesession'] === null) {
+            $invalidProperties[] = "'objActivesession' can't be null";
         }
         return $invalidProperties;
     }
@@ -312,97 +295,33 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets objDebugPayload
+     * Gets objActivesession
      *
-     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayload
+     * @return \eZmaxAPI\Model\ActivesessionResponseCompound
      */
-    public function getObjDebugPayload()
+    public function getObjActivesession()
     {
-	//return $this->container['objDebugPayload'];
-        return $this->container['objDebugPayload'];
+	//return $this->container['objActivesession'];
+        return $this->container['objActivesession'];
     }
 
     /**
-     * Sets objDebugPayload
+     * Sets objActivesession
      *
-     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayload $objDebugPayload objDebugPayload
+     * @param \eZmaxAPI\Model\ActivesessionResponseCompound $objActivesession objActivesession
      *
      * @return self
      */
-    public function setObjDebugPayload($objDebugPayload)
+    public function setObjActivesession($objActivesession)
     {
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objDebugPayload)) {
-            //throw new \InvalidArgumentException('non-nullable objDebugPayload cannot be null');
+        //if (is_null($objActivesession)) {
+            //throw new \InvalidArgumentException('non-nullable objActivesession cannot be null');
         //}
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objDebugPayload'] = $objDebugPayload;
-        $this->container['objDebugPayload'] = $objDebugPayload;
-
-        return $this;
-    }
-
-    /**
-     * Gets objDebug
-     *
-     * @return \eZmaxAPI\Model\CommonResponseObjDebug|null
-     */
-    public function getObjDebug()
-    {
-	//return $this->container['objDebug'];
-        return $this->container['objDebug'];
-    }
-
-    /**
-     * Sets objDebug
-     *
-     * @param \eZmaxAPI\Model\CommonResponseObjDebug|null $objDebug objDebug
-     *
-     * @return self
-     */
-    public function setObjDebug($objDebug)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objDebug)) {
-            //throw new \InvalidArgumentException('non-nullable objDebug cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objDebug'] = $objDebug;
-        $this->container['objDebug'] = $objDebug;
-
-        return $this;
-    }
-
-    /**
-     * Gets mPayload
-     *
-     * @return \eZmaxAPI\Model\WebhookGetHistoryV1ResponseMPayload
-     */
-    public function getMPayload()
-    {
-	//return $this->container['mPayload'];
-        return $this->container['mPayload'];
-    }
-
-    /**
-     * Sets mPayload
-     *
-     * @param \eZmaxAPI\Model\WebhookGetHistoryV1ResponseMPayload $mPayload mPayload
-     *
-     * @return self
-     */
-    public function setMPayload($mPayload)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($mPayload)) {
-            //throw new \InvalidArgumentException('non-nullable mPayload cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['mPayload'] = $mPayload;
-        $this->container['mPayload'] = $mPayload;
+	//$this->container['objActivesession'] = $objActivesession;
+        $this->container['objActivesession'] = $objActivesession;
 
         return $this;
     }

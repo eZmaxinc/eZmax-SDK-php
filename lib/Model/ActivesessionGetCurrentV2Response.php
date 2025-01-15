@@ -1,6 +1,6 @@
 <?php
 /**
- * WebhookGetHistoryV1Response
+ * ActivesessionGetCurrentV2Response
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * WebhookGetHistoryV1Response Class Doc Comment
+ * ActivesessionGetCurrentV2Response Class Doc Comment
  *
  * @category Class
- * @description Response for GET /1/object/webhook/{pkiWebhookID}/getHistory
+ * @description Response for GET /2/object/activesession/getCurrent
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class ActivesessionGetCurrentV2Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'webhook-getHistory-v1-Response';
+    protected static $openAPIModelName = 'activesession-getCurrent-v2-Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
         'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug',
-        'mPayload' => '\eZmaxAPI\Model\WebhookGetHistoryV1ResponseMPayload'
+        'mPayload' => '\eZmaxAPI\Model\ActivesessionGetCurrentV2ResponseMPayload'
     ];
 
     /**
@@ -378,7 +378,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets mPayload
      *
-     * @return \eZmaxAPI\Model\WebhookGetHistoryV1ResponseMPayload
+     * @return \eZmaxAPI\Model\ActivesessionGetCurrentV2ResponseMPayload
      */
     public function getMPayload()
     {
@@ -389,7 +389,7 @@ class WebhookGetHistoryV1Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets mPayload
      *
-     * @param \eZmaxAPI\Model\WebhookGetHistoryV1ResponseMPayload $mPayload mPayload
+     * @param \eZmaxAPI\Model\ActivesessionGetCurrentV2ResponseMPayload $mPayload mPayload
      *
      * @return self
      */
