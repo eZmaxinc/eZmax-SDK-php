@@ -65,7 +65,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
         'dtDiscussionLastread' => 'string',
         'iDiscussionmessageCount' => 'int',
         'iDiscussionmessageCountunread' => 'int',
-        'objDiscussionconfiguration' => 'object',
+        'objDiscussionconfiguration' => '\eZmaxAPI\Model\CustomDiscussionconfigurationResponse',
         'aObjDiscussionmembership' => '\eZmaxAPI\Model\DiscussionmembershipResponseCompound[]',
         'aObjDiscussionmessage' => '\eZmaxAPI\Model\DiscussionmessageResponseCompound[]'
     ];
@@ -595,7 +595,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets objDiscussionconfiguration
      *
-     * @return object|null
+     * @return \eZmaxAPI\Model\CustomDiscussionconfigurationResponse|null
      */
     public function getObjDiscussionconfiguration()
     {
@@ -606,7 +606,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets objDiscussionconfiguration
      *
-     * @param object|null $objDiscussionconfiguration A Custom Discussionconfiguration Object
+     * @param \eZmaxAPI\Model\CustomDiscussionconfigurationResponse|null $objDiscussionconfiguration objDiscussionconfiguration
      *
      * @return self
      */
@@ -619,7 +619,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objDiscussionconfiguration'] = $objDiscussionconfiguration;
-        $this->container['objDiscussionconfiguration'] = (is_null($objDiscussionconfiguration) ? null : $objDiscussionconfiguration);
+        $this->container['objDiscussionconfiguration'] = $objDiscussionconfiguration;
 
         return $this;
     }

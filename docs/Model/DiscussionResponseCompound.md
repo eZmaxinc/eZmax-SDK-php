@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **dtDiscussionLastread** | **string** | The date the Discussion was last read | [optional]
 **iDiscussionmessageCount** | **int** | The count of Attachment. |
 **iDiscussionmessageCountunread** | **int** | The count of Attachment. |
-**objDiscussionconfiguration** | **object** | A Custom Discussionconfiguration Object | [optional]
+**objDiscussionconfiguration** | [**\eZmaxAPI\Model\CustomDiscussionconfigurationResponse**](CustomDiscussionconfigurationResponse.md) |  | [optional]
 **aObjDiscussionmembership** | [**\eZmaxAPI\Model\DiscussionmembershipResponseCompound[]**](DiscussionmembershipResponseCompound.md) |  |
 **aObjDiscussionmessage** | [**\eZmaxAPI\Model\DiscussionmessageResponseCompound[]**](DiscussionmessageResponseCompound.md) |  |
 

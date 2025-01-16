@@ -20,6 +20,6 @@ Name | Type | Description | Notes
 **bSystemconfigurationSspr** | **bool** | Whether if we allow SSPR |
 **dtSystemconfigurationReadonlyexpirationstart** | **string** | The start date where the system will be in read only | [optional]
 **dtSystemconfigurationReadonlyexpirationend** | **string** | The end date where the system will be in read only | [optional]
-**objBranding** | **object** | A Custom Branding Object | [optional]
+**objBranding** | [**\eZmaxAPI\Model\CustomBrandingResponse**](CustomBrandingResponse.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

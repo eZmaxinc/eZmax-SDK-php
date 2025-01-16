@@ -75,7 +75,7 @@ class SystemconfigurationResponse implements ModelInterface, ArrayAccess, \JsonS
         'bSystemconfigurationSspr' => 'bool',
         'dtSystemconfigurationReadonlyexpirationstart' => 'string',
         'dtSystemconfigurationReadonlyexpirationend' => 'string',
-        'objBranding' => 'object'
+        'objBranding' => '\eZmaxAPI\Model\CustomBrandingResponse'
     ];
 
     /**
@@ -1010,7 +1010,7 @@ class SystemconfigurationResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets objBranding
      *
-     * @return object|null
+     * @return \eZmaxAPI\Model\CustomBrandingResponse|null
      */
     public function getObjBranding()
     {
@@ -1021,7 +1021,7 @@ class SystemconfigurationResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets objBranding
      *
-     * @param object|null $objBranding A Custom Branding Object
+     * @param \eZmaxAPI\Model\CustomBrandingResponse|null $objBranding objBranding
      *
      * @return self
      */
@@ -1034,7 +1034,7 @@ class SystemconfigurationResponse implements ModelInterface, ArrayAccess, \JsonS
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objBranding'] = $objBranding;
-        $this->container['objBranding'] = (is_null($objBranding) ? null : $objBranding);
+        $this->container['objBranding'] = $objBranding;
 
         return $this;
     }

@@ -61,7 +61,7 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     protected static $openAPITypes = [
         'pkiEzsignfolderID' => 'int',
         'fkiEzsignfoldertypeID' => 'int',
-        'objEzsignfoldertype' => 'object',
+        'objEzsignfoldertype' => '\eZmaxAPI\Model\CustomEzsignfoldertypeResponse',
         'fkiTimezoneID' => 'int',
         'eEzsignfolderCompletion' => '\eZmaxAPI\Model\FieldEEzsignfolderCompletion',
         'sEzsignfoldertypeNameX' => 'string',
@@ -622,7 +622,7 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     /**
      * Gets objEzsignfoldertype
      *
-     * @return object|null
+     * @return \eZmaxAPI\Model\CustomEzsignfoldertypeResponse|null
      */
     public function getObjEzsignfoldertype()
     {
@@ -633,7 +633,7 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
     /**
      * Sets objEzsignfoldertype
      *
-     * @param object|null $objEzsignfoldertype A Custom Ezsignfoldertype Object
+     * @param \eZmaxAPI\Model\CustomEzsignfoldertypeResponse|null $objEzsignfoldertype objEzsignfoldertype
      *
      * @return self
      */
@@ -646,7 +646,7 @@ class EzsignfolderGetObjectV1ResponseMPayload implements ModelInterface, ArrayAc
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsignfoldertype'] = $objEzsignfoldertype;
-        $this->container['objEzsignfoldertype'] = (is_null($objEzsignfoldertype) ? null : $objEzsignfoldertype);
+        $this->container['objEzsignfoldertype'] = $objEzsignfoldertype;
 
         return $this;
     }

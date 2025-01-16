@@ -61,7 +61,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
     protected static $openAPITypes = [
         'pkiEzsignfolderID' => 'int',
         'fkiEzsignfoldertypeID' => 'int',
-        'objEzsignfoldertype' => 'object',
+        'objEzsignfoldertype' => '\eZmaxAPI\Model\CustomEzsignfoldertypeResponse',
         'fkiTimezoneID' => 'int',
         'eEzsignfolderCompletion' => '\eZmaxAPI\Model\FieldEEzsignfolderCompletion',
         'eEzsignfolderDocumentdependency' => '\eZmaxAPI\Model\FieldEEzsignfolderDocumentdependency',
@@ -629,7 +629,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets objEzsignfoldertype
      *
-     * @return object|null
+     * @return \eZmaxAPI\Model\CustomEzsignfoldertypeResponse|null
      */
     public function getObjEzsignfoldertype()
     {
@@ -640,7 +640,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets objEzsignfoldertype
      *
-     * @param object|null $objEzsignfoldertype A Custom Ezsignfoldertype Object
+     * @param \eZmaxAPI\Model\CustomEzsignfoldertypeResponse|null $objEzsignfoldertype objEzsignfoldertype
      *
      * @return self
      */
@@ -653,7 +653,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objEzsignfoldertype'] = $objEzsignfoldertype;
-        $this->container['objEzsignfoldertype'] = (is_null($objEzsignfoldertype) ? null : $objEzsignfoldertype);
+        $this->container['objEzsignfoldertype'] = $objEzsignfoldertype;
 
         return $this;
     }

@@ -65,7 +65,7 @@ class DiscussionResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         'dtDiscussionLastread' => 'string',
         'iDiscussionmessageCount' => 'int',
         'iDiscussionmessageCountunread' => 'int',
-        'objDiscussionconfiguration' => 'object'
+        'objDiscussionconfiguration' => '\eZmaxAPI\Model\CustomDiscussionconfigurationResponse'
     ];
 
     /**
@@ -575,7 +575,7 @@ class DiscussionResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets objDiscussionconfiguration
      *
-     * @return object|null
+     * @return \eZmaxAPI\Model\CustomDiscussionconfigurationResponse|null
      */
     public function getObjDiscussionconfiguration()
     {
@@ -586,7 +586,7 @@ class DiscussionResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets objDiscussionconfiguration
      *
-     * @param object|null $objDiscussionconfiguration A Custom Discussionconfiguration Object
+     * @param \eZmaxAPI\Model\CustomDiscussionconfigurationResponse|null $objDiscussionconfiguration objDiscussionconfiguration
      *
      * @return self
      */
@@ -599,7 +599,7 @@ class DiscussionResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['objDiscussionconfiguration'] = $objDiscussionconfiguration;
-        $this->container['objDiscussionconfiguration'] = (is_null($objDiscussionconfiguration) ? null : $objDiscussionconfiguration);
+        $this->container['objDiscussionconfiguration'] = $objDiscussionconfiguration;
 
         return $this;
     }
