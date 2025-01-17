@@ -80,7 +80,7 @@ try {
 ## `webhookDeleteObjectV1()`
 
 ```php
-webhookDeleteObjectV1($pkiWebhookID): \eZmaxAPI\Model\CommonResponse
+webhookDeleteObjectV1($pkiWebhookID): \eZmaxAPI\Model\WebhookDeleteObjectV1Response
 ```
 
 Delete an existing Webhook
@@ -124,7 +124,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\WebhookDeleteObjectV1Response**](../Model/WebhookDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ try {
 ## `webhookEditObjectV1()`
 
 ```php
-webhookEditObjectV1($pkiWebhookID, $webhookEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+webhookEditObjectV1($pkiWebhookID, $webhookEditObjectV1Request): \eZmaxAPI\Model\WebhookEditObjectV1Response
 ```
 
 Edit an existing Webhook
@@ -188,7 +188,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\WebhookEditObjectV1Response**](../Model/WebhookEditObjectV1Response.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ try {
 ## `webhookSendWebhookV1()`
 
 ```php
-webhookSendWebhookV1($webhookSendWebhookV1Request): \eZmaxAPI\Model\CommonResponse
+webhookSendWebhookV1($webhookSendWebhookV1Request): \eZmaxAPI\Model\WebhookSendWebhookV1Response
 ```
 
 Emit a Webhook event
@@ -508,7 +508,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\WebhookSendWebhookV1Response**](../Model/WebhookSendWebhookV1Response.md)
 
 ### Authorization
 
@@ -526,7 +526,7 @@ try {
 ## `webhookTestV1()`
 
 ```php
-webhookTestV1($pkiWebhookID, $body): \eZmaxAPI\Model\CommonResponse
+webhookTestV1($pkiWebhookID, $body): \eZmaxAPI\Model\WebhookTestV1Response
 ```
 
 Test the Webhook by calling the Url
@@ -572,7 +572,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\WebhookTestV1Response**](../Model/WebhookTestV1Response.md)
 
 ### Authorization
 

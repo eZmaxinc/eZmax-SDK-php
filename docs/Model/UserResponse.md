@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **sTimezoneName** | **string** | The description of the Timezone |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **sLanguageNameX** | **string** | The Name of the Language in the language of the requester |
-**objEmail** | [**\eZmaxAPI\Model\EmailResponse**](EmailResponse.md) | An Email Object and children to create a complete structure |
+**objEmail** | [**\eZmaxAPI\Model\EmailResponseCompound**](EmailResponseCompound.md) |  |
 **fkiBillingentityinternalID** | **int** | The unique ID of the Billingentityinternal. |
 **sBillingentityinternalDescriptionX** | **string** | The description of the Billingentityinternal in the language of the requester |
 **objPhoneHome** | [**\eZmaxAPI\Model\PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional]

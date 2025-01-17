@@ -405,7 +405,7 @@ try {
 ## `ezsigntemplatedocumentFlattenV1()`
 
 ```php
-ezsigntemplatedocumentFlattenV1($pkiEzsigntemplatedocumentID, $body): \eZmaxAPI\Model\CommonResponse
+ezsigntemplatedocumentFlattenV1($pkiEzsigntemplatedocumentID, $body): \eZmaxAPI\Model\EzsigntemplatedocumentFlattenV1Response
 ```
 
 Flatten
@@ -451,7 +451,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigntemplatedocumentFlattenV1Response**](../Model/EzsigntemplatedocumentFlattenV1Response.md)
 
 ### Authorization
 
@@ -843,7 +843,7 @@ try {
 ## `ezsigntemplatedocumentPatchObjectV1()`
 
 ```php
-ezsigntemplatedocumentPatchObjectV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request): \eZmaxAPI\Model\CommonResponse
+ezsigntemplatedocumentPatchObjectV1($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentPatchObjectV1Request): \eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Response
 ```
 
 Patch an existing Ezsigntemplatedocument
@@ -889,7 +889,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigntemplatedocumentPatchObjectV1Response**](../Model/EzsigntemplatedocumentPatchObjectV1Response.md)
 
 ### Authorization
 

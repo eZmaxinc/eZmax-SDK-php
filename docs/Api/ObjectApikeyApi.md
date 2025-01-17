@@ -81,7 +81,7 @@ try {
 ## `apikeyEditObjectV1()`
 
 ```php
-apikeyEditObjectV1($pkiApikeyID, $apikeyEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+apikeyEditObjectV1($pkiApikeyID, $apikeyEditObjectV1Request): \eZmaxAPI\Model\ApikeyEditObjectV1Response
 ```
 
 Edit an existing Apikey
@@ -127,7 +127,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\ApikeyEditObjectV1Response**](../Model/ApikeyEditObjectV1Response.md)
 
 ### Authorization
 

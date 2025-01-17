@@ -43,7 +43,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 ## `ezsigndocumentApplyEzsigntemplateV1()`
 
 ```php
-ezsigndocumentApplyEzsigntemplateV1($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateV1Request): \eZmaxAPI\Model\CommonResponse
+ezsigndocumentApplyEzsigntemplateV1($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateV1Request): \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Response
 ```
 
 Apply an Ezsigntemplate to the Ezsigndocument.
@@ -89,7 +89,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Response**](../Model/EzsigndocumentApplyEzsigntemplateV1Response.md)
 
 ### Authorization
 
@@ -485,7 +485,7 @@ try {
 ## `ezsigndocumentDeclineToSignV1()`
 
 ```php
-ezsigndocumentDeclineToSignV1($pkiEzsigndocumentID, $ezsigndocumentDeclineToSignV1Request): \eZmaxAPI\Model\CommonResponse
+ezsigndocumentDeclineToSignV1($pkiEzsigndocumentID, $ezsigndocumentDeclineToSignV1Request): \eZmaxAPI\Model\EzsigndocumentDeclineToSignV1Response
 ```
 
 Decline to sign
@@ -531,7 +531,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigndocumentDeclineToSignV1Response**](../Model/EzsigndocumentDeclineToSignV1Response.md)
 
 ### Authorization
 
@@ -549,7 +549,7 @@ try {
 ## `ezsigndocumentDeleteObjectV1()`
 
 ```php
-ezsigndocumentDeleteObjectV1($pkiEzsigndocumentID): \eZmaxAPI\Model\CommonResponse
+ezsigndocumentDeleteObjectV1($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentDeleteObjectV1Response
 ```
 
 Delete an existing Ezsigndocument
@@ -593,7 +593,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigndocumentDeleteObjectV1Response**](../Model/EzsigndocumentDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -867,7 +867,7 @@ try {
 ## `ezsigndocumentEndPrematurelyV1()`
 
 ```php
-ezsigndocumentEndPrematurelyV1($pkiEzsigndocumentID, $body): \eZmaxAPI\Model\CommonResponse
+ezsigndocumentEndPrematurelyV1($pkiEzsigndocumentID, $body): \eZmaxAPI\Model\EzsigndocumentEndPrematurelyV1Response
 ```
 
 End prematurely
@@ -913,7 +913,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigndocumentEndPrematurelyV1Response**](../Model/EzsigndocumentEndPrematurelyV1Response.md)
 
 ### Authorization
 
@@ -995,7 +995,7 @@ try {
 ## `ezsigndocumentFlattenV1()`
 
 ```php
-ezsigndocumentFlattenV1($pkiEzsigndocumentID, $body): \eZmaxAPI\Model\CommonResponse
+ezsigndocumentFlattenV1($pkiEzsigndocumentID, $body): \eZmaxAPI\Model\EzsigndocumentFlattenV1Response
 ```
 
 Flatten
@@ -1041,7 +1041,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigndocumentFlattenV1Response**](../Model/EzsigndocumentFlattenV1Response.md)
 
 ### Authorization
 
@@ -1991,7 +1991,7 @@ try {
 ## `ezsigndocumentPatchObjectV1()`
 
 ```php
-ezsigndocumentPatchObjectV1($pkiEzsigndocumentID, $ezsigndocumentPatchObjectV1Request): \eZmaxAPI\Model\CommonResponse
+ezsigndocumentPatchObjectV1($pkiEzsigndocumentID, $ezsigndocumentPatchObjectV1Request): \eZmaxAPI\Model\EzsigndocumentPatchObjectV1Response
 ```
 
 Patch an existing Ezsigndocument
@@ -2037,7 +2037,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigndocumentPatchObjectV1Response**](../Model/EzsigndocumentPatchObjectV1Response.md)
 
 ### Authorization
 
@@ -2055,7 +2055,7 @@ try {
 ## `ezsigndocumentSubmitEzsignformV1()`
 
 ```php
-ezsigndocumentSubmitEzsignformV1($pkiEzsigndocumentID, $ezsigndocumentSubmitEzsignformV1Request): \eZmaxAPI\Model\CommonResponse
+ezsigndocumentSubmitEzsignformV1($pkiEzsigndocumentID, $ezsigndocumentSubmitEzsignformV1Request): \eZmaxAPI\Model\EzsigndocumentSubmitEzsignformV1Response
 ```
 
 Submit the Ezsignform
@@ -2101,7 +2101,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigndocumentSubmitEzsignformV1Response**](../Model/EzsigndocumentSubmitEzsignformV1Response.md)
 
 ### Authorization
 
@@ -2119,7 +2119,7 @@ try {
 ## `ezsigndocumentUnsendV1()`
 
 ```php
-ezsigndocumentUnsendV1($pkiEzsigndocumentID, $body): \eZmaxAPI\Model\CommonResponse
+ezsigndocumentUnsendV1($pkiEzsigndocumentID, $body): \eZmaxAPI\Model\EzsigndocumentUnsendV1Response
 ```
 
 Unsend the Ezsigndocument
@@ -2165,7 +2165,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigndocumentUnsendV1Response**](../Model/EzsigndocumentUnsendV1Response.md)
 
 ### Authorization
 

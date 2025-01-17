@@ -73,7 +73,7 @@ try {
 ## `discussionmembershipDeleteObjectV1()`
 
 ```php
-discussionmembershipDeleteObjectV1($pkiDiscussionmembershipID): \eZmaxAPI\Model\CommonResponse
+discussionmembershipDeleteObjectV1($pkiDiscussionmembershipID): \eZmaxAPI\Model\DiscussionmembershipDeleteObjectV1Response
 ```
 
 Delete an existing Discussionmembership
@@ -117,7 +117,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\DiscussionmembershipDeleteObjectV1Response**](../Model/DiscussionmembershipDeleteObjectV1Response.md)
 
 ### Authorization
 

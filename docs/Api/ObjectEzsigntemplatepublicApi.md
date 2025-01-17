@@ -142,7 +142,7 @@ try {
 ## `ezsigntemplatepublicEditObjectV1()`
 
 ```php
-ezsigntemplatepublicEditObjectV1($pkiEzsigntemplatepublicID, $ezsigntemplatepublicEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+ezsigntemplatepublicEditObjectV1($pkiEzsigntemplatepublicID, $ezsigntemplatepublicEditObjectV1Request): \eZmaxAPI\Model\EzsigntemplatepublicEditObjectV1Response
 ```
 
 Edit an existing Ezsigntemplatepublic
@@ -188,7 +188,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigntemplatepublicEditObjectV1Response**](../Model/EzsigntemplatepublicEditObjectV1Response.md)
 
 ### Authorization
 

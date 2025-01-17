@@ -204,7 +204,7 @@ try {
 ## `ezsignsignatureDeleteObjectV1()`
 
 ```php
-ezsignsignatureDeleteObjectV1($pkiEzsignsignatureID): \eZmaxAPI\Model\CommonResponse
+ezsignsignatureDeleteObjectV1($pkiEzsignsignatureID): \eZmaxAPI\Model\EzsignsignatureDeleteObjectV1Response
 ```
 
 Delete an existing Ezsignsignature
@@ -248,7 +248,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignsignatureDeleteObjectV1Response**](../Model/EzsignsignatureDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ try {
 ## `ezsignsignatureEditObjectV2()`
 
 ```php
-ezsignsignatureEditObjectV2($pkiEzsignsignatureID, $ezsignsignatureEditObjectV2Request): \eZmaxAPI\Model\CommonResponse
+ezsignsignatureEditObjectV2($pkiEzsignsignatureID, $ezsignsignatureEditObjectV2Request): \eZmaxAPI\Model\EzsignsignatureEditObjectV2Response
 ```
 
 Edit an existing Ezsignsignature
@@ -312,7 +312,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignsignatureEditObjectV2Response**](../Model/EzsignsignatureEditObjectV2Response.md)
 
 ### Authorization
 
