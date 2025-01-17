@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class AuthenticationexternalResponseCompound extends AuthenticationexternalResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,12 +57,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiAuthenticationexternalID' => 'int',
-        'sAuthenticationexternalDescription' => 'string',
-        'eAuthenticationexternalType' => '\eZmaxAPI\Model\FieldEAuthenticationexternalType',
-        'bAuthenticationexternalConnected' => 'bool',
-        'sAuthenticationexternalAuthorizationurl' => 'string',
-        'objAudit' => '\eZmaxAPI\Model\CommonAudit'
+        
     ];
 
     /**
@@ -75,12 +68,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiAuthenticationexternalID' => null,
-        'sAuthenticationexternalDescription' => null,
-        'eAuthenticationexternalType' => null,
-        'bAuthenticationexternalConnected' => null,
-        'sAuthenticationexternalAuthorizationurl' => null,
-        'objAudit' => null
+        
     ];
 
     /**
@@ -89,12 +77,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiAuthenticationexternalID' => false,
-		'sAuthenticationexternalDescription' => false,
-		'eAuthenticationexternalType' => false,
-		'bAuthenticationexternalConnected' => false,
-		'sAuthenticationexternalAuthorizationurl' => false,
-		'objAudit' => false
+        
     ];
 
     /**
@@ -111,7 +94,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -121,7 +104,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -131,7 +114,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -183,12 +166,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiAuthenticationexternalID' => 'pkiAuthenticationexternalID',
-        'sAuthenticationexternalDescription' => 'sAuthenticationexternalDescription',
-        'eAuthenticationexternalType' => 'eAuthenticationexternalType',
-        'bAuthenticationexternalConnected' => 'bAuthenticationexternalConnected',
-        'sAuthenticationexternalAuthorizationurl' => 'sAuthenticationexternalAuthorizationurl',
-        'objAudit' => 'objAudit'
+        
     ];
 
     /**
@@ -197,12 +175,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'pkiAuthenticationexternalID' => 'setPkiAuthenticationexternalID',
-        'sAuthenticationexternalDescription' => 'setSAuthenticationexternalDescription',
-        'eAuthenticationexternalType' => 'setEAuthenticationexternalType',
-        'bAuthenticationexternalConnected' => 'setBAuthenticationexternalConnected',
-        'sAuthenticationexternalAuthorizationurl' => 'setSAuthenticationexternalAuthorizationurl',
-        'objAudit' => 'setObjAudit'
+        
     ];
 
     /**
@@ -211,12 +184,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'pkiAuthenticationexternalID' => 'getPkiAuthenticationexternalID',
-        'sAuthenticationexternalDescription' => 'getSAuthenticationexternalDescription',
-        'eAuthenticationexternalType' => 'getEAuthenticationexternalType',
-        'bAuthenticationexternalConnected' => 'getBAuthenticationexternalConnected',
-        'sAuthenticationexternalAuthorizationurl' => 'getSAuthenticationexternalAuthorizationurl',
-        'objAudit' => 'getObjAudit'
+        
     ];
 
     /**
@@ -227,7 +195,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -237,7 +205,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -247,7 +215,7 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -261,12 +229,6 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -276,12 +238,8 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiAuthenticationexternalID', $data ?? [], null);
-        $this->setIfExists('sAuthenticationexternalDescription', $data ?? [], null);
-        $this->setIfExists('eAuthenticationexternalType', $data ?? [], null);
-        $this->setIfExists('bAuthenticationexternalConnected', $data ?? [], null);
-        $this->setIfExists('sAuthenticationexternalAuthorizationurl', $data ?? [], null);
-        $this->setIfExists('objAudit', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -309,38 +267,8 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiAuthenticationexternalID'] === null) {
-            $invalidProperties[] = "'pkiAuthenticationexternalID' can't be null";
-        }
-        if (($this->container['pkiAuthenticationexternalID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'pkiAuthenticationexternalID', must be smaller than or equal to 255.";
-        }
-
-        if (($this->container['pkiAuthenticationexternalID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiAuthenticationexternalID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sAuthenticationexternalDescription'] === null) {
-            $invalidProperties[] = "'sAuthenticationexternalDescription' can't be null";
-        }
-	//if (!preg_match("/^.{0,50}$/", $this->container['sAuthenticationexternalDescription'])) {
-        if (!is_null($this->container['sAuthenticationexternalDescription']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sAuthenticationexternalDescription'])) {
-            $invalidProperties[] = "invalid value for 'sAuthenticationexternalDescription', must be conform to the pattern /^.{0,50}$/.";
-        }
-
-        if ($this->container['eAuthenticationexternalType'] === null) {
-            $invalidProperties[] = "'eAuthenticationexternalType' can't be null";
-        }
-	//if (!is_null($this->container['sAuthenticationexternalAuthorizationurl']) && !preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sAuthenticationexternalAuthorizationurl'])) {
-        if (!is_null($this->container['sAuthenticationexternalAuthorizationurl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sAuthenticationexternalAuthorizationurl'])) {
-            $invalidProperties[] = "invalid value for 'sAuthenticationexternalAuthorizationurl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
-        }
-
-        if ($this->container['objAudit'] === null) {
-            $invalidProperties[] = "'objAudit' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -355,224 +283,6 @@ class AuthenticationexternalResponseCompound implements ModelInterface, ArrayAcc
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiAuthenticationexternalID
-     *
-     * @return int
-     */
-    public function getPkiAuthenticationexternalID()
-    {
-	//return $this->container['pkiAuthenticationexternalID'];
-        return $this->container['pkiAuthenticationexternalID'];
-    }
-
-    /**
-     * Sets pkiAuthenticationexternalID
-     *
-     * @param int $pkiAuthenticationexternalID The unique ID of the Authenticationexternal
-     *
-     * @return self
-     */
-    public function setPkiAuthenticationexternalID($pkiAuthenticationexternalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiAuthenticationexternalID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiAuthenticationexternalID cannot be null');
-        //}
-
-	//if (($pkiAuthenticationexternalID > 255)) {
-        if (($pkiAuthenticationexternalID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiAuthenticationexternalID when calling AuthenticationexternalResponseCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiAuthenticationexternalID)?'null':'"'.$pkiAuthenticationexternalID.'"').' for pkiAuthenticationexternalID when calling AuthenticationexternalResponseCompound., must be smaller than or equal to 255.');
-        }
-	//if (($pkiAuthenticationexternalID < 0)) {
-        if (($pkiAuthenticationexternalID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiAuthenticationexternalID when calling AuthenticationexternalResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiAuthenticationexternalID)?'null':'"'.$pkiAuthenticationexternalID.'"').' for pkiAuthenticationexternalID when calling AuthenticationexternalResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiAuthenticationexternalID'] = $pkiAuthenticationexternalID;
-        $this->container['pkiAuthenticationexternalID'] = (is_null($pkiAuthenticationexternalID) ? null : (int) $pkiAuthenticationexternalID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sAuthenticationexternalDescription
-     *
-     * @return string
-     */
-    public function getSAuthenticationexternalDescription()
-    {
-	//return $this->container['sAuthenticationexternalDescription'];
-        return is_null($this->container['sAuthenticationexternalDescription']) ? null : trim($this->container['sAuthenticationexternalDescription']);
-    }
-
-    /**
-     * Sets sAuthenticationexternalDescription
-     *
-     * @param string $sAuthenticationexternalDescription The description of the Authenticationexternal
-     *
-     * @return self
-     */
-    public function setSAuthenticationexternalDescription($sAuthenticationexternalDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sAuthenticationexternalDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sAuthenticationexternalDescription cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sAuthenticationexternalDescription)))) {
-        if (!is_null($sAuthenticationexternalDescription) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sAuthenticationexternalDescription)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sAuthenticationexternalDescription when calling AuthenticationexternalResponseCompound., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sAuthenticationexternalDescription)?'null':'"'.$sAuthenticationexternalDescription.'"')." for sAuthenticationexternalDescription when calling AuthenticationexternalResponseCompound., must conform to the pattern /^.{0,50}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sAuthenticationexternalDescription'] = $sAuthenticationexternalDescription;
-        $this->container['sAuthenticationexternalDescription'] = (is_null($sAuthenticationexternalDescription) ? null : trim((string) $sAuthenticationexternalDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets eAuthenticationexternalType
-     *
-     * @return \eZmaxAPI\Model\FieldEAuthenticationexternalType
-     */
-    public function getEAuthenticationexternalType()
-    {
-	//return $this->container['eAuthenticationexternalType'];
-        return $this->container['eAuthenticationexternalType'];
-    }
-
-    /**
-     * Sets eAuthenticationexternalType
-     *
-     * @param \eZmaxAPI\Model\FieldEAuthenticationexternalType $eAuthenticationexternalType eAuthenticationexternalType
-     *
-     * @return self
-     */
-    public function setEAuthenticationexternalType($eAuthenticationexternalType)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eAuthenticationexternalType)) {
-            //throw new \InvalidArgumentException('non-nullable eAuthenticationexternalType cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eAuthenticationexternalType'] = $eAuthenticationexternalType;
-        $this->container['eAuthenticationexternalType'] = $eAuthenticationexternalType;
-
-        return $this;
-    }
-
-    /**
-     * Gets bAuthenticationexternalConnected
-     *
-     * @return bool|null
-     */
-    public function getBAuthenticationexternalConnected()
-    {
-	//return $this->container['bAuthenticationexternalConnected'];
-        return $this->container['bAuthenticationexternalConnected'];
-    }
-
-    /**
-     * Sets bAuthenticationexternalConnected
-     *
-     * @param bool|null $bAuthenticationexternalConnected Whether the Authenticationexternal has been connected or not
-     *
-     * @return self
-     */
-    public function setBAuthenticationexternalConnected($bAuthenticationexternalConnected)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bAuthenticationexternalConnected)) {
-            //throw new \InvalidArgumentException('non-nullable bAuthenticationexternalConnected cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bAuthenticationexternalConnected'] = $bAuthenticationexternalConnected;
-        $this->container['bAuthenticationexternalConnected'] = (is_null($bAuthenticationexternalConnected) ? null : (bool) $bAuthenticationexternalConnected);
-
-        return $this;
-    }
-
-    /**
-     * Gets sAuthenticationexternalAuthorizationurl
-     *
-     * @return string|null
-     */
-    public function getSAuthenticationexternalAuthorizationurl()
-    {
-	//return $this->container['sAuthenticationexternalAuthorizationurl'];
-        return is_null($this->container['sAuthenticationexternalAuthorizationurl']) ? null : trim($this->container['sAuthenticationexternalAuthorizationurl']);
-    }
-
-    /**
-     * Sets sAuthenticationexternalAuthorizationurl
-     *
-     * @param string|null $sAuthenticationexternalAuthorizationurl The url to authorize the Authenticationexternal
-     *
-     * @return self
-     */
-    public function setSAuthenticationexternalAuthorizationurl($sAuthenticationexternalAuthorizationurl)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sAuthenticationexternalAuthorizationurl)) {
-            //throw new \InvalidArgumentException('non-nullable sAuthenticationexternalAuthorizationurl cannot be null');
-        //}
-
-	//if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sAuthenticationexternalAuthorizationurl)))) {
-        if (!is_null($sAuthenticationexternalAuthorizationurl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sAuthenticationexternalAuthorizationurl)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sAuthenticationexternalAuthorizationurl when calling AuthenticationexternalResponseCompound., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sAuthenticationexternalAuthorizationurl)?'null':'"'.$sAuthenticationexternalAuthorizationurl.'"')." for sAuthenticationexternalAuthorizationurl when calling AuthenticationexternalResponseCompound., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sAuthenticationexternalAuthorizationurl'] = $sAuthenticationexternalAuthorizationurl;
-        $this->container['sAuthenticationexternalAuthorizationurl'] = (is_null($sAuthenticationexternalAuthorizationurl) ? null : trim((string) $sAuthenticationexternalAuthorizationurl));
-
-        return $this;
-    }
-
-    /**
-     * Gets objAudit
-     *
-     * @return \eZmaxAPI\Model\CommonAudit
-     */
-    public function getObjAudit()
-    {
-	//return $this->container['objAudit'];
-        return $this->container['objAudit'];
-    }
-
-    /**
-     * Sets objAudit
-     *
-     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
-     *
-     * @return self
-     */
-    public function setObjAudit($objAudit)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objAudit)) {
-            //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objAudit'] = $objAudit;
-        $this->container['objAudit'] = $objAudit;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

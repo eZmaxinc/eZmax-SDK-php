@@ -79,31 +79,4 @@ class EzsignsigningreasonRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiEzsignsigningreasonID"
-     */
-    public function testPropertyPkiEzsignsigningreasonID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objEzsignsigningreasonDescription"
-     */
-    public function testPropertyObjEzsignsigningreasonDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bEzsignsigningreasonIsactive"
-     */
-    public function testPropertyBEzsignsigningreasonIsactive()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

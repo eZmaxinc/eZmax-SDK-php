@@ -81,51 +81,6 @@ class PhoneResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiPhoneID"
-     */
-    public function testPropertyPkiPhoneID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiPhonetypeID"
-     */
-    public function testPropertyFkiPhonetypeID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "ePhoneType"
-     */
-    public function testPropertyEPhoneType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sPhoneE164"
-     */
-    public function testPropertySPhoneE164()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sPhoneExtension"
-     */
-    public function testPropertySPhoneExtension()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "bPhoneInternational"
      */
     public function testPropertyBPhoneInternational()

@@ -79,40 +79,4 @@ class CommunicationattachmentRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiCommunicationattachmentID"
-     */
-    public function testPropertyPkiCommunicationattachmentID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiAttachmentID"
-     */
-    public function testPropertyFkiAttachmentID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiInvoiceID"
-     */
-    public function testPropertyFkiInvoiceID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiSalarypreparationID"
-     */
-    public function testPropertyFkiSalarypreparationID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

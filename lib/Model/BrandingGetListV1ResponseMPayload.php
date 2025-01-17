@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class BrandingGetListV1ResponseMPayload extends CommonGetListV1ResponseMPayload
 {
     public const DISCRIMINATOR = null;
 
@@ -59,8 +57,6 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iRowReturned' => 'int',
-        'iRowFiltered' => 'int',
         'aObjBranding' => '\eZmaxAPI\Model\BrandingListElement[]'
     ];
 
@@ -72,8 +68,6 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'iRowReturned' => null,
-        'iRowFiltered' => null,
         'aObjBranding' => null
     ];
 
@@ -83,9 +77,7 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'iRowReturned' => false,
-		'iRowFiltered' => false,
-		'aObjBranding' => false
+        'aObjBranding' => false
     ];
 
     /**
@@ -102,7 +94,7 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,8 +166,6 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'iRowReturned' => 'iRowReturned',
-        'iRowFiltered' => 'iRowFiltered',
         'aObjBranding' => 'a_objBranding'
     ];
 
@@ -185,8 +175,6 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'iRowReturned' => 'setIRowReturned',
-        'iRowFiltered' => 'setIRowFiltered',
         'aObjBranding' => 'setAObjBranding'
     ];
 
@@ -196,8 +184,6 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'iRowReturned' => 'getIRowReturned',
-        'iRowFiltered' => 'getIRowFiltered',
         'aObjBranding' => 'getAObjBranding'
     ];
 
@@ -209,7 +195,7 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,8 +238,8 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('iRowReturned', $data ?? [], null);
-        $this->setIfExists('iRowFiltered', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjBranding', $data ?? [], null);
     }
 
@@ -288,14 +268,8 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['iRowReturned'] === null) {
-            $invalidProperties[] = "'iRowReturned' can't be null";
-        }
-        if ($this->container['iRowFiltered'] === null) {
-            $invalidProperties[] = "'iRowFiltered' can't be null";
-        }
         if ($this->container['aObjBranding'] === null) {
             $invalidProperties[] = "'aObjBranding' can't be null";
         }
@@ -313,70 +287,6 @@ class BrandingGetListV1ResponseMPayload implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets iRowReturned
-     *
-     * @return int
-     */
-    public function getIRowReturned()
-    {
-	//return $this->container['iRowReturned'];
-        return $this->container['iRowReturned'];
-    }
-
-    /**
-     * Sets iRowReturned
-     *
-     * @param int $iRowReturned The number of rows returned
-     *
-     * @return self
-     */
-    public function setIRowReturned($iRowReturned)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iRowReturned)) {
-            //throw new \InvalidArgumentException('non-nullable iRowReturned cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iRowReturned'] = $iRowReturned;
-        $this->container['iRowReturned'] = (is_null($iRowReturned) ? null : (int) $iRowReturned);
-
-        return $this;
-    }
-
-    /**
-     * Gets iRowFiltered
-     *
-     * @return int
-     */
-    public function getIRowFiltered()
-    {
-	//return $this->container['iRowFiltered'];
-        return $this->container['iRowFiltered'];
-    }
-
-    /**
-     * Sets iRowFiltered
-     *
-     * @param int $iRowFiltered The number of rows matching your filters (if any) or the total number of rows
-     *
-     * @return self
-     */
-    public function setIRowFiltered($iRowFiltered)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iRowFiltered)) {
-            //throw new \InvalidArgumentException('non-nullable iRowFiltered cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iRowFiltered'] = $iRowFiltered;
-        $this->container['iRowFiltered'] = (is_null($iRowFiltered) ? null : (int) $iRowFiltered);
-
-        return $this;
-    }
 
     /**
      * Gets aObjBranding

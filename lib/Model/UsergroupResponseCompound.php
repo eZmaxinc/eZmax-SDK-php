@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class UsergroupResponseCompound extends UsergroupResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,10 +57,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiUsergroupID' => 'int',
-        'objUsergroupName' => '\eZmaxAPI\Model\MultilingualUsergroupName',
-        'sUsergroupNameX' => 'string',
-        'objEmail' => '\eZmaxAPI\Model\EmailRequest'
+        
     ];
 
     /**
@@ -73,10 +68,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiUsergroupID' => null,
-        'objUsergroupName' => null,
-        'sUsergroupNameX' => null,
-        'objEmail' => null
+        
     ];
 
     /**
@@ -85,10 +77,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiUsergroupID' => false,
-		'objUsergroupName' => false,
-		'sUsergroupNameX' => false,
-		'objEmail' => false
+        
     ];
 
     /**
@@ -105,7 +94,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -115,7 +104,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -125,7 +114,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -177,10 +166,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiUsergroupID' => 'pkiUsergroupID',
-        'objUsergroupName' => 'objUsergroupName',
-        'sUsergroupNameX' => 'sUsergroupNameX',
-        'objEmail' => 'objEmail'
+        
     ];
 
     /**
@@ -189,10 +175,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'pkiUsergroupID' => 'setPkiUsergroupID',
-        'objUsergroupName' => 'setObjUsergroupName',
-        'sUsergroupNameX' => 'setSUsergroupNameX',
-        'objEmail' => 'setObjEmail'
+        
     ];
 
     /**
@@ -201,10 +184,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'pkiUsergroupID' => 'getPkiUsergroupID',
-        'objUsergroupName' => 'getObjUsergroupName',
-        'sUsergroupNameX' => 'getSUsergroupNameX',
-        'objEmail' => 'getObjEmail'
+        
     ];
 
     /**
@@ -215,7 +195,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -225,7 +205,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -235,7 +215,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -249,12 +229,6 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -264,10 +238,8 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiUsergroupID', $data ?? [], null);
-        $this->setIfExists('objUsergroupName', $data ?? [], null);
-        $this->setIfExists('sUsergroupNameX', $data ?? [], null);
-        $this->setIfExists('objEmail', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -295,26 +267,7 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiUsergroupID'] === null) {
-            $invalidProperties[] = "'pkiUsergroupID' can't be null";
-        }
-        if (($this->container['pkiUsergroupID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be smaller than or equal to 255.";
-        }
-
-        if (($this->container['pkiUsergroupID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objUsergroupName'] === null) {
-            $invalidProperties[] = "'objUsergroupName' can't be null";
-        }
-	//if (!is_null($this->container['sUsergroupNameX']) && !preg_match("/^.{0,50}$/", $this->container['sUsergroupNameX'])) {
-        if (!is_null($this->container['sUsergroupNameX']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sUsergroupNameX'])) {
-            $invalidProperties[] = "invalid value for 'sUsergroupNameX', must be conform to the pattern /^.{0,50}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -330,153 +283,6 @@ class UsergroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiUsergroupID
-     *
-     * @return int
-     */
-    public function getPkiUsergroupID()
-    {
-	//return $this->container['pkiUsergroupID'];
-        return $this->container['pkiUsergroupID'];
-    }
-
-    /**
-     * Sets pkiUsergroupID
-     *
-     * @param int $pkiUsergroupID The unique ID of the Usergroup
-     *
-     * @return self
-     */
-    public function setPkiUsergroupID($pkiUsergroupID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiUsergroupID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiUsergroupID cannot be null');
-        //}
-
-	//if (($pkiUsergroupID > 255)) {
-        if (($pkiUsergroupID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupResponseCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupID)?'null':'"'.$pkiUsergroupID.'"').' for pkiUsergroupID when calling UsergroupResponseCompound., must be smaller than or equal to 255.');
-        }
-	//if (($pkiUsergroupID < 0)) {
-        if (($pkiUsergroupID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupID)?'null':'"'.$pkiUsergroupID.'"').' for pkiUsergroupID when calling UsergroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiUsergroupID'] = $pkiUsergroupID;
-        $this->container['pkiUsergroupID'] = (is_null($pkiUsergroupID) ? null : (int) $pkiUsergroupID);
-
-        return $this;
-    }
-
-    /**
-     * Gets objUsergroupName
-     *
-     * @return \eZmaxAPI\Model\MultilingualUsergroupName
-     */
-    public function getObjUsergroupName()
-    {
-	//return $this->container['objUsergroupName'];
-        return $this->container['objUsergroupName'];
-    }
-
-    /**
-     * Sets objUsergroupName
-     *
-     * @param \eZmaxAPI\Model\MultilingualUsergroupName $objUsergroupName objUsergroupName
-     *
-     * @return self
-     */
-    public function setObjUsergroupName($objUsergroupName)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objUsergroupName)) {
-            //throw new \InvalidArgumentException('non-nullable objUsergroupName cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objUsergroupName'] = $objUsergroupName;
-        $this->container['objUsergroupName'] = $objUsergroupName;
-
-        return $this;
-    }
-
-    /**
-     * Gets sUsergroupNameX
-     *
-     * @return string|null
-     */
-    public function getSUsergroupNameX()
-    {
-	//return $this->container['sUsergroupNameX'];
-        return is_null($this->container['sUsergroupNameX']) ? null : trim($this->container['sUsergroupNameX']);
-    }
-
-    /**
-     * Sets sUsergroupNameX
-     *
-     * @param string|null $sUsergroupNameX The Name of the Usergroup in the language of the requester
-     *
-     * @return self
-     */
-    public function setSUsergroupNameX($sUsergroupNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sUsergroupNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sUsergroupNameX cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
-        if (!is_null($sUsergroupNameX) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sUsergroupNameX when calling UsergroupResponseCompound., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sUsergroupNameX)?'null':'"'.$sUsergroupNameX.'"')." for sUsergroupNameX when calling UsergroupResponseCompound., must conform to the pattern /^.{0,50}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sUsergroupNameX'] = $sUsergroupNameX;
-        $this->container['sUsergroupNameX'] = (is_null($sUsergroupNameX) ? null : trim((string) $sUsergroupNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets objEmail
-     *
-     * @return \eZmaxAPI\Model\EmailRequest|null
-     */
-    public function getObjEmail()
-    {
-	//return $this->container['objEmail'];
-        return $this->container['objEmail'];
-    }
-
-    /**
-     * Sets objEmail
-     *
-     * @param \eZmaxAPI\Model\EmailRequest|null $objEmail objEmail
-     *
-     * @return self
-     */
-    public function setObjEmail($objEmail)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objEmail)) {
-            //throw new \InvalidArgumentException('non-nullable objEmail cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objEmail'] = $objEmail;
-        $this->container['objEmail'] = $objEmail;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

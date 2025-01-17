@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class AttachmentlogResponseCompound extends AttachmentlogResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fkiAttachmentID' => 'int',
-        'fkiUserID' => 'int',
-        'dtAttachmentlogDatetime' => 'string',
-        'eAttachmentlogType' => '\eZmaxAPI\Model\FieldEAttachmentlogType',
-        'sAttachmentlogDetail' => 'string'
+        
     ];
 
     /**
@@ -74,11 +68,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'fkiAttachmentID' => null,
-        'fkiUserID' => null,
-        'dtAttachmentlogDatetime' => null,
-        'eAttachmentlogType' => null,
-        'sAttachmentlogDetail' => null
+        
     ];
 
     /**
@@ -87,11 +77,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'fkiAttachmentID' => false,
-		'fkiUserID' => false,
-		'dtAttachmentlogDatetime' => false,
-		'eAttachmentlogType' => false,
-		'sAttachmentlogDetail' => false
+        
     ];
 
     /**
@@ -108,7 +94,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -118,7 +104,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -128,7 +114,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -180,11 +166,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'fkiAttachmentID' => 'fkiAttachmentID',
-        'fkiUserID' => 'fkiUserID',
-        'dtAttachmentlogDatetime' => 'dtAttachmentlogDatetime',
-        'eAttachmentlogType' => 'eAttachmentlogType',
-        'sAttachmentlogDetail' => 'sAttachmentlogDetail'
+        
     ];
 
     /**
@@ -193,11 +175,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'fkiAttachmentID' => 'setFkiAttachmentID',
-        'fkiUserID' => 'setFkiUserID',
-        'dtAttachmentlogDatetime' => 'setDtAttachmentlogDatetime',
-        'eAttachmentlogType' => 'setEAttachmentlogType',
-        'sAttachmentlogDetail' => 'setSAttachmentlogDetail'
+        
     ];
 
     /**
@@ -206,11 +184,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'fkiAttachmentID' => 'getFkiAttachmentID',
-        'fkiUserID' => 'getFkiUserID',
-        'dtAttachmentlogDatetime' => 'getDtAttachmentlogDatetime',
-        'eAttachmentlogType' => 'getEAttachmentlogType',
-        'sAttachmentlogDetail' => 'getSAttachmentlogDetail'
+        
     ];
 
     /**
@@ -221,7 +195,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -231,7 +205,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -241,7 +215,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -255,12 +229,6 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -270,11 +238,8 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('fkiAttachmentID', $data ?? [], null);
-        $this->setIfExists('fkiUserID', $data ?? [], null);
-        $this->setIfExists('dtAttachmentlogDatetime', $data ?? [], null);
-        $this->setIfExists('eAttachmentlogType', $data ?? [], null);
-        $this->setIfExists('sAttachmentlogDetail', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -302,37 +267,7 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['fkiAttachmentID'] === null) {
-            $invalidProperties[] = "'fkiAttachmentID' can't be null";
-        }
-        if (($this->container['fkiAttachmentID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiAttachmentID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiUserID'] === null) {
-            $invalidProperties[] = "'fkiUserID' can't be null";
-        }
-        if (($this->container['fkiUserID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUserID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['dtAttachmentlogDatetime'] === null) {
-            $invalidProperties[] = "'dtAttachmentlogDatetime' can't be null";
-        }
-	//if (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $this->container['dtAttachmentlogDatetime'])) {
-        if (!is_null($this->container['dtAttachmentlogDatetime']) && !preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $this->container['dtAttachmentlogDatetime'])) {
-            $invalidProperties[] = "invalid value for 'dtAttachmentlogDatetime', must be conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.";
-        }
-
-        if ($this->container['eAttachmentlogType'] === null) {
-            $invalidProperties[] = "'eAttachmentlogType' can't be null";
-        }
-	//if (!is_null($this->container['sAttachmentlogDetail']) && !preg_match("/^.{0,75}$/", $this->container['sAttachmentlogDetail'])) {
-        if (!is_null($this->container['sAttachmentlogDetail']) && !preg_match("/(*UTF8)^.{0,75}$/", $this->container['sAttachmentlogDetail'])) {
-            $invalidProperties[] = "invalid value for 'sAttachmentlogDetail', must be conform to the pattern /^.{0,75}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -348,194 +283,6 @@ class AttachmentlogResponseCompound implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets fkiAttachmentID
-     *
-     * @return int
-     */
-    public function getFkiAttachmentID()
-    {
-	//return $this->container['fkiAttachmentID'];
-        return $this->container['fkiAttachmentID'];
-    }
-
-    /**
-     * Sets fkiAttachmentID
-     *
-     * @param int $fkiAttachmentID The unique ID of the Attachment.
-     *
-     * @return self
-     */
-    public function setFkiAttachmentID($fkiAttachmentID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiAttachmentID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiAttachmentID cannot be null');
-        //}
-
-	//if (($fkiAttachmentID < 0)) {
-        if (($fkiAttachmentID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiAttachmentID when calling AttachmentlogResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiAttachmentID)?'null':'"'.$fkiAttachmentID.'"').' for fkiAttachmentID when calling AttachmentlogResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiAttachmentID'] = $fkiAttachmentID;
-        $this->container['fkiAttachmentID'] = (is_null($fkiAttachmentID) ? null : (int) $fkiAttachmentID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUserID
-     *
-     * @return int
-     */
-    public function getFkiUserID()
-    {
-	//return $this->container['fkiUserID'];
-        return $this->container['fkiUserID'];
-    }
-
-    /**
-     * Sets fkiUserID
-     *
-     * @param int $fkiUserID The unique ID of the User
-     *
-     * @return self
-     */
-    public function setFkiUserID($fkiUserID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUserID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
-        //}
-
-	//if (($fkiUserID < 0)) {
-        if (($fkiUserID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUserID when calling AttachmentlogResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserID)?'null':'"'.$fkiUserID.'"').' for fkiUserID when calling AttachmentlogResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUserID'] = $fkiUserID;
-        $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
-
-        return $this;
-    }
-
-    /**
-     * Gets dtAttachmentlogDatetime
-     *
-     * @return string
-     */
-    public function getDtAttachmentlogDatetime()
-    {
-	//return $this->container['dtAttachmentlogDatetime'];
-        return is_null($this->container['dtAttachmentlogDatetime']) ? null : trim($this->container['dtAttachmentlogDatetime']);
-    }
-
-    /**
-     * Sets dtAttachmentlogDatetime
-     *
-     * @param string $dtAttachmentlogDatetime The created date
-     *
-     * @return self
-     */
-    public function setDtAttachmentlogDatetime($dtAttachmentlogDatetime)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtAttachmentlogDatetime)) {
-            //throw new \InvalidArgumentException('non-nullable dtAttachmentlogDatetime cannot be null');
-        //}
-
-	//if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtAttachmentlogDatetime)))) {
-        if (!is_null($dtAttachmentlogDatetime) && (!preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", ObjectSerializer::toString($dtAttachmentlogDatetime)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$dtAttachmentlogDatetime when calling AttachmentlogResponseCompound., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($dtAttachmentlogDatetime)?'null':'"'.$dtAttachmentlogDatetime.'"')." for dtAttachmentlogDatetime when calling AttachmentlogResponseCompound., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtAttachmentlogDatetime'] = $dtAttachmentlogDatetime;
-        $this->container['dtAttachmentlogDatetime'] = (is_null($dtAttachmentlogDatetime) ? null : trim((string) $dtAttachmentlogDatetime));
-
-        return $this;
-    }
-
-    /**
-     * Gets eAttachmentlogType
-     *
-     * @return \eZmaxAPI\Model\FieldEAttachmentlogType
-     */
-    public function getEAttachmentlogType()
-    {
-	//return $this->container['eAttachmentlogType'];
-        return $this->container['eAttachmentlogType'];
-    }
-
-    /**
-     * Sets eAttachmentlogType
-     *
-     * @param \eZmaxAPI\Model\FieldEAttachmentlogType $eAttachmentlogType eAttachmentlogType
-     *
-     * @return self
-     */
-    public function setEAttachmentlogType($eAttachmentlogType)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eAttachmentlogType)) {
-            //throw new \InvalidArgumentException('non-nullable eAttachmentlogType cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eAttachmentlogType'] = $eAttachmentlogType;
-        $this->container['eAttachmentlogType'] = $eAttachmentlogType;
-
-        return $this;
-    }
-
-    /**
-     * Gets sAttachmentlogDetail
-     *
-     * @return string|null
-     */
-    public function getSAttachmentlogDetail()
-    {
-	//return $this->container['sAttachmentlogDetail'];
-        return is_null($this->container['sAttachmentlogDetail']) ? null : trim($this->container['sAttachmentlogDetail']);
-    }
-
-    /**
-     * Sets sAttachmentlogDetail
-     *
-     * @param string|null $sAttachmentlogDetail The additionnal detail
-     *
-     * @return self
-     */
-    public function setSAttachmentlogDetail($sAttachmentlogDetail)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sAttachmentlogDetail)) {
-            //throw new \InvalidArgumentException('non-nullable sAttachmentlogDetail cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,75}$/", ObjectSerializer::toString($sAttachmentlogDetail)))) {
-        if (!is_null($sAttachmentlogDetail) && (!preg_match("/(*UTF8)^.{0,75}$/", ObjectSerializer::toString($sAttachmentlogDetail)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sAttachmentlogDetail when calling AttachmentlogResponseCompound., must conform to the pattern /^.{0,75}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sAttachmentlogDetail)?'null':'"'.$sAttachmentlogDetail.'"')." for sAttachmentlogDetail when calling AttachmentlogResponseCompound., must conform to the pattern /^.{0,75}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sAttachmentlogDetail'] = $sAttachmentlogDetail;
-        $this->container['sAttachmentlogDetail'] = (is_null($sAttachmentlogDetail) ? null : trim((string) $sAttachmentlogDetail));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

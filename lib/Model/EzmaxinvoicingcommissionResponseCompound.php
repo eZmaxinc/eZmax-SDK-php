@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzmaxinvoicingcommissionResponseCompound extends EzmaxinvoicingcommissionResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,14 +57,6 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzmaxinvoicingcommissionID' => 'int',
-        'fkiEzmaxinvoicingsummaryglobalID' => 'int',
-        'fkiEzmaxpartnerID' => 'int',
-        'fkiEzmaxrepresentativeID' => 'int',
-        'dtEzmaxinvoicingcommissionStart' => 'string',
-        'dtEzmaxinvoicingcommissionEnd' => 'string',
-        'iEzmaxinvoicingcommissionDays' => 'int',
-        'dEzmaxinvoicingcommissionAmount' => 'string',
         'objContactName' => '\eZmaxAPI\Model\CustomContactNameResponse'
     ];
 
@@ -78,14 +68,6 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzmaxinvoicingcommissionID' => null,
-        'fkiEzmaxinvoicingsummaryglobalID' => null,
-        'fkiEzmaxpartnerID' => null,
-        'fkiEzmaxrepresentativeID' => null,
-        'dtEzmaxinvoicingcommissionStart' => null,
-        'dtEzmaxinvoicingcommissionEnd' => null,
-        'iEzmaxinvoicingcommissionDays' => null,
-        'dEzmaxinvoicingcommissionAmount' => null,
         'objContactName' => null
     ];
 
@@ -95,15 +77,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzmaxinvoicingcommissionID' => false,
-		'fkiEzmaxinvoicingsummaryglobalID' => false,
-		'fkiEzmaxpartnerID' => false,
-		'fkiEzmaxrepresentativeID' => false,
-		'dtEzmaxinvoicingcommissionStart' => false,
-		'dtEzmaxinvoicingcommissionEnd' => false,
-		'iEzmaxinvoicingcommissionDays' => false,
-		'dEzmaxinvoicingcommissionAmount' => false,
-		'objContactName' => false
+        'objContactName' => false
     ];
 
     /**
@@ -120,7 +94,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -130,7 +104,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -140,7 +114,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -192,14 +166,6 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzmaxinvoicingcommissionID' => 'pkiEzmaxinvoicingcommissionID',
-        'fkiEzmaxinvoicingsummaryglobalID' => 'fkiEzmaxinvoicingsummaryglobalID',
-        'fkiEzmaxpartnerID' => 'fkiEzmaxpartnerID',
-        'fkiEzmaxrepresentativeID' => 'fkiEzmaxrepresentativeID',
-        'dtEzmaxinvoicingcommissionStart' => 'dtEzmaxinvoicingcommissionStart',
-        'dtEzmaxinvoicingcommissionEnd' => 'dtEzmaxinvoicingcommissionEnd',
-        'iEzmaxinvoicingcommissionDays' => 'iEzmaxinvoicingcommissionDays',
-        'dEzmaxinvoicingcommissionAmount' => 'dEzmaxinvoicingcommissionAmount',
         'objContactName' => 'objContactName'
     ];
 
@@ -209,14 +175,6 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzmaxinvoicingcommissionID' => 'setPkiEzmaxinvoicingcommissionID',
-        'fkiEzmaxinvoicingsummaryglobalID' => 'setFkiEzmaxinvoicingsummaryglobalID',
-        'fkiEzmaxpartnerID' => 'setFkiEzmaxpartnerID',
-        'fkiEzmaxrepresentativeID' => 'setFkiEzmaxrepresentativeID',
-        'dtEzmaxinvoicingcommissionStart' => 'setDtEzmaxinvoicingcommissionStart',
-        'dtEzmaxinvoicingcommissionEnd' => 'setDtEzmaxinvoicingcommissionEnd',
-        'iEzmaxinvoicingcommissionDays' => 'setIEzmaxinvoicingcommissionDays',
-        'dEzmaxinvoicingcommissionAmount' => 'setDEzmaxinvoicingcommissionAmount',
         'objContactName' => 'setObjContactName'
     ];
 
@@ -226,14 +184,6 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzmaxinvoicingcommissionID' => 'getPkiEzmaxinvoicingcommissionID',
-        'fkiEzmaxinvoicingsummaryglobalID' => 'getFkiEzmaxinvoicingsummaryglobalID',
-        'fkiEzmaxpartnerID' => 'getFkiEzmaxpartnerID',
-        'fkiEzmaxrepresentativeID' => 'getFkiEzmaxrepresentativeID',
-        'dtEzmaxinvoicingcommissionStart' => 'getDtEzmaxinvoicingcommissionStart',
-        'dtEzmaxinvoicingcommissionEnd' => 'getDtEzmaxinvoicingcommissionEnd',
-        'iEzmaxinvoicingcommissionDays' => 'getIEzmaxinvoicingcommissionDays',
-        'dEzmaxinvoicingcommissionAmount' => 'getDEzmaxinvoicingcommissionAmount',
         'objContactName' => 'getObjContactName'
     ];
 
@@ -245,7 +195,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -255,7 +205,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -265,7 +215,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -279,12 +229,6 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -294,14 +238,8 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzmaxinvoicingcommissionID', $data ?? [], null);
-        $this->setIfExists('fkiEzmaxinvoicingsummaryglobalID', $data ?? [], null);
-        $this->setIfExists('fkiEzmaxpartnerID', $data ?? [], null);
-        $this->setIfExists('fkiEzmaxrepresentativeID', $data ?? [], null);
-        $this->setIfExists('dtEzmaxinvoicingcommissionStart', $data ?? [], null);
-        $this->setIfExists('dtEzmaxinvoicingcommissionEnd', $data ?? [], null);
-        $this->setIfExists('iEzmaxinvoicingcommissionDays', $data ?? [], null);
-        $this->setIfExists('dEzmaxinvoicingcommissionAmount', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('objContactName', $data ?? [], null);
     }
 
@@ -330,40 +268,7 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['fkiEzmaxinvoicingsummaryglobalID']) && ($this->container['fkiEzmaxinvoicingsummaryglobalID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzmaxinvoicingsummaryglobalID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiEzmaxpartnerID']) && ($this->container['fkiEzmaxpartnerID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiEzmaxpartnerID', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['fkiEzmaxrepresentativeID']) && ($this->container['fkiEzmaxrepresentativeID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiEzmaxrepresentativeID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['dtEzmaxinvoicingcommissionStart'] === null) {
-            $invalidProperties[] = "'dtEzmaxinvoicingcommissionStart' can't be null";
-        }
-        if ($this->container['dtEzmaxinvoicingcommissionEnd'] === null) {
-            $invalidProperties[] = "'dtEzmaxinvoicingcommissionEnd' can't be null";
-        }
-        if ($this->container['iEzmaxinvoicingcommissionDays'] === null) {
-            $invalidProperties[] = "'iEzmaxinvoicingcommissionDays' can't be null";
-        }
-        if (($this->container['iEzmaxinvoicingcommissionDays'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzmaxinvoicingcommissionDays', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['dEzmaxinvoicingcommissionAmount'] === null) {
-            $invalidProperties[] = "'dEzmaxinvoicingcommissionAmount' can't be null";
-        }
-	//if (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingcommissionAmount'])) {
-        if (!is_null($this->container['dEzmaxinvoicingcommissionAmount']) && !preg_match("/(*UTF8)^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dEzmaxinvoicingcommissionAmount'])) {
-            $invalidProperties[] = "invalid value for 'dEzmaxinvoicingcommissionAmount', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -379,297 +284,6 @@ class EzmaxinvoicingcommissionResponseCompound implements ModelInterface, ArrayA
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzmaxinvoicingcommissionID
-     *
-     * @return int|null
-     */
-    public function getPkiEzmaxinvoicingcommissionID()
-    {
-	//return $this->container['pkiEzmaxinvoicingcommissionID'];
-        return $this->container['pkiEzmaxinvoicingcommissionID'];
-    }
-
-    /**
-     * Sets pkiEzmaxinvoicingcommissionID
-     *
-     * @param int|null $pkiEzmaxinvoicingcommissionID The unique ID of the Ezmaxinvoicingcommission
-     *
-     * @return self
-     */
-    public function setPkiEzmaxinvoicingcommissionID($pkiEzmaxinvoicingcommissionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzmaxinvoicingcommissionID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzmaxinvoicingcommissionID cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzmaxinvoicingcommissionID'] = $pkiEzmaxinvoicingcommissionID;
-        $this->container['pkiEzmaxinvoicingcommissionID'] = (is_null($pkiEzmaxinvoicingcommissionID) ? null : (int) $pkiEzmaxinvoicingcommissionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzmaxinvoicingsummaryglobalID
-     *
-     * @return int|null
-     */
-    public function getFkiEzmaxinvoicingsummaryglobalID()
-    {
-	//return $this->container['fkiEzmaxinvoicingsummaryglobalID'];
-        return $this->container['fkiEzmaxinvoicingsummaryglobalID'];
-    }
-
-    /**
-     * Sets fkiEzmaxinvoicingsummaryglobalID
-     *
-     * @param int|null $fkiEzmaxinvoicingsummaryglobalID The unique ID of the Ezmaxinvoicingsummaryglobal
-     *
-     * @return self
-     */
-    public function setFkiEzmaxinvoicingsummaryglobalID($fkiEzmaxinvoicingsummaryglobalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzmaxinvoicingsummaryglobalID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzmaxinvoicingsummaryglobalID cannot be null');
-        //}
-
-	//if (($fkiEzmaxinvoicingsummaryglobalID < 0)) {
-        if (!is_null($fkiEzmaxinvoicingsummaryglobalID) && ($fkiEzmaxinvoicingsummaryglobalID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzmaxinvoicingsummaryglobalID when calling EzmaxinvoicingcommissionResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxinvoicingsummaryglobalID)?'null':'"'.$fkiEzmaxinvoicingsummaryglobalID.'"').' for fkiEzmaxinvoicingsummaryglobalID when calling EzmaxinvoicingcommissionResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzmaxinvoicingsummaryglobalID'] = $fkiEzmaxinvoicingsummaryglobalID;
-        $this->container['fkiEzmaxinvoicingsummaryglobalID'] = (is_null($fkiEzmaxinvoicingsummaryglobalID) ? null : (int) $fkiEzmaxinvoicingsummaryglobalID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzmaxpartnerID
-     *
-     * @return int|null
-     */
-    public function getFkiEzmaxpartnerID()
-    {
-	//return $this->container['fkiEzmaxpartnerID'];
-        return $this->container['fkiEzmaxpartnerID'];
-    }
-
-    /**
-     * Sets fkiEzmaxpartnerID
-     *
-     * @param int|null $fkiEzmaxpartnerID The unique ID of the Ezmaxpartner
-     *
-     * @return self
-     */
-    public function setFkiEzmaxpartnerID($fkiEzmaxpartnerID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzmaxpartnerID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzmaxpartnerID cannot be null');
-        //}
-
-	//if (($fkiEzmaxpartnerID < 1)) {
-        if (!is_null($fkiEzmaxpartnerID) && ($fkiEzmaxpartnerID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerID when calling EzmaxinvoicingcommissionResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerID)?'null':'"'.$fkiEzmaxpartnerID.'"').' for fkiEzmaxpartnerID when calling EzmaxinvoicingcommissionResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzmaxpartnerID'] = $fkiEzmaxpartnerID;
-        $this->container['fkiEzmaxpartnerID'] = (is_null($fkiEzmaxpartnerID) ? null : (int) $fkiEzmaxpartnerID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzmaxrepresentativeID
-     *
-     * @return int|null
-     */
-    public function getFkiEzmaxrepresentativeID()
-    {
-	//return $this->container['fkiEzmaxrepresentativeID'];
-        return $this->container['fkiEzmaxrepresentativeID'];
-    }
-
-    /**
-     * Sets fkiEzmaxrepresentativeID
-     *
-     * @param int|null $fkiEzmaxrepresentativeID The unique ID of the Ezmaxrepresentative
-     *
-     * @return self
-     */
-    public function setFkiEzmaxrepresentativeID($fkiEzmaxrepresentativeID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzmaxrepresentativeID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzmaxrepresentativeID cannot be null');
-        //}
-
-	//if (($fkiEzmaxrepresentativeID < 1)) {
-        if (!is_null($fkiEzmaxrepresentativeID) && ($fkiEzmaxrepresentativeID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzmaxrepresentativeID when calling EzmaxinvoicingcommissionResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxrepresentativeID)?'null':'"'.$fkiEzmaxrepresentativeID.'"').' for fkiEzmaxrepresentativeID when calling EzmaxinvoicingcommissionResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzmaxrepresentativeID'] = $fkiEzmaxrepresentativeID;
-        $this->container['fkiEzmaxrepresentativeID'] = (is_null($fkiEzmaxrepresentativeID) ? null : (int) $fkiEzmaxrepresentativeID);
-
-        return $this;
-    }
-
-    /**
-     * Gets dtEzmaxinvoicingcommissionStart
-     *
-     * @return string
-     */
-    public function getDtEzmaxinvoicingcommissionStart()
-    {
-	//return $this->container['dtEzmaxinvoicingcommissionStart'];
-        return is_null($this->container['dtEzmaxinvoicingcommissionStart']) ? null : trim($this->container['dtEzmaxinvoicingcommissionStart']);
-    }
-
-    /**
-     * Sets dtEzmaxinvoicingcommissionStart
-     *
-     * @param string $dtEzmaxinvoicingcommissionStart The start date for the Ezmaxinvoicingcommission
-     *
-     * @return self
-     */
-    public function setDtEzmaxinvoicingcommissionStart($dtEzmaxinvoicingcommissionStart)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtEzmaxinvoicingcommissionStart)) {
-            //throw new \InvalidArgumentException('non-nullable dtEzmaxinvoicingcommissionStart cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtEzmaxinvoicingcommissionStart'] = $dtEzmaxinvoicingcommissionStart;
-        $this->container['dtEzmaxinvoicingcommissionStart'] = (is_null($dtEzmaxinvoicingcommissionStart) ? null : trim((string) $dtEzmaxinvoicingcommissionStart));
-
-        return $this;
-    }
-
-    /**
-     * Gets dtEzmaxinvoicingcommissionEnd
-     *
-     * @return string
-     */
-    public function getDtEzmaxinvoicingcommissionEnd()
-    {
-	//return $this->container['dtEzmaxinvoicingcommissionEnd'];
-        return is_null($this->container['dtEzmaxinvoicingcommissionEnd']) ? null : trim($this->container['dtEzmaxinvoicingcommissionEnd']);
-    }
-
-    /**
-     * Sets dtEzmaxinvoicingcommissionEnd
-     *
-     * @param string $dtEzmaxinvoicingcommissionEnd The end date for the Ezmaxinvoicingcommission
-     *
-     * @return self
-     */
-    public function setDtEzmaxinvoicingcommissionEnd($dtEzmaxinvoicingcommissionEnd)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtEzmaxinvoicingcommissionEnd)) {
-            //throw new \InvalidArgumentException('non-nullable dtEzmaxinvoicingcommissionEnd cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtEzmaxinvoicingcommissionEnd'] = $dtEzmaxinvoicingcommissionEnd;
-        $this->container['dtEzmaxinvoicingcommissionEnd'] = (is_null($dtEzmaxinvoicingcommissionEnd) ? null : trim((string) $dtEzmaxinvoicingcommissionEnd));
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzmaxinvoicingcommissionDays
-     *
-     * @return int
-     */
-    public function getIEzmaxinvoicingcommissionDays()
-    {
-	//return $this->container['iEzmaxinvoicingcommissionDays'];
-        return $this->container['iEzmaxinvoicingcommissionDays'];
-    }
-
-    /**
-     * Sets iEzmaxinvoicingcommissionDays
-     *
-     * @param int $iEzmaxinvoicingcommissionDays This is the number of days during the month on which the Ezmaxinvoigcommission applies
-     *
-     * @return self
-     */
-    public function setIEzmaxinvoicingcommissionDays($iEzmaxinvoicingcommissionDays)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzmaxinvoicingcommissionDays)) {
-            //throw new \InvalidArgumentException('non-nullable iEzmaxinvoicingcommissionDays cannot be null');
-        //}
-
-	//if (($iEzmaxinvoicingcommissionDays < 0)) {
-        if (($iEzmaxinvoicingcommissionDays < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzmaxinvoicingcommissionDays when calling EzmaxinvoicingcommissionResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzmaxinvoicingcommissionDays)?'null':'"'.$iEzmaxinvoicingcommissionDays.'"').' for iEzmaxinvoicingcommissionDays when calling EzmaxinvoicingcommissionResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzmaxinvoicingcommissionDays'] = $iEzmaxinvoicingcommissionDays;
-        $this->container['iEzmaxinvoicingcommissionDays'] = (is_null($iEzmaxinvoicingcommissionDays) ? null : (int) $iEzmaxinvoicingcommissionDays);
-
-        return $this;
-    }
-
-    /**
-     * Gets dEzmaxinvoicingcommissionAmount
-     *
-     * @return string
-     */
-    public function getDEzmaxinvoicingcommissionAmount()
-    {
-	//return $this->container['dEzmaxinvoicingcommissionAmount'];
-        return is_null($this->container['dEzmaxinvoicingcommissionAmount']) ? null : trim($this->container['dEzmaxinvoicingcommissionAmount']);
-    }
-
-    /**
-     * Sets dEzmaxinvoicingcommissionAmount
-     *
-     * @param string $dEzmaxinvoicingcommissionAmount The amount of Ezmaxinvoicingcommission
-     *
-     * @return self
-     */
-    public function setDEzmaxinvoicingcommissionAmount($dEzmaxinvoicingcommissionAmount)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dEzmaxinvoicingcommissionAmount)) {
-            //throw new \InvalidArgumentException('non-nullable dEzmaxinvoicingcommissionAmount cannot be null');
-        //}
-
-	//if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcommissionAmount)))) {
-        if (!is_null($dEzmaxinvoicingcommissionAmount) && (!preg_match("/(*UTF8)^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dEzmaxinvoicingcommissionAmount)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$dEzmaxinvoicingcommissionAmount when calling EzmaxinvoicingcommissionResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($dEzmaxinvoicingcommissionAmount)?'null':'"'.$dEzmaxinvoicingcommissionAmount.'"')." for dEzmaxinvoicingcommissionAmount when calling EzmaxinvoicingcommissionResponseCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dEzmaxinvoicingcommissionAmount'] = $dEzmaxinvoicingcommissionAmount;
-        $this->container['dEzmaxinvoicingcommissionAmount'] = (is_null($dEzmaxinvoicingcommissionAmount) ? null : trim((string) $dEzmaxinvoicingcommissionAmount));
-
-        return $this;
-    }
 
     /**
      * Gets objContactName

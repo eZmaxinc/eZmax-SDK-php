@@ -81,51 +81,6 @@ class EzsignsignerResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiEzsignsignerID"
-     */
-    public function testPropertyPkiEzsignsignerID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiTaxassignmentID"
-     */
-    public function testPropertyFkiTaxassignmentID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiSecretquestionID"
-     */
-    public function testPropertyFkiSecretquestionID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiUserlogintypeID"
-     */
-    public function testPropertyFkiUserlogintypeID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sUserlogintypeDescriptionX"
-     */
-    public function testPropertySUserlogintypeDescriptionX()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "objContact"
      */
     public function testPropertyObjContact()

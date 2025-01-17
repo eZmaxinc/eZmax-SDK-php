@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class DomainRequestCompound extends DomainRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,8 +57,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiDomainID' => 'int',
-        'sDomainName' => 'string'
+        
     ];
 
     /**
@@ -71,8 +68,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiDomainID' => null,
-        'sDomainName' => null
+        
     ];
 
     /**
@@ -81,8 +77,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiDomainID' => false,
-		'sDomainName' => false
+        
     ];
 
     /**
@@ -99,7 +94,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -109,7 +104,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -119,7 +114,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -171,8 +166,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiDomainID' => 'pkiDomainID',
-        'sDomainName' => 'sDomainName'
+        
     ];
 
     /**
@@ -181,8 +175,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'pkiDomainID' => 'setPkiDomainID',
-        'sDomainName' => 'setSDomainName'
+        
     ];
 
     /**
@@ -191,8 +184,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'pkiDomainID' => 'getPkiDomainID',
-        'sDomainName' => 'getSDomainName'
+        
     ];
 
     /**
@@ -203,7 +195,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -213,7 +205,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -223,7 +215,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -237,12 +229,6 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -252,8 +238,8 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiDomainID', $data ?? [], null);
-        $this->setIfExists('sDomainName', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -281,23 +267,7 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['pkiDomainID']) && ($this->container['pkiDomainID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'pkiDomainID', must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['pkiDomainID']) && ($this->container['pkiDomainID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiDomainID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sDomainName'] === null) {
-            $invalidProperties[] = "'sDomainName' can't be null";
-        }
-	//if (!preg_match("/^(?=.{4,75}$)([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,63}$/", $this->container['sDomainName'])) {
-        if (!is_null($this->container['sDomainName']) && !preg_match("/(*UTF8)^(?=.{4,75}$)([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,63}$/", $this->container['sDomainName'])) {
-            $invalidProperties[] = "invalid value for 'sDomainName', must be conform to the pattern /^(?=.{4,75}$)([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,63}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -313,89 +283,6 @@ class DomainRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiDomainID
-     *
-     * @return int|null
-     */
-    public function getPkiDomainID()
-    {
-	//return $this->container['pkiDomainID'];
-        return $this->container['pkiDomainID'];
-    }
-
-    /**
-     * Sets pkiDomainID
-     *
-     * @param int|null $pkiDomainID The unique ID of the Domain
-     *
-     * @return self
-     */
-    public function setPkiDomainID($pkiDomainID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiDomainID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiDomainID cannot be null');
-        //}
-
-	//if (($pkiDomainID > 255)) {
-        if (!is_null($pkiDomainID) && ($pkiDomainID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiDomainID when calling DomainRequestCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDomainID)?'null':'"'.$pkiDomainID.'"').' for pkiDomainID when calling DomainRequestCompound., must be smaller than or equal to 255.');
-        }
-	//if (($pkiDomainID < 0)) {
-        if (!is_null($pkiDomainID) && ($pkiDomainID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiDomainID when calling DomainRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDomainID)?'null':'"'.$pkiDomainID.'"').' for pkiDomainID when calling DomainRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiDomainID'] = $pkiDomainID;
-        $this->container['pkiDomainID'] = (is_null($pkiDomainID) ? null : (int) $pkiDomainID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sDomainName
-     *
-     * @return string
-     */
-    public function getSDomainName()
-    {
-	//return $this->container['sDomainName'];
-        return is_null($this->container['sDomainName']) ? null : trim($this->container['sDomainName']);
-    }
-
-    /**
-     * Sets sDomainName
-     *
-     * @param string $sDomainName The name of the Domain
-     *
-     * @return self
-     */
-    public function setSDomainName($sDomainName)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sDomainName)) {
-            //throw new \InvalidArgumentException('non-nullable sDomainName cannot be null');
-        //}
-
-	//if ((!preg_match("/^(?=.{4,75}$)([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,63}$/", ObjectSerializer::toString($sDomainName)))) {
-        if (!is_null($sDomainName) && (!preg_match("/(*UTF8)^(?=.{4,75}$)([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,63}$/", ObjectSerializer::toString($sDomainName)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sDomainName when calling DomainRequestCompound., must conform to the pattern /^(?=.{4,75}$)([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,63}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sDomainName)?'null':'"'.$sDomainName.'"')." for sDomainName when calling DomainRequestCompound., must conform to the pattern /^(?=.{4,75}$)([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,63}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sDomainName'] = $sDomainName;
-        $this->container['sDomainName'] = (is_null($sDomainName) ? null : trim((string) $sDomainName));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

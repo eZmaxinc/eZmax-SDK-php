@@ -81,24 +81,6 @@ class ModulegroupResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiModulegroupID"
-     */
-    public function testPropertyPkiModulegroupID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sModulegroupNameX"
-     */
-    public function testPropertySModulegroupNameX()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjModule"
      */
     public function testPropertyAObjModule()

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignuserRequestCompound extends EzsignuserRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,9 +57,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignuserID' => 'int',
-        'fkiContactID' => 'int',
-        'objContact' => '\eZmaxAPI\Model\ContactRequestCompoundV2'
+        
     ];
 
     /**
@@ -72,9 +68,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignuserID' => null,
-        'fkiContactID' => null,
-        'objContact' => null
+        
     ];
 
     /**
@@ -83,9 +77,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsignuserID' => false,
-		'fkiContactID' => false,
-		'objContact' => false
+        
     ];
 
     /**
@@ -102,7 +94,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,9 +166,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignuserID' => 'pkiEzsignuserID',
-        'fkiContactID' => 'fkiContactID',
-        'objContact' => 'objContact'
+        
     ];
 
     /**
@@ -185,9 +175,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignuserID' => 'setPkiEzsignuserID',
-        'fkiContactID' => 'setFkiContactID',
-        'objContact' => 'setObjContact'
+        
     ];
 
     /**
@@ -196,9 +184,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignuserID' => 'getPkiEzsignuserID',
-        'fkiContactID' => 'getFkiContactID',
-        'objContact' => 'getObjContact'
+        
     ];
 
     /**
@@ -209,7 +195,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,9 +238,8 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsignuserID', $data ?? [], null);
-        $this->setIfExists('fkiContactID', $data ?? [], null);
-        $this->setIfExists('objContact', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -288,26 +267,8 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if (!is_null($this->container['pkiEzsignuserID']) && ($this->container['pkiEzsignuserID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignuserID', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['pkiEzsignuserID']) && ($this->container['pkiEzsignuserID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignuserID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiContactID'] === null) {
-            $invalidProperties[] = "'fkiContactID' can't be null";
-        }
-        if (($this->container['fkiContactID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiContactID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objContact'] === null) {
-            $invalidProperties[] = "'objContact' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -322,121 +283,6 @@ class EzsignuserRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsignuserID
-     *
-     * @return int|null
-     */
-    public function getPkiEzsignuserID()
-    {
-	//return $this->container['pkiEzsignuserID'];
-        return $this->container['pkiEzsignuserID'];
-    }
-
-    /**
-     * Sets pkiEzsignuserID
-     *
-     * @param int|null $pkiEzsignuserID The unique ID of the Ezsignuser
-     *
-     * @return self
-     */
-    public function setPkiEzsignuserID($pkiEzsignuserID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsignuserID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsignuserID cannot be null');
-        //}
-
-	//if (($pkiEzsignuserID > 65535)) {
-        if (!is_null($pkiEzsignuserID) && ($pkiEzsignuserID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignuserID when calling EzsignuserRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignuserID)?'null':'"'.$pkiEzsignuserID.'"').' for pkiEzsignuserID when calling EzsignuserRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($pkiEzsignuserID < 0)) {
-        if (!is_null($pkiEzsignuserID) && ($pkiEzsignuserID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignuserID when calling EzsignuserRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignuserID)?'null':'"'.$pkiEzsignuserID.'"').' for pkiEzsignuserID when calling EzsignuserRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsignuserID'] = $pkiEzsignuserID;
-        $this->container['pkiEzsignuserID'] = (is_null($pkiEzsignuserID) ? null : (int) $pkiEzsignuserID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiContactID
-     *
-     * @return int
-     */
-    public function getFkiContactID()
-    {
-	//return $this->container['fkiContactID'];
-        return $this->container['fkiContactID'];
-    }
-
-    /**
-     * Sets fkiContactID
-     *
-     * @param int $fkiContactID The unique ID of the Contact
-     *
-     * @return self
-     */
-    public function setFkiContactID($fkiContactID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiContactID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiContactID cannot be null');
-        //}
-
-	//if (($fkiContactID < 0)) {
-        if (($fkiContactID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiContactID when calling EzsignuserRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiContactID)?'null':'"'.$fkiContactID.'"').' for fkiContactID when calling EzsignuserRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiContactID'] = $fkiContactID;
-        $this->container['fkiContactID'] = (is_null($fkiContactID) ? null : (int) $fkiContactID);
-
-        return $this;
-    }
-
-    /**
-     * Gets objContact
-     *
-     * @return \eZmaxAPI\Model\ContactRequestCompoundV2
-     */
-    public function getObjContact()
-    {
-	//return $this->container['objContact'];
-        return $this->container['objContact'];
-    }
-
-    /**
-     * Sets objContact
-     *
-     * @param \eZmaxAPI\Model\ContactRequestCompoundV2 $objContact objContact
-     *
-     * @return self
-     */
-    public function setObjContact($objContact)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objContact)) {
-            //throw new \InvalidArgumentException('non-nullable objContact cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objContact'] = $objContact;
-        $this->container['objContact'] = $objContact;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

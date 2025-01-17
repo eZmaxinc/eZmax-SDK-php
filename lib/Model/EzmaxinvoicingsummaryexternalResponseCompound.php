@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzmaxinvoicingsummaryexternalResponseCompound extends EzmaxinvoicingsummaryexternalResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,6 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzmaxinvoicingsummaryexternalID' => 'int',
-        'fkiEzmaxinvoicingID' => 'int',
-        'fkiBillingentityexternalID' => 'int',
-        'sBillingentityexternalDescription' => 'string',
-        'sEzmaxinvoicingsummaryexternalDescription' => 'string',
         'aObjEzmaxinvoicingsummaryexternaldetail' => '\eZmaxAPI\Model\EzmaxinvoicingsummaryexternaldetailResponseCompound[]'
     ];
 
@@ -75,11 +68,6 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzmaxinvoicingsummaryexternalID' => null,
-        'fkiEzmaxinvoicingID' => null,
-        'fkiBillingentityexternalID' => null,
-        'sBillingentityexternalDescription' => null,
-        'sEzmaxinvoicingsummaryexternalDescription' => null,
         'aObjEzmaxinvoicingsummaryexternaldetail' => null
     ];
 
@@ -89,12 +77,7 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzmaxinvoicingsummaryexternalID' => false,
-		'fkiEzmaxinvoicingID' => false,
-		'fkiBillingentityexternalID' => false,
-		'sBillingentityexternalDescription' => false,
-		'sEzmaxinvoicingsummaryexternalDescription' => false,
-		'aObjEzmaxinvoicingsummaryexternaldetail' => false
+        'aObjEzmaxinvoicingsummaryexternaldetail' => false
     ];
 
     /**
@@ -111,7 +94,7 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -121,7 +104,7 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -131,7 +114,7 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -183,11 +166,6 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzmaxinvoicingsummaryexternalID' => 'pkiEzmaxinvoicingsummaryexternalID',
-        'fkiEzmaxinvoicingID' => 'fkiEzmaxinvoicingID',
-        'fkiBillingentityexternalID' => 'fkiBillingentityexternalID',
-        'sBillingentityexternalDescription' => 'sBillingentityexternalDescription',
-        'sEzmaxinvoicingsummaryexternalDescription' => 'sEzmaxinvoicingsummaryexternalDescription',
         'aObjEzmaxinvoicingsummaryexternaldetail' => 'a_objEzmaxinvoicingsummaryexternaldetail'
     ];
 
@@ -197,11 +175,6 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzmaxinvoicingsummaryexternalID' => 'setPkiEzmaxinvoicingsummaryexternalID',
-        'fkiEzmaxinvoicingID' => 'setFkiEzmaxinvoicingID',
-        'fkiBillingentityexternalID' => 'setFkiBillingentityexternalID',
-        'sBillingentityexternalDescription' => 'setSBillingentityexternalDescription',
-        'sEzmaxinvoicingsummaryexternalDescription' => 'setSEzmaxinvoicingsummaryexternalDescription',
         'aObjEzmaxinvoicingsummaryexternaldetail' => 'setAObjEzmaxinvoicingsummaryexternaldetail'
     ];
 
@@ -211,11 +184,6 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzmaxinvoicingsummaryexternalID' => 'getPkiEzmaxinvoicingsummaryexternalID',
-        'fkiEzmaxinvoicingID' => 'getFkiEzmaxinvoicingID',
-        'fkiBillingentityexternalID' => 'getFkiBillingentityexternalID',
-        'sBillingentityexternalDescription' => 'getSBillingentityexternalDescription',
-        'sEzmaxinvoicingsummaryexternalDescription' => 'getSEzmaxinvoicingsummaryexternalDescription',
         'aObjEzmaxinvoicingsummaryexternaldetail' => 'getAObjEzmaxinvoicingsummaryexternaldetail'
     ];
 
@@ -227,7 +195,7 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -237,7 +205,7 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -247,7 +215,7 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -261,12 +229,6 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -276,11 +238,8 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzmaxinvoicingsummaryexternalID', $data ?? [], null);
-        $this->setIfExists('fkiEzmaxinvoicingID', $data ?? [], null);
-        $this->setIfExists('fkiBillingentityexternalID', $data ?? [], null);
-        $this->setIfExists('sBillingentityexternalDescription', $data ?? [], null);
-        $this->setIfExists('sEzmaxinvoicingsummaryexternalDescription', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjEzmaxinvoicingsummaryexternaldetail', $data ?? [], null);
     }
 
@@ -309,33 +268,7 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['pkiEzmaxinvoicingsummaryexternalID']) && ($this->container['pkiEzmaxinvoicingsummaryexternalID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzmaxinvoicingsummaryexternalID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiEzmaxinvoicingID']) && ($this->container['fkiEzmaxinvoicingID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzmaxinvoicingID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiBillingentityexternalID'] === null) {
-            $invalidProperties[] = "'fkiBillingentityexternalID' can't be null";
-        }
-        if (($this->container['fkiBillingentityexternalID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiBillingentityexternalID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['sBillingentityexternalDescription'] === null) {
-            $invalidProperties[] = "'sBillingentityexternalDescription' can't be null";
-        }
-        if ($this->container['sEzmaxinvoicingsummaryexternalDescription'] === null) {
-            $invalidProperties[] = "'sEzmaxinvoicingsummaryexternalDescription' can't be null";
-        }
-	//if ((mb_strlen($this->container['sEzmaxinvoicingsummaryexternalDescription']) > 70)) {
-        if (((is_null($this->container['sEzmaxinvoicingsummaryexternalDescription'])?0:mb_strlen($this->container['sEzmaxinvoicingsummaryexternalDescription'])) > 70)) {
-            $invalidProperties[] = "invalid value for 'sEzmaxinvoicingsummaryexternalDescription', the character length must be smaller than or equal to 70.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         if ($this->container['aObjEzmaxinvoicingsummaryexternaldetail'] === null) {
             $invalidProperties[] = "'aObjEzmaxinvoicingsummaryexternaldetail' can't be null";
@@ -354,193 +287,6 @@ class EzmaxinvoicingsummaryexternalResponseCompound implements ModelInterface, A
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzmaxinvoicingsummaryexternalID
-     *
-     * @return int|null
-     */
-    public function getPkiEzmaxinvoicingsummaryexternalID()
-    {
-	//return $this->container['pkiEzmaxinvoicingsummaryexternalID'];
-        return $this->container['pkiEzmaxinvoicingsummaryexternalID'];
-    }
-
-    /**
-     * Sets pkiEzmaxinvoicingsummaryexternalID
-     *
-     * @param int|null $pkiEzmaxinvoicingsummaryexternalID The unique ID of the Ezmaxinvoicingsummaryexternal
-     *
-     * @return self
-     */
-    public function setPkiEzmaxinvoicingsummaryexternalID($pkiEzmaxinvoicingsummaryexternalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzmaxinvoicingsummaryexternalID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzmaxinvoicingsummaryexternalID cannot be null');
-        //}
-
-	//if (($pkiEzmaxinvoicingsummaryexternalID < 0)) {
-        if (!is_null($pkiEzmaxinvoicingsummaryexternalID) && ($pkiEzmaxinvoicingsummaryexternalID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzmaxinvoicingsummaryexternalID when calling EzmaxinvoicingsummaryexternalResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzmaxinvoicingsummaryexternalID)?'null':'"'.$pkiEzmaxinvoicingsummaryexternalID.'"').' for pkiEzmaxinvoicingsummaryexternalID when calling EzmaxinvoicingsummaryexternalResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzmaxinvoicingsummaryexternalID'] = $pkiEzmaxinvoicingsummaryexternalID;
-        $this->container['pkiEzmaxinvoicingsummaryexternalID'] = (is_null($pkiEzmaxinvoicingsummaryexternalID) ? null : (int) $pkiEzmaxinvoicingsummaryexternalID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzmaxinvoicingID
-     *
-     * @return int|null
-     */
-    public function getFkiEzmaxinvoicingID()
-    {
-	//return $this->container['fkiEzmaxinvoicingID'];
-        return $this->container['fkiEzmaxinvoicingID'];
-    }
-
-    /**
-     * Sets fkiEzmaxinvoicingID
-     *
-     * @param int|null $fkiEzmaxinvoicingID The unique ID of the Ezmaxinvoicing
-     *
-     * @return self
-     */
-    public function setFkiEzmaxinvoicingID($fkiEzmaxinvoicingID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzmaxinvoicingID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzmaxinvoicingID cannot be null');
-        //}
-
-	//if (($fkiEzmaxinvoicingID < 0)) {
-        if (!is_null($fkiEzmaxinvoicingID) && ($fkiEzmaxinvoicingID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzmaxinvoicingID when calling EzmaxinvoicingsummaryexternalResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxinvoicingID)?'null':'"'.$fkiEzmaxinvoicingID.'"').' for fkiEzmaxinvoicingID when calling EzmaxinvoicingsummaryexternalResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzmaxinvoicingID'] = $fkiEzmaxinvoicingID;
-        $this->container['fkiEzmaxinvoicingID'] = (is_null($fkiEzmaxinvoicingID) ? null : (int) $fkiEzmaxinvoicingID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiBillingentityexternalID
-     *
-     * @return int
-     */
-    public function getFkiBillingentityexternalID()
-    {
-	//return $this->container['fkiBillingentityexternalID'];
-        return $this->container['fkiBillingentityexternalID'];
-    }
-
-    /**
-     * Sets fkiBillingentityexternalID
-     *
-     * @param int $fkiBillingentityexternalID The unique ID of the Billingentityexternal
-     *
-     * @return self
-     */
-    public function setFkiBillingentityexternalID($fkiBillingentityexternalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiBillingentityexternalID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiBillingentityexternalID cannot be null');
-        //}
-
-	//if (($fkiBillingentityexternalID < 1)) {
-        if (($fkiBillingentityexternalID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiBillingentityexternalID when calling EzmaxinvoicingsummaryexternalResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiBillingentityexternalID)?'null':'"'.$fkiBillingentityexternalID.'"').' for fkiBillingentityexternalID when calling EzmaxinvoicingsummaryexternalResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiBillingentityexternalID'] = $fkiBillingentityexternalID;
-        $this->container['fkiBillingentityexternalID'] = (is_null($fkiBillingentityexternalID) ? null : (int) $fkiBillingentityexternalID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sBillingentityexternalDescription
-     *
-     * @return string
-     */
-    public function getSBillingentityexternalDescription()
-    {
-	//return $this->container['sBillingentityexternalDescription'];
-        return is_null($this->container['sBillingentityexternalDescription']) ? null : trim($this->container['sBillingentityexternalDescription']);
-    }
-
-    /**
-     * Sets sBillingentityexternalDescription
-     *
-     * @param string $sBillingentityexternalDescription The description of the Billingentityexternal
-     *
-     * @return self
-     */
-    public function setSBillingentityexternalDescription($sBillingentityexternalDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sBillingentityexternalDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sBillingentityexternalDescription cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sBillingentityexternalDescription'] = $sBillingentityexternalDescription;
-        $this->container['sBillingentityexternalDescription'] = (is_null($sBillingentityexternalDescription) ? null : trim((string) $sBillingentityexternalDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzmaxinvoicingsummaryexternalDescription
-     *
-     * @return string
-     */
-    public function getSEzmaxinvoicingsummaryexternalDescription()
-    {
-	//return $this->container['sEzmaxinvoicingsummaryexternalDescription'];
-        return is_null($this->container['sEzmaxinvoicingsummaryexternalDescription']) ? null : trim($this->container['sEzmaxinvoicingsummaryexternalDescription']);
-    }
-
-    /**
-     * Sets sEzmaxinvoicingsummaryexternalDescription
-     *
-     * @param string $sEzmaxinvoicingsummaryexternalDescription The description of the Ezmaxinvoicingsummaryexternal
-     *
-     * @return self
-     */
-    public function setSEzmaxinvoicingsummaryexternalDescription($sEzmaxinvoicingsummaryexternalDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzmaxinvoicingsummaryexternalDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sEzmaxinvoicingsummaryexternalDescription cannot be null');
-        //}
-	//if ((mb_strlen($sEzmaxinvoicingsummaryexternalDescription) > 70)) {
-        if ((mb_strlen($sEzmaxinvoicingsummaryexternalDescription) > 70)) {
-	    //throw new \InvalidArgumentException('invalid length for $sEzmaxinvoicingsummaryexternalDescription when calling EzmaxinvoicingsummaryexternalResponseCompound., must be smaller than or equal to 70.');
-            throw new \InvalidArgumentException('value '.(is_null($sEzmaxinvoicingsummaryexternalDescription)?'null':'"'.$sEzmaxinvoicingsummaryexternalDescription.'"').', invalid length for sEzmaxinvoicingsummaryexternalDescription when calling EzmaxinvoicingsummaryexternalResponseCompound., must be smaller than or equal to 70.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzmaxinvoicingsummaryexternalDescription'] = $sEzmaxinvoicingsummaryexternalDescription;
-        $this->container['sEzmaxinvoicingsummaryexternalDescription'] = (is_null($sEzmaxinvoicingsummaryexternalDescription) ? null : trim((string) $sEzmaxinvoicingsummaryexternalDescription));
-
-        return $this;
-    }
 
     /**
      * Gets aObjEzmaxinvoicingsummaryexternaldetail

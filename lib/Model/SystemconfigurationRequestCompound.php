@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class SystemconfigurationRequestCompound extends SystemconfigurationRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,18 +57,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiSystemconfigurationID' => 'int',
-        'fkiBrandingID' => 'int',
-        'eSystemconfigurationNewexternaluseraction' => '\eZmaxAPI\Model\FieldESystemconfigurationNewexternaluseraction',
-        'eSystemconfigurationLanguage1' => '\eZmaxAPI\Model\FieldESystemconfigurationLanguage1',
-        'eSystemconfigurationLanguage2' => '\eZmaxAPI\Model\FieldESystemconfigurationLanguage2',
-        'eSystemconfigurationEzsign' => '\eZmaxAPI\Model\FieldESystemconfigurationEzsign',
-        'eSystemconfigurationEzsignofficeplan' => '\eZmaxAPI\Model\FieldESystemconfigurationEzsignofficeplan',
-        'bSystemconfigurationEzsignpaidbyoffice' => 'bool',
-        'bSystemconfigurationEzsignpersonnal' => 'bool',
-        'bSystemconfigurationSspr' => 'bool',
-        'dtSystemconfigurationReadonlyexpirationstart' => 'string',
-        'dtSystemconfigurationReadonlyexpirationend' => 'string'
+        
     ];
 
     /**
@@ -81,18 +68,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiSystemconfigurationID' => null,
-        'fkiBrandingID' => null,
-        'eSystemconfigurationNewexternaluseraction' => null,
-        'eSystemconfigurationLanguage1' => null,
-        'eSystemconfigurationLanguage2' => null,
-        'eSystemconfigurationEzsign' => null,
-        'eSystemconfigurationEzsignofficeplan' => null,
-        'bSystemconfigurationEzsignpaidbyoffice' => null,
-        'bSystemconfigurationEzsignpersonnal' => null,
-        'bSystemconfigurationSspr' => null,
-        'dtSystemconfigurationReadonlyexpirationstart' => null,
-        'dtSystemconfigurationReadonlyexpirationend' => null
+        
     ];
 
     /**
@@ -101,18 +77,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiSystemconfigurationID' => false,
-		'fkiBrandingID' => false,
-		'eSystemconfigurationNewexternaluseraction' => false,
-		'eSystemconfigurationLanguage1' => false,
-		'eSystemconfigurationLanguage2' => false,
-		'eSystemconfigurationEzsign' => false,
-		'eSystemconfigurationEzsignofficeplan' => false,
-		'bSystemconfigurationEzsignpaidbyoffice' => false,
-		'bSystemconfigurationEzsignpersonnal' => false,
-		'bSystemconfigurationSspr' => false,
-		'dtSystemconfigurationReadonlyexpirationstart' => false,
-		'dtSystemconfigurationReadonlyexpirationend' => false
+        
     ];
 
     /**
@@ -129,7 +94,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -139,7 +104,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -149,7 +114,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -201,18 +166,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiSystemconfigurationID' => 'pkiSystemconfigurationID',
-        'fkiBrandingID' => 'fkiBrandingID',
-        'eSystemconfigurationNewexternaluseraction' => 'eSystemconfigurationNewexternaluseraction',
-        'eSystemconfigurationLanguage1' => 'eSystemconfigurationLanguage1',
-        'eSystemconfigurationLanguage2' => 'eSystemconfigurationLanguage2',
-        'eSystemconfigurationEzsign' => 'eSystemconfigurationEzsign',
-        'eSystemconfigurationEzsignofficeplan' => 'eSystemconfigurationEzsignofficeplan',
-        'bSystemconfigurationEzsignpaidbyoffice' => 'bSystemconfigurationEzsignpaidbyoffice',
-        'bSystemconfigurationEzsignpersonnal' => 'bSystemconfigurationEzsignpersonnal',
-        'bSystemconfigurationSspr' => 'bSystemconfigurationSspr',
-        'dtSystemconfigurationReadonlyexpirationstart' => 'dtSystemconfigurationReadonlyexpirationstart',
-        'dtSystemconfigurationReadonlyexpirationend' => 'dtSystemconfigurationReadonlyexpirationend'
+        
     ];
 
     /**
@@ -221,18 +175,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'pkiSystemconfigurationID' => 'setPkiSystemconfigurationID',
-        'fkiBrandingID' => 'setFkiBrandingID',
-        'eSystemconfigurationNewexternaluseraction' => 'setESystemconfigurationNewexternaluseraction',
-        'eSystemconfigurationLanguage1' => 'setESystemconfigurationLanguage1',
-        'eSystemconfigurationLanguage2' => 'setESystemconfigurationLanguage2',
-        'eSystemconfigurationEzsign' => 'setESystemconfigurationEzsign',
-        'eSystemconfigurationEzsignofficeplan' => 'setESystemconfigurationEzsignofficeplan',
-        'bSystemconfigurationEzsignpaidbyoffice' => 'setBSystemconfigurationEzsignpaidbyoffice',
-        'bSystemconfigurationEzsignpersonnal' => 'setBSystemconfigurationEzsignpersonnal',
-        'bSystemconfigurationSspr' => 'setBSystemconfigurationSspr',
-        'dtSystemconfigurationReadonlyexpirationstart' => 'setDtSystemconfigurationReadonlyexpirationstart',
-        'dtSystemconfigurationReadonlyexpirationend' => 'setDtSystemconfigurationReadonlyexpirationend'
+        
     ];
 
     /**
@@ -241,18 +184,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'pkiSystemconfigurationID' => 'getPkiSystemconfigurationID',
-        'fkiBrandingID' => 'getFkiBrandingID',
-        'eSystemconfigurationNewexternaluseraction' => 'getESystemconfigurationNewexternaluseraction',
-        'eSystemconfigurationLanguage1' => 'getESystemconfigurationLanguage1',
-        'eSystemconfigurationLanguage2' => 'getESystemconfigurationLanguage2',
-        'eSystemconfigurationEzsign' => 'getESystemconfigurationEzsign',
-        'eSystemconfigurationEzsignofficeplan' => 'getESystemconfigurationEzsignofficeplan',
-        'bSystemconfigurationEzsignpaidbyoffice' => 'getBSystemconfigurationEzsignpaidbyoffice',
-        'bSystemconfigurationEzsignpersonnal' => 'getBSystemconfigurationEzsignpersonnal',
-        'bSystemconfigurationSspr' => 'getBSystemconfigurationSspr',
-        'dtSystemconfigurationReadonlyexpirationstart' => 'getDtSystemconfigurationReadonlyexpirationstart',
-        'dtSystemconfigurationReadonlyexpirationend' => 'getDtSystemconfigurationReadonlyexpirationend'
+        
     ];
 
     /**
@@ -263,7 +195,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -273,7 +205,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -283,7 +215,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -297,12 +229,6 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -312,18 +238,8 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiSystemconfigurationID', $data ?? [], null);
-        $this->setIfExists('fkiBrandingID', $data ?? [], null);
-        $this->setIfExists('eSystemconfigurationNewexternaluseraction', $data ?? [], null);
-        $this->setIfExists('eSystemconfigurationLanguage1', $data ?? [], null);
-        $this->setIfExists('eSystemconfigurationLanguage2', $data ?? [], null);
-        $this->setIfExists('eSystemconfigurationEzsign', $data ?? [], null);
-        $this->setIfExists('eSystemconfigurationEzsignofficeplan', $data ?? [], null);
-        $this->setIfExists('bSystemconfigurationEzsignpaidbyoffice', $data ?? [], null);
-        $this->setIfExists('bSystemconfigurationEzsignpersonnal', $data ?? [], null);
-        $this->setIfExists('bSystemconfigurationSspr', $data ?? [], null);
-        $this->setIfExists('dtSystemconfigurationReadonlyexpirationstart', $data ?? [], null);
-        $this->setIfExists('dtSystemconfigurationReadonlyexpirationend', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -351,44 +267,7 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['pkiSystemconfigurationID']) && ($this->container['pkiSystemconfigurationID'] > 1)) {
-            $invalidProperties[] = "invalid value for 'pkiSystemconfigurationID', must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['pkiSystemconfigurationID']) && ($this->container['pkiSystemconfigurationID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'pkiSystemconfigurationID', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['fkiBrandingID']) && ($this->container['fkiBrandingID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiBrandingID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['eSystemconfigurationNewexternaluseraction'] === null) {
-            $invalidProperties[] = "'eSystemconfigurationNewexternaluseraction' can't be null";
-        }
-        if ($this->container['eSystemconfigurationLanguage1'] === null) {
-            $invalidProperties[] = "'eSystemconfigurationLanguage1' can't be null";
-        }
-        if ($this->container['eSystemconfigurationLanguage2'] === null) {
-            $invalidProperties[] = "'eSystemconfigurationLanguage2' can't be null";
-        }
-        if ($this->container['bSystemconfigurationEzsignpersonnal'] === null) {
-            $invalidProperties[] = "'bSystemconfigurationEzsignpersonnal' can't be null";
-        }
-        if ($this->container['bSystemconfigurationSspr'] === null) {
-            $invalidProperties[] = "'bSystemconfigurationSspr' can't be null";
-        }
-	//if (!is_null($this->container['dtSystemconfigurationReadonlyexpirationstart']) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->container['dtSystemconfigurationReadonlyexpirationstart'])) {
-        if (!is_null($this->container['dtSystemconfigurationReadonlyexpirationstart']) && !preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->container['dtSystemconfigurationReadonlyexpirationstart'])) {
-            $invalidProperties[] = "invalid value for 'dtSystemconfigurationReadonlyexpirationstart', must be conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.";
-        }
-
-	//if (!is_null($this->container['dtSystemconfigurationReadonlyexpirationend']) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->container['dtSystemconfigurationReadonlyexpirationend'])) {
-        if (!is_null($this->container['dtSystemconfigurationReadonlyexpirationend']) && !preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->container['dtSystemconfigurationReadonlyexpirationend'])) {
-            $invalidProperties[] = "invalid value for 'dtSystemconfigurationReadonlyexpirationend', must be conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -404,425 +283,6 @@ class SystemconfigurationRequestCompound implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiSystemconfigurationID
-     *
-     * @return int|null
-     */
-    public function getPkiSystemconfigurationID()
-    {
-	//return $this->container['pkiSystemconfigurationID'];
-        return $this->container['pkiSystemconfigurationID'];
-    }
-
-    /**
-     * Sets pkiSystemconfigurationID
-     *
-     * @param int|null $pkiSystemconfigurationID The unique ID of the Systemconfiguration
-     *
-     * @return self
-     */
-    public function setPkiSystemconfigurationID($pkiSystemconfigurationID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiSystemconfigurationID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiSystemconfigurationID cannot be null');
-        //}
-
-	//if (($pkiSystemconfigurationID > 1)) {
-        if (!is_null($pkiSystemconfigurationID) && ($pkiSystemconfigurationID > 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiSystemconfigurationID when calling SystemconfigurationRequestCompound., must be smaller than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiSystemconfigurationID)?'null':'"'.$pkiSystemconfigurationID.'"').' for pkiSystemconfigurationID when calling SystemconfigurationRequestCompound., must be smaller than or equal to 1.');
-        }
-	//if (($pkiSystemconfigurationID < 1)) {
-        if (!is_null($pkiSystemconfigurationID) && ($pkiSystemconfigurationID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiSystemconfigurationID when calling SystemconfigurationRequestCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiSystemconfigurationID)?'null':'"'.$pkiSystemconfigurationID.'"').' for pkiSystemconfigurationID when calling SystemconfigurationRequestCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiSystemconfigurationID'] = $pkiSystemconfigurationID;
-        $this->container['pkiSystemconfigurationID'] = (is_null($pkiSystemconfigurationID) ? null : (int) $pkiSystemconfigurationID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiBrandingID
-     *
-     * @return int|null
-     */
-    public function getFkiBrandingID()
-    {
-	//return $this->container['fkiBrandingID'];
-        return $this->container['fkiBrandingID'];
-    }
-
-    /**
-     * Sets fkiBrandingID
-     *
-     * @param int|null $fkiBrandingID The unique ID of the Branding
-     *
-     * @return self
-     */
-    public function setFkiBrandingID($fkiBrandingID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiBrandingID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiBrandingID cannot be null');
-        //}
-
-	//if (($fkiBrandingID < 0)) {
-        if (!is_null($fkiBrandingID) && ($fkiBrandingID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiBrandingID when calling SystemconfigurationRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiBrandingID)?'null':'"'.$fkiBrandingID.'"').' for fkiBrandingID when calling SystemconfigurationRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiBrandingID'] = $fkiBrandingID;
-        $this->container['fkiBrandingID'] = (is_null($fkiBrandingID) ? null : (int) $fkiBrandingID);
-
-        return $this;
-    }
-
-    /**
-     * Gets eSystemconfigurationNewexternaluseraction
-     *
-     * @return \eZmaxAPI\Model\FieldESystemconfigurationNewexternaluseraction
-     */
-    public function getESystemconfigurationNewexternaluseraction()
-    {
-	//return $this->container['eSystemconfigurationNewexternaluseraction'];
-        return $this->container['eSystemconfigurationNewexternaluseraction'];
-    }
-
-    /**
-     * Sets eSystemconfigurationNewexternaluseraction
-     *
-     * @param \eZmaxAPI\Model\FieldESystemconfigurationNewexternaluseraction $eSystemconfigurationNewexternaluseraction eSystemconfigurationNewexternaluseraction
-     *
-     * @return self
-     */
-    public function setESystemconfigurationNewexternaluseraction($eSystemconfigurationNewexternaluseraction)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eSystemconfigurationNewexternaluseraction)) {
-            //throw new \InvalidArgumentException('non-nullable eSystemconfigurationNewexternaluseraction cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eSystemconfigurationNewexternaluseraction'] = $eSystemconfigurationNewexternaluseraction;
-        $this->container['eSystemconfigurationNewexternaluseraction'] = $eSystemconfigurationNewexternaluseraction;
-
-        return $this;
-    }
-
-    /**
-     * Gets eSystemconfigurationLanguage1
-     *
-     * @return \eZmaxAPI\Model\FieldESystemconfigurationLanguage1
-     */
-    public function getESystemconfigurationLanguage1()
-    {
-	//return $this->container['eSystemconfigurationLanguage1'];
-        return $this->container['eSystemconfigurationLanguage1'];
-    }
-
-    /**
-     * Sets eSystemconfigurationLanguage1
-     *
-     * @param \eZmaxAPI\Model\FieldESystemconfigurationLanguage1 $eSystemconfigurationLanguage1 eSystemconfigurationLanguage1
-     *
-     * @return self
-     */
-    public function setESystemconfigurationLanguage1($eSystemconfigurationLanguage1)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eSystemconfigurationLanguage1)) {
-            //throw new \InvalidArgumentException('non-nullable eSystemconfigurationLanguage1 cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eSystemconfigurationLanguage1'] = $eSystemconfigurationLanguage1;
-        $this->container['eSystemconfigurationLanguage1'] = $eSystemconfigurationLanguage1;
-
-        return $this;
-    }
-
-    /**
-     * Gets eSystemconfigurationLanguage2
-     *
-     * @return \eZmaxAPI\Model\FieldESystemconfigurationLanguage2
-     */
-    public function getESystemconfigurationLanguage2()
-    {
-	//return $this->container['eSystemconfigurationLanguage2'];
-        return $this->container['eSystemconfigurationLanguage2'];
-    }
-
-    /**
-     * Sets eSystemconfigurationLanguage2
-     *
-     * @param \eZmaxAPI\Model\FieldESystemconfigurationLanguage2 $eSystemconfigurationLanguage2 eSystemconfigurationLanguage2
-     *
-     * @return self
-     */
-    public function setESystemconfigurationLanguage2($eSystemconfigurationLanguage2)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eSystemconfigurationLanguage2)) {
-            //throw new \InvalidArgumentException('non-nullable eSystemconfigurationLanguage2 cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eSystemconfigurationLanguage2'] = $eSystemconfigurationLanguage2;
-        $this->container['eSystemconfigurationLanguage2'] = $eSystemconfigurationLanguage2;
-
-        return $this;
-    }
-
-    /**
-     * Gets eSystemconfigurationEzsign
-     *
-     * @return \eZmaxAPI\Model\FieldESystemconfigurationEzsign|null
-     * @deprecated
-     */
-    public function getESystemconfigurationEzsign()
-    {
-	//return $this->container['eSystemconfigurationEzsign'];
-        return $this->container['eSystemconfigurationEzsign'];
-    }
-
-    /**
-     * Sets eSystemconfigurationEzsign
-     *
-     * @param \eZmaxAPI\Model\FieldESystemconfigurationEzsign|null $eSystemconfigurationEzsign eSystemconfigurationEzsign
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setESystemconfigurationEzsign($eSystemconfigurationEzsign)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eSystemconfigurationEzsign)) {
-            //throw new \InvalidArgumentException('non-nullable eSystemconfigurationEzsign cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eSystemconfigurationEzsign'] = $eSystemconfigurationEzsign;
-        $this->container['eSystemconfigurationEzsign'] = $eSystemconfigurationEzsign;
-
-        return $this;
-    }
-
-    /**
-     * Gets eSystemconfigurationEzsignofficeplan
-     *
-     * @return \eZmaxAPI\Model\FieldESystemconfigurationEzsignofficeplan|null
-     */
-    public function getESystemconfigurationEzsignofficeplan()
-    {
-	//return $this->container['eSystemconfigurationEzsignofficeplan'];
-        return $this->container['eSystemconfigurationEzsignofficeplan'];
-    }
-
-    /**
-     * Sets eSystemconfigurationEzsignofficeplan
-     *
-     * @param \eZmaxAPI\Model\FieldESystemconfigurationEzsignofficeplan|null $eSystemconfigurationEzsignofficeplan eSystemconfigurationEzsignofficeplan
-     *
-     * @return self
-     */
-    public function setESystemconfigurationEzsignofficeplan($eSystemconfigurationEzsignofficeplan)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eSystemconfigurationEzsignofficeplan)) {
-            //throw new \InvalidArgumentException('non-nullable eSystemconfigurationEzsignofficeplan cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eSystemconfigurationEzsignofficeplan'] = $eSystemconfigurationEzsignofficeplan;
-        $this->container['eSystemconfigurationEzsignofficeplan'] = $eSystemconfigurationEzsignofficeplan;
-
-        return $this;
-    }
-
-    /**
-     * Gets bSystemconfigurationEzsignpaidbyoffice
-     *
-     * @return bool|null
-     */
-    public function getBSystemconfigurationEzsignpaidbyoffice()
-    {
-	//return $this->container['bSystemconfigurationEzsignpaidbyoffice'];
-        return $this->container['bSystemconfigurationEzsignpaidbyoffice'];
-    }
-
-    /**
-     * Sets bSystemconfigurationEzsignpaidbyoffice
-     *
-     * @param bool|null $bSystemconfigurationEzsignpaidbyoffice Whether if Ezsign is paid by the company or not
-     *
-     * @return self
-     */
-    public function setBSystemconfigurationEzsignpaidbyoffice($bSystemconfigurationEzsignpaidbyoffice)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bSystemconfigurationEzsignpaidbyoffice)) {
-            //throw new \InvalidArgumentException('non-nullable bSystemconfigurationEzsignpaidbyoffice cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bSystemconfigurationEzsignpaidbyoffice'] = $bSystemconfigurationEzsignpaidbyoffice;
-        $this->container['bSystemconfigurationEzsignpaidbyoffice'] = (is_null($bSystemconfigurationEzsignpaidbyoffice) ? null : (bool) $bSystemconfigurationEzsignpaidbyoffice);
-
-        return $this;
-    }
-
-    /**
-     * Gets bSystemconfigurationEzsignpersonnal
-     *
-     * @return bool
-     */
-    public function getBSystemconfigurationEzsignpersonnal()
-    {
-	//return $this->container['bSystemconfigurationEzsignpersonnal'];
-        return $this->container['bSystemconfigurationEzsignpersonnal'];
-    }
-
-    /**
-     * Sets bSystemconfigurationEzsignpersonnal
-     *
-     * @param bool $bSystemconfigurationEzsignpersonnal Whether if we allow the creation of personal files in eZsign
-     *
-     * @return self
-     */
-    public function setBSystemconfigurationEzsignpersonnal($bSystemconfigurationEzsignpersonnal)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bSystemconfigurationEzsignpersonnal)) {
-            //throw new \InvalidArgumentException('non-nullable bSystemconfigurationEzsignpersonnal cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bSystemconfigurationEzsignpersonnal'] = $bSystemconfigurationEzsignpersonnal;
-        $this->container['bSystemconfigurationEzsignpersonnal'] = (is_null($bSystemconfigurationEzsignpersonnal) ? null : (bool) $bSystemconfigurationEzsignpersonnal);
-
-        return $this;
-    }
-
-    /**
-     * Gets bSystemconfigurationSspr
-     *
-     * @return bool
-     */
-    public function getBSystemconfigurationSspr()
-    {
-	//return $this->container['bSystemconfigurationSspr'];
-        return $this->container['bSystemconfigurationSspr'];
-    }
-
-    /**
-     * Sets bSystemconfigurationSspr
-     *
-     * @param bool $bSystemconfigurationSspr Whether if we allow SSPR
-     *
-     * @return self
-     */
-    public function setBSystemconfigurationSspr($bSystemconfigurationSspr)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bSystemconfigurationSspr)) {
-            //throw new \InvalidArgumentException('non-nullable bSystemconfigurationSspr cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bSystemconfigurationSspr'] = $bSystemconfigurationSspr;
-        $this->container['bSystemconfigurationSspr'] = (is_null($bSystemconfigurationSspr) ? null : (bool) $bSystemconfigurationSspr);
-
-        return $this;
-    }
-
-    /**
-     * Gets dtSystemconfigurationReadonlyexpirationstart
-     *
-     * @return string|null
-     */
-    public function getDtSystemconfigurationReadonlyexpirationstart()
-    {
-	//return $this->container['dtSystemconfigurationReadonlyexpirationstart'];
-        return is_null($this->container['dtSystemconfigurationReadonlyexpirationstart']) ? null : trim($this->container['dtSystemconfigurationReadonlyexpirationstart']);
-    }
-
-    /**
-     * Sets dtSystemconfigurationReadonlyexpirationstart
-     *
-     * @param string|null $dtSystemconfigurationReadonlyexpirationstart The start date where the system will be in read only
-     *
-     * @return self
-     */
-    public function setDtSystemconfigurationReadonlyexpirationstart($dtSystemconfigurationReadonlyexpirationstart)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtSystemconfigurationReadonlyexpirationstart)) {
-            //throw new \InvalidArgumentException('non-nullable dtSystemconfigurationReadonlyexpirationstart cannot be null');
-        //}
-
-	//if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtSystemconfigurationReadonlyexpirationstart)))) {
-        if (!is_null($dtSystemconfigurationReadonlyexpirationstart) && (!preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtSystemconfigurationReadonlyexpirationstart)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$dtSystemconfigurationReadonlyexpirationstart when calling SystemconfigurationRequestCompound., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($dtSystemconfigurationReadonlyexpirationstart)?'null':'"'.$dtSystemconfigurationReadonlyexpirationstart.'"')." for dtSystemconfigurationReadonlyexpirationstart when calling SystemconfigurationRequestCompound., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtSystemconfigurationReadonlyexpirationstart'] = $dtSystemconfigurationReadonlyexpirationstart;
-        $this->container['dtSystemconfigurationReadonlyexpirationstart'] = (is_null($dtSystemconfigurationReadonlyexpirationstart) ? null : trim((string) $dtSystemconfigurationReadonlyexpirationstart));
-
-        return $this;
-    }
-
-    /**
-     * Gets dtSystemconfigurationReadonlyexpirationend
-     *
-     * @return string|null
-     */
-    public function getDtSystemconfigurationReadonlyexpirationend()
-    {
-	//return $this->container['dtSystemconfigurationReadonlyexpirationend'];
-        return is_null($this->container['dtSystemconfigurationReadonlyexpirationend']) ? null : trim($this->container['dtSystemconfigurationReadonlyexpirationend']);
-    }
-
-    /**
-     * Sets dtSystemconfigurationReadonlyexpirationend
-     *
-     * @param string|null $dtSystemconfigurationReadonlyexpirationend The end date where the system will be in read only
-     *
-     * @return self
-     */
-    public function setDtSystemconfigurationReadonlyexpirationend($dtSystemconfigurationReadonlyexpirationend)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtSystemconfigurationReadonlyexpirationend)) {
-            //throw new \InvalidArgumentException('non-nullable dtSystemconfigurationReadonlyexpirationend cannot be null');
-        //}
-
-	//if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtSystemconfigurationReadonlyexpirationend)))) {
-        if (!is_null($dtSystemconfigurationReadonlyexpirationend) && (!preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtSystemconfigurationReadonlyexpirationend)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$dtSystemconfigurationReadonlyexpirationend when calling SystemconfigurationRequestCompound., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($dtSystemconfigurationReadonlyexpirationend)?'null':'"'.$dtSystemconfigurationReadonlyexpirationend.'"')." for dtSystemconfigurationReadonlyexpirationend when calling SystemconfigurationRequestCompound., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtSystemconfigurationReadonlyexpirationend'] = $dtSystemconfigurationReadonlyexpirationend;
-        $this->container['dtSystemconfigurationReadonlyexpirationend'] = (is_null($dtSystemconfigurationReadonlyexpirationend) ? null : trim((string) $dtSystemconfigurationReadonlyexpirationend));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

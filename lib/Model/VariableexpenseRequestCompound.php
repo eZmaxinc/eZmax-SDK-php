@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class VariableexpenseRequestCompound extends VariableexpenseRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiVariableexpenseID' => 'int',
-        'sVariableexpenseCode' => 'string',
-        'objVariableexpenseDescription' => '\eZmaxAPI\Model\MultilingualVariableexpenseDescription',
-        'eVariableexpenseTaxable' => '\eZmaxAPI\Model\FieldEVariableexpenseTaxable',
-        'bVariableexpenseIsactive' => 'bool'
+        
     ];
 
     /**
@@ -74,11 +68,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiVariableexpenseID' => null,
-        'sVariableexpenseCode' => null,
-        'objVariableexpenseDescription' => null,
-        'eVariableexpenseTaxable' => null,
-        'bVariableexpenseIsactive' => null
+        
     ];
 
     /**
@@ -87,11 +77,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiVariableexpenseID' => false,
-		'sVariableexpenseCode' => false,
-		'objVariableexpenseDescription' => false,
-		'eVariableexpenseTaxable' => false,
-		'bVariableexpenseIsactive' => false
+        
     ];
 
     /**
@@ -108,7 +94,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -118,7 +104,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -128,7 +114,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -180,11 +166,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiVariableexpenseID' => 'pkiVariableexpenseID',
-        'sVariableexpenseCode' => 'sVariableexpenseCode',
-        'objVariableexpenseDescription' => 'objVariableexpenseDescription',
-        'eVariableexpenseTaxable' => 'eVariableexpenseTaxable',
-        'bVariableexpenseIsactive' => 'bVariableexpenseIsactive'
+        
     ];
 
     /**
@@ -193,11 +175,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'pkiVariableexpenseID' => 'setPkiVariableexpenseID',
-        'sVariableexpenseCode' => 'setSVariableexpenseCode',
-        'objVariableexpenseDescription' => 'setObjVariableexpenseDescription',
-        'eVariableexpenseTaxable' => 'setEVariableexpenseTaxable',
-        'bVariableexpenseIsactive' => 'setBVariableexpenseIsactive'
+        
     ];
 
     /**
@@ -206,11 +184,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'pkiVariableexpenseID' => 'getPkiVariableexpenseID',
-        'sVariableexpenseCode' => 'getSVariableexpenseCode',
-        'objVariableexpenseDescription' => 'getObjVariableexpenseDescription',
-        'eVariableexpenseTaxable' => 'getEVariableexpenseTaxable',
-        'bVariableexpenseIsactive' => 'getBVariableexpenseIsactive'
+        
     ];
 
     /**
@@ -221,7 +195,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -231,7 +205,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -241,7 +215,7 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -255,12 +229,6 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -270,11 +238,8 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiVariableexpenseID', $data ?? [], null);
-        $this->setIfExists('sVariableexpenseCode', $data ?? [], null);
-        $this->setIfExists('objVariableexpenseDescription', $data ?? [], null);
-        $this->setIfExists('eVariableexpenseTaxable', $data ?? [], null);
-        $this->setIfExists('bVariableexpenseIsactive', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -302,33 +267,8 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if (!is_null($this->container['pkiVariableexpenseID']) && ($this->container['pkiVariableexpenseID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'pkiVariableexpenseID', must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['pkiVariableexpenseID']) && ($this->container['pkiVariableexpenseID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'pkiVariableexpenseID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['sVariableexpenseCode'] === null) {
-            $invalidProperties[] = "'sVariableexpenseCode' can't be null";
-        }
-	//if (!preg_match("/^.{0,5}$/", $this->container['sVariableexpenseCode'])) {
-        if (!is_null($this->container['sVariableexpenseCode']) && !preg_match("/(*UTF8)^.{0,5}$/", $this->container['sVariableexpenseCode'])) {
-            $invalidProperties[] = "invalid value for 'sVariableexpenseCode', must be conform to the pattern /^.{0,5}$/.";
-        }
-
-        if ($this->container['objVariableexpenseDescription'] === null) {
-            $invalidProperties[] = "'objVariableexpenseDescription' can't be null";
-        }
-        if ($this->container['eVariableexpenseTaxable'] === null) {
-            $invalidProperties[] = "'eVariableexpenseTaxable' can't be null";
-        }
-        if ($this->container['bVariableexpenseIsactive'] === null) {
-            $invalidProperties[] = "'bVariableexpenseIsactive' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -343,185 +283,6 @@ class VariableexpenseRequestCompound implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiVariableexpenseID
-     *
-     * @return int|null
-     */
-    public function getPkiVariableexpenseID()
-    {
-	//return $this->container['pkiVariableexpenseID'];
-        return $this->container['pkiVariableexpenseID'];
-    }
-
-    /**
-     * Sets pkiVariableexpenseID
-     *
-     * @param int|null $pkiVariableexpenseID The unique ID of the Variableexpense
-     *
-     * @return self
-     */
-    public function setPkiVariableexpenseID($pkiVariableexpenseID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiVariableexpenseID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiVariableexpenseID cannot be null');
-        //}
-
-	//if (($pkiVariableexpenseID > 255)) {
-        if (!is_null($pkiVariableexpenseID) && ($pkiVariableexpenseID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseRequestCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiVariableexpenseID)?'null':'"'.$pkiVariableexpenseID.'"').' for pkiVariableexpenseID when calling VariableexpenseRequestCompound., must be smaller than or equal to 255.');
-        }
-	//if (($pkiVariableexpenseID < 1)) {
-        if (!is_null($pkiVariableexpenseID) && ($pkiVariableexpenseID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiVariableexpenseID when calling VariableexpenseRequestCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiVariableexpenseID)?'null':'"'.$pkiVariableexpenseID.'"').' for pkiVariableexpenseID when calling VariableexpenseRequestCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiVariableexpenseID'] = $pkiVariableexpenseID;
-        $this->container['pkiVariableexpenseID'] = (is_null($pkiVariableexpenseID) ? null : (int) $pkiVariableexpenseID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sVariableexpenseCode
-     *
-     * @return string
-     */
-    public function getSVariableexpenseCode()
-    {
-	//return $this->container['sVariableexpenseCode'];
-        return is_null($this->container['sVariableexpenseCode']) ? null : trim($this->container['sVariableexpenseCode']);
-    }
-
-    /**
-     * Sets sVariableexpenseCode
-     *
-     * @param string $sVariableexpenseCode The code of the Variableexpense
-     *
-     * @return self
-     */
-    public function setSVariableexpenseCode($sVariableexpenseCode)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sVariableexpenseCode)) {
-            //throw new \InvalidArgumentException('non-nullable sVariableexpenseCode cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,5}$/", ObjectSerializer::toString($sVariableexpenseCode)))) {
-        if (!is_null($sVariableexpenseCode) && (!preg_match("/(*UTF8)^.{0,5}$/", ObjectSerializer::toString($sVariableexpenseCode)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sVariableexpenseCode when calling VariableexpenseRequestCompound., must conform to the pattern /^.{0,5}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sVariableexpenseCode)?'null':'"'.$sVariableexpenseCode.'"')." for sVariableexpenseCode when calling VariableexpenseRequestCompound., must conform to the pattern /^.{0,5}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sVariableexpenseCode'] = $sVariableexpenseCode;
-        $this->container['sVariableexpenseCode'] = (is_null($sVariableexpenseCode) ? null : trim((string) $sVariableexpenseCode));
-
-        return $this;
-    }
-
-    /**
-     * Gets objVariableexpenseDescription
-     *
-     * @return \eZmaxAPI\Model\MultilingualVariableexpenseDescription
-     */
-    public function getObjVariableexpenseDescription()
-    {
-	//return $this->container['objVariableexpenseDescription'];
-        return $this->container['objVariableexpenseDescription'];
-    }
-
-    /**
-     * Sets objVariableexpenseDescription
-     *
-     * @param \eZmaxAPI\Model\MultilingualVariableexpenseDescription $objVariableexpenseDescription objVariableexpenseDescription
-     *
-     * @return self
-     */
-    public function setObjVariableexpenseDescription($objVariableexpenseDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objVariableexpenseDescription)) {
-            //throw new \InvalidArgumentException('non-nullable objVariableexpenseDescription cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objVariableexpenseDescription'] = $objVariableexpenseDescription;
-        $this->container['objVariableexpenseDescription'] = $objVariableexpenseDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets eVariableexpenseTaxable
-     *
-     * @return \eZmaxAPI\Model\FieldEVariableexpenseTaxable
-     */
-    public function getEVariableexpenseTaxable()
-    {
-	//return $this->container['eVariableexpenseTaxable'];
-        return $this->container['eVariableexpenseTaxable'];
-    }
-
-    /**
-     * Sets eVariableexpenseTaxable
-     *
-     * @param \eZmaxAPI\Model\FieldEVariableexpenseTaxable $eVariableexpenseTaxable eVariableexpenseTaxable
-     *
-     * @return self
-     */
-    public function setEVariableexpenseTaxable($eVariableexpenseTaxable)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eVariableexpenseTaxable)) {
-            //throw new \InvalidArgumentException('non-nullable eVariableexpenseTaxable cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eVariableexpenseTaxable'] = $eVariableexpenseTaxable;
-        $this->container['eVariableexpenseTaxable'] = $eVariableexpenseTaxable;
-
-        return $this;
-    }
-
-    /**
-     * Gets bVariableexpenseIsactive
-     *
-     * @return bool
-     */
-    public function getBVariableexpenseIsactive()
-    {
-	//return $this->container['bVariableexpenseIsactive'];
-        return $this->container['bVariableexpenseIsactive'];
-    }
-
-    /**
-     * Sets bVariableexpenseIsactive
-     *
-     * @param bool $bVariableexpenseIsactive Whether the variableexpense is active or not
-     *
-     * @return self
-     */
-    public function setBVariableexpenseIsactive($bVariableexpenseIsactive)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bVariableexpenseIsactive)) {
-            //throw new \InvalidArgumentException('non-nullable bVariableexpenseIsactive cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bVariableexpenseIsactive'] = $bVariableexpenseIsactive;
-        $this->container['bVariableexpenseIsactive'] = (is_null($bVariableexpenseIsactive) ? null : (bool) $bVariableexpenseIsactive);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

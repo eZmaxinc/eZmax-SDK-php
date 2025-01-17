@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAccess, \JsonSerializable
+class CommonResponseErrorWrongFranchiseoffice extends CommonResponseError
 {
     public const DISCRIMINATOR = null;
 
@@ -59,9 +57,6 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sErrorMessage' => 'string',
-        'eErrorCode' => '\eZmaxAPI\Model\FieldEErrorCode',
-        'aSErrorMessagedetail' => 'string[]',
         'fkiFranchiseagenceID' => 'int',
         'sFranchiseagenceName' => 'string',
         'fkiFranchiseofficeID' => 'int',
@@ -76,9 +71,6 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sErrorMessage' => null,
-        'eErrorCode' => null,
-        'aSErrorMessagedetail' => null,
         'fkiFranchiseagenceID' => null,
         'sFranchiseagenceName' => null,
         'fkiFranchiseofficeID' => null,
@@ -91,10 +83,7 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sErrorMessage' => false,
-		'eErrorCode' => false,
-		'aSErrorMessagedetail' => false,
-		'fkiFranchiseagenceID' => false,
+        'fkiFranchiseagenceID' => false,
 		'sFranchiseagenceName' => false,
 		'fkiFranchiseofficeID' => false,
 		'iFranchiseofficeCode' => false
@@ -114,7 +103,7 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -124,7 +113,7 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -134,7 +123,7 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -186,9 +175,6 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'sErrorMessage' => 'sErrorMessage',
-        'eErrorCode' => 'eErrorCode',
-        'aSErrorMessagedetail' => 'a_sErrorMessagedetail',
         'fkiFranchiseagenceID' => 'fkiFranchiseagenceID',
         'sFranchiseagenceName' => 'sFranchiseagenceName',
         'fkiFranchiseofficeID' => 'fkiFranchiseofficeID',
@@ -201,9 +187,6 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'sErrorMessage' => 'setSErrorMessage',
-        'eErrorCode' => 'setEErrorCode',
-        'aSErrorMessagedetail' => 'setASErrorMessagedetail',
         'fkiFranchiseagenceID' => 'setFkiFranchiseagenceID',
         'sFranchiseagenceName' => 'setSFranchiseagenceName',
         'fkiFranchiseofficeID' => 'setFkiFranchiseofficeID',
@@ -216,9 +199,6 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'sErrorMessage' => 'getSErrorMessage',
-        'eErrorCode' => 'getEErrorCode',
-        'aSErrorMessagedetail' => 'getASErrorMessagedetail',
         'fkiFranchiseagenceID' => 'getFkiFranchiseagenceID',
         'sFranchiseagenceName' => 'getSFranchiseagenceName',
         'fkiFranchiseofficeID' => 'getFkiFranchiseofficeID',
@@ -233,7 +213,7 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -243,7 +223,7 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -253,7 +233,7 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -267,12 +247,6 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -282,9 +256,8 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('sErrorMessage', $data ?? [], null);
-        $this->setIfExists('eErrorCode', $data ?? [], null);
-        $this->setIfExists('aSErrorMessagedetail', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('fkiFranchiseagenceID', $data ?? [], null);
         $this->setIfExists('sFranchiseagenceName', $data ?? [], null);
         $this->setIfExists('fkiFranchiseofficeID', $data ?? [], null);
@@ -316,19 +289,8 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['sErrorMessage'] === null) {
-            $invalidProperties[] = "'sErrorMessage' can't be null";
-        }
-	//if (!preg_match("/^.{0,500}$/", $this->container['sErrorMessage'])) {
-        if (!is_null($this->container['sErrorMessage']) && !preg_match("/(*UTF8)^.{0,500}$/", $this->container['sErrorMessage'])) {
-            $invalidProperties[] = "invalid value for 'sErrorMessage', must be conform to the pattern /^.{0,500}$/.";
-        }
-
-        if ($this->container['eErrorCode'] === null) {
-            $invalidProperties[] = "'eErrorCode' can't be null";
-        }
         if ($this->container['fkiFranchiseagenceID'] === null) {
             $invalidProperties[] = "'fkiFranchiseagenceID' can't be null";
         }
@@ -367,109 +329,6 @@ class CommonResponseErrorWrongFranchiseoffice implements ModelInterface, ArrayAc
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets sErrorMessage
-     *
-     * @return string
-     */
-    public function getSErrorMessage()
-    {
-	//return $this->container['sErrorMessage'];
-        return is_null($this->container['sErrorMessage']) ? null : trim($this->container['sErrorMessage']);
-    }
-
-    /**
-     * Sets sErrorMessage
-     *
-     * @param string $sErrorMessage The message giving details about the error
-     *
-     * @return self
-     */
-    public function setSErrorMessage($sErrorMessage)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sErrorMessage)) {
-            //throw new \InvalidArgumentException('non-nullable sErrorMessage cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,500}$/", ObjectSerializer::toString($sErrorMessage)))) {
-        if (!is_null($sErrorMessage) && (!preg_match("/(*UTF8)^.{0,500}$/", ObjectSerializer::toString($sErrorMessage)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sErrorMessage when calling CommonResponseErrorWrongFranchiseoffice., must conform to the pattern /^.{0,500}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sErrorMessage)?'null':'"'.$sErrorMessage.'"')." for sErrorMessage when calling CommonResponseErrorWrongFranchiseoffice., must conform to the pattern /^.{0,500}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sErrorMessage'] = $sErrorMessage;
-        $this->container['sErrorMessage'] = (is_null($sErrorMessage) ? null : trim((string) $sErrorMessage));
-
-        return $this;
-    }
-
-    /**
-     * Gets eErrorCode
-     *
-     * @return \eZmaxAPI\Model\FieldEErrorCode
-     */
-    public function getEErrorCode()
-    {
-	//return $this->container['eErrorCode'];
-        return $this->container['eErrorCode'];
-    }
-
-    /**
-     * Sets eErrorCode
-     *
-     * @param \eZmaxAPI\Model\FieldEErrorCode $eErrorCode eErrorCode
-     *
-     * @return self
-     */
-    public function setEErrorCode($eErrorCode)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eErrorCode)) {
-            //throw new \InvalidArgumentException('non-nullable eErrorCode cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eErrorCode'] = $eErrorCode;
-        $this->container['eErrorCode'] = $eErrorCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets aSErrorMessagedetail
-     *
-     * @return string[]|null
-     */
-    public function getASErrorMessagedetail()
-    {
-	//return $this->container['aSErrorMessagedetail'];
-        return $this->container['aSErrorMessagedetail'];
-    }
-
-    /**
-     * Sets aSErrorMessagedetail
-     *
-     * @param string[]|null $aSErrorMessagedetail More error message detail
-     *
-     * @return self
-     */
-    public function setASErrorMessagedetail($aSErrorMessagedetail)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($aSErrorMessagedetail)) {
-            //throw new \InvalidArgumentException('non-nullable aSErrorMessagedetail cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['aSErrorMessagedetail'] = $aSErrorMessagedetail;
-        $this->container['aSErrorMessagedetail'] = (is_null($aSErrorMessagedetail) ? null : $aSErrorMessagedetail);
-
-        return $this;
-    }
 
     /**
      * Gets fkiFranchiseagenceID

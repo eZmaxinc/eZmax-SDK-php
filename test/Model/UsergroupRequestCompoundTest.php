@@ -79,31 +79,4 @@ class UsergroupRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiUsergroupID"
-     */
-    public function testPropertyPkiUsergroupID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objEmail"
-     */
-    public function testPropertyObjEmail()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objUsergroupName"
-     */
-    public function testPropertyObjUsergroupName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

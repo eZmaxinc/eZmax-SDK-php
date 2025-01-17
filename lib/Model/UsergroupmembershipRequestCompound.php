@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class UsergroupmembershipRequestCompound extends UsergroupmembershipRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,10 +57,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiUsergroupmembershipID' => 'int',
-        'fkiUsergroupID' => 'int',
-        'fkiUserID' => 'int',
-        'fkiUsergroupexternalID' => 'int'
+        
     ];
 
     /**
@@ -73,10 +68,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiUsergroupmembershipID' => null,
-        'fkiUsergroupID' => null,
-        'fkiUserID' => null,
-        'fkiUsergroupexternalID' => null
+        
     ];
 
     /**
@@ -85,10 +77,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiUsergroupmembershipID' => false,
-		'fkiUsergroupID' => false,
-		'fkiUserID' => false,
-		'fkiUsergroupexternalID' => false
+        
     ];
 
     /**
@@ -105,7 +94,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -115,7 +104,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -125,7 +114,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -177,10 +166,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiUsergroupmembershipID' => 'pkiUsergroupmembershipID',
-        'fkiUsergroupID' => 'fkiUsergroupID',
-        'fkiUserID' => 'fkiUserID',
-        'fkiUsergroupexternalID' => 'fkiUsergroupexternalID'
+        
     ];
 
     /**
@@ -189,10 +175,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'pkiUsergroupmembershipID' => 'setPkiUsergroupmembershipID',
-        'fkiUsergroupID' => 'setFkiUsergroupID',
-        'fkiUserID' => 'setFkiUserID',
-        'fkiUsergroupexternalID' => 'setFkiUsergroupexternalID'
+        
     ];
 
     /**
@@ -201,10 +184,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'pkiUsergroupmembershipID' => 'getPkiUsergroupmembershipID',
-        'fkiUsergroupID' => 'getFkiUsergroupID',
-        'fkiUserID' => 'getFkiUserID',
-        'fkiUsergroupexternalID' => 'getFkiUsergroupexternalID'
+        
     ];
 
     /**
@@ -215,7 +195,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -225,7 +205,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -235,7 +215,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -249,12 +229,6 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -264,10 +238,8 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiUsergroupmembershipID', $data ?? [], null);
-        $this->setIfExists('fkiUsergroupID', $data ?? [], null);
-        $this->setIfExists('fkiUserID', $data ?? [], null);
-        $this->setIfExists('fkiUsergroupexternalID', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -295,38 +267,7 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['pkiUsergroupmembershipID']) && ($this->container['pkiUsergroupmembershipID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupmembershipID', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['pkiUsergroupmembershipID']) && ($this->container['pkiUsergroupmembershipID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupmembershipID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiUsergroupID'] === null) {
-            $invalidProperties[] = "'fkiUsergroupID' can't be null";
-        }
-        if (($this->container['fkiUsergroupID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'fkiUsergroupID', must be smaller than or equal to 255.";
-        }
-
-        if (($this->container['fkiUsergroupID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUsergroupID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiUserID']) && ($this->container['fkiUserID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUserID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiUsergroupexternalID']) && ($this->container['fkiUsergroupexternalID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'fkiUsergroupexternalID', must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['fkiUsergroupexternalID']) && ($this->container['fkiUsergroupexternalID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUsergroupexternalID', must be bigger than or equal to 0.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -342,177 +283,6 @@ class UsergroupmembershipRequestCompound implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiUsergroupmembershipID
-     *
-     * @return int|null
-     */
-    public function getPkiUsergroupmembershipID()
-    {
-	//return $this->container['pkiUsergroupmembershipID'];
-        return $this->container['pkiUsergroupmembershipID'];
-    }
-
-    /**
-     * Sets pkiUsergroupmembershipID
-     *
-     * @param int|null $pkiUsergroupmembershipID The unique ID of the Usergroupmembership
-     *
-     * @return self
-     */
-    public function setPkiUsergroupmembershipID($pkiUsergroupmembershipID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiUsergroupmembershipID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiUsergroupmembershipID cannot be null');
-        //}
-
-	//if (($pkiUsergroupmembershipID > 65535)) {
-        if (!is_null($pkiUsergroupmembershipID) && ($pkiUsergroupmembershipID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupmembershipID when calling UsergroupmembershipRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupmembershipID)?'null':'"'.$pkiUsergroupmembershipID.'"').' for pkiUsergroupmembershipID when calling UsergroupmembershipRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($pkiUsergroupmembershipID < 0)) {
-        if (!is_null($pkiUsergroupmembershipID) && ($pkiUsergroupmembershipID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupmembershipID when calling UsergroupmembershipRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupmembershipID)?'null':'"'.$pkiUsergroupmembershipID.'"').' for pkiUsergroupmembershipID when calling UsergroupmembershipRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiUsergroupmembershipID'] = $pkiUsergroupmembershipID;
-        $this->container['pkiUsergroupmembershipID'] = (is_null($pkiUsergroupmembershipID) ? null : (int) $pkiUsergroupmembershipID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUsergroupID
-     *
-     * @return int
-     */
-    public function getFkiUsergroupID()
-    {
-	//return $this->container['fkiUsergroupID'];
-        return $this->container['fkiUsergroupID'];
-    }
-
-    /**
-     * Sets fkiUsergroupID
-     *
-     * @param int $fkiUsergroupID The unique ID of the Usergroup
-     *
-     * @return self
-     */
-    public function setFkiUsergroupID($fkiUsergroupID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUsergroupID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUsergroupID cannot be null');
-        //}
-
-	//if (($fkiUsergroupID > 255)) {
-        if (($fkiUsergroupID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUsergroupID when calling UsergroupmembershipRequestCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUsergroupID)?'null':'"'.$fkiUsergroupID.'"').' for fkiUsergroupID when calling UsergroupmembershipRequestCompound., must be smaller than or equal to 255.');
-        }
-	//if (($fkiUsergroupID < 0)) {
-        if (($fkiUsergroupID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUsergroupID when calling UsergroupmembershipRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUsergroupID)?'null':'"'.$fkiUsergroupID.'"').' for fkiUsergroupID when calling UsergroupmembershipRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUsergroupID'] = $fkiUsergroupID;
-        $this->container['fkiUsergroupID'] = (is_null($fkiUsergroupID) ? null : (int) $fkiUsergroupID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUserID
-     *
-     * @return int|null
-     */
-    public function getFkiUserID()
-    {
-	//return $this->container['fkiUserID'];
-        return $this->container['fkiUserID'];
-    }
-
-    /**
-     * Sets fkiUserID
-     *
-     * @param int|null $fkiUserID The unique ID of the User
-     *
-     * @return self
-     */
-    public function setFkiUserID($fkiUserID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUserID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
-        //}
-
-	//if (($fkiUserID < 0)) {
-        if (!is_null($fkiUserID) && ($fkiUserID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUserID when calling UsergroupmembershipRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserID)?'null':'"'.$fkiUserID.'"').' for fkiUserID when calling UsergroupmembershipRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUserID'] = $fkiUserID;
-        $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUsergroupexternalID
-     *
-     * @return int|null
-     */
-    public function getFkiUsergroupexternalID()
-    {
-	//return $this->container['fkiUsergroupexternalID'];
-        return $this->container['fkiUsergroupexternalID'];
-    }
-
-    /**
-     * Sets fkiUsergroupexternalID
-     *
-     * @param int|null $fkiUsergroupexternalID The unique ID of the Usergroupexternal
-     *
-     * @return self
-     */
-    public function setFkiUsergroupexternalID($fkiUsergroupexternalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUsergroupexternalID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUsergroupexternalID cannot be null');
-        //}
-
-	//if (($fkiUsergroupexternalID > 255)) {
-        if (!is_null($fkiUsergroupexternalID) && ($fkiUsergroupexternalID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUsergroupexternalID when calling UsergroupmembershipRequestCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUsergroupexternalID)?'null':'"'.$fkiUsergroupexternalID.'"').' for fkiUsergroupexternalID when calling UsergroupmembershipRequestCompound., must be smaller than or equal to 255.');
-        }
-	//if (($fkiUsergroupexternalID < 0)) {
-        if (!is_null($fkiUsergroupexternalID) && ($fkiUsergroupexternalID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUsergroupexternalID when calling UsergroupmembershipRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUsergroupexternalID)?'null':'"'.$fkiUsergroupexternalID.'"').' for fkiUsergroupexternalID when calling UsergroupmembershipRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUsergroupexternalID'] = $fkiUsergroupexternalID;
-        $this->container['fkiUsergroupexternalID'] = (is_null($fkiUsergroupexternalID) ? null : (int) $fkiUsergroupexternalID);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

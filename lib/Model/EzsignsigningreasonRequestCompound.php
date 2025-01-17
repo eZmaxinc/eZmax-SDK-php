@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignsigningreasonRequestCompound extends EzsignsigningreasonRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,9 +57,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignsigningreasonID' => 'int',
-        'objEzsignsigningreasonDescription' => '\eZmaxAPI\Model\MultilingualEzsignsigningreasonDescription',
-        'bEzsignsigningreasonIsactive' => 'bool'
+        
     ];
 
     /**
@@ -72,9 +68,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignsigningreasonID' => null,
-        'objEzsignsigningreasonDescription' => null,
-        'bEzsignsigningreasonIsactive' => null
+        
     ];
 
     /**
@@ -83,9 +77,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsignsigningreasonID' => false,
-		'objEzsignsigningreasonDescription' => false,
-		'bEzsignsigningreasonIsactive' => false
+        
     ];
 
     /**
@@ -102,7 +94,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,9 +166,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignsigningreasonID' => 'pkiEzsignsigningreasonID',
-        'objEzsignsigningreasonDescription' => 'objEzsignsigningreasonDescription',
-        'bEzsignsigningreasonIsactive' => 'bEzsignsigningreasonIsactive'
+        
     ];
 
     /**
@@ -185,9 +175,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignsigningreasonID' => 'setPkiEzsignsigningreasonID',
-        'objEzsignsigningreasonDescription' => 'setObjEzsignsigningreasonDescription',
-        'bEzsignsigningreasonIsactive' => 'setBEzsignsigningreasonIsactive'
+        
     ];
 
     /**
@@ -196,9 +184,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignsigningreasonID' => 'getPkiEzsignsigningreasonID',
-        'objEzsignsigningreasonDescription' => 'getObjEzsignsigningreasonDescription',
-        'bEzsignsigningreasonIsactive' => 'getBEzsignsigningreasonIsactive'
+        
     ];
 
     /**
@@ -209,7 +195,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,9 +238,8 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsignsigningreasonID', $data ?? [], null);
-        $this->setIfExists('objEzsignsigningreasonDescription', $data ?? [], null);
-        $this->setIfExists('bEzsignsigningreasonIsactive', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -288,22 +267,8 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if (!is_null($this->container['pkiEzsignsigningreasonID']) && ($this->container['pkiEzsignsigningreasonID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignsigningreasonID', must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['pkiEzsignsigningreasonID']) && ($this->container['pkiEzsignsigningreasonID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignsigningreasonID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objEzsignsigningreasonDescription'] === null) {
-            $invalidProperties[] = "'objEzsignsigningreasonDescription' can't be null";
-        }
-        if ($this->container['bEzsignsigningreasonIsactive'] === null) {
-            $invalidProperties[] = "'bEzsignsigningreasonIsactive' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -318,114 +283,6 @@ class EzsignsigningreasonRequestCompound implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsignsigningreasonID
-     *
-     * @return int|null
-     */
-    public function getPkiEzsignsigningreasonID()
-    {
-	//return $this->container['pkiEzsignsigningreasonID'];
-        return $this->container['pkiEzsignsigningreasonID'];
-    }
-
-    /**
-     * Sets pkiEzsignsigningreasonID
-     *
-     * @param int|null $pkiEzsignsigningreasonID The unique ID of the Ezsignsigningreason
-     *
-     * @return self
-     */
-    public function setPkiEzsignsigningreasonID($pkiEzsignsigningreasonID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsignsigningreasonID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsignsigningreasonID cannot be null');
-        //}
-
-	//if (($pkiEzsignsigningreasonID > 255)) {
-        if (!is_null($pkiEzsignsigningreasonID) && ($pkiEzsignsigningreasonID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignsigningreasonID when calling EzsignsigningreasonRequestCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignsigningreasonID)?'null':'"'.$pkiEzsignsigningreasonID.'"').' for pkiEzsignsigningreasonID when calling EzsignsigningreasonRequestCompound., must be smaller than or equal to 255.');
-        }
-	//if (($pkiEzsignsigningreasonID < 0)) {
-        if (!is_null($pkiEzsignsigningreasonID) && ($pkiEzsignsigningreasonID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignsigningreasonID when calling EzsignsigningreasonRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignsigningreasonID)?'null':'"'.$pkiEzsignsigningreasonID.'"').' for pkiEzsignsigningreasonID when calling EzsignsigningreasonRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsignsigningreasonID'] = $pkiEzsignsigningreasonID;
-        $this->container['pkiEzsignsigningreasonID'] = (is_null($pkiEzsignsigningreasonID) ? null : (int) $pkiEzsignsigningreasonID);
-
-        return $this;
-    }
-
-    /**
-     * Gets objEzsignsigningreasonDescription
-     *
-     * @return \eZmaxAPI\Model\MultilingualEzsignsigningreasonDescription
-     */
-    public function getObjEzsignsigningreasonDescription()
-    {
-	//return $this->container['objEzsignsigningreasonDescription'];
-        return $this->container['objEzsignsigningreasonDescription'];
-    }
-
-    /**
-     * Sets objEzsignsigningreasonDescription
-     *
-     * @param \eZmaxAPI\Model\MultilingualEzsignsigningreasonDescription $objEzsignsigningreasonDescription objEzsignsigningreasonDescription
-     *
-     * @return self
-     */
-    public function setObjEzsignsigningreasonDescription($objEzsignsigningreasonDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objEzsignsigningreasonDescription)) {
-            //throw new \InvalidArgumentException('non-nullable objEzsignsigningreasonDescription cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objEzsignsigningreasonDescription'] = $objEzsignsigningreasonDescription;
-        $this->container['objEzsignsigningreasonDescription'] = $objEzsignsigningreasonDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsignsigningreasonIsactive
-     *
-     * @return bool
-     */
-    public function getBEzsignsigningreasonIsactive()
-    {
-	//return $this->container['bEzsignsigningreasonIsactive'];
-        return $this->container['bEzsignsigningreasonIsactive'];
-    }
-
-    /**
-     * Sets bEzsignsigningreasonIsactive
-     *
-     * @param bool $bEzsignsigningreasonIsactive Whether the ezsignsigningreason is active or not
-     *
-     * @return self
-     */
-    public function setBEzsignsigningreasonIsactive($bEzsignsigningreasonIsactive)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsignsigningreasonIsactive)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsignsigningreasonIsactive cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsignsigningreasonIsactive'] = $bEzsignsigningreasonIsactive;
-        $this->container['bEzsignsigningreasonIsactive'] = (is_null($bEzsignsigningreasonIsactive) ? null : (bool) $bEzsignsigningreasonIsactive);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

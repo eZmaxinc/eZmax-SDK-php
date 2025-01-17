@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigntemplatedocumentpagerecognitionRequestCompound extends EzsigntemplatedocumentpagerecognitionRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,16 +57,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsigntemplatedocumentpagerecognitionID' => 'int',
-        'fkiEzsigntemplatedocumentpageID' => 'int',
-        'eEzsigntemplatedocumentpagerecognitionOperator' => '\eZmaxAPI\Model\FieldEEzsigntemplatedocumentpagerecognitionOperator',
-        'eEzsigntemplatedocumentpagerecognitionSection' => '\eZmaxAPI\Model\FieldEEzsigntemplatedocumentpagerecognitionSection',
-        'iEzsigntemplatedocumentpagerecognitionSimilarpercentage' => 'int',
-        'iEzsigntemplatedocumentpagerecognitionX' => 'int',
-        'iEzsigntemplatedocumentpagerecognitionY' => 'int',
-        'iEzsigntemplatedocumentpagerecognitionWidth' => 'int',
-        'iEzsigntemplatedocumentpagerecognitionHeight' => 'int',
-        'tEzsigntemplatedocumentpagerecognitionText' => 'string'
+        
     ];
 
     /**
@@ -79,16 +68,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsigntemplatedocumentpagerecognitionID' => null,
-        'fkiEzsigntemplatedocumentpageID' => null,
-        'eEzsigntemplatedocumentpagerecognitionOperator' => null,
-        'eEzsigntemplatedocumentpagerecognitionSection' => null,
-        'iEzsigntemplatedocumentpagerecognitionSimilarpercentage' => null,
-        'iEzsigntemplatedocumentpagerecognitionX' => null,
-        'iEzsigntemplatedocumentpagerecognitionY' => null,
-        'iEzsigntemplatedocumentpagerecognitionWidth' => null,
-        'iEzsigntemplatedocumentpagerecognitionHeight' => null,
-        'tEzsigntemplatedocumentpagerecognitionText' => null
+        
     ];
 
     /**
@@ -97,16 +77,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsigntemplatedocumentpagerecognitionID' => false,
-		'fkiEzsigntemplatedocumentpageID' => false,
-		'eEzsigntemplatedocumentpagerecognitionOperator' => false,
-		'eEzsigntemplatedocumentpagerecognitionSection' => false,
-		'iEzsigntemplatedocumentpagerecognitionSimilarpercentage' => false,
-		'iEzsigntemplatedocumentpagerecognitionX' => false,
-		'iEzsigntemplatedocumentpagerecognitionY' => false,
-		'iEzsigntemplatedocumentpagerecognitionWidth' => false,
-		'iEzsigntemplatedocumentpagerecognitionHeight' => false,
-		'tEzsigntemplatedocumentpagerecognitionText' => false
+        
     ];
 
     /**
@@ -123,7 +94,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -133,7 +104,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -143,7 +114,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -195,16 +166,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsigntemplatedocumentpagerecognitionID' => 'pkiEzsigntemplatedocumentpagerecognitionID',
-        'fkiEzsigntemplatedocumentpageID' => 'fkiEzsigntemplatedocumentpageID',
-        'eEzsigntemplatedocumentpagerecognitionOperator' => 'eEzsigntemplatedocumentpagerecognitionOperator',
-        'eEzsigntemplatedocumentpagerecognitionSection' => 'eEzsigntemplatedocumentpagerecognitionSection',
-        'iEzsigntemplatedocumentpagerecognitionSimilarpercentage' => 'iEzsigntemplatedocumentpagerecognitionSimilarpercentage',
-        'iEzsigntemplatedocumentpagerecognitionX' => 'iEzsigntemplatedocumentpagerecognitionX',
-        'iEzsigntemplatedocumentpagerecognitionY' => 'iEzsigntemplatedocumentpagerecognitionY',
-        'iEzsigntemplatedocumentpagerecognitionWidth' => 'iEzsigntemplatedocumentpagerecognitionWidth',
-        'iEzsigntemplatedocumentpagerecognitionHeight' => 'iEzsigntemplatedocumentpagerecognitionHeight',
-        'tEzsigntemplatedocumentpagerecognitionText' => 'tEzsigntemplatedocumentpagerecognitionText'
+        
     ];
 
     /**
@@ -213,16 +175,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsigntemplatedocumentpagerecognitionID' => 'setPkiEzsigntemplatedocumentpagerecognitionID',
-        'fkiEzsigntemplatedocumentpageID' => 'setFkiEzsigntemplatedocumentpageID',
-        'eEzsigntemplatedocumentpagerecognitionOperator' => 'setEEzsigntemplatedocumentpagerecognitionOperator',
-        'eEzsigntemplatedocumentpagerecognitionSection' => 'setEEzsigntemplatedocumentpagerecognitionSection',
-        'iEzsigntemplatedocumentpagerecognitionSimilarpercentage' => 'setIEzsigntemplatedocumentpagerecognitionSimilarpercentage',
-        'iEzsigntemplatedocumentpagerecognitionX' => 'setIEzsigntemplatedocumentpagerecognitionX',
-        'iEzsigntemplatedocumentpagerecognitionY' => 'setIEzsigntemplatedocumentpagerecognitionY',
-        'iEzsigntemplatedocumentpagerecognitionWidth' => 'setIEzsigntemplatedocumentpagerecognitionWidth',
-        'iEzsigntemplatedocumentpagerecognitionHeight' => 'setIEzsigntemplatedocumentpagerecognitionHeight',
-        'tEzsigntemplatedocumentpagerecognitionText' => 'setTEzsigntemplatedocumentpagerecognitionText'
+        
     ];
 
     /**
@@ -231,16 +184,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsigntemplatedocumentpagerecognitionID' => 'getPkiEzsigntemplatedocumentpagerecognitionID',
-        'fkiEzsigntemplatedocumentpageID' => 'getFkiEzsigntemplatedocumentpageID',
-        'eEzsigntemplatedocumentpagerecognitionOperator' => 'getEEzsigntemplatedocumentpagerecognitionOperator',
-        'eEzsigntemplatedocumentpagerecognitionSection' => 'getEEzsigntemplatedocumentpagerecognitionSection',
-        'iEzsigntemplatedocumentpagerecognitionSimilarpercentage' => 'getIEzsigntemplatedocumentpagerecognitionSimilarpercentage',
-        'iEzsigntemplatedocumentpagerecognitionX' => 'getIEzsigntemplatedocumentpagerecognitionX',
-        'iEzsigntemplatedocumentpagerecognitionY' => 'getIEzsigntemplatedocumentpagerecognitionY',
-        'iEzsigntemplatedocumentpagerecognitionWidth' => 'getIEzsigntemplatedocumentpagerecognitionWidth',
-        'iEzsigntemplatedocumentpagerecognitionHeight' => 'getIEzsigntemplatedocumentpagerecognitionHeight',
-        'tEzsigntemplatedocumentpagerecognitionText' => 'getTEzsigntemplatedocumentpagerecognitionText'
+        
     ];
 
     /**
@@ -251,7 +195,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -261,7 +205,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -271,7 +215,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -285,12 +229,6 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -300,16 +238,8 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsigntemplatedocumentpagerecognitionID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigntemplatedocumentpageID', $data ?? [], null);
-        $this->setIfExists('eEzsigntemplatedocumentpagerecognitionOperator', $data ?? [], null);
-        $this->setIfExists('eEzsigntemplatedocumentpagerecognitionSection', $data ?? [], null);
-        $this->setIfExists('iEzsigntemplatedocumentpagerecognitionSimilarpercentage', $data ?? [], null);
-        $this->setIfExists('iEzsigntemplatedocumentpagerecognitionX', $data ?? [], null);
-        $this->setIfExists('iEzsigntemplatedocumentpagerecognitionY', $data ?? [], null);
-        $this->setIfExists('iEzsigntemplatedocumentpagerecognitionWidth', $data ?? [], null);
-        $this->setIfExists('iEzsigntemplatedocumentpagerecognitionHeight', $data ?? [], null);
-        $this->setIfExists('tEzsigntemplatedocumentpagerecognitionText', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -337,76 +267,7 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['pkiEzsigntemplatedocumentpagerecognitionID']) && ($this->container['pkiEzsigntemplatedocumentpagerecognitionID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsigntemplatedocumentpagerecognitionID', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['pkiEzsigntemplatedocumentpagerecognitionID']) && ($this->container['pkiEzsigntemplatedocumentpagerecognitionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsigntemplatedocumentpagerecognitionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsigntemplatedocumentpageID'] === null) {
-            $invalidProperties[] = "'fkiEzsigntemplatedocumentpageID' can't be null";
-        }
-        if (($this->container['fkiEzsigntemplatedocumentpageID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntemplatedocumentpageID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['eEzsigntemplatedocumentpagerecognitionOperator'] === null) {
-            $invalidProperties[] = "'eEzsigntemplatedocumentpagerecognitionOperator' can't be null";
-        }
-        if ($this->container['eEzsigntemplatedocumentpagerecognitionSection'] === null) {
-            $invalidProperties[] = "'eEzsigntemplatedocumentpagerecognitionSection' can't be null";
-        }
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionSimilarpercentage']) && ($this->container['iEzsigntemplatedocumentpagerecognitionSimilarpercentage'] > 100)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionSimilarpercentage', must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionSimilarpercentage']) && ($this->container['iEzsigntemplatedocumentpagerecognitionSimilarpercentage'] < 60)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionSimilarpercentage', must be bigger than or equal to 60.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionX']) && ($this->container['iEzsigntemplatedocumentpagerecognitionX'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionX', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionX']) && ($this->container['iEzsigntemplatedocumentpagerecognitionX'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionX', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionY']) && ($this->container['iEzsigntemplatedocumentpagerecognitionY'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionY', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionY']) && ($this->container['iEzsigntemplatedocumentpagerecognitionY'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionY', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionWidth']) && ($this->container['iEzsigntemplatedocumentpagerecognitionWidth'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionWidth', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionWidth']) && ($this->container['iEzsigntemplatedocumentpagerecognitionWidth'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionWidth', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionHeight']) && ($this->container['iEzsigntemplatedocumentpagerecognitionHeight'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionHeight', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatedocumentpagerecognitionHeight']) && ($this->container['iEzsigntemplatedocumentpagerecognitionHeight'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentpagerecognitionHeight', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['tEzsigntemplatedocumentpagerecognitionText'] === null) {
-            $invalidProperties[] = "'tEzsigntemplatedocumentpagerecognitionText' can't be null";
-        }
-	//if (!preg_match("/^[.\\D\\d]{0,65535}$/", $this->container['tEzsigntemplatedocumentpagerecognitionText'])) {
-        if (!is_null($this->container['tEzsigntemplatedocumentpagerecognitionText']) && !preg_match("/(*UTF8)^[.\\D\\d]{0,65535}$/", $this->container['tEzsigntemplatedocumentpagerecognitionText'])) {
-            $invalidProperties[] = "invalid value for 'tEzsigntemplatedocumentpagerecognitionText', must be conform to the pattern /^[.\\D\\d]{0,65535}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -422,412 +283,6 @@ class EzsigntemplatedocumentpagerecognitionRequestCompound implements ModelInter
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsigntemplatedocumentpagerecognitionID
-     *
-     * @return int|null
-     */
-    public function getPkiEzsigntemplatedocumentpagerecognitionID()
-    {
-	//return $this->container['pkiEzsigntemplatedocumentpagerecognitionID'];
-        return $this->container['pkiEzsigntemplatedocumentpagerecognitionID'];
-    }
-
-    /**
-     * Sets pkiEzsigntemplatedocumentpagerecognitionID
-     *
-     * @param int|null $pkiEzsigntemplatedocumentpagerecognitionID The unique ID of the Ezsigntemplatedocumentpagerecognition
-     *
-     * @return self
-     */
-    public function setPkiEzsigntemplatedocumentpagerecognitionID($pkiEzsigntemplatedocumentpagerecognitionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsigntemplatedocumentpagerecognitionID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatedocumentpagerecognitionID cannot be null');
-        //}
-
-	//if (($pkiEzsigntemplatedocumentpagerecognitionID > 65535)) {
-        if (!is_null($pkiEzsigntemplatedocumentpagerecognitionID) && ($pkiEzsigntemplatedocumentpagerecognitionID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplatedocumentpagerecognitionID when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsigntemplatedocumentpagerecognitionID)?'null':'"'.$pkiEzsigntemplatedocumentpagerecognitionID.'"').' for pkiEzsigntemplatedocumentpagerecognitionID when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($pkiEzsigntemplatedocumentpagerecognitionID < 0)) {
-        if (!is_null($pkiEzsigntemplatedocumentpagerecognitionID) && ($pkiEzsigntemplatedocumentpagerecognitionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplatedocumentpagerecognitionID when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsigntemplatedocumentpagerecognitionID)?'null':'"'.$pkiEzsigntemplatedocumentpagerecognitionID.'"').' for pkiEzsigntemplatedocumentpagerecognitionID when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsigntemplatedocumentpagerecognitionID'] = $pkiEzsigntemplatedocumentpagerecognitionID;
-        $this->container['pkiEzsigntemplatedocumentpagerecognitionID'] = (is_null($pkiEzsigntemplatedocumentpagerecognitionID) ? null : (int) $pkiEzsigntemplatedocumentpagerecognitionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigntemplatedocumentpageID
-     *
-     * @return int
-     */
-    public function getFkiEzsigntemplatedocumentpageID()
-    {
-	//return $this->container['fkiEzsigntemplatedocumentpageID'];
-        return $this->container['fkiEzsigntemplatedocumentpageID'];
-    }
-
-    /**
-     * Sets fkiEzsigntemplatedocumentpageID
-     *
-     * @param int $fkiEzsigntemplatedocumentpageID The unique ID of the Ezsigntemplatedocumentpage
-     *
-     * @return self
-     */
-    public function setFkiEzsigntemplatedocumentpageID($fkiEzsigntemplatedocumentpageID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigntemplatedocumentpageID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatedocumentpageID cannot be null');
-        //}
-
-	//if (($fkiEzsigntemplatedocumentpageID < 0)) {
-        if (($fkiEzsigntemplatedocumentpageID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatedocumentpageID when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntemplatedocumentpageID)?'null':'"'.$fkiEzsigntemplatedocumentpageID.'"').' for fkiEzsigntemplatedocumentpageID when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigntemplatedocumentpageID'] = $fkiEzsigntemplatedocumentpageID;
-        $this->container['fkiEzsigntemplatedocumentpageID'] = (is_null($fkiEzsigntemplatedocumentpageID) ? null : (int) $fkiEzsigntemplatedocumentpageID);
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsigntemplatedocumentpagerecognitionOperator
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsigntemplatedocumentpagerecognitionOperator
-     */
-    public function getEEzsigntemplatedocumentpagerecognitionOperator()
-    {
-	//return $this->container['eEzsigntemplatedocumentpagerecognitionOperator'];
-        return $this->container['eEzsigntemplatedocumentpagerecognitionOperator'];
-    }
-
-    /**
-     * Sets eEzsigntemplatedocumentpagerecognitionOperator
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsigntemplatedocumentpagerecognitionOperator $eEzsigntemplatedocumentpagerecognitionOperator eEzsigntemplatedocumentpagerecognitionOperator
-     *
-     * @return self
-     */
-    public function setEEzsigntemplatedocumentpagerecognitionOperator($eEzsigntemplatedocumentpagerecognitionOperator)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsigntemplatedocumentpagerecognitionOperator)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsigntemplatedocumentpagerecognitionOperator cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsigntemplatedocumentpagerecognitionOperator'] = $eEzsigntemplatedocumentpagerecognitionOperator;
-        $this->container['eEzsigntemplatedocumentpagerecognitionOperator'] = $eEzsigntemplatedocumentpagerecognitionOperator;
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsigntemplatedocumentpagerecognitionSection
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsigntemplatedocumentpagerecognitionSection
-     */
-    public function getEEzsigntemplatedocumentpagerecognitionSection()
-    {
-	//return $this->container['eEzsigntemplatedocumentpagerecognitionSection'];
-        return $this->container['eEzsigntemplatedocumentpagerecognitionSection'];
-    }
-
-    /**
-     * Sets eEzsigntemplatedocumentpagerecognitionSection
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsigntemplatedocumentpagerecognitionSection $eEzsigntemplatedocumentpagerecognitionSection eEzsigntemplatedocumentpagerecognitionSection
-     *
-     * @return self
-     */
-    public function setEEzsigntemplatedocumentpagerecognitionSection($eEzsigntemplatedocumentpagerecognitionSection)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsigntemplatedocumentpagerecognitionSection)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsigntemplatedocumentpagerecognitionSection cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsigntemplatedocumentpagerecognitionSection'] = $eEzsigntemplatedocumentpagerecognitionSection;
-        $this->container['eEzsigntemplatedocumentpagerecognitionSection'] = $eEzsigntemplatedocumentpagerecognitionSection;
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigntemplatedocumentpagerecognitionSimilarpercentage
-     *
-     * @return int|null
-     */
-    public function getIEzsigntemplatedocumentpagerecognitionSimilarpercentage()
-    {
-	//return $this->container['iEzsigntemplatedocumentpagerecognitionSimilarpercentage'];
-        return $this->container['iEzsigntemplatedocumentpagerecognitionSimilarpercentage'];
-    }
-
-    /**
-     * Sets iEzsigntemplatedocumentpagerecognitionSimilarpercentage
-     *
-     * @param int|null $iEzsigntemplatedocumentpagerecognitionSimilarpercentage The similarpercentage of the Ezsigntemplatedocumentpagerecognition
-     *
-     * @return self
-     */
-    public function setIEzsigntemplatedocumentpagerecognitionSimilarpercentage($iEzsigntemplatedocumentpagerecognitionSimilarpercentage)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigntemplatedocumentpagerecognitionSimilarpercentage)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentpagerecognitionSimilarpercentage cannot be null');
-        //}
-
-	//if (($iEzsigntemplatedocumentpagerecognitionSimilarpercentage > 100)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionSimilarpercentage) && ($iEzsigntemplatedocumentpagerecognitionSimilarpercentage > 100)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionSimilarpercentage when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 100.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionSimilarpercentage)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionSimilarpercentage.'"').' for iEzsigntemplatedocumentpagerecognitionSimilarpercentage when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 100.');
-        }
-	//if (($iEzsigntemplatedocumentpagerecognitionSimilarpercentage < 60)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionSimilarpercentage) && ($iEzsigntemplatedocumentpagerecognitionSimilarpercentage < 60)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionSimilarpercentage when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 60.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionSimilarpercentage)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionSimilarpercentage.'"').' for iEzsigntemplatedocumentpagerecognitionSimilarpercentage when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 60.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigntemplatedocumentpagerecognitionSimilarpercentage'] = $iEzsigntemplatedocumentpagerecognitionSimilarpercentage;
-        $this->container['iEzsigntemplatedocumentpagerecognitionSimilarpercentage'] = (is_null($iEzsigntemplatedocumentpagerecognitionSimilarpercentage) ? null : (int) $iEzsigntemplatedocumentpagerecognitionSimilarpercentage);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigntemplatedocumentpagerecognitionX
-     *
-     * @return int|null
-     */
-    public function getIEzsigntemplatedocumentpagerecognitionX()
-    {
-	//return $this->container['iEzsigntemplatedocumentpagerecognitionX'];
-        return $this->container['iEzsigntemplatedocumentpagerecognitionX'];
-    }
-
-    /**
-     * Sets iEzsigntemplatedocumentpagerecognitionX
-     *
-     * @param int|null $iEzsigntemplatedocumentpagerecognitionX The x of the Ezsigntemplatedocumentpagerecognition
-     *
-     * @return self
-     */
-    public function setIEzsigntemplatedocumentpagerecognitionX($iEzsigntemplatedocumentpagerecognitionX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigntemplatedocumentpagerecognitionX)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentpagerecognitionX cannot be null');
-        //}
-
-	//if (($iEzsigntemplatedocumentpagerecognitionX > 65535)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionX) && ($iEzsigntemplatedocumentpagerecognitionX > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionX when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionX)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionX.'"').' for iEzsigntemplatedocumentpagerecognitionX when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($iEzsigntemplatedocumentpagerecognitionX < 0)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionX) && ($iEzsigntemplatedocumentpagerecognitionX < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionX when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionX)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionX.'"').' for iEzsigntemplatedocumentpagerecognitionX when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigntemplatedocumentpagerecognitionX'] = $iEzsigntemplatedocumentpagerecognitionX;
-        $this->container['iEzsigntemplatedocumentpagerecognitionX'] = (is_null($iEzsigntemplatedocumentpagerecognitionX) ? null : (int) $iEzsigntemplatedocumentpagerecognitionX);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigntemplatedocumentpagerecognitionY
-     *
-     * @return int|null
-     */
-    public function getIEzsigntemplatedocumentpagerecognitionY()
-    {
-	//return $this->container['iEzsigntemplatedocumentpagerecognitionY'];
-        return $this->container['iEzsigntemplatedocumentpagerecognitionY'];
-    }
-
-    /**
-     * Sets iEzsigntemplatedocumentpagerecognitionY
-     *
-     * @param int|null $iEzsigntemplatedocumentpagerecognitionY The y of the Ezsigntemplatedocumentpagerecognition
-     *
-     * @return self
-     */
-    public function setIEzsigntemplatedocumentpagerecognitionY($iEzsigntemplatedocumentpagerecognitionY)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigntemplatedocumentpagerecognitionY)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentpagerecognitionY cannot be null');
-        //}
-
-	//if (($iEzsigntemplatedocumentpagerecognitionY > 65535)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionY) && ($iEzsigntemplatedocumentpagerecognitionY > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionY when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionY)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionY.'"').' for iEzsigntemplatedocumentpagerecognitionY when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($iEzsigntemplatedocumentpagerecognitionY < 0)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionY) && ($iEzsigntemplatedocumentpagerecognitionY < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionY when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionY)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionY.'"').' for iEzsigntemplatedocumentpagerecognitionY when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigntemplatedocumentpagerecognitionY'] = $iEzsigntemplatedocumentpagerecognitionY;
-        $this->container['iEzsigntemplatedocumentpagerecognitionY'] = (is_null($iEzsigntemplatedocumentpagerecognitionY) ? null : (int) $iEzsigntemplatedocumentpagerecognitionY);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigntemplatedocumentpagerecognitionWidth
-     *
-     * @return int|null
-     */
-    public function getIEzsigntemplatedocumentpagerecognitionWidth()
-    {
-	//return $this->container['iEzsigntemplatedocumentpagerecognitionWidth'];
-        return $this->container['iEzsigntemplatedocumentpagerecognitionWidth'];
-    }
-
-    /**
-     * Sets iEzsigntemplatedocumentpagerecognitionWidth
-     *
-     * @param int|null $iEzsigntemplatedocumentpagerecognitionWidth The width of the Ezsigntemplatedocumentpagerecognition
-     *
-     * @return self
-     */
-    public function setIEzsigntemplatedocumentpagerecognitionWidth($iEzsigntemplatedocumentpagerecognitionWidth)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigntemplatedocumentpagerecognitionWidth)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentpagerecognitionWidth cannot be null');
-        //}
-
-	//if (($iEzsigntemplatedocumentpagerecognitionWidth > 65535)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionWidth) && ($iEzsigntemplatedocumentpagerecognitionWidth > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionWidth when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionWidth)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionWidth.'"').' for iEzsigntemplatedocumentpagerecognitionWidth when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($iEzsigntemplatedocumentpagerecognitionWidth < 0)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionWidth) && ($iEzsigntemplatedocumentpagerecognitionWidth < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionWidth when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionWidth)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionWidth.'"').' for iEzsigntemplatedocumentpagerecognitionWidth when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigntemplatedocumentpagerecognitionWidth'] = $iEzsigntemplatedocumentpagerecognitionWidth;
-        $this->container['iEzsigntemplatedocumentpagerecognitionWidth'] = (is_null($iEzsigntemplatedocumentpagerecognitionWidth) ? null : (int) $iEzsigntemplatedocumentpagerecognitionWidth);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigntemplatedocumentpagerecognitionHeight
-     *
-     * @return int|null
-     */
-    public function getIEzsigntemplatedocumentpagerecognitionHeight()
-    {
-	//return $this->container['iEzsigntemplatedocumentpagerecognitionHeight'];
-        return $this->container['iEzsigntemplatedocumentpagerecognitionHeight'];
-    }
-
-    /**
-     * Sets iEzsigntemplatedocumentpagerecognitionHeight
-     *
-     * @param int|null $iEzsigntemplatedocumentpagerecognitionHeight The height of the Ezsigntemplatedocumentpagerecognition
-     *
-     * @return self
-     */
-    public function setIEzsigntemplatedocumentpagerecognitionHeight($iEzsigntemplatedocumentpagerecognitionHeight)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigntemplatedocumentpagerecognitionHeight)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentpagerecognitionHeight cannot be null');
-        //}
-
-	//if (($iEzsigntemplatedocumentpagerecognitionHeight > 65535)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionHeight) && ($iEzsigntemplatedocumentpagerecognitionHeight > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionHeight when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionHeight)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionHeight.'"').' for iEzsigntemplatedocumentpagerecognitionHeight when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($iEzsigntemplatedocumentpagerecognitionHeight < 0)) {
-        if (!is_null($iEzsigntemplatedocumentpagerecognitionHeight) && ($iEzsigntemplatedocumentpagerecognitionHeight < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentpagerecognitionHeight when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentpagerecognitionHeight)?'null':'"'.$iEzsigntemplatedocumentpagerecognitionHeight.'"').' for iEzsigntemplatedocumentpagerecognitionHeight when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigntemplatedocumentpagerecognitionHeight'] = $iEzsigntemplatedocumentpagerecognitionHeight;
-        $this->container['iEzsigntemplatedocumentpagerecognitionHeight'] = (is_null($iEzsigntemplatedocumentpagerecognitionHeight) ? null : (int) $iEzsigntemplatedocumentpagerecognitionHeight);
-
-        return $this;
-    }
-
-    /**
-     * Gets tEzsigntemplatedocumentpagerecognitionText
-     *
-     * @return string
-     */
-    public function getTEzsigntemplatedocumentpagerecognitionText()
-    {
-	//return $this->container['tEzsigntemplatedocumentpagerecognitionText'];
-        return is_null($this->container['tEzsigntemplatedocumentpagerecognitionText']) ? null : trim($this->container['tEzsigntemplatedocumentpagerecognitionText']);
-    }
-
-    /**
-     * Sets tEzsigntemplatedocumentpagerecognitionText
-     *
-     * @param string $tEzsigntemplatedocumentpagerecognitionText The text of the Ezsigntemplatedocumentpagerecognition
-     *
-     * @return self
-     */
-    public function setTEzsigntemplatedocumentpagerecognitionText($tEzsigntemplatedocumentpagerecognitionText)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($tEzsigntemplatedocumentpagerecognitionText)) {
-            //throw new \InvalidArgumentException('non-nullable tEzsigntemplatedocumentpagerecognitionText cannot be null');
-        //}
-
-	//if ((!preg_match("/^[.\\D\\d]{0,65535}$/", ObjectSerializer::toString($tEzsigntemplatedocumentpagerecognitionText)))) {
-        if (!is_null($tEzsigntemplatedocumentpagerecognitionText) && (!preg_match("/(*UTF8)^[.\\D\\d]{0,65535}$/", ObjectSerializer::toString($tEzsigntemplatedocumentpagerecognitionText)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$tEzsigntemplatedocumentpagerecognitionText when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must conform to the pattern /^[.\\D\\d]{0,65535}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($tEzsigntemplatedocumentpagerecognitionText)?'null':'"'.$tEzsigntemplatedocumentpagerecognitionText.'"')." for tEzsigntemplatedocumentpagerecognitionText when calling EzsigntemplatedocumentpagerecognitionRequestCompound., must conform to the pattern /^[.\\D\\d]{0,65535}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['tEzsigntemplatedocumentpagerecognitionText'] = $tEzsigntemplatedocumentpagerecognitionText;
-        $this->container['tEzsigntemplatedocumentpagerecognitionText'] = (is_null($tEzsigntemplatedocumentpagerecognitionText) ? null : trim((string) $tEzsigntemplatedocumentpagerecognitionText));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

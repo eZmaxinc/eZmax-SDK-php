@@ -81,60 +81,6 @@ class ContactRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "fkiContacttitleID"
-     */
-    public function testPropertyFkiContacttitleID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiLanguageID"
-     */
-    public function testPropertyFkiLanguageID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sContactFirstname"
-     */
-    public function testPropertySContactFirstname()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sContactLastname"
-     */
-    public function testPropertySContactLastname()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sContactCompany"
-     */
-    public function testPropertySContactCompany()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "dtContactBirthdate"
-     */
-    public function testPropertyDtContactBirthdate()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "objContactinformations"
      */
     public function testPropertyObjContactinformations()

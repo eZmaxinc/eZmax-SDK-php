@@ -81,33 +81,6 @@ class CommonResponseErrorSTemporaryFileUrlTest extends TestCase
     }
 
     /**
-     * Test attribute "sErrorMessage"
-     */
-    public function testPropertySErrorMessage()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "eErrorCode"
-     */
-    public function testPropertyEErrorCode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aSErrorMessagedetail"
-     */
-    public function testPropertyASErrorMessagedetail()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "sTemporaryFileUrl"
      */
     public function testPropertySTemporaryFileUrl()

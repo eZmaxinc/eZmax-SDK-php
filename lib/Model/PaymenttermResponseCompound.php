@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class PaymenttermResponseCompound extends PaymenttermResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,13 +57,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiPaymenttermID' => 'int',
-        'sPaymenttermCode' => 'string',
-        'ePaymenttermType' => '\eZmaxAPI\Model\FieldEPaymenttermType',
-        'iPaymenttermDay' => 'int',
-        'objPaymenttermDescription' => '\eZmaxAPI\Model\MultilingualPaymenttermDescription',
-        'bPaymenttermIsactive' => 'bool',
-        'objAudit' => '\eZmaxAPI\Model\CommonAudit'
+        
     ];
 
     /**
@@ -76,13 +68,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiPaymenttermID' => null,
-        'sPaymenttermCode' => null,
-        'ePaymenttermType' => null,
-        'iPaymenttermDay' => null,
-        'objPaymenttermDescription' => null,
-        'bPaymenttermIsactive' => null,
-        'objAudit' => null
+        
     ];
 
     /**
@@ -91,13 +77,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiPaymenttermID' => false,
-		'sPaymenttermCode' => false,
-		'ePaymenttermType' => false,
-		'iPaymenttermDay' => false,
-		'objPaymenttermDescription' => false,
-		'bPaymenttermIsactive' => false,
-		'objAudit' => false
+        
     ];
 
     /**
@@ -114,7 +94,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -124,7 +104,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -134,7 +114,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -186,13 +166,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiPaymenttermID' => 'pkiPaymenttermID',
-        'sPaymenttermCode' => 'sPaymenttermCode',
-        'ePaymenttermType' => 'ePaymenttermType',
-        'iPaymenttermDay' => 'iPaymenttermDay',
-        'objPaymenttermDescription' => 'objPaymenttermDescription',
-        'bPaymenttermIsactive' => 'bPaymenttermIsactive',
-        'objAudit' => 'objAudit'
+        
     ];
 
     /**
@@ -201,13 +175,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'pkiPaymenttermID' => 'setPkiPaymenttermID',
-        'sPaymenttermCode' => 'setSPaymenttermCode',
-        'ePaymenttermType' => 'setEPaymenttermType',
-        'iPaymenttermDay' => 'setIPaymenttermDay',
-        'objPaymenttermDescription' => 'setObjPaymenttermDescription',
-        'bPaymenttermIsactive' => 'setBPaymenttermIsactive',
-        'objAudit' => 'setObjAudit'
+        
     ];
 
     /**
@@ -216,13 +184,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'pkiPaymenttermID' => 'getPkiPaymenttermID',
-        'sPaymenttermCode' => 'getSPaymenttermCode',
-        'ePaymenttermType' => 'getEPaymenttermType',
-        'iPaymenttermDay' => 'getIPaymenttermDay',
-        'objPaymenttermDescription' => 'getObjPaymenttermDescription',
-        'bPaymenttermIsactive' => 'getBPaymenttermIsactive',
-        'objAudit' => 'getObjAudit'
+        
     ];
 
     /**
@@ -233,7 +195,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -243,7 +205,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -253,7 +215,7 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -267,12 +229,6 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -282,13 +238,8 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiPaymenttermID', $data ?? [], null);
-        $this->setIfExists('sPaymenttermCode', $data ?? [], null);
-        $this->setIfExists('ePaymenttermType', $data ?? [], null);
-        $this->setIfExists('iPaymenttermDay', $data ?? [], null);
-        $this->setIfExists('objPaymenttermDescription', $data ?? [], null);
-        $this->setIfExists('bPaymenttermIsactive', $data ?? [], null);
-        $this->setIfExists('objAudit', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -316,42 +267,8 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiPaymenttermID'] === null) {
-            $invalidProperties[] = "'pkiPaymenttermID' can't be null";
-        }
-        if ($this->container['sPaymenttermCode'] === null) {
-            $invalidProperties[] = "'sPaymenttermCode' can't be null";
-        }
-	//if (!preg_match("/^[A-Z0-9]{1,4}$/", $this->container['sPaymenttermCode'])) {
-        if (!is_null($this->container['sPaymenttermCode']) && !preg_match("/(*UTF8)^[A-Z0-9]{1,4}$/", $this->container['sPaymenttermCode'])) {
-            $invalidProperties[] = "invalid value for 'sPaymenttermCode', must be conform to the pattern /^[A-Z0-9]{1,4}$/.";
-        }
-
-        if ($this->container['ePaymenttermType'] === null) {
-            $invalidProperties[] = "'ePaymenttermType' can't be null";
-        }
-        if ($this->container['iPaymenttermDay'] === null) {
-            $invalidProperties[] = "'iPaymenttermDay' can't be null";
-        }
-        if (($this->container['iPaymenttermDay'] > 255)) {
-            $invalidProperties[] = "invalid value for 'iPaymenttermDay', must be smaller than or equal to 255.";
-        }
-
-        if (($this->container['iPaymenttermDay'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iPaymenttermDay', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objPaymenttermDescription'] === null) {
-            $invalidProperties[] = "'objPaymenttermDescription' can't be null";
-        }
-        if ($this->container['bPaymenttermIsactive'] === null) {
-            $invalidProperties[] = "'bPaymenttermIsactive' can't be null";
-        }
-        if ($this->container['objAudit'] === null) {
-            $invalidProperties[] = "'objAudit' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -366,249 +283,6 @@ class PaymenttermResponseCompound implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiPaymenttermID
-     *
-     * @return int
-     */
-    public function getPkiPaymenttermID()
-    {
-	//return $this->container['pkiPaymenttermID'];
-        return $this->container['pkiPaymenttermID'];
-    }
-
-    /**
-     * Sets pkiPaymenttermID
-     *
-     * @param int $pkiPaymenttermID The unique ID of the Paymentterm
-     *
-     * @return self
-     */
-    public function setPkiPaymenttermID($pkiPaymenttermID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiPaymenttermID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiPaymenttermID cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiPaymenttermID'] = $pkiPaymenttermID;
-        $this->container['pkiPaymenttermID'] = (is_null($pkiPaymenttermID) ? null : (int) $pkiPaymenttermID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sPaymenttermCode
-     *
-     * @return string
-     */
-    public function getSPaymenttermCode()
-    {
-	//return $this->container['sPaymenttermCode'];
-        return is_null($this->container['sPaymenttermCode']) ? null : trim($this->container['sPaymenttermCode']);
-    }
-
-    /**
-     * Sets sPaymenttermCode
-     *
-     * @param string $sPaymenttermCode The code of the Paymentterm
-     *
-     * @return self
-     */
-    public function setSPaymenttermCode($sPaymenttermCode)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sPaymenttermCode)) {
-            //throw new \InvalidArgumentException('non-nullable sPaymenttermCode cannot be null');
-        //}
-
-	//if ((!preg_match("/^[A-Z0-9]{1,4}$/", ObjectSerializer::toString($sPaymenttermCode)))) {
-        if (!is_null($sPaymenttermCode) && (!preg_match("/(*UTF8)^[A-Z0-9]{1,4}$/", ObjectSerializer::toString($sPaymenttermCode)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sPaymenttermCode when calling PaymenttermResponseCompound., must conform to the pattern /^[A-Z0-9]{1,4}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sPaymenttermCode)?'null':'"'.$sPaymenttermCode.'"')." for sPaymenttermCode when calling PaymenttermResponseCompound., must conform to the pattern /^[A-Z0-9]{1,4}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sPaymenttermCode'] = $sPaymenttermCode;
-        $this->container['sPaymenttermCode'] = (is_null($sPaymenttermCode) ? null : trim((string) $sPaymenttermCode));
-
-        return $this;
-    }
-
-    /**
-     * Gets ePaymenttermType
-     *
-     * @return \eZmaxAPI\Model\FieldEPaymenttermType
-     */
-    public function getEPaymenttermType()
-    {
-	//return $this->container['ePaymenttermType'];
-        return $this->container['ePaymenttermType'];
-    }
-
-    /**
-     * Sets ePaymenttermType
-     *
-     * @param \eZmaxAPI\Model\FieldEPaymenttermType $ePaymenttermType ePaymenttermType
-     *
-     * @return self
-     */
-    public function setEPaymenttermType($ePaymenttermType)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($ePaymenttermType)) {
-            //throw new \InvalidArgumentException('non-nullable ePaymenttermType cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['ePaymenttermType'] = $ePaymenttermType;
-        $this->container['ePaymenttermType'] = $ePaymenttermType;
-
-        return $this;
-    }
-
-    /**
-     * Gets iPaymenttermDay
-     *
-     * @return int
-     */
-    public function getIPaymenttermDay()
-    {
-	//return $this->container['iPaymenttermDay'];
-        return $this->container['iPaymenttermDay'];
-    }
-
-    /**
-     * Sets iPaymenttermDay
-     *
-     * @param int $iPaymenttermDay The day of the Paymentterm
-     *
-     * @return self
-     */
-    public function setIPaymenttermDay($iPaymenttermDay)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iPaymenttermDay)) {
-            //throw new \InvalidArgumentException('non-nullable iPaymenttermDay cannot be null');
-        //}
-
-	//if (($iPaymenttermDay > 255)) {
-        if (($iPaymenttermDay > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermResponseCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iPaymenttermDay)?'null':'"'.$iPaymenttermDay.'"').' for iPaymenttermDay when calling PaymenttermResponseCompound., must be smaller than or equal to 255.');
-        }
-	//if (($iPaymenttermDay < 0)) {
-        if (($iPaymenttermDay < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iPaymenttermDay when calling PaymenttermResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iPaymenttermDay)?'null':'"'.$iPaymenttermDay.'"').' for iPaymenttermDay when calling PaymenttermResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iPaymenttermDay'] = $iPaymenttermDay;
-        $this->container['iPaymenttermDay'] = (is_null($iPaymenttermDay) ? null : (int) $iPaymenttermDay);
-
-        return $this;
-    }
-
-    /**
-     * Gets objPaymenttermDescription
-     *
-     * @return \eZmaxAPI\Model\MultilingualPaymenttermDescription
-     */
-    public function getObjPaymenttermDescription()
-    {
-	//return $this->container['objPaymenttermDescription'];
-        return $this->container['objPaymenttermDescription'];
-    }
-
-    /**
-     * Sets objPaymenttermDescription
-     *
-     * @param \eZmaxAPI\Model\MultilingualPaymenttermDescription $objPaymenttermDescription objPaymenttermDescription
-     *
-     * @return self
-     */
-    public function setObjPaymenttermDescription($objPaymenttermDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objPaymenttermDescription)) {
-            //throw new \InvalidArgumentException('non-nullable objPaymenttermDescription cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objPaymenttermDescription'] = $objPaymenttermDescription;
-        $this->container['objPaymenttermDescription'] = $objPaymenttermDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets bPaymenttermIsactive
-     *
-     * @return bool
-     */
-    public function getBPaymenttermIsactive()
-    {
-	//return $this->container['bPaymenttermIsactive'];
-        return $this->container['bPaymenttermIsactive'];
-    }
-
-    /**
-     * Sets bPaymenttermIsactive
-     *
-     * @param bool $bPaymenttermIsactive Whether the Paymentterm is active or not
-     *
-     * @return self
-     */
-    public function setBPaymenttermIsactive($bPaymenttermIsactive)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bPaymenttermIsactive)) {
-            //throw new \InvalidArgumentException('non-nullable bPaymenttermIsactive cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bPaymenttermIsactive'] = $bPaymenttermIsactive;
-        $this->container['bPaymenttermIsactive'] = (is_null($bPaymenttermIsactive) ? null : (bool) $bPaymenttermIsactive);
-
-        return $this;
-    }
-
-    /**
-     * Gets objAudit
-     *
-     * @return \eZmaxAPI\Model\CommonAudit
-     */
-    public function getObjAudit()
-    {
-	//return $this->container['objAudit'];
-        return $this->container['objAudit'];
-    }
-
-    /**
-     * Sets objAudit
-     *
-     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
-     *
-     * @return self
-     */
-    public function setObjAudit($objAudit)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objAudit)) {
-            //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objAudit'] = $objAudit;
-        $this->container['objAudit'] = $objAudit;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

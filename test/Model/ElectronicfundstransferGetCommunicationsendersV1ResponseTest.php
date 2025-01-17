@@ -81,24 +81,6 @@ class ElectronicfundstransferGetCommunicationsendersV1ResponseTest extends TestC
     }
 
     /**
-     * Test attribute "objDebugPayload"
-     */
-    public function testPropertyObjDebugPayload()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objDebug"
-     */
-    public function testPropertyObjDebug()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "mPayload"
      */
     public function testPropertyMPayload()

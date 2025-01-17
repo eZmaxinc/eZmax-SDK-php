@@ -81,51 +81,6 @@ class EzsignbulksendtransmissionResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiEzsignbulksendtransmissionID"
-     */
-    public function testPropertyPkiEzsignbulksendtransmissionID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsignbulksendID"
-     */
-    public function testPropertyFkiEzsignbulksendID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sEzsignbulksendtransmissionDescription"
-     */
-    public function testPropertySEzsignbulksendtransmissionDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iEzsignbulksendtransmissionErrors"
-     */
-    public function testPropertyIEzsignbulksendtransmissionErrors()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objAudit"
-     */
-    public function testPropertyObjAudit()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjEzsignfoldertransmission"
      */
     public function testPropertyAObjEzsignfoldertransmission()

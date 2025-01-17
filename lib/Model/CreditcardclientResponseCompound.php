@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreditcardclientResponseCompound extends CreditcardclientResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,13 +57,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiCreditcardclientID' => 'int',
-        'fkiCreditcarddetailID' => 'int',
-        'bCreditcardclientrelationIsdefault' => 'bool',
-        'sCreditcardclientDescription' => 'string',
-        'bCreditcardclientAllowedcompanypayment' => 'bool',
-        'bCreditcardclientAllowedtranquillit' => 'bool',
-        'objCreditcarddetail' => '\eZmaxAPI\Model\CreditcarddetailResponseCompound'
+        
     ];
 
     /**
@@ -76,13 +68,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiCreditcardclientID' => null,
-        'fkiCreditcarddetailID' => null,
-        'bCreditcardclientrelationIsdefault' => null,
-        'sCreditcardclientDescription' => null,
-        'bCreditcardclientAllowedcompanypayment' => null,
-        'bCreditcardclientAllowedtranquillit' => null,
-        'objCreditcarddetail' => null
+        
     ];
 
     /**
@@ -91,13 +77,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiCreditcardclientID' => false,
-		'fkiCreditcarddetailID' => false,
-		'bCreditcardclientrelationIsdefault' => false,
-		'sCreditcardclientDescription' => false,
-		'bCreditcardclientAllowedcompanypayment' => false,
-		'bCreditcardclientAllowedtranquillit' => false,
-		'objCreditcarddetail' => false
+        
     ];
 
     /**
@@ -114,7 +94,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -124,7 +104,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -134,7 +114,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -186,13 +166,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiCreditcardclientID' => 'pkiCreditcardclientID',
-        'fkiCreditcarddetailID' => 'fkiCreditcarddetailID',
-        'bCreditcardclientrelationIsdefault' => 'bCreditcardclientrelationIsdefault',
-        'sCreditcardclientDescription' => 'sCreditcardclientDescription',
-        'bCreditcardclientAllowedcompanypayment' => 'bCreditcardclientAllowedcompanypayment',
-        'bCreditcardclientAllowedtranquillit' => 'bCreditcardclientAllowedtranquillit',
-        'objCreditcarddetail' => 'objCreditcarddetail'
+        
     ];
 
     /**
@@ -201,13 +175,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'pkiCreditcardclientID' => 'setPkiCreditcardclientID',
-        'fkiCreditcarddetailID' => 'setFkiCreditcarddetailID',
-        'bCreditcardclientrelationIsdefault' => 'setBCreditcardclientrelationIsdefault',
-        'sCreditcardclientDescription' => 'setSCreditcardclientDescription',
-        'bCreditcardclientAllowedcompanypayment' => 'setBCreditcardclientAllowedcompanypayment',
-        'bCreditcardclientAllowedtranquillit' => 'setBCreditcardclientAllowedtranquillit',
-        'objCreditcarddetail' => 'setObjCreditcarddetail'
+        
     ];
 
     /**
@@ -216,13 +184,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'pkiCreditcardclientID' => 'getPkiCreditcardclientID',
-        'fkiCreditcarddetailID' => 'getFkiCreditcarddetailID',
-        'bCreditcardclientrelationIsdefault' => 'getBCreditcardclientrelationIsdefault',
-        'sCreditcardclientDescription' => 'getSCreditcardclientDescription',
-        'bCreditcardclientAllowedcompanypayment' => 'getBCreditcardclientAllowedcompanypayment',
-        'bCreditcardclientAllowedtranquillit' => 'getBCreditcardclientAllowedtranquillit',
-        'objCreditcarddetail' => 'getObjCreditcarddetail'
+        
     ];
 
     /**
@@ -233,7 +195,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -243,7 +205,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -253,7 +215,7 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -267,12 +229,6 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -282,13 +238,8 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiCreditcardclientID', $data ?? [], null);
-        $this->setIfExists('fkiCreditcarddetailID', $data ?? [], null);
-        $this->setIfExists('bCreditcardclientrelationIsdefault', $data ?? [], null);
-        $this->setIfExists('sCreditcardclientDescription', $data ?? [], null);
-        $this->setIfExists('bCreditcardclientAllowedcompanypayment', $data ?? [], null);
-        $this->setIfExists('bCreditcardclientAllowedtranquillit', $data ?? [], null);
-        $this->setIfExists('objCreditcarddetail', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -316,50 +267,8 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiCreditcardclientID'] === null) {
-            $invalidProperties[] = "'pkiCreditcardclientID' can't be null";
-        }
-        if (($this->container['pkiCreditcardclientID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pkiCreditcardclientID', must be smaller than or equal to 65535.";
-        }
-
-        if (($this->container['pkiCreditcardclientID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiCreditcardclientID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiCreditcarddetailID'] === null) {
-            $invalidProperties[] = "'fkiCreditcarddetailID' can't be null";
-        }
-        if (($this->container['fkiCreditcarddetailID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'fkiCreditcarddetailID', must be smaller than or equal to 65535.";
-        }
-
-        if (($this->container['fkiCreditcarddetailID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiCreditcarddetailID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['bCreditcardclientrelationIsdefault'] === null) {
-            $invalidProperties[] = "'bCreditcardclientrelationIsdefault' can't be null";
-        }
-        if ($this->container['sCreditcardclientDescription'] === null) {
-            $invalidProperties[] = "'sCreditcardclientDescription' can't be null";
-        }
-	//if (!preg_match("/^.{0,50}$/", $this->container['sCreditcardclientDescription'])) {
-        if (!is_null($this->container['sCreditcardclientDescription']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sCreditcardclientDescription'])) {
-            $invalidProperties[] = "invalid value for 'sCreditcardclientDescription', must be conform to the pattern /^.{0,50}$/.";
-        }
-
-        if ($this->container['bCreditcardclientAllowedcompanypayment'] === null) {
-            $invalidProperties[] = "'bCreditcardclientAllowedcompanypayment' can't be null";
-        }
-        if ($this->container['bCreditcardclientAllowedtranquillit'] === null) {
-            $invalidProperties[] = "'bCreditcardclientAllowedtranquillit' can't be null";
-        }
-        if ($this->container['objCreditcarddetail'] === null) {
-            $invalidProperties[] = "'objCreditcarddetail' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -374,261 +283,6 @@ class CreditcardclientResponseCompound implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiCreditcardclientID
-     *
-     * @return int
-     */
-    public function getPkiCreditcardclientID()
-    {
-	//return $this->container['pkiCreditcardclientID'];
-        return $this->container['pkiCreditcardclientID'];
-    }
-
-    /**
-     * Sets pkiCreditcardclientID
-     *
-     * @param int $pkiCreditcardclientID The unique ID of the Creditcardclient
-     *
-     * @return self
-     */
-    public function setPkiCreditcardclientID($pkiCreditcardclientID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiCreditcardclientID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiCreditcardclientID cannot be null');
-        //}
-
-	//if (($pkiCreditcardclientID > 65535)) {
-        if (($pkiCreditcardclientID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiCreditcardclientID when calling CreditcardclientResponseCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCreditcardclientID)?'null':'"'.$pkiCreditcardclientID.'"').' for pkiCreditcardclientID when calling CreditcardclientResponseCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($pkiCreditcardclientID < 0)) {
-        if (($pkiCreditcardclientID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiCreditcardclientID when calling CreditcardclientResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCreditcardclientID)?'null':'"'.$pkiCreditcardclientID.'"').' for pkiCreditcardclientID when calling CreditcardclientResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiCreditcardclientID'] = $pkiCreditcardclientID;
-        $this->container['pkiCreditcardclientID'] = (is_null($pkiCreditcardclientID) ? null : (int) $pkiCreditcardclientID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiCreditcarddetailID
-     *
-     * @return int
-     */
-    public function getFkiCreditcarddetailID()
-    {
-	//return $this->container['fkiCreditcarddetailID'];
-        return $this->container['fkiCreditcarddetailID'];
-    }
-
-    /**
-     * Sets fkiCreditcarddetailID
-     *
-     * @param int $fkiCreditcarddetailID The unique ID of the Creditcarddetail
-     *
-     * @return self
-     */
-    public function setFkiCreditcarddetailID($fkiCreditcarddetailID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiCreditcarddetailID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiCreditcarddetailID cannot be null');
-        //}
-
-	//if (($fkiCreditcarddetailID > 65535)) {
-        if (($fkiCreditcarddetailID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiCreditcarddetailID when calling CreditcardclientResponseCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiCreditcarddetailID)?'null':'"'.$fkiCreditcarddetailID.'"').' for fkiCreditcarddetailID when calling CreditcardclientResponseCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($fkiCreditcarddetailID < 0)) {
-        if (($fkiCreditcarddetailID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiCreditcarddetailID when calling CreditcardclientResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiCreditcarddetailID)?'null':'"'.$fkiCreditcarddetailID.'"').' for fkiCreditcarddetailID when calling CreditcardclientResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiCreditcarddetailID'] = $fkiCreditcarddetailID;
-        $this->container['fkiCreditcarddetailID'] = (is_null($fkiCreditcarddetailID) ? null : (int) $fkiCreditcarddetailID);
-
-        return $this;
-    }
-
-    /**
-     * Gets bCreditcardclientrelationIsdefault
-     *
-     * @return bool
-     */
-    public function getBCreditcardclientrelationIsdefault()
-    {
-	//return $this->container['bCreditcardclientrelationIsdefault'];
-        return $this->container['bCreditcardclientrelationIsdefault'];
-    }
-
-    /**
-     * Sets bCreditcardclientrelationIsdefault
-     *
-     * @param bool $bCreditcardclientrelationIsdefault Whether if it's the creditcardclient is the default one
-     *
-     * @return self
-     */
-    public function setBCreditcardclientrelationIsdefault($bCreditcardclientrelationIsdefault)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bCreditcardclientrelationIsdefault)) {
-            //throw new \InvalidArgumentException('non-nullable bCreditcardclientrelationIsdefault cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bCreditcardclientrelationIsdefault'] = $bCreditcardclientrelationIsdefault;
-        $this->container['bCreditcardclientrelationIsdefault'] = (is_null($bCreditcardclientrelationIsdefault) ? null : (bool) $bCreditcardclientrelationIsdefault);
-
-        return $this;
-    }
-
-    /**
-     * Gets sCreditcardclientDescription
-     *
-     * @return string
-     */
-    public function getSCreditcardclientDescription()
-    {
-	//return $this->container['sCreditcardclientDescription'];
-        return is_null($this->container['sCreditcardclientDescription']) ? null : trim($this->container['sCreditcardclientDescription']);
-    }
-
-    /**
-     * Sets sCreditcardclientDescription
-     *
-     * @param string $sCreditcardclientDescription The description of the Creditcardclient
-     *
-     * @return self
-     */
-    public function setSCreditcardclientDescription($sCreditcardclientDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sCreditcardclientDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sCreditcardclientDescription cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sCreditcardclientDescription)))) {
-        if (!is_null($sCreditcardclientDescription) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sCreditcardclientDescription)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sCreditcardclientDescription when calling CreditcardclientResponseCompound., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sCreditcardclientDescription)?'null':'"'.$sCreditcardclientDescription.'"')." for sCreditcardclientDescription when calling CreditcardclientResponseCompound., must conform to the pattern /^.{0,50}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sCreditcardclientDescription'] = $sCreditcardclientDescription;
-        $this->container['sCreditcardclientDescription'] = (is_null($sCreditcardclientDescription) ? null : trim((string) $sCreditcardclientDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets bCreditcardclientAllowedcompanypayment
-     *
-     * @return bool
-     */
-    public function getBCreditcardclientAllowedcompanypayment()
-    {
-	//return $this->container['bCreditcardclientAllowedcompanypayment'];
-        return $this->container['bCreditcardclientAllowedcompanypayment'];
-    }
-
-    /**
-     * Sets bCreditcardclientAllowedcompanypayment
-     *
-     * @param bool $bCreditcardclientAllowedcompanypayment Whether if it's an allowedagencypayment
-     *
-     * @return self
-     */
-    public function setBCreditcardclientAllowedcompanypayment($bCreditcardclientAllowedcompanypayment)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bCreditcardclientAllowedcompanypayment)) {
-            //throw new \InvalidArgumentException('non-nullable bCreditcardclientAllowedcompanypayment cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bCreditcardclientAllowedcompanypayment'] = $bCreditcardclientAllowedcompanypayment;
-        $this->container['bCreditcardclientAllowedcompanypayment'] = (is_null($bCreditcardclientAllowedcompanypayment) ? null : (bool) $bCreditcardclientAllowedcompanypayment);
-
-        return $this;
-    }
-
-    /**
-     * Gets bCreditcardclientAllowedtranquillit
-     *
-     * @return bool
-     */
-    public function getBCreditcardclientAllowedtranquillit()
-    {
-	//return $this->container['bCreditcardclientAllowedtranquillit'];
-        return $this->container['bCreditcardclientAllowedtranquillit'];
-    }
-
-    /**
-     * Sets bCreditcardclientAllowedtranquillit
-     *
-     * @param bool $bCreditcardclientAllowedtranquillit Whether if it's an allowedtranquillit
-     *
-     * @return self
-     */
-    public function setBCreditcardclientAllowedtranquillit($bCreditcardclientAllowedtranquillit)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bCreditcardclientAllowedtranquillit)) {
-            //throw new \InvalidArgumentException('non-nullable bCreditcardclientAllowedtranquillit cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bCreditcardclientAllowedtranquillit'] = $bCreditcardclientAllowedtranquillit;
-        $this->container['bCreditcardclientAllowedtranquillit'] = (is_null($bCreditcardclientAllowedtranquillit) ? null : (bool) $bCreditcardclientAllowedtranquillit);
-
-        return $this;
-    }
-
-    /**
-     * Gets objCreditcarddetail
-     *
-     * @return \eZmaxAPI\Model\CreditcarddetailResponseCompound
-     */
-    public function getObjCreditcarddetail()
-    {
-	//return $this->container['objCreditcarddetail'];
-        return $this->container['objCreditcarddetail'];
-    }
-
-    /**
-     * Sets objCreditcarddetail
-     *
-     * @param \eZmaxAPI\Model\CreditcarddetailResponseCompound $objCreditcarddetail objCreditcarddetail
-     *
-     * @return self
-     */
-    public function setObjCreditcarddetail($objCreditcarddetail)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objCreditcarddetail)) {
-            //throw new \InvalidArgumentException('non-nullable objCreditcarddetail cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objCreditcarddetail'] = $objCreditcarddetail;
-        $this->container['objCreditcarddetail'] = $objCreditcarddetail;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerializable
+class WebhookUserUserCreated extends CommonWebhook
 {
     public const DISCRIMINATOR = null;
 
@@ -59,8 +57,6 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'objWebhook' => '\eZmaxAPI\Model\CustomWebhookResponse',
-        'aObjAttempt' => '\eZmaxAPI\Model\AttemptResponseCompound[]',
         'objUser' => '\eZmaxAPI\Model\UserResponse'
     ];
 
@@ -72,8 +68,6 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'objWebhook' => null,
-        'aObjAttempt' => null,
         'objUser' => null
     ];
 
@@ -83,9 +77,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'objWebhook' => false,
-		'aObjAttempt' => false,
-		'objUser' => false
+        'objUser' => false
     ];
 
     /**
@@ -102,7 +94,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,8 +166,6 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'objWebhook' => 'objWebhook',
-        'aObjAttempt' => 'a_objAttempt',
         'objUser' => 'objUser'
     ];
 
@@ -185,8 +175,6 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'objWebhook' => 'setObjWebhook',
-        'aObjAttempt' => 'setAObjAttempt',
         'objUser' => 'setObjUser'
     ];
 
@@ -196,8 +184,6 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'objWebhook' => 'getObjWebhook',
-        'aObjAttempt' => 'getAObjAttempt',
         'objUser' => 'getObjUser'
     ];
 
@@ -209,7 +195,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,8 +238,8 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('objWebhook', $data ?? [], null);
-        $this->setIfExists('aObjAttempt', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('objUser', $data ?? [], null);
     }
 
@@ -288,14 +268,8 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['objWebhook'] === null) {
-            $invalidProperties[] = "'objWebhook' can't be null";
-        }
-        if ($this->container['aObjAttempt'] === null) {
-            $invalidProperties[] = "'aObjAttempt' can't be null";
-        }
         if ($this->container['objUser'] === null) {
             $invalidProperties[] = "'objUser' can't be null";
         }
@@ -313,70 +287,6 @@ class WebhookUserUserCreated implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets objWebhook
-     *
-     * @return \eZmaxAPI\Model\CustomWebhookResponse
-     */
-    public function getObjWebhook()
-    {
-	//return $this->container['objWebhook'];
-        return $this->container['objWebhook'];
-    }
-
-    /**
-     * Sets objWebhook
-     *
-     * @param \eZmaxAPI\Model\CustomWebhookResponse $objWebhook objWebhook
-     *
-     * @return self
-     */
-    public function setObjWebhook($objWebhook)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objWebhook)) {
-            //throw new \InvalidArgumentException('non-nullable objWebhook cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objWebhook'] = $objWebhook;
-        $this->container['objWebhook'] = $objWebhook;
-
-        return $this;
-    }
-
-    /**
-     * Gets aObjAttempt
-     *
-     * @return \eZmaxAPI\Model\AttemptResponseCompound[]
-     */
-    public function getAObjAttempt()
-    {
-	//return $this->container['aObjAttempt'];
-        return $this->container['aObjAttempt'];
-    }
-
-    /**
-     * Sets aObjAttempt
-     *
-     * @param \eZmaxAPI\Model\AttemptResponseCompound[] $aObjAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
-     *
-     * @return self
-     */
-    public function setAObjAttempt($aObjAttempt)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($aObjAttempt)) {
-            //throw new \InvalidArgumentException('non-nullable aObjAttempt cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['aObjAttempt'] = $aObjAttempt;
-        $this->container['aObjAttempt'] = $aObjAttempt;
-
-        return $this;
-    }
 
     /**
      * Gets objUser

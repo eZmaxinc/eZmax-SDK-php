@@ -81,42 +81,6 @@ class ModulesectionResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiModulesectionID"
-     */
-    public function testPropertyPkiModulesectionID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiModuleID"
-     */
-    public function testPropertyFkiModuleID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sModulesectionInternalname"
-     */
-    public function testPropertySModulesectionInternalname()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sModulesectionNameX"
-     */
-    public function testPropertySModulesectionNameX()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjPermission"
      */
     public function testPropertyAObjPermission()

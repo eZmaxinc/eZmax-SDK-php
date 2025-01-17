@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class ActivesessionResponseCompound extends ActivesessionResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,25 +57,6 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'eActivesessionUsertype' => '\eZmaxAPI\Model\FieldEActivesessionUsertype',
-        'eActivesessionOrigin' => '\eZmaxAPI\Model\FieldEActivesessionOrigin',
-        'eActivesessionWeekdaystart' => '\eZmaxAPI\Model\FieldEActivesessionWeekdaystart',
-        'fkiLanguageID' => 'int',
-        'sCompanyNameX' => 'string',
-        'sDepartmentNameX' => 'string',
-        'bActivesessionDebug' => 'bool',
-        'bActivesessionIssuperadmin' => 'bool',
-        'bActivesessionAttachment' => 'bool',
-        'bActivesessionCanafe' => 'bool',
-        'bActivesessionFinancial' => 'bool',
-        'bActivesessionRealestatecompleted' => 'bool',
-        'eActivesessionEzsign' => '\eZmaxAPI\Model\FieldEActivesessionEzsign',
-        'eActivesessionEzsignaccess' => '\eZmaxAPI\Model\FieldEActivesessionEzsignaccess',
-        'eActivesessionEzsignprepaid' => '\eZmaxAPI\Model\FieldEActivesessionEzsignprepaid',
-        'eActivesessionRealestateinprogress' => '\eZmaxAPI\Model\FieldEActivesessionRealestateinprogress',
-        'pksCustomerCode' => 'string',
-        'fkiSystemconfigurationtypeID' => 'int',
-        'fkiSignatureID' => 'int',
         'fkiEzsignuserID' => 'int',
         'bSystemconfigurationEzsignpaidbyoffice' => 'bool',
         'eSystemconfigurationEzsignofficeplan' => '\eZmaxAPI\Model\FieldESystemconfigurationEzsignofficeplan',
@@ -100,25 +79,6 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'eActivesessionUsertype' => null,
-        'eActivesessionOrigin' => null,
-        'eActivesessionWeekdaystart' => null,
-        'fkiLanguageID' => null,
-        'sCompanyNameX' => null,
-        'sDepartmentNameX' => null,
-        'bActivesessionDebug' => null,
-        'bActivesessionIssuperadmin' => null,
-        'bActivesessionAttachment' => null,
-        'bActivesessionCanafe' => null,
-        'bActivesessionFinancial' => null,
-        'bActivesessionRealestatecompleted' => null,
-        'eActivesessionEzsign' => null,
-        'eActivesessionEzsignaccess' => null,
-        'eActivesessionEzsignprepaid' => null,
-        'eActivesessionRealestateinprogress' => null,
-        'pksCustomerCode' => null,
-        'fkiSystemconfigurationtypeID' => null,
-        'fkiSignatureID' => null,
         'fkiEzsignuserID' => null,
         'bSystemconfigurationEzsignpaidbyoffice' => null,
         'eSystemconfigurationEzsignofficeplan' => null,
@@ -139,26 +99,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'eActivesessionUsertype' => false,
-		'eActivesessionOrigin' => false,
-		'eActivesessionWeekdaystart' => false,
-		'fkiLanguageID' => false,
-		'sCompanyNameX' => false,
-		'sDepartmentNameX' => false,
-		'bActivesessionDebug' => false,
-		'bActivesessionIssuperadmin' => false,
-		'bActivesessionAttachment' => false,
-		'bActivesessionCanafe' => false,
-		'bActivesessionFinancial' => false,
-		'bActivesessionRealestatecompleted' => false,
-		'eActivesessionEzsign' => false,
-		'eActivesessionEzsignaccess' => false,
-		'eActivesessionEzsignprepaid' => false,
-		'eActivesessionRealestateinprogress' => false,
-		'pksCustomerCode' => false,
-		'fkiSystemconfigurationtypeID' => false,
-		'fkiSignatureID' => false,
-		'fkiEzsignuserID' => false,
+        'fkiEzsignuserID' => false,
 		'bSystemconfigurationEzsignpaidbyoffice' => false,
 		'eSystemconfigurationEzsignofficeplan' => false,
 		'eUserEzsignaccess' => false,
@@ -186,7 +127,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -196,7 +137,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -206,7 +147,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -258,25 +199,6 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'eActivesessionUsertype' => 'eActivesessionUsertype',
-        'eActivesessionOrigin' => 'eActivesessionOrigin',
-        'eActivesessionWeekdaystart' => 'eActivesessionWeekdaystart',
-        'fkiLanguageID' => 'fkiLanguageID',
-        'sCompanyNameX' => 'sCompanyNameX',
-        'sDepartmentNameX' => 'sDepartmentNameX',
-        'bActivesessionDebug' => 'bActivesessionDebug',
-        'bActivesessionIssuperadmin' => 'bActivesessionIssuperadmin',
-        'bActivesessionAttachment' => 'bActivesessionAttachment',
-        'bActivesessionCanafe' => 'bActivesessionCanafe',
-        'bActivesessionFinancial' => 'bActivesessionFinancial',
-        'bActivesessionRealestatecompleted' => 'bActivesessionRealestatecompleted',
-        'eActivesessionEzsign' => 'eActivesessionEzsign',
-        'eActivesessionEzsignaccess' => 'eActivesessionEzsignaccess',
-        'eActivesessionEzsignprepaid' => 'eActivesessionEzsignprepaid',
-        'eActivesessionRealestateinprogress' => 'eActivesessionRealestateinprogress',
-        'pksCustomerCode' => 'pksCustomerCode',
-        'fkiSystemconfigurationtypeID' => 'fkiSystemconfigurationtypeID',
-        'fkiSignatureID' => 'fkiSignatureID',
         'fkiEzsignuserID' => 'fkiEzsignuserID',
         'bSystemconfigurationEzsignpaidbyoffice' => 'bSystemconfigurationEzsignpaidbyoffice',
         'eSystemconfigurationEzsignofficeplan' => 'eSystemconfigurationEzsignofficeplan',
@@ -297,25 +219,6 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'eActivesessionUsertype' => 'setEActivesessionUsertype',
-        'eActivesessionOrigin' => 'setEActivesessionOrigin',
-        'eActivesessionWeekdaystart' => 'setEActivesessionWeekdaystart',
-        'fkiLanguageID' => 'setFkiLanguageID',
-        'sCompanyNameX' => 'setSCompanyNameX',
-        'sDepartmentNameX' => 'setSDepartmentNameX',
-        'bActivesessionDebug' => 'setBActivesessionDebug',
-        'bActivesessionIssuperadmin' => 'setBActivesessionIssuperadmin',
-        'bActivesessionAttachment' => 'setBActivesessionAttachment',
-        'bActivesessionCanafe' => 'setBActivesessionCanafe',
-        'bActivesessionFinancial' => 'setBActivesessionFinancial',
-        'bActivesessionRealestatecompleted' => 'setBActivesessionRealestatecompleted',
-        'eActivesessionEzsign' => 'setEActivesessionEzsign',
-        'eActivesessionEzsignaccess' => 'setEActivesessionEzsignaccess',
-        'eActivesessionEzsignprepaid' => 'setEActivesessionEzsignprepaid',
-        'eActivesessionRealestateinprogress' => 'setEActivesessionRealestateinprogress',
-        'pksCustomerCode' => 'setPksCustomerCode',
-        'fkiSystemconfigurationtypeID' => 'setFkiSystemconfigurationtypeID',
-        'fkiSignatureID' => 'setFkiSignatureID',
         'fkiEzsignuserID' => 'setFkiEzsignuserID',
         'bSystemconfigurationEzsignpaidbyoffice' => 'setBSystemconfigurationEzsignpaidbyoffice',
         'eSystemconfigurationEzsignofficeplan' => 'setESystemconfigurationEzsignofficeplan',
@@ -336,25 +239,6 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'eActivesessionUsertype' => 'getEActivesessionUsertype',
-        'eActivesessionOrigin' => 'getEActivesessionOrigin',
-        'eActivesessionWeekdaystart' => 'getEActivesessionWeekdaystart',
-        'fkiLanguageID' => 'getFkiLanguageID',
-        'sCompanyNameX' => 'getSCompanyNameX',
-        'sDepartmentNameX' => 'getSDepartmentNameX',
-        'bActivesessionDebug' => 'getBActivesessionDebug',
-        'bActivesessionIssuperadmin' => 'getBActivesessionIssuperadmin',
-        'bActivesessionAttachment' => 'getBActivesessionAttachment',
-        'bActivesessionCanafe' => 'getBActivesessionCanafe',
-        'bActivesessionFinancial' => 'getBActivesessionFinancial',
-        'bActivesessionRealestatecompleted' => 'getBActivesessionRealestatecompleted',
-        'eActivesessionEzsign' => 'getEActivesessionEzsign',
-        'eActivesessionEzsignaccess' => 'getEActivesessionEzsignaccess',
-        'eActivesessionEzsignprepaid' => 'getEActivesessionEzsignprepaid',
-        'eActivesessionRealestateinprogress' => 'getEActivesessionRealestateinprogress',
-        'pksCustomerCode' => 'getPksCustomerCode',
-        'fkiSystemconfigurationtypeID' => 'getFkiSystemconfigurationtypeID',
-        'fkiSignatureID' => 'getFkiSignatureID',
         'fkiEzsignuserID' => 'getFkiEzsignuserID',
         'bSystemconfigurationEzsignpaidbyoffice' => 'getBSystemconfigurationEzsignpaidbyoffice',
         'eSystemconfigurationEzsignofficeplan' => 'getESystemconfigurationEzsignofficeplan',
@@ -377,7 +261,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -387,7 +271,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -397,7 +281,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -411,12 +295,6 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -426,25 +304,8 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('eActivesessionUsertype', $data ?? [], null);
-        $this->setIfExists('eActivesessionOrigin', $data ?? [], null);
-        $this->setIfExists('eActivesessionWeekdaystart', $data ?? [], null);
-        $this->setIfExists('fkiLanguageID', $data ?? [], null);
-        $this->setIfExists('sCompanyNameX', $data ?? [], null);
-        $this->setIfExists('sDepartmentNameX', $data ?? [], null);
-        $this->setIfExists('bActivesessionDebug', $data ?? [], null);
-        $this->setIfExists('bActivesessionIssuperadmin', $data ?? [], null);
-        $this->setIfExists('bActivesessionAttachment', $data ?? [], null);
-        $this->setIfExists('bActivesessionCanafe', $data ?? [], null);
-        $this->setIfExists('bActivesessionFinancial', $data ?? [], null);
-        $this->setIfExists('bActivesessionRealestatecompleted', $data ?? [], null);
-        $this->setIfExists('eActivesessionEzsign', $data ?? [], null);
-        $this->setIfExists('eActivesessionEzsignaccess', $data ?? [], null);
-        $this->setIfExists('eActivesessionEzsignprepaid', $data ?? [], null);
-        $this->setIfExists('eActivesessionRealestateinprogress', $data ?? [], null);
-        $this->setIfExists('pksCustomerCode', $data ?? [], null);
-        $this->setIfExists('fkiSystemconfigurationtypeID', $data ?? [], null);
-        $this->setIfExists('fkiSignatureID', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('fkiEzsignuserID', $data ?? [], null);
         $this->setIfExists('bSystemconfigurationEzsignpaidbyoffice', $data ?? [], null);
         $this->setIfExists('eSystemconfigurationEzsignofficeplan', $data ?? [], null);
@@ -484,70 +345,7 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['eActivesessionUsertype'] === null) {
-            $invalidProperties[] = "'eActivesessionUsertype' can't be null";
-        }
-        if ($this->container['eActivesessionOrigin'] === null) {
-            $invalidProperties[] = "'eActivesessionOrigin' can't be null";
-        }
-        if ($this->container['eActivesessionWeekdaystart'] === null) {
-            $invalidProperties[] = "'eActivesessionWeekdaystart' can't be null";
-        }
-        if ($this->container['fkiLanguageID'] === null) {
-            $invalidProperties[] = "'fkiLanguageID' can't be null";
-        }
-        if (($this->container['fkiLanguageID'] > 2)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
-        }
-
-        if (($this->container['fkiLanguageID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['sCompanyNameX'] === null) {
-            $invalidProperties[] = "'sCompanyNameX' can't be null";
-        }
-        if ($this->container['sDepartmentNameX'] === null) {
-            $invalidProperties[] = "'sDepartmentNameX' can't be null";
-        }
-        if ($this->container['bActivesessionDebug'] === null) {
-            $invalidProperties[] = "'bActivesessionDebug' can't be null";
-        }
-        if ($this->container['bActivesessionIssuperadmin'] === null) {
-            $invalidProperties[] = "'bActivesessionIssuperadmin' can't be null";
-        }
-        if ($this->container['eActivesessionEzsignaccess'] === null) {
-            $invalidProperties[] = "'eActivesessionEzsignaccess' can't be null";
-        }
-        if ($this->container['pksCustomerCode'] === null) {
-            $invalidProperties[] = "'pksCustomerCode' can't be null";
-        }
-	//if ((mb_strlen($this->container['pksCustomerCode']) > 6)) {
-        if (((is_null($this->container['pksCustomerCode'])?0:mb_strlen($this->container['pksCustomerCode'])) > 6)) {
-            $invalidProperties[] = "invalid value for 'pksCustomerCode', the character length must be smaller than or equal to 6.";
-        }
-
-	//if ((mb_strlen($this->container['pksCustomerCode']) < 2)) {
-        if (((is_null($this->container['pksCustomerCode'])?0:mb_strlen($this->container['pksCustomerCode'])) < 2)) {
-            $invalidProperties[] = "invalid value for 'pksCustomerCode', the character length must be bigger than or equal to 2.";
-        }
-
-        if ($this->container['fkiSystemconfigurationtypeID'] === null) {
-            $invalidProperties[] = "'fkiSystemconfigurationtypeID' can't be null";
-        }
-        if (($this->container['fkiSystemconfigurationtypeID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiSystemconfigurationtypeID', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['fkiSignatureID']) && ($this->container['fkiSignatureID'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'fkiSignatureID', must be smaller than or equal to 16777215.";
-        }
-
-        if (!is_null($this->container['fkiSignatureID']) && ($this->container['fkiSignatureID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiSignatureID', must be bigger than or equal to 0.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         if (!is_null($this->container['fkiEzsignuserID']) && ($this->container['fkiEzsignuserID'] > 65535)) {
             $invalidProperties[] = "invalid value for 'fkiEzsignuserID', must be smaller than or equal to 65535.";
@@ -588,656 +386,6 @@ class ActivesessionResponseCompound implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets eActivesessionUsertype
-     *
-     * @return \eZmaxAPI\Model\FieldEActivesessionUsertype
-     */
-    public function getEActivesessionUsertype()
-    {
-	//return $this->container['eActivesessionUsertype'];
-        return $this->container['eActivesessionUsertype'];
-    }
-
-    /**
-     * Sets eActivesessionUsertype
-     *
-     * @param \eZmaxAPI\Model\FieldEActivesessionUsertype $eActivesessionUsertype eActivesessionUsertype
-     *
-     * @return self
-     */
-    public function setEActivesessionUsertype($eActivesessionUsertype)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eActivesessionUsertype)) {
-            //throw new \InvalidArgumentException('non-nullable eActivesessionUsertype cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eActivesessionUsertype'] = $eActivesessionUsertype;
-        $this->container['eActivesessionUsertype'] = $eActivesessionUsertype;
-
-        return $this;
-    }
-
-    /**
-     * Gets eActivesessionOrigin
-     *
-     * @return \eZmaxAPI\Model\FieldEActivesessionOrigin
-     */
-    public function getEActivesessionOrigin()
-    {
-	//return $this->container['eActivesessionOrigin'];
-        return $this->container['eActivesessionOrigin'];
-    }
-
-    /**
-     * Sets eActivesessionOrigin
-     *
-     * @param \eZmaxAPI\Model\FieldEActivesessionOrigin $eActivesessionOrigin eActivesessionOrigin
-     *
-     * @return self
-     */
-    public function setEActivesessionOrigin($eActivesessionOrigin)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eActivesessionOrigin)) {
-            //throw new \InvalidArgumentException('non-nullable eActivesessionOrigin cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eActivesessionOrigin'] = $eActivesessionOrigin;
-        $this->container['eActivesessionOrigin'] = $eActivesessionOrigin;
-
-        return $this;
-    }
-
-    /**
-     * Gets eActivesessionWeekdaystart
-     *
-     * @return \eZmaxAPI\Model\FieldEActivesessionWeekdaystart
-     */
-    public function getEActivesessionWeekdaystart()
-    {
-	//return $this->container['eActivesessionWeekdaystart'];
-        return $this->container['eActivesessionWeekdaystart'];
-    }
-
-    /**
-     * Sets eActivesessionWeekdaystart
-     *
-     * @param \eZmaxAPI\Model\FieldEActivesessionWeekdaystart $eActivesessionWeekdaystart eActivesessionWeekdaystart
-     *
-     * @return self
-     */
-    public function setEActivesessionWeekdaystart($eActivesessionWeekdaystart)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eActivesessionWeekdaystart)) {
-            //throw new \InvalidArgumentException('non-nullable eActivesessionWeekdaystart cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eActivesessionWeekdaystart'] = $eActivesessionWeekdaystart;
-        $this->container['eActivesessionWeekdaystart'] = $eActivesessionWeekdaystart;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiLanguageID
-     *
-     * @return int
-     */
-    public function getFkiLanguageID()
-    {
-	//return $this->container['fkiLanguageID'];
-        return $this->container['fkiLanguageID'];
-    }
-
-    /**
-     * Sets fkiLanguageID
-     *
-     * @param int $fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     *
-     * @return self
-     */
-    public function setFkiLanguageID($fkiLanguageID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiLanguageID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
-        //}
-
-	//if (($fkiLanguageID > 2)) {
-        if (($fkiLanguageID > 2)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionResponseCompound., must be smaller than or equal to 2.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling ActivesessionResponseCompound., must be smaller than or equal to 2.');
-        }
-	//if (($fkiLanguageID < 1)) {
-        if (($fkiLanguageID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ActivesessionResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling ActivesessionResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiLanguageID'] = $fkiLanguageID;
-        $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sCompanyNameX
-     *
-     * @return string
-     */
-    public function getSCompanyNameX()
-    {
-	//return $this->container['sCompanyNameX'];
-        return is_null($this->container['sCompanyNameX']) ? null : trim($this->container['sCompanyNameX']);
-    }
-
-    /**
-     * Sets sCompanyNameX
-     *
-     * @param string $sCompanyNameX The Name of the Company in the language of the requester
-     *
-     * @return self
-     */
-    public function setSCompanyNameX($sCompanyNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sCompanyNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sCompanyNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sCompanyNameX'] = $sCompanyNameX;
-        $this->container['sCompanyNameX'] = (is_null($sCompanyNameX) ? null : trim((string) $sCompanyNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets sDepartmentNameX
-     *
-     * @return string
-     */
-    public function getSDepartmentNameX()
-    {
-	//return $this->container['sDepartmentNameX'];
-        return is_null($this->container['sDepartmentNameX']) ? null : trim($this->container['sDepartmentNameX']);
-    }
-
-    /**
-     * Sets sDepartmentNameX
-     *
-     * @param string $sDepartmentNameX The Name of the Department in the language of the requester
-     *
-     * @return self
-     */
-    public function setSDepartmentNameX($sDepartmentNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sDepartmentNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sDepartmentNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sDepartmentNameX'] = $sDepartmentNameX;
-        $this->container['sDepartmentNameX'] = (is_null($sDepartmentNameX) ? null : trim((string) $sDepartmentNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets bActivesessionDebug
-     *
-     * @return bool
-     */
-    public function getBActivesessionDebug()
-    {
-	//return $this->container['bActivesessionDebug'];
-        return $this->container['bActivesessionDebug'];
-    }
-
-    /**
-     * Sets bActivesessionDebug
-     *
-     * @param bool $bActivesessionDebug Whether the active session is in debug or not
-     *
-     * @return self
-     */
-    public function setBActivesessionDebug($bActivesessionDebug)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bActivesessionDebug)) {
-            //throw new \InvalidArgumentException('non-nullable bActivesessionDebug cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bActivesessionDebug'] = $bActivesessionDebug;
-        $this->container['bActivesessionDebug'] = (is_null($bActivesessionDebug) ? null : (bool) $bActivesessionDebug);
-
-        return $this;
-    }
-
-    /**
-     * Gets bActivesessionIssuperadmin
-     *
-     * @return bool
-     */
-    public function getBActivesessionIssuperadmin()
-    {
-	//return $this->container['bActivesessionIssuperadmin'];
-        return $this->container['bActivesessionIssuperadmin'];
-    }
-
-    /**
-     * Sets bActivesessionIssuperadmin
-     *
-     * @param bool $bActivesessionIssuperadmin Whether the active session is superadmin or not
-     *
-     * @return self
-     */
-    public function setBActivesessionIssuperadmin($bActivesessionIssuperadmin)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bActivesessionIssuperadmin)) {
-            //throw new \InvalidArgumentException('non-nullable bActivesessionIssuperadmin cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bActivesessionIssuperadmin'] = $bActivesessionIssuperadmin;
-        $this->container['bActivesessionIssuperadmin'] = (is_null($bActivesessionIssuperadmin) ? null : (bool) $bActivesessionIssuperadmin);
-
-        return $this;
-    }
-
-    /**
-     * Gets bActivesessionAttachment
-     *
-     * @return bool|null
-     */
-    public function getBActivesessionAttachment()
-    {
-	//return $this->container['bActivesessionAttachment'];
-        return $this->container['bActivesessionAttachment'];
-    }
-
-    /**
-     * Sets bActivesessionAttachment
-     *
-     * @param bool|null $bActivesessionAttachment Can access attachment when we clone a user
-     *
-     * @return self
-     */
-    public function setBActivesessionAttachment($bActivesessionAttachment)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bActivesessionAttachment)) {
-            //throw new \InvalidArgumentException('non-nullable bActivesessionAttachment cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bActivesessionAttachment'] = $bActivesessionAttachment;
-        $this->container['bActivesessionAttachment'] = (is_null($bActivesessionAttachment) ? null : (bool) $bActivesessionAttachment);
-
-        return $this;
-    }
-
-    /**
-     * Gets bActivesessionCanafe
-     *
-     * @return bool|null
-     */
-    public function getBActivesessionCanafe()
-    {
-	//return $this->container['bActivesessionCanafe'];
-        return $this->container['bActivesessionCanafe'];
-    }
-
-    /**
-     * Sets bActivesessionCanafe
-     *
-     * @param bool|null $bActivesessionCanafe Can access canafe when we clone a user
-     *
-     * @return self
-     */
-    public function setBActivesessionCanafe($bActivesessionCanafe)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bActivesessionCanafe)) {
-            //throw new \InvalidArgumentException('non-nullable bActivesessionCanafe cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bActivesessionCanafe'] = $bActivesessionCanafe;
-        $this->container['bActivesessionCanafe'] = (is_null($bActivesessionCanafe) ? null : (bool) $bActivesessionCanafe);
-
-        return $this;
-    }
-
-    /**
-     * Gets bActivesessionFinancial
-     *
-     * @return bool|null
-     */
-    public function getBActivesessionFinancial()
-    {
-	//return $this->container['bActivesessionFinancial'];
-        return $this->container['bActivesessionFinancial'];
-    }
-
-    /**
-     * Sets bActivesessionFinancial
-     *
-     * @param bool|null $bActivesessionFinancial Can access financial element when we clone a user
-     *
-     * @return self
-     */
-    public function setBActivesessionFinancial($bActivesessionFinancial)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bActivesessionFinancial)) {
-            //throw new \InvalidArgumentException('non-nullable bActivesessionFinancial cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bActivesessionFinancial'] = $bActivesessionFinancial;
-        $this->container['bActivesessionFinancial'] = (is_null($bActivesessionFinancial) ? null : (bool) $bActivesessionFinancial);
-
-        return $this;
-    }
-
-    /**
-     * Gets bActivesessionRealestatecompleted
-     *
-     * @return bool|null
-     */
-    public function getBActivesessionRealestatecompleted()
-    {
-	//return $this->container['bActivesessionRealestatecompleted'];
-        return $this->container['bActivesessionRealestatecompleted'];
-    }
-
-    /**
-     * Sets bActivesessionRealestatecompleted
-     *
-     * @param bool|null $bActivesessionRealestatecompleted Can access closed realestate folders when we clone a user
-     *
-     * @return self
-     */
-    public function setBActivesessionRealestatecompleted($bActivesessionRealestatecompleted)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bActivesessionRealestatecompleted)) {
-            //throw new \InvalidArgumentException('non-nullable bActivesessionRealestatecompleted cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bActivesessionRealestatecompleted'] = $bActivesessionRealestatecompleted;
-        $this->container['bActivesessionRealestatecompleted'] = (is_null($bActivesessionRealestatecompleted) ? null : (bool) $bActivesessionRealestatecompleted);
-
-        return $this;
-    }
-
-    /**
-     * Gets eActivesessionEzsign
-     *
-     * @return \eZmaxAPI\Model\FieldEActivesessionEzsign|null
-     */
-    public function getEActivesessionEzsign()
-    {
-	//return $this->container['eActivesessionEzsign'];
-        return $this->container['eActivesessionEzsign'];
-    }
-
-    /**
-     * Sets eActivesessionEzsign
-     *
-     * @param \eZmaxAPI\Model\FieldEActivesessionEzsign|null $eActivesessionEzsign eActivesessionEzsign
-     *
-     * @return self
-     */
-    public function setEActivesessionEzsign($eActivesessionEzsign)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eActivesessionEzsign)) {
-            //throw new \InvalidArgumentException('non-nullable eActivesessionEzsign cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eActivesessionEzsign'] = $eActivesessionEzsign;
-        $this->container['eActivesessionEzsign'] = $eActivesessionEzsign;
-
-        return $this;
-    }
-
-    /**
-     * Gets eActivesessionEzsignaccess
-     *
-     * @return \eZmaxAPI\Model\FieldEActivesessionEzsignaccess
-     */
-    public function getEActivesessionEzsignaccess()
-    {
-	//return $this->container['eActivesessionEzsignaccess'];
-        return $this->container['eActivesessionEzsignaccess'];
-    }
-
-    /**
-     * Sets eActivesessionEzsignaccess
-     *
-     * @param \eZmaxAPI\Model\FieldEActivesessionEzsignaccess $eActivesessionEzsignaccess eActivesessionEzsignaccess
-     *
-     * @return self
-     */
-    public function setEActivesessionEzsignaccess($eActivesessionEzsignaccess)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eActivesessionEzsignaccess)) {
-            //throw new \InvalidArgumentException('non-nullable eActivesessionEzsignaccess cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eActivesessionEzsignaccess'] = $eActivesessionEzsignaccess;
-        $this->container['eActivesessionEzsignaccess'] = $eActivesessionEzsignaccess;
-
-        return $this;
-    }
-
-    /**
-     * Gets eActivesessionEzsignprepaid
-     *
-     * @return \eZmaxAPI\Model\FieldEActivesessionEzsignprepaid|null
-     */
-    public function getEActivesessionEzsignprepaid()
-    {
-	//return $this->container['eActivesessionEzsignprepaid'];
-        return $this->container['eActivesessionEzsignprepaid'];
-    }
-
-    /**
-     * Sets eActivesessionEzsignprepaid
-     *
-     * @param \eZmaxAPI\Model\FieldEActivesessionEzsignprepaid|null $eActivesessionEzsignprepaid eActivesessionEzsignprepaid
-     *
-     * @return self
-     */
-    public function setEActivesessionEzsignprepaid($eActivesessionEzsignprepaid)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eActivesessionEzsignprepaid)) {
-            //throw new \InvalidArgumentException('non-nullable eActivesessionEzsignprepaid cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eActivesessionEzsignprepaid'] = $eActivesessionEzsignprepaid;
-        $this->container['eActivesessionEzsignprepaid'] = $eActivesessionEzsignprepaid;
-
-        return $this;
-    }
-
-    /**
-     * Gets eActivesessionRealestateinprogress
-     *
-     * @return \eZmaxAPI\Model\FieldEActivesessionRealestateinprogress|null
-     */
-    public function getEActivesessionRealestateinprogress()
-    {
-	//return $this->container['eActivesessionRealestateinprogress'];
-        return $this->container['eActivesessionRealestateinprogress'];
-    }
-
-    /**
-     * Sets eActivesessionRealestateinprogress
-     *
-     * @param \eZmaxAPI\Model\FieldEActivesessionRealestateinprogress|null $eActivesessionRealestateinprogress eActivesessionRealestateinprogress
-     *
-     * @return self
-     */
-    public function setEActivesessionRealestateinprogress($eActivesessionRealestateinprogress)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eActivesessionRealestateinprogress)) {
-            //throw new \InvalidArgumentException('non-nullable eActivesessionRealestateinprogress cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eActivesessionRealestateinprogress'] = $eActivesessionRealestateinprogress;
-        $this->container['eActivesessionRealestateinprogress'] = $eActivesessionRealestateinprogress;
-
-        return $this;
-    }
-
-    /**
-     * Gets pksCustomerCode
-     *
-     * @return string
-     */
-    public function getPksCustomerCode()
-    {
-	//return $this->container['pksCustomerCode'];
-        return is_null($this->container['pksCustomerCode']) ? null : trim($this->container['pksCustomerCode']);
-    }
-
-    /**
-     * Sets pksCustomerCode
-     *
-     * @param string $pksCustomerCode The customer code assigned to your account
-     *
-     * @return self
-     */
-    public function setPksCustomerCode($pksCustomerCode)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pksCustomerCode)) {
-            //throw new \InvalidArgumentException('non-nullable pksCustomerCode cannot be null');
-        //}
-	//if ((mb_strlen($pksCustomerCode) > 6)) {
-        if ((mb_strlen($pksCustomerCode) > 6)) {
-	    //throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling ActivesessionResponseCompound., must be smaller than or equal to 6.');
-            throw new \InvalidArgumentException('value '.(is_null($pksCustomerCode)?'null':'"'.$pksCustomerCode.'"').', invalid length for pksCustomerCode when calling ActivesessionResponseCompound., must be smaller than or equal to 6.');
-        }
-	//if ((mb_strlen($pksCustomerCode) < 2)) {
-        if ((mb_strlen($pksCustomerCode) < 2)) {
-	    //throw new \InvalidArgumentException('invalid length for $pksCustomerCode when calling ActivesessionResponseCompound., must be bigger than or equal to 2.');
-            throw new \InvalidArgumentException('value '.(is_null($pksCustomerCode)?'null':'"'.$pksCustomerCode.'"').', invalid length for pksCustomerCode when calling ActivesessionResponseCompound., must be bigger than or equal to 2.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pksCustomerCode'] = $pksCustomerCode;
-        $this->container['pksCustomerCode'] = (is_null($pksCustomerCode) ? null : trim((string) $pksCustomerCode));
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiSystemconfigurationtypeID
-     *
-     * @return int
-     */
-    public function getFkiSystemconfigurationtypeID()
-    {
-	//return $this->container['fkiSystemconfigurationtypeID'];
-        return $this->container['fkiSystemconfigurationtypeID'];
-    }
-
-    /**
-     * Sets fkiSystemconfigurationtypeID
-     *
-     * @param int $fkiSystemconfigurationtypeID The unique ID of the Systemconfigurationtype
-     *
-     * @return self
-     */
-    public function setFkiSystemconfigurationtypeID($fkiSystemconfigurationtypeID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiSystemconfigurationtypeID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiSystemconfigurationtypeID cannot be null');
-        //}
-
-	//if (($fkiSystemconfigurationtypeID < 1)) {
-        if (($fkiSystemconfigurationtypeID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiSystemconfigurationtypeID when calling ActivesessionResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiSystemconfigurationtypeID)?'null':'"'.$fkiSystemconfigurationtypeID.'"').' for fkiSystemconfigurationtypeID when calling ActivesessionResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiSystemconfigurationtypeID'] = $fkiSystemconfigurationtypeID;
-        $this->container['fkiSystemconfigurationtypeID'] = (is_null($fkiSystemconfigurationtypeID) ? null : (int) $fkiSystemconfigurationtypeID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiSignatureID
-     *
-     * @return int|null
-     */
-    public function getFkiSignatureID()
-    {
-	//return $this->container['fkiSignatureID'];
-        return $this->container['fkiSignatureID'];
-    }
-
-    /**
-     * Sets fkiSignatureID
-     *
-     * @param int|null $fkiSignatureID The unique ID of the Signature
-     *
-     * @return self
-     */
-    public function setFkiSignatureID($fkiSignatureID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiSignatureID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiSignatureID cannot be null');
-        //}
-
-	//if (($fkiSignatureID > 16777215)) {
-        if (!is_null($fkiSignatureID) && ($fkiSignatureID > 16777215)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiSignatureID when calling ActivesessionResponseCompound., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiSignatureID)?'null':'"'.$fkiSignatureID.'"').' for fkiSignatureID when calling ActivesessionResponseCompound., must be smaller than or equal to 16777215.');
-        }
-	//if (($fkiSignatureID < 0)) {
-        if (!is_null($fkiSignatureID) && ($fkiSignatureID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiSignatureID when calling ActivesessionResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiSignatureID)?'null':'"'.$fkiSignatureID.'"').' for fkiSignatureID when calling ActivesessionResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiSignatureID'] = $fkiSignatureID;
-        $this->container['fkiSignatureID'] = (is_null($fkiSignatureID) ? null : (int) $fkiSignatureID);
-
-        return $this;
-    }
 
     /**
      * Gets fkiEzsignuserID

@@ -79,49 +79,4 @@ class VariableexpenseResponseCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiVariableexpenseID"
-     */
-    public function testPropertyPkiVariableexpenseID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sVariableexpenseCode"
-     */
-    public function testPropertySVariableexpenseCode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objVariableexpenseDescription"
-     */
-    public function testPropertyObjVariableexpenseDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "eVariableexpenseTaxable"
-     */
-    public function testPropertyEVariableexpenseTaxable()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bVariableexpenseIsactive"
-     */
-    public function testPropertyBVariableexpenseIsactive()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

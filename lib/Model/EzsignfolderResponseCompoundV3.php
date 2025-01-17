@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfolderResponseCompoundV3 extends EzsignfolderResponseV3
 {
     public const DISCRIMINATOR = null;
 
@@ -59,33 +57,6 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignfolderID' => 'int',
-        'fkiEzsignfoldertypeID' => 'int',
-        'objEzsignfoldertype' => '\eZmaxAPI\Model\CustomEzsignfoldertypeResponse',
-        'fkiTimezoneID' => 'int',
-        'eEzsignfolderCompletion' => '\eZmaxAPI\Model\FieldEEzsignfolderCompletion',
-        'eEzsignfolderDocumentdependency' => '\eZmaxAPI\Model\FieldEEzsignfolderDocumentdependency',
-        'sEzsignfoldertypeNameX' => 'string',
-        'fkiBillingentityinternalID' => 'int',
-        'sBillingentityinternalDescriptionX' => 'string',
-        'fkiEzsigntsarequirementID' => 'int',
-        'sEzsigntsarequirementDescriptionX' => 'string',
-        'sEzsignfolderDescription' => 'string',
-        'tEzsignfolderNote' => 'string',
-        'bEzsignfolderIsdisposable' => 'bool',
-        'iEzsignfolderSendreminderfirstdays' => 'int',
-        'iEzsignfolderSendreminderotherdays' => 'int',
-        'dtEzsignfolderDelayedsenddate' => 'string',
-        'dtEzsignfolderDuedate' => 'string',
-        'dtEzsignfolderSentdate' => 'string',
-        'dtEzsignfolderScheduledarchive' => 'string',
-        'dtEzsignfolderScheduleddispose' => 'string',
-        'eEzsignfolderStep' => '\eZmaxAPI\Model\FieldEEzsignfolderStep',
-        'dtEzsignfolderClose' => 'string',
-        'tEzsignfolderMessage' => 'string',
-        'objAudit' => '\eZmaxAPI\Model\CommonAudit',
-        'sEzsignfolderExternalid' => 'string',
-        'eEzsignfolderAccess' => '\eZmaxAPI\Model\ComputedEEzsignfolderAccess',
         'objTimezone' => '\eZmaxAPI\Model\CustomTimezoneWithCodeResponse'
     ];
 
@@ -97,33 +68,6 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignfolderID' => null,
-        'fkiEzsignfoldertypeID' => null,
-        'objEzsignfoldertype' => null,
-        'fkiTimezoneID' => null,
-        'eEzsignfolderCompletion' => null,
-        'eEzsignfolderDocumentdependency' => null,
-        'sEzsignfoldertypeNameX' => null,
-        'fkiBillingentityinternalID' => null,
-        'sBillingentityinternalDescriptionX' => null,
-        'fkiEzsigntsarequirementID' => null,
-        'sEzsigntsarequirementDescriptionX' => null,
-        'sEzsignfolderDescription' => null,
-        'tEzsignfolderNote' => null,
-        'bEzsignfolderIsdisposable' => null,
-        'iEzsignfolderSendreminderfirstdays' => null,
-        'iEzsignfolderSendreminderotherdays' => null,
-        'dtEzsignfolderDelayedsenddate' => null,
-        'dtEzsignfolderDuedate' => null,
-        'dtEzsignfolderSentdate' => null,
-        'dtEzsignfolderScheduledarchive' => null,
-        'dtEzsignfolderScheduleddispose' => null,
-        'eEzsignfolderStep' => null,
-        'dtEzsignfolderClose' => null,
-        'tEzsignfolderMessage' => null,
-        'objAudit' => null,
-        'sEzsignfolderExternalid' => null,
-        'eEzsignfolderAccess' => null,
         'objTimezone' => null
     ];
 
@@ -133,34 +77,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsignfolderID' => false,
-		'fkiEzsignfoldertypeID' => false,
-		'objEzsignfoldertype' => false,
-		'fkiTimezoneID' => false,
-		'eEzsignfolderCompletion' => false,
-		'eEzsignfolderDocumentdependency' => false,
-		'sEzsignfoldertypeNameX' => false,
-		'fkiBillingentityinternalID' => false,
-		'sBillingentityinternalDescriptionX' => false,
-		'fkiEzsigntsarequirementID' => false,
-		'sEzsigntsarequirementDescriptionX' => false,
-		'sEzsignfolderDescription' => false,
-		'tEzsignfolderNote' => false,
-		'bEzsignfolderIsdisposable' => false,
-		'iEzsignfolderSendreminderfirstdays' => false,
-		'iEzsignfolderSendreminderotherdays' => false,
-		'dtEzsignfolderDelayedsenddate' => false,
-		'dtEzsignfolderDuedate' => false,
-		'dtEzsignfolderSentdate' => false,
-		'dtEzsignfolderScheduledarchive' => false,
-		'dtEzsignfolderScheduleddispose' => false,
-		'eEzsignfolderStep' => false,
-		'dtEzsignfolderClose' => false,
-		'tEzsignfolderMessage' => false,
-		'objAudit' => false,
-		'sEzsignfolderExternalid' => false,
-		'eEzsignfolderAccess' => false,
-		'objTimezone' => false
+        'objTimezone' => false
     ];
 
     /**
@@ -177,7 +94,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -187,7 +104,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -197,7 +114,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -249,33 +166,6 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignfolderID' => 'pkiEzsignfolderID',
-        'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
-        'objEzsignfoldertype' => 'objEzsignfoldertype',
-        'fkiTimezoneID' => 'fkiTimezoneID',
-        'eEzsignfolderCompletion' => 'eEzsignfolderCompletion',
-        'eEzsignfolderDocumentdependency' => 'eEzsignfolderDocumentdependency',
-        'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX',
-        'fkiBillingentityinternalID' => 'fkiBillingentityinternalID',
-        'sBillingentityinternalDescriptionX' => 'sBillingentityinternalDescriptionX',
-        'fkiEzsigntsarequirementID' => 'fkiEzsigntsarequirementID',
-        'sEzsigntsarequirementDescriptionX' => 'sEzsigntsarequirementDescriptionX',
-        'sEzsignfolderDescription' => 'sEzsignfolderDescription',
-        'tEzsignfolderNote' => 'tEzsignfolderNote',
-        'bEzsignfolderIsdisposable' => 'bEzsignfolderIsdisposable',
-        'iEzsignfolderSendreminderfirstdays' => 'iEzsignfolderSendreminderfirstdays',
-        'iEzsignfolderSendreminderotherdays' => 'iEzsignfolderSendreminderotherdays',
-        'dtEzsignfolderDelayedsenddate' => 'dtEzsignfolderDelayedsenddate',
-        'dtEzsignfolderDuedate' => 'dtEzsignfolderDuedate',
-        'dtEzsignfolderSentdate' => 'dtEzsignfolderSentdate',
-        'dtEzsignfolderScheduledarchive' => 'dtEzsignfolderScheduledarchive',
-        'dtEzsignfolderScheduleddispose' => 'dtEzsignfolderScheduleddispose',
-        'eEzsignfolderStep' => 'eEzsignfolderStep',
-        'dtEzsignfolderClose' => 'dtEzsignfolderClose',
-        'tEzsignfolderMessage' => 'tEzsignfolderMessage',
-        'objAudit' => 'objAudit',
-        'sEzsignfolderExternalid' => 'sEzsignfolderExternalid',
-        'eEzsignfolderAccess' => 'eEzsignfolderAccess',
         'objTimezone' => 'objTimezone'
     ];
 
@@ -285,33 +175,6 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignfolderID' => 'setPkiEzsignfolderID',
-        'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
-        'objEzsignfoldertype' => 'setObjEzsignfoldertype',
-        'fkiTimezoneID' => 'setFkiTimezoneID',
-        'eEzsignfolderCompletion' => 'setEEzsignfolderCompletion',
-        'eEzsignfolderDocumentdependency' => 'setEEzsignfolderDocumentdependency',
-        'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX',
-        'fkiBillingentityinternalID' => 'setFkiBillingentityinternalID',
-        'sBillingentityinternalDescriptionX' => 'setSBillingentityinternalDescriptionX',
-        'fkiEzsigntsarequirementID' => 'setFkiEzsigntsarequirementID',
-        'sEzsigntsarequirementDescriptionX' => 'setSEzsigntsarequirementDescriptionX',
-        'sEzsignfolderDescription' => 'setSEzsignfolderDescription',
-        'tEzsignfolderNote' => 'setTEzsignfolderNote',
-        'bEzsignfolderIsdisposable' => 'setBEzsignfolderIsdisposable',
-        'iEzsignfolderSendreminderfirstdays' => 'setIEzsignfolderSendreminderfirstdays',
-        'iEzsignfolderSendreminderotherdays' => 'setIEzsignfolderSendreminderotherdays',
-        'dtEzsignfolderDelayedsenddate' => 'setDtEzsignfolderDelayedsenddate',
-        'dtEzsignfolderDuedate' => 'setDtEzsignfolderDuedate',
-        'dtEzsignfolderSentdate' => 'setDtEzsignfolderSentdate',
-        'dtEzsignfolderScheduledarchive' => 'setDtEzsignfolderScheduledarchive',
-        'dtEzsignfolderScheduleddispose' => 'setDtEzsignfolderScheduleddispose',
-        'eEzsignfolderStep' => 'setEEzsignfolderStep',
-        'dtEzsignfolderClose' => 'setDtEzsignfolderClose',
-        'tEzsignfolderMessage' => 'setTEzsignfolderMessage',
-        'objAudit' => 'setObjAudit',
-        'sEzsignfolderExternalid' => 'setSEzsignfolderExternalid',
-        'eEzsignfolderAccess' => 'setEEzsignfolderAccess',
         'objTimezone' => 'setObjTimezone'
     ];
 
@@ -321,33 +184,6 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignfolderID' => 'getPkiEzsignfolderID',
-        'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
-        'objEzsignfoldertype' => 'getObjEzsignfoldertype',
-        'fkiTimezoneID' => 'getFkiTimezoneID',
-        'eEzsignfolderCompletion' => 'getEEzsignfolderCompletion',
-        'eEzsignfolderDocumentdependency' => 'getEEzsignfolderDocumentdependency',
-        'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX',
-        'fkiBillingentityinternalID' => 'getFkiBillingentityinternalID',
-        'sBillingentityinternalDescriptionX' => 'getSBillingentityinternalDescriptionX',
-        'fkiEzsigntsarequirementID' => 'getFkiEzsigntsarequirementID',
-        'sEzsigntsarequirementDescriptionX' => 'getSEzsigntsarequirementDescriptionX',
-        'sEzsignfolderDescription' => 'getSEzsignfolderDescription',
-        'tEzsignfolderNote' => 'getTEzsignfolderNote',
-        'bEzsignfolderIsdisposable' => 'getBEzsignfolderIsdisposable',
-        'iEzsignfolderSendreminderfirstdays' => 'getIEzsignfolderSendreminderfirstdays',
-        'iEzsignfolderSendreminderotherdays' => 'getIEzsignfolderSendreminderotherdays',
-        'dtEzsignfolderDelayedsenddate' => 'getDtEzsignfolderDelayedsenddate',
-        'dtEzsignfolderDuedate' => 'getDtEzsignfolderDuedate',
-        'dtEzsignfolderSentdate' => 'getDtEzsignfolderSentdate',
-        'dtEzsignfolderScheduledarchive' => 'getDtEzsignfolderScheduledarchive',
-        'dtEzsignfolderScheduleddispose' => 'getDtEzsignfolderScheduleddispose',
-        'eEzsignfolderStep' => 'getEEzsignfolderStep',
-        'dtEzsignfolderClose' => 'getDtEzsignfolderClose',
-        'tEzsignfolderMessage' => 'getTEzsignfolderMessage',
-        'objAudit' => 'getObjAudit',
-        'sEzsignfolderExternalid' => 'getSEzsignfolderExternalid',
-        'eEzsignfolderAccess' => 'getEEzsignfolderAccess',
         'objTimezone' => 'getObjTimezone'
     ];
 
@@ -359,7 +195,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -369,7 +205,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -379,7 +215,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -393,12 +229,6 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -408,33 +238,8 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsignfolderID', $data ?? [], null);
-        $this->setIfExists('fkiEzsignfoldertypeID', $data ?? [], null);
-        $this->setIfExists('objEzsignfoldertype', $data ?? [], null);
-        $this->setIfExists('fkiTimezoneID', $data ?? [], null);
-        $this->setIfExists('eEzsignfolderCompletion', $data ?? [], null);
-        $this->setIfExists('eEzsignfolderDocumentdependency', $data ?? [], null);
-        $this->setIfExists('sEzsignfoldertypeNameX', $data ?? [], null);
-        $this->setIfExists('fkiBillingentityinternalID', $data ?? [], null);
-        $this->setIfExists('sBillingentityinternalDescriptionX', $data ?? [], null);
-        $this->setIfExists('fkiEzsigntsarequirementID', $data ?? [], null);
-        $this->setIfExists('sEzsigntsarequirementDescriptionX', $data ?? [], null);
-        $this->setIfExists('sEzsignfolderDescription', $data ?? [], null);
-        $this->setIfExists('tEzsignfolderNote', $data ?? [], null);
-        $this->setIfExists('bEzsignfolderIsdisposable', $data ?? [], null);
-        $this->setIfExists('iEzsignfolderSendreminderfirstdays', $data ?? [], null);
-        $this->setIfExists('iEzsignfolderSendreminderotherdays', $data ?? [], null);
-        $this->setIfExists('dtEzsignfolderDelayedsenddate', $data ?? [], null);
-        $this->setIfExists('dtEzsignfolderDuedate', $data ?? [], null);
-        $this->setIfExists('dtEzsignfolderSentdate', $data ?? [], null);
-        $this->setIfExists('dtEzsignfolderScheduledarchive', $data ?? [], null);
-        $this->setIfExists('dtEzsignfolderScheduleddispose', $data ?? [], null);
-        $this->setIfExists('eEzsignfolderStep', $data ?? [], null);
-        $this->setIfExists('dtEzsignfolderClose', $data ?? [], null);
-        $this->setIfExists('tEzsignfolderMessage', $data ?? [], null);
-        $this->setIfExists('objAudit', $data ?? [], null);
-        $this->setIfExists('sEzsignfolderExternalid', $data ?? [], null);
-        $this->setIfExists('eEzsignfolderAccess', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('objTimezone', $data ?? [], null);
     }
 
@@ -463,70 +268,7 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'pkiEzsignfolderID' can't be null";
-        }
-        if (($this->container['pkiEzsignfolderID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignfolderID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiEzsignfoldertypeID']) && ($this->container['fkiEzsignfoldertypeID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsignfoldertypeID', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['fkiEzsignfoldertypeID']) && ($this->container['fkiEzsignfoldertypeID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsignfoldertypeID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiTimezoneID']) && ($this->container['fkiTimezoneID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiTimezoneID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['eEzsignfolderCompletion'] === null) {
-            $invalidProperties[] = "'eEzsignfolderCompletion' can't be null";
-        }
-        if (!is_null($this->container['fkiBillingentityinternalID']) && ($this->container['fkiBillingentityinternalID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiBillingentityinternalID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiEzsigntsarequirementID']) && ($this->container['fkiEzsigntsarequirementID'] > 3)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntsarequirementID', must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['fkiEzsigntsarequirementID']) && ($this->container['fkiEzsigntsarequirementID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntsarequirementID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['sEzsignfolderDescription'] === null) {
-            $invalidProperties[] = "'sEzsignfolderDescription' can't be null";
-        }
-	//if (!preg_match("/^.{0,75}$/", $this->container['sEzsignfolderDescription'])) {
-        if (!is_null($this->container['sEzsignfolderDescription']) && !preg_match("/(*UTF8)^.{0,75}$/", $this->container['sEzsignfolderDescription'])) {
-            $invalidProperties[] = "invalid value for 'sEzsignfolderDescription', must be conform to the pattern /^.{0,75}$/.";
-        }
-
-        if (!is_null($this->container['iEzsignfolderSendreminderfirstdays']) && ($this->container['iEzsignfolderSendreminderfirstdays'] > 255)) {
-            $invalidProperties[] = "invalid value for 'iEzsignfolderSendreminderfirstdays', must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['iEzsignfolderSendreminderfirstdays']) && ($this->container['iEzsignfolderSendreminderfirstdays'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsignfolderSendreminderfirstdays', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['iEzsignfolderSendreminderotherdays']) && ($this->container['iEzsignfolderSendreminderotherdays'] > 255)) {
-            $invalidProperties[] = "invalid value for 'iEzsignfolderSendreminderotherdays', must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['iEzsignfolderSendreminderotherdays']) && ($this->container['iEzsignfolderSendreminderotherdays'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsignfolderSendreminderotherdays', must be bigger than or equal to 0.";
-        }
-
-	//if (!is_null($this->container['sEzsignfolderExternalid']) && !preg_match("/^.{0,128}$/", $this->container['sEzsignfolderExternalid'])) {
-        if (!is_null($this->container['sEzsignfolderExternalid']) && !preg_match("/(*UTF8)^.{0,128}$/", $this->container['sEzsignfolderExternalid'])) {
-            $invalidProperties[] = "invalid value for 'sEzsignfolderExternalid', must be conform to the pattern /^.{0,128}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -542,955 +284,6 @@ class EzsignfolderResponseCompoundV3 implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsignfolderID
-     *
-     * @return int
-     */
-    public function getPkiEzsignfolderID()
-    {
-	//return $this->container['pkiEzsignfolderID'];
-        return $this->container['pkiEzsignfolderID'];
-    }
-
-    /**
-     * Sets pkiEzsignfolderID
-     *
-     * @param int $pkiEzsignfolderID The unique ID of the Ezsignfolder
-     *
-     * @return self
-     */
-    public function setPkiEzsignfolderID($pkiEzsignfolderID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsignfolderID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsignfolderID cannot be null');
-        //}
-
-	//if (($pkiEzsignfolderID < 0)) {
-        if (($pkiEzsignfolderID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignfolderID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignfolderID)?'null':'"'.$pkiEzsignfolderID.'"').' for pkiEzsignfolderID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsignfolderID'] = $pkiEzsignfolderID;
-        $this->container['pkiEzsignfolderID'] = (is_null($pkiEzsignfolderID) ? null : (int) $pkiEzsignfolderID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignfoldertypeID
-     *
-     * @return int|null
-     */
-    public function getFkiEzsignfoldertypeID()
-    {
-	//return $this->container['fkiEzsignfoldertypeID'];
-        return $this->container['fkiEzsignfoldertypeID'];
-    }
-
-    /**
-     * Sets fkiEzsignfoldertypeID
-     *
-     * @param int|null $fkiEzsignfoldertypeID The unique ID of the Ezsignfoldertype.
-     *
-     * @return self
-     */
-    public function setFkiEzsignfoldertypeID($fkiEzsignfoldertypeID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsignfoldertypeID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldertypeID cannot be null');
-        //}
-
-	//if (($fkiEzsignfoldertypeID > 65535)) {
-        if (!is_null($fkiEzsignfoldertypeID) && ($fkiEzsignfoldertypeID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling EzsignfolderResponseCompoundV3., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignfoldertypeID)?'null':'"'.$fkiEzsignfoldertypeID.'"').' for fkiEzsignfoldertypeID when calling EzsignfolderResponseCompoundV3., must be smaller than or equal to 65535.');
-        }
-	//if (($fkiEzsignfoldertypeID < 0)) {
-        if (!is_null($fkiEzsignfoldertypeID) && ($fkiEzsignfoldertypeID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignfoldertypeID)?'null':'"'.$fkiEzsignfoldertypeID.'"').' for fkiEzsignfoldertypeID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
-        $this->container['fkiEzsignfoldertypeID'] = (is_null($fkiEzsignfoldertypeID) ? null : (int) $fkiEzsignfoldertypeID);
-
-        return $this;
-    }
-
-    /**
-     * Gets objEzsignfoldertype
-     *
-     * @return \eZmaxAPI\Model\CustomEzsignfoldertypeResponse|null
-     */
-    public function getObjEzsignfoldertype()
-    {
-	//return $this->container['objEzsignfoldertype'];
-        return $this->container['objEzsignfoldertype'];
-    }
-
-    /**
-     * Sets objEzsignfoldertype
-     *
-     * @param \eZmaxAPI\Model\CustomEzsignfoldertypeResponse|null $objEzsignfoldertype objEzsignfoldertype
-     *
-     * @return self
-     */
-    public function setObjEzsignfoldertype($objEzsignfoldertype)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objEzsignfoldertype)) {
-            //throw new \InvalidArgumentException('non-nullable objEzsignfoldertype cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objEzsignfoldertype'] = $objEzsignfoldertype;
-        $this->container['objEzsignfoldertype'] = $objEzsignfoldertype;
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiTimezoneID
-     *
-     * @return int|null
-     */
-    public function getFkiTimezoneID()
-    {
-	//return $this->container['fkiTimezoneID'];
-        return $this->container['fkiTimezoneID'];
-    }
-
-    /**
-     * Sets fkiTimezoneID
-     *
-     * @param int|null $fkiTimezoneID The unique ID of the Timezone
-     *
-     * @return self
-     */
-    public function setFkiTimezoneID($fkiTimezoneID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiTimezoneID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiTimezoneID cannot be null');
-        //}
-
-	//if (($fkiTimezoneID < 0)) {
-        if (!is_null($fkiTimezoneID) && ($fkiTimezoneID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiTimezoneID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiTimezoneID)?'null':'"'.$fkiTimezoneID.'"').' for fkiTimezoneID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiTimezoneID'] = $fkiTimezoneID;
-        $this->container['fkiTimezoneID'] = (is_null($fkiTimezoneID) ? null : (int) $fkiTimezoneID);
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsignfolderCompletion
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsignfolderCompletion
-     */
-    public function getEEzsignfolderCompletion()
-    {
-	//return $this->container['eEzsignfolderCompletion'];
-        return $this->container['eEzsignfolderCompletion'];
-    }
-
-    /**
-     * Sets eEzsignfolderCompletion
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsignfolderCompletion $eEzsignfolderCompletion eEzsignfolderCompletion
-     *
-     * @return self
-     */
-    public function setEEzsignfolderCompletion($eEzsignfolderCompletion)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignfolderCompletion)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignfolderCompletion cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsignfolderCompletion'] = $eEzsignfolderCompletion;
-        $this->container['eEzsignfolderCompletion'] = $eEzsignfolderCompletion;
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsignfolderDocumentdependency
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsignfolderDocumentdependency|null
-     */
-    public function getEEzsignfolderDocumentdependency()
-    {
-	//return $this->container['eEzsignfolderDocumentdependency'];
-        return $this->container['eEzsignfolderDocumentdependency'];
-    }
-
-    /**
-     * Sets eEzsignfolderDocumentdependency
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsignfolderDocumentdependency|null $eEzsignfolderDocumentdependency eEzsignfolderDocumentdependency
-     *
-     * @return self
-     */
-    public function setEEzsignfolderDocumentdependency($eEzsignfolderDocumentdependency)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignfolderDocumentdependency)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignfolderDocumentdependency cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsignfolderDocumentdependency'] = $eEzsignfolderDocumentdependency;
-        $this->container['eEzsignfolderDocumentdependency'] = $eEzsignfolderDocumentdependency;
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignfoldertypeNameX
-     *
-     * @return string|null
-     * @deprecated
-     */
-    public function getSEzsignfoldertypeNameX()
-    {
-	//return $this->container['sEzsignfoldertypeNameX'];
-        return is_null($this->container['sEzsignfoldertypeNameX']) ? null : trim($this->container['sEzsignfoldertypeNameX']);
-    }
-
-    /**
-     * Sets sEzsignfoldertypeNameX
-     *
-     * @param string|null $sEzsignfoldertypeNameX sEzsignfoldertypeNameX
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignfoldertypeNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignfoldertypeNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
-        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : trim((string) $sEzsignfoldertypeNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiBillingentityinternalID
-     *
-     * @return int|null
-     */
-    public function getFkiBillingentityinternalID()
-    {
-	//return $this->container['fkiBillingentityinternalID'];
-        return $this->container['fkiBillingentityinternalID'];
-    }
-
-    /**
-     * Sets fkiBillingentityinternalID
-     *
-     * @param int|null $fkiBillingentityinternalID The unique ID of the Billingentityinternal.
-     *
-     * @return self
-     */
-    public function setFkiBillingentityinternalID($fkiBillingentityinternalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiBillingentityinternalID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiBillingentityinternalID cannot be null');
-        //}
-
-	//if (($fkiBillingentityinternalID < 0)) {
-        if (!is_null($fkiBillingentityinternalID) && ($fkiBillingentityinternalID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiBillingentityinternalID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiBillingentityinternalID)?'null':'"'.$fkiBillingentityinternalID.'"').' for fkiBillingentityinternalID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiBillingentityinternalID'] = $fkiBillingentityinternalID;
-        $this->container['fkiBillingentityinternalID'] = (is_null($fkiBillingentityinternalID) ? null : (int) $fkiBillingentityinternalID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sBillingentityinternalDescriptionX
-     *
-     * @return string|null
-     */
-    public function getSBillingentityinternalDescriptionX()
-    {
-	//return $this->container['sBillingentityinternalDescriptionX'];
-        return is_null($this->container['sBillingentityinternalDescriptionX']) ? null : trim($this->container['sBillingentityinternalDescriptionX']);
-    }
-
-    /**
-     * Sets sBillingentityinternalDescriptionX
-     *
-     * @param string|null $sBillingentityinternalDescriptionX The description of the Billingentityinternal in the language of the requester
-     *
-     * @return self
-     */
-    public function setSBillingentityinternalDescriptionX($sBillingentityinternalDescriptionX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sBillingentityinternalDescriptionX)) {
-            //throw new \InvalidArgumentException('non-nullable sBillingentityinternalDescriptionX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sBillingentityinternalDescriptionX'] = $sBillingentityinternalDescriptionX;
-        $this->container['sBillingentityinternalDescriptionX'] = (is_null($sBillingentityinternalDescriptionX) ? null : trim((string) $sBillingentityinternalDescriptionX));
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigntsarequirementID
-     *
-     * @return int|null
-     */
-    public function getFkiEzsigntsarequirementID()
-    {
-	//return $this->container['fkiEzsigntsarequirementID'];
-        return $this->container['fkiEzsigntsarequirementID'];
-    }
-
-    /**
-     * Sets fkiEzsigntsarequirementID
-     *
-     * @param int|null $fkiEzsigntsarequirementID The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
-     *
-     * @return self
-     */
-    public function setFkiEzsigntsarequirementID($fkiEzsigntsarequirementID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigntsarequirementID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigntsarequirementID cannot be null');
-        //}
-
-	//if (($fkiEzsigntsarequirementID > 3)) {
-        if (!is_null($fkiEzsigntsarequirementID) && ($fkiEzsigntsarequirementID > 3)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntsarequirementID when calling EzsignfolderResponseCompoundV3., must be smaller than or equal to 3.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntsarequirementID)?'null':'"'.$fkiEzsigntsarequirementID.'"').' for fkiEzsigntsarequirementID when calling EzsignfolderResponseCompoundV3., must be smaller than or equal to 3.');
-        }
-	//if (($fkiEzsigntsarequirementID < 1)) {
-        if (!is_null($fkiEzsigntsarequirementID) && ($fkiEzsigntsarequirementID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntsarequirementID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntsarequirementID)?'null':'"'.$fkiEzsigntsarequirementID.'"').' for fkiEzsigntsarequirementID when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigntsarequirementID'] = $fkiEzsigntsarequirementID;
-        $this->container['fkiEzsigntsarequirementID'] = (is_null($fkiEzsigntsarequirementID) ? null : (int) $fkiEzsigntsarequirementID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsigntsarequirementDescriptionX
-     *
-     * @return string|null
-     */
-    public function getSEzsigntsarequirementDescriptionX()
-    {
-	//return $this->container['sEzsigntsarequirementDescriptionX'];
-        return is_null($this->container['sEzsigntsarequirementDescriptionX']) ? null : trim($this->container['sEzsigntsarequirementDescriptionX']);
-    }
-
-    /**
-     * Sets sEzsigntsarequirementDescriptionX
-     *
-     * @param string|null $sEzsigntsarequirementDescriptionX The description of the Ezsigntsarequirement in the language of the requester
-     *
-     * @return self
-     */
-    public function setSEzsigntsarequirementDescriptionX($sEzsigntsarequirementDescriptionX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsigntsarequirementDescriptionX)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsigntsarequirementDescriptionX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsigntsarequirementDescriptionX'] = $sEzsigntsarequirementDescriptionX;
-        $this->container['sEzsigntsarequirementDescriptionX'] = (is_null($sEzsigntsarequirementDescriptionX) ? null : trim((string) $sEzsigntsarequirementDescriptionX));
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignfolderDescription
-     *
-     * @return string
-     */
-    public function getSEzsignfolderDescription()
-    {
-	//return $this->container['sEzsignfolderDescription'];
-        return is_null($this->container['sEzsignfolderDescription']) ? null : trim($this->container['sEzsignfolderDescription']);
-    }
-
-    /**
-     * Sets sEzsignfolderDescription
-     *
-     * @param string $sEzsignfolderDescription The description of the Ezsignfolder
-     *
-     * @return self
-     */
-    public function setSEzsignfolderDescription($sEzsignfolderDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignfolderDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignfolderDescription cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,75}$/", ObjectSerializer::toString($sEzsignfolderDescription)))) {
-        if (!is_null($sEzsignfolderDescription) && (!preg_match("/(*UTF8)^.{0,75}$/", ObjectSerializer::toString($sEzsignfolderDescription)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sEzsignfolderDescription when calling EzsignfolderResponseCompoundV3., must conform to the pattern /^.{0,75}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzsignfolderDescription)?'null':'"'.$sEzsignfolderDescription.'"')." for sEzsignfolderDescription when calling EzsignfolderResponseCompoundV3., must conform to the pattern /^.{0,75}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignfolderDescription'] = $sEzsignfolderDescription;
-        $this->container['sEzsignfolderDescription'] = (is_null($sEzsignfolderDescription) ? null : trim((string) $sEzsignfolderDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets tEzsignfolderNote
-     *
-     * @return string|null
-     */
-    public function getTEzsignfolderNote()
-    {
-	//return $this->container['tEzsignfolderNote'];
-        return is_null($this->container['tEzsignfolderNote']) ? null : trim($this->container['tEzsignfolderNote']);
-    }
-
-    /**
-     * Sets tEzsignfolderNote
-     *
-     * @param string|null $tEzsignfolderNote Note about the Ezsignfolder
-     *
-     * @return self
-     */
-    public function setTEzsignfolderNote($tEzsignfolderNote)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($tEzsignfolderNote)) {
-            //throw new \InvalidArgumentException('non-nullable tEzsignfolderNote cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['tEzsignfolderNote'] = $tEzsignfolderNote;
-        $this->container['tEzsignfolderNote'] = (is_null($tEzsignfolderNote) ? null : trim((string) $tEzsignfolderNote));
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsignfolderIsdisposable
-     *
-     * @return bool|null
-     */
-    public function getBEzsignfolderIsdisposable()
-    {
-	//return $this->container['bEzsignfolderIsdisposable'];
-        return $this->container['bEzsignfolderIsdisposable'];
-    }
-
-    /**
-     * Sets bEzsignfolderIsdisposable
-     *
-     * @param bool|null $bEzsignfolderIsdisposable If the Ezsigndocument can be disposed
-     *
-     * @return self
-     */
-    public function setBEzsignfolderIsdisposable($bEzsignfolderIsdisposable)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsignfolderIsdisposable)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsignfolderIsdisposable cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsignfolderIsdisposable'] = $bEzsignfolderIsdisposable;
-        $this->container['bEzsignfolderIsdisposable'] = (is_null($bEzsignfolderIsdisposable) ? null : (bool) $bEzsignfolderIsdisposable);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignfolderSendreminderfirstdays
-     *
-     * @return int|null
-     */
-    public function getIEzsignfolderSendreminderfirstdays()
-    {
-	//return $this->container['iEzsignfolderSendreminderfirstdays'];
-        return $this->container['iEzsignfolderSendreminderfirstdays'];
-    }
-
-    /**
-     * Sets iEzsignfolderSendreminderfirstdays
-     *
-     * @param int|null $iEzsignfolderSendreminderfirstdays The number of days before the the first reminder sending
-     *
-     * @return self
-     */
-    public function setIEzsignfolderSendreminderfirstdays($iEzsignfolderSendreminderfirstdays)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsignfolderSendreminderfirstdays)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsignfolderSendreminderfirstdays cannot be null');
-        //}
-
-	//if (($iEzsignfolderSendreminderfirstdays > 255)) {
-        if (!is_null($iEzsignfolderSendreminderfirstdays) && ($iEzsignfolderSendreminderfirstdays > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignfolderSendreminderfirstdays when calling EzsignfolderResponseCompoundV3., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignfolderSendreminderfirstdays)?'null':'"'.$iEzsignfolderSendreminderfirstdays.'"').' for iEzsignfolderSendreminderfirstdays when calling EzsignfolderResponseCompoundV3., must be smaller than or equal to 255.');
-        }
-	//if (($iEzsignfolderSendreminderfirstdays < 0)) {
-        if (!is_null($iEzsignfolderSendreminderfirstdays) && ($iEzsignfolderSendreminderfirstdays < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignfolderSendreminderfirstdays when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignfolderSendreminderfirstdays)?'null':'"'.$iEzsignfolderSendreminderfirstdays.'"').' for iEzsignfolderSendreminderfirstdays when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsignfolderSendreminderfirstdays'] = $iEzsignfolderSendreminderfirstdays;
-        $this->container['iEzsignfolderSendreminderfirstdays'] = (is_null($iEzsignfolderSendreminderfirstdays) ? null : (int) $iEzsignfolderSendreminderfirstdays);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignfolderSendreminderotherdays
-     *
-     * @return int|null
-     */
-    public function getIEzsignfolderSendreminderotherdays()
-    {
-	//return $this->container['iEzsignfolderSendreminderotherdays'];
-        return $this->container['iEzsignfolderSendreminderotherdays'];
-    }
-
-    /**
-     * Sets iEzsignfolderSendreminderotherdays
-     *
-     * @param int|null $iEzsignfolderSendreminderotherdays The number of days after the first reminder sending
-     *
-     * @return self
-     */
-    public function setIEzsignfolderSendreminderotherdays($iEzsignfolderSendreminderotherdays)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsignfolderSendreminderotherdays)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsignfolderSendreminderotherdays cannot be null');
-        //}
-
-	//if (($iEzsignfolderSendreminderotherdays > 255)) {
-        if (!is_null($iEzsignfolderSendreminderotherdays) && ($iEzsignfolderSendreminderotherdays > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignfolderSendreminderotherdays when calling EzsignfolderResponseCompoundV3., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignfolderSendreminderotherdays)?'null':'"'.$iEzsignfolderSendreminderotherdays.'"').' for iEzsignfolderSendreminderotherdays when calling EzsignfolderResponseCompoundV3., must be smaller than or equal to 255.');
-        }
-	//if (($iEzsignfolderSendreminderotherdays < 0)) {
-        if (!is_null($iEzsignfolderSendreminderotherdays) && ($iEzsignfolderSendreminderotherdays < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignfolderSendreminderotherdays when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignfolderSendreminderotherdays)?'null':'"'.$iEzsignfolderSendreminderotherdays.'"').' for iEzsignfolderSendreminderotherdays when calling EzsignfolderResponseCompoundV3., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsignfolderSendreminderotherdays'] = $iEzsignfolderSendreminderotherdays;
-        $this->container['iEzsignfolderSendreminderotherdays'] = (is_null($iEzsignfolderSendreminderotherdays) ? null : (int) $iEzsignfolderSendreminderotherdays);
-
-        return $this;
-    }
-
-    /**
-     * Gets dtEzsignfolderDelayedsenddate
-     *
-     * @return string|null
-     */
-    public function getDtEzsignfolderDelayedsenddate()
-    {
-	//return $this->container['dtEzsignfolderDelayedsenddate'];
-        return is_null($this->container['dtEzsignfolderDelayedsenddate']) ? null : trim($this->container['dtEzsignfolderDelayedsenddate']);
-    }
-
-    /**
-     * Sets dtEzsignfolderDelayedsenddate
-     *
-     * @param string|null $dtEzsignfolderDelayedsenddate The date and time at which the Ezsignfolder will be sent in the future.
-     *
-     * @return self
-     */
-    public function setDtEzsignfolderDelayedsenddate($dtEzsignfolderDelayedsenddate)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtEzsignfolderDelayedsenddate)) {
-            //throw new \InvalidArgumentException('non-nullable dtEzsignfolderDelayedsenddate cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtEzsignfolderDelayedsenddate'] = $dtEzsignfolderDelayedsenddate;
-        $this->container['dtEzsignfolderDelayedsenddate'] = (is_null($dtEzsignfolderDelayedsenddate) ? null : trim((string) $dtEzsignfolderDelayedsenddate));
-
-        return $this;
-    }
-
-    /**
-     * Gets dtEzsignfolderDuedate
-     *
-     * @return string|null
-     */
-    public function getDtEzsignfolderDuedate()
-    {
-	//return $this->container['dtEzsignfolderDuedate'];
-        return is_null($this->container['dtEzsignfolderDuedate']) ? null : trim($this->container['dtEzsignfolderDuedate']);
-    }
-
-    /**
-     * Sets dtEzsignfolderDuedate
-     *
-     * @param string|null $dtEzsignfolderDuedate The maximum date and time at which the Ezsignfolder can be signed.
-     *
-     * @return self
-     */
-    public function setDtEzsignfolderDuedate($dtEzsignfolderDuedate)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtEzsignfolderDuedate)) {
-            //throw new \InvalidArgumentException('non-nullable dtEzsignfolderDuedate cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtEzsignfolderDuedate'] = $dtEzsignfolderDuedate;
-        $this->container['dtEzsignfolderDuedate'] = (is_null($dtEzsignfolderDuedate) ? null : trim((string) $dtEzsignfolderDuedate));
-
-        return $this;
-    }
-
-    /**
-     * Gets dtEzsignfolderSentdate
-     *
-     * @return string|null
-     */
-    public function getDtEzsignfolderSentdate()
-    {
-	//return $this->container['dtEzsignfolderSentdate'];
-        return is_null($this->container['dtEzsignfolderSentdate']) ? null : trim($this->container['dtEzsignfolderSentdate']);
-    }
-
-    /**
-     * Sets dtEzsignfolderSentdate
-     *
-     * @param string|null $dtEzsignfolderSentdate The date and time at which the Ezsignfolder was sent the last time.
-     *
-     * @return self
-     */
-    public function setDtEzsignfolderSentdate($dtEzsignfolderSentdate)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtEzsignfolderSentdate)) {
-            //throw new \InvalidArgumentException('non-nullable dtEzsignfolderSentdate cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtEzsignfolderSentdate'] = $dtEzsignfolderSentdate;
-        $this->container['dtEzsignfolderSentdate'] = (is_null($dtEzsignfolderSentdate) ? null : trim((string) $dtEzsignfolderSentdate));
-
-        return $this;
-    }
-
-    /**
-     * Gets dtEzsignfolderScheduledarchive
-     *
-     * @return string|null
-     */
-    public function getDtEzsignfolderScheduledarchive()
-    {
-	//return $this->container['dtEzsignfolderScheduledarchive'];
-        return is_null($this->container['dtEzsignfolderScheduledarchive']) ? null : trim($this->container['dtEzsignfolderScheduledarchive']);
-    }
-
-    /**
-     * Sets dtEzsignfolderScheduledarchive
-     *
-     * @param string|null $dtEzsignfolderScheduledarchive The scheduled date and time at which the Ezsignfolder should be archived.
-     *
-     * @return self
-     */
-    public function setDtEzsignfolderScheduledarchive($dtEzsignfolderScheduledarchive)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtEzsignfolderScheduledarchive)) {
-            //throw new \InvalidArgumentException('non-nullable dtEzsignfolderScheduledarchive cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtEzsignfolderScheduledarchive'] = $dtEzsignfolderScheduledarchive;
-        $this->container['dtEzsignfolderScheduledarchive'] = (is_null($dtEzsignfolderScheduledarchive) ? null : trim((string) $dtEzsignfolderScheduledarchive));
-
-        return $this;
-    }
-
-    /**
-     * Gets dtEzsignfolderScheduleddispose
-     *
-     * @return string|null
-     */
-    public function getDtEzsignfolderScheduleddispose()
-    {
-	//return $this->container['dtEzsignfolderScheduleddispose'];
-        return is_null($this->container['dtEzsignfolderScheduleddispose']) ? null : trim($this->container['dtEzsignfolderScheduleddispose']);
-    }
-
-    /**
-     * Sets dtEzsignfolderScheduleddispose
-     *
-     * @param string|null $dtEzsignfolderScheduleddispose The scheduled date at which the Ezsignfolder should be Disposed.
-     *
-     * @return self
-     */
-    public function setDtEzsignfolderScheduleddispose($dtEzsignfolderScheduleddispose)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtEzsignfolderScheduleddispose)) {
-            //throw new \InvalidArgumentException('non-nullable dtEzsignfolderScheduleddispose cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtEzsignfolderScheduleddispose'] = $dtEzsignfolderScheduleddispose;
-        $this->container['dtEzsignfolderScheduleddispose'] = (is_null($dtEzsignfolderScheduleddispose) ? null : trim((string) $dtEzsignfolderScheduleddispose));
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsignfolderStep
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsignfolderStep|null
-     */
-    public function getEEzsignfolderStep()
-    {
-	//return $this->container['eEzsignfolderStep'];
-        return $this->container['eEzsignfolderStep'];
-    }
-
-    /**
-     * Sets eEzsignfolderStep
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsignfolderStep|null $eEzsignfolderStep eEzsignfolderStep
-     *
-     * @return self
-     */
-    public function setEEzsignfolderStep($eEzsignfolderStep)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignfolderStep)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignfolderStep cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsignfolderStep'] = $eEzsignfolderStep;
-        $this->container['eEzsignfolderStep'] = $eEzsignfolderStep;
-
-        return $this;
-    }
-
-    /**
-     * Gets dtEzsignfolderClose
-     *
-     * @return string|null
-     */
-    public function getDtEzsignfolderClose()
-    {
-	//return $this->container['dtEzsignfolderClose'];
-        return is_null($this->container['dtEzsignfolderClose']) ? null : trim($this->container['dtEzsignfolderClose']);
-    }
-
-    /**
-     * Sets dtEzsignfolderClose
-     *
-     * @param string|null $dtEzsignfolderClose The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely.
-     *
-     * @return self
-     */
-    public function setDtEzsignfolderClose($dtEzsignfolderClose)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtEzsignfolderClose)) {
-            //throw new \InvalidArgumentException('non-nullable dtEzsignfolderClose cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtEzsignfolderClose'] = $dtEzsignfolderClose;
-        $this->container['dtEzsignfolderClose'] = (is_null($dtEzsignfolderClose) ? null : trim((string) $dtEzsignfolderClose));
-
-        return $this;
-    }
-
-    /**
-     * Gets tEzsignfolderMessage
-     *
-     * @return string|null
-     */
-    public function getTEzsignfolderMessage()
-    {
-	//return $this->container['tEzsignfolderMessage'];
-        return is_null($this->container['tEzsignfolderMessage']) ? null : trim($this->container['tEzsignfolderMessage']);
-    }
-
-    /**
-     * Sets tEzsignfolderMessage
-     *
-     * @param string|null $tEzsignfolderMessage A custom text message that will be added to the email sent.
-     *
-     * @return self
-     */
-    public function setTEzsignfolderMessage($tEzsignfolderMessage)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($tEzsignfolderMessage)) {
-            //throw new \InvalidArgumentException('non-nullable tEzsignfolderMessage cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['tEzsignfolderMessage'] = $tEzsignfolderMessage;
-        $this->container['tEzsignfolderMessage'] = (is_null($tEzsignfolderMessage) ? null : trim((string) $tEzsignfolderMessage));
-
-        return $this;
-    }
-
-    /**
-     * Gets objAudit
-     *
-     * @return \eZmaxAPI\Model\CommonAudit|null
-     */
-    public function getObjAudit()
-    {
-	//return $this->container['objAudit'];
-        return $this->container['objAudit'];
-    }
-
-    /**
-     * Sets objAudit
-     *
-     * @param \eZmaxAPI\Model\CommonAudit|null $objAudit objAudit
-     *
-     * @return self
-     */
-    public function setObjAudit($objAudit)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objAudit)) {
-            //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objAudit'] = $objAudit;
-        $this->container['objAudit'] = $objAudit;
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignfolderExternalid
-     *
-     * @return string|null
-     */
-    public function getSEzsignfolderExternalid()
-    {
-	//return $this->container['sEzsignfolderExternalid'];
-        return is_null($this->container['sEzsignfolderExternalid']) ? null : trim($this->container['sEzsignfolderExternalid']);
-    }
-
-    /**
-     * Sets sEzsignfolderExternalid
-     *
-     * @param string|null $sEzsignfolderExternalid This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.
-     *
-     * @return self
-     */
-    public function setSEzsignfolderExternalid($sEzsignfolderExternalid)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignfolderExternalid)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignfolderExternalid cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,128}$/", ObjectSerializer::toString($sEzsignfolderExternalid)))) {
-        if (!is_null($sEzsignfolderExternalid) && (!preg_match("/(*UTF8)^.{0,128}$/", ObjectSerializer::toString($sEzsignfolderExternalid)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sEzsignfolderExternalid when calling EzsignfolderResponseCompoundV3., must conform to the pattern /^.{0,128}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzsignfolderExternalid)?'null':'"'.$sEzsignfolderExternalid.'"')." for sEzsignfolderExternalid when calling EzsignfolderResponseCompoundV3., must conform to the pattern /^.{0,128}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignfolderExternalid'] = $sEzsignfolderExternalid;
-        $this->container['sEzsignfolderExternalid'] = (is_null($sEzsignfolderExternalid) ? null : trim((string) $sEzsignfolderExternalid));
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsignfolderAccess
-     *
-     * @return \eZmaxAPI\Model\ComputedEEzsignfolderAccess|null
-     */
-    public function getEEzsignfolderAccess()
-    {
-	//return $this->container['eEzsignfolderAccess'];
-        return $this->container['eEzsignfolderAccess'];
-    }
-
-    /**
-     * Sets eEzsignfolderAccess
-     *
-     * @param \eZmaxAPI\Model\ComputedEEzsignfolderAccess|null $eEzsignfolderAccess eEzsignfolderAccess
-     *
-     * @return self
-     */
-    public function setEEzsignfolderAccess($eEzsignfolderAccess)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignfolderAccess)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignfolderAccess cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsignfolderAccess'] = $eEzsignfolderAccess;
-        $this->container['eEzsignfolderAccess'] = $eEzsignfolderAccess;
-
-        return $this;
-    }
 
     /**
      * Gets objTimezone

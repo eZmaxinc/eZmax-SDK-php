@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class ModulesectionResponseCompound extends ModulesectionResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,10 +57,6 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiModulesectionID' => 'int',
-        'fkiModuleID' => 'int',
-        'sModulesectionInternalname' => 'string',
-        'sModulesectionNameX' => 'string',
         'aObjPermission' => '\eZmaxAPI\Model\PermissionResponseCompound[]'
     ];
 
@@ -74,10 +68,6 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiModulesectionID' => null,
-        'fkiModuleID' => null,
-        'sModulesectionInternalname' => null,
-        'sModulesectionNameX' => null,
         'aObjPermission' => null
     ];
 
@@ -87,11 +77,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiModulesectionID' => false,
-		'fkiModuleID' => false,
-		'sModulesectionInternalname' => false,
-		'sModulesectionNameX' => false,
-		'aObjPermission' => false
+        'aObjPermission' => false
     ];
 
     /**
@@ -108,7 +94,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -118,7 +104,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -128,7 +114,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -180,10 +166,6 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiModulesectionID' => 'pkiModulesectionID',
-        'fkiModuleID' => 'fkiModuleID',
-        'sModulesectionInternalname' => 'sModulesectionInternalname',
-        'sModulesectionNameX' => 'sModulesectionNameX',
         'aObjPermission' => 'a_objPermission'
     ];
 
@@ -193,10 +175,6 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'pkiModulesectionID' => 'setPkiModulesectionID',
-        'fkiModuleID' => 'setFkiModuleID',
-        'sModulesectionInternalname' => 'setSModulesectionInternalname',
-        'sModulesectionNameX' => 'setSModulesectionNameX',
         'aObjPermission' => 'setAObjPermission'
     ];
 
@@ -206,10 +184,6 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'pkiModulesectionID' => 'getPkiModulesectionID',
-        'fkiModuleID' => 'getFkiModuleID',
-        'sModulesectionInternalname' => 'getSModulesectionInternalname',
-        'sModulesectionNameX' => 'getSModulesectionNameX',
         'aObjPermission' => 'getAObjPermission'
     ];
 
@@ -221,7 +195,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -231,7 +205,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -241,7 +215,7 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -255,12 +229,6 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -270,10 +238,8 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiModulesectionID', $data ?? [], null);
-        $this->setIfExists('fkiModuleID', $data ?? [], null);
-        $this->setIfExists('sModulesectionInternalname', $data ?? [], null);
-        $this->setIfExists('sModulesectionNameX', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjPermission', $data ?? [], null);
     }
 
@@ -302,28 +268,8 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiModulesectionID'] === null) {
-            $invalidProperties[] = "'pkiModulesectionID' can't be null";
-        }
-        if (($this->container['pkiModulesectionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiModulesectionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiModuleID'] === null) {
-            $invalidProperties[] = "'fkiModuleID' can't be null";
-        }
-        if (($this->container['fkiModuleID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiModuleID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sModulesectionInternalname'] === null) {
-            $invalidProperties[] = "'sModulesectionInternalname' can't be null";
-        }
-        if ($this->container['sModulesectionNameX'] === null) {
-            $invalidProperties[] = "'sModulesectionNameX' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -338,148 +284,6 @@ class ModulesectionResponseCompound implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiModulesectionID
-     *
-     * @return int
-     */
-    public function getPkiModulesectionID()
-    {
-	//return $this->container['pkiModulesectionID'];
-        return $this->container['pkiModulesectionID'];
-    }
-
-    /**
-     * Sets pkiModulesectionID
-     *
-     * @param int $pkiModulesectionID The unique ID of the Modulesection
-     *
-     * @return self
-     */
-    public function setPkiModulesectionID($pkiModulesectionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiModulesectionID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiModulesectionID cannot be null');
-        //}
-
-	//if (($pkiModulesectionID < 0)) {
-        if (($pkiModulesectionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiModulesectionID when calling ModulesectionResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiModulesectionID)?'null':'"'.$pkiModulesectionID.'"').' for pkiModulesectionID when calling ModulesectionResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiModulesectionID'] = $pkiModulesectionID;
-        $this->container['pkiModulesectionID'] = (is_null($pkiModulesectionID) ? null : (int) $pkiModulesectionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiModuleID
-     *
-     * @return int
-     */
-    public function getFkiModuleID()
-    {
-	//return $this->container['fkiModuleID'];
-        return $this->container['fkiModuleID'];
-    }
-
-    /**
-     * Sets fkiModuleID
-     *
-     * @param int $fkiModuleID The unique ID of the Module
-     *
-     * @return self
-     */
-    public function setFkiModuleID($fkiModuleID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiModuleID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiModuleID cannot be null');
-        //}
-
-	//if (($fkiModuleID < 0)) {
-        if (($fkiModuleID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiModuleID when calling ModulesectionResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiModuleID)?'null':'"'.$fkiModuleID.'"').' for fkiModuleID when calling ModulesectionResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiModuleID'] = $fkiModuleID;
-        $this->container['fkiModuleID'] = (is_null($fkiModuleID) ? null : (int) $fkiModuleID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sModulesectionInternalname
-     *
-     * @return string
-     */
-    public function getSModulesectionInternalname()
-    {
-	//return $this->container['sModulesectionInternalname'];
-        return is_null($this->container['sModulesectionInternalname']) ? null : trim($this->container['sModulesectionInternalname']);
-    }
-
-    /**
-     * Sets sModulesectionInternalname
-     *
-     * @param string $sModulesectionInternalname The Internal name of the Module section.
-     *
-     * @return self
-     */
-    public function setSModulesectionInternalname($sModulesectionInternalname)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sModulesectionInternalname)) {
-            //throw new \InvalidArgumentException('non-nullable sModulesectionInternalname cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sModulesectionInternalname'] = $sModulesectionInternalname;
-        $this->container['sModulesectionInternalname'] = (is_null($sModulesectionInternalname) ? null : trim((string) $sModulesectionInternalname));
-
-        return $this;
-    }
-
-    /**
-     * Gets sModulesectionNameX
-     *
-     * @return string
-     */
-    public function getSModulesectionNameX()
-    {
-	//return $this->container['sModulesectionNameX'];
-        return is_null($this->container['sModulesectionNameX']) ? null : trim($this->container['sModulesectionNameX']);
-    }
-
-    /**
-     * Sets sModulesectionNameX
-     *
-     * @param string $sModulesectionNameX The Name of the Modulesection in the language of the requester
-     *
-     * @return self
-     */
-    public function setSModulesectionNameX($sModulesectionNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sModulesectionNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sModulesectionNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sModulesectionNameX'] = $sModulesectionNameX;
-        $this->container['sModulesectionNameX'] = (is_null($sModulesectionNameX) ? null : trim((string) $sModulesectionNameX));
-
-        return $this;
-    }
 
     /**
      * Gets aObjPermission

@@ -81,51 +81,6 @@ class CustomNotificationtestgetnotificationtestsResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiNotificationtestID"
-     */
-    public function testPropertyPkiNotificationtestID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objNotificationtestName"
-     */
-    public function testPropertyObjNotificationtestName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiNotificationsubsectionID"
-     */
-    public function testPropertyFkiNotificationsubsectionID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sNotificationtestFunction"
-     */
-    public function testPropertySNotificationtestFunction()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sNotificationtestNameX"
-     */
-    public function testPropertySNotificationtestNameX()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "eNotificationpreferenceStatus"
      */
     public function testPropertyENotificationpreferenceStatus()

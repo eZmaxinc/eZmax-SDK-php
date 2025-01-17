@@ -81,42 +81,6 @@ class ContactinformationsRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "iAddressDefault"
-     */
-    public function testPropertyIAddressDefault()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iPhoneDefault"
-     */
-    public function testPropertyIPhoneDefault()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iEmailDefault"
-     */
-    public function testPropertyIEmailDefault()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iWebsiteDefault"
-     */
-    public function testPropertyIWebsiteDefault()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjAddress"
      */
     public function testPropertyAObjAddress()

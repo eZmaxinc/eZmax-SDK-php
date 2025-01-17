@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class DiscussionmessageRequestCompound extends DiscussionmessageRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,10 +57,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiDiscussionmessageID' => 'int',
-        'fkiDiscussionID' => 'int',
-        'fkiDiscussionmembershipIDActionrequired' => 'int',
-        'tDiscussionmessageContent' => 'string'
+        
     ];
 
     /**
@@ -73,10 +68,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiDiscussionmessageID' => null,
-        'fkiDiscussionID' => null,
-        'fkiDiscussionmembershipIDActionrequired' => null,
-        'tDiscussionmessageContent' => null
+        
     ];
 
     /**
@@ -85,10 +77,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiDiscussionmessageID' => false,
-		'fkiDiscussionID' => false,
-		'fkiDiscussionmembershipIDActionrequired' => false,
-		'tDiscussionmessageContent' => false
+        
     ];
 
     /**
@@ -105,7 +94,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -115,7 +104,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -125,7 +114,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -177,10 +166,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiDiscussionmessageID' => 'pkiDiscussionmessageID',
-        'fkiDiscussionID' => 'fkiDiscussionID',
-        'fkiDiscussionmembershipIDActionrequired' => 'fkiDiscussionmembershipIDActionrequired',
-        'tDiscussionmessageContent' => 'tDiscussionmessageContent'
+        
     ];
 
     /**
@@ -189,10 +175,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'pkiDiscussionmessageID' => 'setPkiDiscussionmessageID',
-        'fkiDiscussionID' => 'setFkiDiscussionID',
-        'fkiDiscussionmembershipIDActionrequired' => 'setFkiDiscussionmembershipIDActionrequired',
-        'tDiscussionmessageContent' => 'setTDiscussionmessageContent'
+        
     ];
 
     /**
@@ -201,10 +184,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'pkiDiscussionmessageID' => 'getPkiDiscussionmessageID',
-        'fkiDiscussionID' => 'getFkiDiscussionID',
-        'fkiDiscussionmembershipIDActionrequired' => 'getFkiDiscussionmembershipIDActionrequired',
-        'tDiscussionmessageContent' => 'getTDiscussionmessageContent'
+        
     ];
 
     /**
@@ -215,7 +195,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -225,7 +205,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -235,7 +215,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -249,12 +229,6 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -264,10 +238,8 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiDiscussionmessageID', $data ?? [], null);
-        $this->setIfExists('fkiDiscussionID', $data ?? [], null);
-        $this->setIfExists('fkiDiscussionmembershipIDActionrequired', $data ?? [], null);
-        $this->setIfExists('tDiscussionmessageContent', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -295,42 +267,7 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['pkiDiscussionmessageID']) && ($this->container['pkiDiscussionmessageID'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'pkiDiscussionmessageID', must be smaller than or equal to 16777215.";
-        }
-
-        if (!is_null($this->container['pkiDiscussionmessageID']) && ($this->container['pkiDiscussionmessageID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiDiscussionmessageID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiDiscussionID'] === null) {
-            $invalidProperties[] = "'fkiDiscussionID' can't be null";
-        }
-        if (($this->container['fkiDiscussionID'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'fkiDiscussionID', must be smaller than or equal to 16777215.";
-        }
-
-        if (($this->container['fkiDiscussionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiDiscussionID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiDiscussionmembershipIDActionrequired']) && ($this->container['fkiDiscussionmembershipIDActionrequired'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'fkiDiscussionmembershipIDActionrequired', must be smaller than or equal to 16777215.";
-        }
-
-        if (!is_null($this->container['fkiDiscussionmembershipIDActionrequired']) && ($this->container['fkiDiscussionmembershipIDActionrequired'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiDiscussionmembershipIDActionrequired', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['tDiscussionmessageContent'] === null) {
-            $invalidProperties[] = "'tDiscussionmessageContent' can't be null";
-        }
-	//if (!preg_match("/^.{0,65535}$/", $this->container['tDiscussionmessageContent'])) {
-        if (!is_null($this->container['tDiscussionmessageContent']) && !preg_match("/(*UTF8)^.{0,65535}$/", $this->container['tDiscussionmessageContent'])) {
-            $invalidProperties[] = "invalid value for 'tDiscussionmessageContent', must be conform to the pattern /^.{0,65535}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -346,177 +283,6 @@ class DiscussionmessageRequestCompound implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiDiscussionmessageID
-     *
-     * @return int|null
-     */
-    public function getPkiDiscussionmessageID()
-    {
-	//return $this->container['pkiDiscussionmessageID'];
-        return $this->container['pkiDiscussionmessageID'];
-    }
-
-    /**
-     * Sets pkiDiscussionmessageID
-     *
-     * @param int|null $pkiDiscussionmessageID The unique ID of the Discussionmessage
-     *
-     * @return self
-     */
-    public function setPkiDiscussionmessageID($pkiDiscussionmessageID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiDiscussionmessageID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiDiscussionmessageID cannot be null');
-        //}
-
-	//if (($pkiDiscussionmessageID > 16777215)) {
-        if (!is_null($pkiDiscussionmessageID) && ($pkiDiscussionmessageID > 16777215)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiDiscussionmessageID when calling DiscussionmessageRequestCompound., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDiscussionmessageID)?'null':'"'.$pkiDiscussionmessageID.'"').' for pkiDiscussionmessageID when calling DiscussionmessageRequestCompound., must be smaller than or equal to 16777215.');
-        }
-	//if (($pkiDiscussionmessageID < 0)) {
-        if (!is_null($pkiDiscussionmessageID) && ($pkiDiscussionmessageID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiDiscussionmessageID when calling DiscussionmessageRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDiscussionmessageID)?'null':'"'.$pkiDiscussionmessageID.'"').' for pkiDiscussionmessageID when calling DiscussionmessageRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiDiscussionmessageID'] = $pkiDiscussionmessageID;
-        $this->container['pkiDiscussionmessageID'] = (is_null($pkiDiscussionmessageID) ? null : (int) $pkiDiscussionmessageID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiDiscussionID
-     *
-     * @return int
-     */
-    public function getFkiDiscussionID()
-    {
-	//return $this->container['fkiDiscussionID'];
-        return $this->container['fkiDiscussionID'];
-    }
-
-    /**
-     * Sets fkiDiscussionID
-     *
-     * @param int $fkiDiscussionID The unique ID of the Discussion
-     *
-     * @return self
-     */
-    public function setFkiDiscussionID($fkiDiscussionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiDiscussionID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiDiscussionID cannot be null');
-        //}
-
-	//if (($fkiDiscussionID > 16777215)) {
-        if (($fkiDiscussionID > 16777215)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiDiscussionID when calling DiscussionmessageRequestCompound., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiDiscussionID)?'null':'"'.$fkiDiscussionID.'"').' for fkiDiscussionID when calling DiscussionmessageRequestCompound., must be smaller than or equal to 16777215.');
-        }
-	//if (($fkiDiscussionID < 0)) {
-        if (($fkiDiscussionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiDiscussionID when calling DiscussionmessageRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiDiscussionID)?'null':'"'.$fkiDiscussionID.'"').' for fkiDiscussionID when calling DiscussionmessageRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiDiscussionID'] = $fkiDiscussionID;
-        $this->container['fkiDiscussionID'] = (is_null($fkiDiscussionID) ? null : (int) $fkiDiscussionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiDiscussionmembershipIDActionrequired
-     *
-     * @return int|null
-     */
-    public function getFkiDiscussionmembershipIDActionrequired()
-    {
-	//return $this->container['fkiDiscussionmembershipIDActionrequired'];
-        return $this->container['fkiDiscussionmembershipIDActionrequired'];
-    }
-
-    /**
-     * Sets fkiDiscussionmembershipIDActionrequired
-     *
-     * @param int|null $fkiDiscussionmembershipIDActionrequired The unique ID of the Discussionmembership
-     *
-     * @return self
-     */
-    public function setFkiDiscussionmembershipIDActionrequired($fkiDiscussionmembershipIDActionrequired)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiDiscussionmembershipIDActionrequired)) {
-            //throw new \InvalidArgumentException('non-nullable fkiDiscussionmembershipIDActionrequired cannot be null');
-        //}
-
-	//if (($fkiDiscussionmembershipIDActionrequired > 16777215)) {
-        if (!is_null($fkiDiscussionmembershipIDActionrequired) && ($fkiDiscussionmembershipIDActionrequired > 16777215)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiDiscussionmembershipIDActionrequired when calling DiscussionmessageRequestCompound., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiDiscussionmembershipIDActionrequired)?'null':'"'.$fkiDiscussionmembershipIDActionrequired.'"').' for fkiDiscussionmembershipIDActionrequired when calling DiscussionmessageRequestCompound., must be smaller than or equal to 16777215.');
-        }
-	//if (($fkiDiscussionmembershipIDActionrequired < 0)) {
-        if (!is_null($fkiDiscussionmembershipIDActionrequired) && ($fkiDiscussionmembershipIDActionrequired < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiDiscussionmembershipIDActionrequired when calling DiscussionmessageRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiDiscussionmembershipIDActionrequired)?'null':'"'.$fkiDiscussionmembershipIDActionrequired.'"').' for fkiDiscussionmembershipIDActionrequired when calling DiscussionmessageRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiDiscussionmembershipIDActionrequired'] = $fkiDiscussionmembershipIDActionrequired;
-        $this->container['fkiDiscussionmembershipIDActionrequired'] = (is_null($fkiDiscussionmembershipIDActionrequired) ? null : (int) $fkiDiscussionmembershipIDActionrequired);
-
-        return $this;
-    }
-
-    /**
-     * Gets tDiscussionmessageContent
-     *
-     * @return string
-     */
-    public function getTDiscussionmessageContent()
-    {
-	//return $this->container['tDiscussionmessageContent'];
-        return is_null($this->container['tDiscussionmessageContent']) ? null : trim($this->container['tDiscussionmessageContent']);
-    }
-
-    /**
-     * Sets tDiscussionmessageContent
-     *
-     * @param string $tDiscussionmessageContent The content of the Discussionmessage
-     *
-     * @return self
-     */
-    public function setTDiscussionmessageContent($tDiscussionmessageContent)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($tDiscussionmessageContent)) {
-            //throw new \InvalidArgumentException('non-nullable tDiscussionmessageContent cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,65535}$/", ObjectSerializer::toString($tDiscussionmessageContent)))) {
-        if (!is_null($tDiscussionmessageContent) && (!preg_match("/(*UTF8)^.{0,65535}$/", ObjectSerializer::toString($tDiscussionmessageContent)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$tDiscussionmessageContent when calling DiscussionmessageRequestCompound., must conform to the pattern /^.{0,65535}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($tDiscussionmessageContent)?'null':'"'.$tDiscussionmessageContent.'"')." for tDiscussionmessageContent when calling DiscussionmessageRequestCompound., must conform to the pattern /^.{0,65535}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['tDiscussionmessageContent'] = $tDiscussionmessageContent;
-        $this->container['tDiscussionmessageContent'] = (is_null($tDiscussionmessageContent) ? null : trim((string) $tDiscussionmessageContent));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

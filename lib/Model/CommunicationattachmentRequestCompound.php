@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class CommunicationattachmentRequestCompound extends CommunicationattachmentRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,10 +57,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiCommunicationattachmentID' => 'int',
-        'fkiAttachmentID' => 'int',
-        'fkiInvoiceID' => 'int',
-        'fkiSalarypreparationID' => 'int'
+        
     ];
 
     /**
@@ -73,10 +68,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiCommunicationattachmentID' => null,
-        'fkiAttachmentID' => null,
-        'fkiInvoiceID' => null,
-        'fkiSalarypreparationID' => null
+        
     ];
 
     /**
@@ -85,10 +77,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiCommunicationattachmentID' => false,
-		'fkiAttachmentID' => false,
-		'fkiInvoiceID' => false,
-		'fkiSalarypreparationID' => false
+        
     ];
 
     /**
@@ -105,7 +94,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -115,7 +104,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -125,7 +114,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -177,10 +166,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiCommunicationattachmentID' => 'pkiCommunicationattachmentID',
-        'fkiAttachmentID' => 'fkiAttachmentID',
-        'fkiInvoiceID' => 'fkiInvoiceID',
-        'fkiSalarypreparationID' => 'fkiSalarypreparationID'
+        
     ];
 
     /**
@@ -189,10 +175,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'pkiCommunicationattachmentID' => 'setPkiCommunicationattachmentID',
-        'fkiAttachmentID' => 'setFkiAttachmentID',
-        'fkiInvoiceID' => 'setFkiInvoiceID',
-        'fkiSalarypreparationID' => 'setFkiSalarypreparationID'
+        
     ];
 
     /**
@@ -201,10 +184,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'pkiCommunicationattachmentID' => 'getPkiCommunicationattachmentID',
-        'fkiAttachmentID' => 'getFkiAttachmentID',
-        'fkiInvoiceID' => 'getFkiInvoiceID',
-        'fkiSalarypreparationID' => 'getFkiSalarypreparationID'
+        
     ];
 
     /**
@@ -215,7 +195,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -225,7 +205,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -235,7 +215,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -249,12 +229,6 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -264,10 +238,8 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiCommunicationattachmentID', $data ?? [], null);
-        $this->setIfExists('fkiAttachmentID', $data ?? [], null);
-        $this->setIfExists('fkiInvoiceID', $data ?? [], null);
-        $this->setIfExists('fkiSalarypreparationID', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -295,19 +267,7 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['fkiAttachmentID']) && ($this->container['fkiAttachmentID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiAttachmentID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiInvoiceID']) && ($this->container['fkiInvoiceID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiInvoiceID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiSalarypreparationID']) && ($this->container['fkiSalarypreparationID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiSalarypreparationID', must be bigger than or equal to 0.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -323,155 +283,6 @@ class CommunicationattachmentRequestCompound implements ModelInterface, ArrayAcc
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiCommunicationattachmentID
-     *
-     * @return int|null
-     */
-    public function getPkiCommunicationattachmentID()
-    {
-	//return $this->container['pkiCommunicationattachmentID'];
-        return $this->container['pkiCommunicationattachmentID'];
-    }
-
-    /**
-     * Sets pkiCommunicationattachmentID
-     *
-     * @param int|null $pkiCommunicationattachmentID The unique ID of the Communicationattachment
-     *
-     * @return self
-     */
-    public function setPkiCommunicationattachmentID($pkiCommunicationattachmentID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiCommunicationattachmentID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiCommunicationattachmentID cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiCommunicationattachmentID'] = $pkiCommunicationattachmentID;
-        $this->container['pkiCommunicationattachmentID'] = (is_null($pkiCommunicationattachmentID) ? null : (int) $pkiCommunicationattachmentID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiAttachmentID
-     *
-     * @return int|null
-     */
-    public function getFkiAttachmentID()
-    {
-	//return $this->container['fkiAttachmentID'];
-        return $this->container['fkiAttachmentID'];
-    }
-
-    /**
-     * Sets fkiAttachmentID
-     *
-     * @param int|null $fkiAttachmentID The unique ID of the Attachment.
-     *
-     * @return self
-     */
-    public function setFkiAttachmentID($fkiAttachmentID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiAttachmentID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiAttachmentID cannot be null');
-        //}
-
-	//if (($fkiAttachmentID < 0)) {
-        if (!is_null($fkiAttachmentID) && ($fkiAttachmentID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiAttachmentID when calling CommunicationattachmentRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiAttachmentID)?'null':'"'.$fkiAttachmentID.'"').' for fkiAttachmentID when calling CommunicationattachmentRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiAttachmentID'] = $fkiAttachmentID;
-        $this->container['fkiAttachmentID'] = (is_null($fkiAttachmentID) ? null : (int) $fkiAttachmentID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiInvoiceID
-     *
-     * @return int|null
-     */
-    public function getFkiInvoiceID()
-    {
-	//return $this->container['fkiInvoiceID'];
-        return $this->container['fkiInvoiceID'];
-    }
-
-    /**
-     * Sets fkiInvoiceID
-     *
-     * @param int|null $fkiInvoiceID The unique ID of the Invoice.
-     *
-     * @return self
-     */
-    public function setFkiInvoiceID($fkiInvoiceID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiInvoiceID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiInvoiceID cannot be null');
-        //}
-
-	//if (($fkiInvoiceID < 0)) {
-        if (!is_null($fkiInvoiceID) && ($fkiInvoiceID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiInvoiceID when calling CommunicationattachmentRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiInvoiceID)?'null':'"'.$fkiInvoiceID.'"').' for fkiInvoiceID when calling CommunicationattachmentRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiInvoiceID'] = $fkiInvoiceID;
-        $this->container['fkiInvoiceID'] = (is_null($fkiInvoiceID) ? null : (int) $fkiInvoiceID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiSalarypreparationID
-     *
-     * @return int|null
-     */
-    public function getFkiSalarypreparationID()
-    {
-	//return $this->container['fkiSalarypreparationID'];
-        return $this->container['fkiSalarypreparationID'];
-    }
-
-    /**
-     * Sets fkiSalarypreparationID
-     *
-     * @param int|null $fkiSalarypreparationID The unique ID of the Salarypreparation.
-     *
-     * @return self
-     */
-    public function setFkiSalarypreparationID($fkiSalarypreparationID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiSalarypreparationID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiSalarypreparationID cannot be null');
-        //}
-
-	//if (($fkiSalarypreparationID < 0)) {
-        if (!is_null($fkiSalarypreparationID) && ($fkiSalarypreparationID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiSalarypreparationID when calling CommunicationattachmentRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiSalarypreparationID)?'null':'"'.$fkiSalarypreparationID.'"').' for fkiSalarypreparationID when calling CommunicationattachmentRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiSalarypreparationID'] = $fkiSalarypreparationID;
-        $this->container['fkiSalarypreparationID'] = (is_null($fkiSalarypreparationID) ? null : (int) $fkiSalarypreparationID);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

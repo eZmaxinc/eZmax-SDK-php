@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsignbulksendtransmissionResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignbulksendtransmissionResponseCompound extends EzsignbulksendtransmissionResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,6 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignbulksendtransmissionID' => 'int',
-        'fkiEzsignbulksendID' => 'int',
-        'sEzsignbulksendtransmissionDescription' => 'string',
-        'iEzsignbulksendtransmissionErrors' => 'int',
-        'objAudit' => '\eZmaxAPI\Model\CommonAudit',
         'aObjEzsignfoldertransmission' => '\eZmaxAPI\Model\CustomEzsignfoldertransmissionResponse[]'
     ];
 
@@ -75,11 +68,6 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignbulksendtransmissionID' => null,
-        'fkiEzsignbulksendID' => null,
-        'sEzsignbulksendtransmissionDescription' => null,
-        'iEzsignbulksendtransmissionErrors' => null,
-        'objAudit' => null,
         'aObjEzsignfoldertransmission' => null
     ];
 
@@ -89,12 +77,7 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsignbulksendtransmissionID' => false,
-		'fkiEzsignbulksendID' => false,
-		'sEzsignbulksendtransmissionDescription' => false,
-		'iEzsignbulksendtransmissionErrors' => false,
-		'objAudit' => false,
-		'aObjEzsignfoldertransmission' => false
+        'aObjEzsignfoldertransmission' => false
     ];
 
     /**
@@ -111,7 +94,7 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -121,7 +104,7 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -131,7 +114,7 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -183,11 +166,6 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignbulksendtransmissionID' => 'pkiEzsignbulksendtransmissionID',
-        'fkiEzsignbulksendID' => 'fkiEzsignbulksendID',
-        'sEzsignbulksendtransmissionDescription' => 'sEzsignbulksendtransmissionDescription',
-        'iEzsignbulksendtransmissionErrors' => 'iEzsignbulksendtransmissionErrors',
-        'objAudit' => 'objAudit',
         'aObjEzsignfoldertransmission' => 'a_objEzsignfoldertransmission'
     ];
 
@@ -197,11 +175,6 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignbulksendtransmissionID' => 'setPkiEzsignbulksendtransmissionID',
-        'fkiEzsignbulksendID' => 'setFkiEzsignbulksendID',
-        'sEzsignbulksendtransmissionDescription' => 'setSEzsignbulksendtransmissionDescription',
-        'iEzsignbulksendtransmissionErrors' => 'setIEzsignbulksendtransmissionErrors',
-        'objAudit' => 'setObjAudit',
         'aObjEzsignfoldertransmission' => 'setAObjEzsignfoldertransmission'
     ];
 
@@ -211,11 +184,6 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignbulksendtransmissionID' => 'getPkiEzsignbulksendtransmissionID',
-        'fkiEzsignbulksendID' => 'getFkiEzsignbulksendID',
-        'sEzsignbulksendtransmissionDescription' => 'getSEzsignbulksendtransmissionDescription',
-        'iEzsignbulksendtransmissionErrors' => 'getIEzsignbulksendtransmissionErrors',
-        'objAudit' => 'getObjAudit',
         'aObjEzsignfoldertransmission' => 'getAObjEzsignfoldertransmission'
     ];
 
@@ -227,7 +195,7 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -237,7 +205,7 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -247,7 +215,7 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -261,12 +229,6 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -276,11 +238,8 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsignbulksendtransmissionID', $data ?? [], null);
-        $this->setIfExists('fkiEzsignbulksendID', $data ?? [], null);
-        $this->setIfExists('sEzsignbulksendtransmissionDescription', $data ?? [], null);
-        $this->setIfExists('iEzsignbulksendtransmissionErrors', $data ?? [], null);
-        $this->setIfExists('objAudit', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjEzsignfoldertransmission', $data ?? [], null);
     }
 
@@ -309,35 +268,8 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiEzsignbulksendtransmissionID'] === null) {
-            $invalidProperties[] = "'pkiEzsignbulksendtransmissionID' can't be null";
-        }
-        if (($this->container['pkiEzsignbulksendtransmissionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignbulksendtransmissionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsignbulksendID'] === null) {
-            $invalidProperties[] = "'fkiEzsignbulksendID' can't be null";
-        }
-        if (($this->container['fkiEzsignbulksendID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsignbulksendID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sEzsignbulksendtransmissionDescription'] === null) {
-            $invalidProperties[] = "'sEzsignbulksendtransmissionDescription' can't be null";
-        }
-        if ($this->container['iEzsignbulksendtransmissionErrors'] === null) {
-            $invalidProperties[] = "'iEzsignbulksendtransmissionErrors' can't be null";
-        }
-        if (($this->container['iEzsignbulksendtransmissionErrors'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsignbulksendtransmissionErrors', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objAudit'] === null) {
-            $invalidProperties[] = "'objAudit' can't be null";
-        }
         if ($this->container['aObjEzsignfoldertransmission'] === null) {
             $invalidProperties[] = "'aObjEzsignfoldertransmission' can't be null";
         }
@@ -355,187 +287,6 @@ class EzsignbulksendtransmissionResponseCompound implements ModelInterface, Arra
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsignbulksendtransmissionID
-     *
-     * @return int
-     */
-    public function getPkiEzsignbulksendtransmissionID()
-    {
-	//return $this->container['pkiEzsignbulksendtransmissionID'];
-        return $this->container['pkiEzsignbulksendtransmissionID'];
-    }
-
-    /**
-     * Sets pkiEzsignbulksendtransmissionID
-     *
-     * @param int $pkiEzsignbulksendtransmissionID The unique ID of the Ezsignbulksendtransmission
-     *
-     * @return self
-     */
-    public function setPkiEzsignbulksendtransmissionID($pkiEzsignbulksendtransmissionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsignbulksendtransmissionID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsignbulksendtransmissionID cannot be null');
-        //}
-
-	//if (($pkiEzsignbulksendtransmissionID < 0)) {
-        if (($pkiEzsignbulksendtransmissionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignbulksendtransmissionID when calling EzsignbulksendtransmissionResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignbulksendtransmissionID)?'null':'"'.$pkiEzsignbulksendtransmissionID.'"').' for pkiEzsignbulksendtransmissionID when calling EzsignbulksendtransmissionResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsignbulksendtransmissionID'] = $pkiEzsignbulksendtransmissionID;
-        $this->container['pkiEzsignbulksendtransmissionID'] = (is_null($pkiEzsignbulksendtransmissionID) ? null : (int) $pkiEzsignbulksendtransmissionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignbulksendID
-     *
-     * @return int
-     */
-    public function getFkiEzsignbulksendID()
-    {
-	//return $this->container['fkiEzsignbulksendID'];
-        return $this->container['fkiEzsignbulksendID'];
-    }
-
-    /**
-     * Sets fkiEzsignbulksendID
-     *
-     * @param int $fkiEzsignbulksendID The unique ID of the Ezsignbulksend
-     *
-     * @return self
-     */
-    public function setFkiEzsignbulksendID($fkiEzsignbulksendID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsignbulksendID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsignbulksendID cannot be null');
-        //}
-
-	//if (($fkiEzsignbulksendID < 0)) {
-        if (($fkiEzsignbulksendID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsignbulksendID when calling EzsignbulksendtransmissionResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignbulksendID)?'null':'"'.$fkiEzsignbulksendID.'"').' for fkiEzsignbulksendID when calling EzsignbulksendtransmissionResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsignbulksendID'] = $fkiEzsignbulksendID;
-        $this->container['fkiEzsignbulksendID'] = (is_null($fkiEzsignbulksendID) ? null : (int) $fkiEzsignbulksendID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignbulksendtransmissionDescription
-     *
-     * @return string
-     */
-    public function getSEzsignbulksendtransmissionDescription()
-    {
-	//return $this->container['sEzsignbulksendtransmissionDescription'];
-        return is_null($this->container['sEzsignbulksendtransmissionDescription']) ? null : trim($this->container['sEzsignbulksendtransmissionDescription']);
-    }
-
-    /**
-     * Sets sEzsignbulksendtransmissionDescription
-     *
-     * @param string $sEzsignbulksendtransmissionDescription The description of the Ezsignbulksendtransmission
-     *
-     * @return self
-     */
-    public function setSEzsignbulksendtransmissionDescription($sEzsignbulksendtransmissionDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignbulksendtransmissionDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignbulksendtransmissionDescription cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignbulksendtransmissionDescription'] = $sEzsignbulksendtransmissionDescription;
-        $this->container['sEzsignbulksendtransmissionDescription'] = (is_null($sEzsignbulksendtransmissionDescription) ? null : trim((string) $sEzsignbulksendtransmissionDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignbulksendtransmissionErrors
-     *
-     * @return int
-     */
-    public function getIEzsignbulksendtransmissionErrors()
-    {
-	//return $this->container['iEzsignbulksendtransmissionErrors'];
-        return $this->container['iEzsignbulksendtransmissionErrors'];
-    }
-
-    /**
-     * Sets iEzsignbulksendtransmissionErrors
-     *
-     * @param int $iEzsignbulksendtransmissionErrors The number of errors during the Ezsignbulksendtransmission
-     *
-     * @return self
-     */
-    public function setIEzsignbulksendtransmissionErrors($iEzsignbulksendtransmissionErrors)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsignbulksendtransmissionErrors)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsignbulksendtransmissionErrors cannot be null');
-        //}
-
-	//if (($iEzsignbulksendtransmissionErrors < 0)) {
-        if (($iEzsignbulksendtransmissionErrors < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignbulksendtransmissionErrors when calling EzsignbulksendtransmissionResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignbulksendtransmissionErrors)?'null':'"'.$iEzsignbulksendtransmissionErrors.'"').' for iEzsignbulksendtransmissionErrors when calling EzsignbulksendtransmissionResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsignbulksendtransmissionErrors'] = $iEzsignbulksendtransmissionErrors;
-        $this->container['iEzsignbulksendtransmissionErrors'] = (is_null($iEzsignbulksendtransmissionErrors) ? null : (int) $iEzsignbulksendtransmissionErrors);
-
-        return $this;
-    }
-
-    /**
-     * Gets objAudit
-     *
-     * @return \eZmaxAPI\Model\CommonAudit
-     */
-    public function getObjAudit()
-    {
-	//return $this->container['objAudit'];
-        return $this->container['objAudit'];
-    }
-
-    /**
-     * Sets objAudit
-     *
-     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
-     *
-     * @return self
-     */
-    public function setObjAudit($objAudit)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objAudit)) {
-            //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objAudit'] = $objAudit;
-        $this->container['objAudit'] = $objAudit;
-
-        return $this;
-    }
 
     /**
      * Gets aObjEzsignfoldertransmission

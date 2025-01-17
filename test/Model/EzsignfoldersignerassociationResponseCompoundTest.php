@@ -81,60 +81,6 @@ class EzsignfoldersignerassociationResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiEzsignfoldersignerassociationID"
-     */
-    public function testPropertyPkiEzsignfoldersignerassociationID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsignfolderID"
-     */
-    public function testPropertyFkiEzsignfolderID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bEzsignfoldersignerassociationDelayedsend"
-     */
-    public function testPropertyBEzsignfoldersignerassociationDelayedsend()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bEzsignfoldersignerassociationReceivecopy"
-     */
-    public function testPropertyBEzsignfoldersignerassociationReceivecopy()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tEzsignfoldersignerassociationMessage"
-     */
-    public function testPropertyTEzsignfoldersignerassociationMessage()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bEzsignfoldersignerassociationAllowsigninginperson"
-     */
-    public function testPropertyBEzsignfoldersignerassociationAllowsigninginperson()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "objEzsignsignergroup"
      */
     public function testPropertyObjEzsignsignergroup()

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class VersionhistoryResponseCompound extends VersionhistoryResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,17 +57,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiVersionhistoryID' => 'int',
-        'fkiModuleID' => 'int',
-        'fkiModulesectionID' => 'int',
-        'sModuleNameX' => 'string',
-        'sModulesectionNameX' => 'string',
-        'eVersionhistoryUsertype' => '\eZmaxAPI\Model\FieldEVersionhistoryUsertype',
-        'objVersionhistoryDetail' => '\eZmaxAPI\Model\MultilingualVersionhistoryDetail',
-        'dtVersionhistoryDate' => 'string',
-        'dtVersionhistoryDateend' => 'string',
-        'eVersionhistoryType' => '\eZmaxAPI\Model\FieldEVersionhistoryType',
-        'bVersionhistoryDraft' => 'bool'
+        
     ];
 
     /**
@@ -80,17 +68,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiVersionhistoryID' => null,
-        'fkiModuleID' => null,
-        'fkiModulesectionID' => null,
-        'sModuleNameX' => null,
-        'sModulesectionNameX' => null,
-        'eVersionhistoryUsertype' => null,
-        'objVersionhistoryDetail' => null,
-        'dtVersionhistoryDate' => null,
-        'dtVersionhistoryDateend' => null,
-        'eVersionhistoryType' => null,
-        'bVersionhistoryDraft' => null
+        
     ];
 
     /**
@@ -99,17 +77,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiVersionhistoryID' => false,
-		'fkiModuleID' => false,
-		'fkiModulesectionID' => false,
-		'sModuleNameX' => false,
-		'sModulesectionNameX' => false,
-		'eVersionhistoryUsertype' => false,
-		'objVersionhistoryDetail' => false,
-		'dtVersionhistoryDate' => false,
-		'dtVersionhistoryDateend' => false,
-		'eVersionhistoryType' => false,
-		'bVersionhistoryDraft' => false
+        
     ];
 
     /**
@@ -126,7 +94,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -136,7 +104,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -146,7 +114,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -198,17 +166,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiVersionhistoryID' => 'pkiVersionhistoryID',
-        'fkiModuleID' => 'fkiModuleID',
-        'fkiModulesectionID' => 'fkiModulesectionID',
-        'sModuleNameX' => 'sModuleNameX',
-        'sModulesectionNameX' => 'sModulesectionNameX',
-        'eVersionhistoryUsertype' => 'eVersionhistoryUsertype',
-        'objVersionhistoryDetail' => 'objVersionhistoryDetail',
-        'dtVersionhistoryDate' => 'dtVersionhistoryDate',
-        'dtVersionhistoryDateend' => 'dtVersionhistoryDateend',
-        'eVersionhistoryType' => 'eVersionhistoryType',
-        'bVersionhistoryDraft' => 'bVersionhistoryDraft'
+        
     ];
 
     /**
@@ -217,17 +175,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'pkiVersionhistoryID' => 'setPkiVersionhistoryID',
-        'fkiModuleID' => 'setFkiModuleID',
-        'fkiModulesectionID' => 'setFkiModulesectionID',
-        'sModuleNameX' => 'setSModuleNameX',
-        'sModulesectionNameX' => 'setSModulesectionNameX',
-        'eVersionhistoryUsertype' => 'setEVersionhistoryUsertype',
-        'objVersionhistoryDetail' => 'setObjVersionhistoryDetail',
-        'dtVersionhistoryDate' => 'setDtVersionhistoryDate',
-        'dtVersionhistoryDateend' => 'setDtVersionhistoryDateend',
-        'eVersionhistoryType' => 'setEVersionhistoryType',
-        'bVersionhistoryDraft' => 'setBVersionhistoryDraft'
+        
     ];
 
     /**
@@ -236,17 +184,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'pkiVersionhistoryID' => 'getPkiVersionhistoryID',
-        'fkiModuleID' => 'getFkiModuleID',
-        'fkiModulesectionID' => 'getFkiModulesectionID',
-        'sModuleNameX' => 'getSModuleNameX',
-        'sModulesectionNameX' => 'getSModulesectionNameX',
-        'eVersionhistoryUsertype' => 'getEVersionhistoryUsertype',
-        'objVersionhistoryDetail' => 'getObjVersionhistoryDetail',
-        'dtVersionhistoryDate' => 'getDtVersionhistoryDate',
-        'dtVersionhistoryDateend' => 'getDtVersionhistoryDateend',
-        'eVersionhistoryType' => 'getEVersionhistoryType',
-        'bVersionhistoryDraft' => 'getBVersionhistoryDraft'
+        
     ];
 
     /**
@@ -257,7 +195,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -267,7 +205,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -277,7 +215,7 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -291,12 +229,6 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -306,17 +238,8 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiVersionhistoryID', $data ?? [], null);
-        $this->setIfExists('fkiModuleID', $data ?? [], null);
-        $this->setIfExists('fkiModulesectionID', $data ?? [], null);
-        $this->setIfExists('sModuleNameX', $data ?? [], null);
-        $this->setIfExists('sModulesectionNameX', $data ?? [], null);
-        $this->setIfExists('eVersionhistoryUsertype', $data ?? [], null);
-        $this->setIfExists('objVersionhistoryDetail', $data ?? [], null);
-        $this->setIfExists('dtVersionhistoryDate', $data ?? [], null);
-        $this->setIfExists('dtVersionhistoryDateend', $data ?? [], null);
-        $this->setIfExists('eVersionhistoryType', $data ?? [], null);
-        $this->setIfExists('bVersionhistoryDraft', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -344,35 +267,8 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiVersionhistoryID'] === null) {
-            $invalidProperties[] = "'pkiVersionhistoryID' can't be null";
-        }
-        if (($this->container['pkiVersionhistoryID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiVersionhistoryID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiModuleID']) && ($this->container['fkiModuleID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiModuleID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiModulesectionID']) && ($this->container['fkiModulesectionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiModulesectionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objVersionhistoryDetail'] === null) {
-            $invalidProperties[] = "'objVersionhistoryDetail' can't be null";
-        }
-        if ($this->container['dtVersionhistoryDate'] === null) {
-            $invalidProperties[] = "'dtVersionhistoryDate' can't be null";
-        }
-        if ($this->container['eVersionhistoryType'] === null) {
-            $invalidProperties[] = "'eVersionhistoryType' can't be null";
-        }
-        if ($this->container['bVersionhistoryDraft'] === null) {
-            $invalidProperties[] = "'bVersionhistoryDraft' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -387,379 +283,6 @@ class VersionhistoryResponseCompound implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiVersionhistoryID
-     *
-     * @return int
-     */
-    public function getPkiVersionhistoryID()
-    {
-	//return $this->container['pkiVersionhistoryID'];
-        return $this->container['pkiVersionhistoryID'];
-    }
-
-    /**
-     * Sets pkiVersionhistoryID
-     *
-     * @param int $pkiVersionhistoryID The unique ID of the Versionhistory
-     *
-     * @return self
-     */
-    public function setPkiVersionhistoryID($pkiVersionhistoryID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiVersionhistoryID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiVersionhistoryID cannot be null');
-        //}
-
-	//if (($pkiVersionhistoryID < 0)) {
-        if (($pkiVersionhistoryID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiVersionhistoryID when calling VersionhistoryResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiVersionhistoryID)?'null':'"'.$pkiVersionhistoryID.'"').' for pkiVersionhistoryID when calling VersionhistoryResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiVersionhistoryID'] = $pkiVersionhistoryID;
-        $this->container['pkiVersionhistoryID'] = (is_null($pkiVersionhistoryID) ? null : (int) $pkiVersionhistoryID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiModuleID
-     *
-     * @return int|null
-     */
-    public function getFkiModuleID()
-    {
-	//return $this->container['fkiModuleID'];
-        return $this->container['fkiModuleID'];
-    }
-
-    /**
-     * Sets fkiModuleID
-     *
-     * @param int|null $fkiModuleID The unique ID of the Module
-     *
-     * @return self
-     */
-    public function setFkiModuleID($fkiModuleID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiModuleID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiModuleID cannot be null');
-        //}
-
-	//if (($fkiModuleID < 0)) {
-        if (!is_null($fkiModuleID) && ($fkiModuleID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiModuleID when calling VersionhistoryResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiModuleID)?'null':'"'.$fkiModuleID.'"').' for fkiModuleID when calling VersionhistoryResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiModuleID'] = $fkiModuleID;
-        $this->container['fkiModuleID'] = (is_null($fkiModuleID) ? null : (int) $fkiModuleID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiModulesectionID
-     *
-     * @return int|null
-     */
-    public function getFkiModulesectionID()
-    {
-	//return $this->container['fkiModulesectionID'];
-        return $this->container['fkiModulesectionID'];
-    }
-
-    /**
-     * Sets fkiModulesectionID
-     *
-     * @param int|null $fkiModulesectionID The unique ID of the Modulesection
-     *
-     * @return self
-     */
-    public function setFkiModulesectionID($fkiModulesectionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiModulesectionID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiModulesectionID cannot be null');
-        //}
-
-	//if (($fkiModulesectionID < 0)) {
-        if (!is_null($fkiModulesectionID) && ($fkiModulesectionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiModulesectionID when calling VersionhistoryResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiModulesectionID)?'null':'"'.$fkiModulesectionID.'"').' for fkiModulesectionID when calling VersionhistoryResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiModulesectionID'] = $fkiModulesectionID;
-        $this->container['fkiModulesectionID'] = (is_null($fkiModulesectionID) ? null : (int) $fkiModulesectionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sModuleNameX
-     *
-     * @return string|null
-     */
-    public function getSModuleNameX()
-    {
-	//return $this->container['sModuleNameX'];
-        return is_null($this->container['sModuleNameX']) ? null : trim($this->container['sModuleNameX']);
-    }
-
-    /**
-     * Sets sModuleNameX
-     *
-     * @param string|null $sModuleNameX The Name of the Module in the language of the requester
-     *
-     * @return self
-     */
-    public function setSModuleNameX($sModuleNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sModuleNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sModuleNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sModuleNameX'] = $sModuleNameX;
-        $this->container['sModuleNameX'] = (is_null($sModuleNameX) ? null : trim((string) $sModuleNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets sModulesectionNameX
-     *
-     * @return string|null
-     */
-    public function getSModulesectionNameX()
-    {
-	//return $this->container['sModulesectionNameX'];
-        return is_null($this->container['sModulesectionNameX']) ? null : trim($this->container['sModulesectionNameX']);
-    }
-
-    /**
-     * Sets sModulesectionNameX
-     *
-     * @param string|null $sModulesectionNameX The Name of the Modulesection in the language of the requester
-     *
-     * @return self
-     */
-    public function setSModulesectionNameX($sModulesectionNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sModulesectionNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sModulesectionNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sModulesectionNameX'] = $sModulesectionNameX;
-        $this->container['sModulesectionNameX'] = (is_null($sModulesectionNameX) ? null : trim((string) $sModulesectionNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets eVersionhistoryUsertype
-     *
-     * @return \eZmaxAPI\Model\FieldEVersionhistoryUsertype|null
-     */
-    public function getEVersionhistoryUsertype()
-    {
-	//return $this->container['eVersionhistoryUsertype'];
-        return $this->container['eVersionhistoryUsertype'];
-    }
-
-    /**
-     * Sets eVersionhistoryUsertype
-     *
-     * @param \eZmaxAPI\Model\FieldEVersionhistoryUsertype|null $eVersionhistoryUsertype eVersionhistoryUsertype
-     *
-     * @return self
-     */
-    public function setEVersionhistoryUsertype($eVersionhistoryUsertype)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eVersionhistoryUsertype)) {
-            //throw new \InvalidArgumentException('non-nullable eVersionhistoryUsertype cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eVersionhistoryUsertype'] = $eVersionhistoryUsertype;
-        $this->container['eVersionhistoryUsertype'] = $eVersionhistoryUsertype;
-
-        return $this;
-    }
-
-    /**
-     * Gets objVersionhistoryDetail
-     *
-     * @return \eZmaxAPI\Model\MultilingualVersionhistoryDetail
-     */
-    public function getObjVersionhistoryDetail()
-    {
-	//return $this->container['objVersionhistoryDetail'];
-        return $this->container['objVersionhistoryDetail'];
-    }
-
-    /**
-     * Sets objVersionhistoryDetail
-     *
-     * @param \eZmaxAPI\Model\MultilingualVersionhistoryDetail $objVersionhistoryDetail objVersionhistoryDetail
-     *
-     * @return self
-     */
-    public function setObjVersionhistoryDetail($objVersionhistoryDetail)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objVersionhistoryDetail)) {
-            //throw new \InvalidArgumentException('non-nullable objVersionhistoryDetail cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objVersionhistoryDetail'] = $objVersionhistoryDetail;
-        $this->container['objVersionhistoryDetail'] = $objVersionhistoryDetail;
-
-        return $this;
-    }
-
-    /**
-     * Gets dtVersionhistoryDate
-     *
-     * @return string
-     */
-    public function getDtVersionhistoryDate()
-    {
-	//return $this->container['dtVersionhistoryDate'];
-        return is_null($this->container['dtVersionhistoryDate']) ? null : trim($this->container['dtVersionhistoryDate']);
-    }
-
-    /**
-     * Sets dtVersionhistoryDate
-     *
-     * @param string $dtVersionhistoryDate The date  at which the Versionhistory was published or should be published
-     *
-     * @return self
-     */
-    public function setDtVersionhistoryDate($dtVersionhistoryDate)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtVersionhistoryDate)) {
-            //throw new \InvalidArgumentException('non-nullable dtVersionhistoryDate cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtVersionhistoryDate'] = $dtVersionhistoryDate;
-        $this->container['dtVersionhistoryDate'] = (is_null($dtVersionhistoryDate) ? null : trim((string) $dtVersionhistoryDate));
-
-        return $this;
-    }
-
-    /**
-     * Gets dtVersionhistoryDateend
-     *
-     * @return string|null
-     */
-    public function getDtVersionhistoryDateend()
-    {
-	//return $this->container['dtVersionhistoryDateend'];
-        return is_null($this->container['dtVersionhistoryDateend']) ? null : trim($this->container['dtVersionhistoryDateend']);
-    }
-
-    /**
-     * Sets dtVersionhistoryDateend
-     *
-     * @param string|null $dtVersionhistoryDateend The date  at which the Versionhistory will no longer be visible
-     *
-     * @return self
-     */
-    public function setDtVersionhistoryDateend($dtVersionhistoryDateend)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtVersionhistoryDateend)) {
-            //throw new \InvalidArgumentException('non-nullable dtVersionhistoryDateend cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtVersionhistoryDateend'] = $dtVersionhistoryDateend;
-        $this->container['dtVersionhistoryDateend'] = (is_null($dtVersionhistoryDateend) ? null : trim((string) $dtVersionhistoryDateend));
-
-        return $this;
-    }
-
-    /**
-     * Gets eVersionhistoryType
-     *
-     * @return \eZmaxAPI\Model\FieldEVersionhistoryType
-     */
-    public function getEVersionhistoryType()
-    {
-	//return $this->container['eVersionhistoryType'];
-        return $this->container['eVersionhistoryType'];
-    }
-
-    /**
-     * Sets eVersionhistoryType
-     *
-     * @param \eZmaxAPI\Model\FieldEVersionhistoryType $eVersionhistoryType eVersionhistoryType
-     *
-     * @return self
-     */
-    public function setEVersionhistoryType($eVersionhistoryType)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eVersionhistoryType)) {
-            //throw new \InvalidArgumentException('non-nullable eVersionhistoryType cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eVersionhistoryType'] = $eVersionhistoryType;
-        $this->container['eVersionhistoryType'] = $eVersionhistoryType;
-
-        return $this;
-    }
-
-    /**
-     * Gets bVersionhistoryDraft
-     *
-     * @return bool
-     */
-    public function getBVersionhistoryDraft()
-    {
-	//return $this->container['bVersionhistoryDraft'];
-        return $this->container['bVersionhistoryDraft'];
-    }
-
-    /**
-     * Sets bVersionhistoryDraft
-     *
-     * @param bool $bVersionhistoryDraft Whether the Versionhistory is published or still a draft
-     *
-     * @return self
-     */
-    public function setBVersionhistoryDraft($bVersionhistoryDraft)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bVersionhistoryDraft)) {
-            //throw new \InvalidArgumentException('non-nullable bVersionhistoryDraft cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bVersionhistoryDraft'] = $bVersionhistoryDraft;
-        $this->container['bVersionhistoryDraft'] = (is_null($bVersionhistoryDraft) ? null : (bool) $bVersionhistoryDraft);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

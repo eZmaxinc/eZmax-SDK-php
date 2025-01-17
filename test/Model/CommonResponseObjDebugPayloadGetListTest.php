@@ -81,51 +81,6 @@ class CommonResponseObjDebugPayloadGetListTest extends TestCase
     }
 
     /**
-     * Test attribute "iVersionMin"
-     */
-    public function testPropertyIVersionMin()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iVersionMax"
-     */
-    public function testPropertyIVersionMax()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aRequiredPermission"
-     */
-    public function testPropertyARequiredPermission()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bVersionDeprecated"
-     */
-    public function testPropertyBVersionDeprecated()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "dtResponseDate"
-     */
-    public function testPropertyDtResponseDate()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aFilter"
      */
     public function testPropertyAFilter()

@@ -79,40 +79,4 @@ class EzsignuserResponseCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiEzsignuserID"
-     */
-    public function testPropertyPkiEzsignuserID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiContactID"
-     */
-    public function testPropertyFkiContactID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objContact"
-     */
-    public function testPropertyObjContact()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objAudit"
-     */
-    public function testPropertyObjAudit()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

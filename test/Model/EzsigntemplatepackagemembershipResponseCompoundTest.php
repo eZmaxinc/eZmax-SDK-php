@@ -81,42 +81,6 @@ class EzsigntemplatepackagemembershipResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiEzsigntemplatepackagemembershipID"
-     */
-    public function testPropertyPkiEzsigntemplatepackagemembershipID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsigntemplatepackageID"
-     */
-    public function testPropertyFkiEzsigntemplatepackageID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsigntemplateID"
-     */
-    public function testPropertyFkiEzsigntemplateID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iEzsigntemplatepackagemembershipOrder"
-     */
-    public function testPropertyIEzsigntemplatepackagemembershipOrder()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "objEzsigntemplate"
      */
     public function testPropertyObjEzsigntemplate()

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class UsergroupexternalResponseCompound extends UsergroupexternalResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,9 +57,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiUsergroupexternalID' => 'int',
-        'sUsergroupexternalName' => 'string',
-        'sUsergroupexternalID' => 'string'
+        
     ];
 
     /**
@@ -72,9 +68,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiUsergroupexternalID' => null,
-        'sUsergroupexternalName' => null,
-        'sUsergroupexternalID' => null
+        
     ];
 
     /**
@@ -83,9 +77,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiUsergroupexternalID' => false,
-		'sUsergroupexternalName' => false,
-		'sUsergroupexternalID' => false
+        
     ];
 
     /**
@@ -102,7 +94,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,9 +166,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiUsergroupexternalID' => 'pkiUsergroupexternalID',
-        'sUsergroupexternalName' => 'sUsergroupexternalName',
-        'sUsergroupexternalID' => 'sUsergroupexternalID'
+        
     ];
 
     /**
@@ -185,9 +175,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'pkiUsergroupexternalID' => 'setPkiUsergroupexternalID',
-        'sUsergroupexternalName' => 'setSUsergroupexternalName',
-        'sUsergroupexternalID' => 'setSUsergroupexternalID'
+        
     ];
 
     /**
@@ -196,9 +184,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'pkiUsergroupexternalID' => 'getPkiUsergroupexternalID',
-        'sUsergroupexternalName' => 'getSUsergroupexternalName',
-        'sUsergroupexternalID' => 'getSUsergroupexternalID'
+        
     ];
 
     /**
@@ -209,7 +195,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,9 +238,8 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiUsergroupexternalID', $data ?? [], null);
-        $this->setIfExists('sUsergroupexternalName', $data ?? [], null);
-        $this->setIfExists('sUsergroupexternalID', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -288,34 +267,7 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiUsergroupexternalID'] === null) {
-            $invalidProperties[] = "'pkiUsergroupexternalID' can't be null";
-        }
-        if (($this->container['pkiUsergroupexternalID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupexternalID', must be smaller than or equal to 255.";
-        }
-
-        if (($this->container['pkiUsergroupexternalID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupexternalID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sUsergroupexternalName'] === null) {
-            $invalidProperties[] = "'sUsergroupexternalName' can't be null";
-        }
-	//if (!preg_match("/^.{0,64}$/", $this->container['sUsergroupexternalName'])) {
-        if (!is_null($this->container['sUsergroupexternalName']) && !preg_match("/(*UTF8)^.{0,64}$/", $this->container['sUsergroupexternalName'])) {
-            $invalidProperties[] = "invalid value for 'sUsergroupexternalName', must be conform to the pattern /^.{0,64}$/.";
-        }
-
-        if ($this->container['sUsergroupexternalID'] === null) {
-            $invalidProperties[] = "'sUsergroupexternalID' can't be null";
-        }
-	//if (!preg_match("/^.{0,64}$/", $this->container['sUsergroupexternalID'])) {
-        if (!is_null($this->container['sUsergroupexternalID']) && !preg_match("/(*UTF8)^.{0,64}$/", $this->container['sUsergroupexternalID'])) {
-            $invalidProperties[] = "invalid value for 'sUsergroupexternalID', must be conform to the pattern /^.{0,64}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -331,128 +283,6 @@ class UsergroupexternalResponseCompound implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiUsergroupexternalID
-     *
-     * @return int
-     */
-    public function getPkiUsergroupexternalID()
-    {
-	//return $this->container['pkiUsergroupexternalID'];
-        return $this->container['pkiUsergroupexternalID'];
-    }
-
-    /**
-     * Sets pkiUsergroupexternalID
-     *
-     * @param int $pkiUsergroupexternalID The unique ID of the Usergroupexternal
-     *
-     * @return self
-     */
-    public function setPkiUsergroupexternalID($pkiUsergroupexternalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiUsergroupexternalID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiUsergroupexternalID cannot be null');
-        //}
-
-	//if (($pkiUsergroupexternalID > 255)) {
-        if (($pkiUsergroupexternalID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupexternalID when calling UsergroupexternalResponseCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupexternalID)?'null':'"'.$pkiUsergroupexternalID.'"').' for pkiUsergroupexternalID when calling UsergroupexternalResponseCompound., must be smaller than or equal to 255.');
-        }
-	//if (($pkiUsergroupexternalID < 0)) {
-        if (($pkiUsergroupexternalID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupexternalID when calling UsergroupexternalResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupexternalID)?'null':'"'.$pkiUsergroupexternalID.'"').' for pkiUsergroupexternalID when calling UsergroupexternalResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiUsergroupexternalID'] = $pkiUsergroupexternalID;
-        $this->container['pkiUsergroupexternalID'] = (is_null($pkiUsergroupexternalID) ? null : (int) $pkiUsergroupexternalID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sUsergroupexternalName
-     *
-     * @return string
-     */
-    public function getSUsergroupexternalName()
-    {
-	//return $this->container['sUsergroupexternalName'];
-        return is_null($this->container['sUsergroupexternalName']) ? null : trim($this->container['sUsergroupexternalName']);
-    }
-
-    /**
-     * Sets sUsergroupexternalName
-     *
-     * @param string $sUsergroupexternalName The name of the Usergroupexternal
-     *
-     * @return self
-     */
-    public function setSUsergroupexternalName($sUsergroupexternalName)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sUsergroupexternalName)) {
-            //throw new \InvalidArgumentException('non-nullable sUsergroupexternalName cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,64}$/", ObjectSerializer::toString($sUsergroupexternalName)))) {
-        if (!is_null($sUsergroupexternalName) && (!preg_match("/(*UTF8)^.{0,64}$/", ObjectSerializer::toString($sUsergroupexternalName)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sUsergroupexternalName when calling UsergroupexternalResponseCompound., must conform to the pattern /^.{0,64}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sUsergroupexternalName)?'null':'"'.$sUsergroupexternalName.'"')." for sUsergroupexternalName when calling UsergroupexternalResponseCompound., must conform to the pattern /^.{0,64}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sUsergroupexternalName'] = $sUsergroupexternalName;
-        $this->container['sUsergroupexternalName'] = (is_null($sUsergroupexternalName) ? null : trim((string) $sUsergroupexternalName));
-
-        return $this;
-    }
-
-    /**
-     * Gets sUsergroupexternalID
-     *
-     * @return string
-     */
-    public function getSUsergroupexternalID()
-    {
-	//return $this->container['sUsergroupexternalID'];
-        return is_null($this->container['sUsergroupexternalID']) ? null : trim($this->container['sUsergroupexternalID']);
-    }
-
-    /**
-     * Sets sUsergroupexternalID
-     *
-     * @param string $sUsergroupexternalID The id of the Usergroupexternal
-     *
-     * @return self
-     */
-    public function setSUsergroupexternalID($sUsergroupexternalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sUsergroupexternalID)) {
-            //throw new \InvalidArgumentException('non-nullable sUsergroupexternalID cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,64}$/", ObjectSerializer::toString($sUsergroupexternalID)))) {
-        if (!is_null($sUsergroupexternalID) && (!preg_match("/(*UTF8)^.{0,64}$/", ObjectSerializer::toString($sUsergroupexternalID)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sUsergroupexternalID when calling UsergroupexternalResponseCompound., must conform to the pattern /^.{0,64}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sUsergroupexternalID)?'null':'"'.$sUsergroupexternalID.'"')." for sUsergroupexternalID when calling UsergroupexternalResponseCompound., must conform to the pattern /^.{0,64}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sUsergroupexternalID'] = $sUsergroupexternalID;
-        $this->container['sUsergroupexternalID'] = (is_null($sUsergroupexternalID) ? null : trim((string) $sUsergroupexternalID));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

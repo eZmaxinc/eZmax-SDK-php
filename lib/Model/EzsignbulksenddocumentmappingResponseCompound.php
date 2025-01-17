@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignbulksenddocumentmappingResponseCompound extends EzsignbulksenddocumentmappingResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,6 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignbulksenddocumentmappingID' => 'int',
-        'fkiEzsignbulksendID' => 'int',
-        'fkiEzsigntemplatepackageID' => 'int',
-        'fkiEzsigntemplateID' => 'int',
-        'iEzsignbulksenddocumentmappingOrder' => 'int',
         'objEzsigntemplate' => '\eZmaxAPI\Model\EzsigntemplateResponseCompound',
         'objEzsigntemplatepackage' => '\eZmaxAPI\Model\EzsigntemplatepackageResponseCompound'
     ];
@@ -76,11 +69,6 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignbulksenddocumentmappingID' => null,
-        'fkiEzsignbulksendID' => null,
-        'fkiEzsigntemplatepackageID' => null,
-        'fkiEzsigntemplateID' => null,
-        'iEzsignbulksenddocumentmappingOrder' => null,
         'objEzsigntemplate' => null,
         'objEzsigntemplatepackage' => null
     ];
@@ -91,12 +79,7 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsignbulksenddocumentmappingID' => false,
-		'fkiEzsignbulksendID' => false,
-		'fkiEzsigntemplatepackageID' => false,
-		'fkiEzsigntemplateID' => false,
-		'iEzsignbulksenddocumentmappingOrder' => false,
-		'objEzsigntemplate' => false,
+        'objEzsigntemplate' => false,
 		'objEzsigntemplatepackage' => false
     ];
 
@@ -114,7 +97,7 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -124,7 +107,7 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -134,7 +117,7 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -186,11 +169,6 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignbulksenddocumentmappingID' => 'pkiEzsignbulksenddocumentmappingID',
-        'fkiEzsignbulksendID' => 'fkiEzsignbulksendID',
-        'fkiEzsigntemplatepackageID' => 'fkiEzsigntemplatepackageID',
-        'fkiEzsigntemplateID' => 'fkiEzsigntemplateID',
-        'iEzsignbulksenddocumentmappingOrder' => 'iEzsignbulksenddocumentmappingOrder',
         'objEzsigntemplate' => 'objEzsigntemplate',
         'objEzsigntemplatepackage' => 'objEzsigntemplatepackage'
     ];
@@ -201,11 +179,6 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignbulksenddocumentmappingID' => 'setPkiEzsignbulksenddocumentmappingID',
-        'fkiEzsignbulksendID' => 'setFkiEzsignbulksendID',
-        'fkiEzsigntemplatepackageID' => 'setFkiEzsigntemplatepackageID',
-        'fkiEzsigntemplateID' => 'setFkiEzsigntemplateID',
-        'iEzsignbulksenddocumentmappingOrder' => 'setIEzsignbulksenddocumentmappingOrder',
         'objEzsigntemplate' => 'setObjEzsigntemplate',
         'objEzsigntemplatepackage' => 'setObjEzsigntemplatepackage'
     ];
@@ -216,11 +189,6 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignbulksenddocumentmappingID' => 'getPkiEzsignbulksenddocumentmappingID',
-        'fkiEzsignbulksendID' => 'getFkiEzsignbulksendID',
-        'fkiEzsigntemplatepackageID' => 'getFkiEzsigntemplatepackageID',
-        'fkiEzsigntemplateID' => 'getFkiEzsigntemplateID',
-        'iEzsignbulksenddocumentmappingOrder' => 'getIEzsignbulksenddocumentmappingOrder',
         'objEzsigntemplate' => 'getObjEzsigntemplate',
         'objEzsigntemplatepackage' => 'getObjEzsigntemplatepackage'
     ];
@@ -233,7 +201,7 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -243,7 +211,7 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -253,7 +221,7 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -267,12 +235,6 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -282,11 +244,8 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsignbulksenddocumentmappingID', $data ?? [], null);
-        $this->setIfExists('fkiEzsignbulksendID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigntemplatepackageID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigntemplateID', $data ?? [], null);
-        $this->setIfExists('iEzsignbulksenddocumentmappingOrder', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('objEzsigntemplate', $data ?? [], null);
         $this->setIfExists('objEzsigntemplatepackage', $data ?? [], null);
     }
@@ -316,36 +275,7 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiEzsignbulksenddocumentmappingID'] === null) {
-            $invalidProperties[] = "'pkiEzsignbulksenddocumentmappingID' can't be null";
-        }
-        if (($this->container['pkiEzsignbulksenddocumentmappingID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignbulksenddocumentmappingID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsignbulksendID'] === null) {
-            $invalidProperties[] = "'fkiEzsignbulksendID' can't be null";
-        }
-        if (($this->container['fkiEzsignbulksendID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsignbulksendID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiEzsigntemplatepackageID']) && ($this->container['fkiEzsigntemplatepackageID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntemplatepackageID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiEzsigntemplateID']) && ($this->container['fkiEzsigntemplateID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntemplateID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['iEzsignbulksenddocumentmappingOrder'] === null) {
-            $invalidProperties[] = "'iEzsignbulksenddocumentmappingOrder' can't be null";
-        }
-        if (($this->container['iEzsignbulksenddocumentmappingOrder'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsignbulksenddocumentmappingOrder', must be bigger than or equal to 0.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -361,201 +291,6 @@ class EzsignbulksenddocumentmappingResponseCompound implements ModelInterface, A
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsignbulksenddocumentmappingID
-     *
-     * @return int
-     */
-    public function getPkiEzsignbulksenddocumentmappingID()
-    {
-	//return $this->container['pkiEzsignbulksenddocumentmappingID'];
-        return $this->container['pkiEzsignbulksenddocumentmappingID'];
-    }
-
-    /**
-     * Sets pkiEzsignbulksenddocumentmappingID
-     *
-     * @param int $pkiEzsignbulksenddocumentmappingID The unique ID of the Ezsignbulksenddocumentmapping.
-     *
-     * @return self
-     */
-    public function setPkiEzsignbulksenddocumentmappingID($pkiEzsignbulksenddocumentmappingID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsignbulksenddocumentmappingID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsignbulksenddocumentmappingID cannot be null');
-        //}
-
-	//if (($pkiEzsignbulksenddocumentmappingID < 0)) {
-        if (($pkiEzsignbulksenddocumentmappingID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignbulksenddocumentmappingID when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignbulksenddocumentmappingID)?'null':'"'.$pkiEzsignbulksenddocumentmappingID.'"').' for pkiEzsignbulksenddocumentmappingID when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsignbulksenddocumentmappingID'] = $pkiEzsignbulksenddocumentmappingID;
-        $this->container['pkiEzsignbulksenddocumentmappingID'] = (is_null($pkiEzsignbulksenddocumentmappingID) ? null : (int) $pkiEzsignbulksenddocumentmappingID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignbulksendID
-     *
-     * @return int
-     */
-    public function getFkiEzsignbulksendID()
-    {
-	//return $this->container['fkiEzsignbulksendID'];
-        return $this->container['fkiEzsignbulksendID'];
-    }
-
-    /**
-     * Sets fkiEzsignbulksendID
-     *
-     * @param int $fkiEzsignbulksendID The unique ID of the Ezsignbulksend
-     *
-     * @return self
-     */
-    public function setFkiEzsignbulksendID($fkiEzsignbulksendID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsignbulksendID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsignbulksendID cannot be null');
-        //}
-
-	//if (($fkiEzsignbulksendID < 0)) {
-        if (($fkiEzsignbulksendID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsignbulksendID when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignbulksendID)?'null':'"'.$fkiEzsignbulksendID.'"').' for fkiEzsignbulksendID when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsignbulksendID'] = $fkiEzsignbulksendID;
-        $this->container['fkiEzsignbulksendID'] = (is_null($fkiEzsignbulksendID) ? null : (int) $fkiEzsignbulksendID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigntemplatepackageID
-     *
-     * @return int|null
-     */
-    public function getFkiEzsigntemplatepackageID()
-    {
-	//return $this->container['fkiEzsigntemplatepackageID'];
-        return $this->container['fkiEzsigntemplatepackageID'];
-    }
-
-    /**
-     * Sets fkiEzsigntemplatepackageID
-     *
-     * @param int|null $fkiEzsigntemplatepackageID The unique ID of the Ezsigntemplatepackage
-     *
-     * @return self
-     */
-    public function setFkiEzsigntemplatepackageID($fkiEzsigntemplatepackageID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigntemplatepackageID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatepackageID cannot be null');
-        //}
-
-	//if (($fkiEzsigntemplatepackageID < 0)) {
-        if (!is_null($fkiEzsigntemplatepackageID) && ($fkiEzsigntemplatepackageID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatepackageID when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntemplatepackageID)?'null':'"'.$fkiEzsigntemplatepackageID.'"').' for fkiEzsigntemplatepackageID when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigntemplatepackageID'] = $fkiEzsigntemplatepackageID;
-        $this->container['fkiEzsigntemplatepackageID'] = (is_null($fkiEzsigntemplatepackageID) ? null : (int) $fkiEzsigntemplatepackageID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigntemplateID
-     *
-     * @return int|null
-     */
-    public function getFkiEzsigntemplateID()
-    {
-	//return $this->container['fkiEzsigntemplateID'];
-        return $this->container['fkiEzsigntemplateID'];
-    }
-
-    /**
-     * Sets fkiEzsigntemplateID
-     *
-     * @param int|null $fkiEzsigntemplateID The unique ID of the Ezsigntemplate
-     *
-     * @return self
-     */
-    public function setFkiEzsigntemplateID($fkiEzsigntemplateID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigntemplateID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplateID cannot be null');
-        //}
-
-	//if (($fkiEzsigntemplateID < 0)) {
-        if (!is_null($fkiEzsigntemplateID) && ($fkiEzsigntemplateID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplateID when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntemplateID)?'null':'"'.$fkiEzsigntemplateID.'"').' for fkiEzsigntemplateID when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigntemplateID'] = $fkiEzsigntemplateID;
-        $this->container['fkiEzsigntemplateID'] = (is_null($fkiEzsigntemplateID) ? null : (int) $fkiEzsigntemplateID);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignbulksenddocumentmappingOrder
-     *
-     * @return int
-     */
-    public function getIEzsignbulksenddocumentmappingOrder()
-    {
-	//return $this->container['iEzsignbulksenddocumentmappingOrder'];
-        return $this->container['iEzsignbulksenddocumentmappingOrder'];
-    }
-
-    /**
-     * Sets iEzsignbulksenddocumentmappingOrder
-     *
-     * @param int $iEzsignbulksenddocumentmappingOrder The order in which the Ezsigntemplate or Ezsigntemplatepackage will be presented to the signatory in the Ezsignfolder.
-     *
-     * @return self
-     */
-    public function setIEzsignbulksenddocumentmappingOrder($iEzsignbulksenddocumentmappingOrder)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsignbulksenddocumentmappingOrder)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsignbulksenddocumentmappingOrder cannot be null');
-        //}
-
-	//if (($iEzsignbulksenddocumentmappingOrder < 0)) {
-        if (($iEzsignbulksenddocumentmappingOrder < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignbulksenddocumentmappingOrder when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignbulksenddocumentmappingOrder)?'null':'"'.$iEzsignbulksenddocumentmappingOrder.'"').' for iEzsignbulksenddocumentmappingOrder when calling EzsignbulksenddocumentmappingResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsignbulksenddocumentmappingOrder'] = $iEzsignbulksenddocumentmappingOrder;
-        $this->container['iEzsignbulksenddocumentmappingOrder'] = (is_null($iEzsignbulksenddocumentmappingOrder) ? null : (int) $iEzsignbulksenddocumentmappingOrder);
-
-        return $this;
-    }
 
     /**
      * Gets objEzsigntemplate

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class UsergroupdelegationResponseCompound extends UsergroupdelegationResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,14 +57,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiUsergroupdelegationID' => 'int',
-        'fkiUsergroupID' => 'int',
-        'fkiUserID' => 'int',
-        'sUserFirstname' => 'string',
-        'sUserLastname' => 'string',
-        'sUserLoginname' => 'string',
-        'sEmailAddress' => 'string',
-        'sUsergroupNameX' => 'string'
+        
     ];
 
     /**
@@ -77,14 +68,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiUsergroupdelegationID' => null,
-        'fkiUsergroupID' => null,
-        'fkiUserID' => null,
-        'sUserFirstname' => null,
-        'sUserLastname' => null,
-        'sUserLoginname' => null,
-        'sEmailAddress' => null,
-        'sUsergroupNameX' => null
+        
     ];
 
     /**
@@ -93,14 +77,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiUsergroupdelegationID' => false,
-		'fkiUsergroupID' => false,
-		'fkiUserID' => false,
-		'sUserFirstname' => false,
-		'sUserLastname' => false,
-		'sUserLoginname' => false,
-		'sEmailAddress' => false,
-		'sUsergroupNameX' => false
+        
     ];
 
     /**
@@ -117,7 +94,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -127,7 +104,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -137,7 +114,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -189,14 +166,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiUsergroupdelegationID' => 'pkiUsergroupdelegationID',
-        'fkiUsergroupID' => 'fkiUsergroupID',
-        'fkiUserID' => 'fkiUserID',
-        'sUserFirstname' => 'sUserFirstname',
-        'sUserLastname' => 'sUserLastname',
-        'sUserLoginname' => 'sUserLoginname',
-        'sEmailAddress' => 'sEmailAddress',
-        'sUsergroupNameX' => 'sUsergroupNameX'
+        
     ];
 
     /**
@@ -205,14 +175,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'pkiUsergroupdelegationID' => 'setPkiUsergroupdelegationID',
-        'fkiUsergroupID' => 'setFkiUsergroupID',
-        'fkiUserID' => 'setFkiUserID',
-        'sUserFirstname' => 'setSUserFirstname',
-        'sUserLastname' => 'setSUserLastname',
-        'sUserLoginname' => 'setSUserLoginname',
-        'sEmailAddress' => 'setSEmailAddress',
-        'sUsergroupNameX' => 'setSUsergroupNameX'
+        
     ];
 
     /**
@@ -221,14 +184,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'pkiUsergroupdelegationID' => 'getPkiUsergroupdelegationID',
-        'fkiUsergroupID' => 'getFkiUsergroupID',
-        'fkiUserID' => 'getFkiUserID',
-        'sUserFirstname' => 'getSUserFirstname',
-        'sUserLastname' => 'getSUserLastname',
-        'sUserLoginname' => 'getSUserLoginname',
-        'sEmailAddress' => 'getSEmailAddress',
-        'sUsergroupNameX' => 'getSUsergroupNameX'
+        
     ];
 
     /**
@@ -239,7 +195,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -249,7 +205,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -259,7 +215,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -273,12 +229,6 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -288,14 +238,8 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiUsergroupdelegationID', $data ?? [], null);
-        $this->setIfExists('fkiUsergroupID', $data ?? [], null);
-        $this->setIfExists('fkiUserID', $data ?? [], null);
-        $this->setIfExists('sUserFirstname', $data ?? [], null);
-        $this->setIfExists('sUserLastname', $data ?? [], null);
-        $this->setIfExists('sUserLoginname', $data ?? [], null);
-        $this->setIfExists('sEmailAddress', $data ?? [], null);
-        $this->setIfExists('sUsergroupNameX', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -323,63 +267,7 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiUsergroupdelegationID'] === null) {
-            $invalidProperties[] = "'pkiUsergroupdelegationID' can't be null";
-        }
-        if (($this->container['pkiUsergroupdelegationID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupdelegationID', must be smaller than or equal to 65535.";
-        }
-
-        if (($this->container['pkiUsergroupdelegationID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupdelegationID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiUsergroupID'] === null) {
-            $invalidProperties[] = "'fkiUsergroupID' can't be null";
-        }
-        if (($this->container['fkiUsergroupID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'fkiUsergroupID', must be smaller than or equal to 255.";
-        }
-
-        if (($this->container['fkiUsergroupID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUsergroupID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiUserID'] === null) {
-            $invalidProperties[] = "'fkiUserID' can't be null";
-        }
-        if (($this->container['fkiUserID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUserID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sUserFirstname'] === null) {
-            $invalidProperties[] = "'sUserFirstname' can't be null";
-        }
-        if ($this->container['sUserLastname'] === null) {
-            $invalidProperties[] = "'sUserLastname' can't be null";
-        }
-        if ($this->container['sUserLoginname'] === null) {
-            $invalidProperties[] = "'sUserLoginname' can't be null";
-        }
-	//if (!preg_match("/^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
-        if (!is_null($this->container['sUserLoginname']) && !preg_match("/(*UTF8)^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
-            $invalidProperties[] = "invalid value for 'sUserLoginname', must be conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.";
-        }
-
-	//if (!is_null($this->container['sEmailAddress']) && !preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddress'])) {
-        if (!is_null($this->container['sEmailAddress']) && !preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddress'])) {
-            $invalidProperties[] = "invalid value for 'sEmailAddress', must be conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.";
-        }
-
-        if ($this->container['sUsergroupNameX'] === null) {
-            $invalidProperties[] = "'sUsergroupNameX' can't be null";
-        }
-	//if (!preg_match("/^.{0,50}$/", $this->container['sUsergroupNameX'])) {
-        if (!is_null($this->container['sUsergroupNameX']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sUsergroupNameX'])) {
-            $invalidProperties[] = "invalid value for 'sUsergroupNameX', must be conform to the pattern /^.{0,50}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -395,314 +283,6 @@ class UsergroupdelegationResponseCompound implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiUsergroupdelegationID
-     *
-     * @return int
-     */
-    public function getPkiUsergroupdelegationID()
-    {
-	//return $this->container['pkiUsergroupdelegationID'];
-        return $this->container['pkiUsergroupdelegationID'];
-    }
-
-    /**
-     * Sets pkiUsergroupdelegationID
-     *
-     * @param int $pkiUsergroupdelegationID The unique ID of the Usergroupdelegation
-     *
-     * @return self
-     */
-    public function setPkiUsergroupdelegationID($pkiUsergroupdelegationID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiUsergroupdelegationID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiUsergroupdelegationID cannot be null');
-        //}
-
-	//if (($pkiUsergroupdelegationID > 65535)) {
-        if (($pkiUsergroupdelegationID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupdelegationID when calling UsergroupdelegationResponseCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupdelegationID)?'null':'"'.$pkiUsergroupdelegationID.'"').' for pkiUsergroupdelegationID when calling UsergroupdelegationResponseCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($pkiUsergroupdelegationID < 0)) {
-        if (($pkiUsergroupdelegationID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupdelegationID when calling UsergroupdelegationResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupdelegationID)?'null':'"'.$pkiUsergroupdelegationID.'"').' for pkiUsergroupdelegationID when calling UsergroupdelegationResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiUsergroupdelegationID'] = $pkiUsergroupdelegationID;
-        $this->container['pkiUsergroupdelegationID'] = (is_null($pkiUsergroupdelegationID) ? null : (int) $pkiUsergroupdelegationID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUsergroupID
-     *
-     * @return int
-     */
-    public function getFkiUsergroupID()
-    {
-	//return $this->container['fkiUsergroupID'];
-        return $this->container['fkiUsergroupID'];
-    }
-
-    /**
-     * Sets fkiUsergroupID
-     *
-     * @param int $fkiUsergroupID The unique ID of the Usergroup
-     *
-     * @return self
-     */
-    public function setFkiUsergroupID($fkiUsergroupID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUsergroupID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUsergroupID cannot be null');
-        //}
-
-	//if (($fkiUsergroupID > 255)) {
-        if (($fkiUsergroupID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUsergroupID when calling UsergroupdelegationResponseCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUsergroupID)?'null':'"'.$fkiUsergroupID.'"').' for fkiUsergroupID when calling UsergroupdelegationResponseCompound., must be smaller than or equal to 255.');
-        }
-	//if (($fkiUsergroupID < 0)) {
-        if (($fkiUsergroupID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUsergroupID when calling UsergroupdelegationResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUsergroupID)?'null':'"'.$fkiUsergroupID.'"').' for fkiUsergroupID when calling UsergroupdelegationResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUsergroupID'] = $fkiUsergroupID;
-        $this->container['fkiUsergroupID'] = (is_null($fkiUsergroupID) ? null : (int) $fkiUsergroupID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUserID
-     *
-     * @return int
-     */
-    public function getFkiUserID()
-    {
-	//return $this->container['fkiUserID'];
-        return $this->container['fkiUserID'];
-    }
-
-    /**
-     * Sets fkiUserID
-     *
-     * @param int $fkiUserID The unique ID of the User
-     *
-     * @return self
-     */
-    public function setFkiUserID($fkiUserID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUserID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
-        //}
-
-	//if (($fkiUserID < 0)) {
-        if (($fkiUserID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUserID when calling UsergroupdelegationResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserID)?'null':'"'.$fkiUserID.'"').' for fkiUserID when calling UsergroupdelegationResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUserID'] = $fkiUserID;
-        $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sUserFirstname
-     *
-     * @return string
-     */
-    public function getSUserFirstname()
-    {
-	//return $this->container['sUserFirstname'];
-        return is_null($this->container['sUserFirstname']) ? null : trim($this->container['sUserFirstname']);
-    }
-
-    /**
-     * Sets sUserFirstname
-     *
-     * @param string $sUserFirstname The first name of the user
-     *
-     * @return self
-     */
-    public function setSUserFirstname($sUserFirstname)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sUserFirstname)) {
-            //throw new \InvalidArgumentException('non-nullable sUserFirstname cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sUserFirstname'] = $sUserFirstname;
-        $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : trim((string) $sUserFirstname));
-
-        return $this;
-    }
-
-    /**
-     * Gets sUserLastname
-     *
-     * @return string
-     */
-    public function getSUserLastname()
-    {
-	//return $this->container['sUserLastname'];
-        return is_null($this->container['sUserLastname']) ? null : trim($this->container['sUserLastname']);
-    }
-
-    /**
-     * Sets sUserLastname
-     *
-     * @param string $sUserLastname The last name of the user
-     *
-     * @return self
-     */
-    public function setSUserLastname($sUserLastname)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sUserLastname)) {
-            //throw new \InvalidArgumentException('non-nullable sUserLastname cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sUserLastname'] = $sUserLastname;
-        $this->container['sUserLastname'] = (is_null($sUserLastname) ? null : trim((string) $sUserLastname));
-
-        return $this;
-    }
-
-    /**
-     * Gets sUserLoginname
-     *
-     * @return string
-     */
-    public function getSUserLoginname()
-    {
-	//return $this->container['sUserLoginname'];
-        return is_null($this->container['sUserLoginname']) ? null : trim($this->container['sUserLoginname']);
-    }
-
-    /**
-     * Sets sUserLoginname
-     *
-     * @param string $sUserLoginname The login name of the User.
-     *
-     * @return self
-     */
-    public function setSUserLoginname($sUserLoginname)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sUserLoginname)) {
-            //throw new \InvalidArgumentException('non-nullable sUserLoginname cannot be null');
-        //}
-
-	//if ((!preg_match("/^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
-        if (!is_null($sUserLoginname) && (!preg_match("/(*UTF8)^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling UsergroupdelegationResponseCompound., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sUserLoginname)?'null':'"'.$sUserLoginname.'"')." for sUserLoginname when calling UsergroupdelegationResponseCompound., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sUserLoginname'] = $sUserLoginname;
-        $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : trim((string) $sUserLoginname));
-
-        return $this;
-    }
-
-    /**
-     * Gets sEmailAddress
-     *
-     * @return string|null
-     */
-    public function getSEmailAddress()
-    {
-	//return $this->container['sEmailAddress'];
-        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
-    }
-
-    /**
-     * Sets sEmailAddress
-     *
-     * @param string|null $sEmailAddress The email address.
-     *
-     * @return self
-     */
-    public function setSEmailAddress($sEmailAddress)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEmailAddress)) {
-            //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
-        //}
-
-	//if ((!preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddress)))) {
-        if (!is_null($sEmailAddress) && (!preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddress)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sEmailAddress when calling UsergroupdelegationResponseCompound., must conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEmailAddress)?'null':'"'.$sEmailAddress.'"')." for sEmailAddress when calling UsergroupdelegationResponseCompound., must conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
-
-        return $this;
-    }
-
-    /**
-     * Gets sUsergroupNameX
-     *
-     * @return string
-     */
-    public function getSUsergroupNameX()
-    {
-	//return $this->container['sUsergroupNameX'];
-        return is_null($this->container['sUsergroupNameX']) ? null : trim($this->container['sUsergroupNameX']);
-    }
-
-    /**
-     * Sets sUsergroupNameX
-     *
-     * @param string $sUsergroupNameX The Name of the Usergroup in the language of the requester
-     *
-     * @return self
-     */
-    public function setSUsergroupNameX($sUsergroupNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sUsergroupNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sUsergroupNameX cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
-        if (!is_null($sUsergroupNameX) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sUsergroupNameX)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sUsergroupNameX when calling UsergroupdelegationResponseCompound., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sUsergroupNameX)?'null':'"'.$sUsergroupNameX.'"')." for sUsergroupNameX when calling UsergroupdelegationResponseCompound., must conform to the pattern /^.{0,50}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sUsergroupNameX'] = $sUsergroupNameX;
-        $this->container['sUsergroupNameX'] = (is_null($sUsergroupNameX) ? null : trim((string) $sUsergroupNameX));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ContactinformationsRequestCompoundV2 extends ContactinformationsRequestV2
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,6 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'eContactinformationsType' => '\eZmaxAPI\Model\FieldEContactinformationsType',
-        'iAddressDefault' => 'int',
-        'iPhoneDefault' => 'int',
-        'iEmailDefault' => 'int',
-        'iWebsiteDefault' => 'int',
         'aObjAddress' => '\eZmaxAPI\Model\AddressRequestCompound[]',
         'aObjPhone' => '\eZmaxAPI\Model\PhoneRequestCompound[]',
         'aObjEmail' => '\eZmaxAPI\Model\EmailRequestCompound[]',
@@ -78,11 +71,6 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'eContactinformationsType' => null,
-        'iAddressDefault' => null,
-        'iPhoneDefault' => null,
-        'iEmailDefault' => null,
-        'iWebsiteDefault' => null,
         'aObjAddress' => null,
         'aObjPhone' => null,
         'aObjEmail' => null,
@@ -95,12 +83,7 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'eContactinformationsType' => false,
-		'iAddressDefault' => false,
-		'iPhoneDefault' => false,
-		'iEmailDefault' => false,
-		'iWebsiteDefault' => false,
-		'aObjAddress' => false,
+        'aObjAddress' => false,
 		'aObjPhone' => false,
 		'aObjEmail' => false,
 		'aObjWebsite' => false
@@ -120,7 +103,7 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -130,7 +113,7 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -140,7 +123,7 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -192,11 +175,6 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'eContactinformationsType' => 'eContactinformationsType',
-        'iAddressDefault' => 'iAddressDefault',
-        'iPhoneDefault' => 'iPhoneDefault',
-        'iEmailDefault' => 'iEmailDefault',
-        'iWebsiteDefault' => 'iWebsiteDefault',
         'aObjAddress' => 'a_objAddress',
         'aObjPhone' => 'a_objPhone',
         'aObjEmail' => 'a_objEmail',
@@ -209,11 +187,6 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'eContactinformationsType' => 'setEContactinformationsType',
-        'iAddressDefault' => 'setIAddressDefault',
-        'iPhoneDefault' => 'setIPhoneDefault',
-        'iEmailDefault' => 'setIEmailDefault',
-        'iWebsiteDefault' => 'setIWebsiteDefault',
         'aObjAddress' => 'setAObjAddress',
         'aObjPhone' => 'setAObjPhone',
         'aObjEmail' => 'setAObjEmail',
@@ -226,11 +199,6 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'eContactinformationsType' => 'getEContactinformationsType',
-        'iAddressDefault' => 'getIAddressDefault',
-        'iPhoneDefault' => 'getIPhoneDefault',
-        'iEmailDefault' => 'getIEmailDefault',
-        'iWebsiteDefault' => 'getIWebsiteDefault',
         'aObjAddress' => 'getAObjAddress',
         'aObjPhone' => 'getAObjPhone',
         'aObjEmail' => 'getAObjEmail',
@@ -245,7 +213,7 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -255,7 +223,7 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -265,7 +233,7 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -279,12 +247,6 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -294,11 +256,8 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('eContactinformationsType', $data ?? [], null);
-        $this->setIfExists('iAddressDefault', $data ?? [], null);
-        $this->setIfExists('iPhoneDefault', $data ?? [], null);
-        $this->setIfExists('iEmailDefault', $data ?? [], null);
-        $this->setIfExists('iWebsiteDefault', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjAddress', $data ?? [], null);
         $this->setIfExists('aObjPhone', $data ?? [], null);
         $this->setIfExists('aObjEmail', $data ?? [], null);
@@ -330,23 +289,8 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['eContactinformationsType'] === null) {
-            $invalidProperties[] = "'eContactinformationsType' can't be null";
-        }
-        if ($this->container['iAddressDefault'] === null) {
-            $invalidProperties[] = "'iAddressDefault' can't be null";
-        }
-        if ($this->container['iPhoneDefault'] === null) {
-            $invalidProperties[] = "'iPhoneDefault' can't be null";
-        }
-        if ($this->container['iEmailDefault'] === null) {
-            $invalidProperties[] = "'iEmailDefault' can't be null";
-        }
-        if ($this->container['iWebsiteDefault'] === null) {
-            $invalidProperties[] = "'iWebsiteDefault' can't be null";
-        }
         if ($this->container['aObjAddress'] === null) {
             $invalidProperties[] = "'aObjAddress' can't be null";
         }
@@ -373,166 +317,6 @@ class ContactinformationsRequestCompoundV2 implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets eContactinformationsType
-     *
-     * @return \eZmaxAPI\Model\FieldEContactinformationsType
-     */
-    public function getEContactinformationsType()
-    {
-	//return $this->container['eContactinformationsType'];
-        return $this->container['eContactinformationsType'];
-    }
-
-    /**
-     * Sets eContactinformationsType
-     *
-     * @param \eZmaxAPI\Model\FieldEContactinformationsType $eContactinformationsType eContactinformationsType
-     *
-     * @return self
-     */
-    public function setEContactinformationsType($eContactinformationsType)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eContactinformationsType)) {
-            //throw new \InvalidArgumentException('non-nullable eContactinformationsType cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eContactinformationsType'] = $eContactinformationsType;
-        $this->container['eContactinformationsType'] = $eContactinformationsType;
-
-        return $this;
-    }
-
-    /**
-     * Gets iAddressDefault
-     *
-     * @return int
-     */
-    public function getIAddressDefault()
-    {
-	//return $this->container['iAddressDefault'];
-        return $this->container['iAddressDefault'];
-    }
-
-    /**
-     * Sets iAddressDefault
-     *
-     * @param int $iAddressDefault The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.
-     *
-     * @return self
-     */
-    public function setIAddressDefault($iAddressDefault)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iAddressDefault)) {
-            //throw new \InvalidArgumentException('non-nullable iAddressDefault cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iAddressDefault'] = $iAddressDefault;
-        $this->container['iAddressDefault'] = (is_null($iAddressDefault) ? null : (int) $iAddressDefault);
-
-        return $this;
-    }
-
-    /**
-     * Gets iPhoneDefault
-     *
-     * @return int
-     */
-    public function getIPhoneDefault()
-    {
-	//return $this->container['iPhoneDefault'];
-        return $this->container['iPhoneDefault'];
-    }
-
-    /**
-     * Sets iPhoneDefault
-     *
-     * @param int $iPhoneDefault The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty.
-     *
-     * @return self
-     */
-    public function setIPhoneDefault($iPhoneDefault)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iPhoneDefault)) {
-            //throw new \InvalidArgumentException('non-nullable iPhoneDefault cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iPhoneDefault'] = $iPhoneDefault;
-        $this->container['iPhoneDefault'] = (is_null($iPhoneDefault) ? null : (int) $iPhoneDefault);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEmailDefault
-     *
-     * @return int
-     */
-    public function getIEmailDefault()
-    {
-	//return $this->container['iEmailDefault'];
-        return $this->container['iEmailDefault'];
-    }
-
-    /**
-     * Sets iEmailDefault
-     *
-     * @param int $iEmailDefault The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty.
-     *
-     * @return self
-     */
-    public function setIEmailDefault($iEmailDefault)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEmailDefault)) {
-            //throw new \InvalidArgumentException('non-nullable iEmailDefault cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEmailDefault'] = $iEmailDefault;
-        $this->container['iEmailDefault'] = (is_null($iEmailDefault) ? null : (int) $iEmailDefault);
-
-        return $this;
-    }
-
-    /**
-     * Gets iWebsiteDefault
-     *
-     * @return int
-     */
-    public function getIWebsiteDefault()
-    {
-	//return $this->container['iWebsiteDefault'];
-        return $this->container['iWebsiteDefault'];
-    }
-
-    /**
-     * Sets iWebsiteDefault
-     *
-     * @param int $iWebsiteDefault The index in the a_objWebsite array (zero based index) representing the Website object that should become the default one.  You can leave the value to 0 if the array is empty.
-     *
-     * @return self
-     */
-    public function setIWebsiteDefault($iWebsiteDefault)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iWebsiteDefault)) {
-            //throw new \InvalidArgumentException('non-nullable iWebsiteDefault cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iWebsiteDefault'] = $iWebsiteDefault;
-        $this->container['iWebsiteDefault'] = (is_null($iWebsiteDefault) ? null : (int) $iWebsiteDefault);
-
-        return $this;
-    }
 
     /**
      * Gets aObjAddress

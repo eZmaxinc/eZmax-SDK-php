@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class SubnetRequestCompound extends SubnetRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,12 +57,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiSubnetID' => 'int',
-        'fkiUserID' => 'int',
-        'fkiApikeyID' => 'int',
-        'objSubnetDescription' => '\eZmaxAPI\Model\MultilingualSubnetDescription',
-        'iSubnetNetwork' => 'int',
-        'iSubnetMask' => 'int'
+        
     ];
 
     /**
@@ -75,12 +68,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiSubnetID' => null,
-        'fkiUserID' => null,
-        'fkiApikeyID' => null,
-        'objSubnetDescription' => null,
-        'iSubnetNetwork' => 'int64',
-        'iSubnetMask' => 'int64'
+        
     ];
 
     /**
@@ -89,12 +77,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiSubnetID' => false,
-		'fkiUserID' => false,
-		'fkiApikeyID' => false,
-		'objSubnetDescription' => false,
-		'iSubnetNetwork' => false,
-		'iSubnetMask' => false
+        
     ];
 
     /**
@@ -111,7 +94,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -121,7 +104,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -131,7 +114,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -183,12 +166,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiSubnetID' => 'pkiSubnetID',
-        'fkiUserID' => 'fkiUserID',
-        'fkiApikeyID' => 'fkiApikeyID',
-        'objSubnetDescription' => 'objSubnetDescription',
-        'iSubnetNetwork' => 'iSubnetNetwork',
-        'iSubnetMask' => 'iSubnetMask'
+        
     ];
 
     /**
@@ -197,12 +175,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'pkiSubnetID' => 'setPkiSubnetID',
-        'fkiUserID' => 'setFkiUserID',
-        'fkiApikeyID' => 'setFkiApikeyID',
-        'objSubnetDescription' => 'setObjSubnetDescription',
-        'iSubnetNetwork' => 'setISubnetNetwork',
-        'iSubnetMask' => 'setISubnetMask'
+        
     ];
 
     /**
@@ -211,12 +184,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'pkiSubnetID' => 'getPkiSubnetID',
-        'fkiUserID' => 'getFkiUserID',
-        'fkiApikeyID' => 'getFkiApikeyID',
-        'objSubnetDescription' => 'getObjSubnetDescription',
-        'iSubnetNetwork' => 'getISubnetNetwork',
-        'iSubnetMask' => 'getISubnetMask'
+        
     ];
 
     /**
@@ -227,7 +195,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -237,7 +205,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -247,7 +215,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -261,12 +229,6 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -276,12 +238,8 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiSubnetID', $data ?? [], null);
-        $this->setIfExists('fkiUserID', $data ?? [], null);
-        $this->setIfExists('fkiApikeyID', $data ?? [], null);
-        $this->setIfExists('objSubnetDescription', $data ?? [], null);
-        $this->setIfExists('iSubnetNetwork', $data ?? [], null);
-        $this->setIfExists('iSubnetMask', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -309,48 +267,7 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['pkiSubnetID']) && ($this->container['pkiSubnetID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pkiSubnetID', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['pkiSubnetID']) && ($this->container['pkiSubnetID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiSubnetID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiUserID']) && ($this->container['fkiUserID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUserID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiApikeyID']) && ($this->container['fkiApikeyID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiApikeyID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objSubnetDescription'] === null) {
-            $invalidProperties[] = "'objSubnetDescription' can't be null";
-        }
-        if ($this->container['iSubnetNetwork'] === null) {
-            $invalidProperties[] = "'iSubnetNetwork' can't be null";
-        }
-        if (($this->container['iSubnetNetwork'] > 4294967295)) {
-            $invalidProperties[] = "invalid value for 'iSubnetNetwork', must be smaller than or equal to 4294967295.";
-        }
-
-        if (($this->container['iSubnetNetwork'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iSubnetNetwork', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['iSubnetMask'] === null) {
-            $invalidProperties[] = "'iSubnetMask' can't be null";
-        }
-        if (($this->container['iSubnetMask'] > 4294967295)) {
-            $invalidProperties[] = "invalid value for 'iSubnetMask', must be smaller than or equal to 4294967295.";
-        }
-
-        if (($this->container['iSubnetMask'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iSubnetMask', must be bigger than or equal to 0.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -366,248 +283,6 @@ class SubnetRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiSubnetID
-     *
-     * @return int|null
-     */
-    public function getPkiSubnetID()
-    {
-	//return $this->container['pkiSubnetID'];
-        return $this->container['pkiSubnetID'];
-    }
-
-    /**
-     * Sets pkiSubnetID
-     *
-     * @param int|null $pkiSubnetID The unique ID of the Subnet
-     *
-     * @return self
-     */
-    public function setPkiSubnetID($pkiSubnetID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiSubnetID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiSubnetID cannot be null');
-        //}
-
-	//if (($pkiSubnetID > 65535)) {
-        if (!is_null($pkiSubnetID) && ($pkiSubnetID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiSubnetID when calling SubnetRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiSubnetID)?'null':'"'.$pkiSubnetID.'"').' for pkiSubnetID when calling SubnetRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($pkiSubnetID < 0)) {
-        if (!is_null($pkiSubnetID) && ($pkiSubnetID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiSubnetID when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiSubnetID)?'null':'"'.$pkiSubnetID.'"').' for pkiSubnetID when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiSubnetID'] = $pkiSubnetID;
-        $this->container['pkiSubnetID'] = (is_null($pkiSubnetID) ? null : (int) $pkiSubnetID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUserID
-     *
-     * @return int|null
-     */
-    public function getFkiUserID()
-    {
-	//return $this->container['fkiUserID'];
-        return $this->container['fkiUserID'];
-    }
-
-    /**
-     * Sets fkiUserID
-     *
-     * @param int|null $fkiUserID The unique ID of the User
-     *
-     * @return self
-     */
-    public function setFkiUserID($fkiUserID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUserID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
-        //}
-
-	//if (($fkiUserID < 0)) {
-        if (!is_null($fkiUserID) && ($fkiUserID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUserID when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserID)?'null':'"'.$fkiUserID.'"').' for fkiUserID when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUserID'] = $fkiUserID;
-        $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiApikeyID
-     *
-     * @return int|null
-     */
-    public function getFkiApikeyID()
-    {
-	//return $this->container['fkiApikeyID'];
-        return $this->container['fkiApikeyID'];
-    }
-
-    /**
-     * Sets fkiApikeyID
-     *
-     * @param int|null $fkiApikeyID The unique ID of the Apikey
-     *
-     * @return self
-     */
-    public function setFkiApikeyID($fkiApikeyID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiApikeyID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiApikeyID cannot be null');
-        //}
-
-	//if (($fkiApikeyID < 0)) {
-        if (!is_null($fkiApikeyID) && ($fkiApikeyID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiApikeyID when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiApikeyID)?'null':'"'.$fkiApikeyID.'"').' for fkiApikeyID when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiApikeyID'] = $fkiApikeyID;
-        $this->container['fkiApikeyID'] = (is_null($fkiApikeyID) ? null : (int) $fkiApikeyID);
-
-        return $this;
-    }
-
-    /**
-     * Gets objSubnetDescription
-     *
-     * @return \eZmaxAPI\Model\MultilingualSubnetDescription
-     */
-    public function getObjSubnetDescription()
-    {
-	//return $this->container['objSubnetDescription'];
-        return $this->container['objSubnetDescription'];
-    }
-
-    /**
-     * Sets objSubnetDescription
-     *
-     * @param \eZmaxAPI\Model\MultilingualSubnetDescription $objSubnetDescription objSubnetDescription
-     *
-     * @return self
-     */
-    public function setObjSubnetDescription($objSubnetDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objSubnetDescription)) {
-            //throw new \InvalidArgumentException('non-nullable objSubnetDescription cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objSubnetDescription'] = $objSubnetDescription;
-        $this->container['objSubnetDescription'] = $objSubnetDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets iSubnetNetwork
-     *
-     * @return int
-     */
-    public function getISubnetNetwork()
-    {
-	//return $this->container['iSubnetNetwork'];
-        return $this->container['iSubnetNetwork'];
-    }
-
-    /**
-     * Sets iSubnetNetwork
-     *
-     * @param int $iSubnetNetwork The network of the Subnet in integer form. For example 8.8.8.0 would be 134744064
-     *
-     * @return self
-     */
-    public function setISubnetNetwork($iSubnetNetwork)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iSubnetNetwork)) {
-            //throw new \InvalidArgumentException('non-nullable iSubnetNetwork cannot be null');
-        //}
-
-	//if (($iSubnetNetwork > 4294967295)) {
-        if (($iSubnetNetwork > 4294967295)) {
-	    //throw new \InvalidArgumentException('invalid value for $iSubnetNetwork when calling SubnetRequestCompound., must be smaller than or equal to 4294967295.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iSubnetNetwork)?'null':'"'.$iSubnetNetwork.'"').' for iSubnetNetwork when calling SubnetRequestCompound., must be smaller than or equal to 4294967295.');
-        }
-	//if (($iSubnetNetwork < 0)) {
-        if (($iSubnetNetwork < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iSubnetNetwork when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iSubnetNetwork)?'null':'"'.$iSubnetNetwork.'"').' for iSubnetNetwork when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iSubnetNetwork'] = $iSubnetNetwork;
-        $this->container['iSubnetNetwork'] = (is_null($iSubnetNetwork) ? null : (int) $iSubnetNetwork);
-
-        return $this;
-    }
-
-    /**
-     * Gets iSubnetMask
-     *
-     * @return int
-     */
-    public function getISubnetMask()
-    {
-	//return $this->container['iSubnetMask'];
-        return $this->container['iSubnetMask'];
-    }
-
-    /**
-     * Sets iSubnetMask
-     *
-     * @param int $iSubnetMask The mask of the Subnet  in integer form. For example 255.255.255.0 would be 4294967040
-     *
-     * @return self
-     */
-    public function setISubnetMask($iSubnetMask)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iSubnetMask)) {
-            //throw new \InvalidArgumentException('non-nullable iSubnetMask cannot be null');
-        //}
-
-	//if (($iSubnetMask > 4294967295)) {
-        if (($iSubnetMask > 4294967295)) {
-	    //throw new \InvalidArgumentException('invalid value for $iSubnetMask when calling SubnetRequestCompound., must be smaller than or equal to 4294967295.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iSubnetMask)?'null':'"'.$iSubnetMask.'"').' for iSubnetMask when calling SubnetRequestCompound., must be smaller than or equal to 4294967295.');
-        }
-	//if (($iSubnetMask < 0)) {
-        if (($iSubnetMask < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iSubnetMask when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iSubnetMask)?'null':'"'.$iSubnetMask.'"').' for iSubnetMask when calling SubnetRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iSubnetMask'] = $iSubnetMask;
-        $this->container['iSubnetMask'] = (is_null($iSubnetMask) ? null : (int) $iSubnetMask);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -81,69 +81,6 @@ class DiscussionResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiDiscussionID"
-     */
-    public function testPropertyPkiDiscussionID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sDiscussionDescription"
-     */
-    public function testPropertySDiscussionDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bDiscussionClosed"
-     */
-    public function testPropertyBDiscussionClosed()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "dtDiscussionLastread"
-     */
-    public function testPropertyDtDiscussionLastread()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iDiscussionmessageCount"
-     */
-    public function testPropertyIDiscussionmessageCount()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iDiscussionmessageCountunread"
-     */
-    public function testPropertyIDiscussionmessageCountunread()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objDiscussionconfiguration"
-     */
-    public function testPropertyObjDiscussionconfiguration()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjDiscussionmembership"
      */
     public function testPropertyAObjDiscussionmembership()

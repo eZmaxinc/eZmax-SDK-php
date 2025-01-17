@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignsignerResponseCompound extends EzsignsignerResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,6 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignsignerID' => 'int',
-        'fkiTaxassignmentID' => 'int',
-        'fkiSecretquestionID' => 'int',
-        'fkiUserlogintypeID' => 'int',
-        'sUserlogintypeDescriptionX' => 'string',
         'objContact' => '\eZmaxAPI\Model\EzsignsignerResponseCompoundContact'
     ];
 
@@ -75,11 +68,6 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignsignerID' => null,
-        'fkiTaxassignmentID' => null,
-        'fkiSecretquestionID' => null,
-        'fkiUserlogintypeID' => null,
-        'sUserlogintypeDescriptionX' => null,
         'objContact' => null
     ];
 
@@ -89,12 +77,7 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsignsignerID' => false,
-		'fkiTaxassignmentID' => false,
-		'fkiSecretquestionID' => false,
-		'fkiUserlogintypeID' => false,
-		'sUserlogintypeDescriptionX' => false,
-		'objContact' => false
+        'objContact' => false
     ];
 
     /**
@@ -111,7 +94,7 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -121,7 +104,7 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -131,7 +114,7 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -183,11 +166,6 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignsignerID' => 'pkiEzsignsignerID',
-        'fkiTaxassignmentID' => 'fkiTaxassignmentID',
-        'fkiSecretquestionID' => 'fkiSecretquestionID',
-        'fkiUserlogintypeID' => 'fkiUserlogintypeID',
-        'sUserlogintypeDescriptionX' => 'sUserlogintypeDescriptionX',
         'objContact' => 'objContact'
     ];
 
@@ -197,11 +175,6 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignsignerID' => 'setPkiEzsignsignerID',
-        'fkiTaxassignmentID' => 'setFkiTaxassignmentID',
-        'fkiSecretquestionID' => 'setFkiSecretquestionID',
-        'fkiUserlogintypeID' => 'setFkiUserlogintypeID',
-        'sUserlogintypeDescriptionX' => 'setSUserlogintypeDescriptionX',
         'objContact' => 'setObjContact'
     ];
 
@@ -211,11 +184,6 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignsignerID' => 'getPkiEzsignsignerID',
-        'fkiTaxassignmentID' => 'getFkiTaxassignmentID',
-        'fkiSecretquestionID' => 'getFkiSecretquestionID',
-        'fkiUserlogintypeID' => 'getFkiUserlogintypeID',
-        'sUserlogintypeDescriptionX' => 'getSUserlogintypeDescriptionX',
         'objContact' => 'getObjContact'
     ];
 
@@ -227,7 +195,7 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -237,7 +205,7 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -247,7 +215,7 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -261,12 +229,6 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -276,11 +238,8 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsignsignerID', $data ?? [], null);
-        $this->setIfExists('fkiTaxassignmentID', $data ?? [], null);
-        $this->setIfExists('fkiSecretquestionID', $data ?? [], null);
-        $this->setIfExists('fkiUserlogintypeID', $data ?? [], null);
-        $this->setIfExists('sUserlogintypeDescriptionX', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('objContact', $data ?? [], null);
     }
 
@@ -309,40 +268,8 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiEzsignsignerID'] === null) {
-            $invalidProperties[] = "'pkiEzsignsignerID' can't be null";
-        }
-        if (($this->container['pkiEzsignsignerID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignsignerID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiTaxassignmentID'] === null) {
-            $invalidProperties[] = "'fkiTaxassignmentID' can't be null";
-        }
-        if (($this->container['fkiTaxassignmentID'] > 15)) {
-            $invalidProperties[] = "invalid value for 'fkiTaxassignmentID', must be smaller than or equal to 15.";
-        }
-
-        if (($this->container['fkiTaxassignmentID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiTaxassignmentID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiSecretquestionID']) && ($this->container['fkiSecretquestionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiSecretquestionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiUserlogintypeID'] === null) {
-            $invalidProperties[] = "'fkiUserlogintypeID' can't be null";
-        }
-        if (($this->container['fkiUserlogintypeID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUserlogintypeID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sUserlogintypeDescriptionX'] === null) {
-            $invalidProperties[] = "'sUserlogintypeDescriptionX' can't be null";
-        }
         if ($this->container['objContact'] === null) {
             $invalidProperties[] = "'objContact' can't be null";
         }
@@ -360,199 +287,6 @@ class EzsignsignerResponseCompound implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsignsignerID
-     *
-     * @return int
-     */
-    public function getPkiEzsignsignerID()
-    {
-	//return $this->container['pkiEzsignsignerID'];
-        return $this->container['pkiEzsignsignerID'];
-    }
-
-    /**
-     * Sets pkiEzsignsignerID
-     *
-     * @param int $pkiEzsignsignerID The unique ID of the Ezsignsigner
-     *
-     * @return self
-     */
-    public function setPkiEzsignsignerID($pkiEzsignsignerID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsignsignerID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsignsignerID cannot be null');
-        //}
-
-	//if (($pkiEzsignsignerID < 0)) {
-        if (($pkiEzsignsignerID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignsignerID when calling EzsignsignerResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignsignerID)?'null':'"'.$pkiEzsignsignerID.'"').' for pkiEzsignsignerID when calling EzsignsignerResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsignsignerID'] = $pkiEzsignsignerID;
-        $this->container['pkiEzsignsignerID'] = (is_null($pkiEzsignsignerID) ? null : (int) $pkiEzsignsignerID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiTaxassignmentID
-     *
-     * @return int
-     */
-    public function getFkiTaxassignmentID()
-    {
-	//return $this->container['fkiTaxassignmentID'];
-        return $this->container['fkiTaxassignmentID'];
-    }
-
-    /**
-     * Sets fkiTaxassignmentID
-     *
-     * @param int $fkiTaxassignmentID The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
-     *
-     * @return self
-     */
-    public function setFkiTaxassignmentID($fkiTaxassignmentID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiTaxassignmentID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiTaxassignmentID cannot be null');
-        //}
-
-	//if (($fkiTaxassignmentID > 15)) {
-        if (($fkiTaxassignmentID > 15)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerResponseCompound., must be smaller than or equal to 15.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiTaxassignmentID)?'null':'"'.$fkiTaxassignmentID.'"').' for fkiTaxassignmentID when calling EzsignsignerResponseCompound., must be smaller than or equal to 15.');
-        }
-	//if (($fkiTaxassignmentID < 0)) {
-        if (($fkiTaxassignmentID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiTaxassignmentID when calling EzsignsignerResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiTaxassignmentID)?'null':'"'.$fkiTaxassignmentID.'"').' for fkiTaxassignmentID when calling EzsignsignerResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiTaxassignmentID'] = $fkiTaxassignmentID;
-        $this->container['fkiTaxassignmentID'] = (is_null($fkiTaxassignmentID) ? null : (int) $fkiTaxassignmentID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiSecretquestionID
-     *
-     * @return int|null
-     */
-    public function getFkiSecretquestionID()
-    {
-	//return $this->container['fkiSecretquestionID'];
-        return $this->container['fkiSecretquestionID'];
-    }
-
-    /**
-     * Sets fkiSecretquestionID
-     *
-     * @param int|null $fkiSecretquestionID The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father's middle name| |15|Your mother's maiden name| |16|Name of your eldest child| |17|Your spouse's middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat's name| |22|Date of Birth (YYYY-MM-DD)| |22|Secret Code| |22|Your reference code|
-     *
-     * @return self
-     */
-    public function setFkiSecretquestionID($fkiSecretquestionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiSecretquestionID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiSecretquestionID cannot be null');
-        //}
-
-	//if (($fkiSecretquestionID < 0)) {
-        if (!is_null($fkiSecretquestionID) && ($fkiSecretquestionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiSecretquestionID when calling EzsignsignerResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiSecretquestionID)?'null':'"'.$fkiSecretquestionID.'"').' for fkiSecretquestionID when calling EzsignsignerResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiSecretquestionID'] = $fkiSecretquestionID;
-        $this->container['fkiSecretquestionID'] = (is_null($fkiSecretquestionID) ? null : (int) $fkiSecretquestionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUserlogintypeID
-     *
-     * @return int
-     */
-    public function getFkiUserlogintypeID()
-    {
-	//return $this->container['fkiUserlogintypeID'];
-        return $this->container['fkiUserlogintypeID'];
-    }
-
-    /**
-     * Sets fkiUserlogintypeID
-     *
-     * @param int $fkiUserlogintypeID The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**| |6|**Embedded**|The Ezsignsigner will only be able to sign in the embedded solution. No email will be sent for invitation to sign. **Additional fee applies**|   |7|**Embedded with phone or SMS**|The Ezsignsigner will only be able to sign in the embedded solution and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|   |8|**No validation**|The Ezsignsigner will not receive an email and won't have to validate his connection using 2 factor. **Additional fee applies**|      |9|**Sms only**|The Ezsignsigner will not receive an email but will will need to authenticate using SMS. **Additional fee applies**|
-     *
-     * @return self
-     */
-    public function setFkiUserlogintypeID($fkiUserlogintypeID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUserlogintypeID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUserlogintypeID cannot be null');
-        //}
-
-	//if (($fkiUserlogintypeID < 0)) {
-        if (($fkiUserlogintypeID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUserlogintypeID when calling EzsignsignerResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserlogintypeID)?'null':'"'.$fkiUserlogintypeID.'"').' for fkiUserlogintypeID when calling EzsignsignerResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUserlogintypeID'] = $fkiUserlogintypeID;
-        $this->container['fkiUserlogintypeID'] = (is_null($fkiUserlogintypeID) ? null : (int) $fkiUserlogintypeID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sUserlogintypeDescriptionX
-     *
-     * @return string
-     */
-    public function getSUserlogintypeDescriptionX()
-    {
-	//return $this->container['sUserlogintypeDescriptionX'];
-        return is_null($this->container['sUserlogintypeDescriptionX']) ? null : trim($this->container['sUserlogintypeDescriptionX']);
-    }
-
-    /**
-     * Sets sUserlogintypeDescriptionX
-     *
-     * @param string $sUserlogintypeDescriptionX The description of the Userlogintype in the language of the requester
-     *
-     * @return self
-     */
-    public function setSUserlogintypeDescriptionX($sUserlogintypeDescriptionX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sUserlogintypeDescriptionX)) {
-            //throw new \InvalidArgumentException('non-nullable sUserlogintypeDescriptionX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sUserlogintypeDescriptionX'] = $sUserlogintypeDescriptionX;
-        $this->container['sUserlogintypeDescriptionX'] = (is_null($sUserlogintypeDescriptionX) ? null : trim((string) $sUserlogintypeDescriptionX));
-
-        return $this;
-    }
 
     /**
      * Gets objContact

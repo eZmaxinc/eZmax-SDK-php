@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigntemplateglobalsignerResponseCompound extends EzsigntemplateglobalsignerResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,9 +57,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsigntemplateglobalsignerID' => 'int',
-        'fkiEzsigntemplateglobalID' => 'int',
-        'sEzsigntemplateglobalsignerDescription' => 'string'
+        
     ];
 
     /**
@@ -72,9 +68,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsigntemplateglobalsignerID' => null,
-        'fkiEzsigntemplateglobalID' => null,
-        'sEzsigntemplateglobalsignerDescription' => null
+        
     ];
 
     /**
@@ -83,9 +77,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsigntemplateglobalsignerID' => false,
-		'fkiEzsigntemplateglobalID' => false,
-		'sEzsigntemplateglobalsignerDescription' => false
+        
     ];
 
     /**
@@ -102,7 +94,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,9 +166,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsigntemplateglobalsignerID' => 'pkiEzsigntemplateglobalsignerID',
-        'fkiEzsigntemplateglobalID' => 'fkiEzsigntemplateglobalID',
-        'sEzsigntemplateglobalsignerDescription' => 'sEzsigntemplateglobalsignerDescription'
+        
     ];
 
     /**
@@ -185,9 +175,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsigntemplateglobalsignerID' => 'setPkiEzsigntemplateglobalsignerID',
-        'fkiEzsigntemplateglobalID' => 'setFkiEzsigntemplateglobalID',
-        'sEzsigntemplateglobalsignerDescription' => 'setSEzsigntemplateglobalsignerDescription'
+        
     ];
 
     /**
@@ -196,9 +184,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsigntemplateglobalsignerID' => 'getPkiEzsigntemplateglobalsignerID',
-        'fkiEzsigntemplateglobalID' => 'getFkiEzsigntemplateglobalID',
-        'sEzsigntemplateglobalsignerDescription' => 'getSEzsigntemplateglobalsignerDescription'
+        
     ];
 
     /**
@@ -209,7 +195,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,9 +238,8 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsigntemplateglobalsignerID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigntemplateglobalID', $data ?? [], null);
-        $this->setIfExists('sEzsigntemplateglobalsignerDescription', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -288,29 +267,7 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiEzsigntemplateglobalsignerID'] === null) {
-            $invalidProperties[] = "'pkiEzsigntemplateglobalsignerID' can't be null";
-        }
-        if (($this->container['pkiEzsigntemplateglobalsignerID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsigntemplateglobalsignerID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsigntemplateglobalID'] === null) {
-            $invalidProperties[] = "'fkiEzsigntemplateglobalID' can't be null";
-        }
-        if (($this->container['fkiEzsigntemplateglobalID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntemplateglobalID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sEzsigntemplateglobalsignerDescription'] === null) {
-            $invalidProperties[] = "'sEzsigntemplateglobalsignerDescription' can't be null";
-        }
-	//if (!preg_match("/^.{1,50}$/", $this->container['sEzsigntemplateglobalsignerDescription'])) {
-        if (!is_null($this->container['sEzsigntemplateglobalsignerDescription']) && !preg_match("/(*UTF8)^.{1,50}$/", $this->container['sEzsigntemplateglobalsignerDescription'])) {
-            $invalidProperties[] = "invalid value for 'sEzsigntemplateglobalsignerDescription', must be conform to the pattern /^.{1,50}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -326,123 +283,6 @@ class EzsigntemplateglobalsignerResponseCompound implements ModelInterface, Arra
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsigntemplateglobalsignerID
-     *
-     * @return int
-     */
-    public function getPkiEzsigntemplateglobalsignerID()
-    {
-	//return $this->container['pkiEzsigntemplateglobalsignerID'];
-        return $this->container['pkiEzsigntemplateglobalsignerID'];
-    }
-
-    /**
-     * Sets pkiEzsigntemplateglobalsignerID
-     *
-     * @param int $pkiEzsigntemplateglobalsignerID The unique ID of the Ezsigntemplateglobalsigner
-     *
-     * @return self
-     */
-    public function setPkiEzsigntemplateglobalsignerID($pkiEzsigntemplateglobalsignerID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsigntemplateglobalsignerID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplateglobalsignerID cannot be null');
-        //}
-
-	//if (($pkiEzsigntemplateglobalsignerID < 0)) {
-        if (($pkiEzsigntemplateglobalsignerID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplateglobalsignerID when calling EzsigntemplateglobalsignerResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsigntemplateglobalsignerID)?'null':'"'.$pkiEzsigntemplateglobalsignerID.'"').' for pkiEzsigntemplateglobalsignerID when calling EzsigntemplateglobalsignerResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsigntemplateglobalsignerID'] = $pkiEzsigntemplateglobalsignerID;
-        $this->container['pkiEzsigntemplateglobalsignerID'] = (is_null($pkiEzsigntemplateglobalsignerID) ? null : (int) $pkiEzsigntemplateglobalsignerID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigntemplateglobalID
-     *
-     * @return int
-     */
-    public function getFkiEzsigntemplateglobalID()
-    {
-	//return $this->container['fkiEzsigntemplateglobalID'];
-        return $this->container['fkiEzsigntemplateglobalID'];
-    }
-
-    /**
-     * Sets fkiEzsigntemplateglobalID
-     *
-     * @param int $fkiEzsigntemplateglobalID The unique ID of the Ezsigntemplateglobal
-     *
-     * @return self
-     */
-    public function setFkiEzsigntemplateglobalID($fkiEzsigntemplateglobalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigntemplateglobalID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplateglobalID cannot be null');
-        //}
-
-	//if (($fkiEzsigntemplateglobalID < 0)) {
-        if (($fkiEzsigntemplateglobalID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplateglobalID when calling EzsigntemplateglobalsignerResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntemplateglobalID)?'null':'"'.$fkiEzsigntemplateglobalID.'"').' for fkiEzsigntemplateglobalID when calling EzsigntemplateglobalsignerResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigntemplateglobalID'] = $fkiEzsigntemplateglobalID;
-        $this->container['fkiEzsigntemplateglobalID'] = (is_null($fkiEzsigntemplateglobalID) ? null : (int) $fkiEzsigntemplateglobalID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsigntemplateglobalsignerDescription
-     *
-     * @return string
-     */
-    public function getSEzsigntemplateglobalsignerDescription()
-    {
-	//return $this->container['sEzsigntemplateglobalsignerDescription'];
-        return is_null($this->container['sEzsigntemplateglobalsignerDescription']) ? null : trim($this->container['sEzsigntemplateglobalsignerDescription']);
-    }
-
-    /**
-     * Sets sEzsigntemplateglobalsignerDescription
-     *
-     * @param string $sEzsigntemplateglobalsignerDescription The description of the Ezsigntemplateglobalsigner
-     *
-     * @return self
-     */
-    public function setSEzsigntemplateglobalsignerDescription($sEzsigntemplateglobalsignerDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsigntemplateglobalsignerDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsigntemplateglobalsignerDescription cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{1,50}$/", ObjectSerializer::toString($sEzsigntemplateglobalsignerDescription)))) {
-        if (!is_null($sEzsigntemplateglobalsignerDescription) && (!preg_match("/(*UTF8)^.{1,50}$/", ObjectSerializer::toString($sEzsigntemplateglobalsignerDescription)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sEzsigntemplateglobalsignerDescription when calling EzsigntemplateglobalsignerResponseCompound., must conform to the pattern /^.{1,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzsigntemplateglobalsignerDescription)?'null':'"'.$sEzsigntemplateglobalsignerDescription.'"')." for sEzsigntemplateglobalsignerDescription when calling EzsigntemplateglobalsignerResponseCompound., must conform to the pattern /^.{1,50}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsigntemplateglobalsignerDescription'] = $sEzsigntemplateglobalsignerDescription;
-        $this->container['sEzsigntemplateglobalsignerDescription'] = (is_null($sEzsigntemplateglobalsignerDescription) ? null : trim((string) $sEzsigntemplateglobalsignerDescription));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

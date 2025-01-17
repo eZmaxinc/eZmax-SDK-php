@@ -79,22 +79,4 @@ class EzsigntemplatedocumentPatchObjectV1ResponseTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "objDebugPayload"
-     */
-    public function testPropertyObjDebugPayload()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objDebug"
-     */
-    public function testPropertyObjDebug()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

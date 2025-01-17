@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class UsergroupRequestCompound extends UsergroupRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,9 +57,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiUsergroupID' => 'int',
-        'objEmail' => '\eZmaxAPI\Model\EmailRequest',
-        'objUsergroupName' => '\eZmaxAPI\Model\MultilingualUsergroupName'
+        
     ];
 
     /**
@@ -72,9 +68,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiUsergroupID' => null,
-        'objEmail' => null,
-        'objUsergroupName' => null
+        
     ];
 
     /**
@@ -83,9 +77,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiUsergroupID' => false,
-		'objEmail' => false,
-		'objUsergroupName' => false
+        
     ];
 
     /**
@@ -102,7 +94,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,9 +166,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiUsergroupID' => 'pkiUsergroupID',
-        'objEmail' => 'objEmail',
-        'objUsergroupName' => 'objUsergroupName'
+        
     ];
 
     /**
@@ -185,9 +175,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'pkiUsergroupID' => 'setPkiUsergroupID',
-        'objEmail' => 'setObjEmail',
-        'objUsergroupName' => 'setObjUsergroupName'
+        
     ];
 
     /**
@@ -196,9 +184,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'pkiUsergroupID' => 'getPkiUsergroupID',
-        'objEmail' => 'getObjEmail',
-        'objUsergroupName' => 'getObjUsergroupName'
+        
     ];
 
     /**
@@ -209,7 +195,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,9 +238,8 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiUsergroupID', $data ?? [], null);
-        $this->setIfExists('objEmail', $data ?? [], null);
-        $this->setIfExists('objUsergroupName', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -288,19 +267,8 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if (!is_null($this->container['pkiUsergroupID']) && ($this->container['pkiUsergroupID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['pkiUsergroupID']) && ($this->container['pkiUsergroupID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiUsergroupID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objUsergroupName'] === null) {
-            $invalidProperties[] = "'objUsergroupName' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -315,114 +283,6 @@ class UsergroupRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiUsergroupID
-     *
-     * @return int|null
-     */
-    public function getPkiUsergroupID()
-    {
-	//return $this->container['pkiUsergroupID'];
-        return $this->container['pkiUsergroupID'];
-    }
-
-    /**
-     * Sets pkiUsergroupID
-     *
-     * @param int|null $pkiUsergroupID The unique ID of the Usergroup
-     *
-     * @return self
-     */
-    public function setPkiUsergroupID($pkiUsergroupID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiUsergroupID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiUsergroupID cannot be null');
-        //}
-
-	//if (($pkiUsergroupID > 255)) {
-        if (!is_null($pkiUsergroupID) && ($pkiUsergroupID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupRequestCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupID)?'null':'"'.$pkiUsergroupID.'"').' for pkiUsergroupID when calling UsergroupRequestCompound., must be smaller than or equal to 255.');
-        }
-	//if (($pkiUsergroupID < 0)) {
-        if (!is_null($pkiUsergroupID) && ($pkiUsergroupID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiUsergroupID when calling UsergroupRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiUsergroupID)?'null':'"'.$pkiUsergroupID.'"').' for pkiUsergroupID when calling UsergroupRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiUsergroupID'] = $pkiUsergroupID;
-        $this->container['pkiUsergroupID'] = (is_null($pkiUsergroupID) ? null : (int) $pkiUsergroupID);
-
-        return $this;
-    }
-
-    /**
-     * Gets objEmail
-     *
-     * @return \eZmaxAPI\Model\EmailRequest|null
-     */
-    public function getObjEmail()
-    {
-	//return $this->container['objEmail'];
-        return $this->container['objEmail'];
-    }
-
-    /**
-     * Sets objEmail
-     *
-     * @param \eZmaxAPI\Model\EmailRequest|null $objEmail objEmail
-     *
-     * @return self
-     */
-    public function setObjEmail($objEmail)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objEmail)) {
-            //throw new \InvalidArgumentException('non-nullable objEmail cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objEmail'] = $objEmail;
-        $this->container['objEmail'] = $objEmail;
-
-        return $this;
-    }
-
-    /**
-     * Gets objUsergroupName
-     *
-     * @return \eZmaxAPI\Model\MultilingualUsergroupName
-     */
-    public function getObjUsergroupName()
-    {
-	//return $this->container['objUsergroupName'];
-        return $this->container['objUsergroupName'];
-    }
-
-    /**
-     * Sets objUsergroupName
-     *
-     * @param \eZmaxAPI\Model\MultilingualUsergroupName $objUsergroupName objUsergroupName
-     *
-     * @return self
-     */
-    public function setObjUsergroupName($objUsergroupName)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objUsergroupName)) {
-            //throw new \InvalidArgumentException('non-nullable objUsergroupName cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objUsergroupName'] = $objUsergroupName;
-        $this->container['objUsergroupName'] = $objUsergroupName;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigntemplatedocumentResponseCompound extends EzsigntemplatedocumentResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,13 +57,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsigntemplatedocumentID' => 'int',
-        'fkiEzsigntemplateID' => 'int',
-        'sEzsigntemplatedocumentName' => 'string',
-        'iEzsigntemplatedocumentPagetotal' => 'int',
-        'iEzsigntemplatedocumentSignaturetotal' => 'int',
-        'iEzsigntemplatedocumentFormfieldtotal' => 'int',
-        'bEzsigntemplatedocumentHassignedsignatures' => 'bool'
+        
     ];
 
     /**
@@ -76,13 +68,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsigntemplatedocumentID' => null,
-        'fkiEzsigntemplateID' => null,
-        'sEzsigntemplatedocumentName' => null,
-        'iEzsigntemplatedocumentPagetotal' => null,
-        'iEzsigntemplatedocumentSignaturetotal' => null,
-        'iEzsigntemplatedocumentFormfieldtotal' => null,
-        'bEzsigntemplatedocumentHassignedsignatures' => null
+        
     ];
 
     /**
@@ -91,13 +77,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsigntemplatedocumentID' => false,
-		'fkiEzsigntemplateID' => false,
-		'sEzsigntemplatedocumentName' => false,
-		'iEzsigntemplatedocumentPagetotal' => false,
-		'iEzsigntemplatedocumentSignaturetotal' => false,
-		'iEzsigntemplatedocumentFormfieldtotal' => false,
-		'bEzsigntemplatedocumentHassignedsignatures' => false
+        
     ];
 
     /**
@@ -114,7 +94,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -124,7 +104,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -134,7 +114,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -186,13 +166,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsigntemplatedocumentID' => 'pkiEzsigntemplatedocumentID',
-        'fkiEzsigntemplateID' => 'fkiEzsigntemplateID',
-        'sEzsigntemplatedocumentName' => 'sEzsigntemplatedocumentName',
-        'iEzsigntemplatedocumentPagetotal' => 'iEzsigntemplatedocumentPagetotal',
-        'iEzsigntemplatedocumentSignaturetotal' => 'iEzsigntemplatedocumentSignaturetotal',
-        'iEzsigntemplatedocumentFormfieldtotal' => 'iEzsigntemplatedocumentFormfieldtotal',
-        'bEzsigntemplatedocumentHassignedsignatures' => 'bEzsigntemplatedocumentHassignedsignatures'
+        
     ];
 
     /**
@@ -201,13 +175,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsigntemplatedocumentID' => 'setPkiEzsigntemplatedocumentID',
-        'fkiEzsigntemplateID' => 'setFkiEzsigntemplateID',
-        'sEzsigntemplatedocumentName' => 'setSEzsigntemplatedocumentName',
-        'iEzsigntemplatedocumentPagetotal' => 'setIEzsigntemplatedocumentPagetotal',
-        'iEzsigntemplatedocumentSignaturetotal' => 'setIEzsigntemplatedocumentSignaturetotal',
-        'iEzsigntemplatedocumentFormfieldtotal' => 'setIEzsigntemplatedocumentFormfieldtotal',
-        'bEzsigntemplatedocumentHassignedsignatures' => 'setBEzsigntemplatedocumentHassignedsignatures'
+        
     ];
 
     /**
@@ -216,13 +184,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsigntemplatedocumentID' => 'getPkiEzsigntemplatedocumentID',
-        'fkiEzsigntemplateID' => 'getFkiEzsigntemplateID',
-        'sEzsigntemplatedocumentName' => 'getSEzsigntemplatedocumentName',
-        'iEzsigntemplatedocumentPagetotal' => 'getIEzsigntemplatedocumentPagetotal',
-        'iEzsigntemplatedocumentSignaturetotal' => 'getIEzsigntemplatedocumentSignaturetotal',
-        'iEzsigntemplatedocumentFormfieldtotal' => 'getIEzsigntemplatedocumentFormfieldtotal',
-        'bEzsigntemplatedocumentHassignedsignatures' => 'getBEzsigntemplatedocumentHassignedsignatures'
+        
     ];
 
     /**
@@ -233,7 +195,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -243,7 +205,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -253,7 +215,7 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -267,12 +229,6 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -282,13 +238,8 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsigntemplatedocumentID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigntemplateID', $data ?? [], null);
-        $this->setIfExists('sEzsigntemplatedocumentName', $data ?? [], null);
-        $this->setIfExists('iEzsigntemplatedocumentPagetotal', $data ?? [], null);
-        $this->setIfExists('iEzsigntemplatedocumentSignaturetotal', $data ?? [], null);
-        $this->setIfExists('iEzsigntemplatedocumentFormfieldtotal', $data ?? [], null);
-        $this->setIfExists('bEzsigntemplatedocumentHassignedsignatures', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -316,41 +267,8 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiEzsigntemplatedocumentID'] === null) {
-            $invalidProperties[] = "'pkiEzsigntemplatedocumentID' can't be null";
-        }
-        if (($this->container['pkiEzsigntemplatedocumentID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsigntemplatedocumentID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsigntemplateID'] === null) {
-            $invalidProperties[] = "'fkiEzsigntemplateID' can't be null";
-        }
-        if (($this->container['fkiEzsigntemplateID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntemplateID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sEzsigntemplatedocumentName'] === null) {
-            $invalidProperties[] = "'sEzsigntemplatedocumentName' can't be null";
-        }
-        if ($this->container['iEzsigntemplatedocumentPagetotal'] === null) {
-            $invalidProperties[] = "'iEzsigntemplatedocumentPagetotal' can't be null";
-        }
-        if (($this->container['iEzsigntemplatedocumentPagetotal'] < 1)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatedocumentPagetotal', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['iEzsigntemplatedocumentSignaturetotal'] === null) {
-            $invalidProperties[] = "'iEzsigntemplatedocumentSignaturetotal' can't be null";
-        }
-        if ($this->container['iEzsigntemplatedocumentFormfieldtotal'] === null) {
-            $invalidProperties[] = "'iEzsigntemplatedocumentFormfieldtotal' can't be null";
-        }
-        if ($this->container['bEzsigntemplatedocumentHassignedsignatures'] === null) {
-            $invalidProperties[] = "'bEzsigntemplatedocumentHassignedsignatures' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -365,251 +283,6 @@ class EzsigntemplatedocumentResponseCompound implements ModelInterface, ArrayAcc
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsigntemplatedocumentID
-     *
-     * @return int
-     */
-    public function getPkiEzsigntemplatedocumentID()
-    {
-	//return $this->container['pkiEzsigntemplatedocumentID'];
-        return $this->container['pkiEzsigntemplatedocumentID'];
-    }
-
-    /**
-     * Sets pkiEzsigntemplatedocumentID
-     *
-     * @param int $pkiEzsigntemplatedocumentID The unique ID of the Ezsigntemplatedocument
-     *
-     * @return self
-     */
-    public function setPkiEzsigntemplatedocumentID($pkiEzsigntemplatedocumentID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsigntemplatedocumentID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatedocumentID cannot be null');
-        //}
-
-	//if (($pkiEzsigntemplatedocumentID < 0)) {
-        if (($pkiEzsigntemplatedocumentID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplatedocumentID when calling EzsigntemplatedocumentResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsigntemplatedocumentID)?'null':'"'.$pkiEzsigntemplatedocumentID.'"').' for pkiEzsigntemplatedocumentID when calling EzsigntemplatedocumentResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsigntemplatedocumentID'] = $pkiEzsigntemplatedocumentID;
-        $this->container['pkiEzsigntemplatedocumentID'] = (is_null($pkiEzsigntemplatedocumentID) ? null : (int) $pkiEzsigntemplatedocumentID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigntemplateID
-     *
-     * @return int
-     */
-    public function getFkiEzsigntemplateID()
-    {
-	//return $this->container['fkiEzsigntemplateID'];
-        return $this->container['fkiEzsigntemplateID'];
-    }
-
-    /**
-     * Sets fkiEzsigntemplateID
-     *
-     * @param int $fkiEzsigntemplateID The unique ID of the Ezsigntemplate
-     *
-     * @return self
-     */
-    public function setFkiEzsigntemplateID($fkiEzsigntemplateID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigntemplateID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplateID cannot be null');
-        //}
-
-	//if (($fkiEzsigntemplateID < 0)) {
-        if (($fkiEzsigntemplateID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplateID when calling EzsigntemplatedocumentResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntemplateID)?'null':'"'.$fkiEzsigntemplateID.'"').' for fkiEzsigntemplateID when calling EzsigntemplatedocumentResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigntemplateID'] = $fkiEzsigntemplateID;
-        $this->container['fkiEzsigntemplateID'] = (is_null($fkiEzsigntemplateID) ? null : (int) $fkiEzsigntemplateID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsigntemplatedocumentName
-     *
-     * @return string
-     */
-    public function getSEzsigntemplatedocumentName()
-    {
-	//return $this->container['sEzsigntemplatedocumentName'];
-        return is_null($this->container['sEzsigntemplatedocumentName']) ? null : trim($this->container['sEzsigntemplatedocumentName']);
-    }
-
-    /**
-     * Sets sEzsigntemplatedocumentName
-     *
-     * @param string $sEzsigntemplatedocumentName The name of the Ezsigntemplatedocument.
-     *
-     * @return self
-     */
-    public function setSEzsigntemplatedocumentName($sEzsigntemplatedocumentName)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsigntemplatedocumentName)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsigntemplatedocumentName cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsigntemplatedocumentName'] = $sEzsigntemplatedocumentName;
-        $this->container['sEzsigntemplatedocumentName'] = (is_null($sEzsigntemplatedocumentName) ? null : trim((string) $sEzsigntemplatedocumentName));
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigntemplatedocumentPagetotal
-     *
-     * @return int
-     */
-    public function getIEzsigntemplatedocumentPagetotal()
-    {
-	//return $this->container['iEzsigntemplatedocumentPagetotal'];
-        return $this->container['iEzsigntemplatedocumentPagetotal'];
-    }
-
-    /**
-     * Sets iEzsigntemplatedocumentPagetotal
-     *
-     * @param int $iEzsigntemplatedocumentPagetotal The number of pages in the Ezsigntemplatedocument.
-     *
-     * @return self
-     */
-    public function setIEzsigntemplatedocumentPagetotal($iEzsigntemplatedocumentPagetotal)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigntemplatedocumentPagetotal)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentPagetotal cannot be null');
-        //}
-
-	//if (($iEzsigntemplatedocumentPagetotal < 1)) {
-        if (($iEzsigntemplatedocumentPagetotal < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatedocumentPagetotal when calling EzsigntemplatedocumentResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatedocumentPagetotal)?'null':'"'.$iEzsigntemplatedocumentPagetotal.'"').' for iEzsigntemplatedocumentPagetotal when calling EzsigntemplatedocumentResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigntemplatedocumentPagetotal'] = $iEzsigntemplatedocumentPagetotal;
-        $this->container['iEzsigntemplatedocumentPagetotal'] = (is_null($iEzsigntemplatedocumentPagetotal) ? null : (int) $iEzsigntemplatedocumentPagetotal);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigntemplatedocumentSignaturetotal
-     *
-     * @return int
-     */
-    public function getIEzsigntemplatedocumentSignaturetotal()
-    {
-	//return $this->container['iEzsigntemplatedocumentSignaturetotal'];
-        return $this->container['iEzsigntemplatedocumentSignaturetotal'];
-    }
-
-    /**
-     * Sets iEzsigntemplatedocumentSignaturetotal
-     *
-     * @param int $iEzsigntemplatedocumentSignaturetotal The number of total signatures in the Ezsigntemplate.
-     *
-     * @return self
-     */
-    public function setIEzsigntemplatedocumentSignaturetotal($iEzsigntemplatedocumentSignaturetotal)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigntemplatedocumentSignaturetotal)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentSignaturetotal cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigntemplatedocumentSignaturetotal'] = $iEzsigntemplatedocumentSignaturetotal;
-        $this->container['iEzsigntemplatedocumentSignaturetotal'] = (is_null($iEzsigntemplatedocumentSignaturetotal) ? null : (int) $iEzsigntemplatedocumentSignaturetotal);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigntemplatedocumentFormfieldtotal
-     *
-     * @return int
-     */
-    public function getIEzsigntemplatedocumentFormfieldtotal()
-    {
-	//return $this->container['iEzsigntemplatedocumentFormfieldtotal'];
-        return $this->container['iEzsigntemplatedocumentFormfieldtotal'];
-    }
-
-    /**
-     * Sets iEzsigntemplatedocumentFormfieldtotal
-     *
-     * @param int $iEzsigntemplatedocumentFormfieldtotal The number of total form fields in the Ezsigntemplate.
-     *
-     * @return self
-     */
-    public function setIEzsigntemplatedocumentFormfieldtotal($iEzsigntemplatedocumentFormfieldtotal)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigntemplatedocumentFormfieldtotal)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatedocumentFormfieldtotal cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigntemplatedocumentFormfieldtotal'] = $iEzsigntemplatedocumentFormfieldtotal;
-        $this->container['iEzsigntemplatedocumentFormfieldtotal'] = (is_null($iEzsigntemplatedocumentFormfieldtotal) ? null : (int) $iEzsigntemplatedocumentFormfieldtotal);
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsigntemplatedocumentHassignedsignatures
-     *
-     * @return bool
-     */
-    public function getBEzsigntemplatedocumentHassignedsignatures()
-    {
-	//return $this->container['bEzsigntemplatedocumentHassignedsignatures'];
-        return $this->container['bEzsigntemplatedocumentHassignedsignatures'];
-    }
-
-    /**
-     * Sets bEzsigntemplatedocumentHassignedsignatures
-     *
-     * @param bool $bEzsigntemplatedocumentHassignedsignatures If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
-     *
-     * @return self
-     */
-    public function setBEzsigntemplatedocumentHassignedsignatures($bEzsigntemplatedocumentHassignedsignatures)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsigntemplatedocumentHassignedsignatures)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsigntemplatedocumentHassignedsignatures cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsigntemplatedocumentHassignedsignatures'] = $bEzsigntemplatedocumentHassignedsignatures;
-        $this->container['bEzsigntemplatedocumentHassignedsignatures'] = (is_null($bEzsigntemplatedocumentHassignedsignatures) ? null : (bool) $bEzsigntemplatedocumentHassignedsignatures);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

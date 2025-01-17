@@ -79,49 +79,4 @@ class SignatureRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiSignatureID"
-     */
-    public function testPropertyPkiSignatureID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiFontID"
-     */
-    public function testPropertyFkiFontID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "eSignaturePreference"
-     */
-    public function testPropertyESignaturePreference()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tSignatureSvg"
-     */
-    public function testPropertyTSignatureSvg()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tSignatureSvginitials"
-     */
-    public function testPropertyTSignatureSvginitials()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

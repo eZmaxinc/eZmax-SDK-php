@@ -79,49 +79,4 @@ class AttachmentlogResponseCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "fkiAttachmentID"
-     */
-    public function testPropertyFkiAttachmentID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiUserID"
-     */
-    public function testPropertyFkiUserID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "dtAttachmentlogDatetime"
-     */
-    public function testPropertyDtAttachmentlogDatetime()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "eAttachmentlogType"
-     */
-    public function testPropertyEAttachmentlogType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sAttachmentlogDetail"
-     */
-    public function testPropertySAttachmentlogDetail()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

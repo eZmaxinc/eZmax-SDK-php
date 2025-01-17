@@ -79,31 +79,4 @@ class BillingentityinternalproductRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiBillingentityinternalproductID"
-     */
-    public function testPropertyPkiBillingentityinternalproductID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzmaxproductID"
-     */
-    public function testPropertyFkiEzmaxproductID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiBillingentityexternalID"
-     */
-    public function testPropertyFkiBillingentityexternalID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

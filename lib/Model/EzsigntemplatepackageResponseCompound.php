@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigntemplatepackageResponseCompound extends EzsigntemplatepackageResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,18 +57,6 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsigntemplatepackageID' => 'int',
-        'fkiEzsignfoldertypeID' => 'int',
-        'fkiEzdoctemplatedocumentID' => 'int',
-        'fkiLanguageID' => 'int',
-        'sEzdoctemplatedocumentNameX' => 'string',
-        'sLanguageNameX' => 'string',
-        'sEzsigntemplatepackageDescription' => 'string',
-        'bEzsigntemplatepackageAdminonly' => 'bool',
-        'bEzsigntemplatepackageNeedvalidation' => 'bool',
-        'bEzsigntemplatepackageIsactive' => 'bool',
-        'sEzsignfoldertypeNameX' => 'string',
-        'bEzsigntemplatepackageEditallowed' => 'bool',
         'aObjEzsigntemplatepackagesigner' => '\eZmaxAPI\Model\EzsigntemplatepackagesignerResponseCompound[]',
         'aObjEzsigntemplatepackagemembership' => '\eZmaxAPI\Model\EzsigntemplatepackagemembershipResponseCompound[]'
     ];
@@ -83,18 +69,6 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsigntemplatepackageID' => null,
-        'fkiEzsignfoldertypeID' => null,
-        'fkiEzdoctemplatedocumentID' => null,
-        'fkiLanguageID' => null,
-        'sEzdoctemplatedocumentNameX' => null,
-        'sLanguageNameX' => null,
-        'sEzsigntemplatepackageDescription' => null,
-        'bEzsigntemplatepackageAdminonly' => null,
-        'bEzsigntemplatepackageNeedvalidation' => null,
-        'bEzsigntemplatepackageIsactive' => null,
-        'sEzsignfoldertypeNameX' => null,
-        'bEzsigntemplatepackageEditallowed' => null,
         'aObjEzsigntemplatepackagesigner' => null,
         'aObjEzsigntemplatepackagemembership' => null
     ];
@@ -105,19 +79,7 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsigntemplatepackageID' => false,
-		'fkiEzsignfoldertypeID' => false,
-		'fkiEzdoctemplatedocumentID' => false,
-		'fkiLanguageID' => false,
-		'sEzdoctemplatedocumentNameX' => false,
-		'sLanguageNameX' => false,
-		'sEzsigntemplatepackageDescription' => false,
-		'bEzsigntemplatepackageAdminonly' => false,
-		'bEzsigntemplatepackageNeedvalidation' => false,
-		'bEzsigntemplatepackageIsactive' => false,
-		'sEzsignfoldertypeNameX' => false,
-		'bEzsigntemplatepackageEditallowed' => false,
-		'aObjEzsigntemplatepackagesigner' => false,
+        'aObjEzsigntemplatepackagesigner' => false,
 		'aObjEzsigntemplatepackagemembership' => false
     ];
 
@@ -135,7 +97,7 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -145,7 +107,7 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -155,7 +117,7 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -207,18 +169,6 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsigntemplatepackageID' => 'pkiEzsigntemplatepackageID',
-        'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
-        'fkiEzdoctemplatedocumentID' => 'fkiEzdoctemplatedocumentID',
-        'fkiLanguageID' => 'fkiLanguageID',
-        'sEzdoctemplatedocumentNameX' => 'sEzdoctemplatedocumentNameX',
-        'sLanguageNameX' => 'sLanguageNameX',
-        'sEzsigntemplatepackageDescription' => 'sEzsigntemplatepackageDescription',
-        'bEzsigntemplatepackageAdminonly' => 'bEzsigntemplatepackageAdminonly',
-        'bEzsigntemplatepackageNeedvalidation' => 'bEzsigntemplatepackageNeedvalidation',
-        'bEzsigntemplatepackageIsactive' => 'bEzsigntemplatepackageIsactive',
-        'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX',
-        'bEzsigntemplatepackageEditallowed' => 'bEzsigntemplatepackageEditallowed',
         'aObjEzsigntemplatepackagesigner' => 'a_objEzsigntemplatepackagesigner',
         'aObjEzsigntemplatepackagemembership' => 'a_objEzsigntemplatepackagemembership'
     ];
@@ -229,18 +179,6 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsigntemplatepackageID' => 'setPkiEzsigntemplatepackageID',
-        'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
-        'fkiEzdoctemplatedocumentID' => 'setFkiEzdoctemplatedocumentID',
-        'fkiLanguageID' => 'setFkiLanguageID',
-        'sEzdoctemplatedocumentNameX' => 'setSEzdoctemplatedocumentNameX',
-        'sLanguageNameX' => 'setSLanguageNameX',
-        'sEzsigntemplatepackageDescription' => 'setSEzsigntemplatepackageDescription',
-        'bEzsigntemplatepackageAdminonly' => 'setBEzsigntemplatepackageAdminonly',
-        'bEzsigntemplatepackageNeedvalidation' => 'setBEzsigntemplatepackageNeedvalidation',
-        'bEzsigntemplatepackageIsactive' => 'setBEzsigntemplatepackageIsactive',
-        'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX',
-        'bEzsigntemplatepackageEditallowed' => 'setBEzsigntemplatepackageEditallowed',
         'aObjEzsigntemplatepackagesigner' => 'setAObjEzsigntemplatepackagesigner',
         'aObjEzsigntemplatepackagemembership' => 'setAObjEzsigntemplatepackagemembership'
     ];
@@ -251,18 +189,6 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsigntemplatepackageID' => 'getPkiEzsigntemplatepackageID',
-        'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
-        'fkiEzdoctemplatedocumentID' => 'getFkiEzdoctemplatedocumentID',
-        'fkiLanguageID' => 'getFkiLanguageID',
-        'sEzdoctemplatedocumentNameX' => 'getSEzdoctemplatedocumentNameX',
-        'sLanguageNameX' => 'getSLanguageNameX',
-        'sEzsigntemplatepackageDescription' => 'getSEzsigntemplatepackageDescription',
-        'bEzsigntemplatepackageAdminonly' => 'getBEzsigntemplatepackageAdminonly',
-        'bEzsigntemplatepackageNeedvalidation' => 'getBEzsigntemplatepackageNeedvalidation',
-        'bEzsigntemplatepackageIsactive' => 'getBEzsigntemplatepackageIsactive',
-        'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX',
-        'bEzsigntemplatepackageEditallowed' => 'getBEzsigntemplatepackageEditallowed',
         'aObjEzsigntemplatepackagesigner' => 'getAObjEzsigntemplatepackagesigner',
         'aObjEzsigntemplatepackagemembership' => 'getAObjEzsigntemplatepackagemembership'
     ];
@@ -275,7 +201,7 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -285,7 +211,7 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -295,7 +221,7 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -309,12 +235,6 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -324,18 +244,8 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsigntemplatepackageID', $data ?? [], null);
-        $this->setIfExists('fkiEzsignfoldertypeID', $data ?? [], null);
-        $this->setIfExists('fkiEzdoctemplatedocumentID', $data ?? [], null);
-        $this->setIfExists('fkiLanguageID', $data ?? [], null);
-        $this->setIfExists('sEzdoctemplatedocumentNameX', $data ?? [], null);
-        $this->setIfExists('sLanguageNameX', $data ?? [], null);
-        $this->setIfExists('sEzsigntemplatepackageDescription', $data ?? [], null);
-        $this->setIfExists('bEzsigntemplatepackageAdminonly', $data ?? [], null);
-        $this->setIfExists('bEzsigntemplatepackageNeedvalidation', $data ?? [], null);
-        $this->setIfExists('bEzsigntemplatepackageIsactive', $data ?? [], null);
-        $this->setIfExists('sEzsignfoldertypeNameX', $data ?? [], null);
-        $this->setIfExists('bEzsigntemplatepackageEditallowed', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjEzsigntemplatepackagesigner', $data ?? [], null);
         $this->setIfExists('aObjEzsigntemplatepackagemembership', $data ?? [], null);
     }
@@ -365,76 +275,8 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiEzsigntemplatepackageID'] === null) {
-            $invalidProperties[] = "'pkiEzsigntemplatepackageID' can't be null";
-        }
-        if (($this->container['pkiEzsigntemplatepackageID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsigntemplatepackageID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsignfoldertypeID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfoldertypeID' can't be null";
-        }
-        if (($this->container['fkiEzsignfoldertypeID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsignfoldertypeID', must be smaller than or equal to 65535.";
-        }
-
-        if (($this->container['fkiEzsignfoldertypeID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsignfoldertypeID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiEzdoctemplatedocumentID']) && ($this->container['fkiEzdoctemplatedocumentID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'fkiEzdoctemplatedocumentID', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['fkiEzdoctemplatedocumentID']) && ($this->container['fkiEzdoctemplatedocumentID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzdoctemplatedocumentID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiLanguageID'] === null) {
-            $invalidProperties[] = "'fkiLanguageID' can't be null";
-        }
-        if (($this->container['fkiLanguageID'] > 2)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
-        }
-
-        if (($this->container['fkiLanguageID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
-        }
-
-	//if (!is_null($this->container['sEzdoctemplatedocumentNameX']) && !preg_match("/^.{0,50}$/", $this->container['sEzdoctemplatedocumentNameX'])) {
-        if (!is_null($this->container['sEzdoctemplatedocumentNameX']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sEzdoctemplatedocumentNameX'])) {
-            $invalidProperties[] = "invalid value for 'sEzdoctemplatedocumentNameX', must be conform to the pattern /^.{0,50}$/.";
-        }
-
-        if ($this->container['sLanguageNameX'] === null) {
-            $invalidProperties[] = "'sLanguageNameX' can't be null";
-        }
-        if ($this->container['sEzsigntemplatepackageDescription'] === null) {
-            $invalidProperties[] = "'sEzsigntemplatepackageDescription' can't be null";
-        }
-	//if (!preg_match("/^.{0,80}$/", $this->container['sEzsigntemplatepackageDescription'])) {
-        if (!is_null($this->container['sEzsigntemplatepackageDescription']) && !preg_match("/(*UTF8)^.{0,80}$/", $this->container['sEzsigntemplatepackageDescription'])) {
-            $invalidProperties[] = "invalid value for 'sEzsigntemplatepackageDescription', must be conform to the pattern /^.{0,80}$/.";
-        }
-
-        if ($this->container['bEzsigntemplatepackageAdminonly'] === null) {
-            $invalidProperties[] = "'bEzsigntemplatepackageAdminonly' can't be null";
-        }
-        if ($this->container['bEzsigntemplatepackageNeedvalidation'] === null) {
-            $invalidProperties[] = "'bEzsigntemplatepackageNeedvalidation' can't be null";
-        }
-        if ($this->container['bEzsigntemplatepackageIsactive'] === null) {
-            $invalidProperties[] = "'bEzsigntemplatepackageIsactive' can't be null";
-        }
-        if ($this->container['sEzsignfoldertypeNameX'] === null) {
-            $invalidProperties[] = "'sEzsignfoldertypeNameX' can't be null";
-        }
-        if ($this->container['bEzsigntemplatepackageEditallowed'] === null) {
-            $invalidProperties[] = "'bEzsigntemplatepackageEditallowed' can't be null";
-        }
         if ($this->container['aObjEzsigntemplatepackagesigner'] === null) {
             $invalidProperties[] = "'aObjEzsigntemplatepackagesigner' can't be null";
         }
@@ -455,447 +297,6 @@ class EzsigntemplatepackageResponseCompound implements ModelInterface, ArrayAcce
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsigntemplatepackageID
-     *
-     * @return int
-     */
-    public function getPkiEzsigntemplatepackageID()
-    {
-	//return $this->container['pkiEzsigntemplatepackageID'];
-        return $this->container['pkiEzsigntemplatepackageID'];
-    }
-
-    /**
-     * Sets pkiEzsigntemplatepackageID
-     *
-     * @param int $pkiEzsigntemplatepackageID The unique ID of the Ezsigntemplatepackage
-     *
-     * @return self
-     */
-    public function setPkiEzsigntemplatepackageID($pkiEzsigntemplatepackageID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsigntemplatepackageID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatepackageID cannot be null');
-        //}
-
-	//if (($pkiEzsigntemplatepackageID < 0)) {
-        if (($pkiEzsigntemplatepackageID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplatepackageID when calling EzsigntemplatepackageResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsigntemplatepackageID)?'null':'"'.$pkiEzsigntemplatepackageID.'"').' for pkiEzsigntemplatepackageID when calling EzsigntemplatepackageResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsigntemplatepackageID'] = $pkiEzsigntemplatepackageID;
-        $this->container['pkiEzsigntemplatepackageID'] = (is_null($pkiEzsigntemplatepackageID) ? null : (int) $pkiEzsigntemplatepackageID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignfoldertypeID
-     *
-     * @return int
-     */
-    public function getFkiEzsignfoldertypeID()
-    {
-	//return $this->container['fkiEzsignfoldertypeID'];
-        return $this->container['fkiEzsignfoldertypeID'];
-    }
-
-    /**
-     * Sets fkiEzsignfoldertypeID
-     *
-     * @param int $fkiEzsignfoldertypeID The unique ID of the Ezsignfoldertype.
-     *
-     * @return self
-     */
-    public function setFkiEzsignfoldertypeID($fkiEzsignfoldertypeID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsignfoldertypeID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldertypeID cannot be null');
-        //}
-
-	//if (($fkiEzsignfoldertypeID > 65535)) {
-        if (($fkiEzsignfoldertypeID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling EzsigntemplatepackageResponseCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignfoldertypeID)?'null':'"'.$fkiEzsignfoldertypeID.'"').' for fkiEzsignfoldertypeID when calling EzsigntemplatepackageResponseCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($fkiEzsignfoldertypeID < 0)) {
-        if (($fkiEzsignfoldertypeID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling EzsigntemplatepackageResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignfoldertypeID)?'null':'"'.$fkiEzsignfoldertypeID.'"').' for fkiEzsignfoldertypeID when calling EzsigntemplatepackageResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
-        $this->container['fkiEzsignfoldertypeID'] = (is_null($fkiEzsignfoldertypeID) ? null : (int) $fkiEzsignfoldertypeID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzdoctemplatedocumentID
-     *
-     * @return int|null
-     */
-    public function getFkiEzdoctemplatedocumentID()
-    {
-	//return $this->container['fkiEzdoctemplatedocumentID'];
-        return $this->container['fkiEzdoctemplatedocumentID'];
-    }
-
-    /**
-     * Sets fkiEzdoctemplatedocumentID
-     *
-     * @param int|null $fkiEzdoctemplatedocumentID The unique ID of the Ezdoctemplatedocument
-     *
-     * @return self
-     */
-    public function setFkiEzdoctemplatedocumentID($fkiEzdoctemplatedocumentID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzdoctemplatedocumentID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzdoctemplatedocumentID cannot be null');
-        //}
-
-	//if (($fkiEzdoctemplatedocumentID > 65535)) {
-        if (!is_null($fkiEzdoctemplatedocumentID) && ($fkiEzdoctemplatedocumentID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzdoctemplatedocumentID when calling EzsigntemplatepackageResponseCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzdoctemplatedocumentID)?'null':'"'.$fkiEzdoctemplatedocumentID.'"').' for fkiEzdoctemplatedocumentID when calling EzsigntemplatepackageResponseCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($fkiEzdoctemplatedocumentID < 0)) {
-        if (!is_null($fkiEzdoctemplatedocumentID) && ($fkiEzdoctemplatedocumentID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzdoctemplatedocumentID when calling EzsigntemplatepackageResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzdoctemplatedocumentID)?'null':'"'.$fkiEzdoctemplatedocumentID.'"').' for fkiEzdoctemplatedocumentID when calling EzsigntemplatepackageResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzdoctemplatedocumentID'] = $fkiEzdoctemplatedocumentID;
-        $this->container['fkiEzdoctemplatedocumentID'] = (is_null($fkiEzdoctemplatedocumentID) ? null : (int) $fkiEzdoctemplatedocumentID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiLanguageID
-     *
-     * @return int
-     */
-    public function getFkiLanguageID()
-    {
-	//return $this->container['fkiLanguageID'];
-        return $this->container['fkiLanguageID'];
-    }
-
-    /**
-     * Sets fkiLanguageID
-     *
-     * @param int $fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     *
-     * @return self
-     */
-    public function setFkiLanguageID($fkiLanguageID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiLanguageID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
-        //}
-
-	//if (($fkiLanguageID > 2)) {
-        if (($fkiLanguageID > 2)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsigntemplatepackageResponseCompound., must be smaller than or equal to 2.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling EzsigntemplatepackageResponseCompound., must be smaller than or equal to 2.');
-        }
-	//if (($fkiLanguageID < 1)) {
-        if (($fkiLanguageID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzsigntemplatepackageResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling EzsigntemplatepackageResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiLanguageID'] = $fkiLanguageID;
-        $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzdoctemplatedocumentNameX
-     *
-     * @return string|null
-     */
-    public function getSEzdoctemplatedocumentNameX()
-    {
-	//return $this->container['sEzdoctemplatedocumentNameX'];
-        return is_null($this->container['sEzdoctemplatedocumentNameX']) ? null : trim($this->container['sEzdoctemplatedocumentNameX']);
-    }
-
-    /**
-     * Sets sEzdoctemplatedocumentNameX
-     *
-     * @param string|null $sEzdoctemplatedocumentNameX The name of the Ezdoctemplatedocument in the language of the requester
-     *
-     * @return self
-     */
-    public function setSEzdoctemplatedocumentNameX($sEzdoctemplatedocumentNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzdoctemplatedocumentNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sEzdoctemplatedocumentNameX cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sEzdoctemplatedocumentNameX)))) {
-        if (!is_null($sEzdoctemplatedocumentNameX) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sEzdoctemplatedocumentNameX)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sEzdoctemplatedocumentNameX when calling EzsigntemplatepackageResponseCompound., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzdoctemplatedocumentNameX)?'null':'"'.$sEzdoctemplatedocumentNameX.'"')." for sEzdoctemplatedocumentNameX when calling EzsigntemplatepackageResponseCompound., must conform to the pattern /^.{0,50}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzdoctemplatedocumentNameX'] = $sEzdoctemplatedocumentNameX;
-        $this->container['sEzdoctemplatedocumentNameX'] = (is_null($sEzdoctemplatedocumentNameX) ? null : trim((string) $sEzdoctemplatedocumentNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets sLanguageNameX
-     *
-     * @return string
-     */
-    public function getSLanguageNameX()
-    {
-	//return $this->container['sLanguageNameX'];
-        return is_null($this->container['sLanguageNameX']) ? null : trim($this->container['sLanguageNameX']);
-    }
-
-    /**
-     * Sets sLanguageNameX
-     *
-     * @param string $sLanguageNameX The Name of the Language in the language of the requester
-     *
-     * @return self
-     */
-    public function setSLanguageNameX($sLanguageNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sLanguageNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sLanguageNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sLanguageNameX'] = $sLanguageNameX;
-        $this->container['sLanguageNameX'] = (is_null($sLanguageNameX) ? null : trim((string) $sLanguageNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsigntemplatepackageDescription
-     *
-     * @return string
-     */
-    public function getSEzsigntemplatepackageDescription()
-    {
-	//return $this->container['sEzsigntemplatepackageDescription'];
-        return is_null($this->container['sEzsigntemplatepackageDescription']) ? null : trim($this->container['sEzsigntemplatepackageDescription']);
-    }
-
-    /**
-     * Sets sEzsigntemplatepackageDescription
-     *
-     * @param string $sEzsigntemplatepackageDescription The description of the Ezsigntemplatepackage
-     *
-     * @return self
-     */
-    public function setSEzsigntemplatepackageDescription($sEzsigntemplatepackageDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsigntemplatepackageDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsigntemplatepackageDescription cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,80}$/", ObjectSerializer::toString($sEzsigntemplatepackageDescription)))) {
-        if (!is_null($sEzsigntemplatepackageDescription) && (!preg_match("/(*UTF8)^.{0,80}$/", ObjectSerializer::toString($sEzsigntemplatepackageDescription)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sEzsigntemplatepackageDescription when calling EzsigntemplatepackageResponseCompound., must conform to the pattern /^.{0,80}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzsigntemplatepackageDescription)?'null':'"'.$sEzsigntemplatepackageDescription.'"')." for sEzsigntemplatepackageDescription when calling EzsigntemplatepackageResponseCompound., must conform to the pattern /^.{0,80}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsigntemplatepackageDescription'] = $sEzsigntemplatepackageDescription;
-        $this->container['sEzsigntemplatepackageDescription'] = (is_null($sEzsigntemplatepackageDescription) ? null : trim((string) $sEzsigntemplatepackageDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsigntemplatepackageAdminonly
-     *
-     * @return bool
-     */
-    public function getBEzsigntemplatepackageAdminonly()
-    {
-	//return $this->container['bEzsigntemplatepackageAdminonly'];
-        return $this->container['bEzsigntemplatepackageAdminonly'];
-    }
-
-    /**
-     * Sets bEzsigntemplatepackageAdminonly
-     *
-     * @param bool $bEzsigntemplatepackageAdminonly Whether the Ezsigntemplatepackage can be accessed by admin users only (eUserType=Normal)
-     *
-     * @return self
-     */
-    public function setBEzsigntemplatepackageAdminonly($bEzsigntemplatepackageAdminonly)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsigntemplatepackageAdminonly)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageAdminonly cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsigntemplatepackageAdminonly'] = $bEzsigntemplatepackageAdminonly;
-        $this->container['bEzsigntemplatepackageAdminonly'] = (is_null($bEzsigntemplatepackageAdminonly) ? null : (bool) $bEzsigntemplatepackageAdminonly);
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsigntemplatepackageNeedvalidation
-     *
-     * @return bool
-     */
-    public function getBEzsigntemplatepackageNeedvalidation()
-    {
-	//return $this->container['bEzsigntemplatepackageNeedvalidation'];
-        return $this->container['bEzsigntemplatepackageNeedvalidation'];
-    }
-
-    /**
-     * Sets bEzsigntemplatepackageNeedvalidation
-     *
-     * @param bool $bEzsigntemplatepackageNeedvalidation Whether the Ezsignbulksend was automatically modified and needs a manual validation
-     *
-     * @return self
-     */
-    public function setBEzsigntemplatepackageNeedvalidation($bEzsigntemplatepackageNeedvalidation)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsigntemplatepackageNeedvalidation)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageNeedvalidation cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsigntemplatepackageNeedvalidation'] = $bEzsigntemplatepackageNeedvalidation;
-        $this->container['bEzsigntemplatepackageNeedvalidation'] = (is_null($bEzsigntemplatepackageNeedvalidation) ? null : (bool) $bEzsigntemplatepackageNeedvalidation);
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsigntemplatepackageIsactive
-     *
-     * @return bool
-     */
-    public function getBEzsigntemplatepackageIsactive()
-    {
-	//return $this->container['bEzsigntemplatepackageIsactive'];
-        return $this->container['bEzsigntemplatepackageIsactive'];
-    }
-
-    /**
-     * Sets bEzsigntemplatepackageIsactive
-     *
-     * @param bool $bEzsigntemplatepackageIsactive Whether the Ezsigntemplatepackage is active or not
-     *
-     * @return self
-     */
-    public function setBEzsigntemplatepackageIsactive($bEzsigntemplatepackageIsactive)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsigntemplatepackageIsactive)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageIsactive cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsigntemplatepackageIsactive'] = $bEzsigntemplatepackageIsactive;
-        $this->container['bEzsigntemplatepackageIsactive'] = (is_null($bEzsigntemplatepackageIsactive) ? null : (bool) $bEzsigntemplatepackageIsactive);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignfoldertypeNameX
-     *
-     * @return string
-     */
-    public function getSEzsignfoldertypeNameX()
-    {
-	//return $this->container['sEzsignfoldertypeNameX'];
-        return is_null($this->container['sEzsignfoldertypeNameX']) ? null : trim($this->container['sEzsignfoldertypeNameX']);
-    }
-
-    /**
-     * Sets sEzsignfoldertypeNameX
-     *
-     * @param string $sEzsignfoldertypeNameX The name of the Ezsignfoldertype in the language of the requester
-     *
-     * @return self
-     */
-    public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignfoldertypeNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignfoldertypeNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
-        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : trim((string) $sEzsignfoldertypeNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsigntemplatepackageEditallowed
-     *
-     * @return bool
-     */
-    public function getBEzsigntemplatepackageEditallowed()
-    {
-	//return $this->container['bEzsigntemplatepackageEditallowed'];
-        return $this->container['bEzsigntemplatepackageEditallowed'];
-    }
-
-    /**
-     * Sets bEzsigntemplatepackageEditallowed
-     *
-     * @param bool $bEzsigntemplatepackageEditallowed Whether the Ezsigntemplatepackage if allowed to edit or not
-     *
-     * @return self
-     */
-    public function setBEzsigntemplatepackageEditallowed($bEzsigntemplatepackageEditallowed)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsigntemplatepackageEditallowed)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsigntemplatepackageEditallowed cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsigntemplatepackageEditallowed'] = $bEzsigntemplatepackageEditallowed;
-        $this->container['bEzsigntemplatepackageEditallowed'] = (is_null($bEzsigntemplatepackageEditallowed) ? null : (bool) $bEzsigntemplatepackageEditallowed);
-
-        return $this;
-    }
 
     /**
      * Gets aObjEzsigntemplatepackagesigner

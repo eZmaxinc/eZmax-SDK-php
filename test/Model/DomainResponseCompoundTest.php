@@ -81,60 +81,6 @@ class DomainResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiDomainID"
-     */
-    public function testPropertyPkiDomainID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sDomainName"
-     */
-    public function testPropertySDomainName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bDomainValiddkim"
-     */
-    public function testPropertyBDomainValiddkim()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bDomainValidmailfrom"
-     */
-    public function testPropertyBDomainValidmailfrom()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bDomainValidcustomer"
-     */
-    public function testPropertyBDomainValidcustomer()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objAudit"
-     */
-    public function testPropertyObjAudit()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjDnsrecord"
      */
     public function testPropertyAObjDnsrecord()

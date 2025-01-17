@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class WebhookheaderResponseCompound extends WebhookheaderResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,10 +57,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiWebhookheaderID' => 'int',
-        'fkiWebhookID' => 'int',
-        'sWebhookheaderName' => 'string',
-        'sWebhookheaderValue' => 'string'
+        
     ];
 
     /**
@@ -73,10 +68,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiWebhookheaderID' => null,
-        'fkiWebhookID' => null,
-        'sWebhookheaderName' => null,
-        'sWebhookheaderValue' => null
+        
     ];
 
     /**
@@ -85,10 +77,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiWebhookheaderID' => false,
-		'fkiWebhookID' => false,
-		'sWebhookheaderName' => false,
-		'sWebhookheaderValue' => false
+        
     ];
 
     /**
@@ -105,7 +94,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -115,7 +104,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -125,7 +114,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -177,10 +166,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiWebhookheaderID' => 'pkiWebhookheaderID',
-        'fkiWebhookID' => 'fkiWebhookID',
-        'sWebhookheaderName' => 'sWebhookheaderName',
-        'sWebhookheaderValue' => 'sWebhookheaderValue'
+        
     ];
 
     /**
@@ -189,10 +175,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'pkiWebhookheaderID' => 'setPkiWebhookheaderID',
-        'fkiWebhookID' => 'setFkiWebhookID',
-        'sWebhookheaderName' => 'setSWebhookheaderName',
-        'sWebhookheaderValue' => 'setSWebhookheaderValue'
+        
     ];
 
     /**
@@ -201,10 +184,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'pkiWebhookheaderID' => 'getPkiWebhookheaderID',
-        'fkiWebhookID' => 'getFkiWebhookID',
-        'sWebhookheaderName' => 'getSWebhookheaderName',
-        'sWebhookheaderValue' => 'getSWebhookheaderValue'
+        
     ];
 
     /**
@@ -215,7 +195,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -225,7 +205,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -235,7 +215,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -249,12 +229,6 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -264,10 +238,8 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiWebhookheaderID', $data ?? [], null);
-        $this->setIfExists('fkiWebhookID', $data ?? [], null);
-        $this->setIfExists('sWebhookheaderName', $data ?? [], null);
-        $this->setIfExists('sWebhookheaderValue', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -295,29 +267,7 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiWebhookheaderID'] === null) {
-            $invalidProperties[] = "'pkiWebhookheaderID' can't be null";
-        }
-        if ($this->container['fkiWebhookID'] === null) {
-            $invalidProperties[] = "'fkiWebhookID' can't be null";
-        }
-        if ($this->container['sWebhookheaderName'] === null) {
-            $invalidProperties[] = "'sWebhookheaderName' can't be null";
-        }
-	//if (!preg_match("/^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\\s)[^\\s].*$/", $this->container['sWebhookheaderName'])) {
-        if (!is_null($this->container['sWebhookheaderName']) && !preg_match("/(*UTF8)^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\\s)[^\\s].*$/", $this->container['sWebhookheaderName'])) {
-            $invalidProperties[] = "invalid value for 'sWebhookheaderName', must be conform to the pattern /^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\\s)[^\\s].*$/.";
-        }
-
-        if ($this->container['sWebhookheaderValue'] === null) {
-            $invalidProperties[] = "'sWebhookheaderValue' can't be null";
-        }
-	//if (!preg_match("/^.{1,255}$/", $this->container['sWebhookheaderValue'])) {
-        if (!is_null($this->container['sWebhookheaderValue']) && !preg_match("/(*UTF8)^.{1,255}$/", $this->container['sWebhookheaderValue'])) {
-            $invalidProperties[] = "invalid value for 'sWebhookheaderValue', must be conform to the pattern /^.{1,255}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -333,148 +283,6 @@ class WebhookheaderResponseCompound implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiWebhookheaderID
-     *
-     * @return int
-     */
-    public function getPkiWebhookheaderID()
-    {
-	//return $this->container['pkiWebhookheaderID'];
-        return $this->container['pkiWebhookheaderID'];
-    }
-
-    /**
-     * Sets pkiWebhookheaderID
-     *
-     * @param int $pkiWebhookheaderID The unique ID of the Webhookheader
-     *
-     * @return self
-     */
-    public function setPkiWebhookheaderID($pkiWebhookheaderID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiWebhookheaderID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiWebhookheaderID cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiWebhookheaderID'] = $pkiWebhookheaderID;
-        $this->container['pkiWebhookheaderID'] = (is_null($pkiWebhookheaderID) ? null : (int) $pkiWebhookheaderID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiWebhookID
-     *
-     * @return int
-     */
-    public function getFkiWebhookID()
-    {
-	//return $this->container['fkiWebhookID'];
-        return $this->container['fkiWebhookID'];
-    }
-
-    /**
-     * Sets fkiWebhookID
-     *
-     * @param int $fkiWebhookID The unique ID of the Webhook
-     *
-     * @return self
-     */
-    public function setFkiWebhookID($fkiWebhookID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiWebhookID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiWebhookID cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiWebhookID'] = $fkiWebhookID;
-        $this->container['fkiWebhookID'] = (is_null($fkiWebhookID) ? null : (int) $fkiWebhookID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sWebhookheaderName
-     *
-     * @return string
-     */
-    public function getSWebhookheaderName()
-    {
-	//return $this->container['sWebhookheaderName'];
-        return is_null($this->container['sWebhookheaderName']) ? null : trim($this->container['sWebhookheaderName']);
-    }
-
-    /**
-     * Sets sWebhookheaderName
-     *
-     * @param string $sWebhookheaderName The Name of the Webhookheader
-     *
-     * @return self
-     */
-    public function setSWebhookheaderName($sWebhookheaderName)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sWebhookheaderName)) {
-            //throw new \InvalidArgumentException('non-nullable sWebhookheaderName cannot be null');
-        //}
-
-	//if ((!preg_match("/^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\\s)[^\\s].*$/", ObjectSerializer::toString($sWebhookheaderName)))) {
-        if (!is_null($sWebhookheaderName) && (!preg_match("/(*UTF8)^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\\s)[^\\s].*$/", ObjectSerializer::toString($sWebhookheaderName)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sWebhookheaderName when calling WebhookheaderResponseCompound., must conform to the pattern /^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\\s)[^\\s].*$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sWebhookheaderName)?'null':'"'.$sWebhookheaderName.'"')." for sWebhookheaderName when calling WebhookheaderResponseCompound., must conform to the pattern /^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\\s)[^\\s].*$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sWebhookheaderName'] = $sWebhookheaderName;
-        $this->container['sWebhookheaderName'] = (is_null($sWebhookheaderName) ? null : trim((string) $sWebhookheaderName));
-
-        return $this;
-    }
-
-    /**
-     * Gets sWebhookheaderValue
-     *
-     * @return string
-     */
-    public function getSWebhookheaderValue()
-    {
-	//return $this->container['sWebhookheaderValue'];
-        return is_null($this->container['sWebhookheaderValue']) ? null : trim($this->container['sWebhookheaderValue']);
-    }
-
-    /**
-     * Sets sWebhookheaderValue
-     *
-     * @param string $sWebhookheaderValue The Value of the Webhookheader
-     *
-     * @return self
-     */
-    public function setSWebhookheaderValue($sWebhookheaderValue)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sWebhookheaderValue)) {
-            //throw new \InvalidArgumentException('non-nullable sWebhookheaderValue cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{1,255}$/", ObjectSerializer::toString($sWebhookheaderValue)))) {
-        if (!is_null($sWebhookheaderValue) && (!preg_match("/(*UTF8)^.{1,255}$/", ObjectSerializer::toString($sWebhookheaderValue)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sWebhookheaderValue when calling WebhookheaderResponseCompound., must conform to the pattern /^.{1,255}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sWebhookheaderValue)?'null':'"'.$sWebhookheaderValue.'"')." for sWebhookheaderValue when calling WebhookheaderResponseCompound., must conform to the pattern /^.{1,255}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sWebhookheaderValue'] = $sWebhookheaderValue;
-        $this->container['sWebhookheaderValue'] = (is_null($sWebhookheaderValue) ? null : trim((string) $sWebhookheaderValue));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

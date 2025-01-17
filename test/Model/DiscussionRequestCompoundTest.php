@@ -79,31 +79,4 @@ class DiscussionRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiDiscussionID"
-     */
-    public function testPropertyPkiDiscussionID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sDiscussionDescription"
-     */
-    public function testPropertySDiscussionDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bDiscussionClosed"
-     */
-    public function testPropertyBDiscussionClosed()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

@@ -81,24 +81,6 @@ class WebhookUserUserCreatedTest extends TestCase
     }
 
     /**
-     * Test attribute "objWebhook"
-     */
-    public function testPropertyObjWebhook()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "aObjAttempt"
-     */
-    public function testPropertyAObjAttempt()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "objUser"
      */
     public function testPropertyObjUser()

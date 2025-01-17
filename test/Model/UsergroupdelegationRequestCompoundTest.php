@@ -79,31 +79,4 @@ class UsergroupdelegationRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiUsergroupdelegationID"
-     */
-    public function testPropertyPkiUsergroupdelegationID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiUsergroupID"
-     */
-    public function testPropertyFkiUsergroupID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiUserID"
-     */
-    public function testPropertyFkiUserID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

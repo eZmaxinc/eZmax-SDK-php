@@ -79,40 +79,4 @@ class EzsignbulksenddocumentmappingRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiEzsignbulksenddocumentmappingID"
-     */
-    public function testPropertyPkiEzsignbulksenddocumentmappingID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsignbulksendID"
-     */
-    public function testPropertyFkiEzsignbulksendID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsigntemplatepackageID"
-     */
-    public function testPropertyFkiEzsigntemplatepackageID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsigntemplateID"
-     */
-    public function testPropertyFkiEzsigntemplateID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

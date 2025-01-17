@@ -81,24 +81,6 @@ class BillingentityinternalRequestCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiBillingentityinternalID"
-     */
-    public function testPropertyPkiBillingentityinternalID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objBillingentityinternalDescription"
-     */
-    public function testPropertyObjBillingentityinternalDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjBillingentityinternalproduct"
      */
     public function testPropertyAObjBillingentityinternalproduct()

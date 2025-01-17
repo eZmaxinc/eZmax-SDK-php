@@ -81,60 +81,6 @@ class EzmaxinvoicingsummaryinternalResponseCompoundTest extends TestCase
     }
 
     /**
-     * Test attribute "pkiEzmaxinvoicingsummaryinternalID"
-     */
-    public function testPropertyPkiEzmaxinvoicingsummaryinternalID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objEzmaxinvoicingsummaryinternalDescription"
-     */
-    public function testPropertyObjEzmaxinvoicingsummaryinternalDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sEzmaxinvoicingsummaryinternalDescriptionX"
-     */
-    public function testPropertySEzmaxinvoicingsummaryinternalDescriptionX()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzmaxinvoicingID"
-     */
-    public function testPropertyFkiEzmaxinvoicingID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiBillingentityinternalID"
-     */
-    public function testPropertyFkiBillingentityinternalID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sBillingentityinternalDescriptionX"
-     */
-    public function testPropertySBillingentityinternalDescriptionX()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjEzmaxinvoicingsummaryinternaldetail"
      */
     public function testPropertyAObjEzmaxinvoicingsummaryinternaldetail()

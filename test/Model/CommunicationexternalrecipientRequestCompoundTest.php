@@ -79,49 +79,4 @@ class CommunicationexternalrecipientRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiCommunicationexternalrecipientID"
-     */
-    public function testPropertyPkiCommunicationexternalrecipientID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sEmailAddress"
-     */
-    public function testPropertySEmailAddress()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sPhoneE164"
-     */
-    public function testPropertySPhoneE164()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "eCommunicationexternalrecipientType"
-     */
-    public function testPropertyECommunicationexternalrecipientType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sCommunicationexternalrecipientName"
-     */
-    public function testPropertySCommunicationexternalrecipientName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

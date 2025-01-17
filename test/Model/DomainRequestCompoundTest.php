@@ -79,22 +79,4 @@ class DomainRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiDomainID"
-     */
-    public function testPropertyPkiDomainID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sDomainName"
-     */
-    public function testPropertySDomainName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

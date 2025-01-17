@@ -79,31 +79,4 @@ class AuthenticationexternalRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiAuthenticationexternalID"
-     */
-    public function testPropertyPkiAuthenticationexternalID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sAuthenticationexternalDescription"
-     */
-    public function testPropertySAuthenticationexternalDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "eAuthenticationexternalType"
-     */
-    public function testPropertyEAuthenticationexternalType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

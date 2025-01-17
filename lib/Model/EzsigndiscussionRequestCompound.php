@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigndiscussionRequestCompound extends EzsigndiscussionRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,12 +57,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsigndiscussionID' => 'int',
-        'fkiEzsigndocumentID' => 'int',
-        'iEzsigndiscussionPagenumber' => 'int',
-        'iEzsigndiscussionX' => 'int',
-        'iEzsigndiscussionY' => 'int',
-        'objDiscussion' => '\eZmaxAPI\Model\DiscussionRequest'
+        
     ];
 
     /**
@@ -75,12 +68,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsigndiscussionID' => null,
-        'fkiEzsigndocumentID' => null,
-        'iEzsigndiscussionPagenumber' => null,
-        'iEzsigndiscussionX' => null,
-        'iEzsigndiscussionY' => null,
-        'objDiscussion' => null
+        
     ];
 
     /**
@@ -89,12 +77,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsigndiscussionID' => false,
-		'fkiEzsigndocumentID' => false,
-		'iEzsigndiscussionPagenumber' => false,
-		'iEzsigndiscussionX' => false,
-		'iEzsigndiscussionY' => false,
-		'objDiscussion' => false
+        
     ];
 
     /**
@@ -111,7 +94,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -121,7 +104,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -131,7 +114,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -183,12 +166,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsigndiscussionID' => 'pkiEzsigndiscussionID',
-        'fkiEzsigndocumentID' => 'fkiEzsigndocumentID',
-        'iEzsigndiscussionPagenumber' => 'iEzsigndiscussionPagenumber',
-        'iEzsigndiscussionX' => 'iEzsigndiscussionX',
-        'iEzsigndiscussionY' => 'iEzsigndiscussionY',
-        'objDiscussion' => 'objDiscussion'
+        
     ];
 
     /**
@@ -197,12 +175,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsigndiscussionID' => 'setPkiEzsigndiscussionID',
-        'fkiEzsigndocumentID' => 'setFkiEzsigndocumentID',
-        'iEzsigndiscussionPagenumber' => 'setIEzsigndiscussionPagenumber',
-        'iEzsigndiscussionX' => 'setIEzsigndiscussionX',
-        'iEzsigndiscussionY' => 'setIEzsigndiscussionY',
-        'objDiscussion' => 'setObjDiscussion'
+        
     ];
 
     /**
@@ -211,12 +184,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsigndiscussionID' => 'getPkiEzsigndiscussionID',
-        'fkiEzsigndocumentID' => 'getFkiEzsigndocumentID',
-        'iEzsigndiscussionPagenumber' => 'getIEzsigndiscussionPagenumber',
-        'iEzsigndiscussionX' => 'getIEzsigndiscussionX',
-        'iEzsigndiscussionY' => 'getIEzsigndiscussionY',
-        'objDiscussion' => 'getObjDiscussion'
+        
     ];
 
     /**
@@ -227,7 +195,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -237,7 +205,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -247,7 +215,7 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -261,12 +229,6 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -276,12 +238,8 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsigndiscussionID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigndocumentID', $data ?? [], null);
-        $this->setIfExists('iEzsigndiscussionPagenumber', $data ?? [], null);
-        $this->setIfExists('iEzsigndiscussionX', $data ?? [], null);
-        $this->setIfExists('iEzsigndiscussionY', $data ?? [], null);
-        $this->setIfExists('objDiscussion', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -309,51 +267,8 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if (!is_null($this->container['pkiEzsigndiscussionID']) && ($this->container['pkiEzsigndiscussionID'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsigndiscussionID', must be smaller than or equal to 16777215.";
-        }
-
-        if (!is_null($this->container['pkiEzsigndiscussionID']) && ($this->container['pkiEzsigndiscussionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsigndiscussionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsigndocumentID'] === null) {
-            $invalidProperties[] = "'fkiEzsigndocumentID' can't be null";
-        }
-        if (($this->container['fkiEzsigndocumentID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigndocumentID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['iEzsigndiscussionPagenumber'] === null) {
-            $invalidProperties[] = "'iEzsigndiscussionPagenumber' can't be null";
-        }
-        if ($this->container['iEzsigndiscussionX'] === null) {
-            $invalidProperties[] = "'iEzsigndiscussionX' can't be null";
-        }
-        if (($this->container['iEzsigndiscussionX'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'iEzsigndiscussionX', must be smaller than or equal to 65535.";
-        }
-
-        if (($this->container['iEzsigndiscussionX'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsigndiscussionX', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['iEzsigndiscussionY'] === null) {
-            $invalidProperties[] = "'iEzsigndiscussionY' can't be null";
-        }
-        if (($this->container['iEzsigndiscussionY'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'iEzsigndiscussionY', must be smaller than or equal to 65535.";
-        }
-
-        if (($this->container['iEzsigndiscussionY'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsigndiscussionY', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objDiscussion'] === null) {
-            $invalidProperties[] = "'objDiscussion' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -368,241 +283,6 @@ class EzsigndiscussionRequestCompound implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsigndiscussionID
-     *
-     * @return int|null
-     */
-    public function getPkiEzsigndiscussionID()
-    {
-	//return $this->container['pkiEzsigndiscussionID'];
-        return $this->container['pkiEzsigndiscussionID'];
-    }
-
-    /**
-     * Sets pkiEzsigndiscussionID
-     *
-     * @param int|null $pkiEzsigndiscussionID The unique ID of the Ezsigndiscussion
-     *
-     * @return self
-     */
-    public function setPkiEzsigndiscussionID($pkiEzsigndiscussionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsigndiscussionID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsigndiscussionID cannot be null');
-        //}
-
-	//if (($pkiEzsigndiscussionID > 16777215)) {
-        if (!is_null($pkiEzsigndiscussionID) && ($pkiEzsigndiscussionID > 16777215)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsigndiscussionID when calling EzsigndiscussionRequestCompound., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsigndiscussionID)?'null':'"'.$pkiEzsigndiscussionID.'"').' for pkiEzsigndiscussionID when calling EzsigndiscussionRequestCompound., must be smaller than or equal to 16777215.');
-        }
-	//if (($pkiEzsigndiscussionID < 0)) {
-        if (!is_null($pkiEzsigndiscussionID) && ($pkiEzsigndiscussionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsigndiscussionID when calling EzsigndiscussionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsigndiscussionID)?'null':'"'.$pkiEzsigndiscussionID.'"').' for pkiEzsigndiscussionID when calling EzsigndiscussionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsigndiscussionID'] = $pkiEzsigndiscussionID;
-        $this->container['pkiEzsigndiscussionID'] = (is_null($pkiEzsigndiscussionID) ? null : (int) $pkiEzsigndiscussionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigndocumentID
-     *
-     * @return int
-     */
-    public function getFkiEzsigndocumentID()
-    {
-	//return $this->container['fkiEzsigndocumentID'];
-        return $this->container['fkiEzsigndocumentID'];
-    }
-
-    /**
-     * Sets fkiEzsigndocumentID
-     *
-     * @param int $fkiEzsigndocumentID The unique ID of the Ezsigndocument
-     *
-     * @return self
-     */
-    public function setFkiEzsigndocumentID($fkiEzsigndocumentID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigndocumentID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigndocumentID cannot be null');
-        //}
-
-	//if (($fkiEzsigndocumentID < 0)) {
-        if (($fkiEzsigndocumentID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigndocumentID when calling EzsigndiscussionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigndocumentID)?'null':'"'.$fkiEzsigndocumentID.'"').' for fkiEzsigndocumentID when calling EzsigndiscussionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigndocumentID'] = $fkiEzsigndocumentID;
-        $this->container['fkiEzsigndocumentID'] = (is_null($fkiEzsigndocumentID) ? null : (int) $fkiEzsigndocumentID);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigndiscussionPagenumber
-     *
-     * @return int
-     */
-    public function getIEzsigndiscussionPagenumber()
-    {
-	//return $this->container['iEzsigndiscussionPagenumber'];
-        return $this->container['iEzsigndiscussionPagenumber'];
-    }
-
-    /**
-     * Sets iEzsigndiscussionPagenumber
-     *
-     * @param int $iEzsigndiscussionPagenumber The page number in the Ezsigndocument for the Ezsigndiscussion
-     *
-     * @return self
-     */
-    public function setIEzsigndiscussionPagenumber($iEzsigndiscussionPagenumber)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigndiscussionPagenumber)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigndiscussionPagenumber cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigndiscussionPagenumber'] = $iEzsigndiscussionPagenumber;
-        $this->container['iEzsigndiscussionPagenumber'] = (is_null($iEzsigndiscussionPagenumber) ? null : (int) $iEzsigndiscussionPagenumber);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigndiscussionX
-     *
-     * @return int
-     */
-    public function getIEzsigndiscussionX()
-    {
-	//return $this->container['iEzsigndiscussionX'];
-        return $this->container['iEzsigndiscussionX'];
-    }
-
-    /**
-     * Sets iEzsigndiscussionX
-     *
-     * @param int $iEzsigndiscussionX The x of the Ezsigndiscussion
-     *
-     * @return self
-     */
-    public function setIEzsigndiscussionX($iEzsigndiscussionX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigndiscussionX)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigndiscussionX cannot be null');
-        //}
-
-	//if (($iEzsigndiscussionX > 65535)) {
-        if (($iEzsigndiscussionX > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigndiscussionX when calling EzsigndiscussionRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigndiscussionX)?'null':'"'.$iEzsigndiscussionX.'"').' for iEzsigndiscussionX when calling EzsigndiscussionRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($iEzsigndiscussionX < 0)) {
-        if (($iEzsigndiscussionX < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigndiscussionX when calling EzsigndiscussionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigndiscussionX)?'null':'"'.$iEzsigndiscussionX.'"').' for iEzsigndiscussionX when calling EzsigndiscussionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigndiscussionX'] = $iEzsigndiscussionX;
-        $this->container['iEzsigndiscussionX'] = (is_null($iEzsigndiscussionX) ? null : (int) $iEzsigndiscussionX);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigndiscussionY
-     *
-     * @return int
-     */
-    public function getIEzsigndiscussionY()
-    {
-	//return $this->container['iEzsigndiscussionY'];
-        return $this->container['iEzsigndiscussionY'];
-    }
-
-    /**
-     * Sets iEzsigndiscussionY
-     *
-     * @param int $iEzsigndiscussionY The y of the Ezsigndiscussion
-     *
-     * @return self
-     */
-    public function setIEzsigndiscussionY($iEzsigndiscussionY)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigndiscussionY)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigndiscussionY cannot be null');
-        //}
-
-	//if (($iEzsigndiscussionY > 65535)) {
-        if (($iEzsigndiscussionY > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigndiscussionY when calling EzsigndiscussionRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigndiscussionY)?'null':'"'.$iEzsigndiscussionY.'"').' for iEzsigndiscussionY when calling EzsigndiscussionRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($iEzsigndiscussionY < 0)) {
-        if (($iEzsigndiscussionY < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigndiscussionY when calling EzsigndiscussionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigndiscussionY)?'null':'"'.$iEzsigndiscussionY.'"').' for iEzsigndiscussionY when calling EzsigndiscussionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigndiscussionY'] = $iEzsigndiscussionY;
-        $this->container['iEzsigndiscussionY'] = (is_null($iEzsigndiscussionY) ? null : (int) $iEzsigndiscussionY);
-
-        return $this;
-    }
-
-    /**
-     * Gets objDiscussion
-     *
-     * @return \eZmaxAPI\Model\DiscussionRequest
-     */
-    public function getObjDiscussion()
-    {
-	//return $this->container['objDiscussion'];
-        return $this->container['objDiscussion'];
-    }
-
-    /**
-     * Sets objDiscussion
-     *
-     * @param \eZmaxAPI\Model\DiscussionRequest $objDiscussion objDiscussion
-     *
-     * @return self
-     */
-    public function setObjDiscussion($objDiscussion)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objDiscussion)) {
-            //throw new \InvalidArgumentException('non-nullable objDiscussion cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objDiscussion'] = $objDiscussion;
-        $this->container['objDiscussion'] = $objDiscussion;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

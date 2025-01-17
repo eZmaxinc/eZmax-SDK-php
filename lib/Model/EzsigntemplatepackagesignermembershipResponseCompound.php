@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigntemplatepackagesignermembershipResponseCompound extends EzsigntemplatepackagesignermembershipResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsigntemplatepackagesignermembershipID' => 'int',
-        'fkiEzsigntemplatepackagemembershipID' => 'int',
-        'fkiEzsigntemplatepackagesignerID' => 'int',
-        'fkiEzsigntemplatesignerID' => 'int',
-        'iEzsigntemplatepackagesignermembershipCopy' => 'int'
+        
     ];
 
     /**
@@ -74,11 +68,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsigntemplatepackagesignermembershipID' => null,
-        'fkiEzsigntemplatepackagemembershipID' => null,
-        'fkiEzsigntemplatepackagesignerID' => null,
-        'fkiEzsigntemplatesignerID' => null,
-        'iEzsigntemplatepackagesignermembershipCopy' => null
+        
     ];
 
     /**
@@ -87,11 +77,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsigntemplatepackagesignermembershipID' => false,
-		'fkiEzsigntemplatepackagemembershipID' => false,
-		'fkiEzsigntemplatepackagesignerID' => false,
-		'fkiEzsigntemplatesignerID' => false,
-		'iEzsigntemplatepackagesignermembershipCopy' => false
+        
     ];
 
     /**
@@ -108,7 +94,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -118,7 +104,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -128,7 +114,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -180,11 +166,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsigntemplatepackagesignermembershipID' => 'pkiEzsigntemplatepackagesignermembershipID',
-        'fkiEzsigntemplatepackagemembershipID' => 'fkiEzsigntemplatepackagemembershipID',
-        'fkiEzsigntemplatepackagesignerID' => 'fkiEzsigntemplatepackagesignerID',
-        'fkiEzsigntemplatesignerID' => 'fkiEzsigntemplatesignerID',
-        'iEzsigntemplatepackagesignermembershipCopy' => 'iEzsigntemplatepackagesignermembershipCopy'
+        
     ];
 
     /**
@@ -193,11 +175,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsigntemplatepackagesignermembershipID' => 'setPkiEzsigntemplatepackagesignermembershipID',
-        'fkiEzsigntemplatepackagemembershipID' => 'setFkiEzsigntemplatepackagemembershipID',
-        'fkiEzsigntemplatepackagesignerID' => 'setFkiEzsigntemplatepackagesignerID',
-        'fkiEzsigntemplatesignerID' => 'setFkiEzsigntemplatesignerID',
-        'iEzsigntemplatepackagesignermembershipCopy' => 'setIEzsigntemplatepackagesignermembershipCopy'
+        
     ];
 
     /**
@@ -206,11 +184,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsigntemplatepackagesignermembershipID' => 'getPkiEzsigntemplatepackagesignermembershipID',
-        'fkiEzsigntemplatepackagemembershipID' => 'getFkiEzsigntemplatepackagemembershipID',
-        'fkiEzsigntemplatepackagesignerID' => 'getFkiEzsigntemplatepackagesignerID',
-        'fkiEzsigntemplatesignerID' => 'getFkiEzsigntemplatesignerID',
-        'iEzsigntemplatepackagesignermembershipCopy' => 'getIEzsigntemplatepackagesignermembershipCopy'
+        
     ];
 
     /**
@@ -221,7 +195,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -231,7 +205,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -241,7 +215,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -255,12 +229,6 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -270,11 +238,8 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsigntemplatepackagesignermembershipID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigntemplatepackagemembershipID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigntemplatepackagesignerID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigntemplatesignerID', $data ?? [], null);
-        $this->setIfExists('iEzsigntemplatepackagesignermembershipCopy', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -302,39 +267,7 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiEzsigntemplatepackagesignermembershipID'] === null) {
-            $invalidProperties[] = "'pkiEzsigntemplatepackagesignermembershipID' can't be null";
-        }
-        if (($this->container['pkiEzsigntemplatepackagesignermembershipID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsigntemplatepackagesignermembershipID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsigntemplatepackagemembershipID'] === null) {
-            $invalidProperties[] = "'fkiEzsigntemplatepackagemembershipID' can't be null";
-        }
-        if (($this->container['fkiEzsigntemplatepackagemembershipID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntemplatepackagemembershipID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsigntemplatepackagesignerID'] === null) {
-            $invalidProperties[] = "'fkiEzsigntemplatepackagesignerID' can't be null";
-        }
-        if (($this->container['fkiEzsigntemplatepackagesignerID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntemplatepackagesignerID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsigntemplatesignerID'] === null) {
-            $invalidProperties[] = "'fkiEzsigntemplatesignerID' can't be null";
-        }
-        if (($this->container['fkiEzsigntemplatesignerID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigntemplatesignerID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['iEzsigntemplatepackagesignermembershipCopy']) && ($this->container['iEzsigntemplatepackagesignermembershipCopy'] < 1)) {
-            $invalidProperties[] = "invalid value for 'iEzsigntemplatepackagesignermembershipCopy', must be bigger than or equal to 1.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -350,201 +283,6 @@ class EzsigntemplatepackagesignermembershipResponseCompound implements ModelInte
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsigntemplatepackagesignermembershipID
-     *
-     * @return int
-     */
-    public function getPkiEzsigntemplatepackagesignermembershipID()
-    {
-	//return $this->container['pkiEzsigntemplatepackagesignermembershipID'];
-        return $this->container['pkiEzsigntemplatepackagesignermembershipID'];
-    }
-
-    /**
-     * Sets pkiEzsigntemplatepackagesignermembershipID
-     *
-     * @param int $pkiEzsigntemplatepackagesignermembershipID The unique ID of the Ezsigntemplatepackagesignermembership
-     *
-     * @return self
-     */
-    public function setPkiEzsigntemplatepackagesignermembershipID($pkiEzsigntemplatepackagesignermembershipID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsigntemplatepackagesignermembershipID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsigntemplatepackagesignermembershipID cannot be null');
-        //}
-
-	//if (($pkiEzsigntemplatepackagesignermembershipID < 0)) {
-        if (($pkiEzsigntemplatepackagesignermembershipID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsigntemplatepackagesignermembershipID when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsigntemplatepackagesignermembershipID)?'null':'"'.$pkiEzsigntemplatepackagesignermembershipID.'"').' for pkiEzsigntemplatepackagesignermembershipID when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsigntemplatepackagesignermembershipID'] = $pkiEzsigntemplatepackagesignermembershipID;
-        $this->container['pkiEzsigntemplatepackagesignermembershipID'] = (is_null($pkiEzsigntemplatepackagesignermembershipID) ? null : (int) $pkiEzsigntemplatepackagesignermembershipID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigntemplatepackagemembershipID
-     *
-     * @return int
-     */
-    public function getFkiEzsigntemplatepackagemembershipID()
-    {
-	//return $this->container['fkiEzsigntemplatepackagemembershipID'];
-        return $this->container['fkiEzsigntemplatepackagemembershipID'];
-    }
-
-    /**
-     * Sets fkiEzsigntemplatepackagemembershipID
-     *
-     * @param int $fkiEzsigntemplatepackagemembershipID The unique ID of the Ezsigntemplatepackagemembership
-     *
-     * @return self
-     */
-    public function setFkiEzsigntemplatepackagemembershipID($fkiEzsigntemplatepackagemembershipID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigntemplatepackagemembershipID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatepackagemembershipID cannot be null');
-        //}
-
-	//if (($fkiEzsigntemplatepackagemembershipID < 0)) {
-        if (($fkiEzsigntemplatepackagemembershipID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatepackagemembershipID when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntemplatepackagemembershipID)?'null':'"'.$fkiEzsigntemplatepackagemembershipID.'"').' for fkiEzsigntemplatepackagemembershipID when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigntemplatepackagemembershipID'] = $fkiEzsigntemplatepackagemembershipID;
-        $this->container['fkiEzsigntemplatepackagemembershipID'] = (is_null($fkiEzsigntemplatepackagemembershipID) ? null : (int) $fkiEzsigntemplatepackagemembershipID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigntemplatepackagesignerID
-     *
-     * @return int
-     */
-    public function getFkiEzsigntemplatepackagesignerID()
-    {
-	//return $this->container['fkiEzsigntemplatepackagesignerID'];
-        return $this->container['fkiEzsigntemplatepackagesignerID'];
-    }
-
-    /**
-     * Sets fkiEzsigntemplatepackagesignerID
-     *
-     * @param int $fkiEzsigntemplatepackagesignerID The unique ID of the Ezsigntemplatepackagesigner
-     *
-     * @return self
-     */
-    public function setFkiEzsigntemplatepackagesignerID($fkiEzsigntemplatepackagesignerID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigntemplatepackagesignerID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatepackagesignerID cannot be null');
-        //}
-
-	//if (($fkiEzsigntemplatepackagesignerID < 0)) {
-        if (($fkiEzsigntemplatepackagesignerID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatepackagesignerID when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntemplatepackagesignerID)?'null':'"'.$fkiEzsigntemplatepackagesignerID.'"').' for fkiEzsigntemplatepackagesignerID when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigntemplatepackagesignerID'] = $fkiEzsigntemplatepackagesignerID;
-        $this->container['fkiEzsigntemplatepackagesignerID'] = (is_null($fkiEzsigntemplatepackagesignerID) ? null : (int) $fkiEzsigntemplatepackagesignerID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigntemplatesignerID
-     *
-     * @return int
-     */
-    public function getFkiEzsigntemplatesignerID()
-    {
-	//return $this->container['fkiEzsigntemplatesignerID'];
-        return $this->container['fkiEzsigntemplatesignerID'];
-    }
-
-    /**
-     * Sets fkiEzsigntemplatesignerID
-     *
-     * @param int $fkiEzsigntemplatesignerID The unique ID of the Ezsigntemplatesigner
-     *
-     * @return self
-     */
-    public function setFkiEzsigntemplatesignerID($fkiEzsigntemplatesignerID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigntemplatesignerID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigntemplatesignerID cannot be null');
-        //}
-
-	//if (($fkiEzsigntemplatesignerID < 0)) {
-        if (($fkiEzsigntemplatesignerID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigntemplatesignerID when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigntemplatesignerID)?'null':'"'.$fkiEzsigntemplatesignerID.'"').' for fkiEzsigntemplatesignerID when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigntemplatesignerID'] = $fkiEzsigntemplatesignerID;
-        $this->container['fkiEzsigntemplatesignerID'] = (is_null($fkiEzsigntemplatesignerID) ? null : (int) $fkiEzsigntemplatesignerID);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsigntemplatepackagesignermembershipCopy
-     *
-     * @return int|null
-     */
-    public function getIEzsigntemplatepackagesignermembershipCopy()
-    {
-	//return $this->container['iEzsigntemplatepackagesignermembershipCopy'];
-        return $this->container['iEzsigntemplatepackagesignermembershipCopy'];
-    }
-
-    /**
-     * Sets iEzsigntemplatepackagesignermembershipCopy
-     *
-     * @param int|null $iEzsigntemplatepackagesignermembershipCopy The Copy number in case of multiple copies.
-     *
-     * @return self
-     */
-    public function setIEzsigntemplatepackagesignermembershipCopy($iEzsigntemplatepackagesignermembershipCopy)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsigntemplatepackagesignermembershipCopy)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsigntemplatepackagesignermembershipCopy cannot be null');
-        //}
-
-	//if (($iEzsigntemplatepackagesignermembershipCopy < 1)) {
-        if (!is_null($iEzsigntemplatepackagesignermembershipCopy) && ($iEzsigntemplatepackagesignermembershipCopy < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsigntemplatepackagesignermembershipCopy when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsigntemplatepackagesignermembershipCopy)?'null':'"'.$iEzsigntemplatepackagesignermembershipCopy.'"').' for iEzsigntemplatepackagesignermembershipCopy when calling EzsigntemplatepackagesignermembershipResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsigntemplatepackagesignermembershipCopy'] = $iEzsigntemplatepackagesignermembershipCopy;
-        $this->container['iEzsigntemplatepackagesignermembershipCopy'] = (is_null($iEzsigntemplatepackagesignermembershipCopy) ? null : (int) $iEzsigntemplatepackagesignermembershipCopy);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

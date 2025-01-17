@@ -79,31 +79,4 @@ class CorsRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiCorsID"
-     */
-    public function testPropertyPkiCorsID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiApikeyID"
-     */
-    public function testPropertyFkiApikeyID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sCorsEntryurl"
-     */
-    public function testPropertySCorsEntryurl()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

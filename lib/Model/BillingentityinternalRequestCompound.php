@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class BillingentityinternalRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class BillingentityinternalRequestCompound extends BillingentityinternalRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,8 +57,6 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiBillingentityinternalID' => 'int',
-        'objBillingentityinternalDescription' => '\eZmaxAPI\Model\MultilingualBillingentityinternalDescription',
         'aObjBillingentityinternalproduct' => '\eZmaxAPI\Model\BillingentityinternalproductRequestCompound[]'
     ];
 
@@ -72,8 +68,6 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiBillingentityinternalID' => null,
-        'objBillingentityinternalDescription' => null,
         'aObjBillingentityinternalproduct' => null
     ];
 
@@ -83,9 +77,7 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiBillingentityinternalID' => false,
-		'objBillingentityinternalDescription' => false,
-		'aObjBillingentityinternalproduct' => false
+        'aObjBillingentityinternalproduct' => false
     ];
 
     /**
@@ -102,7 +94,7 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,8 +166,6 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiBillingentityinternalID' => 'pkiBillingentityinternalID',
-        'objBillingentityinternalDescription' => 'objBillingentityinternalDescription',
         'aObjBillingentityinternalproduct' => 'a_objBillingentityinternalproduct'
     ];
 
@@ -185,8 +175,6 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'pkiBillingentityinternalID' => 'setPkiBillingentityinternalID',
-        'objBillingentityinternalDescription' => 'setObjBillingentityinternalDescription',
         'aObjBillingentityinternalproduct' => 'setAObjBillingentityinternalproduct'
     ];
 
@@ -196,8 +184,6 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'pkiBillingentityinternalID' => 'getPkiBillingentityinternalID',
-        'objBillingentityinternalDescription' => 'getObjBillingentityinternalDescription',
         'aObjBillingentityinternalproduct' => 'getAObjBillingentityinternalproduct'
     ];
 
@@ -209,7 +195,7 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,8 +238,8 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiBillingentityinternalID', $data ?? [], null);
-        $this->setIfExists('objBillingentityinternalDescription', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjBillingentityinternalproduct', $data ?? [], null);
     }
 
@@ -288,15 +268,8 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if (!is_null($this->container['pkiBillingentityinternalID']) && ($this->container['pkiBillingentityinternalID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiBillingentityinternalID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['objBillingentityinternalDescription'] === null) {
-            $invalidProperties[] = "'objBillingentityinternalDescription' can't be null";
-        }
         if ($this->container['aObjBillingentityinternalproduct'] === null) {
             $invalidProperties[] = "'aObjBillingentityinternalproduct' can't be null";
         }
@@ -314,77 +287,6 @@ class BillingentityinternalRequestCompound implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiBillingentityinternalID
-     *
-     * @return int|null
-     */
-    public function getPkiBillingentityinternalID()
-    {
-	//return $this->container['pkiBillingentityinternalID'];
-        return $this->container['pkiBillingentityinternalID'];
-    }
-
-    /**
-     * Sets pkiBillingentityinternalID
-     *
-     * @param int|null $pkiBillingentityinternalID The unique ID of the Billingentityinternal.
-     *
-     * @return self
-     */
-    public function setPkiBillingentityinternalID($pkiBillingentityinternalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiBillingentityinternalID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiBillingentityinternalID cannot be null');
-        //}
-
-	//if (($pkiBillingentityinternalID < 0)) {
-        if (!is_null($pkiBillingentityinternalID) && ($pkiBillingentityinternalID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiBillingentityinternalID when calling BillingentityinternalRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiBillingentityinternalID)?'null':'"'.$pkiBillingentityinternalID.'"').' for pkiBillingentityinternalID when calling BillingentityinternalRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiBillingentityinternalID'] = $pkiBillingentityinternalID;
-        $this->container['pkiBillingentityinternalID'] = (is_null($pkiBillingentityinternalID) ? null : (int) $pkiBillingentityinternalID);
-
-        return $this;
-    }
-
-    /**
-     * Gets objBillingentityinternalDescription
-     *
-     * @return \eZmaxAPI\Model\MultilingualBillingentityinternalDescription
-     */
-    public function getObjBillingentityinternalDescription()
-    {
-	//return $this->container['objBillingentityinternalDescription'];
-        return $this->container['objBillingentityinternalDescription'];
-    }
-
-    /**
-     * Sets objBillingentityinternalDescription
-     *
-     * @param \eZmaxAPI\Model\MultilingualBillingentityinternalDescription $objBillingentityinternalDescription objBillingentityinternalDescription
-     *
-     * @return self
-     */
-    public function setObjBillingentityinternalDescription($objBillingentityinternalDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objBillingentityinternalDescription)) {
-            //throw new \InvalidArgumentException('non-nullable objBillingentityinternalDescription cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objBillingentityinternalDescription'] = $objBillingentityinternalDescription;
-        $this->container['objBillingentityinternalDescription'] = $objBillingentityinternalDescription;
-
-        return $this;
-    }
 
     /**
      * Gets aObjBillingentityinternalproduct

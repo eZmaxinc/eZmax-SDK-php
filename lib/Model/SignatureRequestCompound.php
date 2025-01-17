@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class SignatureRequestCompound extends SignatureRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiSignatureID' => 'int',
-        'fkiFontID' => 'int',
-        'eSignaturePreference' => '\eZmaxAPI\Model\FieldESignaturePreference',
-        'tSignatureSvg' => 'string',
-        'tSignatureSvginitials' => 'string'
+        
     ];
 
     /**
@@ -74,11 +68,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiSignatureID' => null,
-        'fkiFontID' => null,
-        'eSignaturePreference' => null,
-        'tSignatureSvg' => null,
-        'tSignatureSvginitials' => null
+        
     ];
 
     /**
@@ -87,11 +77,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiSignatureID' => false,
-		'fkiFontID' => false,
-		'eSignaturePreference' => false,
-		'tSignatureSvg' => false,
-		'tSignatureSvginitials' => false
+        
     ];
 
     /**
@@ -108,7 +94,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -118,7 +104,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -128,7 +114,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -180,11 +166,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiSignatureID' => 'pkiSignatureID',
-        'fkiFontID' => 'fkiFontID',
-        'eSignaturePreference' => 'eSignaturePreference',
-        'tSignatureSvg' => 'tSignatureSvg',
-        'tSignatureSvginitials' => 'tSignatureSvginitials'
+        
     ];
 
     /**
@@ -193,11 +175,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'pkiSignatureID' => 'setPkiSignatureID',
-        'fkiFontID' => 'setFkiFontID',
-        'eSignaturePreference' => 'setESignaturePreference',
-        'tSignatureSvg' => 'setTSignatureSvg',
-        'tSignatureSvginitials' => 'setTSignatureSvginitials'
+        
     ];
 
     /**
@@ -206,11 +184,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'pkiSignatureID' => 'getPkiSignatureID',
-        'fkiFontID' => 'getFkiFontID',
-        'eSignaturePreference' => 'getESignaturePreference',
-        'tSignatureSvg' => 'getTSignatureSvg',
-        'tSignatureSvginitials' => 'getTSignatureSvginitials'
+        
     ];
 
     /**
@@ -221,7 +195,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -231,7 +205,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -241,7 +215,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -255,12 +229,6 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -270,11 +238,8 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiSignatureID', $data ?? [], null);
-        $this->setIfExists('fkiFontID', $data ?? [], null);
-        $this->setIfExists('eSignaturePreference', $data ?? [], null);
-        $this->setIfExists('tSignatureSvg', $data ?? [], null);
-        $this->setIfExists('tSignatureSvginitials', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -302,35 +267,7 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['pkiSignatureID']) && ($this->container['pkiSignatureID'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'pkiSignatureID', must be smaller than or equal to 16777215.";
-        }
-
-        if (!is_null($this->container['pkiSignatureID']) && ($this->container['pkiSignatureID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiSignatureID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiFontID'] === null) {
-            $invalidProperties[] = "'fkiFontID' can't be null";
-        }
-        if (($this->container['fkiFontID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiFontID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['eSignaturePreference'] === null) {
-            $invalidProperties[] = "'eSignaturePreference' can't be null";
-        }
-	//if (!is_null($this->container['tSignatureSvg']) && !preg_match("/^.{60,65535}$/", $this->container['tSignatureSvg'])) {
-        if (!is_null($this->container['tSignatureSvg']) && !preg_match("/(*UTF8)^.{60,65535}$/", $this->container['tSignatureSvg'])) {
-            $invalidProperties[] = "invalid value for 'tSignatureSvg', must be conform to the pattern /^.{60,65535}$/.";
-        }
-
-	//if (!is_null($this->container['tSignatureSvginitials']) && !preg_match("/^.{60,65535}$/", $this->container['tSignatureSvginitials'])) {
-        if (!is_null($this->container['tSignatureSvginitials']) && !preg_match("/(*UTF8)^.{60,65535}$/", $this->container['tSignatureSvginitials'])) {
-            $invalidProperties[] = "invalid value for 'tSignatureSvginitials', must be conform to the pattern /^.{60,65535}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -346,199 +283,6 @@ class SignatureRequestCompound implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiSignatureID
-     *
-     * @return int|null
-     */
-    public function getPkiSignatureID()
-    {
-	//return $this->container['pkiSignatureID'];
-        return $this->container['pkiSignatureID'];
-    }
-
-    /**
-     * Sets pkiSignatureID
-     *
-     * @param int|null $pkiSignatureID The unique ID of the Signature
-     *
-     * @return self
-     */
-    public function setPkiSignatureID($pkiSignatureID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiSignatureID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiSignatureID cannot be null');
-        //}
-
-	//if (($pkiSignatureID > 16777215)) {
-        if (!is_null($pkiSignatureID) && ($pkiSignatureID > 16777215)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiSignatureID when calling SignatureRequestCompound., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiSignatureID)?'null':'"'.$pkiSignatureID.'"').' for pkiSignatureID when calling SignatureRequestCompound., must be smaller than or equal to 16777215.');
-        }
-	//if (($pkiSignatureID < 0)) {
-        if (!is_null($pkiSignatureID) && ($pkiSignatureID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiSignatureID when calling SignatureRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiSignatureID)?'null':'"'.$pkiSignatureID.'"').' for pkiSignatureID when calling SignatureRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiSignatureID'] = $pkiSignatureID;
-        $this->container['pkiSignatureID'] = (is_null($pkiSignatureID) ? null : (int) $pkiSignatureID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiFontID
-     *
-     * @return int
-     */
-    public function getFkiFontID()
-    {
-	//return $this->container['fkiFontID'];
-        return $this->container['fkiFontID'];
-    }
-
-    /**
-     * Sets fkiFontID
-     *
-     * @param int $fkiFontID The unique ID of the Font
-     *
-     * @return self
-     */
-    public function setFkiFontID($fkiFontID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiFontID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiFontID cannot be null');
-        //}
-
-	//if (($fkiFontID < 0)) {
-        if (($fkiFontID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiFontID when calling SignatureRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiFontID)?'null':'"'.$fkiFontID.'"').' for fkiFontID when calling SignatureRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiFontID'] = $fkiFontID;
-        $this->container['fkiFontID'] = (is_null($fkiFontID) ? null : (int) $fkiFontID);
-
-        return $this;
-    }
-
-    /**
-     * Gets eSignaturePreference
-     *
-     * @return \eZmaxAPI\Model\FieldESignaturePreference
-     */
-    public function getESignaturePreference()
-    {
-	//return $this->container['eSignaturePreference'];
-        return $this->container['eSignaturePreference'];
-    }
-
-    /**
-     * Sets eSignaturePreference
-     *
-     * @param \eZmaxAPI\Model\FieldESignaturePreference $eSignaturePreference eSignaturePreference
-     *
-     * @return self
-     */
-    public function setESignaturePreference($eSignaturePreference)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eSignaturePreference)) {
-            //throw new \InvalidArgumentException('non-nullable eSignaturePreference cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eSignaturePreference'] = $eSignaturePreference;
-        $this->container['eSignaturePreference'] = $eSignaturePreference;
-
-        return $this;
-    }
-
-    /**
-     * Gets tSignatureSvg
-     *
-     * @return string|null
-     */
-    public function getTSignatureSvg()
-    {
-	//return $this->container['tSignatureSvg'];
-        return is_null($this->container['tSignatureSvg']) ? null : trim($this->container['tSignatureSvg']);
-    }
-
-    /**
-     * Sets tSignatureSvg
-     *
-     * @param string|null $tSignatureSvg The svg of the Signature
-     *
-     * @return self
-     */
-    public function setTSignatureSvg($tSignatureSvg)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($tSignatureSvg)) {
-            //throw new \InvalidArgumentException('non-nullable tSignatureSvg cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{60,65535}$/", ObjectSerializer::toString($tSignatureSvg)))) {
-        if (!is_null($tSignatureSvg) && (!preg_match("/(*UTF8)^.{60,65535}$/", ObjectSerializer::toString($tSignatureSvg)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$tSignatureSvg when calling SignatureRequestCompound., must conform to the pattern /^.{60,65535}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($tSignatureSvg)?'null':'"'.$tSignatureSvg.'"')." for tSignatureSvg when calling SignatureRequestCompound., must conform to the pattern /^.{60,65535}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['tSignatureSvg'] = $tSignatureSvg;
-        $this->container['tSignatureSvg'] = (is_null($tSignatureSvg) ? null : trim((string) $tSignatureSvg));
-
-        return $this;
-    }
-
-    /**
-     * Gets tSignatureSvginitials
-     *
-     * @return string|null
-     */
-    public function getTSignatureSvginitials()
-    {
-	//return $this->container['tSignatureSvginitials'];
-        return is_null($this->container['tSignatureSvginitials']) ? null : trim($this->container['tSignatureSvginitials']);
-    }
-
-    /**
-     * Sets tSignatureSvginitials
-     *
-     * @param string|null $tSignatureSvginitials The svg of the Initials
-     *
-     * @return self
-     */
-    public function setTSignatureSvginitials($tSignatureSvginitials)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($tSignatureSvginitials)) {
-            //throw new \InvalidArgumentException('non-nullable tSignatureSvginitials cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{60,65535}$/", ObjectSerializer::toString($tSignatureSvginitials)))) {
-        if (!is_null($tSignatureSvginitials) && (!preg_match("/(*UTF8)^.{60,65535}$/", ObjectSerializer::toString($tSignatureSvginitials)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$tSignatureSvginitials when calling SignatureRequestCompound., must conform to the pattern /^.{60,65535}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($tSignatureSvginitials)?'null':'"'.$tSignatureSvginitials.'"')." for tSignatureSvginitials when calling SignatureRequestCompound., must conform to the pattern /^.{60,65535}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['tSignatureSvginitials'] = $tSignatureSvginitials;
-        $this->container['tSignatureSvginitials'] = (is_null($tSignatureSvginitials) ? null : trim((string) $tSignatureSvginitials));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

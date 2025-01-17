@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class SupplyRequestCompound extends SupplyRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,15 +57,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiSupplyID' => 'int',
-        'fkiGlaccountID' => 'int',
-        'fkiGlaccountcontainerID' => 'int',
-        'fkiVariableexpenseID' => 'int',
-        'sSupplyCode' => 'string',
-        'objSupplyDescription' => '\eZmaxAPI\Model\MultilingualSupplyDescription',
-        'dSupplyUnitprice' => 'string',
-        'bSupplyIsactive' => 'bool',
-        'bSupplyVariableprice' => 'bool'
+        
     ];
 
     /**
@@ -78,15 +68,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiSupplyID' => null,
-        'fkiGlaccountID' => null,
-        'fkiGlaccountcontainerID' => null,
-        'fkiVariableexpenseID' => null,
-        'sSupplyCode' => null,
-        'objSupplyDescription' => null,
-        'dSupplyUnitprice' => null,
-        'bSupplyIsactive' => null,
-        'bSupplyVariableprice' => null
+        
     ];
 
     /**
@@ -95,15 +77,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiSupplyID' => false,
-		'fkiGlaccountID' => false,
-		'fkiGlaccountcontainerID' => false,
-		'fkiVariableexpenseID' => false,
-		'sSupplyCode' => false,
-		'objSupplyDescription' => false,
-		'dSupplyUnitprice' => false,
-		'bSupplyIsactive' => false,
-		'bSupplyVariableprice' => false
+        
     ];
 
     /**
@@ -120,7 +94,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -130,7 +104,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -140,7 +114,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -192,15 +166,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiSupplyID' => 'pkiSupplyID',
-        'fkiGlaccountID' => 'fkiGlaccountID',
-        'fkiGlaccountcontainerID' => 'fkiGlaccountcontainerID',
-        'fkiVariableexpenseID' => 'fkiVariableexpenseID',
-        'sSupplyCode' => 'sSupplyCode',
-        'objSupplyDescription' => 'objSupplyDescription',
-        'dSupplyUnitprice' => 'dSupplyUnitprice',
-        'bSupplyIsactive' => 'bSupplyIsactive',
-        'bSupplyVariableprice' => 'bSupplyVariableprice'
+        
     ];
 
     /**
@@ -209,15 +175,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'pkiSupplyID' => 'setPkiSupplyID',
-        'fkiGlaccountID' => 'setFkiGlaccountID',
-        'fkiGlaccountcontainerID' => 'setFkiGlaccountcontainerID',
-        'fkiVariableexpenseID' => 'setFkiVariableexpenseID',
-        'sSupplyCode' => 'setSSupplyCode',
-        'objSupplyDescription' => 'setObjSupplyDescription',
-        'dSupplyUnitprice' => 'setDSupplyUnitprice',
-        'bSupplyIsactive' => 'setBSupplyIsactive',
-        'bSupplyVariableprice' => 'setBSupplyVariableprice'
+        
     ];
 
     /**
@@ -226,15 +184,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'pkiSupplyID' => 'getPkiSupplyID',
-        'fkiGlaccountID' => 'getFkiGlaccountID',
-        'fkiGlaccountcontainerID' => 'getFkiGlaccountcontainerID',
-        'fkiVariableexpenseID' => 'getFkiVariableexpenseID',
-        'sSupplyCode' => 'getSSupplyCode',
-        'objSupplyDescription' => 'getObjSupplyDescription',
-        'dSupplyUnitprice' => 'getDSupplyUnitprice',
-        'bSupplyIsactive' => 'getBSupplyIsactive',
-        'bSupplyVariableprice' => 'getBSupplyVariableprice'
+        
     ];
 
     /**
@@ -245,7 +195,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -255,7 +205,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -265,7 +215,7 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -279,12 +229,6 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -294,15 +238,8 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiSupplyID', $data ?? [], null);
-        $this->setIfExists('fkiGlaccountID', $data ?? [], null);
-        $this->setIfExists('fkiGlaccountcontainerID', $data ?? [], null);
-        $this->setIfExists('fkiVariableexpenseID', $data ?? [], null);
-        $this->setIfExists('sSupplyCode', $data ?? [], null);
-        $this->setIfExists('objSupplyDescription', $data ?? [], null);
-        $this->setIfExists('dSupplyUnitprice', $data ?? [], null);
-        $this->setIfExists('bSupplyIsactive', $data ?? [], null);
-        $this->setIfExists('bSupplyVariableprice', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -330,70 +267,8 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if (!is_null($this->container['pkiSupplyID']) && ($this->container['pkiSupplyID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pkiSupplyID', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['pkiSupplyID']) && ($this->container['pkiSupplyID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiSupplyID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiGlaccountID']) && ($this->container['fkiGlaccountID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiGlaccountID', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['fkiGlaccountcontainerID']) && ($this->container['fkiGlaccountcontainerID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiGlaccountcontainerID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiVariableexpenseID'] === null) {
-            $invalidProperties[] = "'fkiVariableexpenseID' can't be null";
-        }
-        if (($this->container['fkiVariableexpenseID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'fkiVariableexpenseID', must be smaller than or equal to 255.";
-        }
-
-        if (($this->container['fkiVariableexpenseID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiVariableexpenseID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['sSupplyCode'] === null) {
-            $invalidProperties[] = "'sSupplyCode' can't be null";
-        }
-	//if (!preg_match("/^.{0,5}$/", $this->container['sSupplyCode'])) {
-        if (!is_null($this->container['sSupplyCode']) && !preg_match("/(*UTF8)^.{0,5}$/", $this->container['sSupplyCode'])) {
-            $invalidProperties[] = "invalid value for 'sSupplyCode', must be conform to the pattern /^.{0,5}$/.";
-        }
-
-        if ($this->container['objSupplyDescription'] === null) {
-            $invalidProperties[] = "'objSupplyDescription' can't be null";
-        }
-        if ($this->container['dSupplyUnitprice'] === null) {
-            $invalidProperties[] = "'dSupplyUnitprice' can't be null";
-        }
-	//if ((mb_strlen($this->container['dSupplyUnitprice']) > 13)) {
-        if (((is_null($this->container['dSupplyUnitprice'])?0:mb_strlen($this->container['dSupplyUnitprice'])) > 13)) {
-            $invalidProperties[] = "invalid value for 'dSupplyUnitprice', the character length must be smaller than or equal to 13.";
-        }
-
-	//if ((mb_strlen($this->container['dSupplyUnitprice']) < 4)) {
-        if (((is_null($this->container['dSupplyUnitprice'])?0:mb_strlen($this->container['dSupplyUnitprice'])) < 4)) {
-            $invalidProperties[] = "invalid value for 'dSupplyUnitprice', the character length must be bigger than or equal to 4.";
-        }
-
-	//if (!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dSupplyUnitprice'])) {
-        if (!is_null($this->container['dSupplyUnitprice']) && !preg_match("/(*UTF8)^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", $this->container['dSupplyUnitprice'])) {
-            $invalidProperties[] = "invalid value for 'dSupplyUnitprice', must be conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.";
-        }
-
-        if ($this->container['bSupplyIsactive'] === null) {
-            $invalidProperties[] = "'bSupplyIsactive' can't be null";
-        }
-        if ($this->container['bSupplyVariableprice'] === null) {
-            $invalidProperties[] = "'bSupplyVariableprice' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -408,355 +283,6 @@ class SupplyRequestCompound implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiSupplyID
-     *
-     * @return int|null
-     */
-    public function getPkiSupplyID()
-    {
-	//return $this->container['pkiSupplyID'];
-        return $this->container['pkiSupplyID'];
-    }
-
-    /**
-     * Sets pkiSupplyID
-     *
-     * @param int|null $pkiSupplyID The unique ID of the Supply
-     *
-     * @return self
-     */
-    public function setPkiSupplyID($pkiSupplyID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiSupplyID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiSupplyID cannot be null');
-        //}
-
-	//if (($pkiSupplyID > 65535)) {
-        if (!is_null($pkiSupplyID) && ($pkiSupplyID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiSupplyID when calling SupplyRequestCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiSupplyID)?'null':'"'.$pkiSupplyID.'"').' for pkiSupplyID when calling SupplyRequestCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($pkiSupplyID < 0)) {
-        if (!is_null($pkiSupplyID) && ($pkiSupplyID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiSupplyID when calling SupplyRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiSupplyID)?'null':'"'.$pkiSupplyID.'"').' for pkiSupplyID when calling SupplyRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiSupplyID'] = $pkiSupplyID;
-        $this->container['pkiSupplyID'] = (is_null($pkiSupplyID) ? null : (int) $pkiSupplyID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiGlaccountID
-     *
-     * @return int|null
-     */
-    public function getFkiGlaccountID()
-    {
-	//return $this->container['fkiGlaccountID'];
-        return $this->container['fkiGlaccountID'];
-    }
-
-    /**
-     * Sets fkiGlaccountID
-     *
-     * @param int|null $fkiGlaccountID The unique ID of the Glaccount
-     *
-     * @return self
-     */
-    public function setFkiGlaccountID($fkiGlaccountID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiGlaccountID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiGlaccountID cannot be null');
-        //}
-
-	//if (($fkiGlaccountID < 0)) {
-        if (!is_null($fkiGlaccountID) && ($fkiGlaccountID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiGlaccountID when calling SupplyRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiGlaccountID)?'null':'"'.$fkiGlaccountID.'"').' for fkiGlaccountID when calling SupplyRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiGlaccountID'] = $fkiGlaccountID;
-        $this->container['fkiGlaccountID'] = (is_null($fkiGlaccountID) ? null : (int) $fkiGlaccountID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiGlaccountcontainerID
-     *
-     * @return int|null
-     */
-    public function getFkiGlaccountcontainerID()
-    {
-	//return $this->container['fkiGlaccountcontainerID'];
-        return $this->container['fkiGlaccountcontainerID'];
-    }
-
-    /**
-     * Sets fkiGlaccountcontainerID
-     *
-     * @param int|null $fkiGlaccountcontainerID The unique ID of the Glaccountcontainer
-     *
-     * @return self
-     */
-    public function setFkiGlaccountcontainerID($fkiGlaccountcontainerID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiGlaccountcontainerID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiGlaccountcontainerID cannot be null');
-        //}
-
-	//if (($fkiGlaccountcontainerID < 0)) {
-        if (!is_null($fkiGlaccountcontainerID) && ($fkiGlaccountcontainerID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiGlaccountcontainerID when calling SupplyRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiGlaccountcontainerID)?'null':'"'.$fkiGlaccountcontainerID.'"').' for fkiGlaccountcontainerID when calling SupplyRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiGlaccountcontainerID'] = $fkiGlaccountcontainerID;
-        $this->container['fkiGlaccountcontainerID'] = (is_null($fkiGlaccountcontainerID) ? null : (int) $fkiGlaccountcontainerID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiVariableexpenseID
-     *
-     * @return int
-     */
-    public function getFkiVariableexpenseID()
-    {
-	//return $this->container['fkiVariableexpenseID'];
-        return $this->container['fkiVariableexpenseID'];
-    }
-
-    /**
-     * Sets fkiVariableexpenseID
-     *
-     * @param int $fkiVariableexpenseID The unique ID of the Variableexpense
-     *
-     * @return self
-     */
-    public function setFkiVariableexpenseID($fkiVariableexpenseID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiVariableexpenseID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiVariableexpenseID cannot be null');
-        //}
-
-	//if (($fkiVariableexpenseID > 255)) {
-        if (($fkiVariableexpenseID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiVariableexpenseID when calling SupplyRequestCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiVariableexpenseID)?'null':'"'.$fkiVariableexpenseID.'"').' for fkiVariableexpenseID when calling SupplyRequestCompound., must be smaller than or equal to 255.');
-        }
-	//if (($fkiVariableexpenseID < 1)) {
-        if (($fkiVariableexpenseID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiVariableexpenseID when calling SupplyRequestCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiVariableexpenseID)?'null':'"'.$fkiVariableexpenseID.'"').' for fkiVariableexpenseID when calling SupplyRequestCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiVariableexpenseID'] = $fkiVariableexpenseID;
-        $this->container['fkiVariableexpenseID'] = (is_null($fkiVariableexpenseID) ? null : (int) $fkiVariableexpenseID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sSupplyCode
-     *
-     * @return string
-     */
-    public function getSSupplyCode()
-    {
-	//return $this->container['sSupplyCode'];
-        return is_null($this->container['sSupplyCode']) ? null : trim($this->container['sSupplyCode']);
-    }
-
-    /**
-     * Sets sSupplyCode
-     *
-     * @param string $sSupplyCode The code of the Supply
-     *
-     * @return self
-     */
-    public function setSSupplyCode($sSupplyCode)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sSupplyCode)) {
-            //throw new \InvalidArgumentException('non-nullable sSupplyCode cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,5}$/", ObjectSerializer::toString($sSupplyCode)))) {
-        if (!is_null($sSupplyCode) && (!preg_match("/(*UTF8)^.{0,5}$/", ObjectSerializer::toString($sSupplyCode)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sSupplyCode when calling SupplyRequestCompound., must conform to the pattern /^.{0,5}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sSupplyCode)?'null':'"'.$sSupplyCode.'"')." for sSupplyCode when calling SupplyRequestCompound., must conform to the pattern /^.{0,5}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sSupplyCode'] = $sSupplyCode;
-        $this->container['sSupplyCode'] = (is_null($sSupplyCode) ? null : trim((string) $sSupplyCode));
-
-        return $this;
-    }
-
-    /**
-     * Gets objSupplyDescription
-     *
-     * @return \eZmaxAPI\Model\MultilingualSupplyDescription
-     */
-    public function getObjSupplyDescription()
-    {
-	//return $this->container['objSupplyDescription'];
-        return $this->container['objSupplyDescription'];
-    }
-
-    /**
-     * Sets objSupplyDescription
-     *
-     * @param \eZmaxAPI\Model\MultilingualSupplyDescription $objSupplyDescription objSupplyDescription
-     *
-     * @return self
-     */
-    public function setObjSupplyDescription($objSupplyDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objSupplyDescription)) {
-            //throw new \InvalidArgumentException('non-nullable objSupplyDescription cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objSupplyDescription'] = $objSupplyDescription;
-        $this->container['objSupplyDescription'] = $objSupplyDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets dSupplyUnitprice
-     *
-     * @return string
-     */
-    public function getDSupplyUnitprice()
-    {
-	//return $this->container['dSupplyUnitprice'];
-        return is_null($this->container['dSupplyUnitprice']) ? null : trim($this->container['dSupplyUnitprice']);
-    }
-
-    /**
-     * Sets dSupplyUnitprice
-     *
-     * @param string $dSupplyUnitprice The unit price of the Supply
-     *
-     * @return self
-     */
-    public function setDSupplyUnitprice($dSupplyUnitprice)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dSupplyUnitprice)) {
-            //throw new \InvalidArgumentException('non-nullable dSupplyUnitprice cannot be null');
-        //}
-	//if ((mb_strlen($dSupplyUnitprice) > 13)) {
-        if ((mb_strlen($dSupplyUnitprice) > 13)) {
-	    //throw new \InvalidArgumentException('invalid length for $dSupplyUnitprice when calling SupplyRequestCompound., must be smaller than or equal to 13.');
-            throw new \InvalidArgumentException('value '.(is_null($dSupplyUnitprice)?'null':'"'.$dSupplyUnitprice.'"').', invalid length for dSupplyUnitprice when calling SupplyRequestCompound., must be smaller than or equal to 13.');
-        }
-	//if ((mb_strlen($dSupplyUnitprice) < 4)) {
-        if ((mb_strlen($dSupplyUnitprice) < 4)) {
-	    //throw new \InvalidArgumentException('invalid length for $dSupplyUnitprice when calling SupplyRequestCompound., must be bigger than or equal to 4.');
-            throw new \InvalidArgumentException('value '.(is_null($dSupplyUnitprice)?'null':'"'.$dSupplyUnitprice.'"').', invalid length for dSupplyUnitprice when calling SupplyRequestCompound., must be bigger than or equal to 4.');
-        }
-	//if ((!preg_match("/^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dSupplyUnitprice)))) {
-        if (!is_null($dSupplyUnitprice) && (!preg_match("/(*UTF8)^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/", ObjectSerializer::toString($dSupplyUnitprice)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$dSupplyUnitprice when calling SupplyRequestCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($dSupplyUnitprice)?'null':'"'.$dSupplyUnitprice.'"')." for dSupplyUnitprice when calling SupplyRequestCompound., must conform to the pattern /^-{0,1}[\\d]{1,9}?\\.[\\d]{2}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dSupplyUnitprice'] = $dSupplyUnitprice;
-        $this->container['dSupplyUnitprice'] = (is_null($dSupplyUnitprice) ? null : trim((string) $dSupplyUnitprice));
-
-        return $this;
-    }
-
-    /**
-     * Gets bSupplyIsactive
-     *
-     * @return bool
-     */
-    public function getBSupplyIsactive()
-    {
-	//return $this->container['bSupplyIsactive'];
-        return $this->container['bSupplyIsactive'];
-    }
-
-    /**
-     * Sets bSupplyIsactive
-     *
-     * @param bool $bSupplyIsactive Whether the supply is active or not
-     *
-     * @return self
-     */
-    public function setBSupplyIsactive($bSupplyIsactive)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bSupplyIsactive)) {
-            //throw new \InvalidArgumentException('non-nullable bSupplyIsactive cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bSupplyIsactive'] = $bSupplyIsactive;
-        $this->container['bSupplyIsactive'] = (is_null($bSupplyIsactive) ? null : (bool) $bSupplyIsactive);
-
-        return $this;
-    }
-
-    /**
-     * Gets bSupplyVariableprice
-     *
-     * @return bool
-     */
-    public function getBSupplyVariableprice()
-    {
-	//return $this->container['bSupplyVariableprice'];
-        return $this->container['bSupplyVariableprice'];
-    }
-
-    /**
-     * Sets bSupplyVariableprice
-     *
-     * @param bool $bSupplyVariableprice Whether if the price is variable
-     *
-     * @return self
-     */
-    public function setBSupplyVariableprice($bSupplyVariableprice)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bSupplyVariableprice)) {
-            //throw new \InvalidArgumentException('non-nullable bSupplyVariableprice cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bSupplyVariableprice'] = $bSupplyVariableprice;
-        $this->container['bSupplyVariableprice'] = (is_null($bSupplyVariableprice) ? null : (bool) $bSupplyVariableprice);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

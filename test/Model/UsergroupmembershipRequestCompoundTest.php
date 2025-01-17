@@ -79,40 +79,4 @@ class UsergroupmembershipRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiUsergroupmembershipID"
-     */
-    public function testPropertyPkiUsergroupmembershipID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiUsergroupID"
-     */
-    public function testPropertyFkiUsergroupID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiUserID"
-     */
-    public function testPropertyFkiUserID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiUsergroupexternalID"
-     */
-    public function testPropertyFkiUsergroupexternalID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

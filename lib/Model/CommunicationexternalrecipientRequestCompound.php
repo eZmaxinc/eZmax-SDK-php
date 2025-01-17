@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommunicationexternalrecipientRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class CommunicationexternalrecipientRequestCompound extends CommunicationexternalrecipientRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiCommunicationexternalrecipientID' => 'int',
-        'sEmailAddress' => 'string',
-        'sPhoneE164' => 'string',
-        'eCommunicationexternalrecipientType' => '\eZmaxAPI\Model\FieldECommunicationexternalrecipientType',
-        'sCommunicationexternalrecipientName' => 'string'
+        
     ];
 
     /**
@@ -74,11 +68,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiCommunicationexternalrecipientID' => null,
-        'sEmailAddress' => null,
-        'sPhoneE164' => null,
-        'eCommunicationexternalrecipientType' => null,
-        'sCommunicationexternalrecipientName' => null
+        
     ];
 
     /**
@@ -87,11 +77,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiCommunicationexternalrecipientID' => false,
-		'sEmailAddress' => false,
-		'sPhoneE164' => false,
-		'eCommunicationexternalrecipientType' => false,
-		'sCommunicationexternalrecipientName' => false
+        
     ];
 
     /**
@@ -108,7 +94,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -118,7 +104,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -128,7 +114,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -180,11 +166,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiCommunicationexternalrecipientID' => 'pkiCommunicationexternalrecipientID',
-        'sEmailAddress' => 'sEmailAddress',
-        'sPhoneE164' => 'sPhoneE164',
-        'eCommunicationexternalrecipientType' => 'eCommunicationexternalrecipientType',
-        'sCommunicationexternalrecipientName' => 'sCommunicationexternalrecipientName'
+        
     ];
 
     /**
@@ -193,11 +175,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-        'pkiCommunicationexternalrecipientID' => 'setPkiCommunicationexternalrecipientID',
-        'sEmailAddress' => 'setSEmailAddress',
-        'sPhoneE164' => 'setSPhoneE164',
-        'eCommunicationexternalrecipientType' => 'setECommunicationexternalrecipientType',
-        'sCommunicationexternalrecipientName' => 'setSCommunicationexternalrecipientName'
+        
     ];
 
     /**
@@ -206,11 +184,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      * @var string[]
      */
     protected static $getters = [
-        'pkiCommunicationexternalrecipientID' => 'getPkiCommunicationexternalrecipientID',
-        'sEmailAddress' => 'getSEmailAddress',
-        'sPhoneE164' => 'getSPhoneE164',
-        'eCommunicationexternalrecipientType' => 'getECommunicationexternalrecipientType',
-        'sCommunicationexternalrecipientName' => 'getSCommunicationexternalrecipientName'
+        
     ];
 
     /**
@@ -221,7 +195,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -231,7 +205,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -241,7 +215,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -255,12 +229,6 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -270,11 +238,8 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiCommunicationexternalrecipientID', $data ?? [], null);
-        $this->setIfExists('sEmailAddress', $data ?? [], null);
-        $this->setIfExists('sPhoneE164', $data ?? [], null);
-        $this->setIfExists('eCommunicationexternalrecipientType', $data ?? [], null);
-        $this->setIfExists('sCommunicationexternalrecipientName', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -302,22 +267,7 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-	//if (!is_null($this->container['sEmailAddress']) && !preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddress'])) {
-        if (!is_null($this->container['sEmailAddress']) && !preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", $this->container['sEmailAddress'])) {
-            $invalidProperties[] = "invalid value for 'sEmailAddress', must be conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.";
-        }
-
-	//if (!is_null($this->container['sPhoneE164']) && !preg_match("/^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneE164'])) {
-        if (!is_null($this->container['sPhoneE164']) && !preg_match("/(*UTF8)^\\+[1-9]\\d{1,14}$/", $this->container['sPhoneE164'])) {
-            $invalidProperties[] = "invalid value for 'sPhoneE164', must be conform to the pattern /^\\+[1-9]\\d{1,14}$/.";
-        }
-
-	//if (!is_null($this->container['sCommunicationexternalrecipientName']) && !preg_match("/^.{0,50}$/", $this->container['sCommunicationexternalrecipientName'])) {
-        if (!is_null($this->container['sCommunicationexternalrecipientName']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sCommunicationexternalrecipientName'])) {
-            $invalidProperties[] = "invalid value for 'sCommunicationexternalrecipientName', must be conform to the pattern /^.{0,50}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -333,187 +283,6 @@ class CommunicationexternalrecipientRequestCompound implements ModelInterface, A
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiCommunicationexternalrecipientID
-     *
-     * @return int|null
-     */
-    public function getPkiCommunicationexternalrecipientID()
-    {
-	//return $this->container['pkiCommunicationexternalrecipientID'];
-        return $this->container['pkiCommunicationexternalrecipientID'];
-    }
-
-    /**
-     * Sets pkiCommunicationexternalrecipientID
-     *
-     * @param int|null $pkiCommunicationexternalrecipientID The unique ID of the Communicationexternalrecipient
-     *
-     * @return self
-     */
-    public function setPkiCommunicationexternalrecipientID($pkiCommunicationexternalrecipientID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiCommunicationexternalrecipientID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiCommunicationexternalrecipientID cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiCommunicationexternalrecipientID'] = $pkiCommunicationexternalrecipientID;
-        $this->container['pkiCommunicationexternalrecipientID'] = (is_null($pkiCommunicationexternalrecipientID) ? null : (int) $pkiCommunicationexternalrecipientID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEmailAddress
-     *
-     * @return string|null
-     */
-    public function getSEmailAddress()
-    {
-	//return $this->container['sEmailAddress'];
-        return is_null($this->container['sEmailAddress']) ? null : trim($this->container['sEmailAddress']);
-    }
-
-    /**
-     * Sets sEmailAddress
-     *
-     * @param string|null $sEmailAddress The email address.
-     *
-     * @return self
-     */
-    public function setSEmailAddress($sEmailAddress)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEmailAddress)) {
-            //throw new \InvalidArgumentException('non-nullable sEmailAddress cannot be null');
-        //}
-
-	//if ((!preg_match("/^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddress)))) {
-        if (!is_null($sEmailAddress) && (!preg_match("/(*UTF8)^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/", ObjectSerializer::toString($sEmailAddress)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sEmailAddress when calling CommunicationexternalrecipientRequestCompound., must conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEmailAddress)?'null':'"'.$sEmailAddress.'"')." for sEmailAddress when calling CommunicationexternalrecipientRequestCompound., must conform to the pattern /^[\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEmailAddress'] = $sEmailAddress;
-        $this->container['sEmailAddress'] = (is_null($sEmailAddress) ? null : trim((string) $sEmailAddress));
-
-        return $this;
-    }
-
-    /**
-     * Gets sPhoneE164
-     *
-     * @return string|null
-     */
-    public function getSPhoneE164()
-    {
-	//return $this->container['sPhoneE164'];
-        return is_null($this->container['sPhoneE164']) ? null : trim($this->container['sPhoneE164']);
-    }
-
-    /**
-     * Sets sPhoneE164
-     *
-     * @param string|null $sPhoneE164 A phone number in E.164 Format
-     *
-     * @return self
-     */
-    public function setSPhoneE164($sPhoneE164)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sPhoneE164)) {
-            //throw new \InvalidArgumentException('non-nullable sPhoneE164 cannot be null');
-        //}
-
-	//if ((!preg_match("/^\\+[1-9]\\d{1,14}$/", ObjectSerializer::toString($sPhoneE164)))) {
-        if (!is_null($sPhoneE164) && (!preg_match("/(*UTF8)^\\+[1-9]\\d{1,14}$/", ObjectSerializer::toString($sPhoneE164)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sPhoneE164 when calling CommunicationexternalrecipientRequestCompound., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sPhoneE164)?'null':'"'.$sPhoneE164.'"')." for sPhoneE164 when calling CommunicationexternalrecipientRequestCompound., must conform to the pattern /^\\+[1-9]\\d{1,14}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sPhoneE164'] = $sPhoneE164;
-        $this->container['sPhoneE164'] = (is_null($sPhoneE164) ? null : trim((string) $sPhoneE164));
-
-        return $this;
-    }
-
-    /**
-     * Gets eCommunicationexternalrecipientType
-     *
-     * @return \eZmaxAPI\Model\FieldECommunicationexternalrecipientType|null
-     */
-    public function getECommunicationexternalrecipientType()
-    {
-	//return $this->container['eCommunicationexternalrecipientType'];
-        return $this->container['eCommunicationexternalrecipientType'];
-    }
-
-    /**
-     * Sets eCommunicationexternalrecipientType
-     *
-     * @param \eZmaxAPI\Model\FieldECommunicationexternalrecipientType|null $eCommunicationexternalrecipientType eCommunicationexternalrecipientType
-     *
-     * @return self
-     */
-    public function setECommunicationexternalrecipientType($eCommunicationexternalrecipientType)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eCommunicationexternalrecipientType)) {
-            //throw new \InvalidArgumentException('non-nullable eCommunicationexternalrecipientType cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eCommunicationexternalrecipientType'] = $eCommunicationexternalrecipientType;
-        $this->container['eCommunicationexternalrecipientType'] = $eCommunicationexternalrecipientType;
-
-        return $this;
-    }
-
-    /**
-     * Gets sCommunicationexternalrecipientName
-     *
-     * @return string|null
-     */
-    public function getSCommunicationexternalrecipientName()
-    {
-	//return $this->container['sCommunicationexternalrecipientName'];
-        return is_null($this->container['sCommunicationexternalrecipientName']) ? null : trim($this->container['sCommunicationexternalrecipientName']);
-    }
-
-    /**
-     * Sets sCommunicationexternalrecipientName
-     *
-     * @param string|null $sCommunicationexternalrecipientName The name of the Communicationexternalrecipient
-     *
-     * @return self
-     */
-    public function setSCommunicationexternalrecipientName($sCommunicationexternalrecipientName)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sCommunicationexternalrecipientName)) {
-            //throw new \InvalidArgumentException('non-nullable sCommunicationexternalrecipientName cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sCommunicationexternalrecipientName)))) {
-        if (!is_null($sCommunicationexternalrecipientName) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sCommunicationexternalrecipientName)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sCommunicationexternalrecipientName when calling CommunicationexternalrecipientRequestCompound., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sCommunicationexternalrecipientName)?'null':'"'.$sCommunicationexternalrecipientName.'"')." for sCommunicationexternalrecipientName when calling CommunicationexternalrecipientRequestCompound., must conform to the pattern /^.{0,50}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sCommunicationexternalrecipientName'] = $sCommunicationexternalrecipientName;
-        $this->container['sCommunicationexternalrecipientName'] = (is_null($sCommunicationexternalrecipientName) ? null : trim((string) $sCommunicationexternalrecipientName));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

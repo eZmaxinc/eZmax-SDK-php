@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class ContactResponseCompound extends ContactResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,19 +57,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiContactID' => 'int',
-        'fkiLanguageID' => 'int',
-        'fkiContacttitleID' => 'int',
-        'fkiContactinformationsID' => 'int',
-        'dtContactBirthdate' => 'string',
-        'eContactType' => '\eZmaxAPI\Model\FieldEContactType',
-        'sContactFirstname' => 'string',
-        'sContactLastname' => 'string',
-        'sContactCompany' => 'string',
-        'sContactOccupation' => 'string',
-        'tContactNote' => 'string',
-        'bContactIsactive' => 'bool',
-        'objContactinformations' => '\eZmaxAPI\Model\ContactinformationsResponseCompound'
+        
     ];
 
     /**
@@ -82,19 +68,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiContactID' => null,
-        'fkiLanguageID' => null,
-        'fkiContacttitleID' => null,
-        'fkiContactinformationsID' => null,
-        'dtContactBirthdate' => null,
-        'eContactType' => null,
-        'sContactFirstname' => null,
-        'sContactLastname' => null,
-        'sContactCompany' => null,
-        'sContactOccupation' => null,
-        'tContactNote' => null,
-        'bContactIsactive' => null,
-        'objContactinformations' => null
+        
     ];
 
     /**
@@ -103,19 +77,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiContactID' => false,
-		'fkiLanguageID' => false,
-		'fkiContacttitleID' => false,
-		'fkiContactinformationsID' => false,
-		'dtContactBirthdate' => false,
-		'eContactType' => false,
-		'sContactFirstname' => false,
-		'sContactLastname' => false,
-		'sContactCompany' => false,
-		'sContactOccupation' => false,
-		'tContactNote' => false,
-		'bContactIsactive' => false,
-		'objContactinformations' => false
+        
     ];
 
     /**
@@ -132,7 +94,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -142,7 +104,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -152,7 +114,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -204,19 +166,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiContactID' => 'pkiContactID',
-        'fkiLanguageID' => 'fkiLanguageID',
-        'fkiContacttitleID' => 'fkiContacttitleID',
-        'fkiContactinformationsID' => 'fkiContactinformationsID',
-        'dtContactBirthdate' => 'dtContactBirthdate',
-        'eContactType' => 'eContactType',
-        'sContactFirstname' => 'sContactFirstname',
-        'sContactLastname' => 'sContactLastname',
-        'sContactCompany' => 'sContactCompany',
-        'sContactOccupation' => 'sContactOccupation',
-        'tContactNote' => 'tContactNote',
-        'bContactIsactive' => 'bContactIsactive',
-        'objContactinformations' => 'objContactinformations'
+        
     ];
 
     /**
@@ -225,19 +175,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'pkiContactID' => 'setPkiContactID',
-        'fkiLanguageID' => 'setFkiLanguageID',
-        'fkiContacttitleID' => 'setFkiContacttitleID',
-        'fkiContactinformationsID' => 'setFkiContactinformationsID',
-        'dtContactBirthdate' => 'setDtContactBirthdate',
-        'eContactType' => 'setEContactType',
-        'sContactFirstname' => 'setSContactFirstname',
-        'sContactLastname' => 'setSContactLastname',
-        'sContactCompany' => 'setSContactCompany',
-        'sContactOccupation' => 'setSContactOccupation',
-        'tContactNote' => 'setTContactNote',
-        'bContactIsactive' => 'setBContactIsactive',
-        'objContactinformations' => 'setObjContactinformations'
+        
     ];
 
     /**
@@ -246,19 +184,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'pkiContactID' => 'getPkiContactID',
-        'fkiLanguageID' => 'getFkiLanguageID',
-        'fkiContacttitleID' => 'getFkiContacttitleID',
-        'fkiContactinformationsID' => 'getFkiContactinformationsID',
-        'dtContactBirthdate' => 'getDtContactBirthdate',
-        'eContactType' => 'getEContactType',
-        'sContactFirstname' => 'getSContactFirstname',
-        'sContactLastname' => 'getSContactLastname',
-        'sContactCompany' => 'getSContactCompany',
-        'sContactOccupation' => 'getSContactOccupation',
-        'tContactNote' => 'getTContactNote',
-        'bContactIsactive' => 'getBContactIsactive',
-        'objContactinformations' => 'getObjContactinformations'
+        
     ];
 
     /**
@@ -269,7 +195,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -279,7 +205,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -289,7 +215,7 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -303,12 +229,6 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -318,19 +238,8 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiContactID', $data ?? [], null);
-        $this->setIfExists('fkiLanguageID', $data ?? [], null);
-        $this->setIfExists('fkiContacttitleID', $data ?? [], null);
-        $this->setIfExists('fkiContactinformationsID', $data ?? [], null);
-        $this->setIfExists('dtContactBirthdate', $data ?? [], null);
-        $this->setIfExists('eContactType', $data ?? [], null);
-        $this->setIfExists('sContactFirstname', $data ?? [], null);
-        $this->setIfExists('sContactLastname', $data ?? [], null);
-        $this->setIfExists('sContactCompany', $data ?? [], null);
-        $this->setIfExists('sContactOccupation', $data ?? [], null);
-        $this->setIfExists('tContactNote', $data ?? [], null);
-        $this->setIfExists('bContactIsactive', $data ?? [], null);
-        $this->setIfExists('objContactinformations', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -358,69 +267,8 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiContactID'] === null) {
-            $invalidProperties[] = "'pkiContactID' can't be null";
-        }
-        if (($this->container['pkiContactID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiContactID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiLanguageID'] === null) {
-            $invalidProperties[] = "'fkiLanguageID' can't be null";
-        }
-        if (($this->container['fkiLanguageID'] > 2)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be smaller than or equal to 2.";
-        }
-
-        if (($this->container['fkiLanguageID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'fkiLanguageID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['fkiContacttitleID'] === null) {
-            $invalidProperties[] = "'fkiContacttitleID' can't be null";
-        }
-        if (($this->container['fkiContacttitleID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiContacttitleID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiContactinformationsID'] === null) {
-            $invalidProperties[] = "'fkiContactinformationsID' can't be null";
-        }
-        if (($this->container['fkiContactinformationsID'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'fkiContactinformationsID', must be smaller than or equal to 16777215.";
-        }
-
-        if (($this->container['fkiContactinformationsID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiContactinformationsID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['eContactType'] === null) {
-            $invalidProperties[] = "'eContactType' can't be null";
-        }
-        if ($this->container['sContactFirstname'] === null) {
-            $invalidProperties[] = "'sContactFirstname' can't be null";
-        }
-        if ($this->container['sContactLastname'] === null) {
-            $invalidProperties[] = "'sContactLastname' can't be null";
-        }
-	//if (!is_null($this->container['sContactOccupation']) && !preg_match("/^.{0,50}$/", $this->container['sContactOccupation'])) {
-        if (!is_null($this->container['sContactOccupation']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sContactOccupation'])) {
-            $invalidProperties[] = "invalid value for 'sContactOccupation', must be conform to the pattern /^.{0,50}$/.";
-        }
-
-	//if (!is_null($this->container['tContactNote']) && !preg_match("/^.{0,32000}$/", $this->container['tContactNote'])) {
-        if (!is_null($this->container['tContactNote']) && !preg_match("/(*UTF8)^.{0,32000}$/", $this->container['tContactNote'])) {
-            $invalidProperties[] = "invalid value for 'tContactNote', must be conform to the pattern /^.{0,32000}$/.";
-        }
-
-        if ($this->container['bContactIsactive'] === null) {
-            $invalidProperties[] = "'bContactIsactive' can't be null";
-        }
-        if ($this->container['objContactinformations'] === null) {
-            $invalidProperties[] = "'objContactinformations' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -435,474 +283,6 @@ class ContactResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiContactID
-     *
-     * @return int
-     */
-    public function getPkiContactID()
-    {
-	//return $this->container['pkiContactID'];
-        return $this->container['pkiContactID'];
-    }
-
-    /**
-     * Sets pkiContactID
-     *
-     * @param int $pkiContactID The unique ID of the Contact
-     *
-     * @return self
-     */
-    public function setPkiContactID($pkiContactID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiContactID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiContactID cannot be null');
-        //}
-
-	//if (($pkiContactID < 0)) {
-        if (($pkiContactID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiContactID when calling ContactResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiContactID)?'null':'"'.$pkiContactID.'"').' for pkiContactID when calling ContactResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiContactID'] = $pkiContactID;
-        $this->container['pkiContactID'] = (is_null($pkiContactID) ? null : (int) $pkiContactID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiLanguageID
-     *
-     * @return int
-     */
-    public function getFkiLanguageID()
-    {
-	//return $this->container['fkiLanguageID'];
-        return $this->container['fkiLanguageID'];
-    }
-
-    /**
-     * Sets fkiLanguageID
-     *
-     * @param int $fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     *
-     * @return self
-     */
-    public function setFkiLanguageID($fkiLanguageID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiLanguageID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiLanguageID cannot be null');
-        //}
-
-	//if (($fkiLanguageID > 2)) {
-        if (($fkiLanguageID > 2)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ContactResponseCompound., must be smaller than or equal to 2.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling ContactResponseCompound., must be smaller than or equal to 2.');
-        }
-	//if (($fkiLanguageID < 1)) {
-        if (($fkiLanguageID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling ContactResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling ContactResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiLanguageID'] = $fkiLanguageID;
-        $this->container['fkiLanguageID'] = (is_null($fkiLanguageID) ? null : (int) $fkiLanguageID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiContacttitleID
-     *
-     * @return int
-     */
-    public function getFkiContacttitleID()
-    {
-	//return $this->container['fkiContacttitleID'];
-        return $this->container['fkiContacttitleID'];
-    }
-
-    /**
-     * Sets fkiContacttitleID
-     *
-     * @param int $fkiContacttitleID The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
-     *
-     * @return self
-     */
-    public function setFkiContacttitleID($fkiContacttitleID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiContacttitleID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiContacttitleID cannot be null');
-        //}
-
-	//if (($fkiContacttitleID < 0)) {
-        if (($fkiContacttitleID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiContacttitleID when calling ContactResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiContacttitleID)?'null':'"'.$fkiContacttitleID.'"').' for fkiContacttitleID when calling ContactResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiContacttitleID'] = $fkiContacttitleID;
-        $this->container['fkiContacttitleID'] = (is_null($fkiContacttitleID) ? null : (int) $fkiContacttitleID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiContactinformationsID
-     *
-     * @return int
-     */
-    public function getFkiContactinformationsID()
-    {
-	//return $this->container['fkiContactinformationsID'];
-        return $this->container['fkiContactinformationsID'];
-    }
-
-    /**
-     * Sets fkiContactinformationsID
-     *
-     * @param int $fkiContactinformationsID The unique ID of the Contactinformations
-     *
-     * @return self
-     */
-    public function setFkiContactinformationsID($fkiContactinformationsID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiContactinformationsID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiContactinformationsID cannot be null');
-        //}
-
-	//if (($fkiContactinformationsID > 16777215)) {
-        if (($fkiContactinformationsID > 16777215)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiContactinformationsID when calling ContactResponseCompound., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiContactinformationsID)?'null':'"'.$fkiContactinformationsID.'"').' for fkiContactinformationsID when calling ContactResponseCompound., must be smaller than or equal to 16777215.');
-        }
-	//if (($fkiContactinformationsID < 0)) {
-        if (($fkiContactinformationsID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiContactinformationsID when calling ContactResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiContactinformationsID)?'null':'"'.$fkiContactinformationsID.'"').' for fkiContactinformationsID when calling ContactResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiContactinformationsID'] = $fkiContactinformationsID;
-        $this->container['fkiContactinformationsID'] = (is_null($fkiContactinformationsID) ? null : (int) $fkiContactinformationsID);
-
-        return $this;
-    }
-
-    /**
-     * Gets dtContactBirthdate
-     *
-     * @return string|null
-     */
-    public function getDtContactBirthdate()
-    {
-	//return $this->container['dtContactBirthdate'];
-        return is_null($this->container['dtContactBirthdate']) ? null : trim($this->container['dtContactBirthdate']);
-    }
-
-    /**
-     * Sets dtContactBirthdate
-     *
-     * @param string|null $dtContactBirthdate The Birth Date of the contact
-     *
-     * @return self
-     */
-    public function setDtContactBirthdate($dtContactBirthdate)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtContactBirthdate)) {
-            //throw new \InvalidArgumentException('non-nullable dtContactBirthdate cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtContactBirthdate'] = $dtContactBirthdate;
-        $this->container['dtContactBirthdate'] = (is_null($dtContactBirthdate) ? null : trim((string) $dtContactBirthdate));
-
-        return $this;
-    }
-
-    /**
-     * Gets eContactType
-     *
-     * @return \eZmaxAPI\Model\FieldEContactType
-     */
-    public function getEContactType()
-    {
-	//return $this->container['eContactType'];
-        return $this->container['eContactType'];
-    }
-
-    /**
-     * Sets eContactType
-     *
-     * @param \eZmaxAPI\Model\FieldEContactType $eContactType eContactType
-     *
-     * @return self
-     */
-    public function setEContactType($eContactType)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eContactType)) {
-            //throw new \InvalidArgumentException('non-nullable eContactType cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eContactType'] = $eContactType;
-        $this->container['eContactType'] = $eContactType;
-
-        return $this;
-    }
-
-    /**
-     * Gets sContactFirstname
-     *
-     * @return string
-     */
-    public function getSContactFirstname()
-    {
-	//return $this->container['sContactFirstname'];
-        return is_null($this->container['sContactFirstname']) ? null : trim($this->container['sContactFirstname']);
-    }
-
-    /**
-     * Sets sContactFirstname
-     *
-     * @param string $sContactFirstname The First name of the contact
-     *
-     * @return self
-     */
-    public function setSContactFirstname($sContactFirstname)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sContactFirstname)) {
-            //throw new \InvalidArgumentException('non-nullable sContactFirstname cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sContactFirstname'] = $sContactFirstname;
-        $this->container['sContactFirstname'] = (is_null($sContactFirstname) ? null : trim((string) $sContactFirstname));
-
-        return $this;
-    }
-
-    /**
-     * Gets sContactLastname
-     *
-     * @return string
-     */
-    public function getSContactLastname()
-    {
-	//return $this->container['sContactLastname'];
-        return is_null($this->container['sContactLastname']) ? null : trim($this->container['sContactLastname']);
-    }
-
-    /**
-     * Sets sContactLastname
-     *
-     * @param string $sContactLastname The Last name of the contact
-     *
-     * @return self
-     */
-    public function setSContactLastname($sContactLastname)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sContactLastname)) {
-            //throw new \InvalidArgumentException('non-nullable sContactLastname cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sContactLastname'] = $sContactLastname;
-        $this->container['sContactLastname'] = (is_null($sContactLastname) ? null : trim((string) $sContactLastname));
-
-        return $this;
-    }
-
-    /**
-     * Gets sContactCompany
-     *
-     * @return string|null
-     */
-    public function getSContactCompany()
-    {
-	//return $this->container['sContactCompany'];
-        return is_null($this->container['sContactCompany']) ? null : trim($this->container['sContactCompany']);
-    }
-
-    /**
-     * Sets sContactCompany
-     *
-     * @param string|null $sContactCompany The Company name of the contact
-     *
-     * @return self
-     */
-    public function setSContactCompany($sContactCompany)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sContactCompany)) {
-            //throw new \InvalidArgumentException('non-nullable sContactCompany cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sContactCompany'] = $sContactCompany;
-        $this->container['sContactCompany'] = (is_null($sContactCompany) ? null : trim((string) $sContactCompany));
-
-        return $this;
-    }
-
-    /**
-     * Gets sContactOccupation
-     *
-     * @return string|null
-     */
-    public function getSContactOccupation()
-    {
-	//return $this->container['sContactOccupation'];
-        return is_null($this->container['sContactOccupation']) ? null : trim($this->container['sContactOccupation']);
-    }
-
-    /**
-     * Sets sContactOccupation
-     *
-     * @param string|null $sContactOccupation The occupation of the Contact
-     *
-     * @return self
-     */
-    public function setSContactOccupation($sContactOccupation)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sContactOccupation)) {
-            //throw new \InvalidArgumentException('non-nullable sContactOccupation cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sContactOccupation)))) {
-        if (!is_null($sContactOccupation) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sContactOccupation)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sContactOccupation when calling ContactResponseCompound., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sContactOccupation)?'null':'"'.$sContactOccupation.'"')." for sContactOccupation when calling ContactResponseCompound., must conform to the pattern /^.{0,50}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sContactOccupation'] = $sContactOccupation;
-        $this->container['sContactOccupation'] = (is_null($sContactOccupation) ? null : trim((string) $sContactOccupation));
-
-        return $this;
-    }
-
-    /**
-     * Gets tContactNote
-     *
-     * @return string|null
-     */
-    public function getTContactNote()
-    {
-	//return $this->container['tContactNote'];
-        return is_null($this->container['tContactNote']) ? null : trim($this->container['tContactNote']);
-    }
-
-    /**
-     * Sets tContactNote
-     *
-     * @param string|null $tContactNote The note of the Contact
-     *
-     * @return self
-     */
-    public function setTContactNote($tContactNote)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($tContactNote)) {
-            //throw new \InvalidArgumentException('non-nullable tContactNote cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,32000}$/", ObjectSerializer::toString($tContactNote)))) {
-        if (!is_null($tContactNote) && (!preg_match("/(*UTF8)^.{0,32000}$/", ObjectSerializer::toString($tContactNote)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$tContactNote when calling ContactResponseCompound., must conform to the pattern /^.{0,32000}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($tContactNote)?'null':'"'.$tContactNote.'"')." for tContactNote when calling ContactResponseCompound., must conform to the pattern /^.{0,32000}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['tContactNote'] = $tContactNote;
-        $this->container['tContactNote'] = (is_null($tContactNote) ? null : trim((string) $tContactNote));
-
-        return $this;
-    }
-
-    /**
-     * Gets bContactIsactive
-     *
-     * @return bool
-     */
-    public function getBContactIsactive()
-    {
-	//return $this->container['bContactIsactive'];
-        return $this->container['bContactIsactive'];
-    }
-
-    /**
-     * Sets bContactIsactive
-     *
-     * @param bool $bContactIsactive Whether the contact is active or not
-     *
-     * @return self
-     */
-    public function setBContactIsactive($bContactIsactive)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bContactIsactive)) {
-            //throw new \InvalidArgumentException('non-nullable bContactIsactive cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bContactIsactive'] = $bContactIsactive;
-        $this->container['bContactIsactive'] = (is_null($bContactIsactive) ? null : (bool) $bContactIsactive);
-
-        return $this;
-    }
-
-    /**
-     * Gets objContactinformations
-     *
-     * @return \eZmaxAPI\Model\ContactinformationsResponseCompound
-     */
-    public function getObjContactinformations()
-    {
-	//return $this->container['objContactinformations'];
-        return $this->container['objContactinformations'];
-    }
-
-    /**
-     * Sets objContactinformations
-     *
-     * @param \eZmaxAPI\Model\ContactinformationsResponseCompound $objContactinformations objContactinformations
-     *
-     * @return self
-     */
-    public function setObjContactinformations($objContactinformations)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objContactinformations)) {
-            //throw new \InvalidArgumentException('non-nullable objContactinformations cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objContactinformations'] = $objContactinformations;
-        $this->container['objContactinformations'] = $objContactinformations;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

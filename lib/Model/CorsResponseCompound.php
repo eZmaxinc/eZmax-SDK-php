@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class CorsResponseCompound extends CorsResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,9 +57,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiCorsID' => 'int',
-        'fkiApikeyID' => 'int',
-        'sCorsEntryurl' => 'string'
+        
     ];
 
     /**
@@ -72,9 +68,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiCorsID' => null,
-        'fkiApikeyID' => null,
-        'sCorsEntryurl' => null
+        
     ];
 
     /**
@@ -83,9 +77,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiCorsID' => false,
-		'fkiApikeyID' => false,
-		'sCorsEntryurl' => false
+        
     ];
 
     /**
@@ -102,7 +94,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,9 +166,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiCorsID' => 'pkiCorsID',
-        'fkiApikeyID' => 'fkiApikeyID',
-        'sCorsEntryurl' => 'sCorsEntryurl'
+        
     ];
 
     /**
@@ -185,9 +175,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'pkiCorsID' => 'setPkiCorsID',
-        'fkiApikeyID' => 'setFkiApikeyID',
-        'sCorsEntryurl' => 'setSCorsEntryurl'
+        
     ];
 
     /**
@@ -196,9 +184,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'pkiCorsID' => 'getPkiCorsID',
-        'fkiApikeyID' => 'getFkiApikeyID',
-        'sCorsEntryurl' => 'getSCorsEntryurl'
+        
     ];
 
     /**
@@ -209,7 +195,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,9 +238,8 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiCorsID', $data ?? [], null);
-        $this->setIfExists('fkiApikeyID', $data ?? [], null);
-        $this->setIfExists('sCorsEntryurl', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -288,33 +267,7 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiCorsID'] === null) {
-            $invalidProperties[] = "'pkiCorsID' can't be null";
-        }
-        if (($this->container['pkiCorsID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pkiCorsID', must be smaller than or equal to 65535.";
-        }
-
-        if (($this->container['pkiCorsID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiCorsID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiApikeyID'] === null) {
-            $invalidProperties[] = "'fkiApikeyID' can't be null";
-        }
-        if (($this->container['fkiApikeyID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiApikeyID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sCorsEntryurl'] === null) {
-            $invalidProperties[] = "'sCorsEntryurl' can't be null";
-        }
-	//if (!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sCorsEntryurl'])) {
-        if (!is_null($this->container['sCorsEntryurl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sCorsEntryurl'])) {
-            $invalidProperties[] = "invalid value for 'sCorsEntryurl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -330,128 +283,6 @@ class CorsResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiCorsID
-     *
-     * @return int
-     */
-    public function getPkiCorsID()
-    {
-	//return $this->container['pkiCorsID'];
-        return $this->container['pkiCorsID'];
-    }
-
-    /**
-     * Sets pkiCorsID
-     *
-     * @param int $pkiCorsID The unique ID of the Cors
-     *
-     * @return self
-     */
-    public function setPkiCorsID($pkiCorsID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiCorsID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiCorsID cannot be null');
-        //}
-
-	//if (($pkiCorsID > 65535)) {
-        if (($pkiCorsID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiCorsID when calling CorsResponseCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCorsID)?'null':'"'.$pkiCorsID.'"').' for pkiCorsID when calling CorsResponseCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($pkiCorsID < 0)) {
-        if (($pkiCorsID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiCorsID when calling CorsResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCorsID)?'null':'"'.$pkiCorsID.'"').' for pkiCorsID when calling CorsResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiCorsID'] = $pkiCorsID;
-        $this->container['pkiCorsID'] = (is_null($pkiCorsID) ? null : (int) $pkiCorsID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiApikeyID
-     *
-     * @return int
-     */
-    public function getFkiApikeyID()
-    {
-	//return $this->container['fkiApikeyID'];
-        return $this->container['fkiApikeyID'];
-    }
-
-    /**
-     * Sets fkiApikeyID
-     *
-     * @param int $fkiApikeyID The unique ID of the Apikey
-     *
-     * @return self
-     */
-    public function setFkiApikeyID($fkiApikeyID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiApikeyID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiApikeyID cannot be null');
-        //}
-
-	//if (($fkiApikeyID < 0)) {
-        if (($fkiApikeyID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiApikeyID when calling CorsResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiApikeyID)?'null':'"'.$fkiApikeyID.'"').' for fkiApikeyID when calling CorsResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiApikeyID'] = $fkiApikeyID;
-        $this->container['fkiApikeyID'] = (is_null($fkiApikeyID) ? null : (int) $fkiApikeyID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sCorsEntryurl
-     *
-     * @return string
-     */
-    public function getSCorsEntryurl()
-    {
-	//return $this->container['sCorsEntryurl'];
-        return is_null($this->container['sCorsEntryurl']) ? null : trim($this->container['sCorsEntryurl']);
-    }
-
-    /**
-     * Sets sCorsEntryurl
-     *
-     * @param string $sCorsEntryurl The entryurl of the Cors
-     *
-     * @return self
-     */
-    public function setSCorsEntryurl($sCorsEntryurl)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sCorsEntryurl)) {
-            //throw new \InvalidArgumentException('non-nullable sCorsEntryurl cannot be null');
-        //}
-
-	//if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sCorsEntryurl)))) {
-        if (!is_null($sCorsEntryurl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sCorsEntryurl)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sCorsEntryurl when calling CorsResponseCompound., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sCorsEntryurl)?'null':'"'.$sCorsEntryurl.'"')." for sCorsEntryurl when calling CorsResponseCompound., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sCorsEntryurl'] = $sCorsEntryurl;
-        $this->container['sCorsEntryurl'] = (is_null($sCorsEntryurl) ? null : trim((string) $sCorsEntryurl));
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

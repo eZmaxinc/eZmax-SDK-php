@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignformfieldgroupResponseCompound extends EzsignformfieldgroupResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,23 +57,6 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignformfieldgroupID' => 'int',
-        'fkiEzsigndocumentID' => 'int',
-        'eEzsignformfieldgroupType' => '\eZmaxAPI\Model\FieldEEzsignformfieldgroupType',
-        'eEzsignformfieldgroupSignerrequirement' => '\eZmaxAPI\Model\FieldEEzsignformfieldgroupSignerrequirement',
-        'sEzsignformfieldgroupLabel' => 'string',
-        'iEzsignformfieldgroupStep' => 'int',
-        'sEzsignformfieldgroupDefaultvalue' => 'string',
-        'iEzsignformfieldgroupFilledmin' => 'int',
-        'iEzsignformfieldgroupFilledmax' => 'int',
-        'bEzsignformfieldgroupReadonly' => 'bool',
-        'iEzsignformfieldgroupMaxlength' => 'int',
-        'bEzsignformfieldgroupEncrypted' => 'bool',
-        'eEzsignformfieldgroupTextvalidation' => '\eZmaxAPI\Model\EnumTextvalidation',
-        'sEzsignformfieldgroupRegexp' => 'string',
-        'sEzsignformfieldgroupTextvalidationcustommessage' => 'string',
-        'tEzsignformfieldgroupTooltip' => 'string',
-        'eEzsignformfieldgroupTooltipposition' => '\eZmaxAPI\Model\FieldEEzsignformfieldgroupTooltipposition',
         'aObjEzsignformfield' => '\eZmaxAPI\Model\EzsignformfieldResponseCompound[]',
         'aObjDropdownElement' => '\eZmaxAPI\Model\CustomDropdownElementResponseCompound[]',
         'aObjEzsignformfieldgroupsigner' => '\eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[]'
@@ -89,23 +70,6 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignformfieldgroupID' => null,
-        'fkiEzsigndocumentID' => null,
-        'eEzsignformfieldgroupType' => null,
-        'eEzsignformfieldgroupSignerrequirement' => null,
-        'sEzsignformfieldgroupLabel' => null,
-        'iEzsignformfieldgroupStep' => null,
-        'sEzsignformfieldgroupDefaultvalue' => null,
-        'iEzsignformfieldgroupFilledmin' => null,
-        'iEzsignformfieldgroupFilledmax' => null,
-        'bEzsignformfieldgroupReadonly' => null,
-        'iEzsignformfieldgroupMaxlength' => null,
-        'bEzsignformfieldgroupEncrypted' => null,
-        'eEzsignformfieldgroupTextvalidation' => null,
-        'sEzsignformfieldgroupRegexp' => null,
-        'sEzsignformfieldgroupTextvalidationcustommessage' => null,
-        'tEzsignformfieldgroupTooltip' => null,
-        'eEzsignformfieldgroupTooltipposition' => null,
         'aObjEzsignformfield' => null,
         'aObjDropdownElement' => null,
         'aObjEzsignformfieldgroupsigner' => null
@@ -117,24 +81,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsignformfieldgroupID' => false,
-		'fkiEzsigndocumentID' => false,
-		'eEzsignformfieldgroupType' => false,
-		'eEzsignformfieldgroupSignerrequirement' => false,
-		'sEzsignformfieldgroupLabel' => false,
-		'iEzsignformfieldgroupStep' => false,
-		'sEzsignformfieldgroupDefaultvalue' => false,
-		'iEzsignformfieldgroupFilledmin' => false,
-		'iEzsignformfieldgroupFilledmax' => false,
-		'bEzsignformfieldgroupReadonly' => false,
-		'iEzsignformfieldgroupMaxlength' => false,
-		'bEzsignformfieldgroupEncrypted' => false,
-		'eEzsignformfieldgroupTextvalidation' => false,
-		'sEzsignformfieldgroupRegexp' => false,
-		'sEzsignformfieldgroupTextvalidationcustommessage' => false,
-		'tEzsignformfieldgroupTooltip' => false,
-		'eEzsignformfieldgroupTooltipposition' => false,
-		'aObjEzsignformfield' => false,
+        'aObjEzsignformfield' => false,
 		'aObjDropdownElement' => false,
 		'aObjEzsignformfieldgroupsigner' => false
     ];
@@ -153,7 +100,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -163,7 +110,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -173,7 +120,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -225,23 +172,6 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignformfieldgroupID' => 'pkiEzsignformfieldgroupID',
-        'fkiEzsigndocumentID' => 'fkiEzsigndocumentID',
-        'eEzsignformfieldgroupType' => 'eEzsignformfieldgroupType',
-        'eEzsignformfieldgroupSignerrequirement' => 'eEzsignformfieldgroupSignerrequirement',
-        'sEzsignformfieldgroupLabel' => 'sEzsignformfieldgroupLabel',
-        'iEzsignformfieldgroupStep' => 'iEzsignformfieldgroupStep',
-        'sEzsignformfieldgroupDefaultvalue' => 'sEzsignformfieldgroupDefaultvalue',
-        'iEzsignformfieldgroupFilledmin' => 'iEzsignformfieldgroupFilledmin',
-        'iEzsignformfieldgroupFilledmax' => 'iEzsignformfieldgroupFilledmax',
-        'bEzsignformfieldgroupReadonly' => 'bEzsignformfieldgroupReadonly',
-        'iEzsignformfieldgroupMaxlength' => 'iEzsignformfieldgroupMaxlength',
-        'bEzsignformfieldgroupEncrypted' => 'bEzsignformfieldgroupEncrypted',
-        'eEzsignformfieldgroupTextvalidation' => 'eEzsignformfieldgroupTextvalidation',
-        'sEzsignformfieldgroupRegexp' => 'sEzsignformfieldgroupRegexp',
-        'sEzsignformfieldgroupTextvalidationcustommessage' => 'sEzsignformfieldgroupTextvalidationcustommessage',
-        'tEzsignformfieldgroupTooltip' => 'tEzsignformfieldgroupTooltip',
-        'eEzsignformfieldgroupTooltipposition' => 'eEzsignformfieldgroupTooltipposition',
         'aObjEzsignformfield' => 'a_objEzsignformfield',
         'aObjDropdownElement' => 'a_objDropdownElement',
         'aObjEzsignformfieldgroupsigner' => 'a_objEzsignformfieldgroupsigner'
@@ -253,23 +183,6 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignformfieldgroupID' => 'setPkiEzsignformfieldgroupID',
-        'fkiEzsigndocumentID' => 'setFkiEzsigndocumentID',
-        'eEzsignformfieldgroupType' => 'setEEzsignformfieldgroupType',
-        'eEzsignformfieldgroupSignerrequirement' => 'setEEzsignformfieldgroupSignerrequirement',
-        'sEzsignformfieldgroupLabel' => 'setSEzsignformfieldgroupLabel',
-        'iEzsignformfieldgroupStep' => 'setIEzsignformfieldgroupStep',
-        'sEzsignformfieldgroupDefaultvalue' => 'setSEzsignformfieldgroupDefaultvalue',
-        'iEzsignformfieldgroupFilledmin' => 'setIEzsignformfieldgroupFilledmin',
-        'iEzsignformfieldgroupFilledmax' => 'setIEzsignformfieldgroupFilledmax',
-        'bEzsignformfieldgroupReadonly' => 'setBEzsignformfieldgroupReadonly',
-        'iEzsignformfieldgroupMaxlength' => 'setIEzsignformfieldgroupMaxlength',
-        'bEzsignformfieldgroupEncrypted' => 'setBEzsignformfieldgroupEncrypted',
-        'eEzsignformfieldgroupTextvalidation' => 'setEEzsignformfieldgroupTextvalidation',
-        'sEzsignformfieldgroupRegexp' => 'setSEzsignformfieldgroupRegexp',
-        'sEzsignformfieldgroupTextvalidationcustommessage' => 'setSEzsignformfieldgroupTextvalidationcustommessage',
-        'tEzsignformfieldgroupTooltip' => 'setTEzsignformfieldgroupTooltip',
-        'eEzsignformfieldgroupTooltipposition' => 'setEEzsignformfieldgroupTooltipposition',
         'aObjEzsignformfield' => 'setAObjEzsignformfield',
         'aObjDropdownElement' => 'setAObjDropdownElement',
         'aObjEzsignformfieldgroupsigner' => 'setAObjEzsignformfieldgroupsigner'
@@ -281,23 +194,6 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignformfieldgroupID' => 'getPkiEzsignformfieldgroupID',
-        'fkiEzsigndocumentID' => 'getFkiEzsigndocumentID',
-        'eEzsignformfieldgroupType' => 'getEEzsignformfieldgroupType',
-        'eEzsignformfieldgroupSignerrequirement' => 'getEEzsignformfieldgroupSignerrequirement',
-        'sEzsignformfieldgroupLabel' => 'getSEzsignformfieldgroupLabel',
-        'iEzsignformfieldgroupStep' => 'getIEzsignformfieldgroupStep',
-        'sEzsignformfieldgroupDefaultvalue' => 'getSEzsignformfieldgroupDefaultvalue',
-        'iEzsignformfieldgroupFilledmin' => 'getIEzsignformfieldgroupFilledmin',
-        'iEzsignformfieldgroupFilledmax' => 'getIEzsignformfieldgroupFilledmax',
-        'bEzsignformfieldgroupReadonly' => 'getBEzsignformfieldgroupReadonly',
-        'iEzsignformfieldgroupMaxlength' => 'getIEzsignformfieldgroupMaxlength',
-        'bEzsignformfieldgroupEncrypted' => 'getBEzsignformfieldgroupEncrypted',
-        'eEzsignformfieldgroupTextvalidation' => 'getEEzsignformfieldgroupTextvalidation',
-        'sEzsignformfieldgroupRegexp' => 'getSEzsignformfieldgroupRegexp',
-        'sEzsignformfieldgroupTextvalidationcustommessage' => 'getSEzsignformfieldgroupTextvalidationcustommessage',
-        'tEzsignformfieldgroupTooltip' => 'getTEzsignformfieldgroupTooltip',
-        'eEzsignformfieldgroupTooltipposition' => 'getEEzsignformfieldgroupTooltipposition',
         'aObjEzsignformfield' => 'getAObjEzsignformfield',
         'aObjDropdownElement' => 'getAObjDropdownElement',
         'aObjEzsignformfieldgroupsigner' => 'getAObjEzsignformfieldgroupsigner'
@@ -311,7 +207,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -321,7 +217,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -331,7 +227,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -345,12 +241,6 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -360,23 +250,8 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsignformfieldgroupID', $data ?? [], null);
-        $this->setIfExists('fkiEzsigndocumentID', $data ?? [], null);
-        $this->setIfExists('eEzsignformfieldgroupType', $data ?? [], null);
-        $this->setIfExists('eEzsignformfieldgroupSignerrequirement', $data ?? [], null);
-        $this->setIfExists('sEzsignformfieldgroupLabel', $data ?? [], null);
-        $this->setIfExists('iEzsignformfieldgroupStep', $data ?? [], null);
-        $this->setIfExists('sEzsignformfieldgroupDefaultvalue', $data ?? [], null);
-        $this->setIfExists('iEzsignformfieldgroupFilledmin', $data ?? [], null);
-        $this->setIfExists('iEzsignformfieldgroupFilledmax', $data ?? [], null);
-        $this->setIfExists('bEzsignformfieldgroupReadonly', $data ?? [], null);
-        $this->setIfExists('iEzsignformfieldgroupMaxlength', $data ?? [], null);
-        $this->setIfExists('bEzsignformfieldgroupEncrypted', $data ?? [], null);
-        $this->setIfExists('eEzsignformfieldgroupTextvalidation', $data ?? [], null);
-        $this->setIfExists('sEzsignformfieldgroupRegexp', $data ?? [], null);
-        $this->setIfExists('sEzsignformfieldgroupTextvalidationcustommessage', $data ?? [], null);
-        $this->setIfExists('tEzsignformfieldgroupTooltip', $data ?? [], null);
-        $this->setIfExists('eEzsignformfieldgroupTooltipposition', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjEzsignformfield', $data ?? [], null);
         $this->setIfExists('aObjDropdownElement', $data ?? [], null);
         $this->setIfExists('aObjEzsignformfieldgroupsigner', $data ?? [], null);
@@ -407,84 +282,7 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiEzsignformfieldgroupID'] === null) {
-            $invalidProperties[] = "'pkiEzsignformfieldgroupID' can't be null";
-        }
-        if (($this->container['pkiEzsignformfieldgroupID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignformfieldgroupID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsigndocumentID'] === null) {
-            $invalidProperties[] = "'fkiEzsigndocumentID' can't be null";
-        }
-        if (($this->container['fkiEzsigndocumentID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsigndocumentID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['eEzsignformfieldgroupType'] === null) {
-            $invalidProperties[] = "'eEzsignformfieldgroupType' can't be null";
-        }
-        if ($this->container['sEzsignformfieldgroupLabel'] === null) {
-            $invalidProperties[] = "'sEzsignformfieldgroupLabel' can't be null";
-        }
-	//if ((mb_strlen($this->container['sEzsignformfieldgroupLabel']) > 50)) {
-        if (((is_null($this->container['sEzsignformfieldgroupLabel'])?0:mb_strlen($this->container['sEzsignformfieldgroupLabel'])) > 50)) {
-            $invalidProperties[] = "invalid value for 'sEzsignformfieldgroupLabel', the character length must be smaller than or equal to 50.";
-        }
-
-	//if ((mb_strlen($this->container['sEzsignformfieldgroupLabel']) < 1)) {
-        if (((is_null($this->container['sEzsignformfieldgroupLabel'])?0:mb_strlen($this->container['sEzsignformfieldgroupLabel'])) < 1)) {
-            $invalidProperties[] = "invalid value for 'sEzsignformfieldgroupLabel', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['iEzsignformfieldgroupStep'] === null) {
-            $invalidProperties[] = "'iEzsignformfieldgroupStep' can't be null";
-        }
-        if (($this->container['iEzsignformfieldgroupStep'] < 1)) {
-            $invalidProperties[] = "invalid value for 'iEzsignformfieldgroupStep', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['iEzsignformfieldgroupFilledmin'] === null) {
-            $invalidProperties[] = "'iEzsignformfieldgroupFilledmin' can't be null";
-        }
-        if (($this->container['iEzsignformfieldgroupFilledmin'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsignformfieldgroupFilledmin', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['iEzsignformfieldgroupFilledmax'] === null) {
-            $invalidProperties[] = "'iEzsignformfieldgroupFilledmax' can't be null";
-        }
-        if (($this->container['iEzsignformfieldgroupFilledmax'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsignformfieldgroupFilledmax', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['bEzsignformfieldgroupReadonly'] === null) {
-            $invalidProperties[] = "'bEzsignformfieldgroupReadonly' can't be null";
-        }
-        if (!is_null($this->container['iEzsignformfieldgroupMaxlength']) && ($this->container['iEzsignformfieldgroupMaxlength'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'iEzsignformfieldgroupMaxlength', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['iEzsignformfieldgroupMaxlength']) && ($this->container['iEzsignformfieldgroupMaxlength'] < 0)) {
-            $invalidProperties[] = "invalid value for 'iEzsignformfieldgroupMaxlength', must be bigger than or equal to 0.";
-        }
-
-	//if (!is_null($this->container['sEzsignformfieldgroupRegexp']) && !preg_match("/^\\^.*\\$$|^$/", $this->container['sEzsignformfieldgroupRegexp'])) {
-        if (!is_null($this->container['sEzsignformfieldgroupRegexp']) && !preg_match("/(*UTF8)^\\^.*\\$$|^$/", $this->container['sEzsignformfieldgroupRegexp'])) {
-            $invalidProperties[] = "invalid value for 'sEzsignformfieldgroupRegexp', must be conform to the pattern /^\\^.*\\$$|^$/.";
-        }
-
-	//if (!is_null($this->container['sEzsignformfieldgroupTextvalidationcustommessage']) && (mb_strlen($this->container['sEzsignformfieldgroupTextvalidationcustommessage']) > 50)) {
-        if (!is_null($this->container['sEzsignformfieldgroupTextvalidationcustommessage']) && ((is_null($this->container['sEzsignformfieldgroupTextvalidationcustommessage'])?0:mb_strlen($this->container['sEzsignformfieldgroupTextvalidationcustommessage'])) > 50)) {
-            $invalidProperties[] = "invalid value for 'sEzsignformfieldgroupTextvalidationcustommessage', the character length must be smaller than or equal to 50.";
-        }
-
-	//if (!is_null($this->container['sEzsignformfieldgroupTextvalidationcustommessage']) && (mb_strlen($this->container['sEzsignformfieldgroupTextvalidationcustommessage']) < 0)) {
-        if (!is_null($this->container['sEzsignformfieldgroupTextvalidationcustommessage']) && ((is_null($this->container['sEzsignformfieldgroupTextvalidationcustommessage'])?0:mb_strlen($this->container['sEzsignformfieldgroupTextvalidationcustommessage'])) < 0)) {
-            $invalidProperties[] = "invalid value for 'sEzsignformfieldgroupTextvalidationcustommessage', the character length must be bigger than or equal to 0.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         if ($this->container['aObjEzsignformfield'] === null) {
             $invalidProperties[] = "'aObjEzsignformfield' can't be null";
@@ -506,628 +304,6 @@ class EzsignformfieldgroupResponseCompound implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsignformfieldgroupID
-     *
-     * @return int
-     */
-    public function getPkiEzsignformfieldgroupID()
-    {
-	//return $this->container['pkiEzsignformfieldgroupID'];
-        return $this->container['pkiEzsignformfieldgroupID'];
-    }
-
-    /**
-     * Sets pkiEzsignformfieldgroupID
-     *
-     * @param int $pkiEzsignformfieldgroupID The unique ID of the Ezsignformfieldgroup
-     *
-     * @return self
-     */
-    public function setPkiEzsignformfieldgroupID($pkiEzsignformfieldgroupID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsignformfieldgroupID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsignformfieldgroupID cannot be null');
-        //}
-
-	//if (($pkiEzsignformfieldgroupID < 0)) {
-        if (($pkiEzsignformfieldgroupID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignformfieldgroupID when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignformfieldgroupID)?'null':'"'.$pkiEzsignformfieldgroupID.'"').' for pkiEzsignformfieldgroupID when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsignformfieldgroupID'] = $pkiEzsignformfieldgroupID;
-        $this->container['pkiEzsignformfieldgroupID'] = (is_null($pkiEzsignformfieldgroupID) ? null : (int) $pkiEzsignformfieldgroupID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsigndocumentID
-     *
-     * @return int
-     */
-    public function getFkiEzsigndocumentID()
-    {
-	//return $this->container['fkiEzsigndocumentID'];
-        return $this->container['fkiEzsigndocumentID'];
-    }
-
-    /**
-     * Sets fkiEzsigndocumentID
-     *
-     * @param int $fkiEzsigndocumentID The unique ID of the Ezsigndocument
-     *
-     * @return self
-     */
-    public function setFkiEzsigndocumentID($fkiEzsigndocumentID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsigndocumentID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsigndocumentID cannot be null');
-        //}
-
-	//if (($fkiEzsigndocumentID < 0)) {
-        if (($fkiEzsigndocumentID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsigndocumentID when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsigndocumentID)?'null':'"'.$fkiEzsigndocumentID.'"').' for fkiEzsigndocumentID when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsigndocumentID'] = $fkiEzsigndocumentID;
-        $this->container['fkiEzsigndocumentID'] = (is_null($fkiEzsigndocumentID) ? null : (int) $fkiEzsigndocumentID);
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsignformfieldgroupType
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsignformfieldgroupType
-     */
-    public function getEEzsignformfieldgroupType()
-    {
-	//return $this->container['eEzsignformfieldgroupType'];
-        return $this->container['eEzsignformfieldgroupType'];
-    }
-
-    /**
-     * Sets eEzsignformfieldgroupType
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsignformfieldgroupType $eEzsignformfieldgroupType eEzsignformfieldgroupType
-     *
-     * @return self
-     */
-    public function setEEzsignformfieldgroupType($eEzsignformfieldgroupType)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignformfieldgroupType)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignformfieldgroupType cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsignformfieldgroupType'] = $eEzsignformfieldgroupType;
-        $this->container['eEzsignformfieldgroupType'] = $eEzsignformfieldgroupType;
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsignformfieldgroupSignerrequirement
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsignformfieldgroupSignerrequirement|null
-     * @deprecated
-     */
-    public function getEEzsignformfieldgroupSignerrequirement()
-    {
-	//return $this->container['eEzsignformfieldgroupSignerrequirement'];
-        return $this->container['eEzsignformfieldgroupSignerrequirement'];
-    }
-
-    /**
-     * Sets eEzsignformfieldgroupSignerrequirement
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsignformfieldgroupSignerrequirement|null $eEzsignformfieldgroupSignerrequirement eEzsignformfieldgroupSignerrequirement
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setEEzsignformfieldgroupSignerrequirement($eEzsignformfieldgroupSignerrequirement)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignformfieldgroupSignerrequirement)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignformfieldgroupSignerrequirement cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsignformfieldgroupSignerrequirement'] = $eEzsignformfieldgroupSignerrequirement;
-        $this->container['eEzsignformfieldgroupSignerrequirement'] = $eEzsignformfieldgroupSignerrequirement;
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignformfieldgroupLabel
-     *
-     * @return string
-     */
-    public function getSEzsignformfieldgroupLabel()
-    {
-	//return $this->container['sEzsignformfieldgroupLabel'];
-        return is_null($this->container['sEzsignformfieldgroupLabel']) ? null : trim($this->container['sEzsignformfieldgroupLabel']);
-    }
-
-    /**
-     * Sets sEzsignformfieldgroupLabel
-     *
-     * @param string $sEzsignformfieldgroupLabel The Label for the Ezsignformfieldgroup
-     *
-     * @return self
-     */
-    public function setSEzsignformfieldgroupLabel($sEzsignformfieldgroupLabel)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignformfieldgroupLabel)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignformfieldgroupLabel cannot be null');
-        //}
-	//if ((mb_strlen($sEzsignformfieldgroupLabel) > 50)) {
-        if ((mb_strlen($sEzsignformfieldgroupLabel) > 50)) {
-	    //throw new \InvalidArgumentException('invalid length for $sEzsignformfieldgroupLabel when calling EzsignformfieldgroupResponseCompound., must be smaller than or equal to 50.');
-            throw new \InvalidArgumentException('value '.(is_null($sEzsignformfieldgroupLabel)?'null':'"'.$sEzsignformfieldgroupLabel.'"').', invalid length for sEzsignformfieldgroupLabel when calling EzsignformfieldgroupResponseCompound., must be smaller than or equal to 50.');
-        }
-	//if ((mb_strlen($sEzsignformfieldgroupLabel) < 1)) {
-        if ((mb_strlen($sEzsignformfieldgroupLabel) < 1)) {
-	    //throw new \InvalidArgumentException('invalid length for $sEzsignformfieldgroupLabel when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('value '.(is_null($sEzsignformfieldgroupLabel)?'null':'"'.$sEzsignformfieldgroupLabel.'"').', invalid length for sEzsignformfieldgroupLabel when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignformfieldgroupLabel'] = $sEzsignformfieldgroupLabel;
-        $this->container['sEzsignformfieldgroupLabel'] = (is_null($sEzsignformfieldgroupLabel) ? null : trim((string) $sEzsignformfieldgroupLabel));
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignformfieldgroupStep
-     *
-     * @return int
-     */
-    public function getIEzsignformfieldgroupStep()
-    {
-	//return $this->container['iEzsignformfieldgroupStep'];
-        return $this->container['iEzsignformfieldgroupStep'];
-    }
-
-    /**
-     * Sets iEzsignformfieldgroupStep
-     *
-     * @param int $iEzsignformfieldgroupStep The step when the Ezsignsigner will be invited to fill the form fields
-     *
-     * @return self
-     */
-    public function setIEzsignformfieldgroupStep($iEzsignformfieldgroupStep)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsignformfieldgroupStep)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsignformfieldgroupStep cannot be null');
-        //}
-
-	//if (($iEzsignformfieldgroupStep < 1)) {
-        if (($iEzsignformfieldgroupStep < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignformfieldgroupStep when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignformfieldgroupStep)?'null':'"'.$iEzsignformfieldgroupStep.'"').' for iEzsignformfieldgroupStep when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsignformfieldgroupStep'] = $iEzsignformfieldgroupStep;
-        $this->container['iEzsignformfieldgroupStep'] = (is_null($iEzsignformfieldgroupStep) ? null : (int) $iEzsignformfieldgroupStep);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignformfieldgroupDefaultvalue
-     *
-     * @return string|null
-     */
-    public function getSEzsignformfieldgroupDefaultvalue()
-    {
-	//return $this->container['sEzsignformfieldgroupDefaultvalue'];
-        return is_null($this->container['sEzsignformfieldgroupDefaultvalue']) ? null : trim($this->container['sEzsignformfieldgroupDefaultvalue']);
-    }
-
-    /**
-     * Sets sEzsignformfieldgroupDefaultvalue
-     *
-     * @param string|null $sEzsignformfieldgroupDefaultvalue The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
-     *
-     * @return self
-     */
-    public function setSEzsignformfieldgroupDefaultvalue($sEzsignformfieldgroupDefaultvalue)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignformfieldgroupDefaultvalue)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignformfieldgroupDefaultvalue cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignformfieldgroupDefaultvalue'] = $sEzsignformfieldgroupDefaultvalue;
-        $this->container['sEzsignformfieldgroupDefaultvalue'] = (is_null($sEzsignformfieldgroupDefaultvalue) ? null : trim((string) $sEzsignformfieldgroupDefaultvalue));
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignformfieldgroupFilledmin
-     *
-     * @return int
-     */
-    public function getIEzsignformfieldgroupFilledmin()
-    {
-	//return $this->container['iEzsignformfieldgroupFilledmin'];
-        return $this->container['iEzsignformfieldgroupFilledmin'];
-    }
-
-    /**
-     * Sets iEzsignformfieldgroupFilledmin
-     *
-     * @param int $iEzsignformfieldgroupFilledmin The minimum number of Ezsignformfield that must be filled in the Ezsignformfieldgroup
-     *
-     * @return self
-     */
-    public function setIEzsignformfieldgroupFilledmin($iEzsignformfieldgroupFilledmin)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsignformfieldgroupFilledmin)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsignformfieldgroupFilledmin cannot be null');
-        //}
-
-	//if (($iEzsignformfieldgroupFilledmin < 0)) {
-        if (($iEzsignformfieldgroupFilledmin < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignformfieldgroupFilledmin when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignformfieldgroupFilledmin)?'null':'"'.$iEzsignformfieldgroupFilledmin.'"').' for iEzsignformfieldgroupFilledmin when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsignformfieldgroupFilledmin'] = $iEzsignformfieldgroupFilledmin;
-        $this->container['iEzsignformfieldgroupFilledmin'] = (is_null($iEzsignformfieldgroupFilledmin) ? null : (int) $iEzsignformfieldgroupFilledmin);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignformfieldgroupFilledmax
-     *
-     * @return int
-     */
-    public function getIEzsignformfieldgroupFilledmax()
-    {
-	//return $this->container['iEzsignformfieldgroupFilledmax'];
-        return $this->container['iEzsignformfieldgroupFilledmax'];
-    }
-
-    /**
-     * Sets iEzsignformfieldgroupFilledmax
-     *
-     * @param int $iEzsignformfieldgroupFilledmax The maximum number of Ezsignformfield that must be filled in the Ezsignformfieldgroup
-     *
-     * @return self
-     */
-    public function setIEzsignformfieldgroupFilledmax($iEzsignformfieldgroupFilledmax)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsignformfieldgroupFilledmax)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsignformfieldgroupFilledmax cannot be null');
-        //}
-
-	//if (($iEzsignformfieldgroupFilledmax < 0)) {
-        if (($iEzsignformfieldgroupFilledmax < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignformfieldgroupFilledmax when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignformfieldgroupFilledmax)?'null':'"'.$iEzsignformfieldgroupFilledmax.'"').' for iEzsignformfieldgroupFilledmax when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsignformfieldgroupFilledmax'] = $iEzsignformfieldgroupFilledmax;
-        $this->container['iEzsignformfieldgroupFilledmax'] = (is_null($iEzsignformfieldgroupFilledmax) ? null : (int) $iEzsignformfieldgroupFilledmax);
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsignformfieldgroupReadonly
-     *
-     * @return bool
-     */
-    public function getBEzsignformfieldgroupReadonly()
-    {
-	//return $this->container['bEzsignformfieldgroupReadonly'];
-        return $this->container['bEzsignformfieldgroupReadonly'];
-    }
-
-    /**
-     * Sets bEzsignformfieldgroupReadonly
-     *
-     * @param bool $bEzsignformfieldgroupReadonly Whether the Ezsignformfieldgroup is read only or not.
-     *
-     * @return self
-     */
-    public function setBEzsignformfieldgroupReadonly($bEzsignformfieldgroupReadonly)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsignformfieldgroupReadonly)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsignformfieldgroupReadonly cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsignformfieldgroupReadonly'] = $bEzsignformfieldgroupReadonly;
-        $this->container['bEzsignformfieldgroupReadonly'] = (is_null($bEzsignformfieldgroupReadonly) ? null : (bool) $bEzsignformfieldgroupReadonly);
-
-        return $this;
-    }
-
-    /**
-     * Gets iEzsignformfieldgroupMaxlength
-     *
-     * @return int|null
-     */
-    public function getIEzsignformfieldgroupMaxlength()
-    {
-	//return $this->container['iEzsignformfieldgroupMaxlength'];
-        return $this->container['iEzsignformfieldgroupMaxlength'];
-    }
-
-    /**
-     * Sets iEzsignformfieldgroupMaxlength
-     *
-     * @param int|null $iEzsignformfieldgroupMaxlength The maximum length for the value in the Ezsignformfieldgroup  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
-     *
-     * @return self
-     */
-    public function setIEzsignformfieldgroupMaxlength($iEzsignformfieldgroupMaxlength)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iEzsignformfieldgroupMaxlength)) {
-            //throw new \InvalidArgumentException('non-nullable iEzsignformfieldgroupMaxlength cannot be null');
-        //}
-
-	//if (($iEzsignformfieldgroupMaxlength > 65535)) {
-        if (!is_null($iEzsignformfieldgroupMaxlength) && ($iEzsignformfieldgroupMaxlength > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignformfieldgroupMaxlength when calling EzsignformfieldgroupResponseCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignformfieldgroupMaxlength)?'null':'"'.$iEzsignformfieldgroupMaxlength.'"').' for iEzsignformfieldgroupMaxlength when calling EzsignformfieldgroupResponseCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($iEzsignformfieldgroupMaxlength < 0)) {
-        if (!is_null($iEzsignformfieldgroupMaxlength) && ($iEzsignformfieldgroupMaxlength < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $iEzsignformfieldgroupMaxlength when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iEzsignformfieldgroupMaxlength)?'null':'"'.$iEzsignformfieldgroupMaxlength.'"').' for iEzsignformfieldgroupMaxlength when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iEzsignformfieldgroupMaxlength'] = $iEzsignformfieldgroupMaxlength;
-        $this->container['iEzsignformfieldgroupMaxlength'] = (is_null($iEzsignformfieldgroupMaxlength) ? null : (int) $iEzsignformfieldgroupMaxlength);
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsignformfieldgroupEncrypted
-     *
-     * @return bool|null
-     */
-    public function getBEzsignformfieldgroupEncrypted()
-    {
-	//return $this->container['bEzsignformfieldgroupEncrypted'];
-        return $this->container['bEzsignformfieldgroupEncrypted'];
-    }
-
-    /**
-     * Sets bEzsignformfieldgroupEncrypted
-     *
-     * @param bool|null $bEzsignformfieldgroupEncrypted Whether the Ezsignformfieldgroup is encrypted in the database or not. Encrypted values are not displayed on the Ezsigndocument. This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
-     *
-     * @return self
-     */
-    public function setBEzsignformfieldgroupEncrypted($bEzsignformfieldgroupEncrypted)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsignformfieldgroupEncrypted)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsignformfieldgroupEncrypted cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsignformfieldgroupEncrypted'] = $bEzsignformfieldgroupEncrypted;
-        $this->container['bEzsignformfieldgroupEncrypted'] = (is_null($bEzsignformfieldgroupEncrypted) ? null : (bool) $bEzsignformfieldgroupEncrypted);
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsignformfieldgroupTextvalidation
-     *
-     * @return \eZmaxAPI\Model\EnumTextvalidation|null
-     */
-    public function getEEzsignformfieldgroupTextvalidation()
-    {
-	//return $this->container['eEzsignformfieldgroupTextvalidation'];
-        return $this->container['eEzsignformfieldgroupTextvalidation'];
-    }
-
-    /**
-     * Sets eEzsignformfieldgroupTextvalidation
-     *
-     * @param \eZmaxAPI\Model\EnumTextvalidation|null $eEzsignformfieldgroupTextvalidation eEzsignformfieldgroupTextvalidation
-     *
-     * @return self
-     */
-    public function setEEzsignformfieldgroupTextvalidation($eEzsignformfieldgroupTextvalidation)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignformfieldgroupTextvalidation)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignformfieldgroupTextvalidation cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsignformfieldgroupTextvalidation'] = $eEzsignformfieldgroupTextvalidation;
-        $this->container['eEzsignformfieldgroupTextvalidation'] = $eEzsignformfieldgroupTextvalidation;
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignformfieldgroupRegexp
-     *
-     * @return string|null
-     */
-    public function getSEzsignformfieldgroupRegexp()
-    {
-	//return $this->container['sEzsignformfieldgroupRegexp'];
-        return is_null($this->container['sEzsignformfieldgroupRegexp']) ? null : trim($this->container['sEzsignformfieldgroupRegexp']);
-    }
-
-    /**
-     * Sets sEzsignformfieldgroupRegexp
-     *
-     * @param string|null $sEzsignformfieldgroupRegexp A regular expression to indicate what values are acceptable for the Ezsignformfieldgroup.  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
-     *
-     * @return self
-     */
-    public function setSEzsignformfieldgroupRegexp($sEzsignformfieldgroupRegexp)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignformfieldgroupRegexp)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignformfieldgroupRegexp cannot be null');
-        //}
-
-	//if ((!preg_match("/^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignformfieldgroupRegexp)))) {
-        if (!is_null($sEzsignformfieldgroupRegexp) && (!preg_match("/(*UTF8)^\\^.*\\$$|^$/", ObjectSerializer::toString($sEzsignformfieldgroupRegexp)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sEzsignformfieldgroupRegexp when calling EzsignformfieldgroupResponseCompound., must conform to the pattern /^\\^.*\\$$|^$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzsignformfieldgroupRegexp)?'null':'"'.$sEzsignformfieldgroupRegexp.'"')." for sEzsignformfieldgroupRegexp when calling EzsignformfieldgroupResponseCompound., must conform to the pattern /^\\^.*\\$$|^$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignformfieldgroupRegexp'] = $sEzsignformfieldgroupRegexp;
-        $this->container['sEzsignformfieldgroupRegexp'] = (is_null($sEzsignformfieldgroupRegexp) ? null : trim((string) $sEzsignformfieldgroupRegexp));
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignformfieldgroupTextvalidationcustommessage
-     *
-     * @return string|null
-     */
-    public function getSEzsignformfieldgroupTextvalidationcustommessage()
-    {
-	//return $this->container['sEzsignformfieldgroupTextvalidationcustommessage'];
-        return is_null($this->container['sEzsignformfieldgroupTextvalidationcustommessage']) ? null : trim($this->container['sEzsignformfieldgroupTextvalidationcustommessage']);
-    }
-
-    /**
-     * Sets sEzsignformfieldgroupTextvalidationcustommessage
-     *
-     * @param string|null $sEzsignformfieldgroupTextvalidationcustommessage Description of validation rule. Show by signatory.
-     *
-     * @return self
-     */
-    public function setSEzsignformfieldgroupTextvalidationcustommessage($sEzsignformfieldgroupTextvalidationcustommessage)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignformfieldgroupTextvalidationcustommessage)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignformfieldgroupTextvalidationcustommessage cannot be null');
-        //}
-	//if ((mb_strlen($sEzsignformfieldgroupTextvalidationcustommessage) > 50)) {
-        if (!is_null($sEzsignformfieldgroupTextvalidationcustommessage) && (mb_strlen($sEzsignformfieldgroupTextvalidationcustommessage) > 50)) {
-	    //throw new \InvalidArgumentException('invalid length for $sEzsignformfieldgroupTextvalidationcustommessage when calling EzsignformfieldgroupResponseCompound., must be smaller than or equal to 50.');
-            throw new \InvalidArgumentException('value '.(is_null($sEzsignformfieldgroupTextvalidationcustommessage)?'null':'"'.$sEzsignformfieldgroupTextvalidationcustommessage.'"').', invalid length for sEzsignformfieldgroupTextvalidationcustommessage when calling EzsignformfieldgroupResponseCompound., must be smaller than or equal to 50.');
-        }
-	//if ((mb_strlen($sEzsignformfieldgroupTextvalidationcustommessage) < 0)) {
-        if (!is_null($sEzsignformfieldgroupTextvalidationcustommessage) && (mb_strlen($sEzsignformfieldgroupTextvalidationcustommessage) < 0)) {
-	    //throw new \InvalidArgumentException('invalid length for $sEzsignformfieldgroupTextvalidationcustommessage when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('value '.(is_null($sEzsignformfieldgroupTextvalidationcustommessage)?'null':'"'.$sEzsignformfieldgroupTextvalidationcustommessage.'"').', invalid length for sEzsignformfieldgroupTextvalidationcustommessage when calling EzsignformfieldgroupResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignformfieldgroupTextvalidationcustommessage'] = $sEzsignformfieldgroupTextvalidationcustommessage;
-        $this->container['sEzsignformfieldgroupTextvalidationcustommessage'] = (is_null($sEzsignformfieldgroupTextvalidationcustommessage) ? null : trim((string) $sEzsignformfieldgroupTextvalidationcustommessage));
-
-        return $this;
-    }
-
-    /**
-     * Gets tEzsignformfieldgroupTooltip
-     *
-     * @return string|null
-     */
-    public function getTEzsignformfieldgroupTooltip()
-    {
-	//return $this->container['tEzsignformfieldgroupTooltip'];
-        return is_null($this->container['tEzsignformfieldgroupTooltip']) ? null : trim($this->container['tEzsignformfieldgroupTooltip']);
-    }
-
-    /**
-     * Sets tEzsignformfieldgroupTooltip
-     *
-     * @param string|null $tEzsignformfieldgroupTooltip A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup
-     *
-     * @return self
-     */
-    public function setTEzsignformfieldgroupTooltip($tEzsignformfieldgroupTooltip)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($tEzsignformfieldgroupTooltip)) {
-            //throw new \InvalidArgumentException('non-nullable tEzsignformfieldgroupTooltip cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['tEzsignformfieldgroupTooltip'] = $tEzsignformfieldgroupTooltip;
-        $this->container['tEzsignformfieldgroupTooltip'] = (is_null($tEzsignformfieldgroupTooltip) ? null : trim((string) $tEzsignformfieldgroupTooltip));
-
-        return $this;
-    }
-
-    /**
-     * Gets eEzsignformfieldgroupTooltipposition
-     *
-     * @return \eZmaxAPI\Model\FieldEEzsignformfieldgroupTooltipposition|null
-     */
-    public function getEEzsignformfieldgroupTooltipposition()
-    {
-	//return $this->container['eEzsignformfieldgroupTooltipposition'];
-        return $this->container['eEzsignformfieldgroupTooltipposition'];
-    }
-
-    /**
-     * Sets eEzsignformfieldgroupTooltipposition
-     *
-     * @param \eZmaxAPI\Model\FieldEEzsignformfieldgroupTooltipposition|null $eEzsignformfieldgroupTooltipposition eEzsignformfieldgroupTooltipposition
-     *
-     * @return self
-     */
-    public function setEEzsignformfieldgroupTooltipposition($eEzsignformfieldgroupTooltipposition)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eEzsignformfieldgroupTooltipposition)) {
-            //throw new \InvalidArgumentException('non-nullable eEzsignformfieldgroupTooltipposition cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eEzsignformfieldgroupTooltipposition'] = $eEzsignformfieldgroupTooltipposition;
-        $this->container['eEzsignformfieldgroupTooltipposition'] = $eEzsignformfieldgroupTooltipposition;
-
-        return $this;
-    }
 
     /**
      * Gets aObjEzsignformfield

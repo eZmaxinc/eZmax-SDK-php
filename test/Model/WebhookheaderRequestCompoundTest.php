@@ -79,31 +79,4 @@ class WebhookheaderRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiWebhookheaderID"
-     */
-    public function testPropertyPkiWebhookheaderID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sWebhookheaderName"
-     */
-    public function testPropertySWebhookheaderName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sWebhookheaderValue"
-     */
-    public function testPropertySWebhookheaderValue()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

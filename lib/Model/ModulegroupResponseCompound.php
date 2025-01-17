@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class ModulegroupResponseCompound extends ModulegroupResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,8 +57,6 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiModulegroupID' => 'int',
-        'sModulegroupNameX' => 'string',
         'aObjModule' => '\eZmaxAPI\Model\ModuleResponseCompound[]'
     ];
 
@@ -72,8 +68,6 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiModulegroupID' => null,
-        'sModulegroupNameX' => null,
         'aObjModule' => null
     ];
 
@@ -83,9 +77,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiModulegroupID' => false,
-		'sModulegroupNameX' => false,
-		'aObjModule' => false
+        'aObjModule' => false
     ];
 
     /**
@@ -102,7 +94,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,8 +166,6 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiModulegroupID' => 'pkiModulegroupID',
-        'sModulegroupNameX' => 'sModulegroupNameX',
         'aObjModule' => 'a_objModule'
     ];
 
@@ -185,8 +175,6 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'pkiModulegroupID' => 'setPkiModulegroupID',
-        'sModulegroupNameX' => 'setSModulegroupNameX',
         'aObjModule' => 'setAObjModule'
     ];
 
@@ -196,8 +184,6 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'pkiModulegroupID' => 'getPkiModulegroupID',
-        'sModulegroupNameX' => 'getSModulegroupNameX',
         'aObjModule' => 'getAObjModule'
     ];
 
@@ -209,7 +195,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,8 +238,8 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiModulegroupID', $data ?? [], null);
-        $this->setIfExists('sModulegroupNameX', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjModule', $data ?? [], null);
     }
 
@@ -288,26 +268,7 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if ($this->container['pkiModulegroupID'] === null) {
-            $invalidProperties[] = "'pkiModulegroupID' can't be null";
-        }
-        if (($this->container['pkiModulegroupID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'pkiModulegroupID', must be smaller than or equal to 255.";
-        }
-
-        if (($this->container['pkiModulegroupID'] < 1)) {
-            $invalidProperties[] = "invalid value for 'pkiModulegroupID', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['sModulegroupNameX'] === null) {
-            $invalidProperties[] = "'sModulegroupNameX' can't be null";
-        }
-	//if (!preg_match("/^.{0,25}$/", $this->container['sModulegroupNameX'])) {
-        if (!is_null($this->container['sModulegroupNameX']) && !preg_match("/(*UTF8)^.{0,25}$/", $this->container['sModulegroupNameX'])) {
-            $invalidProperties[] = "invalid value for 'sModulegroupNameX', must be conform to the pattern /^.{0,25}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -323,89 +284,6 @@ class ModulegroupResponseCompound implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiModulegroupID
-     *
-     * @return int
-     */
-    public function getPkiModulegroupID()
-    {
-	//return $this->container['pkiModulegroupID'];
-        return $this->container['pkiModulegroupID'];
-    }
-
-    /**
-     * Sets pkiModulegroupID
-     *
-     * @param int $pkiModulegroupID The unique ID of the Modulegroup
-     *
-     * @return self
-     */
-    public function setPkiModulegroupID($pkiModulegroupID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiModulegroupID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiModulegroupID cannot be null');
-        //}
-
-	//if (($pkiModulegroupID > 255)) {
-        if (($pkiModulegroupID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiModulegroupID when calling ModulegroupResponseCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiModulegroupID)?'null':'"'.$pkiModulegroupID.'"').' for pkiModulegroupID when calling ModulegroupResponseCompound., must be smaller than or equal to 255.');
-        }
-	//if (($pkiModulegroupID < 1)) {
-        if (($pkiModulegroupID < 1)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiModulegroupID when calling ModulegroupResponseCompound., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiModulegroupID)?'null':'"'.$pkiModulegroupID.'"').' for pkiModulegroupID when calling ModulegroupResponseCompound., must be bigger than or equal to 1.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiModulegroupID'] = $pkiModulegroupID;
-        $this->container['pkiModulegroupID'] = (is_null($pkiModulegroupID) ? null : (int) $pkiModulegroupID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sModulegroupNameX
-     *
-     * @return string
-     */
-    public function getSModulegroupNameX()
-    {
-	//return $this->container['sModulegroupNameX'];
-        return is_null($this->container['sModulegroupNameX']) ? null : trim($this->container['sModulegroupNameX']);
-    }
-
-    /**
-     * Sets sModulegroupNameX
-     *
-     * @param string $sModulegroupNameX The name of the Modulegroup in the language of the requester
-     *
-     * @return self
-     */
-    public function setSModulegroupNameX($sModulegroupNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sModulegroupNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sModulegroupNameX cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,25}$/", ObjectSerializer::toString($sModulegroupNameX)))) {
-        if (!is_null($sModulegroupNameX) && (!preg_match("/(*UTF8)^.{0,25}$/", ObjectSerializer::toString($sModulegroupNameX)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sModulegroupNameX when calling ModulegroupResponseCompound., must conform to the pattern /^.{0,25}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sModulegroupNameX)?'null':'"'.$sModulegroupNameX.'"')." for sModulegroupNameX when calling ModulegroupResponseCompound., must conform to the pattern /^.{0,25}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sModulegroupNameX'] = $sModulegroupNameX;
-        $this->container['sModulegroupNameX'] = (is_null($sModulegroupNameX) ? null : trim((string) $sModulegroupNameX));
-
-        return $this;
-    }
 
     /**
      * Gets aObjModule

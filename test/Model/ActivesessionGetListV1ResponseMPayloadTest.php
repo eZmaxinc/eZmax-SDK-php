@@ -81,24 +81,6 @@ class ActivesessionGetListV1ResponseMPayloadTest extends TestCase
     }
 
     /**
-     * Test attribute "iRowReturned"
-     */
-    public function testPropertyIRowReturned()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "iRowFiltered"
-     */
-    public function testPropertyIRowFiltered()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjActivesession"
      */
     public function testPropertyAObjActivesession()

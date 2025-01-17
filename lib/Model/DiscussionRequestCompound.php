@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class DiscussionRequestCompound extends DiscussionRequest
 {
     public const DISCRIMINATOR = null;
 
@@ -59,9 +57,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiDiscussionID' => 'int',
-        'sDiscussionDescription' => 'string',
-        'bDiscussionClosed' => 'bool'
+        
     ];
 
     /**
@@ -72,9 +68,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiDiscussionID' => null,
-        'sDiscussionDescription' => null,
-        'bDiscussionClosed' => null
+        
     ];
 
     /**
@@ -83,9 +77,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiDiscussionID' => false,
-		'sDiscussionDescription' => false,
-		'bDiscussionClosed' => false
+        
     ];
 
     /**
@@ -102,7 +94,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -112,7 +104,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -122,7 +114,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -174,9 +166,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiDiscussionID' => 'pkiDiscussionID',
-        'sDiscussionDescription' => 'sDiscussionDescription',
-        'bDiscussionClosed' => 'bDiscussionClosed'
+        
     ];
 
     /**
@@ -185,9 +175,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'pkiDiscussionID' => 'setPkiDiscussionID',
-        'sDiscussionDescription' => 'setSDiscussionDescription',
-        'bDiscussionClosed' => 'setBDiscussionClosed'
+        
     ];
 
     /**
@@ -196,9 +184,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'pkiDiscussionID' => 'getPkiDiscussionID',
-        'sDiscussionDescription' => 'getSDiscussionDescription',
-        'bDiscussionClosed' => 'getBDiscussionClosed'
+        
     ];
 
     /**
@@ -209,7 +195,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -219,7 +205,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -229,7 +215,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -243,12 +229,6 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -258,9 +238,8 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiDiscussionID', $data ?? [], null);
-        $this->setIfExists('sDiscussionDescription', $data ?? [], null);
-        $this->setIfExists('bDiscussionClosed', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -288,23 +267,7 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
-
-        if (!is_null($this->container['pkiDiscussionID']) && ($this->container['pkiDiscussionID'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'pkiDiscussionID', must be smaller than or equal to 16777215.";
-        }
-
-        if (!is_null($this->container['pkiDiscussionID']) && ($this->container['pkiDiscussionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiDiscussionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sDiscussionDescription'] === null) {
-            $invalidProperties[] = "'sDiscussionDescription' can't be null";
-        }
-	//if (!preg_match("/^.{0,75}$/", $this->container['sDiscussionDescription'])) {
-        if (!is_null($this->container['sDiscussionDescription']) && !preg_match("/(*UTF8)^.{0,75}$/", $this->container['sDiscussionDescription'])) {
-            $invalidProperties[] = "invalid value for 'sDiscussionDescription', must be conform to the pattern /^.{0,75}$/.";
-        }
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -320,121 +283,6 @@ class DiscussionRequestCompound implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiDiscussionID
-     *
-     * @return int|null
-     */
-    public function getPkiDiscussionID()
-    {
-	//return $this->container['pkiDiscussionID'];
-        return $this->container['pkiDiscussionID'];
-    }
-
-    /**
-     * Sets pkiDiscussionID
-     *
-     * @param int|null $pkiDiscussionID The unique ID of the Discussion
-     *
-     * @return self
-     */
-    public function setPkiDiscussionID($pkiDiscussionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiDiscussionID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiDiscussionID cannot be null');
-        //}
-
-	//if (($pkiDiscussionID > 16777215)) {
-        if (!is_null($pkiDiscussionID) && ($pkiDiscussionID > 16777215)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiDiscussionID when calling DiscussionRequestCompound., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDiscussionID)?'null':'"'.$pkiDiscussionID.'"').' for pkiDiscussionID when calling DiscussionRequestCompound., must be smaller than or equal to 16777215.');
-        }
-	//if (($pkiDiscussionID < 0)) {
-        if (!is_null($pkiDiscussionID) && ($pkiDiscussionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiDiscussionID when calling DiscussionRequestCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDiscussionID)?'null':'"'.$pkiDiscussionID.'"').' for pkiDiscussionID when calling DiscussionRequestCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiDiscussionID'] = $pkiDiscussionID;
-        $this->container['pkiDiscussionID'] = (is_null($pkiDiscussionID) ? null : (int) $pkiDiscussionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sDiscussionDescription
-     *
-     * @return string
-     */
-    public function getSDiscussionDescription()
-    {
-	//return $this->container['sDiscussionDescription'];
-        return is_null($this->container['sDiscussionDescription']) ? null : trim($this->container['sDiscussionDescription']);
-    }
-
-    /**
-     * Sets sDiscussionDescription
-     *
-     * @param string $sDiscussionDescription The description of the Discussion
-     *
-     * @return self
-     */
-    public function setSDiscussionDescription($sDiscussionDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sDiscussionDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sDiscussionDescription cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,75}$/", ObjectSerializer::toString($sDiscussionDescription)))) {
-        if (!is_null($sDiscussionDescription) && (!preg_match("/(*UTF8)^.{0,75}$/", ObjectSerializer::toString($sDiscussionDescription)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sDiscussionDescription when calling DiscussionRequestCompound., must conform to the pattern /^.{0,75}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sDiscussionDescription)?'null':'"'.$sDiscussionDescription.'"')." for sDiscussionDescription when calling DiscussionRequestCompound., must conform to the pattern /^.{0,75}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sDiscussionDescription'] = $sDiscussionDescription;
-        $this->container['sDiscussionDescription'] = (is_null($sDiscussionDescription) ? null : trim((string) $sDiscussionDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets bDiscussionClosed
-     *
-     * @return bool|null
-     */
-    public function getBDiscussionClosed()
-    {
-	//return $this->container['bDiscussionClosed'];
-        return $this->container['bDiscussionClosed'];
-    }
-
-    /**
-     * Sets bDiscussionClosed
-     *
-     * @param bool|null $bDiscussionClosed Whether if it's an closed
-     *
-     * @return self
-     */
-    public function setBDiscussionClosed($bDiscussionClosed)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bDiscussionClosed)) {
-            //throw new \InvalidArgumentException('non-nullable bDiscussionClosed cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bDiscussionClosed'] = $bDiscussionClosed;
-        $this->container['bDiscussionClosed'] = (is_null($bDiscussionClosed) ? null : (bool) $bDiscussionClosed);
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ColleagueResponseCompoundV2 extends ColleagueResponseV2
 {
     public const DISCRIMINATOR = null;
 
@@ -59,22 +57,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiColleagueID' => 'int',
-        'fkiUserID' => 'int',
-        'fkiUserIDColleague' => 'int',
-        'bColleagueEzsignemail' => 'bool',
-        'bColleagueFinancial' => 'bool',
-        'bColleagueUsecloneemail' => 'bool',
-        'bColleagueAttachment' => 'bool',
-        'bColleagueCanafe' => 'bool',
-        'bColleaguePermission' => 'bool',
-        'bColleagueRealestatecompleted' => 'bool',
-        'dtColleagueFrom' => 'string',
-        'dtColleagueTo' => 'string',
-        'eColleagueEzsign' => '\eZmaxAPI\Model\FieldEColleagueEzsign',
-        'eColleagueRealestateinprogress' => '\eZmaxAPI\Model\FieldEColleagueRealestateinprogess',
-        'objUserName' => '\eZmaxAPI\Model\CustomUserNameResponse',
-        'objAudit' => '\eZmaxAPI\Model\CommonAudit'
+        
     ];
 
     /**
@@ -85,22 +68,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiColleagueID' => null,
-        'fkiUserID' => null,
-        'fkiUserIDColleague' => null,
-        'bColleagueEzsignemail' => null,
-        'bColleagueFinancial' => null,
-        'bColleagueUsecloneemail' => null,
-        'bColleagueAttachment' => null,
-        'bColleagueCanafe' => null,
-        'bColleaguePermission' => null,
-        'bColleagueRealestatecompleted' => null,
-        'dtColleagueFrom' => null,
-        'dtColleagueTo' => null,
-        'eColleagueEzsign' => null,
-        'eColleagueRealestateinprogress' => null,
-        'objUserName' => null,
-        'objAudit' => null
+        
     ];
 
     /**
@@ -109,22 +77,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiColleagueID' => false,
-		'fkiUserID' => false,
-		'fkiUserIDColleague' => false,
-		'bColleagueEzsignemail' => false,
-		'bColleagueFinancial' => false,
-		'bColleagueUsecloneemail' => false,
-		'bColleagueAttachment' => false,
-		'bColleagueCanafe' => false,
-		'bColleaguePermission' => false,
-		'bColleagueRealestatecompleted' => false,
-		'dtColleagueFrom' => false,
-		'dtColleagueTo' => false,
-		'eColleagueEzsign' => false,
-		'eColleagueRealestateinprogress' => false,
-		'objUserName' => false,
-		'objAudit' => false
+        
     ];
 
     /**
@@ -141,7 +94,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -151,7 +104,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -161,7 +114,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -213,22 +166,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiColleagueID' => 'pkiColleagueID',
-        'fkiUserID' => 'fkiUserID',
-        'fkiUserIDColleague' => 'fkiUserIDColleague',
-        'bColleagueEzsignemail' => 'bColleagueEzsignemail',
-        'bColleagueFinancial' => 'bColleagueFinancial',
-        'bColleagueUsecloneemail' => 'bColleagueUsecloneemail',
-        'bColleagueAttachment' => 'bColleagueAttachment',
-        'bColleagueCanafe' => 'bColleagueCanafe',
-        'bColleaguePermission' => 'bColleaguePermission',
-        'bColleagueRealestatecompleted' => 'bColleagueRealestatecompleted',
-        'dtColleagueFrom' => 'dtColleagueFrom',
-        'dtColleagueTo' => 'dtColleagueTo',
-        'eColleagueEzsign' => 'eColleagueEzsign',
-        'eColleagueRealestateinprogress' => 'eColleagueRealestateinprogress',
-        'objUserName' => 'objUserName',
-        'objAudit' => 'objAudit'
+        
     ];
 
     /**
@@ -237,22 +175,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'pkiColleagueID' => 'setPkiColleagueID',
-        'fkiUserID' => 'setFkiUserID',
-        'fkiUserIDColleague' => 'setFkiUserIDColleague',
-        'bColleagueEzsignemail' => 'setBColleagueEzsignemail',
-        'bColleagueFinancial' => 'setBColleagueFinancial',
-        'bColleagueUsecloneemail' => 'setBColleagueUsecloneemail',
-        'bColleagueAttachment' => 'setBColleagueAttachment',
-        'bColleagueCanafe' => 'setBColleagueCanafe',
-        'bColleaguePermission' => 'setBColleaguePermission',
-        'bColleagueRealestatecompleted' => 'setBColleagueRealestatecompleted',
-        'dtColleagueFrom' => 'setDtColleagueFrom',
-        'dtColleagueTo' => 'setDtColleagueTo',
-        'eColleagueEzsign' => 'setEColleagueEzsign',
-        'eColleagueRealestateinprogress' => 'setEColleagueRealestateinprogress',
-        'objUserName' => 'setObjUserName',
-        'objAudit' => 'setObjAudit'
+        
     ];
 
     /**
@@ -261,22 +184,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'pkiColleagueID' => 'getPkiColleagueID',
-        'fkiUserID' => 'getFkiUserID',
-        'fkiUserIDColleague' => 'getFkiUserIDColleague',
-        'bColleagueEzsignemail' => 'getBColleagueEzsignemail',
-        'bColleagueFinancial' => 'getBColleagueFinancial',
-        'bColleagueUsecloneemail' => 'getBColleagueUsecloneemail',
-        'bColleagueAttachment' => 'getBColleagueAttachment',
-        'bColleagueCanafe' => 'getBColleagueCanafe',
-        'bColleaguePermission' => 'getBColleaguePermission',
-        'bColleagueRealestatecompleted' => 'getBColleagueRealestatecompleted',
-        'dtColleagueFrom' => 'getDtColleagueFrom',
-        'dtColleagueTo' => 'getDtColleagueTo',
-        'eColleagueEzsign' => 'getEColleagueEzsign',
-        'eColleagueRealestateinprogress' => 'getEColleagueRealestateinprogress',
-        'objUserName' => 'getObjUserName',
-        'objAudit' => 'getObjAudit'
+        
     ];
 
     /**
@@ -287,7 +195,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -297,7 +205,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -307,7 +215,7 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -321,12 +229,6 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -336,22 +238,8 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiColleagueID', $data ?? [], null);
-        $this->setIfExists('fkiUserID', $data ?? [], null);
-        $this->setIfExists('fkiUserIDColleague', $data ?? [], null);
-        $this->setIfExists('bColleagueEzsignemail', $data ?? [], null);
-        $this->setIfExists('bColleagueFinancial', $data ?? [], null);
-        $this->setIfExists('bColleagueUsecloneemail', $data ?? [], null);
-        $this->setIfExists('bColleagueAttachment', $data ?? [], null);
-        $this->setIfExists('bColleagueCanafe', $data ?? [], null);
-        $this->setIfExists('bColleaguePermission', $data ?? [], null);
-        $this->setIfExists('bColleagueRealestatecompleted', $data ?? [], null);
-        $this->setIfExists('dtColleagueFrom', $data ?? [], null);
-        $this->setIfExists('dtColleagueTo', $data ?? [], null);
-        $this->setIfExists('eColleagueEzsign', $data ?? [], null);
-        $this->setIfExists('eColleagueRealestateinprogress', $data ?? [], null);
-        $this->setIfExists('objUserName', $data ?? [], null);
-        $this->setIfExists('objAudit', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -379,76 +267,8 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiColleagueID'] === null) {
-            $invalidProperties[] = "'pkiColleagueID' can't be null";
-        }
-        if (($this->container['pkiColleagueID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'pkiColleagueID', must be smaller than or equal to 65535.";
-        }
-
-        if (($this->container['pkiColleagueID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiColleagueID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiUserID'] === null) {
-            $invalidProperties[] = "'fkiUserID' can't be null";
-        }
-        if (($this->container['fkiUserID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUserID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiUserIDColleague'] === null) {
-            $invalidProperties[] = "'fkiUserIDColleague' can't be null";
-        }
-        if (($this->container['fkiUserIDColleague'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiUserIDColleague', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['bColleagueEzsignemail'] === null) {
-            $invalidProperties[] = "'bColleagueEzsignemail' can't be null";
-        }
-        if ($this->container['bColleagueFinancial'] === null) {
-            $invalidProperties[] = "'bColleagueFinancial' can't be null";
-        }
-        if ($this->container['bColleagueUsecloneemail'] === null) {
-            $invalidProperties[] = "'bColleagueUsecloneemail' can't be null";
-        }
-        if ($this->container['bColleagueAttachment'] === null) {
-            $invalidProperties[] = "'bColleagueAttachment' can't be null";
-        }
-        if ($this->container['bColleagueCanafe'] === null) {
-            $invalidProperties[] = "'bColleagueCanafe' can't be null";
-        }
-        if ($this->container['bColleaguePermission'] === null) {
-            $invalidProperties[] = "'bColleaguePermission' can't be null";
-        }
-        if ($this->container['bColleagueRealestatecompleted'] === null) {
-            $invalidProperties[] = "'bColleagueRealestatecompleted' can't be null";
-        }
-	//if (!is_null($this->container['dtColleagueFrom']) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->container['dtColleagueFrom'])) {
-        if (!is_null($this->container['dtColleagueFrom']) && !preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->container['dtColleagueFrom'])) {
-            $invalidProperties[] = "invalid value for 'dtColleagueFrom', must be conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.";
-        }
-
-	//if (!is_null($this->container['dtColleagueTo']) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->container['dtColleagueTo'])) {
-        if (!is_null($this->container['dtColleagueTo']) && !preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $this->container['dtColleagueTo'])) {
-            $invalidProperties[] = "invalid value for 'dtColleagueTo', must be conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.";
-        }
-
-        if ($this->container['eColleagueEzsign'] === null) {
-            $invalidProperties[] = "'eColleagueEzsign' can't be null";
-        }
-        if ($this->container['eColleagueRealestateinprogress'] === null) {
-            $invalidProperties[] = "'eColleagueRealestateinprogress' can't be null";
-        }
-        if ($this->container['objUserName'] === null) {
-            $invalidProperties[] = "'objUserName' can't be null";
-        }
-        if ($this->container['objAudit'] === null) {
-            $invalidProperties[] = "'objAudit' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -463,558 +283,6 @@ class ColleagueResponseCompoundV2 implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiColleagueID
-     *
-     * @return int
-     */
-    public function getPkiColleagueID()
-    {
-	//return $this->container['pkiColleagueID'];
-        return $this->container['pkiColleagueID'];
-    }
-
-    /**
-     * Sets pkiColleagueID
-     *
-     * @param int $pkiColleagueID The unique ID of the Colleague
-     *
-     * @return self
-     */
-    public function setPkiColleagueID($pkiColleagueID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiColleagueID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiColleagueID cannot be null');
-        //}
-
-	//if (($pkiColleagueID > 65535)) {
-        if (($pkiColleagueID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiColleagueID when calling ColleagueResponseCompoundV2., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiColleagueID)?'null':'"'.$pkiColleagueID.'"').' for pkiColleagueID when calling ColleagueResponseCompoundV2., must be smaller than or equal to 65535.');
-        }
-	//if (($pkiColleagueID < 0)) {
-        if (($pkiColleagueID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiColleagueID when calling ColleagueResponseCompoundV2., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiColleagueID)?'null':'"'.$pkiColleagueID.'"').' for pkiColleagueID when calling ColleagueResponseCompoundV2., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiColleagueID'] = $pkiColleagueID;
-        $this->container['pkiColleagueID'] = (is_null($pkiColleagueID) ? null : (int) $pkiColleagueID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUserID
-     *
-     * @return int
-     */
-    public function getFkiUserID()
-    {
-	//return $this->container['fkiUserID'];
-        return $this->container['fkiUserID'];
-    }
-
-    /**
-     * Sets fkiUserID
-     *
-     * @param int $fkiUserID The unique ID of the User
-     *
-     * @return self
-     */
-    public function setFkiUserID($fkiUserID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUserID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUserID cannot be null');
-        //}
-
-	//if (($fkiUserID < 0)) {
-        if (($fkiUserID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUserID when calling ColleagueResponseCompoundV2., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserID)?'null':'"'.$fkiUserID.'"').' for fkiUserID when calling ColleagueResponseCompoundV2., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUserID'] = $fkiUserID;
-        $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiUserIDColleague
-     *
-     * @return int
-     */
-    public function getFkiUserIDColleague()
-    {
-	//return $this->container['fkiUserIDColleague'];
-        return $this->container['fkiUserIDColleague'];
-    }
-
-    /**
-     * Sets fkiUserIDColleague
-     *
-     * @param int $fkiUserIDColleague The unique ID of the User
-     *
-     * @return self
-     */
-    public function setFkiUserIDColleague($fkiUserIDColleague)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiUserIDColleague)) {
-            //throw new \InvalidArgumentException('non-nullable fkiUserIDColleague cannot be null');
-        //}
-
-	//if (($fkiUserIDColleague < 0)) {
-        if (($fkiUserIDColleague < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiUserIDColleague when calling ColleagueResponseCompoundV2., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserIDColleague)?'null':'"'.$fkiUserIDColleague.'"').' for fkiUserIDColleague when calling ColleagueResponseCompoundV2., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiUserIDColleague'] = $fkiUserIDColleague;
-        $this->container['fkiUserIDColleague'] = (is_null($fkiUserIDColleague) ? null : (int) $fkiUserIDColleague);
-
-        return $this;
-    }
-
-    /**
-     * Gets bColleagueEzsignemail
-     *
-     * @return bool
-     */
-    public function getBColleagueEzsignemail()
-    {
-	//return $this->container['bColleagueEzsignemail'];
-        return $this->container['bColleagueEzsignemail'];
-    }
-
-    /**
-     * Sets bColleagueEzsignemail
-     *
-     * @param bool $bColleagueEzsignemail Whether the email can be used by the cloning user in Ezsign
-     *
-     * @return self
-     */
-    public function setBColleagueEzsignemail($bColleagueEzsignemail)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bColleagueEzsignemail)) {
-            //throw new \InvalidArgumentException('non-nullable bColleagueEzsignemail cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bColleagueEzsignemail'] = $bColleagueEzsignemail;
-        $this->container['bColleagueEzsignemail'] = (is_null($bColleagueEzsignemail) ? null : (bool) $bColleagueEzsignemail);
-
-        return $this;
-    }
-
-    /**
-     * Gets bColleagueFinancial
-     *
-     * @return bool
-     */
-    public function getBColleagueFinancial()
-    {
-	//return $this->container['bColleagueFinancial'];
-        return $this->container['bColleagueFinancial'];
-    }
-
-    /**
-     * Sets bColleagueFinancial
-     *
-     * @param bool $bColleagueFinancial Whether the cloning user has access to the financial
-     *
-     * @return self
-     */
-    public function setBColleagueFinancial($bColleagueFinancial)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bColleagueFinancial)) {
-            //throw new \InvalidArgumentException('non-nullable bColleagueFinancial cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bColleagueFinancial'] = $bColleagueFinancial;
-        $this->container['bColleagueFinancial'] = (is_null($bColleagueFinancial) ? null : (bool) $bColleagueFinancial);
-
-        return $this;
-    }
-
-    /**
-     * Gets bColleagueUsecloneemail
-     *
-     * @return bool
-     */
-    public function getBColleagueUsecloneemail()
-    {
-	//return $this->container['bColleagueUsecloneemail'];
-        return $this->container['bColleagueUsecloneemail'];
-    }
-
-    /**
-     * Sets bColleagueUsecloneemail
-     *
-     * @param bool $bColleagueUsecloneemail Whether the cloning user has access to the cloned user email to send communications
-     *
-     * @return self
-     */
-    public function setBColleagueUsecloneemail($bColleagueUsecloneemail)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bColleagueUsecloneemail)) {
-            //throw new \InvalidArgumentException('non-nullable bColleagueUsecloneemail cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bColleagueUsecloneemail'] = $bColleagueUsecloneemail;
-        $this->container['bColleagueUsecloneemail'] = (is_null($bColleagueUsecloneemail) ? null : (bool) $bColleagueUsecloneemail);
-
-        return $this;
-    }
-
-    /**
-     * Gets bColleagueAttachment
-     *
-     * @return bool
-     */
-    public function getBColleagueAttachment()
-    {
-	//return $this->container['bColleagueAttachment'];
-        return $this->container['bColleagueAttachment'];
-    }
-
-    /**
-     * Sets bColleagueAttachment
-     *
-     * @param bool $bColleagueAttachment Whether the cloning user has access to the attachment
-     *
-     * @return self
-     */
-    public function setBColleagueAttachment($bColleagueAttachment)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bColleagueAttachment)) {
-            //throw new \InvalidArgumentException('non-nullable bColleagueAttachment cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bColleagueAttachment'] = $bColleagueAttachment;
-        $this->container['bColleagueAttachment'] = (is_null($bColleagueAttachment) ? null : (bool) $bColleagueAttachment);
-
-        return $this;
-    }
-
-    /**
-     * Gets bColleagueCanafe
-     *
-     * @return bool
-     */
-    public function getBColleagueCanafe()
-    {
-	//return $this->container['bColleagueCanafe'];
-        return $this->container['bColleagueCanafe'];
-    }
-
-    /**
-     * Sets bColleagueCanafe
-     *
-     * @param bool $bColleagueCanafe Whether the cloning user has access to canafe
-     *
-     * @return self
-     */
-    public function setBColleagueCanafe($bColleagueCanafe)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bColleagueCanafe)) {
-            //throw new \InvalidArgumentException('non-nullable bColleagueCanafe cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bColleagueCanafe'] = $bColleagueCanafe;
-        $this->container['bColleagueCanafe'] = (is_null($bColleagueCanafe) ? null : (bool) $bColleagueCanafe);
-
-        return $this;
-    }
-
-    /**
-     * Gets bColleaguePermission
-     *
-     * @return bool
-     */
-    public function getBColleaguePermission()
-    {
-	//return $this->container['bColleaguePermission'];
-        return $this->container['bColleaguePermission'];
-    }
-
-    /**
-     * Sets bColleaguePermission
-     *
-     * @param bool $bColleaguePermission Whether the cloning user copies the permission of the cloned user
-     *
-     * @return self
-     */
-    public function setBColleaguePermission($bColleaguePermission)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bColleaguePermission)) {
-            //throw new \InvalidArgumentException('non-nullable bColleaguePermission cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bColleaguePermission'] = $bColleaguePermission;
-        $this->container['bColleaguePermission'] = (is_null($bColleaguePermission) ? null : (bool) $bColleaguePermission);
-
-        return $this;
-    }
-
-    /**
-     * Gets bColleagueRealestatecompleted
-     *
-     * @return bool
-     */
-    public function getBColleagueRealestatecompleted()
-    {
-	//return $this->container['bColleagueRealestatecompleted'];
-        return $this->container['bColleagueRealestatecompleted'];
-    }
-
-    /**
-     * Sets bColleagueRealestatecompleted
-     *
-     * @param bool $bColleagueRealestatecompleted Whether if the cloning user has access to the completed folders in real estate
-     *
-     * @return self
-     */
-    public function setBColleagueRealestatecompleted($bColleagueRealestatecompleted)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bColleagueRealestatecompleted)) {
-            //throw new \InvalidArgumentException('non-nullable bColleagueRealestatecompleted cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bColleagueRealestatecompleted'] = $bColleagueRealestatecompleted;
-        $this->container['bColleagueRealestatecompleted'] = (is_null($bColleagueRealestatecompleted) ? null : (bool) $bColleagueRealestatecompleted);
-
-        return $this;
-    }
-
-    /**
-     * Gets dtColleagueFrom
-     *
-     * @return string|null
-     */
-    public function getDtColleagueFrom()
-    {
-	//return $this->container['dtColleagueFrom'];
-        return is_null($this->container['dtColleagueFrom']) ? null : trim($this->container['dtColleagueFrom']);
-    }
-
-    /**
-     * Sets dtColleagueFrom
-     *
-     * @param string|null $dtColleagueFrom The from of the Colleague
-     *
-     * @return self
-     */
-    public function setDtColleagueFrom($dtColleagueFrom)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtColleagueFrom)) {
-            //throw new \InvalidArgumentException('non-nullable dtColleagueFrom cannot be null');
-        //}
-
-	//if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtColleagueFrom)))) {
-        if (!is_null($dtColleagueFrom) && (!preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtColleagueFrom)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$dtColleagueFrom when calling ColleagueResponseCompoundV2., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($dtColleagueFrom)?'null':'"'.$dtColleagueFrom.'"')." for dtColleagueFrom when calling ColleagueResponseCompoundV2., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtColleagueFrom'] = $dtColleagueFrom;
-        $this->container['dtColleagueFrom'] = (is_null($dtColleagueFrom) ? null : trim((string) $dtColleagueFrom));
-
-        return $this;
-    }
-
-    /**
-     * Gets dtColleagueTo
-     *
-     * @return string|null
-     */
-    public function getDtColleagueTo()
-    {
-	//return $this->container['dtColleagueTo'];
-        return is_null($this->container['dtColleagueTo']) ? null : trim($this->container['dtColleagueTo']);
-    }
-
-    /**
-     * Sets dtColleagueTo
-     *
-     * @param string|null $dtColleagueTo The to of the Colleague
-     *
-     * @return self
-     */
-    public function setDtColleagueTo($dtColleagueTo)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtColleagueTo)) {
-            //throw new \InvalidArgumentException('non-nullable dtColleagueTo cannot be null');
-        //}
-
-	//if ((!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtColleagueTo)))) {
-        if (!is_null($dtColleagueTo) && (!preg_match("/(*UTF8)^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", ObjectSerializer::toString($dtColleagueTo)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$dtColleagueTo when calling ColleagueResponseCompoundV2., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($dtColleagueTo)?'null':'"'.$dtColleagueTo.'"')." for dtColleagueTo when calling ColleagueResponseCompoundV2., must conform to the pattern /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtColleagueTo'] = $dtColleagueTo;
-        $this->container['dtColleagueTo'] = (is_null($dtColleagueTo) ? null : trim((string) $dtColleagueTo));
-
-        return $this;
-    }
-
-    /**
-     * Gets eColleagueEzsign
-     *
-     * @return \eZmaxAPI\Model\FieldEColleagueEzsign
-     */
-    public function getEColleagueEzsign()
-    {
-	//return $this->container['eColleagueEzsign'];
-        return $this->container['eColleagueEzsign'];
-    }
-
-    /**
-     * Sets eColleagueEzsign
-     *
-     * @param \eZmaxAPI\Model\FieldEColleagueEzsign $eColleagueEzsign eColleagueEzsign
-     *
-     * @return self
-     */
-    public function setEColleagueEzsign($eColleagueEzsign)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eColleagueEzsign)) {
-            //throw new \InvalidArgumentException('non-nullable eColleagueEzsign cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eColleagueEzsign'] = $eColleagueEzsign;
-        $this->container['eColleagueEzsign'] = $eColleagueEzsign;
-
-        return $this;
-    }
-
-    /**
-     * Gets eColleagueRealestateinprogress
-     *
-     * @return \eZmaxAPI\Model\FieldEColleagueRealestateinprogess
-     */
-    public function getEColleagueRealestateinprogress()
-    {
-	//return $this->container['eColleagueRealestateinprogress'];
-        return $this->container['eColleagueRealestateinprogress'];
-    }
-
-    /**
-     * Sets eColleagueRealestateinprogress
-     *
-     * @param \eZmaxAPI\Model\FieldEColleagueRealestateinprogess $eColleagueRealestateinprogress eColleagueRealestateinprogress
-     *
-     * @return self
-     */
-    public function setEColleagueRealestateinprogress($eColleagueRealestateinprogress)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eColleagueRealestateinprogress)) {
-            //throw new \InvalidArgumentException('non-nullable eColleagueRealestateinprogress cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eColleagueRealestateinprogress'] = $eColleagueRealestateinprogress;
-        $this->container['eColleagueRealestateinprogress'] = $eColleagueRealestateinprogress;
-
-        return $this;
-    }
-
-    /**
-     * Gets objUserName
-     *
-     * @return \eZmaxAPI\Model\CustomUserNameResponse
-     */
-    public function getObjUserName()
-    {
-	//return $this->container['objUserName'];
-        return $this->container['objUserName'];
-    }
-
-    /**
-     * Sets objUserName
-     *
-     * @param \eZmaxAPI\Model\CustomUserNameResponse $objUserName objUserName
-     *
-     * @return self
-     */
-    public function setObjUserName($objUserName)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objUserName)) {
-            //throw new \InvalidArgumentException('non-nullable objUserName cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objUserName'] = $objUserName;
-        $this->container['objUserName'] = $objUserName;
-
-        return $this;
-    }
-
-    /**
-     * Gets objAudit
-     *
-     * @return \eZmaxAPI\Model\CommonAudit
-     */
-    public function getObjAudit()
-    {
-	//return $this->container['objAudit'];
-        return $this->container['objAudit'];
-    }
-
-    /**
-     * Sets objAudit
-     *
-     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
-     *
-     * @return self
-     */
-    public function setObjAudit($objAudit)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objAudit)) {
-            //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objAudit'] = $objAudit;
-        $this->container['objAudit'] = $objAudit;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

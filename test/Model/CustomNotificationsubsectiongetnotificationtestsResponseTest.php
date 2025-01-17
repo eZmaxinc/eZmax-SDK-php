@@ -81,51 +81,6 @@ class CustomNotificationsubsectiongetnotificationtestsResponseTest extends TestC
     }
 
     /**
-     * Test attribute "pkiNotificationsubsectionID"
-     */
-    public function testPropertyPkiNotificationsubsectionID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiNotificationsectionID"
-     */
-    public function testPropertyFkiNotificationsectionID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objNotificationsubsectionName"
-     */
-    public function testPropertyObjNotificationsubsectionName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sNotificationsectionNameX"
-     */
-    public function testPropertySNotificationsectionNameX()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sNotificationsubsectionNameX"
-     */
-    public function testPropertySNotificationsubsectionNameX()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "aObjNotificationtest"
      */
     public function testPropertyAObjNotificationtest()

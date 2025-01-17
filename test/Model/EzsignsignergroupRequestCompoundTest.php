@@ -79,31 +79,4 @@ class EzsignsignergroupRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiEzsignsignergroupID"
-     */
-    public function testPropertyPkiEzsignsignergroupID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsignfolderID"
-     */
-    public function testPropertyFkiEzsignfolderID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "objEzsignsignergroupDescription"
-     */
-    public function testPropertyObjEzsignsignergroupDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

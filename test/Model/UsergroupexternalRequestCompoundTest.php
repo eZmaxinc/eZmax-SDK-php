@@ -79,31 +79,4 @@ class UsergroupexternalRequestCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiUsergroupexternalID"
-     */
-    public function testPropertyPkiUsergroupexternalID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sUsergroupexternalName"
-     */
-    public function testPropertySUsergroupexternalName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sUsergroupexternalID"
-     */
-    public function testPropertySUsergroupexternalID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

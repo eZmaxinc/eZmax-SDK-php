@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class CustomNotificationsubsectiongetnotificationtestsResponse extends NotificationsubsectionResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,6 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiNotificationsubsectionID' => 'int',
-        'fkiNotificationsectionID' => 'int',
-        'objNotificationsubsectionName' => '\eZmaxAPI\Model\MultilingualNotificationsubsectionName',
-        'sNotificationsectionNameX' => 'string',
-        'sNotificationsubsectionNameX' => 'string',
         'aObjNotificationtest' => '\eZmaxAPI\Model\CustomNotificationtestgetnotificationtestsResponse[]'
     ];
 
@@ -75,11 +68,6 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiNotificationsubsectionID' => null,
-        'fkiNotificationsectionID' => null,
-        'objNotificationsubsectionName' => null,
-        'sNotificationsectionNameX' => null,
-        'sNotificationsubsectionNameX' => null,
         'aObjNotificationtest' => null
     ];
 
@@ -89,12 +77,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiNotificationsubsectionID' => false,
-		'fkiNotificationsectionID' => false,
-		'objNotificationsubsectionName' => false,
-		'sNotificationsectionNameX' => false,
-		'sNotificationsubsectionNameX' => false,
-		'aObjNotificationtest' => false
+        'aObjNotificationtest' => false
     ];
 
     /**
@@ -111,7 +94,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -121,7 +104,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -131,7 +114,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -183,11 +166,6 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiNotificationsubsectionID' => 'pkiNotificationsubsectionID',
-        'fkiNotificationsectionID' => 'fkiNotificationsectionID',
-        'objNotificationsubsectionName' => 'objNotificationsubsectionName',
-        'sNotificationsectionNameX' => 'sNotificationsectionNameX',
-        'sNotificationsubsectionNameX' => 'sNotificationsubsectionNameX',
         'aObjNotificationtest' => 'a_objNotificationtest'
     ];
 
@@ -197,11 +175,6 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      * @var string[]
      */
     protected static $setters = [
-        'pkiNotificationsubsectionID' => 'setPkiNotificationsubsectionID',
-        'fkiNotificationsectionID' => 'setFkiNotificationsectionID',
-        'objNotificationsubsectionName' => 'setObjNotificationsubsectionName',
-        'sNotificationsectionNameX' => 'setSNotificationsectionNameX',
-        'sNotificationsubsectionNameX' => 'setSNotificationsubsectionNameX',
         'aObjNotificationtest' => 'setAObjNotificationtest'
     ];
 
@@ -211,11 +184,6 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      * @var string[]
      */
     protected static $getters = [
-        'pkiNotificationsubsectionID' => 'getPkiNotificationsubsectionID',
-        'fkiNotificationsectionID' => 'getFkiNotificationsectionID',
-        'objNotificationsubsectionName' => 'getObjNotificationsubsectionName',
-        'sNotificationsectionNameX' => 'getSNotificationsectionNameX',
-        'sNotificationsubsectionNameX' => 'getSNotificationsubsectionNameX',
         'aObjNotificationtest' => 'getAObjNotificationtest'
     ];
 
@@ -227,7 +195,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -237,7 +205,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -247,7 +215,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -261,12 +229,6 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -276,11 +238,8 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiNotificationsubsectionID', $data ?? [], null);
-        $this->setIfExists('fkiNotificationsectionID', $data ?? [], null);
-        $this->setIfExists('objNotificationsubsectionName', $data ?? [], null);
-        $this->setIfExists('sNotificationsectionNameX', $data ?? [], null);
-        $this->setIfExists('sNotificationsubsectionNameX', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjNotificationtest', $data ?? [], null);
     }
 
@@ -309,25 +268,8 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiNotificationsubsectionID'] === null) {
-            $invalidProperties[] = "'pkiNotificationsubsectionID' can't be null";
-        }
-        if (($this->container['pkiNotificationsubsectionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiNotificationsubsectionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiNotificationsectionID'] === null) {
-            $invalidProperties[] = "'fkiNotificationsectionID' can't be null";
-        }
-        if (($this->container['fkiNotificationsectionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiNotificationsectionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sNotificationsubsectionNameX'] === null) {
-            $invalidProperties[] = "'sNotificationsubsectionNameX' can't be null";
-        }
         if ($this->container['aObjNotificationtest'] === null) {
             $invalidProperties[] = "'aObjNotificationtest' can't be null";
         }
@@ -345,180 +287,6 @@ class CustomNotificationsubsectiongetnotificationtestsResponse implements ModelI
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiNotificationsubsectionID
-     *
-     * @return int
-     */
-    public function getPkiNotificationsubsectionID()
-    {
-	//return $this->container['pkiNotificationsubsectionID'];
-        return $this->container['pkiNotificationsubsectionID'];
-    }
-
-    /**
-     * Sets pkiNotificationsubsectionID
-     *
-     * @param int $pkiNotificationsubsectionID The unique ID of the Notificationsubsection
-     *
-     * @return self
-     */
-    public function setPkiNotificationsubsectionID($pkiNotificationsubsectionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiNotificationsubsectionID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiNotificationsubsectionID cannot be null');
-        //}
-
-	//if (($pkiNotificationsubsectionID < 0)) {
-        if (($pkiNotificationsubsectionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiNotificationsubsectionID when calling CustomNotificationsubsectiongetnotificationtestsResponse., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiNotificationsubsectionID)?'null':'"'.$pkiNotificationsubsectionID.'"').' for pkiNotificationsubsectionID when calling CustomNotificationsubsectiongetnotificationtestsResponse., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiNotificationsubsectionID'] = $pkiNotificationsubsectionID;
-        $this->container['pkiNotificationsubsectionID'] = (is_null($pkiNotificationsubsectionID) ? null : (int) $pkiNotificationsubsectionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiNotificationsectionID
-     *
-     * @return int
-     */
-    public function getFkiNotificationsectionID()
-    {
-	//return $this->container['fkiNotificationsectionID'];
-        return $this->container['fkiNotificationsectionID'];
-    }
-
-    /**
-     * Sets fkiNotificationsectionID
-     *
-     * @param int $fkiNotificationsectionID The unique ID of the Notificationsection
-     *
-     * @return self
-     */
-    public function setFkiNotificationsectionID($fkiNotificationsectionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiNotificationsectionID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiNotificationsectionID cannot be null');
-        //}
-
-	//if (($fkiNotificationsectionID < 0)) {
-        if (($fkiNotificationsectionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiNotificationsectionID when calling CustomNotificationsubsectiongetnotificationtestsResponse., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiNotificationsectionID)?'null':'"'.$fkiNotificationsectionID.'"').' for fkiNotificationsectionID when calling CustomNotificationsubsectiongetnotificationtestsResponse., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiNotificationsectionID'] = $fkiNotificationsectionID;
-        $this->container['fkiNotificationsectionID'] = (is_null($fkiNotificationsectionID) ? null : (int) $fkiNotificationsectionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets objNotificationsubsectionName
-     *
-     * @return \eZmaxAPI\Model\MultilingualNotificationsubsectionName|null
-     */
-    public function getObjNotificationsubsectionName()
-    {
-	//return $this->container['objNotificationsubsectionName'];
-        return $this->container['objNotificationsubsectionName'];
-    }
-
-    /**
-     * Sets objNotificationsubsectionName
-     *
-     * @param \eZmaxAPI\Model\MultilingualNotificationsubsectionName|null $objNotificationsubsectionName objNotificationsubsectionName
-     *
-     * @return self
-     */
-    public function setObjNotificationsubsectionName($objNotificationsubsectionName)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objNotificationsubsectionName)) {
-            //throw new \InvalidArgumentException('non-nullable objNotificationsubsectionName cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objNotificationsubsectionName'] = $objNotificationsubsectionName;
-        $this->container['objNotificationsubsectionName'] = $objNotificationsubsectionName;
-
-        return $this;
-    }
-
-    /**
-     * Gets sNotificationsectionNameX
-     *
-     * @return string|null
-     */
-    public function getSNotificationsectionNameX()
-    {
-	//return $this->container['sNotificationsectionNameX'];
-        return is_null($this->container['sNotificationsectionNameX']) ? null : trim($this->container['sNotificationsectionNameX']);
-    }
-
-    /**
-     * Sets sNotificationsectionNameX
-     *
-     * @param string|null $sNotificationsectionNameX The name of the Notificationsection in the language of the requester
-     *
-     * @return self
-     */
-    public function setSNotificationsectionNameX($sNotificationsectionNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sNotificationsectionNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sNotificationsectionNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sNotificationsectionNameX'] = $sNotificationsectionNameX;
-        $this->container['sNotificationsectionNameX'] = (is_null($sNotificationsectionNameX) ? null : trim((string) $sNotificationsectionNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets sNotificationsubsectionNameX
-     *
-     * @return string
-     */
-    public function getSNotificationsubsectionNameX()
-    {
-	//return $this->container['sNotificationsubsectionNameX'];
-        return is_null($this->container['sNotificationsubsectionNameX']) ? null : trim($this->container['sNotificationsubsectionNameX']);
-    }
-
-    /**
-     * Sets sNotificationsubsectionNameX
-     *
-     * @param string $sNotificationsubsectionNameX The name of the Notificationsubsection in the language of the requester
-     *
-     * @return self
-     */
-    public function setSNotificationsubsectionNameX($sNotificationsubsectionNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sNotificationsubsectionNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sNotificationsubsectionNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sNotificationsubsectionNameX'] = $sNotificationsubsectionNameX;
-        $this->container['sNotificationsubsectionNameX'] = (is_null($sNotificationsubsectionNameX) ? null : trim((string) $sNotificationsubsectionNameX));
-
-        return $this;
-    }
 
     /**
      * Gets aObjNotificationtest

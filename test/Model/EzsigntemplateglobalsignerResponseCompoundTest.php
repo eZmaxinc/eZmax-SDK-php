@@ -79,31 +79,4 @@ class EzsigntemplateglobalsignerResponseCompoundTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pkiEzsigntemplateglobalsignerID"
-     */
-    public function testPropertyPkiEzsigntemplateglobalsignerID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fkiEzsigntemplateglobalID"
-     */
-    public function testPropertyFkiEzsigntemplateglobalID()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "sEzsigntemplateglobalsignerDescription"
-     */
-    public function testPropertySEzsigntemplateglobalsignerDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

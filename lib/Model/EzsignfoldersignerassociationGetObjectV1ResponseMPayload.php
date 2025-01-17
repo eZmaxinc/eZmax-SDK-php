@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfoldersignerassociationGetObjectV1ResponseMPayload extends EzsignfoldersignerassociationResponseCompound
 {
     public const DISCRIMINATOR = null;
 
@@ -59,15 +57,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiEzsignfoldersignerassociationID' => 'int',
-        'fkiEzsignfolderID' => 'int',
-        'bEzsignfoldersignerassociationDelayedsend' => 'bool',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bool',
-        'tEzsignfoldersignerassociationMessage' => 'string',
-        'bEzsignfoldersignerassociationAllowsigninginperson' => 'bool',
-        'objEzsignsignergroup' => '\eZmaxAPI\Model\EzsignsignergroupResponseCompound',
-        'objUser' => '\eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser',
-        'objEzsignsigner' => '\eZmaxAPI\Model\EzsignsignerResponseCompound'
+        
     ];
 
     /**
@@ -78,15 +68,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiEzsignfoldersignerassociationID' => null,
-        'fkiEzsignfolderID' => null,
-        'bEzsignfoldersignerassociationDelayedsend' => null,
-        'bEzsignfoldersignerassociationReceivecopy' => null,
-        'tEzsignfoldersignerassociationMessage' => null,
-        'bEzsignfoldersignerassociationAllowsigninginperson' => null,
-        'objEzsignsignergroup' => null,
-        'objUser' => null,
-        'objEzsignsigner' => null
+        
     ];
 
     /**
@@ -95,15 +77,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiEzsignfoldersignerassociationID' => false,
-		'fkiEzsignfolderID' => false,
-		'bEzsignfoldersignerassociationDelayedsend' => false,
-		'bEzsignfoldersignerassociationReceivecopy' => false,
-		'tEzsignfoldersignerassociationMessage' => false,
-		'bEzsignfoldersignerassociationAllowsigninginperson' => false,
-		'objEzsignsignergroup' => false,
-		'objUser' => false,
-		'objEzsignsigner' => false
+        
     ];
 
     /**
@@ -120,7 +94,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -130,7 +104,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -140,7 +114,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -192,15 +166,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiEzsignfoldersignerassociationID' => 'pkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'fkiEzsignfolderID',
-        'bEzsignfoldersignerassociationDelayedsend' => 'bEzsignfoldersignerassociationDelayedsend',
-        'bEzsignfoldersignerassociationReceivecopy' => 'bEzsignfoldersignerassociationReceivecopy',
-        'tEzsignfoldersignerassociationMessage' => 'tEzsignfoldersignerassociationMessage',
-        'bEzsignfoldersignerassociationAllowsigninginperson' => 'bEzsignfoldersignerassociationAllowsigninginperson',
-        'objEzsignsignergroup' => 'objEzsignsignergroup',
-        'objUser' => 'objUser',
-        'objEzsignsigner' => 'objEzsignsigner'
+        
     ];
 
     /**
@@ -209,15 +175,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      * @var string[]
      */
     protected static $setters = [
-        'pkiEzsignfoldersignerassociationID' => 'setPkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'setFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationDelayedsend' => 'setBEzsignfoldersignerassociationDelayedsend',
-        'bEzsignfoldersignerassociationReceivecopy' => 'setBEzsignfoldersignerassociationReceivecopy',
-        'tEzsignfoldersignerassociationMessage' => 'setTEzsignfoldersignerassociationMessage',
-        'bEzsignfoldersignerassociationAllowsigninginperson' => 'setBEzsignfoldersignerassociationAllowsigninginperson',
-        'objEzsignsignergroup' => 'setObjEzsignsignergroup',
-        'objUser' => 'setObjUser',
-        'objEzsignsigner' => 'setObjEzsignsigner'
+        
     ];
 
     /**
@@ -226,15 +184,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      * @var string[]
      */
     protected static $getters = [
-        'pkiEzsignfoldersignerassociationID' => 'getPkiEzsignfoldersignerassociationID',
-        'fkiEzsignfolderID' => 'getFkiEzsignfolderID',
-        'bEzsignfoldersignerassociationDelayedsend' => 'getBEzsignfoldersignerassociationDelayedsend',
-        'bEzsignfoldersignerassociationReceivecopy' => 'getBEzsignfoldersignerassociationReceivecopy',
-        'tEzsignfoldersignerassociationMessage' => 'getTEzsignfoldersignerassociationMessage',
-        'bEzsignfoldersignerassociationAllowsigninginperson' => 'getBEzsignfoldersignerassociationAllowsigninginperson',
-        'objEzsignsignergroup' => 'getObjEzsignsignergroup',
-        'objUser' => 'getObjUser',
-        'objEzsignsigner' => 'getObjEzsignsigner'
+        
     ];
 
     /**
@@ -245,7 +195,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -255,7 +205,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -265,7 +215,7 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -279,12 +229,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -294,15 +238,8 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiEzsignfoldersignerassociationID', $data ?? [], null);
-        $this->setIfExists('fkiEzsignfolderID', $data ?? [], null);
-        $this->setIfExists('bEzsignfoldersignerassociationDelayedsend', $data ?? [], null);
-        $this->setIfExists('bEzsignfoldersignerassociationReceivecopy', $data ?? [], null);
-        $this->setIfExists('tEzsignfoldersignerassociationMessage', $data ?? [], null);
-        $this->setIfExists('bEzsignfoldersignerassociationAllowsigninginperson', $data ?? [], null);
-        $this->setIfExists('objEzsignsignergroup', $data ?? [], null);
-        $this->setIfExists('objUser', $data ?? [], null);
-        $this->setIfExists('objEzsignsigner', $data ?? [], null);
+        parent::__construct($data);
+
     }
 
     /**
@@ -330,34 +267,8 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiEzsignfoldersignerassociationID'] === null) {
-            $invalidProperties[] = "'pkiEzsignfoldersignerassociationID' can't be null";
-        }
-        if (($this->container['pkiEzsignfoldersignerassociationID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiEzsignfoldersignerassociationID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['fkiEzsignfolderID'] === null) {
-            $invalidProperties[] = "'fkiEzsignfolderID' can't be null";
-        }
-        if (($this->container['fkiEzsignfolderID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsignfolderID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['bEzsignfoldersignerassociationDelayedsend'] === null) {
-            $invalidProperties[] = "'bEzsignfoldersignerassociationDelayedsend' can't be null";
-        }
-        if ($this->container['bEzsignfoldersignerassociationReceivecopy'] === null) {
-            $invalidProperties[] = "'bEzsignfoldersignerassociationReceivecopy' can't be null";
-        }
-        if ($this->container['tEzsignfoldersignerassociationMessage'] === null) {
-            $invalidProperties[] = "'tEzsignfoldersignerassociationMessage' can't be null";
-        }
-        if ($this->container['bEzsignfoldersignerassociationAllowsigninginperson'] === null) {
-            $invalidProperties[] = "'bEzsignfoldersignerassociationAllowsigninginperson' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -372,308 +283,6 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload implements ModelI
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiEzsignfoldersignerassociationID
-     *
-     * @return int
-     */
-    public function getPkiEzsignfoldersignerassociationID()
-    {
-	//return $this->container['pkiEzsignfoldersignerassociationID'];
-        return $this->container['pkiEzsignfoldersignerassociationID'];
-    }
-
-    /**
-     * Sets pkiEzsignfoldersignerassociationID
-     *
-     * @param int $pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
-     *
-     * @return self
-     */
-    public function setPkiEzsignfoldersignerassociationID($pkiEzsignfoldersignerassociationID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiEzsignfoldersignerassociationID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiEzsignfoldersignerassociationID cannot be null');
-        //}
-
-	//if (($pkiEzsignfoldersignerassociationID < 0)) {
-        if (($pkiEzsignfoldersignerassociationID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiEzsignfoldersignerassociationID when calling EzsignfoldersignerassociationGetObjectV1ResponseMPayload., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsignfoldersignerassociationID)?'null':'"'.$pkiEzsignfoldersignerassociationID.'"').' for pkiEzsignfoldersignerassociationID when calling EzsignfoldersignerassociationGetObjectV1ResponseMPayload., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiEzsignfoldersignerassociationID'] = $pkiEzsignfoldersignerassociationID;
-        $this->container['pkiEzsignfoldersignerassociationID'] = (is_null($pkiEzsignfoldersignerassociationID) ? null : (int) $pkiEzsignfoldersignerassociationID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignfolderID
-     *
-     * @return int
-     */
-    public function getFkiEzsignfolderID()
-    {
-	//return $this->container['fkiEzsignfolderID'];
-        return $this->container['fkiEzsignfolderID'];
-    }
-
-    /**
-     * Sets fkiEzsignfolderID
-     *
-     * @param int $fkiEzsignfolderID The unique ID of the Ezsignfolder
-     *
-     * @return self
-     */
-    public function setFkiEzsignfolderID($fkiEzsignfolderID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsignfolderID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsignfolderID cannot be null');
-        //}
-
-	//if (($fkiEzsignfolderID < 0)) {
-        if (($fkiEzsignfolderID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsignfolderID when calling EzsignfoldersignerassociationGetObjectV1ResponseMPayload., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignfolderID)?'null':'"'.$fkiEzsignfolderID.'"').' for fkiEzsignfolderID when calling EzsignfoldersignerassociationGetObjectV1ResponseMPayload., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsignfolderID'] = $fkiEzsignfolderID;
-        $this->container['fkiEzsignfolderID'] = (is_null($fkiEzsignfolderID) ? null : (int) $fkiEzsignfolderID);
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsignfoldersignerassociationDelayedsend
-     *
-     * @return bool
-     */
-    public function getBEzsignfoldersignerassociationDelayedsend()
-    {
-	//return $this->container['bEzsignfoldersignerassociationDelayedsend'];
-        return $this->container['bEzsignfoldersignerassociationDelayedsend'];
-    }
-
-    /**
-     * Sets bEzsignfoldersignerassociationDelayedsend
-     *
-     * @param bool $bEzsignfoldersignerassociationDelayedsend If this flag is true the signatory is part of a delayed send.
-     *
-     * @return self
-     */
-    public function setBEzsignfoldersignerassociationDelayedsend($bEzsignfoldersignerassociationDelayedsend)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsignfoldersignerassociationDelayedsend)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsignfoldersignerassociationDelayedsend cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsignfoldersignerassociationDelayedsend'] = $bEzsignfoldersignerassociationDelayedsend;
-        $this->container['bEzsignfoldersignerassociationDelayedsend'] = (is_null($bEzsignfoldersignerassociationDelayedsend) ? null : (bool) $bEzsignfoldersignerassociationDelayedsend);
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsignfoldersignerassociationReceivecopy
-     *
-     * @return bool
-     */
-    public function getBEzsignfoldersignerassociationReceivecopy()
-    {
-	//return $this->container['bEzsignfoldersignerassociationReceivecopy'];
-        return $this->container['bEzsignfoldersignerassociationReceivecopy'];
-    }
-
-    /**
-     * Sets bEzsignfoldersignerassociationReceivecopy
-     *
-     * @param bool $bEzsignfoldersignerassociationReceivecopy If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
-     *
-     * @return self
-     */
-    public function setBEzsignfoldersignerassociationReceivecopy($bEzsignfoldersignerassociationReceivecopy)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsignfoldersignerassociationReceivecopy)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsignfoldersignerassociationReceivecopy cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsignfoldersignerassociationReceivecopy'] = $bEzsignfoldersignerassociationReceivecopy;
-        $this->container['bEzsignfoldersignerassociationReceivecopy'] = (is_null($bEzsignfoldersignerassociationReceivecopy) ? null : (bool) $bEzsignfoldersignerassociationReceivecopy);
-
-        return $this;
-    }
-
-    /**
-     * Gets tEzsignfoldersignerassociationMessage
-     *
-     * @return string
-     */
-    public function getTEzsignfoldersignerassociationMessage()
-    {
-	//return $this->container['tEzsignfoldersignerassociationMessage'];
-        return is_null($this->container['tEzsignfoldersignerassociationMessage']) ? null : trim($this->container['tEzsignfoldersignerassociationMessage']);
-    }
-
-    /**
-     * Sets tEzsignfoldersignerassociationMessage
-     *
-     * @param string $tEzsignfoldersignerassociationMessage A custom text message that will be added to the email sent.
-     *
-     * @return self
-     */
-    public function setTEzsignfoldersignerassociationMessage($tEzsignfoldersignerassociationMessage)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($tEzsignfoldersignerassociationMessage)) {
-            //throw new \InvalidArgumentException('non-nullable tEzsignfoldersignerassociationMessage cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['tEzsignfoldersignerassociationMessage'] = $tEzsignfoldersignerassociationMessage;
-        $this->container['tEzsignfoldersignerassociationMessage'] = (is_null($tEzsignfoldersignerassociationMessage) ? null : trim((string) $tEzsignfoldersignerassociationMessage));
-
-        return $this;
-    }
-
-    /**
-     * Gets bEzsignfoldersignerassociationAllowsigninginperson
-     *
-     * @return bool
-     */
-    public function getBEzsignfoldersignerassociationAllowsigninginperson()
-    {
-	//return $this->container['bEzsignfoldersignerassociationAllowsigninginperson'];
-        return $this->container['bEzsignfoldersignerassociationAllowsigninginperson'];
-    }
-
-    /**
-     * Sets bEzsignfoldersignerassociationAllowsigninginperson
-     *
-     * @param bool $bEzsignfoldersignerassociationAllowsigninginperson If the Ezsignfoldersignerassociation is allowed to sign in person or not
-     *
-     * @return self
-     */
-    public function setBEzsignfoldersignerassociationAllowsigninginperson($bEzsignfoldersignerassociationAllowsigninginperson)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bEzsignfoldersignerassociationAllowsigninginperson)) {
-            //throw new \InvalidArgumentException('non-nullable bEzsignfoldersignerassociationAllowsigninginperson cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bEzsignfoldersignerassociationAllowsigninginperson'] = $bEzsignfoldersignerassociationAllowsigninginperson;
-        $this->container['bEzsignfoldersignerassociationAllowsigninginperson'] = (is_null($bEzsignfoldersignerassociationAllowsigninginperson) ? null : (bool) $bEzsignfoldersignerassociationAllowsigninginperson);
-
-        return $this;
-    }
-
-    /**
-     * Gets objEzsignsignergroup
-     *
-     * @return \eZmaxAPI\Model\EzsignsignergroupResponseCompound|null
-     */
-    public function getObjEzsignsignergroup()
-    {
-	//return $this->container['objEzsignsignergroup'];
-        return $this->container['objEzsignsignergroup'];
-    }
-
-    /**
-     * Sets objEzsignsignergroup
-     *
-     * @param \eZmaxAPI\Model\EzsignsignergroupResponseCompound|null $objEzsignsignergroup objEzsignsignergroup
-     *
-     * @return self
-     */
-    public function setObjEzsignsignergroup($objEzsignsignergroup)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objEzsignsignergroup)) {
-            //throw new \InvalidArgumentException('non-nullable objEzsignsignergroup cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objEzsignsignergroup'] = $objEzsignsignergroup;
-        $this->container['objEzsignsignergroup'] = $objEzsignsignergroup;
-
-        return $this;
-    }
-
-    /**
-     * Gets objUser
-     *
-     * @return \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser|null
-     */
-    public function getObjUser()
-    {
-	//return $this->container['objUser'];
-        return $this->container['objUser'];
-    }
-
-    /**
-     * Sets objUser
-     *
-     * @param \eZmaxAPI\Model\EzsignfoldersignerassociationResponseCompoundUser|null $objUser objUser
-     *
-     * @return self
-     */
-    public function setObjUser($objUser)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objUser)) {
-            //throw new \InvalidArgumentException('non-nullable objUser cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objUser'] = $objUser;
-        $this->container['objUser'] = $objUser;
-
-        return $this;
-    }
-
-    /**
-     * Gets objEzsignsigner
-     *
-     * @return \eZmaxAPI\Model\EzsignsignerResponseCompound|null
-     */
-    public function getObjEzsignsigner()
-    {
-	//return $this->container['objEzsignsigner'];
-        return $this->container['objEzsignsigner'];
-    }
-
-    /**
-     * Sets objEzsignsigner
-     *
-     * @param \eZmaxAPI\Model\EzsignsignerResponseCompound|null $objEzsignsigner objEzsignsigner
-     *
-     * @return self
-     */
-    public function setObjEzsignsigner($objEzsignsigner)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objEzsignsigner)) {
-            //throw new \InvalidArgumentException('non-nullable objEzsignsigner cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objEzsignsigner'] = $objEzsignsigner;
-        $this->container['objEzsignsigner'] = $objEzsignsigner;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAccess, \JsonSerializable
+class CommonResponseObjDebugPayloadGetList extends CommonResponseObjDebugPayload
 {
     public const DISCRIMINATOR = null;
 
@@ -59,11 +57,6 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'iVersionMin' => 'int',
-        'iVersionMax' => 'int',
-        'aRequiredPermission' => 'int[]',
-        'bVersionDeprecated' => 'bool',
-        'dtResponseDate' => 'string',
         'aFilter' => '\eZmaxAPI\Model\CommonResponseFilter',
         'aOrderBy' => 'array<string,string>',
         'iRowMax' => 'int',
@@ -78,11 +71,6 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'iVersionMin' => null,
-        'iVersionMax' => null,
-        'aRequiredPermission' => null,
-        'bVersionDeprecated' => null,
-        'dtResponseDate' => null,
         'aFilter' => null,
         'aOrderBy' => null,
         'iRowMax' => null,
@@ -95,12 +83,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'iVersionMin' => false,
-		'iVersionMax' => false,
-		'aRequiredPermission' => false,
-		'bVersionDeprecated' => false,
-		'dtResponseDate' => false,
-		'aFilter' => false,
+        'aFilter' => false,
 		'aOrderBy' => false,
 		'iRowMax' => false,
 		'iRowOffset' => false
@@ -120,7 +103,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -130,7 +113,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -140,7 +123,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -192,11 +175,6 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'iVersionMin' => 'iVersionMin',
-        'iVersionMax' => 'iVersionMax',
-        'aRequiredPermission' => 'a_RequiredPermission',
-        'bVersionDeprecated' => 'bVersionDeprecated',
-        'dtResponseDate' => 'dtResponseDate',
         'aFilter' => 'a_Filter',
         'aOrderBy' => 'a_OrderBy',
         'iRowMax' => 'iRowMax',
@@ -209,11 +187,6 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'iVersionMin' => 'setIVersionMin',
-        'iVersionMax' => 'setIVersionMax',
-        'aRequiredPermission' => 'setARequiredPermission',
-        'bVersionDeprecated' => 'setBVersionDeprecated',
-        'dtResponseDate' => 'setDtResponseDate',
         'aFilter' => 'setAFilter',
         'aOrderBy' => 'setAOrderBy',
         'iRowMax' => 'setIRowMax',
@@ -226,11 +199,6 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'iVersionMin' => 'getIVersionMin',
-        'iVersionMax' => 'getIVersionMax',
-        'aRequiredPermission' => 'getARequiredPermission',
-        'bVersionDeprecated' => 'getBVersionDeprecated',
-        'dtResponseDate' => 'getDtResponseDate',
         'aFilter' => 'getAFilter',
         'aOrderBy' => 'getAOrderBy',
         'iRowMax' => 'getIRowMax',
@@ -245,7 +213,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -255,7 +223,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -265,7 +233,7 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -279,12 +247,6 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -294,11 +256,8 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('iVersionMin', $data ?? [], null);
-        $this->setIfExists('iVersionMax', $data ?? [], null);
-        $this->setIfExists('aRequiredPermission', $data ?? [], null);
-        $this->setIfExists('bVersionDeprecated', $data ?? [], null);
-        $this->setIfExists('dtResponseDate', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aFilter', $data ?? [], null);
         $this->setIfExists('aOrderBy', $data ?? [], null);
         $this->setIfExists('iRowMax', $data ?? [], null);
@@ -330,23 +289,8 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['iVersionMin'] === null) {
-            $invalidProperties[] = "'iVersionMin' can't be null";
-        }
-        if ($this->container['iVersionMax'] === null) {
-            $invalidProperties[] = "'iVersionMax' can't be null";
-        }
-        if ($this->container['aRequiredPermission'] === null) {
-            $invalidProperties[] = "'aRequiredPermission' can't be null";
-        }
-        if ($this->container['bVersionDeprecated'] === null) {
-            $invalidProperties[] = "'bVersionDeprecated' can't be null";
-        }
-        if ($this->container['dtResponseDate'] === null) {
-            $invalidProperties[] = "'dtResponseDate' can't be null";
-        }
         if ($this->container['aFilter'] === null) {
             $invalidProperties[] = "'aFilter' can't be null";
         }
@@ -385,166 +329,6 @@ class CommonResponseObjDebugPayloadGetList implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets iVersionMin
-     *
-     * @return int
-     */
-    public function getIVersionMin()
-    {
-	//return $this->container['iVersionMin'];
-        return $this->container['iVersionMin'];
-    }
-
-    /**
-     * Sets iVersionMin
-     *
-     * @param int $iVersionMin The minimum version of the function that can be called
-     *
-     * @return self
-     */
-    public function setIVersionMin($iVersionMin)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iVersionMin)) {
-            //throw new \InvalidArgumentException('non-nullable iVersionMin cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iVersionMin'] = $iVersionMin;
-        $this->container['iVersionMin'] = (is_null($iVersionMin) ? null : (int) $iVersionMin);
-
-        return $this;
-    }
-
-    /**
-     * Gets iVersionMax
-     *
-     * @return int
-     */
-    public function getIVersionMax()
-    {
-	//return $this->container['iVersionMax'];
-        return $this->container['iVersionMax'];
-    }
-
-    /**
-     * Sets iVersionMax
-     *
-     * @param int $iVersionMax The maximum version of the function that can be called
-     *
-     * @return self
-     */
-    public function setIVersionMax($iVersionMax)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iVersionMax)) {
-            //throw new \InvalidArgumentException('non-nullable iVersionMax cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iVersionMax'] = $iVersionMax;
-        $this->container['iVersionMax'] = (is_null($iVersionMax) ? null : (int) $iVersionMax);
-
-        return $this;
-    }
-
-    /**
-     * Gets aRequiredPermission
-     *
-     * @return int[]
-     */
-    public function getARequiredPermission()
-    {
-	//return $this->container['aRequiredPermission'];
-        return $this->container['aRequiredPermission'];
-    }
-
-    /**
-     * Sets aRequiredPermission
-     *
-     * @param int[] $aRequiredPermission An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
-     *
-     * @return self
-     */
-    public function setARequiredPermission($aRequiredPermission)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($aRequiredPermission)) {
-            //throw new \InvalidArgumentException('non-nullable aRequiredPermission cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['aRequiredPermission'] = $aRequiredPermission;
-        $this->container['aRequiredPermission'] = (is_null($aRequiredPermission) ? null : $aRequiredPermission);
-
-        return $this;
-    }
-
-    /**
-     * Gets bVersionDeprecated
-     *
-     * @return bool
-     */
-    public function getBVersionDeprecated()
-    {
-	//return $this->container['bVersionDeprecated'];
-        return $this->container['bVersionDeprecated'];
-    }
-
-    /**
-     * Sets bVersionDeprecated
-     *
-     * @param bool $bVersionDeprecated Wheter the current route is deprecated or not
-     *
-     * @return self
-     */
-    public function setBVersionDeprecated($bVersionDeprecated)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bVersionDeprecated)) {
-            //throw new \InvalidArgumentException('non-nullable bVersionDeprecated cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bVersionDeprecated'] = $bVersionDeprecated;
-        $this->container['bVersionDeprecated'] = (is_null($bVersionDeprecated) ? null : (bool) $bVersionDeprecated);
-
-        return $this;
-    }
-
-    /**
-     * Gets dtResponseDate
-     *
-     * @return string
-     */
-    public function getDtResponseDate()
-    {
-	//return $this->container['dtResponseDate'];
-        return is_null($this->container['dtResponseDate']) ? null : trim($this->container['dtResponseDate']);
-    }
-
-    /**
-     * Sets dtResponseDate
-     *
-     * @param string $dtResponseDate Represent a Date Time. The timezone is the one configured in the User's profile.
-     *
-     * @return self
-     */
-    public function setDtResponseDate($dtResponseDate)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtResponseDate)) {
-            //throw new \InvalidArgumentException('non-nullable dtResponseDate cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtResponseDate'] = $dtResponseDate;
-        $this->container['dtResponseDate'] = (is_null($dtResponseDate) ? null : trim((string) $dtResponseDate));
-
-        return $this;
-    }
 
     /**
      * Gets aFilter

@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class DiscussionResponseCompound extends DiscussionResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,13 +57,6 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiDiscussionID' => 'int',
-        'sDiscussionDescription' => 'string',
-        'bDiscussionClosed' => 'bool',
-        'dtDiscussionLastread' => 'string',
-        'iDiscussionmessageCount' => 'int',
-        'iDiscussionmessageCountunread' => 'int',
-        'objDiscussionconfiguration' => '\eZmaxAPI\Model\CustomDiscussionconfigurationResponse',
         'aObjDiscussionmembership' => '\eZmaxAPI\Model\DiscussionmembershipResponseCompound[]',
         'aObjDiscussionmessage' => '\eZmaxAPI\Model\DiscussionmessageResponseCompound[]'
     ];
@@ -78,13 +69,6 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiDiscussionID' => null,
-        'sDiscussionDescription' => null,
-        'bDiscussionClosed' => null,
-        'dtDiscussionLastread' => null,
-        'iDiscussionmessageCount' => null,
-        'iDiscussionmessageCountunread' => null,
-        'objDiscussionconfiguration' => null,
         'aObjDiscussionmembership' => null,
         'aObjDiscussionmessage' => null
     ];
@@ -95,14 +79,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiDiscussionID' => false,
-		'sDiscussionDescription' => false,
-		'bDiscussionClosed' => false,
-		'dtDiscussionLastread' => false,
-		'iDiscussionmessageCount' => false,
-		'iDiscussionmessageCountunread' => false,
-		'objDiscussionconfiguration' => false,
-		'aObjDiscussionmembership' => false,
+        'aObjDiscussionmembership' => false,
 		'aObjDiscussionmessage' => false
     ];
 
@@ -120,7 +97,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -130,7 +107,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -140,7 +117,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -192,13 +169,6 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiDiscussionID' => 'pkiDiscussionID',
-        'sDiscussionDescription' => 'sDiscussionDescription',
-        'bDiscussionClosed' => 'bDiscussionClosed',
-        'dtDiscussionLastread' => 'dtDiscussionLastread',
-        'iDiscussionmessageCount' => 'iDiscussionmessageCount',
-        'iDiscussionmessageCountunread' => 'iDiscussionmessageCountunread',
-        'objDiscussionconfiguration' => 'objDiscussionconfiguration',
         'aObjDiscussionmembership' => 'a_objDiscussionmembership',
         'aObjDiscussionmessage' => 'a_objDiscussionmessage'
     ];
@@ -209,13 +179,6 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'pkiDiscussionID' => 'setPkiDiscussionID',
-        'sDiscussionDescription' => 'setSDiscussionDescription',
-        'bDiscussionClosed' => 'setBDiscussionClosed',
-        'dtDiscussionLastread' => 'setDtDiscussionLastread',
-        'iDiscussionmessageCount' => 'setIDiscussionmessageCount',
-        'iDiscussionmessageCountunread' => 'setIDiscussionmessageCountunread',
-        'objDiscussionconfiguration' => 'setObjDiscussionconfiguration',
         'aObjDiscussionmembership' => 'setAObjDiscussionmembership',
         'aObjDiscussionmessage' => 'setAObjDiscussionmessage'
     ];
@@ -226,13 +189,6 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'pkiDiscussionID' => 'getPkiDiscussionID',
-        'sDiscussionDescription' => 'getSDiscussionDescription',
-        'bDiscussionClosed' => 'getBDiscussionClosed',
-        'dtDiscussionLastread' => 'getDtDiscussionLastread',
-        'iDiscussionmessageCount' => 'getIDiscussionmessageCount',
-        'iDiscussionmessageCountunread' => 'getIDiscussionmessageCountunread',
-        'objDiscussionconfiguration' => 'getObjDiscussionconfiguration',
         'aObjDiscussionmembership' => 'getAObjDiscussionmembership',
         'aObjDiscussionmessage' => 'getAObjDiscussionmessage'
     ];
@@ -245,7 +201,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -255,7 +211,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -265,7 +221,7 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -279,12 +235,6 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -294,13 +244,8 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiDiscussionID', $data ?? [], null);
-        $this->setIfExists('sDiscussionDescription', $data ?? [], null);
-        $this->setIfExists('bDiscussionClosed', $data ?? [], null);
-        $this->setIfExists('dtDiscussionLastread', $data ?? [], null);
-        $this->setIfExists('iDiscussionmessageCount', $data ?? [], null);
-        $this->setIfExists('iDiscussionmessageCountunread', $data ?? [], null);
-        $this->setIfExists('objDiscussionconfiguration', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('aObjDiscussionmembership', $data ?? [], null);
         $this->setIfExists('aObjDiscussionmessage', $data ?? [], null);
     }
@@ -330,36 +275,8 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiDiscussionID'] === null) {
-            $invalidProperties[] = "'pkiDiscussionID' can't be null";
-        }
-        if (($this->container['pkiDiscussionID'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'pkiDiscussionID', must be smaller than or equal to 16777215.";
-        }
-
-        if (($this->container['pkiDiscussionID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'pkiDiscussionID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sDiscussionDescription'] === null) {
-            $invalidProperties[] = "'sDiscussionDescription' can't be null";
-        }
-	//if (!preg_match("/^.{0,75}$/", $this->container['sDiscussionDescription'])) {
-        if (!is_null($this->container['sDiscussionDescription']) && !preg_match("/(*UTF8)^.{0,75}$/", $this->container['sDiscussionDescription'])) {
-            $invalidProperties[] = "invalid value for 'sDiscussionDescription', must be conform to the pattern /^.{0,75}$/.";
-        }
-
-        if ($this->container['bDiscussionClosed'] === null) {
-            $invalidProperties[] = "'bDiscussionClosed' can't be null";
-        }
-        if ($this->container['iDiscussionmessageCount'] === null) {
-            $invalidProperties[] = "'iDiscussionmessageCount' can't be null";
-        }
-        if ($this->container['iDiscussionmessageCountunread'] === null) {
-            $invalidProperties[] = "'iDiscussionmessageCountunread' can't be null";
-        }
         if ($this->container['aObjDiscussionmembership'] === null) {
             $invalidProperties[] = "'aObjDiscussionmembership' can't be null";
         }
@@ -380,249 +297,6 @@ class DiscussionResponseCompound implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiDiscussionID
-     *
-     * @return int
-     */
-    public function getPkiDiscussionID()
-    {
-	//return $this->container['pkiDiscussionID'];
-        return $this->container['pkiDiscussionID'];
-    }
-
-    /**
-     * Sets pkiDiscussionID
-     *
-     * @param int $pkiDiscussionID The unique ID of the Discussion
-     *
-     * @return self
-     */
-    public function setPkiDiscussionID($pkiDiscussionID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiDiscussionID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiDiscussionID cannot be null');
-        //}
-
-	//if (($pkiDiscussionID > 16777215)) {
-        if (($pkiDiscussionID > 16777215)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiDiscussionID when calling DiscussionResponseCompound., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDiscussionID)?'null':'"'.$pkiDiscussionID.'"').' for pkiDiscussionID when calling DiscussionResponseCompound., must be smaller than or equal to 16777215.');
-        }
-	//if (($pkiDiscussionID < 0)) {
-        if (($pkiDiscussionID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $pkiDiscussionID when calling DiscussionResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDiscussionID)?'null':'"'.$pkiDiscussionID.'"').' for pkiDiscussionID when calling DiscussionResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiDiscussionID'] = $pkiDiscussionID;
-        $this->container['pkiDiscussionID'] = (is_null($pkiDiscussionID) ? null : (int) $pkiDiscussionID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sDiscussionDescription
-     *
-     * @return string
-     */
-    public function getSDiscussionDescription()
-    {
-	//return $this->container['sDiscussionDescription'];
-        return is_null($this->container['sDiscussionDescription']) ? null : trim($this->container['sDiscussionDescription']);
-    }
-
-    /**
-     * Sets sDiscussionDescription
-     *
-     * @param string $sDiscussionDescription The description of the Discussion
-     *
-     * @return self
-     */
-    public function setSDiscussionDescription($sDiscussionDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sDiscussionDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sDiscussionDescription cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,75}$/", ObjectSerializer::toString($sDiscussionDescription)))) {
-        if (!is_null($sDiscussionDescription) && (!preg_match("/(*UTF8)^.{0,75}$/", ObjectSerializer::toString($sDiscussionDescription)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sDiscussionDescription when calling DiscussionResponseCompound., must conform to the pattern /^.{0,75}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sDiscussionDescription)?'null':'"'.$sDiscussionDescription.'"')." for sDiscussionDescription when calling DiscussionResponseCompound., must conform to the pattern /^.{0,75}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sDiscussionDescription'] = $sDiscussionDescription;
-        $this->container['sDiscussionDescription'] = (is_null($sDiscussionDescription) ? null : trim((string) $sDiscussionDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets bDiscussionClosed
-     *
-     * @return bool
-     */
-    public function getBDiscussionClosed()
-    {
-	//return $this->container['bDiscussionClosed'];
-        return $this->container['bDiscussionClosed'];
-    }
-
-    /**
-     * Sets bDiscussionClosed
-     *
-     * @param bool $bDiscussionClosed Whether if it's an closed
-     *
-     * @return self
-     */
-    public function setBDiscussionClosed($bDiscussionClosed)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bDiscussionClosed)) {
-            //throw new \InvalidArgumentException('non-nullable bDiscussionClosed cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bDiscussionClosed'] = $bDiscussionClosed;
-        $this->container['bDiscussionClosed'] = (is_null($bDiscussionClosed) ? null : (bool) $bDiscussionClosed);
-
-        return $this;
-    }
-
-    /**
-     * Gets dtDiscussionLastread
-     *
-     * @return string|null
-     */
-    public function getDtDiscussionLastread()
-    {
-	//return $this->container['dtDiscussionLastread'];
-        return is_null($this->container['dtDiscussionLastread']) ? null : trim($this->container['dtDiscussionLastread']);
-    }
-
-    /**
-     * Sets dtDiscussionLastread
-     *
-     * @param string|null $dtDiscussionLastread The date the Discussion was last read
-     *
-     * @return self
-     */
-    public function setDtDiscussionLastread($dtDiscussionLastread)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($dtDiscussionLastread)) {
-            //throw new \InvalidArgumentException('non-nullable dtDiscussionLastread cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['dtDiscussionLastread'] = $dtDiscussionLastread;
-        $this->container['dtDiscussionLastread'] = (is_null($dtDiscussionLastread) ? null : trim((string) $dtDiscussionLastread));
-
-        return $this;
-    }
-
-    /**
-     * Gets iDiscussionmessageCount
-     *
-     * @return int
-     */
-    public function getIDiscussionmessageCount()
-    {
-	//return $this->container['iDiscussionmessageCount'];
-        return $this->container['iDiscussionmessageCount'];
-    }
-
-    /**
-     * Sets iDiscussionmessageCount
-     *
-     * @param int $iDiscussionmessageCount The count of Attachment.
-     *
-     * @return self
-     */
-    public function setIDiscussionmessageCount($iDiscussionmessageCount)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iDiscussionmessageCount)) {
-            //throw new \InvalidArgumentException('non-nullable iDiscussionmessageCount cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iDiscussionmessageCount'] = $iDiscussionmessageCount;
-        $this->container['iDiscussionmessageCount'] = (is_null($iDiscussionmessageCount) ? null : (int) $iDiscussionmessageCount);
-
-        return $this;
-    }
-
-    /**
-     * Gets iDiscussionmessageCountunread
-     *
-     * @return int
-     */
-    public function getIDiscussionmessageCountunread()
-    {
-	//return $this->container['iDiscussionmessageCountunread'];
-        return $this->container['iDiscussionmessageCountunread'];
-    }
-
-    /**
-     * Sets iDiscussionmessageCountunread
-     *
-     * @param int $iDiscussionmessageCountunread The count of Attachment.
-     *
-     * @return self
-     */
-    public function setIDiscussionmessageCountunread($iDiscussionmessageCountunread)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iDiscussionmessageCountunread)) {
-            //throw new \InvalidArgumentException('non-nullable iDiscussionmessageCountunread cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['iDiscussionmessageCountunread'] = $iDiscussionmessageCountunread;
-        $this->container['iDiscussionmessageCountunread'] = (is_null($iDiscussionmessageCountunread) ? null : (int) $iDiscussionmessageCountunread);
-
-        return $this;
-    }
-
-    /**
-     * Gets objDiscussionconfiguration
-     *
-     * @return \eZmaxAPI\Model\CustomDiscussionconfigurationResponse|null
-     */
-    public function getObjDiscussionconfiguration()
-    {
-	//return $this->container['objDiscussionconfiguration'];
-        return $this->container['objDiscussionconfiguration'];
-    }
-
-    /**
-     * Sets objDiscussionconfiguration
-     *
-     * @param \eZmaxAPI\Model\CustomDiscussionconfigurationResponse|null $objDiscussionconfiguration objDiscussionconfiguration
-     *
-     * @return self
-     */
-    public function setObjDiscussionconfiguration($objDiscussionconfiguration)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objDiscussionconfiguration)) {
-            //throw new \InvalidArgumentException('non-nullable objDiscussionconfiguration cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objDiscussionconfiguration'] = $objDiscussionconfiguration;
-        $this->container['objDiscussionconfiguration'] = $objDiscussionconfiguration;
-
-        return $this;
-    }
 
     /**
      * Gets aObjDiscussionmembership

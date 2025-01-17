@@ -28,8 +28,6 @@
  */
 
 namespace eZmaxAPI\Model;
-
-use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
@@ -42,7 +40,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSerializable
+class WebhookResponseCompound extends WebhookResponse
 {
     public const DISCRIMINATOR = null;
 
@@ -59,23 +57,6 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pkiWebhookID' => 'int',
-        'fkiAuthenticationexternalID' => 'int',
-        'sWebhookDescription' => 'string',
-        'fkiEzsignfoldertypeID' => 'int',
-        'sEzsignfoldertypeNameX' => 'string',
-        'eWebhookModule' => '\eZmaxAPI\Model\FieldEWebhookModule',
-        'eWebhookEzsignevent' => '\eZmaxAPI\Model\FieldEWebhookEzsignevent',
-        'eWebhookManagementevent' => '\eZmaxAPI\Model\FieldEWebhookManagementevent',
-        'sWebhookUrl' => 'string',
-        'sWebhookEmailfailed' => 'string',
-        'sWebhookApikey' => 'string',
-        'sWebhookSecret' => 'string',
-        'bWebhookIsactive' => 'bool',
-        'bWebhookIssigned' => 'bool',
-        'bWebhookSkipsslvalidation' => 'bool',
-        'sAuthenticationexternalDescription' => 'string',
-        'objAudit' => '\eZmaxAPI\Model\CommonAudit',
         'sWebhookEvent' => 'string',
         'aObjWebhookheader' => '\eZmaxAPI\Model\WebhookheaderResponseCompound[]'
     ];
@@ -88,23 +69,6 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pkiWebhookID' => null,
-        'fkiAuthenticationexternalID' => null,
-        'sWebhookDescription' => null,
-        'fkiEzsignfoldertypeID' => null,
-        'sEzsignfoldertypeNameX' => null,
-        'eWebhookModule' => null,
-        'eWebhookEzsignevent' => null,
-        'eWebhookManagementevent' => null,
-        'sWebhookUrl' => null,
-        'sWebhookEmailfailed' => null,
-        'sWebhookApikey' => null,
-        'sWebhookSecret' => null,
-        'bWebhookIsactive' => null,
-        'bWebhookIssigned' => null,
-        'bWebhookSkipsslvalidation' => null,
-        'sAuthenticationexternalDescription' => null,
-        'objAudit' => null,
         'sWebhookEvent' => null,
         'aObjWebhookheader' => null
     ];
@@ -115,24 +79,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pkiWebhookID' => false,
-		'fkiAuthenticationexternalID' => false,
-		'sWebhookDescription' => false,
-		'fkiEzsignfoldertypeID' => false,
-		'sEzsignfoldertypeNameX' => false,
-		'eWebhookModule' => false,
-		'eWebhookEzsignevent' => false,
-		'eWebhookManagementevent' => false,
-		'sWebhookUrl' => false,
-		'sWebhookEmailfailed' => false,
-		'sWebhookApikey' => false,
-		'sWebhookSecret' => false,
-		'bWebhookIsactive' => false,
-		'bWebhookIssigned' => false,
-		'bWebhookSkipsslvalidation' => false,
-		'sAuthenticationexternalDescription' => false,
-		'objAudit' => false,
-		'sWebhookEvent' => false,
+        'sWebhookEvent' => false,
 		'aObjWebhookheader' => false
     ];
 
@@ -150,7 +97,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function openAPITypes()
     {
-        return self::$openAPITypes;
+        return self::$openAPITypes + parent::openAPITypes();
     }
 
     /**
@@ -160,7 +107,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function openAPIFormats()
     {
-        return self::$openAPIFormats;
+        return self::$openAPIFormats + parent::openAPIFormats();
     }
 
     /**
@@ -170,7 +117,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static function openAPINullables(): array
     {
-        return self::$openAPINullables;
+        return self::$openAPINullables + parent::openAPINullables();
     }
 
     /**
@@ -222,23 +169,6 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'pkiWebhookID' => 'pkiWebhookID',
-        'fkiAuthenticationexternalID' => 'fkiAuthenticationexternalID',
-        'sWebhookDescription' => 'sWebhookDescription',
-        'fkiEzsignfoldertypeID' => 'fkiEzsignfoldertypeID',
-        'sEzsignfoldertypeNameX' => 'sEzsignfoldertypeNameX',
-        'eWebhookModule' => 'eWebhookModule',
-        'eWebhookEzsignevent' => 'eWebhookEzsignevent',
-        'eWebhookManagementevent' => 'eWebhookManagementevent',
-        'sWebhookUrl' => 'sWebhookUrl',
-        'sWebhookEmailfailed' => 'sWebhookEmailfailed',
-        'sWebhookApikey' => 'sWebhookApikey',
-        'sWebhookSecret' => 'sWebhookSecret',
-        'bWebhookIsactive' => 'bWebhookIsactive',
-        'bWebhookIssigned' => 'bWebhookIssigned',
-        'bWebhookSkipsslvalidation' => 'bWebhookSkipsslvalidation',
-        'sAuthenticationexternalDescription' => 'sAuthenticationexternalDescription',
-        'objAudit' => 'objAudit',
         'sWebhookEvent' => 'sWebhookEvent',
         'aObjWebhookheader' => 'a_objWebhookheader'
     ];
@@ -249,23 +179,6 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'pkiWebhookID' => 'setPkiWebhookID',
-        'fkiAuthenticationexternalID' => 'setFkiAuthenticationexternalID',
-        'sWebhookDescription' => 'setSWebhookDescription',
-        'fkiEzsignfoldertypeID' => 'setFkiEzsignfoldertypeID',
-        'sEzsignfoldertypeNameX' => 'setSEzsignfoldertypeNameX',
-        'eWebhookModule' => 'setEWebhookModule',
-        'eWebhookEzsignevent' => 'setEWebhookEzsignevent',
-        'eWebhookManagementevent' => 'setEWebhookManagementevent',
-        'sWebhookUrl' => 'setSWebhookUrl',
-        'sWebhookEmailfailed' => 'setSWebhookEmailfailed',
-        'sWebhookApikey' => 'setSWebhookApikey',
-        'sWebhookSecret' => 'setSWebhookSecret',
-        'bWebhookIsactive' => 'setBWebhookIsactive',
-        'bWebhookIssigned' => 'setBWebhookIssigned',
-        'bWebhookSkipsslvalidation' => 'setBWebhookSkipsslvalidation',
-        'sAuthenticationexternalDescription' => 'setSAuthenticationexternalDescription',
-        'objAudit' => 'setObjAudit',
         'sWebhookEvent' => 'setSWebhookEvent',
         'aObjWebhookheader' => 'setAObjWebhookheader'
     ];
@@ -276,23 +189,6 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'pkiWebhookID' => 'getPkiWebhookID',
-        'fkiAuthenticationexternalID' => 'getFkiAuthenticationexternalID',
-        'sWebhookDescription' => 'getSWebhookDescription',
-        'fkiEzsignfoldertypeID' => 'getFkiEzsignfoldertypeID',
-        'sEzsignfoldertypeNameX' => 'getSEzsignfoldertypeNameX',
-        'eWebhookModule' => 'getEWebhookModule',
-        'eWebhookEzsignevent' => 'getEWebhookEzsignevent',
-        'eWebhookManagementevent' => 'getEWebhookManagementevent',
-        'sWebhookUrl' => 'getSWebhookUrl',
-        'sWebhookEmailfailed' => 'getSWebhookEmailfailed',
-        'sWebhookApikey' => 'getSWebhookApikey',
-        'sWebhookSecret' => 'getSWebhookSecret',
-        'bWebhookIsactive' => 'getBWebhookIsactive',
-        'bWebhookIssigned' => 'getBWebhookIssigned',
-        'bWebhookSkipsslvalidation' => 'getBWebhookSkipsslvalidation',
-        'sAuthenticationexternalDescription' => 'getSAuthenticationexternalDescription',
-        'objAudit' => 'getObjAudit',
         'sWebhookEvent' => 'getSWebhookEvent',
         'aObjWebhookheader' => 'getAObjWebhookheader'
     ];
@@ -305,7 +201,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -315,7 +211,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -325,7 +221,7 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -339,12 +235,6 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -354,23 +244,8 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('pkiWebhookID', $data ?? [], null);
-        $this->setIfExists('fkiAuthenticationexternalID', $data ?? [], null);
-        $this->setIfExists('sWebhookDescription', $data ?? [], null);
-        $this->setIfExists('fkiEzsignfoldertypeID', $data ?? [], null);
-        $this->setIfExists('sEzsignfoldertypeNameX', $data ?? [], null);
-        $this->setIfExists('eWebhookModule', $data ?? [], null);
-        $this->setIfExists('eWebhookEzsignevent', $data ?? [], null);
-        $this->setIfExists('eWebhookManagementevent', $data ?? [], null);
-        $this->setIfExists('sWebhookUrl', $data ?? [], null);
-        $this->setIfExists('sWebhookEmailfailed', $data ?? [], null);
-        $this->setIfExists('sWebhookApikey', $data ?? [], null);
-        $this->setIfExists('sWebhookSecret', $data ?? [], null);
-        $this->setIfExists('bWebhookIsactive', $data ?? [], null);
-        $this->setIfExists('bWebhookIssigned', $data ?? [], null);
-        $this->setIfExists('bWebhookSkipsslvalidation', $data ?? [], null);
-        $this->setIfExists('sAuthenticationexternalDescription', $data ?? [], null);
-        $this->setIfExists('objAudit', $data ?? [], null);
+        parent::__construct($data);
+
         $this->setIfExists('sWebhookEvent', $data ?? [], null);
         $this->setIfExists('aObjWebhookheader', $data ?? [], null);
     }
@@ -400,61 +275,8 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['pkiWebhookID'] === null) {
-            $invalidProperties[] = "'pkiWebhookID' can't be null";
-        }
-        if (!is_null($this->container['fkiAuthenticationexternalID']) && ($this->container['fkiAuthenticationexternalID'] > 255)) {
-            $invalidProperties[] = "invalid value for 'fkiAuthenticationexternalID', must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['fkiAuthenticationexternalID']) && ($this->container['fkiAuthenticationexternalID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiAuthenticationexternalID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['sWebhookDescription'] === null) {
-            $invalidProperties[] = "'sWebhookDescription' can't be null";
-        }
-        if (!is_null($this->container['fkiEzsignfoldertypeID']) && ($this->container['fkiEzsignfoldertypeID'] > 65535)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsignfoldertypeID', must be smaller than or equal to 65535.";
-        }
-
-        if (!is_null($this->container['fkiEzsignfoldertypeID']) && ($this->container['fkiEzsignfoldertypeID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiEzsignfoldertypeID', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['eWebhookModule'] === null) {
-            $invalidProperties[] = "'eWebhookModule' can't be null";
-        }
-        if ($this->container['sWebhookUrl'] === null) {
-            $invalidProperties[] = "'sWebhookUrl' can't be null";
-        }
-	//if (!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sWebhookUrl'])) {
-        if (!is_null($this->container['sWebhookUrl']) && !preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", $this->container['sWebhookUrl'])) {
-            $invalidProperties[] = "invalid value for 'sWebhookUrl', must be conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.";
-        }
-
-        if ($this->container['sWebhookEmailfailed'] === null) {
-            $invalidProperties[] = "'sWebhookEmailfailed' can't be null";
-        }
-        if ($this->container['bWebhookIsactive'] === null) {
-            $invalidProperties[] = "'bWebhookIsactive' can't be null";
-        }
-        if ($this->container['bWebhookIssigned'] === null) {
-            $invalidProperties[] = "'bWebhookIssigned' can't be null";
-        }
-        if ($this->container['bWebhookSkipsslvalidation'] === null) {
-            $invalidProperties[] = "'bWebhookSkipsslvalidation' can't be null";
-        }
-	//if (!is_null($this->container['sAuthenticationexternalDescription']) && !preg_match("/^.{0,50}$/", $this->container['sAuthenticationexternalDescription'])) {
-        if (!is_null($this->container['sAuthenticationexternalDescription']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sAuthenticationexternalDescription'])) {
-            $invalidProperties[] = "invalid value for 'sAuthenticationexternalDescription', must be conform to the pattern /^.{0,50}$/.";
-        }
-
-        if ($this->container['objAudit'] === null) {
-            $invalidProperties[] = "'objAudit' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -469,588 +291,6 @@ class WebhookResponseCompound implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pkiWebhookID
-     *
-     * @return int
-     */
-    public function getPkiWebhookID()
-    {
-	//return $this->container['pkiWebhookID'];
-        return $this->container['pkiWebhookID'];
-    }
-
-    /**
-     * Sets pkiWebhookID
-     *
-     * @param int $pkiWebhookID The unique ID of the Webhook
-     *
-     * @return self
-     */
-    public function setPkiWebhookID($pkiWebhookID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($pkiWebhookID)) {
-            //throw new \InvalidArgumentException('non-nullable pkiWebhookID cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['pkiWebhookID'] = $pkiWebhookID;
-        $this->container['pkiWebhookID'] = (is_null($pkiWebhookID) ? null : (int) $pkiWebhookID);
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiAuthenticationexternalID
-     *
-     * @return int|null
-     */
-    public function getFkiAuthenticationexternalID()
-    {
-	//return $this->container['fkiAuthenticationexternalID'];
-        return $this->container['fkiAuthenticationexternalID'];
-    }
-
-    /**
-     * Sets fkiAuthenticationexternalID
-     *
-     * @param int|null $fkiAuthenticationexternalID The unique ID of the Authenticationexternal
-     *
-     * @return self
-     */
-    public function setFkiAuthenticationexternalID($fkiAuthenticationexternalID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiAuthenticationexternalID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiAuthenticationexternalID cannot be null');
-        //}
-
-	//if (($fkiAuthenticationexternalID > 255)) {
-        if (!is_null($fkiAuthenticationexternalID) && ($fkiAuthenticationexternalID > 255)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiAuthenticationexternalID when calling WebhookResponseCompound., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiAuthenticationexternalID)?'null':'"'.$fkiAuthenticationexternalID.'"').' for fkiAuthenticationexternalID when calling WebhookResponseCompound., must be smaller than or equal to 255.');
-        }
-	//if (($fkiAuthenticationexternalID < 0)) {
-        if (!is_null($fkiAuthenticationexternalID) && ($fkiAuthenticationexternalID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiAuthenticationexternalID when calling WebhookResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiAuthenticationexternalID)?'null':'"'.$fkiAuthenticationexternalID.'"').' for fkiAuthenticationexternalID when calling WebhookResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiAuthenticationexternalID'] = $fkiAuthenticationexternalID;
-        $this->container['fkiAuthenticationexternalID'] = (is_null($fkiAuthenticationexternalID) ? null : (int) $fkiAuthenticationexternalID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sWebhookDescription
-     *
-     * @return string
-     */
-    public function getSWebhookDescription()
-    {
-	//return $this->container['sWebhookDescription'];
-        return is_null($this->container['sWebhookDescription']) ? null : trim($this->container['sWebhookDescription']);
-    }
-
-    /**
-     * Sets sWebhookDescription
-     *
-     * @param string $sWebhookDescription The description of the Webhook
-     *
-     * @return self
-     */
-    public function setSWebhookDescription($sWebhookDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sWebhookDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sWebhookDescription cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sWebhookDescription'] = $sWebhookDescription;
-        $this->container['sWebhookDescription'] = (is_null($sWebhookDescription) ? null : trim((string) $sWebhookDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets fkiEzsignfoldertypeID
-     *
-     * @return int|null
-     */
-    public function getFkiEzsignfoldertypeID()
-    {
-	//return $this->container['fkiEzsignfoldertypeID'];
-        return $this->container['fkiEzsignfoldertypeID'];
-    }
-
-    /**
-     * Sets fkiEzsignfoldertypeID
-     *
-     * @param int|null $fkiEzsignfoldertypeID The unique ID of the Ezsignfoldertype.
-     *
-     * @return self
-     */
-    public function setFkiEzsignfoldertypeID($fkiEzsignfoldertypeID)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiEzsignfoldertypeID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiEzsignfoldertypeID cannot be null');
-        //}
-
-	//if (($fkiEzsignfoldertypeID > 65535)) {
-        if (!is_null($fkiEzsignfoldertypeID) && ($fkiEzsignfoldertypeID > 65535)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling WebhookResponseCompound., must be smaller than or equal to 65535.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignfoldertypeID)?'null':'"'.$fkiEzsignfoldertypeID.'"').' for fkiEzsignfoldertypeID when calling WebhookResponseCompound., must be smaller than or equal to 65535.');
-        }
-	//if (($fkiEzsignfoldertypeID < 0)) {
-        if (!is_null($fkiEzsignfoldertypeID) && ($fkiEzsignfoldertypeID < 0)) {
-	    //throw new \InvalidArgumentException('invalid value for $fkiEzsignfoldertypeID when calling WebhookResponseCompound., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignfoldertypeID)?'null':'"'.$fkiEzsignfoldertypeID.'"').' for fkiEzsignfoldertypeID when calling WebhookResponseCompound., must be bigger than or equal to 0.');
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['fkiEzsignfoldertypeID'] = $fkiEzsignfoldertypeID;
-        $this->container['fkiEzsignfoldertypeID'] = (is_null($fkiEzsignfoldertypeID) ? null : (int) $fkiEzsignfoldertypeID);
-
-        return $this;
-    }
-
-    /**
-     * Gets sEzsignfoldertypeNameX
-     *
-     * @return string|null
-     */
-    public function getSEzsignfoldertypeNameX()
-    {
-	//return $this->container['sEzsignfoldertypeNameX'];
-        return is_null($this->container['sEzsignfoldertypeNameX']) ? null : trim($this->container['sEzsignfoldertypeNameX']);
-    }
-
-    /**
-     * Sets sEzsignfoldertypeNameX
-     *
-     * @param string|null $sEzsignfoldertypeNameX The name of the Ezsignfoldertype in the language of the requester
-     *
-     * @return self
-     */
-    public function setSEzsignfoldertypeNameX($sEzsignfoldertypeNameX)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sEzsignfoldertypeNameX)) {
-            //throw new \InvalidArgumentException('non-nullable sEzsignfoldertypeNameX cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sEzsignfoldertypeNameX'] = $sEzsignfoldertypeNameX;
-        $this->container['sEzsignfoldertypeNameX'] = (is_null($sEzsignfoldertypeNameX) ? null : trim((string) $sEzsignfoldertypeNameX));
-
-        return $this;
-    }
-
-    /**
-     * Gets eWebhookModule
-     *
-     * @return \eZmaxAPI\Model\FieldEWebhookModule
-     */
-    public function getEWebhookModule()
-    {
-	//return $this->container['eWebhookModule'];
-        return $this->container['eWebhookModule'];
-    }
-
-    /**
-     * Sets eWebhookModule
-     *
-     * @param \eZmaxAPI\Model\FieldEWebhookModule $eWebhookModule eWebhookModule
-     *
-     * @return self
-     */
-    public function setEWebhookModule($eWebhookModule)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eWebhookModule)) {
-            //throw new \InvalidArgumentException('non-nullable eWebhookModule cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eWebhookModule'] = $eWebhookModule;
-        $this->container['eWebhookModule'] = $eWebhookModule;
-
-        return $this;
-    }
-
-    /**
-     * Gets eWebhookEzsignevent
-     *
-     * @return \eZmaxAPI\Model\FieldEWebhookEzsignevent|null
-     */
-    public function getEWebhookEzsignevent()
-    {
-	//return $this->container['eWebhookEzsignevent'];
-        return $this->container['eWebhookEzsignevent'];
-    }
-
-    /**
-     * Sets eWebhookEzsignevent
-     *
-     * @param \eZmaxAPI\Model\FieldEWebhookEzsignevent|null $eWebhookEzsignevent eWebhookEzsignevent
-     *
-     * @return self
-     */
-    public function setEWebhookEzsignevent($eWebhookEzsignevent)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eWebhookEzsignevent)) {
-            //throw new \InvalidArgumentException('non-nullable eWebhookEzsignevent cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eWebhookEzsignevent'] = $eWebhookEzsignevent;
-        $this->container['eWebhookEzsignevent'] = $eWebhookEzsignevent;
-
-        return $this;
-    }
-
-    /**
-     * Gets eWebhookManagementevent
-     *
-     * @return \eZmaxAPI\Model\FieldEWebhookManagementevent|null
-     */
-    public function getEWebhookManagementevent()
-    {
-	//return $this->container['eWebhookManagementevent'];
-        return $this->container['eWebhookManagementevent'];
-    }
-
-    /**
-     * Sets eWebhookManagementevent
-     *
-     * @param \eZmaxAPI\Model\FieldEWebhookManagementevent|null $eWebhookManagementevent eWebhookManagementevent
-     *
-     * @return self
-     */
-    public function setEWebhookManagementevent($eWebhookManagementevent)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($eWebhookManagementevent)) {
-            //throw new \InvalidArgumentException('non-nullable eWebhookManagementevent cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['eWebhookManagementevent'] = $eWebhookManagementevent;
-        $this->container['eWebhookManagementevent'] = $eWebhookManagementevent;
-
-        return $this;
-    }
-
-    /**
-     * Gets sWebhookUrl
-     *
-     * @return string
-     */
-    public function getSWebhookUrl()
-    {
-	//return $this->container['sWebhookUrl'];
-        return is_null($this->container['sWebhookUrl']) ? null : trim($this->container['sWebhookUrl']);
-    }
-
-    /**
-     * Sets sWebhookUrl
-     *
-     * @param string $sWebhookUrl The URL of the Webhook callback
-     *
-     * @return self
-     */
-    public function setSWebhookUrl($sWebhookUrl)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sWebhookUrl)) {
-            //throw new \InvalidArgumentException('non-nullable sWebhookUrl cannot be null');
-        //}
-
-	//if ((!preg_match("/^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sWebhookUrl)))) {
-        if (!is_null($sWebhookUrl) && (!preg_match("/(*UTF8)^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/", ObjectSerializer::toString($sWebhookUrl)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sWebhookUrl when calling WebhookResponseCompound., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sWebhookUrl)?'null':'"'.$sWebhookUrl.'"')." for sWebhookUrl when calling WebhookResponseCompound., must conform to the pattern /^(https|http):\/\/[^\\s\/$.?#].[^\\s]*$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sWebhookUrl'] = $sWebhookUrl;
-        $this->container['sWebhookUrl'] = (is_null($sWebhookUrl) ? null : trim((string) $sWebhookUrl));
-
-        return $this;
-    }
-
-    /**
-     * Gets sWebhookEmailfailed
-     *
-     * @return string
-     */
-    public function getSWebhookEmailfailed()
-    {
-	//return $this->container['sWebhookEmailfailed'];
-        return is_null($this->container['sWebhookEmailfailed']) ? null : trim($this->container['sWebhookEmailfailed']);
-    }
-
-    /**
-     * Sets sWebhookEmailfailed
-     *
-     * @param string $sWebhookEmailfailed The email that will receive the Webhook in case all attempts fail
-     *
-     * @return self
-     */
-    public function setSWebhookEmailfailed($sWebhookEmailfailed)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sWebhookEmailfailed)) {
-            //throw new \InvalidArgumentException('non-nullable sWebhookEmailfailed cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sWebhookEmailfailed'] = $sWebhookEmailfailed;
-        $this->container['sWebhookEmailfailed'] = (is_null($sWebhookEmailfailed) ? null : trim((string) $sWebhookEmailfailed));
-
-        return $this;
-    }
-
-    /**
-     * Gets sWebhookApikey
-     *
-     * @return string|null
-     */
-    public function getSWebhookApikey()
-    {
-	//return $this->container['sWebhookApikey'];
-        return is_null($this->container['sWebhookApikey']) ? null : trim($this->container['sWebhookApikey']);
-    }
-
-    /**
-     * Sets sWebhookApikey
-     *
-     * @param string|null $sWebhookApikey The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
-     *
-     * @return self
-     */
-    public function setSWebhookApikey($sWebhookApikey)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sWebhookApikey)) {
-            //throw new \InvalidArgumentException('non-nullable sWebhookApikey cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sWebhookApikey'] = $sWebhookApikey;
-        $this->container['sWebhookApikey'] = (is_null($sWebhookApikey) ? null : trim((string) $sWebhookApikey));
-
-        return $this;
-    }
-
-    /**
-     * Gets sWebhookSecret
-     *
-     * @return string|null
-     */
-    public function getSWebhookSecret()
-    {
-	//return $this->container['sWebhookSecret'];
-        return is_null($this->container['sWebhookSecret']) ? null : trim($this->container['sWebhookSecret']);
-    }
-
-    /**
-     * Sets sWebhookSecret
-     *
-     * @param string|null $sWebhookSecret The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
-     *
-     * @return self
-     */
-    public function setSWebhookSecret($sWebhookSecret)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sWebhookSecret)) {
-            //throw new \InvalidArgumentException('non-nullable sWebhookSecret cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sWebhookSecret'] = $sWebhookSecret;
-        $this->container['sWebhookSecret'] = (is_null($sWebhookSecret) ? null : trim((string) $sWebhookSecret));
-
-        return $this;
-    }
-
-    /**
-     * Gets bWebhookIsactive
-     *
-     * @return bool
-     */
-    public function getBWebhookIsactive()
-    {
-	//return $this->container['bWebhookIsactive'];
-        return $this->container['bWebhookIsactive'];
-    }
-
-    /**
-     * Sets bWebhookIsactive
-     *
-     * @param bool $bWebhookIsactive Whether the Webhook is active or not
-     *
-     * @return self
-     */
-    public function setBWebhookIsactive($bWebhookIsactive)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bWebhookIsactive)) {
-            //throw new \InvalidArgumentException('non-nullable bWebhookIsactive cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bWebhookIsactive'] = $bWebhookIsactive;
-        $this->container['bWebhookIsactive'] = (is_null($bWebhookIsactive) ? null : (bool) $bWebhookIsactive);
-
-        return $this;
-    }
-
-    /**
-     * Gets bWebhookIssigned
-     *
-     * @return bool
-     */
-    public function getBWebhookIssigned()
-    {
-	//return $this->container['bWebhookIssigned'];
-        return $this->container['bWebhookIssigned'];
-    }
-
-    /**
-     * Sets bWebhookIssigned
-     *
-     * @param bool $bWebhookIssigned Whether the requests will be signed or not
-     *
-     * @return self
-     */
-    public function setBWebhookIssigned($bWebhookIssigned)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bWebhookIssigned)) {
-            //throw new \InvalidArgumentException('non-nullable bWebhookIssigned cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bWebhookIssigned'] = $bWebhookIssigned;
-        $this->container['bWebhookIssigned'] = (is_null($bWebhookIssigned) ? null : (bool) $bWebhookIssigned);
-
-        return $this;
-    }
-
-    /**
-     * Gets bWebhookSkipsslvalidation
-     *
-     * @return bool
-     */
-    public function getBWebhookSkipsslvalidation()
-    {
-	//return $this->container['bWebhookSkipsslvalidation'];
-        return $this->container['bWebhookSkipsslvalidation'];
-    }
-
-    /**
-     * Sets bWebhookSkipsslvalidation
-     *
-     * @param bool $bWebhookSkipsslvalidation Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
-     *
-     * @return self
-     */
-    public function setBWebhookSkipsslvalidation($bWebhookSkipsslvalidation)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($bWebhookSkipsslvalidation)) {
-            //throw new \InvalidArgumentException('non-nullable bWebhookSkipsslvalidation cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['bWebhookSkipsslvalidation'] = $bWebhookSkipsslvalidation;
-        $this->container['bWebhookSkipsslvalidation'] = (is_null($bWebhookSkipsslvalidation) ? null : (bool) $bWebhookSkipsslvalidation);
-
-        return $this;
-    }
-
-    /**
-     * Gets sAuthenticationexternalDescription
-     *
-     * @return string|null
-     */
-    public function getSAuthenticationexternalDescription()
-    {
-	//return $this->container['sAuthenticationexternalDescription'];
-        return is_null($this->container['sAuthenticationexternalDescription']) ? null : trim($this->container['sAuthenticationexternalDescription']);
-    }
-
-    /**
-     * Sets sAuthenticationexternalDescription
-     *
-     * @param string|null $sAuthenticationexternalDescription The description of the Authenticationexternal
-     *
-     * @return self
-     */
-    public function setSAuthenticationexternalDescription($sAuthenticationexternalDescription)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($sAuthenticationexternalDescription)) {
-            //throw new \InvalidArgumentException('non-nullable sAuthenticationexternalDescription cannot be null');
-        //}
-
-	//if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sAuthenticationexternalDescription)))) {
-        if (!is_null($sAuthenticationexternalDescription) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sAuthenticationexternalDescription)))) {
-	    //throw new \InvalidArgumentException("invalid value for \$sAuthenticationexternalDescription when calling WebhookResponseCompound., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sAuthenticationexternalDescription)?'null':'"'.$sAuthenticationexternalDescription.'"')." for sAuthenticationexternalDescription when calling WebhookResponseCompound., must conform to the pattern /^.{0,50}$/.");
-        }
-
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['sAuthenticationexternalDescription'] = $sAuthenticationexternalDescription;
-        $this->container['sAuthenticationexternalDescription'] = (is_null($sAuthenticationexternalDescription) ? null : trim((string) $sAuthenticationexternalDescription));
-
-        return $this;
-    }
-
-    /**
-     * Gets objAudit
-     *
-     * @return \eZmaxAPI\Model\CommonAudit
-     */
-    public function getObjAudit()
-    {
-	//return $this->container['objAudit'];
-        return $this->container['objAudit'];
-    }
-
-    /**
-     * Sets objAudit
-     *
-     * @param \eZmaxAPI\Model\CommonAudit $objAudit objAudit
-     *
-     * @return self
-     */
-    public function setObjAudit($objAudit)
-    {
-	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($objAudit)) {
-            //throw new \InvalidArgumentException('non-nullable objAudit cannot be null');
-        //}
-        
-	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-	//$this->container['objAudit'] = $objAudit;
-        $this->container['objAudit'] = $objAudit;
-
-        return $this;
-    }
 
     /**
      * Gets sWebhookEvent
