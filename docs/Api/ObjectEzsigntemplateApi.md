@@ -142,7 +142,7 @@ try {
 ## `ezsigntemplateDeleteObjectV1()`
 
 ```php
-ezsigntemplateDeleteObjectV1($pkiEzsigntemplateID): \eZmaxAPI\Model\EzsigntemplateDeleteObjectV1Response
+ezsigntemplateDeleteObjectV1($pkiEzsigntemplateID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Ezsigntemplate
@@ -186,7 +186,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigntemplateDeleteObjectV1Response**](../Model/EzsigntemplateDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ try {
 ## `ezsigntemplateEditObjectV3()`
 
 ```php
-ezsigntemplateEditObjectV3($pkiEzsigntemplateID, $ezsigntemplateEditObjectV3Request): \eZmaxAPI\Model\EzsigntemplateEditObjectV3Response
+ezsigntemplateEditObjectV3($pkiEzsigntemplateID, $ezsigntemplateEditObjectV3Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Ezsigntemplate
@@ -250,7 +250,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigntemplateEditObjectV3Response**](../Model/EzsigntemplateEditObjectV3Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

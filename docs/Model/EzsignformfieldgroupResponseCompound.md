@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **tEzsignformfieldgroupTooltip** | **string** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional]
 **eEzsignformfieldgroupTooltipposition** | [**\eZmaxAPI\Model\FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional]
 **aObjEzsignformfield** | [**\eZmaxAPI\Model\EzsignformfieldResponseCompound[]**](EzsignformfieldResponseCompound.md) |  |
-**aObjDropdownElement** | [**\eZmaxAPI\Model\CustomDropdownElementResponseCompound[]**](CustomDropdownElementResponseCompound.md) |  | [optional]
-**aObjEzsignformfieldgroupsigner** | [**\eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[]**](EzsignformfieldgroupsignerResponseCompound.md) |  |
+**aObjDropdownElement** | [**\eZmaxAPI\Model\CustomDropdownElementResponseCompound[]**](CustomDropdownElementResponse.md) |  | [optional]
+**aObjEzsignformfieldgroupsigner** | [**\eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[]**](EzsignformfieldgroupsignerResponse.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

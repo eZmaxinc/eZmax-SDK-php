@@ -76,7 +76,7 @@ try {
 ## `discussionDeleteObjectV1()`
 
 ```php
-discussionDeleteObjectV1($pkiDiscussionID): \eZmaxAPI\Model\DiscussionDeleteObjectV1Response
+discussionDeleteObjectV1($pkiDiscussionID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Discussion
@@ -120,7 +120,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\DiscussionDeleteObjectV1Response**](../Model/DiscussionDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ try {
 ## `discussionPatchObjectV1()`
 
 ```php
-discussionPatchObjectV1($pkiDiscussionID, $discussionPatchObjectV1Request): \eZmaxAPI\Model\DiscussionPatchObjectV1Response
+discussionPatchObjectV1($pkiDiscussionID, $discussionPatchObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Patch an existing Discussion
@@ -246,7 +246,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\DiscussionPatchObjectV1Response**](../Model/DiscussionPatchObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ try {
 ## `discussionUpdateDiscussionreadstatusV1()`
 
 ```php
-discussionUpdateDiscussionreadstatusV1($pkiDiscussionID, $discussionUpdateDiscussionreadstatusV1Request): \eZmaxAPI\Model\DiscussionUpdateDiscussionreadstatusV1Response
+discussionUpdateDiscussionreadstatusV1($pkiDiscussionID, $discussionUpdateDiscussionreadstatusV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Update the read status of the discussion
@@ -308,7 +308,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\DiscussionUpdateDiscussionreadstatusV1Response**](../Model/DiscussionUpdateDiscussionreadstatusV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

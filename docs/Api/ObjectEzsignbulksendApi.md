@@ -144,7 +144,7 @@ try {
 ## `ezsignbulksendDeleteObjectV1()`
 
 ```php
-ezsignbulksendDeleteObjectV1($pkiEzsignbulksendID): \eZmaxAPI\Model\EzsignbulksendDeleteObjectV1Response
+ezsignbulksendDeleteObjectV1($pkiEzsignbulksendID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Ezsignbulksend
@@ -188,7 +188,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignbulksendDeleteObjectV1Response**](../Model/EzsignbulksendDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ try {
 ## `ezsignbulksendEditObjectV1()`
 
 ```php
-ezsignbulksendEditObjectV1($pkiEzsignbulksendID, $ezsignbulksendEditObjectV1Request): \eZmaxAPI\Model\EzsignbulksendEditObjectV1Response
+ezsignbulksendEditObjectV1($pkiEzsignbulksendID, $ezsignbulksendEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Ezsignbulksend
@@ -252,7 +252,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignbulksendEditObjectV1Response**](../Model/EzsignbulksendEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -652,7 +652,7 @@ try {
 ## `ezsignbulksendReorderV1()`
 
 ```php
-ezsignbulksendReorderV1($pkiEzsignbulksendID, $ezsignbulksendReorderV1Request): \eZmaxAPI\Model\EzsignbulksendReorderV1Response
+ezsignbulksendReorderV1($pkiEzsignbulksendID, $ezsignbulksendReorderV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend
@@ -696,7 +696,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignbulksendReorderV1Response**](../Model/EzsignbulksendReorderV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

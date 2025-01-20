@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **iEzsigntemplatesignaturePositioningoffsety** | **int** | The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates** | [optional]
 **eEzsigntemplatesignaturePositioningoccurence** | [**\eZmaxAPI\Model\FieldEEzsigntemplatesignaturePositioningoccurence**](FieldEEzsigntemplatesignaturePositioningoccurence.md) |  | [optional]
 **bEzsigntemplatesignatureCustomdate** | **bool** | Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**) | [optional]
-**aObjEzsigntemplatesignaturecustomdate** | [**\eZmaxAPI\Model\EzsigntemplatesignaturecustomdateResponseCompoundV2[]**](EzsigntemplatesignaturecustomdateResponseCompoundV2.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsigntemplatesignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional]
-**aObjEzsigntemplateelementdependency** | [**\eZmaxAPI\Model\EzsigntemplateelementdependencyResponseCompound[]**](EzsigntemplateelementdependencyResponseCompound.md) |  | [optional]
+**aObjEzsigntemplatesignaturecustomdate** | [**\eZmaxAPI\Model\EzsigntemplatesignaturecustomdateResponseCompoundV2[]**](EzsigntemplatesignaturecustomdateResponseV2.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsigntemplatesignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional]
+**aObjEzsigntemplateelementdependency** | [**\eZmaxAPI\Model\EzsigntemplateelementdependencyResponseCompound[]**](EzsigntemplateelementdependencyResponse.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

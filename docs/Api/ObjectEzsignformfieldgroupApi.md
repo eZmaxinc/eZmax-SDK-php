@@ -75,7 +75,7 @@ try {
 ## `ezsignformfieldgroupDeleteObjectV1()`
 
 ```php
-ezsignformfieldgroupDeleteObjectV1($pkiEzsignformfieldgroupID): \eZmaxAPI\Model\EzsignformfieldgroupDeleteObjectV1Response
+ezsignformfieldgroupDeleteObjectV1($pkiEzsignformfieldgroupID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Ezsignformfieldgroup
@@ -119,7 +119,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignformfieldgroupDeleteObjectV1Response**](../Model/EzsignformfieldgroupDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ try {
 ## `ezsignformfieldgroupEditObjectV1()`
 
 ```php
-ezsignformfieldgroupEditObjectV1($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request): \eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Response
+ezsignformfieldgroupEditObjectV1($pkiEzsignformfieldgroupID, $ezsignformfieldgroupEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Ezsignformfieldgroup
@@ -183,7 +183,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignformfieldgroupEditObjectV1Response**](../Model/EzsignformfieldgroupEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

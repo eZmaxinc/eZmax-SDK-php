@@ -77,7 +77,7 @@ try {
 ## `supplyDeleteObjectV1()`
 
 ```php
-supplyDeleteObjectV1($pkiSupplyID): \eZmaxAPI\Model\SupplyDeleteObjectV1Response
+supplyDeleteObjectV1($pkiSupplyID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Supply
@@ -121,7 +121,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\SupplyDeleteObjectV1Response**](../Model/SupplyDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ try {
 ## `supplyEditObjectV1()`
 
 ```php
-supplyEditObjectV1($pkiSupplyID, $supplyEditObjectV1Request): \eZmaxAPI\Model\SupplyEditObjectV1Response
+supplyEditObjectV1($pkiSupplyID, $supplyEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Supply
@@ -185,7 +185,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\SupplyEditObjectV1Response**](../Model/SupplyEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

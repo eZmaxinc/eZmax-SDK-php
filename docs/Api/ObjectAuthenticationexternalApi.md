@@ -78,7 +78,7 @@ try {
 ## `authenticationexternalDeleteObjectV1()`
 
 ```php
-authenticationexternalDeleteObjectV1($pkiAuthenticationexternalID): \eZmaxAPI\Model\AuthenticationexternalDeleteObjectV1Response
+authenticationexternalDeleteObjectV1($pkiAuthenticationexternalID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Authenticationexternal
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\AuthenticationexternalDeleteObjectV1Response**](../Model/AuthenticationexternalDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ try {
 ## `authenticationexternalEditObjectV1()`
 
 ```php
-authenticationexternalEditObjectV1($pkiAuthenticationexternalID, $authenticationexternalEditObjectV1Request): \eZmaxAPI\Model\AuthenticationexternalEditObjectV1Response
+authenticationexternalEditObjectV1($pkiAuthenticationexternalID, $authenticationexternalEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Authenticationexternal
@@ -186,7 +186,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\AuthenticationexternalEditObjectV1Response**](../Model/AuthenticationexternalEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -404,7 +404,7 @@ try {
 ## `authenticationexternalResetAuthorizationV1()`
 
 ```php
-authenticationexternalResetAuthorizationV1($pkiAuthenticationexternalID, $body): \eZmaxAPI\Model\AuthenticationexternalResetAuthorizationV1Response
+authenticationexternalResetAuthorizationV1($pkiAuthenticationexternalID, $body): \eZmaxAPI\Model\CommonResponse
 ```
 
 Reset the Authenticationexternal authorization
@@ -450,7 +450,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\AuthenticationexternalResetAuthorizationV1Response**](../Model/AuthenticationexternalResetAuthorizationV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

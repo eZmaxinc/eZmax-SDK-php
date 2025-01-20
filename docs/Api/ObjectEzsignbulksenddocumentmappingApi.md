@@ -74,7 +74,7 @@ try {
 ## `ezsignbulksenddocumentmappingDeleteObjectV1()`
 
 ```php
-ezsignbulksenddocumentmappingDeleteObjectV1($pkiEzsignbulksenddocumentmappingID): \eZmaxAPI\Model\EzsignbulksenddocumentmappingDeleteObjectV1Response
+ezsignbulksenddocumentmappingDeleteObjectV1($pkiEzsignbulksenddocumentmappingID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Ezsignbulksenddocumentmapping
@@ -118,7 +118,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignbulksenddocumentmappingDeleteObjectV1Response**](../Model/EzsignbulksenddocumentmappingDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

@@ -75,7 +75,7 @@ try {
 ## `corsDeleteObjectV1()`
 
 ```php
-corsDeleteObjectV1($pkiCorsID): \eZmaxAPI\Model\CorsDeleteObjectV1Response
+corsDeleteObjectV1($pkiCorsID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Cors
@@ -119,7 +119,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CorsDeleteObjectV1Response**](../Model/CorsDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ try {
 ## `corsEditObjectV1()`
 
 ```php
-corsEditObjectV1($pkiCorsID, $corsEditObjectV1Request): \eZmaxAPI\Model\CorsEditObjectV1Response
+corsEditObjectV1($pkiCorsID, $corsEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Cors
@@ -183,7 +183,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CorsEditObjectV1Response**](../Model/CorsEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
