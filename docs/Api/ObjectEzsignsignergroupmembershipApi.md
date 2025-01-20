@@ -74,7 +74,7 @@ try {
 ## `ezsignsignergroupmembershipDeleteObjectV1()`
 
 ```php
-ezsignsignergroupmembershipDeleteObjectV1($pkiEzsignsignergroupmembershipID): \eZmaxAPI\Model\EzsignsignergroupmembershipDeleteObjectV1Response
+ezsignsignergroupmembershipDeleteObjectV1($pkiEzsignsignergroupmembershipID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Ezsignsignergroupmembership
@@ -118,7 +118,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignsignergroupmembershipDeleteObjectV1Response**](../Model/EzsignsignergroupmembershipDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

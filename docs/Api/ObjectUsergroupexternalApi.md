@@ -79,7 +79,7 @@ try {
 ## `usergroupexternalDeleteObjectV1()`
 
 ```php
-usergroupexternalDeleteObjectV1($pkiUsergroupexternalID): \eZmaxAPI\Model\UsergroupexternalDeleteObjectV1Response
+usergroupexternalDeleteObjectV1($pkiUsergroupexternalID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Usergroupexternal
@@ -123,7 +123,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UsergroupexternalDeleteObjectV1Response**](../Model/UsergroupexternalDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ try {
 ## `usergroupexternalEditObjectV1()`
 
 ```php
-usergroupexternalEditObjectV1($pkiUsergroupexternalID, $usergroupexternalEditObjectV1Request): \eZmaxAPI\Model\UsergroupexternalEditObjectV1Response
+usergroupexternalEditObjectV1($pkiUsergroupexternalID, $usergroupexternalEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Usergroupexternal
@@ -187,7 +187,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UsergroupexternalEditObjectV1Response**](../Model/UsergroupexternalEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

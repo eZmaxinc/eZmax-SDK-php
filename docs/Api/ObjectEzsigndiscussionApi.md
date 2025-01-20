@@ -74,7 +74,7 @@ try {
 ## `ezsigndiscussionDeleteObjectV1()`
 
 ```php
-ezsigndiscussionDeleteObjectV1($pkiEzsigndiscussionID): \eZmaxAPI\Model\EzsigndiscussionDeleteObjectV1Response
+ezsigndiscussionDeleteObjectV1($pkiEzsigndiscussionID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Ezsigndiscussion
@@ -118,7 +118,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigndiscussionDeleteObjectV1Response**](../Model/EzsigndiscussionDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

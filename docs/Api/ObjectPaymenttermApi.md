@@ -76,7 +76,7 @@ try {
 ## `paymenttermEditObjectV1()`
 
 ```php
-paymenttermEditObjectV1($pkiPaymenttermID, $paymenttermEditObjectV1Request): \eZmaxAPI\Model\PaymenttermEditObjectV1Response
+paymenttermEditObjectV1($pkiPaymenttermID, $paymenttermEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Paymentterm
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\PaymenttermEditObjectV1Response**](../Model/PaymenttermEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

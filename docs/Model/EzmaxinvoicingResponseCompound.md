@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **aObjEzmaxinvoicingsummaryinternal** | [**\eZmaxAPI\Model\EzmaxinvoicingsummaryinternalResponseCompound[]**](EzmaxinvoicingsummaryinternalResponseCompound.md) |  |
 **aObjEzmaxinvoicingagent** | [**\eZmaxAPI\Model\EzmaxinvoicingagentResponseCompound[]**](EzmaxinvoicingagentResponseCompound.md) |  |
 **aObjEzmaxinvoicinguser** | [**\eZmaxAPI\Model\EzmaxinvoicinguserResponseCompound[]**](EzmaxinvoicinguserResponseCompound.md) |  |
-**aObjEzmaxinvoicingezsignfolder** | [**\eZmaxAPI\Model\CustomEzmaxinvoicingEzsignfolderResponse[]**](CustomEzmaxinvoicingEzsignfolderResponse.md) |  |
-**aObjEzmaxinvoicingezsigndocument** | [**\eZmaxAPI\Model\CustomEzmaxinvoicingEzsigndocumentResponse[]**](CustomEzmaxinvoicingEzsigndocumentResponse.md) |  |
+**aObjEzmaxinvoicingezsignfolder** | **\eZmaxAPI\Model\CustomEzmaxinvoicingEzsignfolderResponse[]** |  |
+**aObjEzmaxinvoicingezsigndocument** | **\eZmaxAPI\Model\CustomEzmaxinvoicingEzsigndocumentResponse[]** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

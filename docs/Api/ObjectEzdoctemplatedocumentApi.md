@@ -144,7 +144,7 @@ void (empty response body)
 ## `ezdoctemplatedocumentEditObjectV1()`
 
 ```php
-ezdoctemplatedocumentEditObjectV1($pkiEzdoctemplatedocumentID, $ezdoctemplatedocumentEditObjectV1Request): \eZmaxAPI\Model\EzdoctemplatedocumentEditObjectV1Response
+ezdoctemplatedocumentEditObjectV1($pkiEzdoctemplatedocumentID, $ezdoctemplatedocumentEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Ezdoctemplatedocument
@@ -190,7 +190,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzdoctemplatedocumentEditObjectV1Response**](../Model/EzdoctemplatedocumentEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ try {
 ## `ezdoctemplatedocumentPatchObjectV1()`
 
 ```php
-ezdoctemplatedocumentPatchObjectV1($pkiEzdoctemplatedocumentID, $ezdoctemplatedocumentPatchObjectV1Request): \eZmaxAPI\Model\EzdoctemplatedocumentPatchObjectV1Response
+ezdoctemplatedocumentPatchObjectV1($pkiEzdoctemplatedocumentID, $ezdoctemplatedocumentPatchObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Patch an existing Ezdoctemplatedocument
@@ -458,7 +458,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzdoctemplatedocumentPatchObjectV1Response**](../Model/EzdoctemplatedocumentPatchObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

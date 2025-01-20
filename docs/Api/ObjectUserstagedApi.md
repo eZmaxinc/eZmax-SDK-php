@@ -78,7 +78,7 @@ try {
 ## `userstagedDeleteObjectV1()`
 
 ```php
-userstagedDeleteObjectV1($pkiUserstagedID): \eZmaxAPI\Model\UserstagedDeleteObjectV1Response
+userstagedDeleteObjectV1($pkiUserstagedID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Userstaged
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UserstagedDeleteObjectV1Response**](../Model/UserstagedDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ try {
 ## `userstagedMapV1()`
 
 ```php
-userstagedMapV1($pkiUserstagedID, $userstagedMapV1Request): \eZmaxAPI\Model\UserstagedMapV1Response
+userstagedMapV1($pkiUserstagedID, $userstagedMapV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Map the Userstaged to an existing user
@@ -318,7 +318,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UserstagedMapV1Response**](../Model/UserstagedMapV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

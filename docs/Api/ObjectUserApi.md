@@ -213,7 +213,7 @@ try {
 ## `userEditObjectV1()`
 
 ```php
-userEditObjectV1($pkiUserID, $userEditObjectV1Request): \eZmaxAPI\Model\UserEditObjectV1Response
+userEditObjectV1($pkiUserID, $userEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing User
@@ -259,7 +259,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UserEditObjectV1Response**](../Model/UserEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -963,7 +963,7 @@ try {
 ## `userSendPasswordResetV1()`
 
 ```php
-userSendPasswordResetV1($pkiUserID, $body): \eZmaxAPI\Model\UserSendPasswordResetV1Response
+userSendPasswordResetV1($pkiUserID, $body): \eZmaxAPI\Model\CommonResponse
 ```
 
 Send password reset
@@ -1009,7 +1009,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\UserSendPasswordResetV1Response**](../Model/UserSendPasswordResetV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

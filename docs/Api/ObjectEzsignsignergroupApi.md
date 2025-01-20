@@ -77,7 +77,7 @@ try {
 ## `ezsignsignergroupDeleteObjectV1()`
 
 ```php
-ezsignsignergroupDeleteObjectV1($pkiEzsignsignergroupID): \eZmaxAPI\Model\EzsignsignergroupDeleteObjectV1Response
+ezsignsignergroupDeleteObjectV1($pkiEzsignsignergroupID): \eZmaxAPI\Model\CommonResponse
 ```
 
 Delete an existing Ezsignsignergroup
@@ -121,7 +121,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignsignergroupDeleteObjectV1Response**](../Model/EzsignsignergroupDeleteObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ try {
 ## `ezsignsignergroupEditObjectV1()`
 
 ```php
-ezsignsignergroupEditObjectV1($pkiEzsignsignergroupID, $ezsignsignergroupEditObjectV1Request): \eZmaxAPI\Model\EzsignsignergroupEditObjectV1Response
+ezsignsignergroupEditObjectV1($pkiEzsignsignergroupID, $ezsignsignergroupEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Ezsignsignergroup
@@ -249,7 +249,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignsignergroupEditObjectV1Response**](../Model/EzsignsignergroupEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 

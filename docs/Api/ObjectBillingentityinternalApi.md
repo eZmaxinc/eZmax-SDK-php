@@ -76,7 +76,7 @@ try {
 ## `billingentityinternalEditObjectV1()`
 
 ```php
-billingentityinternalEditObjectV1($pkiBillingentityinternalID, $billingentityinternalEditObjectV1Request): \eZmaxAPI\Model\BillingentityinternalEditObjectV1Response
+billingentityinternalEditObjectV1($pkiBillingentityinternalID, $billingentityinternalEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
 ```
 
 Edit an existing Billingentityinternal
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\BillingentityinternalEditObjectV1Response**](../Model/BillingentityinternalEditObjectV1Response.md)
+[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
 
 ### Authorization
 
