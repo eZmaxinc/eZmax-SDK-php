@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **bCommunicationReadreceipt** | **bool** | Whether we ask for a read receipt or not. | [optional]
 **aObjCommunicationattachment** | [**\eZmaxAPI\Model\CustomCommunicationattachmentRequest[]**](CustomCommunicationattachmentRequest.md) |  |
 **aObjCommunicationrecipient** | [**\eZmaxAPI\Model\CommunicationrecipientRequestCompound[]**](CommunicationrecipientRequestCompound.md) |  |
-**aObjCommunicationreference** | [**\eZmaxAPI\Model\CommunicationreferenceRequestCompound[]**](CommunicationreferenceRequest.md) |  |
+**aObjCommunicationreference** | [**\eZmaxAPI\Model\CommunicationreferenceRequestCompound[]**](CommunicationreferenceRequestCompound.md) |  |
 **aObjCommunicationexternalrecipient** | [**\eZmaxAPI\Model\CommunicationexternalrecipientRequestCompound[]**](CommunicationexternalrecipientRequestCompound.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

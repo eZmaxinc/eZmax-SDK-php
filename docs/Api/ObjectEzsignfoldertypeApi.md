@@ -77,7 +77,7 @@ try {
 ## `ezsignfoldertypeEditObjectV3()`
 
 ```php
-ezsignfoldertypeEditObjectV3($pkiEzsignfoldertypeID, $ezsignfoldertypeEditObjectV3Request): \eZmaxAPI\Model\CommonResponse
+ezsignfoldertypeEditObjectV3($pkiEzsignfoldertypeID, $ezsignfoldertypeEditObjectV3Request): \eZmaxAPI\Model\EzsignfoldertypeEditObjectV3Response
 ```
 
 Edit an existing Ezsignfoldertype
@@ -123,7 +123,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfoldertypeEditObjectV3Response**](../Model/EzsignfoldertypeEditObjectV3Response.md)
 
 ### Authorization
 

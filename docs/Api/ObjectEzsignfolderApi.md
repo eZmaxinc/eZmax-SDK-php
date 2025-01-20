@@ -41,7 +41,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 ## `ezsignfolderArchiveV1()`
 
 ```php
-ezsignfolderArchiveV1($pkiEzsignfolderID, $body): \eZmaxAPI\Model\CommonResponse
+ezsignfolderArchiveV1($pkiEzsignfolderID, $body): \eZmaxAPI\Model\EzsignfolderArchiveV1Response
 ```
 
 Archive the Ezsignfolder
@@ -87,7 +87,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderArchiveV1Response**](../Model/EzsignfolderArchiveV1Response.md)
 
 ### Authorization
 
@@ -353,7 +353,7 @@ try {
 ## `ezsignfolderDeleteObjectV1()`
 
 ```php
-ezsignfolderDeleteObjectV1($pkiEzsignfolderID): \eZmaxAPI\Model\CommonResponse
+ezsignfolderDeleteObjectV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response
 ```
 
 Delete an existing Ezsignfolder
@@ -395,7 +395,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderDeleteObjectV1Response**](../Model/EzsignfolderDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -413,7 +413,7 @@ try {
 ## `ezsignfolderDisposeEzsignfoldersV1()`
 
 ```php
-ezsignfolderDisposeEzsignfoldersV1($ezsignfolderDisposeEzsignfoldersV1Request): \eZmaxAPI\Model\CommonResponse
+ezsignfolderDisposeEzsignfoldersV1($ezsignfolderDisposeEzsignfoldersV1Request): \eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Response
 ```
 
 Dispose Ezsignfolders
@@ -457,7 +457,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderDisposeEzsignfoldersV1Response**](../Model/EzsignfolderDisposeEzsignfoldersV1Response.md)
 
 ### Authorization
 
@@ -475,7 +475,7 @@ try {
 ## `ezsignfolderDisposeV1()`
 
 ```php
-ezsignfolderDisposeV1($pkiEzsignfolderID, $body): \eZmaxAPI\Model\CommonResponse
+ezsignfolderDisposeV1($pkiEzsignfolderID, $body): \eZmaxAPI\Model\EzsignfolderDisposeV1Response
 ```
 
 Dispose the Ezsignfolder
@@ -521,7 +521,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderDisposeV1Response**](../Model/EzsignfolderDisposeV1Response.md)
 
 ### Authorization
 
@@ -539,7 +539,7 @@ try {
 ## `ezsignfolderEditObjectV3()`
 
 ```php
-ezsignfolderEditObjectV3($pkiEzsignfolderID, $ezsignfolderEditObjectV3Request): \eZmaxAPI\Model\CommonResponse
+ezsignfolderEditObjectV3($pkiEzsignfolderID, $ezsignfolderEditObjectV3Request): \eZmaxAPI\Model\EzsignfolderEditObjectV3Response
 ```
 
 Edit an existing Ezsignfolder
@@ -585,7 +585,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderEditObjectV3Response**](../Model/EzsignfolderEditObjectV3Response.md)
 
 ### Authorization
 
@@ -603,7 +603,7 @@ try {
 ## `ezsignfolderEndPrematurelyV1()`
 
 ```php
-ezsignfolderEndPrematurelyV1($pkiEzsignfolderID, $body): \eZmaxAPI\Model\CommonResponse
+ezsignfolderEndPrematurelyV1($pkiEzsignfolderID, $body): \eZmaxAPI\Model\EzsignfolderEndPrematurelyV1Response
 ```
 
 End prematurely
@@ -649,7 +649,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderEndPrematurelyV1Response**](../Model/EzsignfolderEndPrematurelyV1Response.md)
 
 ### Authorization
 
@@ -1731,7 +1731,7 @@ try {
 ## `ezsignfolderReorderV1()`
 
 ```php
-ezsignfolderReorderV1($pkiEzsignfolderID, $ezsignfolderReorderV1Request): \eZmaxAPI\Model\CommonResponse
+ezsignfolderReorderV1($pkiEzsignfolderID, $ezsignfolderReorderV1Request): \eZmaxAPI\Model\EzsignfolderReorderV1Response
 ```
 
 Reorder Ezsigndocuments in the Ezsignfolder
@@ -1775,7 +1775,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderReorderV1Response**](../Model/EzsignfolderReorderV1Response.md)
 
 ### Authorization
 
@@ -1793,7 +1793,7 @@ try {
 ## `ezsignfolderReorderV2()`
 
 ```php
-ezsignfolderReorderV2($pkiEzsignfolderID, $ezsignfolderReorderV2Request): \eZmaxAPI\Model\CommonResponse
+ezsignfolderReorderV2($pkiEzsignfolderID, $ezsignfolderReorderV2Request): \eZmaxAPI\Model\EzsignfolderReorderV2Response
 ```
 
 Reorder Ezsigndocuments in the Ezsignfolder
@@ -1837,7 +1837,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderReorderV2Response**](../Model/EzsignfolderReorderV2Response.md)
 
 ### Authorization
 
@@ -1855,7 +1855,7 @@ try {
 ## `ezsignfolderSendV1()`
 
 ```php
-ezsignfolderSendV1($pkiEzsignfolderID, $ezsignfolderSendV1Request): \eZmaxAPI\Model\CommonResponse
+ezsignfolderSendV1($pkiEzsignfolderID, $ezsignfolderSendV1Request): \eZmaxAPI\Model\EzsignfolderSendV1Response
 ```
 
 Send the Ezsignfolder to the signatories for signature
@@ -1901,7 +1901,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderSendV1Response**](../Model/EzsignfolderSendV1Response.md)
 
 ### Authorization
 
@@ -1919,7 +1919,7 @@ try {
 ## `ezsignfolderSendV3()`
 
 ```php
-ezsignfolderSendV3($pkiEzsignfolderID, $ezsignfolderSendV3Request): \eZmaxAPI\Model\CommonResponse
+ezsignfolderSendV3($pkiEzsignfolderID, $ezsignfolderSendV3Request): \eZmaxAPI\Model\EzsignfolderSendV3Response
 ```
 
 Send the Ezsignfolder to the signatories for signature
@@ -1965,7 +1965,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderSendV3Response**](../Model/EzsignfolderSendV3Response.md)
 
 ### Authorization
 
@@ -1983,7 +1983,7 @@ try {
 ## `ezsignfolderUnsendV1()`
 
 ```php
-ezsignfolderUnsendV1($pkiEzsignfolderID, $body): \eZmaxAPI\Model\CommonResponse
+ezsignfolderUnsendV1($pkiEzsignfolderID, $body): \eZmaxAPI\Model\EzsignfolderUnsendV1Response
 ```
 
 Unsend the Ezsignfolder
@@ -2029,7 +2029,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfolderUnsendV1Response**](../Model/EzsignfolderUnsendV1Response.md)
 
 ### Authorization
 

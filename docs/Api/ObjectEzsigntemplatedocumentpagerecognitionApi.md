@@ -75,7 +75,7 @@ try {
 ## `ezsigntemplatedocumentpagerecognitionDeleteObjectV1()`
 
 ```php
-ezsigntemplatedocumentpagerecognitionDeleteObjectV1($pkiEzsigntemplatedocumentpagerecognitionID): \eZmaxAPI\Model\CommonResponse
+ezsigntemplatedocumentpagerecognitionDeleteObjectV1($pkiEzsigntemplatedocumentpagerecognitionID): \eZmaxAPI\Model\EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response
 ```
 
 Delete an existing Ezsigntemplatedocumentpagerecognition
@@ -119,7 +119,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response**](../Model/EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ try {
 ## `ezsigntemplatedocumentpagerecognitionEditObjectV1()`
 
 ```php
-ezsigntemplatedocumentpagerecognitionEditObjectV1($pkiEzsigntemplatedocumentpagerecognitionID, $ezsigntemplatedocumentpagerecognitionEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+ezsigntemplatedocumentpagerecognitionEditObjectV1($pkiEzsigntemplatedocumentpagerecognitionID, $ezsigntemplatedocumentpagerecognitionEditObjectV1Request): \eZmaxAPI\Model\EzsigntemplatedocumentpagerecognitionEditObjectV1Response
 ```
 
 Edit an existing Ezsigntemplatedocumentpagerecognition
@@ -183,7 +183,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigntemplatedocumentpagerecognitionEditObjectV1Response**](../Model/EzsigntemplatedocumentpagerecognitionEditObjectV1Response.md)
 
 ### Authorization
 

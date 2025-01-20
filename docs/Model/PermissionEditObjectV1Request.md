@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objPermission** | [**\eZmaxAPI\Model\PermissionRequest**](PermissionRequest.md) | A Permission Object and children to create a complete structure |
+**objPermission** | [**\eZmaxAPI\Model\PermissionRequestCompound**](PermissionRequestCompound.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

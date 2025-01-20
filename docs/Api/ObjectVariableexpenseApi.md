@@ -76,7 +76,7 @@ try {
 ## `variableexpenseEditObjectV1()`
 
 ```php
-variableexpenseEditObjectV1($pkiVariableexpenseID, $variableexpenseEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+variableexpenseEditObjectV1($pkiVariableexpenseID, $variableexpenseEditObjectV1Request): \eZmaxAPI\Model\VariableexpenseEditObjectV1Response
 ```
 
 Edit an existing Variableexpense
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\VariableexpenseEditObjectV1Response**](../Model/VariableexpenseEditObjectV1Response.md)
 
 ### Authorization
 

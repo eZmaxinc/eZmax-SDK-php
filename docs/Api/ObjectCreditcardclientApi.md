@@ -78,7 +78,7 @@ try {
 ## `creditcardclientDeleteObjectV1()`
 
 ```php
-creditcardclientDeleteObjectV1($pkiCreditcardclientID): \eZmaxAPI\Model\CommonResponse
+creditcardclientDeleteObjectV1($pkiCreditcardclientID): \eZmaxAPI\Model\CreditcardclientDeleteObjectV1Response
 ```
 
 Delete an existing Creditcardclient
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\CreditcardclientDeleteObjectV1Response**](../Model/CreditcardclientDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ try {
 ## `creditcardclientEditObjectV1()`
 
 ```php
-creditcardclientEditObjectV1($pkiCreditcardclientID, $creditcardclientEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+creditcardclientEditObjectV1($pkiCreditcardclientID, $creditcardclientEditObjectV1Request): \eZmaxAPI\Model\CreditcardclientEditObjectV1Response
 ```
 
 Edit an existing Creditcardclient
@@ -186,7 +186,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\CreditcardclientEditObjectV1Response**](../Model/CreditcardclientEditObjectV1Response.md)
 
 ### Authorization
 
@@ -404,7 +404,7 @@ try {
 ## `creditcardclientPatchObjectV1()`
 
 ```php
-creditcardclientPatchObjectV1($pkiCreditcardclientID, $creditcardclientPatchObjectV1Request): \eZmaxAPI\Model\CommonResponse
+creditcardclientPatchObjectV1($pkiCreditcardclientID, $creditcardclientPatchObjectV1Request): \eZmaxAPI\Model\CreditcardclientPatchObjectV1Response
 ```
 
 Patch an existing Creditcardclient
@@ -450,7 +450,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\CreditcardclientPatchObjectV1Response**](../Model/CreditcardclientPatchObjectV1Response.md)
 
 ### Authorization
 

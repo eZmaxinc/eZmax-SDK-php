@@ -75,7 +75,7 @@ try {
 ## `ezsignannotationDeleteObjectV1()`
 
 ```php
-ezsignannotationDeleteObjectV1($pkiEzsignannotationID): \eZmaxAPI\Model\CommonResponse
+ezsignannotationDeleteObjectV1($pkiEzsignannotationID): \eZmaxAPI\Model\EzsignannotationDeleteObjectV1Response
 ```
 
 Delete an existing Ezsignannotation
@@ -119,7 +119,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignannotationDeleteObjectV1Response**](../Model/EzsignannotationDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ try {
 ## `ezsignannotationEditObjectV1()`
 
 ```php
-ezsignannotationEditObjectV1($pkiEzsignannotationID, $ezsignannotationEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+ezsignannotationEditObjectV1($pkiEzsignannotationID, $ezsignannotationEditObjectV1Request): \eZmaxAPI\Model\EzsignannotationEditObjectV1Response
 ```
 
 Edit an existing Ezsignannotation
@@ -183,7 +183,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignannotationEditObjectV1Response**](../Model/EzsignannotationEditObjectV1Response.md)
 
 ### Authorization
 

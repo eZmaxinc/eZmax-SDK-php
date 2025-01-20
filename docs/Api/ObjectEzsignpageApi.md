@@ -10,7 +10,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 ## `ezsignpageConsultV1()`
 
 ```php
-ezsignpageConsultV1($pkiEzsignpageID, $body): \eZmaxAPI\Model\CommonResponse
+ezsignpageConsultV1($pkiEzsignpageID, $body): \eZmaxAPI\Model\EzsignpageConsultV1Response
 ```
 
 Consult an Ezsignpage
@@ -54,7 +54,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignpageConsultV1Response**](../Model/EzsignpageConsultV1Response.md)
 
 ### Authorization
 
