@@ -75,7 +75,7 @@ try {
 ## `permissionDeleteObjectV1()`
 
 ```php
-permissionDeleteObjectV1($pkiPermissionID): \eZmaxAPI\Model\CommonResponse
+permissionDeleteObjectV1($pkiPermissionID): \eZmaxAPI\Model\PermissionDeleteObjectV1Response
 ```
 
 Delete an existing Permission
@@ -119,7 +119,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\PermissionDeleteObjectV1Response**](../Model/PermissionDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ try {
 ## `permissionEditObjectV1()`
 
 ```php
-permissionEditObjectV1($pkiPermissionID, $permissionEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+permissionEditObjectV1($pkiPermissionID, $permissionEditObjectV1Request): \eZmaxAPI\Model\PermissionEditObjectV1Response
 ```
 
 Edit an existing Permission
@@ -183,7 +183,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\PermissionEditObjectV1Response**](../Model/PermissionEditObjectV1Response.md)
 
 ### Authorization
 

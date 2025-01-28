@@ -21,8 +21,8 @@ Name | Type | Description | Notes
 **tEzsignformfieldgroupTooltip** | **string** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional]
 **eEzsignformfieldgroupTooltipposition** | [**\eZmaxAPI\Model\FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional]
 **eEzsignformfieldgroupTextvalidation** | [**\eZmaxAPI\Model\EnumTextvalidation**](EnumTextvalidation.md) |  | [optional]
-**aObjEzsignformfieldgroupsigner** | [**\eZmaxAPI\Model\EzsignformfieldgroupsignerRequestCompound[]**](EzsignformfieldgroupsignerRequest.md) |  |
-**aObjDropdownElement** | [**\eZmaxAPI\Model\CustomDropdownElementRequestCompound[]**](CustomDropdownElementRequest.md) |  | [optional]
+**aObjEzsignformfieldgroupsigner** | [**\eZmaxAPI\Model\EzsignformfieldgroupsignerRequestCompound[]**](EzsignformfieldgroupsignerRequestCompound.md) |  |
+**aObjDropdownElement** | [**\eZmaxAPI\Model\CustomDropdownElementRequestCompound[]**](CustomDropdownElementRequestCompound.md) |  | [optional]
 **aObjEzsignformfield** | [**\eZmaxAPI\Model\EzsignformfieldRequestCompound[]**](EzsignformfieldRequestCompound.md) |  |
 **objCreateezsignelementspositionedbyword** | [**\eZmaxAPI\Model\CustomCreateEzsignelementsPositionedByWordRequest**](CustomCreateEzsignelementsPositionedByWordRequest.md) |  |
 

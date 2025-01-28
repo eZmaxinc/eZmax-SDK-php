@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **fkiPhonelinesharedID** | **int** | The unique ID of the Phonelineshared | [optional]
 **eCommunicationsenderObjecttype** | **string** |  |
 **objContactName** | [**\eZmaxAPI\Model\CustomContactNameResponse**](CustomContactNameResponse.md) |  |
-**objEmail** | [**\eZmaxAPI\Model\EmailResponse**](EmailResponse.md) | An Email Object and children to create a complete structure | [optional]
+**objEmail** | [**\eZmaxAPI\Model\EmailResponseCompound**](EmailResponseCompound.md) |  | [optional]
 **objPhoneFax** | [**\eZmaxAPI\Model\PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional]
 **objPhoneSMS** | [**\eZmaxAPI\Model\PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional]
 

@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
 *ObjectAuthenticationexternalApi* | [**authenticationexternalGetListV1**](docs/Api/ObjectAuthenticationexternalApi.md#authenticationexternalgetlistv1) | **GET** /1/object/authenticationexternal/getList | Retrieve Authenticationexternal list
 *ObjectAuthenticationexternalApi* | [**authenticationexternalGetObjectV2**](docs/Api/ObjectAuthenticationexternalApi.md#authenticationexternalgetobjectv2) | **GET** /2/object/authenticationexternal/{pkiAuthenticationexternalID} | Retrieve an existing Authenticationexternal
 *ObjectAuthenticationexternalApi* | [**authenticationexternalResetAuthorizationV1**](docs/Api/ObjectAuthenticationexternalApi.md#authenticationexternalresetauthorizationv1) | **POST** /1/object/authenticationexternal/{pkiAuthenticationexternalID}/resetAuthorization | Reset the Authenticationexternal authorization
+*ObjectBankaccountApi* | [**bankaccountGetAutocompleteV2**](docs/Api/ObjectBankaccountApi.md#bankaccountgetautocompletev2) | **GET** /2/object/bankaccount/getAutocomplete/{sSelector} | Retrieve Bankaccounts and IDs
 *ObjectBillingentityexternalApi* | [**billingentityexternalGenerateFederationTokenV1**](docs/Api/ObjectBillingentityexternalApi.md#billingentityexternalgeneratefederationtokenv1) | **POST** /1/object/billingentityexternal/{pkiBillingentityexternalID}/generateFederationToken | Generate a federation token
 *ObjectBillingentityexternalApi* | [**billingentityexternalGetAutocompleteV2**](docs/Api/ObjectBillingentityexternalApi.md#billingentityexternalgetautocompletev2) | **GET** /2/object/billingentityexternal/getAutocomplete/{sSelector} | Retrieve Billingentityexternals and IDs
 *ObjectBillingentityinternalApi* | [**billingentityinternalCreateObjectV1**](docs/Api/ObjectBillingentityinternalApi.md#billingentityinternalcreateobjectv1) | **POST** /1/object/billingentityinternal | Create a new Billingentityinternal
@@ -135,6 +136,12 @@ Class | Method | HTTP request | Description
 *ObjectCreditcardclientApi* | [**creditcardclientGetListV1**](docs/Api/ObjectCreditcardclientApi.md#creditcardclientgetlistv1) | **GET** /1/object/creditcardclient/getList | Retrieve Creditcardclient list
 *ObjectCreditcardclientApi* | [**creditcardclientGetObjectV2**](docs/Api/ObjectCreditcardclientApi.md#creditcardclientgetobjectv2) | **GET** /2/object/creditcardclient/{pkiCreditcardclientID} | Retrieve an existing Creditcardclient
 *ObjectCreditcardclientApi* | [**creditcardclientPatchObjectV1**](docs/Api/ObjectCreditcardclientApi.md#creditcardclientpatchobjectv1) | **PATCH** /1/object/creditcardclient/{pkiCreditcardclientID} | Patch an existing Creditcardclient
+*ObjectCreditcardmerchantApi* | [**creditcardmerchantCreateObjectV1**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantcreateobjectv1) | **POST** /1/object/creditcardmerchant | Create a new Creditcardmerchant
+*ObjectCreditcardmerchantApi* | [**creditcardmerchantDeleteObjectV1**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantdeleteobjectv1) | **DELETE** /1/object/creditcardmerchant/{pkiCreditcardmerchantID} | Delete an existing Creditcardmerchant
+*ObjectCreditcardmerchantApi* | [**creditcardmerchantEditObjectV1**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchanteditobjectv1) | **PUT** /1/object/creditcardmerchant/{pkiCreditcardmerchantID} | Edit an existing Creditcardmerchant
+*ObjectCreditcardmerchantApi* | [**creditcardmerchantGetAutocompleteV2**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantgetautocompletev2) | **GET** /2/object/creditcardmerchant/getAutocomplete/{sSelector} | Retrieve Creditcardmerchants and IDs
+*ObjectCreditcardmerchantApi* | [**creditcardmerchantGetListV1**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantgetlistv1) | **GET** /1/object/creditcardmerchant/getList | Retrieve Creditcardmerchant list
+*ObjectCreditcardmerchantApi* | [**creditcardmerchantGetObjectV2**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantgetobjectv2) | **GET** /2/object/creditcardmerchant/{pkiCreditcardmerchantID} | Retrieve an existing Creditcardmerchant
 *ObjectCreditcardtypeApi* | [**creditcardtypeGetAutocompleteV2**](docs/Api/ObjectCreditcardtypeApi.md#creditcardtypegetautocompletev2) | **GET** /2/object/creditcardtype/getAutocomplete/{sSelector} | Retrieve Creditcardtypes and IDs
 *ObjectCustomerApi* | [**customerCreateObjectV1**](docs/Api/ObjectCustomerApi.md#customercreateobjectv1) | **POST** /1/object/customer | Create a new Customer
 *ObjectCustomerApi* | [**customerGetObjectV2**](docs/Api/ObjectCustomerApi.md#customergetobjectv2) | **GET** /2/object/customer/{pkiCustomerID} | Retrieve an existing Customer
@@ -607,6 +614,9 @@ Class | Method | HTTP request | Description
 - [AuthenticationexternalResetAuthorizationV1Response](docs/Model/AuthenticationexternalResetAuthorizationV1Response.md)
 - [AuthenticationexternalResponse](docs/Model/AuthenticationexternalResponse.md)
 - [AuthenticationexternalResponseCompound](docs/Model/AuthenticationexternalResponseCompound.md)
+- [BankaccountAutocompleteElementResponse](docs/Model/BankaccountAutocompleteElementResponse.md)
+- [BankaccountGetAutocompleteV2Response](docs/Model/BankaccountGetAutocompleteV2Response.md)
+- [BankaccountGetAutocompleteV2ResponseMPayload](docs/Model/BankaccountGetAutocompleteV2ResponseMPayload.md)
 - [BillingentityexternalAutocompleteElementResponse](docs/Model/BillingentityexternalAutocompleteElementResponse.md)
 - [BillingentityexternalGenerateFederationTokenV1Request](docs/Model/BillingentityexternalGenerateFederationTokenV1Request.md)
 - [BillingentityexternalGenerateFederationTokenV1Response](docs/Model/BillingentityexternalGenerateFederationTokenV1Response.md)
@@ -770,6 +780,24 @@ Class | Method | HTTP request | Description
 - [CreditcarddetailRequest](docs/Model/CreditcarddetailRequest.md)
 - [CreditcarddetailResponse](docs/Model/CreditcarddetailResponse.md)
 - [CreditcarddetailResponseCompound](docs/Model/CreditcarddetailResponseCompound.md)
+- [CreditcardmerchantAutocompleteElementResponse](docs/Model/CreditcardmerchantAutocompleteElementResponse.md)
+- [CreditcardmerchantCreateObjectV1Request](docs/Model/CreditcardmerchantCreateObjectV1Request.md)
+- [CreditcardmerchantCreateObjectV1Response](docs/Model/CreditcardmerchantCreateObjectV1Response.md)
+- [CreditcardmerchantCreateObjectV1ResponseMPayload](docs/Model/CreditcardmerchantCreateObjectV1ResponseMPayload.md)
+- [CreditcardmerchantDeleteObjectV1Response](docs/Model/CreditcardmerchantDeleteObjectV1Response.md)
+- [CreditcardmerchantEditObjectV1Request](docs/Model/CreditcardmerchantEditObjectV1Request.md)
+- [CreditcardmerchantEditObjectV1Response](docs/Model/CreditcardmerchantEditObjectV1Response.md)
+- [CreditcardmerchantGetAutocompleteV2Response](docs/Model/CreditcardmerchantGetAutocompleteV2Response.md)
+- [CreditcardmerchantGetAutocompleteV2ResponseMPayload](docs/Model/CreditcardmerchantGetAutocompleteV2ResponseMPayload.md)
+- [CreditcardmerchantGetListV1Response](docs/Model/CreditcardmerchantGetListV1Response.md)
+- [CreditcardmerchantGetListV1ResponseMPayload](docs/Model/CreditcardmerchantGetListV1ResponseMPayload.md)
+- [CreditcardmerchantGetObjectV2Response](docs/Model/CreditcardmerchantGetObjectV2Response.md)
+- [CreditcardmerchantGetObjectV2ResponseMPayload](docs/Model/CreditcardmerchantGetObjectV2ResponseMPayload.md)
+- [CreditcardmerchantListElement](docs/Model/CreditcardmerchantListElement.md)
+- [CreditcardmerchantRequest](docs/Model/CreditcardmerchantRequest.md)
+- [CreditcardmerchantRequestCompound](docs/Model/CreditcardmerchantRequestCompound.md)
+- [CreditcardmerchantResponse](docs/Model/CreditcardmerchantResponse.md)
+- [CreditcardmerchantResponseCompound](docs/Model/CreditcardmerchantResponseCompound.md)
 - [CreditcardtypeAutocompleteElementResponse](docs/Model/CreditcardtypeAutocompleteElementResponse.md)
 - [CreditcardtypeGetAutocompleteV2Response](docs/Model/CreditcardtypeGetAutocompleteV2Response.md)
 - [CreditcardtypeGetAutocompleteV2ResponseMPayload](docs/Model/CreditcardtypeGetAutocompleteV2ResponseMPayload.md)
@@ -2211,5 +2239,5 @@ This PHP package is automatically generated by the [OpenAPI Generator](https://o
 
 - API version: `1.2.1`
     - Package version: `1.2.1`
-    - Generator version: `7.10.0`
+    - Generator version: `7.11.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

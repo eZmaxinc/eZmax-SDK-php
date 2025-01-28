@@ -75,7 +75,7 @@ try {
 ## `subnetDeleteObjectV1()`
 
 ```php
-subnetDeleteObjectV1($pkiSubnetID): \eZmaxAPI\Model\CommonResponse
+subnetDeleteObjectV1($pkiSubnetID): \eZmaxAPI\Model\SubnetDeleteObjectV1Response
 ```
 
 Delete an existing Subnet
@@ -119,7 +119,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\SubnetDeleteObjectV1Response**](../Model/SubnetDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ try {
 ## `subnetEditObjectV1()`
 
 ```php
-subnetEditObjectV1($pkiSubnetID, $subnetEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+subnetEditObjectV1($pkiSubnetID, $subnetEditObjectV1Request): \eZmaxAPI\Model\SubnetEditObjectV1Response
 ```
 
 Edit an existing Subnet
@@ -183,7 +183,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\SubnetEditObjectV1Response**](../Model/SubnetEditObjectV1Response.md)
 
 ### Authorization
 

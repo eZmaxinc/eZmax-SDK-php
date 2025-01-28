@@ -208,7 +208,7 @@ try {
 ## `ezsignfoldersignerassociationDeleteObjectV1()`
 
 ```php
-ezsignfoldersignerassociationDeleteObjectV1($pkiEzsignfoldersignerassociationID): \eZmaxAPI\Model\CommonResponse
+ezsignfoldersignerassociationDeleteObjectV1($pkiEzsignfoldersignerassociationID): \eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response
 ```
 
 Delete an existing Ezsignfoldersignerassociation
@@ -252,7 +252,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfoldersignerassociationDeleteObjectV1Response**](../Model/EzsignfoldersignerassociationDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -270,7 +270,7 @@ try {
 ## `ezsignfoldersignerassociationEditObjectV1()`
 
 ```php
-ezsignfoldersignerassociationEditObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+ezsignfoldersignerassociationEditObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationEditObjectV1Request): \eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Response
 ```
 
 Edit an existing Ezsignfoldersignerassociation
@@ -316,7 +316,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfoldersignerassociationEditObjectV1Response**](../Model/EzsignfoldersignerassociationEditObjectV1Response.md)
 
 ### Authorization
 
@@ -334,7 +334,7 @@ try {
 ## `ezsignfoldersignerassociationForceDisconnectV1()`
 
 ```php
-ezsignfoldersignerassociationForceDisconnectV1($pkiEzsignfoldersignerassociationID, $body): \eZmaxAPI\Model\CommonResponse
+ezsignfoldersignerassociationForceDisconnectV1($pkiEzsignfoldersignerassociationID, $body): \eZmaxAPI\Model\EzsignfoldersignerassociationForceDisconnectV1Response
 ```
 
 Disconnects the Ezsignfoldersignerassociation
@@ -380,7 +380,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfoldersignerassociationForceDisconnectV1Response**](../Model/EzsignfoldersignerassociationForceDisconnectV1Response.md)
 
 ### Authorization
 
@@ -584,7 +584,7 @@ try {
 ## `ezsignfoldersignerassociationPatchObjectV1()`
 
 ```php
-ezsignfoldersignerassociationPatchObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request): \eZmaxAPI\Model\CommonResponse
+ezsignfoldersignerassociationPatchObjectV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationPatchObjectV1Request): \eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Response
 ```
 
 Patch an existing Ezsignfoldersignerassociation
@@ -628,7 +628,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfoldersignerassociationPatchObjectV1Response**](../Model/EzsignfoldersignerassociationPatchObjectV1Response.md)
 
 ### Authorization
 
@@ -646,7 +646,7 @@ try {
 ## `ezsignfoldersignerassociationReassignV1()`
 
 ```php
-ezsignfoldersignerassociationReassignV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationReassignV1Request): \eZmaxAPI\Model\CommonResponse
+ezsignfoldersignerassociationReassignV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationReassignV1Request): \eZmaxAPI\Model\EzsignfoldersignerassociationReassignV1Response
 ```
 
 Reassign remaining unsigned signatures and forms
@@ -692,7 +692,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignfoldersignerassociationReassignV1Response**](../Model/EzsignfoldersignerassociationReassignV1Response.md)
 
 ### Authorization
 

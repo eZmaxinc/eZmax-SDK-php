@@ -22,6 +22,6 @@ Name | Type | Description | Notes
 **eEzsigntemplateformfieldPositioningoccurence** | [**\eZmaxAPI\Model\FieldEEzsigntemplateformfieldPositioningoccurence**](FieldEEzsigntemplateformfieldPositioningoccurence.md) |  | [optional]
 **eEzsigntemplateformfieldHorizontalalignment** | [**\eZmaxAPI\Model\EnumHorizontalalignment**](EnumHorizontalalignment.md) |  | [optional]
 **objTextstylestatic** | [**\eZmaxAPI\Model\TextstylestaticRequestCompound**](TextstylestaticRequestCompound.md) |  | [optional]
-**aObjEzsigntemplateelementdependency** | [**\eZmaxAPI\Model\EzsigntemplateelementdependencyRequestCompound[]**](EzsigntemplateelementdependencyRequest.md) |  | [optional]
+**aObjEzsigntemplateelementdependency** | [**\eZmaxAPI\Model\EzsigntemplateelementdependencyRequestCompound[]**](EzsigntemplateelementdependencyRequestCompound.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

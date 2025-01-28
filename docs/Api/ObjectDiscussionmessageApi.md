@@ -74,7 +74,7 @@ try {
 ## `discussionmessageDeleteObjectV1()`
 
 ```php
-discussionmessageDeleteObjectV1($pkiDiscussionmessageID): \eZmaxAPI\Model\CommonResponse
+discussionmessageDeleteObjectV1($pkiDiscussionmessageID): \eZmaxAPI\Model\DiscussionmessageDeleteObjectV1Response
 ```
 
 Delete an existing Discussionmessage
@@ -118,7 +118,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\DiscussionmessageDeleteObjectV1Response**](../Model/DiscussionmessageDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ try {
 ## `discussionmessagePatchObjectV1()`
 
 ```php
-discussionmessagePatchObjectV1($pkiDiscussionmessageID, $discussionmessagePatchObjectV1Request): \eZmaxAPI\Model\CommonResponse
+discussionmessagePatchObjectV1($pkiDiscussionmessageID, $discussionmessagePatchObjectV1Request): \eZmaxAPI\Model\DiscussionmessagePatchObjectV1Response
 ```
 
 Patch an existing Discussionmessage
@@ -182,7 +182,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\DiscussionmessagePatchObjectV1Response**](../Model/DiscussionmessagePatchObjectV1Response.md)
 
 ### Authorization
 

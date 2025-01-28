@@ -76,7 +76,7 @@ try {
 ## `ezsignsigningreasonEditObjectV1()`
 
 ```php
-ezsignsigningreasonEditObjectV1($pkiEzsignsigningreasonID, $ezsignsigningreasonEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+ezsignsigningreasonEditObjectV1($pkiEzsignsigningreasonID, $ezsignsigningreasonEditObjectV1Request): \eZmaxAPI\Model\EzsignsigningreasonEditObjectV1Response
 ```
 
 Edit an existing Ezsignsigningreason
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsignsigningreasonEditObjectV1Response**](../Model/EzsignsigningreasonEditObjectV1Response.md)
 
 ### Authorization
 

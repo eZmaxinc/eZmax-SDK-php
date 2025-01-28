@@ -137,7 +137,7 @@ try {
 ## `ezsigntemplatepackagesignerEditObjectV1()`
 
 ```php
-ezsigntemplatepackagesignerEditObjectV1($pkiEzsigntemplatepackagesignerID, $ezsigntemplatepackagesignerEditObjectV1Request): \eZmaxAPI\Model\CommonResponse
+ezsigntemplatepackagesignerEditObjectV1($pkiEzsigntemplatepackagesignerID, $ezsigntemplatepackagesignerEditObjectV1Request): \eZmaxAPI\Model\EzsigntemplatepackagesignerEditObjectV1Response
 ```
 
 Edit an existing Ezsigntemplatepackagesigner
@@ -183,7 +183,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\CommonResponse**](../Model/CommonResponse.md)
+[**\eZmaxAPI\Model\EzsigntemplatepackagesignerEditObjectV1Response**](../Model/EzsigntemplatepackagesignerEditObjectV1Response.md)
 
 ### Authorization
 
