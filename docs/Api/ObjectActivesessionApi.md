@@ -4,9 +4,73 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**activesessionGenerateFederationTokenV1()**](ObjectActivesessionApi.md#activesessionGenerateFederationTokenV1) | **POST** /1/object/activesession/generateFederationToken | Generate a federation token |
 | [**activesessionGetCurrentV1()**](ObjectActivesessionApi.md#activesessionGetCurrentV1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession |
+| [**activesessionGetCurrentV2()**](ObjectActivesessionApi.md#activesessionGetCurrentV2) | **GET** /2/object/activesession/getCurrent | Get Current Activesession |
 | [**activesessionGetListV1()**](ObjectActivesessionApi.md#activesessionGetListV1) | **GET** /1/object/activesession/getList | Retrieve Activesession list |
 
+
+## `activesessionGenerateFederationTokenV1()`
+
+```php
+activesessionGenerateFederationTokenV1($activesessionGenerateFederationTokenV1Request): \eZmaxAPI\Model\ActivesessionGenerateFederationTokenV1Response
+```
+
+Generate a federation token
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectActivesessionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$activesessionGenerateFederationTokenV1Request = new \eZmaxAPI\Model\ActivesessionGenerateFederationTokenV1Request(); // \eZmaxAPI\Model\ActivesessionGenerateFederationTokenV1Request
+
+try {
+    $result = $apiInstance->activesessionGenerateFederationTokenV1($activesessionGenerateFederationTokenV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectActivesessionApi->activesessionGenerateFederationTokenV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **activesessionGenerateFederationTokenV1Request** | [**\eZmaxAPI\Model\ActivesessionGenerateFederationTokenV1Request**](../Model/ActivesessionGenerateFederationTokenV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\ActivesessionGenerateFederationTokenV1Response**](../Model/ActivesessionGenerateFederationTokenV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `activesessionGetCurrentV1()`
 
@@ -67,6 +131,65 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `activesessionGetCurrentV2()`
+
+```php
+activesessionGetCurrentV2(): \eZmaxAPI\Model\ActivesessionGetCurrentV2Response
+```
+
+Get Current Activesession
+
+Retrieve the details about the current activesession
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectActivesessionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->activesessionGetCurrentV2();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectActivesessionApi->activesessionGetCurrentV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\eZmaxAPI\Model\ActivesessionGetCurrentV2Response**](../Model/ActivesessionGetCurrentV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `activesessionGetListV1()`
 
 ```php
@@ -97,7 +220,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectActivesessionApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 0; // int
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -115,7 +238,7 @@ try {
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
 | **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
 ### Return type

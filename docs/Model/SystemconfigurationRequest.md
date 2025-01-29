@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiSystemconfigurationID** | **int** | The unique ID of the Systemconfiguration | [optional]
+**fkiBrandingID** | **int** | The unique ID of the Branding | [optional]
 **eSystemconfigurationNewexternaluseraction** | [**\eZmaxAPI\Model\FieldESystemconfigurationNewexternaluseraction**](FieldESystemconfigurationNewexternaluseraction.md) |  |
 **eSystemconfigurationLanguage1** | [**\eZmaxAPI\Model\FieldESystemconfigurationLanguage1**](FieldESystemconfigurationLanguage1.md) |  |
 **eSystemconfigurationLanguage2** | [**\eZmaxAPI\Model\FieldESystemconfigurationLanguage2**](FieldESystemconfigurationLanguage2.md) |  |

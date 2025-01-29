@@ -4,16 +4,16 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ezsigntemplatesignatureCreateObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureCreateObjectV1) | **POST** /1/object/ezsigntemplatesignature | Create a new Ezsigntemplatesignature |
+| [**ezsigntemplatesignatureCreateObjectV2()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureCreateObjectV2) | **POST** /2/object/ezsigntemplatesignature | Create a new Ezsigntemplatesignature |
 | [**ezsigntemplatesignatureDeleteObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Delete an existing Ezsigntemplatesignature |
-| [**ezsigntemplatesignatureEditObjectV1()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureEditObjectV1) | **PUT** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Edit an existing Ezsigntemplatesignature |
-| [**ezsigntemplatesignatureGetObjectV2()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureGetObjectV2) | **GET** /2/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Retrieve an existing Ezsigntemplatesignature |
+| [**ezsigntemplatesignatureEditObjectV2()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureEditObjectV2) | **PUT** /2/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Edit an existing Ezsigntemplatesignature |
+| [**ezsigntemplatesignatureGetObjectV3()**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignatureGetObjectV3) | **GET** /3/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Retrieve an existing Ezsigntemplatesignature |
 
 
-## `ezsigntemplatesignatureCreateObjectV1()`
+## `ezsigntemplatesignatureCreateObjectV2()`
 
 ```php
-ezsigntemplatesignatureCreateObjectV1($ezsigntemplatesignatureCreateObjectV1Request): \eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV1Response
+ezsigntemplatesignatureCreateObjectV2($ezsigntemplatesignatureCreateObjectV2Request): \eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV2Response
 ```
 
 Create a new Ezsigntemplatesignature
@@ -39,13 +39,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatesignatureApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ezsigntemplatesignatureCreateObjectV1Request = new \eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV1Request(); // \eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV1Request
+$ezsigntemplatesignatureCreateObjectV2Request = new \eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV2Request(); // \eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV2Request
 
 try {
-    $result = $apiInstance->ezsigntemplatesignatureCreateObjectV1($ezsigntemplatesignatureCreateObjectV1Request);
+    $result = $apiInstance->ezsigntemplatesignatureCreateObjectV2($ezsigntemplatesignatureCreateObjectV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignatureCreateObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignatureCreateObjectV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -53,11 +53,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ezsigntemplatesignatureCreateObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV1Request**](../Model/EzsigntemplatesignatureCreateObjectV1Request.md)|  | |
+| **ezsigntemplatesignatureCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV2Request**](../Model/EzsigntemplatesignatureCreateObjectV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV1Response**](../Model/EzsigntemplatesignatureCreateObjectV1Response.md)
+[**\eZmaxAPI\Model\EzsigntemplatesignatureCreateObjectV2Response**](../Model/EzsigntemplatesignatureCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -134,10 +134,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsigntemplatesignatureEditObjectV1()`
+## `ezsigntemplatesignatureEditObjectV2()`
 
 ```php
-ezsigntemplatesignatureEditObjectV1($pkiEzsigntemplatesignatureID, $ezsigntemplatesignatureEditObjectV1Request): \eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV1Response
+ezsigntemplatesignatureEditObjectV2($pkiEzsigntemplatesignatureID, $ezsigntemplatesignatureEditObjectV2Request): \eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV2Response
 ```
 
 Edit an existing Ezsigntemplatesignature
@@ -164,13 +164,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatesignatureApi(
     $config
 );
 $pkiEzsigntemplatesignatureID = 56; // int
-$ezsigntemplatesignatureEditObjectV1Request = new \eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV1Request(); // \eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV1Request
+$ezsigntemplatesignatureEditObjectV2Request = new \eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV2Request(); // \eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV2Request
 
 try {
-    $result = $apiInstance->ezsigntemplatesignatureEditObjectV1($pkiEzsigntemplatesignatureID, $ezsigntemplatesignatureEditObjectV1Request);
+    $result = $apiInstance->ezsigntemplatesignatureEditObjectV2($pkiEzsigntemplatesignatureID, $ezsigntemplatesignatureEditObjectV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignatureEditObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignatureEditObjectV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -179,11 +179,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pkiEzsigntemplatesignatureID** | **int**|  | |
-| **ezsigntemplatesignatureEditObjectV1Request** | [**\eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV1Request**](../Model/EzsigntemplatesignatureEditObjectV1Request.md)|  | |
+| **ezsigntemplatesignatureEditObjectV2Request** | [**\eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV2Request**](../Model/EzsigntemplatesignatureEditObjectV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV1Response**](../Model/EzsigntemplatesignatureEditObjectV1Response.md)
+[**\eZmaxAPI\Model\EzsigntemplatesignatureEditObjectV2Response**](../Model/EzsigntemplatesignatureEditObjectV2Response.md)
 
 ### Authorization
 
@@ -198,10 +198,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsigntemplatesignatureGetObjectV2()`
+## `ezsigntemplatesignatureGetObjectV3()`
 
 ```php
-ezsigntemplatesignatureGetObjectV2($pkiEzsigntemplatesignatureID): \eZmaxAPI\Model\EzsigntemplatesignatureGetObjectV2Response
+ezsigntemplatesignatureGetObjectV3($pkiEzsigntemplatesignatureID): \eZmaxAPI\Model\EzsigntemplatesignatureGetObjectV3Response
 ```
 
 Retrieve an existing Ezsigntemplatesignature
@@ -230,10 +230,10 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatesignatureApi(
 $pkiEzsigntemplatesignatureID = 56; // int
 
 try {
-    $result = $apiInstance->ezsigntemplatesignatureGetObjectV2($pkiEzsigntemplatesignatureID);
+    $result = $apiInstance->ezsigntemplatesignatureGetObjectV3($pkiEzsigntemplatesignatureID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignatureGetObjectV2: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignatureGetObjectV3: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -245,7 +245,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigntemplatesignatureGetObjectV2Response**](../Model/EzsigntemplatesignatureGetObjectV2Response.md)
+[**\eZmaxAPI\Model\EzsigntemplatesignatureGetObjectV3Response**](../Model/EzsigntemplatesignatureGetObjectV3Response.md)
 
 ### Authorization
 

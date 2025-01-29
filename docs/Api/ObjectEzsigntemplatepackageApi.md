@@ -268,7 +268,7 @@ try {
 ## `ezsigntemplatepackageGetAutocompleteV2()`
 
 ```php
-ezsigntemplatepackageGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\EzsigntemplatepackageGetAutocompleteV2Response
+ezsigntemplatepackageGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $fkiEzsignfoldertypeID): \eZmaxAPI\Model\EzsigntemplatepackageGetAutocompleteV2Response
 ```
 
 Retrieve Ezsigntemplatepackages and IDs
@@ -297,10 +297,11 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatepackageApi(
 $sSelector = 'sSelector_example'; // string | The type of Ezsigntemplatepackages to return
 $eFilterActive = 'Active'; // string | Specify which results we want to display.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$fkiEzsignfoldertypeID = 56; // int | The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic
 
 try {
-    $result = $apiInstance->ezsigntemplatepackageGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+    $result = $apiInstance->ezsigntemplatepackageGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage, $fkiEzsignfoldertypeID);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectEzsigntemplatepackageApi->ezsigntemplatepackageGetAutocompleteV2: ', $e->getMessage(), PHP_EOL;
@@ -314,7 +315,8 @@ try {
 | **sSelector** | **string**| The type of Ezsigntemplatepackages to return | |
 | **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
 | **sQuery** | **string**| Allow to filter the returned results | [optional] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **fkiEzsignfoldertypeID** | **int**| The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic | [optional] |
 
 ### Return type
 
@@ -365,7 +367,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatepackageApi(
 $eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
 $iRowMax = 56; // int
 $iRowOffset = 0; // int
-$acceptLanguage = new \eZmaxAPI\Model\HeaderAcceptLanguage(); // HeaderAcceptLanguage
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 $sFilter = 'sFilter_example'; // string
 
 try {
@@ -383,7 +385,7 @@ try {
 | **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
 | **iRowMax** | **int**|  | [optional] |
 | **iRowOffset** | **int**|  | [optional] [default to 0] |
-| **acceptLanguage** | [**HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 | **sFilter** | **string**|  | [optional] |
 
 ### Return type

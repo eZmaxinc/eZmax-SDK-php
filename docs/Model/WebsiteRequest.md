@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pkiWebsiteID** | **int** | The unique ID of the Website Default | [optional]
 **fkiWebsitetypeID** | **int** | The unique ID of the Websitetype.  Valid values:  |Value|Description| |-|-| |1|Website| |2|Twitter| |3|Facebook| |4|Survey| |
 **sWebsiteAddress** | **string** | The URL of the website. |
 
