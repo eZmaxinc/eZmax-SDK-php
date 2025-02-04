@@ -101,6 +101,7 @@ class EzsignfoldertypeRequestV3 implements ModelInterface, ArrayAccess, \JsonSer
         'bEzsignfoldertypeSendsignedtouser' => 'bool',
         'bEzsignfoldertypeSendattachmentezsignsigner' => 'bool',
         'bEzsignfoldertypeSendproofezsignsigner' => 'bool',
+        'bEzsignfoldertypeSendattachmentreceivecopy' => 'bool',
         'bEzsignfoldertypeSendattachmentuser' => 'bool',
         'bEzsignfoldertypeSendproofuser' => 'bool',
         'bEzsignfoldertypeSendproofemail' => 'bool',
@@ -171,6 +172,7 @@ class EzsignfoldertypeRequestV3 implements ModelInterface, ArrayAccess, \JsonSer
         'bEzsignfoldertypeSendsignedtouser' => null,
         'bEzsignfoldertypeSendattachmentezsignsigner' => null,
         'bEzsignfoldertypeSendproofezsignsigner' => null,
+        'bEzsignfoldertypeSendattachmentreceivecopy' => null,
         'bEzsignfoldertypeSendattachmentuser' => null,
         'bEzsignfoldertypeSendproofuser' => null,
         'bEzsignfoldertypeSendproofemail' => null,
@@ -239,6 +241,7 @@ class EzsignfoldertypeRequestV3 implements ModelInterface, ArrayAccess, \JsonSer
 		'bEzsignfoldertypeSendsignedtouser' => false,
 		'bEzsignfoldertypeSendattachmentezsignsigner' => false,
 		'bEzsignfoldertypeSendproofezsignsigner' => false,
+		'bEzsignfoldertypeSendattachmentreceivecopy' => false,
 		'bEzsignfoldertypeSendattachmentuser' => false,
 		'bEzsignfoldertypeSendproofuser' => false,
 		'bEzsignfoldertypeSendproofemail' => false,
@@ -387,6 +390,7 @@ class EzsignfoldertypeRequestV3 implements ModelInterface, ArrayAccess, \JsonSer
         'bEzsignfoldertypeSendsignedtouser' => 'bEzsignfoldertypeSendsignedtouser',
         'bEzsignfoldertypeSendattachmentezsignsigner' => 'bEzsignfoldertypeSendattachmentezsignsigner',
         'bEzsignfoldertypeSendproofezsignsigner' => 'bEzsignfoldertypeSendproofezsignsigner',
+        'bEzsignfoldertypeSendattachmentreceivecopy' => 'bEzsignfoldertypeSendattachmentreceivecopy',
         'bEzsignfoldertypeSendattachmentuser' => 'bEzsignfoldertypeSendattachmentuser',
         'bEzsignfoldertypeSendproofuser' => 'bEzsignfoldertypeSendproofuser',
         'bEzsignfoldertypeSendproofemail' => 'bEzsignfoldertypeSendproofemail',
@@ -455,6 +459,7 @@ class EzsignfoldertypeRequestV3 implements ModelInterface, ArrayAccess, \JsonSer
         'bEzsignfoldertypeSendsignedtouser' => 'setBEzsignfoldertypeSendsignedtouser',
         'bEzsignfoldertypeSendattachmentezsignsigner' => 'setBEzsignfoldertypeSendattachmentezsignsigner',
         'bEzsignfoldertypeSendproofezsignsigner' => 'setBEzsignfoldertypeSendproofezsignsigner',
+        'bEzsignfoldertypeSendattachmentreceivecopy' => 'setBEzsignfoldertypeSendattachmentreceivecopy',
         'bEzsignfoldertypeSendattachmentuser' => 'setBEzsignfoldertypeSendattachmentuser',
         'bEzsignfoldertypeSendproofuser' => 'setBEzsignfoldertypeSendproofuser',
         'bEzsignfoldertypeSendproofemail' => 'setBEzsignfoldertypeSendproofemail',
@@ -523,6 +528,7 @@ class EzsignfoldertypeRequestV3 implements ModelInterface, ArrayAccess, \JsonSer
         'bEzsignfoldertypeSendsignedtouser' => 'getBEzsignfoldertypeSendsignedtouser',
         'bEzsignfoldertypeSendattachmentezsignsigner' => 'getBEzsignfoldertypeSendattachmentezsignsigner',
         'bEzsignfoldertypeSendproofezsignsigner' => 'getBEzsignfoldertypeSendproofezsignsigner',
+        'bEzsignfoldertypeSendattachmentreceivecopy' => 'getBEzsignfoldertypeSendattachmentreceivecopy',
         'bEzsignfoldertypeSendattachmentuser' => 'getBEzsignfoldertypeSendattachmentuser',
         'bEzsignfoldertypeSendproofuser' => 'getBEzsignfoldertypeSendproofuser',
         'bEzsignfoldertypeSendproofemail' => 'getBEzsignfoldertypeSendproofemail',
@@ -642,6 +648,7 @@ class EzsignfoldertypeRequestV3 implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('bEzsignfoldertypeSendsignedtouser', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeSendattachmentezsignsigner', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeSendproofezsignsigner', $data ?? [], null);
+        $this->setIfExists('bEzsignfoldertypeSendattachmentreceivecopy', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeSendattachmentuser', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeSendproofuser', $data ?? [], null);
         $this->setIfExists('bEzsignfoldertypeSendproofemail', $data ?? [], null);
@@ -2388,6 +2395,38 @@ class EzsignfoldertypeRequestV3 implements ModelInterface, ArrayAccess, \JsonSer
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
 	//$this->container['bEzsignfoldertypeSendproofezsignsigner'] = $bEzsignfoldertypeSendproofezsignsigner;
         $this->container['bEzsignfoldertypeSendproofezsignsigner'] = (is_null($bEzsignfoldertypeSendproofezsignsigner) ? null : (bool) $bEzsignfoldertypeSendproofezsignsigner);
+
+        return $this;
+    }
+
+    /**
+     * Gets bEzsignfoldertypeSendattachmentreceivecopy
+     *
+     * @return bool|null
+     */
+    public function getBEzsignfoldertypeSendattachmentreceivecopy()
+    {
+	//return $this->container['bEzsignfoldertypeSendattachmentreceivecopy'];
+        return $this->container['bEzsignfoldertypeSendattachmentreceivecopy'];
+    }
+
+    /**
+     * Sets bEzsignfoldertypeSendattachmentreceivecopy
+     *
+     * @param bool|null $bEzsignfoldertypeSendattachmentreceivecopy Whether we send the Ezsigndocument in the email to Ezsignsigner or User when bEzsignfoldersignerassociationReceivecopy = 1
+     *
+     * @return self
+     */
+    public function setBEzsignfoldertypeSendattachmentreceivecopy($bEzsignfoldertypeSendattachmentreceivecopy)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bEzsignfoldertypeSendattachmentreceivecopy)) {
+            //throw new \InvalidArgumentException('non-nullable bEzsignfoldertypeSendattachmentreceivecopy cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+	//$this->container['bEzsignfoldertypeSendattachmentreceivecopy'] = $bEzsignfoldertypeSendattachmentreceivecopy;
+        $this->container['bEzsignfoldertypeSendattachmentreceivecopy'] = (is_null($bEzsignfoldertypeSendattachmentreceivecopy) ? null : (bool) $bEzsignfoldertypeSendattachmentreceivecopy);
 
         return $this;
     }
