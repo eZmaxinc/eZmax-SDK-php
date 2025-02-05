@@ -27,6 +27,7 @@ docs/Api/ObjectCountryApi.md
 docs/Api/ObjectCreditcardclientApi.md
 docs/Api/ObjectCreditcardmerchantApi.md
 docs/Api/ObjectCreditcardtypeApi.md
+docs/Api/ObjectCurrencyApi.md
 docs/Api/ObjectCustomerApi.md
 docs/Api/ObjectDepartmentApi.md
 docs/Api/ObjectDiscussionApi.md
@@ -376,6 +377,9 @@ docs/Model/CreditcardmerchantResponseCompound.md
 docs/Model/CreditcardtypeAutocompleteElementResponse.md
 docs/Model/CreditcardtypeGetAutocompleteV2Response.md
 docs/Model/CreditcardtypeGetAutocompleteV2ResponseMPayload.md
+docs/Model/CurrencyAutocompleteElementResponse.md
+docs/Model/CurrencyGetAutocompleteV2Response.md
+docs/Model/CurrencyGetAutocompleteV2ResponseMPayload.md
 docs/Model/CustomApikey.md
 docs/Model/CustomApikeyfederation.md
 docs/Model/CustomAttachmentResponse.md
@@ -1798,6 +1802,7 @@ lib/Api/ObjectCountryApi.php
 lib/Api/ObjectCreditcardclientApi.php
 lib/Api/ObjectCreditcardmerchantApi.php
 lib/Api/ObjectCreditcardtypeApi.php
+lib/Api/ObjectCurrencyApi.php
 lib/Api/ObjectCustomerApi.php
 lib/Api/ObjectDepartmentApi.php
 lib/Api/ObjectDiscussionApi.php
@@ -2150,6 +2155,9 @@ lib/Model/CreditcardmerchantResponseCompound.php
 lib/Model/CreditcardtypeAutocompleteElementResponse.php
 lib/Model/CreditcardtypeGetAutocompleteV2Response.php
 lib/Model/CreditcardtypeGetAutocompleteV2ResponseMPayload.php
+lib/Model/CurrencyAutocompleteElementResponse.php
+lib/Model/CurrencyGetAutocompleteV2Response.php
+lib/Model/CurrencyGetAutocompleteV2ResponseMPayload.php
 lib/Model/CustomApikey.php
 lib/Model/CustomApikeyfederation.php
 lib/Model/CustomAttachmentResponse.php
