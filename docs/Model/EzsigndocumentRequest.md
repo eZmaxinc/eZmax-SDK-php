@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **fkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder |
 **fkiEzsigntemplateID** | **int** | The unique ID of the Ezsigntemplate | [optional]
 **fkiEzsignfoldersignerassociationID** | **int** | The unique ID of the Ezsignfoldersignerassociation | [optional]
+**fkiEzsignimportdocumentID** | **int** | The unique ID of the Ezsignimportdocument | [optional]
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **eEzsigndocumentSource** | **string** | Indicates where to look for the document binary content. |
 **eEzsigndocumentFormat** | **string** | Indicates the format of the document. | [optional]

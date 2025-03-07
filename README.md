@@ -136,14 +136,13 @@ Class | Method | HTTP request | Description
 *ObjectCreditcardclientApi* | [**creditcardclientGetListV1**](docs/Api/ObjectCreditcardclientApi.md#creditcardclientgetlistv1) | **GET** /1/object/creditcardclient/getList | Retrieve Creditcardclient list
 *ObjectCreditcardclientApi* | [**creditcardclientGetObjectV2**](docs/Api/ObjectCreditcardclientApi.md#creditcardclientgetobjectv2) | **GET** /2/object/creditcardclient/{pkiCreditcardclientID} | Retrieve an existing Creditcardclient
 *ObjectCreditcardclientApi* | [**creditcardclientPatchObjectV1**](docs/Api/ObjectCreditcardclientApi.md#creditcardclientpatchobjectv1) | **PATCH** /1/object/creditcardclient/{pkiCreditcardclientID} | Patch an existing Creditcardclient
-*ObjectCreditcardmerchantApi* | [**creditcardmerchantCreateObjectV1**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantcreateobjectv1) | **POST** /1/object/creditcardmerchant | Create a new Creditcardmerchant
-*ObjectCreditcardmerchantApi* | [**creditcardmerchantDeleteObjectV1**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantdeleteobjectv1) | **DELETE** /1/object/creditcardmerchant/{pkiCreditcardmerchantID} | Delete an existing Creditcardmerchant
-*ObjectCreditcardmerchantApi* | [**creditcardmerchantEditObjectV1**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchanteditobjectv1) | **PUT** /1/object/creditcardmerchant/{pkiCreditcardmerchantID} | Edit an existing Creditcardmerchant
 *ObjectCreditcardmerchantApi* | [**creditcardmerchantGetAutocompleteV2**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantgetautocompletev2) | **GET** /2/object/creditcardmerchant/getAutocomplete/{sSelector} | Retrieve Creditcardmerchants and IDs
 *ObjectCreditcardmerchantApi* | [**creditcardmerchantGetListV1**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantgetlistv1) | **GET** /1/object/creditcardmerchant/getList | Retrieve Creditcardmerchant list
 *ObjectCreditcardmerchantApi* | [**creditcardmerchantGetObjectV2**](docs/Api/ObjectCreditcardmerchantApi.md#creditcardmerchantgetobjectv2) | **GET** /2/object/creditcardmerchant/{pkiCreditcardmerchantID} | Retrieve an existing Creditcardmerchant
 *ObjectCreditcardtypeApi* | [**creditcardtypeGetAutocompleteV2**](docs/Api/ObjectCreditcardtypeApi.md#creditcardtypegetautocompletev2) | **GET** /2/object/creditcardtype/getAutocomplete/{sSelector} | Retrieve Creditcardtypes and IDs
+*ObjectCurrencyApi* | [**currencyGetAutocompleteV2**](docs/Api/ObjectCurrencyApi.md#currencygetautocompletev2) | **GET** /2/object/currency/getAutocomplete/{sSelector} | Retrieve Currencies and IDs
 *ObjectCustomerApi* | [**customerCreateObjectV1**](docs/Api/ObjectCustomerApi.md#customercreateobjectv1) | **POST** /1/object/customer | Create a new Customer
+*ObjectCustomerApi* | [**customerGetAutocompleteV2**](docs/Api/ObjectCustomerApi.md#customergetautocompletev2) | **GET** /2/object/customer/getAutocomplete/{sSelector} | Retrieve Customers and IDs
 *ObjectCustomerApi* | [**customerGetObjectV2**](docs/Api/ObjectCustomerApi.md#customergetobjectv2) | **GET** /2/object/customer/{pkiCustomerID} | Retrieve an existing Customer
 *ObjectDepartmentApi* | [**departmentGetAutocompleteV2**](docs/Api/ObjectDepartmentApi.md#departmentgetautocompletev2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
 *ObjectDiscussionApi* | [**discussionCreateObjectV1**](docs/Api/ObjectDiscussionApi.md#discussioncreateobjectv1) | **POST** /1/object/discussion | Create a new Discussion
@@ -238,6 +237,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsigndocumentApi* | [**ezsigndocumentGetTemporaryProofV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgettemporaryproofv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof
 *ObjectEzsigndocumentApi* | [**ezsigndocumentGetWordsPositionsV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgetwordspositionsv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentPatchObjectV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentpatchobjectv1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument
+*ObjectEzsigndocumentApi* | [**ezsigndocumentPrefillEzsignformV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentprefillezsignformv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/prefillEzsignform | Prefill an Ezsignform
 *ObjectEzsigndocumentApi* | [**ezsigndocumentSubmitEzsignformV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentsubmitezsignformv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/submitEzsignform | Submit the Ezsignform
 *ObjectEzsigndocumentApi* | [**ezsigndocumentUnsendV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentunsendv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/unsend | Unsend the Ezsigndocument
 *ObjectEzsignfolderApi* | [**ezsignfolderArchiveV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderarchivev1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/archive | Archive the Ezsignfolder
@@ -293,6 +293,10 @@ Class | Method | HTTP request | Description
 *ObjectEzsignformfieldgroupApi* | [**ezsignformfieldgroupDeleteObjectV1**](docs/Api/ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupdeleteobjectv1) | **DELETE** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Delete an existing Ezsignformfieldgroup
 *ObjectEzsignformfieldgroupApi* | [**ezsignformfieldgroupEditObjectV1**](docs/Api/ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupeditobjectv1) | **PUT** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Edit an existing Ezsignformfieldgroup
 *ObjectEzsignformfieldgroupApi* | [**ezsignformfieldgroupGetObjectV2**](docs/Api/ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupgetobjectv2) | **GET** /2/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Retrieve an existing Ezsignformfieldgroup
+*ObjectEzsignimportdocumentApi* | [**ezsignimportdocumentDownloadV1**](docs/Api/ObjectEzsignimportdocumentApi.md#ezsignimportdocumentdownloadv1) | **GET** /1/object/ezsignimportdocument/{pkiEzsignimportdocumentID}/download | Retrieve the content
+*ObjectEzsignimportfolderApi* | [**ezsignimportfolderDeleteObjectV1**](docs/Api/ObjectEzsignimportfolderApi.md#ezsignimportfolderdeleteobjectv1) | **DELETE** /1/object/ezsignimportfolder/{pkiEzsignimportfolderID} | Delete an existing Ezsignimportfolder
+*ObjectEzsignimportfolderApi* | [**ezsignimportfolderGetListV1**](docs/Api/ObjectEzsignimportfolderApi.md#ezsignimportfoldergetlistv1) | **GET** /1/object/ezsignimportfolder/getList | Retrieve Ezsignimportfolder list
+*ObjectEzsignimportfolderApi* | [**ezsignimportfolderGetObjectV2**](docs/Api/ObjectEzsignimportfolderApi.md#ezsignimportfoldergetobjectv2) | **GET** /2/object/ezsignimportfolder/{pkiEzsignimportfolderID} | Retrieve an existing Ezsignimportfolder
 *ObjectEzsignpageApi* | [**ezsignpageConsultV1**](docs/Api/ObjectEzsignpageApi.md#ezsignpageconsultv1) | **POST** /1/object/ezsignpage/{pkiEzsignpageID}/consult | Consult an Ezsignpage
 *ObjectEzsignsignatureApi* | [**ezsignsignatureCreateObjectV1**](docs/Api/ObjectEzsignsignatureApi.md#ezsignsignaturecreateobjectv1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 *ObjectEzsignsignatureApi* | [**ezsignsignatureCreateObjectV2**](docs/Api/ObjectEzsignsignatureApi.md#ezsignsignaturecreateobjectv2) | **POST** /2/object/ezsignsignature | Create a new Ezsignsignature
@@ -367,6 +371,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsigntemplatepackagesignermembershipApi* | [**ezsigntemplatepackagesignermembershipGetObjectV2**](docs/Api/ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembershipgetobjectv2) | **GET** /2/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Retrieve an existing Ezsigntemplatepackagesignermembership
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublicCreateEzsignfolderV1**](docs/Api/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepubliccreateezsignfolderv1) | **POST** /1/object/ezsigntemplatepublic/createEzsignfolder | Create an Ezsignfolder
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublicCreateObjectV1**](docs/Api/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepubliccreateobjectv1) | **POST** /1/object/ezsigntemplatepublic | Create a new Ezsigntemplatepublic
+*ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublicDeleteObjectV1**](docs/Api/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublicdeleteobjectv1) | **DELETE** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Delete an existing Ezsigntemplatepublic
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublicEditObjectV1**](docs/Api/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepubliceditobjectv1) | **PUT** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Edit an existing Ezsigntemplatepublic
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublicGetEzsigntemplatepublicDetailsV1**](docs/Api/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublicgetezsigntemplatepublicdetailsv1) | **POST** /1/object/ezsigntemplatepublic/getEzsigntemplatepublicDetails | Retrieve the Ezsigntemplatepublic details
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublicGetFormsDataV1**](docs/Api/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublicgetformsdatav1) | **GET** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}/getFormsData | Retrieve an existing Ezsigntemplatepublic&#39;s forms data
@@ -418,6 +423,11 @@ Class | Method | HTTP request | Description
 *ObjectOtherincomeApi* | [**otherincomeGetCommunicationListV1**](docs/Api/ObjectOtherincomeApi.md#otherincomegetcommunicationlistv1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationList | Retrieve Communication list
 *ObjectOtherincomeApi* | [**otherincomeGetCommunicationrecipientsV1**](docs/Api/ObjectOtherincomeApi.md#otherincomegetcommunicationrecipientsv1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationrecipients | Retrieve Otherincome&#39;s Communicationrecipient
 *ObjectOtherincomeApi* | [**otherincomeGetCommunicationsendersV1**](docs/Api/ObjectOtherincomeApi.md#otherincomegetcommunicationsendersv1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationsenders | Retrieve Otherincome&#39;s Communicationsender
+*ObjectPaymentgatewayApi* | [**paymentgatewayCreateObjectV1**](docs/Api/ObjectPaymentgatewayApi.md#paymentgatewaycreateobjectv1) | **POST** /1/object/paymentgateway | Create a new Paymentgateway
+*ObjectPaymentgatewayApi* | [**paymentgatewayEditObjectV1**](docs/Api/ObjectPaymentgatewayApi.md#paymentgatewayeditobjectv1) | **PUT** /1/object/paymentgateway/{pkiPaymentgatewayID} | Edit an existing Paymentgateway
+*ObjectPaymentgatewayApi* | [**paymentgatewayGetAutocompleteV2**](docs/Api/ObjectPaymentgatewayApi.md#paymentgatewaygetautocompletev2) | **GET** /2/object/paymentgateway/getAutocomplete/{sSelector} | Retrieve Paymentgateways and IDs
+*ObjectPaymentgatewayApi* | [**paymentgatewayGetListV1**](docs/Api/ObjectPaymentgatewayApi.md#paymentgatewaygetlistv1) | **GET** /1/object/paymentgateway/getList | Retrieve Paymentgateway list
+*ObjectPaymentgatewayApi* | [**paymentgatewayGetObjectV2**](docs/Api/ObjectPaymentgatewayApi.md#paymentgatewaygetobjectv2) | **GET** /2/object/paymentgateway/{pkiPaymentgatewayID} | Retrieve an existing Paymentgateway
 *ObjectPaymenttermApi* | [**paymenttermCreateObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermcreateobjectv1) | **POST** /1/object/paymentterm | Create a new Paymentterm
 *ObjectPaymenttermApi* | [**paymenttermEditObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermeditobjectv1) | **PUT** /1/object/paymentterm/{pkiPaymenttermID} | Edit an existing Paymentterm
 *ObjectPaymenttermApi* | [**paymenttermGetAutocompleteV2**](docs/Api/ObjectPaymenttermApi.md#paymenttermgetautocompletev2) | **GET** /2/object/paymentterm/getAutocomplete/{sSelector} | Retrieve Paymentterms and IDs
@@ -687,6 +697,7 @@ Class | Method | HTTP request | Description
 - [CommonReportcellstyle](docs/Model/CommonReportcellstyle.md)
 - [CommonReportcolumn](docs/Model/CommonReportcolumn.md)
 - [CommonReportgroup](docs/Model/CommonReportgroup.md)
+- [CommonReportgroupParameter](docs/Model/CommonReportgroupParameter.md)
 - [CommonReportrow](docs/Model/CommonReportrow.md)
 - [CommonReportsection](docs/Model/CommonReportsection.md)
 - [CommonReportsubsection](docs/Model/CommonReportsubsection.md)
@@ -726,6 +737,7 @@ Class | Method | HTTP request | Description
 - [ComputedECommunicationDirection](docs/Model/ComputedECommunicationDirection.md)
 - [ComputedEEzsigndocumentSteptype](docs/Model/ComputedEEzsigndocumentSteptype.md)
 - [ComputedEEzsignfolderAccess](docs/Model/ComputedEEzsignfolderAccess.md)
+- [ComputedEEzsignimportfolderStatus](docs/Model/ComputedEEzsignimportfolderStatus.md)
 - [ContactRequest](docs/Model/ContactRequest.md)
 - [ContactRequestCompound](docs/Model/ContactRequestCompound.md)
 - [ContactRequestCompoundV2](docs/Model/ContactRequestCompoundV2.md)
@@ -781,12 +793,6 @@ Class | Method | HTTP request | Description
 - [CreditcarddetailResponse](docs/Model/CreditcarddetailResponse.md)
 - [CreditcarddetailResponseCompound](docs/Model/CreditcarddetailResponseCompound.md)
 - [CreditcardmerchantAutocompleteElementResponse](docs/Model/CreditcardmerchantAutocompleteElementResponse.md)
-- [CreditcardmerchantCreateObjectV1Request](docs/Model/CreditcardmerchantCreateObjectV1Request.md)
-- [CreditcardmerchantCreateObjectV1Response](docs/Model/CreditcardmerchantCreateObjectV1Response.md)
-- [CreditcardmerchantCreateObjectV1ResponseMPayload](docs/Model/CreditcardmerchantCreateObjectV1ResponseMPayload.md)
-- [CreditcardmerchantDeleteObjectV1Response](docs/Model/CreditcardmerchantDeleteObjectV1Response.md)
-- [CreditcardmerchantEditObjectV1Request](docs/Model/CreditcardmerchantEditObjectV1Request.md)
-- [CreditcardmerchantEditObjectV1Response](docs/Model/CreditcardmerchantEditObjectV1Response.md)
 - [CreditcardmerchantGetAutocompleteV2Response](docs/Model/CreditcardmerchantGetAutocompleteV2Response.md)
 - [CreditcardmerchantGetAutocompleteV2ResponseMPayload](docs/Model/CreditcardmerchantGetAutocompleteV2ResponseMPayload.md)
 - [CreditcardmerchantGetListV1Response](docs/Model/CreditcardmerchantGetListV1Response.md)
@@ -801,6 +807,9 @@ Class | Method | HTTP request | Description
 - [CreditcardtypeAutocompleteElementResponse](docs/Model/CreditcardtypeAutocompleteElementResponse.md)
 - [CreditcardtypeGetAutocompleteV2Response](docs/Model/CreditcardtypeGetAutocompleteV2Response.md)
 - [CreditcardtypeGetAutocompleteV2ResponseMPayload](docs/Model/CreditcardtypeGetAutocompleteV2ResponseMPayload.md)
+- [CurrencyAutocompleteElementResponse](docs/Model/CurrencyAutocompleteElementResponse.md)
+- [CurrencyGetAutocompleteV2Response](docs/Model/CurrencyGetAutocompleteV2Response.md)
+- [CurrencyGetAutocompleteV2ResponseMPayload](docs/Model/CurrencyGetAutocompleteV2ResponseMPayload.md)
 - [CustomApikey](docs/Model/CustomApikey.md)
 - [CustomApikeyfederation](docs/Model/CustomApikeyfederation.md)
 - [CustomAttachmentResponse](docs/Model/CustomAttachmentResponse.md)
@@ -814,6 +823,7 @@ Class | Method | HTTP request | Description
 - [CustomCommunicationsenderResponse](docs/Model/CustomCommunicationsenderResponse.md)
 - [CustomContactNameResponse](docs/Model/CustomContactNameResponse.md)
 - [CustomCreateEzsignelementsPositionedByWordRequest](docs/Model/CustomCreateEzsignelementsPositionedByWordRequest.md)
+- [CustomCreditcardRequest](docs/Model/CustomCreditcardRequest.md)
 - [CustomCreditcardtransactionResponse](docs/Model/CustomCreditcardtransactionResponse.md)
 - [CustomCreditcardtransactionresponseResponse](docs/Model/CustomCreditcardtransactionresponseResponse.md)
 - [CustomDiscussionconfigurationResponse](docs/Model/CustomDiscussionconfigurationResponse.md)
@@ -836,11 +846,13 @@ Class | Method | HTTP request | Description
 - [CustomEzsignfoldertransmissionResponse](docs/Model/CustomEzsignfoldertransmissionResponse.md)
 - [CustomEzsignfoldertransmissionSignerResponse](docs/Model/CustomEzsignfoldertransmissionSignerResponse.md)
 - [CustomEzsignfoldertypeResponse](docs/Model/CustomEzsignfoldertypeResponse.md)
+- [CustomEzsignfoldertypeTemplateResponse](docs/Model/CustomEzsignfoldertypeTemplateResponse.md)
 - [CustomEzsignformfieldRequest](docs/Model/CustomEzsignformfieldRequest.md)
 - [CustomEzsignformfielderrorResponse](docs/Model/CustomEzsignformfielderrorResponse.md)
 - [CustomEzsignformfielderrortestResponse](docs/Model/CustomEzsignformfielderrortestResponse.md)
 - [CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest](docs/Model/CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest.md)
 - [CustomEzsignformfieldgroupRequest](docs/Model/CustomEzsignformfieldgroupRequest.md)
+- [CustomEzsignimportdocumentResponse](docs/Model/CustomEzsignimportdocumentResponse.md)
 - [CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest](docs/Model/CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest.md)
 - [CustomEzsignsignatureEzsignsignaturesAutomaticResponse](docs/Model/CustomEzsignsignatureEzsignsignaturesAutomaticResponse.md)
 - [CustomEzsignsignaturestatusResponse](docs/Model/CustomEzsignsignaturestatusResponse.md)
@@ -852,15 +864,19 @@ Class | Method | HTTP request | Description
 - [CustomImportEzsigntemplatepackageRelationRequest](docs/Model/CustomImportEzsigntemplatepackageRelationRequest.md)
 - [CustomNotificationsubsectiongetnotificationtestsResponse](docs/Model/CustomNotificationsubsectiongetnotificationtestsResponse.md)
 - [CustomNotificationtestgetnotificationtestsResponse](docs/Model/CustomNotificationtestgetnotificationtestsResponse.md)
+- [CustomPrefillEzsignformValueRequest](docs/Model/CustomPrefillEzsignformValueRequest.md)
 - [CustomTimezoneWithCodeResponse](docs/Model/CustomTimezoneWithCodeResponse.md)
 - [CustomUserNameResponse](docs/Model/CustomUserNameResponse.md)
 - [CustomWebhookResponse](docs/Model/CustomWebhookResponse.md)
 - [CustomWebhooklogResponse](docs/Model/CustomWebhooklogResponse.md)
 - [CustomWordPositionOccurenceResponse](docs/Model/CustomWordPositionOccurenceResponse.md)
 - [CustomWordPositionWordResponse](docs/Model/CustomWordPositionWordResponse.md)
+- [CustomerAutocompleteElementResponse](docs/Model/CustomerAutocompleteElementResponse.md)
 - [CustomerCreateObjectV1Request](docs/Model/CustomerCreateObjectV1Request.md)
 - [CustomerCreateObjectV1Response](docs/Model/CustomerCreateObjectV1Response.md)
 - [CustomerCreateObjectV1ResponseMPayload](docs/Model/CustomerCreateObjectV1ResponseMPayload.md)
+- [CustomerGetAutocompleteV2Response](docs/Model/CustomerGetAutocompleteV2Response.md)
+- [CustomerGetAutocompleteV2ResponseMPayload](docs/Model/CustomerGetAutocompleteV2ResponseMPayload.md)
 - [CustomerGetObjectV2Response](docs/Model/CustomerGetObjectV2Response.md)
 - [CustomerGetObjectV2ResponseMPayload](docs/Model/CustomerGetObjectV2ResponseMPayload.md)
 - [CustomerRequest](docs/Model/CustomerRequest.md)
@@ -935,6 +951,7 @@ Class | Method | HTTP request | Description
 - [EnumFontunderline](docs/Model/EnumFontunderline.md)
 - [EnumFontweight](docs/Model/EnumFontweight.md)
 - [EnumHorizontalalignment](docs/Model/EnumHorizontalalignment.md)
+- [EnumReportdataType](docs/Model/EnumReportdataType.md)
 - [EnumTextvalidation](docs/Model/EnumTextvalidation.md)
 - [EnumVerticalalignment](docs/Model/EnumVerticalalignment.md)
 - [EzdoctemplatedocumentAutocompleteElementResponse](docs/Model/EzdoctemplatedocumentAutocompleteElementResponse.md)
@@ -1140,6 +1157,8 @@ Class | Method | HTTP request | Description
 - [EzsigndocumentMatchingtemplateV3Response](docs/Model/EzsigndocumentMatchingtemplateV3Response.md)
 - [EzsigndocumentPatchObjectV1Request](docs/Model/EzsigndocumentPatchObjectV1Request.md)
 - [EzsigndocumentPatchObjectV1Response](docs/Model/EzsigndocumentPatchObjectV1Response.md)
+- [EzsigndocumentPrefillEzsignformV1Request](docs/Model/EzsigndocumentPrefillEzsignformV1Request.md)
+- [EzsigndocumentPrefillEzsignformV1Response](docs/Model/EzsigndocumentPrefillEzsignformV1Response.md)
 - [EzsigndocumentRequest](docs/Model/EzsigndocumentRequest.md)
 - [EzsigndocumentRequestCompound](docs/Model/EzsigndocumentRequestCompound.md)
 - [EzsigndocumentRequestPatch](docs/Model/EzsigndocumentRequestPatch.md)
@@ -1299,6 +1318,15 @@ Class | Method | HTTP request | Description
 - [EzsignformfieldgroupsignerRequestCompound](docs/Model/EzsignformfieldgroupsignerRequestCompound.md)
 - [EzsignformfieldgroupsignerResponse](docs/Model/EzsignformfieldgroupsignerResponse.md)
 - [EzsignformfieldgroupsignerResponseCompound](docs/Model/EzsignformfieldgroupsignerResponseCompound.md)
+- [EzsignimportdocumentDownloadV1Response](docs/Model/EzsignimportdocumentDownloadV1Response.md)
+- [EzsignimportfolderDeleteObjectV1Response](docs/Model/EzsignimportfolderDeleteObjectV1Response.md)
+- [EzsignimportfolderGetListV1Response](docs/Model/EzsignimportfolderGetListV1Response.md)
+- [EzsignimportfolderGetListV1ResponseMPayload](docs/Model/EzsignimportfolderGetListV1ResponseMPayload.md)
+- [EzsignimportfolderGetObjectV2Response](docs/Model/EzsignimportfolderGetObjectV2Response.md)
+- [EzsignimportfolderGetObjectV2ResponseMPayload](docs/Model/EzsignimportfolderGetObjectV2ResponseMPayload.md)
+- [EzsignimportfolderListElement](docs/Model/EzsignimportfolderListElement.md)
+- [EzsignimportfolderResponse](docs/Model/EzsignimportfolderResponse.md)
+- [EzsignimportfolderResponseCompound](docs/Model/EzsignimportfolderResponseCompound.md)
 - [EzsignpageConsultV1Response](docs/Model/EzsignpageConsultV1Response.md)
 - [EzsignpageResponse](docs/Model/EzsignpageResponse.md)
 - [EzsignpageResponseCompound](docs/Model/EzsignpageResponseCompound.md)
@@ -1338,6 +1366,10 @@ Class | Method | HTTP request | Description
 - [EzsignsignaturecustomdateResponseCompound](docs/Model/EzsignsignaturecustomdateResponseCompound.md)
 - [EzsignsignaturecustomdateResponseCompoundV2](docs/Model/EzsignsignaturecustomdateResponseCompoundV2.md)
 - [EzsignsignaturecustomdateResponseV2](docs/Model/EzsignsignaturecustomdateResponseV2.md)
+- [EzsignsignaturepaymentdetailRequest](docs/Model/EzsignsignaturepaymentdetailRequest.md)
+- [EzsignsignaturepaymentdetailRequestCompound](docs/Model/EzsignsignaturepaymentdetailRequestCompound.md)
+- [EzsignsignaturepaymentdetailResponse](docs/Model/EzsignsignaturepaymentdetailResponse.md)
+- [EzsignsignaturepaymentdetailResponseCompound](docs/Model/EzsignsignaturepaymentdetailResponseCompound.md)
 - [EzsignsignerRequest](docs/Model/EzsignsignerRequest.md)
 - [EzsignsignerRequestCompound](docs/Model/EzsignsignerRequestCompound.md)
 - [EzsignsignerRequestCompoundContact](docs/Model/EzsignsignerRequestCompoundContact.md)
@@ -1557,6 +1589,7 @@ Class | Method | HTTP request | Description
 - [EzsigntemplatepublicCreateObjectV1Request](docs/Model/EzsigntemplatepublicCreateObjectV1Request.md)
 - [EzsigntemplatepublicCreateObjectV1Response](docs/Model/EzsigntemplatepublicCreateObjectV1Response.md)
 - [EzsigntemplatepublicCreateObjectV1ResponseMPayload](docs/Model/EzsigntemplatepublicCreateObjectV1ResponseMPayload.md)
+- [EzsigntemplatepublicDeleteObjectV1Response](docs/Model/EzsigntemplatepublicDeleteObjectV1Response.md)
 - [EzsigntemplatepublicEditObjectV1Request](docs/Model/EzsigntemplatepublicEditObjectV1Request.md)
 - [EzsigntemplatepublicEditObjectV1Response](docs/Model/EzsigntemplatepublicEditObjectV1Response.md)
 - [EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Request](docs/Model/EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Request.md)
@@ -1686,6 +1719,7 @@ Class | Method | HTTP request | Description
 - [FieldEEzsignsignatureFont](docs/Model/FieldEEzsignsignatureFont.md)
 - [FieldEEzsignsignatureTooltipposition](docs/Model/FieldEEzsignsignatureTooltipposition.md)
 - [FieldEEzsignsignatureType](docs/Model/FieldEEzsignsignatureType.md)
+- [FieldEEzsignsignaturepaymentdetailTaxable](docs/Model/FieldEEzsignsignaturepaymentdetailTaxable.md)
 - [FieldEEzsigntemplateRecognition](docs/Model/FieldEEzsigntemplateRecognition.md)
 - [FieldEEzsigntemplateType](docs/Model/FieldEEzsigntemplateType.md)
 - [FieldEEzsigntemplatedocumentpagerecognitionOperator](docs/Model/FieldEEzsigntemplatedocumentpagerecognitionOperator.md)
@@ -1712,6 +1746,7 @@ Class | Method | HTTP request | Description
 - [FieldEEzsigntemplatesignatureType](docs/Model/FieldEEzsigntemplatesignatureType.md)
 - [FieldEEzsigntemplatesignerMapping](docs/Model/FieldEEzsigntemplatesignerMapping.md)
 - [FieldENotificationpreferenceStatus](docs/Model/FieldENotificationpreferenceStatus.md)
+- [FieldEPaymentgatewayProcessor](docs/Model/FieldEPaymentgatewayProcessor.md)
 - [FieldEPaymenttermType](docs/Model/FieldEPaymenttermType.md)
 - [FieldEPhoneType](docs/Model/FieldEPhoneType.md)
 - [FieldESessionhistoryEndby](docs/Model/FieldESessionhistoryEndby.md)
@@ -1818,6 +1853,7 @@ Class | Method | HTTP request | Description
 - [MultilingualEzsignsigningreasonDescription](docs/Model/MultilingualEzsignsigningreasonDescription.md)
 - [MultilingualNotificationsubsectionName](docs/Model/MultilingualNotificationsubsectionName.md)
 - [MultilingualNotificationtestName](docs/Model/MultilingualNotificationtestName.md)
+- [MultilingualPaymentgatewayDescription](docs/Model/MultilingualPaymentgatewayDescription.md)
 - [MultilingualPaymenttermDescription](docs/Model/MultilingualPaymenttermDescription.md)
 - [MultilingualSubnetDescription](docs/Model/MultilingualSubnetDescription.md)
 - [MultilingualSupplyDescription](docs/Model/MultilingualSupplyDescription.md)
@@ -1839,6 +1875,23 @@ Class | Method | HTTP request | Description
 - [OtherincomeGetCommunicationrecipientsV1ResponseMPayload](docs/Model/OtherincomeGetCommunicationrecipientsV1ResponseMPayload.md)
 - [OtherincomeGetCommunicationsendersV1Response](docs/Model/OtherincomeGetCommunicationsendersV1Response.md)
 - [OtherincomeGetCommunicationsendersV1ResponseMPayload](docs/Model/OtherincomeGetCommunicationsendersV1ResponseMPayload.md)
+- [PaymentgatewayAutocompleteElementResponse](docs/Model/PaymentgatewayAutocompleteElementResponse.md)
+- [PaymentgatewayCreateObjectV1Request](docs/Model/PaymentgatewayCreateObjectV1Request.md)
+- [PaymentgatewayCreateObjectV1Response](docs/Model/PaymentgatewayCreateObjectV1Response.md)
+- [PaymentgatewayCreateObjectV1ResponseMPayload](docs/Model/PaymentgatewayCreateObjectV1ResponseMPayload.md)
+- [PaymentgatewayEditObjectV1Request](docs/Model/PaymentgatewayEditObjectV1Request.md)
+- [PaymentgatewayEditObjectV1Response](docs/Model/PaymentgatewayEditObjectV1Response.md)
+- [PaymentgatewayGetAutocompleteV2Response](docs/Model/PaymentgatewayGetAutocompleteV2Response.md)
+- [PaymentgatewayGetAutocompleteV2ResponseMPayload](docs/Model/PaymentgatewayGetAutocompleteV2ResponseMPayload.md)
+- [PaymentgatewayGetListV1Response](docs/Model/PaymentgatewayGetListV1Response.md)
+- [PaymentgatewayGetListV1ResponseMPayload](docs/Model/PaymentgatewayGetListV1ResponseMPayload.md)
+- [PaymentgatewayGetObjectV2Response](docs/Model/PaymentgatewayGetObjectV2Response.md)
+- [PaymentgatewayGetObjectV2ResponseMPayload](docs/Model/PaymentgatewayGetObjectV2ResponseMPayload.md)
+- [PaymentgatewayListElement](docs/Model/PaymentgatewayListElement.md)
+- [PaymentgatewayRequest](docs/Model/PaymentgatewayRequest.md)
+- [PaymentgatewayRequestCompound](docs/Model/PaymentgatewayRequestCompound.md)
+- [PaymentgatewayResponse](docs/Model/PaymentgatewayResponse.md)
+- [PaymentgatewayResponseCompound](docs/Model/PaymentgatewayResponseCompound.md)
 - [PaymenttermAutocompleteElementResponse](docs/Model/PaymenttermAutocompleteElementResponse.md)
 - [PaymenttermCreateObjectV1Request](docs/Model/PaymenttermCreateObjectV1Request.md)
 - [PaymenttermCreateObjectV1Response](docs/Model/PaymenttermCreateObjectV1Response.md)
@@ -2237,7 +2290,7 @@ support-api@ezmax.ca
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.2.1`
-    - Package version: `1.2.1`
-    - Generator version: `7.11.0`
+- API version: `1.2.2`
+    - Package version: `1.2.2`
+    - Generator version: `7.12.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
