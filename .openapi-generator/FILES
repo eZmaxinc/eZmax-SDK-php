@@ -39,7 +39,6 @@ docs/Api/ObjectEmailtypeApi.md
 docs/Api/ObjectEzdoctemplatedocumentApi.md
 docs/Api/ObjectEzdoctemplatefieldtypecategoryApi.md
 docs/Api/ObjectEzdoctemplatetypeApi.md
-docs/Api/ObjectEzmaxcaseApi.md
 docs/Api/ObjectEzmaxinvoicingApi.md
 docs/Api/ObjectEzmaxproductApi.md
 docs/Api/ObjectEzsignannotationApi.md
@@ -550,9 +549,6 @@ docs/Model/EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload.md
 docs/Model/EzdoctemplatetypeAutocompleteElementResponse.md
 docs/Model/EzdoctemplatetypeGetAutocompleteV2Response.md
 docs/Model/EzdoctemplatetypeGetAutocompleteV2ResponseMPayload.md
-docs/Model/EzmaxcasePatchObjectV1Request.md
-docs/Model/EzmaxcasePatchObjectV1Response.md
-docs/Model/EzmaxcaseRequestPatch.md
 docs/Model/EzmaxinvoicingAutocompleteElementResponse.md
 docs/Model/EzmaxinvoicingGetAutocompleteV2Response.md
 docs/Model/EzmaxinvoicingGetAutocompleteV2ResponseMPayload.md
@@ -1860,7 +1856,6 @@ lib/Api/ObjectEmailtypeApi.php
 lib/Api/ObjectEzdoctemplatedocumentApi.php
 lib/Api/ObjectEzdoctemplatefieldtypecategoryApi.php
 lib/Api/ObjectEzdoctemplatetypeApi.php
-lib/Api/ObjectEzmaxcaseApi.php
 lib/Api/ObjectEzmaxinvoicingApi.php
 lib/Api/ObjectEzmaxproductApi.php
 lib/Api/ObjectEzsignannotationApi.php
@@ -2374,9 +2369,6 @@ lib/Model/EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload.php
 lib/Model/EzdoctemplatetypeAutocompleteElementResponse.php
 lib/Model/EzdoctemplatetypeGetAutocompleteV2Response.php
 lib/Model/EzdoctemplatetypeGetAutocompleteV2ResponseMPayload.php
-lib/Model/EzmaxcasePatchObjectV1Request.php
-lib/Model/EzmaxcasePatchObjectV1Response.php
-lib/Model/EzmaxcaseRequestPatch.php
 lib/Model/EzmaxinvoicingAutocompleteElementResponse.php
 lib/Model/EzmaxinvoicingGetAutocompleteV2Response.php
 lib/Model/EzmaxinvoicingGetAutocompleteV2ResponseMPayload.php
