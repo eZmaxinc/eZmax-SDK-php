@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester |
 **sEzsignfolderDescription** | **string** | The description of the Ezsignfolder |
 **eEzsignfolderStep** | [**\eZmaxAPI\Model\FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |
+**eEzsignfolderCompletion** | [**\eZmaxAPI\Model\FieldEEzsignfolderCompletion**](FieldEEzsignfolderCompletion.md) |  |
 **dtCreatedDate** | **string** | The date and time at which the object was created |
 **dtEzsignfolderDelayedsenddate** | **string** | The date and time at which the Ezsignfolder will be sent in the future. | [optional]
 **dtEzsignfolderSentdate** | **string** | The date and time at which the Ezsignfolder was sent the last time. | [optional]

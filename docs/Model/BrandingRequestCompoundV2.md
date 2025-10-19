@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiBrandingID** | **int** | The unique ID of the Branding | [optional]
+**fkiDomainID** | **int** | The unique ID of the Domain | [optional]
 **objBrandingDescription** | [**\eZmaxAPI\Model\MultilingualBrandingDescription**](MultilingualBrandingDescription.md) |  |
 **eBrandingLogo** | [**\eZmaxAPI\Model\FieldEBrandingLogo**](FieldEBrandingLogo.md) |  |
 **eBrandingAlignlogo** | [**\eZmaxAPI\Model\FieldEBrandingAlignlogo**](FieldEBrandingAlignlogo.md) |  | [optional]

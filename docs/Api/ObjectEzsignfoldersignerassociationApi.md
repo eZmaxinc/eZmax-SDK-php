@@ -5,6 +5,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**ezsignfoldersignerassociationCreateEmbeddedUrlV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateEmbeddedUrlV1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing |
+| [**ezsignfoldersignerassociationCreateEmbeddedUrlV2()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateEmbeddedUrlV2) | **POST** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing |
 | [**ezsignfoldersignerassociationCreateObjectV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateObjectV1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociationCreateObjectV2()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateObjectV2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociationDeleteObjectV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationDeleteObjectV1) | **DELETE** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Delete an existing Ezsignfoldersignerassociation |
@@ -67,6 +68,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV1Response**](../Model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfoldersignerassociationCreateEmbeddedUrlV2()`
+
+```php
+ezsignfoldersignerassociationCreateEmbeddedUrlV2($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationCreateEmbeddedUrlV2Request): \eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Response
+```
+
+Creates an Url to allow embedded signing
+
+This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldersignerassociationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfoldersignerassociationID = 56; // int
+$ezsignfoldersignerassociationCreateEmbeddedUrlV2Request = new \eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Request(); // \eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Request
+
+try {
+    $result = $apiInstance->ezsignfoldersignerassociationCreateEmbeddedUrlV2($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationCreateEmbeddedUrlV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociationCreateEmbeddedUrlV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfoldersignerassociationID** | **int**|  | |
+| **ezsignfoldersignerassociationCreateEmbeddedUrlV2Request** | [**\eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Request**](../Model/EzsignfoldersignerassociationCreateEmbeddedUrlV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Response**](../Model/EzsignfoldersignerassociationCreateEmbeddedUrlV2Response.md)
 
 ### Authorization
 

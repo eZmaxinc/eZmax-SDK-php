@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiBrandingID** | **int** | The unique ID of the Branding |
+**fkiDomainID** | **int** | The unique ID of the Domain | [optional]
+**sDomainName** | **string** | The name of the Domain | [optional]
 **fkiEmailID** | **int** | The unique ID of the Email | [optional]
 **objBrandingDescription** | [**\eZmaxAPI\Model\MultilingualBrandingDescription**](MultilingualBrandingDescription.md) |  |
 **sBrandingDescriptionX** | **string** | The Description of the Branding in the language of the requester |

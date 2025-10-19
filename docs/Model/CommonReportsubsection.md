@@ -4,6 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aObjReportcolumn** | [**\eZmaxAPI\Model\CommonReportcolumn[]**](CommonReportcolumn.md) |  |
+**iReportsubsectionColumncount** | **int** | The number of Reportcolumns in the Reportsection |
+**iReportsubsectionWidth** | **int** | The combined width of all the Reportcolumns in the Reportsection |
 **objReportsubsectionpartHeader** | [**\eZmaxAPI\Model\CommonReportsubsectionpart**](CommonReportsubsectionpart.md) |  |
 **objReportsubsectionpartBody** | [**\eZmaxAPI\Model\CommonReportsubsectionpart**](CommonReportsubsectionpart.md) |  |
 **objReportsubsectionpartFooter** | [**\eZmaxAPI\Model\CommonReportsubsectionpart**](CommonReportsubsectionpart.md) |  |

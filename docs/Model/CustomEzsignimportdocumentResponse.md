@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiEzsignimportdocumentID** | **int** | The unique ID of the Ezsignimportdocument |
 **sEzsignimportdocumentName** | **string** | The name of the Ezsignimportdocument |
+**fkiEzsigntemplateglobalID** | **int** | The unique ID of the Ezsigntemplateglobal | [optional]
+**sEzsigntemplateglobalDescription** | **string** | The description of the Ezsigntemplate | [optional]
 **fkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder | [optional]
 **sEzsignfolderDescription** | **string** | The description of the Ezsignfolder | [optional]
 
