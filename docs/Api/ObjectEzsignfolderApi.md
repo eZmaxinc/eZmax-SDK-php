@@ -1,5 +1,7 @@
 # eZmaxAPI\ObjectEzsignfolderApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -16,6 +18,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignfolderEndPrematurelyV1()**](ObjectEzsignfolderApi.md#ezsignfolderEndPrematurelyV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely |
 | [**ezsignfolderGetActionableElementsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
 | [**ezsignfolderGetActionableElementsV2()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsV2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
+| [**ezsignfolderGetActionableElementsV3()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsV3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
 | [**ezsignfolderGetAttachmentCountV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetAttachmentCountV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachmentCount | Retrieve Attachment count |
 | [**ezsignfolderGetAttachmentsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetAttachmentsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachments | Retrieve Ezsignfolder&#39;s Attachments |
 | [**ezsignfolderGetCommunicationCountV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetCommunicationCountV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationCount | Retrieve Communication count |
@@ -34,7 +37,6 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignfolderImportEzsignfoldersignerassociationsV1()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsignfoldersignerassociationsV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsignfoldersignerassociations | Import an existing Ezsignfoldersignerassociation into this Ezsignfolder |
 | [**ezsignfolderImportEzsigntemplatepackageV1()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsigntemplatepackageV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder |
 | [**ezsignfolderImportEzsigntemplatepackageV2()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsigntemplatepackageV2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder |
-| [**ezsignfolderReorderV1()**](ObjectEzsignfolderApi.md#ezsignfolderReorderV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder |
 | [**ezsignfolderReorderV2()**](ObjectEzsignfolderApi.md#ezsignfolderReorderV2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder |
 | [**ezsignfolderSendV1()**](ObjectEzsignfolderApi.md#ezsignfolderSendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
 | [**ezsignfolderSendV3()**](ObjectEzsignfolderApi.md#ezsignfolderSendV3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
@@ -777,6 +779,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignfolderGetActionableElementsV2Response**](../Model/EzsignfolderGetActionableElementsV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfolderGetActionableElementsV3()`
+
+```php
+ezsignfolderGetActionableElementsV3($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderGetActionableElementsV3Response
+```
+
+Retrieve actionable elements for the Ezsignfolder
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfolderID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignfolderGetActionableElementsV3($pkiEzsignfolderID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfolderApi->ezsignfolderGetActionableElementsV3: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfolderGetActionableElementsV3Response**](../Model/EzsignfolderGetActionableElementsV3Response.md)
 
 ### Authorization
 
@@ -1905,68 +1969,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV2Response**](../Model/EzsignfolderImportEzsigntemplatepackageV2Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `ezsignfolderReorderV1()`
-
-```php
-ezsignfolderReorderV1($pkiEzsignfolderID, $ezsignfolderReorderV1Request): \eZmaxAPI\Model\EzsignfolderReorderV1Response
-```
-
-Reorder Ezsigndocuments in the Ezsignfolder
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiEzsignfolderID = 56; // int
-$ezsignfolderReorderV1Request = new \eZmaxAPI\Model\EzsignfolderReorderV1Request(); // \eZmaxAPI\Model\EzsignfolderReorderV1Request
-
-try {
-    $result = $apiInstance->ezsignfolderReorderV1($pkiEzsignfolderID, $ezsignfolderReorderV1Request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignfolderApi->ezsignfolderReorderV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiEzsignfolderID** | **int**|  | |
-| **ezsignfolderReorderV1Request** | [**\eZmaxAPI\Model\EzsignfolderReorderV1Request**](../Model/EzsignfolderReorderV1Request.md)|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\EzsignfolderReorderV1Response**](../Model/EzsignfolderReorderV1Response.md)
 
 ### Authorization
 

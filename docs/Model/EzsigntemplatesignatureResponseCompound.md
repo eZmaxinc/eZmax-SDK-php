@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **iEzsigntemplatesignatureHeight** | **int** | The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \&quot;200\&quot; for the iEzsigntemplatesignatureHeight. | [optional]
 **iEzsigntemplatesignatureStep** | **int** | The step when the Ezsigntemplatesigner will be invited to sign |
 **eEzsigntemplatesignatureType** | [**\eZmaxAPI\Model\FieldEEzsigntemplatesignatureType**](FieldEEzsigntemplatesignatureType.md) |  |
+**eEzsigntemplatesignatureSignaturepad** | [**\eZmaxAPI\Model\FieldEEzsigntemplatesignatureSignaturepad**](FieldEEzsigntemplatesignatureSignaturepad.md) |  | [optional]
+**eEzsigntemplatesignatureSignaturepadrequired** | [**\eZmaxAPI\Model\FieldEEzsigntemplatesignatureSignaturepadrequired**](FieldEEzsigntemplatesignatureSignaturepadrequired.md) |  | [optional]
 **eEzsigntemplatesignatureConsultationtrigger** | [**\eZmaxAPI\Model\FieldEEzsigntemplatesignatureConsultationtrigger**](FieldEEzsigntemplatesignatureConsultationtrigger.md) |  | [optional]
 **tEzsigntemplatesignatureTooltip** | **string** | A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplatesignature | [optional]
 **eEzsigntemplatesignatureTooltipposition** | [**\eZmaxAPI\Model\FieldEEzsigntemplatesignatureTooltipposition**](FieldEEzsigntemplatesignatureTooltipposition.md) |  | [optional]

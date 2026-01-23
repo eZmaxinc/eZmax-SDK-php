@@ -1,5 +1,7 @@
 # eZmaxAPI\ObjectEzsignsignatureApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -9,11 +11,9 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignsignatureCreateObjectV3()**](ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV3) | **POST** /3/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignatureCreateObjectV4()**](ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV4) | **POST** /4/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignatureDeleteObjectV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature |
-| [**ezsignsignatureEditObjectV2()**](ObjectEzsignsignatureApi.md#ezsignsignatureEditObjectV2) | **PUT** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature |
 | [**ezsignsignatureEditObjectV3()**](ObjectEzsignsignatureApi.md#ezsignsignatureEditObjectV3) | **PUT** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature |
 | [**ezsignsignatureGetEzsignsignatureattachmentV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetEzsignsignatureattachmentV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getEzsignsignatureattachment | Retrieve an existing Ezsignsignature&#39;s Ezsignsignatureattachments |
 | [**ezsignsignatureGetEzsignsignaturesAutomaticV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetEzsignsignaturesAutomaticV1) | **GET** /1/object/ezsignsignature/getEzsignsignaturesAutomatic | Retrieve all automatic Ezsignsignatures |
-| [**ezsignsignatureGetObjectV3()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV3) | **GET** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
 | [**ezsignsignatureGetObjectV4()**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV4) | **GET** /4/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
 | [**ezsignsignatureSignV1()**](ObjectEzsignsignatureApi.md#ezsignsignatureSignV1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature |
 
@@ -328,70 +328,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsignsignatureEditObjectV2()`
-
-```php
-ezsignsignatureEditObjectV2($pkiEzsignsignatureID, $ezsignsignatureEditObjectV2Request): \eZmaxAPI\Model\EzsignsignatureEditObjectV2Response
-```
-
-Edit an existing Ezsignsignature
-
-Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEzsignsignatureApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiEzsignsignatureID = 56; // int
-$ezsignsignatureEditObjectV2Request = new \eZmaxAPI\Model\EzsignsignatureEditObjectV2Request(); // \eZmaxAPI\Model\EzsignsignatureEditObjectV2Request
-
-try {
-    $result = $apiInstance->ezsignsignatureEditObjectV2($pkiEzsignsignatureID, $ezsignsignatureEditObjectV2Request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignsignatureApi->ezsignsignatureEditObjectV2: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiEzsignsignatureID** | **int**|  | |
-| **ezsignsignatureEditObjectV2Request** | [**\eZmaxAPI\Model\EzsignsignatureEditObjectV2Request**](../Model/EzsignsignatureEditObjectV2Request.md)|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\EzsignsignatureEditObjectV2Response**](../Model/EzsignsignatureEditObjectV2Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `ezsignsignatureEditObjectV3()`
 
 ```php
@@ -561,68 +497,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignsignatureGetEzsignsignaturesAutomaticV1Response**](../Model/EzsignsignatureGetEzsignsignaturesAutomaticV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `ezsignsignatureGetObjectV3()`
-
-```php
-ezsignsignatureGetObjectV3($pkiEzsignsignatureID): \eZmaxAPI\Model\EzsignsignatureGetObjectV3Response
-```
-
-Retrieve an existing Ezsignsignature
-
-Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEzsignsignatureApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiEzsignsignatureID = 56; // int
-
-try {
-    $result = $apiInstance->ezsignsignatureGetObjectV3($pkiEzsignsignatureID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignsignatureApi->ezsignsignatureGetObjectV3: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiEzsignsignatureID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\EzsignsignatureGetObjectV3Response**](../Model/EzsignsignatureGetObjectV3Response.md)
 
 ### Authorization
 

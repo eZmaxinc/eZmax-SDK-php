@@ -1,5 +1,7 @@
 # eZmaxAPI\ObjectEzsigndocumentApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -16,6 +18,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsigndocumentDeleteObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument |
 | [**ezsigndocumentEditEzsignannotationsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignannotationsV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignannotations | Edit multiple Ezsignannotations |
 | [**ezsigndocumentEditEzsignformfieldgroupsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignformfieldgroupsV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups |
+| [**ezsigndocumentEditEzsignformfieldgroupsV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignformfieldgroupsV2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups |
 | [**ezsigndocumentEditEzsignsignaturesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures |
 | [**ezsigndocumentEditEzsignsignaturesV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures |
 | [**ezsigndocumentEditObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditObjectV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Edit an existing Ezsigndocument |
@@ -24,6 +27,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsigndocumentFlattenV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentFlattenV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten |
 | [**ezsigndocumentGetActionableElementsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocumentGetActionableElementsV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
+| [**ezsigndocumentGetActionableElementsV3()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocumentGetAttachmentsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetAttachmentsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments | Retrieve Ezsigndocument&#39;s Attachments |
 | [**ezsigndocumentGetCompletedElementsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetCompletedElementsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument |
 | [**ezsigndocumentGetCompletedElementsV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetCompletedElementsV2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument |
@@ -807,6 +811,70 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigndocumentEditEzsignformfieldgroupsV2()`
+
+```php
+ezsigndocumentEditEzsignformfieldgroupsV2($pkiEzsigndocumentID, $ezsigndocumentEditEzsignformfieldgroupsV2Request): \eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Response
+```
+
+Edit multiple Ezsignformfieldgroups
+
+Using this endpoint, you can edit multiple Ezsignformfieldgroups at the same time.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+$ezsigndocumentEditEzsignformfieldgroupsV2Request = new \eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Request(); // \eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Request
+
+try {
+    $result = $apiInstance->ezsigndocumentEditEzsignformfieldgroupsV2($pkiEzsigndocumentID, $ezsigndocumentEditEzsignformfieldgroupsV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentEditEzsignformfieldgroupsV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentEditEzsignformfieldgroupsV2Request** | [**\eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Request**](../Model/EzsigndocumentEditEzsignformfieldgroupsV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Response**](../Model/EzsigndocumentEditEzsignformfieldgroupsV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `ezsigndocumentEditEzsignsignaturesV1()`
 
 ```php
@@ -1301,6 +1369,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigndocumentGetActionableElementsV2Response**](../Model/EzsigndocumentGetActionableElementsV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentGetActionableElementsV3()`
+
+```php
+ezsigndocumentGetActionableElementsV3($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentGetActionableElementsV3Response
+```
+
+Retrieve actionable elements for the Ezsigndocument
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigndocumentGetActionableElementsV3($pkiEzsigndocumentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetActionableElementsV3: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentGetActionableElementsV3Response**](../Model/EzsigndocumentGetActionableElementsV3Response.md)
 
 ### Authorization
 

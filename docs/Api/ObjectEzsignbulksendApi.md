@@ -1,5 +1,7 @@
 # eZmaxAPI\ObjectEzsignbulksendApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -8,7 +10,6 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignbulksendCreateObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendCreateObjectV1) | **POST** /1/object/ezsignbulksend | Create a new Ezsignbulksend |
 | [**ezsignbulksendCreateObjectV2()**](ObjectEzsignbulksendApi.md#ezsignbulksendCreateObjectV2) | **POST** /2/object/ezsignbulksend | Create a new Ezsignbulksend |
 | [**ezsignbulksendDeleteObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendDeleteObjectV1) | **DELETE** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Delete an existing Ezsignbulksend |
-| [**ezsignbulksendEditObjectV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendEditObjectV1) | **PUT** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend |
 | [**ezsignbulksendEditObjectV2()**](ObjectEzsignbulksendApi.md#ezsignbulksendEditObjectV2) | **PUT** /2/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend |
 | [**ezsignbulksendGetBatchFileV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetBatchFileV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getBatchFile | Retrieve file to download documents in batch |
 | [**ezsignbulksendGetCsvTemplateV1()**](ObjectEzsignbulksendApi.md#ezsignbulksendGetCsvTemplateV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getCsvTemplate | Retrieve an existing Ezsignbulksend&#39;s empty Csv template |
@@ -263,70 +264,6 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `ezsignbulksendEditObjectV1()`
-
-```php
-ezsignbulksendEditObjectV1($pkiEzsignbulksendID, $ezsignbulksendEditObjectV1Request): \eZmaxAPI\Model\EzsignbulksendEditObjectV1Response
-```
-
-Edit an existing Ezsignbulksend
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksendApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiEzsignbulksendID = 56; // int
-$ezsignbulksendEditObjectV1Request = new \eZmaxAPI\Model\EzsignbulksendEditObjectV1Request(); // \eZmaxAPI\Model\EzsignbulksendEditObjectV1Request
-
-try {
-    $result = $apiInstance->ezsignbulksendEditObjectV1($pkiEzsignbulksendID, $ezsignbulksendEditObjectV1Request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignbulksendApi->ezsignbulksendEditObjectV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiEzsignbulksendID** | **int**|  | |
-| **ezsignbulksendEditObjectV1Request** | [**\eZmaxAPI\Model\EzsignbulksendEditObjectV1Request**](../Model/EzsignbulksendEditObjectV1Request.md)|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\EzsignbulksendEditObjectV1Response**](../Model/EzsignbulksendEditObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
