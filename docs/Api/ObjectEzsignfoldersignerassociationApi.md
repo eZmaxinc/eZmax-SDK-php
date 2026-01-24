@@ -1,10 +1,12 @@
 # eZmaxAPI\ObjectEzsignfoldersignerassociationApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ezsignfoldersignerassociationCreateEmbeddedUrlV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateEmbeddedUrlV1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing |
+| [**ezsignfoldersignerassociationCreateEmbeddedUrlV2()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateEmbeddedUrlV2) | **POST** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing |
 | [**ezsignfoldersignerassociationCreateObjectV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateObjectV1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociationCreateObjectV2()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationCreateObjectV2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociationDeleteObjectV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationDeleteObjectV1) | **DELETE** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Delete an existing Ezsignfoldersignerassociation |
@@ -17,15 +19,15 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignfoldersignerassociationReassignV1()**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationReassignV1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign | Reassign remaining unsigned signatures and forms |
 
 
-## `ezsignfoldersignerassociationCreateEmbeddedUrlV1()`
+## `ezsignfoldersignerassociationCreateEmbeddedUrlV2()`
 
 ```php
-ezsignfoldersignerassociationCreateEmbeddedUrlV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationCreateEmbeddedUrlV1Request): \eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV1Response
+ezsignfoldersignerassociationCreateEmbeddedUrlV2($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationCreateEmbeddedUrlV2Request): \eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Response
 ```
 
 Creates an Url to allow embedded signing
 
-This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  ### Iframe Communication (postMessage)  If the signing page is embedded in an `iframe`, the application sends events to the parent window via `window.postMessage`.  The message structure is defined as follows:  ```json {   \"source\": \"ezsign\",   \"type\": \"eEzsignEvent\",   \"payload\": \"CompletedEzsignfolder\" } ```  * **source**: Always `'ezsign'`. * **type**: Always `'eEzsignEvent'`. * **payload**: Corresponds to the **eEzsignEvent** values listed in the table above (e.g., `SessionTimeout`, `CompletedStep`, etc.).  #### Example listener  ```javascript window.addEventListener('message', (event) => {     const { source, type, payload } = event.data;         if (source === 'ezsign' && type === 'eEzsignEvent') {         console.log('Event received:', payload);     } }); ```
 
 ### Example
 
@@ -47,13 +49,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldersignerassociationApi(
     $config
 );
 $pkiEzsignfoldersignerassociationID = 56; // int
-$ezsignfoldersignerassociationCreateEmbeddedUrlV1Request = new \eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV1Request(); // \eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV1Request
+$ezsignfoldersignerassociationCreateEmbeddedUrlV2Request = new \eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Request(); // \eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Request
 
 try {
-    $result = $apiInstance->ezsignfoldersignerassociationCreateEmbeddedUrlV1($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationCreateEmbeddedUrlV1Request);
+    $result = $apiInstance->ezsignfoldersignerassociationCreateEmbeddedUrlV2($pkiEzsignfoldersignerassociationID, $ezsignfoldersignerassociationCreateEmbeddedUrlV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociationCreateEmbeddedUrlV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociationCreateEmbeddedUrlV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -62,11 +64,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pkiEzsignfoldersignerassociationID** | **int**|  | |
-| **ezsignfoldersignerassociationCreateEmbeddedUrlV1Request** | [**\eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV1Request**](../Model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Request.md)|  | |
+| **ezsignfoldersignerassociationCreateEmbeddedUrlV2Request** | [**\eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Request**](../Model/EzsignfoldersignerassociationCreateEmbeddedUrlV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV1Response**](../Model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Response.md)
+[**\eZmaxAPI\Model\EzsignfoldersignerassociationCreateEmbeddedUrlV2Response**](../Model/EzsignfoldersignerassociationCreateEmbeddedUrlV2Response.md)
 
 ### Authorization
 

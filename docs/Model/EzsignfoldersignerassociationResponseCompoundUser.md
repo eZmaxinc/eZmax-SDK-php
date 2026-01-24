@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **sUserFirstname** | **string** | The first name of the user |
 **sUserLastname** | **string** | The last name of the user |
 **sEmailAddress** | **string** | The email address. |
+**eUserType** | [**\eZmaxAPI\Model\FieldEUserType**](FieldEUserType.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

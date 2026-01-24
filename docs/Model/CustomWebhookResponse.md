@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **sAuthenticationexternalDescription** | **string** | The description of the Authenticationexternal | [optional]
 **objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
 **sWebhookEvent** | **string** | The concatenated string to describe the Webhook event | [optional]
+**sWebhookAuthentificationexternalerror** | **string** | Error message when token renewal failed or is not configured. Only if an Authenticationexternal is set. | [optional]
 **aObjWebhookheader** | [**\eZmaxAPI\Model\WebhookheaderResponseCompound[]**](WebhookheaderResponseCompound.md) |  | [optional]
 **pksCustomerCode** | **string** | The customer code assigned to your account |
 **bWebhookTest** | **bool** | Wheter the webhook received is a manual test or a real event |

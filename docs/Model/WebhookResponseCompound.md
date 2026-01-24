@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **sAuthenticationexternalDescription** | **string** | The description of the Authenticationexternal | [optional]
 **objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
 **sWebhookEvent** | **string** | The concatenated string to describe the Webhook event | [optional]
+**sWebhookAuthentificationexternalerror** | **string** | Error message when token renewal failed or is not configured. Only if an Authenticationexternal is set. | [optional]
 **aObjWebhookheader** | [**\eZmaxAPI\Model\WebhookheaderResponseCompound[]**](WebhookheaderResponseCompound.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

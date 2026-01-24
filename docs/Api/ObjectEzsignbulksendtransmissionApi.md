@@ -1,14 +1,85 @@
 # eZmaxAPI\ObjectEzsignbulksendtransmissionApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**ezsignbulksendtransmissionGetBatchFileV1()**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetBatchFileV1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getBatchFile | Retrieve file to download documents in batch |
 | [**ezsignbulksendtransmissionGetCsvErrorsV1()**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetCsvErrorsV1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getCsvErrors | Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors |
 | [**ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1()**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignbulksendtransmission&#39;s automatic Ezsignsignatures |
 | [**ezsignbulksendtransmissionGetFormsDataV1()**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetFormsDataV1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getFormsData | Retrieve an existing Ezsignbulksendtransmission&#39;s forms data |
 | [**ezsignbulksendtransmissionGetObjectV2()**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetObjectV2) | **GET** /2/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID} | Retrieve an existing Ezsignbulksendtransmission |
 
+
+## `ezsignbulksendtransmissionGetBatchFileV1()`
+
+```php
+ezsignbulksendtransmissionGetBatchFileV1($pkiEzsignbulksendtransmissionID, $bIncludeSigned, $bIncludeAttachment, $bIncludeProofdocument, $bIncludeProof): \SplFileObject
+```
+
+Retrieve file to download documents in batch
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksendtransmissionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignbulksendtransmissionID = 56; // int
+$bIncludeSigned = True; // bool | Include final document once all signatures were applied
+$bIncludeAttachment = True; // bool | Include attached files in signatures
+$bIncludeProofdocument = True; // bool | Include the evidence report
+$bIncludeProof = True; // bool | include the complete evidence archive including all of the above and more
+
+try {
+    $result = $apiInstance->ezsignbulksendtransmissionGetBatchFileV1($pkiEzsignbulksendtransmissionID, $bIncludeSigned, $bIncludeAttachment, $bIncludeProofdocument, $bIncludeProof);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignbulksendtransmissionApi->ezsignbulksendtransmissionGetBatchFileV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendtransmissionID** | **int**|  | |
+| **bIncludeSigned** | **bool**| Include final document once all signatures were applied | [optional] |
+| **bIncludeAttachment** | **bool**| Include attached files in signatures | [optional] |
+| **bIncludeProofdocument** | **bool**| Include the evidence report | [optional] |
+| **bIncludeProof** | **bool**| include the complete evidence archive including all of the above and more | [optional] |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `text/xml`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `ezsignbulksendtransmissionGetCsvErrorsV1()`
 

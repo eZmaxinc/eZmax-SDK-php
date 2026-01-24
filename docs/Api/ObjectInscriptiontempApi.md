@@ -1,5 +1,7 @@
 # eZmaxAPI\ObjectInscriptiontempApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -8,6 +10,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**inscriptiontempGetCommunicationListV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetCommunicationListV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList | Retrieve Communication list |
 | [**inscriptiontempGetCommunicationrecipientsV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetCommunicationrecipientsV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationrecipients | Retrieve Inscriptiontemp&#39;s Communicationrecipient |
 | [**inscriptiontempGetCommunicationsendersV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetCommunicationsendersV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationsenders | Retrieve Inscriptiontemp&#39;s Communicationsender |
+| [**inscriptiontempGetListV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetListV1) | **GET** /1/object/inscriptiontemp/getList | Retrieve Inscriptiontemp list |
+| [**inscriptiontempImportIntoEDMV1()**](ObjectInscriptiontempApi.md#inscriptiontempImportIntoEDMV1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/importIntoEDM | Import attachments into the Inscriptiontemp |
 
 
 ## `inscriptiontempGetCommunicationCountV1()`
@@ -252,6 +256,140 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `inscriptiontempGetListV1()`
+
+```php
+inscriptiontempGetListV1($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter): \eZmaxAPI\Model\InscriptiontempGetListV1Response
+```
+
+Retrieve Inscriptiontemp list
+
+Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInscriptiontempStatus | Imported<br>Processed<br>Modified |
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectInscriptiontempApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
+$iRowMax = 56; // int
+$iRowOffset = 0; // int
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$sFilter = 'sFilter_example'; // string
+
+try {
+    $result = $apiInstance->inscriptiontempGetListV1($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectInscriptiontempApi->inscriptiontempGetListV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
+| **iRowMax** | **int**|  | [optional] |
+| **iRowOffset** | **int**|  | [optional] [default to 0] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **sFilter** | **string**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\InscriptiontempGetListV1Response**](../Model/InscriptiontempGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `inscriptiontempImportIntoEDMV1()`
+
+```php
+inscriptiontempImportIntoEDMV1($pkiInscriptiontempID, $inscriptiontempImportIntoEDMV1Request): \eZmaxAPI\Model\InscriptiontempImportIntoEDMV1Response
+```
+
+Import attachments into the Inscriptiontemp
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectInscriptiontempApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiInscriptiontempID = 56; // int
+$inscriptiontempImportIntoEDMV1Request = new \eZmaxAPI\Model\InscriptiontempImportIntoEDMV1Request(); // \eZmaxAPI\Model\InscriptiontempImportIntoEDMV1Request
+
+try {
+    $result = $apiInstance->inscriptiontempImportIntoEDMV1($pkiInscriptiontempID, $inscriptiontempImportIntoEDMV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectInscriptiontempApi->inscriptiontempImportIntoEDMV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiInscriptiontempID** | **int**|  | |
+| **inscriptiontempImportIntoEDMV1Request** | [**\eZmaxAPI\Model\InscriptiontempImportIntoEDMV1Request**](../Model/InscriptiontempImportIntoEDMV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\InscriptiontempImportIntoEDMV1Response**](../Model/InscriptiontempImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

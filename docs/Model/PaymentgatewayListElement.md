@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **fkiCreditcardmerchantID** | **int** | The unique ID of the Creditcardmerchant |
 **ePaymentgatewayProcessor** | [**\eZmaxAPI\Model\FieldEPaymentgatewayProcessor**](FieldEPaymentgatewayProcessor.md) |  |
 **sPaymentgatewayDescriptionX** | **string** | The description of the Paymentgateway in the language of the requester |
+**bPaymentgatewayIsactive** | **bool** | Whether the Paymentgateway is active or not |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

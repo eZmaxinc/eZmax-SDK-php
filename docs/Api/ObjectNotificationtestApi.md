@@ -1,16 +1,18 @@
 # eZmaxAPI\ObjectNotificationtestApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**notificationtestGetElementsV1()**](ObjectNotificationtestApi.md#notificationtestGetElementsV1) | **GET** /1/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest&#39;s Elements |
+| [**notificationtestGetElementsV2()**](ObjectNotificationtestApi.md#notificationtestGetElementsV2) | **GET** /2/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest&#39;s Elements |
 
 
-## `notificationtestGetElementsV1()`
+## `notificationtestGetElementsV2()`
 
 ```php
-notificationtestGetElementsV1($pkiNotificationtestID): \eZmaxAPI\Model\NotificationtestGetElementsV1Response
+notificationtestGetElementsV2($pkiNotificationtestID): \eZmaxAPI\Model\NotificationtestGetElementsV2Response
 ```
 
 Retrieve an existing Notificationtest's Elements
@@ -39,10 +41,10 @@ $apiInstance = new eZmaxAPI\Api\ObjectNotificationtestApi(
 $pkiNotificationtestID = 56; // int
 
 try {
-    $result = $apiInstance->notificationtestGetElementsV1($pkiNotificationtestID);
+    $result = $apiInstance->notificationtestGetElementsV2($pkiNotificationtestID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectNotificationtestApi->notificationtestGetElementsV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectNotificationtestApi->notificationtestGetElementsV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -54,7 +56,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\NotificationtestGetElementsV1Response**](../Model/NotificationtestGetElementsV1Response.md)
+[**\eZmaxAPI\Model\NotificationtestGetElementsV2Response**](../Model/NotificationtestGetElementsV2Response.md)
 
 ### Authorization
 

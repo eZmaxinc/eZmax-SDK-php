@@ -1,17 +1,19 @@
 # eZmaxAPI\ObjectSystemconfigurationApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**systemconfigurationEditObjectV1()**](ObjectSystemconfigurationApi.md#systemconfigurationEditObjectV1) | **PUT** /1/object/systemconfiguration/{pkiSystemconfigurationID} | Edit an existing Systemconfiguration |
+| [**systemconfigurationEditObjectV2()**](ObjectSystemconfigurationApi.md#systemconfigurationEditObjectV2) | **PUT** /2/object/systemconfiguration/{pkiSystemconfigurationID} | Edit an existing Systemconfiguration |
 | [**systemconfigurationGetObjectV2()**](ObjectSystemconfigurationApi.md#systemconfigurationGetObjectV2) | **GET** /2/object/systemconfiguration/{pkiSystemconfigurationID} | Retrieve an existing Systemconfiguration |
 
 
-## `systemconfigurationEditObjectV1()`
+## `systemconfigurationEditObjectV2()`
 
 ```php
-systemconfigurationEditObjectV1($pkiSystemconfigurationID, $systemconfigurationEditObjectV1Request): \eZmaxAPI\Model\SystemconfigurationEditObjectV1Response
+systemconfigurationEditObjectV2($pkiSystemconfigurationID, $systemconfigurationEditObjectV2Request): \eZmaxAPI\Model\SystemconfigurationEditObjectV2Response
 ```
 
 Edit an existing Systemconfiguration
@@ -38,13 +40,13 @@ $apiInstance = new eZmaxAPI\Api\ObjectSystemconfigurationApi(
     $config
 );
 $pkiSystemconfigurationID = 56; // int | The unique ID of the Systemconfiguration
-$systemconfigurationEditObjectV1Request = new \eZmaxAPI\Model\SystemconfigurationEditObjectV1Request(); // \eZmaxAPI\Model\SystemconfigurationEditObjectV1Request
+$systemconfigurationEditObjectV2Request = new \eZmaxAPI\Model\SystemconfigurationEditObjectV2Request(); // \eZmaxAPI\Model\SystemconfigurationEditObjectV2Request
 
 try {
-    $result = $apiInstance->systemconfigurationEditObjectV1($pkiSystemconfigurationID, $systemconfigurationEditObjectV1Request);
+    $result = $apiInstance->systemconfigurationEditObjectV2($pkiSystemconfigurationID, $systemconfigurationEditObjectV2Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectSystemconfigurationApi->systemconfigurationEditObjectV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectSystemconfigurationApi->systemconfigurationEditObjectV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -53,11 +55,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pkiSystemconfigurationID** | **int**| The unique ID of the Systemconfiguration | |
-| **systemconfigurationEditObjectV1Request** | [**\eZmaxAPI\Model\SystemconfigurationEditObjectV1Request**](../Model/SystemconfigurationEditObjectV1Request.md)|  | |
+| **systemconfigurationEditObjectV2Request** | [**\eZmaxAPI\Model\SystemconfigurationEditObjectV2Request**](../Model/SystemconfigurationEditObjectV2Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\SystemconfigurationEditObjectV1Response**](../Model/SystemconfigurationEditObjectV1Response.md)
+[**\eZmaxAPI\Model\SystemconfigurationEditObjectV2Response**](../Model/SystemconfigurationEditObjectV2Response.md)
 
 ### Authorization
 

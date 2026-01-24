@@ -1,13 +1,16 @@
 # eZmaxAPI\ObjectEzsigndocumentApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ezsigndocumentApplyEzsigntemplateV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument. |
-| [**ezsigndocumentApplyEzsigntemplateV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument. |
-| [**ezsigndocumentApplyEzsigntemplateglobalV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateglobalV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal | Apply an Ezsigntemplateglobal to the Ezsigndocument. |
+| [**ezsigndocumentApplyEzsigntemplateV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument |
+| [**ezsigndocumentApplyEzsigntemplateV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument |
+| [**ezsigndocumentApplyEzsigntemplateglobalV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateglobalV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal | Apply an Ezsigntemplateglobal to the Ezsigndocument |
 | [**ezsigndocumentCreateEzsignelementsPositionedByWordV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateEzsignelementsPositionedByWordV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord | Create multiple Ezsignsignatures/Ezsignformfieldgroups |
+| [**ezsigndocumentCreateEzsignelementsPositionedByWordV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateEzsignelementsPositionedByWordV2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord | Create multiple Ezsignsignatures/Ezsignformfieldgroups |
 | [**ezsigndocumentCreateObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument |
 | [**ezsigndocumentCreateObjectV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV2) | **POST** /2/object/ezsigndocument | Create a new Ezsigndocument |
 | [**ezsigndocumentCreateObjectV3()**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV3) | **POST** /3/object/ezsigndocument | Create a new Ezsigndocument |
@@ -15,24 +18,31 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsigndocumentDeleteObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument |
 | [**ezsigndocumentEditEzsignannotationsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignannotationsV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignannotations | Edit multiple Ezsignannotations |
 | [**ezsigndocumentEditEzsignformfieldgroupsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignformfieldgroupsV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups |
+| [**ezsigndocumentEditEzsignformfieldgroupsV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignformfieldgroupsV2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups |
 | [**ezsigndocumentEditEzsignsignaturesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures |
+| [**ezsigndocumentEditEzsignsignaturesV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures |
 | [**ezsigndocumentEditObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEditObjectV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Edit an existing Ezsigndocument |
 | [**ezsigndocumentEndPrematurelyV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEndPrematurelyV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely |
 | [**ezsigndocumentExtractTextV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentExtractTextV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText | Extract text from Ezsigndocument area |
 | [**ezsigndocumentFlattenV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentFlattenV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten |
 | [**ezsigndocumentGetActionableElementsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
+| [**ezsigndocumentGetActionableElementsV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
+| [**ezsigndocumentGetActionableElementsV3()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocumentGetAttachmentsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetAttachmentsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments | Retrieve Ezsigndocument&#39;s Attachments |
 | [**ezsigndocumentGetCompletedElementsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetCompletedElementsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument |
-| [**ezsigndocumentGetDownloadUrlV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents. |
+| [**ezsigndocumentGetCompletedElementsV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetCompletedElementsV2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument |
+| [**ezsigndocumentGetDownloadUrlV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents |
 | [**ezsigndocumentGetEzsignannotationsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignannotationsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignannotations | Retrieve an existing Ezsigndocument&#39;s Ezsignannotations |
 | [**ezsigndocumentGetEzsigndiscussionsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsigndiscussionsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsigndiscussions | Retrieve an existing Ezsigndocument&#39;s Ezsigndiscussions |
 | [**ezsigndocumentGetEzsignformfieldgroupsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignformfieldgroupsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignformfieldgroups | Retrieve an existing Ezsigndocument&#39;s Ezsignformfieldgroups |
 | [**ezsigndocumentGetEzsignpagesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignpagesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages |
 | [**ezsigndocumentGetEzsignsignaturesAutomaticV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignsignaturesAutomaticV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsigndocument&#39;s automatic Ezsignsignatures |
 | [**ezsigndocumentGetEzsignsignaturesV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignsignaturesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignatures | Retrieve an existing Ezsigndocument&#39;s Ezsignsignatures |
+| [**ezsigndocumentGetEzsignsignaturesV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignsignaturesV2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignatures | Retrieve an existing Ezsigndocument&#39;s Ezsignsignatures |
 | [**ezsigndocumentGetFormDataV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetFormDataV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data |
 | [**ezsigndocumentGetObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument |
 | [**ezsigndocumentGetObjectV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument |
+| [**ezsigndocumentGetObjectV3()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument |
 | [**ezsigndocumentGetTemporaryProofV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetTemporaryProofV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof |
 | [**ezsigndocumentGetWordsPositionsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetWordsPositionsV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument |
 | [**ezsigndocumentPatchObjectV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentPatchObjectV1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument |
@@ -47,7 +57,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 ezsigndocumentApplyEzsigntemplateV1($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateV1Request): \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV1Response
 ```
 
-Apply an Ezsigntemplate to the Ezsigndocument.
+Apply an Ezsigntemplate to the Ezsigndocument
 
 This function is deprecated. Please use *applyEzsigntemplate* instead which is doing the same thing but with a capital \"E\" to normalize the nomenclature.  This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
 
@@ -111,7 +121,7 @@ try {
 ezsigndocumentApplyEzsigntemplateV2($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateV2Request): \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateV2Response
 ```
 
-Apply an Ezsigntemplate to the Ezsigndocument.
+Apply an Ezsigntemplate to the Ezsigndocument
 
 This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
 
@@ -175,7 +185,7 @@ try {
 ezsigndocumentApplyEzsigntemplateglobalV1($pkiEzsigndocumentID, $ezsigndocumentApplyEzsigntemplateglobalV1Request): \eZmaxAPI\Model\EzsigndocumentApplyEzsigntemplateglobalV1Response
 ```
 
-Apply an Ezsigntemplateglobal to the Ezsigndocument.
+Apply an Ezsigntemplateglobal to the Ezsigndocument
 
 This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
 
@@ -241,7 +251,7 @@ ezsigndocumentCreateEzsignelementsPositionedByWordV1($pkiEzsigndocumentID, $ezsi
 
 Create multiple Ezsignsignatures/Ezsignformfieldgroups
 
-Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 
@@ -283,6 +293,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV1Response**](../Model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentCreateEzsignelementsPositionedByWordV2()`
+
+```php
+ezsigndocumentCreateEzsignelementsPositionedByWordV2($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV2Request): \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV2Response
+```
+
+Create multiple Ezsignsignatures/Ezsignformfieldgroups
+
+Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+$ezsigndocumentCreateEzsignelementsPositionedByWordV2Request = new \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV2Request(); // \eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV2Request
+
+try {
+    $result = $apiInstance->ezsigndocumentCreateEzsignelementsPositionedByWordV2($pkiEzsigndocumentID, $ezsigndocumentCreateEzsignelementsPositionedByWordV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentCreateEzsignelementsPositionedByWordV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentCreateEzsignelementsPositionedByWordV2Request** | [**\eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV2Request**](../Model/EzsigndocumentCreateEzsignelementsPositionedByWordV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentCreateEzsignelementsPositionedByWordV2Response**](../Model/EzsigndocumentCreateEzsignelementsPositionedByWordV2Response.md)
 
 ### Authorization
 
@@ -737,6 +811,70 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigndocumentEditEzsignformfieldgroupsV2()`
+
+```php
+ezsigndocumentEditEzsignformfieldgroupsV2($pkiEzsigndocumentID, $ezsigndocumentEditEzsignformfieldgroupsV2Request): \eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Response
+```
+
+Edit multiple Ezsignformfieldgroups
+
+Using this endpoint, you can edit multiple Ezsignformfieldgroups at the same time.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+$ezsigndocumentEditEzsignformfieldgroupsV2Request = new \eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Request(); // \eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Request
+
+try {
+    $result = $apiInstance->ezsigndocumentEditEzsignformfieldgroupsV2($pkiEzsigndocumentID, $ezsigndocumentEditEzsignformfieldgroupsV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentEditEzsignformfieldgroupsV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentEditEzsignformfieldgroupsV2Request** | [**\eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Request**](../Model/EzsigndocumentEditEzsignformfieldgroupsV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentEditEzsignformfieldgroupsV2Response**](../Model/EzsigndocumentEditEzsignformfieldgroupsV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `ezsigndocumentEditEzsignsignaturesV1()`
 
 ```php
@@ -745,7 +883,7 @@ ezsigndocumentEditEzsignsignaturesV1($pkiEzsigndocumentID, $ezsigndocumentEditEz
 
 Edit multiple Ezsignsignatures
 
-Using this endpoint, you can edit multiple Ezsignsignatures at the same time.
+Using this endpoint, you can edit multiple Ezsignsignatures at the same time.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 
@@ -787,6 +925,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV1Response**](../Model/EzsigndocumentEditEzsignsignaturesV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentEditEzsignsignaturesV2()`
+
+```php
+ezsigndocumentEditEzsignsignaturesV2($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV2Request): \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV2Response
+```
+
+Edit multiple Ezsignsignatures
+
+Using this endpoint, you can edit multiple Ezsignsignatures at the same time.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+$ezsigndocumentEditEzsignsignaturesV2Request = new \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV2Request(); // \eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV2Request
+
+try {
+    $result = $apiInstance->ezsigndocumentEditEzsignsignaturesV2($pkiEzsigndocumentID, $ezsigndocumentEditEzsignsignaturesV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentEditEzsignsignaturesV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **ezsigndocumentEditEzsignsignaturesV2Request** | [**\eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV2Request**](../Model/EzsigndocumentEditEzsignsignaturesV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentEditEzsignsignaturesV2Response**](../Model/EzsigndocumentEditEzsignsignaturesV2Response.md)
 
 ### Authorization
 
@@ -1065,7 +1267,7 @@ ezsigndocumentGetActionableElementsV1($pkiEzsigndocumentID): \eZmaxAPI\Model\Ezs
 
 Retrieve actionable elements for the Ezsigndocument
 
-Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 
@@ -1105,6 +1307,130 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigndocumentGetActionableElementsV1Response**](../Model/EzsigndocumentGetActionableElementsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentGetActionableElementsV2()`
+
+```php
+ezsigndocumentGetActionableElementsV2($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentGetActionableElementsV2Response
+```
+
+Retrieve actionable elements for the Ezsigndocument
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigndocumentGetActionableElementsV2($pkiEzsigndocumentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetActionableElementsV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentGetActionableElementsV2Response**](../Model/EzsigndocumentGetActionableElementsV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentGetActionableElementsV3()`
+
+```php
+ezsigndocumentGetActionableElementsV3($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentGetActionableElementsV3Response
+```
+
+Retrieve actionable elements for the Ezsigndocument
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigndocumentGetActionableElementsV3($pkiEzsigndocumentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetActionableElementsV3: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentGetActionableElementsV3Response**](../Model/EzsigndocumentGetActionableElementsV3Response.md)
 
 ### Authorization
 
@@ -1189,7 +1515,7 @@ ezsigndocumentGetCompletedElementsV1($pkiEzsigndocumentID): \eZmaxAPI\Model\Ezsi
 
 Retrieve completed elements for the Ezsigndocument
 
-Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process
+Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 
@@ -1243,13 +1569,75 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigndocumentGetCompletedElementsV2()`
+
+```php
+ezsigndocumentGetCompletedElementsV2($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentGetCompletedElementsV2Response
+```
+
+Retrieve completed elements for the Ezsigndocument
+
+Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigndocumentGetCompletedElementsV2($pkiEzsigndocumentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetCompletedElementsV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentGetCompletedElementsV2Response**](../Model/EzsigndocumentGetCompletedElementsV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `ezsigndocumentGetDownloadUrlV1()`
 
 ```php
 ezsigndocumentGetDownloadUrlV1($pkiEzsigndocumentID, $eDocumentType): \eZmaxAPI\Model\EzsigndocumentGetDownloadUrlV1Response
 ```
 
-Retrieve a URL to download documents.
+Retrieve a URL to download documents
 
 This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
 
@@ -1273,7 +1661,7 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
     $config
 );
 $pkiEzsigndocumentID = 56; // int
-$eDocumentType = 'eDocumentType_example'; // string | The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.<br>     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more.
+$eDocumentType = 'eDocumentType_example'; // string | The type of document to retrieve.  1. **original** Is the original document before any repair or conversion were applied. **Initial** Is the initial document after initial signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.<br>     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more.
 
 try {
     $result = $apiInstance->ezsigndocumentGetDownloadUrlV1($pkiEzsigndocumentID, $eDocumentType);
@@ -1288,7 +1676,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pkiEzsigndocumentID** | **int**|  | |
-| **eDocumentType** | **string**| The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. | |
+| **eDocumentType** | **string**| The type of document to retrieve.  1. **original** Is the original document before any repair or conversion were applied. **Initial** Is the initial document after initial signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. | |
 
 ### Return type
 
@@ -1625,7 +2013,7 @@ ezsigndocumentGetEzsignsignaturesV1($pkiEzsigndocumentID): \eZmaxAPI\Model\Ezsig
 
 Retrieve an existing Ezsigndocument's Ezsignsignatures
 
-
+Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 
@@ -1665,6 +2053,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigndocumentGetEzsignsignaturesV1Response**](../Model/EzsigndocumentGetEzsignsignaturesV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentGetEzsignsignaturesV2()`
+
+```php
+ezsigndocumentGetEzsignsignaturesV2($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentGetEzsignsignaturesV2Response
+```
+
+Retrieve an existing Ezsigndocument's Ezsignsignatures
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigndocumentGetEzsignsignaturesV2($pkiEzsigndocumentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetEzsignsignaturesV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentGetEzsignsignaturesV2Response**](../Model/EzsigndocumentGetEzsignsignaturesV2Response.md)
 
 ### Authorization
 
@@ -1749,6 +2199,8 @@ ezsigndocumentGetObjectV1($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentG
 
 Retrieve an existing Ezsigndocument
 
+Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
+
 ### Example
 
 ```php
@@ -1809,7 +2261,7 @@ ezsigndocumentGetObjectV2($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentG
 
 Retrieve an existing Ezsigndocument
 
-
+Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 
@@ -1849,6 +2301,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigndocumentGetObjectV2Response**](../Model/EzsigndocumentGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentGetObjectV3()`
+
+```php
+ezsigndocumentGetObjectV3($pkiEzsigndocumentID): \eZmaxAPI\Model\EzsigndocumentGetObjectV3Response
+```
+
+Retrieve an existing Ezsigndocument
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigndocumentGetObjectV3($pkiEzsigndocumentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetObjectV3: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentGetObjectV3Response**](../Model/EzsigndocumentGetObjectV3Response.md)
 
 ### Authorization
 
@@ -2061,7 +2575,7 @@ ezsigndocumentPrefillEzsignformV1($pkiEzsigndocumentID, $ezsigndocumentPrefillEz
 
 Prefill an Ezsignform
 
-Using this endpoint, you can prefill an Ezsignform.
+Using this endpoint, you can prefill an Ezsignform.  To fill Ezsignformfield with type **Dropdown**, **Text**, **Textarea**, **Checkbox**, **Date**, **Number**, you must provide properties sEzsignformfieldgroupLabel and sEzsignformfieldLabel.  To fill Ezsignformfield with type **Radio**, you must provide only the property sEzsignformfieldgroupLabel.  In **PowerAutomate** if you need to add a line feed in sEzsignformfieldEnteredvalue, you should do it like this: concat('string1',decodeUriComponent('%0A'),'string2',decodeUriComponent('%0A'),'string3')
 
 ### Example
 

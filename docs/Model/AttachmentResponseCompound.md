@@ -58,7 +58,7 @@ Name | Type | Description | Notes
 **eAttachmentType** | [**\eZmaxAPI\Model\FieldEAttachmentType**](FieldEAttachmentType.md) |  |
 **iAttachmentSize** | **int** | The size of the Attachment |
 **iAttachmentEDMmoduleflag** | **int** | The edmmoduleflag of the Attachment | [optional]
-**sAttachmentMD5** | **string** | The md5 of the Attachment |
+**sAttachmentMD5** | **string** | The MD5 of the Attachment |
 **bAttachmentDeleted** | **bool** | Whether if it&#39;s deleted |
 **bAttachmentValid** | **bool** | Whether if it&#39;s valid |
 **eAttachmentVerified** | [**\eZmaxAPI\Model\FieldEAttachmentVerified**](FieldEAttachmentVerified.md) |  |

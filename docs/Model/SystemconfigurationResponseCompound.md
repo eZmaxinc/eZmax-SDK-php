@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **pkiSystemconfigurationID** | **int** | The unique ID of the Systemconfiguration |
 **fkiSystemconfigurationtypeID** | **int** | The unique ID of the Systemconfigurationtype |
 **fkiBrandingID** | **int** | The unique ID of the Branding | [optional]
+**fkiTimezoneIDDefault** | **int** | The unique ID of the Timezone |
+**sTimezoneNameDefault** | **string** | The description of the Timezone |
 **sSystemconfigurationtypeDescriptionX** | **string** | The description of the Systemconfigurationtype in the language of the requester |
 **eSystemconfigurationNewexternaluseraction** | [**\eZmaxAPI\Model\FieldESystemconfigurationNewexternaluseraction**](FieldESystemconfigurationNewexternaluseraction.md) |  |
 **eSystemconfigurationLanguage1** | [**\eZmaxAPI\Model\FieldESystemconfigurationLanguage1**](FieldESystemconfigurationLanguage1.md) |  |
@@ -21,5 +23,6 @@ Name | Type | Description | Notes
 **dtSystemconfigurationReadonlyexpirationstart** | **string** | The start date where the system will be in read only | [optional]
 **dtSystemconfigurationReadonlyexpirationend** | **string** | The end date where the system will be in read only | [optional]
 **objBranding** | [**\eZmaxAPI\Model\CustomBrandingResponse**](CustomBrandingResponse.md) |  | [optional]
+**iSystemconfigurationEzsignreminderhoursend** | **int** | The hour we will send the eZsign reminders | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

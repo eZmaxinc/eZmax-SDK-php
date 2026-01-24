@@ -1,20 +1,24 @@
 # eZmaxAPI\ObjectEzsigntemplatedocumentApi
 
+
+
 All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/rest, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**ezsigntemplatedocumentCreateObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentCreateObjectV1) | **POST** /1/object/ezsigntemplatedocument | Create a new Ezsigntemplatedocument |
+| [**ezsigntemplatedocumentDownloadV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentDownloadV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/download | Retrieve an existing Ezsigntemplatedocument&#39;s original file |
 | [**ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatedocumentpagerecognitions | Edit multiple Ezsigntemplatedocumentpagerecognitions |
 | [**ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups | Edit multiple Ezsigntemplateformfieldgroups |
 | [**ezsigntemplatedocumentEditEzsigntemplatesignaturesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditEzsigntemplatesignaturesV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures | Edit multiple Ezsigntemplatesignatures |
+| [**ezsigntemplatedocumentEditEzsigntemplatesignaturesV2()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditEzsigntemplatesignaturesV2) | **PUT** /2/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures | Edit multiple Ezsigntemplatesignatures |
 | [**ezsigntemplatedocumentEditObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentEditObjectV1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Edit an existing Ezsigntemplatedocument |
 | [**ezsigntemplatedocumentExtractTextV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentExtractTextV1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/extractText | Extract text from Ezsigntemplatedocument area |
 | [**ezsigntemplatedocumentFlattenV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentFlattenV1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/flatten | Flatten |
 | [**ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpagerecognitions | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpagerecognitions |
 | [**ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages |
 | [**ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups |
-| [**ezsigntemplatedocumentGetEzsigntemplatesignaturesV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplatesignaturesV1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures |
+| [**ezsigntemplatedocumentGetEzsigntemplatesignaturesV2()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetEzsigntemplatesignaturesV2) | **GET** /2/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures |
 | [**ezsigntemplatedocumentGetObjectV2()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetObjectV2) | **GET** /2/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Retrieve an existing Ezsigntemplatedocument |
 | [**ezsigntemplatedocumentGetWordsPositionsV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentGetWordsPositionsV1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigntemplatedocument |
 | [**ezsigntemplatedocumentPatchObjectV1()**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentPatchObjectV1) | **PATCH** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Patch an existing Ezsigntemplatedocument |
@@ -76,6 +80,67 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigntemplatedocumentDownloadV1()`
+
+```php
+ezsigntemplatedocumentDownloadV1($pkiEzsigntemplatedocumentID)
+```
+
+Retrieve an existing Ezsigntemplatedocument's original file
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatedocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigntemplatedocumentID = 56; // int
+
+try {
+    $apiInstance->ezsigntemplatedocumentDownloadV1($pkiEzsigntemplatedocumentID);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocumentDownloadV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -218,7 +283,7 @@ ezsigntemplatedocumentEditEzsigntemplatesignaturesV1($pkiEzsigntemplatedocumentI
 
 Edit multiple Ezsigntemplatesignatures
 
-Using this endpoint, you can edit multiple Ezsigntemplatesignatures at the same time.
+Using this endpoint, you can edit multiple Ezsigntemplatesignatures at the same time.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 
@@ -260,6 +325,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response**](../Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigntemplatedocumentEditEzsigntemplatesignaturesV2()`
+
+```php
+ezsigntemplatedocumentEditEzsigntemplatesignaturesV2($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV2Request): \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV2Response
+```
+
+Edit multiple Ezsigntemplatesignatures
+
+Using this endpoint, you can edit multiple Ezsigntemplatesignatures at the same time.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatedocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigntemplatedocumentID = 56; // int
+$ezsigntemplatedocumentEditEzsigntemplatesignaturesV2Request = new \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV2Request(); // \eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV2Request
+
+try {
+    $result = $apiInstance->ezsigntemplatedocumentEditEzsigntemplatesignaturesV2($pkiEzsigntemplatedocumentID, $ezsigntemplatedocumentEditEzsigntemplatesignaturesV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocumentEditEzsigntemplatesignaturesV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatedocumentID** | **int**|  | |
+| **ezsigntemplatedocumentEditEzsigntemplatesignaturesV2Request** | [**\eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV2Request**](../Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplatedocumentEditEzsigntemplatesignaturesV2Response**](../Model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV2Response.md)
 
 ### Authorization
 
@@ -652,10 +781,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `ezsigntemplatedocumentGetEzsigntemplatesignaturesV1()`
+## `ezsigntemplatedocumentGetEzsigntemplatesignaturesV2()`
 
 ```php
-ezsigntemplatedocumentGetEzsigntemplatesignaturesV1($pkiEzsigntemplatedocumentID): \eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response
+ezsigntemplatedocumentGetEzsigntemplatesignaturesV2($pkiEzsigntemplatedocumentID): \eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatesignaturesV2Response
 ```
 
 Retrieve an existing Ezsigntemplatedocument's Ezsigntemplatesignatures
@@ -684,10 +813,10 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatedocumentApi(
 $pkiEzsigntemplatedocumentID = 56; // int
 
 try {
-    $result = $apiInstance->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1($pkiEzsigntemplatedocumentID);
+    $result = $apiInstance->ezsigntemplatedocumentGetEzsigntemplatesignaturesV2($pkiEzsigntemplatedocumentID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocumentGetEzsigntemplatesignaturesV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocumentGetEzsigntemplatesignaturesV2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -699,7 +828,7 @@ try {
 
 ### Return type
 
-[**\eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response**](../Model/EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response.md)
+[**\eZmaxAPI\Model\EzsigntemplatedocumentGetEzsigntemplatesignaturesV2Response**](../Model/EzsigntemplatedocumentGetEzsigntemplatesignaturesV2Response.md)
 
 ### Authorization
 
