@@ -110,7 +110,7 @@ try {
 ## `ezsignfolderBatchDownloadV1()`
 
 ```php
-ezsignfolderBatchDownloadV1($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept): \SplFileObject
+ezsignfolderBatchDownloadV1($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request): \SplFileObject
 ```
 
 Download multiples files from an Ezsignfolder
@@ -136,10 +136,9 @@ $apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
 );
 $pkiEzsignfolderID = 56; // int
 $ezsignfolderBatchDownloadV1Request = new \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request(); // \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request
-$accept = 'accept_example'; // string | Test csharp
 
 try {
-    $result = $apiInstance->ezsignfolderBatchDownloadV1($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept);
+    $result = $apiInstance->ezsignfolderBatchDownloadV1($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectEzsignfolderApi->ezsignfolderBatchDownloadV1: ', $e->getMessage(), PHP_EOL;
@@ -152,7 +151,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pkiEzsignfolderID** | **int**|  | |
 | **ezsignfolderBatchDownloadV1Request** | [**\eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request**](../Model/EzsignfolderBatchDownloadV1Request.md)|  | |
-| **accept** | **string**| Test csharp | [optional] |
 
 ### Return type
 

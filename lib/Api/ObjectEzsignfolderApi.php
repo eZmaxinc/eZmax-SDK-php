@@ -1101,16 +1101,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request ezsignfolderBatchDownloadV1Request (required)
-     * @param  string|null $accept Test csharp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SplFileObject|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
-    public function ezsignfolderBatchDownloadV1($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept = null, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
+    public function ezsignfolderBatchDownloadV1($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
-        list($response) = $this->ezsignfolderBatchDownloadV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept, $contentType);
+        list($response) = $this->ezsignfolderBatchDownloadV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $contentType);
         return $response;
     }
 
@@ -1121,16 +1120,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request (required)
-     * @param  string|null $accept Test csharp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ezsignfolderBatchDownloadV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept = null, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
+    public function ezsignfolderBatchDownloadV1WithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
-        $request = $this->ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept, $contentType);
+        $request = $this->ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1250,15 +1248,14 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request (required)
-     * @param  string|null $accept Test csharp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderBatchDownloadV1Async($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept = null, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
+    public function ezsignfolderBatchDownloadV1Async($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
-        return $this->ezsignfolderBatchDownloadV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept, $contentType)
+        return $this->ezsignfolderBatchDownloadV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1273,16 +1270,15 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request (required)
-     * @param  string|null $accept Test csharp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ezsignfolderBatchDownloadV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept = null, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
+    public function ezsignfolderBatchDownloadV1AsyncWithHttpInfo($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
         $returnType = '\SplFileObject';
-        $request = $this->ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept, $contentType);
+        $request = $this->ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1325,13 +1321,12 @@ class ObjectEzsignfolderApi
      *
      * @param  int $pkiEzsignfolderID (required)
      * @param  \eZmaxAPI\Model\EzsignfolderBatchDownloadV1Request $ezsignfolderBatchDownloadV1Request (required)
-     * @param  string|null $accept Test csharp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsignfolderBatchDownloadV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, $accept = null, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
+    public function ezsignfolderBatchDownloadV1Request($pkiEzsignfolderID, $ezsignfolderBatchDownloadV1Request, string $contentType = self::contentTypes['ezsignfolderBatchDownloadV1'][0])
     {
 
         // verify the required parameter 'pkiEzsignfolderID' is set
@@ -1353,7 +1348,6 @@ class ObjectEzsignfolderApi
         }
 
 
-
         $resourcePath = '/1/object/ezsignfolder/{pkiEzsignfolderID}/batchDownload';
         $formParams = [];
         $queryParams = [];
@@ -1362,10 +1356,6 @@ class ObjectEzsignfolderApi
         $multipart = false;
 
 
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($pkiEzsignfolderID !== null) {
