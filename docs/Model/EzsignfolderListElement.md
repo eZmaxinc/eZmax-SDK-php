@@ -6,6 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder |
 **fkiEzsignfoldertypeID** | **int** | The unique ID of the Ezsignfoldertype. |
+**fkiEzsignbulksendID** | **int** | The unique ID of the Ezsignbulksend | [optional]
+**sEzsignbulksendDescription** | **string** | The description of the Ezsignbulksend | [optional]
+**fkiEzsignbulksendtransmissionID** | **int** | The unique ID of the Ezsignbulksendtransmission | [optional]
+**sEzsignbulksendtransmissionDescription** | **string** | The description of the Ezsignbulksendtransmission | [optional]
+**fkiEzsigntemplatepublicID** | **int** | The unique ID of the Ezsigntemplatepublic | [optional]
+**sEzsigntemplatepublicDescription** | **string** | The description of the Ezsigntemplatepublic | [optional]
+**eEzsignfolderSource** | [**\eZmaxAPI\Model\FieldEEzsignfolderSource**](FieldEEzsignfolderSource.md) |  |
 **eEzsignfoldertypePrivacylevel** | [**\eZmaxAPI\Model\FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  |
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester |
 **sEzsignfolderDescription** | **string** | The description of the Ezsignfolder |
@@ -29,5 +36,6 @@ Name | Type | Description | Notes
 **dtEzsignfolderArchive** | **string** | The date and time at which the Ezsignfolder was archived. | [optional]
 **dtEzsignfolderDispose** | **string** | The date and time at which the Ezsignfolder was disposed. | [optional]
 **bEzsignfolderSigner** | **bool** | Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user | [optional]
+**bEzsignfolderIsmyown** | **bool** | Whether the Ezsignfolder is my own or not | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -15,12 +15,14 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**userGetAutocompleteV2()**](ObjectUserApi.md#userGetAutocompleteV2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs |
 | [**userGetColleaguesV2()**](ObjectUserApi.md#userGetColleaguesV2) | **GET** /2/object/user/{pkiUserID}/getColleagues | Retrieve an existing User&#39;s Colleagues |
 | [**userGetEffectivePermissionsV1()**](ObjectUserApi.md#userGetEffectivePermissionsV1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User&#39;s Effective Permissions |
+| [**userGetEzmaxcustomeruserV1()**](ObjectUserApi.md#userGetEzmaxcustomeruserV1) | **GET** /1/object/user/{pkiUserID}/getEzmaxcustomeruser | Returns the Ezmaxcustomeruser for the User |
 | [**userGetListV1()**](ObjectUserApi.md#userGetListV1) | **GET** /1/object/user/getList | Retrieve User list |
 | [**userGetObjectV2()**](ObjectUserApi.md#userGetObjectV2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User |
 | [**userGetPermissionsV1()**](ObjectUserApi.md#userGetPermissionsV1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User&#39;s Permissions |
 | [**userGetSubnetsV1()**](ObjectUserApi.md#userGetSubnetsV1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User&#39;s Subnets |
 | [**userGetUsergroupexternalsV1()**](ObjectUserApi.md#userGetUsergroupexternalsV1) | **GET** /1/object/user/{pkiUserID}/getUsergroupexternals | Get User&#39;s Usergroupexternals |
 | [**userGetUsergroupsV1()**](ObjectUserApi.md#userGetUsergroupsV1) | **GET** /1/object/user/{pkiUserID}/getUsergroups | Get User&#39;s Usergroups |
+| [**userImpersonateV1()**](ObjectUserApi.md#userImpersonateV1) | **POST** /1/object/user/{pkiUserID}/impersonate | Impersonate the user |
 | [**userSendPasswordResetV1()**](ObjectUserApi.md#userSendPasswordResetV1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset |
 
 
@@ -590,6 +592,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `userGetEzmaxcustomeruserV1()`
+
+```php
+userGetEzmaxcustomeruserV1($pkiUserID): \eZmaxAPI\Model\UserGetEzmaxcustomeruserV1Response
+```
+
+Returns the Ezmaxcustomeruser for the User
+
+Returns the Ezmaxcustomeruser for the User
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectUserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiUserID = 56; // int
+
+try {
+    $result = $apiInstance->userGetEzmaxcustomeruserV1($pkiUserID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectUserApi->userGetEzmaxcustomeruserV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiUserID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\UserGetEzmaxcustomeruserV1Response**](../Model/UserGetEzmaxcustomeruserV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `userGetListV1()`
 
 ```php
@@ -956,6 +1020,70 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `userImpersonateV1()`
+
+```php
+userImpersonateV1($pkiUserID, $userImpersonateV1Request): \eZmaxAPI\Model\UserImpersonateV1Response
+```
+
+Impersonate the user
+
+Using this endpoint, you can impersonate the user.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectUserApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiUserID = 56; // int
+$userImpersonateV1Request = new \eZmaxAPI\Model\UserImpersonateV1Request(); // \eZmaxAPI\Model\UserImpersonateV1Request
+
+try {
+    $result = $apiInstance->userImpersonateV1($pkiUserID, $userImpersonateV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectUserApi->userImpersonateV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiUserID** | **int**|  | |
+| **userImpersonateV1Request** | [**\eZmaxAPI\Model\UserImpersonateV1Request**](../Model/UserImpersonateV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\UserImpersonateV1Response**](../Model/UserImpersonateV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

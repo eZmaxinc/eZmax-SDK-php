@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **sEzsigntemplateglobalDescription** | **string** | The description of the Ezsigntemplate |
 **objEzsigntemplateglobaldocument** | [**\eZmaxAPI\Model\EzsigntemplateglobaldocumentResponse**](EzsigntemplateglobaldocumentResponse.md) |  | [optional]
 **aObjEzsigntemplateglobalsigner** | [**\eZmaxAPI\Model\EzsigntemplateglobalsignerResponseCompound[]**](EzsigntemplateglobalsignerResponseCompound.md) |  |
+**aObjEzsigntemplateglobalannotation** | [**\eZmaxAPI\Model\EzsigntemplateglobalannotationResponseCompound[]**](EzsigntemplateglobalannotationResponseCompound.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

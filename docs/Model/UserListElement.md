@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **sUserLastname** | **string** | The last name of the user |
 **sUserLoginname** | **string** | The login name of the User. |
 **bUserIsactive** | **bool** | Whether the User is active or not |
+**bUserSuspended** | **bool** | Whether the User is suspended or not | [optional]
 **eUserType** | [**\eZmaxAPI\Model\FieldEUserType**](FieldEUserType.md) |  |
 **eUserOrigin** | [**\eZmaxAPI\Model\FieldEUserOrigin**](FieldEUserOrigin.md) |  |
 **eUserEzsignaccess** | [**\eZmaxAPI\Model\FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |

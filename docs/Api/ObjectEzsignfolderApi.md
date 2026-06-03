@@ -14,6 +14,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignfolderDeleteObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder |
 | [**ezsignfolderDisposeEzsignfoldersV1()**](ObjectEzsignfolderApi.md#ezsignfolderDisposeEzsignfoldersV1) | **POST** /1/object/ezsignfolder/disposeEzsignfolders | Dispose Ezsignfolders |
 | [**ezsignfolderDisposeV1()**](ObjectEzsignfolderApi.md#ezsignfolderDisposeV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/dispose | Dispose the Ezsignfolder |
+| [**ezsignfolderDuplicateV1()**](ObjectEzsignfolderApi.md#ezsignfolderDuplicateV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/duplicate | Duplicate the Ezsignfolder |
 | [**ezsignfolderEditObjectV3()**](ObjectEzsignfolderApi.md#ezsignfolderEditObjectV3) | **PUT** /3/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder |
 | [**ezsignfolderEndPrematurelyV1()**](ObjectEzsignfolderApi.md#ezsignfolderEndPrematurelyV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely |
 | [**ezsignfolderGetActionableElementsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
@@ -25,10 +26,13 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignfolderGetCommunicationListV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetCommunicationListV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList | Retrieve Communication list |
 | [**ezsignfolderGetCommunicationrecipientsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetCommunicationrecipientsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients | Retrieve Ezsignfolder&#39;s Communicationrecipient |
 | [**ezsignfolderGetCommunicationsendersV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetCommunicationsendersV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationsenders | Retrieve Ezsignfolder&#39;s Communicationsender |
+| [**ezsignfolderGetEzsignannotationsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsignannotationsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignannotations | Retrieve an existing Ezsignfolder&#39;s Ezsignannotations |
 | [**ezsignfolderGetEzsigndocumentsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsigndocumentsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments |
 | [**ezsignfolderGetEzsigndocumentsV2()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsigndocumentsV2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments |
 | [**ezsignfolderGetEzsignfoldersignerassociationsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsignfoldersignerassociationsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations |
+| [**ezsignfolderGetEzsignformfieldgroupsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsignformfieldgroupsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignformfieldgroups | Retrieve an existing Ezsignfolder&#39;s Ezsignformfieldgroups |
 | [**ezsignfolderGetEzsignsignaturesAutomaticV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsignsignaturesAutomaticV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignfolder&#39;s automatic Ezsignsignatures |
+| [**ezsignfolderGetEzsignsignaturesV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsignsignaturesV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignatures | Retrieve an existing Ezsignfolder&#39;s Ezsignsignatures |
 | [**ezsignfolderGetFormsDataV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetFormsDataV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data |
 | [**ezsignfolderGetListV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetListV1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list |
 | [**ezsignfolderGetObjectV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder |
@@ -37,6 +41,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignfolderImportEzsignfoldersignerassociationsV1()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsignfoldersignerassociationsV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsignfoldersignerassociations | Import an existing Ezsignfoldersignerassociation into this Ezsignfolder |
 | [**ezsignfolderImportEzsigntemplatepackageV1()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsigntemplatepackageV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder |
 | [**ezsignfolderImportEzsigntemplatepackageV2()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsigntemplatepackageV2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder |
+| [**ezsignfolderImportEzsigntemplatepackageV3()**](ObjectEzsignfolderApi.md#ezsignfolderImportEzsigntemplatepackageV3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder |
 | [**ezsignfolderReorderV2()**](ObjectEzsignfolderApi.md#ezsignfolderReorderV2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder |
 | [**ezsignfolderSendV1()**](ObjectEzsignfolderApi.md#ezsignfolderSendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
 | [**ezsignfolderSendV3()**](ObjectEzsignfolderApi.md#ezsignfolderSendV3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
@@ -527,6 +532,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignfolderDisposeV1Response**](../Model/EzsignfolderDisposeV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfolderDuplicateV1()`
+
+```php
+ezsignfolderDuplicateV1($pkiEzsignfolderID, $ezsignfolderDuplicateV1Request): \eZmaxAPI\Model\EzsignfolderDuplicateV1Response
+```
+
+Duplicate the Ezsignfolder
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfolderID = 56; // int
+$ezsignfolderDuplicateV1Request = new \eZmaxAPI\Model\EzsignfolderDuplicateV1Request(); // \eZmaxAPI\Model\EzsignfolderDuplicateV1Request
+
+try {
+    $result = $apiInstance->ezsignfolderDuplicateV1($pkiEzsignfolderID, $ezsignfolderDuplicateV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfolderApi->ezsignfolderDuplicateV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **ezsignfolderDuplicateV1Request** | [**\eZmaxAPI\Model\EzsignfolderDuplicateV1Request**](../Model/EzsignfolderDuplicateV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfolderDuplicateV1Response**](../Model/EzsignfolderDuplicateV1Response.md)
 
 ### Authorization
 
@@ -1227,6 +1296,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfolderGetEzsignannotationsV1()`
+
+```php
+ezsignfolderGetEzsignannotationsV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderGetEzsignannotationsV1Response
+```
+
+Retrieve an existing Ezsignfolder's Ezsignannotations
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfolderID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignfolderGetEzsignannotationsV1($pkiEzsignfolderID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfolderApi->ezsignfolderGetEzsignannotationsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfolderGetEzsignannotationsV1Response**](../Model/EzsignfolderGetEzsignannotationsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `ezsignfolderGetEzsigndocumentsV1()`
 
 ```php
@@ -1413,6 +1544,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfolderGetEzsignformfieldgroupsV1()`
+
+```php
+ezsignfolderGetEzsignformfieldgroupsV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderGetEzsignformfieldgroupsV1Response
+```
+
+Retrieve an existing Ezsignfolder's Ezsignformfieldgroups
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfolderID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignfolderGetEzsignformfieldgroupsV1($pkiEzsignfolderID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfolderApi->ezsignfolderGetEzsignformfieldgroupsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfolderGetEzsignformfieldgroupsV1Response**](../Model/EzsignfolderGetEzsignformfieldgroupsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `ezsignfolderGetEzsignsignaturesAutomaticV1()`
 
 ```php
@@ -1461,6 +1654,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignfolderGetEzsignsignaturesAutomaticV1Response**](../Model/EzsignfolderGetEzsignsignaturesAutomaticV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfolderGetEzsignsignaturesV1()`
+
+```php
+ezsignfolderGetEzsignsignaturesV1($pkiEzsignfolderID): \eZmaxAPI\Model\EzsignfolderGetEzsignsignaturesV1Response
+```
+
+Retrieve an existing Ezsignfolder's Ezsignsignatures
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfolderID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignfolderGetEzsignsignaturesV1($pkiEzsignfolderID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfolderApi->ezsignfolderGetEzsignsignaturesV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfolderGetEzsignsignaturesV1Response**](../Model/EzsignfolderGetEzsignsignaturesV1Response.md)
 
 ### Authorization
 
@@ -1545,7 +1800,7 @@ ezsignfolderGetListV1($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilte
 
 Retrieve Ezsignfolder list
 
-Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sUserFirstname | | sUserLastname | | sEzsigndocumentName |
+Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup | | eEzsignfolderSource | Normal<br>Ezsignbulksend<br>Ezsigntemplatepublic |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sUserFirstname | | sUserLastname | | sEzsigndocumentName |
 
 ### Example
 
@@ -1969,6 +2224,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV2Response**](../Model/EzsignfolderImportEzsigntemplatepackageV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfolderImportEzsigntemplatepackageV3()`
+
+```php
+ezsignfolderImportEzsigntemplatepackageV3($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV3Request): \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV3Response
+```
+
+Import an Ezsigntemplatepackage in the Ezsignfolder
+
+This endpoint imports all of the Ezsigntemplates from the Ezsigntemplatepackage into the Ezsignfolder as Ezsigndocuments.  This allows to automatically apply all the Ezsigntemplateformfieldgroups and Ezsigntemplatesignatures on the newly created Ezsigndocuments in a single step.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfolderID = 56; // int
+$ezsignfolderImportEzsigntemplatepackageV3Request = new \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV3Request(); // \eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV3Request
+
+try {
+    $result = $apiInstance->ezsignfolderImportEzsigntemplatepackageV3($pkiEzsignfolderID, $ezsignfolderImportEzsigntemplatepackageV3Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfolderApi->ezsignfolderImportEzsigntemplatepackageV3: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **ezsignfolderImportEzsigntemplatepackageV3Request** | [**\eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV3Request**](../Model/EzsignfolderImportEzsigntemplatepackageV3Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfolderImportEzsigntemplatepackageV3Response**](../Model/EzsignfolderImportEzsigntemplatepackageV3Response.md)
 
 ### Authorization
 

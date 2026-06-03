@@ -21,5 +21,6 @@ Name | Type | Description | Notes
 **eEzsigntemplateType** | [**\eZmaxAPI\Model\FieldEEzsigntemplateType**](FieldEEzsigntemplateType.md) |  | [optional]
 **objEzsigntemplatedocument** | [**\eZmaxAPI\Model\EzsigntemplatedocumentResponse**](EzsigntemplatedocumentResponse.md) |  | [optional]
 **aObjEzsigntemplatesigner** | [**\eZmaxAPI\Model\EzsigntemplatesignerResponseCompound[]**](EzsigntemplatesignerResponseCompound.md) |  |
+**aObjEzsigntemplateannotation** | [**\eZmaxAPI\Model\EzsigntemplateannotationResponseCompound[]**](EzsigntemplateannotationResponseCompound.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
