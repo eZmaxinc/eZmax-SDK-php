@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicCreateObjectV1Request
+# EzsigntemplatepublicCreateObjectV1Request
 
 ## Properties
 

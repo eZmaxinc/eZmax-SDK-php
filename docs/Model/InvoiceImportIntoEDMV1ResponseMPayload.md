@@ -1,4 +1,4 @@
-# # InvoiceImportIntoEDMV1ResponseMPayload
+# InvoiceImportIntoEDMV1ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # InvoiceGetAttachmentsV1Response
+# InvoiceGetAttachmentsV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UsergroupdelegationDeleteObjectV1Response
+# UsergroupdelegationDeleteObjectV1Response
 
 ## Properties
 

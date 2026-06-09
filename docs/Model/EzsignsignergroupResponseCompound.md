@@ -1,4 +1,4 @@
-# # EzsignsignergroupResponseCompound
+# EzsignsignergroupResponseCompound
 
 ## Properties
 

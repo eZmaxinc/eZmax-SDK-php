@@ -1,4 +1,4 @@
-# # EzsignsignerResponse
+# EzsignsignerResponse
 
 ## Properties
 

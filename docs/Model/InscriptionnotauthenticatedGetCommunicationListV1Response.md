@@ -1,4 +1,4 @@
-# # InscriptionnotauthenticatedGetCommunicationListV1Response
+# InscriptionnotauthenticatedGetCommunicationListV1Response
 
 ## Properties
 

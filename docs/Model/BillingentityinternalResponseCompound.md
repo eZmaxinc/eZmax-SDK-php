@@ -1,4 +1,4 @@
-# # BillingentityinternalResponseCompound
+# BillingentityinternalResponseCompound
 
 ## Properties
 

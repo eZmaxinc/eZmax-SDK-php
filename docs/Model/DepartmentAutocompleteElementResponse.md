@@ -1,4 +1,4 @@
-# # DepartmentAutocompleteElementResponse
+# DepartmentAutocompleteElementResponse
 
 ## Properties
 

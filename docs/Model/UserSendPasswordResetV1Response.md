@@ -1,4 +1,4 @@
-# # UserSendPasswordResetV1Response
+# UserSendPasswordResetV1Response
 
 ## Properties
 

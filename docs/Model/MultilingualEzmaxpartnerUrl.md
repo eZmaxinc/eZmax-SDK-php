@@ -1,4 +1,4 @@
-# # MultilingualEzmaxpartnerUrl
+# MultilingualEzmaxpartnerUrl
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignannotationCreateObjectV1Response
+# EzsignannotationCreateObjectV1Response
 
 ## Properties
 

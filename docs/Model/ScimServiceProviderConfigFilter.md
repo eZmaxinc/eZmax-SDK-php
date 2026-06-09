@@ -1,4 +1,4 @@
-# # ScimServiceProviderConfigFilter
+# ScimServiceProviderConfigFilter
 
 ## Properties
 

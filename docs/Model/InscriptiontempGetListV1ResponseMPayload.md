@@ -1,4 +1,4 @@
-# # InscriptiontempGetListV1ResponseMPayload
+# InscriptiontempGetListV1ResponseMPayload
 
 ## Properties
 

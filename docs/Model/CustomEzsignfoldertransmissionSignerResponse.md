@@ -1,4 +1,4 @@
-# # CustomEzsignfoldertransmissionSignerResponse
+# CustomEzsignfoldertransmissionSignerResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # OtherincomeListElement
+# OtherincomeListElement
 
 ## Properties
 

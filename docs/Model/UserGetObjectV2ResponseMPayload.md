@@ -1,4 +1,4 @@
-# # UserGetObjectV2ResponseMPayload
+# UserGetObjectV2ResponseMPayload
 
 ## Properties
 

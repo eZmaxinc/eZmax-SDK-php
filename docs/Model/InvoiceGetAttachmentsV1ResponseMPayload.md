@@ -1,4 +1,4 @@
-# # InvoiceGetAttachmentsV1ResponseMPayload
+# InvoiceGetAttachmentsV1ResponseMPayload
 
 ## Properties
 

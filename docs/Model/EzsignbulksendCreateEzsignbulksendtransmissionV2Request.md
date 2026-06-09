@@ -1,4 +1,4 @@
-# # EzsignbulksendCreateEzsignbulksendtransmissionV2Request
+# EzsignbulksendCreateEzsignbulksendtransmissionV2Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignsignaturecustomdateResponseCompound
+# EzsignsignaturecustomdateResponseCompound
 
 ## Properties
 

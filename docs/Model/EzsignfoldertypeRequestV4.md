@@ -1,4 +1,4 @@
-# # EzsignfoldertypeRequestV4
+# EzsignfoldertypeRequestV4
 
 ## Properties
 

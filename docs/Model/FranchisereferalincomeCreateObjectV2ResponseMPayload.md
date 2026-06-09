@@ -1,4 +1,4 @@
-# # FranchisereferalincomeCreateObjectV2ResponseMPayload
+# FranchisereferalincomeCreateObjectV2ResponseMPayload
 
 ## Properties
 

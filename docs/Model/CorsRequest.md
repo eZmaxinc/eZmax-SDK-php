@@ -1,4 +1,4 @@
-# # CorsRequest
+# CorsRequest
 
 ## Properties
 

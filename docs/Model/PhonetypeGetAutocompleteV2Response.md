@@ -1,4 +1,4 @@
-# # PhonetypeGetAutocompleteV2Response
+# PhonetypeGetAutocompleteV2Response
 
 ## Properties
 

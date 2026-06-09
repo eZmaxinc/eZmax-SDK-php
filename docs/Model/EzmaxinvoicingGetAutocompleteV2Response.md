@@ -1,4 +1,4 @@
-# # EzmaxinvoicingGetAutocompleteV2Response
+# EzmaxinvoicingGetAutocompleteV2Response
 
 ## Properties
 

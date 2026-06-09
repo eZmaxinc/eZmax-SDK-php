@@ -1,4 +1,4 @@
-# # FieldEPaymenttermType
+# FieldEPaymenttermType
 
 ## Properties
 

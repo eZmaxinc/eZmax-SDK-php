@@ -1,4 +1,4 @@
-# # CommonResponseObjDebug
+# CommonResponseObjDebug
 
 ## Properties
 

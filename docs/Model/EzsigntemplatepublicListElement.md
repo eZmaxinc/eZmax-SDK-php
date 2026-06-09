@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicListElement
+# EzsigntemplatepublicListElement
 
 ## Properties
 

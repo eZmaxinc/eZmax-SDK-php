@@ -1,4 +1,4 @@
-# # EzsigntemplatesignatureCreateObjectV3Response
+# EzsigntemplatesignatureCreateObjectV3Response
 
 ## Properties
 

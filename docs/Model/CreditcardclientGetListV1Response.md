@@ -1,4 +1,4 @@
-# # CreditcardclientGetListV1Response
+# CreditcardclientGetListV1Response
 
 ## Properties
 

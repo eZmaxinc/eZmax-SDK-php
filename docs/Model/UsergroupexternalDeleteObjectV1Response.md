@@ -1,4 +1,4 @@
-# # UsergroupexternalDeleteObjectV1Response
+# UsergroupexternalDeleteObjectV1Response
 
 ## Properties
 

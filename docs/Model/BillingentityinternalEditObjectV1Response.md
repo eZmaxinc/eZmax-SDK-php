@@ -1,4 +1,4 @@
-# # BillingentityinternalEditObjectV1Response
+# BillingentityinternalEditObjectV1Response
 
 ## Properties
 

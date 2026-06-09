@@ -1,4 +1,4 @@
-# # MultilingualEzmaxpartnerName
+# MultilingualEzmaxpartnerName
 
 ## Properties
 

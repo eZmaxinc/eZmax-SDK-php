@@ -1,4 +1,4 @@
-# # CorsCreateObjectV1Request
+# CorsCreateObjectV1Request
 
 ## Properties
 

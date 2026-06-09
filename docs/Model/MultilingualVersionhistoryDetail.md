@@ -1,4 +1,4 @@
-# # MultilingualVersionhistoryDetail
+# MultilingualVersionhistoryDetail
 
 ## Properties
 

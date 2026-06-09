@@ -1,4 +1,4 @@
-# # InscriptionGetListV1Response
+# InscriptionGetListV1Response
 
 ## Properties
 

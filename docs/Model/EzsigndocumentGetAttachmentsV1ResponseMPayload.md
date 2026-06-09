@@ -1,4 +1,4 @@
-# # EzsigndocumentGetAttachmentsV1ResponseMPayload
+# EzsigndocumentGetAttachmentsV1ResponseMPayload
 
 ## Properties
 

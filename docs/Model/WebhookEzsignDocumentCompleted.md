@@ -1,4 +1,4 @@
-# # WebhookEzsignDocumentCompleted
+# WebhookEzsignDocumentCompleted
 
 ## Properties
 

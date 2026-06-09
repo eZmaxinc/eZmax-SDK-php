@@ -1,4 +1,4 @@
-# # UserGetApikeysV1Response
+# UserGetApikeysV1Response
 
 ## Properties
 

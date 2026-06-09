@@ -1,4 +1,4 @@
-# # BrandingEditObjectV2Request
+# BrandingEditObjectV2Request
 
 ## Properties
 

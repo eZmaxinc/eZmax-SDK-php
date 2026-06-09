@@ -1,4 +1,4 @@
-# # EzmaxpartnerGetCustomDeveloppersV1Response
+# EzmaxpartnerGetCustomDeveloppersV1Response
 
 ## Properties
 

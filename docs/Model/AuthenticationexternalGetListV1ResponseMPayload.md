@@ -1,4 +1,4 @@
-# # AuthenticationexternalGetListV1ResponseMPayload
+# AuthenticationexternalGetListV1ResponseMPayload
 
 ## Properties
 

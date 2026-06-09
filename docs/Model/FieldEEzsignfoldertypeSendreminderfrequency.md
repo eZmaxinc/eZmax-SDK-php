@@ -1,4 +1,4 @@
-# # FieldEEzsignfoldertypeSendreminderfrequency
+# FieldEEzsignfoldertypeSendreminderfrequency
 
 ## Properties
 

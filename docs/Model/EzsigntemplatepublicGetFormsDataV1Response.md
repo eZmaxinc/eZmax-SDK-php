@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicGetFormsDataV1Response
+# EzsigntemplatepublicGetFormsDataV1Response
 
 ## Properties
 

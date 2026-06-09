@@ -1,4 +1,4 @@
-# # VariableexpenseListElement
+# VariableexpenseListElement
 
 ## Properties
 

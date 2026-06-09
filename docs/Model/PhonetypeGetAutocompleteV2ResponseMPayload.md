@@ -1,4 +1,4 @@
-# # PhonetypeGetAutocompleteV2ResponseMPayload
+# PhonetypeGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

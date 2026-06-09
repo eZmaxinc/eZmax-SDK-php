@@ -1,4 +1,4 @@
-# # EzsignfolderImportEzsigntemplatepackageV3Request
+# EzsignfolderImportEzsigntemplatepackageV3Request
 
 ## Properties
 

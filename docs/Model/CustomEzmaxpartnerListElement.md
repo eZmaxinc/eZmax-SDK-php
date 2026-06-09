@@ -1,4 +1,4 @@
-# # CustomEzmaxpartnerListElement
+# CustomEzmaxpartnerListElement
 
 ## Properties
 

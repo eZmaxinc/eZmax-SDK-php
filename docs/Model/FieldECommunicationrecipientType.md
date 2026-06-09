@@ -1,4 +1,4 @@
-# # FieldECommunicationrecipientType
+# FieldECommunicationrecipientType
 
 ## Properties
 

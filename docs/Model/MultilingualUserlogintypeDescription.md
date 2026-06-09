@@ -1,4 +1,4 @@
-# # MultilingualUserlogintypeDescription
+# MultilingualUserlogintypeDescription
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # MultilingualEzsignfoldertypeName
+# MultilingualEzsignfoldertypeName
 
 ## Properties
 

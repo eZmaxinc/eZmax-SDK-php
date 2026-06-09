@@ -1,4 +1,4 @@
-# # AuthenticationexternalAutocompleteElementResponse
+# AuthenticationexternalAutocompleteElementResponse
 
 ## Properties
 

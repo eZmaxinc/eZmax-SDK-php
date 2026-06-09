@@ -1,4 +1,4 @@
-# # EzsignfolderEndPrematurelyV1Response
+# EzsignfolderEndPrematurelyV1Response
 
 ## Properties
 

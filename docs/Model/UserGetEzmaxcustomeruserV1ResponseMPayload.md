@@ -1,4 +1,4 @@
-# # UserGetEzmaxcustomeruserV1ResponseMPayload
+# UserGetEzmaxcustomeruserV1ResponseMPayload
 
 ## Properties
 

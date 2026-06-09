@@ -1,4 +1,4 @@
-# # TranqcontractImportIntoEDMV1Response
+# TranqcontractImportIntoEDMV1Response
 
 ## Properties
 

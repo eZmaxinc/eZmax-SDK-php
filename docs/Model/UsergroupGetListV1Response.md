@@ -1,4 +1,4 @@
-# # UsergroupGetListV1Response
+# UsergroupGetListV1Response
 
 ## Properties
 

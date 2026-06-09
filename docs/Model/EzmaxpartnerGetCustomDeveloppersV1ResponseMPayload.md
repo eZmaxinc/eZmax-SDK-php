@@ -1,4 +1,4 @@
-# # EzmaxpartnerGetCustomDeveloppersV1ResponseMPayload
+# EzmaxpartnerGetCustomDeveloppersV1ResponseMPayload
 
 ## Properties
 

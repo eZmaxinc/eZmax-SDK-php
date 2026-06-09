@@ -1,4 +1,4 @@
-# # EzsigndiscussionCreateObjectV1Response
+# EzsigndiscussionCreateObjectV1Response
 
 ## Properties
 

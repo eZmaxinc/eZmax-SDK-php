@@ -1,4 +1,4 @@
-# # TranqcontractGetCommunicationListV1ResponseMPayload
+# TranqcontractGetCommunicationListV1ResponseMPayload
 
 ## Properties
 

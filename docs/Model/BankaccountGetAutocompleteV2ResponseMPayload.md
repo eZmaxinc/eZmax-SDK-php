@@ -1,4 +1,4 @@
-# # BankaccountGetAutocompleteV2ResponseMPayload
+# BankaccountGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

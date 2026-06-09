@@ -1,4 +1,4 @@
-# # EzmaxinvoicingGetProvisionalV1Response
+# EzmaxinvoicingGetProvisionalV1Response
 
 ## Properties
 

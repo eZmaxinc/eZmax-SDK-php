@@ -1,4 +1,4 @@
-# # ScimAuthenticationScheme
+# ScimAuthenticationScheme
 
 ## Properties
 

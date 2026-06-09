@@ -1,4 +1,4 @@
-# # PaymentgatewayEditObjectV1Request
+# PaymentgatewayEditObjectV1Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EmailRequest
+# EmailRequest
 
 ## Properties
 

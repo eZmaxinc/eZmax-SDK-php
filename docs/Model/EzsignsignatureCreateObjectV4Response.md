@@ -1,4 +1,4 @@
-# # EzsignsignatureCreateObjectV4Response
+# EzsignsignatureCreateObjectV4Response
 
 ## Properties
 

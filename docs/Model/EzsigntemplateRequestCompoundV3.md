@@ -1,4 +1,4 @@
-# # EzsigntemplateRequestCompoundV3
+# EzsigntemplateRequestCompoundV3
 
 ## Properties
 

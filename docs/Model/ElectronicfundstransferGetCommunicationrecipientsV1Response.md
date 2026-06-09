@@ -1,4 +1,4 @@
-# # ElectronicfundstransferGetCommunicationrecipientsV1Response
+# ElectronicfundstransferGetCommunicationrecipientsV1Response
 
 ## Properties
 

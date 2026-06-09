@@ -1,4 +1,4 @@
-# # CustomEzmaxinvoicingEzsignfolderResponse
+# CustomEzmaxinvoicingEzsignfolderResponse
 
 ## Properties
 

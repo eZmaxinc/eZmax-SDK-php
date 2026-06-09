@@ -1,4 +1,4 @@
-# # InscriptionnotauthenticatedconditionResponseCompound
+# InscriptionnotauthenticatedconditionResponseCompound
 
 ## Properties
 

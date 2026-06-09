@@ -1,4 +1,4 @@
-# # EzsigntemplatepackagesignermembershipResponseCompound
+# EzsigntemplatepackagesignermembershipResponseCompound
 
 ## Properties
 

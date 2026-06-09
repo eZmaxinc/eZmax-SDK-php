@@ -1,4 +1,4 @@
-# # EzmaxinvoicingGetObjectV2Response
+# EzmaxinvoicingGetObjectV2Response
 
 ## Properties
 

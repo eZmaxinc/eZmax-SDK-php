@@ -1,4 +1,4 @@
-# # ElectronicfundstransferImportIntoEDMV1Response
+# ElectronicfundstransferImportIntoEDMV1Response
 
 ## Properties
 

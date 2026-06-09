@@ -1,4 +1,4 @@
-# # EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload
+# EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

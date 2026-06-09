@@ -1,4 +1,4 @@
-# # ActivesessionGenerateFederationTokenV1Request
+# ActivesessionGenerateFederationTokenV1Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CommonResponseWarning
+# CommonResponseWarning
 
 ## Properties
 

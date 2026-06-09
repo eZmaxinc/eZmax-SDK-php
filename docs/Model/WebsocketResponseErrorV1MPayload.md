@@ -1,4 +1,4 @@
-# # WebsocketResponseErrorV1MPayload
+# WebsocketResponseErrorV1MPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UsergroupexternalResponseCompound
+# UsergroupexternalResponseCompound
 
 ## Properties
 

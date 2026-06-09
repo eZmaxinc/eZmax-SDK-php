@@ -1,4 +1,4 @@
-# # CustomEzsignsignaturestatusResponse
+# CustomEzsignsignaturestatusResponse
 
 ## Properties
 

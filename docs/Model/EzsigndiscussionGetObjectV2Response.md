@@ -1,4 +1,4 @@
-# # EzsigndiscussionGetObjectV2Response
+# EzsigndiscussionGetObjectV2Response
 
 ## Properties
 

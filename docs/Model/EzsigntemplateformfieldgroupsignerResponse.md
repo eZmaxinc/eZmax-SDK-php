@@ -1,4 +1,4 @@
-# # EzsigntemplateformfieldgroupsignerResponse
+# EzsigntemplateformfieldgroupsignerResponse
 
 ## Properties
 

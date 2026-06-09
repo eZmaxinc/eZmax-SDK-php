@@ -1,4 +1,4 @@
-# # EnumFontweight
+# EnumFontweight
 
 ## Properties
 

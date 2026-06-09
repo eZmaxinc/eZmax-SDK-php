@@ -1,4 +1,4 @@
-# # EzsignformfieldgroupRequest
+# EzsignformfieldgroupRequest
 
 ## Properties
 

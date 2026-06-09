@@ -1,4 +1,4 @@
-# # BuyercontractImportIntoEDMV1ResponseMPayload
+# BuyercontractImportIntoEDMV1ResponseMPayload
 
 ## Properties
 

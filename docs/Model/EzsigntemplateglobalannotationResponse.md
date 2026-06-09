@@ -1,4 +1,4 @@
-# # EzsigntemplateglobalannotationResponse
+# EzsigntemplateglobalannotationResponse
 
 ## Properties
 

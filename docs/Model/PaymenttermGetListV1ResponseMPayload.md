@@ -1,4 +1,4 @@
-# # PaymenttermGetListV1ResponseMPayload
+# PaymenttermGetListV1ResponseMPayload
 
 ## Properties
 

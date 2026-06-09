@@ -1,4 +1,4 @@
-# # SupplyDeleteObjectV1Response
+# SupplyDeleteObjectV1Response
 
 ## Properties
 

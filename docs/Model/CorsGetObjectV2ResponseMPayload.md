@@ -1,4 +1,4 @@
-# # CorsGetObjectV2ResponseMPayload
+# CorsGetObjectV2ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CurrencyGetAutocompleteV2Response
+# CurrencyGetAutocompleteV2Response
 
 ## Properties
 

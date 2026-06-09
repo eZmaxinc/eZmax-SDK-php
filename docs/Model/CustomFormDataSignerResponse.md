@@ -1,4 +1,4 @@
-# # CustomFormDataSignerResponse
+# CustomFormDataSignerResponse
 
 ## Properties
 

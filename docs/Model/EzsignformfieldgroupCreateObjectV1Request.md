@@ -1,4 +1,4 @@
-# # EzsignformfieldgroupCreateObjectV1Request
+# EzsignformfieldgroupCreateObjectV1Request
 
 ## Properties
 

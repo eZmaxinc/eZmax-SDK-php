@@ -1,4 +1,4 @@
-# # UserstagedGetListV1ResponseMPayload
+# UserstagedGetListV1ResponseMPayload
 
 ## Properties
 

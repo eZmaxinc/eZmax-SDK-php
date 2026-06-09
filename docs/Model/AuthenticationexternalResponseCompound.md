@@ -1,4 +1,4 @@
-# # AuthenticationexternalResponseCompound
+# AuthenticationexternalResponseCompound
 
 ## Properties
 

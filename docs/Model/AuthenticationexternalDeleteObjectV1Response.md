@@ -1,4 +1,4 @@
-# # AuthenticationexternalDeleteObjectV1Response
+# AuthenticationexternalDeleteObjectV1Response
 
 ## Properties
 

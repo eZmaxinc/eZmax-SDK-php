@@ -1,4 +1,4 @@
-# # EzsignbulksenddocumentmappingRequest
+# EzsignbulksenddocumentmappingRequest
 
 ## Properties
 

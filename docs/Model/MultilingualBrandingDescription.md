@@ -1,4 +1,4 @@
-# # MultilingualBrandingDescription
+# MultilingualBrandingDescription
 
 ## Properties
 

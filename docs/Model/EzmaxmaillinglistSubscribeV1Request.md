@@ -1,4 +1,4 @@
-# # EzmaxmaillinglistSubscribeV1Request
+# EzmaxmaillinglistSubscribeV1Request
 
 ## Properties
 

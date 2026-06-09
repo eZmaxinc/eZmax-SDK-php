@@ -1,4 +1,4 @@
-# # SupplierImportIntoEDMV1Response
+# SupplierImportIntoEDMV1Response
 
 ## Properties
 

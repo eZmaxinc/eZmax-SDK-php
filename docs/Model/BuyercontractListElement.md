@@ -1,4 +1,4 @@
-# # BuyercontractListElement
+# BuyercontractListElement
 
 ## Properties
 

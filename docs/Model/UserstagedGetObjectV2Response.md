@@ -1,4 +1,4 @@
-# # UserstagedGetObjectV2Response
+# UserstagedGetObjectV2Response
 
 ## Properties
 

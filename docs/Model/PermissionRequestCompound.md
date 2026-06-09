@@ -1,4 +1,4 @@
-# # PermissionRequestCompound
+# PermissionRequestCompound
 
 ## Properties
 

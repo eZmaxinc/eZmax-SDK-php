@@ -1,4 +1,4 @@
-# # SystemconfigurationResponse
+# SystemconfigurationResponse
 
 ## Properties
 

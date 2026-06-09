@@ -1,4 +1,4 @@
-# # CustomCommunicationListElementResponse
+# CustomCommunicationListElementResponse
 
 ## Properties
 

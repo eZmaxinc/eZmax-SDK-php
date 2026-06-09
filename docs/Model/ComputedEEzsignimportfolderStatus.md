@@ -1,4 +1,4 @@
-# # ComputedEEzsignimportfolderStatus
+# ComputedEEzsignimportfolderStatus
 
 ## Properties
 

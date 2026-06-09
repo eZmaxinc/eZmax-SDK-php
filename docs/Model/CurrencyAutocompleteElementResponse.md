@@ -1,4 +1,4 @@
-# # CurrencyAutocompleteElementResponse
+# CurrencyAutocompleteElementResponse
 
 ## Properties
 

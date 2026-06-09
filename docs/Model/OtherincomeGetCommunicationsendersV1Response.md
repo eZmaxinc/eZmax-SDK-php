@@ -1,4 +1,4 @@
-# # OtherincomeGetCommunicationsendersV1Response
+# OtherincomeGetCommunicationsendersV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # AuthenticationexternalGetObjectV2Response
+# AuthenticationexternalGetObjectV2Response
 
 ## Properties
 

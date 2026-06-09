@@ -1,4 +1,4 @@
-# # EzsigntemplateCopyV1Response
+# EzsigntemplateCopyV1Response
 
 ## Properties
 

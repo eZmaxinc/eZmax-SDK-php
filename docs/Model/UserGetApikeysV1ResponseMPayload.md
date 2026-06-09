@@ -1,4 +1,4 @@
-# # UserGetApikeysV1ResponseMPayload
+# UserGetApikeysV1ResponseMPayload
 
 ## Properties
 

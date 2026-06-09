@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentAutocompleteElementResponse
+# EzdoctemplatedocumentAutocompleteElementResponse
 
 ## Properties
 

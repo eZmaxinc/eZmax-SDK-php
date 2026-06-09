@@ -1,4 +1,4 @@
-# # MultilingualEzmaxinvoicingsummaryinternalDescription
+# MultilingualEzmaxinvoicingsummaryinternalDescription
 
 ## Properties
 

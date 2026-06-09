@@ -1,4 +1,4 @@
-# # BrokerGetListV1Response
+# BrokerGetListV1Response
 
 ## Properties
 

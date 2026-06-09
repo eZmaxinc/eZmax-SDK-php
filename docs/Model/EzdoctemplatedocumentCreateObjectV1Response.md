@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentCreateObjectV1Response
+# EzdoctemplatedocumentCreateObjectV1Response
 
 ## Properties
 

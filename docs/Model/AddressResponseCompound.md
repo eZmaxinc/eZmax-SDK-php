@@ -1,4 +1,4 @@
-# # AddressResponseCompound
+# AddressResponseCompound
 
 ## Properties
 

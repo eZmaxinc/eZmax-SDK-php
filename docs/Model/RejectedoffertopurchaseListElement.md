@@ -1,4 +1,4 @@
-# # RejectedoffertopurchaseListElement
+# RejectedoffertopurchaseListElement
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UserGetListV1ResponseMPayload
+# UserGetListV1ResponseMPayload
 
 ## Properties
 

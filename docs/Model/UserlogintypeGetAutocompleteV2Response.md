@@ -1,4 +1,4 @@
-# # UserlogintypeGetAutocompleteV2Response
+# UserlogintypeGetAutocompleteV2Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # WebsocketResponseInformationV1MPayload
+# WebsocketResponseInformationV1MPayload
 
 ## Properties
 

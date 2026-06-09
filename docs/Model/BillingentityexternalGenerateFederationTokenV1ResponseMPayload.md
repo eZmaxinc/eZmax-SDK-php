@@ -1,4 +1,4 @@
-# # BillingentityexternalGenerateFederationTokenV1ResponseMPayload
+# BillingentityexternalGenerateFederationTokenV1ResponseMPayload
 
 ## Properties
 

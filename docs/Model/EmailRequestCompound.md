@@ -1,4 +1,4 @@
-# # EmailRequestCompound
+# EmailRequestCompound
 
 ## Properties
 

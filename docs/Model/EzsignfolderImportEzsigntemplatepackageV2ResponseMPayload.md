@@ -1,4 +1,4 @@
-# # EzsignfolderImportEzsigntemplatepackageV2ResponseMPayload
+# EzsignfolderImportEzsigntemplatepackageV2ResponseMPayload
 
 ## Properties
 

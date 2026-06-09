@@ -1,4 +1,4 @@
-# # EzmaxpartnerGetObjectV2Response
+# EzmaxpartnerGetObjectV2Response
 
 ## Properties
 

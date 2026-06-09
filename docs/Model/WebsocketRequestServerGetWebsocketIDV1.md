@@ -1,4 +1,4 @@
-# # WebsocketRequestServerGetWebsocketIDV1
+# WebsocketRequestServerGetWebsocketIDV1
 
 ## Properties
 

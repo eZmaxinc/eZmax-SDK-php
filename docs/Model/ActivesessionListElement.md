@@ -1,4 +1,4 @@
-# # ActivesessionListElement
+# ActivesessionListElement
 
 ## Properties
 

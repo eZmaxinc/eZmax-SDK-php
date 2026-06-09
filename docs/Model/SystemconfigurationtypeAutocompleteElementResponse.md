@@ -1,4 +1,4 @@
-# # SystemconfigurationtypeAutocompleteElementResponse
+# SystemconfigurationtypeAutocompleteElementResponse
 
 ## Properties
 

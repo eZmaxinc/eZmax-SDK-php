@@ -1,4 +1,4 @@
-# # TextstylestaticRequestCompound
+# TextstylestaticRequestCompound
 
 ## Properties
 

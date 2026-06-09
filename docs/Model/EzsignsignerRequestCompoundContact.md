@@ -1,4 +1,4 @@
-# # EzsignsignerRequestCompoundContact
+# EzsignsignerRequestCompoundContact
 
 ## Properties
 

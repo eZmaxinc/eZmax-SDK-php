@@ -1,4 +1,4 @@
-# # PermissionEditObjectV1Response
+# PermissionEditObjectV1Response
 
 ## Properties
 

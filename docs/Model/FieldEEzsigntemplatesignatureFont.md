@@ -1,4 +1,4 @@
-# # FieldEEzsigntemplatesignatureFont
+# FieldEEzsigntemplatesignatureFont
 
 ## Properties
 

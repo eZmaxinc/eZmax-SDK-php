@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response
+# EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response
 
 ## Properties
 

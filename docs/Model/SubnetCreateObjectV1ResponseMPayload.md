@@ -1,4 +1,4 @@
-# # SubnetCreateObjectV1ResponseMPayload
+# SubnetCreateObjectV1ResponseMPayload
 
 ## Properties
 

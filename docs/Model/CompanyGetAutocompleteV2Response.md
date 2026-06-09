@@ -1,4 +1,4 @@
-# # CompanyGetAutocompleteV2Response
+# CompanyGetAutocompleteV2Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload
+# EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload
 
 ## Properties
 

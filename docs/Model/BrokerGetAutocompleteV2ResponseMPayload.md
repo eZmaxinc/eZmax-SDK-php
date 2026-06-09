@@ -1,4 +1,4 @@
-# # BrokerGetAutocompleteV2ResponseMPayload
+# BrokerGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

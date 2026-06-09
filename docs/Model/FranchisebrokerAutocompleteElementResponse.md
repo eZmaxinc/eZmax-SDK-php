@@ -1,4 +1,4 @@
-# # FranchisebrokerAutocompleteElementResponse
+# FranchisebrokerAutocompleteElementResponse
 
 ## Properties
 

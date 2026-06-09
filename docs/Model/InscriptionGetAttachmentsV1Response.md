@@ -1,4 +1,4 @@
-# # InscriptionGetAttachmentsV1Response
+# InscriptionGetAttachmentsV1Response
 
 ## Properties
 

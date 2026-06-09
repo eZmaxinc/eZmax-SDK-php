@@ -1,4 +1,4 @@
-# # UserCreateObjectV1Response
+# UserCreateObjectV1Response
 
 ## Properties
 

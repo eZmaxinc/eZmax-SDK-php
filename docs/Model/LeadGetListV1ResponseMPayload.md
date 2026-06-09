@@ -1,4 +1,4 @@
-# # LeadGetListV1ResponseMPayload
+# LeadGetListV1ResponseMPayload
 
 ## Properties
 

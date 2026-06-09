@@ -1,4 +1,4 @@
-# # EzsignfolderDuplicateV1Request
+# EzsignfolderDuplicateV1Request
 
 ## Properties
 

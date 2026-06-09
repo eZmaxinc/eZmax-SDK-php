@@ -1,4 +1,4 @@
-# # ActivesessionGenerateFederationTokenV1ResponseMPayload
+# ActivesessionGenerateFederationTokenV1ResponseMPayload
 
 ## Properties
 

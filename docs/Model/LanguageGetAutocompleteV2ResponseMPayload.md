@@ -1,4 +1,4 @@
-# # LanguageGetAutocompleteV2ResponseMPayload
+# LanguageGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

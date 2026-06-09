@@ -1,4 +1,4 @@
-# # UsergroupEditPermissionsV1Request
+# UsergroupEditPermissionsV1Request
 
 ## Properties
 

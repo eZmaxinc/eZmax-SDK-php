@@ -1,4 +1,4 @@
-# # EzsigntemplateResponseCompoundV3
+# EzsigntemplateResponseCompoundV3
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CustomerGetObjectV2ResponseMPayload
+# CustomerGetObjectV2ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzmaxmaillinglistGetListV1ResponseMPayload
+# EzmaxmaillinglistGetListV1ResponseMPayload
 
 ## Properties
 

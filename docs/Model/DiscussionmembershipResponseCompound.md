@@ -1,4 +1,4 @@
-# # DiscussionmembershipResponseCompound
+# DiscussionmembershipResponseCompound
 
 ## Properties
 

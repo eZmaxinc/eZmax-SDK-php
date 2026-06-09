@@ -1,4 +1,4 @@
-# # EzsigntemplateannotationResponseCompound
+# EzsigntemplateannotationResponseCompound
 
 ## Properties
 

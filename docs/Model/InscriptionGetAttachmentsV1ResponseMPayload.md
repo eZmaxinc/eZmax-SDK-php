@@ -1,4 +1,4 @@
-# # InscriptionGetAttachmentsV1ResponseMPayload
+# InscriptionGetAttachmentsV1ResponseMPayload
 
 ## Properties
 

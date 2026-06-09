@@ -1,4 +1,4 @@
-# # TaxassignmentGetAutocompleteV2Response
+# TaxassignmentGetAutocompleteV2Response
 
 ## Properties
 

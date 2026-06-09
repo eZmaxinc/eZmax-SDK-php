@@ -1,4 +1,4 @@
-# # CustomUserNameResponse
+# CustomUserNameResponse
 
 ## Properties
 

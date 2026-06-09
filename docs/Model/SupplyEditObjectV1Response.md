@@ -1,4 +1,4 @@
-# # SupplyEditObjectV1Response
+# SupplyEditObjectV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CorsResponse
+# CorsResponse
 
 ## Properties
 

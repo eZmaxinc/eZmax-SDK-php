@@ -1,4 +1,4 @@
-# # MultilingualPaymenttermDescription
+# MultilingualPaymenttermDescription
 
 ## Properties
 

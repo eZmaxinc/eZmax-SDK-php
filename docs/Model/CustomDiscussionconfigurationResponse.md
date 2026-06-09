@@ -1,4 +1,4 @@
-# # CustomDiscussionconfigurationResponse
+# CustomDiscussionconfigurationResponse
 
 ## Properties
 

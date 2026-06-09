@@ -1,4 +1,4 @@
-# # SupplyGetAutocompleteV2Response
+# SupplyGetAutocompleteV2Response
 
 ## Properties
 

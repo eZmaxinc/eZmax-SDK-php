@@ -1,4 +1,4 @@
-# # DiscussionResponseCompound
+# DiscussionResponseCompound
 
 ## Properties
 

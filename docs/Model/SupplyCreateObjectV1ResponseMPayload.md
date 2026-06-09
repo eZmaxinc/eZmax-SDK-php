@@ -1,4 +1,4 @@
-# # SupplyCreateObjectV1ResponseMPayload
+# SupplyCreateObjectV1ResponseMPayload
 
 ## Properties
 

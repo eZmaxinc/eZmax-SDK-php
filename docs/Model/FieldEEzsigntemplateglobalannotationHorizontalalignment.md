@@ -1,4 +1,4 @@
-# # FieldEEzsigntemplateglobalannotationHorizontalalignment
+# FieldEEzsigntemplateglobalannotationHorizontalalignment
 
 ## Properties
 

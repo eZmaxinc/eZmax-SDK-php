@@ -1,4 +1,4 @@
-# # CustomCommunicationsenderRequest
+# CustomCommunicationsenderRequest
 
 ## Properties
 

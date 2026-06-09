@@ -1,4 +1,4 @@
-# # EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload
+# EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload
 
 ## Properties
 

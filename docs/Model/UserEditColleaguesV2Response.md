@@ -1,4 +1,4 @@
-# # UserEditColleaguesV2Response
+# UserEditColleaguesV2Response
 
 ## Properties
 

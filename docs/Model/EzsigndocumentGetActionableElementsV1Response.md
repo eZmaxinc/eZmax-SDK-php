@@ -1,4 +1,4 @@
-# # EzsigndocumentGetActionableElementsV1Response
+# EzsigndocumentGetActionableElementsV1Response
 
 ## Properties
 

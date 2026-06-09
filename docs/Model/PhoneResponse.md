@@ -1,4 +1,4 @@
-# # PhoneResponse
+# PhoneResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # WebhookEzsignFolderCompleted
+# WebhookEzsignFolderCompleted
 
 ## Properties
 

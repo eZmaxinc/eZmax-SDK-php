@@ -1,4 +1,4 @@
-# # AttachmentGetAttachmentlogsV1ResponseMPayload
+# AttachmentGetAttachmentlogsV1ResponseMPayload
 
 ## Properties
 

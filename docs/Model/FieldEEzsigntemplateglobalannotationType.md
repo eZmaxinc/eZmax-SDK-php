@@ -1,4 +1,4 @@
-# # FieldEEzsigntemplateglobalannotationType
+# FieldEEzsigntemplateglobalannotationType
 
 ## Properties
 

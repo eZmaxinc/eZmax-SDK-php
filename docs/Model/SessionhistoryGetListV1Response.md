@@ -1,4 +1,4 @@
-# # SessionhistoryGetListV1Response
+# SessionhistoryGetListV1Response
 
 ## Properties
 

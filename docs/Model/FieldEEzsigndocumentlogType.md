@@ -1,4 +1,4 @@
-# # FieldEEzsigndocumentlogType
+# FieldEEzsigndocumentlogType
 
 ## Properties
 

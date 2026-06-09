@@ -1,4 +1,4 @@
-# # DomainCreateObjectV1ResponseMPayload
+# DomainCreateObjectV1ResponseMPayload
 
 ## Properties
 

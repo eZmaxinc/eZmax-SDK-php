@@ -1,4 +1,4 @@
-# # DiscussionmembershipRequest
+# DiscussionmembershipRequest
 
 ## Properties
 

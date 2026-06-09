@@ -1,4 +1,4 @@
-# # EzsignsignergroupDeleteObjectV1Response
+# EzsignsignergroupDeleteObjectV1Response
 
 ## Properties
 

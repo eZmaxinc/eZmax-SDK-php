@@ -1,4 +1,4 @@
-# # EzsigndocumentlogResponse
+# EzsigndocumentlogResponse
 
 ## Properties
 

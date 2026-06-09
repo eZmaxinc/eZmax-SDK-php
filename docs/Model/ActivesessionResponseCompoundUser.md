@@ -1,4 +1,4 @@
-# # ActivesessionResponseCompoundUser
+# ActivesessionResponseCompoundUser
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # RejectedoffertopurchaseImportIntoEDMV1Response
+# RejectedoffertopurchaseImportIntoEDMV1Response
 
 ## Properties
 

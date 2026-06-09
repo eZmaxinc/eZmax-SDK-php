@@ -1,4 +1,4 @@
-# # SupplyCreateObjectV1Response
+# SupplyCreateObjectV1Response
 
 ## Properties
 

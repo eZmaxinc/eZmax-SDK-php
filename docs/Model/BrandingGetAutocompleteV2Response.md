@@ -1,4 +1,4 @@
-# # BrandingGetAutocompleteV2Response
+# BrandingGetAutocompleteV2Response
 
 ## Properties
 

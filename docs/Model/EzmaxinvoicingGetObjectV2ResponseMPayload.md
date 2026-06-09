@@ -1,4 +1,4 @@
-# # EzmaxinvoicingGetObjectV2ResponseMPayload
+# EzmaxinvoicingGetObjectV2ResponseMPayload
 
 ## Properties
 

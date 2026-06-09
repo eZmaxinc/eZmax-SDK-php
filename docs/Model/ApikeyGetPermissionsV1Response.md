@@ -1,4 +1,4 @@
-# # ApikeyGetPermissionsV1Response
+# ApikeyGetPermissionsV1Response
 
 ## Properties
 

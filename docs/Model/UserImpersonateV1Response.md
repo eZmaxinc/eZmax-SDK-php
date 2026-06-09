@@ -1,4 +1,4 @@
-# # UserImpersonateV1Response
+# UserImpersonateV1Response
 
 ## Properties
 

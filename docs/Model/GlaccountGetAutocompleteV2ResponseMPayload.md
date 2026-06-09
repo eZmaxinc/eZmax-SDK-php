@@ -1,4 +1,4 @@
-# # GlaccountGetAutocompleteV2ResponseMPayload
+# GlaccountGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

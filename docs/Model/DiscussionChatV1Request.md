@@ -1,4 +1,4 @@
-# # DiscussionChatV1Request
+# DiscussionChatV1Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignsignergroupEditObjectV1Request
+# EzsignsignergroupEditObjectV1Request
 
 ## Properties
 

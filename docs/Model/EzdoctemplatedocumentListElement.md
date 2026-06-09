@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentListElement
+# EzdoctemplatedocumentListElement
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UserstagedGetObjectV2ResponseMPayload
+# UserstagedGetObjectV2ResponseMPayload
 
 ## Properties
 

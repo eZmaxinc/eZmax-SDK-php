@@ -1,4 +1,4 @@
-# # EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload
+# EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload
 
 ## Properties
 

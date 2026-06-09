@@ -1,4 +1,4 @@
-# # InscriptiontypeGetAutocompleteV2Response
+# InscriptiontypeGetAutocompleteV2Response
 
 ## Properties
 

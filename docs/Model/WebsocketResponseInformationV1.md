@@ -1,4 +1,4 @@
-# # WebsocketResponseInformationV1
+# WebsocketResponseInformationV1
 
 ## Properties
 

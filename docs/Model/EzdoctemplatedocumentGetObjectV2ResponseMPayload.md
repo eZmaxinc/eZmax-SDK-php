@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentGetObjectV2ResponseMPayload
+# EzdoctemplatedocumentGetObjectV2ResponseMPayload
 
 ## Properties
 

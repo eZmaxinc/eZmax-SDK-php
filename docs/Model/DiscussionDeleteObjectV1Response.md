@@ -1,4 +1,4 @@
-# # DiscussionDeleteObjectV1Response
+# DiscussionDeleteObjectV1Response
 
 ## Properties
 

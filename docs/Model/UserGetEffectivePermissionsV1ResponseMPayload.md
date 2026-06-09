@@ -1,4 +1,4 @@
-# # UserGetEffectivePermissionsV1ResponseMPayload
+# UserGetEffectivePermissionsV1ResponseMPayload
 
 ## Properties
 

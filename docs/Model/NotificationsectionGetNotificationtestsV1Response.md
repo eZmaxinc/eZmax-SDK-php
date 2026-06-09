@@ -1,4 +1,4 @@
-# # NotificationsectionGetNotificationtestsV1Response
+# NotificationsectionGetNotificationtestsV1Response
 
 ## Properties
 

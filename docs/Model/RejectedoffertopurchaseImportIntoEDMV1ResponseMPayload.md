@@ -1,4 +1,4 @@
-# # RejectedoffertopurchaseImportIntoEDMV1ResponseMPayload
+# RejectedoffertopurchaseImportIntoEDMV1ResponseMPayload
 
 ## Properties
 

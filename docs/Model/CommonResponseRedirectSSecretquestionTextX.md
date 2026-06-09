@@ -1,4 +1,4 @@
-# # CommonResponseRedirectSSecretquestionTextX
+# CommonResponseRedirectSSecretquestionTextX
 
 ## Properties
 

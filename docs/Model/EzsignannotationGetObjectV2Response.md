@@ -1,4 +1,4 @@
-# # EzsignannotationGetObjectV2Response
+# EzsignannotationGetObjectV2Response
 
 ## Properties
 

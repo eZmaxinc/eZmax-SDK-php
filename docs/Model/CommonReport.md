@@ -1,4 +1,4 @@
-# # CommonReport
+# CommonReport
 
 ## Properties
 

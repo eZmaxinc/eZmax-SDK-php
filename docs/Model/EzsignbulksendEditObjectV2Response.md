@@ -1,4 +1,4 @@
-# # EzsignbulksendEditObjectV2Response
+# EzsignbulksendEditObjectV2Response
 
 ## Properties
 

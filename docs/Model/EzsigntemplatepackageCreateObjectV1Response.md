@@ -1,4 +1,4 @@
-# # EzsigntemplatepackageCreateObjectV1Response
+# EzsigntemplatepackageCreateObjectV1Response
 
 ## Properties
 

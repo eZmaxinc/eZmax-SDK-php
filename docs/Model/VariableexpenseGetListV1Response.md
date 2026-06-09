@@ -1,4 +1,4 @@
-# # VariableexpenseGetListV1Response
+# VariableexpenseGetListV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # FieldEPhoneType
+# FieldEPhoneType
 
 ## Properties
 

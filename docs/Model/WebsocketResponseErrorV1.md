@@ -1,4 +1,4 @@
-# # WebsocketResponseErrorV1
+# WebsocketResponseErrorV1
 
 ## Properties
 

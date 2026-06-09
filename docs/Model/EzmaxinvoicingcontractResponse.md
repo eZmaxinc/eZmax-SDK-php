@@ -1,4 +1,4 @@
-# # EzmaxinvoicingcontractResponse
+# EzmaxinvoicingcontractResponse
 
 ## Properties
 

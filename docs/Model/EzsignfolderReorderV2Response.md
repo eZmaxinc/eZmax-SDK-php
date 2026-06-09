@@ -1,4 +1,4 @@
-# # EzsignfolderReorderV2Response
+# EzsignfolderReorderV2Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EmployeeGetListV1ResponseMPayload
+# EmployeeGetListV1ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ApikeyGenerateDelegatedCredentialsV1ResponseMPayload
+# ApikeyGenerateDelegatedCredentialsV1ResponseMPayload
 
 ## Properties
 

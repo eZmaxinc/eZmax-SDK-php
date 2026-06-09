@@ -1,4 +1,4 @@
-# # CustomEzsigndocumentGetEzsignannotationsResponse
+# CustomEzsigndocumentGetEzsignannotationsResponse
 
 ## Properties
 

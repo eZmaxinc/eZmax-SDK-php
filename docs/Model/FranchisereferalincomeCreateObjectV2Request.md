@@ -1,4 +1,4 @@
-# # FranchisereferalincomeCreateObjectV2Request
+# FranchisereferalincomeCreateObjectV2Request
 
 ## Properties
 

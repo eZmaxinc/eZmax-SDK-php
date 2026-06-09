@@ -1,4 +1,4 @@
-# # BrokerImportIntoEDMV1ResponseMPayload
+# BrokerImportIntoEDMV1ResponseMPayload
 
 ## Properties
 

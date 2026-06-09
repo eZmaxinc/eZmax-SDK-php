@@ -1,4 +1,4 @@
-# # CustomCreditcardRequest
+# CustomCreditcardRequest
 
 ## Properties
 

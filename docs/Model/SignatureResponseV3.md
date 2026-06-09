@@ -1,4 +1,4 @@
-# # SignatureResponseV3
+# SignatureResponseV3
 
 ## Properties
 

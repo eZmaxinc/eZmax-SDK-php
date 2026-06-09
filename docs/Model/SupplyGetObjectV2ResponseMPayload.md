@@ -1,4 +1,4 @@
-# # SupplyGetObjectV2ResponseMPayload
+# SupplyGetObjectV2ResponseMPayload
 
 ## Properties
 

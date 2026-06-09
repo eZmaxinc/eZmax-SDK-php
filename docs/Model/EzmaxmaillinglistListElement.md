@@ -1,4 +1,4 @@
-# # EzmaxmaillinglistListElement
+# EzmaxmaillinglistListElement
 
 ## Properties
 

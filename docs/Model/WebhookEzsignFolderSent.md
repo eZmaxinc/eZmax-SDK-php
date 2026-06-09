@@ -1,4 +1,4 @@
-# # WebhookEzsignFolderSent
+# WebhookEzsignFolderSent
 
 ## Properties
 

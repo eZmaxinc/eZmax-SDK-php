@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentGetListV1ResponseMPayload
+# EzdoctemplatedocumentGetListV1ResponseMPayload
 
 ## Properties
 

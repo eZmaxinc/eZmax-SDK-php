@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentGetObjectV2Response
+# EzdoctemplatedocumentGetObjectV2Response
 
 ## Properties
 

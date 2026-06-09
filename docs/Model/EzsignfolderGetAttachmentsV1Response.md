@@ -1,4 +1,4 @@
-# # EzsignfolderGetAttachmentsV1Response
+# EzsignfolderGetAttachmentsV1Response
 
 ## Properties
 

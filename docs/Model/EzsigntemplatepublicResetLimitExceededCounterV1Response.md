@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicResetLimitExceededCounterV1Response
+# EzsigntemplatepublicResetLimitExceededCounterV1Response
 
 ## Properties
 

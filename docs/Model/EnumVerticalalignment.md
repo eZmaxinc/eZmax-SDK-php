@@ -1,4 +1,4 @@
-# # EnumVerticalalignment
+# EnumVerticalalignment
 
 ## Properties
 

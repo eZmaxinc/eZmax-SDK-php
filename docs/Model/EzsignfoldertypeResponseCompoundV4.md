@@ -1,4 +1,4 @@
-# # EzsignfoldertypeResponseCompoundV4
+# EzsignfoldertypeResponseCompoundV4
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ActivesessionResponseCompoundApikey
+# ActivesessionResponseCompoundApikey
 
 ## Properties
 

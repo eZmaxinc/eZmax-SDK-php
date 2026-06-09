@@ -1,4 +1,4 @@
-# # InscriptionListElement
+# InscriptionListElement
 
 ## Properties
 

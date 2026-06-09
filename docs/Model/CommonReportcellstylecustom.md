@@ -1,4 +1,4 @@
-# # CommonReportcellstylecustom
+# CommonReportcellstylecustom
 
 ## Properties
 

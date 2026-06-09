@@ -1,4 +1,4 @@
-# # ScimUserList
+# ScimUserList
 
 ## Properties
 

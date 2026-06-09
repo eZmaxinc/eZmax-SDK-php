@@ -1,4 +1,4 @@
-# # EzmaxproductGetAutocompleteV2Response
+# EzmaxproductGetAutocompleteV2Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # VariableexpenseCreateObjectV1Request
+# VariableexpenseCreateObjectV1Request
 
 ## Properties
 

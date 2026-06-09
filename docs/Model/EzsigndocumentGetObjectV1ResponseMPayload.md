@@ -1,4 +1,4 @@
-# # EzsigndocumentGetObjectV1ResponseMPayload
+# EzsigndocumentGetObjectV1ResponseMPayload
 
 ## Properties
 

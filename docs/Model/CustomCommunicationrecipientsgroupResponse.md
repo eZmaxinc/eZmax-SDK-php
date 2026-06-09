@@ -1,4 +1,4 @@
-# # CustomCommunicationrecipientsgroupResponse
+# CustomCommunicationrecipientsgroupResponse
 
 ## Properties
 

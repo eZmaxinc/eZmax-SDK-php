@@ -1,4 +1,4 @@
-# # DiscussionChatV1200Response
+# DiscussionChatV1200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # LeadListElement
+# LeadListElement
 
 ## Properties
 

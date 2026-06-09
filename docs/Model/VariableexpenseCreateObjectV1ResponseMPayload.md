@@ -1,4 +1,4 @@
-# # VariableexpenseCreateObjectV1ResponseMPayload
+# VariableexpenseCreateObjectV1ResponseMPayload
 
 ## Properties
 

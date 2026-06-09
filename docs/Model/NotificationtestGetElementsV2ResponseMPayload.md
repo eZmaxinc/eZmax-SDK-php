@@ -1,4 +1,4 @@
-# # NotificationtestGetElementsV2ResponseMPayload
+# NotificationtestGetElementsV2ResponseMPayload
 
 ## Properties
 

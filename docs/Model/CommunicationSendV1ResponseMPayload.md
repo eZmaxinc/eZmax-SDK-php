@@ -1,4 +1,4 @@
-# # CommunicationSendV1ResponseMPayload
+# CommunicationSendV1ResponseMPayload
 
 ## Properties
 

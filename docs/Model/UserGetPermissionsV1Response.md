@@ -1,4 +1,4 @@
-# # UserGetPermissionsV1Response
+# UserGetPermissionsV1Response
 
 ## Properties
 

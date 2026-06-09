@@ -1,4 +1,4 @@
-# # EzsigntemplatepackagesignerGetObjectV2ResponseMPayload
+# EzsigntemplatepackagesignerGetObjectV2ResponseMPayload
 
 ## Properties
 

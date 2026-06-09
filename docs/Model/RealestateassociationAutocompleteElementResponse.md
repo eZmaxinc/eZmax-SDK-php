@@ -1,4 +1,4 @@
-# # RealestateassociationAutocompleteElementResponse
+# RealestateassociationAutocompleteElementResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # DomainGetListV1ResponseMPayload
+# DomainGetListV1ResponseMPayload
 
 ## Properties
 

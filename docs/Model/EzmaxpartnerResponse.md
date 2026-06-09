@@ -1,4 +1,4 @@
-# # EzmaxpartnerResponse
+# EzmaxpartnerResponse
 
 ## Properties
 

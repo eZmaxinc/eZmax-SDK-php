@@ -1,4 +1,4 @@
-# # CreditcardclientGetObjectV2Response
+# CreditcardclientGetObjectV2Response
 
 ## Properties
 

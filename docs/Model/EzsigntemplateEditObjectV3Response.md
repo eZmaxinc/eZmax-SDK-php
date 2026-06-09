@@ -1,4 +1,4 @@
-# # EzsigntemplateEditObjectV3Response
+# EzsigntemplateEditObjectV3Response
 
 ## Properties
 

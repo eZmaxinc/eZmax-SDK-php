@@ -1,4 +1,4 @@
-# # UsergroupEditUsergroupdelegationsV1Request
+# UsergroupEditUsergroupdelegationsV1Request
 
 ## Properties
 

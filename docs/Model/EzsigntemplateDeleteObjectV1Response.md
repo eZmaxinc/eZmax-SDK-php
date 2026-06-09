@@ -1,4 +1,4 @@
-# # EzsigntemplateDeleteObjectV1Response
+# EzsigntemplateDeleteObjectV1Response
 
 ## Properties
 

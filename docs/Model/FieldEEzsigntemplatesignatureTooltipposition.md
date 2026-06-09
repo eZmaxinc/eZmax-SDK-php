@@ -1,4 +1,4 @@
-# # FieldEEzsigntemplatesignatureTooltipposition
+# FieldEEzsigntemplatesignatureTooltipposition
 
 ## Properties
 

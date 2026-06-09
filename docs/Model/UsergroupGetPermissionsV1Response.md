@@ -1,4 +1,4 @@
-# # UsergroupGetPermissionsV1Response
+# UsergroupGetPermissionsV1Response
 
 ## Properties
 

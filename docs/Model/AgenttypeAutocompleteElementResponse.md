@@ -1,4 +1,4 @@
-# # AgenttypeAutocompleteElementResponse
+# AgenttypeAutocompleteElementResponse
 
 ## Properties
 

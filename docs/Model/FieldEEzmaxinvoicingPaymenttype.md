@@ -1,4 +1,4 @@
-# # FieldEEzmaxinvoicingPaymenttype
+# FieldEEzmaxinvoicingPaymenttype
 
 ## Properties
 

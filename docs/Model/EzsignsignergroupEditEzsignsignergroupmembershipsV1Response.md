@@ -1,4 +1,4 @@
-# # EzsignsignergroupEditEzsignsignergroupmembershipsV1Response
+# EzsignsignergroupEditEzsignsignergroupmembershipsV1Response
 
 ## Properties
 

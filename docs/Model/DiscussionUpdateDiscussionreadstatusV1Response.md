@@ -1,4 +1,4 @@
-# # DiscussionUpdateDiscussionreadstatusV1Response
+# DiscussionUpdateDiscussionreadstatusV1Response
 
 ## Properties
 

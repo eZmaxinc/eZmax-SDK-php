@@ -1,4 +1,4 @@
-# # CreditcardclientRequestCompound
+# CreditcardclientRequestCompound
 
 ## Properties
 

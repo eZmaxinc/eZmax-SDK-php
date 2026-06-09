@@ -1,4 +1,4 @@
-# # CommonResponseErrorWrongFranchiseoffice
+# CommonResponseErrorWrongFranchiseoffice
 
 ## Properties
 

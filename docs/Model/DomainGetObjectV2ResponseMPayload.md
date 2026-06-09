@@ -1,4 +1,4 @@
-# # DomainGetObjectV2ResponseMPayload
+# DomainGetObjectV2ResponseMPayload
 
 ## Properties
 

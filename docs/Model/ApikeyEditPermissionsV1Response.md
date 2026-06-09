@@ -1,4 +1,4 @@
-# # ApikeyEditPermissionsV1Response
+# ApikeyEditPermissionsV1Response
 
 ## Properties
 

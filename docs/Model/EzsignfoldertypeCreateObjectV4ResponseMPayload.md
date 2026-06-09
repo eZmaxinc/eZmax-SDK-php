@@ -1,4 +1,4 @@
-# # EzsignfoldertypeCreateObjectV4ResponseMPayload
+# EzsignfoldertypeCreateObjectV4ResponseMPayload
 
 ## Properties
 

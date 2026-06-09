@@ -1,4 +1,4 @@
-# # PaymenttermResponseCompound
+# PaymenttermResponseCompound
 
 ## Properties
 

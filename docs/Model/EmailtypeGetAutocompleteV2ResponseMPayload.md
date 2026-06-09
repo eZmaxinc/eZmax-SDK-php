@@ -1,4 +1,4 @@
-# # EmailtypeGetAutocompleteV2ResponseMPayload
+# EmailtypeGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

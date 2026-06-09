@@ -1,4 +1,4 @@
-# # SubnetGetObjectV2ResponseMPayload
+# SubnetGetObjectV2ResponseMPayload
 
 ## Properties
 

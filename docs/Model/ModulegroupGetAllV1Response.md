@@ -1,4 +1,4 @@
-# # ModulegroupGetAllV1Response
+# ModulegroupGetAllV1Response
 
 ## Properties
 

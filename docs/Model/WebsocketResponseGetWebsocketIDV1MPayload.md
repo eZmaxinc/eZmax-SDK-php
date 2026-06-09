@@ -1,4 +1,4 @@
-# # WebsocketResponseGetWebsocketIDV1MPayload
+# WebsocketResponseGetWebsocketIDV1MPayload
 
 ## Properties
 

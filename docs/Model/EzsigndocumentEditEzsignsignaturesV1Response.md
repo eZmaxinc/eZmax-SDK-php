@@ -1,4 +1,4 @@
-# # EzsigndocumentEditEzsignsignaturesV1Response
+# EzsigndocumentEditEzsignsignaturesV1Response
 
 ## Properties
 

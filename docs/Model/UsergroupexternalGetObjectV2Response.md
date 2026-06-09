@@ -1,4 +1,4 @@
-# # UsergroupexternalGetObjectV2Response
+# UsergroupexternalGetObjectV2Response
 
 ## Properties
 

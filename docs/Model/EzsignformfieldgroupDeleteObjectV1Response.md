@@ -1,4 +1,4 @@
-# # EzsignformfieldgroupDeleteObjectV1Response
+# EzsignformfieldgroupDeleteObjectV1Response
 
 ## Properties
 

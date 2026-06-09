@@ -1,4 +1,4 @@
-# # AuthenticationexternalGetAutocompleteV2ResponseMPayload
+# AuthenticationexternalGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

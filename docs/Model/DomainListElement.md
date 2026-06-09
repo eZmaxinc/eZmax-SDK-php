@@ -1,4 +1,4 @@
-# # DomainListElement
+# DomainListElement
 
 ## Properties
 

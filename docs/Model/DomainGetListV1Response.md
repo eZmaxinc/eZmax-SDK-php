@@ -1,4 +1,4 @@
-# # DomainGetListV1Response
+# DomainGetListV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UserGetAutocompleteV2ResponseMPayload
+# UserGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

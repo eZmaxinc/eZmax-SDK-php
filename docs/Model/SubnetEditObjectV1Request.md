@@ -1,4 +1,4 @@
-# # SubnetEditObjectV1Request
+# SubnetEditObjectV1Request
 
 ## Properties
 

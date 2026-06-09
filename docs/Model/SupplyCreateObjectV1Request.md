@@ -1,4 +1,4 @@
-# # SupplyCreateObjectV1Request
+# SupplyCreateObjectV1Request
 
 ## Properties
 

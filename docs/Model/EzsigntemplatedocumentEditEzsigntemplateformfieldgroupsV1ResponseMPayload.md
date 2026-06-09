@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload
+# EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload
 
 ## Properties
 

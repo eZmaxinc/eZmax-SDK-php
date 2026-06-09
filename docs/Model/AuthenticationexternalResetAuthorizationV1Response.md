@@ -1,4 +1,4 @@
-# # AuthenticationexternalResetAuthorizationV1Response
+# AuthenticationexternalResetAuthorizationV1Response
 
 ## Properties
 

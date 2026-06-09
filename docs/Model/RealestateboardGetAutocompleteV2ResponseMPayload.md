@@ -1,4 +1,4 @@
-# # RealestateboardGetAutocompleteV2ResponseMPayload
+# RealestateboardGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

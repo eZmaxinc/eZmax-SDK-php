@@ -1,4 +1,4 @@
-# # DepartmentGetAutocompleteV2Response
+# DepartmentGetAutocompleteV2Response
 
 ## Properties
 

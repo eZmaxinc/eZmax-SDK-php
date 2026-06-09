@@ -1,4 +1,4 @@
-# # BrokerListElement
+# BrokerListElement
 
 ## Properties
 

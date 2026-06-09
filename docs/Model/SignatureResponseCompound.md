@@ -1,4 +1,4 @@
-# # SignatureResponseCompound
+# SignatureResponseCompound
 
 ## Properties
 

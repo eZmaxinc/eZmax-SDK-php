@@ -1,4 +1,4 @@
-# # BillingentityinternalResponse
+# BillingentityinternalResponse
 
 ## Properties
 

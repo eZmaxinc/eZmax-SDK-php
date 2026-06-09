@@ -1,4 +1,4 @@
-# # FieldEBrandingAlignlogo
+# FieldEBrandingAlignlogo
 
 ## Properties
 

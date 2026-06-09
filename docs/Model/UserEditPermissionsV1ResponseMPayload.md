@@ -1,4 +1,4 @@
-# # UserEditPermissionsV1ResponseMPayload
+# UserEditPermissionsV1ResponseMPayload
 
 ## Properties
 

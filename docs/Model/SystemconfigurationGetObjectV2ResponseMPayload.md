@@ -1,4 +1,4 @@
-# # SystemconfigurationGetObjectV2ResponseMPayload
+# SystemconfigurationGetObjectV2ResponseMPayload
 
 ## Properties
 

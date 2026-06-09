@@ -1,4 +1,4 @@
-# # EzsignsignatureEditObjectV3Response
+# EzsignsignatureEditObjectV3Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # BrokerGetListV1ResponseMPayload
+# BrokerGetListV1ResponseMPayload
 
 ## Properties
 

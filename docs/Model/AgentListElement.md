@@ -1,4 +1,4 @@
-# # AgentListElement
+# AgentListElement
 
 ## Properties
 

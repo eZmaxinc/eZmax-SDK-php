@@ -1,4 +1,4 @@
-# # EzsignbulksenddocumentmappingResponseCompound
+# EzsignbulksenddocumentmappingResponseCompound
 
 ## Properties
 

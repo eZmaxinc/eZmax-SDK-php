@@ -1,4 +1,4 @@
-# # EzsigndocumentDeleteObjectV1Response
+# EzsigndocumentDeleteObjectV1Response
 
 ## Properties
 

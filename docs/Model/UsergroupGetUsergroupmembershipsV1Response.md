@@ -1,4 +1,4 @@
-# # UsergroupGetUsergroupmembershipsV1Response
+# UsergroupGetUsergroupmembershipsV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignfolderGetAttachmentCountV1Response
+# EzsignfolderGetAttachmentCountV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ModulesectionResponseCompound
+# ModulesectionResponseCompound
 
 ## Properties
 

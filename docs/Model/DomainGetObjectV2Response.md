@@ -1,4 +1,4 @@
-# # DomainGetObjectV2Response
+# DomainGetObjectV2Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # DomainGetAutocompleteV2ResponseMPayload
+# DomainGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UsergroupdelegationGetObjectV2Response
+# UsergroupdelegationGetObjectV2Response
 
 ## Properties
 

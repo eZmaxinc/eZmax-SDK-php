@@ -1,4 +1,4 @@
-# # PaymenttermCreateObjectV1ResponseMPayload
+# PaymenttermCreateObjectV1ResponseMPayload
 
 ## Properties
 

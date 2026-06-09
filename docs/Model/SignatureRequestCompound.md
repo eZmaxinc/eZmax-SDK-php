@@ -1,4 +1,4 @@
-# # SignatureRequestCompound
+# SignatureRequestCompound
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UserstagedResponseCompound
+# UserstagedResponseCompound
 
 ## Properties
 

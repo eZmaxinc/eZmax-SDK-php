@@ -1,4 +1,4 @@
-# # SignatureCreateObjectV1Request
+# SignatureCreateObjectV1Request
 
 ## Properties
 

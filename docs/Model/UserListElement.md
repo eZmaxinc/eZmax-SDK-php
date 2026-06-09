@@ -1,4 +1,4 @@
-# # UserListElement
+# UserListElement
 
 ## Properties
 

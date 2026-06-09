@@ -1,4 +1,4 @@
-# # InfrastructureregionAutocompleteElementResponse
+# InfrastructureregionAutocompleteElementResponse
 
 ## Properties
 

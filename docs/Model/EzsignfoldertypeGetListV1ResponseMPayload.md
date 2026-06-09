@@ -1,4 +1,4 @@
-# # EzsignfoldertypeGetListV1ResponseMPayload
+# EzsignfoldertypeGetListV1ResponseMPayload
 
 ## Properties
 

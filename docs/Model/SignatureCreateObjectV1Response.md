@@ -1,4 +1,4 @@
-# # SignatureCreateObjectV1Response
+# SignatureCreateObjectV1Response
 
 ## Properties
 

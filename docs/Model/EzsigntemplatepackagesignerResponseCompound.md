@@ -1,4 +1,4 @@
-# # EzsigntemplatepackagesignerResponseCompound
+# EzsigntemplatepackagesignerResponseCompound
 
 ## Properties
 

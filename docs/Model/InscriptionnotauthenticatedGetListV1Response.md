@@ -1,4 +1,4 @@
-# # InscriptionnotauthenticatedGetListV1Response
+# InscriptionnotauthenticatedGetListV1Response
 
 ## Properties
 

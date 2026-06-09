@@ -1,4 +1,4 @@
-# # CustomEzmaxinvoicingEzsigndocumentResponse
+# CustomEzmaxinvoicingEzsigndocumentResponse
 
 ## Properties
 

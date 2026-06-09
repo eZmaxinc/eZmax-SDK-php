@@ -1,4 +1,4 @@
-# # UsergroupdelegationRequestCompound
+# UsergroupdelegationRequestCompound
 
 ## Properties
 

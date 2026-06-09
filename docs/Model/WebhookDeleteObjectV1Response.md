@@ -1,4 +1,4 @@
-# # WebhookDeleteObjectV1Response
+# WebhookDeleteObjectV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignimportfolderGetListV1Response
+# EzsignimportfolderGetListV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ModulegroupGetAllV1ResponseMPayload
+# ModulegroupGetAllV1ResponseMPayload
 
 ## Properties
 

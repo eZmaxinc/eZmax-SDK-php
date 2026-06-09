@@ -1,4 +1,4 @@
-# # PermissionResponse
+# PermissionResponse
 
 ## Properties
 

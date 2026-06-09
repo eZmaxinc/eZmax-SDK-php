@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentPatchObjectV1Request
+# EzdoctemplatedocumentPatchObjectV1Request
 
 ## Properties
 

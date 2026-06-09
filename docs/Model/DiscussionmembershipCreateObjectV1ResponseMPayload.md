@@ -1,4 +1,4 @@
-# # DiscussionmembershipCreateObjectV1ResponseMPayload
+# DiscussionmembershipCreateObjectV1ResponseMPayload
 
 ## Properties
 

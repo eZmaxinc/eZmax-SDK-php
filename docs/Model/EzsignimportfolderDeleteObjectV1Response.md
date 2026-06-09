@@ -1,4 +1,4 @@
-# # EzsignimportfolderDeleteObjectV1Response
+# EzsignimportfolderDeleteObjectV1Response
 
 ## Properties
 

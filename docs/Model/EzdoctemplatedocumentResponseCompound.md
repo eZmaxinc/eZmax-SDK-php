@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentResponseCompound
+# EzdoctemplatedocumentResponseCompound
 
 ## Properties
 

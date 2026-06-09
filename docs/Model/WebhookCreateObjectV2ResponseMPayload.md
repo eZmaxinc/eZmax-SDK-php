@@ -1,4 +1,4 @@
-# # WebhookCreateObjectV2ResponseMPayload
+# WebhookCreateObjectV2ResponseMPayload
 
 ## Properties
 

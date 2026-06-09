@@ -1,4 +1,4 @@
-# # UserResponseCompound
+# UserResponseCompound
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignfolderGetEzsignsignaturesV1ResponseMPayload
+# EzsignfolderGetEzsignsignaturesV1ResponseMPayload
 
 ## Properties
 

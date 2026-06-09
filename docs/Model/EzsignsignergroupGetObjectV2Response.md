@@ -1,4 +1,4 @@
-# # EzsignsignergroupGetObjectV2Response
+# EzsignsignergroupGetObjectV2Response
 
 ## Properties
 

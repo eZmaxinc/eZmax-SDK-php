@@ -1,4 +1,4 @@
-# # BrandingAutocompleteElementResponse
+# BrandingAutocompleteElementResponse
 
 ## Properties
 

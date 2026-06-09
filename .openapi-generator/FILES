@@ -1826,10 +1826,7 @@ docs/Model/ScimGroupMember.md
 docs/Model/ScimServiceProviderConfig.md
 docs/Model/ScimServiceProviderConfigBulk.md
 docs/Model/ScimServiceProviderConfigChangePassword.md
-docs/Model/ScimServiceProviderConfigEtag.md
 docs/Model/ScimServiceProviderConfigFilter.md
-docs/Model/ScimServiceProviderConfigPatch.md
-docs/Model/ScimServiceProviderConfigSort.md
 docs/Model/ScimUser.md
 docs/Model/ScimUserList.md
 docs/Model/SecretquestionAutocompleteElementResponse.md
@@ -3966,10 +3963,7 @@ lib/Model/ScimGroupMember.php
 lib/Model/ScimServiceProviderConfig.php
 lib/Model/ScimServiceProviderConfigBulk.php
 lib/Model/ScimServiceProviderConfigChangePassword.php
-lib/Model/ScimServiceProviderConfigEtag.php
 lib/Model/ScimServiceProviderConfigFilter.php
-lib/Model/ScimServiceProviderConfigPatch.php
-lib/Model/ScimServiceProviderConfigSort.php
 lib/Model/ScimUser.php
 lib/Model/ScimUserList.php
 lib/Model/SecretquestionAutocompleteElementResponse.php

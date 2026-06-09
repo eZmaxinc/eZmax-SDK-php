@@ -1,4 +1,4 @@
-# # EzsignbulksendGetEzsignsignaturesAutomaticV1Response
+# EzsignbulksendGetEzsignsignaturesAutomaticV1Response
 
 ## Properties
 

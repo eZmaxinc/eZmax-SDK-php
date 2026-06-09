@@ -1,4 +1,4 @@
-# # ApikeyGetSubnetsV1Response
+# ApikeyGetSubnetsV1Response
 
 ## Properties
 

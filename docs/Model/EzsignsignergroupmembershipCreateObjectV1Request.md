@@ -1,4 +1,4 @@
-# # EzsignsignergroupmembershipCreateObjectV1Request
+# EzsignsignergroupmembershipCreateObjectV1Request
 
 ## Properties
 

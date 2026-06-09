@@ -1,4 +1,4 @@
-# # WebhookEditObjectV1Request
+# WebhookEditObjectV1Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CustomerAutocompleteElementResponse
+# CustomerAutocompleteElementResponse
 
 ## Properties
 

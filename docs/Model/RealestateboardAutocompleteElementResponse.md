@@ -1,4 +1,4 @@
-# # RealestateboardAutocompleteElementResponse
+# RealestateboardAutocompleteElementResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GlobalCustomerGetEndpointV1Response
+# GlobalCustomerGetEndpointV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EmailResponse
+# EmailResponse
 
 ## Properties
 

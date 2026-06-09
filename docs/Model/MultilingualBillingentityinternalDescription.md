@@ -1,4 +1,4 @@
-# # MultilingualBillingentityinternalDescription
+# MultilingualBillingentityinternalDescription
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # DiscussionRequestCompound
+# DiscussionRequestCompound
 
 ## Properties
 

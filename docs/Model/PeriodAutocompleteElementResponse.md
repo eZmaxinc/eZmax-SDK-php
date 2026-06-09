@@ -1,4 +1,4 @@
-# # PeriodAutocompleteElementResponse
+# PeriodAutocompleteElementResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SupplierListElement
+# SupplierListElement
 
 ## Properties
 

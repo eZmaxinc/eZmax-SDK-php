@@ -1,4 +1,4 @@
-# # SupplyGetListV1ResponseMPayload
+# SupplyGetListV1ResponseMPayload
 
 ## Properties
 

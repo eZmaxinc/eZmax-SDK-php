@@ -1,4 +1,4 @@
-# # DepartmentGetAutocompleteV2ResponseMPayload
+# DepartmentGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

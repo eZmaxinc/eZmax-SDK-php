@@ -1,4 +1,4 @@
-# # CustomContactNameResponse
+# CustomContactNameResponse
 
 ## Properties
 

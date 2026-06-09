@@ -1,4 +1,4 @@
-# # DomainResponseCompound
+# DomainResponseCompound
 
 ## Properties
 

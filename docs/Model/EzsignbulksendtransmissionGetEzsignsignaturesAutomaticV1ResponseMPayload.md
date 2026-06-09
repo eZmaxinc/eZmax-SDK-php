@@ -1,4 +1,4 @@
-# # EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseMPayload
+# EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseMPayload
 
 ## Properties
 

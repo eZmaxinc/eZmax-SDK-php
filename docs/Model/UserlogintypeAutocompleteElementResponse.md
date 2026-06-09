@@ -1,4 +1,4 @@
-# # UserlogintypeAutocompleteElementResponse
+# UserlogintypeAutocompleteElementResponse
 
 ## Properties
 

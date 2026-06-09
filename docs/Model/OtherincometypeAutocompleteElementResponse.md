@@ -1,4 +1,4 @@
-# # OtherincometypeAutocompleteElementResponse
+# OtherincometypeAutocompleteElementResponse
 
 ## Properties
 

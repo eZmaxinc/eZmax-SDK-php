@@ -1,4 +1,4 @@
-# # AddressResponse
+# AddressResponse
 
 ## Properties
 

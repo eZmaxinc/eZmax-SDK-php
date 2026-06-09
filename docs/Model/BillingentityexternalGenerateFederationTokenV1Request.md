@@ -1,4 +1,4 @@
-# # BillingentityexternalGenerateFederationTokenV1Request
+# BillingentityexternalGenerateFederationTokenV1Request
 
 ## Properties
 

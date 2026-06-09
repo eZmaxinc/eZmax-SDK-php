@@ -1,4 +1,4 @@
-# # EzsignfoldersignerassociationCreateEmbeddedUrlV1Request
+# EzsignfoldersignerassociationCreateEmbeddedUrlV1Request
 
 ## Properties
 

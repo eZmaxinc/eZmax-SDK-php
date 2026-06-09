@@ -1,4 +1,4 @@
-# # SecretquestionAutocompleteElementResponse
+# SecretquestionAutocompleteElementResponse
 
 ## Properties
 

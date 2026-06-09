@@ -1,4 +1,4 @@
-# # ApikeyGetCorsV1ResponseMPayload
+# ApikeyGetCorsV1ResponseMPayload
 
 ## Properties
 

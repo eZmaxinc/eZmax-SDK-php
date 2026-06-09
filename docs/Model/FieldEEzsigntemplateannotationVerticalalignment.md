@@ -1,4 +1,4 @@
-# # FieldEEzsigntemplateannotationVerticalalignment
+# FieldEEzsigntemplateannotationVerticalalignment
 
 ## Properties
 

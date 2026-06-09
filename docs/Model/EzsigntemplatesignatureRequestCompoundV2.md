@@ -1,4 +1,4 @@
-# # EzsigntemplatesignatureRequestCompoundV2
+# EzsigntemplatesignatureRequestCompoundV2
 
 ## Properties
 

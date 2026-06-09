@@ -1,4 +1,4 @@
-# # LeadsourceAutocompleteElementResponse
+# LeadsourceAutocompleteElementResponse
 
 ## Properties
 

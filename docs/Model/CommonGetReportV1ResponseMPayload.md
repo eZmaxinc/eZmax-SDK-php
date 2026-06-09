@@ -1,4 +1,4 @@
-# # CommonGetReportV1ResponseMPayload
+# CommonGetReportV1ResponseMPayload
 
 ## Properties
 

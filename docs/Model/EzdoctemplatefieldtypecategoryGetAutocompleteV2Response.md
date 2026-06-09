@@ -1,4 +1,4 @@
-# # EzdoctemplatefieldtypecategoryGetAutocompleteV2Response
+# EzdoctemplatefieldtypecategoryGetAutocompleteV2Response
 
 ## Properties
 

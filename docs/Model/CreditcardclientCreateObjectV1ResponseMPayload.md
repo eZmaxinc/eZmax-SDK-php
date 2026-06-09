@@ -1,4 +1,4 @@
-# # CreditcardclientCreateObjectV1ResponseMPayload
+# CreditcardclientCreateObjectV1ResponseMPayload
 
 ## Properties
 

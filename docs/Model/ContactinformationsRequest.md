@@ -1,4 +1,4 @@
-# # ContactinformationsRequest
+# ContactinformationsRequest
 
 ## Properties
 

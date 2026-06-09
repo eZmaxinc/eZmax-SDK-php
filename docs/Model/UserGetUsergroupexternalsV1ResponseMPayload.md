@@ -1,4 +1,4 @@
-# # UserGetUsergroupexternalsV1ResponseMPayload
+# UserGetUsergroupexternalsV1ResponseMPayload
 
 ## Properties
 

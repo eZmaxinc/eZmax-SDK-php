@@ -1,4 +1,4 @@
-# # UserGetEzmaxcustomeruserV1Response
+# UserGetEzmaxcustomeruserV1Response
 
 ## Properties
 

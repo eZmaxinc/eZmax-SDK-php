@@ -1,4 +1,4 @@
-# # ScimServiceProviderConfigBulk
+# ScimServiceProviderConfigBulk
 
 ## Properties
 

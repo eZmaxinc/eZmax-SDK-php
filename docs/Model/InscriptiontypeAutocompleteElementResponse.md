@@ -1,4 +1,4 @@
-# # InscriptiontypeAutocompleteElementResponse
+# InscriptiontypeAutocompleteElementResponse
 
 ## Properties
 

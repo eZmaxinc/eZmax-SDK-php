@@ -1,4 +1,4 @@
-# # EzsignsigningreasonAutocompleteElementResponse
+# EzsignsigningreasonAutocompleteElementResponse
 
 ## Properties
 

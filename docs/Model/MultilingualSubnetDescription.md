@@ -1,4 +1,4 @@
-# # MultilingualSubnetDescription
+# MultilingualSubnetDescription
 
 ## Properties
 

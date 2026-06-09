@@ -1,4 +1,4 @@
-# # OtherincomeGetCommunicationrecipientsV1ResponseMPayload
+# OtherincomeGetCommunicationrecipientsV1ResponseMPayload
 
 ## Properties
 

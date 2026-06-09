@@ -1,4 +1,4 @@
-# # BillingentityexternalGetAutocompleteV2ResponseMPayload
+# BillingentityexternalGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

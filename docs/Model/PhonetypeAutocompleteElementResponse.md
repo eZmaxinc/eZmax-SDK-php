@@ -1,4 +1,4 @@
-# # PhonetypeAutocompleteElementResponse
+# PhonetypeAutocompleteElementResponse
 
 ## Properties
 

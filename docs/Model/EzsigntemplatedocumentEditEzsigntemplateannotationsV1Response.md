@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response
+# EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response
 
 ## Properties
 

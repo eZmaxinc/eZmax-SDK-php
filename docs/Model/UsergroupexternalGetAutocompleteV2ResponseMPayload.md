@@ -1,4 +1,4 @@
-# # UsergroupexternalGetAutocompleteV2ResponseMPayload
+# UsergroupexternalGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

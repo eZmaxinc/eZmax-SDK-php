@@ -1,4 +1,4 @@
-# # EzsignfoldertypeRequestCompoundV3
+# EzsignfoldertypeRequestCompoundV3
 
 ## Properties
 

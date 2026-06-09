@@ -1,4 +1,4 @@
-# # CustomBrandingResponse
+# CustomBrandingResponse
 
 ## Properties
 

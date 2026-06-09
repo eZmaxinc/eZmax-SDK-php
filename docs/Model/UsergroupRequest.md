@@ -1,4 +1,4 @@
-# # UsergroupRequest
+# UsergroupRequest
 
 ## Properties
 

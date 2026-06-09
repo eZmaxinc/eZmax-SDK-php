@@ -1,4 +1,4 @@
-# # PermissionCreateObjectV1ResponseMPayload
+# PermissionCreateObjectV1ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentCreateObjectV1ResponseMPayload
+# EzdoctemplatedocumentCreateObjectV1ResponseMPayload
 
 ## Properties
 

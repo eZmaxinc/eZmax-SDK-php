@@ -1,4 +1,4 @@
-# # UserstagedListElement
+# UserstagedListElement
 
 ## Properties
 

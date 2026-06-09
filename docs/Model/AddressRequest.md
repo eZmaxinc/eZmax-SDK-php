@@ -1,4 +1,4 @@
-# # AddressRequest
+# AddressRequest
 
 ## Properties
 

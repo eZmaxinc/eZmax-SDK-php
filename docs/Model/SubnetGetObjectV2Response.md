@@ -1,4 +1,4 @@
-# # SubnetGetObjectV2Response
+# SubnetGetObjectV2Response
 
 ## Properties
 

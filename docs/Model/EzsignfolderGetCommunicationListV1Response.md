@@ -1,4 +1,4 @@
-# # EzsignfolderGetCommunicationListV1Response
+# EzsignfolderGetCommunicationListV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # BrandingCreateObjectV2Request
+# BrandingCreateObjectV2Request
 
 ## Properties
 

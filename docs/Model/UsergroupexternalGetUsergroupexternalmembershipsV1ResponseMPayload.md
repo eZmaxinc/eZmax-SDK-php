@@ -1,4 +1,4 @@
-# # UsergroupexternalGetUsergroupexternalmembershipsV1ResponseMPayload
+# UsergroupexternalGetUsergroupexternalmembershipsV1ResponseMPayload
 
 ## Properties
 

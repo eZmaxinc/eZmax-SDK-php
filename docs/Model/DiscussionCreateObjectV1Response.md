@@ -1,4 +1,4 @@
-# # DiscussionCreateObjectV1Response
+# DiscussionCreateObjectV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # AgenttypeGetAutocompleteV2Response
+# AgenttypeGetAutocompleteV2Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzmaxcustomeruserPatchObjectV1Response
+# EzmaxcustomeruserPatchObjectV1Response
 
 ## Properties
 

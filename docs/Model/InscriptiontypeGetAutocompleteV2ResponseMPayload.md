@@ -1,4 +1,4 @@
-# # InscriptiontypeGetAutocompleteV2ResponseMPayload
+# InscriptiontypeGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

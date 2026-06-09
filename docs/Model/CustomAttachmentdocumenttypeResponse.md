@@ -1,4 +1,4 @@
-# # CustomAttachmentdocumenttypeResponse
+# CustomAttachmentdocumenttypeResponse
 
 ## Properties
 

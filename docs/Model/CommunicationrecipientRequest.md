@@ -1,4 +1,4 @@
-# # CommunicationrecipientRequest
+# CommunicationrecipientRequest
 
 ## Properties
 

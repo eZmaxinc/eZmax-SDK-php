@@ -1,4 +1,4 @@
-# # EzsigndocumentMatchingtemplateV3Response
+# EzsigndocumentMatchingtemplateV3Response
 
 ## Properties
 

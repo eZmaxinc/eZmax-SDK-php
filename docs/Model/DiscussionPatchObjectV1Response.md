@@ -1,4 +1,4 @@
-# # DiscussionPatchObjectV1Response
+# DiscussionPatchObjectV1Response
 
 ## Properties
 

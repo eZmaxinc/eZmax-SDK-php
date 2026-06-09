@@ -1,4 +1,4 @@
-# # EzsigndocumentPrefillEzsignformV1Response
+# EzsigndocumentPrefillEzsignformV1Response
 
 ## Properties
 

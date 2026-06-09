@@ -1,4 +1,4 @@
-# # CustomFormDataEzsignformfieldgroupResponse
+# CustomFormDataEzsignformfieldgroupResponse
 
 ## Properties
 

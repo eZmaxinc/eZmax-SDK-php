@@ -1,4 +1,4 @@
-# # MultilingualPaymentgatewayDescription
+# MultilingualPaymentgatewayDescription
 
 ## Properties
 

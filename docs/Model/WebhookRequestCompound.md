@@ -1,4 +1,4 @@
-# # WebhookRequestCompound
+# WebhookRequestCompound
 
 ## Properties
 

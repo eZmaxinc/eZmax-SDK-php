@@ -1,4 +1,4 @@
-# # DomainCreateObjectV1Request
+# DomainCreateObjectV1Request
 
 ## Properties
 

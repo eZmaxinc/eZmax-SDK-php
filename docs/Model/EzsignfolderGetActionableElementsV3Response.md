@@ -1,4 +1,4 @@
-# # EzsignfolderGetActionableElementsV3Response
+# EzsignfolderGetActionableElementsV3Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentEditObjectV1Response
+# EzdoctemplatedocumentEditObjectV1Response
 
 ## Properties
 

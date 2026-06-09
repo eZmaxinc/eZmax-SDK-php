@@ -1,4 +1,4 @@
-# # CountryGetAutocompleteV2ResponseMPayload
+# CountryGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

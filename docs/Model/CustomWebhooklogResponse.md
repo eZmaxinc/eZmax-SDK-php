@@ -1,4 +1,4 @@
-# # CustomWebhooklogResponse
+# CustomWebhooklogResponse
 
 ## Properties
 

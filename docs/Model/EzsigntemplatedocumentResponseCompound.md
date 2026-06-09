@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentResponseCompound
+# EzsigntemplatedocumentResponseCompound
 
 ## Properties
 

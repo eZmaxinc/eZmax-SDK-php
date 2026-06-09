@@ -1,4 +1,4 @@
-# # SystemconfigurationtypeGetAutocompleteV2Response
+# SystemconfigurationtypeGetAutocompleteV2Response
 
 ## Properties
 

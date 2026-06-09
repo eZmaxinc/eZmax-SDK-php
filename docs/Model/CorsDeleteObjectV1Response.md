@@ -1,4 +1,4 @@
-# # CorsDeleteObjectV1Response
+# CorsDeleteObjectV1Response
 
 ## Properties
 

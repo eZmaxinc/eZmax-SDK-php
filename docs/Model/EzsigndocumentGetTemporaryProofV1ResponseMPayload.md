@@ -1,4 +1,4 @@
-# # EzsigndocumentGetTemporaryProofV1ResponseMPayload
+# EzsigndocumentGetTemporaryProofV1ResponseMPayload
 
 ## Properties
 

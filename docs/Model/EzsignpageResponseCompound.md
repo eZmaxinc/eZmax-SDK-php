@@ -1,4 +1,4 @@
-# # EzsignpageResponseCompound
+# EzsignpageResponseCompound
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response
+# EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response
 
 ## Properties
 

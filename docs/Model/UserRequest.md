@@ -1,4 +1,4 @@
-# # UserRequest
+# UserRequest
 
 ## Properties
 

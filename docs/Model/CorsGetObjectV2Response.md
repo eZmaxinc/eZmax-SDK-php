@@ -1,4 +1,4 @@
-# # CorsGetObjectV2Response
+# CorsGetObjectV2Response
 
 ## Properties
 

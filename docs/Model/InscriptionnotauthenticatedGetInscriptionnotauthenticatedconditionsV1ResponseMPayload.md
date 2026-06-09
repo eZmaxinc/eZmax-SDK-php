@@ -1,4 +1,4 @@
-# # InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1ResponseMPayload
+# InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1ResponseMPayload
 
 ## Properties
 

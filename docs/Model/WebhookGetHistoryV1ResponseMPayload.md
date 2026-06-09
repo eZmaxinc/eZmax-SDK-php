@@ -1,4 +1,4 @@
-# # WebhookGetHistoryV1ResponseMPayload
+# WebhookGetHistoryV1ResponseMPayload
 
 ## Properties
 

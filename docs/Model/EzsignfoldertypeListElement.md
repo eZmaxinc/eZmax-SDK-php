@@ -1,4 +1,4 @@
-# # EzsignfoldertypeListElement
+# EzsignfoldertypeListElement
 
 ## Properties
 

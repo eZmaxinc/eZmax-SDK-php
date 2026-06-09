@@ -1,4 +1,4 @@
-# # SupplyGetObjectV2Response
+# SupplyGetObjectV2Response
 
 ## Properties
 

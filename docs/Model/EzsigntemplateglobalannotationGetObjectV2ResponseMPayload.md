@@ -1,4 +1,4 @@
-# # EzsigntemplateglobalannotationGetObjectV2ResponseMPayload
+# EzsigntemplateglobalannotationGetObjectV2ResponseMPayload
 
 ## Properties
 

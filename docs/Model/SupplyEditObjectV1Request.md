@@ -1,4 +1,4 @@
-# # SupplyEditObjectV1Request
+# SupplyEditObjectV1Request
 
 ## Properties
 

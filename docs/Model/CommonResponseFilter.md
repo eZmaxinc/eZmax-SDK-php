@@ -1,4 +1,4 @@
-# # CommonResponseFilter
+# CommonResponseFilter
 
 ## Properties
 

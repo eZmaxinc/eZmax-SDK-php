@@ -1,4 +1,4 @@
-# # CommonReportgroupParameter
+# CommonReportgroupParameter
 
 ## Properties
 

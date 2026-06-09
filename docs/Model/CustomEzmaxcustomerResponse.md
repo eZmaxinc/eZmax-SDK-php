@@ -1,4 +1,4 @@
-# # CustomEzmaxcustomerResponse
+# CustomEzmaxcustomerResponse
 
 ## Properties
 

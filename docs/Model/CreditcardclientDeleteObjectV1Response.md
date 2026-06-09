@@ -1,4 +1,4 @@
-# # CreditcardclientDeleteObjectV1Response
+# CreditcardclientDeleteObjectV1Response
 
 ## Properties
 

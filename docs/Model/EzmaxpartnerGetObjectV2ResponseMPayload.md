@@ -1,4 +1,4 @@
-# # EzmaxpartnerGetObjectV2ResponseMPayload
+# EzmaxpartnerGetObjectV2ResponseMPayload
 
 ## Properties
 

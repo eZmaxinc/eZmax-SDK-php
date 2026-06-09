@@ -1,4 +1,4 @@
-# # WebhookheaderResponseCompound
+# WebhookheaderResponseCompound
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigntemplatesignaturepaymentdetailResponseCompound
+# EzsigntemplatesignaturepaymentdetailResponseCompound
 
 ## Properties
 

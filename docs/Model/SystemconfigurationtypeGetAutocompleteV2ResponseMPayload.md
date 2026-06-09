@@ -1,4 +1,4 @@
-# # SystemconfigurationtypeGetAutocompleteV2ResponseMPayload
+# SystemconfigurationtypeGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

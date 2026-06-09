@@ -1,4 +1,4 @@
-# # ApikeyRegenerateV1Response
+# ApikeyRegenerateV1Response
 
 ## Properties
 

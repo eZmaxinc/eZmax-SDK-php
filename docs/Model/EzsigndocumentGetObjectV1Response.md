@@ -1,4 +1,4 @@
-# # EzsigndocumentGetObjectV1Response
+# EzsigndocumentGetObjectV1Response
 
 ## Properties
 

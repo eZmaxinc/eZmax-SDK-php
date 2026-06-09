@@ -1,4 +1,4 @@
-# # CustomEzsignfoldersignerassociationstatusResponse
+# CustomEzsignfoldersignerassociationstatusResponse
 
 ## Properties
 

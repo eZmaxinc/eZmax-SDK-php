@@ -1,4 +1,4 @@
-# # EzsigntemplateannotationCreateObjectV1ResponseMPayload
+# EzsigntemplateannotationCreateObjectV1ResponseMPayload
 
 ## Properties
 

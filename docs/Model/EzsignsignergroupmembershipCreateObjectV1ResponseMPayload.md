@@ -1,4 +1,4 @@
-# # EzsignsignergroupmembershipCreateObjectV1ResponseMPayload
+# EzsignsignergroupmembershipCreateObjectV1ResponseMPayload
 
 ## Properties
 

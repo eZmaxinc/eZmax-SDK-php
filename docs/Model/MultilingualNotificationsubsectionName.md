@@ -1,4 +1,4 @@
-# # MultilingualNotificationsubsectionName
+# MultilingualNotificationsubsectionName
 
 ## Properties
 

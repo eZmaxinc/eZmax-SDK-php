@@ -1,4 +1,4 @@
-# # PermissionGetObjectV2ResponseMPayload
+# PermissionGetObjectV2ResponseMPayload
 
 ## Properties
 

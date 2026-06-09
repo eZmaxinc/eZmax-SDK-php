@@ -1,4 +1,4 @@
-# # EzsignbulksendResponse
+# EzsignbulksendResponse
 
 ## Properties
 

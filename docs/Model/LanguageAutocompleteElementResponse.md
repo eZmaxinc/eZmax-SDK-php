@@ -1,4 +1,4 @@
-# # LanguageAutocompleteElementResponse
+# LanguageAutocompleteElementResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UserImpersonateV1ResponseMPayload
+# UserImpersonateV1ResponseMPayload
 
 ## Properties
 

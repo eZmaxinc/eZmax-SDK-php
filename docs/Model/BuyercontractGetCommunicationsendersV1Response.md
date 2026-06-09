@@ -1,4 +1,4 @@
-# # BuyercontractGetCommunicationsendersV1Response
+# BuyercontractGetCommunicationsendersV1Response
 
 ## Properties
 

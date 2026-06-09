@@ -1,4 +1,4 @@
-# # EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload
+# EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload
 
 ## Properties
 

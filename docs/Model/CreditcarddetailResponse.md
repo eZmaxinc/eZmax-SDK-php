@@ -1,4 +1,4 @@
-# # CreditcarddetailResponse
+# CreditcarddetailResponse
 
 ## Properties
 

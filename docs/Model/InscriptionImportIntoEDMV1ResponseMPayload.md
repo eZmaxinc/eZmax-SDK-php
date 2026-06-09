@@ -1,4 +1,4 @@
-# # InscriptionImportIntoEDMV1ResponseMPayload
+# InscriptionImportIntoEDMV1ResponseMPayload
 
 ## Properties
 

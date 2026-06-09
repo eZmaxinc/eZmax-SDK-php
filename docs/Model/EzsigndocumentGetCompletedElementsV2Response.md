@@ -1,4 +1,4 @@
-# # EzsigndocumentGetCompletedElementsV2Response
+# EzsigndocumentGetCompletedElementsV2Response
 
 ## Properties
 

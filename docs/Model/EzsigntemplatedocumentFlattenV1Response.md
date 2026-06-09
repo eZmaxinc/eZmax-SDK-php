@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentFlattenV1Response
+# EzsigntemplatedocumentFlattenV1Response
 
 ## Properties
 

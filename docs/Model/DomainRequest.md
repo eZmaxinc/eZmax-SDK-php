@@ -1,4 +1,4 @@
-# # DomainRequest
+# DomainRequest
 
 ## Properties
 

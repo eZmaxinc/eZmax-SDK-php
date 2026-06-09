@@ -1,4 +1,4 @@
-# # VariableexpenseGetAutocompleteV2ResponseMPayload
+# VariableexpenseGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

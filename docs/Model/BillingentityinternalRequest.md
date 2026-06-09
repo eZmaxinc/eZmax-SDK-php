@@ -1,4 +1,4 @@
-# # BillingentityinternalRequest
+# BillingentityinternalRequest
 
 ## Properties
 

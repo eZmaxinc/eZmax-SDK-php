@@ -1,4 +1,4 @@
-# # UsergroupEditUsergroupdelegationsV1ResponseMPayload
+# UsergroupEditUsergroupdelegationsV1ResponseMPayload
 
 ## Properties
 

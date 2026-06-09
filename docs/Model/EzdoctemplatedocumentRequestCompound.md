@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentRequestCompound
+# EzdoctemplatedocumentRequestCompound
 
 ## Properties
 

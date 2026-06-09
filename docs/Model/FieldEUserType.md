@@ -1,4 +1,4 @@
-# # FieldEUserType
+# FieldEUserType
 
 ## Properties
 

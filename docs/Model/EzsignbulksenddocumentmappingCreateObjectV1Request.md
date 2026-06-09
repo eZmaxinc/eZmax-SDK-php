@@ -1,4 +1,4 @@
-# # EzsignbulksenddocumentmappingCreateObjectV1Request
+# EzsignbulksenddocumentmappingCreateObjectV1Request
 
 ## Properties
 

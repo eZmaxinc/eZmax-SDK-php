@@ -1,4 +1,4 @@
-# # BillingentityinternalCreateObjectV1ResponseMPayload
+# BillingentityinternalCreateObjectV1ResponseMPayload
 
 ## Properties
 

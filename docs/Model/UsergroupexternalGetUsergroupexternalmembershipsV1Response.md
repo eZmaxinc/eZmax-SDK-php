@@ -1,4 +1,4 @@
-# # UsergroupexternalGetUsergroupexternalmembershipsV1Response
+# UsergroupexternalGetUsergroupexternalmembershipsV1Response
 
 ## Properties
 

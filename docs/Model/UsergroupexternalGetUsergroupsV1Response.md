@@ -1,4 +1,4 @@
-# # UsergroupexternalGetUsergroupsV1Response
+# UsergroupexternalGetUsergroupsV1Response
 
 ## Properties
 

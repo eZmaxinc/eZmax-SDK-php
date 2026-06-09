@@ -1,4 +1,4 @@
-# # CommonResponseErrorCreditcardValidation
+# CommonResponseErrorCreditcardValidation
 
 ## Properties
 

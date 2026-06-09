@@ -1,4 +1,4 @@
-# # OtherincomeImportIntoEDMV1Response
+# OtherincomeImportIntoEDMV1Response
 
 ## Properties
 

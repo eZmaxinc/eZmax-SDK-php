@@ -1,4 +1,4 @@
-# # EzsigndocumentDeclineToSignV1Request
+# EzsigndocumentDeclineToSignV1Request
 
 ## Properties
 

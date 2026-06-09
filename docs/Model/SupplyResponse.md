@@ -1,4 +1,4 @@
-# # SupplyResponse
+# SupplyResponse
 
 ## Properties
 

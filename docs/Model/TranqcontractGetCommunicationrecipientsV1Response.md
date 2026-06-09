@@ -1,4 +1,4 @@
-# # TranqcontractGetCommunicationrecipientsV1Response
+# TranqcontractGetCommunicationrecipientsV1Response
 
 ## Properties
 

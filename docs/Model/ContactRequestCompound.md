@@ -1,4 +1,4 @@
-# # ContactRequestCompound
+# ContactRequestCompound
 
 ## Properties
 

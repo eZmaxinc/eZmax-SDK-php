@@ -1,4 +1,4 @@
-# # WebhookUserstagedUserstagedCreated
+# WebhookUserstagedUserstagedCreated
 
 ## Properties
 

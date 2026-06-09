@@ -1,4 +1,4 @@
-# # VariableexpenseEditObjectV1Response
+# VariableexpenseEditObjectV1Response
 
 ## Properties
 

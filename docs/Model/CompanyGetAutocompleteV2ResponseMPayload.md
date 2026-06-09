@@ -1,4 +1,4 @@
-# # CompanyGetAutocompleteV2ResponseMPayload
+# CompanyGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

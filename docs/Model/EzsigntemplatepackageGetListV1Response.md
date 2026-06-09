@@ -1,4 +1,4 @@
-# # EzsigntemplatepackageGetListV1Response
+# EzsigntemplatepackageGetListV1Response
 
 ## Properties
 

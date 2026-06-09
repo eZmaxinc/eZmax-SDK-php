@@ -1,4 +1,4 @@
-# # PaymenttermCreateObjectV1Request
+# PaymenttermCreateObjectV1Request
 
 ## Properties
 

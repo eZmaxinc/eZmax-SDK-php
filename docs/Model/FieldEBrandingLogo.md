@@ -1,4 +1,4 @@
-# # FieldEBrandingLogo
+# FieldEBrandingLogo
 
 ## Properties
 

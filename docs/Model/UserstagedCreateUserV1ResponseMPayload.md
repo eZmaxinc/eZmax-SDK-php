@@ -1,4 +1,4 @@
-# # UserstagedCreateUserV1ResponseMPayload
+# UserstagedCreateUserV1ResponseMPayload
 
 ## Properties
 

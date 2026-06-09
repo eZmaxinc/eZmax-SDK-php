@@ -1,4 +1,4 @@
-# # BuyercontractGetCommunicationCountV1Response
+# BuyercontractGetCommunicationCountV1Response
 
 ## Properties
 

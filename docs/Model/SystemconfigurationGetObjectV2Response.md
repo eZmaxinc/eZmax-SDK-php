@@ -1,4 +1,4 @@
-# # SystemconfigurationGetObjectV2Response
+# SystemconfigurationGetObjectV2Response
 
 ## Properties
 

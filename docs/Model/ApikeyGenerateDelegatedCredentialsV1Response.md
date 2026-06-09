@@ -1,4 +1,4 @@
-# # ApikeyGenerateDelegatedCredentialsV1Response
+# ApikeyGenerateDelegatedCredentialsV1Response
 
 ## Properties
 

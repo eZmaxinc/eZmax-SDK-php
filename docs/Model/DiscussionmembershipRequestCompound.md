@@ -1,4 +1,4 @@
-# # DiscussionmembershipRequestCompound
+# DiscussionmembershipRequestCompound
 
 ## Properties
 

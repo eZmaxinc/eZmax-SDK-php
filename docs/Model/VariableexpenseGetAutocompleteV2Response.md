@@ -1,4 +1,4 @@
-# # VariableexpenseGetAutocompleteV2Response
+# VariableexpenseGetAutocompleteV2Response
 
 ## Properties
 

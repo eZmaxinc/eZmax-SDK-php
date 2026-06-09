@@ -1,4 +1,4 @@
-# # ColleagueRequestCompoundV2
+# ColleagueRequestCompoundV2
 
 ## Properties
 

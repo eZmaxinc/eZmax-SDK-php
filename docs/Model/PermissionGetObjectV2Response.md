@@ -1,4 +1,4 @@
-# # PermissionGetObjectV2Response
+# PermissionGetObjectV2Response
 
 ## Properties
 

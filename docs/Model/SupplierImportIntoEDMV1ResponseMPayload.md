@@ -1,4 +1,4 @@
-# # SupplierImportIntoEDMV1ResponseMPayload
+# SupplierImportIntoEDMV1ResponseMPayload
 
 ## Properties
 

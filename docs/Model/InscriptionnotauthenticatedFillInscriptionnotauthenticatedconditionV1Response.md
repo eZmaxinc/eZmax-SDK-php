@@ -1,4 +1,4 @@
-# # InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response
+# InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response
 
 ## Properties
 

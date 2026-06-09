@@ -1,4 +1,4 @@
-# # AgentGetListV1ResponseMPayload
+# AgentGetListV1ResponseMPayload
 
 ## Properties
 

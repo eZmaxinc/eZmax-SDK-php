@@ -1,4 +1,4 @@
-# # CustomEzmaxpricingResponse
+# CustomEzmaxpricingResponse
 
 ## Properties
 

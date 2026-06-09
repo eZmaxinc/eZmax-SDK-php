@@ -1,4 +1,4 @@
-# # CustomEzsignfolderEzsignsignaturesAutomaticResponse
+# CustomEzsignfolderEzsignsignaturesAutomaticResponse
 
 ## Properties
 

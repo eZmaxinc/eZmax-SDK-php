@@ -1,4 +1,4 @@
-# # EzsigntemplatepackageResponse
+# EzsigntemplatepackageResponse
 
 ## Properties
 

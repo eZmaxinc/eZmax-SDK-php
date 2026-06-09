@@ -1,4 +1,4 @@
-# # EzsigndocumentCreateEzsignelementsPositionedByWordV2Response
+# EzsigndocumentCreateEzsignelementsPositionedByWordV2Response
 
 ## Properties
 

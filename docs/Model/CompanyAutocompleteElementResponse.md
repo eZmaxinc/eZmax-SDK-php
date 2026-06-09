@@ -1,4 +1,4 @@
-# # CompanyAutocompleteElementResponse
+# CompanyAutocompleteElementResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # WebhookGetListV1Response
+# WebhookGetListV1Response
 
 ## Properties
 

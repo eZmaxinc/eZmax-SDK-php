@@ -1,4 +1,4 @@
-# # SignatureGetObjectV3Response
+# SignatureGetObjectV3Response
 
 ## Properties
 

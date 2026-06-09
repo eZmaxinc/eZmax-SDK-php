@@ -1,4 +1,4 @@
-# # WebhookCreateObjectV2Response
+# WebhookCreateObjectV2Response
 
 ## Properties
 

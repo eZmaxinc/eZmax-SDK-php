@@ -1,4 +1,4 @@
-# # CurrencyGetAutocompleteV2ResponseMPayload
+# CurrencyGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SystemconfigurationRequestCompoundV2
+# SystemconfigurationRequestCompoundV2
 
 ## Properties
 

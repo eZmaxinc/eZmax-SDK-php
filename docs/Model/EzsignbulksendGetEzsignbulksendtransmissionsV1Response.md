@@ -1,4 +1,4 @@
-# # EzsignbulksendGetEzsignbulksendtransmissionsV1Response
+# EzsignbulksendGetEzsignbulksendtransmissionsV1Response
 
 ## Properties
 

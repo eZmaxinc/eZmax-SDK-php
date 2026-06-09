@@ -1,4 +1,4 @@
-# # FieldEEzsigntemplateglobaldocumentAcceptationtype
+# FieldEEzsigntemplateglobaldocumentAcceptationtype
 
 ## Properties
 

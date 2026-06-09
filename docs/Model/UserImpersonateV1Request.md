@@ -1,4 +1,4 @@
-# # UserImpersonateV1Request
+# UserImpersonateV1Request
 
 ## Properties
 

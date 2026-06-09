@@ -1,4 +1,4 @@
-# # UsergroupGetListV1ResponseMPayload
+# UsergroupGetListV1ResponseMPayload
 
 ## Properties
 
