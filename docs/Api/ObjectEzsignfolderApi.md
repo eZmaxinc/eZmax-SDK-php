@@ -17,6 +17,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignfolderDuplicateV1()**](ObjectEzsignfolderApi.md#ezsignfolderDuplicateV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/duplicate | Duplicate the Ezsignfolder |
 | [**ezsignfolderEditObjectV3()**](ObjectEzsignfolderApi.md#ezsignfolderEditObjectV3) | **PUT** /3/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder |
 | [**ezsignfolderEndPrematurelyV1()**](ObjectEzsignfolderApi.md#ezsignfolderEndPrematurelyV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely |
+| [**ezsignfolderGetActionableElementsForSignerV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsForSignerV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsignfolder |
 | [**ezsignfolderGetActionableElementsV1()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
 | [**ezsignfolderGetActionableElementsV2()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsV2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
 | [**ezsignfolderGetActionableElementsV3()**](ObjectEzsignfolderApi.md#ezsignfolderGetActionableElementsV3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
@@ -732,6 +733,74 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfolderGetActionableElementsForSignerV1()`
+
+```php
+ezsignfolderGetActionableElementsForSignerV1($pkiEzsignfolderID, $eSignerType, $fkiEzsignsignerID, $fkiUserID): \eZmaxAPI\Model\EzsignfolderGetActionableElementsForSignerV1Response
+```
+
+Retrieve actionable elements of a user for the Ezsignfolder
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfolderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfolderID = 56; // int
+$eSignerType = 'eSignerType_example'; // string
+$fkiEzsignsignerID = 56; // int
+$fkiUserID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignfolderGetActionableElementsForSignerV1($pkiEzsignfolderID, $eSignerType, $fkiEzsignsignerID, $fkiUserID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfolderApi->ezsignfolderGetActionableElementsForSignerV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfolderID** | **int**|  | |
+| **eSignerType** | **string**|  | |
+| **fkiEzsignsignerID** | **int**|  | [optional] |
+| **fkiUserID** | **int**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfolderGetActionableElementsForSignerV1Response**](../Model/EzsignfolderGetActionableElementsForSignerV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

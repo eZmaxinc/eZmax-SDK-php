@@ -1,6 +1,6 @@
 <?php
 /**
- * UserImpersonateV1Request
+ * DocumentationSubscribeV1Response
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UserImpersonateV1Request Class Doc Comment
+ * DocumentationSubscribeV1Response Class Doc Comment
  *
  * @category Class
- * @description Request for POST /1/object/user/{pkiUserID}/impersonate
+ * @description Request for POST /1/module/ezmaxmaillinglist/subscribe
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
+class DocumentationSubscribeV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string
      */
-    protected static $openAPIModelName = 'user-impersonate-v1-Request';
+    protected static $openAPIModelName = 'documentation-subscribe-v1-Response';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $openAPITypes = [
-        'iExpirationMinutes' => 'int'
+        'sExternalID' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'iExpirationMinutes' => null
+        'sExternalID' => null
     ];
 
     /**
@@ -79,7 +79,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'iExpirationMinutes' => false
+        'sExternalID' => false
     ];
 
     /**
@@ -168,7 +168,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'iExpirationMinutes' => 'iExpirationMinutes'
+        'sExternalID' => 'sExternalID'
     ];
 
     /**
@@ -177,7 +177,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'iExpirationMinutes' => 'setIExpirationMinutes'
+        'sExternalID' => 'setSExternalID'
     ];
 
     /**
@@ -186,7 +186,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'iExpirationMinutes' => 'getIExpirationMinutes'
+        'sExternalID' => 'getSExternalID'
     ];
 
     /**
@@ -246,7 +246,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('iExpirationMinutes', $data ?? [], null);
+        $this->setIfExists('sExternalID', $data ?? [], null);
     }
 
     /**
@@ -276,17 +276,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['iExpirationMinutes'] === null) {
-            $invalidProperties[] = "'iExpirationMinutes' can't be null";
+        if ($this->container['sExternalID'] === null) {
+            $invalidProperties[] = "'sExternalID' can't be null";
         }
-        if (($this->container['iExpirationMinutes'] > 180)) {
-            $invalidProperties[] = "invalid value for 'iExpirationMinutes', must be smaller than or equal to 180.";
-        }
-
-        if (($this->container['iExpirationMinutes'] < 1)) {
-            $invalidProperties[] = "invalid value for 'iExpirationMinutes', must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -303,45 +295,33 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets iExpirationMinutes
+     * Gets sExternalID
      *
-     * @return int
+     * @return string
      */
-    public function getIExpirationMinutes()
+    public function getSExternalID()
     {
-	//return $this->container['iExpirationMinutes'];
-        return $this->container['iExpirationMinutes'];
+	//return $this->container['sExternalID'];
+        return is_null($this->container['sExternalID']) ? null : trim($this->container['sExternalID']);
     }
 
     /**
-     * Sets iExpirationMinutes
+     * Sets sExternalID
      *
-     * @param int $iExpirationMinutes The number of minute before key is no longer active
+     * @param string $sExternalID 
      *
      * @return self
      */
-    public function setIExpirationMinutes($iExpirationMinutes)
+    public function setSExternalID($sExternalID)
     {
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iExpirationMinutes)) {
-            //throw new \InvalidArgumentException('non-nullable iExpirationMinutes cannot be null');
+        //if (is_null($sExternalID)) {
+            //throw new \InvalidArgumentException('non-nullable sExternalID cannot be null');
         //}
-
-        //if (($iExpirationMinutes > 180)) {
-        if (($iExpirationMinutes > 180)) {
-            //throw new \InvalidArgumentException('invalid value for $iExpirationMinutes when calling UserImpersonateV1Request., must be smaller than or equal to 180.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iExpirationMinutes)?'null':'"'.$iExpirationMinutes.'"').' for iExpirationMinutes when calling UserImpersonateV1Request., must be smaller than or equal to 180.');
-        }
-        //if (($iExpirationMinutes < 1)) {
-        if (($iExpirationMinutes < 1)) {
-            //throw new \InvalidArgumentException('invalid value for $iExpirationMinutes when calling UserImpersonateV1Request., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iExpirationMinutes)?'null':'"'.$iExpirationMinutes.'"').' for iExpirationMinutes when calling UserImpersonateV1Request., must be bigger than or equal to 1.');
-        }
-
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-        //$this->container['iExpirationMinutes'] = $iExpirationMinutes;
-        $this->container['iExpirationMinutes'] = (is_null($iExpirationMinutes) ? null : (int) $iExpirationMinutes);
+        //$this->container['sExternalID'] = $sExternalID;
+        $this->container['sExternalID'] = (is_null($sExternalID) ? null : trim((string) $sExternalID));
 
         return $this;
     }

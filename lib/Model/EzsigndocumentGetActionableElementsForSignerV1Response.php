@@ -1,6 +1,6 @@
 <?php
 /**
- * UserImpersonateV1Request
+ * EzsigndocumentGetActionableElementsForSignerV1Response
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UserImpersonateV1Request Class Doc Comment
+ * EzsigndocumentGetActionableElementsForSignerV1Response Class Doc Comment
  *
  * @category Class
- * @description Request for POST /1/object/user/{pkiUserID}/impersonate
+ * @description Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElementsForSigner
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsigndocumentGetActionableElementsForSignerV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string
      */
-    protected static $openAPIModelName = 'user-impersonate-v1-Request';
+    protected static $openAPIModelName = 'ezsigndocument-getActionableElementsForSigner-v1-Response';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $openAPITypes = [
-        'iExpirationMinutes' => 'int'
+        'objDebugPayload' => '\eZmaxAPI\Model\CommonResponseObjDebugPayload',
+        'objDebug' => '\eZmaxAPI\Model\CommonResponseObjDebug',
+        'mPayload' => '\eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload'
     ];
 
     /**
@@ -70,7 +72,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'iExpirationMinutes' => null
+        'objDebugPayload' => null,
+        'objDebug' => null,
+        'mPayload' => null
     ];
 
     /**
@@ -79,7 +83,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'iExpirationMinutes' => false
+        'objDebugPayload' => false,
+        'objDebug' => false,
+        'mPayload' => false
     ];
 
     /**
@@ -168,7 +174,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'iExpirationMinutes' => 'iExpirationMinutes'
+        'objDebugPayload' => 'objDebugPayload',
+        'objDebug' => 'objDebug',
+        'mPayload' => 'mPayload'
     ];
 
     /**
@@ -177,7 +185,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'iExpirationMinutes' => 'setIExpirationMinutes'
+        'objDebugPayload' => 'setObjDebugPayload',
+        'objDebug' => 'setObjDebug',
+        'mPayload' => 'setMPayload'
     ];
 
     /**
@@ -186,7 +196,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'iExpirationMinutes' => 'getIExpirationMinutes'
+        'objDebugPayload' => 'getObjDebugPayload',
+        'objDebug' => 'getObjDebug',
+        'mPayload' => 'getMPayload'
     ];
 
     /**
@@ -246,7 +258,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('iExpirationMinutes', $data ?? [], null);
+        $this->setIfExists('objDebugPayload', $data ?? [], null);
+        $this->setIfExists('objDebug', $data ?? [], null);
+        $this->setIfExists('mPayload', $data ?? [], null);
     }
 
     /**
@@ -276,17 +290,12 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['iExpirationMinutes'] === null) {
-            $invalidProperties[] = "'iExpirationMinutes' can't be null";
+        if ($this->container['objDebugPayload'] === null) {
+            $invalidProperties[] = "'objDebugPayload' can't be null";
         }
-        if (($this->container['iExpirationMinutes'] > 180)) {
-            $invalidProperties[] = "invalid value for 'iExpirationMinutes', must be smaller than or equal to 180.";
+        if ($this->container['mPayload'] === null) {
+            $invalidProperties[] = "'mPayload' can't be null";
         }
-
-        if (($this->container['iExpirationMinutes'] < 1)) {
-            $invalidProperties[] = "invalid value for 'iExpirationMinutes', must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -303,45 +312,97 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets iExpirationMinutes
+     * Gets objDebugPayload
      *
-     * @return int
+     * @return \eZmaxAPI\Model\CommonResponseObjDebugPayload
      */
-    public function getIExpirationMinutes()
+    public function getObjDebugPayload()
     {
-	//return $this->container['iExpirationMinutes'];
-        return $this->container['iExpirationMinutes'];
+	//return $this->container['objDebugPayload'];
+        return $this->container['objDebugPayload'];
     }
 
     /**
-     * Sets iExpirationMinutes
+     * Sets objDebugPayload
      *
-     * @param int $iExpirationMinutes The number of minute before key is no longer active
+     * @param \eZmaxAPI\Model\CommonResponseObjDebugPayload $objDebugPayload objDebugPayload
      *
      * @return self
      */
-    public function setIExpirationMinutes($iExpirationMinutes)
+    public function setObjDebugPayload($objDebugPayload)
     {
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iExpirationMinutes)) {
-            //throw new \InvalidArgumentException('non-nullable iExpirationMinutes cannot be null');
+        //if (is_null($objDebugPayload)) {
+            //throw new \InvalidArgumentException('non-nullable objDebugPayload cannot be null');
         //}
-
-        //if (($iExpirationMinutes > 180)) {
-        if (($iExpirationMinutes > 180)) {
-            //throw new \InvalidArgumentException('invalid value for $iExpirationMinutes when calling UserImpersonateV1Request., must be smaller than or equal to 180.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iExpirationMinutes)?'null':'"'.$iExpirationMinutes.'"').' for iExpirationMinutes when calling UserImpersonateV1Request., must be smaller than or equal to 180.');
-        }
-        //if (($iExpirationMinutes < 1)) {
-        if (($iExpirationMinutes < 1)) {
-            //throw new \InvalidArgumentException('invalid value for $iExpirationMinutes when calling UserImpersonateV1Request., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iExpirationMinutes)?'null':'"'.$iExpirationMinutes.'"').' for iExpirationMinutes when calling UserImpersonateV1Request., must be bigger than or equal to 1.');
-        }
-
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-        //$this->container['iExpirationMinutes'] = $iExpirationMinutes;
-        $this->container['iExpirationMinutes'] = (is_null($iExpirationMinutes) ? null : (int) $iExpirationMinutes);
+        //$this->container['objDebugPayload'] = $objDebugPayload;
+        $this->container['objDebugPayload'] = $objDebugPayload;
+
+        return $this;
+    }
+
+    /**
+     * Gets objDebug
+     *
+     * @return \eZmaxAPI\Model\CommonResponseObjDebug|null
+     */
+    public function getObjDebug()
+    {
+	//return $this->container['objDebug'];
+        return $this->container['objDebug'];
+    }
+
+    /**
+     * Sets objDebug
+     *
+     * @param \eZmaxAPI\Model\CommonResponseObjDebug|null $objDebug objDebug
+     *
+     * @return self
+     */
+    public function setObjDebug($objDebug)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objDebug)) {
+            //throw new \InvalidArgumentException('non-nullable objDebug cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['objDebug'] = $objDebug;
+        $this->container['objDebug'] = $objDebug;
+
+        return $this;
+    }
+
+    /**
+     * Gets mPayload
+     *
+     * @return \eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload
+     */
+    public function getMPayload()
+    {
+	//return $this->container['mPayload'];
+        return $this->container['mPayload'];
+    }
+
+    /**
+     * Sets mPayload
+     *
+     * @param \eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload $mPayload mPayload
+     *
+     * @return self
+     */
+    public function setMPayload($mPayload)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($mPayload)) {
+            //throw new \InvalidArgumentException('non-nullable mPayload cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['mPayload'] = $mPayload;
+        $this->container['mPayload'] = $mPayload;
 
         return $this;
     }

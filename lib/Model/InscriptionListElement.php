@@ -62,10 +62,13 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiInscriptionID' => 'int',
         'pkiInscriptionnotauthenticatedID' => 'int',
         'fkiInscriptiontypeID' => 'int',
+        'fkiBuyercontractID' => 'int',
+        'sBuyercontractContract' => 'string',
         'sInscriptiontypeNameX' => 'string',
         'eInscriptionStep' => '\eZmaxAPI\Model\FieldEInscriptionStep',
         'sInscriptionCivicend' => 'string',
         'sInscriptionMLS' => 'string',
+        'sInscriptionContract' => 'string',
         'dInscriptionSaleprice' => 'string',
         'dInscriptionRentprice' => 'string',
         'dtInscriptionDate' => 'string',
@@ -103,10 +106,13 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiInscriptionID' => null,
         'pkiInscriptionnotauthenticatedID' => null,
         'fkiInscriptiontypeID' => null,
+        'fkiBuyercontractID' => null,
+        'sBuyercontractContract' => null,
         'sInscriptiontypeNameX' => null,
         'eInscriptionStep' => null,
         'sInscriptionCivicend' => null,
         'sInscriptionMLS' => null,
+        'sInscriptionContract' => null,
         'dInscriptionSaleprice' => null,
         'dInscriptionRentprice' => null,
         'dtInscriptionDate' => null,
@@ -142,10 +148,13 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiInscriptionID' => false,
         'pkiInscriptionnotauthenticatedID' => false,
         'fkiInscriptiontypeID' => false,
+        'fkiBuyercontractID' => false,
+        'sBuyercontractContract' => false,
         'sInscriptiontypeNameX' => false,
         'eInscriptionStep' => false,
         'sInscriptionCivicend' => false,
         'sInscriptionMLS' => false,
+        'sInscriptionContract' => false,
         'dInscriptionSaleprice' => false,
         'dInscriptionRentprice' => false,
         'dtInscriptionDate' => false,
@@ -261,10 +270,13 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiInscriptionID' => 'pkiInscriptionID',
         'pkiInscriptionnotauthenticatedID' => 'pkiInscriptionnotauthenticatedID',
         'fkiInscriptiontypeID' => 'fkiInscriptiontypeID',
+        'fkiBuyercontractID' => 'fkiBuyercontractID',
+        'sBuyercontractContract' => 'sBuyercontractContract',
         'sInscriptiontypeNameX' => 'sInscriptiontypeNameX',
         'eInscriptionStep' => 'eInscriptionStep',
         'sInscriptionCivicend' => 'sInscriptionCivicend',
         'sInscriptionMLS' => 'sInscriptionMLS',
+        'sInscriptionContract' => 'sInscriptionContract',
         'dInscriptionSaleprice' => 'dInscriptionSaleprice',
         'dInscriptionRentprice' => 'dInscriptionRentprice',
         'dtInscriptionDate' => 'dtInscriptionDate',
@@ -300,10 +312,13 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiInscriptionID' => 'setPkiInscriptionID',
         'pkiInscriptionnotauthenticatedID' => 'setPkiInscriptionnotauthenticatedID',
         'fkiInscriptiontypeID' => 'setFkiInscriptiontypeID',
+        'fkiBuyercontractID' => 'setFkiBuyercontractID',
+        'sBuyercontractContract' => 'setSBuyercontractContract',
         'sInscriptiontypeNameX' => 'setSInscriptiontypeNameX',
         'eInscriptionStep' => 'setEInscriptionStep',
         'sInscriptionCivicend' => 'setSInscriptionCivicend',
         'sInscriptionMLS' => 'setSInscriptionMLS',
+        'sInscriptionContract' => 'setSInscriptionContract',
         'dInscriptionSaleprice' => 'setDInscriptionSaleprice',
         'dInscriptionRentprice' => 'setDInscriptionRentprice',
         'dtInscriptionDate' => 'setDtInscriptionDate',
@@ -339,10 +354,13 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
         'pkiInscriptionID' => 'getPkiInscriptionID',
         'pkiInscriptionnotauthenticatedID' => 'getPkiInscriptionnotauthenticatedID',
         'fkiInscriptiontypeID' => 'getFkiInscriptiontypeID',
+        'fkiBuyercontractID' => 'getFkiBuyercontractID',
+        'sBuyercontractContract' => 'getSBuyercontractContract',
         'sInscriptiontypeNameX' => 'getSInscriptiontypeNameX',
         'eInscriptionStep' => 'getEInscriptionStep',
         'sInscriptionCivicend' => 'getSInscriptionCivicend',
         'sInscriptionMLS' => 'getSInscriptionMLS',
+        'sInscriptionContract' => 'getSInscriptionContract',
         'dInscriptionSaleprice' => 'getDInscriptionSaleprice',
         'dInscriptionRentprice' => 'getDInscriptionRentprice',
         'dtInscriptionDate' => 'getDtInscriptionDate',
@@ -429,10 +447,13 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('pkiInscriptionID', $data ?? [], null);
         $this->setIfExists('pkiInscriptionnotauthenticatedID', $data ?? [], null);
         $this->setIfExists('fkiInscriptiontypeID', $data ?? [], null);
+        $this->setIfExists('fkiBuyercontractID', $data ?? [], null);
+        $this->setIfExists('sBuyercontractContract', $data ?? [], null);
         $this->setIfExists('sInscriptiontypeNameX', $data ?? [], null);
         $this->setIfExists('eInscriptionStep', $data ?? [], null);
         $this->setIfExists('sInscriptionCivicend', $data ?? [], null);
         $this->setIfExists('sInscriptionMLS', $data ?? [], null);
+        $this->setIfExists('sInscriptionContract', $data ?? [], null);
         $this->setIfExists('dInscriptionSaleprice', $data ?? [], null);
         $this->setIfExists('dInscriptionRentprice', $data ?? [], null);
         $this->setIfExists('dtInscriptionDate', $data ?? [], null);
@@ -508,6 +529,14 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'fkiInscriptiontypeID', must be bigger than or equal to 0.";
         }
 
+        if (!is_null($this->container['fkiBuyercontractID']) && ($this->container['fkiBuyercontractID'] > 65535)) {
+            $invalidProperties[] = "invalid value for 'fkiBuyercontractID', must be smaller than or equal to 65535.";
+        }
+
+        if (!is_null($this->container['fkiBuyercontractID']) && ($this->container['fkiBuyercontractID'] < 1)) {
+            $invalidProperties[] = "invalid value for 'fkiBuyercontractID', must be bigger than or equal to 1.";
+        }
+
         if ($this->container['sInscriptiontypeNameX'] === null) {
             $invalidProperties[] = "'sInscriptiontypeNameX' can't be null";
         }
@@ -533,6 +562,12 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
         if (!is_null($this->container['sInscriptionMLS']) && !preg_match("/(*UTF8)^.{0,20}$/", $this->container['sInscriptionMLS'])) {
             //$invalidProperties[] = "invalid value for 'sInscriptionMLS', must be conform to the pattern /^.{0,20}$/.";
             $invalidProperties[] = "invalid value ".(is_null($this->container['sInscriptionMLS'])?'null':'"'.$this->container['sInscriptionMLS'].'"')." for 'sInscriptionMLS', must be conform to the pattern /^.{0,20}$/.";
+        }
+
+        //if (!is_null($this->container['sInscriptionContract']) && !preg_match("/^.{0,20}$/", $this->container['sInscriptionContract'])) {
+        if (!is_null($this->container['sInscriptionContract']) && !preg_match("/(*UTF8)^.{0,20}$/", $this->container['sInscriptionContract'])) {
+            //$invalidProperties[] = "invalid value for 'sInscriptionContract', must be conform to the pattern /^.{0,20}$/.";
+            $invalidProperties[] = "invalid value ".(is_null($this->container['sInscriptionContract'])?'null':'"'.$this->container['sInscriptionContract'].'"')." for 'sInscriptionContract', must be conform to the pattern /^.{0,20}$/.";
         }
 
         if ($this->container['dInscriptionSaleprice'] === null) {
@@ -779,6 +814,82 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets fkiBuyercontractID
+     *
+     * @return int|null
+     */
+    public function getFkiBuyercontractID()
+    {
+	//return $this->container['fkiBuyercontractID'];
+        return $this->container['fkiBuyercontractID'];
+    }
+
+    /**
+     * Sets fkiBuyercontractID
+     *
+     * @param int|null $fkiBuyercontractID The unique ID of the Buyercontract
+     *
+     * @return self
+     */
+    public function setFkiBuyercontractID($fkiBuyercontractID)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($fkiBuyercontractID)) {
+            //throw new \InvalidArgumentException('non-nullable fkiBuyercontractID cannot be null');
+        //}
+
+        //if (($fkiBuyercontractID > 65535)) {
+        if (!is_null($fkiBuyercontractID) && ($fkiBuyercontractID > 65535)) {
+            //throw new \InvalidArgumentException('invalid value for $fkiBuyercontractID when calling InscriptionListElement., must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiBuyercontractID)?'null':'"'.$fkiBuyercontractID.'"').' for fkiBuyercontractID when calling InscriptionListElement., must be smaller than or equal to 65535.');
+        }
+        //if (($fkiBuyercontractID < 1)) {
+        if (!is_null($fkiBuyercontractID) && ($fkiBuyercontractID < 1)) {
+            //throw new \InvalidArgumentException('invalid value for $fkiBuyercontractID when calling InscriptionListElement., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiBuyercontractID)?'null':'"'.$fkiBuyercontractID.'"').' for fkiBuyercontractID when calling InscriptionListElement., must be bigger than or equal to 1.');
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['fkiBuyercontractID'] = $fkiBuyercontractID;
+        $this->container['fkiBuyercontractID'] = (is_null($fkiBuyercontractID) ? null : (int) $fkiBuyercontractID);
+
+        return $this;
+    }
+
+    /**
+     * Gets sBuyercontractContract
+     *
+     * @return string|null
+     */
+    public function getSBuyercontractContract()
+    {
+	//return $this->container['sBuyercontractContract'];
+        return is_null($this->container['sBuyercontractContract']) ? null : trim($this->container['sBuyercontractContract']);
+    }
+
+    /**
+     * Sets sBuyercontractContract
+     *
+     * @param string|null $sBuyercontractContract The number of the Buyercontract
+     *
+     * @return self
+     */
+    public function setSBuyercontractContract($sBuyercontractContract)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sBuyercontractContract)) {
+            //throw new \InvalidArgumentException('non-nullable sBuyercontractContract cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['sBuyercontractContract'] = $sBuyercontractContract;
+        $this->container['sBuyercontractContract'] = (is_null($sBuyercontractContract) ? null : trim((string) $sBuyercontractContract));
+
+        return $this;
+    }
+
+    /**
      * Gets sInscriptiontypeNameX
      *
      * @return string
@@ -923,6 +1034,45 @@ class InscriptionListElement implements ModelInterface, ArrayAccess, \JsonSerial
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
         //$this->container['sInscriptionMLS'] = $sInscriptionMLS;
         $this->container['sInscriptionMLS'] = (is_null($sInscriptionMLS) ? null : trim((string) $sInscriptionMLS));
+
+        return $this;
+    }
+
+    /**
+     * Gets sInscriptionContract
+     *
+     * @return string|null
+     */
+    public function getSInscriptionContract()
+    {
+	//return $this->container['sInscriptionContract'];
+        return is_null($this->container['sInscriptionContract']) ? null : trim($this->container['sInscriptionContract']);
+    }
+
+    /**
+     * Sets sInscriptionContract
+     *
+     * @param string|null $sInscriptionContract The sale contract number
+     *
+     * @return self
+     */
+    public function setSInscriptionContract($sInscriptionContract)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sInscriptionContract)) {
+            //throw new \InvalidArgumentException('non-nullable sInscriptionContract cannot be null');
+        //}
+
+        //if ((!preg_match("/^.{0,20}$/", ObjectSerializer::toString($sInscriptionContract)))) {
+        if (!is_null($sInscriptionContract) && (!preg_match("/(*UTF8)^.{0,20}$/", ObjectSerializer::toString($sInscriptionContract)))) {
+            //throw new \InvalidArgumentException("invalid value for \$sInscriptionContract when calling InscriptionListElement., must conform to the pattern /^.{0,20}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sInscriptionContract)?'null':'"'.$sInscriptionContract.'"')." for sInscriptionContract when calling InscriptionListElement., must conform to the pattern /^.{0,20}$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['sInscriptionContract'] = $sInscriptionContract;
+        $this->container['sInscriptionContract'] = (is_null($sInscriptionContract) ? null : trim((string) $sInscriptionContract));
 
         return $this;
     }

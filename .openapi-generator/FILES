@@ -4,6 +4,7 @@
 .travis.yml
 README.md
 composer.json
+docs/Api/DocumentationEzmaxpartnerApi.md
 docs/Api/GlobalCustomerApi.md
 docs/Api/GlobalEzmaxclientApi.md
 docs/Api/GlobalEzmaxcustomerApi.md
@@ -466,6 +467,7 @@ docs/Model/CustomEzmaxcustomeruserResponse.md
 docs/Model/CustomEzmaxinvoicingEzsigndocumentResponse.md
 docs/Model/CustomEzmaxinvoicingEzsignfolderResponse.md
 docs/Model/CustomEzmaxpartnerListElement.md
+docs/Model/CustomEzmaxpartnerproductSubscribe.md
 docs/Model/CustomEzmaxpricingResponse.md
 docs/Model/CustomEzsigndocumentDuplicateRequest.md
 docs/Model/CustomEzsigndocumentEzsignsignaturesAutomaticResponse.md
@@ -558,6 +560,8 @@ docs/Model/DiscussionmessageRequestCompound.md
 docs/Model/DiscussionmessageRequestPatch.md
 docs/Model/DiscussionmessageResponse.md
 docs/Model/DiscussionmessageResponseCompound.md
+docs/Model/DocumentationSubscribeV1Request.md
+docs/Model/DocumentationSubscribeV1Response.md
 docs/Model/DomainAutocompleteElementResponse.md
 docs/Model/DomainCreateObjectV1Request.md
 docs/Model/DomainCreateObjectV1Response.md
@@ -816,6 +820,8 @@ docs/Model/EzsigndocumentExtractTextV1Request.md
 docs/Model/EzsigndocumentExtractTextV1Response.md
 docs/Model/EzsigndocumentExtractTextV1ResponseMPayload.md
 docs/Model/EzsigndocumentFlattenV1Response.md
+docs/Model/EzsigndocumentGetActionableElementsForSignerV1Response.md
+docs/Model/EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload.md
 docs/Model/EzsigndocumentGetActionableElementsV1Response.md
 docs/Model/EzsigndocumentGetActionableElementsV1ResponseMPayload.md
 docs/Model/EzsigndocumentGetActionableElementsV2Response.md
@@ -900,6 +906,8 @@ docs/Model/EzsignfolderDuplicateV1ResponseMPayload.md
 docs/Model/EzsignfolderEditObjectV3Request.md
 docs/Model/EzsignfolderEditObjectV3Response.md
 docs/Model/EzsignfolderEndPrematurelyV1Response.md
+docs/Model/EzsignfolderGetActionableElementsForSignerV1Response.md
+docs/Model/EzsignfolderGetActionableElementsForSignerV1ResponseMPayload.md
 docs/Model/EzsignfolderGetActionableElementsV1Response.md
 docs/Model/EzsignfolderGetActionableElementsV1ResponseMPayload.md
 docs/Model/EzsignfolderGetActionableElementsV2Response.md
@@ -2091,6 +2099,8 @@ docs/Model/WebhookCreateObjectV2ResponseMPayload.md
 docs/Model/WebhookDeleteObjectV1Response.md
 docs/Model/WebhookEditObjectV1Request.md
 docs/Model/WebhookEditObjectV1Response.md
+docs/Model/WebhookEzmaxpartnerproductSubscribe.md
+docs/Model/WebhookEzmaxpartnerproductUnsubscribe.md
 docs/Model/WebhookEzsignDocumentCompleted.md
 docs/Model/WebhookEzsignDocumentFormCompleted.md
 docs/Model/WebhookEzsignDocumentUnsent.md
@@ -2136,6 +2146,7 @@ docs/Model/WebsocketResponseGetWebsocketIDV1MPayload.md
 docs/Model/WebsocketResponseInformationV1.md
 docs/Model/WebsocketResponseInformationV1MPayload.md
 git_push.sh
+lib/Api/DocumentationEzmaxpartnerApi.php
 lib/Api/GlobalCustomerApi.php
 lib/Api/GlobalEzmaxclientApi.php
 lib/Api/GlobalEzmaxcustomerApi.php
@@ -2602,6 +2613,7 @@ lib/Model/CustomEzmaxcustomeruserResponse.php
 lib/Model/CustomEzmaxinvoicingEzsigndocumentResponse.php
 lib/Model/CustomEzmaxinvoicingEzsignfolderResponse.php
 lib/Model/CustomEzmaxpartnerListElement.php
+lib/Model/CustomEzmaxpartnerproductSubscribe.php
 lib/Model/CustomEzmaxpricingResponse.php
 lib/Model/CustomEzsigndocumentDuplicateRequest.php
 lib/Model/CustomEzsigndocumentEzsignsignaturesAutomaticResponse.php
@@ -2694,6 +2706,8 @@ lib/Model/DiscussionmessageRequestCompound.php
 lib/Model/DiscussionmessageRequestPatch.php
 lib/Model/DiscussionmessageResponse.php
 lib/Model/DiscussionmessageResponseCompound.php
+lib/Model/DocumentationSubscribeV1Request.php
+lib/Model/DocumentationSubscribeV1Response.php
 lib/Model/DomainAutocompleteElementResponse.php
 lib/Model/DomainCreateObjectV1Request.php
 lib/Model/DomainCreateObjectV1Response.php
@@ -2952,6 +2966,8 @@ lib/Model/EzsigndocumentExtractTextV1Request.php
 lib/Model/EzsigndocumentExtractTextV1Response.php
 lib/Model/EzsigndocumentExtractTextV1ResponseMPayload.php
 lib/Model/EzsigndocumentFlattenV1Response.php
+lib/Model/EzsigndocumentGetActionableElementsForSignerV1Response.php
+lib/Model/EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload.php
 lib/Model/EzsigndocumentGetActionableElementsV1Response.php
 lib/Model/EzsigndocumentGetActionableElementsV1ResponseMPayload.php
 lib/Model/EzsigndocumentGetActionableElementsV2Response.php
@@ -3036,6 +3052,8 @@ lib/Model/EzsignfolderDuplicateV1ResponseMPayload.php
 lib/Model/EzsignfolderEditObjectV3Request.php
 lib/Model/EzsignfolderEditObjectV3Response.php
 lib/Model/EzsignfolderEndPrematurelyV1Response.php
+lib/Model/EzsignfolderGetActionableElementsForSignerV1Response.php
+lib/Model/EzsignfolderGetActionableElementsForSignerV1ResponseMPayload.php
 lib/Model/EzsignfolderGetActionableElementsV1Response.php
 lib/Model/EzsignfolderGetActionableElementsV1ResponseMPayload.php
 lib/Model/EzsignfolderGetActionableElementsV2Response.php
@@ -4228,6 +4246,8 @@ lib/Model/WebhookCreateObjectV2ResponseMPayload.php
 lib/Model/WebhookDeleteObjectV1Response.php
 lib/Model/WebhookEditObjectV1Request.php
 lib/Model/WebhookEditObjectV1Response.php
+lib/Model/WebhookEzmaxpartnerproductSubscribe.php
+lib/Model/WebhookEzmaxpartnerproductUnsubscribe.php
 lib/Model/WebhookEzsignDocumentCompleted.php
 lib/Model/WebhookEzsignDocumentFormCompleted.php
 lib/Model/WebhookEzsignDocumentUnsent.php

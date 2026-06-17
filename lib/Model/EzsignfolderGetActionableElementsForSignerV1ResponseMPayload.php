@@ -1,6 +1,6 @@
 <?php
 /**
- * UserImpersonateV1Request
+ * EzsignfolderGetActionableElementsForSignerV1ResponseMPayload
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UserImpersonateV1Request Class Doc Comment
+ * EzsignfolderGetActionableElementsForSignerV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Request for POST /1/object/user/{pkiUserID}/impersonate
+ * @description Payload for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzsignfolderGetActionableElementsForSignerV1ResponseMPayload implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string
      */
-    protected static $openAPIModelName = 'user-impersonate-v1-Request';
+    protected static $openAPIModelName = 'ezsignfolder-getActionableElementsForSigner-v1-Response-mPayload';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,8 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $openAPITypes = [
-        'iExpirationMinutes' => 'int'
+        'aObjEzsignsignature' => '\eZmaxAPI\Model\EzsignsignatureResponseCompound[]',
+        'aObjEzsignformfieldgroup' => '\eZmaxAPI\Model\EzsignformfieldgroupResponseCompound[]'
     ];
 
     /**
@@ -70,7 +71,8 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'iExpirationMinutes' => null
+        'aObjEzsignsignature' => null,
+        'aObjEzsignformfieldgroup' => null
     ];
 
     /**
@@ -79,7 +81,8 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'iExpirationMinutes' => false
+        'aObjEzsignsignature' => false,
+        'aObjEzsignformfieldgroup' => false
     ];
 
     /**
@@ -168,7 +171,8 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'iExpirationMinutes' => 'iExpirationMinutes'
+        'aObjEzsignsignature' => 'a_objEzsignsignature',
+        'aObjEzsignformfieldgroup' => 'a_objEzsignformfieldgroup'
     ];
 
     /**
@@ -177,7 +181,8 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'iExpirationMinutes' => 'setIExpirationMinutes'
+        'aObjEzsignsignature' => 'setAObjEzsignsignature',
+        'aObjEzsignformfieldgroup' => 'setAObjEzsignformfieldgroup'
     ];
 
     /**
@@ -186,7 +191,8 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'iExpirationMinutes' => 'getIExpirationMinutes'
+        'aObjEzsignsignature' => 'getAObjEzsignsignature',
+        'aObjEzsignformfieldgroup' => 'getAObjEzsignformfieldgroup'
     ];
 
     /**
@@ -246,7 +252,8 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('iExpirationMinutes', $data ?? [], null);
+        $this->setIfExists('aObjEzsignsignature', $data ?? [], null);
+        $this->setIfExists('aObjEzsignformfieldgroup', $data ?? [], null);
     }
 
     /**
@@ -276,17 +283,12 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['iExpirationMinutes'] === null) {
-            $invalidProperties[] = "'iExpirationMinutes' can't be null";
+        if ($this->container['aObjEzsignsignature'] === null) {
+            $invalidProperties[] = "'aObjEzsignsignature' can't be null";
         }
-        if (($this->container['iExpirationMinutes'] > 180)) {
-            $invalidProperties[] = "invalid value for 'iExpirationMinutes', must be smaller than or equal to 180.";
+        if ($this->container['aObjEzsignformfieldgroup'] === null) {
+            $invalidProperties[] = "'aObjEzsignformfieldgroup' can't be null";
         }
-
-        if (($this->container['iExpirationMinutes'] < 1)) {
-            $invalidProperties[] = "invalid value for 'iExpirationMinutes', must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -303,45 +305,65 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets iExpirationMinutes
+     * Gets aObjEzsignsignature
      *
-     * @return int
+     * @return \eZmaxAPI\Model\EzsignsignatureResponseCompound[]
      */
-    public function getIExpirationMinutes()
+    public function getAObjEzsignsignature()
     {
-	//return $this->container['iExpirationMinutes'];
-        return $this->container['iExpirationMinutes'];
+	//return $this->container['aObjEzsignsignature'];
+        return $this->container['aObjEzsignsignature'];
     }
 
     /**
-     * Sets iExpirationMinutes
+     * Sets aObjEzsignsignature
      *
-     * @param int $iExpirationMinutes The number of minute before key is no longer active
+     * @param \eZmaxAPI\Model\EzsignsignatureResponseCompound[] $aObjEzsignsignature aObjEzsignsignature
      *
      * @return self
      */
-    public function setIExpirationMinutes($iExpirationMinutes)
+    public function setAObjEzsignsignature($aObjEzsignsignature)
     {
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iExpirationMinutes)) {
-            //throw new \InvalidArgumentException('non-nullable iExpirationMinutes cannot be null');
+        //if (is_null($aObjEzsignsignature)) {
+            //throw new \InvalidArgumentException('non-nullable aObjEzsignsignature cannot be null');
         //}
-
-        //if (($iExpirationMinutes > 180)) {
-        if (($iExpirationMinutes > 180)) {
-            //throw new \InvalidArgumentException('invalid value for $iExpirationMinutes when calling UserImpersonateV1Request., must be smaller than or equal to 180.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iExpirationMinutes)?'null':'"'.$iExpirationMinutes.'"').' for iExpirationMinutes when calling UserImpersonateV1Request., must be smaller than or equal to 180.');
-        }
-        //if (($iExpirationMinutes < 1)) {
-        if (($iExpirationMinutes < 1)) {
-            //throw new \InvalidArgumentException('invalid value for $iExpirationMinutes when calling UserImpersonateV1Request., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iExpirationMinutes)?'null':'"'.$iExpirationMinutes.'"').' for iExpirationMinutes when calling UserImpersonateV1Request., must be bigger than or equal to 1.');
-        }
-
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-        //$this->container['iExpirationMinutes'] = $iExpirationMinutes;
-        $this->container['iExpirationMinutes'] = (is_null($iExpirationMinutes) ? null : (int) $iExpirationMinutes);
+        //$this->container['aObjEzsignsignature'] = $aObjEzsignsignature;
+        $this->container['aObjEzsignsignature'] = $aObjEzsignsignature;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjEzsignformfieldgroup
+     *
+     * @return \eZmaxAPI\Model\EzsignformfieldgroupResponseCompound[]
+     */
+    public function getAObjEzsignformfieldgroup()
+    {
+	//return $this->container['aObjEzsignformfieldgroup'];
+        return $this->container['aObjEzsignformfieldgroup'];
+    }
+
+    /**
+     * Sets aObjEzsignformfieldgroup
+     *
+     * @param \eZmaxAPI\Model\EzsignformfieldgroupResponseCompound[] $aObjEzsignformfieldgroup aObjEzsignformfieldgroup
+     *
+     * @return self
+     */
+    public function setAObjEzsignformfieldgroup($aObjEzsignformfieldgroup)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($aObjEzsignformfieldgroup)) {
+            //throw new \InvalidArgumentException('non-nullable aObjEzsignformfieldgroup cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['aObjEzsignformfieldgroup'] = $aObjEzsignformfieldgroup;
+        $this->container['aObjEzsignformfieldgroup'] = $aObjEzsignformfieldgroup;
 
         return $this;
     }

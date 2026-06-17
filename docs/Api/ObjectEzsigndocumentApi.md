@@ -27,6 +27,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsigndocumentEndPrematurelyV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentEndPrematurelyV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely |
 | [**ezsigndocumentExtractTextV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentExtractTextV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText | Extract text from Ezsigndocument area |
 | [**ezsigndocumentFlattenV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentFlattenV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten |
+| [**ezsigndocumentGetActionableElementsForSignerV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsForSignerV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsigndocument |
 | [**ezsigndocumentGetActionableElementsV1()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocumentGetActionableElementsV2()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocumentGetActionableElementsV3()**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
@@ -1383,6 +1384,74 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigndocumentGetActionableElementsForSignerV1()`
+
+```php
+ezsigndocumentGetActionableElementsForSignerV1($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID, $fkiUserID): \eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1Response
+```
+
+Retrieve actionable elements of a user for the Ezsigndocument
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by a user at the current step in the process
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigndocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigndocumentID = 56; // int
+$eSignerType = 'eSignerType_example'; // string
+$fkiEzsignsignerID = 56; // int
+$fkiUserID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigndocumentGetActionableElementsForSignerV1($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID, $fkiUserID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigndocumentApi->ezsigndocumentGetActionableElementsForSignerV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigndocumentID** | **int**|  | |
+| **eSignerType** | **string**|  | |
+| **fkiEzsignsignerID** | **int**|  | [optional] |
+| **fkiUserID** | **int**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1Response**](../Model/EzsigndocumentGetActionableElementsForSignerV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

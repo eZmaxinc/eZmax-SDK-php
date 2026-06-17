@@ -7,10 +7,13 @@ Name | Type | Description | Notes
 **pkiInscriptionID** | **int** | The unique ID of the Inscription. |
 **pkiInscriptionnotauthenticatedID** | **int** | The unique ID of the Inscriptionnotauthenticated. | [optional]
 **fkiInscriptiontypeID** | **int** | The unique ID of the Inscriptiontype |
+**fkiBuyercontractID** | **int** | The unique ID of the Buyercontract | [optional]
+**sBuyercontractContract** | **string** | The number of the Buyercontract | [optional]
 **sInscriptiontypeNameX** | **string** | The name of the Inscriptiontype in the language of the requester |
 **eInscriptionStep** | [**\eZmaxAPI\Model\FieldEInscriptionStep**](FieldEInscriptionStep.md) |  |
 **sInscriptionCivicend** | **string** | The civicend of the Inscription |
 **sInscriptionMLS** | **string** | The mls of the Inscription | [optional]
+**sInscriptionContract** | **string** | The sale contract number | [optional]
 **dInscriptionSaleprice** | **string** | The saleprice of the Inscription |
 **dInscriptionRentprice** | **string** | The rentprice of the Inscription |
 **dtInscriptionDate** | **string** | The date of the Inscription | [optional]

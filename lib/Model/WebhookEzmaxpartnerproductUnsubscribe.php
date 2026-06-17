@@ -1,6 +1,6 @@
 <?php
 /**
- * UserImpersonateV1Request
+ * WebhookEzmaxpartnerproductUnsubscribe
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * UserImpersonateV1Request Class Doc Comment
+ * WebhookEzmaxpartnerproductUnsubscribe Class Doc Comment
  *
  * @category Class
- * @description Request for POST /1/object/user/{pkiUserID}/impersonate
+ * @description This is the base Webhook object
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
+class WebhookEzmaxpartnerproductUnsubscribe implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string
      */
-    protected static $openAPIModelName = 'user-impersonate-v1-Request';
+    protected static $openAPIModelName = 'Webhook-Ezmaxpartnerproduct-Unsubscribe';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $openAPITypes = [
-        'iExpirationMinutes' => 'int'
+        'objWebhook' => '\eZmaxAPI\Model\CustomWebhookResponse',
+        'aObjAttempt' => '\eZmaxAPI\Model\AttemptResponseCompound[]',
+        'objEzmaxpartnerproduct' => '\eZmaxAPI\Model\CustomEzmaxpartnerproductSubscribe'
     ];
 
     /**
@@ -70,7 +72,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'iExpirationMinutes' => null
+        'objWebhook' => null,
+        'aObjAttempt' => null,
+        'objEzmaxpartnerproduct' => null
     ];
 
     /**
@@ -79,7 +83,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'iExpirationMinutes' => false
+        'objWebhook' => false,
+        'aObjAttempt' => false,
+        'objEzmaxpartnerproduct' => false
     ];
 
     /**
@@ -168,7 +174,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'iExpirationMinutes' => 'iExpirationMinutes'
+        'objWebhook' => 'objWebhook',
+        'aObjAttempt' => 'a_objAttempt',
+        'objEzmaxpartnerproduct' => 'objEzmaxpartnerproduct'
     ];
 
     /**
@@ -177,7 +185,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'iExpirationMinutes' => 'setIExpirationMinutes'
+        'objWebhook' => 'setObjWebhook',
+        'aObjAttempt' => 'setAObjAttempt',
+        'objEzmaxpartnerproduct' => 'setObjEzmaxpartnerproduct'
     ];
 
     /**
@@ -186,7 +196,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'iExpirationMinutes' => 'getIExpirationMinutes'
+        'objWebhook' => 'getObjWebhook',
+        'aObjAttempt' => 'getAObjAttempt',
+        'objEzmaxpartnerproduct' => 'getObjEzmaxpartnerproduct'
     ];
 
     /**
@@ -246,7 +258,9 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('iExpirationMinutes', $data ?? [], null);
+        $this->setIfExists('objWebhook', $data ?? [], null);
+        $this->setIfExists('aObjAttempt', $data ?? [], null);
+        $this->setIfExists('objEzmaxpartnerproduct', $data ?? [], null);
     }
 
     /**
@@ -276,17 +290,15 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['iExpirationMinutes'] === null) {
-            $invalidProperties[] = "'iExpirationMinutes' can't be null";
+        if ($this->container['objWebhook'] === null) {
+            $invalidProperties[] = "'objWebhook' can't be null";
         }
-        if (($this->container['iExpirationMinutes'] > 180)) {
-            $invalidProperties[] = "invalid value for 'iExpirationMinutes', must be smaller than or equal to 180.";
+        if ($this->container['aObjAttempt'] === null) {
+            $invalidProperties[] = "'aObjAttempt' can't be null";
         }
-
-        if (($this->container['iExpirationMinutes'] < 1)) {
-            $invalidProperties[] = "invalid value for 'iExpirationMinutes', must be bigger than or equal to 1.";
+        if ($this->container['objEzmaxpartnerproduct'] === null) {
+            $invalidProperties[] = "'objEzmaxpartnerproduct' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -303,45 +315,97 @@ class UserImpersonateV1Request implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets iExpirationMinutes
+     * Gets objWebhook
      *
-     * @return int
+     * @return \eZmaxAPI\Model\CustomWebhookResponse
      */
-    public function getIExpirationMinutes()
+    public function getObjWebhook()
     {
-	//return $this->container['iExpirationMinutes'];
-        return $this->container['iExpirationMinutes'];
+	//return $this->container['objWebhook'];
+        return $this->container['objWebhook'];
     }
 
     /**
-     * Sets iExpirationMinutes
+     * Sets objWebhook
      *
-     * @param int $iExpirationMinutes The number of minute before key is no longer active
+     * @param \eZmaxAPI\Model\CustomWebhookResponse $objWebhook objWebhook
      *
      * @return self
      */
-    public function setIExpirationMinutes($iExpirationMinutes)
+    public function setObjWebhook($objWebhook)
     {
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($iExpirationMinutes)) {
-            //throw new \InvalidArgumentException('non-nullable iExpirationMinutes cannot be null');
+        //if (is_null($objWebhook)) {
+            //throw new \InvalidArgumentException('non-nullable objWebhook cannot be null');
         //}
-
-        //if (($iExpirationMinutes > 180)) {
-        if (($iExpirationMinutes > 180)) {
-            //throw new \InvalidArgumentException('invalid value for $iExpirationMinutes when calling UserImpersonateV1Request., must be smaller than or equal to 180.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iExpirationMinutes)?'null':'"'.$iExpirationMinutes.'"').' for iExpirationMinutes when calling UserImpersonateV1Request., must be smaller than or equal to 180.');
-        }
-        //if (($iExpirationMinutes < 1)) {
-        if (($iExpirationMinutes < 1)) {
-            //throw new \InvalidArgumentException('invalid value for $iExpirationMinutes when calling UserImpersonateV1Request., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($iExpirationMinutes)?'null':'"'.$iExpirationMinutes.'"').' for iExpirationMinutes when calling UserImpersonateV1Request., must be bigger than or equal to 1.');
-        }
-
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-        //$this->container['iExpirationMinutes'] = $iExpirationMinutes;
-        $this->container['iExpirationMinutes'] = (is_null($iExpirationMinutes) ? null : (int) $iExpirationMinutes);
+        //$this->container['objWebhook'] = $objWebhook;
+        $this->container['objWebhook'] = $objWebhook;
+
+        return $this;
+    }
+
+    /**
+     * Gets aObjAttempt
+     *
+     * @return \eZmaxAPI\Model\AttemptResponseCompound[]
+     */
+    public function getAObjAttempt()
+    {
+	//return $this->container['aObjAttempt'];
+        return $this->container['aObjAttempt'];
+    }
+
+    /**
+     * Sets aObjAttempt
+     *
+     * @param \eZmaxAPI\Model\AttemptResponseCompound[] $aObjAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+     *
+     * @return self
+     */
+    public function setAObjAttempt($aObjAttempt)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($aObjAttempt)) {
+            //throw new \InvalidArgumentException('non-nullable aObjAttempt cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['aObjAttempt'] = $aObjAttempt;
+        $this->container['aObjAttempt'] = $aObjAttempt;
+
+        return $this;
+    }
+
+    /**
+     * Gets objEzmaxpartnerproduct
+     *
+     * @return \eZmaxAPI\Model\CustomEzmaxpartnerproductSubscribe
+     */
+    public function getObjEzmaxpartnerproduct()
+    {
+	//return $this->container['objEzmaxpartnerproduct'];
+        return $this->container['objEzmaxpartnerproduct'];
+    }
+
+    /**
+     * Sets objEzmaxpartnerproduct
+     *
+     * @param \eZmaxAPI\Model\CustomEzmaxpartnerproductSubscribe $objEzmaxpartnerproduct objEzmaxpartnerproduct
+     *
+     * @return self
+     */
+    public function setObjEzmaxpartnerproduct($objEzmaxpartnerproduct)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objEzmaxpartnerproduct)) {
+            //throw new \InvalidArgumentException('non-nullable objEzmaxpartnerproduct cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['objEzmaxpartnerproduct'] = $objEzmaxpartnerproduct;
+        $this->container['objEzmaxpartnerproduct'] = $objEzmaxpartnerproduct;
 
         return $this;
     }

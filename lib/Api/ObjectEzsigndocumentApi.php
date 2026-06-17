@@ -139,6 +139,9 @@ class ObjectEzsigndocumentApi
         'ezsigndocumentFlattenV1' => [
             'application/json',
         ],
+        'ezsigndocumentGetActionableElementsForSignerV1' => [
+            'application/json',
+        ],
         'ezsigndocumentGetActionableElementsV1' => [
             'application/json',
         ],
@@ -514,6 +517,21 @@ class ObjectEzsigndocumentApi
             'deprecated' => false,
         ],
         'ezsigndocumentFlattenV1' => [
+            'systemconfigurationtype' => [
+                'All',
+            ],
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
+                'AgentBroker',
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'ezsigndocumentGetActionableElementsForSignerV1' => [
             'systemconfigurationtype' => [
                 'All',
             ],
@@ -7856,6 +7874,379 @@ class ObjectEzsigndocumentApi
 
         return new Request(
             'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation ezsigndocumentGetActionableElementsForSignerV1
+     *
+     * Retrieve actionable elements of a user for the Ezsigndocument
+     *
+     * @param  int $pkiEzsigndocumentID pkiEzsigndocumentID (required)
+     * @param  string $eSignerType eSignerType (required)
+     * @param  int|null $fkiEzsignsignerID fkiEzsignsignerID (optional)
+     * @param  int|null $fkiUserID fkiUserID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function ezsigndocumentGetActionableElementsForSignerV1($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID = null, $fkiUserID = null, string $contentType = self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'][0])
+    {
+        list($response) = $this->ezsigndocumentGetActionableElementsForSignerV1WithHttpInfo($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID, $fkiUserID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation ezsigndocumentGetActionableElementsForSignerV1WithHttpInfo
+     *
+     * Retrieve actionable elements of a user for the Ezsigndocument
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  string $eSignerType (required)
+     * @param  int|null $fkiEzsignsignerID (optional)
+     * @param  int|null $fkiUserID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function ezsigndocumentGetActionableElementsForSignerV1WithHttpInfo($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID = null, $fkiUserID = null, string $contentType = self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'][0])
+    {
+        $request = $this->ezsigndocumentGetActionableElementsForSignerV1Request($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID, $fkiUserID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation ezsigndocumentGetActionableElementsForSignerV1Async
+     *
+     * Retrieve actionable elements of a user for the Ezsigndocument
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  string $eSignerType (required)
+     * @param  int|null $fkiEzsignsignerID (optional)
+     * @param  int|null $fkiUserID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigndocumentGetActionableElementsForSignerV1Async($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID = null, $fkiUserID = null, string $contentType = self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'][0])
+    {
+        return $this->ezsigndocumentGetActionableElementsForSignerV1AsyncWithHttpInfo($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID, $fkiUserID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation ezsigndocumentGetActionableElementsForSignerV1AsyncWithHttpInfo
+     *
+     * Retrieve actionable elements of a user for the Ezsigndocument
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  string $eSignerType (required)
+     * @param  int|null $fkiEzsignsignerID (optional)
+     * @param  int|null $fkiUserID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function ezsigndocumentGetActionableElementsForSignerV1AsyncWithHttpInfo($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID = null, $fkiUserID = null, string $contentType = self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\EzsigndocumentGetActionableElementsForSignerV1Response';
+        $request = $this->ezsigndocumentGetActionableElementsForSignerV1Request($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID, $fkiUserID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'ezsigndocumentGetActionableElementsForSignerV1'
+     *
+     * @param  int $pkiEzsigndocumentID (required)
+     * @param  string $eSignerType (required)
+     * @param  int|null $fkiEzsignsignerID (optional)
+     * @param  int|null $fkiUserID (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function ezsigndocumentGetActionableElementsForSignerV1Request($pkiEzsigndocumentID, $eSignerType, $fkiEzsignsignerID = null, $fkiUserID = null, string $contentType = self::contentTypes['ezsigndocumentGetActionableElementsForSignerV1'][0])
+    {
+
+        // verify the required parameter 'pkiEzsigndocumentID' is set
+        if ($pkiEzsigndocumentID === null || (is_array($pkiEzsigndocumentID) && count($pkiEzsigndocumentID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiEzsigndocumentID when calling ezsigndocumentGetActionableElementsForSignerV1'
+            );
+        }
+        if ($pkiEzsigndocumentID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiEzsigndocumentID" when calling ObjectEzsigndocumentApi.ezsigndocumentGetActionableElementsForSignerV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiEzsigndocumentID)?'null':'"'.$pkiEzsigndocumentID.'"').' for "pkiEzsigndocumentID" when calling ObjectEzsigndocumentApi.ezsigndocumentGetActionableElementsForSignerV1, must be bigger than or equal to 0.');
+        }
+        
+        // verify the required parameter 'eSignerType' is set
+        if ($eSignerType === null || (is_array($eSignerType) && count($eSignerType) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $eSignerType when calling ezsigndocumentGetActionableElementsForSignerV1'
+            );
+        }
+
+        if ($fkiEzsignsignerID !== null && $fkiEzsignsignerID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$fkiEzsignsignerID" when calling ObjectEzsigndocumentApi.ezsigndocumentGetActionableElementsForSignerV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzsignsignerID)?'null':'"'.$fkiEzsignsignerID.'"').' for "fkiEzsignsignerID" when calling ObjectEzsigndocumentApi.ezsigndocumentGetActionableElementsForSignerV1, must be bigger than or equal to 0.');
+        }
+        
+        if ($fkiUserID !== null && $fkiUserID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$fkiUserID" when calling ObjectEzsigndocumentApi.ezsigndocumentGetActionableElementsForSignerV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserID)?'null':'"'.$fkiUserID.'"').' for "fkiUserID" when calling ObjectEzsigndocumentApi.ezsigndocumentGetActionableElementsForSignerV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElementsForSigner';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eSignerType,
+            'eSignerType', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $fkiEzsignsignerID,
+            'fkiEzsignsignerID', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $fkiUserID,
+            'fkiUserID', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($pkiEzsigndocumentID !== null) {
+            $resourcePath = str_replace(
+                '{pkiEzsigndocumentID}',
+                ObjectSerializer::toPathValue($pkiEzsigndocumentID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

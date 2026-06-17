@@ -49,20 +49,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new eZmaxAPI\Api\GlobalCustomerApi(
+
+$apiInstance = new eZmaxAPI\Api\DocumentationEzmaxpartnerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$pksCustomerCode = 'pksCustomerCode_example'; // string
-$sInfrastructureproductCode = 'sInfrastructureproductCode_example'; // string | The infrastructure product Code  If undefined, \"appcluster01\" is assumed
+$documentationSubscribeV1Request = new \eZmaxAPI\Model\DocumentationSubscribeV1Request(); // \eZmaxAPI\Model\DocumentationSubscribeV1Request | 
 
 try {
-    $result = $apiInstance->globalCustomerGetEndpointV1($pksCustomerCode, $sInfrastructureproductCode);
+    $result = $apiInstance->documentationSubscribeV1($documentationSubscribeV1Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GlobalCustomerApi->globalCustomerGetEndpointV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DocumentationEzmaxpartnerApi->documentationSubscribeV1: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -73,6 +78,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DocumentationEzmaxpartnerApi* | [**documentationSubscribeV1**](docs/Api/DocumentationEzmaxpartnerApi.md#documentationsubscribev1) | **POST** /1/documentation/subscribe | Subscribe to an Ezmaxparnerproductstage
 *GlobalCustomerApi* | [**globalCustomerGetEndpointV1**](docs/Api/GlobalCustomerApi.md#globalcustomergetendpointv1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
 *GlobalEzmaxclientApi* | [**globalEzmaxclientVersionV1**](docs/Api/GlobalEzmaxclientApi.md#globalezmaxclientversionv1) | **GET** /1/ezmaxclient/{pksEzmaxclientOs}/version | Retrieve the latest version of the Ezmaxclient
 *GlobalEzmaxcustomerApi* | [**globalEzmaxcustomerGetConfigurationV1**](docs/Api/GlobalEzmaxcustomerApi.md#globalezmaxcustomergetconfigurationv1) | **GET** /1/ezmaxcustomer/{pksEzmaxcustomerCode}/getConfiguration | Get ezmaxcustomer configuration
@@ -251,6 +257,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsigndocumentApi* | [**ezsigndocumentEndPrematurelyV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentendprematurelyv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely
 *ObjectEzsigndocumentApi* | [**ezsigndocumentExtractTextV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentextracttextv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText | Extract text from Ezsigndocument area
 *ObjectEzsigndocumentApi* | [**ezsigndocumentFlattenV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentflattenv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten
+*ObjectEzsigndocumentApi* | [**ezsigndocumentGetActionableElementsForSignerV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgetactionableelementsforsignerv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentGetActionableElementsV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgetactionableelementsv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentGetActionableElementsV2**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgetactionableelementsv2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentGetActionableElementsV3**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgetactionableelementsv3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
@@ -286,6 +293,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolderDuplicateV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderduplicatev1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/duplicate | Duplicate the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderEditObjectV3**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldereditobjectv3) | **PUT** /3/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderEndPrematurelyV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderendprematurelyv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely
+*ObjectEzsignfolderApi* | [**ezsignfolderGetActionableElementsForSignerV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetactionableelementsforsignerv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderGetActionableElementsV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetactionableelementsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderGetActionableElementsV2**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetactionableelementsv2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderGetActionableElementsV3**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetactionableelementsv3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
@@ -959,6 +967,7 @@ Class | Method | HTTP request | Description
 - [CustomEzmaxinvoicingEzsigndocumentResponse](docs/Model/CustomEzmaxinvoicingEzsigndocumentResponse.md)
 - [CustomEzmaxinvoicingEzsignfolderResponse](docs/Model/CustomEzmaxinvoicingEzsignfolderResponse.md)
 - [CustomEzmaxpartnerListElement](docs/Model/CustomEzmaxpartnerListElement.md)
+- [CustomEzmaxpartnerproductSubscribe](docs/Model/CustomEzmaxpartnerproductSubscribe.md)
 - [CustomEzmaxpricingResponse](docs/Model/CustomEzmaxpricingResponse.md)
 - [CustomEzsigndocumentDuplicateRequest](docs/Model/CustomEzsigndocumentDuplicateRequest.md)
 - [CustomEzsigndocumentEzsignsignaturesAutomaticResponse](docs/Model/CustomEzsigndocumentEzsignsignaturesAutomaticResponse.md)
@@ -1051,6 +1060,8 @@ Class | Method | HTTP request | Description
 - [DiscussionmessageRequestPatch](docs/Model/DiscussionmessageRequestPatch.md)
 - [DiscussionmessageResponse](docs/Model/DiscussionmessageResponse.md)
 - [DiscussionmessageResponseCompound](docs/Model/DiscussionmessageResponseCompound.md)
+- [DocumentationSubscribeV1Request](docs/Model/DocumentationSubscribeV1Request.md)
+- [DocumentationSubscribeV1Response](docs/Model/DocumentationSubscribeV1Response.md)
 - [DomainAutocompleteElementResponse](docs/Model/DomainAutocompleteElementResponse.md)
 - [DomainCreateObjectV1Request](docs/Model/DomainCreateObjectV1Request.md)
 - [DomainCreateObjectV1Response](docs/Model/DomainCreateObjectV1Response.md)
@@ -1309,6 +1320,8 @@ Class | Method | HTTP request | Description
 - [EzsigndocumentExtractTextV1Response](docs/Model/EzsigndocumentExtractTextV1Response.md)
 - [EzsigndocumentExtractTextV1ResponseMPayload](docs/Model/EzsigndocumentExtractTextV1ResponseMPayload.md)
 - [EzsigndocumentFlattenV1Response](docs/Model/EzsigndocumentFlattenV1Response.md)
+- [EzsigndocumentGetActionableElementsForSignerV1Response](docs/Model/EzsigndocumentGetActionableElementsForSignerV1Response.md)
+- [EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload](docs/Model/EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload.md)
 - [EzsigndocumentGetActionableElementsV1Response](docs/Model/EzsigndocumentGetActionableElementsV1Response.md)
 - [EzsigndocumentGetActionableElementsV1ResponseMPayload](docs/Model/EzsigndocumentGetActionableElementsV1ResponseMPayload.md)
 - [EzsigndocumentGetActionableElementsV2Response](docs/Model/EzsigndocumentGetActionableElementsV2Response.md)
@@ -1393,6 +1406,8 @@ Class | Method | HTTP request | Description
 - [EzsignfolderEditObjectV3Request](docs/Model/EzsignfolderEditObjectV3Request.md)
 - [EzsignfolderEditObjectV3Response](docs/Model/EzsignfolderEditObjectV3Response.md)
 - [EzsignfolderEndPrematurelyV1Response](docs/Model/EzsignfolderEndPrematurelyV1Response.md)
+- [EzsignfolderGetActionableElementsForSignerV1Response](docs/Model/EzsignfolderGetActionableElementsForSignerV1Response.md)
+- [EzsignfolderGetActionableElementsForSignerV1ResponseMPayload](docs/Model/EzsignfolderGetActionableElementsForSignerV1ResponseMPayload.md)
 - [EzsignfolderGetActionableElementsV1Response](docs/Model/EzsignfolderGetActionableElementsV1Response.md)
 - [EzsignfolderGetActionableElementsV1ResponseMPayload](docs/Model/EzsignfolderGetActionableElementsV1ResponseMPayload.md)
 - [EzsignfolderGetActionableElementsV2Response](docs/Model/EzsignfolderGetActionableElementsV2Response.md)
@@ -2584,6 +2599,8 @@ Class | Method | HTTP request | Description
 - [WebhookDeleteObjectV1Response](docs/Model/WebhookDeleteObjectV1Response.md)
 - [WebhookEditObjectV1Request](docs/Model/WebhookEditObjectV1Request.md)
 - [WebhookEditObjectV1Response](docs/Model/WebhookEditObjectV1Response.md)
+- [WebhookEzmaxpartnerproductSubscribe](docs/Model/WebhookEzmaxpartnerproductSubscribe.md)
+- [WebhookEzmaxpartnerproductUnsubscribe](docs/Model/WebhookEzmaxpartnerproductUnsubscribe.md)
 - [WebhookEzsignDocumentCompleted](docs/Model/WebhookEzsignDocumentCompleted.md)
 - [WebhookEzsignDocumentFormCompleted](docs/Model/WebhookEzsignDocumentFormCompleted.md)
 - [WebhookEzsignDocumentUnsent](docs/Model/WebhookEzsignDocumentUnsent.md)

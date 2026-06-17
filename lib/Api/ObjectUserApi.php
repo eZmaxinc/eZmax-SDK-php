@@ -400,7 +400,9 @@ class ObjectUserApi
                 'All',
             ],
             'permissions' => [
-                'All',
+                'Impersonate_Impersonate',
+                'Impersonate_ImpersonateBrokerAgency',
+                'Impersonate_ImpersonateEmployee',
             ],
             'usertypeextra' => [
             ],
