@@ -1,4 +1,4 @@
-# # UserstagedGetListV1Response
+# UserstagedGetListV1Response
 
 ## Properties
 

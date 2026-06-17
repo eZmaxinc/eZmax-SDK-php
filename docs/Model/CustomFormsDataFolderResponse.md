@@ -1,4 +1,4 @@
-# # CustomFormsDataFolderResponse
+# CustomFormsDataFolderResponse
 
 ## Properties
 

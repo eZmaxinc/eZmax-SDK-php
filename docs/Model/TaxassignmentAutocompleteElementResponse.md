@@ -1,4 +1,4 @@
-# # TaxassignmentAutocompleteElementResponse
+# TaxassignmentAutocompleteElementResponse
 
 ## Properties
 

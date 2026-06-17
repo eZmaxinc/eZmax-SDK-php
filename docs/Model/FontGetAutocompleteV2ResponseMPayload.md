@@ -1,4 +1,4 @@
-# # FontGetAutocompleteV2ResponseMPayload
+# FontGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

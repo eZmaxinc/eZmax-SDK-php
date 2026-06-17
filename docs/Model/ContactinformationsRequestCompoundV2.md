@@ -1,4 +1,4 @@
-# # ContactinformationsRequestCompoundV2
+# ContactinformationsRequestCompoundV2
 
 ## Properties
 

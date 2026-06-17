@@ -1,4 +1,4 @@
-# # DomainCreateObjectV1Response
+# DomainCreateObjectV1Response
 
 ## Properties
 

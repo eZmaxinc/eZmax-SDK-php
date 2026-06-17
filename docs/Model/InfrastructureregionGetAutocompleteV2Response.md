@@ -1,4 +1,4 @@
-# # InfrastructureregionGetAutocompleteV2Response
+# InfrastructureregionGetAutocompleteV2Response
 
 ## Properties
 

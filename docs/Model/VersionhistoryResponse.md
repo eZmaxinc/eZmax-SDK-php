@@ -1,4 +1,4 @@
-# # VersionhistoryResponse
+# VersionhistoryResponse
 
 ## Properties
 

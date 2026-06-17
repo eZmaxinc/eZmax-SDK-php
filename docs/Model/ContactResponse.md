@@ -1,4 +1,4 @@
-# # ContactResponse
+# ContactResponse
 
 ## Properties
 

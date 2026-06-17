@@ -1,4 +1,4 @@
-# # DiscussionmessageCreateObjectV1Request
+# DiscussionmessageCreateObjectV1Request
 
 ## Properties
 

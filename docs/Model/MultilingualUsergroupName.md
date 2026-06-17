@@ -1,4 +1,4 @@
-# # MultilingualUsergroupName
+# MultilingualUsergroupName
 
 ## Properties
 

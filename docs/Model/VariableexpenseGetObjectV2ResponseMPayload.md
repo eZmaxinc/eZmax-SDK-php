@@ -1,4 +1,4 @@
-# # VariableexpenseGetObjectV2ResponseMPayload
+# VariableexpenseGetObjectV2ResponseMPayload
 
 ## Properties
 

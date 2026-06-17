@@ -1,4 +1,4 @@
-# # UsergroupexternalmembershipResponseCompound
+# UsergroupexternalmembershipResponseCompound
 
 ## Properties
 

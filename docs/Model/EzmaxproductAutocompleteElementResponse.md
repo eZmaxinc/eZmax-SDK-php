@@ -1,4 +1,4 @@
-# # EzmaxproductAutocompleteElementResponse
+# EzmaxproductAutocompleteElementResponse
 
 ## Properties
 

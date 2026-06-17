@@ -1,4 +1,4 @@
-# # AuthenticationexternalListElement
+# AuthenticationexternalListElement
 
 ## Properties
 

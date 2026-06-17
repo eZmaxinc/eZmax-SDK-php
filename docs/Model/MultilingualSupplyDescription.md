@@ -1,4 +1,4 @@
-# # MultilingualSupplyDescription
+# MultilingualSupplyDescription
 
 ## Properties
 

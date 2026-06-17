@@ -1,4 +1,4 @@
-# # BillingentityinternalGetObjectV2ResponseMPayload
+# BillingentityinternalGetObjectV2ResponseMPayload
 
 ## Properties
 

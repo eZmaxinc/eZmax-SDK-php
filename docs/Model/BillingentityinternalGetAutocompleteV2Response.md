@@ -1,4 +1,4 @@
-# # BillingentityinternalGetAutocompleteV2Response
+# BillingentityinternalGetAutocompleteV2Response
 
 ## Properties
 

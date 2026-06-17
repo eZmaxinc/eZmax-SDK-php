@@ -1,4 +1,4 @@
-# # BrandingResponseV3
+# BrandingResponseV3
 
 ## Properties
 

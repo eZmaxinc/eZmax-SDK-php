@@ -1,4 +1,4 @@
-# # MultilingualEzsignsignergroupDescription
+# MultilingualEzsignsignergroupDescription
 
 ## Properties
 

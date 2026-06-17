@@ -1,4 +1,4 @@
-# # PermissionCreateObjectV1Request
+# PermissionCreateObjectV1Request
 
 ## Properties
 

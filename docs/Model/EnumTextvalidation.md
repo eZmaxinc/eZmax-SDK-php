@@ -1,4 +1,4 @@
-# # EnumTextvalidation
+# EnumTextvalidation
 
 ## Properties
 

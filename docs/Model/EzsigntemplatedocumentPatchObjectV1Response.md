@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentPatchObjectV1Response
+# EzsigntemplatedocumentPatchObjectV1Response
 
 ## Properties
 

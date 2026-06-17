@@ -1,4 +1,4 @@
-# # CreditcardclientCreateObjectV1Response
+# CreditcardclientCreateObjectV1Response
 
 ## Properties
 

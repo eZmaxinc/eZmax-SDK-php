@@ -1,4 +1,4 @@
-# # DiscussionGetObjectV2Response
+# DiscussionGetObjectV2Response
 
 ## Properties
 

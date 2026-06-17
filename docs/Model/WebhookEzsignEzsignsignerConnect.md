@@ -1,4 +1,4 @@
-# # WebhookEzsignEzsignsignerConnect
+# WebhookEzsignEzsignsignerConnect
 
 ## Properties
 

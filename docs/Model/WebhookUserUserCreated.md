@@ -1,4 +1,4 @@
-# # WebhookUserUserCreated
+# WebhookUserUserCreated
 
 ## Properties
 

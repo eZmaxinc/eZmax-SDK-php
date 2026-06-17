@@ -1,4 +1,4 @@
-# # VersionhistoryGetObjectV2Response
+# VersionhistoryGetObjectV2Response
 
 ## Properties
 

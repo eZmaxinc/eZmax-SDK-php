@@ -1,4 +1,4 @@
-# # WebhookRegenerateApikeyV1ResponseMPayload
+# WebhookRegenerateApikeyV1ResponseMPayload
 
 ## Properties
 

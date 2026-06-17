@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicRequestCompound
+# EzsigntemplatepublicRequestCompound
 
 ## Properties
 

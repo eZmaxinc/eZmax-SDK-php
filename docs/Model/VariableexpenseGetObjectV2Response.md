@@ -1,4 +1,4 @@
-# # VariableexpenseGetObjectV2Response
+# VariableexpenseGetObjectV2Response
 
 ## Properties
 

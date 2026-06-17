@@ -1,4 +1,4 @@
-# # EzsignpageConsultV1Response
+# EzsignpageConsultV1Response
 
 ## Properties
 

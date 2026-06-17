@@ -1,4 +1,4 @@
-# # VariableexpenseAutocompleteElementResponse
+# VariableexpenseAutocompleteElementResponse
 
 ## Properties
 

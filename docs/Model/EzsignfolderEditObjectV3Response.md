@@ -1,4 +1,4 @@
-# # EzsignfolderEditObjectV3Response
+# EzsignfolderEditObjectV3Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CreditcardtypeGetAutocompleteV2ResponseMPayload
+# CreditcardtypeGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

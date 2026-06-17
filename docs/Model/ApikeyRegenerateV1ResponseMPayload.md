@@ -1,4 +1,4 @@
-# # ApikeyRegenerateV1ResponseMPayload
+# ApikeyRegenerateV1ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignfoldertypeGetAutocompleteV2ResponseMPayload
+# EzsignfoldertypeGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

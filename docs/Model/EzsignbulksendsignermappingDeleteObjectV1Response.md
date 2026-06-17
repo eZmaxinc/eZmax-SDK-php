@@ -1,4 +1,4 @@
-# # EzsignbulksendsignermappingDeleteObjectV1Response
+# EzsignbulksendsignermappingDeleteObjectV1Response
 
 ## Properties
 

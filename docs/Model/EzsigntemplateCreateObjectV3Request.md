@@ -1,4 +1,4 @@
-# # EzsigntemplateCreateObjectV3Request
+# EzsigntemplateCreateObjectV3Request
 
 ## Properties
 

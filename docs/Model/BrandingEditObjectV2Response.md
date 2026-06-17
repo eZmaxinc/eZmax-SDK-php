@@ -1,4 +1,4 @@
-# # BrandingEditObjectV2Response
+# BrandingEditObjectV2Response
 
 ## Properties
 

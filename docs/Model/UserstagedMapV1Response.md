@@ -1,4 +1,4 @@
-# # UserstagedMapV1Response
+# UserstagedMapV1Response
 
 ## Properties
 

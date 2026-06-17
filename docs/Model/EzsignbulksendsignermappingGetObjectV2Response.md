@@ -1,4 +1,4 @@
-# # EzsignbulksendsignermappingGetObjectV2Response
+# EzsignbulksendsignermappingGetObjectV2Response
 
 ## Properties
 

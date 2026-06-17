@@ -1,4 +1,4 @@
-# # SubnetRequest
+# SubnetRequest
 
 ## Properties
 

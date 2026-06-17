@@ -1,4 +1,4 @@
-# # PhoneResponseCompound
+# PhoneResponseCompound
 
 ## Properties
 

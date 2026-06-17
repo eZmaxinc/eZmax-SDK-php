@@ -1,4 +1,4 @@
-# # FranchisebrokerGetAutocompleteV2ResponseMPayload
+# FranchisebrokerGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

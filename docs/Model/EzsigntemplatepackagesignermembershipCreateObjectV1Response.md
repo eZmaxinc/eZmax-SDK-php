@@ -1,4 +1,4 @@
-# # EzsigntemplatepackagesignermembershipCreateObjectV1Response
+# EzsigntemplatepackagesignermembershipCreateObjectV1Response
 
 ## Properties
 

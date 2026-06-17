@@ -1,4 +1,4 @@
-# # InvoiceGetCommunicationsendersV1Response
+# InvoiceGetCommunicationsendersV1Response
 
 ## Properties
 

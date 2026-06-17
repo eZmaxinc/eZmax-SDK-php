@@ -1,4 +1,4 @@
-# # DomainGetAutocompleteV2Response
+# DomainGetAutocompleteV2Response
 
 ## Properties
 

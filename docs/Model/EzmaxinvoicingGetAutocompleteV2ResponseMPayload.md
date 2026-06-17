@@ -1,4 +1,4 @@
-# # EzmaxinvoicingGetAutocompleteV2ResponseMPayload
+# EzmaxinvoicingGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

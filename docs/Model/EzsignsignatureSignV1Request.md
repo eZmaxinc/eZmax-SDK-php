@@ -1,4 +1,4 @@
-# # EzsignsignatureSignV1Request
+# EzsignsignatureSignV1Request
 
 ## Properties
 

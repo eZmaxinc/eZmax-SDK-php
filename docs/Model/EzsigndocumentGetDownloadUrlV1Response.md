@@ -1,4 +1,4 @@
-# # EzsigndocumentGetDownloadUrlV1Response
+# EzsigndocumentGetDownloadUrlV1Response
 
 ## Properties
 

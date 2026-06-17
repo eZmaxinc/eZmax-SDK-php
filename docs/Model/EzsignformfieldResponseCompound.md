@@ -1,4 +1,4 @@
-# # EzsignformfieldResponseCompound
+# EzsignformfieldResponseCompound
 
 ## Properties
 

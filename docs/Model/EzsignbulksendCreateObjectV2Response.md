@@ -1,4 +1,4 @@
-# # EzsignbulksendCreateObjectV2Response
+# EzsignbulksendCreateObjectV2Response
 
 ## Properties
 

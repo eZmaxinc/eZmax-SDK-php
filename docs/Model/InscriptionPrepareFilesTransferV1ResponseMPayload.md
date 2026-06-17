@@ -1,4 +1,4 @@
-# # InscriptionPrepareFilesTransferV1ResponseMPayload
+# InscriptionPrepareFilesTransferV1ResponseMPayload
 
 ## Properties
 

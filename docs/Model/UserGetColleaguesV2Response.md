@@ -1,4 +1,4 @@
-# # UserGetColleaguesV2Response
+# UserGetColleaguesV2Response
 
 ## Properties
 

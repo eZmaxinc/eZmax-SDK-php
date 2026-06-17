@@ -1,4 +1,4 @@
-# # LanguageGetAutocompleteV2Response
+# LanguageGetAutocompleteV2Response
 
 ## Properties
 

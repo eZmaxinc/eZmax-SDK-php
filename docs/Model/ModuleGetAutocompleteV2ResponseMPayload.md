@@ -1,4 +1,4 @@
-# # ModuleGetAutocompleteV2ResponseMPayload
+# ModuleGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

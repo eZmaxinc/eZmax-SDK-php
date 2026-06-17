@@ -1,4 +1,4 @@
-# # BrandingCreateObjectV2Response
+# BrandingCreateObjectV2Response
 
 ## Properties
 

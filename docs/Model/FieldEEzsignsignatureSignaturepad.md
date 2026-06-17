@@ -1,4 +1,4 @@
-# # FieldEEzsignsignatureSignaturepad
+# FieldEEzsignsignatureSignaturepad
 
 ## Properties
 

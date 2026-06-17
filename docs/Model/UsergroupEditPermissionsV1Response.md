@@ -1,4 +1,4 @@
-# # UsergroupEditPermissionsV1Response
+# UsergroupEditPermissionsV1Response
 
 ## Properties
 

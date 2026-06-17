@@ -1,4 +1,4 @@
-# # EzsigntemplatepackageGetListV1ResponseMPayload
+# EzsigntemplatepackageGetListV1ResponseMPayload
 
 ## Properties
 

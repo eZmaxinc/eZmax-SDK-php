@@ -1,4 +1,4 @@
-# # BillingentityexternalGetAutocompleteV2Response
+# BillingentityexternalGetAutocompleteV2Response
 
 ## Properties
 

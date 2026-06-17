@@ -1,4 +1,4 @@
-# # EzsignfolderDisposeEzsignfoldersV1Response
+# EzsignfolderDisposeEzsignfoldersV1Response
 
 ## Properties
 

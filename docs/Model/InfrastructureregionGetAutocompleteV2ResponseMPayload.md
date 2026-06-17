@@ -1,4 +1,4 @@
-# # InfrastructureregionGetAutocompleteV2ResponseMPayload
+# InfrastructureregionGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

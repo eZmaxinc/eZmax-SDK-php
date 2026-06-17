@@ -1,4 +1,4 @@
-# # PeriodGetAutocompleteV2ResponseMPayload
+# PeriodGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

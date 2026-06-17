@@ -1,4 +1,4 @@
-# # CorsRequestCompound
+# CorsRequestCompound
 
 ## Properties
 

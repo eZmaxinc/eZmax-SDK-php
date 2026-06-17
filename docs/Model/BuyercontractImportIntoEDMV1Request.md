@@ -1,4 +1,4 @@
-# # BuyercontractImportIntoEDMV1Request
+# BuyercontractImportIntoEDMV1Request
 
 ## Properties
 

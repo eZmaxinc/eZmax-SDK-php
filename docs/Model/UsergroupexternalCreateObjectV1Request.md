@@ -1,4 +1,4 @@
-# # UsergroupexternalCreateObjectV1Request
+# UsergroupexternalCreateObjectV1Request
 
 ## Properties
 

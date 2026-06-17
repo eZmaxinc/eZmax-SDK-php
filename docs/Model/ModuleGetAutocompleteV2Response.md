@@ -1,4 +1,4 @@
-# # ModuleGetAutocompleteV2Response
+# ModuleGetAutocompleteV2Response
 
 ## Properties
 

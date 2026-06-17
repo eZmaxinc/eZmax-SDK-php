@@ -1,4 +1,4 @@
-# # NotificationsubsectionResponse
+# NotificationsubsectionResponse
 
 ## Properties
 

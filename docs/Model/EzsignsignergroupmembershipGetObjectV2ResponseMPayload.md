@@ -1,4 +1,4 @@
-# # EzsignsignergroupmembershipGetObjectV2ResponseMPayload
+# EzsignsignergroupmembershipGetObjectV2ResponseMPayload
 
 ## Properties
 

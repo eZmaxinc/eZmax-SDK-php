@@ -1,4 +1,4 @@
-# # CountryGetAutocompleteV2Response
+# CountryGetAutocompleteV2Response
 
 ## Properties
 

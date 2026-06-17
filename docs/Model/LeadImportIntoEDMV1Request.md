@@ -1,4 +1,4 @@
-# # LeadImportIntoEDMV1Request
+# LeadImportIntoEDMV1Request
 
 ## Properties
 

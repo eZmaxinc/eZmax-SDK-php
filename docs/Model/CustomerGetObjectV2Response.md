@@ -1,4 +1,4 @@
-# # CustomerGetObjectV2Response
+# CustomerGetObjectV2Response
 
 ## Properties
 

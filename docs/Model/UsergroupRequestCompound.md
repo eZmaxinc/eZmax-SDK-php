@@ -1,4 +1,4 @@
-# # UsergroupRequestCompound
+# UsergroupRequestCompound
 
 ## Properties
 

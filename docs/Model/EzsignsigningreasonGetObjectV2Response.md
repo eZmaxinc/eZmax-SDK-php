@@ -1,4 +1,4 @@
-# # EzsignsigningreasonGetObjectV2Response
+# EzsignsigningreasonGetObjectV2Response
 
 ## Properties
 

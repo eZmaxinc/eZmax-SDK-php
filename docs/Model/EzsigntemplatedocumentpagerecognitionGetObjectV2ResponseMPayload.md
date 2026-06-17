@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentpagerecognitionGetObjectV2ResponseMPayload
+# EzsigntemplatedocumentpagerecognitionGetObjectV2ResponseMPayload
 
 ## Properties
 

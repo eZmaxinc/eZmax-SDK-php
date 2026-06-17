@@ -1,4 +1,4 @@
-# # EzsigntemplateGetObjectV3ResponseMPayload
+# EzsigntemplateGetObjectV3ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # NotificationsectionGetNotificationtestsV1ResponseMPayload
+# NotificationsectionGetNotificationtestsV1ResponseMPayload
 
 ## Properties
 

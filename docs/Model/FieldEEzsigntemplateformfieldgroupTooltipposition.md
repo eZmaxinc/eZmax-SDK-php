@@ -1,4 +1,4 @@
-# # FieldEEzsigntemplateformfieldgroupTooltipposition
+# FieldEEzsigntemplateformfieldgroupTooltipposition
 
 ## Properties
 

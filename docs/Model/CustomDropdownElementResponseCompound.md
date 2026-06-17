@@ -1,4 +1,4 @@
-# # CustomDropdownElementResponseCompound
+# CustomDropdownElementResponseCompound
 
 ## Properties
 

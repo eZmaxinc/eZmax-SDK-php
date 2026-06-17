@@ -1,4 +1,4 @@
-# # InscriptionPrepareFilesTransferV1Response
+# InscriptionPrepareFilesTransferV1Response
 
 ## Properties
 

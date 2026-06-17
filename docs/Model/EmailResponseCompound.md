@@ -1,4 +1,4 @@
-# # EmailResponseCompound
+# EmailResponseCompound
 
 ## Properties
 

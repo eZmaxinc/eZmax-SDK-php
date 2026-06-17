@@ -1,4 +1,4 @@
-# # AgentGetListV1Response
+# AgentGetListV1Response
 
 ## Properties
 

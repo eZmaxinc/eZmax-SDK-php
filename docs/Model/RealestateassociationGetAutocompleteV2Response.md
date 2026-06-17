@@ -1,4 +1,4 @@
-# # RealestateassociationGetAutocompleteV2Response
+# RealestateassociationGetAutocompleteV2Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # FieldENotificationpreferenceStatus
+# FieldENotificationpreferenceStatus
 
 ## Properties
 

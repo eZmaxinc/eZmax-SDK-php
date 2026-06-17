@@ -1,4 +1,4 @@
-# # BrandingGetObjectV3ResponseMPayload
+# BrandingGetObjectV3ResponseMPayload
 
 ## Properties
 

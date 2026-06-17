@@ -1,4 +1,4 @@
-# # EnumReportdataType
+# EnumReportdataType
 
 ## Properties
 

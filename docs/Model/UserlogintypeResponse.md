@@ -1,4 +1,4 @@
-# # UserlogintypeResponse
+# UserlogintypeResponse
 
 ## Properties
 

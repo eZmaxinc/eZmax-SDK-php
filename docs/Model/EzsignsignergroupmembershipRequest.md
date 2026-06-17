@@ -1,4 +1,4 @@
-# # EzsignsignergroupmembershipRequest
+# EzsignsignergroupmembershipRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignimportdocumentDownloadV1Response
+# EzsignimportdocumentDownloadV1Response
 
 ## Properties
 

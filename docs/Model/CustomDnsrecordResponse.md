@@ -1,4 +1,4 @@
-# # CustomDnsrecordResponse
+# CustomDnsrecordResponse
 
 ## Properties
 

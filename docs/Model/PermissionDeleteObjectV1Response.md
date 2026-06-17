@@ -1,4 +1,4 @@
-# # PermissionDeleteObjectV1Response
+# PermissionDeleteObjectV1Response
 
 ## Properties
 

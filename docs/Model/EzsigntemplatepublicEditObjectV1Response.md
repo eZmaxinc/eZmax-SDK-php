@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicEditObjectV1Response
+# EzsigntemplatepublicEditObjectV1Response
 
 ## Properties
 

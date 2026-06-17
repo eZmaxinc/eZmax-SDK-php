@@ -1,4 +1,4 @@
-# # MultilingualEzdoctemplatedocumentName
+# MultilingualEzdoctemplatedocumentName
 
 ## Properties
 

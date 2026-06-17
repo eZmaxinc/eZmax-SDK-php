@@ -1,4 +1,4 @@
-# # EzsigntemplatesignatureResponseCompoundV4
+# EzsigntemplatesignatureResponseCompoundV4
 
 ## Properties
 

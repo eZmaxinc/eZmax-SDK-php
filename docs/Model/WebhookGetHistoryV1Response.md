@@ -1,4 +1,4 @@
-# # WebhookGetHistoryV1Response
+# WebhookGetHistoryV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CommonReportcolumn
+# CommonReportcolumn
 
 ## Properties
 

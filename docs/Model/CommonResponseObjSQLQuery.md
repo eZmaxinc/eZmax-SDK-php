@@ -1,4 +1,4 @@
-# # CommonResponseObjSQLQuery
+# CommonResponseObjSQLQuery
 
 ## Properties
 

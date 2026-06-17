@@ -1,4 +1,4 @@
-# # UsergroupCreateObjectV1Response
+# UsergroupCreateObjectV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # LeadGetListV1Response
+# LeadGetListV1Response
 
 ## Properties
 

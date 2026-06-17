@@ -1,4 +1,4 @@
-# # EzsigntemplateAutocompleteElementResponse
+# EzsigntemplateAutocompleteElementResponse
 
 ## Properties
 

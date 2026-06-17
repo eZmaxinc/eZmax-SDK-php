@@ -1,4 +1,4 @@
-# # WebhookEzsignEzsignsignerAcceptclause
+# WebhookEzsignEzsignsignerAcceptclause
 
 ## Properties
 

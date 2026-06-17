@@ -1,4 +1,4 @@
-# # UserGetSubnetsV1Response
+# UserGetSubnetsV1Response
 
 ## Properties
 

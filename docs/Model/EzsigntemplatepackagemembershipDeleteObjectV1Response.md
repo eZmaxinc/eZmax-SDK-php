@@ -1,4 +1,4 @@
-# # EzsigntemplatepackagemembershipDeleteObjectV1Response
+# EzsigntemplatepackagemembershipDeleteObjectV1Response
 
 ## Properties
 

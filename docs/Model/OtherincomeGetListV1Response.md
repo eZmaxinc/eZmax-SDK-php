@@ -1,4 +1,4 @@
-# # OtherincomeGetListV1Response
+# OtherincomeGetListV1Response
 
 ## Properties
 

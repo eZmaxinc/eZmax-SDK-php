@@ -1,4 +1,4 @@
-# # DiscussionGetObjectV2ResponseMPayload
+# DiscussionGetObjectV2ResponseMPayload
 
 ## Properties
 

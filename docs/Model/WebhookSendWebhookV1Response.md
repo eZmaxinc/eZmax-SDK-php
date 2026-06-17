@@ -1,4 +1,4 @@
-# # WebhookSendWebhookV1Response
+# WebhookSendWebhookV1Response
 
 ## Properties
 

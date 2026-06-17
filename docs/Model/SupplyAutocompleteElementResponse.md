@@ -1,4 +1,4 @@
-# # SupplyAutocompleteElementResponse
+# SupplyAutocompleteElementResponse
 
 ## Properties
 

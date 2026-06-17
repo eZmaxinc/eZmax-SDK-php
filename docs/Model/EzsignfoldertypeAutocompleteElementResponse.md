@@ -1,4 +1,4 @@
-# # EzsignfoldertypeAutocompleteElementResponse
+# EzsignfoldertypeAutocompleteElementResponse
 
 ## Properties
 

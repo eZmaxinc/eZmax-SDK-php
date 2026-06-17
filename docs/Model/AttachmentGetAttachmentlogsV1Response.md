@@ -1,4 +1,4 @@
-# # AttachmentGetAttachmentlogsV1Response
+# AttachmentGetAttachmentlogsV1Response
 
 ## Properties
 

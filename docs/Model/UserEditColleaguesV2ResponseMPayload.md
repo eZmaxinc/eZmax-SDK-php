@@ -1,4 +1,4 @@
-# # UserEditColleaguesV2ResponseMPayload
+# UserEditColleaguesV2ResponseMPayload
 
 ## Properties
 

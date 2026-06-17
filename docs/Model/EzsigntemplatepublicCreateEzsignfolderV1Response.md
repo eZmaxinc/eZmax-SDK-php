@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicCreateEzsignfolderV1Response
+# EzsigntemplatepublicCreateEzsignfolderV1Response
 
 ## Properties
 

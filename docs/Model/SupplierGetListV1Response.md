@@ -1,4 +1,4 @@
-# # SupplierGetListV1Response
+# SupplierGetListV1Response
 
 ## Properties
 

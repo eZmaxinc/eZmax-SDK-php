@@ -1,4 +1,4 @@
-# # CommonWebhook
+# CommonWebhook
 
 ## Properties
 

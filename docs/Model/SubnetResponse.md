@@ -1,4 +1,4 @@
-# # SubnetResponse
+# SubnetResponse
 
 ## Properties
 

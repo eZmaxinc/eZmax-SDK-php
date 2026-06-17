@@ -1,4 +1,4 @@
-# # LeadsourceGetAutocompleteV2ResponseMPayload
+# LeadsourceGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

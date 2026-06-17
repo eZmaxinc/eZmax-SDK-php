@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentExtractTextV1ResponseMPayload
+# EzsigntemplatedocumentExtractTextV1ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GlaccountcontainerGetAutocompleteV2Response
+# GlaccountcontainerGetAutocompleteV2Response
 
 ## Properties
 

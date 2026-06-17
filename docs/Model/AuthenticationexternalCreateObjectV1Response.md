@@ -1,4 +1,4 @@
-# # AuthenticationexternalCreateObjectV1Response
+# AuthenticationexternalCreateObjectV1Response
 
 ## Properties
 

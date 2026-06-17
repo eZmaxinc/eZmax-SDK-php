@@ -1,4 +1,4 @@
-# # RejectedoffertopurchaseGetCommunicationCountV1Response
+# RejectedoffertopurchaseGetCommunicationCountV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzmaxinvoicingsummaryglobalResponseCompound
+# EzmaxinvoicingsummaryglobalResponseCompound
 
 ## Properties
 

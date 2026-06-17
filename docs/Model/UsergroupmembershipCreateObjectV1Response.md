@@ -1,4 +1,4 @@
-# # UsergroupmembershipCreateObjectV1Response
+# UsergroupmembershipCreateObjectV1Response
 
 ## Properties
 

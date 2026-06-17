@@ -1,4 +1,4 @@
-# # RejectedoffertopurchaseGetListV1ResponseMPayload
+# RejectedoffertopurchaseGetListV1ResponseMPayload
 
 ## Properties
 

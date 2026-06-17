@@ -1,4 +1,4 @@
-# # SessionhistoryListElement
+# SessionhistoryListElement
 
 ## Properties
 

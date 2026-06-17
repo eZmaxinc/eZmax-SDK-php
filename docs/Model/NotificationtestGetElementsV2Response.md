@@ -1,4 +1,4 @@
-# # NotificationtestGetElementsV2Response
+# NotificationtestGetElementsV2Response
 
 ## Properties
 

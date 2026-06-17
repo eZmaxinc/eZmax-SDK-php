@@ -1,4 +1,4 @@
-# # AgentAutocompleteElementResponse
+# AgentAutocompleteElementResponse
 
 ## Properties
 

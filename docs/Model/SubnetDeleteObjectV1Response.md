@@ -1,4 +1,4 @@
-# # SubnetDeleteObjectV1Response
+# SubnetDeleteObjectV1Response
 
 ## Properties
 

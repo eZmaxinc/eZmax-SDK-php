@@ -1,4 +1,4 @@
-# # DomainDeleteObjectV1Response
+# DomainDeleteObjectV1Response
 
 ## Properties
 

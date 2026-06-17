@@ -1,4 +1,4 @@
-# # ApikeyGetSubnetsV1ResponseMPayload
+# ApikeyGetSubnetsV1ResponseMPayload
 
 ## Properties
 

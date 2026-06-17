@@ -1,4 +1,4 @@
-# # CommunicationSendV1Response
+# CommunicationSendV1Response
 
 ## Properties
 

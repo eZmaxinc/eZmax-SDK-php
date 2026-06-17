@@ -1,4 +1,4 @@
-# # UsergroupdelegationCreateObjectV1Response
+# UsergroupdelegationCreateObjectV1Response
 
 ## Properties
 

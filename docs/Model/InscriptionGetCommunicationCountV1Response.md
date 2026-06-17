@@ -1,4 +1,4 @@
-# # InscriptionGetCommunicationCountV1Response
+# InscriptionGetCommunicationCountV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CountryAutocompleteElementResponse
+# CountryAutocompleteElementResponse
 
 ## Properties
 

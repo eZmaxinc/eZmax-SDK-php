@@ -1,4 +1,4 @@
-# # EzdoctemplatetypeGetAutocompleteV2ResponseMPayload
+# EzdoctemplatetypeGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

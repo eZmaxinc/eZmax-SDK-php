@@ -1,4 +1,4 @@
-# # DomainRequestCompound
+# DomainRequestCompound
 
 ## Properties
 

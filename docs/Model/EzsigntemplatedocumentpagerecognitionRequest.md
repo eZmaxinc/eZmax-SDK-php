@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentpagerecognitionRequest
+# EzsigntemplatedocumentpagerecognitionRequest
 
 ## Properties
 

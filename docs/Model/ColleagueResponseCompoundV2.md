@@ -1,4 +1,4 @@
-# # ColleagueResponseCompoundV2
+# ColleagueResponseCompoundV2
 
 ## Properties
 

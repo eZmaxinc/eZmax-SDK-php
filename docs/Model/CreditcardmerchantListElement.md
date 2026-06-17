@@ -1,11 +1,11 @@
-# # CreditcardmerchantListElement
+# CreditcardmerchantListElement
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiCreditcardmerchantID** | **int** | The unique ID of the Creditcardmerchant |
-**fkiBankaccountID** | **int** | The unique ID of the Bankaccount |
+**fkiBankaccountID** | **int** | The unique ID of the Bankaccount | [optional]
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | [optional]
 **bCreditcardmerchantDenyvisa** | **bool** | Whether if visa are denied |
 **bCreditcardmerchantDenymastercard** | **bool** | Whether if mastercard are denied |

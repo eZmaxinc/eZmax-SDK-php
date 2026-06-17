@@ -1,4 +1,4 @@
-# # UsergroupmembershipGetObjectV2Response
+# UsergroupmembershipGetObjectV2Response
 
 ## Properties
 

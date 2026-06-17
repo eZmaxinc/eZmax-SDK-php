@@ -1,4 +1,4 @@
-# # ModulegroupResponseCompound
+# ModulegroupResponseCompound
 
 ## Properties
 

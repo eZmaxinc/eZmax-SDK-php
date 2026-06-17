@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentGetListV1Response
+# EzdoctemplatedocumentGetListV1Response
 
 ## Properties
 

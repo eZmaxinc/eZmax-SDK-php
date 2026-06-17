@@ -1,4 +1,4 @@
-# # BankaccountAutocompleteElementResponse
+# BankaccountAutocompleteElementResponse
 
 ## Properties
 

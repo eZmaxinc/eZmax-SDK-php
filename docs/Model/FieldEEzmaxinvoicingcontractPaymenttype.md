@@ -1,4 +1,4 @@
-# # FieldEEzmaxinvoicingcontractPaymenttype
+# FieldEEzmaxinvoicingcontractPaymenttype
 
 ## Properties
 

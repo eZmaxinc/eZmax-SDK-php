@@ -1,4 +1,4 @@
-# # CommunicationattachmentRequestCompound
+# CommunicationattachmentRequestCompound
 
 ## Properties
 

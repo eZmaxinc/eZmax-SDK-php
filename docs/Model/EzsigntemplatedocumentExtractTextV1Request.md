@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentExtractTextV1Request
+# EzsigntemplatedocumentExtractTextV1Request
 
 ## Properties
 

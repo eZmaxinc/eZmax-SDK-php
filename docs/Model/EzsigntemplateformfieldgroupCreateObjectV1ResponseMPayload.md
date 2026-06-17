@@ -1,4 +1,4 @@
-# # EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload
+# EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload
 
 ## Properties
 

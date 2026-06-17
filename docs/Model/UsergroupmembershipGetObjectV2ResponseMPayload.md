@@ -1,4 +1,4 @@
-# # UsergroupmembershipGetObjectV2ResponseMPayload
+# UsergroupmembershipGetObjectV2ResponseMPayload
 
 ## Properties
 

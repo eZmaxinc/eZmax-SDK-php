@@ -49,20 +49,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$apiInstance = new eZmaxAPI\Api\GlobalCustomerApi(
+
+$apiInstance = new eZmaxAPI\Api\DocumentationEzmaxpartnerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$pksCustomerCode = 'pksCustomerCode_example'; // string
-$sInfrastructureproductCode = 'sInfrastructureproductCode_example'; // string | The infrastructure product Code  If undefined, \"appcluster01\" is assumed
+$documentationSubscribeV1Request = new \eZmaxAPI\Model\DocumentationSubscribeV1Request(); // \eZmaxAPI\Model\DocumentationSubscribeV1Request | 
 
 try {
-    $result = $apiInstance->globalCustomerGetEndpointV1($pksCustomerCode, $sInfrastructureproductCode);
+    $result = $apiInstance->documentationSubscribeV1($documentationSubscribeV1Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GlobalCustomerApi->globalCustomerGetEndpointV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DocumentationEzmaxpartnerApi->documentationSubscribeV1: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -73,9 +78,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DocumentationEzmaxpartnerApi* | [**documentationSubscribeV1**](docs/Api/DocumentationEzmaxpartnerApi.md#documentationsubscribev1) | **POST** /1/documentation/subscribe | Subscribe to an Ezmaxparnerproductstage
 *GlobalCustomerApi* | [**globalCustomerGetEndpointV1**](docs/Api/GlobalCustomerApi.md#globalcustomergetendpointv1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
 *GlobalEzmaxclientApi* | [**globalEzmaxclientVersionV1**](docs/Api/GlobalEzmaxclientApi.md#globalezmaxclientversionv1) | **GET** /1/ezmaxclient/{pksEzmaxclientOs}/version | Retrieve the latest version of the Ezmaxclient
 *GlobalEzmaxcustomerApi* | [**globalEzmaxcustomerGetConfigurationV1**](docs/Api/GlobalEzmaxcustomerApi.md#globalezmaxcustomergetconfigurationv1) | **GET** /1/ezmaxcustomer/{pksEzmaxcustomerCode}/getConfiguration | Get ezmaxcustomer configuration
+*ModuleEzmaxmaillinglistApi* | [**ezmaxmaillinglistSubscribeV1**](docs/Api/ModuleEzmaxmaillinglistApi.md#ezmaxmaillinglistsubscribev1) | **POST** /1/module/ezmaxmaillinglist/subscribe | Subscribe to specific Ezmaxmaillinglist
 *ModuleReportApi* | [**reportGetReportFromCacheV1**](docs/Api/ModuleReportApi.md#reportgetreportfromcachev1) | **GET** /1/module/report/getReportFromCache/{sReportgroupCacheID} | Retrieve report from cache
 *ModuleUserApi* | [**userCreateEzsignuserV1**](docs/Api/ModuleUserApi.md#usercreateezsignuserv1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
 *ObjectActivesessionApi* | [**activesessionGenerateFederationTokenV1**](docs/Api/ObjectActivesessionApi.md#activesessiongeneratefederationtokenv1) | **POST** /1/object/activesession/generateFederationToken | Generate a federation token
@@ -193,6 +200,9 @@ Class | Method | HTTP request | Description
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicingGetAutocompleteV2**](docs/Api/ObjectEzmaxinvoicingApi.md#ezmaxinvoicinggetautocompletev2) | **GET** /2/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicingGetObjectV2**](docs/Api/ObjectEzmaxinvoicingApi.md#ezmaxinvoicinggetobjectv2) | **GET** /2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID} | Retrieve an existing Ezmaxinvoicing
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicingGetProvisionalV1**](docs/Api/ObjectEzmaxinvoicingApi.md#ezmaxinvoicinggetprovisionalv1) | **GET** /1/object/ezmaxinvoicing/getProvisional | Retrieve provisional Ezmaxinvoicing
+*ObjectEzmaxmaillinglistApi* | [**ezmaxmaillinglistGetListV1**](docs/Api/ObjectEzmaxmaillinglistApi.md#ezmaxmaillinglistgetlistv1) | **GET** /1/object/ezmaxmaillinglist/getList | Retrieve Ezmaxmaillinglist list
+*ObjectEzmaxpartnerApi* | [**ezmaxpartnerGetCustomDeveloppersV1**](docs/Api/ObjectEzmaxpartnerApi.md#ezmaxpartnergetcustomdeveloppersv1) | **GET** /1/object/ezmaxpartner/getCustomDeveloppers | Retrieve Ezmaxpartner custom developpers list
+*ObjectEzmaxpartnerApi* | [**ezmaxpartnerGetObjectV2**](docs/Api/ObjectEzmaxpartnerApi.md#ezmaxpartnergetobjectv2) | **GET** /2/object/ezmaxpartner/{pkiEzmaxpartnerID} | Retrieve an existing Ezmaxpartner
 *ObjectEzmaxproductApi* | [**ezmaxproductGetAutocompleteV2**](docs/Api/ObjectEzmaxproductApi.md#ezmaxproductgetautocompletev2) | **GET** /2/object/ezmaxproduct/getAutocomplete/{sSelector} | Retrieve Ezmaxproducts and IDs
 *ObjectEzsignannotationApi* | [**ezsignannotationCreateObjectV1**](docs/Api/ObjectEzsignannotationApi.md#ezsignannotationcreateobjectv1) | **POST** /1/object/ezsignannotation | Create a new Ezsignannotation
 *ObjectEzsignannotationApi* | [**ezsignannotationDeleteObjectV1**](docs/Api/ObjectEzsignannotationApi.md#ezsignannotationdeleteobjectv1) | **DELETE** /1/object/ezsignannotation/{pkiEzsignannotationID} | Delete an existing Ezsignannotation
@@ -228,7 +238,9 @@ Class | Method | HTTP request | Description
 *ObjectEzsigndiscussionApi* | [**ezsigndiscussionGetObjectV2**](docs/Api/ObjectEzsigndiscussionApi.md#ezsigndiscussiongetobjectv2) | **GET** /2/object/ezsigndiscussion/{pkiEzsigndiscussionID} | Retrieve an existing Ezsigndiscussion
 *ObjectEzsigndocumentApi* | [**ezsigndocumentApplyEzsigntemplateV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentapplyezsigntemplatev1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentApplyEzsigntemplateV2**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentapplyezsigntemplatev2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument
+*ObjectEzsigndocumentApi* | [**ezsigndocumentApplyEzsigntemplateV3**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentapplyezsigntemplatev3) | **POST** /3/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentApplyEzsigntemplateglobalV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentapplyezsigntemplateglobalv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal | Apply an Ezsigntemplateglobal to the Ezsigndocument
+*ObjectEzsigndocumentApi* | [**ezsigndocumentApplyEzsigntemplateglobalV2**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentapplyezsigntemplateglobalv2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal | Apply an Ezsigntemplateglobal to the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentCreateEzsignelementsPositionedByWordV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentcreateezsignelementspositionedbywordv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord | Create multiple Ezsignsignatures/Ezsignformfieldgroups
 *ObjectEzsigndocumentApi* | [**ezsigndocumentCreateEzsignelementsPositionedByWordV2**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentcreateezsignelementspositionedbywordv2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord | Create multiple Ezsignsignatures/Ezsignformfieldgroups
 *ObjectEzsigndocumentApi* | [**ezsigndocumentCreateObjectV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentcreateobjectv1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
@@ -245,6 +257,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsigndocumentApi* | [**ezsigndocumentEndPrematurelyV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentendprematurelyv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely
 *ObjectEzsigndocumentApi* | [**ezsigndocumentExtractTextV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentextracttextv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText | Extract text from Ezsigndocument area
 *ObjectEzsigndocumentApi* | [**ezsigndocumentFlattenV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentflattenv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten
+*ObjectEzsigndocumentApi* | [**ezsigndocumentGetActionableElementsForSignerV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgetactionableelementsforsignerv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentGetActionableElementsV1**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgetactionableelementsv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentGetActionableElementsV2**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgetactionableelementsv2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocumentGetActionableElementsV3**](docs/Api/ObjectEzsigndocumentApi.md#ezsigndocumentgetactionableelementsv3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
@@ -277,8 +290,10 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolderDeleteObjectV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderdeleteobjectv1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderDisposeEzsignfoldersV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderdisposeezsignfoldersv1) | **POST** /1/object/ezsignfolder/disposeEzsignfolders | Dispose Ezsignfolders
 *ObjectEzsignfolderApi* | [**ezsignfolderDisposeV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderdisposev1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/dispose | Dispose the Ezsignfolder
+*ObjectEzsignfolderApi* | [**ezsignfolderDuplicateV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderduplicatev1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/duplicate | Duplicate the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderEditObjectV3**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldereditobjectv3) | **PUT** /3/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderEndPrematurelyV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderendprematurelyv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely
+*ObjectEzsignfolderApi* | [**ezsignfolderGetActionableElementsForSignerV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetactionableelementsforsignerv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderGetActionableElementsV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetactionableelementsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderGetActionableElementsV2**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetactionableelementsv2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderGetActionableElementsV3**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetactionableelementsv3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
@@ -288,10 +303,13 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolderGetCommunicationListV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetcommunicationlistv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList | Retrieve Communication list
 *ObjectEzsignfolderApi* | [**ezsignfolderGetCommunicationrecipientsV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetcommunicationrecipientsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients | Retrieve Ezsignfolder&#39;s Communicationrecipient
 *ObjectEzsignfolderApi* | [**ezsignfolderGetCommunicationsendersV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetcommunicationsendersv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationsenders | Retrieve Ezsignfolder&#39;s Communicationsender
+*ObjectEzsignfolderApi* | [**ezsignfolderGetEzsignannotationsV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetezsignannotationsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignannotations | Retrieve an existing Ezsignfolder&#39;s Ezsignannotations
 *ObjectEzsignfolderApi* | [**ezsignfolderGetEzsigndocumentsV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetezsigndocumentsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
 *ObjectEzsignfolderApi* | [**ezsignfolderGetEzsigndocumentsV2**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetezsigndocumentsv2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
 *ObjectEzsignfolderApi* | [**ezsignfolderGetEzsignfoldersignerassociationsV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetezsignfoldersignerassociationsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
+*ObjectEzsignfolderApi* | [**ezsignfolderGetEzsignformfieldgroupsV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetezsignformfieldgroupsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignformfieldgroups | Retrieve an existing Ezsignfolder&#39;s Ezsignformfieldgroups
 *ObjectEzsignfolderApi* | [**ezsignfolderGetEzsignsignaturesAutomaticV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetezsignsignaturesautomaticv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignfolder&#39;s automatic Ezsignsignatures
+*ObjectEzsignfolderApi* | [**ezsignfolderGetEzsignsignaturesV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetezsignsignaturesv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignatures | Retrieve an existing Ezsignfolder&#39;s Ezsignsignatures
 *ObjectEzsignfolderApi* | [**ezsignfolderGetFormsDataV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetformsdatav1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data
 *ObjectEzsignfolderApi* | [**ezsignfolderGetListV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetlistv1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list
 *ObjectEzsignfolderApi* | [**ezsignfolderGetObjectV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldergetobjectv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
@@ -300,10 +318,12 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolderImportEzsignfoldersignerassociationsV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderimportezsignfoldersignerassociationsv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsignfoldersignerassociations | Import an existing Ezsignfoldersignerassociation into this Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderImportEzsigntemplatepackageV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderimportezsigntemplatepackagev1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderImportEzsigntemplatepackageV2**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderimportezsigntemplatepackagev2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder
+*ObjectEzsignfolderApi* | [**ezsignfolderImportEzsigntemplatepackageV3**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderimportezsigntemplatepackagev3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderReorderV2**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderreorderv2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolderSendV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldersendv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 *ObjectEzsignfolderApi* | [**ezsignfolderSendV3**](docs/Api/ObjectEzsignfolderApi.md#ezsignfoldersendv3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 *ObjectEzsignfolderApi* | [**ezsignfolderUnsendV1**](docs/Api/ObjectEzsignfolderApi.md#ezsignfolderunsendv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend | Unsend the Ezsignfolder
+*ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateEmbeddedUrlV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateembeddedurlv1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateEmbeddedUrlV2**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateembeddedurlv2) | **POST** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateObjectV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateobjectv1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateObjectV2**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateobjectv2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
@@ -316,7 +336,9 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationPatchObjectV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationpatchobjectv1) | **PATCH** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Patch an existing Ezsignfoldersignerassociation
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationReassignV1**](docs/Api/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationreassignv1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign | Reassign remaining unsigned signatures and forms
 *ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeCreateObjectV3**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypecreateobjectv3) | **POST** /3/object/ezsignfoldertype | Create a new Ezsignfoldertype
+*ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeCreateObjectV4**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypecreateobjectv4) | **POST** /4/object/ezsignfoldertype | Create a new Ezsignfoldertype
 *ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeEditObjectV3**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypeeditobjectv3) | **PUT** /3/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype
+*ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeEditObjectV4**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypeeditobjectv4) | **PUT** /4/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype
 *ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeGetAutocompleteV2**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypegetautocompletev2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
 *ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeGetListV1**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypegetlistv1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list
 *ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeGetObjectV2**](docs/Api/ObjectEzsignfoldertypeApi.md#ezsignfoldertypegetobjectv2) | **GET** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype
@@ -361,8 +383,13 @@ Class | Method | HTTP request | Description
 *ObjectEzsigntemplateApi* | [**ezsigntemplateGetAutocompleteV2**](docs/Api/ObjectEzsigntemplateApi.md#ezsigntemplategetautocompletev2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs
 *ObjectEzsigntemplateApi* | [**ezsigntemplateGetListV1**](docs/Api/ObjectEzsigntemplateApi.md#ezsigntemplategetlistv1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list
 *ObjectEzsigntemplateApi* | [**ezsigntemplateGetObjectV3**](docs/Api/ObjectEzsigntemplateApi.md#ezsigntemplategetobjectv3) | **GET** /3/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
+*ObjectEzsigntemplateannotationApi* | [**ezsigntemplateannotationCreateObjectV1**](docs/Api/ObjectEzsigntemplateannotationApi.md#ezsigntemplateannotationcreateobjectv1) | **POST** /1/object/ezsigntemplateannotation | Create a new Ezsigntemplateannotation
+*ObjectEzsigntemplateannotationApi* | [**ezsigntemplateannotationDeleteObjectV1**](docs/Api/ObjectEzsigntemplateannotationApi.md#ezsigntemplateannotationdeleteobjectv1) | **DELETE** /1/object/ezsigntemplateannotation/{pkiEzsigntemplateannotationID} | Delete an existing Ezsigntemplateannotation
+*ObjectEzsigntemplateannotationApi* | [**ezsigntemplateannotationEditObjectV1**](docs/Api/ObjectEzsigntemplateannotationApi.md#ezsigntemplateannotationeditobjectv1) | **PUT** /1/object/ezsigntemplateannotation/{pkiEzsigntemplateannotationID} | Edit an existing Ezsigntemplateannotation
+*ObjectEzsigntemplateannotationApi* | [**ezsigntemplateannotationGetObjectV2**](docs/Api/ObjectEzsigntemplateannotationApi.md#ezsigntemplateannotationgetobjectv2) | **GET** /2/object/ezsigntemplateannotation/{pkiEzsigntemplateannotationID} | Retrieve an existing Ezsigntemplateannotation
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentCreateObjectV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentcreateobjectv1) | **POST** /1/object/ezsigntemplatedocument | Create a new Ezsigntemplatedocument
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentDownloadV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentdownloadv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/download | Retrieve an existing Ezsigntemplatedocument&#39;s original file
+*ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentEditEzsigntemplateannotationsV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumenteditezsigntemplateannotationsv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateannotations | Edit multiple Ezsigntemplateannotations
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumenteditezsigntemplatedocumentpagerecognitionsv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatedocumentpagerecognitions | Edit multiple Ezsigntemplatedocumentpagerecognitions
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumenteditezsigntemplateformfieldgroupsv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups | Edit multiple Ezsigntemplateformfieldgroups
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentEditEzsigntemplatesignaturesV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumenteditezsigntemplatesignaturesv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures | Edit multiple Ezsigntemplatesignatures
@@ -370,6 +397,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentEditObjectV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumenteditobjectv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Edit an existing Ezsigntemplatedocument
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentExtractTextV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentextracttextv1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/extractText | Extract text from Ezsigntemplatedocument area
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentFlattenV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentflattenv1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/flatten | Flatten
+*ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentGetEzsigntemplateannotationsV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentgetezsigntemplateannotationsv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateannotations | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateannotations
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentgetezsigntemplatedocumentpagerecognitionsv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpagerecognitions | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpagerecognitions
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentgetezsigntemplatedocumentpagesv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1**](docs/Api/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentgetezsigntemplateformfieldgroupsv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups
@@ -387,6 +415,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsigntemplateformfieldgroupApi* | [**ezsigntemplateformfieldgroupGetObjectV2**](docs/Api/ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupgetobjectv2) | **GET** /2/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Retrieve an existing Ezsigntemplateformfieldgroup
 *ObjectEzsigntemplateglobalApi* | [**ezsigntemplateglobalGetAutocompleteV2**](docs/Api/ObjectEzsigntemplateglobalApi.md#ezsigntemplateglobalgetautocompletev2) | **GET** /2/object/ezsigntemplateglobal/getAutocomplete/{sSelector} | Retrieve Ezsigntemplateglobals and IDs
 *ObjectEzsigntemplateglobalApi* | [**ezsigntemplateglobalGetObjectV2**](docs/Api/ObjectEzsigntemplateglobalApi.md#ezsigntemplateglobalgetobjectv2) | **GET** /2/object/ezsigntemplateglobal/{pkiEzsigntemplateglobalID} | Retrieve an existing Ezsigntemplateglobal
+*ObjectEzsigntemplateglobalannotationApi* | [**ezsigntemplateglobalannotationGetObjectV2**](docs/Api/ObjectEzsigntemplateglobalannotationApi.md#ezsigntemplateglobalannotationgetobjectv2) | **GET** /2/object/ezsigntemplateglobalannotation/{pkiEzsigntemplateglobalannotationID} | Retrieve an existing Ezsigntemplateglobalannotation
 *ObjectEzsigntemplatepackageApi* | [**ezsigntemplatepackageCreateObjectV1**](docs/Api/ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackagecreateobjectv1) | **POST** /1/object/ezsigntemplatepackage | Create a new Ezsigntemplatepackage
 *ObjectEzsigntemplatepackageApi* | [**ezsigntemplatepackageDeleteObjectV1**](docs/Api/ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackagedeleteobjectv1) | **DELETE** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Delete an existing Ezsigntemplatepackage
 *ObjectEzsigntemplatepackageApi* | [**ezsigntemplatepackageEditEzsigntemplatepackagesignersV1**](docs/Api/ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageeditezsigntemplatepackagesignersv1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners | Edit multiple Ezsigntemplatepackagesigners
@@ -442,10 +471,12 @@ Class | Method | HTTP request | Description
 *ObjectInscriptionApi* | [**inscriptionImportIntoEDMV1**](docs/Api/ObjectInscriptionApi.md#inscriptionimportintoedmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription
 *ObjectInscriptionApi* | [**inscriptionPrepareFilesTransferV1**](docs/Api/ObjectInscriptionApi.md#inscriptionpreparefilestransferv1) | **POST** /1/object/inscription/{pkiInscriptionID}/prepareFilesTransfer | Prepares file transfer into EDM
 *ObjectInscriptionchecklistApi* | [**inscriptionchecklistGetAutocompleteV3**](docs/Api/ObjectInscriptionchecklistApi.md#inscriptionchecklistgetautocompletev3) | **GET** /3/object/inscriptionchecklist/getAutocomplete/{sSelector} | Retrieve Inscriptionchecklists and IDs
+*ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedfillinscriptionnotauthenticatedconditionv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/fillInscriptionnotauthenticatedcondition | Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
 *ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedGetCommunicationCountV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedgetcommunicationcountv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationCount | Retrieve Communication count
 *ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedGetCommunicationListV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedgetcommunicationlistv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationList | Retrieve Communication list
 *ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedGetCommunicationrecipientsV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedgetcommunicationrecipientsv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationrecipients | Retrieve Inscriptionnotauthenticated&#39;s Communicationrecipient
 *ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedGetCommunicationsendersV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedgetcommunicationsendersv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationsenders | Retrieve Inscriptionnotauthenticated&#39;s Communicationsender
+*ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedgetinscriptionnotauthenticatedconditionsv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getInscriptionnotauthenticatedconditions | Retrieve Inscriptionnotauthenticated conditions
 *ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedGetListV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedgetlistv1) | **GET** /1/object/inscriptionnotauthenticated/getList | Retrieve Inscriptionnotauthenticated list
 *ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedImportIntoEDMV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedimportintoedmv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/importIntoEDM | Import attachments into the Inscriptionnotauthenticated
 *ObjectInscriptiontempApi* | [**inscriptiontempGetCommunicationCountV1**](docs/Api/ObjectInscriptiontempApi.md#inscriptiontempgetcommunicationcountv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationCount | Retrieve Communication count
@@ -542,12 +573,14 @@ Class | Method | HTTP request | Description
 *ObjectUserApi* | [**userGetAutocompleteV2**](docs/Api/ObjectUserApi.md#usergetautocompletev2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs
 *ObjectUserApi* | [**userGetColleaguesV2**](docs/Api/ObjectUserApi.md#usergetcolleaguesv2) | **GET** /2/object/user/{pkiUserID}/getColleagues | Retrieve an existing User&#39;s Colleagues
 *ObjectUserApi* | [**userGetEffectivePermissionsV1**](docs/Api/ObjectUserApi.md#usergeteffectivepermissionsv1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User&#39;s Effective Permissions
+*ObjectUserApi* | [**userGetEzmaxcustomeruserV1**](docs/Api/ObjectUserApi.md#usergetezmaxcustomeruserv1) | **GET** /1/object/user/{pkiUserID}/getEzmaxcustomeruser | Returns the Ezmaxcustomeruser for the User
 *ObjectUserApi* | [**userGetListV1**](docs/Api/ObjectUserApi.md#usergetlistv1) | **GET** /1/object/user/getList | Retrieve User list
 *ObjectUserApi* | [**userGetObjectV2**](docs/Api/ObjectUserApi.md#usergetobjectv2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User
 *ObjectUserApi* | [**userGetPermissionsV1**](docs/Api/ObjectUserApi.md#usergetpermissionsv1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User&#39;s Permissions
 *ObjectUserApi* | [**userGetSubnetsV1**](docs/Api/ObjectUserApi.md#usergetsubnetsv1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User&#39;s Subnets
 *ObjectUserApi* | [**userGetUsergroupexternalsV1**](docs/Api/ObjectUserApi.md#usergetusergroupexternalsv1) | **GET** /1/object/user/{pkiUserID}/getUsergroupexternals | Get User&#39;s Usergroupexternals
 *ObjectUserApi* | [**userGetUsergroupsV1**](docs/Api/ObjectUserApi.md#usergetusergroupsv1) | **GET** /1/object/user/{pkiUserID}/getUsergroups | Get User&#39;s Usergroups
+*ObjectUserApi* | [**userImpersonateV1**](docs/Api/ObjectUserApi.md#userimpersonatev1) | **POST** /1/object/user/{pkiUserID}/impersonate | Impersonate the user
 *ObjectUserApi* | [**userSendPasswordResetV1**](docs/Api/ObjectUserApi.md#usersendpasswordresetv1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset
 *ObjectUsergroupApi* | [**usergroupCreateObjectV1**](docs/Api/ObjectUsergroupApi.md#usergroupcreateobjectv1) | **POST** /1/object/usergroup | Create a new Usergroup
 *ObjectUsergroupApi* | [**usergroupEditObjectV1**](docs/Api/ObjectUsergroupApi.md#usergroupeditobjectv1) | **PUT** /1/object/usergroup/{pkiUsergroupID} | Edit an existing Usergroup
@@ -929,10 +962,18 @@ Class | Method | HTTP request | Description
 - [CustomDropdownElementResponse](docs/Model/CustomDropdownElementResponse.md)
 - [CustomDropdownElementResponseCompound](docs/Model/CustomDropdownElementResponseCompound.md)
 - [CustomEWebhookEzsignevent](docs/Model/CustomEWebhookEzsignevent.md)
+- [CustomEzmaxcustomerResponse](docs/Model/CustomEzmaxcustomerResponse.md)
+- [CustomEzmaxcustomeruserResponse](docs/Model/CustomEzmaxcustomeruserResponse.md)
 - [CustomEzmaxinvoicingEzsigndocumentResponse](docs/Model/CustomEzmaxinvoicingEzsigndocumentResponse.md)
 - [CustomEzmaxinvoicingEzsignfolderResponse](docs/Model/CustomEzmaxinvoicingEzsignfolderResponse.md)
+- [CustomEzmaxpartnerListElement](docs/Model/CustomEzmaxpartnerListElement.md)
+- [CustomEzmaxpartnerproductSubscribe](docs/Model/CustomEzmaxpartnerproductSubscribe.md)
 - [CustomEzmaxpricingResponse](docs/Model/CustomEzmaxpricingResponse.md)
+- [CustomEzsigndocumentDuplicateRequest](docs/Model/CustomEzsigndocumentDuplicateRequest.md)
 - [CustomEzsigndocumentEzsignsignaturesAutomaticResponse](docs/Model/CustomEzsigndocumentEzsignsignaturesAutomaticResponse.md)
+- [CustomEzsigndocumentGetEzsignannotationsResponse](docs/Model/CustomEzsigndocumentGetEzsignannotationsResponse.md)
+- [CustomEzsigndocumentGetEzsignformfieldgroupsResponse](docs/Model/CustomEzsigndocumentGetEzsignformfieldgroupsResponse.md)
+- [CustomEzsigndocumentGetEzsignsignaturesResponse](docs/Model/CustomEzsigndocumentGetEzsignsignaturesResponse.md)
 - [CustomEzsigndocumentRequest](docs/Model/CustomEzsigndocumentRequest.md)
 - [CustomEzsignfolderEzsignsignaturesAutomaticResponse](docs/Model/CustomEzsignfolderEzsignsignaturesAutomaticResponse.md)
 - [CustomEzsignfolderezsigntemplatepublicResponse](docs/Model/CustomEzsignfolderezsigntemplatepublicResponse.md)
@@ -959,6 +1000,7 @@ Class | Method | HTTP request | Description
 - [CustomFormDataSignerResponse](docs/Model/CustomFormDataSignerResponse.md)
 - [CustomFormsDataFolderResponse](docs/Model/CustomFormsDataFolderResponse.md)
 - [CustomImportEzsigntemplatepackageRelationRequest](docs/Model/CustomImportEzsigntemplatepackageRelationRequest.md)
+- [CustomInscriptionnotauthenticatedconditionRequest](docs/Model/CustomInscriptionnotauthenticatedconditionRequest.md)
 - [CustomNotificationsubsectiongetnotificationtestsResponse](docs/Model/CustomNotificationsubsectiongetnotificationtestsResponse.md)
 - [CustomNotificationtestgetelementsResponse](docs/Model/CustomNotificationtestgetelementsResponse.md)
 - [CustomNotificationtestgetnotificationtestsResponse](docs/Model/CustomNotificationtestgetnotificationtestsResponse.md)
@@ -1018,6 +1060,8 @@ Class | Method | HTTP request | Description
 - [DiscussionmessageRequestPatch](docs/Model/DiscussionmessageRequestPatch.md)
 - [DiscussionmessageResponse](docs/Model/DiscussionmessageResponse.md)
 - [DiscussionmessageResponseCompound](docs/Model/DiscussionmessageResponseCompound.md)
+- [DocumentationSubscribeV1Request](docs/Model/DocumentationSubscribeV1Request.md)
+- [DocumentationSubscribeV1Response](docs/Model/DocumentationSubscribeV1Response.md)
 - [DomainAutocompleteElementResponse](docs/Model/DomainAutocompleteElementResponse.md)
 - [DomainCreateObjectV1Request](docs/Model/DomainCreateObjectV1Request.md)
 - [DomainCreateObjectV1Response](docs/Model/DomainCreateObjectV1Response.md)
@@ -1126,6 +1170,17 @@ Class | Method | HTTP request | Description
 - [EzmaxinvoicingsummaryinternaldetailResponseCompound](docs/Model/EzmaxinvoicingsummaryinternaldetailResponseCompound.md)
 - [EzmaxinvoicinguserResponse](docs/Model/EzmaxinvoicinguserResponse.md)
 - [EzmaxinvoicinguserResponseCompound](docs/Model/EzmaxinvoicinguserResponseCompound.md)
+- [EzmaxmaillinglistGetListV1Response](docs/Model/EzmaxmaillinglistGetListV1Response.md)
+- [EzmaxmaillinglistGetListV1ResponseMPayload](docs/Model/EzmaxmaillinglistGetListV1ResponseMPayload.md)
+- [EzmaxmaillinglistListElement](docs/Model/EzmaxmaillinglistListElement.md)
+- [EzmaxmaillinglistSubscribeV1Request](docs/Model/EzmaxmaillinglistSubscribeV1Request.md)
+- [EzmaxmaillinglistSubscribeV1Response](docs/Model/EzmaxmaillinglistSubscribeV1Response.md)
+- [EzmaxpartnerGetCustomDeveloppersV1Response](docs/Model/EzmaxpartnerGetCustomDeveloppersV1Response.md)
+- [EzmaxpartnerGetCustomDeveloppersV1ResponseMPayload](docs/Model/EzmaxpartnerGetCustomDeveloppersV1ResponseMPayload.md)
+- [EzmaxpartnerGetObjectV2Response](docs/Model/EzmaxpartnerGetObjectV2Response.md)
+- [EzmaxpartnerGetObjectV2ResponseMPayload](docs/Model/EzmaxpartnerGetObjectV2ResponseMPayload.md)
+- [EzmaxpartnerResponse](docs/Model/EzmaxpartnerResponse.md)
+- [EzmaxpartnerResponseCompound](docs/Model/EzmaxpartnerResponseCompound.md)
 - [EzmaxproductAutocompleteElementResponse](docs/Model/EzmaxproductAutocompleteElementResponse.md)
 - [EzmaxproductGetAutocompleteV2Response](docs/Model/EzmaxproductGetAutocompleteV2Response.md)
 - [EzmaxproductGetAutocompleteV2ResponseMPayload](docs/Model/EzmaxproductGetAutocompleteV2ResponseMPayload.md)
@@ -1218,8 +1273,12 @@ Class | Method | HTTP request | Description
 - [EzsigndocumentApplyEzsigntemplateV1Response](docs/Model/EzsigndocumentApplyEzsigntemplateV1Response.md)
 - [EzsigndocumentApplyEzsigntemplateV2Request](docs/Model/EzsigndocumentApplyEzsigntemplateV2Request.md)
 - [EzsigndocumentApplyEzsigntemplateV2Response](docs/Model/EzsigndocumentApplyEzsigntemplateV2Response.md)
+- [EzsigndocumentApplyEzsigntemplateV3Request](docs/Model/EzsigndocumentApplyEzsigntemplateV3Request.md)
+- [EzsigndocumentApplyEzsigntemplateV3Response](docs/Model/EzsigndocumentApplyEzsigntemplateV3Response.md)
 - [EzsigndocumentApplyEzsigntemplateglobalV1Request](docs/Model/EzsigndocumentApplyEzsigntemplateglobalV1Request.md)
 - [EzsigndocumentApplyEzsigntemplateglobalV1Response](docs/Model/EzsigndocumentApplyEzsigntemplateglobalV1Response.md)
+- [EzsigndocumentApplyEzsigntemplateglobalV2Request](docs/Model/EzsigndocumentApplyEzsigntemplateglobalV2Request.md)
+- [EzsigndocumentApplyEzsigntemplateglobalV2Response](docs/Model/EzsigndocumentApplyEzsigntemplateglobalV2Response.md)
 - [EzsigndocumentCreateElementV3Response](docs/Model/EzsigndocumentCreateElementV3Response.md)
 - [EzsigndocumentCreateEzsignelementsPositionedByWordV1Request](docs/Model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Request.md)
 - [EzsigndocumentCreateEzsignelementsPositionedByWordV1Response](docs/Model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Response.md)
@@ -1261,6 +1320,8 @@ Class | Method | HTTP request | Description
 - [EzsigndocumentExtractTextV1Response](docs/Model/EzsigndocumentExtractTextV1Response.md)
 - [EzsigndocumentExtractTextV1ResponseMPayload](docs/Model/EzsigndocumentExtractTextV1ResponseMPayload.md)
 - [EzsigndocumentFlattenV1Response](docs/Model/EzsigndocumentFlattenV1Response.md)
+- [EzsigndocumentGetActionableElementsForSignerV1Response](docs/Model/EzsigndocumentGetActionableElementsForSignerV1Response.md)
+- [EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload](docs/Model/EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload.md)
 - [EzsigndocumentGetActionableElementsV1Response](docs/Model/EzsigndocumentGetActionableElementsV1Response.md)
 - [EzsigndocumentGetActionableElementsV1ResponseMPayload](docs/Model/EzsigndocumentGetActionableElementsV1ResponseMPayload.md)
 - [EzsigndocumentGetActionableElementsV2Response](docs/Model/EzsigndocumentGetActionableElementsV2Response.md)
@@ -1339,9 +1400,14 @@ Class | Method | HTTP request | Description
 - [EzsignfolderDisposeEzsignfoldersV1Request](docs/Model/EzsignfolderDisposeEzsignfoldersV1Request.md)
 - [EzsignfolderDisposeEzsignfoldersV1Response](docs/Model/EzsignfolderDisposeEzsignfoldersV1Response.md)
 - [EzsignfolderDisposeV1Response](docs/Model/EzsignfolderDisposeV1Response.md)
+- [EzsignfolderDuplicateV1Request](docs/Model/EzsignfolderDuplicateV1Request.md)
+- [EzsignfolderDuplicateV1Response](docs/Model/EzsignfolderDuplicateV1Response.md)
+- [EzsignfolderDuplicateV1ResponseMPayload](docs/Model/EzsignfolderDuplicateV1ResponseMPayload.md)
 - [EzsignfolderEditObjectV3Request](docs/Model/EzsignfolderEditObjectV3Request.md)
 - [EzsignfolderEditObjectV3Response](docs/Model/EzsignfolderEditObjectV3Response.md)
 - [EzsignfolderEndPrematurelyV1Response](docs/Model/EzsignfolderEndPrematurelyV1Response.md)
+- [EzsignfolderGetActionableElementsForSignerV1Response](docs/Model/EzsignfolderGetActionableElementsForSignerV1Response.md)
+- [EzsignfolderGetActionableElementsForSignerV1ResponseMPayload](docs/Model/EzsignfolderGetActionableElementsForSignerV1ResponseMPayload.md)
 - [EzsignfolderGetActionableElementsV1Response](docs/Model/EzsignfolderGetActionableElementsV1Response.md)
 - [EzsignfolderGetActionableElementsV1ResponseMPayload](docs/Model/EzsignfolderGetActionableElementsV1ResponseMPayload.md)
 - [EzsignfolderGetActionableElementsV2Response](docs/Model/EzsignfolderGetActionableElementsV2Response.md)
@@ -1360,14 +1426,20 @@ Class | Method | HTTP request | Description
 - [EzsignfolderGetCommunicationrecipientsV1ResponseMPayload](docs/Model/EzsignfolderGetCommunicationrecipientsV1ResponseMPayload.md)
 - [EzsignfolderGetCommunicationsendersV1Response](docs/Model/EzsignfolderGetCommunicationsendersV1Response.md)
 - [EzsignfolderGetCommunicationsendersV1ResponseMPayload](docs/Model/EzsignfolderGetCommunicationsendersV1ResponseMPayload.md)
+- [EzsignfolderGetEzsignannotationsV1Response](docs/Model/EzsignfolderGetEzsignannotationsV1Response.md)
+- [EzsignfolderGetEzsignannotationsV1ResponseMPayload](docs/Model/EzsignfolderGetEzsignannotationsV1ResponseMPayload.md)
 - [EzsignfolderGetEzsigndocumentsV1Response](docs/Model/EzsignfolderGetEzsigndocumentsV1Response.md)
 - [EzsignfolderGetEzsigndocumentsV1ResponseMPayload](docs/Model/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.md)
 - [EzsignfolderGetEzsigndocumentsV2Response](docs/Model/EzsignfolderGetEzsigndocumentsV2Response.md)
 - [EzsignfolderGetEzsigndocumentsV2ResponseMPayload](docs/Model/EzsignfolderGetEzsigndocumentsV2ResponseMPayload.md)
 - [EzsignfolderGetEzsignfoldersignerassociationsV1Response](docs/Model/EzsignfolderGetEzsignfoldersignerassociationsV1Response.md)
 - [EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload](docs/Model/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload.md)
+- [EzsignfolderGetEzsignformfieldgroupsV1Response](docs/Model/EzsignfolderGetEzsignformfieldgroupsV1Response.md)
+- [EzsignfolderGetEzsignformfieldgroupsV1ResponseMPayload](docs/Model/EzsignfolderGetEzsignformfieldgroupsV1ResponseMPayload.md)
 - [EzsignfolderGetEzsignsignaturesAutomaticV1Response](docs/Model/EzsignfolderGetEzsignsignaturesAutomaticV1Response.md)
 - [EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload](docs/Model/EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload.md)
+- [EzsignfolderGetEzsignsignaturesV1Response](docs/Model/EzsignfolderGetEzsignsignaturesV1Response.md)
+- [EzsignfolderGetEzsignsignaturesV1ResponseMPayload](docs/Model/EzsignfolderGetEzsignsignaturesV1ResponseMPayload.md)
 - [EzsignfolderGetFormsDataV1Response](docs/Model/EzsignfolderGetFormsDataV1Response.md)
 - [EzsignfolderGetFormsDataV1ResponseMPayload](docs/Model/EzsignfolderGetFormsDataV1ResponseMPayload.md)
 - [EzsignfolderGetListV1Response](docs/Model/EzsignfolderGetListV1Response.md)
@@ -1387,6 +1459,9 @@ Class | Method | HTTP request | Description
 - [EzsignfolderImportEzsigntemplatepackageV2Request](docs/Model/EzsignfolderImportEzsigntemplatepackageV2Request.md)
 - [EzsignfolderImportEzsigntemplatepackageV2Response](docs/Model/EzsignfolderImportEzsigntemplatepackageV2Response.md)
 - [EzsignfolderImportEzsigntemplatepackageV2ResponseMPayload](docs/Model/EzsignfolderImportEzsigntemplatepackageV2ResponseMPayload.md)
+- [EzsignfolderImportEzsigntemplatepackageV3Request](docs/Model/EzsignfolderImportEzsigntemplatepackageV3Request.md)
+- [EzsignfolderImportEzsigntemplatepackageV3Response](docs/Model/EzsignfolderImportEzsigntemplatepackageV3Response.md)
+- [EzsignfolderImportEzsigntemplatepackageV3ResponseMPayload](docs/Model/EzsignfolderImportEzsigntemplatepackageV3ResponseMPayload.md)
 - [EzsignfolderListElement](docs/Model/EzsignfolderListElement.md)
 - [EzsignfolderReorderV2Request](docs/Model/EzsignfolderReorderV2Request.md)
 - [EzsignfolderReorderV2Response](docs/Model/EzsignfolderReorderV2Response.md)
@@ -1403,6 +1478,9 @@ Class | Method | HTTP request | Description
 - [EzsignfolderSendV3Request](docs/Model/EzsignfolderSendV3Request.md)
 - [EzsignfolderSendV3Response](docs/Model/EzsignfolderSendV3Response.md)
 - [EzsignfolderUnsendV1Response](docs/Model/EzsignfolderUnsendV1Response.md)
+- [EzsignfoldersignerassociationCreateEmbeddedUrlV1Request](docs/Model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Request.md)
+- [EzsignfoldersignerassociationCreateEmbeddedUrlV1Response](docs/Model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Response.md)
+- [EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload](docs/Model/EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload.md)
 - [EzsignfoldersignerassociationCreateEmbeddedUrlV2Request](docs/Model/EzsignfoldersignerassociationCreateEmbeddedUrlV2Request.md)
 - [EzsignfoldersignerassociationCreateEmbeddedUrlV2Response](docs/Model/EzsignfoldersignerassociationCreateEmbeddedUrlV2Response.md)
 - [EzsignfoldersignerassociationCreateEmbeddedUrlV2ResponseMPayload](docs/Model/EzsignfoldersignerassociationCreateEmbeddedUrlV2ResponseMPayload.md)
@@ -1436,8 +1514,13 @@ Class | Method | HTTP request | Description
 - [EzsignfoldertypeCreateObjectV3Request](docs/Model/EzsignfoldertypeCreateObjectV3Request.md)
 - [EzsignfoldertypeCreateObjectV3Response](docs/Model/EzsignfoldertypeCreateObjectV3Response.md)
 - [EzsignfoldertypeCreateObjectV3ResponseMPayload](docs/Model/EzsignfoldertypeCreateObjectV3ResponseMPayload.md)
+- [EzsignfoldertypeCreateObjectV4Request](docs/Model/EzsignfoldertypeCreateObjectV4Request.md)
+- [EzsignfoldertypeCreateObjectV4Response](docs/Model/EzsignfoldertypeCreateObjectV4Response.md)
+- [EzsignfoldertypeCreateObjectV4ResponseMPayload](docs/Model/EzsignfoldertypeCreateObjectV4ResponseMPayload.md)
 - [EzsignfoldertypeEditObjectV3Request](docs/Model/EzsignfoldertypeEditObjectV3Request.md)
 - [EzsignfoldertypeEditObjectV3Response](docs/Model/EzsignfoldertypeEditObjectV3Response.md)
+- [EzsignfoldertypeEditObjectV4Request](docs/Model/EzsignfoldertypeEditObjectV4Request.md)
+- [EzsignfoldertypeEditObjectV4Response](docs/Model/EzsignfoldertypeEditObjectV4Response.md)
 - [EzsignfoldertypeGetAutocompleteV2Response](docs/Model/EzsignfoldertypeGetAutocompleteV2Response.md)
 - [EzsignfoldertypeGetAutocompleteV2ResponseMPayload](docs/Model/EzsignfoldertypeGetAutocompleteV2ResponseMPayload.md)
 - [EzsignfoldertypeGetListV1Response](docs/Model/EzsignfoldertypeGetListV1Response.md)
@@ -1448,7 +1531,9 @@ Class | Method | HTTP request | Description
 - [EzsignfoldertypeGetObjectV4ResponseMPayload](docs/Model/EzsignfoldertypeGetObjectV4ResponseMPayload.md)
 - [EzsignfoldertypeListElement](docs/Model/EzsignfoldertypeListElement.md)
 - [EzsignfoldertypeRequestCompoundV3](docs/Model/EzsignfoldertypeRequestCompoundV3.md)
+- [EzsignfoldertypeRequestCompoundV4](docs/Model/EzsignfoldertypeRequestCompoundV4.md)
 - [EzsignfoldertypeRequestV3](docs/Model/EzsignfoldertypeRequestV3.md)
+- [EzsignfoldertypeRequestV4](docs/Model/EzsignfoldertypeRequestV4.md)
 - [EzsignfoldertypeResponse](docs/Model/EzsignfoldertypeResponse.md)
 - [EzsignfoldertypeResponseCompound](docs/Model/EzsignfoldertypeResponseCompound.md)
 - [EzsignfoldertypeResponseCompoundV4](docs/Model/EzsignfoldertypeResponseCompoundV4.md)
@@ -1601,9 +1686,24 @@ Class | Method | HTTP request | Description
 - [EzsigntemplateResponseCompound](docs/Model/EzsigntemplateResponseCompound.md)
 - [EzsigntemplateResponseCompoundV3](docs/Model/EzsigntemplateResponseCompoundV3.md)
 - [EzsigntemplateResponseV3](docs/Model/EzsigntemplateResponseV3.md)
+- [EzsigntemplateannotationCreateObjectV1Request](docs/Model/EzsigntemplateannotationCreateObjectV1Request.md)
+- [EzsigntemplateannotationCreateObjectV1Response](docs/Model/EzsigntemplateannotationCreateObjectV1Response.md)
+- [EzsigntemplateannotationCreateObjectV1ResponseMPayload](docs/Model/EzsigntemplateannotationCreateObjectV1ResponseMPayload.md)
+- [EzsigntemplateannotationDeleteObjectV1Response](docs/Model/EzsigntemplateannotationDeleteObjectV1Response.md)
+- [EzsigntemplateannotationEditObjectV1Request](docs/Model/EzsigntemplateannotationEditObjectV1Request.md)
+- [EzsigntemplateannotationEditObjectV1Response](docs/Model/EzsigntemplateannotationEditObjectV1Response.md)
+- [EzsigntemplateannotationGetObjectV2Response](docs/Model/EzsigntemplateannotationGetObjectV2Response.md)
+- [EzsigntemplateannotationGetObjectV2ResponseMPayload](docs/Model/EzsigntemplateannotationGetObjectV2ResponseMPayload.md)
+- [EzsigntemplateannotationRequest](docs/Model/EzsigntemplateannotationRequest.md)
+- [EzsigntemplateannotationRequestCompound](docs/Model/EzsigntemplateannotationRequestCompound.md)
+- [EzsigntemplateannotationResponse](docs/Model/EzsigntemplateannotationResponse.md)
+- [EzsigntemplateannotationResponseCompound](docs/Model/EzsigntemplateannotationResponseCompound.md)
 - [EzsigntemplatedocumentCreateObjectV1Request](docs/Model/EzsigntemplatedocumentCreateObjectV1Request.md)
 - [EzsigntemplatedocumentCreateObjectV1Response](docs/Model/EzsigntemplatedocumentCreateObjectV1Response.md)
 - [EzsigntemplatedocumentCreateObjectV1ResponseMPayload](docs/Model/EzsigntemplatedocumentCreateObjectV1ResponseMPayload.md)
+- [EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request](docs/Model/EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request.md)
+- [EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response](docs/Model/EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response.md)
+- [EzsigntemplatedocumentEditEzsigntemplateannotationsV1ResponseMPayload](docs/Model/EzsigntemplatedocumentEditEzsigntemplateannotationsV1ResponseMPayload.md)
 - [EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request](docs/Model/EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request.md)
 - [EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response](docs/Model/EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response.md)
 - [EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload](docs/Model/EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload.md)
@@ -1622,6 +1722,8 @@ Class | Method | HTTP request | Description
 - [EzsigntemplatedocumentExtractTextV1Response](docs/Model/EzsigntemplatedocumentExtractTextV1Response.md)
 - [EzsigntemplatedocumentExtractTextV1ResponseMPayload](docs/Model/EzsigntemplatedocumentExtractTextV1ResponseMPayload.md)
 - [EzsigntemplatedocumentFlattenV1Response](docs/Model/EzsigntemplatedocumentFlattenV1Response.md)
+- [EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response](docs/Model/EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response.md)
+- [EzsigntemplatedocumentGetEzsigntemplateannotationsV1ResponseMPayload](docs/Model/EzsigntemplatedocumentGetEzsigntemplateannotationsV1ResponseMPayload.md)
 - [EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1Response](docs/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1Response.md)
 - [EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload](docs/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload.md)
 - [EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response](docs/Model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response.md)
@@ -1686,6 +1788,10 @@ Class | Method | HTTP request | Description
 - [EzsigntemplateglobalGetObjectV2ResponseMPayload](docs/Model/EzsigntemplateglobalGetObjectV2ResponseMPayload.md)
 - [EzsigntemplateglobalResponse](docs/Model/EzsigntemplateglobalResponse.md)
 - [EzsigntemplateglobalResponseCompound](docs/Model/EzsigntemplateglobalResponseCompound.md)
+- [EzsigntemplateglobalannotationGetObjectV2Response](docs/Model/EzsigntemplateglobalannotationGetObjectV2Response.md)
+- [EzsigntemplateglobalannotationGetObjectV2ResponseMPayload](docs/Model/EzsigntemplateglobalannotationGetObjectV2ResponseMPayload.md)
+- [EzsigntemplateglobalannotationResponse](docs/Model/EzsigntemplateglobalannotationResponse.md)
+- [EzsigntemplateglobalannotationResponseCompound](docs/Model/EzsigntemplateglobalannotationResponseCompound.md)
 - [EzsigntemplateglobaldocumentResponse](docs/Model/EzsigntemplateglobaldocumentResponse.md)
 - [EzsigntemplateglobalsignerResponse](docs/Model/EzsigntemplateglobalsignerResponse.md)
 - [EzsigntemplateglobalsignerResponseCompound](docs/Model/EzsigntemplateglobalsignerResponseCompound.md)
@@ -1862,6 +1968,7 @@ Class | Method | HTTP request | Description
 - [FieldEEzmaxinvoicingagentVariationezsign](docs/Model/FieldEEzmaxinvoicingagentVariationezsign.md)
 - [FieldEEzmaxinvoicingcontractPaymenttype](docs/Model/FieldEEzmaxinvoicingcontractPaymenttype.md)
 - [FieldEEzmaxinvoicinguserVariationezsign](docs/Model/FieldEEzmaxinvoicinguserVariationezsign.md)
+- [FieldEEzmaxpartnerCustomdevelopment](docs/Model/FieldEEzmaxpartnerCustomdevelopment.md)
 - [FieldEEzsignannotationType](docs/Model/FieldEEzsignannotationType.md)
 - [FieldEEzsignbulksendEzsignformfieldorder](docs/Model/FieldEEzsignbulksendEzsignformfieldorder.md)
 - [FieldEEzsigndocumentStep](docs/Model/FieldEEzsigndocumentStep.md)
@@ -1872,6 +1979,7 @@ Class | Method | HTTP request | Description
 - [FieldEEzsignfolderDocumentdependency](docs/Model/FieldEEzsignfolderDocumentdependency.md)
 - [FieldEEzsignfolderMessageorder](docs/Model/FieldEEzsignfolderMessageorder.md)
 - [FieldEEzsignfolderSendreminderfrequency](docs/Model/FieldEEzsignfolderSendreminderfrequency.md)
+- [FieldEEzsignfolderSource](docs/Model/FieldEEzsignfolderSource.md)
 - [FieldEEzsignfolderStep](docs/Model/FieldEEzsignfolderStep.md)
 - [FieldEEzsignfoldertypeCompletion](docs/Model/FieldEEzsignfoldertypeCompletion.md)
 - [FieldEEzsignfoldertypeDisposal](docs/Model/FieldEEzsignfoldertypeDisposal.md)
@@ -1881,6 +1989,7 @@ Class | Method | HTTP request | Description
 - [FieldEEzsignfoldertypePdfarequirement](docs/Model/FieldEEzsignfoldertypePdfarequirement.md)
 - [FieldEEzsignfoldertypePrivacylevel](docs/Model/FieldEEzsignfoldertypePrivacylevel.md)
 - [FieldEEzsignfoldertypeSendreminderfrequency](docs/Model/FieldEEzsignfoldertypeSendreminderfrequency.md)
+- [FieldEEzsignfoldertypeSignaturedatedisplay](docs/Model/FieldEEzsignfoldertypeSignaturedatedisplay.md)
 - [FieldEEzsignfoldertypeSigneraccess](docs/Model/FieldEEzsignfoldertypeSigneraccess.md)
 - [FieldEEzsignformfieldDependencyrequirement](docs/Model/FieldEEzsignformfieldDependencyrequirement.md)
 - [FieldEEzsignformfieldgroupSignerrequirement](docs/Model/FieldEEzsignformfieldgroupSignerrequirement.md)
@@ -1897,6 +2006,9 @@ Class | Method | HTTP request | Description
 - [FieldEEzsignsignaturepaymentdetailTaxable](docs/Model/FieldEEzsignsignaturepaymentdetailTaxable.md)
 - [FieldEEzsigntemplateRecognition](docs/Model/FieldEEzsigntemplateRecognition.md)
 - [FieldEEzsigntemplateType](docs/Model/FieldEEzsigntemplateType.md)
+- [FieldEEzsigntemplateannotationHorizontalalignment](docs/Model/FieldEEzsigntemplateannotationHorizontalalignment.md)
+- [FieldEEzsigntemplateannotationType](docs/Model/FieldEEzsigntemplateannotationType.md)
+- [FieldEEzsigntemplateannotationVerticalalignment](docs/Model/FieldEEzsigntemplateannotationVerticalalignment.md)
 - [FieldEEzsigntemplatedocumentpagerecognitionOperator](docs/Model/FieldEEzsigntemplatedocumentpagerecognitionOperator.md)
 - [FieldEEzsigntemplatedocumentpagerecognitionSection](docs/Model/FieldEEzsigntemplatedocumentpagerecognitionSection.md)
 - [FieldEEzsigntemplateelementdependencyOperator](docs/Model/FieldEEzsigntemplateelementdependencyOperator.md)
@@ -1909,6 +2021,10 @@ Class | Method | HTTP request | Description
 - [FieldEEzsigntemplateformfieldgroupType](docs/Model/FieldEEzsigntemplateformfieldgroupType.md)
 - [FieldEEzsigntemplateglobalModule](docs/Model/FieldEEzsigntemplateglobalModule.md)
 - [FieldEEzsigntemplateglobalSupplier](docs/Model/FieldEEzsigntemplateglobalSupplier.md)
+- [FieldEEzsigntemplateglobalannotationHorizontalalignment](docs/Model/FieldEEzsigntemplateglobalannotationHorizontalalignment.md)
+- [FieldEEzsigntemplateglobalannotationType](docs/Model/FieldEEzsigntemplateglobalannotationType.md)
+- [FieldEEzsigntemplateglobalannotationVerticalalignment](docs/Model/FieldEEzsigntemplateglobalannotationVerticalalignment.md)
+- [FieldEEzsigntemplateglobaldocumentAcceptationtype](docs/Model/FieldEEzsigntemplateglobaldocumentAcceptationtype.md)
 - [FieldEEzsigntemplatepackagesignerMapping](docs/Model/FieldEEzsigntemplatepackagesignerMapping.md)
 - [FieldEEzsigntemplatepublicLimittype](docs/Model/FieldEEzsigntemplatepublicLimittype.md)
 - [FieldEEzsigntemplatesignatureAttachmentnamesource](docs/Model/FieldEEzsigntemplatesignatureAttachmentnamesource.md)
@@ -2000,6 +2116,8 @@ Class | Method | HTTP request | Description
 - [InscriptionchecklistAutocompleteElementResponse](docs/Model/InscriptionchecklistAutocompleteElementResponse.md)
 - [InscriptionchecklistGetAutocompleteV3Response](docs/Model/InscriptionchecklistGetAutocompleteV3Response.md)
 - [InscriptionchecklistGetAutocompleteV3ResponseMPayload](docs/Model/InscriptionchecklistGetAutocompleteV3ResponseMPayload.md)
+- [InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request](docs/Model/InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request.md)
+- [InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response](docs/Model/InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response.md)
 - [InscriptionnotauthenticatedGetCommunicationCountV1Response](docs/Model/InscriptionnotauthenticatedGetCommunicationCountV1Response.md)
 - [InscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload](docs/Model/InscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload.md)
 - [InscriptionnotauthenticatedGetCommunicationListV1Response](docs/Model/InscriptionnotauthenticatedGetCommunicationListV1Response.md)
@@ -2008,12 +2126,16 @@ Class | Method | HTTP request | Description
 - [InscriptionnotauthenticatedGetCommunicationrecipientsV1ResponseMPayload](docs/Model/InscriptionnotauthenticatedGetCommunicationrecipientsV1ResponseMPayload.md)
 - [InscriptionnotauthenticatedGetCommunicationsendersV1Response](docs/Model/InscriptionnotauthenticatedGetCommunicationsendersV1Response.md)
 - [InscriptionnotauthenticatedGetCommunicationsendersV1ResponseMPayload](docs/Model/InscriptionnotauthenticatedGetCommunicationsendersV1ResponseMPayload.md)
+- [InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response](docs/Model/InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response.md)
+- [InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1ResponseMPayload](docs/Model/InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1ResponseMPayload.md)
 - [InscriptionnotauthenticatedGetListV1Response](docs/Model/InscriptionnotauthenticatedGetListV1Response.md)
 - [InscriptionnotauthenticatedGetListV1ResponseMPayload](docs/Model/InscriptionnotauthenticatedGetListV1ResponseMPayload.md)
 - [InscriptionnotauthenticatedImportIntoEDMV1Request](docs/Model/InscriptionnotauthenticatedImportIntoEDMV1Request.md)
 - [InscriptionnotauthenticatedImportIntoEDMV1Response](docs/Model/InscriptionnotauthenticatedImportIntoEDMV1Response.md)
 - [InscriptionnotauthenticatedImportIntoEDMV1ResponseMPayload](docs/Model/InscriptionnotauthenticatedImportIntoEDMV1ResponseMPayload.md)
 - [InscriptionnotauthenticatedListElement](docs/Model/InscriptionnotauthenticatedListElement.md)
+- [InscriptionnotauthenticatedconditionResponse](docs/Model/InscriptionnotauthenticatedconditionResponse.md)
+- [InscriptionnotauthenticatedconditionResponseCompound](docs/Model/InscriptionnotauthenticatedconditionResponseCompound.md)
 - [InscriptiontempGetCommunicationCountV1Response](docs/Model/InscriptiontempGetCommunicationCountV1Response.md)
 - [InscriptiontempGetCommunicationCountV1ResponseMPayload](docs/Model/InscriptiontempGetCommunicationCountV1ResponseMPayload.md)
 - [InscriptiontempGetCommunicationListV1Response](docs/Model/InscriptiontempGetCommunicationListV1Response.md)
@@ -2071,9 +2193,17 @@ Class | Method | HTTP request | Description
 - [MultilingualBillingentityinternalDescription](docs/Model/MultilingualBillingentityinternalDescription.md)
 - [MultilingualBrandingDescription](docs/Model/MultilingualBrandingDescription.md)
 - [MultilingualEzdoctemplatedocumentName](docs/Model/MultilingualEzdoctemplatedocumentName.md)
+- [MultilingualEzmaxcustomerCompany](docs/Model/MultilingualEzmaxcustomerCompany.md)
 - [MultilingualEzmaxcustomerNote](docs/Model/MultilingualEzmaxcustomerNote.md)
 - [MultilingualEzmaxcustomeruserNote](docs/Model/MultilingualEzmaxcustomeruserNote.md)
 - [MultilingualEzmaxinvoicingsummaryinternalDescription](docs/Model/MultilingualEzmaxinvoicingsummaryinternalDescription.md)
+- [MultilingualEzmaxpartnerAddress](docs/Model/MultilingualEzmaxpartnerAddress.md)
+- [MultilingualEzmaxpartnerDescription](docs/Model/MultilingualEzmaxpartnerDescription.md)
+- [MultilingualEzmaxpartnerEmailaddress](docs/Model/MultilingualEzmaxpartnerEmailaddress.md)
+- [MultilingualEzmaxpartnerName](docs/Model/MultilingualEzmaxpartnerName.md)
+- [MultilingualEzmaxpartnerPhoneE164](docs/Model/MultilingualEzmaxpartnerPhoneE164.md)
+- [MultilingualEzmaxpartnerShortdescription](docs/Model/MultilingualEzmaxpartnerShortdescription.md)
+- [MultilingualEzmaxpartnerUrl](docs/Model/MultilingualEzmaxpartnerUrl.md)
 - [MultilingualEzsignfoldertypeName](docs/Model/MultilingualEzsignfoldertypeName.md)
 - [MultilingualEzsignsignergroupDescription](docs/Model/MultilingualEzsignsignergroupDescription.md)
 - [MultilingualEzsignsigningreasonDescription](docs/Model/MultilingualEzsignsigningreasonDescription.md)
@@ -2204,10 +2334,7 @@ Class | Method | HTTP request | Description
 - [ScimServiceProviderConfig](docs/Model/ScimServiceProviderConfig.md)
 - [ScimServiceProviderConfigBulk](docs/Model/ScimServiceProviderConfigBulk.md)
 - [ScimServiceProviderConfigChangePassword](docs/Model/ScimServiceProviderConfigChangePassword.md)
-- [ScimServiceProviderConfigEtag](docs/Model/ScimServiceProviderConfigEtag.md)
 - [ScimServiceProviderConfigFilter](docs/Model/ScimServiceProviderConfigFilter.md)
-- [ScimServiceProviderConfigPatch](docs/Model/ScimServiceProviderConfigPatch.md)
-- [ScimServiceProviderConfigSort](docs/Model/ScimServiceProviderConfigSort.md)
 - [ScimUser](docs/Model/ScimUser.md)
 - [ScimUserList](docs/Model/ScimUserList.md)
 - [SecretquestionAutocompleteElementResponse](docs/Model/SecretquestionAutocompleteElementResponse.md)
@@ -2324,6 +2451,8 @@ Class | Method | HTTP request | Description
 - [UserGetColleaguesV2ResponseMPayload](docs/Model/UserGetColleaguesV2ResponseMPayload.md)
 - [UserGetEffectivePermissionsV1Response](docs/Model/UserGetEffectivePermissionsV1Response.md)
 - [UserGetEffectivePermissionsV1ResponseMPayload](docs/Model/UserGetEffectivePermissionsV1ResponseMPayload.md)
+- [UserGetEzmaxcustomeruserV1Response](docs/Model/UserGetEzmaxcustomeruserV1Response.md)
+- [UserGetEzmaxcustomeruserV1ResponseMPayload](docs/Model/UserGetEzmaxcustomeruserV1ResponseMPayload.md)
 - [UserGetListV1Response](docs/Model/UserGetListV1Response.md)
 - [UserGetListV1ResponseMPayload](docs/Model/UserGetListV1ResponseMPayload.md)
 - [UserGetObjectV2Response](docs/Model/UserGetObjectV2Response.md)
@@ -2336,6 +2465,9 @@ Class | Method | HTTP request | Description
 - [UserGetUsergroupexternalsV1ResponseMPayload](docs/Model/UserGetUsergroupexternalsV1ResponseMPayload.md)
 - [UserGetUsergroupsV1Response](docs/Model/UserGetUsergroupsV1Response.md)
 - [UserGetUsergroupsV1ResponseMPayload](docs/Model/UserGetUsergroupsV1ResponseMPayload.md)
+- [UserImpersonateV1Request](docs/Model/UserImpersonateV1Request.md)
+- [UserImpersonateV1Response](docs/Model/UserImpersonateV1Response.md)
+- [UserImpersonateV1ResponseMPayload](docs/Model/UserImpersonateV1ResponseMPayload.md)
 - [UserListElement](docs/Model/UserListElement.md)
 - [UserRequest](docs/Model/UserRequest.md)
 - [UserRequestCompound](docs/Model/UserRequestCompound.md)
@@ -2467,6 +2599,8 @@ Class | Method | HTTP request | Description
 - [WebhookDeleteObjectV1Response](docs/Model/WebhookDeleteObjectV1Response.md)
 - [WebhookEditObjectV1Request](docs/Model/WebhookEditObjectV1Request.md)
 - [WebhookEditObjectV1Response](docs/Model/WebhookEditObjectV1Response.md)
+- [WebhookEzmaxpartnerproductSubscribe](docs/Model/WebhookEzmaxpartnerproductSubscribe.md)
+- [WebhookEzmaxpartnerproductUnsubscribe](docs/Model/WebhookEzmaxpartnerproductUnsubscribe.md)
 - [WebhookEzsignDocumentCompleted](docs/Model/WebhookEzsignDocumentCompleted.md)
 - [WebhookEzsignDocumentFormCompleted](docs/Model/WebhookEzsignDocumentFormCompleted.md)
 - [WebhookEzsignDocumentUnsent](docs/Model/WebhookEzsignDocumentUnsent.md)
@@ -2550,7 +2684,7 @@ support-api@ezmax.ca
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.3.0`
-    - Package version: `1.3.0`
-    - Generator version: `7.19.0`
+- API version: `1.3.1`
+    - Package version: `1.3.1`
+    - Generator version: `7.23.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

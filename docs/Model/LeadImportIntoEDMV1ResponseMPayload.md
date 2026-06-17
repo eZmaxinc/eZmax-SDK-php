@@ -1,4 +1,4 @@
-# # LeadImportIntoEDMV1ResponseMPayload
+# LeadImportIntoEDMV1ResponseMPayload
 
 ## Properties
 

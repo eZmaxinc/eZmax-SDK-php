@@ -1,4 +1,4 @@
-# # AuthenticationexternalGetListV1Response
+# AuthenticationexternalGetListV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CommonGetReportV1Response
+# CommonGetReportV1Response
 
 ## Properties
 

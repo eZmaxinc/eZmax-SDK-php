@@ -1,4 +1,4 @@
-# # EzsignfolderCreateObjectV1Request
+# EzsignfolderCreateObjectV1Request
 
 ## Properties
 

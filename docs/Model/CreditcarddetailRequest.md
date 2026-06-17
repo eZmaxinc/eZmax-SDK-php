@@ -1,4 +1,4 @@
-# # CreditcarddetailRequest
+# CreditcarddetailRequest
 
 ## Properties
 

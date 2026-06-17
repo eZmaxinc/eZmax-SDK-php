@@ -1,4 +1,4 @@
-# # SignatureEditObjectV1Response
+# SignatureEditObjectV1Response
 
 ## Properties
 

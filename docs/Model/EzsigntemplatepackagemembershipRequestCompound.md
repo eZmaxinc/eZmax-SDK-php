@@ -1,4 +1,4 @@
-# # EzsigntemplatepackagemembershipRequestCompound
+# EzsigntemplatepackagemembershipRequestCompound
 
 ## Properties
 

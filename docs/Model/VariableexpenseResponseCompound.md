@@ -1,4 +1,4 @@
-# # VariableexpenseResponseCompound
+# VariableexpenseResponseCompound
 
 ## Properties
 

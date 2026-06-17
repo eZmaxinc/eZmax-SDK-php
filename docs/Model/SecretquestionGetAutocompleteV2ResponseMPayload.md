@@ -1,4 +1,4 @@
-# # SecretquestionGetAutocompleteV2ResponseMPayload
+# SecretquestionGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

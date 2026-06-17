@@ -1,4 +1,4 @@
-# # BillingentityinternalCreateObjectV1Response
+# BillingentityinternalCreateObjectV1Response
 
 ## Properties
 

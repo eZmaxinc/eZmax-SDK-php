@@ -1,4 +1,4 @@
-# # EzsignuserGetObjectV2ResponseMPayload
+# EzsignuserGetObjectV2ResponseMPayload
 
 ## Properties
 

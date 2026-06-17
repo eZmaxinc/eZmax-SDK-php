@@ -1,4 +1,4 @@
-# # EzsigntemplatesignatureEditObjectV3Request
+# EzsigntemplatesignatureEditObjectV3Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CommonAuditdetail
+# CommonAuditdetail
 
 ## Properties
 

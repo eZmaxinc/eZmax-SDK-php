@@ -1,4 +1,4 @@
-# # ClonehistoryGetListV1ResponseMPayload
+# ClonehistoryGetListV1ResponseMPayload
 
 ## Properties
 

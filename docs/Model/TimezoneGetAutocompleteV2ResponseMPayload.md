@@ -1,4 +1,4 @@
-# # TimezoneGetAutocompleteV2ResponseMPayload
+# TimezoneGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

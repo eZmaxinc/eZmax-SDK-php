@@ -1,4 +1,4 @@
-# # PaymentgatewayListElement
+# PaymentgatewayListElement
 
 ## Properties
 

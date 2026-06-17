@@ -1,4 +1,4 @@
-# # BrandingGetObjectV3Response
+# BrandingGetObjectV3Response
 
 ## Properties
 

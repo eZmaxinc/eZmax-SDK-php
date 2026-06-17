@@ -1,4 +1,4 @@
-# # EzsigndiscussionCreateObjectV1ResponseMPayload
+# EzsigndiscussionCreateObjectV1ResponseMPayload
 
 ## Properties
 

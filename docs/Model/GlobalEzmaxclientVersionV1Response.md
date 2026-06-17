@@ -1,4 +1,4 @@
-# # GlobalEzmaxclientVersionV1Response
+# GlobalEzmaxclientVersionV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentEditObjectV1Request
+# EzdoctemplatedocumentEditObjectV1Request
 
 ## Properties
 

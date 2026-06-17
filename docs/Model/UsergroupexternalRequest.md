@@ -1,4 +1,4 @@
-# # UsergroupexternalRequest
+# UsergroupexternalRequest
 
 ## Properties
 

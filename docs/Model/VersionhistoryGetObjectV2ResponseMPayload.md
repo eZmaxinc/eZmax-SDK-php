@@ -1,4 +1,4 @@
-# # VersionhistoryGetObjectV2ResponseMPayload
+# VersionhistoryGetObjectV2ResponseMPayload
 
 ## Properties
 

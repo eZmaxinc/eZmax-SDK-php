@@ -1,4 +1,4 @@
-# # BillingentityinternalListElement
+# BillingentityinternalListElement
 
 ## Properties
 

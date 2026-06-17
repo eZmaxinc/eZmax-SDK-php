@@ -1,4 +1,4 @@
-# # EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload
+# EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload
 
 ## Properties
 

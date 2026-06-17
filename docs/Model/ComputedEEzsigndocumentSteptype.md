@@ -1,4 +1,4 @@
-# # ComputedEEzsigndocumentSteptype
+# ComputedEEzsigndocumentSteptype
 
 ## Properties
 

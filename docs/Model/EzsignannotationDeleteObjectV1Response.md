@@ -1,4 +1,4 @@
-# # EzsignannotationDeleteObjectV1Response
+# EzsignannotationDeleteObjectV1Response
 
 ## Properties
 

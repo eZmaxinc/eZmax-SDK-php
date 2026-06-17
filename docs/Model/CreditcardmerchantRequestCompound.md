@@ -1,4 +1,4 @@
-# # CreditcardmerchantRequestCompound
+# CreditcardmerchantRequestCompound
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CustomAttachmentPrepareFilesTransferRequest
+# CustomAttachmentPrepareFilesTransferRequest
 
 ## Properties
 

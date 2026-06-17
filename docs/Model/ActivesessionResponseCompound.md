@@ -1,4 +1,4 @@
-# # ActivesessionResponseCompound
+# ActivesessionResponseCompound
 
 ## Properties
 
@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **eUserEzsignaccess** | [**\eZmaxAPI\Model\FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |
 **eUserEzsignprepaid** | [**\eZmaxAPI\Model\FieldEUserEzsignprepaid**](FieldEUserEzsignprepaid.md) |  | [optional]
 **bUserEzsigntrial** | **bool** | Whether the User&#39;s eZsign subscription is a trial | [optional]
+**bUserEzsigntemplaterolegrouping** | **bool** | Whether we group or not the Ezsigntemplate roles | [optional]
 **dtUserEzsignprepaidexpiration** | **string** | The eZsign prepaid expiration date | [optional]
 **dtUserNpsrequest** | **string** | The date at which the NPS questionnaire will be show | [optional]
 **aPkiPermissionID** | **int[]** | An array of permissions granted to the user or api key |
@@ -36,5 +37,6 @@ Name | Type | Description | Notes
 **objUserCloned** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional]
 **objApikey** | [**\eZmaxAPI\Model\ActivesessionResponseCompoundApikey**](ActivesessionResponseCompoundApikey.md) |  | [optional]
 **aEModuleInternalname** | **string[]** | An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key. |
+**bActivesessionMaillinglistrequest** | **bool** | If you need to ask which mailing lists this user wants to subscribe to | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

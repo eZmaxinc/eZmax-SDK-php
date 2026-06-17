@@ -1,4 +1,4 @@
-# # BrandingRequestCompoundV2
+# BrandingRequestCompoundV2
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ContactResponseCompound
+# ContactResponseCompound
 
 ## Properties
 

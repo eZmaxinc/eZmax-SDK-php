@@ -1,4 +1,4 @@
-# # EzsignfolderGetCommunicationCountV1Response
+# EzsignfolderGetCommunicationCountV1Response
 
 ## Properties
 

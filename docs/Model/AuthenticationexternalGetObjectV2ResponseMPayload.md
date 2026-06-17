@@ -1,4 +1,4 @@
-# # AuthenticationexternalGetObjectV2ResponseMPayload
+# AuthenticationexternalGetObjectV2ResponseMPayload
 
 ## Properties
 

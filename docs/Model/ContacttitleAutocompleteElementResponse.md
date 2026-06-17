@@ -1,4 +1,4 @@
-# # ContacttitleAutocompleteElementResponse
+# ContacttitleAutocompleteElementResponse
 
 ## Properties
 

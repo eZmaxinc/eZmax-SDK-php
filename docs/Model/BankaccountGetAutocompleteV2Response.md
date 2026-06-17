@@ -1,4 +1,4 @@
-# # BankaccountGetAutocompleteV2Response
+# BankaccountGetAutocompleteV2Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigndocumentExtractTextV1Response
+# EzsigndocumentExtractTextV1Response
 
 ## Properties
 

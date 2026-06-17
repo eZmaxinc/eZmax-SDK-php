@@ -1,4 +1,4 @@
-# # EzsigndocumentSubmitEzsignformV1Response
+# EzsigndocumentSubmitEzsignformV1Response
 
 ## Properties
 

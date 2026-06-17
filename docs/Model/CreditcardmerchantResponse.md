@@ -1,4 +1,4 @@
-# # CreditcardmerchantResponse
+# CreditcardmerchantResponse
 
 ## Properties
 

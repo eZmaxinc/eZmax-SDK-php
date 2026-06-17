@@ -1,4 +1,4 @@
-# # BillingentityinternalAutocompleteElementResponse
+# BillingentityinternalAutocompleteElementResponse
 
 ## Properties
 

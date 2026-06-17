@@ -1,4 +1,4 @@
-# # EzsignfoldertypeGetAutocompleteV2Response
+# EzsignfoldertypeGetAutocompleteV2Response
 
 ## Properties
 

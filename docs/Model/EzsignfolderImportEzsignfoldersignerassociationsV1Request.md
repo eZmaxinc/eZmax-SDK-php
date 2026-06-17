@@ -1,4 +1,4 @@
-# # EzsignfolderImportEzsignfoldersignerassociationsV1Request
+# EzsignfolderImportEzsignfoldersignerassociationsV1Request
 
 ## Properties
 

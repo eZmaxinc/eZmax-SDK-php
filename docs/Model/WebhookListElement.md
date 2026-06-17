@@ -1,4 +1,4 @@
-# # WebhookListElement
+# WebhookListElement
 
 ## Properties
 

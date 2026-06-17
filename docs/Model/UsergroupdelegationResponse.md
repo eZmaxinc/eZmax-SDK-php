@@ -1,4 +1,4 @@
-# # UsergroupdelegationResponse
+# UsergroupdelegationResponse
 
 ## Properties
 

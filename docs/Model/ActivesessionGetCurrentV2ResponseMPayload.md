@@ -1,4 +1,4 @@
-# # ActivesessionGetCurrentV2ResponseMPayload
+# ActivesessionGetCurrentV2ResponseMPayload
 
 ## Properties
 

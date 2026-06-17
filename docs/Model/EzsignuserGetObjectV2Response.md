@@ -1,4 +1,4 @@
-# # EzsignuserGetObjectV2Response
+# EzsignuserGetObjectV2Response
 
 ## Properties
 

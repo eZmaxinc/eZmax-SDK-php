@@ -1,4 +1,4 @@
-# # UsergroupexternalCreateObjectV1Response
+# UsergroupexternalCreateObjectV1Response
 
 ## Properties
 

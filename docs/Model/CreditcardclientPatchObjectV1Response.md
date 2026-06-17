@@ -1,4 +1,4 @@
-# # CreditcardclientPatchObjectV1Response
+# CreditcardclientPatchObjectV1Response
 
 ## Properties
 

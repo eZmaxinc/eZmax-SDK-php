@@ -1,4 +1,4 @@
-# # EzsignsignergroupCreateObjectV1Response
+# EzsignsignergroupCreateObjectV1Response
 
 ## Properties
 

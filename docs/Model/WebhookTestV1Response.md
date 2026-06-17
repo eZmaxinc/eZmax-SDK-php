@@ -1,4 +1,4 @@
-# # WebhookTestV1Response
+# WebhookTestV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ExternalbrokerImportIntoEDMV1Request
+# ExternalbrokerImportIntoEDMV1Request
 
 ## Properties
 

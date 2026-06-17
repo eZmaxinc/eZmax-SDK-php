@@ -1,4 +1,4 @@
-# # ApikeyGetListV1ResponseMPayload
+# ApikeyGetListV1ResponseMPayload
 
 ## Properties
 

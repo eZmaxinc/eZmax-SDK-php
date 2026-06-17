@@ -1,4 +1,4 @@
-# # BrandingCreateObjectV2ResponseMPayload
+# BrandingCreateObjectV2ResponseMPayload
 
 ## Properties
 

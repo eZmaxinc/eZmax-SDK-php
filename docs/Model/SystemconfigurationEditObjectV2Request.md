@@ -1,4 +1,4 @@
-# # SystemconfigurationEditObjectV2Request
+# SystemconfigurationEditObjectV2Request
 
 ## Properties
 

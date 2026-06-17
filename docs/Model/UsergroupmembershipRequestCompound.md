@@ -1,4 +1,4 @@
-# # UsergroupmembershipRequestCompound
+# UsergroupmembershipRequestCompound
 
 ## Properties
 

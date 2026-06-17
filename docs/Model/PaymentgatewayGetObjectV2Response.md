@@ -1,4 +1,4 @@
-# # PaymentgatewayGetObjectV2Response
+# PaymentgatewayGetObjectV2Response
 
 ## Properties
 

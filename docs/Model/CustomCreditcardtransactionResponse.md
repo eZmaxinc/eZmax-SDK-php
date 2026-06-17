@@ -1,4 +1,4 @@
-# # CustomCreditcardtransactionResponse
+# CustomCreditcardtransactionResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicGetListV1ResponseMPayload
+# EzsigntemplatepublicGetListV1ResponseMPayload
 
 ## Properties
 

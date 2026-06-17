@@ -1,4 +1,4 @@
-# # UserCreateEzsignuserV1Response
+# UserCreateEzsignuserV1Response
 
 ## Properties
 

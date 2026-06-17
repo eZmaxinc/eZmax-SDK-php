@@ -1,4 +1,4 @@
-# # CreditcardmerchantGetListV1ResponseMPayload
+# CreditcardmerchantGetListV1ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # VariableexpenseCreateObjectV1Response
+# VariableexpenseCreateObjectV1Response
 
 ## Properties
 

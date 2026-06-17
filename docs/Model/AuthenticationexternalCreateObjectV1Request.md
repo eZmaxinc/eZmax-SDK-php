@@ -1,4 +1,4 @@
-# # AuthenticationexternalCreateObjectV1Request
+# AuthenticationexternalCreateObjectV1Request
 
 ## Properties
 

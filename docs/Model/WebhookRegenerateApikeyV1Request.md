@@ -1,4 +1,4 @@
-# # WebhookRegenerateApikeyV1Request
+# WebhookRegenerateApikeyV1Request
 
 ## Properties
 

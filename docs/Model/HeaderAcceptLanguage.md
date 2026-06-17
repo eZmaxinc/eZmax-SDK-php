@@ -1,4 +1,4 @@
-# # HeaderAcceptLanguage
+# HeaderAcceptLanguage
 
 ## Properties
 

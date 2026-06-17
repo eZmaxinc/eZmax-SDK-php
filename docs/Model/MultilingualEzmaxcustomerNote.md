@@ -1,4 +1,4 @@
-# # MultilingualEzmaxcustomerNote
+# MultilingualEzmaxcustomerNote
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignbulksendsignermappingResponseCompound
+# EzsignbulksendsignermappingResponseCompound
 
 ## Properties
 

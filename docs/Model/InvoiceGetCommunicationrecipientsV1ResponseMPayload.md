@@ -1,4 +1,4 @@
-# # InvoiceGetCommunicationrecipientsV1ResponseMPayload
+# InvoiceGetCommunicationrecipientsV1ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SubnetCreateObjectV1Response
+# SubnetCreateObjectV1Response
 
 ## Properties
 

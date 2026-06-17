@@ -1,4 +1,4 @@
-# # EzsignbulksendtransmissionResponse
+# EzsignbulksendtransmissionResponse
 
 ## Properties
 

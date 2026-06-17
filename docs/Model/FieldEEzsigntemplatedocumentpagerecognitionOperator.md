@@ -1,4 +1,4 @@
-# # FieldEEzsigntemplatedocumentpagerecognitionOperator
+# FieldEEzsigntemplatedocumentpagerecognitionOperator
 
 ## Properties
 

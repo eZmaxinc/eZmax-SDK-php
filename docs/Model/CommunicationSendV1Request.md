@@ -1,4 +1,4 @@
-# # CommunicationSendV1Request
+# CommunicationSendV1Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SignatureGetObjectV3ResponseMPayload
+# SignatureGetObjectV3ResponseMPayload
 
 ## Properties
 

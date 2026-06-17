@@ -1,4 +1,4 @@
-# # EzsignsignergroupEditObjectV1Response
+# EzsignsignergroupEditObjectV1Response
 
 ## Properties
 

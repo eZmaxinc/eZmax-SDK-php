@@ -1,4 +1,4 @@
-# # PaymentgatewayRequestCompound
+# PaymentgatewayRequestCompound
 
 ## Properties
 

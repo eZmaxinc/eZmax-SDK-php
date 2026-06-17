@@ -1,4 +1,4 @@
-# # UsergroupGetAutocompleteV2Response
+# UsergroupGetAutocompleteV2Response
 
 ## Properties
 

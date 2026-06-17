@@ -1,4 +1,4 @@
-# # EzsigndocumentEditEzsignsignaturesV1ResponseMPayload
+# EzsigndocumentEditEzsignsignaturesV1ResponseMPayload
 
 ## Properties
 

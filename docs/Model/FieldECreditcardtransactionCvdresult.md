@@ -1,4 +1,4 @@
-# # FieldECreditcardtransactionCvdresult
+# FieldECreditcardtransactionCvdresult
 
 ## Properties
 

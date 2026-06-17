@@ -1,4 +1,4 @@
-# # FieldESignaturePreference
+# FieldESignaturePreference
 
 ## Properties
 

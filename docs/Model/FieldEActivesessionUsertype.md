@@ -1,4 +1,4 @@
-# # FieldEActivesessionUsertype
+# FieldEActivesessionUsertype
 
 ## Properties
 

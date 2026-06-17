@@ -1,4 +1,4 @@
-# # SignatureDeleteObjectV1Response
+# SignatureDeleteObjectV1Response
 
 ## Properties
 

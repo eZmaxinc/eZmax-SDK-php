@@ -1,4 +1,4 @@
-# # EzsignfolderGetObjectV2ResponseMPayload
+# EzsignfolderGetObjectV2ResponseMPayload
 
 ## Properties
 

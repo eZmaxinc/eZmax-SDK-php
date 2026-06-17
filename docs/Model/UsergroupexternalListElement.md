@@ -1,4 +1,4 @@
-# # UsergroupexternalListElement
+# UsergroupexternalListElement
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # BuyercontractListElement
+# BuyercontractListElement
 
 ## Properties
 
@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **dBuyercontractMinimumprice** | **string** | The minimumprice of the Buyercontract |
 **dBuyercontractMaximumprice** | **string** | The maximumprice of the Buyercontract |
 **eBuyercontractType** | [**\eZmaxAPI\Model\FieldEBuyercontractType**](FieldEBuyercontractType.md) |  |
+**sBuyercontractContract** | **string** | The number of the Buyercontract | [optional]
 **dtBuyercontractDate** | **string** | The date of the Buyercontract |
 **dtBuyercontractExpirationdate** | **string** | The expirationdate of the Buyercontract | [optional]
 **bBuyercontractIsactive** | **bool** | Whether the buyercontract is active or not |

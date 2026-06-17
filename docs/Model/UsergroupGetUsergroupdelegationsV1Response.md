@@ -1,4 +1,4 @@
-# # UsergroupGetUsergroupdelegationsV1Response
+# UsergroupGetUsergroupdelegationsV1Response
 
 ## Properties
 

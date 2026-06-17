@@ -1,4 +1,4 @@
-# # CreditcardclientEditObjectV1Response
+# CreditcardclientEditObjectV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload
+# EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload
 
 ## Properties
 

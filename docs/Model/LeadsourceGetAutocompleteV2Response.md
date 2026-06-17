@@ -1,4 +1,4 @@
-# # LeadsourceGetAutocompleteV2Response
+# LeadsourceGetAutocompleteV2Response
 
 ## Properties
 

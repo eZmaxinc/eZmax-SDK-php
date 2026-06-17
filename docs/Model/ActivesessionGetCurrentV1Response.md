@@ -1,4 +1,4 @@
-# # ActivesessionGetCurrentV1Response
+# ActivesessionGetCurrentV1Response
 
 ## Properties
 

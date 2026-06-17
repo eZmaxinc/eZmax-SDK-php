@@ -1,4 +1,4 @@
-# # TranqcontractGetCommunicationsendersV1Response
+# TranqcontractGetCommunicationsendersV1Response
 
 ## Properties
 

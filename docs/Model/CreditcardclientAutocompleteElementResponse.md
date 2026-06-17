@@ -1,4 +1,4 @@
-# # CreditcardclientAutocompleteElementResponse
+# CreditcardclientAutocompleteElementResponse
 
 ## Properties
 

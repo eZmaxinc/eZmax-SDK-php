@@ -1,4 +1,4 @@
-# # UserGetSubnetsV1ResponseMPayload
+# UserGetSubnetsV1ResponseMPayload
 
 ## Properties
 

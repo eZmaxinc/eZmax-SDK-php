@@ -1,4 +1,4 @@
-# # PaymenttermGetAutocompleteV2Response
+# PaymenttermGetAutocompleteV2Response
 
 ## Properties
 

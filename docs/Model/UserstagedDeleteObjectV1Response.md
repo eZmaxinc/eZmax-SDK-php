@@ -1,4 +1,4 @@
-# # UserstagedDeleteObjectV1Response
+# UserstagedDeleteObjectV1Response
 
 ## Properties
 

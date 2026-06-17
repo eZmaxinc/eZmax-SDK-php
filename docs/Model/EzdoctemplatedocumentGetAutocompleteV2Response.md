@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentGetAutocompleteV2Response
+# EzdoctemplatedocumentGetAutocompleteV2Response
 
 ## Properties
 

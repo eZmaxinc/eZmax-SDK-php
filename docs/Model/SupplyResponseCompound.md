@@ -1,4 +1,4 @@
-# # SupplyResponseCompound
+# SupplyResponseCompound
 
 ## Properties
 

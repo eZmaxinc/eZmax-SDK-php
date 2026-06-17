@@ -1,4 +1,4 @@
-# # InscriptionImportIntoEDMV1Request
+# InscriptionImportIntoEDMV1Request
 
 ## Properties
 

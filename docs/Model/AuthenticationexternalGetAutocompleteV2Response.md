@@ -1,4 +1,4 @@
-# # AuthenticationexternalGetAutocompleteV2Response
+# AuthenticationexternalGetAutocompleteV2Response
 
 ## Properties
 

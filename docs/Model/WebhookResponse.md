@@ -1,10 +1,10 @@
-# # WebhookResponse
+# WebhookResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pkiWebhookID** | **int** | The unique ID of the Webhook |
+**pkiWebhookID** | **int** | The unique ID of the Webhook | [optional]
 **fkiAuthenticationexternalID** | **int** | The unique ID of the Authenticationexternal | [optional]
 **sWebhookDescription** | **string** | The description of the Webhook |
 **fkiEzsignfoldertypeID** | **int** | The unique ID of the Ezsignfoldertype. | [optional]
@@ -20,6 +20,6 @@ Name | Type | Description | Notes
 **bWebhookIssigned** | **bool** | Whether the requests will be signed or not |
 **bWebhookSkipsslvalidation** | **bool** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |
 **sAuthenticationexternalDescription** | **string** | The description of the Authenticationexternal | [optional]
-**objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |
+**objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

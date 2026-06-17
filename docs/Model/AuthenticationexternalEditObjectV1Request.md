@@ -1,4 +1,4 @@
-# # AuthenticationexternalEditObjectV1Request
+# AuthenticationexternalEditObjectV1Request
 
 ## Properties
 

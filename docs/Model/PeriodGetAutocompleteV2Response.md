@@ -1,4 +1,4 @@
-# # PeriodGetAutocompleteV2Response
+# PeriodGetAutocompleteV2Response
 
 ## Properties
 

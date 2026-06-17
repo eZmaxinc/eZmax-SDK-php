@@ -1,4 +1,4 @@
-# # ModulesectionResponse
+# ModulesectionResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # TextstylestaticResponse
+# TextstylestaticResponse
 
 ## Properties
 

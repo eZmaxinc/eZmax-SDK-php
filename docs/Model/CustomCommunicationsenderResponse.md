@@ -1,4 +1,4 @@
-# # CustomCommunicationsenderResponse
+# CustomCommunicationsenderResponse
 
 ## Properties
 

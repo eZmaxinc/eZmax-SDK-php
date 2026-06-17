@@ -1,4 +1,4 @@
-# # EzsignsigningreasonResponseCompound
+# EzsignsigningreasonResponseCompound
 
 ## Properties
 

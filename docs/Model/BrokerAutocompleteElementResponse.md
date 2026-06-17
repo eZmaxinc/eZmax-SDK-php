@@ -1,4 +1,4 @@
-# # BrokerAutocompleteElementResponse
+# BrokerAutocompleteElementResponse
 
 ## Properties
 

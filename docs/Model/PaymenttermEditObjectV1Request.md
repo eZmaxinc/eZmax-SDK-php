@@ -1,4 +1,4 @@
-# # PaymenttermEditObjectV1Request
+# PaymenttermEditObjectV1Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentpagerecognitionEditObjectV1Response
+# EzsigntemplatedocumentpagerecognitionEditObjectV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigntemplatesignerGetObjectV2Response
+# EzsigntemplatesignerGetObjectV2Response
 
 ## Properties
 

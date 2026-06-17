@@ -1,4 +1,4 @@
-# # FieldEAuthenticationexternalType
+# FieldEAuthenticationexternalType
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignformfieldgroupGetObjectV2Response
+# EzsignformfieldgroupGetObjectV2Response
 
 ## Properties
 

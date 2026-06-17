@@ -1,4 +1,4 @@
-# # EzsigndiscussionDeleteObjectV1Response
+# EzsigndiscussionDeleteObjectV1Response
 
 ## Properties
 

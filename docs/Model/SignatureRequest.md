@@ -1,4 +1,4 @@
-# # SignatureRequest
+# SignatureRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CommonResponseGetList
+# CommonResponseGetList
 
 ## Properties
 

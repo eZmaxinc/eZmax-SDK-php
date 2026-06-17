@@ -1,4 +1,4 @@
-# # SignatureCreateObjectV1ResponseMPayload
+# SignatureCreateObjectV1ResponseMPayload
 
 ## Properties
 

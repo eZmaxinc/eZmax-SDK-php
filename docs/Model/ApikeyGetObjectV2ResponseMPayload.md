@@ -1,4 +1,4 @@
-# # ApikeyGetObjectV2ResponseMPayload
+# ApikeyGetObjectV2ResponseMPayload
 
 ## Properties
 

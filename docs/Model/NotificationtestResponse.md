@@ -1,4 +1,4 @@
-# # NotificationtestResponse
+# NotificationtestResponse
 
 ## Properties
 

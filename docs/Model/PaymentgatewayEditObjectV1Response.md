@@ -1,4 +1,4 @@
-# # PaymentgatewayEditObjectV1Response
+# PaymentgatewayEditObjectV1Response
 
 ## Properties
 

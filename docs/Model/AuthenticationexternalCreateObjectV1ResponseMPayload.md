@@ -1,4 +1,4 @@
-# # AuthenticationexternalCreateObjectV1ResponseMPayload
+# AuthenticationexternalCreateObjectV1ResponseMPayload
 
 ## Properties
 

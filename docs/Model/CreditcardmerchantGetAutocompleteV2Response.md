@@ -1,4 +1,4 @@
-# # CreditcardmerchantGetAutocompleteV2Response
+# CreditcardmerchantGetAutocompleteV2Response
 
 ## Properties
 

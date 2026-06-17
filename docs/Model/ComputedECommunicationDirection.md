@@ -1,4 +1,4 @@
-# # ComputedECommunicationDirection
+# ComputedECommunicationDirection
 
 ## Properties
 

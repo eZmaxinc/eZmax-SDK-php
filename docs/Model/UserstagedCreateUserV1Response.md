@@ -1,4 +1,4 @@
-# # UserstagedCreateUserV1Response
+# UserstagedCreateUserV1Response
 
 ## Properties
 

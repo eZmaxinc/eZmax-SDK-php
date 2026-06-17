@@ -1,4 +1,4 @@
-# # ApikeyCreateObjectV2Request
+# ApikeyCreateObjectV2Request
 
 ## Properties
 

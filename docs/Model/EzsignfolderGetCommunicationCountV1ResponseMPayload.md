@@ -1,4 +1,4 @@
-# # EzsignfolderGetCommunicationCountV1ResponseMPayload
+# EzsignfolderGetCommunicationCountV1ResponseMPayload
 
 ## Properties
 

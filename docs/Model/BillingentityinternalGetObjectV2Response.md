@@ -1,4 +1,4 @@
-# # BillingentityinternalGetObjectV2Response
+# BillingentityinternalGetObjectV2Response
 
 ## Properties
 

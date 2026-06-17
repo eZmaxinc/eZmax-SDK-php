@@ -1,4 +1,4 @@
-# # UsergroupEditObjectV1Response
+# UsergroupEditObjectV1Response
 
 ## Properties
 

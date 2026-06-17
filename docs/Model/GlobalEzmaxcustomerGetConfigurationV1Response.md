@@ -1,4 +1,4 @@
-# # GlobalEzmaxcustomerGetConfigurationV1Response
+# GlobalEzmaxcustomerGetConfigurationV1Response
 
 ## Properties
 

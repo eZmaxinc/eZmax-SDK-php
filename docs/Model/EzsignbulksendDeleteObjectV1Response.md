@@ -1,4 +1,4 @@
-# # EzsignbulksendDeleteObjectV1Response
+# EzsignbulksendDeleteObjectV1Response
 
 ## Properties
 

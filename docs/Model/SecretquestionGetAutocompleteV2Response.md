@@ -1,4 +1,4 @@
-# # SecretquestionGetAutocompleteV2Response
+# SecretquestionGetAutocompleteV2Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response
+# EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response
 
 ## Properties
 

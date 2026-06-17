@@ -1,4 +1,4 @@
-# # WebsiteResponseCompound
+# WebsiteResponseCompound
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignformfieldgroupEditObjectV1Response
+# EzsignformfieldgroupEditObjectV1Response
 
 ## Properties
 

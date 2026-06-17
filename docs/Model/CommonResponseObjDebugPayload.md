@@ -1,4 +1,4 @@
-# # CommonResponseObjDebugPayload
+# CommonResponseObjDebugPayload
 
 ## Properties
 

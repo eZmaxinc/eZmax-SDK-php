@@ -1,4 +1,4 @@
-# # GlaccountAutocompleteElementResponse
+# GlaccountAutocompleteElementResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigndocumentGetEzsignformfieldgroupsV1Response
+# EzsigndocumentGetEzsignformfieldgroupsV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UserGetObjectV2Response
+# UserGetObjectV2Response
 
 ## Properties
 

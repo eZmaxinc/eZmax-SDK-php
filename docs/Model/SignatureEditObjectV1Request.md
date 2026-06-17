@@ -1,4 +1,4 @@
-# # SignatureEditObjectV1Request
+# SignatureEditObjectV1Request
 
 ## Properties
 

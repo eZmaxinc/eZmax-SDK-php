@@ -1,4 +1,4 @@
-# # SupplyGetAutocompleteV2ResponseMPayload
+# SupplyGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

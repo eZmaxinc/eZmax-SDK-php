@@ -1,4 +1,4 @@
-# # EzsignfolderGetCommunicationsendersV1ResponseMPayload
+# EzsignfolderGetCommunicationsendersV1ResponseMPayload
 
 ## Properties
 

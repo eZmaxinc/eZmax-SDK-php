@@ -1,4 +1,4 @@
-# # PaymentgatewayResponse
+# PaymentgatewayResponse
 
 ## Properties
 

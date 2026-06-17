@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentGetWordsPositionsV1Request
+# EzsigntemplatedocumentGetWordsPositionsV1Request
 
 ## Properties
 

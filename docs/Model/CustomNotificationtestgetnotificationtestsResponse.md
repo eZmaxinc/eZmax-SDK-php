@@ -1,4 +1,4 @@
-# # CustomNotificationtestgetnotificationtestsResponse
+# CustomNotificationtestgetnotificationtestsResponse
 
 ## Properties
 

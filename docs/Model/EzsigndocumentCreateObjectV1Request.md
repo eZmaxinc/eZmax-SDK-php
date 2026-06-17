@@ -1,4 +1,4 @@
-# # EzsigndocumentCreateObjectV1Request
+# EzsigndocumentCreateObjectV1Request
 
 ## Properties
 

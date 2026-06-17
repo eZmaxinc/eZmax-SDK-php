@@ -6,13 +6,79 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1()**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/fillInscriptionnotauthenticatedcondition | Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated |
 | [**inscriptionnotauthenticatedGetCommunicationCountV1()**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedGetCommunicationCountV1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationCount | Retrieve Communication count |
 | [**inscriptionnotauthenticatedGetCommunicationListV1()**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedGetCommunicationListV1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationList | Retrieve Communication list |
 | [**inscriptionnotauthenticatedGetCommunicationrecipientsV1()**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedGetCommunicationrecipientsV1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationrecipients | Retrieve Inscriptionnotauthenticated&#39;s Communicationrecipient |
 | [**inscriptionnotauthenticatedGetCommunicationsendersV1()**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedGetCommunicationsendersV1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationsenders | Retrieve Inscriptionnotauthenticated&#39;s Communicationsender |
+| [**inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1()**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getInscriptionnotauthenticatedconditions | Retrieve Inscriptionnotauthenticated conditions |
 | [**inscriptionnotauthenticatedGetListV1()**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedGetListV1) | **GET** /1/object/inscriptionnotauthenticated/getList | Retrieve Inscriptionnotauthenticated list |
 | [**inscriptionnotauthenticatedImportIntoEDMV1()**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedImportIntoEDMV1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/importIntoEDM | Import attachments into the Inscriptionnotauthenticated |
 
+
+## `inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1()`
+
+```php
+inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1($pkiInscriptionnotauthenticatedID, $inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request): \eZmaxAPI\Model\InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response
+```
+
+Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectInscriptionnotauthenticatedApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiInscriptionnotauthenticatedID = 56; // int
+$inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request = new \eZmaxAPI\Model\InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request(); // \eZmaxAPI\Model\InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request
+
+try {
+    $result = $apiInstance->inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1($pkiInscriptionnotauthenticatedID, $inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiInscriptionnotauthenticatedID** | **int**|  | |
+| **inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request** | [**\eZmaxAPI\Model\InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request**](../Model/InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response**](../Model/InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `inscriptionnotauthenticatedGetCommunicationCountV1()`
 
@@ -248,6 +314,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\InscriptionnotauthenticatedGetCommunicationsendersV1Response**](../Model/InscriptionnotauthenticatedGetCommunicationsendersV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1()`
+
+```php
+inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1($pkiInscriptionnotauthenticatedID): \eZmaxAPI\Model\InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response
+```
+
+Retrieve Inscriptionnotauthenticated conditions
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectInscriptionnotauthenticatedApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiInscriptionnotauthenticatedID = 56; // int
+
+try {
+    $result = $apiInstance->inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1($pkiInscriptionnotauthenticatedID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiInscriptionnotauthenticatedID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response**](../Model/InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response.md)
 
 ### Authorization
 

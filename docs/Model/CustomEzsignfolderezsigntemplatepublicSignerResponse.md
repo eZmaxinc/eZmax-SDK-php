@@ -1,4 +1,4 @@
-# # CustomEzsignfolderezsigntemplatepublicSignerResponse
+# CustomEzsignfolderezsigntemplatepublicSignerResponse
 
 ## Properties
 

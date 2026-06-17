@@ -1,4 +1,4 @@
-# # PaymentgatewayAutocompleteElementResponse
+# PaymentgatewayAutocompleteElementResponse
 
 ## Properties
 

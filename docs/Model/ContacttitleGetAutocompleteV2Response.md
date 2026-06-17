@@ -1,4 +1,4 @@
-# # ContacttitleGetAutocompleteV2Response
+# ContacttitleGetAutocompleteV2Response
 
 ## Properties
 

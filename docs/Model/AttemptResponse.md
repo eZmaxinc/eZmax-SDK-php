@@ -1,4 +1,4 @@
-# # AttemptResponse
+# AttemptResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SystemconfigurationResponseCompound
+# SystemconfigurationResponseCompound
 
 ## Properties
 
@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **bSystemconfigurationEzsignpersonnal** | **bool** | Whether if we allow the creation of personal files in eZsign |
 **bSystemconfigurationHascreditcardmerchant** | **bool** | Whether there is a creditcard merchant configured or not | [optional]
 **bSystemconfigurationIsdisposalactive** | **bool** | Whether is Disposal processus is active or not | [optional]
+**bSystemconfigurationAllowcomplexcreditcardsignature** | **bool** | Whether is the system allows to have a complex creditcard signature | [optional]
 **bSystemconfigurationSspr** | **bool** | Whether if we allow SSPR |
 **dtSystemconfigurationReadonlyexpirationstart** | **string** | The start date where the system will be in read only | [optional]
 **dtSystemconfigurationReadonlyexpirationend** | **string** | The end date where the system will be in read only | [optional]

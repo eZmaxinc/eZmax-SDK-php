@@ -1,4 +1,4 @@
-# # UserGetColleaguesV2ResponseMPayload
+# UserGetColleaguesV2ResponseMPayload
 
 ## Properties
 

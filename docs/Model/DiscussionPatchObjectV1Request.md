@@ -1,4 +1,4 @@
-# # DiscussionPatchObjectV1Request
+# DiscussionPatchObjectV1Request
 
 ## Properties
 

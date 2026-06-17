@@ -1,4 +1,4 @@
-# # UsergroupAutocompleteElementResponse
+# UsergroupAutocompleteElementResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzmaxinvoicingAutocompleteElementResponse
+# EzmaxinvoicingAutocompleteElementResponse
 
 ## Properties
 

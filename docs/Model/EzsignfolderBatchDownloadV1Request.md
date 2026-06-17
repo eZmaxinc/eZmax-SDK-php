@@ -1,4 +1,4 @@
-# # EzsignfolderBatchDownloadV1Request
+# EzsignfolderBatchDownloadV1Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsignfoldersignerassociationRequestCompound
+# EzsignfoldersignerassociationRequestCompound
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigndocumentCreateObjectV2Response
+# EzsigndocumentCreateObjectV2Response
 
 ## Properties
 

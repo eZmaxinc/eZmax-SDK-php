@@ -1,4 +1,4 @@
-# # ScimEmail
+# ScimEmail
 
 ## Properties
 

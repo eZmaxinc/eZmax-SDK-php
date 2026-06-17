@@ -1,4 +1,4 @@
-# # EzsignfoldersignerassociationGetObjectV2Response
+# EzsignfoldersignerassociationGetObjectV2Response
 
 ## Properties
 

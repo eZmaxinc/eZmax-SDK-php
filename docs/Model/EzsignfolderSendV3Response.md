@@ -1,4 +1,4 @@
-# # EzsignfolderSendV3Response
+# EzsignfolderSendV3Response
 
 ## Properties
 

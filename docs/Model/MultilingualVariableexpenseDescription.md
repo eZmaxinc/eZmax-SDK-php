@@ -1,4 +1,4 @@
-# # MultilingualVariableexpenseDescription
+# MultilingualVariableexpenseDescription
 
 ## Properties
 

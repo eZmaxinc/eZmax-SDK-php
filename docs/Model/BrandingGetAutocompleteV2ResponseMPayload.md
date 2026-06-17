@@ -1,4 +1,4 @@
-# # BrandingGetAutocompleteV2ResponseMPayload
+# BrandingGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

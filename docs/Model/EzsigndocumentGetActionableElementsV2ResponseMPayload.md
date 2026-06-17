@@ -1,4 +1,4 @@
-# # EzsigndocumentGetActionableElementsV2ResponseMPayload
+# EzsigndocumentGetActionableElementsV2ResponseMPayload
 
 ## Properties
 

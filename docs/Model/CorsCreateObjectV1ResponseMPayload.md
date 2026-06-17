@@ -1,4 +1,4 @@
-# # CorsCreateObjectV1ResponseMPayload
+# CorsCreateObjectV1ResponseMPayload
 
 ## Properties
 

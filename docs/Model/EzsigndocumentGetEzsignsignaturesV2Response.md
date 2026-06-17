@@ -1,4 +1,4 @@
-# # EzsigndocumentGetEzsignsignaturesV2Response
+# EzsigndocumentGetEzsignsignaturesV2Response
 
 ## Properties
 

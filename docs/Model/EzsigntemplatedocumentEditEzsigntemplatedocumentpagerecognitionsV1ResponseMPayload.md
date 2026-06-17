@@ -1,4 +1,4 @@
-# # EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload
+# EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload
 
 ## Properties
 

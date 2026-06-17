@@ -1,4 +1,4 @@
-# # VariableexpenseGetListV1ResponseMPayload
+# VariableexpenseGetListV1ResponseMPayload
 
 ## Properties
 

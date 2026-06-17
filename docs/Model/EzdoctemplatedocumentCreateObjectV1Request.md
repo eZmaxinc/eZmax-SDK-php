@@ -1,4 +1,4 @@
-# # EzdoctemplatedocumentCreateObjectV1Request
+# EzdoctemplatedocumentCreateObjectV1Request
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UsergroupmembershipDeleteObjectV1Response
+# UsergroupmembershipDeleteObjectV1Response
 
 ## Properties
 

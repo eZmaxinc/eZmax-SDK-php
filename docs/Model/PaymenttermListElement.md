@@ -1,4 +1,4 @@
-# # PaymenttermListElement
+# PaymenttermListElement
 
 ## Properties
 

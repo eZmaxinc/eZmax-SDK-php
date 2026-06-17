@@ -1,4 +1,4 @@
-# # EzsigntemplateelementdependencyResponseCompound
+# EzsigntemplateelementdependencyResponseCompound
 
 ## Properties
 

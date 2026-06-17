@@ -1,4 +1,4 @@
-# # BrandingGetListV1ResponseMPayload
+# BrandingGetListV1ResponseMPayload
 
 ## Properties
 

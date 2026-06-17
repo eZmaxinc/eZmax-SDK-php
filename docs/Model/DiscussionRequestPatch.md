@@ -1,4 +1,4 @@
-# # DiscussionRequestPatch
+# DiscussionRequestPatch
 
 ## Properties
 

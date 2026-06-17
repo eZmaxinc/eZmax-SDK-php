@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicResetUrlV1ResponseMPayload
+# EzsigntemplatepublicResetUrlV1ResponseMPayload
 
 ## Properties
 

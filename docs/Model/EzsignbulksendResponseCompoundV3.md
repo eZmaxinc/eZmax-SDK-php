@@ -1,4 +1,4 @@
-# # EzsignbulksendResponseCompoundV3
+# EzsignbulksendResponseCompoundV3
 
 ## Properties
 

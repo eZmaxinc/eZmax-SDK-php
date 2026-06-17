@@ -1,4 +1,4 @@
-# # VariableexpenseRequestCompound
+# VariableexpenseRequestCompound
 
 ## Properties
 

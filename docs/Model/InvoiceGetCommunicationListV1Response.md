@@ -1,4 +1,4 @@
-# # InvoiceGetCommunicationListV1Response
+# InvoiceGetCommunicationListV1Response
 
 ## Properties
 

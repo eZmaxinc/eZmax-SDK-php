@@ -1,4 +1,4 @@
-# # CorsEditObjectV1Response
+# CorsEditObjectV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PaymentmethodGetAutocompleteV2Response
+# PaymentmethodGetAutocompleteV2Response
 
 ## Properties
 

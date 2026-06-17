@@ -1,4 +1,4 @@
-# # FontGetAutocompleteV2Response
+# FontGetAutocompleteV2Response
 
 ## Properties
 

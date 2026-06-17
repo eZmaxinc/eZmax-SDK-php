@@ -1,4 +1,4 @@
-# # CommonReportsubsectionpart
+# CommonReportsubsectionpart
 
 ## Properties
 

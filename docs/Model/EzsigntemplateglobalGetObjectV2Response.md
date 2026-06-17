@@ -1,4 +1,4 @@
-# # EzsigntemplateglobalGetObjectV2Response
+# EzsigntemplateglobalGetObjectV2Response
 
 ## Properties
 

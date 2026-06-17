@@ -1,4 +1,4 @@
-# # AttachmentlogResponseCompound
+# AttachmentlogResponseCompound
 
 ## Properties
 

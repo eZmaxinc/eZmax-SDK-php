@@ -1,4 +1,4 @@
-# # EmployeeGetListV1Response
+# EmployeeGetListV1Response
 
 ## Properties
 

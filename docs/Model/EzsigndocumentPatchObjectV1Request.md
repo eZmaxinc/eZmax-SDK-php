@@ -1,4 +1,4 @@
-# # EzsigndocumentPatchObjectV1Request
+# EzsigndocumentPatchObjectV1Request
 
 ## Properties
 

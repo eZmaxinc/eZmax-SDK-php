@@ -1,4 +1,4 @@
-# # UsergroupexternalGetListV1Response
+# UsergroupexternalGetListV1Response
 
 ## Properties
 

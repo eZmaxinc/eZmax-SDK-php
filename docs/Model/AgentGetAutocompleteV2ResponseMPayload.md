@@ -1,4 +1,4 @@
-# # AgentGetAutocompleteV2ResponseMPayload
+# AgentGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

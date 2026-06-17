@@ -1,4 +1,4 @@
-# # ApikeyEditObjectV1Request
+# ApikeyEditObjectV1Request
 
 ## Properties
 

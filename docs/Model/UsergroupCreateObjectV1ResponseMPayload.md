@@ -1,4 +1,4 @@
-# # UsergroupCreateObjectV1ResponseMPayload
+# UsergroupCreateObjectV1ResponseMPayload
 
 ## Properties
 

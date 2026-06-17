@@ -1,4 +1,4 @@
-# # CommunicationexternalrecipientRequest
+# CommunicationexternalrecipientRequest
 
 ## Properties
 

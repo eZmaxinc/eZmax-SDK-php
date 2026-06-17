@@ -1,4 +1,4 @@
-# # CustomerResponseCompound
+# CustomerResponseCompound
 
 ## Properties
 

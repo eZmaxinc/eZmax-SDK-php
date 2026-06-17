@@ -1,4 +1,4 @@
-# # CustomEzsignfoldertypeTemplateResponse
+# CustomEzsignfoldertypeTemplateResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigndiscussionResponse
+# EzsigndiscussionResponse
 
 ## Properties
 

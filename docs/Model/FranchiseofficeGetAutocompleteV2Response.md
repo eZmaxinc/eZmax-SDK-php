@@ -1,4 +1,4 @@
-# # FranchiseofficeGetAutocompleteV2Response
+# FranchiseofficeGetAutocompleteV2Response
 
 ## Properties
 

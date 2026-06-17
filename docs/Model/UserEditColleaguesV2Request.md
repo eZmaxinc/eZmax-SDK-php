@@ -1,4 +1,4 @@
-# # UserEditColleaguesV2Request
+# UserEditColleaguesV2Request
 
 ## Properties
 

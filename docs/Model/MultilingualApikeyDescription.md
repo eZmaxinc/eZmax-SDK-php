@@ -1,4 +1,4 @@
-# # MultilingualApikeyDescription
+# MultilingualApikeyDescription
 
 ## Properties
 

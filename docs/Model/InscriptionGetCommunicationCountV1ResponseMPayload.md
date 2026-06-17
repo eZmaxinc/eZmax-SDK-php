@@ -1,4 +1,4 @@
-# # InscriptionGetCommunicationCountV1ResponseMPayload
+# InscriptionGetCommunicationCountV1ResponseMPayload
 
 ## Properties
 

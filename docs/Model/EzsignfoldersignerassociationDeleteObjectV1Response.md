@@ -1,4 +1,4 @@
-# # EzsignfoldersignerassociationDeleteObjectV1Response
+# EzsignfoldersignerassociationDeleteObjectV1Response
 
 ## Properties
 

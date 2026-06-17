@@ -1,4 +1,4 @@
-# # EzsignfolderArchiveV1Response
+# EzsignfolderArchiveV1Response
 
 ## Properties
 

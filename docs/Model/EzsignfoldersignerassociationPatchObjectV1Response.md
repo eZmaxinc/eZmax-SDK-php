@@ -1,4 +1,4 @@
-# # EzsignfoldersignerassociationPatchObjectV1Response
+# EzsignfoldersignerassociationPatchObjectV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # FontAutocompleteElementResponse
+# FontAutocompleteElementResponse
 
 ## Properties
 

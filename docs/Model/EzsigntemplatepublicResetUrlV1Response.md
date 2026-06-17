@@ -1,4 +1,4 @@
-# # EzsigntemplatepublicResetUrlV1Response
+# EzsigntemplatepublicResetUrlV1Response
 
 ## Properties
 

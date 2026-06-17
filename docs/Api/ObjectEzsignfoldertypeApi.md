@@ -7,7 +7,9 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**ezsignfoldertypeCreateObjectV3()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeCreateObjectV3) | **POST** /3/object/ezsignfoldertype | Create a new Ezsignfoldertype |
+| [**ezsignfoldertypeCreateObjectV4()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeCreateObjectV4) | **POST** /4/object/ezsignfoldertype | Create a new Ezsignfoldertype |
 | [**ezsignfoldertypeEditObjectV3()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeEditObjectV3) | **PUT** /3/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype |
+| [**ezsignfoldertypeEditObjectV4()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeEditObjectV4) | **PUT** /4/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype |
 | [**ezsignfoldertypeGetAutocompleteV2()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetAutocompleteV2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs |
 | [**ezsignfoldertypeGetListV1()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetListV1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list |
 | [**ezsignfoldertypeGetObjectV2()**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetObjectV2) | **GET** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype |
@@ -76,6 +78,68 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsignfoldertypeCreateObjectV4()`
+
+```php
+ezsignfoldertypeCreateObjectV4($ezsignfoldertypeCreateObjectV4Request): \eZmaxAPI\Model\EzsignfoldertypeCreateObjectV4Response
+```
+
+Create a new Ezsignfoldertype
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldertypeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ezsignfoldertypeCreateObjectV4Request = new \eZmaxAPI\Model\EzsignfoldertypeCreateObjectV4Request(); // \eZmaxAPI\Model\EzsignfoldertypeCreateObjectV4Request
+
+try {
+    $result = $apiInstance->ezsignfoldertypeCreateObjectV4($ezsignfoldertypeCreateObjectV4Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeCreateObjectV4: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignfoldertypeCreateObjectV4Request** | [**\eZmaxAPI\Model\EzsignfoldertypeCreateObjectV4Request**](../Model/EzsignfoldertypeCreateObjectV4Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfoldertypeCreateObjectV4Response**](../Model/EzsignfoldertypeCreateObjectV4Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `ezsignfoldertypeEditObjectV3()`
 
 ```php
@@ -126,6 +190,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignfoldertypeEditObjectV3Response**](../Model/EzsignfoldertypeEditObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignfoldertypeEditObjectV4()`
+
+```php
+ezsignfoldertypeEditObjectV4($pkiEzsignfoldertypeID, $ezsignfoldertypeEditObjectV4Request): \eZmaxAPI\Model\EzsignfoldertypeEditObjectV4Response
+```
+
+Edit an existing Ezsignfoldertype
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignfoldertypeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignfoldertypeID = 56; // int
+$ezsignfoldertypeEditObjectV4Request = new \eZmaxAPI\Model\EzsignfoldertypeEditObjectV4Request(); // \eZmaxAPI\Model\EzsignfoldertypeEditObjectV4Request
+
+try {
+    $result = $apiInstance->ezsignfoldertypeEditObjectV4($pkiEzsignfoldertypeID, $ezsignfoldertypeEditObjectV4Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertypeEditObjectV4: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignfoldertypeID** | **int**|  | |
+| **ezsignfoldertypeEditObjectV4Request** | [**\eZmaxAPI\Model\EzsignfoldertypeEditObjectV4Request**](../Model/EzsignfoldertypeEditObjectV4Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignfoldertypeEditObjectV4Response**](../Model/EzsignfoldertypeEditObjectV4Response.md)
 
 ### Authorization
 

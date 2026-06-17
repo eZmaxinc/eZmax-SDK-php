@@ -1,4 +1,4 @@
-# # CommonGetListV1ResponseMPayload
+# CommonGetListV1ResponseMPayload
 
 ## Properties
 

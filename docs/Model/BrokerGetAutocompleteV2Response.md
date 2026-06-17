@@ -1,4 +1,4 @@
-# # BrokerGetAutocompleteV2Response
+# BrokerGetAutocompleteV2Response
 
 ## Properties
 

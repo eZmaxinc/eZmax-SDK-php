@@ -1,4 +1,4 @@
-# # InscriptiontempGetCommunicationListV1Response
+# InscriptiontempGetCommunicationListV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ComputedEEzsignfolderAccess
+# ComputedEEzsignfolderAccess
 
 ## Properties
 

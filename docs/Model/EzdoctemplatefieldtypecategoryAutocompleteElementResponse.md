@@ -1,4 +1,4 @@
-# # EzdoctemplatefieldtypecategoryAutocompleteElementResponse
+# EzdoctemplatefieldtypecategoryAutocompleteElementResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # BrandingGetListV1Response
+# BrandingGetListV1Response
 
 ## Properties
 

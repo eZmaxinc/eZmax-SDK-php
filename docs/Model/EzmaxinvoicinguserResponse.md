@@ -1,4 +1,4 @@
-# # EzmaxinvoicinguserResponse
+# EzmaxinvoicinguserResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # CreditcardmerchantGetObjectV2Response
+# CreditcardmerchantGetObjectV2Response
 
 ## Properties
 

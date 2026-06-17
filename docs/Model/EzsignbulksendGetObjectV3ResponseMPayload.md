@@ -1,4 +1,4 @@
-# # EzsignbulksendGetObjectV3ResponseMPayload
+# EzsignbulksendGetObjectV3ResponseMPayload
 
 ## Properties
 

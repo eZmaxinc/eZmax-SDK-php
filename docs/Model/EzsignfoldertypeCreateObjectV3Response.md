@@ -1,4 +1,4 @@
-# # EzsignfoldertypeCreateObjectV3Response
+# EzsignfoldertypeCreateObjectV3Response
 
 ## Properties
 

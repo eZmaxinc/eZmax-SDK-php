@@ -1,4 +1,4 @@
-# # InscriptionGetCommunicationsendersV1Response
+# InscriptionGetCommunicationsendersV1Response
 
 ## Properties
 

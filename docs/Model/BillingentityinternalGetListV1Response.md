@@ -1,4 +1,4 @@
-# # BillingentityinternalGetListV1Response
+# BillingentityinternalGetListV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # BillingentityinternalproductRequest
+# BillingentityinternalproductRequest
 
 ## Properties
 

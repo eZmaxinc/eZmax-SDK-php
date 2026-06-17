@@ -1,4 +1,4 @@
-# # ProvinceAutocompleteElementResponse
+# ProvinceAutocompleteElementResponse
 
 ## Properties
 

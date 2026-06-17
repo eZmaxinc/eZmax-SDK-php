@@ -1,4 +1,4 @@
-# # SessionhistoryGetListV1ResponseMPayload
+# SessionhistoryGetListV1ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # EzsigndiscussionRequestCompound
+# EzsigndiscussionRequestCompound
 
 ## Properties
 

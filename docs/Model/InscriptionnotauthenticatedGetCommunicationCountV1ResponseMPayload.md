@@ -1,4 +1,4 @@
-# # InscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload
+# InscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload
 
 ## Properties
 

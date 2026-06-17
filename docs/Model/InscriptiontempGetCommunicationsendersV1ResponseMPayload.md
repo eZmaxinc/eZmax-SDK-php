@@ -1,4 +1,4 @@
-# # InscriptiontempGetCommunicationsendersV1ResponseMPayload
+# InscriptiontempGetCommunicationsendersV1ResponseMPayload
 
 ## Properties
 

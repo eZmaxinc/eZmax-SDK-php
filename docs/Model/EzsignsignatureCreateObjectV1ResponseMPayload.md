@@ -1,4 +1,4 @@
-# # EzsignsignatureCreateObjectV1ResponseMPayload
+# EzsignsignatureCreateObjectV1ResponseMPayload
 
 ## Properties
 

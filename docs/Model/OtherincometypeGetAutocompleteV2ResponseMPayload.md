@@ -1,4 +1,4 @@
-# # OtherincometypeGetAutocompleteV2ResponseMPayload
+# OtherincometypeGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

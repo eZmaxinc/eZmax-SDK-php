@@ -1,4 +1,4 @@
-# # BuyercontractGetListV1ResponseMPayload
+# BuyercontractGetListV1ResponseMPayload
 
 ## Properties
 

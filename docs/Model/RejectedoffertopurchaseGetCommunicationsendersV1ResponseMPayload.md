@@ -1,4 +1,4 @@
-# # RejectedoffertopurchaseGetCommunicationsendersV1ResponseMPayload
+# RejectedoffertopurchaseGetCommunicationsendersV1ResponseMPayload
 
 ## Properties
 

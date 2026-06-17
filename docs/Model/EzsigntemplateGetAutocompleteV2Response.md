@@ -1,4 +1,4 @@
-# # EzsigntemplateGetAutocompleteV2Response
+# EzsigntemplateGetAutocompleteV2Response
 
 ## Properties
 

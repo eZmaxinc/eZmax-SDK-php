@@ -1,4 +1,4 @@
-# # OtherincomeGetCommunicationCountV1Response
+# OtherincomeGetCommunicationCountV1Response
 
 ## Properties
 

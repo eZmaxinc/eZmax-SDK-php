@@ -1,4 +1,4 @@
-# # EzsignfoldersignerassociationReassignV1Response
+# EzsignfoldersignerassociationReassignV1Response
 
 ## Properties
 

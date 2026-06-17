@@ -1,4 +1,4 @@
-# # EzsignbulksendRequestCompoundV2
+# EzsignbulksendRequestCompoundV2
 
 ## Properties
 

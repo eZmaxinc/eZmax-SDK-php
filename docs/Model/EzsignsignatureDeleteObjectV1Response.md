@@ -1,4 +1,4 @@
-# # EzsignsignatureDeleteObjectV1Response
+# EzsignsignatureDeleteObjectV1Response
 
 ## Properties
 

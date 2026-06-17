@@ -1,4 +1,4 @@
-# # CustomTimezoneWithCodeResponse
+# CustomTimezoneWithCodeResponse
 
 ## Properties
 

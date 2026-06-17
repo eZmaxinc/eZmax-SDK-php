@@ -1,4 +1,4 @@
-# # InscriptionchecklistGetAutocompleteV3ResponseMPayload
+# InscriptionchecklistGetAutocompleteV3ResponseMPayload
 
 ## Properties
 

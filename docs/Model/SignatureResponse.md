@@ -1,4 +1,4 @@
-# # SignatureResponse
+# SignatureResponse
 
 ## Properties
 

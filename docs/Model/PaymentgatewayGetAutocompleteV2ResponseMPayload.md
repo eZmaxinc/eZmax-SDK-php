@@ -1,4 +1,4 @@
-# # PaymentgatewayGetAutocompleteV2ResponseMPayload
+# PaymentgatewayGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ActivesessionGetListV1ResponseMPayload
+# ActivesessionGetListV1ResponseMPayload
 
 ## Properties
 

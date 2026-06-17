@@ -1,4 +1,4 @@
-# # EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload
+# EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload
 
 ## Properties
 

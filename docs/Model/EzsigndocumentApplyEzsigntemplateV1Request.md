@@ -1,4 +1,4 @@
-# # EzsigndocumentApplyEzsigntemplateV1Request
+# EzsigndocumentApplyEzsigntemplateV1Request
 
 ## Properties
 

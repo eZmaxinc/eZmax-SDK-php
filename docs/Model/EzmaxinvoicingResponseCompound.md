@@ -1,4 +1,4 @@
-# # EzmaxinvoicingResponseCompound
+# EzmaxinvoicingResponseCompound
 
 ## Properties
 

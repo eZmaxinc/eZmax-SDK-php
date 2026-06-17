@@ -1,4 +1,4 @@
-# # EzmaxproductGetAutocompleteV2ResponseMPayload
+# EzmaxproductGetAutocompleteV2ResponseMPayload
 
 ## Properties
 

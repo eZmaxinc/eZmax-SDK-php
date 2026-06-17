@@ -1,4 +1,4 @@
-# # FranchisereferalincomeRequestCompound
+# FranchisereferalincomeRequestCompound
 
 ## Properties
 

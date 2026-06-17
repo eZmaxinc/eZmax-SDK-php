@@ -1,4 +1,4 @@
-# # PermissionCreateObjectV1Response
+# PermissionCreateObjectV1Response
 
 ## Properties
 

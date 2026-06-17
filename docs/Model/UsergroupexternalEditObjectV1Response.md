@@ -1,4 +1,4 @@
-# # UsergroupexternalEditObjectV1Response
+# UsergroupexternalEditObjectV1Response
 
 ## Properties
 

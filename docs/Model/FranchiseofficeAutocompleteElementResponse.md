@@ -1,4 +1,4 @@
-# # FranchiseofficeAutocompleteElementResponse
+# FranchiseofficeAutocompleteElementResponse
 
 ## Properties
 
