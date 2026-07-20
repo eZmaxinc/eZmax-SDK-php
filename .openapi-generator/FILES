@@ -4,7 +4,7 @@
 .travis.yml
 README.md
 composer.json
-docs/Api/DocumentationEzmaxpartnerApi.md
+docs/Api/ExternalEzmaxpartnerApi.md
 docs/Api/GlobalCustomerApi.md
 docs/Api/GlobalEzmaxclientApi.md
 docs/Api/GlobalEzmaxcustomerApi.md
@@ -1450,6 +1450,7 @@ docs/Model/FieldEActivesessionOrigin.md
 docs/Model/FieldEActivesessionRealestateinprogress.md
 docs/Model/FieldEActivesessionUsertype.md
 docs/Model/FieldEActivesessionWeekdaystart.md
+docs/Model/FieldEAgentSchedule.md
 docs/Model/FieldEAttachmentDocumenttype.md
 docs/Model/FieldEAttachmentPrivacy.md
 docs/Model/FieldEAttachmentType.md
@@ -1591,6 +1592,7 @@ docs/Model/FieldEWebhookEzmaxpartnerevent.md
 docs/Model/FieldEWebhookEzsignevent.md
 docs/Model/FieldEWebhookManagementevent.md
 docs/Model/FieldEWebhookModule.md
+docs/Model/FieldEWebhookRealestateevent.md
 docs/Model/FieldEtInscriptionnotauthenticatedMortgagetype.md
 docs/Model/FieldPksEzmaxclientOs.md
 docs/Model/FontAutocompleteElementResponse.md
@@ -1870,7 +1872,10 @@ docs/Model/ScimGroupMember.md
 docs/Model/ScimServiceProviderConfig.md
 docs/Model/ScimServiceProviderConfigBulk.md
 docs/Model/ScimServiceProviderConfigChangePassword.md
+docs/Model/ScimServiceProviderConfigEtag.md
 docs/Model/ScimServiceProviderConfigFilter.md
+docs/Model/ScimServiceProviderConfigPatch.md
+docs/Model/ScimServiceProviderConfigSort.md
 docs/Model/ScimUser.md
 docs/Model/ScimUserList.md
 docs/Model/SecretquestionAutocompleteElementResponse.md
@@ -2154,6 +2159,10 @@ docs/Model/WebhookGetListV1ResponseMPayload.md
 docs/Model/WebhookGetObjectV2Response.md
 docs/Model/WebhookGetObjectV2ResponseMPayload.md
 docs/Model/WebhookListElement.md
+docs/Model/WebhookRealestateInscriptionCreated.md
+docs/Model/WebhookRealestateInscriptionModified.md
+docs/Model/WebhookRealestateInscriptionnotauthenticatedCreated.md
+docs/Model/WebhookRealestateInscriptionnotauthenticatedModified.md
 docs/Model/WebhookRegenerateApikeyV1Request.md
 docs/Model/WebhookRegenerateApikeyV1Response.md
 docs/Model/WebhookRegenerateApikeyV1ResponseMPayload.md
@@ -2182,7 +2191,7 @@ docs/Model/WebsocketResponseGetWebsocketIDV1MPayload.md
 docs/Model/WebsocketResponseInformationV1.md
 docs/Model/WebsocketResponseInformationV1MPayload.md
 git_push.sh
-lib/Api/DocumentationEzmaxpartnerApi.php
+lib/Api/ExternalEzmaxpartnerApi.php
 lib/Api/GlobalCustomerApi.php
 lib/Api/GlobalEzmaxclientApi.php
 lib/Api/GlobalEzmaxcustomerApi.php
@@ -3632,6 +3641,7 @@ lib/Model/FieldEActivesessionOrigin.php
 lib/Model/FieldEActivesessionRealestateinprogress.php
 lib/Model/FieldEActivesessionUsertype.php
 lib/Model/FieldEActivesessionWeekdaystart.php
+lib/Model/FieldEAgentSchedule.php
 lib/Model/FieldEAttachmentDocumenttype.php
 lib/Model/FieldEAttachmentPrivacy.php
 lib/Model/FieldEAttachmentType.php
@@ -3773,6 +3783,7 @@ lib/Model/FieldEWebhookEzmaxpartnerevent.php
 lib/Model/FieldEWebhookEzsignevent.php
 lib/Model/FieldEWebhookManagementevent.php
 lib/Model/FieldEWebhookModule.php
+lib/Model/FieldEWebhookRealestateevent.php
 lib/Model/FieldEtInscriptionnotauthenticatedMortgagetype.php
 lib/Model/FieldPksEzmaxclientOs.php
 lib/Model/FontAutocompleteElementResponse.php
@@ -4053,7 +4064,10 @@ lib/Model/ScimGroupMember.php
 lib/Model/ScimServiceProviderConfig.php
 lib/Model/ScimServiceProviderConfigBulk.php
 lib/Model/ScimServiceProviderConfigChangePassword.php
+lib/Model/ScimServiceProviderConfigEtag.php
 lib/Model/ScimServiceProviderConfigFilter.php
+lib/Model/ScimServiceProviderConfigPatch.php
+lib/Model/ScimServiceProviderConfigSort.php
 lib/Model/ScimUser.php
 lib/Model/ScimUserList.php
 lib/Model/SecretquestionAutocompleteElementResponse.php
@@ -4337,6 +4351,10 @@ lib/Model/WebhookGetListV1ResponseMPayload.php
 lib/Model/WebhookGetObjectV2Response.php
 lib/Model/WebhookGetObjectV2ResponseMPayload.php
 lib/Model/WebhookListElement.php
+lib/Model/WebhookRealestateInscriptionCreated.php
+lib/Model/WebhookRealestateInscriptionModified.php
+lib/Model/WebhookRealestateInscriptionnotauthenticatedCreated.php
+lib/Model/WebhookRealestateInscriptionnotauthenticatedModified.php
 lib/Model/WebhookRegenerateApikeyV1Request.php
 lib/Model/WebhookRegenerateApikeyV1Response.php
 lib/Model/WebhookRegenerateApikeyV1ResponseMPayload.php

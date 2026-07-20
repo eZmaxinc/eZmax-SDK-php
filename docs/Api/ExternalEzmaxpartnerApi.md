@@ -1,4 +1,4 @@
-# eZmaxAPI\DocumentationEzmaxpartnerApi
+# eZmaxAPI\ExternalEzmaxpartnerApi
 
 
 
@@ -6,13 +6,13 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**documentationSubscribeV1()**](DocumentationEzmaxpartnerApi.md#documentationSubscribeV1) | **POST** /1/documentation/subscribe | Subscribe to an Ezmaxparnerproductstage |
+| [**externalpartnerSubscribeV1()**](ExternalEzmaxpartnerApi.md#externalpartnerSubscribeV1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage |
 
 
-## `documentationSubscribeV1()`
+## `externalpartnerSubscribeV1()`
 
 ```php
-documentationSubscribeV1($documentationSubscribeV1Request): \eZmaxAPI\Model\DocumentationSubscribeV1Response
+externalpartnerSubscribeV1($documentationSubscribeV1Request): \eZmaxAPI\Model\DocumentationSubscribeV1Response
 ```
 
 Subscribe to an Ezmaxparnerproductstage
@@ -32,7 +32,7 @@ $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authoriz
 // $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Api\DocumentationEzmaxpartnerApi(
+$apiInstance = new eZmaxAPI\Api\ExternalEzmaxpartnerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -41,10 +41,10 @@ $apiInstance = new eZmaxAPI\Api\DocumentationEzmaxpartnerApi(
 $documentationSubscribeV1Request = new \eZmaxAPI\Model\DocumentationSubscribeV1Request(); // \eZmaxAPI\Model\DocumentationSubscribeV1Request | 
 
 try {
-    $result = $apiInstance->documentationSubscribeV1($documentationSubscribeV1Request);
+    $result = $apiInstance->externalpartnerSubscribeV1($documentationSubscribeV1Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DocumentationEzmaxpartnerApi->documentationSubscribeV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExternalEzmaxpartnerApi->externalpartnerSubscribeV1: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

@@ -55,7 +55,7 @@ $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authoriz
 // $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new eZmaxAPI\Api\DocumentationEzmaxpartnerApi(
+$apiInstance = new eZmaxAPI\Api\ExternalEzmaxpartnerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -64,10 +64,10 @@ $apiInstance = new eZmaxAPI\Api\DocumentationEzmaxpartnerApi(
 $documentationSubscribeV1Request = new \eZmaxAPI\Model\DocumentationSubscribeV1Request(); // \eZmaxAPI\Model\DocumentationSubscribeV1Request | 
 
 try {
-    $result = $apiInstance->documentationSubscribeV1($documentationSubscribeV1Request);
+    $result = $apiInstance->externalpartnerSubscribeV1($documentationSubscribeV1Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DocumentationEzmaxpartnerApi->documentationSubscribeV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExternalEzmaxpartnerApi->externalpartnerSubscribeV1: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -78,7 +78,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DocumentationEzmaxpartnerApi* | [**documentationSubscribeV1**](docs/Api/DocumentationEzmaxpartnerApi.md#documentationsubscribev1) | **POST** /1/documentation/subscribe | Subscribe to an Ezmaxparnerproductstage
+*ExternalEzmaxpartnerApi* | [**externalpartnerSubscribeV1**](docs/Api/ExternalEzmaxpartnerApi.md#externalpartnersubscribev1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage
 *GlobalCustomerApi* | [**globalCustomerGetEndpointV1**](docs/Api/GlobalCustomerApi.md#globalcustomergetendpointv1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
 *GlobalEzmaxclientApi* | [**globalEzmaxclientVersionV1**](docs/Api/GlobalEzmaxclientApi.md#globalezmaxclientversionv1) | **GET** /1/ezmaxclient/{pksEzmaxclientOs}/version | Retrieve the latest version of the Ezmaxclient
 *GlobalEzmaxcustomerApi* | [**globalEzmaxcustomerGetConfigurationV1**](docs/Api/GlobalEzmaxcustomerApi.md#globalezmaxcustomergetconfigurationv1) | **GET** /1/ezmaxcustomer/{pksEzmaxcustomerCode}/getConfiguration | Get ezmaxcustomer configuration
@@ -1957,6 +1957,7 @@ Class | Method | HTTP request | Description
 - [FieldEActivesessionRealestateinprogress](docs/Model/FieldEActivesessionRealestateinprogress.md)
 - [FieldEActivesessionUsertype](docs/Model/FieldEActivesessionUsertype.md)
 - [FieldEActivesessionWeekdaystart](docs/Model/FieldEActivesessionWeekdaystart.md)
+- [FieldEAgentSchedule](docs/Model/FieldEAgentSchedule.md)
 - [FieldEAttachmentDocumenttype](docs/Model/FieldEAttachmentDocumenttype.md)
 - [FieldEAttachmentPrivacy](docs/Model/FieldEAttachmentPrivacy.md)
 - [FieldEAttachmentType](docs/Model/FieldEAttachmentType.md)
@@ -2098,6 +2099,7 @@ Class | Method | HTTP request | Description
 - [FieldEWebhookEzsignevent](docs/Model/FieldEWebhookEzsignevent.md)
 - [FieldEWebhookManagementevent](docs/Model/FieldEWebhookManagementevent.md)
 - [FieldEWebhookModule](docs/Model/FieldEWebhookModule.md)
+- [FieldEWebhookRealestateevent](docs/Model/FieldEWebhookRealestateevent.md)
 - [FieldEtInscriptionnotauthenticatedMortgagetype](docs/Model/FieldEtInscriptionnotauthenticatedMortgagetype.md)
 - [FieldPksEzmaxclientOs](docs/Model/FieldPksEzmaxclientOs.md)
 - [FontAutocompleteElementResponse](docs/Model/FontAutocompleteElementResponse.md)
@@ -2377,7 +2379,10 @@ Class | Method | HTTP request | Description
 - [ScimServiceProviderConfig](docs/Model/ScimServiceProviderConfig.md)
 - [ScimServiceProviderConfigBulk](docs/Model/ScimServiceProviderConfigBulk.md)
 - [ScimServiceProviderConfigChangePassword](docs/Model/ScimServiceProviderConfigChangePassword.md)
+- [ScimServiceProviderConfigEtag](docs/Model/ScimServiceProviderConfigEtag.md)
 - [ScimServiceProviderConfigFilter](docs/Model/ScimServiceProviderConfigFilter.md)
+- [ScimServiceProviderConfigPatch](docs/Model/ScimServiceProviderConfigPatch.md)
+- [ScimServiceProviderConfigSort](docs/Model/ScimServiceProviderConfigSort.md)
 - [ScimUser](docs/Model/ScimUser.md)
 - [ScimUserList](docs/Model/ScimUserList.md)
 - [SecretquestionAutocompleteElementResponse](docs/Model/SecretquestionAutocompleteElementResponse.md)
@@ -2661,6 +2666,10 @@ Class | Method | HTTP request | Description
 - [WebhookGetObjectV2Response](docs/Model/WebhookGetObjectV2Response.md)
 - [WebhookGetObjectV2ResponseMPayload](docs/Model/WebhookGetObjectV2ResponseMPayload.md)
 - [WebhookListElement](docs/Model/WebhookListElement.md)
+- [WebhookRealestateInscriptionCreated](docs/Model/WebhookRealestateInscriptionCreated.md)
+- [WebhookRealestateInscriptionModified](docs/Model/WebhookRealestateInscriptionModified.md)
+- [WebhookRealestateInscriptionnotauthenticatedCreated](docs/Model/WebhookRealestateInscriptionnotauthenticatedCreated.md)
+- [WebhookRealestateInscriptionnotauthenticatedModified](docs/Model/WebhookRealestateInscriptionnotauthenticatedModified.md)
 - [WebhookRegenerateApikeyV1Request](docs/Model/WebhookRegenerateApikeyV1Request.md)
 - [WebhookRegenerateApikeyV1Response](docs/Model/WebhookRegenerateApikeyV1Response.md)
 - [WebhookRegenerateApikeyV1ResponseMPayload](docs/Model/WebhookRegenerateApikeyV1ResponseMPayload.md)
@@ -2729,5 +2738,5 @@ This PHP package is automatically generated by the [OpenAPI Generator](https://o
 
 - API version: `1.3.2`
     - Package version: `1.3.2`
-    - Generator version: `7.23.0`
+    - Generator version: `7.24.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **eWebhookEzmaxpartnerevent** | [**\eZmaxAPI\Model\FieldEWebhookEzmaxpartnerevent**](FieldEWebhookEzmaxpartnerevent.md) |  | [optional]
 **eWebhookEzsignevent** | [**\eZmaxAPI\Model\FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional]
 **eWebhookManagementevent** | [**\eZmaxAPI\Model\FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional]
+**eWebhookRealestateevent** | [**\eZmaxAPI\Model\FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional]
 **sWebhookUrl** | **string** | The URL of the Webhook callback |
 **sWebhookEmailfailed** | **string** | The email that will receive the Webhook in case all attempts fail |
 **sWebhookApikey** | **string** | The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey. | [optional]
