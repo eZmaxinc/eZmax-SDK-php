@@ -438,7 +438,8 @@ class ObjectSystemconfigurationApi
         if (isset($systemconfigurationEditObjectV2Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($systemconfigurationEditObjectV2Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($systemconfigurationEditObjectV2Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($systemconfigurationEditObjectV2Request));
             } else {
                 $httpBody = $systemconfigurationEditObjectV2Request;
             }
@@ -459,7 +460,8 @@ class ObjectSystemconfigurationApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -763,7 +765,8 @@ class ObjectSystemconfigurationApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

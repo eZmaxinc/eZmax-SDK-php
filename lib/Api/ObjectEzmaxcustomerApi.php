@@ -418,7 +418,8 @@ class ObjectEzmaxcustomerApi
         if (isset($ezmaxcustomerPatchObjectV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezmaxcustomerPatchObjectV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezmaxcustomerPatchObjectV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezmaxcustomerPatchObjectV1Request));
             } else {
                 $httpBody = $ezmaxcustomerPatchObjectV1Request;
             }
@@ -439,7 +440,8 @@ class ObjectEzmaxcustomerApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

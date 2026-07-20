@@ -377,7 +377,8 @@ class ObjectFranchisereferalincomeApi
         if (isset($franchisereferalincomeCreateObjectV2Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($franchisereferalincomeCreateObjectV2Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($franchisereferalincomeCreateObjectV2Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($franchisereferalincomeCreateObjectV2Request));
             } else {
                 $httpBody = $franchisereferalincomeCreateObjectV2Request;
             }
@@ -398,7 +399,8 @@ class ObjectFranchisereferalincomeApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

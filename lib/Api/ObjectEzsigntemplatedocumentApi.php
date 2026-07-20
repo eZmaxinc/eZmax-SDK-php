@@ -697,7 +697,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentCreateObjectV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentCreateObjectV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentCreateObjectV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentCreateObjectV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentCreateObjectV1Request;
             }
@@ -718,7 +719,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -962,7 +964,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1274,7 +1277,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentEditEzsigntemplateannotationsV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplateannotationsV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplateannotationsV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplateannotationsV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentEditEzsigntemplateannotationsV1Request;
             }
@@ -1295,7 +1299,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1607,7 +1612,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request;
             }
@@ -1628,7 +1634,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -1940,7 +1947,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request;
             }
@@ -1961,7 +1969,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2278,7 +2287,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentEditEzsigntemplatesignaturesV1Request;
             }
@@ -2299,7 +2309,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2611,7 +2622,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentEditEzsigntemplatesignaturesV2Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatesignaturesV2Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatesignaturesV2Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditEzsigntemplatesignaturesV2Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentEditEzsigntemplatesignaturesV2Request;
             }
@@ -2632,7 +2644,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -2944,7 +2957,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentEditObjectV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditObjectV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditObjectV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentEditObjectV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentEditObjectV1Request;
             }
@@ -2965,7 +2979,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3277,7 +3292,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentExtractTextV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentExtractTextV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentExtractTextV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentExtractTextV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentExtractTextV1Request;
             }
@@ -3298,7 +3314,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3610,7 +3627,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
             }
@@ -3631,7 +3649,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -3945,7 +3964,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4259,7 +4279,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4559,7 +4580,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -4873,7 +4895,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -5187,7 +5210,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -5487,7 +5511,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -5785,7 +5810,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentGetWordsPositionsV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentGetWordsPositionsV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentGetWordsPositionsV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentGetWordsPositionsV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentGetWordsPositionsV1Request;
             }
@@ -5806,7 +5832,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
@@ -6104,7 +6131,8 @@ class ObjectEzsigntemplatedocumentApi
         if (isset($ezsigntemplatedocumentPatchObjectV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentPatchObjectV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentPatchObjectV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezsigntemplatedocumentPatchObjectV1Request));
             } else {
                 $httpBody = $ezsigntemplatedocumentPatchObjectV1Request;
             }
@@ -6125,7 +6153,8 @@ class ObjectEzsigntemplatedocumentApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);

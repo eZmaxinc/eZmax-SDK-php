@@ -401,7 +401,8 @@ class ObjectExternalbrokerApi
         if (isset($externalbrokerImportIntoEDMV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($externalbrokerImportIntoEDMV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($externalbrokerImportIntoEDMV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($externalbrokerImportIntoEDMV1Request));
             } else {
                 $httpBody = $externalbrokerImportIntoEDMV1Request;
             }
@@ -422,7 +423,8 @@ class ObjectExternalbrokerApi
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+				$httpBody = json_encode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
