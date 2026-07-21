@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **dtAgentSenioritydate** | **string** | The seniority date of the Agent | [optional]
 **dtAgentSickleavestart** | **string** | The sick leave start date of the Agent | [optional]
 **dtAgentSickleaveend** | **string** | The sick leave end date of the Agent | [optional]
+**eAgentSchedule** | [**\eZmaxAPI\Model\FieldEAgentSchedule**](FieldEAgentSchedule.md) |  |
 **bAgentTranquillit** | **bool** | Whether if it&#39;s an tranquillit |
 **bAgentResidentiallicense** | **bool** | Whether if it&#39;s an residentiallicense |
 **bAgentCommerciallicense** | **bool** | Whether if it&#39;s an commerciallicense |

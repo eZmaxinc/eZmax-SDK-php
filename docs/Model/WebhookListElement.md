@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **eWebhookModule** | [**\eZmaxAPI\Model\FieldEWebhookModule**](FieldEWebhookModule.md) |  |
 **eWebhookEzsignevent** | [**\eZmaxAPI\Model\FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional]
 **eWebhookManagementevent** | [**\eZmaxAPI\Model\FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional]
+**eWebhookRealestateevent** | [**\eZmaxAPI\Model\FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional]
 **bWebhookIsactive** | **bool** | Whether the Webhook is active or not |
 **bWebhookIssigned** | **bool** | Whether the requests will be signed or not |
 

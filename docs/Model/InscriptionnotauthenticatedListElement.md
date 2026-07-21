@@ -7,10 +7,15 @@ Name | Type | Description | Notes
 **pkiInscriptionID** | **int** | The unique ID of the Inscription. |
 **pkiInscriptionnotauthenticatedID** | **int** | The unique ID of the Inscriptionnotauthenticated. | [optional]
 **fkiInscriptiontypeID** | **int** | The unique ID of the Inscriptiontype |
+**sInscriptiontypeNameX** | **string** | The name of the Inscriptiontype in the language of the requester |
+**fkiInscriptionbuildingtypeID** | **int** | The unique ID of the Inscriptionbuildingtype |
+**sInscriptionbuildingtypeNameX** | **string** | The name of the Inscriptionbuildingtype in the language of the requester |
+**fkiInscriptioncategoryID** | **int** | The unique ID of the Inscriptioncategory |
+**sInscriptioncategoryNameX** | **string** | The name of the Inscriptioncategory in the language of the requester |
 **fkiBuyercontractID** | **int** | The unique ID of the Buyercontract | [optional]
 **sBuyercontractContract** | **string** | The number of the Buyercontract | [optional]
-**sInscriptiontypeNameX** | **string** | The name of the Inscriptiontype in the language of the requester |
 **eInscriptionStep** | [**\eZmaxAPI\Model\FieldEInscriptionStep**](FieldEInscriptionStep.md) |  |
+**eInscriptionType** | [**\eZmaxAPI\Model\FieldEInscriptionType**](FieldEInscriptionType.md) |  |
 **sInscriptionCivicend** | **string** | The civicend of the Inscription |
 **sInscriptionMLS** | **string** | The mls of the Inscription | [optional]
 **sInscriptionContract** | **string** | The sale contract number | [optional]
@@ -27,6 +32,7 @@ Name | Type | Description | Notes
 **dtInscriptionnotauthenticatedTransactiondateReal** | **string** | The transactiondatereal of the Inscriptionnotauthenticated | [optional]
 **bInscriptionnotauthenticatedConditional** | **bool** | Whether the inscriptionnotauthenticated is conditional | [optional]
 **bInscriptionnotauthenticatedIsactive** | **bool** | Whether the inscriptionnotauthenticated is active or not | [optional]
+**bInscriptionnotauthenticatedDraft** | **bool** | Whether the inscriptionnotauthenticated is a draft or not | [optional]
 **sAddressCivic** | **string** | The Civic number. | [optional]
 **sAddressStreet** | **string** | The Street Name | [optional]
 **sAddressSuite** | **string** | The Suite or appartment number | [optional]
@@ -37,5 +43,6 @@ Name | Type | Description | Notes
 **fkiCountryID** | **int** | The unique ID of the Country.  Here are some common values (Complete list must be retrieved from API):  |Value|Description| |-|-| |1|Canada| |2|United-States| | [optional]
 **sCountryNameX** | **string** | The name of the Country in the language of the requester | [optional]
 **sInscriptionnotauthenticatedOffertopurchasenumber** | **string** | The Offer to purchase number |
+**iInscriptionUnit** | **int** | The unit of the Inscription |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -10,8 +10,10 @@ Name | Type | Description | Notes
 **fkiEzsignfoldertypeID** | **int** | The unique ID of the Ezsignfoldertype. | [optional]
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester | [optional]
 **eWebhookModule** | [**\eZmaxAPI\Model\FieldEWebhookModule**](FieldEWebhookModule.md) |  |
+**eWebhookEzmaxpartnerevent** | [**\eZmaxAPI\Model\FieldEWebhookEzmaxpartnerevent**](FieldEWebhookEzmaxpartnerevent.md) |  | [optional]
 **eWebhookEzsignevent** | [**\eZmaxAPI\Model\FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional]
 **eWebhookManagementevent** | [**\eZmaxAPI\Model\FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional]
+**eWebhookRealestateevent** | [**\eZmaxAPI\Model\FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional]
 **sWebhookUrl** | **string** | The URL of the Webhook callback |
 **sWebhookEmailfailed** | **string** | The email that will receive the Webhook in case all attempts fail |
 **sWebhookApikey** | **string** | The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey. | [optional]
