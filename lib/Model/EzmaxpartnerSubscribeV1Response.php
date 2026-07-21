@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentationSubscribeV1Response
+ * EzmaxpartnerSubscribeV1Response
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * DocumentationSubscribeV1Response Class Doc Comment
+ * EzmaxpartnerSubscribeV1Response Class Doc Comment
  *
  * @category Class
  * @description Request for POST /1/module/ezmaxmaillinglist/subscribe
@@ -42,7 +42,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DocumentationSubscribeV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzmaxpartnerSubscribeV1Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class DocumentationSubscribeV1Response implements ModelInterface, ArrayAccess, \
      *
      * @var string
      */
-    protected static $openAPIModelName = 'documentation-subscribe-v1-Response';
+    protected static $openAPIModelName = 'ezmaxpartner-subscribe-v1-Response';
 
     /**
      * Array of property to type mappings. Used for (de)serialization

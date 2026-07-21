@@ -6,13 +6,13 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**externalpartnerSubscribeV1()**](ExternalEzmaxpartnerApi.md#externalpartnerSubscribeV1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage |
+| [**ezmaxpartnerSubscribeV1()**](ExternalEzmaxpartnerApi.md#ezmaxpartnerSubscribeV1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage |
 
 
-## `externalpartnerSubscribeV1()`
+## `ezmaxpartnerSubscribeV1()`
 
 ```php
-externalpartnerSubscribeV1($documentationSubscribeV1Request): \eZmaxAPI\Model\DocumentationSubscribeV1Response
+ezmaxpartnerSubscribeV1($ezmaxpartnerSubscribeV1Request): \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response
 ```
 
 Subscribe to an Ezmaxparnerproductstage
@@ -38,13 +38,13 @@ $apiInstance = new eZmaxAPI\Api\ExternalEzmaxpartnerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$documentationSubscribeV1Request = new \eZmaxAPI\Model\DocumentationSubscribeV1Request(); // \eZmaxAPI\Model\DocumentationSubscribeV1Request | 
+$ezmaxpartnerSubscribeV1Request = new \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Request(); // \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Request | 
 
 try {
-    $result = $apiInstance->externalpartnerSubscribeV1($documentationSubscribeV1Request);
+    $result = $apiInstance->ezmaxpartnerSubscribeV1($ezmaxpartnerSubscribeV1Request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ExternalEzmaxpartnerApi->externalpartnerSubscribeV1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExternalEzmaxpartnerApi->ezmaxpartnerSubscribeV1: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -52,11 +52,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **documentationSubscribeV1Request** | [**\eZmaxAPI\Model\DocumentationSubscribeV1Request**](../Model/DocumentationSubscribeV1Request.md)|  | |
+| **ezmaxpartnerSubscribeV1Request** | [**\eZmaxAPI\Model\EzmaxpartnerSubscribeV1Request**](../Model/EzmaxpartnerSubscribeV1Request.md)|  | |
 
 ### Return type
 
-[**\eZmaxAPI\Model\DocumentationSubscribeV1Response**](../Model/DocumentationSubscribeV1Response.md)
+[**\eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response**](../Model/EzmaxpartnerSubscribeV1Response.md)
 
 ### Authorization
 

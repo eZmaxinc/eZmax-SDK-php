@@ -61,7 +61,8 @@ class WebhookEzmaxpartnerproductUnsubscribe implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'objWebhook' => '\eZmaxAPI\Model\CustomWebhookResponse',
         'aObjAttempt' => '\eZmaxAPI\Model\AttemptResponseCompound[]',
-        'objEzmaxpartnerproduct' => '\eZmaxAPI\Model\CustomEzmaxpartnerproductSubscribe'
+        'objEzmaxpartnerproduct' => '\eZmaxAPI\Model\CustomEzmaxpartnerproductSubscribe',
+        'sExternalID' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class WebhookEzmaxpartnerproductUnsubscribe implements ModelInterface, ArrayAcce
     protected static $openAPIFormats = [
         'objWebhook' => null,
         'aObjAttempt' => null,
-        'objEzmaxpartnerproduct' => null
+        'objEzmaxpartnerproduct' => null,
+        'sExternalID' => null
     ];
 
     /**
@@ -85,7 +87,8 @@ class WebhookEzmaxpartnerproductUnsubscribe implements ModelInterface, ArrayAcce
     protected static array $openAPINullables = [
         'objWebhook' => false,
         'aObjAttempt' => false,
-        'objEzmaxpartnerproduct' => false
+        'objEzmaxpartnerproduct' => false,
+        'sExternalID' => false
     ];
 
     /**
@@ -176,7 +179,8 @@ class WebhookEzmaxpartnerproductUnsubscribe implements ModelInterface, ArrayAcce
     protected static $attributeMap = [
         'objWebhook' => 'objWebhook',
         'aObjAttempt' => 'a_objAttempt',
-        'objEzmaxpartnerproduct' => 'objEzmaxpartnerproduct'
+        'objEzmaxpartnerproduct' => 'objEzmaxpartnerproduct',
+        'sExternalID' => 'sExternalID'
     ];
 
     /**
@@ -187,7 +191,8 @@ class WebhookEzmaxpartnerproductUnsubscribe implements ModelInterface, ArrayAcce
     protected static $setters = [
         'objWebhook' => 'setObjWebhook',
         'aObjAttempt' => 'setAObjAttempt',
-        'objEzmaxpartnerproduct' => 'setObjEzmaxpartnerproduct'
+        'objEzmaxpartnerproduct' => 'setObjEzmaxpartnerproduct',
+        'sExternalID' => 'setSExternalID'
     ];
 
     /**
@@ -198,7 +203,8 @@ class WebhookEzmaxpartnerproductUnsubscribe implements ModelInterface, ArrayAcce
     protected static $getters = [
         'objWebhook' => 'getObjWebhook',
         'aObjAttempt' => 'getAObjAttempt',
-        'objEzmaxpartnerproduct' => 'getObjEzmaxpartnerproduct'
+        'objEzmaxpartnerproduct' => 'getObjEzmaxpartnerproduct',
+        'sExternalID' => 'getSExternalID'
     ];
 
     /**
@@ -261,6 +267,7 @@ class WebhookEzmaxpartnerproductUnsubscribe implements ModelInterface, ArrayAcce
         $this->setIfExists('objWebhook', $data ?? [], null);
         $this->setIfExists('aObjAttempt', $data ?? [], null);
         $this->setIfExists('objEzmaxpartnerproduct', $data ?? [], null);
+        $this->setIfExists('sExternalID', $data ?? [], null);
     }
 
     /**
@@ -406,6 +413,38 @@ class WebhookEzmaxpartnerproductUnsubscribe implements ModelInterface, ArrayAcce
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
         //$this->container['objEzmaxpartnerproduct'] = $objEzmaxpartnerproduct;
         $this->container['objEzmaxpartnerproduct'] = $objEzmaxpartnerproduct;
+
+        return $this;
+    }
+
+    /**
+     * Gets sExternalID
+     *
+     * @return string|null
+     */
+    public function getSExternalID()
+    {
+	//return $this->container['sExternalID'];
+        return is_null($this->container['sExternalID']) ? null : trim($this->container['sExternalID']);
+    }
+
+    /**
+     * Sets sExternalID
+     *
+     * @param string|null $sExternalID sExternalID
+     *
+     * @return self
+     */
+    public function setSExternalID($sExternalID)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sExternalID)) {
+            //throw new \InvalidArgumentException('non-nullable sExternalID cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['sExternalID'] = $sExternalID;
+        $this->container['sExternalID'] = (is_null($sExternalID) ? null : trim((string) $sExternalID));
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentationSubscribeV1Request
+ * EzmaxpartnerSubscribeV1Request
  *
  * PHP version 8.1
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \eZmaxAPI\ObjectSerializer;
 
 /**
- * DocumentationSubscribeV1Request Class Doc Comment
+ * EzmaxpartnerSubscribeV1Request Class Doc Comment
  *
  * @category Class
  * @description Request for POST /1/webhookdocumentation/subscribe
@@ -42,7 +42,7 @@ use \eZmaxAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
+class EzmaxpartnerSubscribeV1Request implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
      *
      * @var string
      */
-    protected static $openAPIModelName = 'documentation-subscribe-v1-Request';
+    protected static $openAPIModelName = 'ezmaxpartner-subscribe-v1-Request';
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -559,18 +559,18 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
         //}
         //if ((mb_strlen($pksEzmaxcustomerCode) > 6)) {
         if (!is_null($pksEzmaxcustomerCode) && (mb_strlen($pksEzmaxcustomerCode) > 6)) {
-            //throw new \InvalidArgumentException('invalid length for $pksEzmaxcustomerCode when calling DocumentationSubscribeV1Request., must be smaller than or equal to 6.');
-            throw new \InvalidArgumentException('value '.(is_null($pksEzmaxcustomerCode)?'null':'"'.$pksEzmaxcustomerCode.'"').', invalid length for pksEzmaxcustomerCode when calling DocumentationSubscribeV1Request., must be smaller than or equal to 6.');
+            //throw new \InvalidArgumentException('invalid length for $pksEzmaxcustomerCode when calling EzmaxpartnerSubscribeV1Request., must be smaller than or equal to 6.');
+            throw new \InvalidArgumentException('value '.(is_null($pksEzmaxcustomerCode)?'null':'"'.$pksEzmaxcustomerCode.'"').', invalid length for pksEzmaxcustomerCode when calling EzmaxpartnerSubscribeV1Request., must be smaller than or equal to 6.');
         }
         //if ((mb_strlen($pksEzmaxcustomerCode) < 2)) {
         if (!is_null($pksEzmaxcustomerCode) && (mb_strlen($pksEzmaxcustomerCode) < 2)) {
-            //throw new \InvalidArgumentException('invalid length for $pksEzmaxcustomerCode when calling DocumentationSubscribeV1Request., must be bigger than or equal to 2.');
-            throw new \InvalidArgumentException('value '.(is_null($pksEzmaxcustomerCode)?'null':'"'.$pksEzmaxcustomerCode.'"').', invalid length for pksEzmaxcustomerCode when calling DocumentationSubscribeV1Request., must be bigger than or equal to 2.');
+            //throw new \InvalidArgumentException('invalid length for $pksEzmaxcustomerCode when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 2.');
+            throw new \InvalidArgumentException('value '.(is_null($pksEzmaxcustomerCode)?'null':'"'.$pksEzmaxcustomerCode.'"').', invalid length for pksEzmaxcustomerCode when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 2.');
         }
         //if ((!preg_match("/^[a-z\\d]{2,6}$/", ObjectSerializer::toString($pksEzmaxcustomerCode)))) {
         if (!is_null($pksEzmaxcustomerCode) && (!preg_match("/(*UTF8)^[a-z\\d]{2,6}$/", ObjectSerializer::toString($pksEzmaxcustomerCode)))) {
-            //throw new \InvalidArgumentException("invalid value for \$pksEzmaxcustomerCode when calling DocumentationSubscribeV1Request., must conform to the pattern /^[a-z\\d]{2,6}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($pksEzmaxcustomerCode)?'null':'"'.$pksEzmaxcustomerCode.'"')." for pksEzmaxcustomerCode when calling DocumentationSubscribeV1Request., must conform to the pattern /^[a-z\\d]{2,6}$/.");
+            //throw new \InvalidArgumentException("invalid value for \$pksEzmaxcustomerCode when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^[a-z\\d]{2,6}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($pksEzmaxcustomerCode)?'null':'"'.$pksEzmaxcustomerCode.'"')." for pksEzmaxcustomerCode when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^[a-z\\d]{2,6}$/.");
         }
 
         
@@ -703,8 +703,8 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
         //}
         //if (($fkiSystemconfigurationtypeID < 1)) {
         if (!is_null($fkiSystemconfigurationtypeID) && ($fkiSystemconfigurationtypeID < 1)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiSystemconfigurationtypeID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiSystemconfigurationtypeID)?'null':'"'.$fkiSystemconfigurationtypeID.'"').' for fkiSystemconfigurationtypeID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 1.');
+            //throw new \InvalidArgumentException('invalid value for $fkiSystemconfigurationtypeID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiSystemconfigurationtypeID)?'null':'"'.$fkiSystemconfigurationtypeID.'"').' for fkiSystemconfigurationtypeID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 1.');
         }
 
         
@@ -805,8 +805,8 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
         //}
         //if (($fkiEzmaxpartnerID < 1)) {
         if (!is_null($fkiEzmaxpartnerID) && ($fkiEzmaxpartnerID < 1)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerID)?'null':'"'.$fkiEzmaxpartnerID.'"').' for fkiEzmaxpartnerID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 1.');
+            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerID)?'null':'"'.$fkiEzmaxpartnerID.'"').' for fkiEzmaxpartnerID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 1.');
         }
 
         
@@ -844,8 +844,8 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
 
         //if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sEzmaxpartnerName1)))) {
         if (!is_null($sEzmaxpartnerName1) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sEzmaxpartnerName1)))) {
-            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerName1 when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerName1)?'null':'"'.$sEzmaxpartnerName1.'"')." for sEzmaxpartnerName1 when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,50}$/.");
+            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerName1 when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,50}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerName1)?'null':'"'.$sEzmaxpartnerName1.'"')." for sEzmaxpartnerName1 when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,50}$/.");
         }
 
         
@@ -883,8 +883,8 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
 
         //if ((!preg_match("/^.{0,50}$/", ObjectSerializer::toString($sEzmaxpartnerName2)))) {
         if (!is_null($sEzmaxpartnerName2) && (!preg_match("/(*UTF8)^.{0,50}$/", ObjectSerializer::toString($sEzmaxpartnerName2)))) {
-            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerName2 when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,50}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerName2)?'null':'"'.$sEzmaxpartnerName2.'"')." for sEzmaxpartnerName2 when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,50}$/.");
+            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerName2 when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,50}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerName2)?'null':'"'.$sEzmaxpartnerName2.'"')." for sEzmaxpartnerName2 when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,50}$/.");
         }
 
         
@@ -921,13 +921,13 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
         //}
         //if (($fkiEzmaxpartnerproductID > 255)) {
         if (!is_null($fkiEzmaxpartnerproductID) && ($fkiEzmaxpartnerproductID > 255)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerproductID when calling DocumentationSubscribeV1Request., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerproductID)?'null':'"'.$fkiEzmaxpartnerproductID.'"').' for fkiEzmaxpartnerproductID when calling DocumentationSubscribeV1Request., must be smaller than or equal to 255.');
+            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerproductID when calling EzmaxpartnerSubscribeV1Request., must be smaller than or equal to 255.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerproductID)?'null':'"'.$fkiEzmaxpartnerproductID.'"').' for fkiEzmaxpartnerproductID when calling EzmaxpartnerSubscribeV1Request., must be smaller than or equal to 255.');
         }
         //if (($fkiEzmaxpartnerproductID < 0)) {
         if (!is_null($fkiEzmaxpartnerproductID) && ($fkiEzmaxpartnerproductID < 0)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerproductID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerproductID)?'null':'"'.$fkiEzmaxpartnerproductID.'"').' for fkiEzmaxpartnerproductID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 0.');
+            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerproductID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerproductID)?'null':'"'.$fkiEzmaxpartnerproductID.'"').' for fkiEzmaxpartnerproductID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 0.');
         }
 
         
@@ -965,8 +965,8 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
 
         //if ((!preg_match("/^.{0,35}$/", ObjectSerializer::toString($sEzmaxpartnerproductName1)))) {
         if (!is_null($sEzmaxpartnerproductName1) && (!preg_match("/(*UTF8)^.{0,35}$/", ObjectSerializer::toString($sEzmaxpartnerproductName1)))) {
-            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerproductName1 when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,35}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerproductName1)?'null':'"'.$sEzmaxpartnerproductName1.'"')." for sEzmaxpartnerproductName1 when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,35}$/.");
+            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerproductName1 when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,35}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerproductName1)?'null':'"'.$sEzmaxpartnerproductName1.'"')." for sEzmaxpartnerproductName1 when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,35}$/.");
         }
 
         
@@ -1004,8 +1004,8 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
 
         //if ((!preg_match("/^.{0,35}$/", ObjectSerializer::toString($sEzmaxpartnerproductName2)))) {
         if (!is_null($sEzmaxpartnerproductName2) && (!preg_match("/(*UTF8)^.{0,35}$/", ObjectSerializer::toString($sEzmaxpartnerproductName2)))) {
-            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerproductName2 when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,35}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerproductName2)?'null':'"'.$sEzmaxpartnerproductName2.'"')." for sEzmaxpartnerproductName2 when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,35}$/.");
+            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerproductName2 when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,35}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerproductName2)?'null':'"'.$sEzmaxpartnerproductName2.'"')." for sEzmaxpartnerproductName2 when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,35}$/.");
         }
 
         
@@ -1042,13 +1042,13 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
         //}
         //if (($fkiEzmaxpartnerproductstageID > 255)) {
         if (!is_null($fkiEzmaxpartnerproductstageID) && ($fkiEzmaxpartnerproductstageID > 255)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerproductstageID when calling DocumentationSubscribeV1Request., must be smaller than or equal to 255.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerproductstageID)?'null':'"'.$fkiEzmaxpartnerproductstageID.'"').' for fkiEzmaxpartnerproductstageID when calling DocumentationSubscribeV1Request., must be smaller than or equal to 255.');
+            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerproductstageID when calling EzmaxpartnerSubscribeV1Request., must be smaller than or equal to 255.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerproductstageID)?'null':'"'.$fkiEzmaxpartnerproductstageID.'"').' for fkiEzmaxpartnerproductstageID when calling EzmaxpartnerSubscribeV1Request., must be smaller than or equal to 255.');
         }
         //if (($fkiEzmaxpartnerproductstageID < 0)) {
         if (!is_null($fkiEzmaxpartnerproductstageID) && ($fkiEzmaxpartnerproductstageID < 0)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerproductstageID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerproductstageID)?'null':'"'.$fkiEzmaxpartnerproductstageID.'"').' for fkiEzmaxpartnerproductstageID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 0.');
+            //throw new \InvalidArgumentException('invalid value for $fkiEzmaxpartnerproductstageID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiEzmaxpartnerproductstageID)?'null':'"'.$fkiEzmaxpartnerproductstageID.'"').' for fkiEzmaxpartnerproductstageID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 0.');
         }
 
         
@@ -1086,8 +1086,8 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
 
         //if ((!preg_match("/^.{0,15}$/", ObjectSerializer::toString($sEzmaxpartnerproductstageCode)))) {
         if (!is_null($sEzmaxpartnerproductstageCode) && (!preg_match("/(*UTF8)^.{0,15}$/", ObjectSerializer::toString($sEzmaxpartnerproductstageCode)))) {
-            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerproductstageCode when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,15}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerproductstageCode)?'null':'"'.$sEzmaxpartnerproductstageCode.'"')." for sEzmaxpartnerproductstageCode when calling DocumentationSubscribeV1Request., must conform to the pattern /^.{0,15}$/.");
+            //throw new \InvalidArgumentException("invalid value for \$sEzmaxpartnerproductstageCode when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,15}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sEzmaxpartnerproductstageCode)?'null':'"'.$sEzmaxpartnerproductstageCode.'"')." for sEzmaxpartnerproductstageCode when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^.{0,15}$/.");
         }
 
         
@@ -1125,8 +1125,8 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
 
         //if ((!preg_match("/^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginName)))) {
         if (!is_null($sUserLoginName) && (!preg_match("/(*UTF8)^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginName)))) {
-            //throw new \InvalidArgumentException("invalid value for \$sUserLoginName when calling DocumentationSubscribeV1Request., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sUserLoginName)?'null':'"'.$sUserLoginName.'"')." for sUserLoginName when calling DocumentationSubscribeV1Request., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
+            //throw new \InvalidArgumentException("invalid value for \$sUserLoginName when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sUserLoginName)?'null':'"'.$sUserLoginName.'"')." for sUserLoginName when calling EzmaxpartnerSubscribeV1Request., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
         }
 
         
@@ -1227,8 +1227,8 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
         //}
         //if (($fkiUserID < 0)) {
         if (!is_null($fkiUserID) && ($fkiUserID < 0)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiUserID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserID)?'null':'"'.$fkiUserID.'"').' for fkiUserID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 0.');
+            //throw new \InvalidArgumentException('invalid value for $fkiUserID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiUserID)?'null':'"'.$fkiUserID.'"').' for fkiUserID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 0.');
         }
 
         
@@ -1265,13 +1265,13 @@ class DocumentationSubscribeV1Request implements ModelInterface, ArrayAccess, \J
         //}
         //if (($fkiLanguageID > 2)) {
         if (!is_null($fkiLanguageID) && ($fkiLanguageID > 2)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling DocumentationSubscribeV1Request., must be smaller than or equal to 2.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling DocumentationSubscribeV1Request., must be smaller than or equal to 2.');
+            //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzmaxpartnerSubscribeV1Request., must be smaller than or equal to 2.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling EzmaxpartnerSubscribeV1Request., must be smaller than or equal to 2.');
         }
         //if (($fkiLanguageID < 1)) {
         if (!is_null($fkiLanguageID) && ($fkiLanguageID < 1)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 1.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling DocumentationSubscribeV1Request., must be bigger than or equal to 1.');
+            //throw new \InvalidArgumentException('invalid value for $fkiLanguageID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiLanguageID)?'null':'"'.$fkiLanguageID.'"').' for fkiLanguageID when calling EzmaxpartnerSubscribeV1Request., must be bigger than or equal to 1.');
         }
 
         

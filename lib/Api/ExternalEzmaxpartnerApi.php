@@ -76,14 +76,14 @@ class ExternalEzmaxpartnerApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'externalpartnerSubscribeV1' => [
+        'ezmaxpartnerSubscribeV1' => [
             'application/json',
         ],
     ];
 
     /** @var array[] $objEzmaxConfig **/
     public const objEzmaxConfig = [
-        'externalpartnerSubscribeV1' => [
+        'ezmaxpartnerSubscribeV1' => [
             'systemconfigurationtype' => [
                 'All',
             ],
@@ -146,38 +146,38 @@ class ExternalEzmaxpartnerApi
     }
 
     /**
-     * Operation externalpartnerSubscribeV1
+     * Operation ezmaxpartnerSubscribeV1
      *
      * Subscribe to an Ezmaxparnerproductstage
      *
-     * @param  \eZmaxAPI\Model\DocumentationSubscribeV1Request $documentationSubscribeV1Request  (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalpartnerSubscribeV1'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Request $ezmaxpartnerSubscribeV1Request  (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxpartnerSubscribeV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\DocumentationSubscribeV1Response
+     * @return \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response
      */
-    public function externalpartnerSubscribeV1($documentationSubscribeV1Request, string $contentType = self::contentTypes['externalpartnerSubscribeV1'][0])
+    public function ezmaxpartnerSubscribeV1($ezmaxpartnerSubscribeV1Request, string $contentType = self::contentTypes['ezmaxpartnerSubscribeV1'][0])
     {
-        list($response) = $this->externalpartnerSubscribeV1WithHttpInfo($documentationSubscribeV1Request, $contentType);
+        list($response) = $this->ezmaxpartnerSubscribeV1WithHttpInfo($ezmaxpartnerSubscribeV1Request, $contentType);
         return $response;
     }
 
     /**
-     * Operation externalpartnerSubscribeV1WithHttpInfo
+     * Operation ezmaxpartnerSubscribeV1WithHttpInfo
      *
      * Subscribe to an Ezmaxparnerproductstage
      *
-     * @param  \eZmaxAPI\Model\DocumentationSubscribeV1Request $documentationSubscribeV1Request  (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalpartnerSubscribeV1'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Request $ezmaxpartnerSubscribeV1Request  (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxpartnerSubscribeV1'] to see the possible values for this operation
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\DocumentationSubscribeV1Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function externalpartnerSubscribeV1WithHttpInfo($documentationSubscribeV1Request, string $contentType = self::contentTypes['externalpartnerSubscribeV1'][0])
+    public function ezmaxpartnerSubscribeV1WithHttpInfo($ezmaxpartnerSubscribeV1Request, string $contentType = self::contentTypes['ezmaxpartnerSubscribeV1'][0])
     {
-        $request = $this->externalpartnerSubscribeV1Request($documentationSubscribeV1Request, $contentType);
+        $request = $this->ezmaxpartnerSubscribeV1Request($ezmaxpartnerSubscribeV1Request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -205,7 +205,7 @@ class ExternalEzmaxpartnerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\eZmaxAPI\Model\DocumentationSubscribeV1Response',
+                        '\eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response',
                         $request,
                         $response,
                     );
@@ -227,7 +227,7 @@ class ExternalEzmaxpartnerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\eZmaxAPI\Model\DocumentationSubscribeV1Response',
+                '\eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response',
                 $request,
                 $response,
             );
@@ -236,7 +236,7 @@ class ExternalEzmaxpartnerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\eZmaxAPI\Model\DocumentationSubscribeV1Response',
+                        '\eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -249,19 +249,19 @@ class ExternalEzmaxpartnerApi
     }
 
     /**
-     * Operation externalpartnerSubscribeV1Async
+     * Operation ezmaxpartnerSubscribeV1Async
      *
      * Subscribe to an Ezmaxparnerproductstage
      *
-     * @param  \eZmaxAPI\Model\DocumentationSubscribeV1Request $documentationSubscribeV1Request  (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalpartnerSubscribeV1'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Request $ezmaxpartnerSubscribeV1Request  (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxpartnerSubscribeV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function externalpartnerSubscribeV1Async($documentationSubscribeV1Request, string $contentType = self::contentTypes['externalpartnerSubscribeV1'][0])
+    public function ezmaxpartnerSubscribeV1Async($ezmaxpartnerSubscribeV1Request, string $contentType = self::contentTypes['ezmaxpartnerSubscribeV1'][0])
     {
-        return $this->externalpartnerSubscribeV1AsyncWithHttpInfo($documentationSubscribeV1Request, $contentType)
+        return $this->ezmaxpartnerSubscribeV1AsyncWithHttpInfo($ezmaxpartnerSubscribeV1Request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -270,20 +270,20 @@ class ExternalEzmaxpartnerApi
     }
 
     /**
-     * Operation externalpartnerSubscribeV1AsyncWithHttpInfo
+     * Operation ezmaxpartnerSubscribeV1AsyncWithHttpInfo
      *
      * Subscribe to an Ezmaxparnerproductstage
      *
-     * @param  \eZmaxAPI\Model\DocumentationSubscribeV1Request $documentationSubscribeV1Request  (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalpartnerSubscribeV1'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Request $ezmaxpartnerSubscribeV1Request  (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxpartnerSubscribeV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function externalpartnerSubscribeV1AsyncWithHttpInfo($documentationSubscribeV1Request, string $contentType = self::contentTypes['externalpartnerSubscribeV1'][0])
+    public function ezmaxpartnerSubscribeV1AsyncWithHttpInfo($ezmaxpartnerSubscribeV1Request, string $contentType = self::contentTypes['ezmaxpartnerSubscribeV1'][0])
     {
-        $returnType = '\eZmaxAPI\Model\DocumentationSubscribeV1Response';
-        $request = $this->externalpartnerSubscribeV1Request($documentationSubscribeV1Request, $contentType);
+        $returnType = '\eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response';
+        $request = $this->ezmaxpartnerSubscribeV1Request($ezmaxpartnerSubscribeV1Request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -322,21 +322,21 @@ class ExternalEzmaxpartnerApi
     }
 
     /**
-     * Create request for operation 'externalpartnerSubscribeV1'
+     * Create request for operation 'ezmaxpartnerSubscribeV1'
      *
-     * @param  \eZmaxAPI\Model\DocumentationSubscribeV1Request $documentationSubscribeV1Request  (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalpartnerSubscribeV1'] to see the possible values for this operation
+     * @param  \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Request $ezmaxpartnerSubscribeV1Request  (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ezmaxpartnerSubscribeV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function externalpartnerSubscribeV1Request($documentationSubscribeV1Request, string $contentType = self::contentTypes['externalpartnerSubscribeV1'][0])
+    public function ezmaxpartnerSubscribeV1Request($ezmaxpartnerSubscribeV1Request, string $contentType = self::contentTypes['ezmaxpartnerSubscribeV1'][0])
     {
 
-        // verify the required parameter 'documentationSubscribeV1Request' is set
-        if ($documentationSubscribeV1Request === null || (is_array($documentationSubscribeV1Request) && count($documentationSubscribeV1Request) === 0)) {
+        // verify the required parameter 'ezmaxpartnerSubscribeV1Request' is set
+        if ($ezmaxpartnerSubscribeV1Request === null || (is_array($ezmaxpartnerSubscribeV1Request) && count($ezmaxpartnerSubscribeV1Request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $documentationSubscribeV1Request when calling externalpartnerSubscribeV1'
+                'Missing the required parameter $ezmaxpartnerSubscribeV1Request when calling ezmaxpartnerSubscribeV1'
             );
         }
 
@@ -359,13 +359,13 @@ class ExternalEzmaxpartnerApi
         );
 
         // for model (json/xml)
-        if (isset($documentationSubscribeV1Request)) {
+        if (isset($ezmaxpartnerSubscribeV1Request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($documentationSubscribeV1Request));
-				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($documentationSubscribeV1Request));
+                //$httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ezmaxpartnerSubscribeV1Request));
+				$httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($ezmaxpartnerSubscribeV1Request));
             } else {
-                $httpBody = $documentationSubscribeV1Request;
+                $httpBody = $ezmaxpartnerSubscribeV1Request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

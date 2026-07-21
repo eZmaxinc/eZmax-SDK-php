@@ -561,8 +561,6 @@ docs/Model/DiscussionmessageRequestCompound.md
 docs/Model/DiscussionmessageRequestPatch.md
 docs/Model/DiscussionmessageResponse.md
 docs/Model/DiscussionmessageResponseCompound.md
-docs/Model/DocumentationSubscribeV1Request.md
-docs/Model/DocumentationSubscribeV1Response.md
 docs/Model/DomainAutocompleteElementResponse.md
 docs/Model/DomainCreateObjectV1Request.md
 docs/Model/DomainCreateObjectV1Response.md
@@ -682,6 +680,8 @@ docs/Model/EzmaxpartnerGetObjectV2Response.md
 docs/Model/EzmaxpartnerGetObjectV2ResponseMPayload.md
 docs/Model/EzmaxpartnerResponse.md
 docs/Model/EzmaxpartnerResponseCompound.md
+docs/Model/EzmaxpartnerSubscribeV1Request.md
+docs/Model/EzmaxpartnerSubscribeV1Response.md
 docs/Model/EzmaxproductAutocompleteElementResponse.md
 docs/Model/EzmaxproductGetAutocompleteV2Response.md
 docs/Model/EzmaxproductGetAutocompleteV2ResponseMPayload.md
@@ -2752,8 +2752,6 @@ lib/Model/DiscussionmessageRequestCompound.php
 lib/Model/DiscussionmessageRequestPatch.php
 lib/Model/DiscussionmessageResponse.php
 lib/Model/DiscussionmessageResponseCompound.php
-lib/Model/DocumentationSubscribeV1Request.php
-lib/Model/DocumentationSubscribeV1Response.php
 lib/Model/DomainAutocompleteElementResponse.php
 lib/Model/DomainCreateObjectV1Request.php
 lib/Model/DomainCreateObjectV1Response.php
@@ -2873,6 +2871,8 @@ lib/Model/EzmaxpartnerGetObjectV2Response.php
 lib/Model/EzmaxpartnerGetObjectV2ResponseMPayload.php
 lib/Model/EzmaxpartnerResponse.php
 lib/Model/EzmaxpartnerResponseCompound.php
+lib/Model/EzmaxpartnerSubscribeV1Request.php
+lib/Model/EzmaxpartnerSubscribeV1Response.php
 lib/Model/EzmaxproductAutocompleteElementResponse.php
 lib/Model/EzmaxproductGetAutocompleteV2Response.php
 lib/Model/EzmaxproductGetAutocompleteV2ResponseMPayload.php
