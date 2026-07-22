@@ -1633,6 +1633,7 @@ docs/Model/InscriptionGetCommunicationrecipientsV1ResponseMPayload.md
 docs/Model/InscriptionGetCommunicationsendersV1Response.md
 docs/Model/InscriptionGetCommunicationsendersV1ResponseMPayload.md
 docs/Model/InscriptionGetInscriptionnotauthenticatedsV1Response.md
+docs/Model/InscriptionGetInscriptionnotauthenticatedsV1ResponseMPayload.md
 docs/Model/InscriptionGetListV1Response.md
 docs/Model/InscriptionGetListV1ResponseMPayload.md
 docs/Model/InscriptionGetObjectV2Response.md
@@ -3824,6 +3825,7 @@ lib/Model/InscriptionGetCommunicationrecipientsV1ResponseMPayload.php
 lib/Model/InscriptionGetCommunicationsendersV1Response.php
 lib/Model/InscriptionGetCommunicationsendersV1ResponseMPayload.php
 lib/Model/InscriptionGetInscriptionnotauthenticatedsV1Response.php
+lib/Model/InscriptionGetInscriptionnotauthenticatedsV1ResponseMPayload.php
 lib/Model/InscriptionGetListV1Response.php
 lib/Model/InscriptionGetListV1ResponseMPayload.php
 lib/Model/InscriptionGetObjectV2Response.php
