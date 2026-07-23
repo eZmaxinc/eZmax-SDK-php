@@ -16,23 +16,23 @@ Name | Type | Description | Notes
 **sBuyercontractContract** | **string** | The number of the Buyercontract | [optional]
 **eInscriptionStep** | [**\eZmaxAPI\Model\FieldEInscriptionStep**](FieldEInscriptionStep.md) |  |
 **eInscriptionType** | [**\eZmaxAPI\Model\FieldEInscriptionType**](FieldEInscriptionType.md) |  |
-**sInscriptionCivicend** | **string** | The civicend of the Inscription |
+**sInscriptionCivicend** | **string** | The address civic end of the Inscription |
 **sInscriptionMLS** | **string** | The mls of the Inscription | [optional]
 **sInscriptionContract** | **string** | The sale contract number | [optional]
 **dInscriptionSaleprice** | **string** | The saleprice of the Inscription |
-**dInscriptionRentprice** | **string** | The rentprice of the Inscription |
+**dInscriptionRentprice** | **string** | The rent price of the Inscription |
 **dtInscriptionDate** | **string** | The date of the Inscription | [optional]
-**dtInscriptionExpirationdate** | **string** | The expirationdate of the Inscription | [optional]
-**dtInscriptionNotarydate** | **string** | The notarydate of the Inscription | [optional]
+**dtInscriptionExpirationdate** | **string** | The expiration date of the Inscription | [optional]
+**dtInscriptionNotarydate** | **string** | The notary date of the Inscription | [optional]
 **bInscriptionInspection** | **bool** | Whether the inscription can be acces by an inspector | [optional]
 **bInscriptionIsactive** | **bool** | Whether the inscription is active or not |
 **bInscriptionArchived** | **bool** | Whether the inscription is archived or not |
-**dtInscriptionnotauthenticatedNotaryscheduledate** | **string** | The notaryscheduledate of the Inscriptionnotauthenticated | [optional]
-**dtInscriptionnotauthenticatedTransactiondate** | **string** | The transactiondate of the Inscriptionnotauthenticated | [optional]
-**dtInscriptionnotauthenticatedTransactiondateReal** | **string** | The transactiondatereal of the Inscriptionnotauthenticated | [optional]
+**dtInscriptionnotauthenticatedNotaryscheduledate** | **string** | The notary schedule date of the Inscriptionnotauthenticated | [optional]
+**dtInscriptionnotauthenticatedTransactiondate** | **string** | The transaction date of the Inscriptionnotauthenticated | [optional]
+**dtInscriptionnotauthenticatedTransactiondateReal** | **string** | The real transactiondate of the Inscriptionnotauthenticated | [optional]
 **bInscriptionnotauthenticatedConditional** | **bool** | Whether the inscriptionnotauthenticated is conditional | [optional]
 **bInscriptionnotauthenticatedIsactive** | **bool** | Whether the inscriptionnotauthenticated is active or not | [optional]
-**bInscriptionnotauthenticatedDraft** | **bool** | Whether the inscriptionnotauthenticated is a draft or not | [optional]
+**bInscriptionnotauthenticatedDraft** | **bool** | Whether the Inscriptionnotauthenticated is a draft or not | [optional]
 **sAddressCivic** | **string** | The Civic number. | [optional]
 **sAddressStreet** | **string** | The Street Name | [optional]
 **sAddressSuite** | **string** | The Suite or appartment number | [optional]
@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **sProvinceNameX** | **string** | The name of the Province in the language of the requester | [optional]
 **fkiCountryID** | **int** | The unique ID of the Country.  Here are some common values (Complete list must be retrieved from API):  |Value|Description| |-|-| |1|Canada| |2|United-States| | [optional]
 **sCountryNameX** | **string** | The name of the Country in the language of the requester | [optional]
-**sInscriptionnotauthenticatedOffertopurchasenumber** | **string** | The Offer to purchase number |
-**iInscriptionUnit** | **int** | The unit of the Inscription |
+**sInscriptionnotauthenticatedOffertopurchasenumber** | **string** | The offer to purchase number of the Inscriptionnotauthenticated |
+**iInscriptionUnit** | **int** | The number of unit for the Inscription |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
