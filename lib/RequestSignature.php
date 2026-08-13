@@ -28,17 +28,17 @@ namespace eZmaxAPI;
  */
 class RequestSignature
 {
-	public static function getFingerprintV1 ($sAuthorization, $dtDate, $sMethod, $sURL, $sBody = '', $iExpiration = null) {
+	public static function getFingerprintV1 (string $sAuthorization, string $dtDate, string $sMethod, string $sURL, string $sBody = '', ?int $iExpiration = null): string  {
 		$sContentToHash = "$sMethod\n$sURL\n$sBody\n$sAuthorization\n$dtDate" . (is_null($iExpiration) ? '' : "\n$iExpiration");
 		return 'v1='.hash('sha256', $sContentToHash);
 	}
 
-	public static function getSignatureV1 ($sAuthorization, $dtDate, $sFingerprint, $sSecret) {
+	public static function getSignatureV1 (string $sAuthorization, string $dtDate, string $sFingerprint, string $sSecret): string  {
 		$sContentToSign = "$sFingerprint$sAuthorization$dtDate";
 		return 'v1='.hash_hmac('sha256', $sContentToSign, $sSecret);
 	}
 
-	public static function getHeadersV1 ($sAuthorization, $sSecret, $sMethod, $sURL, $sBody = '', $iExpiration = null) {
+	public static function getHeadersV1 (string $sAuthorization, string $sSecret, string $sMethod, string $sURL, string $sBody = '', ?int $iExpiration = null): array {
 	    $dtDate = gmdate('Y-m-d\TH:i:s\Z');
 		$sFingerprint = self::getFingerprintV1 ($sAuthorization, $dtDate, $sMethod, $sURL, $sBody, $iExpiration);
 		$sSignature = self::getSignatureV1 ($sAuthorization, $dtDate, $sFingerprint, $sSecret);
