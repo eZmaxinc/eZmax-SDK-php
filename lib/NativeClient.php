@@ -3,7 +3,7 @@
 /**
  * NativeClient
  *
- * PHP version 7.2
+ * PHP version 8.1
  *
  * @category Class
  * @package  eZmaxAPI

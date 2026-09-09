@@ -6,9 +6,133 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**supplierBatchDownloadV1()**](ObjectSupplierApi.md#supplierBatchDownloadV1) | **POST** /1/object/supplier/{pkiSupplierID}/batchDownload | Download multiples attachments from a Supplier |
+| [**supplierGetAttachmentsV1()**](ObjectSupplierApi.md#supplierGetAttachmentsV1) | **GET** /1/object/supplier/{pkiSupplierID}/getAttachments | Retrieve Supplier&#39;s attachments |
 | [**supplierGetListV1()**](ObjectSupplierApi.md#supplierGetListV1) | **GET** /1/object/supplier/getList | Retrieve Supplier list |
 | [**supplierImportIntoEDMV1()**](ObjectSupplierApi.md#supplierImportIntoEDMV1) | **POST** /1/object/supplier/{pkiSupplierID}/importIntoEDM | Import attachments into the Supplier |
 
+
+## `supplierBatchDownloadV1()`
+
+```php
+supplierBatchDownloadV1($pkiSupplierID, $supplierBatchDownloadV1Request): \SplFileObject
+```
+
+Download multiples attachments from a Supplier
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectSupplierApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiSupplierID = 56; // int
+$supplierBatchDownloadV1Request = new \eZmaxAPI\Model\SupplierBatchDownloadV1Request(); // \eZmaxAPI\Model\SupplierBatchDownloadV1Request
+
+try {
+    $result = $apiInstance->supplierBatchDownloadV1($pkiSupplierID, $supplierBatchDownloadV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectSupplierApi->supplierBatchDownloadV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiSupplierID** | **int**|  | |
+| **supplierBatchDownloadV1Request** | [**\eZmaxAPI\Model\SupplierBatchDownloadV1Request**](../Model/SupplierBatchDownloadV1Request.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/zip`, `text/xml`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `supplierGetAttachmentsV1()`
+
+```php
+supplierGetAttachmentsV1($pkiSupplierID): \eZmaxAPI\Model\SupplierGetAttachmentsV1Response
+```
+
+Retrieve Supplier's attachments
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectSupplierApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiSupplierID = 56; // int
+
+try {
+    $result = $apiInstance->supplierGetAttachmentsV1($pkiSupplierID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectSupplierApi->supplierGetAttachmentsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiSupplierID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\SupplierGetAttachmentsV1Response**](../Model/SupplierGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `supplierGetListV1()`
 

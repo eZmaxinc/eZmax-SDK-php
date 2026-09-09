@@ -8,6 +8,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | ------------- | ------------- | ------------- |
 | [**attachmentDownloadV1()**](ObjectAttachmentApi.md#attachmentDownloadV1) | **GET** /1/object/attachment/{pkiAttachmentID}/download | Retrieve the content |
 | [**attachmentGetAttachmentlogsV1()**](ObjectAttachmentApi.md#attachmentGetAttachmentlogsV1) | **GET** /1/object/attachment/{pkiAttachmentID}/getAttachmentlogs | Retrieve the Attachmentlogs |
+| [**attachmentRenameV1()**](ObjectAttachmentApi.md#attachmentRenameV1) | **POST** /1/object/attachment/{pkiAttachmentID}/rename | Rename an Attachment |
 
 
 ## `attachmentDownloadV1()`
@@ -132,6 +133,70 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `attachmentRenameV1()`
+
+```php
+attachmentRenameV1($pkiAttachmentID, $attachmentRenameV1Request): \eZmaxAPI\Model\AttachmentRenameV1Response
+```
+
+Rename an Attachment
+
+The endpoint allows to change the attachment's file name and category.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAttachmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiAttachmentID = 56; // int
+$attachmentRenameV1Request = new \eZmaxAPI\Model\AttachmentRenameV1Request(); // \eZmaxAPI\Model\AttachmentRenameV1Request
+
+try {
+    $result = $apiInstance->attachmentRenameV1($pkiAttachmentID, $attachmentRenameV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAttachmentApi->attachmentRenameV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiAttachmentID** | **int**|  | |
+| **attachmentRenameV1Request** | [**\eZmaxAPI\Model\AttachmentRenameV1Request**](../Model/AttachmentRenameV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\AttachmentRenameV1Response**](../Model/AttachmentRenameV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

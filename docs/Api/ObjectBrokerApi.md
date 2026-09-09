@@ -6,10 +6,134 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**brokerBatchDownloadV1()**](ObjectBrokerApi.md#brokerBatchDownloadV1) | **POST** /1/object/broker/{pkiBrokerID}/batchDownload | Download multiples attachments from a Broker |
+| [**brokerGetAttachmentsV1()**](ObjectBrokerApi.md#brokerGetAttachmentsV1) | **GET** /1/object/broker/{pkiBrokerID}/getAttachments | Retrieve Broker&#39;s attachments |
 | [**brokerGetAutocompleteV2()**](ObjectBrokerApi.md#brokerGetAutocompleteV2) | **GET** /2/object/broker/getAutocomplete/{sSelector} | Retrieve Brokers and IDs |
 | [**brokerGetListV1()**](ObjectBrokerApi.md#brokerGetListV1) | **GET** /1/object/broker/getList | Retrieve Broker list |
 | [**brokerImportIntoEDMV1()**](ObjectBrokerApi.md#brokerImportIntoEDMV1) | **POST** /1/object/broker/{pkiBrokerID}/importIntoEDM | Import attachments into the Broker |
 
+
+## `brokerBatchDownloadV1()`
+
+```php
+brokerBatchDownloadV1($pkiBrokerID, $brokerBatchDownloadV1Request): \SplFileObject
+```
+
+Download multiples attachments from a Broker
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBrokerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBrokerID = 56; // int
+$brokerBatchDownloadV1Request = new \eZmaxAPI\Model\BrokerBatchDownloadV1Request(); // \eZmaxAPI\Model\BrokerBatchDownloadV1Request
+
+try {
+    $result = $apiInstance->brokerBatchDownloadV1($pkiBrokerID, $brokerBatchDownloadV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBrokerApi->brokerBatchDownloadV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBrokerID** | **int**|  | |
+| **brokerBatchDownloadV1Request** | [**\eZmaxAPI\Model\BrokerBatchDownloadV1Request**](../Model/BrokerBatchDownloadV1Request.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/zip`, `text/xml`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `brokerGetAttachmentsV1()`
+
+```php
+brokerGetAttachmentsV1($pkiBrokerID): \eZmaxAPI\Model\BrokerGetAttachmentsV1Response
+```
+
+Retrieve Broker's attachments
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBrokerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBrokerID = 56; // int
+
+try {
+    $result = $apiInstance->brokerGetAttachmentsV1($pkiBrokerID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBrokerApi->brokerGetAttachmentsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBrokerID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BrokerGetAttachmentsV1Response**](../Model/BrokerGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `brokerGetAutocompleteV2()`
 

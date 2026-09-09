@@ -6,9 +6,133 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**employeeBatchDownloadV1()**](ObjectEmployeeApi.md#employeeBatchDownloadV1) | **POST** /1/object/employee/{pkiEmployeeID}/batchDownload | Download multiples attachments from a Employee |
+| [**employeeGetAttachmentsV1()**](ObjectEmployeeApi.md#employeeGetAttachmentsV1) | **GET** /1/object/employee/{pkiEmployeeID}/getAttachments | Retrieve Employee&#39;s attachments |
 | [**employeeGetListV1()**](ObjectEmployeeApi.md#employeeGetListV1) | **GET** /1/object/employee/getList | Retrieve Employee list |
 | [**employeeImportIntoEDMV1()**](ObjectEmployeeApi.md#employeeImportIntoEDMV1) | **POST** /1/object/employee/{pkiEmployeeID}/importIntoEDM | Import attachments into the Employee |
 
+
+## `employeeBatchDownloadV1()`
+
+```php
+employeeBatchDownloadV1($pkiEmployeeID, $employeeBatchDownloadV1Request): \SplFileObject
+```
+
+Download multiples attachments from a Employee
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEmployeeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEmployeeID = 56; // int
+$employeeBatchDownloadV1Request = new \eZmaxAPI\Model\EmployeeBatchDownloadV1Request(); // \eZmaxAPI\Model\EmployeeBatchDownloadV1Request
+
+try {
+    $result = $apiInstance->employeeBatchDownloadV1($pkiEmployeeID, $employeeBatchDownloadV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEmployeeApi->employeeBatchDownloadV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEmployeeID** | **int**|  | |
+| **employeeBatchDownloadV1Request** | [**\eZmaxAPI\Model\EmployeeBatchDownloadV1Request**](../Model/EmployeeBatchDownloadV1Request.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/zip`, `text/xml`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `employeeGetAttachmentsV1()`
+
+```php
+employeeGetAttachmentsV1($pkiEmployeeID): \eZmaxAPI\Model\EmployeeGetAttachmentsV1Response
+```
+
+Retrieve Employee's attachments
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEmployeeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEmployeeID = 56; // int
+
+try {
+    $result = $apiInstance->employeeGetAttachmentsV1($pkiEmployeeID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEmployeeApi->employeeGetAttachmentsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEmployeeID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EmployeeGetAttachmentsV1Response**](../Model/EmployeeGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `employeeGetListV1()`
 

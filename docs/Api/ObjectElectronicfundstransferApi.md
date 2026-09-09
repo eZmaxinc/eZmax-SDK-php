@@ -6,12 +6,136 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**electronicfundstransferBatchDownloadV1()**](ObjectElectronicfundstransferApi.md#electronicfundstransferBatchDownloadV1) | **POST** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/batchDownload | Download multiples attachments from an Electronicfundstransfer |
+| [**electronicfundstransferGetAttachmentsV1()**](ObjectElectronicfundstransferApi.md#electronicfundstransferGetAttachmentsV1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getAttachments | Retrieve Electronicfundstransfer&#39;s attachments |
 | [**electronicfundstransferGetCommunicationCountV1()**](ObjectElectronicfundstransferApi.md#electronicfundstransferGetCommunicationCountV1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationCount | Retrieve Communication count |
 | [**electronicfundstransferGetCommunicationListV1()**](ObjectElectronicfundstransferApi.md#electronicfundstransferGetCommunicationListV1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list |
 | [**electronicfundstransferGetCommunicationrecipientsV1()**](ObjectElectronicfundstransferApi.md#electronicfundstransferGetCommunicationrecipientsV1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationrecipients | Retrieve Electronicfundstransfer&#39;s Communicationrecipient |
 | [**electronicfundstransferGetCommunicationsendersV1()**](ObjectElectronicfundstransferApi.md#electronicfundstransferGetCommunicationsendersV1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationsenders | Retrieve Electronicfundstransfer&#39;s Communicationsender |
 | [**electronicfundstransferImportIntoEDMV1()**](ObjectElectronicfundstransferApi.md#electronicfundstransferImportIntoEDMV1) | **POST** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/importIntoEDM | Import attachments into the Electronicfundstransfer |
 
+
+## `electronicfundstransferBatchDownloadV1()`
+
+```php
+electronicfundstransferBatchDownloadV1($pkiElectronicfundstransferID, $electronicfundstransferBatchDownloadV1Request): \SplFileObject
+```
+
+Download multiples attachments from an Electronicfundstransfer
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectElectronicfundstransferApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiElectronicfundstransferID = 56; // int
+$electronicfundstransferBatchDownloadV1Request = new \eZmaxAPI\Model\ElectronicfundstransferBatchDownloadV1Request(); // \eZmaxAPI\Model\ElectronicfundstransferBatchDownloadV1Request
+
+try {
+    $result = $apiInstance->electronicfundstransferBatchDownloadV1($pkiElectronicfundstransferID, $electronicfundstransferBatchDownloadV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectElectronicfundstransferApi->electronicfundstransferBatchDownloadV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiElectronicfundstransferID** | **int**|  | |
+| **electronicfundstransferBatchDownloadV1Request** | [**\eZmaxAPI\Model\ElectronicfundstransferBatchDownloadV1Request**](../Model/ElectronicfundstransferBatchDownloadV1Request.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/zip`, `text/xml`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `electronicfundstransferGetAttachmentsV1()`
+
+```php
+electronicfundstransferGetAttachmentsV1($pkiElectronicfundstransferID): \eZmaxAPI\Model\ElectronicfundstransferGetAttachmentsV1Response
+```
+
+Retrieve Electronicfundstransfer's attachments
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectElectronicfundstransferApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiElectronicfundstransferID = 56; // int
+
+try {
+    $result = $apiInstance->electronicfundstransferGetAttachmentsV1($pkiElectronicfundstransferID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectElectronicfundstransferApi->electronicfundstransferGetAttachmentsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiElectronicfundstransferID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\ElectronicfundstransferGetAttachmentsV1Response**](../Model/ElectronicfundstransferGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `electronicfundstransferGetCommunicationCountV1()`
 
