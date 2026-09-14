@@ -365,10 +365,10 @@ class InscriptionnotauthenticatedconditionResponseCompound implements ModelInter
         if ($this->container['tInscriptionnotauthenticatedconditionComment'] === null) {
             $invalidProperties[] = "'tInscriptionnotauthenticatedconditionComment' can't be null";
         }
-        //if (!preg_match("/^.{0,65535}$/", $this->container['tInscriptionnotauthenticatedconditionComment'])) {
-        if (!is_null($this->container['tInscriptionnotauthenticatedconditionComment']) && !preg_match("/(*UTF8)^.{0,65535}$/", $this->container['tInscriptionnotauthenticatedconditionComment'])) {
-            //$invalidProperties[] = "invalid value for 'tInscriptionnotauthenticatedconditionComment', must be conform to the pattern /^.{0,65535}$/.";
-            $invalidProperties[] = "invalid value ".(is_null($this->container['tInscriptionnotauthenticatedconditionComment'])?'null':'"'.$this->container['tInscriptionnotauthenticatedconditionComment'].'"')." for 'tInscriptionnotauthenticatedconditionComment', must be conform to the pattern /^.{0,65535}$/.";
+        //if (!preg_match("/^[\\s\\S]{0,65535}$/", $this->container['tInscriptionnotauthenticatedconditionComment'])) {
+        if (!is_null($this->container['tInscriptionnotauthenticatedconditionComment']) && !preg_match("/(*UTF8)^[\\s\\S]{0,65535}$/", $this->container['tInscriptionnotauthenticatedconditionComment'])) {
+            //$invalidProperties[] = "invalid value for 'tInscriptionnotauthenticatedconditionComment', must be conform to the pattern /^[\\s\\S]{0,65535}$/.";
+            $invalidProperties[] = "invalid value ".(is_null($this->container['tInscriptionnotauthenticatedconditionComment'])?'null':'"'.$this->container['tInscriptionnotauthenticatedconditionComment'].'"')." for 'tInscriptionnotauthenticatedconditionComment', must be conform to the pattern /^[\\s\\S]{0,65535}$/.";
         }
 
         return $invalidProperties;
@@ -662,10 +662,10 @@ class InscriptionnotauthenticatedconditionResponseCompound implements ModelInter
             //throw new \InvalidArgumentException('non-nullable tInscriptionnotauthenticatedconditionComment cannot be null');
         //}
 
-        //if ((!preg_match("/^.{0,65535}$/", ObjectSerializer::toString($tInscriptionnotauthenticatedconditionComment)))) {
-        if (!is_null($tInscriptionnotauthenticatedconditionComment) && (!preg_match("/(*UTF8)^.{0,65535}$/", ObjectSerializer::toString($tInscriptionnotauthenticatedconditionComment)))) {
-            //throw new \InvalidArgumentException("invalid value for \$tInscriptionnotauthenticatedconditionComment when calling InscriptionnotauthenticatedconditionResponseCompound., must conform to the pattern /^.{0,65535}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($tInscriptionnotauthenticatedconditionComment)?'null':'"'.$tInscriptionnotauthenticatedconditionComment.'"')." for tInscriptionnotauthenticatedconditionComment when calling InscriptionnotauthenticatedconditionResponseCompound., must conform to the pattern /^.{0,65535}$/.");
+        //if ((!preg_match("/^[\\s\\S]{0,65535}$/", ObjectSerializer::toString($tInscriptionnotauthenticatedconditionComment)))) {
+        if (!is_null($tInscriptionnotauthenticatedconditionComment) && (!preg_match("/(*UTF8)^[\\s\\S]{0,65535}$/", ObjectSerializer::toString($tInscriptionnotauthenticatedconditionComment)))) {
+            //throw new \InvalidArgumentException("invalid value for \$tInscriptionnotauthenticatedconditionComment when calling InscriptionnotauthenticatedconditionResponseCompound., must conform to the pattern /^[\\s\\S]{0,65535}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($tInscriptionnotauthenticatedconditionComment)?'null':'"'.$tInscriptionnotauthenticatedconditionComment.'"')." for tInscriptionnotauthenticatedconditionComment when calling InscriptionnotauthenticatedconditionResponseCompound., must conform to the pattern /^[\\s\\S]{0,65535}$/.");
         }
 
         

@@ -76,6 +76,9 @@ class ObjectAttachmentApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
+        'attachmentDeleteV1' => [
+            'application/json',
+        ],
         'attachmentDownloadV1' => [
             'application/json',
         ],
@@ -85,10 +88,30 @@ class ObjectAttachmentApi
         'attachmentRenameV1' => [
             'application/json',
         ],
+        'attachmentRestoreV1' => [
+            'application/json',
+        ],
+        'attachmentValidateV1' => [
+            'application/json',
+        ],
     ];
 
     /** @var array[] $objEzmaxConfig **/
     public const objEzmaxConfig = [
+        'attachmentDeleteV1' => [
+            'systemconfigurationtype' => [
+                'All',
+            ],
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
         'attachmentDownloadV1' => [
             'systemconfigurationtype' => [
                 'All',
@@ -122,6 +145,35 @@ class ObjectAttachmentApi
             'deprecated' => false,
         ],
         'attachmentRenameV1' => [
+            'systemconfigurationtype' => [
+                'All',
+            ],
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
+                'AgentBroker',
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'attachmentRestoreV1' => [
+            'systemconfigurationtype' => [
+                'All',
+            ],
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'attachmentValidateV1' => [
             'systemconfigurationtype' => [
                 'All',
             ],
@@ -181,6 +233,361 @@ class ObjectAttachmentApi
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /**
+     * Operation attachmentDeleteV1
+     *
+     * Delete an existing attachment
+     *
+     * @param  int $pkiAttachmentID pkiAttachmentID (required)
+     * @param  object $body body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDeleteV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\AttachmentDeleteV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function attachmentDeleteV1($pkiAttachmentID, $body, string $contentType = self::contentTypes['attachmentDeleteV1'][0])
+    {
+        list($response) = $this->attachmentDeleteV1WithHttpInfo($pkiAttachmentID, $body, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation attachmentDeleteV1WithHttpInfo
+     *
+     * Delete an existing attachment
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDeleteV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\AttachmentDeleteV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function attachmentDeleteV1WithHttpInfo($pkiAttachmentID, $body, string $contentType = self::contentTypes['attachmentDeleteV1'][0])
+    {
+        $request = $this->attachmentDeleteV1Request($pkiAttachmentID, $body, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\AttachmentDeleteV1Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\AttachmentDeleteV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\AttachmentDeleteV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation attachmentDeleteV1Async
+     *
+     * Delete an existing attachment
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDeleteV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentDeleteV1Async($pkiAttachmentID, $body, string $contentType = self::contentTypes['attachmentDeleteV1'][0])
+    {
+        return $this->attachmentDeleteV1AsyncWithHttpInfo($pkiAttachmentID, $body, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation attachmentDeleteV1AsyncWithHttpInfo
+     *
+     * Delete an existing attachment
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDeleteV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentDeleteV1AsyncWithHttpInfo($pkiAttachmentID, $body, string $contentType = self::contentTypes['attachmentDeleteV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\AttachmentDeleteV1Response';
+        $request = $this->attachmentDeleteV1Request($pkiAttachmentID, $body, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'attachmentDeleteV1'
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  object $body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDeleteV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function attachmentDeleteV1Request($pkiAttachmentID, $body, string $contentType = self::contentTypes['attachmentDeleteV1'][0])
+    {
+
+        // verify the required parameter 'pkiAttachmentID' is set
+        if ($pkiAttachmentID === null || (is_array($pkiAttachmentID) && count($pkiAttachmentID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiAttachmentID when calling attachmentDeleteV1'
+            );
+        }
+        if ($pkiAttachmentID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiAttachmentID" when calling ObjectAttachmentApi.attachmentDeleteV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiAttachmentID)?'null':'"'.$pkiAttachmentID.'"').' for "pkiAttachmentID" when calling ObjectAttachmentApi.attachmentDeleteV1, must be bigger than or equal to 0.');
+        }
+        
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling attachmentDeleteV1'
+            );
+        }
+
+
+        $resourcePath = '/1/object/attachment/{pkiAttachmentID}/delete';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiAttachmentID !== null) {
+            $resourcePath = str_replace(
+                '{pkiAttachmentID}',
+                ObjectSerializer::toPathValue($pkiAttachmentID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                try {
+                    $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
     /**
@@ -743,7 +1150,7 @@ class ObjectAttachmentApi
     /**
      * Operation attachmentRenameV1
      *
-     * Rename an Attachment
+     * Rename an attachment
      *
      * @param  int $pkiAttachmentID pkiAttachmentID (required)
      * @param  \eZmaxAPI\Model\AttachmentRenameV1Request $attachmentRenameV1Request attachmentRenameV1Request (required)
@@ -762,7 +1169,7 @@ class ObjectAttachmentApi
     /**
      * Operation attachmentRenameV1WithHttpInfo
      *
-     * Rename an Attachment
+     * Rename an attachment
      *
      * @param  int $pkiAttachmentID (required)
      * @param  \eZmaxAPI\Model\AttachmentRenameV1Request $attachmentRenameV1Request (required)
@@ -904,7 +1311,7 @@ class ObjectAttachmentApi
     /**
      * Operation attachmentRenameV1Async
      *
-     * Rename an Attachment
+     * Rename an attachment
      *
      * @param  int $pkiAttachmentID (required)
      * @param  \eZmaxAPI\Model\AttachmentRenameV1Request $attachmentRenameV1Request (required)
@@ -926,7 +1333,7 @@ class ObjectAttachmentApi
     /**
      * Operation attachmentRenameV1AsyncWithHttpInfo
      *
-     * Rename an Attachment
+     * Rename an attachment
      *
      * @param  int $pkiAttachmentID (required)
      * @param  \eZmaxAPI\Model\AttachmentRenameV1Request $attachmentRenameV1Request (required)
@@ -1103,6 +1510,730 @@ class ObjectAttachmentApi
 
         return new Request(
             'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation attachmentRestoreV1
+     *
+     * Restore a deleted attachment
+     *
+     * @param  int $pkiAttachmentID pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentRestoreV1Request $attachmentRestoreV1Request attachmentRestoreV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentRestoreV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\AttachmentRestoreV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function attachmentRestoreV1($pkiAttachmentID, $attachmentRestoreV1Request, string $contentType = self::contentTypes['attachmentRestoreV1'][0])
+    {
+        list($response) = $this->attachmentRestoreV1WithHttpInfo($pkiAttachmentID, $attachmentRestoreV1Request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation attachmentRestoreV1WithHttpInfo
+     *
+     * Restore a deleted attachment
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentRestoreV1Request $attachmentRestoreV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentRestoreV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\AttachmentRestoreV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function attachmentRestoreV1WithHttpInfo($pkiAttachmentID, $attachmentRestoreV1Request, string $contentType = self::contentTypes['attachmentRestoreV1'][0])
+    {
+        $request = $this->attachmentRestoreV1Request($pkiAttachmentID, $attachmentRestoreV1Request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\AttachmentRestoreV1Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 409:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\AttachmentRestoreV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\AttachmentRestoreV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation attachmentRestoreV1Async
+     *
+     * Restore a deleted attachment
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentRestoreV1Request $attachmentRestoreV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentRestoreV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentRestoreV1Async($pkiAttachmentID, $attachmentRestoreV1Request, string $contentType = self::contentTypes['attachmentRestoreV1'][0])
+    {
+        return $this->attachmentRestoreV1AsyncWithHttpInfo($pkiAttachmentID, $attachmentRestoreV1Request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation attachmentRestoreV1AsyncWithHttpInfo
+     *
+     * Restore a deleted attachment
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentRestoreV1Request $attachmentRestoreV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentRestoreV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentRestoreV1AsyncWithHttpInfo($pkiAttachmentID, $attachmentRestoreV1Request, string $contentType = self::contentTypes['attachmentRestoreV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\AttachmentRestoreV1Response';
+        $request = $this->attachmentRestoreV1Request($pkiAttachmentID, $attachmentRestoreV1Request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'attachmentRestoreV1'
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentRestoreV1Request $attachmentRestoreV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentRestoreV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function attachmentRestoreV1Request($pkiAttachmentID, $attachmentRestoreV1Request, string $contentType = self::contentTypes['attachmentRestoreV1'][0])
+    {
+
+        // verify the required parameter 'pkiAttachmentID' is set
+        if ($pkiAttachmentID === null || (is_array($pkiAttachmentID) && count($pkiAttachmentID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiAttachmentID when calling attachmentRestoreV1'
+            );
+        }
+        if ($pkiAttachmentID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiAttachmentID" when calling ObjectAttachmentApi.attachmentRestoreV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiAttachmentID)?'null':'"'.$pkiAttachmentID.'"').' for "pkiAttachmentID" when calling ObjectAttachmentApi.attachmentRestoreV1, must be bigger than or equal to 0.');
+        }
+        
+        // verify the required parameter 'attachmentRestoreV1Request' is set
+        if ($attachmentRestoreV1Request === null || (is_array($attachmentRestoreV1Request) && count($attachmentRestoreV1Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $attachmentRestoreV1Request when calling attachmentRestoreV1'
+            );
+        }
+
+
+        $resourcePath = '/1/object/attachment/{pkiAttachmentID}/restore';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiAttachmentID !== null) {
+            $resourcePath = str_replace(
+                '{pkiAttachmentID}',
+                ObjectSerializer::toPathValue($pkiAttachmentID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($attachmentRestoreV1Request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                try {
+                    $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($attachmentRestoreV1Request), JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                $httpBody = $attachmentRestoreV1Request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation attachmentValidateV1
+     *
+     * Validate an existing attachment
+     *
+     * @param  int $pkiAttachmentID pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentValidateV1Request $attachmentValidateV1Request attachmentValidateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentValidateV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\AttachmentValidateV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function attachmentValidateV1($pkiAttachmentID, $attachmentValidateV1Request, string $contentType = self::contentTypes['attachmentValidateV1'][0])
+    {
+        list($response) = $this->attachmentValidateV1WithHttpInfo($pkiAttachmentID, $attachmentValidateV1Request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation attachmentValidateV1WithHttpInfo
+     *
+     * Validate an existing attachment
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentValidateV1Request $attachmentValidateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentValidateV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\AttachmentValidateV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function attachmentValidateV1WithHttpInfo($pkiAttachmentID, $attachmentValidateV1Request, string $contentType = self::contentTypes['attachmentValidateV1'][0])
+    {
+        $request = $this->attachmentValidateV1Request($pkiAttachmentID, $attachmentValidateV1Request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\AttachmentValidateV1Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\AttachmentValidateV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\AttachmentValidateV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation attachmentValidateV1Async
+     *
+     * Validate an existing attachment
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentValidateV1Request $attachmentValidateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentValidateV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentValidateV1Async($pkiAttachmentID, $attachmentValidateV1Request, string $contentType = self::contentTypes['attachmentValidateV1'][0])
+    {
+        return $this->attachmentValidateV1AsyncWithHttpInfo($pkiAttachmentID, $attachmentValidateV1Request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation attachmentValidateV1AsyncWithHttpInfo
+     *
+     * Validate an existing attachment
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentValidateV1Request $attachmentValidateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentValidateV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentValidateV1AsyncWithHttpInfo($pkiAttachmentID, $attachmentValidateV1Request, string $contentType = self::contentTypes['attachmentValidateV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\AttachmentValidateV1Response';
+        $request = $this->attachmentValidateV1Request($pkiAttachmentID, $attachmentValidateV1Request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'attachmentValidateV1'
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentValidateV1Request $attachmentValidateV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentValidateV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function attachmentValidateV1Request($pkiAttachmentID, $attachmentValidateV1Request, string $contentType = self::contentTypes['attachmentValidateV1'][0])
+    {
+
+        // verify the required parameter 'pkiAttachmentID' is set
+        if ($pkiAttachmentID === null || (is_array($pkiAttachmentID) && count($pkiAttachmentID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiAttachmentID when calling attachmentValidateV1'
+            );
+        }
+        if ($pkiAttachmentID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiAttachmentID" when calling ObjectAttachmentApi.attachmentValidateV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiAttachmentID)?'null':'"'.$pkiAttachmentID.'"').' for "pkiAttachmentID" when calling ObjectAttachmentApi.attachmentValidateV1, must be bigger than or equal to 0.');
+        }
+        
+        // verify the required parameter 'attachmentValidateV1Request' is set
+        if ($attachmentValidateV1Request === null || (is_array($attachmentValidateV1Request) && count($attachmentValidateV1Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $attachmentValidateV1Request when calling attachmentValidateV1'
+            );
+        }
+
+
+        $resourcePath = '/1/object/attachment/{pkiAttachmentID}/validate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiAttachmentID !== null) {
+            $resourcePath = str_replace(
+                '{pkiAttachmentID}',
+                ObjectSerializer::toPathValue($pkiAttachmentID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($attachmentValidateV1Request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                try {
+                    $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($attachmentValidateV1Request), JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                $httpBody = $attachmentValidateV1Request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'PATCH', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'PATCH',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

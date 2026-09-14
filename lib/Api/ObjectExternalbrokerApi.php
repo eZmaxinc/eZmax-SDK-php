@@ -82,6 +82,18 @@ class ObjectExternalbrokerApi
         'externalbrokerGetAttachmentsV1' => [
             'application/json',
         ],
+        'externalbrokerGetCommunicationCountV1' => [
+            'application/json',
+        ],
+        'externalbrokerGetCommunicationListV1' => [
+            'application/json',
+        ],
+        'externalbrokerGetCommunicationrecipientsV1' => [
+            'application/json',
+        ],
+        'externalbrokerGetCommunicationsendersV1' => [
+            'application/json',
+        ],
         'externalbrokerImportIntoEDMV1' => [
             'application/json',
         ],
@@ -107,6 +119,62 @@ class ObjectExternalbrokerApi
         'externalbrokerGetAttachmentsV1' => [
             'systemconfigurationtype' => [
                 'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_ExternalBrokers',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'externalbrokerGetCommunicationCountV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_ExternalBrokers',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'externalbrokerGetCommunicationListV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_ExternalBrokers',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'externalbrokerGetCommunicationrecipientsV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_ExternalBrokers',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'externalbrokerGetCommunicationsendersV1' => [
+            'systemconfigurationtype' => [
                 'RealEstate',
             ],
             'permissions' => [
@@ -752,6 +820,1222 @@ class ObjectExternalbrokerApi
         
 
         $resourcePath = '/1/object/externalbroker/{pkiExternalbrokerID}/getAttachments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiExternalbrokerID !== null) {
+            $resourcePath = str_replace(
+                '{pkiExternalbrokerID}',
+                ObjectSerializer::toPathValue($pkiExternalbrokerID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationCountV1
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiExternalbrokerID pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\ExternalbrokerGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function externalbrokerGetCommunicationCountV1($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationCountV1'][0])
+    {
+        list($response) = $this->externalbrokerGetCommunicationCountV1WithHttpInfo($pkiExternalbrokerID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationCountV1WithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\ExternalbrokerGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function externalbrokerGetCommunicationCountV1WithHttpInfo($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationCountV1'][0])
+    {
+        $request = $this->externalbrokerGetCommunicationCountV1Request($pkiExternalbrokerID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\ExternalbrokerGetCommunicationCountV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\ExternalbrokerGetCommunicationCountV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\ExternalbrokerGetCommunicationCountV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationCountV1Async
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function externalbrokerGetCommunicationCountV1Async($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationCountV1'][0])
+    {
+        return $this->externalbrokerGetCommunicationCountV1AsyncWithHttpInfo($pkiExternalbrokerID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationCountV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function externalbrokerGetCommunicationCountV1AsyncWithHttpInfo($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationCountV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\ExternalbrokerGetCommunicationCountV1Response';
+        $request = $this->externalbrokerGetCommunicationCountV1Request($pkiExternalbrokerID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'externalbrokerGetCommunicationCountV1'
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function externalbrokerGetCommunicationCountV1Request($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationCountV1'][0])
+    {
+
+        // verify the required parameter 'pkiExternalbrokerID' is set
+        if ($pkiExternalbrokerID === null || (is_array($pkiExternalbrokerID) && count($pkiExternalbrokerID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiExternalbrokerID when calling externalbrokerGetCommunicationCountV1'
+            );
+        }
+        if ($pkiExternalbrokerID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiExternalbrokerID" when calling ObjectExternalbrokerApi.externalbrokerGetCommunicationCountV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiExternalbrokerID)?'null':'"'.$pkiExternalbrokerID.'"').' for "pkiExternalbrokerID" when calling ObjectExternalbrokerApi.externalbrokerGetCommunicationCountV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationCount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiExternalbrokerID !== null) {
+            $resourcePath = str_replace(
+                '{pkiExternalbrokerID}',
+                ObjectSerializer::toPathValue($pkiExternalbrokerID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationListV1
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiExternalbrokerID pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\ExternalbrokerGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function externalbrokerGetCommunicationListV1($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationListV1'][0])
+    {
+        list($response) = $this->externalbrokerGetCommunicationListV1WithHttpInfo($pkiExternalbrokerID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationListV1WithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\ExternalbrokerGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function externalbrokerGetCommunicationListV1WithHttpInfo($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationListV1'][0])
+    {
+        $request = $this->externalbrokerGetCommunicationListV1Request($pkiExternalbrokerID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\ExternalbrokerGetCommunicationListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\ExternalbrokerGetCommunicationListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\ExternalbrokerGetCommunicationListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationListV1Async
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function externalbrokerGetCommunicationListV1Async($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationListV1'][0])
+    {
+        return $this->externalbrokerGetCommunicationListV1AsyncWithHttpInfo($pkiExternalbrokerID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationListV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function externalbrokerGetCommunicationListV1AsyncWithHttpInfo($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\ExternalbrokerGetCommunicationListV1Response';
+        $request = $this->externalbrokerGetCommunicationListV1Request($pkiExternalbrokerID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'externalbrokerGetCommunicationListV1'
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function externalbrokerGetCommunicationListV1Request($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationListV1'][0])
+    {
+
+        // verify the required parameter 'pkiExternalbrokerID' is set
+        if ($pkiExternalbrokerID === null || (is_array($pkiExternalbrokerID) && count($pkiExternalbrokerID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiExternalbrokerID when calling externalbrokerGetCommunicationListV1'
+            );
+        }
+        if ($pkiExternalbrokerID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiExternalbrokerID" when calling ObjectExternalbrokerApi.externalbrokerGetCommunicationListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiExternalbrokerID)?'null':'"'.$pkiExternalbrokerID.'"').' for "pkiExternalbrokerID" when calling ObjectExternalbrokerApi.externalbrokerGetCommunicationListV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiExternalbrokerID !== null) {
+            $resourcePath = str_replace(
+                '{pkiExternalbrokerID}',
+                ObjectSerializer::toPathValue($pkiExternalbrokerID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationrecipientsV1
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiExternalbrokerID pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\ExternalbrokerGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function externalbrokerGetCommunicationrecipientsV1($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationrecipientsV1'][0])
+    {
+        list($response) = $this->externalbrokerGetCommunicationrecipientsV1WithHttpInfo($pkiExternalbrokerID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationrecipientsV1WithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\ExternalbrokerGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function externalbrokerGetCommunicationrecipientsV1WithHttpInfo($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationrecipientsV1'][0])
+    {
+        $request = $this->externalbrokerGetCommunicationrecipientsV1Request($pkiExternalbrokerID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\ExternalbrokerGetCommunicationrecipientsV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\ExternalbrokerGetCommunicationrecipientsV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\ExternalbrokerGetCommunicationrecipientsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationrecipientsV1Async
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function externalbrokerGetCommunicationrecipientsV1Async($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationrecipientsV1'][0])
+    {
+        return $this->externalbrokerGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiExternalbrokerID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationrecipientsV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function externalbrokerGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationrecipientsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\ExternalbrokerGetCommunicationrecipientsV1Response';
+        $request = $this->externalbrokerGetCommunicationrecipientsV1Request($pkiExternalbrokerID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'externalbrokerGetCommunicationrecipientsV1'
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function externalbrokerGetCommunicationrecipientsV1Request($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationrecipientsV1'][0])
+    {
+
+        // verify the required parameter 'pkiExternalbrokerID' is set
+        if ($pkiExternalbrokerID === null || (is_array($pkiExternalbrokerID) && count($pkiExternalbrokerID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiExternalbrokerID when calling externalbrokerGetCommunicationrecipientsV1'
+            );
+        }
+        if ($pkiExternalbrokerID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiExternalbrokerID" when calling ObjectExternalbrokerApi.externalbrokerGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiExternalbrokerID)?'null':'"'.$pkiExternalbrokerID.'"').' for "pkiExternalbrokerID" when calling ObjectExternalbrokerApi.externalbrokerGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationrecipients';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiExternalbrokerID !== null) {
+            $resourcePath = str_replace(
+                '{pkiExternalbrokerID}',
+                ObjectSerializer::toPathValue($pkiExternalbrokerID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationsendersV1
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiExternalbrokerID pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\ExternalbrokerGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function externalbrokerGetCommunicationsendersV1($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationsendersV1'][0])
+    {
+        list($response) = $this->externalbrokerGetCommunicationsendersV1WithHttpInfo($pkiExternalbrokerID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationsendersV1WithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\ExternalbrokerGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function externalbrokerGetCommunicationsendersV1WithHttpInfo($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationsendersV1'][0])
+    {
+        $request = $this->externalbrokerGetCommunicationsendersV1Request($pkiExternalbrokerID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\ExternalbrokerGetCommunicationsendersV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\ExternalbrokerGetCommunicationsendersV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\ExternalbrokerGetCommunicationsendersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationsendersV1Async
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function externalbrokerGetCommunicationsendersV1Async($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationsendersV1'][0])
+    {
+        return $this->externalbrokerGetCommunicationsendersV1AsyncWithHttpInfo($pkiExternalbrokerID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation externalbrokerGetCommunicationsendersV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function externalbrokerGetCommunicationsendersV1AsyncWithHttpInfo($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationsendersV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\ExternalbrokerGetCommunicationsendersV1Response';
+        $request = $this->externalbrokerGetCommunicationsendersV1Request($pkiExternalbrokerID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'externalbrokerGetCommunicationsendersV1'
+     *
+     * @param  int $pkiExternalbrokerID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['externalbrokerGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function externalbrokerGetCommunicationsendersV1Request($pkiExternalbrokerID, string $contentType = self::contentTypes['externalbrokerGetCommunicationsendersV1'][0])
+    {
+
+        // verify the required parameter 'pkiExternalbrokerID' is set
+        if ($pkiExternalbrokerID === null || (is_array($pkiExternalbrokerID) && count($pkiExternalbrokerID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiExternalbrokerID when calling externalbrokerGetCommunicationsendersV1'
+            );
+        }
+        if ($pkiExternalbrokerID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiExternalbrokerID" when calling ObjectExternalbrokerApi.externalbrokerGetCommunicationsendersV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiExternalbrokerID)?'null':'"'.$pkiExternalbrokerID.'"').' for "pkiExternalbrokerID" when calling ObjectExternalbrokerApi.externalbrokerGetCommunicationsendersV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationsenders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

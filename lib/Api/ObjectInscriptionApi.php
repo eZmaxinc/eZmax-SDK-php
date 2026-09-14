@@ -124,6 +124,7 @@ class ObjectInscriptionApi
                 'Inscription_Deals',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',

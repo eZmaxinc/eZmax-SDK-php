@@ -9,6 +9,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**bankaccountBatchDownloadV1()**](ObjectBankaccountApi.md#bankaccountBatchDownloadV1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/batchDownload | Download multiples attachments from a Bankaccount |
 | [**bankaccountGetAttachmentsV1()**](ObjectBankaccountApi.md#bankaccountGetAttachmentsV1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getAttachments | Retrieve Bankaccount&#39;s attachments |
 | [**bankaccountGetAutocompleteV2()**](ObjectBankaccountApi.md#bankaccountGetAutocompleteV2) | **GET** /2/object/bankaccount/getAutocomplete/{sSelector} | Retrieve Bankaccounts and IDs |
+| [**bankaccountGetCommunicationCountV1()**](ObjectBankaccountApi.md#bankaccountGetCommunicationCountV1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationCount | Retrieve Communication count |
+| [**bankaccountGetCommunicationListV1()**](ObjectBankaccountApi.md#bankaccountGetCommunicationListV1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationList | Retrieve Communication list |
+| [**bankaccountGetCommunicationrecipientsV1()**](ObjectBankaccountApi.md#bankaccountGetCommunicationrecipientsV1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**bankaccountGetCommunicationsendersV1()**](ObjectBankaccountApi.md#bankaccountGetCommunicationsendersV1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationsenders | Retrieve Communication senders |
 | [**bankaccountImportIntoEDMV1()**](ObjectBankaccountApi.md#bankaccountImportIntoEDMV1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/importIntoEDM | Import attachments into the Bankaccount |
 
 
@@ -188,6 +192,246 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\BankaccountGetAutocompleteV2Response**](../Model/BankaccountGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `bankaccountGetCommunicationCountV1()`
+
+```php
+bankaccountGetCommunicationCountV1($pkiBankaccountID): \eZmaxAPI\Model\BankaccountGetCommunicationCountV1Response
+```
+
+Retrieve Communication count
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBankaccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBankaccountID = 56; // int
+
+try {
+    $result = $apiInstance->bankaccountGetCommunicationCountV1($pkiBankaccountID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBankaccountApi->bankaccountGetCommunicationCountV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBankaccountID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BankaccountGetCommunicationCountV1Response**](../Model/BankaccountGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `bankaccountGetCommunicationListV1()`
+
+```php
+bankaccountGetCommunicationListV1($pkiBankaccountID): \eZmaxAPI\Model\BankaccountGetCommunicationListV1Response
+```
+
+Retrieve Communication list
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBankaccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBankaccountID = 56; // int
+
+try {
+    $result = $apiInstance->bankaccountGetCommunicationListV1($pkiBankaccountID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBankaccountApi->bankaccountGetCommunicationListV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBankaccountID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BankaccountGetCommunicationListV1Response**](../Model/BankaccountGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `bankaccountGetCommunicationrecipientsV1()`
+
+```php
+bankaccountGetCommunicationrecipientsV1($pkiBankaccountID): \eZmaxAPI\Model\BankaccountGetCommunicationrecipientsV1Response
+```
+
+Retrieve Communication recipients
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBankaccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBankaccountID = 56; // int
+
+try {
+    $result = $apiInstance->bankaccountGetCommunicationrecipientsV1($pkiBankaccountID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBankaccountApi->bankaccountGetCommunicationrecipientsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBankaccountID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BankaccountGetCommunicationrecipientsV1Response**](../Model/BankaccountGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `bankaccountGetCommunicationsendersV1()`
+
+```php
+bankaccountGetCommunicationsendersV1($pkiBankaccountID): \eZmaxAPI\Model\BankaccountGetCommunicationsendersV1Response
+```
+
+Retrieve Communication senders
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBankaccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBankaccountID = 56; // int
+
+try {
+    $result = $apiInstance->bankaccountGetCommunicationsendersV1($pkiBankaccountID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBankaccountApi->bankaccountGetCommunicationsendersV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBankaccountID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BankaccountGetCommunicationsendersV1Response**](../Model/BankaccountGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

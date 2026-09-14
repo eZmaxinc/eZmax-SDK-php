@@ -9,6 +9,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**brokerBatchDownloadV1()**](ObjectBrokerApi.md#brokerBatchDownloadV1) | **POST** /1/object/broker/{pkiBrokerID}/batchDownload | Download multiples attachments from a Broker |
 | [**brokerGetAttachmentsV1()**](ObjectBrokerApi.md#brokerGetAttachmentsV1) | **GET** /1/object/broker/{pkiBrokerID}/getAttachments | Retrieve Broker&#39;s attachments |
 | [**brokerGetAutocompleteV2()**](ObjectBrokerApi.md#brokerGetAutocompleteV2) | **GET** /2/object/broker/getAutocomplete/{sSelector} | Retrieve Brokers and IDs |
+| [**brokerGetCommunicationCountV1()**](ObjectBrokerApi.md#brokerGetCommunicationCountV1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationCount | Retrieve Communication count |
+| [**brokerGetCommunicationListV1()**](ObjectBrokerApi.md#brokerGetCommunicationListV1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationList | Retrieve Communication list |
+| [**brokerGetCommunicationrecipientsV1()**](ObjectBrokerApi.md#brokerGetCommunicationrecipientsV1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**brokerGetCommunicationsendersV1()**](ObjectBrokerApi.md#brokerGetCommunicationsendersV1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationsenders | Retrieve Communication senders |
 | [**brokerGetListV1()**](ObjectBrokerApi.md#brokerGetListV1) | **GET** /1/object/broker/getList | Retrieve Broker list |
 | [**brokerImportIntoEDMV1()**](ObjectBrokerApi.md#brokerImportIntoEDMV1) | **POST** /1/object/broker/{pkiBrokerID}/importIntoEDM | Import attachments into the Broker |
 
@@ -189,6 +193,246 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\BrokerGetAutocompleteV2Response**](../Model/BrokerGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `brokerGetCommunicationCountV1()`
+
+```php
+brokerGetCommunicationCountV1($pkiBrokerID): \eZmaxAPI\Model\BrokerGetCommunicationCountV1Response
+```
+
+Retrieve Communication count
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBrokerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBrokerID = 56; // int
+
+try {
+    $result = $apiInstance->brokerGetCommunicationCountV1($pkiBrokerID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBrokerApi->brokerGetCommunicationCountV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBrokerID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BrokerGetCommunicationCountV1Response**](../Model/BrokerGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `brokerGetCommunicationListV1()`
+
+```php
+brokerGetCommunicationListV1($pkiBrokerID): \eZmaxAPI\Model\BrokerGetCommunicationListV1Response
+```
+
+Retrieve Communication list
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBrokerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBrokerID = 56; // int
+
+try {
+    $result = $apiInstance->brokerGetCommunicationListV1($pkiBrokerID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBrokerApi->brokerGetCommunicationListV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBrokerID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BrokerGetCommunicationListV1Response**](../Model/BrokerGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `brokerGetCommunicationrecipientsV1()`
+
+```php
+brokerGetCommunicationrecipientsV1($pkiBrokerID): \eZmaxAPI\Model\BrokerGetCommunicationrecipientsV1Response
+```
+
+Retrieve Communication recipients
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBrokerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBrokerID = 56; // int
+
+try {
+    $result = $apiInstance->brokerGetCommunicationrecipientsV1($pkiBrokerID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBrokerApi->brokerGetCommunicationrecipientsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBrokerID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BrokerGetCommunicationrecipientsV1Response**](../Model/BrokerGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `brokerGetCommunicationsendersV1()`
+
+```php
+brokerGetCommunicationsendersV1($pkiBrokerID): \eZmaxAPI\Model\BrokerGetCommunicationsendersV1Response
+```
+
+Retrieve Communication senders
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBrokerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBrokerID = 56; // int
+
+try {
+    $result = $apiInstance->brokerGetCommunicationsendersV1($pkiBrokerID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBrokerApi->brokerGetCommunicationsendersV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBrokerID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BrokerGetCommunicationsendersV1Response**](../Model/BrokerGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

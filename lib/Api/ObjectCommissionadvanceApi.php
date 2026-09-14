@@ -82,6 +82,18 @@ class ObjectCommissionadvanceApi
         'commissionadvanceGetAttachmentsV1' => [
             'application/json',
         ],
+        'commissionadvanceGetCommunicationCountV1' => [
+            'application/json',
+        ],
+        'commissionadvanceGetCommunicationListV1' => [
+            'application/json',
+        ],
+        'commissionadvanceGetCommunicationrecipientsV1' => [
+            'application/json',
+        ],
+        'commissionadvanceGetCommunicationsendersV1' => [
+            'application/json',
+        ],
         'commissionadvanceImportIntoEDMV1' => [
             'application/json',
         ],
@@ -107,6 +119,62 @@ class ObjectCommissionadvanceApi
         'commissionadvanceGetAttachmentsV1' => [
             'systemconfigurationtype' => [
                 'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Inscription_CommissionAdvance',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'commissionadvanceGetCommunicationCountV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Inscription_CommissionAdvance',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'commissionadvanceGetCommunicationListV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Inscription_CommissionAdvance',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'commissionadvanceGetCommunicationrecipientsV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Inscription_CommissionAdvance',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'commissionadvanceGetCommunicationsendersV1' => [
+            'systemconfigurationtype' => [
                 'RealEstate',
             ],
             'permissions' => [
@@ -760,6 +828,1238 @@ class ObjectCommissionadvanceApi
         
 
         $resourcePath = '/1/object/commissionadvance/{pkiCommissionadvanceID}/getAttachments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiCommissionadvanceID !== null) {
+            $resourcePath = str_replace(
+                '{pkiCommissionadvanceID}',
+                ObjectSerializer::toPathValue($pkiCommissionadvanceID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationCountV1
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiCommissionadvanceID pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\CommissionadvanceGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function commissionadvanceGetCommunicationCountV1($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationCountV1'][0])
+    {
+        list($response) = $this->commissionadvanceGetCommunicationCountV1WithHttpInfo($pkiCommissionadvanceID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationCountV1WithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\CommissionadvanceGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function commissionadvanceGetCommunicationCountV1WithHttpInfo($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationCountV1'][0])
+    {
+        $request = $this->commissionadvanceGetCommunicationCountV1Request($pkiCommissionadvanceID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommissionadvanceGetCommunicationCountV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\CommissionadvanceGetCommunicationCountV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommissionadvanceGetCommunicationCountV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationCountV1Async
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function commissionadvanceGetCommunicationCountV1Async($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationCountV1'][0])
+    {
+        return $this->commissionadvanceGetCommunicationCountV1AsyncWithHttpInfo($pkiCommissionadvanceID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationCountV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function commissionadvanceGetCommunicationCountV1AsyncWithHttpInfo($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationCountV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\CommissionadvanceGetCommunicationCountV1Response';
+        $request = $this->commissionadvanceGetCommunicationCountV1Request($pkiCommissionadvanceID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'commissionadvanceGetCommunicationCountV1'
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function commissionadvanceGetCommunicationCountV1Request($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationCountV1'][0])
+    {
+
+        // verify the required parameter 'pkiCommissionadvanceID' is set
+        if ($pkiCommissionadvanceID === null || (is_array($pkiCommissionadvanceID) && count($pkiCommissionadvanceID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiCommissionadvanceID when calling commissionadvanceGetCommunicationCountV1'
+            );
+        }
+        if ($pkiCommissionadvanceID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationCountV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCommissionadvanceID)?'null':'"'.$pkiCommissionadvanceID.'"').' for "pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationCountV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiCommissionadvanceID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationCountV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCommissionadvanceID)?'null':'"'.$pkiCommissionadvanceID.'"').' for "pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationCountV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationCount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiCommissionadvanceID !== null) {
+            $resourcePath = str_replace(
+                '{pkiCommissionadvanceID}',
+                ObjectSerializer::toPathValue($pkiCommissionadvanceID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationListV1
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiCommissionadvanceID pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\CommissionadvanceGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function commissionadvanceGetCommunicationListV1($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationListV1'][0])
+    {
+        list($response) = $this->commissionadvanceGetCommunicationListV1WithHttpInfo($pkiCommissionadvanceID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationListV1WithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\CommissionadvanceGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function commissionadvanceGetCommunicationListV1WithHttpInfo($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationListV1'][0])
+    {
+        $request = $this->commissionadvanceGetCommunicationListV1Request($pkiCommissionadvanceID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommissionadvanceGetCommunicationListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\CommissionadvanceGetCommunicationListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommissionadvanceGetCommunicationListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationListV1Async
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function commissionadvanceGetCommunicationListV1Async($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationListV1'][0])
+    {
+        return $this->commissionadvanceGetCommunicationListV1AsyncWithHttpInfo($pkiCommissionadvanceID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationListV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function commissionadvanceGetCommunicationListV1AsyncWithHttpInfo($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\CommissionadvanceGetCommunicationListV1Response';
+        $request = $this->commissionadvanceGetCommunicationListV1Request($pkiCommissionadvanceID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'commissionadvanceGetCommunicationListV1'
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function commissionadvanceGetCommunicationListV1Request($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationListV1'][0])
+    {
+
+        // verify the required parameter 'pkiCommissionadvanceID' is set
+        if ($pkiCommissionadvanceID === null || (is_array($pkiCommissionadvanceID) && count($pkiCommissionadvanceID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiCommissionadvanceID when calling commissionadvanceGetCommunicationListV1'
+            );
+        }
+        if ($pkiCommissionadvanceID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationListV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCommissionadvanceID)?'null':'"'.$pkiCommissionadvanceID.'"').' for "pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationListV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiCommissionadvanceID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCommissionadvanceID)?'null':'"'.$pkiCommissionadvanceID.'"').' for "pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationListV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiCommissionadvanceID !== null) {
+            $resourcePath = str_replace(
+                '{pkiCommissionadvanceID}',
+                ObjectSerializer::toPathValue($pkiCommissionadvanceID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationrecipientsV1
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiCommissionadvanceID pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\CommissionadvanceGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function commissionadvanceGetCommunicationrecipientsV1($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'][0])
+    {
+        list($response) = $this->commissionadvanceGetCommunicationrecipientsV1WithHttpInfo($pkiCommissionadvanceID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationrecipientsV1WithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\CommissionadvanceGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function commissionadvanceGetCommunicationrecipientsV1WithHttpInfo($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'][0])
+    {
+        $request = $this->commissionadvanceGetCommunicationrecipientsV1Request($pkiCommissionadvanceID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommissionadvanceGetCommunicationrecipientsV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\CommissionadvanceGetCommunicationrecipientsV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommissionadvanceGetCommunicationrecipientsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationrecipientsV1Async
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function commissionadvanceGetCommunicationrecipientsV1Async($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'][0])
+    {
+        return $this->commissionadvanceGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiCommissionadvanceID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationrecipientsV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function commissionadvanceGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\CommissionadvanceGetCommunicationrecipientsV1Response';
+        $request = $this->commissionadvanceGetCommunicationrecipientsV1Request($pkiCommissionadvanceID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'commissionadvanceGetCommunicationrecipientsV1'
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function commissionadvanceGetCommunicationrecipientsV1Request($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationrecipientsV1'][0])
+    {
+
+        // verify the required parameter 'pkiCommissionadvanceID' is set
+        if ($pkiCommissionadvanceID === null || (is_array($pkiCommissionadvanceID) && count($pkiCommissionadvanceID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiCommissionadvanceID when calling commissionadvanceGetCommunicationrecipientsV1'
+            );
+        }
+        if ($pkiCommissionadvanceID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCommissionadvanceID)?'null':'"'.$pkiCommissionadvanceID.'"').' for "pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiCommissionadvanceID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCommissionadvanceID)?'null':'"'.$pkiCommissionadvanceID.'"').' for "pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationrecipients';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiCommissionadvanceID !== null) {
+            $resourcePath = str_replace(
+                '{pkiCommissionadvanceID}',
+                ObjectSerializer::toPathValue($pkiCommissionadvanceID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationsendersV1
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiCommissionadvanceID pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\CommissionadvanceGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function commissionadvanceGetCommunicationsendersV1($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationsendersV1'][0])
+    {
+        list($response) = $this->commissionadvanceGetCommunicationsendersV1WithHttpInfo($pkiCommissionadvanceID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationsendersV1WithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\CommissionadvanceGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function commissionadvanceGetCommunicationsendersV1WithHttpInfo($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationsendersV1'][0])
+    {
+        $request = $this->commissionadvanceGetCommunicationsendersV1Request($pkiCommissionadvanceID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommissionadvanceGetCommunicationsendersV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\CommissionadvanceGetCommunicationsendersV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommissionadvanceGetCommunicationsendersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationsendersV1Async
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function commissionadvanceGetCommunicationsendersV1Async($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationsendersV1'][0])
+    {
+        return $this->commissionadvanceGetCommunicationsendersV1AsyncWithHttpInfo($pkiCommissionadvanceID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation commissionadvanceGetCommunicationsendersV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function commissionadvanceGetCommunicationsendersV1AsyncWithHttpInfo($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationsendersV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\CommissionadvanceGetCommunicationsendersV1Response';
+        $request = $this->commissionadvanceGetCommunicationsendersV1Request($pkiCommissionadvanceID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'commissionadvanceGetCommunicationsendersV1'
+     *
+     * @param  int $pkiCommissionadvanceID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['commissionadvanceGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function commissionadvanceGetCommunicationsendersV1Request($pkiCommissionadvanceID, string $contentType = self::contentTypes['commissionadvanceGetCommunicationsendersV1'][0])
+    {
+
+        // verify the required parameter 'pkiCommissionadvanceID' is set
+        if ($pkiCommissionadvanceID === null || (is_array($pkiCommissionadvanceID) && count($pkiCommissionadvanceID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiCommissionadvanceID when calling commissionadvanceGetCommunicationsendersV1'
+            );
+        }
+        if ($pkiCommissionadvanceID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCommissionadvanceID)?'null':'"'.$pkiCommissionadvanceID.'"').' for "pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiCommissionadvanceID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationsendersV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiCommissionadvanceID)?'null':'"'.$pkiCommissionadvanceID.'"').' for "pkiCommissionadvanceID" when calling ObjectCommissionadvanceApi.commissionadvanceGetCommunicationsendersV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationsenders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

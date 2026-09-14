@@ -9,6 +9,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**agentBatchDownloadV1()**](ObjectAgentApi.md#agentBatchDownloadV1) | **POST** /1/object/agent/{pkiAgentID}/batchDownload | Download multiples attachments from a Agent |
 | [**agentGetAttachmentsV1()**](ObjectAgentApi.md#agentGetAttachmentsV1) | **GET** /1/object/agent/{pkiAgentID}/getAttachments | Retrieve Agent&#39;s attachments |
 | [**agentGetAutocompleteV2()**](ObjectAgentApi.md#agentGetAutocompleteV2) | **GET** /2/object/agent/getAutocomplete/{sSelector} | Retrieve Agents and IDs |
+| [**agentGetCommunicationCountV1()**](ObjectAgentApi.md#agentGetCommunicationCountV1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationCount | Retrieve Communication count |
+| [**agentGetCommunicationListV1()**](ObjectAgentApi.md#agentGetCommunicationListV1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationList | Retrieve Communication list |
+| [**agentGetCommunicationrecipientsV1()**](ObjectAgentApi.md#agentGetCommunicationrecipientsV1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**agentGetCommunicationsendersV1()**](ObjectAgentApi.md#agentGetCommunicationsendersV1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationsenders | Retrieve Communication senders |
 | [**agentGetListV1()**](ObjectAgentApi.md#agentGetListV1) | **GET** /1/object/agent/getList | Retrieve Agent list |
 | [**agentImportIntoEDMV1()**](ObjectAgentApi.md#agentImportIntoEDMV1) | **POST** /1/object/agent/{pkiAgentID}/importIntoEDM | Import attachments into the Agent |
 
@@ -189,6 +193,246 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\AgentGetAutocompleteV2Response**](../Model/AgentGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `agentGetCommunicationCountV1()`
+
+```php
+agentGetCommunicationCountV1($pkiAgentID): \eZmaxAPI\Model\AgentGetCommunicationCountV1Response
+```
+
+Retrieve Communication count
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAgentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiAgentID = 56; // int
+
+try {
+    $result = $apiInstance->agentGetCommunicationCountV1($pkiAgentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAgentApi->agentGetCommunicationCountV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiAgentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\AgentGetCommunicationCountV1Response**](../Model/AgentGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `agentGetCommunicationListV1()`
+
+```php
+agentGetCommunicationListV1($pkiAgentID): \eZmaxAPI\Model\AgentGetCommunicationListV1Response
+```
+
+Retrieve Communication list
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAgentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiAgentID = 56; // int
+
+try {
+    $result = $apiInstance->agentGetCommunicationListV1($pkiAgentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAgentApi->agentGetCommunicationListV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiAgentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\AgentGetCommunicationListV1Response**](../Model/AgentGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `agentGetCommunicationrecipientsV1()`
+
+```php
+agentGetCommunicationrecipientsV1($pkiAgentID): \eZmaxAPI\Model\AgentGetCommunicationrecipientsV1Response
+```
+
+Retrieve Communication recipients
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAgentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiAgentID = 56; // int
+
+try {
+    $result = $apiInstance->agentGetCommunicationrecipientsV1($pkiAgentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAgentApi->agentGetCommunicationrecipientsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiAgentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\AgentGetCommunicationrecipientsV1Response**](../Model/AgentGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `agentGetCommunicationsendersV1()`
+
+```php
+agentGetCommunicationsendersV1($pkiAgentID): \eZmaxAPI\Model\AgentGetCommunicationsendersV1Response
+```
+
+Retrieve Communication senders
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAgentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiAgentID = 56; // int
+
+try {
+    $result = $apiInstance->agentGetCommunicationsendersV1($pkiAgentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAgentApi->agentGetCommunicationsendersV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiAgentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\AgentGetCommunicationsendersV1Response**](../Model/AgentGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

@@ -85,6 +85,18 @@ class ObjectBankaccountApi
         'bankaccountGetAutocompleteV2' => [
             'application/json',
         ],
+        'bankaccountGetCommunicationCountV1' => [
+            'application/json',
+        ],
+        'bankaccountGetCommunicationListV1' => [
+            'application/json',
+        ],
+        'bankaccountGetCommunicationrecipientsV1' => [
+            'application/json',
+        ],
+        'bankaccountGetCommunicationsendersV1' => [
+            'application/json',
+        ],
         'bankaccountImportIntoEDMV1' => [
             'application/json',
         ],
@@ -128,6 +140,66 @@ class ObjectBankaccountApi
                 'MultiCompanies',
                 'EzsignEnterprise',
                 'EzsignEnterprisePerSending',
+            ],
+            'permissions' => [
+                'Management_PaymentMethods',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'bankaccountGetCommunicationCountV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_PaymentMethods',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'bankaccountGetCommunicationListV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_PaymentMethods',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'bankaccountGetCommunicationrecipientsV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_PaymentMethods',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'bankaccountGetCommunicationsendersV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
             ],
             'permissions' => [
                 'Management_PaymentMethods',
@@ -1119,6 +1191,1238 @@ class ObjectBankaccountApi
             $resourcePath = str_replace(
                 '{sSelector}',
                 ObjectSerializer::toPathValue($sSelector),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationCountV1
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiBankaccountID pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\BankaccountGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function bankaccountGetCommunicationCountV1($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationCountV1'][0])
+    {
+        list($response) = $this->bankaccountGetCommunicationCountV1WithHttpInfo($pkiBankaccountID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationCountV1WithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\BankaccountGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function bankaccountGetCommunicationCountV1WithHttpInfo($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationCountV1'][0])
+    {
+        $request = $this->bankaccountGetCommunicationCountV1Request($pkiBankaccountID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\BankaccountGetCommunicationCountV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\BankaccountGetCommunicationCountV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\BankaccountGetCommunicationCountV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationCountV1Async
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bankaccountGetCommunicationCountV1Async($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationCountV1'][0])
+    {
+        return $this->bankaccountGetCommunicationCountV1AsyncWithHttpInfo($pkiBankaccountID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationCountV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bankaccountGetCommunicationCountV1AsyncWithHttpInfo($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationCountV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\BankaccountGetCommunicationCountV1Response';
+        $request = $this->bankaccountGetCommunicationCountV1Request($pkiBankaccountID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'bankaccountGetCommunicationCountV1'
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function bankaccountGetCommunicationCountV1Request($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationCountV1'][0])
+    {
+
+        // verify the required parameter 'pkiBankaccountID' is set
+        if ($pkiBankaccountID === null || (is_array($pkiBankaccountID) && count($pkiBankaccountID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiBankaccountID when calling bankaccountGetCommunicationCountV1'
+            );
+        }
+        if ($pkiBankaccountID > 255) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationCountV1, must be smaller than or equal to 255.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiBankaccountID)?'null':'"'.$pkiBankaccountID.'"').' for "pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationCountV1, must be smaller than or equal to 255.');
+        }
+        if ($pkiBankaccountID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationCountV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiBankaccountID)?'null':'"'.$pkiBankaccountID.'"').' for "pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationCountV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/bankaccount/{pkiBankaccountID}/getCommunicationCount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiBankaccountID !== null) {
+            $resourcePath = str_replace(
+                '{pkiBankaccountID}',
+                ObjectSerializer::toPathValue($pkiBankaccountID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationListV1
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiBankaccountID pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\BankaccountGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function bankaccountGetCommunicationListV1($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationListV1'][0])
+    {
+        list($response) = $this->bankaccountGetCommunicationListV1WithHttpInfo($pkiBankaccountID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationListV1WithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\BankaccountGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function bankaccountGetCommunicationListV1WithHttpInfo($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationListV1'][0])
+    {
+        $request = $this->bankaccountGetCommunicationListV1Request($pkiBankaccountID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\BankaccountGetCommunicationListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\BankaccountGetCommunicationListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\BankaccountGetCommunicationListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationListV1Async
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bankaccountGetCommunicationListV1Async($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationListV1'][0])
+    {
+        return $this->bankaccountGetCommunicationListV1AsyncWithHttpInfo($pkiBankaccountID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationListV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bankaccountGetCommunicationListV1AsyncWithHttpInfo($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\BankaccountGetCommunicationListV1Response';
+        $request = $this->bankaccountGetCommunicationListV1Request($pkiBankaccountID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'bankaccountGetCommunicationListV1'
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function bankaccountGetCommunicationListV1Request($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationListV1'][0])
+    {
+
+        // verify the required parameter 'pkiBankaccountID' is set
+        if ($pkiBankaccountID === null || (is_array($pkiBankaccountID) && count($pkiBankaccountID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiBankaccountID when calling bankaccountGetCommunicationListV1'
+            );
+        }
+        if ($pkiBankaccountID > 255) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationListV1, must be smaller than or equal to 255.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiBankaccountID)?'null':'"'.$pkiBankaccountID.'"').' for "pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationListV1, must be smaller than or equal to 255.');
+        }
+        if ($pkiBankaccountID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiBankaccountID)?'null':'"'.$pkiBankaccountID.'"').' for "pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationListV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/bankaccount/{pkiBankaccountID}/getCommunicationList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiBankaccountID !== null) {
+            $resourcePath = str_replace(
+                '{pkiBankaccountID}',
+                ObjectSerializer::toPathValue($pkiBankaccountID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationrecipientsV1
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiBankaccountID pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\BankaccountGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function bankaccountGetCommunicationrecipientsV1($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationrecipientsV1'][0])
+    {
+        list($response) = $this->bankaccountGetCommunicationrecipientsV1WithHttpInfo($pkiBankaccountID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationrecipientsV1WithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\BankaccountGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function bankaccountGetCommunicationrecipientsV1WithHttpInfo($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationrecipientsV1'][0])
+    {
+        $request = $this->bankaccountGetCommunicationrecipientsV1Request($pkiBankaccountID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\BankaccountGetCommunicationrecipientsV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\BankaccountGetCommunicationrecipientsV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\BankaccountGetCommunicationrecipientsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationrecipientsV1Async
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bankaccountGetCommunicationrecipientsV1Async($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationrecipientsV1'][0])
+    {
+        return $this->bankaccountGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiBankaccountID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationrecipientsV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bankaccountGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationrecipientsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\BankaccountGetCommunicationrecipientsV1Response';
+        $request = $this->bankaccountGetCommunicationrecipientsV1Request($pkiBankaccountID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'bankaccountGetCommunicationrecipientsV1'
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function bankaccountGetCommunicationrecipientsV1Request($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationrecipientsV1'][0])
+    {
+
+        // verify the required parameter 'pkiBankaccountID' is set
+        if ($pkiBankaccountID === null || (is_array($pkiBankaccountID) && count($pkiBankaccountID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiBankaccountID when calling bankaccountGetCommunicationrecipientsV1'
+            );
+        }
+        if ($pkiBankaccountID > 255) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationrecipientsV1, must be smaller than or equal to 255.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiBankaccountID)?'null':'"'.$pkiBankaccountID.'"').' for "pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationrecipientsV1, must be smaller than or equal to 255.');
+        }
+        if ($pkiBankaccountID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiBankaccountID)?'null':'"'.$pkiBankaccountID.'"').' for "pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/bankaccount/{pkiBankaccountID}/getCommunicationrecipients';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiBankaccountID !== null) {
+            $resourcePath = str_replace(
+                '{pkiBankaccountID}',
+                ObjectSerializer::toPathValue($pkiBankaccountID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationsendersV1
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiBankaccountID pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\BankaccountGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function bankaccountGetCommunicationsendersV1($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationsendersV1'][0])
+    {
+        list($response) = $this->bankaccountGetCommunicationsendersV1WithHttpInfo($pkiBankaccountID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationsendersV1WithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\BankaccountGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function bankaccountGetCommunicationsendersV1WithHttpInfo($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationsendersV1'][0])
+    {
+        $request = $this->bankaccountGetCommunicationsendersV1Request($pkiBankaccountID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\BankaccountGetCommunicationsendersV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\BankaccountGetCommunicationsendersV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\BankaccountGetCommunicationsendersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationsendersV1Async
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bankaccountGetCommunicationsendersV1Async($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationsendersV1'][0])
+    {
+        return $this->bankaccountGetCommunicationsendersV1AsyncWithHttpInfo($pkiBankaccountID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation bankaccountGetCommunicationsendersV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bankaccountGetCommunicationsendersV1AsyncWithHttpInfo($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationsendersV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\BankaccountGetCommunicationsendersV1Response';
+        $request = $this->bankaccountGetCommunicationsendersV1Request($pkiBankaccountID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'bankaccountGetCommunicationsendersV1'
+     *
+     * @param  int $pkiBankaccountID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bankaccountGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function bankaccountGetCommunicationsendersV1Request($pkiBankaccountID, string $contentType = self::contentTypes['bankaccountGetCommunicationsendersV1'][0])
+    {
+
+        // verify the required parameter 'pkiBankaccountID' is set
+        if ($pkiBankaccountID === null || (is_array($pkiBankaccountID) && count($pkiBankaccountID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiBankaccountID when calling bankaccountGetCommunicationsendersV1'
+            );
+        }
+        if ($pkiBankaccountID > 255) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationsendersV1, must be smaller than or equal to 255.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiBankaccountID)?'null':'"'.$pkiBankaccountID.'"').' for "pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationsendersV1, must be smaller than or equal to 255.');
+        }
+        if ($pkiBankaccountID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationsendersV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiBankaccountID)?'null':'"'.$pkiBankaccountID.'"').' for "pkiBankaccountID" when calling ObjectBankaccountApi.bankaccountGetCommunicationsendersV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/bankaccount/{pkiBankaccountID}/getCommunicationsenders';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiBankaccountID !== null) {
+            $resourcePath = str_replace(
+                '{pkiBankaccountID}',
+                ObjectSerializer::toPathValue($pkiBankaccountID),
                 $resourcePath
             );
         }

@@ -53,6 +53,7 @@ Name | Type | Description | Notes
 **fkiEzsigndocumentIDReference** | **int** | The unique ID of the Ezsigndocument | [optional]
 **eAttachmentDocumenttype** | [**\eZmaxAPI\Model\FieldEAttachmentDocumenttype**](FieldEAttachmentDocumenttype.md) |  |
 **sAttachmentName** | **string** | The name of the Attachment |
+**sAttachmentCategory** | **string** | The attachment category |
 **eAttachmentPrivacy** | [**\eZmaxAPI\Model\FieldEAttachmentPrivacy**](FieldEAttachmentPrivacy.md) |  |
 **fkiUserIDSpecific** | **int** | The unique ID of the User | [optional]
 **eAttachmentType** | [**\eZmaxAPI\Model\FieldEAttachmentType**](FieldEAttachmentType.md) |  |

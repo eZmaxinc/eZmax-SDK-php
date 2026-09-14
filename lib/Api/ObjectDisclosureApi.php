@@ -82,6 +82,18 @@ class ObjectDisclosureApi
         'disclosureGetAttachmentsV1' => [
             'application/json',
         ],
+        'disclosureGetCommunicationCountV1' => [
+            'application/json',
+        ],
+        'disclosureGetCommunicationListV1' => [
+            'application/json',
+        ],
+        'disclosureGetCommunicationrecipientsV1' => [
+            'application/json',
+        ],
+        'disclosureGetCommunicationsendersV1' => [
+            'application/json',
+        ],
         'disclosureImportIntoEDMV1' => [
             'application/json',
         ],
@@ -107,6 +119,62 @@ class ObjectDisclosureApi
         'disclosureGetAttachmentsV1' => [
             'systemconfigurationtype' => [
                 'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Inscription_Deals',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'disclosureGetCommunicationCountV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Inscription_Deals',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'disclosureGetCommunicationListV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Inscription_Deals',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'disclosureGetCommunicationrecipientsV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Inscription_Deals',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'disclosureGetCommunicationsendersV1' => [
+            'systemconfigurationtype' => [
                 'RealEstate',
             ],
             'permissions' => [
@@ -760,6 +828,1238 @@ class ObjectDisclosureApi
         
 
         $resourcePath = '/1/object/disclosure/{pkiDisclosureID}/getAttachments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiDisclosureID !== null) {
+            $resourcePath = str_replace(
+                '{pkiDisclosureID}',
+                ObjectSerializer::toPathValue($pkiDisclosureID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation disclosureGetCommunicationCountV1
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiDisclosureID pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\DisclosureGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function disclosureGetCommunicationCountV1($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationCountV1'][0])
+    {
+        list($response) = $this->disclosureGetCommunicationCountV1WithHttpInfo($pkiDisclosureID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation disclosureGetCommunicationCountV1WithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\DisclosureGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function disclosureGetCommunicationCountV1WithHttpInfo($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationCountV1'][0])
+    {
+        $request = $this->disclosureGetCommunicationCountV1Request($pkiDisclosureID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\DisclosureGetCommunicationCountV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\DisclosureGetCommunicationCountV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\DisclosureGetCommunicationCountV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation disclosureGetCommunicationCountV1Async
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function disclosureGetCommunicationCountV1Async($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationCountV1'][0])
+    {
+        return $this->disclosureGetCommunicationCountV1AsyncWithHttpInfo($pkiDisclosureID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation disclosureGetCommunicationCountV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function disclosureGetCommunicationCountV1AsyncWithHttpInfo($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationCountV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\DisclosureGetCommunicationCountV1Response';
+        $request = $this->disclosureGetCommunicationCountV1Request($pkiDisclosureID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'disclosureGetCommunicationCountV1'
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function disclosureGetCommunicationCountV1Request($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationCountV1'][0])
+    {
+
+        // verify the required parameter 'pkiDisclosureID' is set
+        if ($pkiDisclosureID === null || (is_array($pkiDisclosureID) && count($pkiDisclosureID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiDisclosureID when calling disclosureGetCommunicationCountV1'
+            );
+        }
+        if ($pkiDisclosureID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationCountV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDisclosureID)?'null':'"'.$pkiDisclosureID.'"').' for "pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationCountV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiDisclosureID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationCountV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDisclosureID)?'null':'"'.$pkiDisclosureID.'"').' for "pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationCountV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/disclosure/{pkiDisclosureID}/getCommunicationCount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiDisclosureID !== null) {
+            $resourcePath = str_replace(
+                '{pkiDisclosureID}',
+                ObjectSerializer::toPathValue($pkiDisclosureID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation disclosureGetCommunicationListV1
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiDisclosureID pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\DisclosureGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function disclosureGetCommunicationListV1($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationListV1'][0])
+    {
+        list($response) = $this->disclosureGetCommunicationListV1WithHttpInfo($pkiDisclosureID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation disclosureGetCommunicationListV1WithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\DisclosureGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function disclosureGetCommunicationListV1WithHttpInfo($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationListV1'][0])
+    {
+        $request = $this->disclosureGetCommunicationListV1Request($pkiDisclosureID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\DisclosureGetCommunicationListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\DisclosureGetCommunicationListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\DisclosureGetCommunicationListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation disclosureGetCommunicationListV1Async
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function disclosureGetCommunicationListV1Async($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationListV1'][0])
+    {
+        return $this->disclosureGetCommunicationListV1AsyncWithHttpInfo($pkiDisclosureID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation disclosureGetCommunicationListV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function disclosureGetCommunicationListV1AsyncWithHttpInfo($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\DisclosureGetCommunicationListV1Response';
+        $request = $this->disclosureGetCommunicationListV1Request($pkiDisclosureID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'disclosureGetCommunicationListV1'
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function disclosureGetCommunicationListV1Request($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationListV1'][0])
+    {
+
+        // verify the required parameter 'pkiDisclosureID' is set
+        if ($pkiDisclosureID === null || (is_array($pkiDisclosureID) && count($pkiDisclosureID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiDisclosureID when calling disclosureGetCommunicationListV1'
+            );
+        }
+        if ($pkiDisclosureID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationListV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDisclosureID)?'null':'"'.$pkiDisclosureID.'"').' for "pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationListV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiDisclosureID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDisclosureID)?'null':'"'.$pkiDisclosureID.'"').' for "pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationListV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/disclosure/{pkiDisclosureID}/getCommunicationList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiDisclosureID !== null) {
+            $resourcePath = str_replace(
+                '{pkiDisclosureID}',
+                ObjectSerializer::toPathValue($pkiDisclosureID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation disclosureGetCommunicationrecipientsV1
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiDisclosureID pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\DisclosureGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function disclosureGetCommunicationrecipientsV1($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationrecipientsV1'][0])
+    {
+        list($response) = $this->disclosureGetCommunicationrecipientsV1WithHttpInfo($pkiDisclosureID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation disclosureGetCommunicationrecipientsV1WithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\DisclosureGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function disclosureGetCommunicationrecipientsV1WithHttpInfo($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationrecipientsV1'][0])
+    {
+        $request = $this->disclosureGetCommunicationrecipientsV1Request($pkiDisclosureID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\DisclosureGetCommunicationrecipientsV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\DisclosureGetCommunicationrecipientsV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\DisclosureGetCommunicationrecipientsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation disclosureGetCommunicationrecipientsV1Async
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function disclosureGetCommunicationrecipientsV1Async($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationrecipientsV1'][0])
+    {
+        return $this->disclosureGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiDisclosureID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation disclosureGetCommunicationrecipientsV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function disclosureGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationrecipientsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\DisclosureGetCommunicationrecipientsV1Response';
+        $request = $this->disclosureGetCommunicationrecipientsV1Request($pkiDisclosureID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'disclosureGetCommunicationrecipientsV1'
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function disclosureGetCommunicationrecipientsV1Request($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationrecipientsV1'][0])
+    {
+
+        // verify the required parameter 'pkiDisclosureID' is set
+        if ($pkiDisclosureID === null || (is_array($pkiDisclosureID) && count($pkiDisclosureID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiDisclosureID when calling disclosureGetCommunicationrecipientsV1'
+            );
+        }
+        if ($pkiDisclosureID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDisclosureID)?'null':'"'.$pkiDisclosureID.'"').' for "pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiDisclosureID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDisclosureID)?'null':'"'.$pkiDisclosureID.'"').' for "pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/disclosure/{pkiDisclosureID}/getCommunicationrecipients';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiDisclosureID !== null) {
+            $resourcePath = str_replace(
+                '{pkiDisclosureID}',
+                ObjectSerializer::toPathValue($pkiDisclosureID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation disclosureGetCommunicationsendersV1
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiDisclosureID pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\DisclosureGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function disclosureGetCommunicationsendersV1($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationsendersV1'][0])
+    {
+        list($response) = $this->disclosureGetCommunicationsendersV1WithHttpInfo($pkiDisclosureID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation disclosureGetCommunicationsendersV1WithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\DisclosureGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function disclosureGetCommunicationsendersV1WithHttpInfo($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationsendersV1'][0])
+    {
+        $request = $this->disclosureGetCommunicationsendersV1Request($pkiDisclosureID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\DisclosureGetCommunicationsendersV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\DisclosureGetCommunicationsendersV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\DisclosureGetCommunicationsendersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation disclosureGetCommunicationsendersV1Async
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function disclosureGetCommunicationsendersV1Async($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationsendersV1'][0])
+    {
+        return $this->disclosureGetCommunicationsendersV1AsyncWithHttpInfo($pkiDisclosureID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation disclosureGetCommunicationsendersV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function disclosureGetCommunicationsendersV1AsyncWithHttpInfo($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationsendersV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\DisclosureGetCommunicationsendersV1Response';
+        $request = $this->disclosureGetCommunicationsendersV1Request($pkiDisclosureID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'disclosureGetCommunicationsendersV1'
+     *
+     * @param  int $pkiDisclosureID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disclosureGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function disclosureGetCommunicationsendersV1Request($pkiDisclosureID, string $contentType = self::contentTypes['disclosureGetCommunicationsendersV1'][0])
+    {
+
+        // verify the required parameter 'pkiDisclosureID' is set
+        if ($pkiDisclosureID === null || (is_array($pkiDisclosureID) && count($pkiDisclosureID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiDisclosureID when calling disclosureGetCommunicationsendersV1'
+            );
+        }
+        if ($pkiDisclosureID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDisclosureID)?'null':'"'.$pkiDisclosureID.'"').' for "pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiDisclosureID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationsendersV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDisclosureID)?'null':'"'.$pkiDisclosureID.'"').' for "pkiDisclosureID" when calling ObjectDisclosureApi.disclosureGetCommunicationsendersV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/disclosure/{pkiDisclosureID}/getCommunicationsenders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

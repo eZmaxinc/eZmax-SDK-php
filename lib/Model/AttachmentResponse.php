@@ -108,6 +108,7 @@ class AttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         'fkiEzsigndocumentIDReference' => 'int',
         'eAttachmentDocumenttype' => '\eZmaxAPI\Model\FieldEAttachmentDocumenttype',
         'sAttachmentName' => 'string',
+        'sAttachmentCategory' => 'string',
         'eAttachmentPrivacy' => '\eZmaxAPI\Model\FieldEAttachmentPrivacy',
         'fkiUserIDSpecific' => 'int',
         'eAttachmentType' => '\eZmaxAPI\Model\FieldEAttachmentType',
@@ -179,6 +180,7 @@ class AttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         'fkiEzsigndocumentIDReference' => null,
         'eAttachmentDocumenttype' => null,
         'sAttachmentName' => null,
+        'sAttachmentCategory' => null,
         'eAttachmentPrivacy' => null,
         'fkiUserIDSpecific' => null,
         'eAttachmentType' => null,
@@ -248,6 +250,7 @@ class AttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         'fkiEzsigndocumentIDReference' => false,
         'eAttachmentDocumenttype' => false,
         'sAttachmentName' => false,
+        'sAttachmentCategory' => false,
         'eAttachmentPrivacy' => false,
         'fkiUserIDSpecific' => false,
         'eAttachmentType' => false,
@@ -397,6 +400,7 @@ class AttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         'fkiEzsigndocumentIDReference' => 'fkiEzsigndocumentIDReference',
         'eAttachmentDocumenttype' => 'eAttachmentDocumenttype',
         'sAttachmentName' => 'sAttachmentName',
+        'sAttachmentCategory' => 'sAttachmentCategory',
         'eAttachmentPrivacy' => 'eAttachmentPrivacy',
         'fkiUserIDSpecific' => 'fkiUserIDSpecific',
         'eAttachmentType' => 'eAttachmentType',
@@ -466,6 +470,7 @@ class AttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         'fkiEzsigndocumentIDReference' => 'setFkiEzsigndocumentIDReference',
         'eAttachmentDocumenttype' => 'setEAttachmentDocumenttype',
         'sAttachmentName' => 'setSAttachmentName',
+        'sAttachmentCategory' => 'setSAttachmentCategory',
         'eAttachmentPrivacy' => 'setEAttachmentPrivacy',
         'fkiUserIDSpecific' => 'setFkiUserIDSpecific',
         'eAttachmentType' => 'setEAttachmentType',
@@ -535,6 +540,7 @@ class AttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         'fkiEzsigndocumentIDReference' => 'getFkiEzsigndocumentIDReference',
         'eAttachmentDocumenttype' => 'getEAttachmentDocumenttype',
         'sAttachmentName' => 'getSAttachmentName',
+        'sAttachmentCategory' => 'getSAttachmentCategory',
         'eAttachmentPrivacy' => 'getEAttachmentPrivacy',
         'fkiUserIDSpecific' => 'getFkiUserIDSpecific',
         'eAttachmentType' => 'getEAttachmentType',
@@ -655,6 +661,7 @@ class AttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('fkiEzsigndocumentIDReference', $data ?? [], null);
         $this->setIfExists('eAttachmentDocumenttype', $data ?? [], null);
         $this->setIfExists('sAttachmentName', $data ?? [], null);
+        $this->setIfExists('sAttachmentCategory', $data ?? [], null);
         $this->setIfExists('eAttachmentPrivacy', $data ?? [], null);
         $this->setIfExists('fkiUserIDSpecific', $data ?? [], null);
         $this->setIfExists('eAttachmentType', $data ?? [], null);
@@ -1013,6 +1020,15 @@ class AttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         if (!is_null($this->container['sAttachmentName']) && !preg_match("/(*UTF8)^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{1,75}$/", $this->container['sAttachmentName'])) {
             //$invalidProperties[] = "invalid value for 'sAttachmentName', must be conform to the pattern /^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{1,75}$/.";
             $invalidProperties[] = "invalid value ".(is_null($this->container['sAttachmentName'])?'null':'"'.$this->container['sAttachmentName'].'"')." for 'sAttachmentName', must be conform to the pattern /^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{1,75}$/.";
+        }
+
+        if ($this->container['sAttachmentCategory'] === null) {
+            $invalidProperties[] = "'sAttachmentCategory' can't be null";
+        }
+        //if (!preg_match("/^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{0,75}$/", $this->container['sAttachmentCategory'])) {
+        if (!is_null($this->container['sAttachmentCategory']) && !preg_match("/(*UTF8)^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{0,75}$/", $this->container['sAttachmentCategory'])) {
+            //$invalidProperties[] = "invalid value for 'sAttachmentCategory', must be conform to the pattern /^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{0,75}$/.";
+            $invalidProperties[] = "invalid value ".(is_null($this->container['sAttachmentCategory'])?'null':'"'.$this->container['sAttachmentCategory'].'"')." for 'sAttachmentCategory', must be conform to the pattern /^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{0,75}$/.";
         }
 
         if ($this->container['eAttachmentPrivacy'] === null) {
@@ -3084,6 +3100,45 @@ class AttachmentResponse implements ModelInterface, ArrayAccess, \JsonSerializab
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
         //$this->container['sAttachmentName'] = $sAttachmentName;
         $this->container['sAttachmentName'] = (is_null($sAttachmentName) ? null : trim((string) $sAttachmentName));
+
+        return $this;
+    }
+
+    /**
+     * Gets sAttachmentCategory
+     *
+     * @return string
+     */
+    public function getSAttachmentCategory()
+    {
+	//return $this->container['sAttachmentCategory'];
+        return is_null($this->container['sAttachmentCategory']) ? null : trim($this->container['sAttachmentCategory']);
+    }
+
+    /**
+     * Sets sAttachmentCategory
+     *
+     * @param string $sAttachmentCategory The attachment category
+     *
+     * @return self
+     */
+    public function setSAttachmentCategory($sAttachmentCategory)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sAttachmentCategory)) {
+            //throw new \InvalidArgumentException('non-nullable sAttachmentCategory cannot be null');
+        //}
+
+        //if ((!preg_match("/^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{0,75}$/", ObjectSerializer::toString($sAttachmentCategory)))) {
+        if (!is_null($sAttachmentCategory) && (!preg_match("/(*UTF8)^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{0,75}$/", ObjectSerializer::toString($sAttachmentCategory)))) {
+            //throw new \InvalidArgumentException("invalid value for \$sAttachmentCategory when calling AttachmentResponse., must conform to the pattern /^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{0,75}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sAttachmentCategory)?'null':'"'.$sAttachmentCategory.'"')." for sAttachmentCategory when calling AttachmentResponse., must conform to the pattern /^(?!\\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\\.|$))[^\\x00-\\x1F<>:\"\/\\\\\\\\|?*]{0,75}$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['sAttachmentCategory'] = $sAttachmentCategory;
+        $this->container['sAttachmentCategory'] = (is_null($sAttachmentCategory) ? null : trim((string) $sAttachmentCategory));
 
         return $this;
     }

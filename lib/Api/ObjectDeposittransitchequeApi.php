@@ -82,6 +82,18 @@ class ObjectDeposittransitchequeApi
         'deposittransitchequeGetAttachmentsV1' => [
             'application/json',
         ],
+        'deposittransitchequeGetCommunicationCountV1' => [
+            'application/json',
+        ],
+        'deposittransitchequeGetCommunicationListV1' => [
+            'application/json',
+        ],
+        'deposittransitchequeGetCommunicationrecipientsV1' => [
+            'application/json',
+        ],
+        'deposittransitchequeGetCommunicationsendersV1' => [
+            'application/json',
+        ],
         'deposittransitchequeImportIntoEDMV1' => [
             'application/json',
         ],
@@ -105,6 +117,66 @@ class ObjectDeposittransitchequeApi
             'deprecated' => false,
         ],
         'deposittransitchequeGetAttachmentsV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'DepositTransitCheque_Access',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'deposittransitchequeGetCommunicationCountV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'DepositTransitCheque_Access',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'deposittransitchequeGetCommunicationListV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'DepositTransitCheque_Access',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'deposittransitchequeGetCommunicationrecipientsV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'DepositTransitCheque_Access',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'deposittransitchequeGetCommunicationsendersV1' => [
             'systemconfigurationtype' => [
                 'MultiCompanies',
                 'RealEstate',
@@ -760,6 +832,1238 @@ class ObjectDeposittransitchequeApi
         
 
         $resourcePath = '/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getAttachments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiDeposittransitchequeID !== null) {
+            $resourcePath = str_replace(
+                '{pkiDeposittransitchequeID}',
+                ObjectSerializer::toPathValue($pkiDeposittransitchequeID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationCountV1
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiDeposittransitchequeID pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\DeposittransitchequeGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function deposittransitchequeGetCommunicationCountV1($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationCountV1'][0])
+    {
+        list($response) = $this->deposittransitchequeGetCommunicationCountV1WithHttpInfo($pkiDeposittransitchequeID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationCountV1WithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\DeposittransitchequeGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deposittransitchequeGetCommunicationCountV1WithHttpInfo($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationCountV1'][0])
+    {
+        $request = $this->deposittransitchequeGetCommunicationCountV1Request($pkiDeposittransitchequeID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationCountV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationCountV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationCountV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationCountV1Async
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deposittransitchequeGetCommunicationCountV1Async($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationCountV1'][0])
+    {
+        return $this->deposittransitchequeGetCommunicationCountV1AsyncWithHttpInfo($pkiDeposittransitchequeID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationCountV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deposittransitchequeGetCommunicationCountV1AsyncWithHttpInfo($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationCountV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationCountV1Response';
+        $request = $this->deposittransitchequeGetCommunicationCountV1Request($pkiDeposittransitchequeID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deposittransitchequeGetCommunicationCountV1'
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deposittransitchequeGetCommunicationCountV1Request($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationCountV1'][0])
+    {
+
+        // verify the required parameter 'pkiDeposittransitchequeID' is set
+        if ($pkiDeposittransitchequeID === null || (is_array($pkiDeposittransitchequeID) && count($pkiDeposittransitchequeID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiDeposittransitchequeID when calling deposittransitchequeGetCommunicationCountV1'
+            );
+        }
+        if ($pkiDeposittransitchequeID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationCountV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDeposittransitchequeID)?'null':'"'.$pkiDeposittransitchequeID.'"').' for "pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationCountV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiDeposittransitchequeID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationCountV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDeposittransitchequeID)?'null':'"'.$pkiDeposittransitchequeID.'"').' for "pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationCountV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationCount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiDeposittransitchequeID !== null) {
+            $resourcePath = str_replace(
+                '{pkiDeposittransitchequeID}',
+                ObjectSerializer::toPathValue($pkiDeposittransitchequeID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationListV1
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiDeposittransitchequeID pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\DeposittransitchequeGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function deposittransitchequeGetCommunicationListV1($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationListV1'][0])
+    {
+        list($response) = $this->deposittransitchequeGetCommunicationListV1WithHttpInfo($pkiDeposittransitchequeID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationListV1WithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\DeposittransitchequeGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deposittransitchequeGetCommunicationListV1WithHttpInfo($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationListV1'][0])
+    {
+        $request = $this->deposittransitchequeGetCommunicationListV1Request($pkiDeposittransitchequeID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationListV1Async
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deposittransitchequeGetCommunicationListV1Async($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationListV1'][0])
+    {
+        return $this->deposittransitchequeGetCommunicationListV1AsyncWithHttpInfo($pkiDeposittransitchequeID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationListV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deposittransitchequeGetCommunicationListV1AsyncWithHttpInfo($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationListV1Response';
+        $request = $this->deposittransitchequeGetCommunicationListV1Request($pkiDeposittransitchequeID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deposittransitchequeGetCommunicationListV1'
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deposittransitchequeGetCommunicationListV1Request($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationListV1'][0])
+    {
+
+        // verify the required parameter 'pkiDeposittransitchequeID' is set
+        if ($pkiDeposittransitchequeID === null || (is_array($pkiDeposittransitchequeID) && count($pkiDeposittransitchequeID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiDeposittransitchequeID when calling deposittransitchequeGetCommunicationListV1'
+            );
+        }
+        if ($pkiDeposittransitchequeID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationListV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDeposittransitchequeID)?'null':'"'.$pkiDeposittransitchequeID.'"').' for "pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationListV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiDeposittransitchequeID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDeposittransitchequeID)?'null':'"'.$pkiDeposittransitchequeID.'"').' for "pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationListV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiDeposittransitchequeID !== null) {
+            $resourcePath = str_replace(
+                '{pkiDeposittransitchequeID}',
+                ObjectSerializer::toPathValue($pkiDeposittransitchequeID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationrecipientsV1
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiDeposittransitchequeID pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\DeposittransitchequeGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function deposittransitchequeGetCommunicationrecipientsV1($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'][0])
+    {
+        list($response) = $this->deposittransitchequeGetCommunicationrecipientsV1WithHttpInfo($pkiDeposittransitchequeID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationrecipientsV1WithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\DeposittransitchequeGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deposittransitchequeGetCommunicationrecipientsV1WithHttpInfo($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'][0])
+    {
+        $request = $this->deposittransitchequeGetCommunicationrecipientsV1Request($pkiDeposittransitchequeID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationrecipientsV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationrecipientsV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationrecipientsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationrecipientsV1Async
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deposittransitchequeGetCommunicationrecipientsV1Async($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'][0])
+    {
+        return $this->deposittransitchequeGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiDeposittransitchequeID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationrecipientsV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deposittransitchequeGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationrecipientsV1Response';
+        $request = $this->deposittransitchequeGetCommunicationrecipientsV1Request($pkiDeposittransitchequeID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deposittransitchequeGetCommunicationrecipientsV1'
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deposittransitchequeGetCommunicationrecipientsV1Request($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationrecipientsV1'][0])
+    {
+
+        // verify the required parameter 'pkiDeposittransitchequeID' is set
+        if ($pkiDeposittransitchequeID === null || (is_array($pkiDeposittransitchequeID) && count($pkiDeposittransitchequeID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiDeposittransitchequeID when calling deposittransitchequeGetCommunicationrecipientsV1'
+            );
+        }
+        if ($pkiDeposittransitchequeID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDeposittransitchequeID)?'null':'"'.$pkiDeposittransitchequeID.'"').' for "pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiDeposittransitchequeID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDeposittransitchequeID)?'null':'"'.$pkiDeposittransitchequeID.'"').' for "pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationrecipients';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiDeposittransitchequeID !== null) {
+            $resourcePath = str_replace(
+                '{pkiDeposittransitchequeID}',
+                ObjectSerializer::toPathValue($pkiDeposittransitchequeID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationsendersV1
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiDeposittransitchequeID pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\DeposittransitchequeGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function deposittransitchequeGetCommunicationsendersV1($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationsendersV1'][0])
+    {
+        list($response) = $this->deposittransitchequeGetCommunicationsendersV1WithHttpInfo($pkiDeposittransitchequeID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationsendersV1WithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\DeposittransitchequeGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deposittransitchequeGetCommunicationsendersV1WithHttpInfo($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationsendersV1'][0])
+    {
+        $request = $this->deposittransitchequeGetCommunicationsendersV1Request($pkiDeposittransitchequeID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationsendersV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationsendersV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationsendersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationsendersV1Async
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deposittransitchequeGetCommunicationsendersV1Async($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationsendersV1'][0])
+    {
+        return $this->deposittransitchequeGetCommunicationsendersV1AsyncWithHttpInfo($pkiDeposittransitchequeID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deposittransitchequeGetCommunicationsendersV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deposittransitchequeGetCommunicationsendersV1AsyncWithHttpInfo($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationsendersV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\DeposittransitchequeGetCommunicationsendersV1Response';
+        $request = $this->deposittransitchequeGetCommunicationsendersV1Request($pkiDeposittransitchequeID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deposittransitchequeGetCommunicationsendersV1'
+     *
+     * @param  int $pkiDeposittransitchequeID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deposittransitchequeGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deposittransitchequeGetCommunicationsendersV1Request($pkiDeposittransitchequeID, string $contentType = self::contentTypes['deposittransitchequeGetCommunicationsendersV1'][0])
+    {
+
+        // verify the required parameter 'pkiDeposittransitchequeID' is set
+        if ($pkiDeposittransitchequeID === null || (is_array($pkiDeposittransitchequeID) && count($pkiDeposittransitchequeID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiDeposittransitchequeID when calling deposittransitchequeGetCommunicationsendersV1'
+            );
+        }
+        if ($pkiDeposittransitchequeID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDeposittransitchequeID)?'null':'"'.$pkiDeposittransitchequeID.'"').' for "pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiDeposittransitchequeID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationsendersV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiDeposittransitchequeID)?'null':'"'.$pkiDeposittransitchequeID.'"').' for "pkiDeposittransitchequeID" when calling ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationsendersV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationsenders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

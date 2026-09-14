@@ -8,6 +8,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | ------------- | ------------- | ------------- |
 | [**deposittransitchequeBatchDownloadV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeBatchDownloadV1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/batchDownload | Download multiples attachments from a Deposittransitcheque |
 | [**deposittransitchequeGetAttachmentsV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetAttachmentsV1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getAttachments | Retrieve Deposittransitcheque&#39;s attachments |
+| [**deposittransitchequeGetCommunicationCountV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetCommunicationCountV1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationCount | Retrieve Communication count |
+| [**deposittransitchequeGetCommunicationListV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetCommunicationListV1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationList | Retrieve Communication list |
+| [**deposittransitchequeGetCommunicationrecipientsV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetCommunicationrecipientsV1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**deposittransitchequeGetCommunicationsendersV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetCommunicationsendersV1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationsenders | Retrieve Communication senders |
 | [**deposittransitchequeImportIntoEDMV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeImportIntoEDMV1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/importIntoEDM | Import attachments into the Deposittransitcheque |
 
 
@@ -119,6 +123,246 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\DeposittransitchequeGetAttachmentsV1Response**](../Model/DeposittransitchequeGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deposittransitchequeGetCommunicationCountV1()`
+
+```php
+deposittransitchequeGetCommunicationCountV1($pkiDeposittransitchequeID): \eZmaxAPI\Model\DeposittransitchequeGetCommunicationCountV1Response
+```
+
+Retrieve Communication count
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectDeposittransitchequeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiDeposittransitchequeID = 56; // int
+
+try {
+    $result = $apiInstance->deposittransitchequeGetCommunicationCountV1($pkiDeposittransitchequeID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectDeposittransitchequeApi->deposittransitchequeGetCommunicationCountV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiDeposittransitchequeID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\DeposittransitchequeGetCommunicationCountV1Response**](../Model/DeposittransitchequeGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deposittransitchequeGetCommunicationListV1()`
+
+```php
+deposittransitchequeGetCommunicationListV1($pkiDeposittransitchequeID): \eZmaxAPI\Model\DeposittransitchequeGetCommunicationListV1Response
+```
+
+Retrieve Communication list
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectDeposittransitchequeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiDeposittransitchequeID = 56; // int
+
+try {
+    $result = $apiInstance->deposittransitchequeGetCommunicationListV1($pkiDeposittransitchequeID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectDeposittransitchequeApi->deposittransitchequeGetCommunicationListV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiDeposittransitchequeID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\DeposittransitchequeGetCommunicationListV1Response**](../Model/DeposittransitchequeGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deposittransitchequeGetCommunicationrecipientsV1()`
+
+```php
+deposittransitchequeGetCommunicationrecipientsV1($pkiDeposittransitchequeID): \eZmaxAPI\Model\DeposittransitchequeGetCommunicationrecipientsV1Response
+```
+
+Retrieve Communication recipients
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectDeposittransitchequeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiDeposittransitchequeID = 56; // int
+
+try {
+    $result = $apiInstance->deposittransitchequeGetCommunicationrecipientsV1($pkiDeposittransitchequeID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectDeposittransitchequeApi->deposittransitchequeGetCommunicationrecipientsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiDeposittransitchequeID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\DeposittransitchequeGetCommunicationrecipientsV1Response**](../Model/DeposittransitchequeGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deposittransitchequeGetCommunicationsendersV1()`
+
+```php
+deposittransitchequeGetCommunicationsendersV1($pkiDeposittransitchequeID): \eZmaxAPI\Model\DeposittransitchequeGetCommunicationsendersV1Response
+```
+
+Retrieve Communication senders
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectDeposittransitchequeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiDeposittransitchequeID = 56; // int
+
+try {
+    $result = $apiInstance->deposittransitchequeGetCommunicationsendersV1($pkiDeposittransitchequeID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectDeposittransitchequeApi->deposittransitchequeGetCommunicationsendersV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiDeposittransitchequeID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\DeposittransitchequeGetCommunicationsendersV1Response**](../Model/DeposittransitchequeGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

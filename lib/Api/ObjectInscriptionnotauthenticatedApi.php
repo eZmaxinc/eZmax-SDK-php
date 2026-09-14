@@ -123,6 +123,7 @@ class ObjectInscriptionnotauthenticatedApi
                 'Inscription_Deals',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',
@@ -157,6 +158,7 @@ class ObjectInscriptionnotauthenticatedApi
                 'Inscription_Deals',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',
