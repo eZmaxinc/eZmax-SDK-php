@@ -94,6 +94,9 @@ class ObjectDepositApi
         'depositGetCommunicationsendersV1' => [
             'application/json',
         ],
+        'depositGetListV1' => [
+            'application/json',
+        ],
         'depositImportIntoEDMV1' => [
             'application/json',
         ],
@@ -180,6 +183,20 @@ class ObjectDepositApi
             'systemconfigurationtype' => [
                 'MultiCompanies',
                 'RealEstate',
+            ],
+            'permissions' => [
+                'Deposits_Access',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'depositGetListV1' => [
+            'systemconfigurationtype' => [
+                'All',
             ],
             'permissions' => [
                 'Deposits_Access',
@@ -2084,6 +2101,368 @@ class ObjectDepositApi
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation depositGetListV1
+     *
+     * Retrieve Deposit list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax iRowMax (optional)
+     * @param  int|null $iRowOffset iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage acceptLanguage (optional)
+     * @param  string|null $sFilter sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['depositGetListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\DepositGetListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function depositGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['depositGetListV1'][0])
+    {
+        list($response) = $this->depositGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation depositGetListV1WithHttpInfo
+     *
+     * Retrieve Deposit list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['depositGetListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\DepositGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function depositGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['depositGetListV1'][0])
+    {
+        $request = $this->depositGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\DepositGetListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 406:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\DepositGetListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\DepositGetListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation depositGetListV1Async
+     *
+     * Retrieve Deposit list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['depositGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function depositGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['depositGetListV1'][0])
+    {
+        return $this->depositGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation depositGetListV1AsyncWithHttpInfo
+     *
+     * Retrieve Deposit list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['depositGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function depositGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['depositGetListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\DepositGetListV1Response';
+        $request = $this->depositGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'depositGetListV1'
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['depositGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function depositGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['depositGetListV1'][0])
+    {
+
+
+        if ($iRowMax !== null && $iRowMax > 10000) {
+	    //throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectDepositApi.depositGetListV1, must be smaller than or equal to 10000.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($iRowMax)?'null':'"'.$iRowMax.'"').' for "iRowMax" when calling ObjectDepositApi.depositGetListV1, must be smaller than or equal to 10000.');
+        }
+        if ($iRowMax !== null && $iRowMax < 1) {
+	    //throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectDepositApi.depositGetListV1, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($iRowMax)?'null':'"'.$iRowMax.'"').' for "iRowMax" when calling ObjectDepositApi.depositGetListV1, must be bigger than or equal to 1.');
+        }
+        
+        if ($iRowOffset !== null && $iRowOffset < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$iRowOffset" when calling ObjectDepositApi.depositGetListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($iRowOffset)?'null':'"'.$iRowOffset.'"').' for "iRowOffset" when calling ObjectDepositApi.depositGetListV1, must be bigger than or equal to 0.');
+        }
+        
+
+
+
+        $resourcePath = '/1/object/deposit/getList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eOrderBy,
+            'eOrderBy', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowMax,
+            'iRowMax', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowOffset,
+            'iRowOffset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sFilter,
+            'sFilter', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($acceptLanguage !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($acceptLanguage);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', ],
             $contentType,
             $multipart
         );

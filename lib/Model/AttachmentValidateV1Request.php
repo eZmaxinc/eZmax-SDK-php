@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * AttachmentValidateV1Request Class Doc Comment
  *
  * @category Class
- * @description Request for PATCH /1/object/attachment/{pkiAttachmentID}/validate
+ * @description Request for POST /1/object/attachment/{pkiAttachmentID}/validate
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,7 +59,12 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $openAPITypes = [
-        'eAttachmentVerified' => '\eZmaxAPI\Model\FieldEAttachmentVerified'
+        'fkiAttachmentrejectreasonID' => 'int',
+        'eAttachmentVerified' => '\eZmaxAPI\Model\FieldEAttachmentVerified',
+        'tAttachmentRejectioncomment' => 'string',
+        'aSNotificationEmailAddress' => 'string[]',
+        'tNotificationMessage' => 'string',
+        'bNotificationIncludeAttachment' => 'bool'
     ];
 
     /**
@@ -70,7 +75,12 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
      * @psalm-var array<string, string|null>
      */
     protected static $openAPIFormats = [
-        'eAttachmentVerified' => null
+        'fkiAttachmentrejectreasonID' => null,
+        'eAttachmentVerified' => null,
+        'tAttachmentRejectioncomment' => null,
+        'aSNotificationEmailAddress' => null,
+        'tNotificationMessage' => null,
+        'bNotificationIncludeAttachment' => null
     ];
 
     /**
@@ -79,7 +89,12 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
      * @var boolean[]
      */
     protected static array $openAPINullables = [
-        'eAttachmentVerified' => false
+        'fkiAttachmentrejectreasonID' => false,
+        'eAttachmentVerified' => false,
+        'tAttachmentRejectioncomment' => false,
+        'aSNotificationEmailAddress' => false,
+        'tNotificationMessage' => false,
+        'bNotificationIncludeAttachment' => false
     ];
 
     /**
@@ -168,7 +183,12 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'eAttachmentVerified' => 'eAttachmentVerified'
+        'fkiAttachmentrejectreasonID' => 'fkiAttachmentrejectreasonID',
+        'eAttachmentVerified' => 'eAttachmentVerified',
+        'tAttachmentRejectioncomment' => 'tAttachmentRejectioncomment',
+        'aSNotificationEmailAddress' => 'a_sNotificationEmailAddress',
+        'tNotificationMessage' => 'tNotificationMessage',
+        'bNotificationIncludeAttachment' => 'bNotificationIncludeAttachment'
     ];
 
     /**
@@ -177,7 +197,12 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'eAttachmentVerified' => 'setEAttachmentVerified'
+        'fkiAttachmentrejectreasonID' => 'setFkiAttachmentrejectreasonID',
+        'eAttachmentVerified' => 'setEAttachmentVerified',
+        'tAttachmentRejectioncomment' => 'setTAttachmentRejectioncomment',
+        'aSNotificationEmailAddress' => 'setASNotificationEmailAddress',
+        'tNotificationMessage' => 'setTNotificationMessage',
+        'bNotificationIncludeAttachment' => 'setBNotificationIncludeAttachment'
     ];
 
     /**
@@ -186,7 +211,12 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'eAttachmentVerified' => 'getEAttachmentVerified'
+        'fkiAttachmentrejectreasonID' => 'getFkiAttachmentrejectreasonID',
+        'eAttachmentVerified' => 'getEAttachmentVerified',
+        'tAttachmentRejectioncomment' => 'getTAttachmentRejectioncomment',
+        'aSNotificationEmailAddress' => 'getASNotificationEmailAddress',
+        'tNotificationMessage' => 'getTNotificationMessage',
+        'bNotificationIncludeAttachment' => 'getBNotificationIncludeAttachment'
     ];
 
     /**
@@ -246,7 +276,12 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('fkiAttachmentrejectreasonID', $data ?? [], null);
         $this->setIfExists('eAttachmentVerified', $data ?? [], null);
+        $this->setIfExists('tAttachmentRejectioncomment', $data ?? [], null);
+        $this->setIfExists('aSNotificationEmailAddress', $data ?? [], null);
+        $this->setIfExists('tNotificationMessage', $data ?? [], null);
+        $this->setIfExists('bNotificationIncludeAttachment', $data ?? [], null);
     }
 
     /**
@@ -276,9 +311,34 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['fkiAttachmentrejectreasonID']) && ($this->container['fkiAttachmentrejectreasonID'] > 255)) {
+            $invalidProperties[] = "invalid value for 'fkiAttachmentrejectreasonID', must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['fkiAttachmentrejectreasonID']) && ($this->container['fkiAttachmentrejectreasonID'] < 0)) {
+            $invalidProperties[] = "invalid value for 'fkiAttachmentrejectreasonID', must be bigger than or equal to 0.";
+        }
+
         if ($this->container['eAttachmentVerified'] === null) {
             $invalidProperties[] = "'eAttachmentVerified' can't be null";
         }
+        //if (!is_null($this->container['tAttachmentRejectioncomment']) && !preg_match("/^.{0,65535}$/", $this->container['tAttachmentRejectioncomment'])) {
+        if (!is_null($this->container['tAttachmentRejectioncomment']) && !preg_match("/(*UTF8)^.{0,65535}$/", $this->container['tAttachmentRejectioncomment'])) {
+            //$invalidProperties[] = "invalid value for 'tAttachmentRejectioncomment', must be conform to the pattern /^.{0,65535}$/.";
+            $invalidProperties[] = "invalid value ".(is_null($this->container['tAttachmentRejectioncomment'])?'null':'"'.$this->container['tAttachmentRejectioncomment'].'"')." for 'tAttachmentRejectioncomment', must be conform to the pattern /^.{0,65535}$/.";
+        }
+
+        if ('string[]' !== 'array[]') {
+            if ($this->container['aSNotificationEmailAddress'] !== null && count($this->container['aSNotificationEmailAddress']) != count(array_unique($this->container['aSNotificationEmailAddress']))) {
+                $invalidProperties[] = "'aSNotificationEmailAddress' must be unique.";
+            }
+        }
+        //if (!is_null($this->container['tNotificationMessage']) && !preg_match("/^[\\s\\S]{0,65535}$/", $this->container['tNotificationMessage'])) {
+        if (!is_null($this->container['tNotificationMessage']) && !preg_match("/(*UTF8)^[\\s\\S]{0,65535}$/", $this->container['tNotificationMessage'])) {
+            //$invalidProperties[] = "invalid value for 'tNotificationMessage', must be conform to the pattern /^[\\s\\S]{0,65535}$/.";
+            $invalidProperties[] = "invalid value ".(is_null($this->container['tNotificationMessage'])?'null':'"'.$this->container['tNotificationMessage'].'"')." for 'tNotificationMessage', must be conform to the pattern /^[\\s\\S]{0,65535}$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -293,6 +353,49 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets fkiAttachmentrejectreasonID
+     *
+     * @return int|null
+     */
+    public function getFkiAttachmentrejectreasonID()
+    {
+	//return $this->container['fkiAttachmentrejectreasonID'];
+        return $this->container['fkiAttachmentrejectreasonID'];
+    }
+
+    /**
+     * Sets fkiAttachmentrejectreasonID
+     *
+     * @param int|null $fkiAttachmentrejectreasonID The unique ID of the Attachmentrejectreason
+     *
+     * @return self
+     */
+    public function setFkiAttachmentrejectreasonID($fkiAttachmentrejectreasonID)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($fkiAttachmentrejectreasonID)) {
+            //throw new \InvalidArgumentException('non-nullable fkiAttachmentrejectreasonID cannot be null');
+        //}
+        //if (($fkiAttachmentrejectreasonID > 255)) {
+        if (!is_null($fkiAttachmentrejectreasonID) && ($fkiAttachmentrejectreasonID > 255)) {
+            //throw new \InvalidArgumentException('invalid value for $fkiAttachmentrejectreasonID when calling AttachmentValidateV1Request., must be smaller than or equal to 255.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiAttachmentrejectreasonID)?'null':'"'.$fkiAttachmentrejectreasonID.'"').' for fkiAttachmentrejectreasonID when calling AttachmentValidateV1Request., must be smaller than or equal to 255.');
+        }
+        //if (($fkiAttachmentrejectreasonID < 0)) {
+        if (!is_null($fkiAttachmentrejectreasonID) && ($fkiAttachmentrejectreasonID < 0)) {
+            //throw new \InvalidArgumentException('invalid value for $fkiAttachmentrejectreasonID when calling AttachmentValidateV1Request., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiAttachmentrejectreasonID)?'null':'"'.$fkiAttachmentrejectreasonID.'"').' for fkiAttachmentrejectreasonID when calling AttachmentValidateV1Request., must be bigger than or equal to 0.');
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['fkiAttachmentrejectreasonID'] = $fkiAttachmentrejectreasonID;
+        $this->container['fkiAttachmentrejectreasonID'] = (is_null($fkiAttachmentrejectreasonID) ? null : (int) $fkiAttachmentrejectreasonID);
+
+        return $this;
+    }
 
     /**
      * Gets eAttachmentVerified
@@ -322,6 +425,149 @@ class AttachmentValidateV1Request implements ModelInterface, ArrayAccess, \JsonS
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
         //$this->container['eAttachmentVerified'] = $eAttachmentVerified;
         $this->container['eAttachmentVerified'] = $eAttachmentVerified;
+
+        return $this;
+    }
+
+    /**
+     * Gets tAttachmentRejectioncomment
+     *
+     * @return string|null
+     */
+    public function getTAttachmentRejectioncomment()
+    {
+	//return $this->container['tAttachmentRejectioncomment'];
+        return is_null($this->container['tAttachmentRejectioncomment']) ? null : trim($this->container['tAttachmentRejectioncomment']);
+    }
+
+    /**
+     * Sets tAttachmentRejectioncomment
+     *
+     * @param string|null $tAttachmentRejectioncomment The rejectioncomment of the Attachment
+     *
+     * @return self
+     */
+    public function setTAttachmentRejectioncomment($tAttachmentRejectioncomment)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($tAttachmentRejectioncomment)) {
+            //throw new \InvalidArgumentException('non-nullable tAttachmentRejectioncomment cannot be null');
+        //}
+
+        //if ((!preg_match("/^.{0,65535}$/", ObjectSerializer::toString($tAttachmentRejectioncomment)))) {
+        if (!is_null($tAttachmentRejectioncomment) && (!preg_match("/(*UTF8)^.{0,65535}$/", ObjectSerializer::toString($tAttachmentRejectioncomment)))) {
+            //throw new \InvalidArgumentException("invalid value for \$tAttachmentRejectioncomment when calling AttachmentValidateV1Request., must conform to the pattern /^.{0,65535}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($tAttachmentRejectioncomment)?'null':'"'.$tAttachmentRejectioncomment.'"')." for tAttachmentRejectioncomment when calling AttachmentValidateV1Request., must conform to the pattern /^.{0,65535}$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['tAttachmentRejectioncomment'] = $tAttachmentRejectioncomment;
+        $this->container['tAttachmentRejectioncomment'] = (is_null($tAttachmentRejectioncomment) ? null : trim((string) $tAttachmentRejectioncomment));
+
+        return $this;
+    }
+
+    /**
+     * Gets aSNotificationEmailAddress
+     *
+     * @return string[]|null
+     */
+    public function getASNotificationEmailAddress()
+    {
+	//return $this->container['aSNotificationEmailAddress'];
+        return $this->container['aSNotificationEmailAddress'];
+    }
+
+    /**
+     * Sets aSNotificationEmailAddress
+     *
+     * @param string[]|null $aSNotificationEmailAddress A list of email addresses to send a rejection notification to.
+     *
+     * @return self
+     */
+    public function setASNotificationEmailAddress($aSNotificationEmailAddress)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($aSNotificationEmailAddress)) {
+            //throw new \InvalidArgumentException('non-nullable aSNotificationEmailAddress cannot be null');
+        //}
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['aSNotificationEmailAddress'] = $aSNotificationEmailAddress;
+        $this->container['aSNotificationEmailAddress'] = (is_null($aSNotificationEmailAddress) ? null : $aSNotificationEmailAddress);
+
+        return $this;
+    }
+
+    /**
+     * Gets tNotificationMessage
+     *
+     * @return string|null
+     */
+    public function getTNotificationMessage()
+    {
+	//return $this->container['tNotificationMessage'];
+        return is_null($this->container['tNotificationMessage']) ? null : trim($this->container['tNotificationMessage']);
+    }
+
+    /**
+     * Sets tNotificationMessage
+     *
+     * @param string|null $tNotificationMessage The email body to send to the notification recipients.
+     *
+     * @return self
+     */
+    public function setTNotificationMessage($tNotificationMessage)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($tNotificationMessage)) {
+            //throw new \InvalidArgumentException('non-nullable tNotificationMessage cannot be null');
+        //}
+
+        //if ((!preg_match("/^[\\s\\S]{0,65535}$/", ObjectSerializer::toString($tNotificationMessage)))) {
+        if (!is_null($tNotificationMessage) && (!preg_match("/(*UTF8)^[\\s\\S]{0,65535}$/", ObjectSerializer::toString($tNotificationMessage)))) {
+            //throw new \InvalidArgumentException("invalid value for \$tNotificationMessage when calling AttachmentValidateV1Request., must conform to the pattern /^[\\s\\S]{0,65535}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($tNotificationMessage)?'null':'"'.$tNotificationMessage.'"')." for tNotificationMessage when calling AttachmentValidateV1Request., must conform to the pattern /^[\\s\\S]{0,65535}$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['tNotificationMessage'] = $tNotificationMessage;
+        $this->container['tNotificationMessage'] = (is_null($tNotificationMessage) ? null : trim((string) $tNotificationMessage));
+
+        return $this;
+    }
+
+    /**
+     * Gets bNotificationIncludeAttachment
+     *
+     * @return bool|null
+     */
+    public function getBNotificationIncludeAttachment()
+    {
+	//return $this->container['bNotificationIncludeAttachment'];
+        return $this->container['bNotificationIncludeAttachment'];
+    }
+
+    /**
+     * Sets bNotificationIncludeAttachment
+     *
+     * @param bool|null $bNotificationIncludeAttachment Should a copy of the attachment be included in the email.
+     *
+     * @return self
+     */
+    public function setBNotificationIncludeAttachment($bNotificationIncludeAttachment)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($bNotificationIncludeAttachment)) {
+            //throw new \InvalidArgumentException('non-nullable bNotificationIncludeAttachment cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['bNotificationIncludeAttachment'] = $bNotificationIncludeAttachment;
+        $this->container['bNotificationIncludeAttachment'] = (is_null($bNotificationIncludeAttachment) ? null : (bool) $bNotificationIncludeAttachment);
 
         return $this;
     }

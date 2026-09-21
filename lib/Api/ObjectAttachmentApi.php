@@ -79,10 +79,16 @@ class ObjectAttachmentApi
         'attachmentDeleteV1' => [
             'application/json',
         ],
+        'attachmentDocumentTypeV1' => [
+            'application/json',
+        ],
         'attachmentDownloadV1' => [
             'application/json',
         ],
         'attachmentGetAttachmentlogsV1' => [
+            'application/json',
+        ],
+        'attachmentPrivacyV1' => [
             'application/json',
         ],
         'attachmentRenameV1' => [
@@ -99,6 +105,20 @@ class ObjectAttachmentApi
     /** @var array[] $objEzmaxConfig **/
     public const objEzmaxConfig = [
         'attachmentDeleteV1' => [
+            'systemconfigurationtype' => [
+                'All',
+            ],
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'attachmentDocumentTypeV1' => [
             'systemconfigurationtype' => [
                 'All',
             ],
@@ -138,6 +158,20 @@ class ObjectAttachmentApi
             ],
             'usertypeextra' => [
                 'AgentBroker',
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'attachmentPrivacyV1' => [
+            'systemconfigurationtype' => [
+                'All',
+            ],
+            'permissions' => [
+                'All',
+            ],
+            'usertypeextra' => [
             ],
             'authorizationsources' => [
                 'Authorization',
@@ -525,6 +559,361 @@ class ObjectAttachmentApi
                 }
             } else {
                 $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation attachmentDocumentTypeV1
+     *
+     * Change attachment document type
+     *
+     * @param  int $pkiAttachmentID pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentDocumentTypeV1Request $attachmentDocumentTypeV1Request attachmentDocumentTypeV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDocumentTypeV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\AttachmentDocumentTypeV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function attachmentDocumentTypeV1($pkiAttachmentID, $attachmentDocumentTypeV1Request, string $contentType = self::contentTypes['attachmentDocumentTypeV1'][0])
+    {
+        list($response) = $this->attachmentDocumentTypeV1WithHttpInfo($pkiAttachmentID, $attachmentDocumentTypeV1Request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation attachmentDocumentTypeV1WithHttpInfo
+     *
+     * Change attachment document type
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentDocumentTypeV1Request $attachmentDocumentTypeV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDocumentTypeV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\AttachmentDocumentTypeV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function attachmentDocumentTypeV1WithHttpInfo($pkiAttachmentID, $attachmentDocumentTypeV1Request, string $contentType = self::contentTypes['attachmentDocumentTypeV1'][0])
+    {
+        $request = $this->attachmentDocumentTypeV1Request($pkiAttachmentID, $attachmentDocumentTypeV1Request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\AttachmentDocumentTypeV1Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\AttachmentDocumentTypeV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\AttachmentDocumentTypeV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation attachmentDocumentTypeV1Async
+     *
+     * Change attachment document type
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentDocumentTypeV1Request $attachmentDocumentTypeV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDocumentTypeV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentDocumentTypeV1Async($pkiAttachmentID, $attachmentDocumentTypeV1Request, string $contentType = self::contentTypes['attachmentDocumentTypeV1'][0])
+    {
+        return $this->attachmentDocumentTypeV1AsyncWithHttpInfo($pkiAttachmentID, $attachmentDocumentTypeV1Request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation attachmentDocumentTypeV1AsyncWithHttpInfo
+     *
+     * Change attachment document type
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentDocumentTypeV1Request $attachmentDocumentTypeV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDocumentTypeV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentDocumentTypeV1AsyncWithHttpInfo($pkiAttachmentID, $attachmentDocumentTypeV1Request, string $contentType = self::contentTypes['attachmentDocumentTypeV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\AttachmentDocumentTypeV1Response';
+        $request = $this->attachmentDocumentTypeV1Request($pkiAttachmentID, $attachmentDocumentTypeV1Request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'attachmentDocumentTypeV1'
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentDocumentTypeV1Request $attachmentDocumentTypeV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentDocumentTypeV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function attachmentDocumentTypeV1Request($pkiAttachmentID, $attachmentDocumentTypeV1Request, string $contentType = self::contentTypes['attachmentDocumentTypeV1'][0])
+    {
+
+        // verify the required parameter 'pkiAttachmentID' is set
+        if ($pkiAttachmentID === null || (is_array($pkiAttachmentID) && count($pkiAttachmentID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiAttachmentID when calling attachmentDocumentTypeV1'
+            );
+        }
+        if ($pkiAttachmentID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiAttachmentID" when calling ObjectAttachmentApi.attachmentDocumentTypeV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiAttachmentID)?'null':'"'.$pkiAttachmentID.'"').' for "pkiAttachmentID" when calling ObjectAttachmentApi.attachmentDocumentTypeV1, must be bigger than or equal to 0.');
+        }
+        
+        // verify the required parameter 'attachmentDocumentTypeV1Request' is set
+        if ($attachmentDocumentTypeV1Request === null || (is_array($attachmentDocumentTypeV1Request) && count($attachmentDocumentTypeV1Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $attachmentDocumentTypeV1Request when calling attachmentDocumentTypeV1'
+            );
+        }
+
+
+        $resourcePath = '/1/object/attachment/{pkiAttachmentID}/documentType';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiAttachmentID !== null) {
+            $resourcePath = str_replace(
+                '{pkiAttachmentID}',
+                ObjectSerializer::toPathValue($pkiAttachmentID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($attachmentDocumentTypeV1Request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                try {
+                    $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($attachmentDocumentTypeV1Request), JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                $httpBody = $attachmentDocumentTypeV1Request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1141,6 +1530,361 @@ class ObjectAttachmentApi
 
         return new Request(
             'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation attachmentPrivacyV1
+     *
+     * Change the attachment privacy
+     *
+     * @param  int $pkiAttachmentID pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentPrivacyV1Request $attachmentPrivacyV1Request attachmentPrivacyV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentPrivacyV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\AttachmentPrivacyV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function attachmentPrivacyV1($pkiAttachmentID, $attachmentPrivacyV1Request, string $contentType = self::contentTypes['attachmentPrivacyV1'][0])
+    {
+        list($response) = $this->attachmentPrivacyV1WithHttpInfo($pkiAttachmentID, $attachmentPrivacyV1Request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation attachmentPrivacyV1WithHttpInfo
+     *
+     * Change the attachment privacy
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentPrivacyV1Request $attachmentPrivacyV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentPrivacyV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\AttachmentPrivacyV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function attachmentPrivacyV1WithHttpInfo($pkiAttachmentID, $attachmentPrivacyV1Request, string $contentType = self::contentTypes['attachmentPrivacyV1'][0])
+    {
+        $request = $this->attachmentPrivacyV1Request($pkiAttachmentID, $attachmentPrivacyV1Request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\AttachmentPrivacyV1Response',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\AttachmentPrivacyV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\AttachmentPrivacyV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation attachmentPrivacyV1Async
+     *
+     * Change the attachment privacy
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentPrivacyV1Request $attachmentPrivacyV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentPrivacyV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentPrivacyV1Async($pkiAttachmentID, $attachmentPrivacyV1Request, string $contentType = self::contentTypes['attachmentPrivacyV1'][0])
+    {
+        return $this->attachmentPrivacyV1AsyncWithHttpInfo($pkiAttachmentID, $attachmentPrivacyV1Request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation attachmentPrivacyV1AsyncWithHttpInfo
+     *
+     * Change the attachment privacy
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentPrivacyV1Request $attachmentPrivacyV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentPrivacyV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function attachmentPrivacyV1AsyncWithHttpInfo($pkiAttachmentID, $attachmentPrivacyV1Request, string $contentType = self::contentTypes['attachmentPrivacyV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\AttachmentPrivacyV1Response';
+        $request = $this->attachmentPrivacyV1Request($pkiAttachmentID, $attachmentPrivacyV1Request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'attachmentPrivacyV1'
+     *
+     * @param  int $pkiAttachmentID (required)
+     * @param  \eZmaxAPI\Model\AttachmentPrivacyV1Request $attachmentPrivacyV1Request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attachmentPrivacyV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function attachmentPrivacyV1Request($pkiAttachmentID, $attachmentPrivacyV1Request, string $contentType = self::contentTypes['attachmentPrivacyV1'][0])
+    {
+
+        // verify the required parameter 'pkiAttachmentID' is set
+        if ($pkiAttachmentID === null || (is_array($pkiAttachmentID) && count($pkiAttachmentID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiAttachmentID when calling attachmentPrivacyV1'
+            );
+        }
+        if ($pkiAttachmentID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiAttachmentID" when calling ObjectAttachmentApi.attachmentPrivacyV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiAttachmentID)?'null':'"'.$pkiAttachmentID.'"').' for "pkiAttachmentID" when calling ObjectAttachmentApi.attachmentPrivacyV1, must be bigger than or equal to 0.');
+        }
+        
+        // verify the required parameter 'attachmentPrivacyV1Request' is set
+        if ($attachmentPrivacyV1Request === null || (is_array($attachmentPrivacyV1Request) && count($attachmentPrivacyV1Request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $attachmentPrivacyV1Request when calling attachmentPrivacyV1'
+            );
+        }
+
+
+        $resourcePath = '/1/object/attachment/{pkiAttachmentID}/privacy';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiAttachmentID !== null) {
+            $resourcePath = str_replace(
+                '{pkiAttachmentID}',
+                ObjectSerializer::toPathValue($pkiAttachmentID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($attachmentPrivacyV1Request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                try {
+                    $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($attachmentPrivacyV1Request), JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                $httpBody = $attachmentPrivacyV1Request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2228,12 +2972,12 @@ class ObjectAttachmentApi
             $secret = $this->config->getSecret();
             if ($secret !== '') {
                 //Let's sign the request
-                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'PATCH', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'POST', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
             }		
         }
 
         return new Request(
-            'PATCH',
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

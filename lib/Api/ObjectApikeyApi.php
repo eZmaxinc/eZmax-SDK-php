@@ -170,7 +170,6 @@ class ObjectApikeyApi
             ],
             'usertypeextra' => [
                 'Customer',
-                'EzsignUser',
             ],
             'authorizationsources' => [
                 'Authorization',

@@ -82,6 +82,18 @@ class ObjectFolderApi
         'folderGetAttachmentsV1' => [
             'application/json',
         ],
+        'folderGetCommunicationCountV1' => [
+            'application/json',
+        ],
+        'folderGetCommunicationListV1' => [
+            'application/json',
+        ],
+        'folderGetCommunicationrecipientsV1' => [
+            'application/json',
+        ],
+        'folderGetCommunicationsendersV1' => [
+            'application/json',
+        ],
         'folderImportIntoEDMV1' => [
             'application/json',
         ],
@@ -115,6 +127,74 @@ class ObjectFolderApi
                 'InternalDocument_Access',
             ],
             'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'folderGetCommunicationCountV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'InternalDocument_CreationModification',
+                'InternalDocument_Access',
+            ],
+            'usertypeextra' => [
+                'AgentBroker',
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'folderGetCommunicationListV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'InternalDocument_CreationModification',
+                'InternalDocument_Access',
+            ],
+            'usertypeextra' => [
+                'AgentBroker',
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'folderGetCommunicationrecipientsV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'InternalDocument_CreationModification',
+                'InternalDocument_Access',
+            ],
+            'usertypeextra' => [
+                'AgentBroker',
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'folderGetCommunicationsendersV1' => [
+            'systemconfigurationtype' => [
+                'MultiCompanies',
+                'RealEstate',
+            ],
+            'permissions' => [
+                'InternalDocument_CreationModification',
+                'InternalDocument_Access',
+            ],
+            'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',
@@ -763,6 +843,1238 @@ class ObjectFolderApi
         
 
         $resourcePath = '/1/object/folder/{pkiFolderID}/getAttachments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiFolderID !== null) {
+            $resourcePath = str_replace(
+                '{pkiFolderID}',
+                ObjectSerializer::toPathValue($pkiFolderID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation folderGetCommunicationCountV1
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiFolderID pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\FolderGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function folderGetCommunicationCountV1($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationCountV1'][0])
+    {
+        list($response) = $this->folderGetCommunicationCountV1WithHttpInfo($pkiFolderID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation folderGetCommunicationCountV1WithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\FolderGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function folderGetCommunicationCountV1WithHttpInfo($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationCountV1'][0])
+    {
+        $request = $this->folderGetCommunicationCountV1Request($pkiFolderID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\FolderGetCommunicationCountV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\FolderGetCommunicationCountV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\FolderGetCommunicationCountV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation folderGetCommunicationCountV1Async
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function folderGetCommunicationCountV1Async($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationCountV1'][0])
+    {
+        return $this->folderGetCommunicationCountV1AsyncWithHttpInfo($pkiFolderID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation folderGetCommunicationCountV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function folderGetCommunicationCountV1AsyncWithHttpInfo($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationCountV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\FolderGetCommunicationCountV1Response';
+        $request = $this->folderGetCommunicationCountV1Request($pkiFolderID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'folderGetCommunicationCountV1'
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function folderGetCommunicationCountV1Request($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationCountV1'][0])
+    {
+
+        // verify the required parameter 'pkiFolderID' is set
+        if ($pkiFolderID === null || (is_array($pkiFolderID) && count($pkiFolderID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiFolderID when calling folderGetCommunicationCountV1'
+            );
+        }
+        if ($pkiFolderID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationCountV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiFolderID)?'null':'"'.$pkiFolderID.'"').' for "pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationCountV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiFolderID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationCountV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiFolderID)?'null':'"'.$pkiFolderID.'"').' for "pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationCountV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/folder/{pkiFolderID}/getCommunicationCount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiFolderID !== null) {
+            $resourcePath = str_replace(
+                '{pkiFolderID}',
+                ObjectSerializer::toPathValue($pkiFolderID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation folderGetCommunicationListV1
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiFolderID pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\FolderGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function folderGetCommunicationListV1($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationListV1'][0])
+    {
+        list($response) = $this->folderGetCommunicationListV1WithHttpInfo($pkiFolderID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation folderGetCommunicationListV1WithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\FolderGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function folderGetCommunicationListV1WithHttpInfo($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationListV1'][0])
+    {
+        $request = $this->folderGetCommunicationListV1Request($pkiFolderID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\FolderGetCommunicationListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\FolderGetCommunicationListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\FolderGetCommunicationListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation folderGetCommunicationListV1Async
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function folderGetCommunicationListV1Async($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationListV1'][0])
+    {
+        return $this->folderGetCommunicationListV1AsyncWithHttpInfo($pkiFolderID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation folderGetCommunicationListV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function folderGetCommunicationListV1AsyncWithHttpInfo($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\FolderGetCommunicationListV1Response';
+        $request = $this->folderGetCommunicationListV1Request($pkiFolderID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'folderGetCommunicationListV1'
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function folderGetCommunicationListV1Request($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationListV1'][0])
+    {
+
+        // verify the required parameter 'pkiFolderID' is set
+        if ($pkiFolderID === null || (is_array($pkiFolderID) && count($pkiFolderID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiFolderID when calling folderGetCommunicationListV1'
+            );
+        }
+        if ($pkiFolderID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationListV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiFolderID)?'null':'"'.$pkiFolderID.'"').' for "pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationListV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiFolderID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiFolderID)?'null':'"'.$pkiFolderID.'"').' for "pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationListV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/folder/{pkiFolderID}/getCommunicationList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiFolderID !== null) {
+            $resourcePath = str_replace(
+                '{pkiFolderID}',
+                ObjectSerializer::toPathValue($pkiFolderID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation folderGetCommunicationrecipientsV1
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiFolderID pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\FolderGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function folderGetCommunicationrecipientsV1($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationrecipientsV1'][0])
+    {
+        list($response) = $this->folderGetCommunicationrecipientsV1WithHttpInfo($pkiFolderID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation folderGetCommunicationrecipientsV1WithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\FolderGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function folderGetCommunicationrecipientsV1WithHttpInfo($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationrecipientsV1'][0])
+    {
+        $request = $this->folderGetCommunicationrecipientsV1Request($pkiFolderID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\FolderGetCommunicationrecipientsV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\FolderGetCommunicationrecipientsV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\FolderGetCommunicationrecipientsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation folderGetCommunicationrecipientsV1Async
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function folderGetCommunicationrecipientsV1Async($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationrecipientsV1'][0])
+    {
+        return $this->folderGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiFolderID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation folderGetCommunicationrecipientsV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function folderGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationrecipientsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\FolderGetCommunicationrecipientsV1Response';
+        $request = $this->folderGetCommunicationrecipientsV1Request($pkiFolderID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'folderGetCommunicationrecipientsV1'
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function folderGetCommunicationrecipientsV1Request($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationrecipientsV1'][0])
+    {
+
+        // verify the required parameter 'pkiFolderID' is set
+        if ($pkiFolderID === null || (is_array($pkiFolderID) && count($pkiFolderID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiFolderID when calling folderGetCommunicationrecipientsV1'
+            );
+        }
+        if ($pkiFolderID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiFolderID)?'null':'"'.$pkiFolderID.'"').' for "pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiFolderID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiFolderID)?'null':'"'.$pkiFolderID.'"').' for "pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/folder/{pkiFolderID}/getCommunicationrecipients';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiFolderID !== null) {
+            $resourcePath = str_replace(
+                '{pkiFolderID}',
+                ObjectSerializer::toPathValue($pkiFolderID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation folderGetCommunicationsendersV1
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiFolderID pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\FolderGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function folderGetCommunicationsendersV1($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationsendersV1'][0])
+    {
+        list($response) = $this->folderGetCommunicationsendersV1WithHttpInfo($pkiFolderID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation folderGetCommunicationsendersV1WithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\FolderGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function folderGetCommunicationsendersV1WithHttpInfo($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationsendersV1'][0])
+    {
+        $request = $this->folderGetCommunicationsendersV1Request($pkiFolderID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\FolderGetCommunicationsendersV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\FolderGetCommunicationsendersV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\FolderGetCommunicationsendersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation folderGetCommunicationsendersV1Async
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function folderGetCommunicationsendersV1Async($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationsendersV1'][0])
+    {
+        return $this->folderGetCommunicationsendersV1AsyncWithHttpInfo($pkiFolderID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation folderGetCommunicationsendersV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function folderGetCommunicationsendersV1AsyncWithHttpInfo($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationsendersV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\FolderGetCommunicationsendersV1Response';
+        $request = $this->folderGetCommunicationsendersV1Request($pkiFolderID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'folderGetCommunicationsendersV1'
+     *
+     * @param  int $pkiFolderID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['folderGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function folderGetCommunicationsendersV1Request($pkiFolderID, string $contentType = self::contentTypes['folderGetCommunicationsendersV1'][0])
+    {
+
+        // verify the required parameter 'pkiFolderID' is set
+        if ($pkiFolderID === null || (is_array($pkiFolderID) && count($pkiFolderID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiFolderID when calling folderGetCommunicationsendersV1'
+            );
+        }
+        if ($pkiFolderID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiFolderID)?'null':'"'.$pkiFolderID.'"').' for "pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiFolderID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationsendersV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiFolderID)?'null':'"'.$pkiFolderID.'"').' for "pkiFolderID" when calling ObjectFolderApi.folderGetCommunicationsendersV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/folder/{pkiFolderID}/getCommunicationsenders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

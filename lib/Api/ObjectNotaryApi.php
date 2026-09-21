@@ -82,6 +82,21 @@ class ObjectNotaryApi
         'notaryGetAttachmentsV1' => [
             'application/json',
         ],
+        'notaryGetCommunicationCountV1' => [
+            'application/json',
+        ],
+        'notaryGetCommunicationListV1' => [
+            'application/json',
+        ],
+        'notaryGetCommunicationrecipientsV1' => [
+            'application/json',
+        ],
+        'notaryGetCommunicationsendersV1' => [
+            'application/json',
+        ],
+        'notaryGetListV1' => [
+            'application/json',
+        ],
         'notaryImportIntoEDMV1' => [
             'application/json',
         ],
@@ -111,6 +126,77 @@ class ObjectNotaryApi
             ],
             'permissions' => [
                 'Management_NotariesLawyers',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'notaryGetCommunicationCountV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_NotariesLawyers',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'notaryGetCommunicationListV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_NotariesLawyers',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'notaryGetCommunicationrecipientsV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_NotariesLawyers',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'notaryGetCommunicationsendersV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+            ],
+            'permissions' => [
+                'Management_NotariesLawyers',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'notaryGetListV1' => [
+            'systemconfigurationtype' => [
+                'All',
+            ],
+            'permissions' => [
+                'Management_NotariesLawyers',
+                'Ghacq_CreationModification',
             ],
             'usertypeextra' => [
             ],
@@ -772,6 +858,1584 @@ class ObjectNotaryApi
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation notaryGetCommunicationCountV1
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiNotaryID pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\NotaryGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function notaryGetCommunicationCountV1($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationCountV1'][0])
+    {
+        list($response) = $this->notaryGetCommunicationCountV1WithHttpInfo($pkiNotaryID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation notaryGetCommunicationCountV1WithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\NotaryGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function notaryGetCommunicationCountV1WithHttpInfo($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationCountV1'][0])
+    {
+        $request = $this->notaryGetCommunicationCountV1Request($pkiNotaryID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\NotaryGetCommunicationCountV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\NotaryGetCommunicationCountV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\NotaryGetCommunicationCountV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation notaryGetCommunicationCountV1Async
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetCommunicationCountV1Async($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationCountV1'][0])
+    {
+        return $this->notaryGetCommunicationCountV1AsyncWithHttpInfo($pkiNotaryID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation notaryGetCommunicationCountV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetCommunicationCountV1AsyncWithHttpInfo($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationCountV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\NotaryGetCommunicationCountV1Response';
+        $request = $this->notaryGetCommunicationCountV1Request($pkiNotaryID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'notaryGetCommunicationCountV1'
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function notaryGetCommunicationCountV1Request($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationCountV1'][0])
+    {
+
+        // verify the required parameter 'pkiNotaryID' is set
+        if ($pkiNotaryID === null || (is_array($pkiNotaryID) && count($pkiNotaryID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiNotaryID when calling notaryGetCommunicationCountV1'
+            );
+        }
+        if ($pkiNotaryID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiNotaryID" when calling ObjectNotaryApi.notaryGetCommunicationCountV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiNotaryID)?'null':'"'.$pkiNotaryID.'"').' for "pkiNotaryID" when calling ObjectNotaryApi.notaryGetCommunicationCountV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/notary/{pkiNotaryID}/getCommunicationCount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiNotaryID !== null) {
+            $resourcePath = str_replace(
+                '{pkiNotaryID}',
+                ObjectSerializer::toPathValue($pkiNotaryID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation notaryGetCommunicationListV1
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiNotaryID pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\NotaryGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function notaryGetCommunicationListV1($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationListV1'][0])
+    {
+        list($response) = $this->notaryGetCommunicationListV1WithHttpInfo($pkiNotaryID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation notaryGetCommunicationListV1WithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\NotaryGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function notaryGetCommunicationListV1WithHttpInfo($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationListV1'][0])
+    {
+        $request = $this->notaryGetCommunicationListV1Request($pkiNotaryID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\NotaryGetCommunicationListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\NotaryGetCommunicationListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\NotaryGetCommunicationListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation notaryGetCommunicationListV1Async
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetCommunicationListV1Async($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationListV1'][0])
+    {
+        return $this->notaryGetCommunicationListV1AsyncWithHttpInfo($pkiNotaryID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation notaryGetCommunicationListV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetCommunicationListV1AsyncWithHttpInfo($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\NotaryGetCommunicationListV1Response';
+        $request = $this->notaryGetCommunicationListV1Request($pkiNotaryID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'notaryGetCommunicationListV1'
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function notaryGetCommunicationListV1Request($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationListV1'][0])
+    {
+
+        // verify the required parameter 'pkiNotaryID' is set
+        if ($pkiNotaryID === null || (is_array($pkiNotaryID) && count($pkiNotaryID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiNotaryID when calling notaryGetCommunicationListV1'
+            );
+        }
+        if ($pkiNotaryID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiNotaryID" when calling ObjectNotaryApi.notaryGetCommunicationListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiNotaryID)?'null':'"'.$pkiNotaryID.'"').' for "pkiNotaryID" when calling ObjectNotaryApi.notaryGetCommunicationListV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/notary/{pkiNotaryID}/getCommunicationList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiNotaryID !== null) {
+            $resourcePath = str_replace(
+                '{pkiNotaryID}',
+                ObjectSerializer::toPathValue($pkiNotaryID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation notaryGetCommunicationrecipientsV1
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiNotaryID pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\NotaryGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function notaryGetCommunicationrecipientsV1($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationrecipientsV1'][0])
+    {
+        list($response) = $this->notaryGetCommunicationrecipientsV1WithHttpInfo($pkiNotaryID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation notaryGetCommunicationrecipientsV1WithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\NotaryGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function notaryGetCommunicationrecipientsV1WithHttpInfo($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationrecipientsV1'][0])
+    {
+        $request = $this->notaryGetCommunicationrecipientsV1Request($pkiNotaryID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\NotaryGetCommunicationrecipientsV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\NotaryGetCommunicationrecipientsV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\NotaryGetCommunicationrecipientsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation notaryGetCommunicationrecipientsV1Async
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetCommunicationrecipientsV1Async($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationrecipientsV1'][0])
+    {
+        return $this->notaryGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiNotaryID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation notaryGetCommunicationrecipientsV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationrecipientsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\NotaryGetCommunicationrecipientsV1Response';
+        $request = $this->notaryGetCommunicationrecipientsV1Request($pkiNotaryID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'notaryGetCommunicationrecipientsV1'
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function notaryGetCommunicationrecipientsV1Request($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationrecipientsV1'][0])
+    {
+
+        // verify the required parameter 'pkiNotaryID' is set
+        if ($pkiNotaryID === null || (is_array($pkiNotaryID) && count($pkiNotaryID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiNotaryID when calling notaryGetCommunicationrecipientsV1'
+            );
+        }
+        if ($pkiNotaryID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiNotaryID" when calling ObjectNotaryApi.notaryGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiNotaryID)?'null':'"'.$pkiNotaryID.'"').' for "pkiNotaryID" when calling ObjectNotaryApi.notaryGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/notary/{pkiNotaryID}/getCommunicationrecipients';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiNotaryID !== null) {
+            $resourcePath = str_replace(
+                '{pkiNotaryID}',
+                ObjectSerializer::toPathValue($pkiNotaryID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation notaryGetCommunicationsendersV1
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiNotaryID pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\NotaryGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function notaryGetCommunicationsendersV1($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationsendersV1'][0])
+    {
+        list($response) = $this->notaryGetCommunicationsendersV1WithHttpInfo($pkiNotaryID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation notaryGetCommunicationsendersV1WithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\NotaryGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function notaryGetCommunicationsendersV1WithHttpInfo($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationsendersV1'][0])
+    {
+        $request = $this->notaryGetCommunicationsendersV1Request($pkiNotaryID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\NotaryGetCommunicationsendersV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\NotaryGetCommunicationsendersV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\NotaryGetCommunicationsendersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation notaryGetCommunicationsendersV1Async
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetCommunicationsendersV1Async($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationsendersV1'][0])
+    {
+        return $this->notaryGetCommunicationsendersV1AsyncWithHttpInfo($pkiNotaryID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation notaryGetCommunicationsendersV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetCommunicationsendersV1AsyncWithHttpInfo($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationsendersV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\NotaryGetCommunicationsendersV1Response';
+        $request = $this->notaryGetCommunicationsendersV1Request($pkiNotaryID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'notaryGetCommunicationsendersV1'
+     *
+     * @param  int $pkiNotaryID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function notaryGetCommunicationsendersV1Request($pkiNotaryID, string $contentType = self::contentTypes['notaryGetCommunicationsendersV1'][0])
+    {
+
+        // verify the required parameter 'pkiNotaryID' is set
+        if ($pkiNotaryID === null || (is_array($pkiNotaryID) && count($pkiNotaryID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiNotaryID when calling notaryGetCommunicationsendersV1'
+            );
+        }
+        if ($pkiNotaryID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiNotaryID" when calling ObjectNotaryApi.notaryGetCommunicationsendersV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiNotaryID)?'null':'"'.$pkiNotaryID.'"').' for "pkiNotaryID" when calling ObjectNotaryApi.notaryGetCommunicationsendersV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/notary/{pkiNotaryID}/getCommunicationsenders';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiNotaryID !== null) {
+            $resourcePath = str_replace(
+                '{pkiNotaryID}',
+                ObjectSerializer::toPathValue($pkiNotaryID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation notaryGetListV1
+     *
+     * Retrieve Notary list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax iRowMax (optional)
+     * @param  int|null $iRowOffset iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage acceptLanguage (optional)
+     * @param  string|null $sFilter sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\NotaryGetListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function notaryGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['notaryGetListV1'][0])
+    {
+        list($response) = $this->notaryGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation notaryGetListV1WithHttpInfo
+     *
+     * Retrieve Notary list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\NotaryGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function notaryGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['notaryGetListV1'][0])
+    {
+        $request = $this->notaryGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\NotaryGetListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 406:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\NotaryGetListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\NotaryGetListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation notaryGetListV1Async
+     *
+     * Retrieve Notary list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['notaryGetListV1'][0])
+    {
+        return $this->notaryGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation notaryGetListV1AsyncWithHttpInfo
+     *
+     * Retrieve Notary list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function notaryGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['notaryGetListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\NotaryGetListV1Response';
+        $request = $this->notaryGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'notaryGetListV1'
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['notaryGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function notaryGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['notaryGetListV1'][0])
+    {
+
+
+        if ($iRowMax !== null && $iRowMax > 10000) {
+	    //throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectNotaryApi.notaryGetListV1, must be smaller than or equal to 10000.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($iRowMax)?'null':'"'.$iRowMax.'"').' for "iRowMax" when calling ObjectNotaryApi.notaryGetListV1, must be smaller than or equal to 10000.');
+        }
+        if ($iRowMax !== null && $iRowMax < 1) {
+	    //throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectNotaryApi.notaryGetListV1, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($iRowMax)?'null':'"'.$iRowMax.'"').' for "iRowMax" when calling ObjectNotaryApi.notaryGetListV1, must be bigger than or equal to 1.');
+        }
+        
+        if ($iRowOffset !== null && $iRowOffset < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$iRowOffset" when calling ObjectNotaryApi.notaryGetListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($iRowOffset)?'null':'"'.$iRowOffset.'"').' for "iRowOffset" when calling ObjectNotaryApi.notaryGetListV1, must be bigger than or equal to 0.');
+        }
+        
+
+
+
+        $resourcePath = '/1/object/notary/getList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eOrderBy,
+            'eOrderBy', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowMax,
+            'iRowMax', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowOffset,
+            'iRowOffset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sFilter,
+            'sFilter', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($acceptLanguage !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($acceptLanguage);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', ],
             $contentType,
             $multipart
         );

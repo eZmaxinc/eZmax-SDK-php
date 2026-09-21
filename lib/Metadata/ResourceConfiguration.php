@@ -42,6 +42,7 @@ class ResourceConfiguration {
         public readonly ?ResourceAttachmentbilling $eResourceAttachmentbilling,
         public readonly ?bool $bResourceAttachmentimport,
         public readonly ?ResourceAttachmentlocation $eResourceAttachmentlocation,
+        public readonly ?bool $bResourceAttachmentvalidation,
         public readonly bool $bResourceCommunication,
         public readonly bool $bResourceDocumenttype,
         public readonly array $a_eResourceattachementprivacy,
@@ -96,8 +97,13 @@ class ResourceConfiguration {
                 true,
                 ResourceAttachmentlocation::Global,
                 false,
+                false,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Adjustments_CreationModification,
@@ -115,9 +121,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_BrokersModification,
@@ -135,9 +146,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_PaymentMethods,
@@ -155,9 +171,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_BrokersModification,
@@ -177,15 +198,16 @@ class ResourceConfiguration {
                 ResourceAttachmentlocation::Global,
                 true,
                 true,
+                true,
                 [
                     ResourceattachmentprivacyRole::Administration->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Administration,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerBuyerContract->value => [
                         ResourceattachmentprivacyPermission::All,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                 ],
                 [
@@ -208,9 +230,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_BrokersModification,
@@ -228,9 +255,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Free,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::Customer->value => new ResourceConfiguration(
@@ -244,9 +276,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_Clients,
@@ -265,9 +302,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Vetrx_CreationModification,
@@ -285,9 +327,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Deposits_CreationModification,
@@ -305,9 +352,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::DepositTransitCheque_Access,
@@ -325,9 +377,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Folder,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Inscription_Deals,
@@ -345,9 +402,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Payments_ElectronicsFundsTransfer,
@@ -365,9 +427,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_Employees,
@@ -385,9 +452,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_ExternalBrokers,
@@ -405,9 +477,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Ezcom_CreationModification,
@@ -425,9 +502,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Ezcom_CreationModification,
@@ -445,9 +527,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Free,
                 false,
                 ResourceAttachmentlocation::PerUser,
+                false,
                 true,
                 false,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::EzsigndocumentProof->value => new ResourceConfiguration(
@@ -461,9 +548,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Free,
                 false,
                 ResourceAttachmentlocation::PerUser,
+                false,
                 true,
                 false,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::EzsigndocumentProofdocument->value => new ResourceConfiguration(
@@ -477,9 +569,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Free,
                 false,
                 ResourceAttachmentlocation::PerUser,
+                false,
                 true,
                 false,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::EzsigndocumentAttachment->value => new ResourceConfiguration(
@@ -493,9 +590,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Free,
                 false,
                 ResourceAttachmentlocation::PerUser,
+                false,
                 true,
                 false,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::Ezsigndocumentgroup->value => new ResourceConfiguration(
@@ -509,9 +611,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Free,
                 false,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 false,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::EzsigndocumentgroupProof->value => new ResourceConfiguration(
@@ -525,9 +632,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Free,
                 false,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 false,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::EzsigndocumentgroupProofdocument->value => new ResourceConfiguration(
@@ -541,9 +653,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Free,
                 false,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 false,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::Folder->value => new ResourceConfiguration(
@@ -557,9 +674,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::Franchiseagence->value => new ResourceConfiguration(
@@ -573,9 +695,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::Franchisebroker->value => new ResourceConfiguration(
@@ -589,9 +716,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::Franchisecomplaint->value => new ResourceConfiguration(
@@ -605,9 +737,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::Franchisefranchise->value => new ResourceConfiguration(
@@ -621,9 +758,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::Franchiseoffice->value => new ResourceConfiguration(
@@ -637,9 +779,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [],
             ),
             Resource::Ghacqcontract->value => new ResourceConfiguration(
@@ -653,9 +800,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Ghacq_Access,
@@ -675,21 +827,22 @@ class ResourceConfiguration {
                 ResourceAttachmentlocation::Global,
                 true,
                 true,
+                true,
                 [
                     ResourceattachmentprivacyRole::Administration->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Administration,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerInscriptor->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Inscriptor,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerSeller->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Inscriptor,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                 ],
                 [
@@ -714,21 +867,22 @@ class ResourceConfiguration {
                 ResourceAttachmentlocation::Global,
                 true,
                 true,
+                true,
                 [
                     ResourceattachmentprivacyRole::Administration->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Administration,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerInscriptor->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Inscriptor,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerSeller->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Inscriptor,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                 ],
                 [
@@ -754,6 +908,7 @@ class ResourceConfiguration {
                 ResourceAttachmentlocation::Global,
                 true,
                 true,
+                true,
                 [
                     ResourceattachmentprivacyRole::Administration->value => [
                         ResourceattachmentprivacyPermission::All,
@@ -762,12 +917,12 @@ class ResourceConfiguration {
                     ResourceattachmentprivacyRole::AgentBrokerInscriptor->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Inscriptor,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerSeller->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Inscriptor,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                 ],
                 [
@@ -790,9 +945,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Invoicing_Invoicing,
@@ -810,9 +970,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Inscription_LeadsCreationModification,
@@ -830,9 +995,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Vetrx_Access,
@@ -850,9 +1020,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Vetrx_Access,
@@ -870,9 +1045,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_NotariesLawyers,
@@ -890,6 +1070,7 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
                 [
@@ -915,17 +1096,18 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Folder,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
                 [
                     ResourceattachmentprivacyRole::Administration->value => [
                         ResourceattachmentprivacyPermission::All,
                         ResourceattachmentprivacyPermission::Administration,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerOtherIncome->value => [
                         ResourceattachmentprivacyPermission::All,
-                        ResourceattachmentprivacyPermission::SpecificUser,
+                        ResourceattachmentprivacyPermission::Specificuser,
                     ],
                 ],
                 [
@@ -945,6 +1127,7 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
                 [
@@ -970,9 +1153,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Purchases_CreationModification,
@@ -990,9 +1178,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Reconciliation_ReconciliationBank,
@@ -1012,9 +1205,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Folder,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_RefusedPromisestoPurchase,
@@ -1032,6 +1230,7 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
                 [
@@ -1057,9 +1256,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_Suppliers,
@@ -1077,9 +1281,14 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Management_ContentTemplate,
@@ -1097,14 +1306,36 @@ class ResourceConfiguration {
                 ResourceAttachmentbilling::Size,
                 true,
                 ResourceAttachmentlocation::Global,
+                false,
                 true,
                 true,
-                [],
+                [
+                    ResourceattachmentprivacyRole::Administration->value => [
+                        ResourceattachmentprivacyPermission::All,
+                    ],
+                ],
                 [
                     ResourcepermissionContext::Default->value => [
                         Modulesection::Tranq_Access,
                     ],
                 ],
+            ),
+            Resource::Ezsignfolder->value => new ResourceConfiguration(
+                Resource::Ezsignfolder,
+                'Dossier eZsign',
+                'eZsign Folder',
+                'Ezsignfolder',
+                'fkiEzsignfolderID',
+                true,
+                false,
+                ResourceAttachmentbilling::Free,
+                false,
+                ResourceAttachmentlocation::Global,
+                false,
+                true,
+                false,
+                [],
+                [],
             ),
         ];
     }

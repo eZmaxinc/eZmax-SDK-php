@@ -61,6 +61,7 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'fkiAttachmentID' => 'int',
         'fkiUserID' => 'int',
+        'objUser' => '\eZmaxAPI\Model\CustomUserNameResponse',
         'dtAttachmentlogDatetime' => 'string',
         'eAttachmentlogType' => '\eZmaxAPI\Model\FieldEAttachmentlogType',
         'sAttachmentlogDetail' => 'string'
@@ -76,6 +77,7 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPIFormats = [
         'fkiAttachmentID' => null,
         'fkiUserID' => null,
+        'objUser' => null,
         'dtAttachmentlogDatetime' => null,
         'eAttachmentlogType' => null,
         'sAttachmentlogDetail' => null
@@ -89,6 +91,7 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static array $openAPINullables = [
         'fkiAttachmentID' => false,
         'fkiUserID' => false,
+        'objUser' => false,
         'dtAttachmentlogDatetime' => false,
         'eAttachmentlogType' => false,
         'sAttachmentlogDetail' => false
@@ -182,6 +185,7 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $attributeMap = [
         'fkiAttachmentID' => 'fkiAttachmentID',
         'fkiUserID' => 'fkiUserID',
+        'objUser' => 'objUser',
         'dtAttachmentlogDatetime' => 'dtAttachmentlogDatetime',
         'eAttachmentlogType' => 'eAttachmentlogType',
         'sAttachmentlogDetail' => 'sAttachmentlogDetail'
@@ -195,6 +199,7 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $setters = [
         'fkiAttachmentID' => 'setFkiAttachmentID',
         'fkiUserID' => 'setFkiUserID',
+        'objUser' => 'setObjUser',
         'dtAttachmentlogDatetime' => 'setDtAttachmentlogDatetime',
         'eAttachmentlogType' => 'setEAttachmentlogType',
         'sAttachmentlogDetail' => 'setSAttachmentlogDetail'
@@ -208,6 +213,7 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $getters = [
         'fkiAttachmentID' => 'getFkiAttachmentID',
         'fkiUserID' => 'getFkiUserID',
+        'objUser' => 'getObjUser',
         'dtAttachmentlogDatetime' => 'getDtAttachmentlogDatetime',
         'eAttachmentlogType' => 'getEAttachmentlogType',
         'sAttachmentlogDetail' => 'getSAttachmentlogDetail'
@@ -272,6 +278,7 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $this->setIfExists('fkiAttachmentID', $data ?? [], null);
         $this->setIfExists('fkiUserID', $data ?? [], null);
+        $this->setIfExists('objUser', $data ?? [], null);
         $this->setIfExists('dtAttachmentlogDatetime', $data ?? [], null);
         $this->setIfExists('eAttachmentlogType', $data ?? [], null);
         $this->setIfExists('sAttachmentlogDetail', $data ?? [], null);
@@ -318,6 +325,9 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'fkiUserID', must be bigger than or equal to 0.";
         }
 
+        if ($this->container['objUser'] === null) {
+            $invalidProperties[] = "'objUser' can't be null";
+        }
         if ($this->container['dtAttachmentlogDatetime'] === null) {
             $invalidProperties[] = "'dtAttachmentlogDatetime' can't be null";
         }
@@ -423,6 +433,38 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
         //$this->container['fkiUserID'] = $fkiUserID;
         $this->container['fkiUserID'] = (is_null($fkiUserID) ? null : (int) $fkiUserID);
+
+        return $this;
+    }
+
+    /**
+     * Gets objUser
+     *
+     * @return \eZmaxAPI\Model\CustomUserNameResponse
+     */
+    public function getObjUser()
+    {
+	//return $this->container['objUser'];
+        return $this->container['objUser'];
+    }
+
+    /**
+     * Sets objUser
+     *
+     * @param \eZmaxAPI\Model\CustomUserNameResponse $objUser objUser
+     *
+     * @return self
+     */
+    public function setObjUser($objUser)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objUser)) {
+            //throw new \InvalidArgumentException('non-nullable objUser cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['objUser'] = $objUser;
+        $this->container['objUser'] = $objUser;
 
         return $this;
     }

@@ -82,6 +82,21 @@ class ObjectOfficetaxreportApi
         'officetaxreportGetAttachmentsV1' => [
             'application/json',
         ],
+        'officetaxreportGetCommunicationCountV1' => [
+            'application/json',
+        ],
+        'officetaxreportGetCommunicationListV1' => [
+            'application/json',
+        ],
+        'officetaxreportGetCommunicationrecipientsV1' => [
+            'application/json',
+        ],
+        'officetaxreportGetCommunicationsendersV1' => [
+            'application/json',
+        ],
+        'officetaxreportGetListV1' => [
+            'application/json',
+        ],
         'officetaxreportImportIntoEDMV1' => [
             'application/json',
         ],
@@ -108,6 +123,80 @@ class ObjectOfficetaxreportApi
             'systemconfigurationtype' => [
                 'MultiCompanies',
                 'RealEstate',
+            ],
+            'permissions' => [
+                'Taxes_OfficeTaxesReport',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'officetaxreportGetCommunicationCountV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+                'MultiCompanies',
+            ],
+            'permissions' => [
+                'Taxes_OfficeTaxesReport',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'officetaxreportGetCommunicationListV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+                'MultiCompanies',
+            ],
+            'permissions' => [
+                'Taxes_OfficeTaxesReport',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'officetaxreportGetCommunicationrecipientsV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+                'MultiCompanies',
+            ],
+            'permissions' => [
+                'Taxes_OfficeTaxesReport',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'officetaxreportGetCommunicationsendersV1' => [
+            'systemconfigurationtype' => [
+                'RealEstate',
+                'MultiCompanies',
+            ],
+            'permissions' => [
+                'Taxes_OfficeTaxesReport',
+            ],
+            'usertypeextra' => [
+            ],
+            'authorizationsources' => [
+                'Authorization',
+            ],
+            'deprecated' => false,
+        ],
+        'officetaxreportGetListV1' => [
+            'systemconfigurationtype' => [
+                'All',
             ],
             'permissions' => [
                 'Taxes_OfficeTaxesReport',
@@ -780,6 +869,1600 @@ class ObjectOfficetaxreportApi
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationCountV1
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiOfficetaxreportID pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\OfficetaxreportGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function officetaxreportGetCommunicationCountV1($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationCountV1'][0])
+    {
+        list($response) = $this->officetaxreportGetCommunicationCountV1WithHttpInfo($pkiOfficetaxreportID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationCountV1WithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\OfficetaxreportGetCommunicationCountV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function officetaxreportGetCommunicationCountV1WithHttpInfo($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationCountV1'][0])
+    {
+        $request = $this->officetaxreportGetCommunicationCountV1Request($pkiOfficetaxreportID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\OfficetaxreportGetCommunicationCountV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\OfficetaxreportGetCommunicationCountV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\OfficetaxreportGetCommunicationCountV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationCountV1Async
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetCommunicationCountV1Async($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationCountV1'][0])
+    {
+        return $this->officetaxreportGetCommunicationCountV1AsyncWithHttpInfo($pkiOfficetaxreportID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationCountV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication count
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetCommunicationCountV1AsyncWithHttpInfo($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationCountV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\OfficetaxreportGetCommunicationCountV1Response';
+        $request = $this->officetaxreportGetCommunicationCountV1Request($pkiOfficetaxreportID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'officetaxreportGetCommunicationCountV1'
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationCountV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function officetaxreportGetCommunicationCountV1Request($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationCountV1'][0])
+    {
+
+        // verify the required parameter 'pkiOfficetaxreportID' is set
+        if ($pkiOfficetaxreportID === null || (is_array($pkiOfficetaxreportID) && count($pkiOfficetaxreportID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiOfficetaxreportID when calling officetaxreportGetCommunicationCountV1'
+            );
+        }
+        if ($pkiOfficetaxreportID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationCountV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiOfficetaxreportID)?'null':'"'.$pkiOfficetaxreportID.'"').' for "pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationCountV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiOfficetaxreportID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationCountV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiOfficetaxreportID)?'null':'"'.$pkiOfficetaxreportID.'"').' for "pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationCountV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationCount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiOfficetaxreportID !== null) {
+            $resourcePath = str_replace(
+                '{pkiOfficetaxreportID}',
+                ObjectSerializer::toPathValue($pkiOfficetaxreportID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationListV1
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiOfficetaxreportID pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\OfficetaxreportGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function officetaxreportGetCommunicationListV1($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationListV1'][0])
+    {
+        list($response) = $this->officetaxreportGetCommunicationListV1WithHttpInfo($pkiOfficetaxreportID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationListV1WithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\OfficetaxreportGetCommunicationListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function officetaxreportGetCommunicationListV1WithHttpInfo($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationListV1'][0])
+    {
+        $request = $this->officetaxreportGetCommunicationListV1Request($pkiOfficetaxreportID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\OfficetaxreportGetCommunicationListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\OfficetaxreportGetCommunicationListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\OfficetaxreportGetCommunicationListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationListV1Async
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetCommunicationListV1Async($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationListV1'][0])
+    {
+        return $this->officetaxreportGetCommunicationListV1AsyncWithHttpInfo($pkiOfficetaxreportID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationListV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication list
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetCommunicationListV1AsyncWithHttpInfo($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\OfficetaxreportGetCommunicationListV1Response';
+        $request = $this->officetaxreportGetCommunicationListV1Request($pkiOfficetaxreportID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'officetaxreportGetCommunicationListV1'
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function officetaxreportGetCommunicationListV1Request($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationListV1'][0])
+    {
+
+        // verify the required parameter 'pkiOfficetaxreportID' is set
+        if ($pkiOfficetaxreportID === null || (is_array($pkiOfficetaxreportID) && count($pkiOfficetaxreportID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiOfficetaxreportID when calling officetaxreportGetCommunicationListV1'
+            );
+        }
+        if ($pkiOfficetaxreportID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationListV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiOfficetaxreportID)?'null':'"'.$pkiOfficetaxreportID.'"').' for "pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationListV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiOfficetaxreportID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiOfficetaxreportID)?'null':'"'.$pkiOfficetaxreportID.'"').' for "pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationListV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiOfficetaxreportID !== null) {
+            $resourcePath = str_replace(
+                '{pkiOfficetaxreportID}',
+                ObjectSerializer::toPathValue($pkiOfficetaxreportID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationrecipientsV1
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiOfficetaxreportID pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\OfficetaxreportGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function officetaxreportGetCommunicationrecipientsV1($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationrecipientsV1'][0])
+    {
+        list($response) = $this->officetaxreportGetCommunicationrecipientsV1WithHttpInfo($pkiOfficetaxreportID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationrecipientsV1WithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\OfficetaxreportGetCommunicationrecipientsV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function officetaxreportGetCommunicationrecipientsV1WithHttpInfo($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationrecipientsV1'][0])
+    {
+        $request = $this->officetaxreportGetCommunicationrecipientsV1Request($pkiOfficetaxreportID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\OfficetaxreportGetCommunicationrecipientsV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\OfficetaxreportGetCommunicationrecipientsV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\OfficetaxreportGetCommunicationrecipientsV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationrecipientsV1Async
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetCommunicationrecipientsV1Async($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationrecipientsV1'][0])
+    {
+        return $this->officetaxreportGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiOfficetaxreportID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationrecipientsV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication recipients
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetCommunicationrecipientsV1AsyncWithHttpInfo($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationrecipientsV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\OfficetaxreportGetCommunicationrecipientsV1Response';
+        $request = $this->officetaxreportGetCommunicationrecipientsV1Request($pkiOfficetaxreportID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'officetaxreportGetCommunicationrecipientsV1'
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationrecipientsV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function officetaxreportGetCommunicationrecipientsV1Request($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationrecipientsV1'][0])
+    {
+
+        // verify the required parameter 'pkiOfficetaxreportID' is set
+        if ($pkiOfficetaxreportID === null || (is_array($pkiOfficetaxreportID) && count($pkiOfficetaxreportID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiOfficetaxreportID when calling officetaxreportGetCommunicationrecipientsV1'
+            );
+        }
+        if ($pkiOfficetaxreportID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiOfficetaxreportID)?'null':'"'.$pkiOfficetaxreportID.'"').' for "pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationrecipientsV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiOfficetaxreportID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiOfficetaxreportID)?'null':'"'.$pkiOfficetaxreportID.'"').' for "pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationrecipientsV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationrecipients';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiOfficetaxreportID !== null) {
+            $resourcePath = str_replace(
+                '{pkiOfficetaxreportID}',
+                ObjectSerializer::toPathValue($pkiOfficetaxreportID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationsendersV1
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiOfficetaxreportID pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\OfficetaxreportGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function officetaxreportGetCommunicationsendersV1($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationsendersV1'][0])
+    {
+        list($response) = $this->officetaxreportGetCommunicationsendersV1WithHttpInfo($pkiOfficetaxreportID, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationsendersV1WithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\OfficetaxreportGetCommunicationsendersV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function officetaxreportGetCommunicationsendersV1WithHttpInfo($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationsendersV1'][0])
+    {
+        $request = $this->officetaxreportGetCommunicationsendersV1Request($pkiOfficetaxreportID, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\OfficetaxreportGetCommunicationsendersV1Response',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\OfficetaxreportGetCommunicationsendersV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\OfficetaxreportGetCommunicationsendersV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationsendersV1Async
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetCommunicationsendersV1Async($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationsendersV1'][0])
+    {
+        return $this->officetaxreportGetCommunicationsendersV1AsyncWithHttpInfo($pkiOfficetaxreportID, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation officetaxreportGetCommunicationsendersV1AsyncWithHttpInfo
+     *
+     * Retrieve Communication senders
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetCommunicationsendersV1AsyncWithHttpInfo($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationsendersV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\OfficetaxreportGetCommunicationsendersV1Response';
+        $request = $this->officetaxreportGetCommunicationsendersV1Request($pkiOfficetaxreportID, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'officetaxreportGetCommunicationsendersV1'
+     *
+     * @param  int $pkiOfficetaxreportID (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetCommunicationsendersV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function officetaxreportGetCommunicationsendersV1Request($pkiOfficetaxreportID, string $contentType = self::contentTypes['officetaxreportGetCommunicationsendersV1'][0])
+    {
+
+        // verify the required parameter 'pkiOfficetaxreportID' is set
+        if ($pkiOfficetaxreportID === null || (is_array($pkiOfficetaxreportID) && count($pkiOfficetaxreportID) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pkiOfficetaxreportID when calling officetaxreportGetCommunicationsendersV1'
+            );
+        }
+        if ($pkiOfficetaxreportID > 65535) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiOfficetaxreportID)?'null':'"'.$pkiOfficetaxreportID.'"').' for "pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationsendersV1, must be smaller than or equal to 65535.');
+        }
+        if ($pkiOfficetaxreportID < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationsendersV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($pkiOfficetaxreportID)?'null':'"'.$pkiOfficetaxreportID.'"').' for "pkiOfficetaxreportID" when calling ObjectOfficetaxreportApi.officetaxreportGetCommunicationsendersV1, must be bigger than or equal to 0.');
+        }
+        
+
+        $resourcePath = '/1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationsenders';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($pkiOfficetaxreportID !== null) {
+            $resourcePath = str_replace(
+                '{pkiOfficetaxreportID}',
+                ObjectSerializer::toPathValue($pkiOfficetaxreportID),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                try {
+                    $httpBody = json_encode($formParams, JSON_THROW_ON_ERROR);
+                } catch (\JsonException $e) {
+                    throw new \InvalidArgumentException('json_encode error: ' . $e->getMessage(), 0, $e);
+                }
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+
+        if ($apiKey !== null) {
+            $secret = $this->config->getSecret();
+            if ($secret !== '') {
+                //Let's sign the request
+                $headers = array_merge($headers, RequestSignature::getHeadersV1($apiKey, $secret, 'GET', $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''), $httpBody));
+            }		
+        }
+
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation officetaxreportGetListV1
+     *
+     * Retrieve Officetaxreport list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax iRowMax (optional)
+     * @param  int|null $iRowOffset iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage acceptLanguage (optional)
+     * @param  string|null $sFilter sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \eZmaxAPI\Model\OfficetaxreportGetListV1Response|\eZmaxAPI\Model\CommonResponseError
+     */
+    public function officetaxreportGetListV1($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['officetaxreportGetListV1'][0])
+    {
+        list($response) = $this->officetaxreportGetListV1WithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation officetaxreportGetListV1WithHttpInfo
+     *
+     * Retrieve Officetaxreport list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetListV1'] to see the possible values for this operation
+     *
+     * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \eZmaxAPI\Model\OfficetaxreportGetListV1Response|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function officetaxreportGetListV1WithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['officetaxreportGetListV1'][0])
+    {
+        $request = $this->officetaxreportGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\OfficetaxreportGetListV1Response',
+                        $request,
+                        $response,
+                    );
+                case 406:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\eZmaxAPI\Model\OfficetaxreportGetListV1Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\OfficetaxreportGetListV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 406:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation officetaxreportGetListV1Async
+     *
+     * Retrieve Officetaxreport list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetListV1Async($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['officetaxreportGetListV1'][0])
+    {
+        return $this->officetaxreportGetListV1AsyncWithHttpInfo($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation officetaxreportGetListV1AsyncWithHttpInfo
+     *
+     * Retrieve Officetaxreport list
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function officetaxreportGetListV1AsyncWithHttpInfo($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['officetaxreportGetListV1'][0])
+    {
+        $returnType = '\eZmaxAPI\Model\OfficetaxreportGetListV1Response';
+        $request = $this->officetaxreportGetListV1Request($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'officetaxreportGetListV1'
+     *
+     * @param  string|null $eOrderBy Specify how you want the results to be sorted (optional)
+     * @param  int|null $iRowMax (optional)
+     * @param  int|null $iRowOffset (optional, default to 0)
+     * @param  \eZmaxAPI\Model\HeaderAcceptLanguage|null $acceptLanguage (optional)
+     * @param  string|null $sFilter (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['officetaxreportGetListV1'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function officetaxreportGetListV1Request($eOrderBy = null, $iRowMax = null, $iRowOffset = 0, $acceptLanguage = null, $sFilter = null, string $contentType = self::contentTypes['officetaxreportGetListV1'][0])
+    {
+
+
+        if ($iRowMax !== null && $iRowMax > 10000) {
+	    //throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectOfficetaxreportApi.officetaxreportGetListV1, must be smaller than or equal to 10000.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($iRowMax)?'null':'"'.$iRowMax.'"').' for "iRowMax" when calling ObjectOfficetaxreportApi.officetaxreportGetListV1, must be smaller than or equal to 10000.');
+        }
+        if ($iRowMax !== null && $iRowMax < 1) {
+	    //throw new \InvalidArgumentException('invalid value for "$iRowMax" when calling ObjectOfficetaxreportApi.officetaxreportGetListV1, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($iRowMax)?'null':'"'.$iRowMax.'"').' for "iRowMax" when calling ObjectOfficetaxreportApi.officetaxreportGetListV1, must be bigger than or equal to 1.');
+        }
+        
+        if ($iRowOffset !== null && $iRowOffset < 0) {
+	    //throw new \InvalidArgumentException('invalid value for "$iRowOffset" when calling ObjectOfficetaxreportApi.officetaxreportGetListV1, must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($iRowOffset)?'null':'"'.$iRowOffset.'"').' for "iRowOffset" when calling ObjectOfficetaxreportApi.officetaxreportGetListV1, must be bigger than or equal to 0.');
+        }
+        
+
+
+
+        $resourcePath = '/1/object/officetaxreport/getList';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eOrderBy,
+            'eOrderBy', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowMax,
+            'iRowMax', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iRowOffset,
+            'iRowOffset', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sFilter,
+            'sFilter', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($acceptLanguage !== null) {
+            $headerParams['Accept-Language'] = ObjectSerializer::toHeaderValue($acceptLanguage);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', ],
             $contentType,
             $multipart
         );

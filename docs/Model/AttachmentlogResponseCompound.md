@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fkiAttachmentID** | **int** | The unique ID of the Attachment. |
 **fkiUserID** | **int** | The unique ID of the User |
+**objUser** | [**\eZmaxAPI\Model\CustomUserNameResponse**](CustomUserNameResponse.md) |  |
 **dtAttachmentlogDatetime** | **string** | The created date |
 **eAttachmentlogType** | [**\eZmaxAPI\Model\FieldEAttachmentlogType**](FieldEAttachmentlogType.md) |  |
 **sAttachmentlogDetail** | **string** | The additionnal detail | [optional]

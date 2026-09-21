@@ -100,7 +100,8 @@ class CustomAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'fkiSupplierID' => 'int',
         'fkiTranqcontractID' => 'int',
         'fkiTemplateID' => 'int',
-        'fkiInscriptionchecklistID' => 'int',
+        'fkiDocumenttypechecklistID' => 'int',
+        'sDocumenttypeNameX' => 'string',
         'fkiFolderID' => 'int',
         'fkiRejectedoffertopurchaseID' => 'int',
         'fkiDisclosureID' => 'int',
@@ -176,7 +177,8 @@ class CustomAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'fkiSupplierID' => null,
         'fkiTranqcontractID' => null,
         'fkiTemplateID' => null,
-        'fkiInscriptionchecklistID' => null,
+        'fkiDocumenttypechecklistID' => null,
+        'sDocumenttypeNameX' => null,
         'fkiFolderID' => null,
         'fkiRejectedoffertopurchaseID' => null,
         'fkiDisclosureID' => null,
@@ -250,7 +252,8 @@ class CustomAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'fkiSupplierID' => false,
         'fkiTranqcontractID' => false,
         'fkiTemplateID' => false,
-        'fkiInscriptionchecklistID' => false,
+        'fkiDocumenttypechecklistID' => false,
+        'sDocumenttypeNameX' => false,
         'fkiFolderID' => false,
         'fkiRejectedoffertopurchaseID' => false,
         'fkiDisclosureID' => false,
@@ -404,7 +407,8 @@ class CustomAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'fkiSupplierID' => 'fkiSupplierID',
         'fkiTranqcontractID' => 'fkiTranqcontractID',
         'fkiTemplateID' => 'fkiTemplateID',
-        'fkiInscriptionchecklistID' => 'fkiInscriptionchecklistID',
+        'fkiDocumenttypechecklistID' => 'fkiDocumenttypechecklistID',
+        'sDocumenttypeNameX' => 'sDocumenttypeNameX',
         'fkiFolderID' => 'fkiFolderID',
         'fkiRejectedoffertopurchaseID' => 'fkiRejectedoffertopurchaseID',
         'fkiDisclosureID' => 'fkiDisclosureID',
@@ -478,7 +482,8 @@ class CustomAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'fkiSupplierID' => 'setFkiSupplierID',
         'fkiTranqcontractID' => 'setFkiTranqcontractID',
         'fkiTemplateID' => 'setFkiTemplateID',
-        'fkiInscriptionchecklistID' => 'setFkiInscriptionchecklistID',
+        'fkiDocumenttypechecklistID' => 'setFkiDocumenttypechecklistID',
+        'sDocumenttypeNameX' => 'setSDocumenttypeNameX',
         'fkiFolderID' => 'setFkiFolderID',
         'fkiRejectedoffertopurchaseID' => 'setFkiRejectedoffertopurchaseID',
         'fkiDisclosureID' => 'setFkiDisclosureID',
@@ -552,7 +557,8 @@ class CustomAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSeri
         'fkiSupplierID' => 'getFkiSupplierID',
         'fkiTranqcontractID' => 'getFkiTranqcontractID',
         'fkiTemplateID' => 'getFkiTemplateID',
-        'fkiInscriptionchecklistID' => 'getFkiInscriptionchecklistID',
+        'fkiDocumenttypechecklistID' => 'getFkiDocumenttypechecklistID',
+        'sDocumenttypeNameX' => 'getSDocumenttypeNameX',
         'fkiFolderID' => 'getFkiFolderID',
         'fkiRejectedoffertopurchaseID' => 'getFkiRejectedoffertopurchaseID',
         'fkiDisclosureID' => 'getFkiDisclosureID',
@@ -677,7 +683,8 @@ class CustomAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('fkiSupplierID', $data ?? [], null);
         $this->setIfExists('fkiTranqcontractID', $data ?? [], null);
         $this->setIfExists('fkiTemplateID', $data ?? [], null);
-        $this->setIfExists('fkiInscriptionchecklistID', $data ?? [], null);
+        $this->setIfExists('fkiDocumenttypechecklistID', $data ?? [], null);
+        $this->setIfExists('sDocumenttypeNameX', $data ?? [], null);
         $this->setIfExists('fkiFolderID', $data ?? [], null);
         $this->setIfExists('fkiRejectedoffertopurchaseID', $data ?? [], null);
         $this->setIfExists('fkiDisclosureID', $data ?? [], null);
@@ -994,12 +1001,18 @@ class CustomAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'fkiTemplateID', must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['fkiInscriptionchecklistID']) && ($this->container['fkiInscriptionchecklistID'] > 16777215)) {
-            $invalidProperties[] = "invalid value for 'fkiInscriptionchecklistID', must be smaller than or equal to 16777215.";
+        if (!is_null($this->container['fkiDocumenttypechecklistID']) && ($this->container['fkiDocumenttypechecklistID'] > 16777215)) {
+            $invalidProperties[] = "invalid value for 'fkiDocumenttypechecklistID', must be smaller than or equal to 16777215.";
         }
 
-        if (!is_null($this->container['fkiInscriptionchecklistID']) && ($this->container['fkiInscriptionchecklistID'] < 0)) {
-            $invalidProperties[] = "invalid value for 'fkiInscriptionchecklistID', must be bigger than or equal to 0.";
+        if (!is_null($this->container['fkiDocumenttypechecklistID']) && ($this->container['fkiDocumenttypechecklistID'] < 0)) {
+            $invalidProperties[] = "invalid value for 'fkiDocumenttypechecklistID', must be bigger than or equal to 0.";
+        }
+
+        //if (!is_null($this->container['sDocumenttypeNameX']) && !preg_match("/^.{0,55}$/", $this->container['sDocumenttypeNameX'])) {
+        if (!is_null($this->container['sDocumenttypeNameX']) && !preg_match("/(*UTF8)^.{0,55}$/", $this->container['sDocumenttypeNameX'])) {
+            //$invalidProperties[] = "invalid value for 'sDocumenttypeNameX', must be conform to the pattern /^.{0,55}$/.";
+            $invalidProperties[] = "invalid value ".(is_null($this->container['sDocumenttypeNameX'])?'null':'"'.$this->container['sDocumenttypeNameX'].'"')." for 'sDocumenttypeNameX', must be conform to the pattern /^.{0,55}$/.";
         }
 
         if (!is_null($this->container['fkiFolderID']) && ($this->container['fkiFolderID'] > 65535)) {
@@ -2809,44 +2822,83 @@ class CustomAttachmentResponse implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets fkiInscriptionchecklistID
+     * Gets fkiDocumenttypechecklistID
      *
      * @return int|null
      */
-    public function getFkiInscriptionchecklistID()
+    public function getFkiDocumenttypechecklistID()
     {
-	//return $this->container['fkiInscriptionchecklistID'];
-        return $this->container['fkiInscriptionchecklistID'];
+	//return $this->container['fkiDocumenttypechecklistID'];
+        return $this->container['fkiDocumenttypechecklistID'];
     }
 
     /**
-     * Sets fkiInscriptionchecklistID
+     * Sets fkiDocumenttypechecklistID
      *
-     * @param int|null $fkiInscriptionchecklistID The unique ID of the Inscriptionchecklist
+     * @param int|null $fkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
      *
      * @return self
      */
-    public function setFkiInscriptionchecklistID($fkiInscriptionchecklistID)
+    public function setFkiDocumenttypechecklistID($fkiDocumenttypechecklistID)
     {
 	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
-        //if (is_null($fkiInscriptionchecklistID)) {
-            //throw new \InvalidArgumentException('non-nullable fkiInscriptionchecklistID cannot be null');
+        //if (is_null($fkiDocumenttypechecklistID)) {
+            //throw new \InvalidArgumentException('non-nullable fkiDocumenttypechecklistID cannot be null');
         //}
-        //if (($fkiInscriptionchecklistID > 16777215)) {
-        if (!is_null($fkiInscriptionchecklistID) && ($fkiInscriptionchecklistID > 16777215)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiInscriptionchecklistID when calling CustomAttachmentResponse., must be smaller than or equal to 16777215.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiInscriptionchecklistID)?'null':'"'.$fkiInscriptionchecklistID.'"').' for fkiInscriptionchecklistID when calling CustomAttachmentResponse., must be smaller than or equal to 16777215.');
+        //if (($fkiDocumenttypechecklistID > 16777215)) {
+        if (!is_null($fkiDocumenttypechecklistID) && ($fkiDocumenttypechecklistID > 16777215)) {
+            //throw new \InvalidArgumentException('invalid value for $fkiDocumenttypechecklistID when calling CustomAttachmentResponse., must be smaller than or equal to 16777215.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiDocumenttypechecklistID)?'null':'"'.$fkiDocumenttypechecklistID.'"').' for fkiDocumenttypechecklistID when calling CustomAttachmentResponse., must be smaller than or equal to 16777215.');
         }
-        //if (($fkiInscriptionchecklistID < 0)) {
-        if (!is_null($fkiInscriptionchecklistID) && ($fkiInscriptionchecklistID < 0)) {
-            //throw new \InvalidArgumentException('invalid value for $fkiInscriptionchecklistID when calling CustomAttachmentResponse., must be bigger than or equal to 0.');
-            throw new \InvalidArgumentException('invalid value '.(is_null($fkiInscriptionchecklistID)?'null':'"'.$fkiInscriptionchecklistID.'"').' for fkiInscriptionchecklistID when calling CustomAttachmentResponse., must be bigger than or equal to 0.');
+        //if (($fkiDocumenttypechecklistID < 0)) {
+        if (!is_null($fkiDocumenttypechecklistID) && ($fkiDocumenttypechecklistID < 0)) {
+            //throw new \InvalidArgumentException('invalid value for $fkiDocumenttypechecklistID when calling CustomAttachmentResponse., must be bigger than or equal to 0.');
+            throw new \InvalidArgumentException('invalid value '.(is_null($fkiDocumenttypechecklistID)?'null':'"'.$fkiDocumenttypechecklistID.'"').' for fkiDocumenttypechecklistID when calling CustomAttachmentResponse., must be bigger than or equal to 0.');
         }
 
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
-        //$this->container['fkiInscriptionchecklistID'] = $fkiInscriptionchecklistID;
-        $this->container['fkiInscriptionchecklistID'] = (is_null($fkiInscriptionchecklistID) ? null : (int) $fkiInscriptionchecklistID);
+        //$this->container['fkiDocumenttypechecklistID'] = $fkiDocumenttypechecklistID;
+        $this->container['fkiDocumenttypechecklistID'] = (is_null($fkiDocumenttypechecklistID) ? null : (int) $fkiDocumenttypechecklistID);
+
+        return $this;
+    }
+
+    /**
+     * Gets sDocumenttypeNameX
+     *
+     * @return string|null
+     */
+    public function getSDocumenttypeNameX()
+    {
+	//return $this->container['sDocumenttypeNameX'];
+        return is_null($this->container['sDocumenttypeNameX']) ? null : trim($this->container['sDocumenttypeNameX']);
+    }
+
+    /**
+     * Sets sDocumenttypeNameX
+     *
+     * @param string|null $sDocumenttypeNameX The name of the Documenttype in the language of the requester
+     *
+     * @return self
+     */
+    public function setSDocumenttypeNameX($sDocumenttypeNameX)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sDocumenttypeNameX)) {
+            //throw new \InvalidArgumentException('non-nullable sDocumenttypeNameX cannot be null');
+        //}
+
+        //if ((!preg_match("/^.{0,55}$/", ObjectSerializer::toString($sDocumenttypeNameX)))) {
+        if (!is_null($sDocumenttypeNameX) && (!preg_match("/(*UTF8)^.{0,55}$/", ObjectSerializer::toString($sDocumenttypeNameX)))) {
+            //throw new \InvalidArgumentException("invalid value for \$sDocumenttypeNameX when calling CustomAttachmentResponse., must conform to the pattern /^.{0,55}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sDocumenttypeNameX)?'null':'"'.$sDocumenttypeNameX.'"')." for sDocumenttypeNameX when calling CustomAttachmentResponse., must conform to the pattern /^.{0,55}$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['sDocumenttypeNameX'] = $sDocumenttypeNameX;
+        $this->container['sDocumenttypeNameX'] = (is_null($sDocumenttypeNameX) ? null : trim((string) $sDocumenttypeNameX));
 
         return $this;
     }

@@ -50,6 +50,8 @@ class FieldEAttachmentVerified
 
     public const REJECTED = 'Rejected';
 
+    public const PENDING = 'Pending';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -59,7 +61,8 @@ class FieldEAttachmentVerified
         return [
             self::NO,
             self::YES,
-            self::REJECTED
+            self::REJECTED,
+            self::PENDING
         ];
     }
 }

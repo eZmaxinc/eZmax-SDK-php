@@ -77,4 +77,5 @@ enum Resource: int {
     case Supplier = 47;
     case Template = 48;
     case Tranqcontract = 49;
+    case Ezsignfolder = 50;
 }

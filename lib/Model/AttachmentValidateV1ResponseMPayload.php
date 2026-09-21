@@ -36,7 +36,7 @@ use \eZmaxAPI\ObjectSerializer;
  * AttachmentValidateV1ResponseMPayload Class Doc Comment
  *
  * @category Class
- * @description Response for PATCH /1/object/attachment/{pkiAttachmentID}/validate
+ * @description Response for POST /1/object/attachment/{pkiAttachmentID}/validate
  * @package  eZmaxAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -33,5 +33,5 @@ enum ResourceattachmentprivacyPermission: string {
      case Administration = 'Administration';
      case Inscriptor = 'Inscriptor';
      case Seller = 'Seller';
-     case SpecificUser = 'SpecificUser';
+     case Specificuser = 'Specificuser';
 }

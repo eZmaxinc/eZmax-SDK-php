@@ -62,6 +62,7 @@ class CustomUserNameResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'sContacttitleNameX' => 'string',
         'sUserLastname' => 'string',
         'sUserFirstname' => 'string',
+        'sUserLoginname' => 'string',
         'sUserJobtitle' => 'string'
     ];
 
@@ -76,6 +77,7 @@ class CustomUserNameResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'sContacttitleNameX' => null,
         'sUserLastname' => null,
         'sUserFirstname' => null,
+        'sUserLoginname' => null,
         'sUserJobtitle' => null
     ];
 
@@ -88,6 +90,7 @@ class CustomUserNameResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'sContacttitleNameX' => false,
         'sUserLastname' => false,
         'sUserFirstname' => false,
+        'sUserLoginname' => false,
         'sUserJobtitle' => false
     ];
 
@@ -180,6 +183,7 @@ class CustomUserNameResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'sContacttitleNameX' => 'sContacttitleNameX',
         'sUserLastname' => 'sUserLastname',
         'sUserFirstname' => 'sUserFirstname',
+        'sUserLoginname' => 'sUserLoginname',
         'sUserJobtitle' => 'sUserJobtitle'
     ];
 
@@ -192,6 +196,7 @@ class CustomUserNameResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'sContacttitleNameX' => 'setSContacttitleNameX',
         'sUserLastname' => 'setSUserLastname',
         'sUserFirstname' => 'setSUserFirstname',
+        'sUserLoginname' => 'setSUserLoginname',
         'sUserJobtitle' => 'setSUserJobtitle'
     ];
 
@@ -204,6 +209,7 @@ class CustomUserNameResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'sContacttitleNameX' => 'getSContacttitleNameX',
         'sUserLastname' => 'getSUserLastname',
         'sUserFirstname' => 'getSUserFirstname',
+        'sUserLoginname' => 'getSUserLoginname',
         'sUserJobtitle' => 'getSUserJobtitle'
     ];
 
@@ -267,6 +273,7 @@ class CustomUserNameResponse implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('sContacttitleNameX', $data ?? [], null);
         $this->setIfExists('sUserLastname', $data ?? [], null);
         $this->setIfExists('sUserFirstname', $data ?? [], null);
+        $this->setIfExists('sUserLoginname', $data ?? [], null);
         $this->setIfExists('sUserJobtitle', $data ?? [], null);
     }
 
@@ -309,6 +316,12 @@ class CustomUserNameResponse implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['sUserFirstname'] === null) {
             $invalidProperties[] = "'sUserFirstname' can't be null";
         }
+        //if (!is_null($this->container['sUserLoginname']) && !preg_match("/^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
+        if (!is_null($this->container['sUserLoginname']) && !preg_match("/(*UTF8)^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", $this->container['sUserLoginname'])) {
+            //$invalidProperties[] = "invalid value for 'sUserLoginname', must be conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.";
+            $invalidProperties[] = "invalid value ".(is_null($this->container['sUserLoginname'])?'null':'"'.$this->container['sUserLoginname'].'"')." for 'sUserLoginname', must be conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.";
+        }
+
         //if (!is_null($this->container['sUserJobtitle']) && !preg_match("/^.{0,50}$/", $this->container['sUserJobtitle'])) {
         if (!is_null($this->container['sUserJobtitle']) && !preg_match("/(*UTF8)^.{0,50}$/", $this->container['sUserJobtitle'])) {
             //$invalidProperties[] = "invalid value for 'sUserJobtitle', must be conform to the pattern /^.{0,50}$/.";
@@ -429,6 +442,45 @@ class CustomUserNameResponse implements ModelInterface, ArrayAccess, \JsonSerial
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
         //$this->container['sUserFirstname'] = $sUserFirstname;
         $this->container['sUserFirstname'] = (is_null($sUserFirstname) ? null : trim((string) $sUserFirstname));
+
+        return $this;
+    }
+
+    /**
+     * Gets sUserLoginname
+     *
+     * @return string|null
+     */
+    public function getSUserLoginname()
+    {
+	//return $this->container['sUserLoginname'];
+        return is_null($this->container['sUserLoginname']) ? null : trim($this->container['sUserLoginname']);
+    }
+
+    /**
+     * Sets sUserLoginname
+     *
+     * @param string|null $sUserLoginname The login name of the User.
+     *
+     * @return self
+     */
+    public function setSUserLoginname($sUserLoginname)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($sUserLoginname)) {
+            //throw new \InvalidArgumentException('non-nullable sUserLoginname cannot be null');
+        //}
+
+        //if ((!preg_match("/^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+        if (!is_null($sUserLoginname) && (!preg_match("/(*UTF8)^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/", ObjectSerializer::toString($sUserLoginname)))) {
+            //throw new \InvalidArgumentException("invalid value for \$sUserLoginname when calling CustomUserNameResponse., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sUserLoginname)?'null':'"'.$sUserLoginname.'"')." for sUserLoginname when calling CustomUserNameResponse., must conform to the pattern /^(?:([\\w.%+\\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/.");
+        }
+
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['sUserLoginname'] = $sUserLoginname;
+        $this->container['sUserLoginname'] = (is_null($sUserLoginname) ? null : trim((string) $sUserLoginname));
 
         return $this;
     }
