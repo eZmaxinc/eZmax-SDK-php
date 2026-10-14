@@ -841,7 +841,7 @@ class ResourceConfiguration {
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerSeller->value => [
                         ResourceattachmentprivacyPermission::All,
-                        ResourceattachmentprivacyPermission::Inscriptor,
+                        ResourceattachmentprivacyPermission::Seller,
                         ResourceattachmentprivacyPermission::Specificuser,
                     ],
                 ],
@@ -881,7 +881,7 @@ class ResourceConfiguration {
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerSeller->value => [
                         ResourceattachmentprivacyPermission::All,
-                        ResourceattachmentprivacyPermission::Inscriptor,
+                        ResourceattachmentprivacyPermission::Seller,
                         ResourceattachmentprivacyPermission::Specificuser,
                     ],
                 ],
@@ -921,7 +921,7 @@ class ResourceConfiguration {
                     ],
                     ResourceattachmentprivacyRole::AgentBrokerSeller->value => [
                         ResourceattachmentprivacyPermission::All,
-                        ResourceattachmentprivacyPermission::Inscriptor,
+                        ResourceattachmentprivacyPermission::Seller,
                         ResourceattachmentprivacyPermission::Specificuser,
                     ],
                 ],

@@ -296,6 +296,7 @@ enum Modulesection: int {
     case Payments_PaymentCancellation = 9;
     case Payments_PaymentsClients = 68;
     case Payments_PaymentsEmployees = 66;
+    case Payments_PaymentsNotariesLawyers = 340;
     case Payments_PaymentsOffices = 178;
     case Payments_PaymentsRealestate = 67;
     case Payments_PaymentsSuppliers = 69;
@@ -464,6 +465,7 @@ enum Modulesection: int {
             66 => 'Comptes à payer: Paiements: Paiements (Employés)',
             69 => 'Comptes à payer: Paiements: Paiements (Fournisseurs)',
             67 => 'Comptes à payer: Paiements: Paiements (Immobilier)',
+            340 => 'Comptes à payer: Paiements: Paiements (Notaires)',
             8 => 'Comptes à payer: Paiements: Transferts électroniques',
             10 => 'Comptes à payer: Rapports: Rapports',
             103 => 'Comptes à recevoir: Chèque en attente de dépôt: Accès',
@@ -672,6 +674,7 @@ enum Modulesection: int {
             9 => 'Accounts Payable: Payments: Payment Cancellation',
             68 => 'Accounts Payable: Payments: Payments (Clients)',
             66 => 'Accounts Payable: Payments: Payments (Employees)',
+            340 => 'Accounts Payable: Payments: Payments (Notaries/Lawyers)',
             178 => 'Accounts Payable: Payments: Payments (Offices)',
             67 => 'Accounts Payable: Payments: Payments (Real estate)',
             69 => 'Accounts Payable: Payments: Payments (Suppliers)',

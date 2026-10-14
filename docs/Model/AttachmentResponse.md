@@ -57,6 +57,7 @@ Name | Type | Description | Notes
 **sAttachmentCategory** | **string** | The attachment category |
 **eAttachmentPrivacy** | [**\eZmaxAPI\Model\FieldEAttachmentPrivacy**](FieldEAttachmentPrivacy.md) |  |
 **fkiUserIDSpecific** | **int** | The unique ID of the User | [optional]
+**objUserSpecific** | [**\eZmaxAPI\Model\CustomUserNameResponse**](CustomUserNameResponse.md) |  | [optional]
 **eAttachmentType** | [**\eZmaxAPI\Model\FieldEAttachmentType**](FieldEAttachmentType.md) |  |
 **iAttachmentSize** | **int** | The size of the Attachment |
 **iAttachmentEDMmoduleflag** | **int** | The edmmoduleflag of the Attachment | [optional]

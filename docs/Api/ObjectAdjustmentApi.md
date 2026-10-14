@@ -12,6 +12,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**adjustmentGetCommunicationListV1()**](ObjectAdjustmentApi.md#adjustmentGetCommunicationListV1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationList | Retrieve Communication list |
 | [**adjustmentGetCommunicationrecipientsV1()**](ObjectAdjustmentApi.md#adjustmentGetCommunicationrecipientsV1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**adjustmentGetCommunicationsendersV1()**](ObjectAdjustmentApi.md#adjustmentGetCommunicationsendersV1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationsenders | Retrieve Communication senders |
+| [**adjustmentGetListV1()**](ObjectAdjustmentApi.md#adjustmentGetListV1) | **GET** /1/object/adjustment/getList | Retrieve Adjustment list |
 | [**adjustmentImportIntoEDMV1()**](ObjectAdjustmentApi.md#adjustmentImportIntoEDMV1) | **POST** /1/object/adjustment/{pkiAdjustmentID}/importIntoEDM | Import attachments into the Adjustment |
 
 
@@ -372,6 +373,76 @@ try {
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `adjustmentGetListV1()`
+
+```php
+adjustmentGetListV1($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter): \eZmaxAPI\Model\AdjustmentGetListV1Response
+```
+
+Retrieve Adjustment list
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAdjustmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$eOrderBy = 'eOrderBy_example'; // string | Specify how you want the results to be sorted
+$iRowMax = 56; // int
+$iRowOffset = 0; // int
+$acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
+$sFilter = 'sFilter_example'; // string
+
+try {
+    $result = $apiInstance->adjustmentGetListV1($eOrderBy, $iRowMax, $iRowOffset, $acceptLanguage, $sFilter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAdjustmentApi->adjustmentGetListV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eOrderBy** | **string**| Specify how you want the results to be sorted | [optional] |
+| **iRowMax** | **int**|  | [optional] |
+| **iRowOffset** | **int**|  | [optional] [default to 0] |
+| **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
+| **sFilter** | **string**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\AdjustmentGetListV1Response**](../Model/AdjustmentGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

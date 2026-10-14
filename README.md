@@ -95,7 +95,9 @@ Class | Method | HTTP request | Description
 *ObjectAdjustmentApi* | [**adjustmentGetCommunicationListV1**](docs/Api/ObjectAdjustmentApi.md#adjustmentgetcommunicationlistv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationList | Retrieve Communication list
 *ObjectAdjustmentApi* | [**adjustmentGetCommunicationrecipientsV1**](docs/Api/ObjectAdjustmentApi.md#adjustmentgetcommunicationrecipientsv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationrecipients | Retrieve Communication recipients
 *ObjectAdjustmentApi* | [**adjustmentGetCommunicationsendersV1**](docs/Api/ObjectAdjustmentApi.md#adjustmentgetcommunicationsendersv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationsenders | Retrieve Communication senders
+*ObjectAdjustmentApi* | [**adjustmentGetListV1**](docs/Api/ObjectAdjustmentApi.md#adjustmentgetlistv1) | **GET** /1/object/adjustment/getList | Retrieve Adjustment list
 *ObjectAdjustmentApi* | [**adjustmentImportIntoEDMV1**](docs/Api/ObjectAdjustmentApi.md#adjustmentimportintoedmv1) | **POST** /1/object/adjustment/{pkiAdjustmentID}/importIntoEDM | Import attachments into the Adjustment
+*ObjectAdjustmentreminderApi* | [**adjustmentreminderGetListV1**](docs/Api/ObjectAdjustmentreminderApi.md#adjustmentremindergetlistv1) | **GET** /1/object/adjustmentreminder/getList | Retrieve Adjustmentreminder list
 *ObjectAgentApi* | [**agentBatchDownloadV1**](docs/Api/ObjectAgentApi.md#agentbatchdownloadv1) | **POST** /1/object/agent/{pkiAgentID}/batchDownload | Download multiples attachments from a Agent
 *ObjectAgentApi* | [**agentGetAttachmentsV1**](docs/Api/ObjectAgentApi.md#agentgetattachmentsv1) | **GET** /1/object/agent/{pkiAgentID}/getAttachments | Retrieve Agent&#39;s attachments
 *ObjectAgentApi* | [**agentGetAutocompleteV2**](docs/Api/ObjectAgentApi.md#agentgetautocompletev2) | **GET** /2/object/agent/getAutocomplete/{sSelector} | Retrieve Agents and IDs
@@ -256,7 +258,9 @@ Class | Method | HTTP request | Description
 *ObjectElectronicfundstransferApi* | [**electronicfundstransferGetCommunicationListV1**](docs/Api/ObjectElectronicfundstransferApi.md#electronicfundstransfergetcommunicationlistv1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list
 *ObjectElectronicfundstransferApi* | [**electronicfundstransferGetCommunicationrecipientsV1**](docs/Api/ObjectElectronicfundstransferApi.md#electronicfundstransfergetcommunicationrecipientsv1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationrecipients | Retrieve Electronicfundstransfer&#39;s Communicationrecipient
 *ObjectElectronicfundstransferApi* | [**electronicfundstransferGetCommunicationsendersV1**](docs/Api/ObjectElectronicfundstransferApi.md#electronicfundstransfergetcommunicationsendersv1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationsenders | Retrieve Electronicfundstransfer&#39;s Communicationsender
+*ObjectElectronicfundstransferApi* | [**electronicfundstransferGetListV1**](docs/Api/ObjectElectronicfundstransferApi.md#electronicfundstransfergetlistv1) | **GET** /1/object/electronicfundstransfer/getList | Retrieve Electronicfundstransfer list
 *ObjectElectronicfundstransferApi* | [**electronicfundstransferImportIntoEDMV1**](docs/Api/ObjectElectronicfundstransferApi.md#electronicfundstransferimportintoedmv1) | **POST** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/importIntoEDM | Import attachments into the Electronicfundstransfer
+*ObjectElectronicfundstransfertransactionApi* | [**electronicfundstransfertransactionGetListV1**](docs/Api/ObjectElectronicfundstransfertransactionApi.md#electronicfundstransfertransactiongetlistv1) | **GET** /1/object/electronicfundstransfertransaction/getList | Retrieve Electronicfundstransfertransaction list
 *ObjectEmailtypeApi* | [**emailtypeGetAutocompleteV2**](docs/Api/ObjectEmailtypeApi.md#emailtypegetautocompletev2) | **GET** /2/object/emailtype/getAutocomplete/{sSelector} | Retrieve Emailtypes and IDs
 *ObjectEmployeeApi* | [**employeeBatchDownloadV1**](docs/Api/ObjectEmployeeApi.md#employeebatchdownloadv1) | **POST** /1/object/employee/{pkiEmployeeID}/batchDownload | Download multiples attachments from a Employee
 *ObjectEmployeeApi* | [**employeeGetAttachmentsV1**](docs/Api/ObjectEmployeeApi.md#employeegetattachmentsv1) | **GET** /1/object/employee/{pkiEmployeeID}/getAttachments | Retrieve Employee&#39;s attachments
@@ -661,6 +665,10 @@ Class | Method | HTTP request | Description
 *ObjectPaymentmethodApi* | [**paymentmethodGetAutocompleteV2**](docs/Api/ObjectPaymentmethodApi.md#paymentmethodgetautocompletev2) | **GET** /2/object/paymentmethod/getAutocomplete/{sSelector} | Retrieve Paymentmethods and IDs
 *ObjectPaymentpreparationApi* | [**paymentpreparationBatchDownloadV1**](docs/Api/ObjectPaymentpreparationApi.md#paymentpreparationbatchdownloadv1) | **POST** /1/object/paymentpreparation/{pkiPaymentpreparationID}/batchDownload | Download multiples attachments from an Paymentpreparation
 *ObjectPaymentpreparationApi* | [**paymentpreparationGetAttachmentsV1**](docs/Api/ObjectPaymentpreparationApi.md#paymentpreparationgetattachmentsv1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getAttachments | Retrieve Paymentpreparation&#39;s attachments
+*ObjectPaymentpreparationApi* | [**paymentpreparationGetCommunicationCountV1**](docs/Api/ObjectPaymentpreparationApi.md#paymentpreparationgetcommunicationcountv1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationCount | Retrieve Communication count
+*ObjectPaymentpreparationApi* | [**paymentpreparationGetCommunicationListV1**](docs/Api/ObjectPaymentpreparationApi.md#paymentpreparationgetcommunicationlistv1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationList | Retrieve Communication list
+*ObjectPaymentpreparationApi* | [**paymentpreparationGetCommunicationrecipientsV1**](docs/Api/ObjectPaymentpreparationApi.md#paymentpreparationgetcommunicationrecipientsv1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationrecipients | Retrieve Communication recipients
+*ObjectPaymentpreparationApi* | [**paymentpreparationGetCommunicationsendersV1**](docs/Api/ObjectPaymentpreparationApi.md#paymentpreparationgetcommunicationsendersv1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationsenders | Retrieve Communication senders
 *ObjectPaymentpreparationApi* | [**paymentpreparationImportIntoEDMV1**](docs/Api/ObjectPaymentpreparationApi.md#paymentpreparationimportintoedmv1) | **POST** /1/object/paymentpreparation/{pkiPaymentpreparationID}/importIntoEDM | Import attachments into the Paymentpreparation
 *ObjectPaymenttermApi* | [**paymenttermCreateObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermcreateobjectv1) | **POST** /1/object/paymentterm | Create a new Paymentterm
 *ObjectPaymenttermApi* | [**paymenttermEditObjectV1**](docs/Api/ObjectPaymenttermApi.md#paymenttermeditobjectv1) | **PUT** /1/object/paymentterm/{pkiPaymenttermID} | Edit an existing Paymentterm
@@ -677,12 +685,20 @@ Class | Method | HTTP request | Description
 *ObjectProvinceApi* | [**provinceGetAutocompleteV2**](docs/Api/ObjectProvinceApi.md#provincegetautocompletev2) | **GET** /2/object/province/getAutocomplete/{sSelector} | Retrieve Provinces and IDs
 *ObjectPurchaseApi* | [**purchaseBatchDownloadV1**](docs/Api/ObjectPurchaseApi.md#purchasebatchdownloadv1) | **POST** /1/object/purchase/{pkiPurchaseID}/batchDownload | Download multiples attachments from a Purchase
 *ObjectPurchaseApi* | [**purchaseGetAttachmentsV1**](docs/Api/ObjectPurchaseApi.md#purchasegetattachmentsv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getAttachments | Retrieve Purchase&#39;s attachments
+*ObjectPurchaseApi* | [**purchaseGetCommunicationCountV1**](docs/Api/ObjectPurchaseApi.md#purchasegetcommunicationcountv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationCount | Retrieve Communication count
+*ObjectPurchaseApi* | [**purchaseGetCommunicationListV1**](docs/Api/ObjectPurchaseApi.md#purchasegetcommunicationlistv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationList | Retrieve Communication list
+*ObjectPurchaseApi* | [**purchaseGetCommunicationrecipientsV1**](docs/Api/ObjectPurchaseApi.md#purchasegetcommunicationrecipientsv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationrecipients | Retrieve Communication recipients
+*ObjectPurchaseApi* | [**purchaseGetCommunicationsendersV1**](docs/Api/ObjectPurchaseApi.md#purchasegetcommunicationsendersv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationsenders | Retrieve Communication senders
 *ObjectPurchaseApi* | [**purchaseGetListV1**](docs/Api/ObjectPurchaseApi.md#purchasegetlistv1) | **GET** /1/object/purchase/getList | Retrieve Purchase list
 *ObjectPurchaseApi* | [**purchaseImportIntoEDMV1**](docs/Api/ObjectPurchaseApi.md#purchaseimportintoedmv1) | **POST** /1/object/purchase/{pkiPurchaseID}/importIntoEDM | Import attachments into the Purchase
 *ObjectRealestateassociationApi* | [**realestateassociationGetAutocompleteV2**](docs/Api/ObjectRealestateassociationApi.md#realestateassociationgetautocompletev2) | **GET** /2/object/realestateassociation/getAutocomplete/{sSelector} | Retrieve Realestateassociations and IDs
 *ObjectRealestateboardApi* | [**realestateboardGetAutocompleteV2**](docs/Api/ObjectRealestateboardApi.md#realestateboardgetautocompletev2) | **GET** /2/object/realestateboard/getAutocomplete/{sSelector} | Retrieve Realestateboards and IDs
 *ObjectReconciliationApi* | [**reconciliationBatchDownloadV1**](docs/Api/ObjectReconciliationApi.md#reconciliationbatchdownloadv1) | **POST** /1/object/reconciliation/{pkiReconciliationID}/batchDownload | Download multiples attachments from a Reconciliation
 *ObjectReconciliationApi* | [**reconciliationGetAttachmentsV1**](docs/Api/ObjectReconciliationApi.md#reconciliationgetattachmentsv1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getAttachments | Retrieve Reconciliation&#39;s attachments
+*ObjectReconciliationApi* | [**reconciliationGetCommunicationCountV1**](docs/Api/ObjectReconciliationApi.md#reconciliationgetcommunicationcountv1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationCount | Retrieve Communication count
+*ObjectReconciliationApi* | [**reconciliationGetCommunicationListV1**](docs/Api/ObjectReconciliationApi.md#reconciliationgetcommunicationlistv1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationList | Retrieve Communication list
+*ObjectReconciliationApi* | [**reconciliationGetCommunicationrecipientsV1**](docs/Api/ObjectReconciliationApi.md#reconciliationgetcommunicationrecipientsv1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationrecipients | Retrieve Communication recipients
+*ObjectReconciliationApi* | [**reconciliationGetCommunicationsendersV1**](docs/Api/ObjectReconciliationApi.md#reconciliationgetcommunicationsendersv1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationsenders | Retrieve Communication senders
 *ObjectReconciliationApi* | [**reconciliationImportIntoEDMV1**](docs/Api/ObjectReconciliationApi.md#reconciliationimportintoedmv1) | **POST** /1/object/reconciliation/{pkiReconciliationID}/importIntoEDM | Import attachments into the Reconciliation
 *ObjectRejectedoffertopurchaseApi* | [**rejectedoffertopurchaseBatchDownloadV1**](docs/Api/ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchasebatchdownloadv1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/batchDownload | Download multiples attachments from a Rejectedoffertopurchase
 *ObjectRejectedoffertopurchaseApi* | [**rejectedoffertopurchaseGetAttachmentsV1**](docs/Api/ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchasegetattachmentsv1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getAttachments | Retrieve Rejectedoffertopurchase&#39;s attachments
@@ -694,6 +710,10 @@ Class | Method | HTTP request | Description
 *ObjectRejectedoffertopurchaseApi* | [**rejectedoffertopurchaseImportIntoEDMV1**](docs/Api/ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseimportintoedmv1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/importIntoEDM | Import attachments into the Rejectedoffertopurchase
 *ObjectSalaryApi* | [**salaryBatchDownloadV1**](docs/Api/ObjectSalaryApi.md#salarybatchdownloadv1) | **POST** /1/object/salary/{pkiSalaryID}/batchDownload | Download multiples attachments from a Reconciliation
 *ObjectSalaryApi* | [**salaryGetAttachmentsV1**](docs/Api/ObjectSalaryApi.md#salarygetattachmentsv1) | **GET** /1/object/salary/{pkiSalaryID}/getAttachments | Retrieve Salary&#39;s attachments
+*ObjectSalaryApi* | [**salaryGetCommunicationCountV1**](docs/Api/ObjectSalaryApi.md#salarygetcommunicationcountv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationCount | Retrieve Communication count
+*ObjectSalaryApi* | [**salaryGetCommunicationListV1**](docs/Api/ObjectSalaryApi.md#salarygetcommunicationlistv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationList | Retrieve Communication list
+*ObjectSalaryApi* | [**salaryGetCommunicationrecipientsV1**](docs/Api/ObjectSalaryApi.md#salarygetcommunicationrecipientsv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationrecipients | Retrieve Communication recipients
+*ObjectSalaryApi* | [**salaryGetCommunicationsendersV1**](docs/Api/ObjectSalaryApi.md#salarygetcommunicationsendersv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationsenders | Retrieve Communication senders
 *ObjectSalaryApi* | [**salaryGetListV1**](docs/Api/ObjectSalaryApi.md#salarygetlistv1) | **GET** /1/object/salary/getList | Retrieve Salary list
 *ObjectSalaryApi* | [**salaryImportIntoEDMV1**](docs/Api/ObjectSalaryApi.md#salaryimportintoedmv1) | **POST** /1/object/salary/{pkiSalaryID}/importIntoEDM | Import attachments into the Salary
 *ObjectSecretquestionApi* | [**secretquestionGetAutocompleteV2**](docs/Api/ObjectSecretquestionApi.md#secretquestiongetautocompletev2) | **GET** /2/object/secretquestion/getAutocomplete/{sSelector} | Retrieve Secretquestions and IDs
@@ -710,6 +730,10 @@ Class | Method | HTTP request | Description
 *ObjectSubnetApi* | [**subnetGetObjectV2**](docs/Api/ObjectSubnetApi.md#subnetgetobjectv2) | **GET** /2/object/subnet/{pkiSubnetID} | Retrieve an existing Subnet
 *ObjectSupplierApi* | [**supplierBatchDownloadV1**](docs/Api/ObjectSupplierApi.md#supplierbatchdownloadv1) | **POST** /1/object/supplier/{pkiSupplierID}/batchDownload | Download multiples attachments from a Supplier
 *ObjectSupplierApi* | [**supplierGetAttachmentsV1**](docs/Api/ObjectSupplierApi.md#suppliergetattachmentsv1) | **GET** /1/object/supplier/{pkiSupplierID}/getAttachments | Retrieve Supplier&#39;s attachments
+*ObjectSupplierApi* | [**supplierGetCommunicationCountV1**](docs/Api/ObjectSupplierApi.md#suppliergetcommunicationcountv1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationCount | Retrieve Communication count
+*ObjectSupplierApi* | [**supplierGetCommunicationListV1**](docs/Api/ObjectSupplierApi.md#suppliergetcommunicationlistv1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationList | Retrieve Communication list
+*ObjectSupplierApi* | [**supplierGetCommunicationrecipientsV1**](docs/Api/ObjectSupplierApi.md#suppliergetcommunicationrecipientsv1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationrecipients | Retrieve Communication recipients
+*ObjectSupplierApi* | [**supplierGetCommunicationsendersV1**](docs/Api/ObjectSupplierApi.md#suppliergetcommunicationsendersv1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationsenders | Retrieve Communication senders
 *ObjectSupplierApi* | [**supplierGetListV1**](docs/Api/ObjectSupplierApi.md#suppliergetlistv1) | **GET** /1/object/supplier/getList | Retrieve Supplier list
 *ObjectSupplierApi* | [**supplierImportIntoEDMV1**](docs/Api/ObjectSupplierApi.md#supplierimportintoedmv1) | **POST** /1/object/supplier/{pkiSupplierID}/importIntoEDM | Import attachments into the Supplier
 *ObjectSupplyApi* | [**supplyCreateObjectV1**](docs/Api/ObjectSupplyApi.md#supplycreateobjectv1) | **POST** /1/object/supply | Create a new Supply
@@ -837,9 +861,15 @@ Class | Method | HTTP request | Description
 - [AdjustmentGetCommunicationrecipientsV1ResponseMPayload](docs/Model/AdjustmentGetCommunicationrecipientsV1ResponseMPayload.md)
 - [AdjustmentGetCommunicationsendersV1Response](docs/Model/AdjustmentGetCommunicationsendersV1Response.md)
 - [AdjustmentGetCommunicationsendersV1ResponseMPayload](docs/Model/AdjustmentGetCommunicationsendersV1ResponseMPayload.md)
+- [AdjustmentGetListV1Response](docs/Model/AdjustmentGetListV1Response.md)
+- [AdjustmentGetListV1ResponseMPayload](docs/Model/AdjustmentGetListV1ResponseMPayload.md)
 - [AdjustmentImportIntoEDMV1Request](docs/Model/AdjustmentImportIntoEDMV1Request.md)
 - [AdjustmentImportIntoEDMV1Response](docs/Model/AdjustmentImportIntoEDMV1Response.md)
 - [AdjustmentImportIntoEDMV1ResponseMPayload](docs/Model/AdjustmentImportIntoEDMV1ResponseMPayload.md)
+- [AdjustmentListElement](docs/Model/AdjustmentListElement.md)
+- [AdjustmentreminderGetListV1Response](docs/Model/AdjustmentreminderGetListV1Response.md)
+- [AdjustmentreminderGetListV1ResponseMPayload](docs/Model/AdjustmentreminderGetListV1ResponseMPayload.md)
+- [AdjustmentreminderListElement](docs/Model/AdjustmentreminderListElement.md)
 - [AgentAutocompleteElementResponse](docs/Model/AgentAutocompleteElementResponse.md)
 - [AgentBatchDownloadV1Request](docs/Model/AgentBatchDownloadV1Request.md)
 - [AgentGetAttachmentsV1Response](docs/Model/AgentGetAttachmentsV1Response.md)
@@ -1405,9 +1435,15 @@ Class | Method | HTTP request | Description
 - [ElectronicfundstransferGetCommunicationrecipientsV1ResponseMPayload](docs/Model/ElectronicfundstransferGetCommunicationrecipientsV1ResponseMPayload.md)
 - [ElectronicfundstransferGetCommunicationsendersV1Response](docs/Model/ElectronicfundstransferGetCommunicationsendersV1Response.md)
 - [ElectronicfundstransferGetCommunicationsendersV1ResponseMPayload](docs/Model/ElectronicfundstransferGetCommunicationsendersV1ResponseMPayload.md)
+- [ElectronicfundstransferGetListV1Response](docs/Model/ElectronicfundstransferGetListV1Response.md)
+- [ElectronicfundstransferGetListV1ResponseMPayload](docs/Model/ElectronicfundstransferGetListV1ResponseMPayload.md)
 - [ElectronicfundstransferImportIntoEDMV1Request](docs/Model/ElectronicfundstransferImportIntoEDMV1Request.md)
 - [ElectronicfundstransferImportIntoEDMV1Response](docs/Model/ElectronicfundstransferImportIntoEDMV1Response.md)
 - [ElectronicfundstransferImportIntoEDMV1ResponseMPayload](docs/Model/ElectronicfundstransferImportIntoEDMV1ResponseMPayload.md)
+- [ElectronicfundstransferListElement](docs/Model/ElectronicfundstransferListElement.md)
+- [ElectronicfundstransfertransactionGetListV1Response](docs/Model/ElectronicfundstransfertransactionGetListV1Response.md)
+- [ElectronicfundstransfertransactionGetListV1ResponseMPayload](docs/Model/ElectronicfundstransfertransactionGetListV1ResponseMPayload.md)
+- [ElectronicfundstransfertransactionListElement](docs/Model/ElectronicfundstransfertransactionListElement.md)
 - [EmailRequest](docs/Model/EmailRequest.md)
 - [EmailRequestCompound](docs/Model/EmailRequestCompound.md)
 - [EmailResponse](docs/Model/EmailResponse.md)
@@ -2344,6 +2380,7 @@ Class | Method | HTTP request | Description
 - [FieldEActivesessionRealestateinprogress](docs/Model/FieldEActivesessionRealestateinprogress.md)
 - [FieldEActivesessionUsertype](docs/Model/FieldEActivesessionUsertype.md)
 - [FieldEActivesessionWeekdaystart](docs/Model/FieldEActivesessionWeekdaystart.md)
+- [FieldEAdjustmentreminderType](docs/Model/FieldEAdjustmentreminderType.md)
 - [FieldEAgentSchedule](docs/Model/FieldEAgentSchedule.md)
 - [FieldEAttachmentDocumenttype](docs/Model/FieldEAttachmentDocumenttype.md)
 - [FieldEAttachmentPrivacy](docs/Model/FieldEAttachmentPrivacy.md)
@@ -2776,6 +2813,14 @@ Class | Method | HTTP request | Description
 - [PaymentpreparationBatchDownloadV1Request](docs/Model/PaymentpreparationBatchDownloadV1Request.md)
 - [PaymentpreparationGetAttachmentsV1Response](docs/Model/PaymentpreparationGetAttachmentsV1Response.md)
 - [PaymentpreparationGetAttachmentsV1ResponseMPayload](docs/Model/PaymentpreparationGetAttachmentsV1ResponseMPayload.md)
+- [PaymentpreparationGetCommunicationCountV1Response](docs/Model/PaymentpreparationGetCommunicationCountV1Response.md)
+- [PaymentpreparationGetCommunicationCountV1ResponseMPayload](docs/Model/PaymentpreparationGetCommunicationCountV1ResponseMPayload.md)
+- [PaymentpreparationGetCommunicationListV1Response](docs/Model/PaymentpreparationGetCommunicationListV1Response.md)
+- [PaymentpreparationGetCommunicationListV1ResponseMPayload](docs/Model/PaymentpreparationGetCommunicationListV1ResponseMPayload.md)
+- [PaymentpreparationGetCommunicationrecipientsV1Response](docs/Model/PaymentpreparationGetCommunicationrecipientsV1Response.md)
+- [PaymentpreparationGetCommunicationrecipientsV1ResponseMPayload](docs/Model/PaymentpreparationGetCommunicationrecipientsV1ResponseMPayload.md)
+- [PaymentpreparationGetCommunicationsendersV1Response](docs/Model/PaymentpreparationGetCommunicationsendersV1Response.md)
+- [PaymentpreparationGetCommunicationsendersV1ResponseMPayload](docs/Model/PaymentpreparationGetCommunicationsendersV1ResponseMPayload.md)
 - [PaymentpreparationImportIntoEDMV1Request](docs/Model/PaymentpreparationImportIntoEDMV1Request.md)
 - [PaymentpreparationImportIntoEDMV1Response](docs/Model/PaymentpreparationImportIntoEDMV1Response.md)
 - [PaymentpreparationImportIntoEDMV1ResponseMPayload](docs/Model/PaymentpreparationImportIntoEDMV1ResponseMPayload.md)
@@ -2829,6 +2874,14 @@ Class | Method | HTTP request | Description
 - [PurchaseBatchDownloadV1Request](docs/Model/PurchaseBatchDownloadV1Request.md)
 - [PurchaseGetAttachmentsV1Response](docs/Model/PurchaseGetAttachmentsV1Response.md)
 - [PurchaseGetAttachmentsV1ResponseMPayload](docs/Model/PurchaseGetAttachmentsV1ResponseMPayload.md)
+- [PurchaseGetCommunicationCountV1Response](docs/Model/PurchaseGetCommunicationCountV1Response.md)
+- [PurchaseGetCommunicationCountV1ResponseMPayload](docs/Model/PurchaseGetCommunicationCountV1ResponseMPayload.md)
+- [PurchaseGetCommunicationListV1Response](docs/Model/PurchaseGetCommunicationListV1Response.md)
+- [PurchaseGetCommunicationListV1ResponseMPayload](docs/Model/PurchaseGetCommunicationListV1ResponseMPayload.md)
+- [PurchaseGetCommunicationrecipientsV1Response](docs/Model/PurchaseGetCommunicationrecipientsV1Response.md)
+- [PurchaseGetCommunicationrecipientsV1ResponseMPayload](docs/Model/PurchaseGetCommunicationrecipientsV1ResponseMPayload.md)
+- [PurchaseGetCommunicationsendersV1Response](docs/Model/PurchaseGetCommunicationsendersV1Response.md)
+- [PurchaseGetCommunicationsendersV1ResponseMPayload](docs/Model/PurchaseGetCommunicationsendersV1ResponseMPayload.md)
 - [PurchaseGetListV1Response](docs/Model/PurchaseGetListV1Response.md)
 - [PurchaseGetListV1ResponseMPayload](docs/Model/PurchaseGetListV1ResponseMPayload.md)
 - [PurchaseImportIntoEDMV1Request](docs/Model/PurchaseImportIntoEDMV1Request.md)
@@ -2844,6 +2897,14 @@ Class | Method | HTTP request | Description
 - [ReconciliationBatchDownloadV1Request](docs/Model/ReconciliationBatchDownloadV1Request.md)
 - [ReconciliationGetAttachmentsV1Response](docs/Model/ReconciliationGetAttachmentsV1Response.md)
 - [ReconciliationGetAttachmentsV1ResponseMPayload](docs/Model/ReconciliationGetAttachmentsV1ResponseMPayload.md)
+- [ReconciliationGetCommunicationCountV1Response](docs/Model/ReconciliationGetCommunicationCountV1Response.md)
+- [ReconciliationGetCommunicationCountV1ResponseMPayload](docs/Model/ReconciliationGetCommunicationCountV1ResponseMPayload.md)
+- [ReconciliationGetCommunicationListV1Response](docs/Model/ReconciliationGetCommunicationListV1Response.md)
+- [ReconciliationGetCommunicationListV1ResponseMPayload](docs/Model/ReconciliationGetCommunicationListV1ResponseMPayload.md)
+- [ReconciliationGetCommunicationrecipientsV1Response](docs/Model/ReconciliationGetCommunicationrecipientsV1Response.md)
+- [ReconciliationGetCommunicationrecipientsV1ResponseMPayload](docs/Model/ReconciliationGetCommunicationrecipientsV1ResponseMPayload.md)
+- [ReconciliationGetCommunicationsendersV1Response](docs/Model/ReconciliationGetCommunicationsendersV1Response.md)
+- [ReconciliationGetCommunicationsendersV1ResponseMPayload](docs/Model/ReconciliationGetCommunicationsendersV1ResponseMPayload.md)
 - [ReconciliationImportIntoEDMV1Request](docs/Model/ReconciliationImportIntoEDMV1Request.md)
 - [ReconciliationImportIntoEDMV1Response](docs/Model/ReconciliationImportIntoEDMV1Response.md)
 - [ReconciliationImportIntoEDMV1ResponseMPayload](docs/Model/ReconciliationImportIntoEDMV1ResponseMPayload.md)
@@ -2867,6 +2928,14 @@ Class | Method | HTTP request | Description
 - [SalaryBatchDownloadV1Request](docs/Model/SalaryBatchDownloadV1Request.md)
 - [SalaryGetAttachmentsV1Response](docs/Model/SalaryGetAttachmentsV1Response.md)
 - [SalaryGetAttachmentsV1ResponseMPayload](docs/Model/SalaryGetAttachmentsV1ResponseMPayload.md)
+- [SalaryGetCommunicationCountV1Response](docs/Model/SalaryGetCommunicationCountV1Response.md)
+- [SalaryGetCommunicationCountV1ResponseMPayload](docs/Model/SalaryGetCommunicationCountV1ResponseMPayload.md)
+- [SalaryGetCommunicationListV1Response](docs/Model/SalaryGetCommunicationListV1Response.md)
+- [SalaryGetCommunicationListV1ResponseMPayload](docs/Model/SalaryGetCommunicationListV1ResponseMPayload.md)
+- [SalaryGetCommunicationrecipientsV1Response](docs/Model/SalaryGetCommunicationrecipientsV1Response.md)
+- [SalaryGetCommunicationrecipientsV1ResponseMPayload](docs/Model/SalaryGetCommunicationrecipientsV1ResponseMPayload.md)
+- [SalaryGetCommunicationsendersV1Response](docs/Model/SalaryGetCommunicationsendersV1Response.md)
+- [SalaryGetCommunicationsendersV1ResponseMPayload](docs/Model/SalaryGetCommunicationsendersV1ResponseMPayload.md)
 - [SalaryGetListV1Response](docs/Model/SalaryGetListV1Response.md)
 - [SalaryGetListV1ResponseMPayload](docs/Model/SalaryGetListV1ResponseMPayload.md)
 - [SalaryImportIntoEDMV1Request](docs/Model/SalaryImportIntoEDMV1Request.md)
@@ -2921,6 +2990,14 @@ Class | Method | HTTP request | Description
 - [SupplierBatchDownloadV1Request](docs/Model/SupplierBatchDownloadV1Request.md)
 - [SupplierGetAttachmentsV1Response](docs/Model/SupplierGetAttachmentsV1Response.md)
 - [SupplierGetAttachmentsV1ResponseMPayload](docs/Model/SupplierGetAttachmentsV1ResponseMPayload.md)
+- [SupplierGetCommunicationCountV1Response](docs/Model/SupplierGetCommunicationCountV1Response.md)
+- [SupplierGetCommunicationCountV1ResponseMPayload](docs/Model/SupplierGetCommunicationCountV1ResponseMPayload.md)
+- [SupplierGetCommunicationListV1Response](docs/Model/SupplierGetCommunicationListV1Response.md)
+- [SupplierGetCommunicationListV1ResponseMPayload](docs/Model/SupplierGetCommunicationListV1ResponseMPayload.md)
+- [SupplierGetCommunicationrecipientsV1Response](docs/Model/SupplierGetCommunicationrecipientsV1Response.md)
+- [SupplierGetCommunicationrecipientsV1ResponseMPayload](docs/Model/SupplierGetCommunicationrecipientsV1ResponseMPayload.md)
+- [SupplierGetCommunicationsendersV1Response](docs/Model/SupplierGetCommunicationsendersV1Response.md)
+- [SupplierGetCommunicationsendersV1ResponseMPayload](docs/Model/SupplierGetCommunicationsendersV1ResponseMPayload.md)
 - [SupplierGetListV1Response](docs/Model/SupplierGetListV1Response.md)
 - [SupplierGetListV1ResponseMPayload](docs/Model/SupplierGetListV1ResponseMPayload.md)
 - [SupplierImportIntoEDMV1Request](docs/Model/SupplierImportIntoEDMV1Request.md)
@@ -3244,5 +3321,5 @@ This PHP package is automatically generated by the [OpenAPI Generator](https://o
 
 - API version: `1.3.4`
     - Package version: `1.3.4`
-    - Generator version: `7.25.0`
+    - Generator version: `7.26.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

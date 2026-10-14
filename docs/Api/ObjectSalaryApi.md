@@ -8,6 +8,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | ------------- | ------------- | ------------- |
 | [**salaryBatchDownloadV1()**](ObjectSalaryApi.md#salaryBatchDownloadV1) | **POST** /1/object/salary/{pkiSalaryID}/batchDownload | Download multiples attachments from a Reconciliation |
 | [**salaryGetAttachmentsV1()**](ObjectSalaryApi.md#salaryGetAttachmentsV1) | **GET** /1/object/salary/{pkiSalaryID}/getAttachments | Retrieve Salary&#39;s attachments |
+| [**salaryGetCommunicationCountV1()**](ObjectSalaryApi.md#salaryGetCommunicationCountV1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationCount | Retrieve Communication count |
+| [**salaryGetCommunicationListV1()**](ObjectSalaryApi.md#salaryGetCommunicationListV1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationList | Retrieve Communication list |
+| [**salaryGetCommunicationrecipientsV1()**](ObjectSalaryApi.md#salaryGetCommunicationrecipientsV1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**salaryGetCommunicationsendersV1()**](ObjectSalaryApi.md#salaryGetCommunicationsendersV1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationsenders | Retrieve Communication senders |
 | [**salaryGetListV1()**](ObjectSalaryApi.md#salaryGetListV1) | **GET** /1/object/salary/getList | Retrieve Salary list |
 | [**salaryImportIntoEDMV1()**](ObjectSalaryApi.md#salaryImportIntoEDMV1) | **POST** /1/object/salary/{pkiSalaryID}/importIntoEDM | Import attachments into the Salary |
 
@@ -120,6 +124,246 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\SalaryGetAttachmentsV1Response**](../Model/SalaryGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `salaryGetCommunicationCountV1()`
+
+```php
+salaryGetCommunicationCountV1($pkiSalaryID): \eZmaxAPI\Model\SalaryGetCommunicationCountV1Response
+```
+
+Retrieve Communication count
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectSalaryApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiSalaryID = 56; // int
+
+try {
+    $result = $apiInstance->salaryGetCommunicationCountV1($pkiSalaryID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectSalaryApi->salaryGetCommunicationCountV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiSalaryID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\SalaryGetCommunicationCountV1Response**](../Model/SalaryGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `salaryGetCommunicationListV1()`
+
+```php
+salaryGetCommunicationListV1($pkiSalaryID): \eZmaxAPI\Model\SalaryGetCommunicationListV1Response
+```
+
+Retrieve Communication list
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectSalaryApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiSalaryID = 56; // int
+
+try {
+    $result = $apiInstance->salaryGetCommunicationListV1($pkiSalaryID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectSalaryApi->salaryGetCommunicationListV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiSalaryID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\SalaryGetCommunicationListV1Response**](../Model/SalaryGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `salaryGetCommunicationrecipientsV1()`
+
+```php
+salaryGetCommunicationrecipientsV1($pkiSalaryID): \eZmaxAPI\Model\SalaryGetCommunicationrecipientsV1Response
+```
+
+Retrieve Communication recipients
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectSalaryApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiSalaryID = 56; // int
+
+try {
+    $result = $apiInstance->salaryGetCommunicationrecipientsV1($pkiSalaryID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectSalaryApi->salaryGetCommunicationrecipientsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiSalaryID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\SalaryGetCommunicationrecipientsV1Response**](../Model/SalaryGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `salaryGetCommunicationsendersV1()`
+
+```php
+salaryGetCommunicationsendersV1($pkiSalaryID): \eZmaxAPI\Model\SalaryGetCommunicationsendersV1Response
+```
+
+Retrieve Communication senders
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectSalaryApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiSalaryID = 56; // int
+
+try {
+    $result = $apiInstance->salaryGetCommunicationsendersV1($pkiSalaryID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectSalaryApi->salaryGetCommunicationsendersV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiSalaryID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\SalaryGetCommunicationsendersV1Response**](../Model/SalaryGetCommunicationsendersV1Response.md)
 
 ### Authorization
 
