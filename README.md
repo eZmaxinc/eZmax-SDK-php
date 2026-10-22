@@ -247,6 +247,17 @@ Class | Method | HTTP request | Description
 *ObjectDiscussionmessageApi* | [**discussionmessageCreateObjectV1**](docs/Api/ObjectDiscussionmessageApi.md#discussionmessagecreateobjectv1) | **POST** /1/object/discussionmessage | Create a new Discussionmessage
 *ObjectDiscussionmessageApi* | [**discussionmessageDeleteObjectV1**](docs/Api/ObjectDiscussionmessageApi.md#discussionmessagedeleteobjectv1) | **DELETE** /1/object/discussionmessage/{pkiDiscussionmessageID} | Delete an existing Discussionmessage
 *ObjectDiscussionmessageApi* | [**discussionmessagePatchObjectV1**](docs/Api/ObjectDiscussionmessageApi.md#discussionmessagepatchobjectv1) | **PATCH** /1/object/discussionmessage/{pkiDiscussionmessageID} | Patch an existing Discussionmessage
+*ObjectDocumenttypeApi* | [**documenttypeCreateObjectV1**](docs/Api/ObjectDocumenttypeApi.md#documenttypecreateobjectv1) | **POST** /1/object/documenttype | Create a new Documenttype
+*ObjectDocumenttypeApi* | [**documenttypeDeleteObjectV1**](docs/Api/ObjectDocumenttypeApi.md#documenttypedeleteobjectv1) | **DELETE** /1/object/documenttype/{pkiDocumenttypeID} | Delete an existing Documenttype
+*ObjectDocumenttypeApi* | [**documenttypeEditObjectV1**](docs/Api/ObjectDocumenttypeApi.md#documenttypeeditobjectv1) | **PUT** /1/object/documenttype/{pkiDocumenttypeID} | Edit an existing Documenttype
+*ObjectDocumenttypeApi* | [**documenttypeGetAutocompleteV2**](docs/Api/ObjectDocumenttypeApi.md#documenttypegetautocompletev2) | **GET** /2/object/documenttype/getAutocomplete/{sSelector} | Retrieve Documenttypes and IDs
+*ObjectDocumenttypeApi* | [**documenttypeGetListV1**](docs/Api/ObjectDocumenttypeApi.md#documenttypegetlistv1) | **GET** /1/object/documenttype/getList | Retrieve Documenttype list
+*ObjectDocumenttypeApi* | [**documenttypeGetObjectV2**](docs/Api/ObjectDocumenttypeApi.md#documenttypegetobjectv2) | **GET** /2/object/documenttype/{pkiDocumenttypeID} | Retrieve an existing Documenttype
+*ObjectDocumenttypechecklistApi* | [**documenttypechecklistCreateObjectV1**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklistcreateobjectv1) | **POST** /1/object/documenttypechecklist | Create a new Documenttypechecklist
+*ObjectDocumenttypechecklistApi* | [**documenttypechecklistDeleteObjectV1**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklistdeleteobjectv1) | **DELETE** /1/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Delete an existing Documenttypechecklist
+*ObjectDocumenttypechecklistApi* | [**documenttypechecklistEditObjectV1**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklisteditobjectv1) | **PUT** /1/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Edit an existing Documenttypechecklist
+*ObjectDocumenttypechecklistApi* | [**documenttypechecklistGetListV1**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklistgetlistv1) | **GET** /1/object/documenttypechecklist/getList | Retrieve Documenttypechecklist list
+*ObjectDocumenttypechecklistApi* | [**documenttypechecklistGetObjectV2**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklistgetobjectv2) | **GET** /2/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Retrieve an existing Documenttypechecklist
 *ObjectDomainApi* | [**domainCreateObjectV1**](docs/Api/ObjectDomainApi.md#domaincreateobjectv1) | **POST** /1/object/domain | Create a new Domain
 *ObjectDomainApi* | [**domainDeleteObjectV1**](docs/Api/ObjectDomainApi.md#domaindeleteobjectv1) | **DELETE** /1/object/domain/{pkiDomainID} | Delete an existing Domain
 *ObjectDomainApi* | [**domainGetAutocompleteV2**](docs/Api/ObjectDomainApi.md#domaingetautocompletev2) | **GET** /2/object/domain/getAutocomplete/{sSelector} | Retrieve Domain and IDs
@@ -1408,6 +1419,39 @@ Class | Method | HTTP request | Description
 - [DiscussionmessageRequestPatch](docs/Model/DiscussionmessageRequestPatch.md)
 - [DiscussionmessageResponse](docs/Model/DiscussionmessageResponse.md)
 - [DiscussionmessageResponseCompound](docs/Model/DiscussionmessageResponseCompound.md)
+- [DocumenttypeAutocompleteElementResponse](docs/Model/DocumenttypeAutocompleteElementResponse.md)
+- [DocumenttypeCreateObjectV1Request](docs/Model/DocumenttypeCreateObjectV1Request.md)
+- [DocumenttypeCreateObjectV1Response](docs/Model/DocumenttypeCreateObjectV1Response.md)
+- [DocumenttypeCreateObjectV1ResponseMPayload](docs/Model/DocumenttypeCreateObjectV1ResponseMPayload.md)
+- [DocumenttypeDeleteObjectV1Response](docs/Model/DocumenttypeDeleteObjectV1Response.md)
+- [DocumenttypeEditObjectV1Request](docs/Model/DocumenttypeEditObjectV1Request.md)
+- [DocumenttypeEditObjectV1Response](docs/Model/DocumenttypeEditObjectV1Response.md)
+- [DocumenttypeGetAutocompleteV2Response](docs/Model/DocumenttypeGetAutocompleteV2Response.md)
+- [DocumenttypeGetAutocompleteV2ResponseMPayload](docs/Model/DocumenttypeGetAutocompleteV2ResponseMPayload.md)
+- [DocumenttypeGetListV1Response](docs/Model/DocumenttypeGetListV1Response.md)
+- [DocumenttypeGetListV1ResponseMPayload](docs/Model/DocumenttypeGetListV1ResponseMPayload.md)
+- [DocumenttypeGetObjectV2Response](docs/Model/DocumenttypeGetObjectV2Response.md)
+- [DocumenttypeGetObjectV2ResponseMPayload](docs/Model/DocumenttypeGetObjectV2ResponseMPayload.md)
+- [DocumenttypeListElement](docs/Model/DocumenttypeListElement.md)
+- [DocumenttypeRequest](docs/Model/DocumenttypeRequest.md)
+- [DocumenttypeRequestCompound](docs/Model/DocumenttypeRequestCompound.md)
+- [DocumenttypeResponse](docs/Model/DocumenttypeResponse.md)
+- [DocumenttypeResponseCompound](docs/Model/DocumenttypeResponseCompound.md)
+- [DocumenttypechecklistCreateObjectV1Request](docs/Model/DocumenttypechecklistCreateObjectV1Request.md)
+- [DocumenttypechecklistCreateObjectV1Response](docs/Model/DocumenttypechecklistCreateObjectV1Response.md)
+- [DocumenttypechecklistCreateObjectV1ResponseMPayload](docs/Model/DocumenttypechecklistCreateObjectV1ResponseMPayload.md)
+- [DocumenttypechecklistDeleteObjectV1Response](docs/Model/DocumenttypechecklistDeleteObjectV1Response.md)
+- [DocumenttypechecklistEditObjectV1Request](docs/Model/DocumenttypechecklistEditObjectV1Request.md)
+- [DocumenttypechecklistEditObjectV1Response](docs/Model/DocumenttypechecklistEditObjectV1Response.md)
+- [DocumenttypechecklistGetListV1Response](docs/Model/DocumenttypechecklistGetListV1Response.md)
+- [DocumenttypechecklistGetListV1ResponseMPayload](docs/Model/DocumenttypechecklistGetListV1ResponseMPayload.md)
+- [DocumenttypechecklistGetObjectV2Response](docs/Model/DocumenttypechecklistGetObjectV2Response.md)
+- [DocumenttypechecklistGetObjectV2ResponseMPayload](docs/Model/DocumenttypechecklistGetObjectV2ResponseMPayload.md)
+- [DocumenttypechecklistListElement](docs/Model/DocumenttypechecklistListElement.md)
+- [DocumenttypechecklistRequest](docs/Model/DocumenttypechecklistRequest.md)
+- [DocumenttypechecklistRequestCompound](docs/Model/DocumenttypechecklistRequestCompound.md)
+- [DocumenttypechecklistResponse](docs/Model/DocumenttypechecklistResponse.md)
+- [DocumenttypechecklistResponseCompound](docs/Model/DocumenttypechecklistResponseCompound.md)
 - [DomainAutocompleteElementResponse](docs/Model/DomainAutocompleteElementResponse.md)
 - [DomainCreateObjectV1Request](docs/Model/DomainCreateObjectV1Request.md)
 - [DomainCreateObjectV1Response](docs/Model/DomainCreateObjectV1Response.md)
@@ -2410,6 +2454,14 @@ Class | Method | HTTP request | Description
 - [FieldEDisclosureInteresttype](docs/Model/FieldEDisclosureInteresttype.md)
 - [FieldEDiscussionRobot](docs/Model/FieldEDiscussionRobot.md)
 - [FieldEDiscussionmessageStatus](docs/Model/FieldEDiscussionmessageStatus.md)
+- [FieldEDocumenttypeEzcom](docs/Model/FieldEDocumenttypeEzcom.md)
+- [FieldEDocumenttypePrivacydefault](docs/Model/FieldEDocumenttypePrivacydefault.md)
+- [FieldEDocumenttypeRepossession](docs/Model/FieldEDocumenttypeRepossession.md)
+- [FieldEDocumenttypeSalebyowner](docs/Model/FieldEDocumenttypeSalebyowner.md)
+- [FieldEDocumenttypeSaledisplaybyrole](docs/Model/FieldEDocumenttypeSaledisplaybyrole.md)
+- [FieldEDocumenttypeStatusdefault](docs/Model/FieldEDocumenttypeStatusdefault.md)
+- [FieldEDocumenttypeTransactiontype](docs/Model/FieldEDocumenttypeTransactiontype.md)
+- [FieldEDocumenttypechecklistStatus](docs/Model/FieldEDocumenttypechecklistStatus.md)
 - [FieldEErrorCode](docs/Model/FieldEErrorCode.md)
 - [FieldEEzdoctemplatedocumentPrivacylevel](docs/Model/FieldEEzdoctemplatedocumentPrivacylevel.md)
 - [FieldEEzmaxinvoicingPaymenttype](docs/Model/FieldEEzmaxinvoicingPaymenttype.md)
@@ -2704,6 +2756,7 @@ Class | Method | HTTP request | Description
 - [MultilingualApikeyDescription](docs/Model/MultilingualApikeyDescription.md)
 - [MultilingualBillingentityinternalDescription](docs/Model/MultilingualBillingentityinternalDescription.md)
 - [MultilingualBrandingDescription](docs/Model/MultilingualBrandingDescription.md)
+- [MultilingualDocumenttypeName](docs/Model/MultilingualDocumenttypeName.md)
 - [MultilingualEzdoctemplatedocumentName](docs/Model/MultilingualEzdoctemplatedocumentName.md)
 - [MultilingualEzmaxcustomerCompany](docs/Model/MultilingualEzmaxcustomerCompany.md)
 - [MultilingualEzmaxcustomerNote](docs/Model/MultilingualEzmaxcustomerNote.md)
