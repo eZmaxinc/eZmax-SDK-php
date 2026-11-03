@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiDocumenttypeID** | **int** | The unique ID of the Documenttype | [optional]
 **objDocumenttypeName** | [**\eZmaxAPI\Model\MultilingualDocumenttypeName**](MultilingualDocumenttypeName.md) |  |
+**eDocumenttypeStep** | [**\eZmaxAPI\Model\ComputedEDocumenttypeStep**](ComputedEDocumenttypeStep.md) |  |
 **sDocumenttypeDefaultfilename** | **string** | The defaultfilename of the Documenttype |
 **bDocumenttypeShowagent** | **bool** | Whether if it&#39;s an showagent |
 **bDocumenttypeIsactive** | **bool** | Whether the documenttype is active or not |
@@ -20,12 +21,13 @@ Name | Type | Description | Notes
 **bDocumenttypeForeclosedsale** | **bool** | Whether if it&#39;s an foreclosedsale |
 **bDocumenttypeCommercialfunding** | **bool** | Whether if it&#39;s an commercialfunding |
 **bDocumenttypeCanafe** | **bool** | Whether if it&#39;s an canafe |
-**eDocumenttypeEzcom** | [**\eZmaxAPI\Model\FieldEDocumenttypeEzcom**](FieldEDocumenttypeEzcom.md) |  |
+**eDocumenttypeEzcom** | [**\eZmaxAPI\Model\FieldEDocumenttypeEzcom**](FieldEDocumenttypeEzcom.md) |  | [optional]
 **eDocumenttypePrivacydefault** | [**\eZmaxAPI\Model\FieldEDocumenttypePrivacydefault**](FieldEDocumenttypePrivacydefault.md) |  |
 **eDocumenttypeStatusdefault** | [**\eZmaxAPI\Model\FieldEDocumenttypeStatusdefault**](FieldEDocumenttypeStatusdefault.md) |  |
 **eDocumenttypeSalebyowner** | [**\eZmaxAPI\Model\FieldEDocumenttypeSalebyowner**](FieldEDocumenttypeSalebyowner.md) |  |
 **eDocumenttypeSaledisplaybyrole** | [**\eZmaxAPI\Model\FieldEDocumenttypeSaledisplaybyrole**](FieldEDocumenttypeSaledisplaybyrole.md) |  |
 **eDocumenttypeTransactiontype** | [**\eZmaxAPI\Model\FieldEDocumenttypeTransactiontype**](FieldEDocumenttypeTransactiontype.md) |  |
 **eDocumenttypeRepossession** | [**\eZmaxAPI\Model\FieldEDocumenttypeRepossession**](FieldEDocumenttypeRepossession.md) |  |
+**aFkiInscriptiontypeID** | **int[]** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

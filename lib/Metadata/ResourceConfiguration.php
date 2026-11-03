@@ -66,6 +66,45 @@ class ResourceConfiguration {
     }
 
     /**
+     * Retrieves the first configuration that matches the given callback function.
+     *
+     * @param callable(eZmaxAPI\Metadata\ResourceConfiguration): bool $fnCallable The callback to match against.
+     *
+     * @return eZmaxAPI\Metadata\ResourceConfiguration|null The matching configuration or null if none matched.
+     */
+    public static function find(callable $fnCallable): ?ResourceConfiguration    {
+        if (empty(static::$configuration)) {
+            static::$configuration = static::initialize();
+        }
+
+        return array_find(static::$configuration, $fnCallable);
+    }
+
+    /**
+     * Retrieves the first configration that matches the given identifier.
+     *
+     * @param string $sResourceIdentifier The identifier to look for.
+     *
+     * @return eZmaxAPI\Metadata\ResourceConfiguration|null The matching configuration or null if none matched.
+     */
+    public static function findByResourceIdentifier(string $sResourceIdentifier): ?ResourceConfiguration    {
+        return static::find(static fn(ResourceConfiguration $configuration) => $configuration->sResourceIdentifier === $sResourceIdentifier);
+    }
+
+    /**
+     * Retrieves the first configration that matches the given field name.
+     *
+     * @param string $sResourceFieldname The field name to look for.
+     *
+     * @return eZmaxAPI\Metadata\ResourceConfiguration|null The matching configuration or null if none matched.
+     */
+    public static function findByResourceFieldname(string $sResourceFieldname): ?ResourceConfiguration    {
+        return static::find(static fn(ResourceConfiguration $configuration) => $configuration->sResourceFieldname === $sResourceFieldname);
+    }
+
+    /**
+     * Gets the translated name of the resource configuration.
+     *
      * @param eZmaxAPI\Metadata\Language $eLanguage
      *
      * @return string Translated name of the resource.

@@ -7,12 +7,12 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**attachmentDeleteV1()**](ObjectAttachmentApi.md#attachmentDeleteV1) | **POST** /1/object/attachment/{pkiAttachmentID}/delete | Delete an existing attachment |
-| [**attachmentDocumentTypeV1()**](ObjectAttachmentApi.md#attachmentDocumentTypeV1) | **POST** /1/object/attachment/{pkiAttachmentID}/documentType | Change attachment document type |
 | [**attachmentDownloadV1()**](ObjectAttachmentApi.md#attachmentDownloadV1) | **GET** /1/object/attachment/{pkiAttachmentID}/download | Retrieve the content |
 | [**attachmentGetAttachmentlogsV1()**](ObjectAttachmentApi.md#attachmentGetAttachmentlogsV1) | **GET** /1/object/attachment/{pkiAttachmentID}/getAttachmentlogs | Retrieve the Attachmentlogs |
-| [**attachmentPrivacyV1()**](ObjectAttachmentApi.md#attachmentPrivacyV1) | **POST** /1/object/attachment/{pkiAttachmentID}/privacy | Change the attachment privacy |
 | [**attachmentRenameV1()**](ObjectAttachmentApi.md#attachmentRenameV1) | **POST** /1/object/attachment/{pkiAttachmentID}/rename | Rename an attachment |
 | [**attachmentRestoreV1()**](ObjectAttachmentApi.md#attachmentRestoreV1) | **POST** /1/object/attachment/{pkiAttachmentID}/restore | Restore a deleted attachment |
+| [**attachmentSetDocumentTypeV1()**](ObjectAttachmentApi.md#attachmentSetDocumentTypeV1) | **POST** /1/object/attachment/{pkiAttachmentID}/setDocumentType | Change attachment document type |
+| [**attachmentSetPrivacyV1()**](ObjectAttachmentApi.md#attachmentSetPrivacyV1) | **POST** /1/object/attachment/{pkiAttachmentID}/setPrivacy | Change the attachment privacy |
 | [**attachmentValidateV1()**](ObjectAttachmentApi.md#attachmentValidateV1) | **POST** /1/object/attachment/{pkiAttachmentID}/validate | Validate an existing attachment |
 
 
@@ -66,70 +66,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\AttachmentDeleteV1Response**](../Model/AttachmentDeleteV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `attachmentDocumentTypeV1()`
-
-```php
-attachmentDocumentTypeV1($pkiAttachmentID, $attachmentDocumentTypeV1Request): \eZmaxAPI\Model\AttachmentDocumentTypeV1Response
-```
-
-Change attachment document type
-
-The endpoint allows to change the checklist document type for an attachment.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectAttachmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiAttachmentID = 56; // int
-$attachmentDocumentTypeV1Request = new \eZmaxAPI\Model\AttachmentDocumentTypeV1Request(); // \eZmaxAPI\Model\AttachmentDocumentTypeV1Request
-
-try {
-    $result = $apiInstance->attachmentDocumentTypeV1($pkiAttachmentID, $attachmentDocumentTypeV1Request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectAttachmentApi->attachmentDocumentTypeV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiAttachmentID** | **int**|  | |
-| **attachmentDocumentTypeV1Request** | [**\eZmaxAPI\Model\AttachmentDocumentTypeV1Request**](../Model/AttachmentDocumentTypeV1Request.md)|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\AttachmentDocumentTypeV1Response**](../Model/AttachmentDocumentTypeV1Response.md)
 
 ### Authorization
 
@@ -272,70 +208,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `attachmentPrivacyV1()`
-
-```php
-attachmentPrivacyV1($pkiAttachmentID, $attachmentPrivacyV1Request): \eZmaxAPI\Model\AttachmentPrivacyV1Response
-```
-
-Change the attachment privacy
-
-The endpoint allows to change an attachment's access privacy.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectAttachmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiAttachmentID = 56; // int
-$attachmentPrivacyV1Request = new \eZmaxAPI\Model\AttachmentPrivacyV1Request(); // \eZmaxAPI\Model\AttachmentPrivacyV1Request
-
-try {
-    $result = $apiInstance->attachmentPrivacyV1($pkiAttachmentID, $attachmentPrivacyV1Request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectAttachmentApi->attachmentPrivacyV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiAttachmentID** | **int**|  | |
-| **attachmentPrivacyV1Request** | [**\eZmaxAPI\Model\AttachmentPrivacyV1Request**](../Model/AttachmentPrivacyV1Request.md)|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\AttachmentPrivacyV1Response**](../Model/AttachmentPrivacyV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `attachmentRenameV1()`
 
 ```php
@@ -450,6 +322,134 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\AttachmentRestoreV1Response**](../Model/AttachmentRestoreV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `attachmentSetDocumentTypeV1()`
+
+```php
+attachmentSetDocumentTypeV1($pkiAttachmentID, $attachmentSetDocumentTypeV1Request): \eZmaxAPI\Model\AttachmentSetDocumentTypeV1Response
+```
+
+Change attachment document type
+
+The endpoint allows to change the checklist document type for an attachment.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAttachmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiAttachmentID = 56; // int
+$attachmentSetDocumentTypeV1Request = new \eZmaxAPI\Model\AttachmentSetDocumentTypeV1Request(); // \eZmaxAPI\Model\AttachmentSetDocumentTypeV1Request
+
+try {
+    $result = $apiInstance->attachmentSetDocumentTypeV1($pkiAttachmentID, $attachmentSetDocumentTypeV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAttachmentApi->attachmentSetDocumentTypeV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiAttachmentID** | **int**|  | |
+| **attachmentSetDocumentTypeV1Request** | [**\eZmaxAPI\Model\AttachmentSetDocumentTypeV1Request**](../Model/AttachmentSetDocumentTypeV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\AttachmentSetDocumentTypeV1Response**](../Model/AttachmentSetDocumentTypeV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `attachmentSetPrivacyV1()`
+
+```php
+attachmentSetPrivacyV1($pkiAttachmentID, $attachmentSetPrivacyV1Request): \eZmaxAPI\Model\AttachmentSetPrivacyV1Response
+```
+
+Change the attachment privacy
+
+The endpoint allows to change an attachment's access privacy.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAttachmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiAttachmentID = 56; // int
+$attachmentSetPrivacyV1Request = new \eZmaxAPI\Model\AttachmentSetPrivacyV1Request(); // \eZmaxAPI\Model\AttachmentSetPrivacyV1Request
+
+try {
+    $result = $apiInstance->attachmentSetPrivacyV1($pkiAttachmentID, $attachmentSetPrivacyV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAttachmentApi->attachmentSetPrivacyV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiAttachmentID** | **int**|  | |
+| **attachmentSetPrivacyV1Request** | [**\eZmaxAPI\Model\AttachmentSetPrivacyV1Request**](../Model/AttachmentSetPrivacyV1Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\AttachmentSetPrivacyV1Response**](../Model/AttachmentSetPrivacyV1Response.md)
 
 ### Authorization
 

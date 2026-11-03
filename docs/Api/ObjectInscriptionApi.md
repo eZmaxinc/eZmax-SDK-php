@@ -17,6 +17,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**inscriptionGetObjectV2()**](ObjectInscriptionApi.md#inscriptionGetObjectV2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription |
 | [**inscriptionImportIntoEDMV1()**](ObjectInscriptionApi.md#inscriptionImportIntoEDMV1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription |
 | [**inscriptionPrepareFilesTransferV1()**](ObjectInscriptionApi.md#inscriptionPrepareFilesTransferV1) | **POST** /1/object/inscription/{pkiInscriptionID}/prepareFilesTransfer | Prepares file transfer into EDM |
+| [**inscriptionSynchronizationDocumenttypeV1()**](ObjectInscriptionApi.md#inscriptionSynchronizationDocumenttypeV1) | **POST** /1/object/inscription/{pkiInscriptionID}/synchronizationDocumenttype | Synchronization of the Documenttype in the Inscription |
 
 
 ## `inscriptionBatchDownloadV1()`
@@ -697,6 +698,70 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\InscriptionPrepareFilesTransferV1Response**](../Model/InscriptionPrepareFilesTransferV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `inscriptionSynchronizationDocumenttypeV1()`
+
+```php
+inscriptionSynchronizationDocumenttypeV1($pkiInscriptionID, $body): \eZmaxAPI\Model\InscriptionSynchronizationDocumenttypeV1Response
+```
+
+Synchronization of the Documenttype in the Inscription
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectInscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiInscriptionID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->inscriptionSynchronizationDocumenttypeV1($pkiInscriptionID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectInscriptionApi->inscriptionSynchronizationDocumenttypeV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiInscriptionID** | **int**|  | |
+| **body** | **object**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\InscriptionSynchronizationDocumenttypeV1Response**](../Model/InscriptionSynchronizationDocumenttypeV1Response.md)
 
 ### Authorization
 

@@ -119,12 +119,12 @@ Class | Method | HTTP request | Description
 *ObjectApikeyApi* | [**apikeyGetSubnetsV1**](docs/Api/ObjectApikeyApi.md#apikeygetsubnetsv1) | **GET** /1/object/apikey/{pkiApikeyID}/getSubnets | Retrieve an existing Apikey&#39;s subnets
 *ObjectApikeyApi* | [**apikeyRegenerateV1**](docs/Api/ObjectApikeyApi.md#apikeyregeneratev1) | **POST** /1/object/apikey/{pkiApikeyID}/regenerate | Regenerate the Apikey
 *ObjectAttachmentApi* | [**attachmentDeleteV1**](docs/Api/ObjectAttachmentApi.md#attachmentdeletev1) | **POST** /1/object/attachment/{pkiAttachmentID}/delete | Delete an existing attachment
-*ObjectAttachmentApi* | [**attachmentDocumentTypeV1**](docs/Api/ObjectAttachmentApi.md#attachmentdocumenttypev1) | **POST** /1/object/attachment/{pkiAttachmentID}/documentType | Change attachment document type
 *ObjectAttachmentApi* | [**attachmentDownloadV1**](docs/Api/ObjectAttachmentApi.md#attachmentdownloadv1) | **GET** /1/object/attachment/{pkiAttachmentID}/download | Retrieve the content
 *ObjectAttachmentApi* | [**attachmentGetAttachmentlogsV1**](docs/Api/ObjectAttachmentApi.md#attachmentgetattachmentlogsv1) | **GET** /1/object/attachment/{pkiAttachmentID}/getAttachmentlogs | Retrieve the Attachmentlogs
-*ObjectAttachmentApi* | [**attachmentPrivacyV1**](docs/Api/ObjectAttachmentApi.md#attachmentprivacyv1) | **POST** /1/object/attachment/{pkiAttachmentID}/privacy | Change the attachment privacy
 *ObjectAttachmentApi* | [**attachmentRenameV1**](docs/Api/ObjectAttachmentApi.md#attachmentrenamev1) | **POST** /1/object/attachment/{pkiAttachmentID}/rename | Rename an attachment
 *ObjectAttachmentApi* | [**attachmentRestoreV1**](docs/Api/ObjectAttachmentApi.md#attachmentrestorev1) | **POST** /1/object/attachment/{pkiAttachmentID}/restore | Restore a deleted attachment
+*ObjectAttachmentApi* | [**attachmentSetDocumentTypeV1**](docs/Api/ObjectAttachmentApi.md#attachmentsetdocumenttypev1) | **POST** /1/object/attachment/{pkiAttachmentID}/setDocumentType | Change attachment document type
+*ObjectAttachmentApi* | [**attachmentSetPrivacyV1**](docs/Api/ObjectAttachmentApi.md#attachmentsetprivacyv1) | **POST** /1/object/attachment/{pkiAttachmentID}/setPrivacy | Change the attachment privacy
 *ObjectAttachmentApi* | [**attachmentValidateV1**](docs/Api/ObjectAttachmentApi.md#attachmentvalidatev1) | **POST** /1/object/attachment/{pkiAttachmentID}/validate | Validate an existing attachment
 *ObjectAttachmentrejectreasonApi* | [**attachmentrejectreasonGetAutocompleteV2**](docs/Api/ObjectAttachmentrejectreasonApi.md#attachmentrejectreasongetautocompletev2) | **GET** /2/object/attachmentrejectreason/getAutocomplete/{sSelector} | Retrieve Attachmentrejectreasons and IDs
 *ObjectAuthenticationexternalApi* | [**authenticationexternalCreateObjectV1**](docs/Api/ObjectAuthenticationexternalApi.md#authenticationexternalcreateobjectv1) | **POST** /1/object/authenticationexternal | Create a new Authenticationexternal
@@ -248,16 +248,12 @@ Class | Method | HTTP request | Description
 *ObjectDiscussionmessageApi* | [**discussionmessageDeleteObjectV1**](docs/Api/ObjectDiscussionmessageApi.md#discussionmessagedeleteobjectv1) | **DELETE** /1/object/discussionmessage/{pkiDiscussionmessageID} | Delete an existing Discussionmessage
 *ObjectDiscussionmessageApi* | [**discussionmessagePatchObjectV1**](docs/Api/ObjectDiscussionmessageApi.md#discussionmessagepatchobjectv1) | **PATCH** /1/object/discussionmessage/{pkiDiscussionmessageID} | Patch an existing Discussionmessage
 *ObjectDocumenttypeApi* | [**documenttypeCreateObjectV1**](docs/Api/ObjectDocumenttypeApi.md#documenttypecreateobjectv1) | **POST** /1/object/documenttype | Create a new Documenttype
-*ObjectDocumenttypeApi* | [**documenttypeDeleteObjectV1**](docs/Api/ObjectDocumenttypeApi.md#documenttypedeleteobjectv1) | **DELETE** /1/object/documenttype/{pkiDocumenttypeID} | Delete an existing Documenttype
 *ObjectDocumenttypeApi* | [**documenttypeEditObjectV1**](docs/Api/ObjectDocumenttypeApi.md#documenttypeeditobjectv1) | **PUT** /1/object/documenttype/{pkiDocumenttypeID} | Edit an existing Documenttype
 *ObjectDocumenttypeApi* | [**documenttypeGetAutocompleteV2**](docs/Api/ObjectDocumenttypeApi.md#documenttypegetautocompletev2) | **GET** /2/object/documenttype/getAutocomplete/{sSelector} | Retrieve Documenttypes and IDs
 *ObjectDocumenttypeApi* | [**documenttypeGetListV1**](docs/Api/ObjectDocumenttypeApi.md#documenttypegetlistv1) | **GET** /1/object/documenttype/getList | Retrieve Documenttype list
 *ObjectDocumenttypeApi* | [**documenttypeGetObjectV2**](docs/Api/ObjectDocumenttypeApi.md#documenttypegetobjectv2) | **GET** /2/object/documenttype/{pkiDocumenttypeID} | Retrieve an existing Documenttype
-*ObjectDocumenttypechecklistApi* | [**documenttypechecklistCreateObjectV1**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklistcreateobjectv1) | **POST** /1/object/documenttypechecklist | Create a new Documenttypechecklist
 *ObjectDocumenttypechecklistApi* | [**documenttypechecklistDeleteObjectV1**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklistdeleteobjectv1) | **DELETE** /1/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Delete an existing Documenttypechecklist
-*ObjectDocumenttypechecklistApi* | [**documenttypechecklistEditObjectV1**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklisteditobjectv1) | **PUT** /1/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Edit an existing Documenttypechecklist
-*ObjectDocumenttypechecklistApi* | [**documenttypechecklistGetListV1**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklistgetlistv1) | **GET** /1/object/documenttypechecklist/getList | Retrieve Documenttypechecklist list
-*ObjectDocumenttypechecklistApi* | [**documenttypechecklistGetObjectV2**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklistgetobjectv2) | **GET** /2/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Retrieve an existing Documenttypechecklist
+*ObjectDocumenttypechecklistApi* | [**documenttypechecklistPatchObjectV1**](docs/Api/ObjectDocumenttypechecklistApi.md#documenttypechecklistpatchobjectv1) | **PATCH** /1/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Patch an existing Documenttypechecklist
 *ObjectDomainApi* | [**domainCreateObjectV1**](docs/Api/ObjectDomainApi.md#domaincreateobjectv1) | **POST** /1/object/domain | Create a new Domain
 *ObjectDomainApi* | [**domainDeleteObjectV1**](docs/Api/ObjectDomainApi.md#domaindeleteobjectv1) | **DELETE** /1/object/domain/{pkiDomainID} | Delete an existing Domain
 *ObjectDomainApi* | [**domainGetAutocompleteV2**](docs/Api/ObjectDomainApi.md#domaingetautocompletev2) | **GET** /2/object/domain/getAutocomplete/{sSelector} | Retrieve Domain and IDs
@@ -600,6 +596,7 @@ Class | Method | HTTP request | Description
 *ObjectInscriptionApi* | [**inscriptionGetObjectV2**](docs/Api/ObjectInscriptionApi.md#inscriptiongetobjectv2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription
 *ObjectInscriptionApi* | [**inscriptionImportIntoEDMV1**](docs/Api/ObjectInscriptionApi.md#inscriptionimportintoedmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription
 *ObjectInscriptionApi* | [**inscriptionPrepareFilesTransferV1**](docs/Api/ObjectInscriptionApi.md#inscriptionpreparefilestransferv1) | **POST** /1/object/inscription/{pkiInscriptionID}/prepareFilesTransfer | Prepares file transfer into EDM
+*ObjectInscriptionApi* | [**inscriptionSynchronizationDocumenttypeV1**](docs/Api/ObjectInscriptionApi.md#inscriptionsynchronizationdocumenttypev1) | **POST** /1/object/inscription/{pkiInscriptionID}/synchronizationDocumenttype | Synchronization of the Documenttype in the Inscription
 *ObjectInscriptionchecklistApi* | [**inscriptionchecklistGetAutocompleteV3**](docs/Api/ObjectInscriptionchecklistApi.md#inscriptionchecklistgetautocompletev3) | **GET** /3/object/inscriptionchecklist/getAutocomplete/{sSelector} | Retrieve Inscriptionchecklists and IDs
 *ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedBatchDownloadV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedbatchdownloadv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/batchDownload | Download multiples attachments from a Inscriptionnotauthenticated
 *ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1**](docs/Api/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticatedfillinscriptionnotauthenticatedconditionv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/fillInscriptionnotauthenticatedcondition | Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
@@ -935,14 +932,8 @@ Class | Method | HTTP request | Description
 - [ApikeyResponseCompound](docs/Model/ApikeyResponseCompound.md)
 - [AttachmentDeleteV1Response](docs/Model/AttachmentDeleteV1Response.md)
 - [AttachmentDeleteV1ResponseMPayload](docs/Model/AttachmentDeleteV1ResponseMPayload.md)
-- [AttachmentDocumentTypeV1Request](docs/Model/AttachmentDocumentTypeV1Request.md)
-- [AttachmentDocumentTypeV1Response](docs/Model/AttachmentDocumentTypeV1Response.md)
-- [AttachmentDocumentTypeV1ResponseMPayload](docs/Model/AttachmentDocumentTypeV1ResponseMPayload.md)
 - [AttachmentGetAttachmentlogsV1Response](docs/Model/AttachmentGetAttachmentlogsV1Response.md)
 - [AttachmentGetAttachmentlogsV1ResponseMPayload](docs/Model/AttachmentGetAttachmentlogsV1ResponseMPayload.md)
-- [AttachmentPrivacyV1Request](docs/Model/AttachmentPrivacyV1Request.md)
-- [AttachmentPrivacyV1Response](docs/Model/AttachmentPrivacyV1Response.md)
-- [AttachmentPrivacyV1ResponseMPayload](docs/Model/AttachmentPrivacyV1ResponseMPayload.md)
 - [AttachmentRenameV1Request](docs/Model/AttachmentRenameV1Request.md)
 - [AttachmentRenameV1Response](docs/Model/AttachmentRenameV1Response.md)
 - [AttachmentRenameV1ResponseMPayload](docs/Model/AttachmentRenameV1ResponseMPayload.md)
@@ -951,6 +942,12 @@ Class | Method | HTTP request | Description
 - [AttachmentRestoreV1Request](docs/Model/AttachmentRestoreV1Request.md)
 - [AttachmentRestoreV1Response](docs/Model/AttachmentRestoreV1Response.md)
 - [AttachmentRestoreV1ResponseMPayload](docs/Model/AttachmentRestoreV1ResponseMPayload.md)
+- [AttachmentSetDocumentTypeV1Request](docs/Model/AttachmentSetDocumentTypeV1Request.md)
+- [AttachmentSetDocumentTypeV1Response](docs/Model/AttachmentSetDocumentTypeV1Response.md)
+- [AttachmentSetDocumentTypeV1ResponseMPayload](docs/Model/AttachmentSetDocumentTypeV1ResponseMPayload.md)
+- [AttachmentSetPrivacyV1Request](docs/Model/AttachmentSetPrivacyV1Request.md)
+- [AttachmentSetPrivacyV1Response](docs/Model/AttachmentSetPrivacyV1Response.md)
+- [AttachmentSetPrivacyV1ResponseMPayload](docs/Model/AttachmentSetPrivacyV1ResponseMPayload.md)
 - [AttachmentValidateV1Request](docs/Model/AttachmentValidateV1Request.md)
 - [AttachmentValidateV1Response](docs/Model/AttachmentValidateV1Response.md)
 - [AttachmentValidateV1ResponseMPayload](docs/Model/AttachmentValidateV1ResponseMPayload.md)
@@ -1156,6 +1153,7 @@ Class | Method | HTTP request | Description
 - [CompanyGetAutocompleteV2Response](docs/Model/CompanyGetAutocompleteV2Response.md)
 - [CompanyGetAutocompleteV2ResponseMPayload](docs/Model/CompanyGetAutocompleteV2ResponseMPayload.md)
 - [ComputedECommunicationDirection](docs/Model/ComputedECommunicationDirection.md)
+- [ComputedEDocumenttypeStep](docs/Model/ComputedEDocumenttypeStep.md)
 - [ComputedEEzsigndocumentSteptype](docs/Model/ComputedEEzsigndocumentSteptype.md)
 - [ComputedEEzsignfolderAccess](docs/Model/ComputedEEzsignfolderAccess.md)
 - [ComputedEEzsignimportfolderStatus](docs/Model/ComputedEEzsignimportfolderStatus.md)
@@ -1297,6 +1295,7 @@ Class | Method | HTTP request | Description
 - [CustomFormDataSignerResponse](docs/Model/CustomFormDataSignerResponse.md)
 - [CustomFormsDataFolderResponse](docs/Model/CustomFormsDataFolderResponse.md)
 - [CustomImportEzsigntemplatepackageRelationRequest](docs/Model/CustomImportEzsigntemplatepackageRelationRequest.md)
+- [CustomInscription](docs/Model/CustomInscription.md)
 - [CustomInscriptionnotauthenticatedconditionRequest](docs/Model/CustomInscriptionnotauthenticatedconditionRequest.md)
 - [CustomNotificationsubsectiongetnotificationtestsResponse](docs/Model/CustomNotificationsubsectiongetnotificationtestsResponse.md)
 - [CustomNotificationtestgetelementsResponse](docs/Model/CustomNotificationtestgetelementsResponse.md)
@@ -1423,7 +1422,6 @@ Class | Method | HTTP request | Description
 - [DocumenttypeCreateObjectV1Request](docs/Model/DocumenttypeCreateObjectV1Request.md)
 - [DocumenttypeCreateObjectV1Response](docs/Model/DocumenttypeCreateObjectV1Response.md)
 - [DocumenttypeCreateObjectV1ResponseMPayload](docs/Model/DocumenttypeCreateObjectV1ResponseMPayload.md)
-- [DocumenttypeDeleteObjectV1Response](docs/Model/DocumenttypeDeleteObjectV1Response.md)
 - [DocumenttypeEditObjectV1Request](docs/Model/DocumenttypeEditObjectV1Request.md)
 - [DocumenttypeEditObjectV1Response](docs/Model/DocumenttypeEditObjectV1Response.md)
 - [DocumenttypeGetAutocompleteV2Response](docs/Model/DocumenttypeGetAutocompleteV2Response.md)
@@ -1437,21 +1435,10 @@ Class | Method | HTTP request | Description
 - [DocumenttypeRequestCompound](docs/Model/DocumenttypeRequestCompound.md)
 - [DocumenttypeResponse](docs/Model/DocumenttypeResponse.md)
 - [DocumenttypeResponseCompound](docs/Model/DocumenttypeResponseCompound.md)
-- [DocumenttypechecklistCreateObjectV1Request](docs/Model/DocumenttypechecklistCreateObjectV1Request.md)
-- [DocumenttypechecklistCreateObjectV1Response](docs/Model/DocumenttypechecklistCreateObjectV1Response.md)
-- [DocumenttypechecklistCreateObjectV1ResponseMPayload](docs/Model/DocumenttypechecklistCreateObjectV1ResponseMPayload.md)
 - [DocumenttypechecklistDeleteObjectV1Response](docs/Model/DocumenttypechecklistDeleteObjectV1Response.md)
-- [DocumenttypechecklistEditObjectV1Request](docs/Model/DocumenttypechecklistEditObjectV1Request.md)
-- [DocumenttypechecklistEditObjectV1Response](docs/Model/DocumenttypechecklistEditObjectV1Response.md)
-- [DocumenttypechecklistGetListV1Response](docs/Model/DocumenttypechecklistGetListV1Response.md)
-- [DocumenttypechecklistGetListV1ResponseMPayload](docs/Model/DocumenttypechecklistGetListV1ResponseMPayload.md)
-- [DocumenttypechecklistGetObjectV2Response](docs/Model/DocumenttypechecklistGetObjectV2Response.md)
-- [DocumenttypechecklistGetObjectV2ResponseMPayload](docs/Model/DocumenttypechecklistGetObjectV2ResponseMPayload.md)
-- [DocumenttypechecklistListElement](docs/Model/DocumenttypechecklistListElement.md)
-- [DocumenttypechecklistRequest](docs/Model/DocumenttypechecklistRequest.md)
-- [DocumenttypechecklistRequestCompound](docs/Model/DocumenttypechecklistRequestCompound.md)
-- [DocumenttypechecklistResponse](docs/Model/DocumenttypechecklistResponse.md)
-- [DocumenttypechecklistResponseCompound](docs/Model/DocumenttypechecklistResponseCompound.md)
+- [DocumenttypechecklistPatchObjectV1Request](docs/Model/DocumenttypechecklistPatchObjectV1Request.md)
+- [DocumenttypechecklistPatchObjectV1Response](docs/Model/DocumenttypechecklistPatchObjectV1Response.md)
+- [DocumenttypechecklistRequestPatch](docs/Model/DocumenttypechecklistRequestPatch.md)
 - [DomainAutocompleteElementResponse](docs/Model/DomainAutocompleteElementResponse.md)
 - [DomainCreateObjectV1Request](docs/Model/DomainCreateObjectV1Request.md)
 - [DomainCreateObjectV1Response](docs/Model/DomainCreateObjectV1Response.md)
@@ -2652,6 +2639,7 @@ Class | Method | HTTP request | Description
 - [InscriptionPrepareFilesTransferV1ResponseMPayload](docs/Model/InscriptionPrepareFilesTransferV1ResponseMPayload.md)
 - [InscriptionResponse](docs/Model/InscriptionResponse.md)
 - [InscriptionResponseCompound](docs/Model/InscriptionResponseCompound.md)
+- [InscriptionSynchronizationDocumenttypeV1Response](docs/Model/InscriptionSynchronizationDocumenttypeV1Response.md)
 - [InscriptionchecklistAutocompleteElementResponse](docs/Model/InscriptionchecklistAutocompleteElementResponse.md)
 - [InscriptionchecklistGetAutocompleteV3Response](docs/Model/InscriptionchecklistGetAutocompleteV3Response.md)
 - [InscriptionchecklistGetAutocompleteV3ResponseMPayload](docs/Model/InscriptionchecklistGetAutocompleteV3ResponseMPayload.md)
@@ -3374,5 +3362,5 @@ This PHP package is automatically generated by the [OpenAPI Generator](https://o
 
 - API version: `1.3.4`
     - Package version: `1.3.4`
-    - Generator version: `7.26.0`
+    - Generator version: `7.27.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **bDocumenttypeForeclosedsale** | **bool** | Whether if it&#39;s an foreclosedsale |
 **bDocumenttypeCommercialfunding** | **bool** | Whether if it&#39;s an commercialfunding |
 **bDocumenttypeCanafe** | **bool** | Whether if it&#39;s an canafe |
-**eDocumenttypeEzcom** | [**\eZmaxAPI\Model\FieldEDocumenttypeEzcom**](FieldEDocumenttypeEzcom.md) |  |
+**eDocumenttypeEzcom** | [**\eZmaxAPI\Model\FieldEDocumenttypeEzcom**](FieldEDocumenttypeEzcom.md) |  | [optional]
 **eDocumenttypePrivacydefault** | [**\eZmaxAPI\Model\FieldEDocumenttypePrivacydefault**](FieldEDocumenttypePrivacydefault.md) |  |
 **eDocumenttypeStatusdefault** | [**\eZmaxAPI\Model\FieldEDocumenttypeStatusdefault**](FieldEDocumenttypeStatusdefault.md) |  |
 **eDocumenttypeSalebyowner** | [**\eZmaxAPI\Model\FieldEDocumenttypeSalebyowner**](FieldEDocumenttypeSalebyowner.md) |  |
