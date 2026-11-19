@@ -568,6 +568,7 @@ docs/Model/CustomCommunicationsenderResponse.md
 docs/Model/CustomContactNameResponse.md
 docs/Model/CustomCreateEzsignelementsPositionedByWordRequest.md
 docs/Model/CustomCreditcardRequest.md
+docs/Model/CustomCreditcardmerchantResponse.md
 docs/Model/CustomCreditcardtransactionResponse.md
 docs/Model/CustomCreditcardtransactionresponseResponse.md
 docs/Model/CustomDiscussionconfigurationResponse.md
@@ -3220,6 +3221,7 @@ lib/Model/CustomCommunicationsenderResponse.php
 lib/Model/CustomContactNameResponse.php
 lib/Model/CustomCreateEzsignelementsPositionedByWordRequest.php
 lib/Model/CustomCreditcardRequest.php
+lib/Model/CustomCreditcardmerchantResponse.php
 lib/Model/CustomCreditcardtransactionResponse.php
 lib/Model/CustomCreditcardtransactionresponseResponse.php
 lib/Model/CustomDiscussionconfigurationResponse.php

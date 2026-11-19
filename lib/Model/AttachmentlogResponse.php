@@ -340,10 +340,10 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['eAttachmentlogType'] === null) {
             $invalidProperties[] = "'eAttachmentlogType' can't be null";
         }
-        //if (!is_null($this->container['sAttachmentlogDetail']) && !preg_match("/[\\s\\S]{0,65535}$/", $this->container['sAttachmentlogDetail'])) {
-        if (!is_null($this->container['sAttachmentlogDetail']) && !preg_match("/(*UTF8)[\\s\\S]{0,65535}$/", $this->container['sAttachmentlogDetail'])) {
-            //$invalidProperties[] = "invalid value for 'sAttachmentlogDetail', must be conform to the pattern /[\\s\\S]{0,65535}$/.";
-            $invalidProperties[] = "invalid value ".(is_null($this->container['sAttachmentlogDetail'])?'null':'"'.$this->container['sAttachmentlogDetail'].'"')." for 'sAttachmentlogDetail', must be conform to the pattern /[\\s\\S]{0,65535}$/.";
+        //if (!is_null($this->container['sAttachmentlogDetail']) && !preg_match("/^[\\s\\S]{0,65535}$/", $this->container['sAttachmentlogDetail'])) {
+        if (!is_null($this->container['sAttachmentlogDetail']) && !preg_match("/(*UTF8)^[\\s\\S]{0,65535}$/", $this->container['sAttachmentlogDetail'])) {
+            //$invalidProperties[] = "invalid value for 'sAttachmentlogDetail', must be conform to the pattern /^[\\s\\S]{0,65535}$/.";
+            $invalidProperties[] = "invalid value ".(is_null($this->container['sAttachmentlogDetail'])?'null':'"'.$this->container['sAttachmentlogDetail'].'"')." for 'sAttachmentlogDetail', must be conform to the pattern /^[\\s\\S]{0,65535}$/.";
         }
 
         return $invalidProperties;
@@ -565,10 +565,10 @@ class AttachmentlogResponse implements ModelInterface, ArrayAccess, \JsonSeriali
             //throw new \InvalidArgumentException('non-nullable sAttachmentlogDetail cannot be null');
         //}
 
-        //if ((!preg_match("/[\\s\\S]{0,65535}$/", ObjectSerializer::toString($sAttachmentlogDetail)))) {
-        if (!is_null($sAttachmentlogDetail) && (!preg_match("/(*UTF8)[\\s\\S]{0,65535}$/", ObjectSerializer::toString($sAttachmentlogDetail)))) {
-            //throw new \InvalidArgumentException("invalid value for \$sAttachmentlogDetail when calling AttachmentlogResponse., must conform to the pattern /[\\s\\S]{0,65535}$/.");
-            throw new \InvalidArgumentException("invalid value ".(is_null($sAttachmentlogDetail)?'null':'"'.$sAttachmentlogDetail.'"')." for sAttachmentlogDetail when calling AttachmentlogResponse., must conform to the pattern /[\\s\\S]{0,65535}$/.");
+        //if ((!preg_match("/^[\\s\\S]{0,65535}$/", ObjectSerializer::toString($sAttachmentlogDetail)))) {
+        if (!is_null($sAttachmentlogDetail) && (!preg_match("/(*UTF8)^[\\s\\S]{0,65535}$/", ObjectSerializer::toString($sAttachmentlogDetail)))) {
+            //throw new \InvalidArgumentException("invalid value for \$sAttachmentlogDetail when calling AttachmentlogResponse., must conform to the pattern /^[\\s\\S]{0,65535}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sAttachmentlogDetail)?'null':'"'.$sAttachmentlogDetail.'"')." for sAttachmentlogDetail when calling AttachmentlogResponse., must conform to the pattern /^[\\s\\S]{0,65535}$/.");
         }
 
         

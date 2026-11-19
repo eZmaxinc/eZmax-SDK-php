@@ -110,7 +110,8 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'objCreditcardtransaction' => '\eZmaxAPI\Model\CustomCreditcardtransactionResponse',
         'aObjEzsignelementdependency' => '\eZmaxAPI\Model\EzsignelementdependencyResponseCompound[]',
         'objTimezone' => '\eZmaxAPI\Model\CustomTimezoneWithCodeResponse',
-        'aObjEzsignsignaturepaymentdetail' => '\eZmaxAPI\Model\EzsignsignaturepaymentdetailResponseCompound[]'
+        'aObjEzsignsignaturepaymentdetail' => '\eZmaxAPI\Model\EzsignsignaturepaymentdetailResponseCompound[]',
+        'objCreditcardmerchant' => '\eZmaxAPI\Model\CustomCreditcardmerchantResponse'
     ];
 
     /**
@@ -172,7 +173,8 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'objCreditcardtransaction' => null,
         'aObjEzsignelementdependency' => null,
         'objTimezone' => null,
-        'aObjEzsignsignaturepaymentdetail' => null
+        'aObjEzsignsignaturepaymentdetail' => null,
+        'objCreditcardmerchant' => null
     ];
 
     /**
@@ -232,7 +234,8 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'objCreditcardtransaction' => false,
         'aObjEzsignelementdependency' => false,
         'objTimezone' => false,
-        'aObjEzsignsignaturepaymentdetail' => false
+        'aObjEzsignsignaturepaymentdetail' => false,
+        'objCreditcardmerchant' => false
     ];
 
     /**
@@ -372,7 +375,8 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'objCreditcardtransaction' => 'objCreditcardtransaction',
         'aObjEzsignelementdependency' => 'a_objEzsignelementdependency',
         'objTimezone' => 'objTimezone',
-        'aObjEzsignsignaturepaymentdetail' => 'a_objEzsignsignaturepaymentdetail'
+        'aObjEzsignsignaturepaymentdetail' => 'a_objEzsignsignaturepaymentdetail',
+        'objCreditcardmerchant' => 'objCreditcardmerchant'
     ];
 
     /**
@@ -432,7 +436,8 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'objCreditcardtransaction' => 'setObjCreditcardtransaction',
         'aObjEzsignelementdependency' => 'setAObjEzsignelementdependency',
         'objTimezone' => 'setObjTimezone',
-        'aObjEzsignsignaturepaymentdetail' => 'setAObjEzsignsignaturepaymentdetail'
+        'aObjEzsignsignaturepaymentdetail' => 'setAObjEzsignsignaturepaymentdetail',
+        'objCreditcardmerchant' => 'setObjCreditcardmerchant'
     ];
 
     /**
@@ -492,7 +497,8 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         'objCreditcardtransaction' => 'getObjCreditcardtransaction',
         'aObjEzsignelementdependency' => 'getAObjEzsignelementdependency',
         'objTimezone' => 'getObjTimezone',
-        'aObjEzsignsignaturepaymentdetail' => 'getAObjEzsignsignaturepaymentdetail'
+        'aObjEzsignsignaturepaymentdetail' => 'getAObjEzsignsignaturepaymentdetail',
+        'objCreditcardmerchant' => 'getObjCreditcardmerchant'
     ];
 
     /**
@@ -604,6 +610,7 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
         $this->setIfExists('aObjEzsignelementdependency', $data ?? [], null);
         $this->setIfExists('objTimezone', $data ?? [], null);
         $this->setIfExists('aObjEzsignsignaturepaymentdetail', $data ?? [], null);
+        $this->setIfExists('objCreditcardmerchant', $data ?? [], null);
     }
 
     /**
@@ -2604,6 +2611,38 @@ class EzsignsignatureResponseCompound implements ModelInterface, ArrayAccess, \J
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
         //$this->container['aObjEzsignsignaturepaymentdetail'] = $aObjEzsignsignaturepaymentdetail;
         $this->container['aObjEzsignsignaturepaymentdetail'] = $aObjEzsignsignaturepaymentdetail;
+
+        return $this;
+    }
+
+    /**
+     * Gets objCreditcardmerchant
+     *
+     * @return \eZmaxAPI\Model\CustomCreditcardmerchantResponse|null
+     */
+    public function getObjCreditcardmerchant()
+    {
+	//return $this->container['objCreditcardmerchant'];
+        return $this->container['objCreditcardmerchant'];
+    }
+
+    /**
+     * Sets objCreditcardmerchant
+     *
+     * @param \eZmaxAPI\Model\CustomCreditcardmerchantResponse|null $objCreditcardmerchant objCreditcardmerchant
+     *
+     * @return self
+     */
+    public function setObjCreditcardmerchant($objCreditcardmerchant)
+    {
+	//Openapi doesn't allow to set a variable to null when it's defined as Non-nullable even if it is the normal way of unsetting a variable
+        //if (is_null($objCreditcardmerchant)) {
+            //throw new \InvalidArgumentException('non-nullable objCreditcardmerchant cannot be null');
+        //}
+        
+	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
+        //$this->container['objCreditcardmerchant'] = $objCreditcardmerchant;
+        $this->container['objCreditcardmerchant'] = $objCreditcardmerchant;
 
         return $this;
     }

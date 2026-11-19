@@ -56,5 +56,6 @@ Name | Type | Description | Notes
 **aObjEzsignelementdependency** | [**\eZmaxAPI\Model\EzsignelementdependencyResponseCompound[]**](EzsignelementdependencyResponseCompound.md) |  | [optional]
 **objTimezone** | [**\eZmaxAPI\Model\CustomTimezoneWithCodeResponse**](CustomTimezoneWithCodeResponse.md) |  | [optional]
 **aObjEzsignsignaturepaymentdetail** | [**\eZmaxAPI\Model\EzsignsignaturepaymentdetailResponseCompound[]**](EzsignsignaturepaymentdetailResponseCompound.md) |  | [optional]
+**objCreditcardmerchant** | [**\eZmaxAPI\Model\CustomCreditcardmerchantResponse**](CustomCreditcardmerchantResponse.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
