@@ -332,6 +332,12 @@ class WebhookEzmaxpartnerproductSubscribe implements ModelInterface, ArrayAccess
         if ($this->container['sApikeySecret'] === null) {
             $invalidProperties[] = "'sApikeySecret' can't be null";
         }
+        //if (!preg_match("/^[0-9a-fA-F]{1,32}$/", $this->container['sApikeySecret'])) {
+        if (!is_null($this->container['sApikeySecret']) && !preg_match("/(*UTF8)^[0-9a-fA-F]{1,32}$/", $this->container['sApikeySecret'])) {
+            //$invalidProperties[] = "invalid value for 'sApikeySecret', must be conform to the pattern /^[0-9a-fA-F]{1,32}$/.";
+            $invalidProperties[] = "invalid value ".(is_null($this->container['sApikeySecret'])?'null':'"'.$this->container['sApikeySecret'].'"')." for 'sApikeySecret', must be conform to the pattern /^[0-9a-fA-F]{1,32}$/.";
+        }
+
         return $invalidProperties;
     }
 
@@ -496,7 +502,7 @@ class WebhookEzmaxpartnerproductSubscribe implements ModelInterface, ArrayAccess
     /**
      * Sets sApikeyApikey
      *
-     * @param string $sApikeyApikey sApikeyApikey
+     * @param string $sApikeyApikey The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
      *
      * @return self
      */
@@ -528,7 +534,7 @@ class WebhookEzmaxpartnerproductSubscribe implements ModelInterface, ArrayAccess
     /**
      * Sets sApikeySecret
      *
-     * @param string $sApikeySecret sApikeySecret
+     * @param string $sApikeySecret The secret of the Apikey
      *
      * @return self
      */
@@ -538,6 +544,13 @@ class WebhookEzmaxpartnerproductSubscribe implements ModelInterface, ArrayAccess
         //if (is_null($sApikeySecret)) {
             //throw new \InvalidArgumentException('non-nullable sApikeySecret cannot be null');
         //}
+
+        //if ((!preg_match("/^[0-9a-fA-F]{1,32}$/", ObjectSerializer::toString($sApikeySecret)))) {
+        if (!is_null($sApikeySecret) && (!preg_match("/(*UTF8)^[0-9a-fA-F]{1,32}$/", ObjectSerializer::toString($sApikeySecret)))) {
+            //throw new \InvalidArgumentException("invalid value for \$sApikeySecret when calling WebhookEzmaxpartnerproductSubscribe., must conform to the pattern /^[0-9a-fA-F]{1,32}$/.");
+            throw new \InvalidArgumentException("invalid value ".(is_null($sApikeySecret)?'null':'"'.$sApikeySecret.'"')." for sApikeySecret when calling WebhookEzmaxpartnerproductSubscribe., must conform to the pattern /^[0-9a-fA-F]{1,32}$/.");
+        }
+
         
 	//Openapi doesn't cast variable so if you set a value to "1" instead of 1 in a int, it's not casted automatically
         //$this->container['sApikeySecret'] = $sApikeySecret;

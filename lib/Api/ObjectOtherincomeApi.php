@@ -112,6 +112,7 @@ class ObjectOtherincomeApi
                 'Inscription_OtherIncomeAccess',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',
@@ -126,6 +127,7 @@ class ObjectOtherincomeApi
                 'Inscription_OtherIncomeAccess',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',

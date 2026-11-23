@@ -112,6 +112,7 @@ class ObjectInscriptiontempApi
                 'Inscription_TemporaryListingsAccess',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',
@@ -126,6 +127,7 @@ class ObjectInscriptiontempApi
                 'Inscription_TemporaryListingsAccess',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',

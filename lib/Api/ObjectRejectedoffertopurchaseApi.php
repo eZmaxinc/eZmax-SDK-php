@@ -112,6 +112,7 @@ class ObjectRejectedoffertopurchaseApi
                 'Management_RefusedPromisestoPurchase',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',
@@ -126,6 +127,7 @@ class ObjectRejectedoffertopurchaseApi
                 'Management_RefusedPromisestoPurchase',
             ],
             'usertypeextra' => [
+                'AgentBroker',
             ],
             'authorizationsources' => [
                 'Authorization',

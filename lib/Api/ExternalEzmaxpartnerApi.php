@@ -155,7 +155,7 @@ class ExternalEzmaxpartnerApi
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response
+     * @return \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError
      */
     public function ezmaxpartnerSubscribeV1($ezmaxpartnerSubscribeV1Request, string $contentType = self::contentTypes['ezmaxpartnerSubscribeV1'][0])
     {
@@ -173,7 +173,7 @@ class ExternalEzmaxpartnerApi
      *
      * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response|\eZmaxAPI\Model\CommonResponseError|\eZmaxAPI\Model\CommonResponseError, HTTP status code, HTTP response headers (array of strings)
      */
     public function ezmaxpartnerSubscribeV1WithHttpInfo($ezmaxpartnerSubscribeV1Request, string $contentType = self::contentTypes['ezmaxpartnerSubscribeV1'][0])
     {
@@ -210,6 +210,18 @@ class ExternalEzmaxpartnerApi
                         $request,
                         $response,
                     );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $request,
+                        $response,
+                    );
             }
 
             
@@ -238,6 +250,22 @@ class ExternalEzmaxpartnerApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\eZmaxAPI\Model\CommonResponseError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
