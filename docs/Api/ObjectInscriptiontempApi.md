@@ -12,10 +12,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**inscriptiontempGetCommunicationListV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetCommunicationListV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList | Retrieve Communication list |
 | [**inscriptiontempGetCommunicationrecipientsV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetCommunicationrecipientsV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationrecipients | Retrieve Inscriptiontemp&#39;s Communicationrecipient |
 | [**inscriptiontempGetCommunicationsendersV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetCommunicationsendersV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationsenders | Retrieve Inscriptiontemp&#39;s Communicationsender |
-| [**inscriptiontempGetDocumenttypechecklistV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetDocumenttypechecklistV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**inscriptiontempGetListV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetListV1) | **GET** /1/object/inscriptiontemp/getList | Retrieve Inscriptiontemp list |
 | [**inscriptiontempImportIntoEDMV1()**](ObjectInscriptiontempApi.md#inscriptiontempImportIntoEDMV1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/importIntoEDM | Import attachments into the Inscriptiontemp |
-| [**inscriptiontempSyncDocumenttypechecklistV1()**](ObjectInscriptiontempApi.md#inscriptiontempSyncDocumenttypechecklistV1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `inscriptiontempBatchDownloadV1()`
@@ -388,66 +386,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `inscriptiontempGetDocumenttypechecklistV1()`
-
-```php
-inscriptiontempGetDocumenttypechecklistV1($pkiInscriptiontempID): \eZmaxAPI\Model\InscriptiontempGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectInscriptiontempApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiInscriptiontempID = 56; // int
-
-try {
-    $result = $apiInstance->inscriptiontempGetDocumenttypechecklistV1($pkiInscriptiontempID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectInscriptiontempApi->inscriptiontempGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiInscriptiontempID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\InscriptiontempGetDocumenttypechecklistV1Response**](../Model/InscriptiontempGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `inscriptiontempGetListV1()`
 
 ```php
@@ -568,68 +506,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\InscriptiontempImportIntoEDMV1Response**](../Model/InscriptiontempImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `inscriptiontempSyncDocumenttypechecklistV1()`
-
-```php
-inscriptiontempSyncDocumenttypechecklistV1($pkiInscriptiontempID, $body): \eZmaxAPI\Model\InscriptiontempSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectInscriptiontempApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiInscriptiontempID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->inscriptiontempSyncDocumenttypechecklistV1($pkiInscriptiontempID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectInscriptiontempApi->inscriptiontempSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiInscriptiontempID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\InscriptiontempSyncDocumenttypechecklistV1Response**](../Model/InscriptiontempSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

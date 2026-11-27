@@ -12,10 +12,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**purchaseGetCommunicationListV1()**](ObjectPurchaseApi.md#purchaseGetCommunicationListV1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationList | Retrieve Communication list |
 | [**purchaseGetCommunicationrecipientsV1()**](ObjectPurchaseApi.md#purchaseGetCommunicationrecipientsV1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**purchaseGetCommunicationsendersV1()**](ObjectPurchaseApi.md#purchaseGetCommunicationsendersV1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationsenders | Retrieve Communication senders |
-| [**purchaseGetDocumenttypechecklistV1()**](ObjectPurchaseApi.md#purchaseGetDocumenttypechecklistV1) | **GET** /1/object/purchase/{pkiPurchaseID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**purchaseGetListV1()**](ObjectPurchaseApi.md#purchaseGetListV1) | **GET** /1/object/purchase/getList | Retrieve Purchase list |
 | [**purchaseImportIntoEDMV1()**](ObjectPurchaseApi.md#purchaseImportIntoEDMV1) | **POST** /1/object/purchase/{pkiPurchaseID}/importIntoEDM | Import attachments into the Purchase |
-| [**purchaseSyncDocumenttypechecklistV1()**](ObjectPurchaseApi.md#purchaseSyncDocumenttypechecklistV1) | **POST** /1/object/purchase/{pkiPurchaseID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `purchaseBatchDownloadV1()`
@@ -380,66 +378,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `purchaseGetDocumenttypechecklistV1()`
-
-```php
-purchaseGetDocumenttypechecklistV1($pkiPurchaseID): \eZmaxAPI\Model\PurchaseGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectPurchaseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiPurchaseID = 56; // int
-
-try {
-    $result = $apiInstance->purchaseGetDocumenttypechecklistV1($pkiPurchaseID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectPurchaseApi->purchaseGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiPurchaseID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\PurchaseGetDocumenttypechecklistV1Response**](../Model/PurchaseGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `purchaseGetListV1()`
 
 ```php
@@ -558,68 +496,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\PurchaseImportIntoEDMV1Response**](../Model/PurchaseImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `purchaseSyncDocumenttypechecklistV1()`
-
-```php
-purchaseSyncDocumenttypechecklistV1($pkiPurchaseID, $body): \eZmaxAPI\Model\PurchaseSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectPurchaseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiPurchaseID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->purchaseSyncDocumenttypechecklistV1($pkiPurchaseID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectPurchaseApi->purchaseSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiPurchaseID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\PurchaseSyncDocumenttypechecklistV1Response**](../Model/PurchaseSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

@@ -13,10 +13,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**agentGetCommunicationListV1()**](ObjectAgentApi.md#agentGetCommunicationListV1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationList | Retrieve Communication list |
 | [**agentGetCommunicationrecipientsV1()**](ObjectAgentApi.md#agentGetCommunicationrecipientsV1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**agentGetCommunicationsendersV1()**](ObjectAgentApi.md#agentGetCommunicationsendersV1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationsenders | Retrieve Communication senders |
-| [**agentGetDocumenttypechecklistV1()**](ObjectAgentApi.md#agentGetDocumenttypechecklistV1) | **GET** /1/object/agent/{pkiAgentID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**agentGetListV1()**](ObjectAgentApi.md#agentGetListV1) | **GET** /1/object/agent/getList | Retrieve Agent list |
 | [**agentImportIntoEDMV1()**](ObjectAgentApi.md#agentImportIntoEDMV1) | **POST** /1/object/agent/{pkiAgentID}/importIntoEDM | Import attachments into the Agent |
-| [**agentSyncDocumenttypechecklistV1()**](ObjectAgentApi.md#agentSyncDocumenttypechecklistV1) | **POST** /1/object/agent/{pkiAgentID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `agentBatchDownloadV1()`
@@ -449,66 +447,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `agentGetDocumenttypechecklistV1()`
-
-```php
-agentGetDocumenttypechecklistV1($pkiAgentID): \eZmaxAPI\Model\AgentGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectAgentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiAgentID = 56; // int
-
-try {
-    $result = $apiInstance->agentGetDocumenttypechecklistV1($pkiAgentID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectAgentApi->agentGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiAgentID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\AgentGetDocumenttypechecklistV1Response**](../Model/AgentGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `agentGetListV1()`
 
 ```php
@@ -629,68 +567,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\AgentImportIntoEDMV1Response**](../Model/AgentImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `agentSyncDocumenttypechecklistV1()`
-
-```php
-agentSyncDocumenttypechecklistV1($pkiAgentID, $body): \eZmaxAPI\Model\AgentSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectAgentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiAgentID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->agentSyncDocumenttypechecklistV1($pkiAgentID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectAgentApi->agentSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiAgentID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\AgentSyncDocumenttypechecklistV1Response**](../Model/AgentSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

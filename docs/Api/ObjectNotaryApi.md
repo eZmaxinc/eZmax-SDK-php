@@ -12,10 +12,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**notaryGetCommunicationListV1()**](ObjectNotaryApi.md#notaryGetCommunicationListV1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationList | Retrieve Communication list |
 | [**notaryGetCommunicationrecipientsV1()**](ObjectNotaryApi.md#notaryGetCommunicationrecipientsV1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**notaryGetCommunicationsendersV1()**](ObjectNotaryApi.md#notaryGetCommunicationsendersV1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationsenders | Retrieve Communication senders |
-| [**notaryGetDocumenttypechecklistV1()**](ObjectNotaryApi.md#notaryGetDocumenttypechecklistV1) | **GET** /1/object/notary/{pkiNotaryID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**notaryGetListV1()**](ObjectNotaryApi.md#notaryGetListV1) | **GET** /1/object/notary/getList | Retrieve Notary list |
 | [**notaryImportIntoEDMV1()**](ObjectNotaryApi.md#notaryImportIntoEDMV1) | **POST** /1/object/notary/{pkiNotaryID}/importIntoEDM | Import attachments into the Notary |
-| [**notarySyncDocumenttypechecklistV1()**](ObjectNotaryApi.md#notarySyncDocumenttypechecklistV1) | **POST** /1/object/notary/{pkiNotaryID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `notaryBatchDownloadV1()`
@@ -380,66 +378,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `notaryGetDocumenttypechecklistV1()`
-
-```php
-notaryGetDocumenttypechecklistV1($pkiNotaryID): \eZmaxAPI\Model\NotaryGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectNotaryApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiNotaryID = 56; // int
-
-try {
-    $result = $apiInstance->notaryGetDocumenttypechecklistV1($pkiNotaryID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectNotaryApi->notaryGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiNotaryID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\NotaryGetDocumenttypechecklistV1Response**](../Model/NotaryGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `notaryGetListV1()`
 
 ```php
@@ -558,68 +496,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\NotaryImportIntoEDMV1Response**](../Model/NotaryImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `notarySyncDocumenttypechecklistV1()`
-
-```php
-notarySyncDocumenttypechecklistV1($pkiNotaryID, $body): \eZmaxAPI\Model\NotarySyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectNotaryApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiNotaryID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->notarySyncDocumenttypechecklistV1($pkiNotaryID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectNotaryApi->notarySyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiNotaryID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\NotarySyncDocumenttypechecklistV1Response**](../Model/NotarySyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

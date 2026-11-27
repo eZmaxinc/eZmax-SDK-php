@@ -12,10 +12,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**disclosureGetCommunicationListV1()**](ObjectDisclosureApi.md#disclosureGetCommunicationListV1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationList | Retrieve Communication list |
 | [**disclosureGetCommunicationrecipientsV1()**](ObjectDisclosureApi.md#disclosureGetCommunicationrecipientsV1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**disclosureGetCommunicationsendersV1()**](ObjectDisclosureApi.md#disclosureGetCommunicationsendersV1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationsenders | Retrieve Communication senders |
-| [**disclosureGetDocumenttypechecklistV1()**](ObjectDisclosureApi.md#disclosureGetDocumenttypechecklistV1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**disclosureGetListV1()**](ObjectDisclosureApi.md#disclosureGetListV1) | **GET** /1/object/disclosure/getList | Retrieve Disclosure list |
 | [**disclosureImportIntoEDMV1()**](ObjectDisclosureApi.md#disclosureImportIntoEDMV1) | **POST** /1/object/disclosure/{pkiDisclosureID}/importIntoEDM | Import attachments into the Disclosure |
-| [**disclosureSyncDocumenttypechecklistV1()**](ObjectDisclosureApi.md#disclosureSyncDocumenttypechecklistV1) | **POST** /1/object/disclosure/{pkiDisclosureID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `disclosureBatchDownloadV1()`
@@ -380,66 +378,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `disclosureGetDocumenttypechecklistV1()`
-
-```php
-disclosureGetDocumenttypechecklistV1($pkiDisclosureID): \eZmaxAPI\Model\DisclosureGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectDisclosureApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiDisclosureID = 56; // int
-
-try {
-    $result = $apiInstance->disclosureGetDocumenttypechecklistV1($pkiDisclosureID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectDisclosureApi->disclosureGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiDisclosureID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\DisclosureGetDocumenttypechecklistV1Response**](../Model/DisclosureGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `disclosureGetListV1()`
 
 ```php
@@ -558,68 +496,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\DisclosureImportIntoEDMV1Response**](../Model/DisclosureImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `disclosureSyncDocumenttypechecklistV1()`
-
-```php
-disclosureSyncDocumenttypechecklistV1($pkiDisclosureID, $body): \eZmaxAPI\Model\DisclosureSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectDisclosureApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiDisclosureID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->disclosureSyncDocumenttypechecklistV1($pkiDisclosureID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectDisclosureApi->disclosureSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiDisclosureID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\DisclosureSyncDocumenttypechecklistV1Response**](../Model/DisclosureSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

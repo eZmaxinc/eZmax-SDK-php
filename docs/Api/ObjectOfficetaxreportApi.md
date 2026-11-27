@@ -12,10 +12,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**officetaxreportGetCommunicationListV1()**](ObjectOfficetaxreportApi.md#officetaxreportGetCommunicationListV1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationList | Retrieve Communication list |
 | [**officetaxreportGetCommunicationrecipientsV1()**](ObjectOfficetaxreportApi.md#officetaxreportGetCommunicationrecipientsV1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**officetaxreportGetCommunicationsendersV1()**](ObjectOfficetaxreportApi.md#officetaxreportGetCommunicationsendersV1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationsenders | Retrieve Communication senders |
-| [**officetaxreportGetDocumenttypechecklistV1()**](ObjectOfficetaxreportApi.md#officetaxreportGetDocumenttypechecklistV1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**officetaxreportGetListV1()**](ObjectOfficetaxreportApi.md#officetaxreportGetListV1) | **GET** /1/object/officetaxreport/getList | Retrieve Officetaxreport list |
 | [**officetaxreportImportIntoEDMV1()**](ObjectOfficetaxreportApi.md#officetaxreportImportIntoEDMV1) | **POST** /1/object/officetaxreport/{pkiOfficetaxreportID}/importIntoEDM | Import attachments into the Officetaxreport |
-| [**officetaxreportSyncDocumenttypechecklistV1()**](ObjectOfficetaxreportApi.md#officetaxreportSyncDocumenttypechecklistV1) | **POST** /1/object/officetaxreport/{pkiOfficetaxreportID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `officetaxreportBatchDownloadV1()`
@@ -380,66 +378,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `officetaxreportGetDocumenttypechecklistV1()`
-
-```php
-officetaxreportGetDocumenttypechecklistV1($pkiOfficetaxreportID): \eZmaxAPI\Model\OfficetaxreportGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectOfficetaxreportApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiOfficetaxreportID = 56; // int
-
-try {
-    $result = $apiInstance->officetaxreportGetDocumenttypechecklistV1($pkiOfficetaxreportID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectOfficetaxreportApi->officetaxreportGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiOfficetaxreportID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\OfficetaxreportGetDocumenttypechecklistV1Response**](../Model/OfficetaxreportGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `officetaxreportGetListV1()`
 
 ```php
@@ -558,68 +496,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\OfficetaxreportImportIntoEDMV1Response**](../Model/OfficetaxreportImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `officetaxreportSyncDocumenttypechecklistV1()`
-
-```php
-officetaxreportSyncDocumenttypechecklistV1($pkiOfficetaxreportID, $body): \eZmaxAPI\Model\OfficetaxreportSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectOfficetaxreportApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiOfficetaxreportID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->officetaxreportSyncDocumenttypechecklistV1($pkiOfficetaxreportID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectOfficetaxreportApi->officetaxreportSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiOfficetaxreportID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\OfficetaxreportSyncDocumenttypechecklistV1Response**](../Model/OfficetaxreportSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

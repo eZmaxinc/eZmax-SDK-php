@@ -12,9 +12,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**paymentpreparationGetCommunicationListV1()**](ObjectPaymentpreparationApi.md#paymentpreparationGetCommunicationListV1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationList | Retrieve Communication list |
 | [**paymentpreparationGetCommunicationrecipientsV1()**](ObjectPaymentpreparationApi.md#paymentpreparationGetCommunicationrecipientsV1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**paymentpreparationGetCommunicationsendersV1()**](ObjectPaymentpreparationApi.md#paymentpreparationGetCommunicationsendersV1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationsenders | Retrieve Communication senders |
-| [**paymentpreparationGetDocumenttypechecklistV1()**](ObjectPaymentpreparationApi.md#paymentpreparationGetDocumenttypechecklistV1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**paymentpreparationImportIntoEDMV1()**](ObjectPaymentpreparationApi.md#paymentpreparationImportIntoEDMV1) | **POST** /1/object/paymentpreparation/{pkiPaymentpreparationID}/importIntoEDM | Import attachments into the Paymentpreparation |
-| [**paymentpreparationSyncDocumenttypechecklistV1()**](ObjectPaymentpreparationApi.md#paymentpreparationSyncDocumenttypechecklistV1) | **POST** /1/object/paymentpreparation/{pkiPaymentpreparationID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `paymentpreparationBatchDownloadV1()`
@@ -379,66 +377,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `paymentpreparationGetDocumenttypechecklistV1()`
-
-```php
-paymentpreparationGetDocumenttypechecklistV1($pkiPaymentpreparationID): \eZmaxAPI\Model\PaymentpreparationGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectPaymentpreparationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiPaymentpreparationID = 56; // int
-
-try {
-    $result = $apiInstance->paymentpreparationGetDocumenttypechecklistV1($pkiPaymentpreparationID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectPaymentpreparationApi->paymentpreparationGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiPaymentpreparationID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\PaymentpreparationGetDocumenttypechecklistV1Response**](../Model/PaymentpreparationGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `paymentpreparationImportIntoEDMV1()`
 
 ```php
@@ -487,68 +425,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\PaymentpreparationImportIntoEDMV1Response**](../Model/PaymentpreparationImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `paymentpreparationSyncDocumenttypechecklistV1()`
-
-```php
-paymentpreparationSyncDocumenttypechecklistV1($pkiPaymentpreparationID, $body): \eZmaxAPI\Model\PaymentpreparationSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectPaymentpreparationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiPaymentpreparationID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->paymentpreparationSyncDocumenttypechecklistV1($pkiPaymentpreparationID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectPaymentpreparationApi->paymentpreparationSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiPaymentpreparationID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\PaymentpreparationSyncDocumenttypechecklistV1Response**](../Model/PaymentpreparationSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

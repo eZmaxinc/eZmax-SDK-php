@@ -12,9 +12,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**externalbrokerGetCommunicationListV1()**](ObjectExternalbrokerApi.md#externalbrokerGetCommunicationListV1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationList | Retrieve Communication list |
 | [**externalbrokerGetCommunicationrecipientsV1()**](ObjectExternalbrokerApi.md#externalbrokerGetCommunicationrecipientsV1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**externalbrokerGetCommunicationsendersV1()**](ObjectExternalbrokerApi.md#externalbrokerGetCommunicationsendersV1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationsenders | Retrieve Communication senders |
-| [**externalbrokerGetDocumenttypechecklistV1()**](ObjectExternalbrokerApi.md#externalbrokerGetDocumenttypechecklistV1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**externalbrokerImportIntoEDMV1()**](ObjectExternalbrokerApi.md#externalbrokerImportIntoEDMV1) | **POST** /1/object/externalbroker/{pkiExternalbrokerID}/importIntoEDM | Import attachments into the Externalbroker |
-| [**externalbrokerSyncDocumenttypechecklistV1()**](ObjectExternalbrokerApi.md#externalbrokerSyncDocumenttypechecklistV1) | **POST** /1/object/externalbroker/{pkiExternalbrokerID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `externalbrokerBatchDownloadV1()`
@@ -379,66 +377,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `externalbrokerGetDocumenttypechecklistV1()`
-
-```php
-externalbrokerGetDocumenttypechecklistV1($pkiExternalbrokerID): \eZmaxAPI\Model\ExternalbrokerGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectExternalbrokerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiExternalbrokerID = 56; // int
-
-try {
-    $result = $apiInstance->externalbrokerGetDocumenttypechecklistV1($pkiExternalbrokerID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectExternalbrokerApi->externalbrokerGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiExternalbrokerID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\ExternalbrokerGetDocumenttypechecklistV1Response**](../Model/ExternalbrokerGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `externalbrokerImportIntoEDMV1()`
 
 ```php
@@ -489,68 +427,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\ExternalbrokerImportIntoEDMV1Response**](../Model/ExternalbrokerImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `externalbrokerSyncDocumenttypechecklistV1()`
-
-```php
-externalbrokerSyncDocumenttypechecklistV1($pkiExternalbrokerID, $body): \eZmaxAPI\Model\ExternalbrokerSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectExternalbrokerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiExternalbrokerID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->externalbrokerSyncDocumenttypechecklistV1($pkiExternalbrokerID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectExternalbrokerApi->externalbrokerSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiExternalbrokerID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\ExternalbrokerSyncDocumenttypechecklistV1Response**](../Model/ExternalbrokerSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

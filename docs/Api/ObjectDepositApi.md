@@ -12,10 +12,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**depositGetCommunicationListV1()**](ObjectDepositApi.md#depositGetCommunicationListV1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationList | Retrieve Communication list |
 | [**depositGetCommunicationrecipientsV1()**](ObjectDepositApi.md#depositGetCommunicationrecipientsV1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**depositGetCommunicationsendersV1()**](ObjectDepositApi.md#depositGetCommunicationsendersV1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationsenders | Retrieve Communication senders |
-| [**depositGetDocumenttypechecklistV1()**](ObjectDepositApi.md#depositGetDocumenttypechecklistV1) | **GET** /1/object/deposit/{pkiDepositID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**depositGetListV1()**](ObjectDepositApi.md#depositGetListV1) | **GET** /1/object/deposit/getList | Retrieve Deposit list |
 | [**depositImportIntoEDMV1()**](ObjectDepositApi.md#depositImportIntoEDMV1) | **POST** /1/object/deposit/{pkiDepositID}/importIntoEDM | Import attachments into the Deposit |
-| [**depositSyncDocumenttypechecklistV1()**](ObjectDepositApi.md#depositSyncDocumenttypechecklistV1) | **POST** /1/object/deposit/{pkiDepositID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `depositBatchDownloadV1()`
@@ -380,66 +378,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `depositGetDocumenttypechecklistV1()`
-
-```php
-depositGetDocumenttypechecklistV1($pkiDepositID): \eZmaxAPI\Model\DepositGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectDepositApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiDepositID = 56; // int
-
-try {
-    $result = $apiInstance->depositGetDocumenttypechecklistV1($pkiDepositID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectDepositApi->depositGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiDepositID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\DepositGetDocumenttypechecklistV1Response**](../Model/DepositGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `depositGetListV1()`
 
 ```php
@@ -558,68 +496,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\DepositImportIntoEDMV1Response**](../Model/DepositImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `depositSyncDocumenttypechecklistV1()`
-
-```php
-depositSyncDocumenttypechecklistV1($pkiDepositID, $body): \eZmaxAPI\Model\DepositSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectDepositApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiDepositID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->depositSyncDocumenttypechecklistV1($pkiDepositID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectDepositApi->depositSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiDepositID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\DepositSyncDocumenttypechecklistV1Response**](../Model/DepositSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

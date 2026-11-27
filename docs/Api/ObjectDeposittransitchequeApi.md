@@ -12,10 +12,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**deposittransitchequeGetCommunicationListV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetCommunicationListV1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationList | Retrieve Communication list |
 | [**deposittransitchequeGetCommunicationrecipientsV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetCommunicationrecipientsV1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**deposittransitchequeGetCommunicationsendersV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetCommunicationsendersV1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationsenders | Retrieve Communication senders |
-| [**deposittransitchequeGetDocumenttypechecklistV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetDocumenttypechecklistV1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**deposittransitchequeGetListV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeGetListV1) | **GET** /1/object/deposittransitcheque/getList | Retrieve Deposittransitcheque list |
 | [**deposittransitchequeImportIntoEDMV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeImportIntoEDMV1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/importIntoEDM | Import attachments into the Deposittransitcheque |
-| [**deposittransitchequeSyncDocumenttypechecklistV1()**](ObjectDeposittransitchequeApi.md#deposittransitchequeSyncDocumenttypechecklistV1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `deposittransitchequeBatchDownloadV1()`
@@ -380,66 +378,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deposittransitchequeGetDocumenttypechecklistV1()`
-
-```php
-deposittransitchequeGetDocumenttypechecklistV1($pkiDeposittransitchequeID): \eZmaxAPI\Model\DeposittransitchequeGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectDeposittransitchequeApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiDeposittransitchequeID = 56; // int
-
-try {
-    $result = $apiInstance->deposittransitchequeGetDocumenttypechecklistV1($pkiDeposittransitchequeID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectDeposittransitchequeApi->deposittransitchequeGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiDeposittransitchequeID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\DeposittransitchequeGetDocumenttypechecklistV1Response**](../Model/DeposittransitchequeGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `deposittransitchequeGetListV1()`
 
 ```php
@@ -558,68 +496,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\DeposittransitchequeImportIntoEDMV1Response**](../Model/DeposittransitchequeImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `deposittransitchequeSyncDocumenttypechecklistV1()`
-
-```php
-deposittransitchequeSyncDocumenttypechecklistV1($pkiDeposittransitchequeID, $body): \eZmaxAPI\Model\DeposittransitchequeSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectDeposittransitchequeApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiDeposittransitchequeID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->deposittransitchequeSyncDocumenttypechecklistV1($pkiDeposittransitchequeID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectDeposittransitchequeApi->deposittransitchequeSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiDeposittransitchequeID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\DeposittransitchequeSyncDocumenttypechecklistV1Response**](../Model/DeposittransitchequeSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

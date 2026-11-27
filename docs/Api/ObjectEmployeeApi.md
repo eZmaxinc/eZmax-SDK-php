@@ -12,10 +12,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**employeeGetCommunicationListV1()**](ObjectEmployeeApi.md#employeeGetCommunicationListV1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationList | Retrieve Communication list |
 | [**employeeGetCommunicationrecipientsV1()**](ObjectEmployeeApi.md#employeeGetCommunicationrecipientsV1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**employeeGetCommunicationsendersV1()**](ObjectEmployeeApi.md#employeeGetCommunicationsendersV1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationsenders | Retrieve Communication senders |
-| [**employeeGetDocumenttypechecklistV1()**](ObjectEmployeeApi.md#employeeGetDocumenttypechecklistV1) | **GET** /1/object/employee/{pkiEmployeeID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**employeeGetListV1()**](ObjectEmployeeApi.md#employeeGetListV1) | **GET** /1/object/employee/getList | Retrieve Employee list |
 | [**employeeImportIntoEDMV1()**](ObjectEmployeeApi.md#employeeImportIntoEDMV1) | **POST** /1/object/employee/{pkiEmployeeID}/importIntoEDM | Import attachments into the Employee |
-| [**employeeSyncDocumenttypechecklistV1()**](ObjectEmployeeApi.md#employeeSyncDocumenttypechecklistV1) | **POST** /1/object/employee/{pkiEmployeeID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `employeeBatchDownloadV1()`
@@ -380,66 +378,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `employeeGetDocumenttypechecklistV1()`
-
-```php
-employeeGetDocumenttypechecklistV1($pkiEmployeeID): \eZmaxAPI\Model\EmployeeGetDocumenttypechecklistV1Response
-```
-
-Retrieve Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEmployeeApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiEmployeeID = 56; // int
-
-try {
-    $result = $apiInstance->employeeGetDocumenttypechecklistV1($pkiEmployeeID);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEmployeeApi->employeeGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiEmployeeID** | **int**|  | |
-
-### Return type
-
-[**\eZmaxAPI\Model\EmployeeGetDocumenttypechecklistV1Response**](../Model/EmployeeGetDocumenttypechecklistV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `employeeGetListV1()`
 
 ```php
@@ -560,68 +498,6 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EmployeeImportIntoEDMV1Response**](../Model/EmployeeImportIntoEDMV1Response.md)
-
-### Authorization
-
-[Authorization](../../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `employeeSyncDocumenttypechecklistV1()`
-
-```php
-employeeSyncDocumenttypechecklistV1($pkiEmployeeID, $body): \eZmaxAPI\Model\EmployeeSyncDocumenttypechecklistV1Response
-```
-
-Synchronize Document type checklist
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: Authorization
-$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new eZmaxAPI\Api\ObjectEmployeeApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$pkiEmployeeID = 56; // int
-$body = array('key' => new \stdClass); // object
-
-try {
-    $result = $apiInstance->employeeSyncDocumenttypechecklistV1($pkiEmployeeID, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObjectEmployeeApi->employeeSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pkiEmployeeID** | **int**|  | |
-| **body** | **object**|  | [optional] |
-
-### Return type
-
-[**\eZmaxAPI\Model\EmployeeSyncDocumenttypechecklistV1Response**](../Model/EmployeeSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 
