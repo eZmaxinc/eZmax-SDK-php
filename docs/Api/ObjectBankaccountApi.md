@@ -13,8 +13,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**bankaccountGetCommunicationListV1()**](ObjectBankaccountApi.md#bankaccountGetCommunicationListV1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationList | Retrieve Communication list |
 | [**bankaccountGetCommunicationrecipientsV1()**](ObjectBankaccountApi.md#bankaccountGetCommunicationrecipientsV1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**bankaccountGetCommunicationsendersV1()**](ObjectBankaccountApi.md#bankaccountGetCommunicationsendersV1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationsenders | Retrieve Communication senders |
+| [**bankaccountGetDocumenttypechecklistV1()**](ObjectBankaccountApi.md#bankaccountGetDocumenttypechecklistV1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**bankaccountGetListV1()**](ObjectBankaccountApi.md#bankaccountGetListV1) | **GET** /1/object/bankaccount/getList | Retrieve Bankaccount list |
 | [**bankaccountImportIntoEDMV1()**](ObjectBankaccountApi.md#bankaccountImportIntoEDMV1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/importIntoEDM | Import attachments into the Bankaccount |
+| [**bankaccountSyncDocumenttypechecklistV1()**](ObjectBankaccountApi.md#bankaccountSyncDocumenttypechecklistV1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `bankaccountBatchDownloadV1()`
@@ -447,6 +449,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `bankaccountGetDocumenttypechecklistV1()`
+
+```php
+bankaccountGetDocumenttypechecklistV1($pkiBankaccountID): \eZmaxAPI\Model\BankaccountGetDocumenttypechecklistV1Response
+```
+
+Retrieve Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBankaccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBankaccountID = 56; // int
+
+try {
+    $result = $apiInstance->bankaccountGetDocumenttypechecklistV1($pkiBankaccountID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBankaccountApi->bankaccountGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBankaccountID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BankaccountGetDocumenttypechecklistV1Response**](../Model/BankaccountGetDocumenttypechecklistV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `bankaccountGetListV1()`
 
 ```php
@@ -565,6 +627,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\BankaccountImportIntoEDMV1Response**](../Model/BankaccountImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `bankaccountSyncDocumenttypechecklistV1()`
+
+```php
+bankaccountSyncDocumenttypechecklistV1($pkiBankaccountID, $body): \eZmaxAPI\Model\BankaccountSyncDocumenttypechecklistV1Response
+```
+
+Synchronize Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBankaccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBankaccountID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->bankaccountSyncDocumenttypechecklistV1($pkiBankaccountID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBankaccountApi->bankaccountSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBankaccountID** | **int**|  | |
+| **body** | **object**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\BankaccountSyncDocumenttypechecklistV1Response**](../Model/BankaccountSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

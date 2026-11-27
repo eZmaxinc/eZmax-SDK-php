@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **objUser** | [**\eZmaxAPI\Model\CustomUserNameResponse**](CustomUserNameResponse.md) |  |
 **dtAttachmentlogDatetime** | **string** | The created date |
 **eAttachmentlogType** | [**\eZmaxAPI\Model\FieldEAttachmentlogType**](FieldEAttachmentlogType.md) |  |
-**sAttachmentlogDetail** | **string** | The additionnal detail | [optional]
+**sAttachmentlogDetail** | **string** | The additional detail for the Attachmentlog | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

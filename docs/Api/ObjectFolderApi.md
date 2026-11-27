@@ -12,7 +12,9 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**folderGetCommunicationListV1()**](ObjectFolderApi.md#folderGetCommunicationListV1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationList | Retrieve Communication list |
 | [**folderGetCommunicationrecipientsV1()**](ObjectFolderApi.md#folderGetCommunicationrecipientsV1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**folderGetCommunicationsendersV1()**](ObjectFolderApi.md#folderGetCommunicationsendersV1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationsenders | Retrieve Communication senders |
+| [**folderGetDocumenttypechecklistV1()**](ObjectFolderApi.md#folderGetDocumenttypechecklistV1) | **GET** /1/object/folder/{pkiFolderID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**folderImportIntoEDMV1()**](ObjectFolderApi.md#folderImportIntoEDMV1) | **POST** /1/object/folder/{pkiFolderID}/importIntoEDM | Import attachments into the Folder |
+| [**folderSyncDocumenttypechecklistV1()**](ObjectFolderApi.md#folderSyncDocumenttypechecklistV1) | **POST** /1/object/folder/{pkiFolderID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `folderBatchDownloadV1()`
@@ -377,6 +379,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `folderGetDocumenttypechecklistV1()`
+
+```php
+folderGetDocumenttypechecklistV1($pkiFolderID): \eZmaxAPI\Model\FolderGetDocumenttypechecklistV1Response
+```
+
+Retrieve Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectFolderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiFolderID = 56; // int
+
+try {
+    $result = $apiInstance->folderGetDocumenttypechecklistV1($pkiFolderID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectFolderApi->folderGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiFolderID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\FolderGetDocumenttypechecklistV1Response**](../Model/FolderGetDocumenttypechecklistV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `folderImportIntoEDMV1()`
 
 ```php
@@ -425,6 +487,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\FolderImportIntoEDMV1Response**](../Model/FolderImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `folderSyncDocumenttypechecklistV1()`
+
+```php
+folderSyncDocumenttypechecklistV1($pkiFolderID, $body): \eZmaxAPI\Model\FolderSyncDocumenttypechecklistV1Response
+```
+
+Synchronize Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectFolderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiFolderID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->folderSyncDocumenttypechecklistV1($pkiFolderID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectFolderApi->folderSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiFolderID** | **int**|  | |
+| **body** | **object**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\FolderSyncDocumenttypechecklistV1Response**](../Model/FolderSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

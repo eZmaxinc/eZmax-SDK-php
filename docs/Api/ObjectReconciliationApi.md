@@ -12,7 +12,9 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**reconciliationGetCommunicationListV1()**](ObjectReconciliationApi.md#reconciliationGetCommunicationListV1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationList | Retrieve Communication list |
 | [**reconciliationGetCommunicationrecipientsV1()**](ObjectReconciliationApi.md#reconciliationGetCommunicationrecipientsV1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**reconciliationGetCommunicationsendersV1()**](ObjectReconciliationApi.md#reconciliationGetCommunicationsendersV1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationsenders | Retrieve Communication senders |
+| [**reconciliationGetDocumenttypechecklistV1()**](ObjectReconciliationApi.md#reconciliationGetDocumenttypechecklistV1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**reconciliationImportIntoEDMV1()**](ObjectReconciliationApi.md#reconciliationImportIntoEDMV1) | **POST** /1/object/reconciliation/{pkiReconciliationID}/importIntoEDM | Import attachments into the Reconciliation |
+| [**reconciliationSyncDocumenttypechecklistV1()**](ObjectReconciliationApi.md#reconciliationSyncDocumenttypechecklistV1) | **POST** /1/object/reconciliation/{pkiReconciliationID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `reconciliationBatchDownloadV1()`
@@ -377,6 +379,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reconciliationGetDocumenttypechecklistV1()`
+
+```php
+reconciliationGetDocumenttypechecklistV1($pkiReconciliationID): \eZmaxAPI\Model\ReconciliationGetDocumenttypechecklistV1Response
+```
+
+Retrieve Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectReconciliationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiReconciliationID = 56; // int
+
+try {
+    $result = $apiInstance->reconciliationGetDocumenttypechecklistV1($pkiReconciliationID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectReconciliationApi->reconciliationGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiReconciliationID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\ReconciliationGetDocumenttypechecklistV1Response**](../Model/ReconciliationGetDocumenttypechecklistV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `reconciliationImportIntoEDMV1()`
 
 ```php
@@ -425,6 +487,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\ReconciliationImportIntoEDMV1Response**](../Model/ReconciliationImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `reconciliationSyncDocumenttypechecklistV1()`
+
+```php
+reconciliationSyncDocumenttypechecklistV1($pkiReconciliationID, $body): \eZmaxAPI\Model\ReconciliationSyncDocumenttypechecklistV1Response
+```
+
+Synchronize Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectReconciliationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiReconciliationID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->reconciliationSyncDocumenttypechecklistV1($pkiReconciliationID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectReconciliationApi->reconciliationSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiReconciliationID** | **int**|  | |
+| **body** | **object**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\ReconciliationSyncDocumenttypechecklistV1Response**](../Model/ReconciliationSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

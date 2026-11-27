@@ -12,8 +12,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**otherincomeGetCommunicationListV1()**](ObjectOtherincomeApi.md#otherincomeGetCommunicationListV1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationList | Retrieve Communication list |
 | [**otherincomeGetCommunicationrecipientsV1()**](ObjectOtherincomeApi.md#otherincomeGetCommunicationrecipientsV1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationrecipients | Retrieve Otherincome&#39;s Communicationrecipient |
 | [**otherincomeGetCommunicationsendersV1()**](ObjectOtherincomeApi.md#otherincomeGetCommunicationsendersV1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationsenders | Retrieve Otherincome&#39;s Communicationsender |
+| [**otherincomeGetDocumenttypechecklistV1()**](ObjectOtherincomeApi.md#otherincomeGetDocumenttypechecklistV1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**otherincomeGetListV1()**](ObjectOtherincomeApi.md#otherincomeGetListV1) | **GET** /1/object/otherincome/getList | Retrieve Otherincome list |
 | [**otherincomeImportIntoEDMV1()**](ObjectOtherincomeApi.md#otherincomeImportIntoEDMV1) | **POST** /1/object/otherincome/{pkiOtherincomeID}/importIntoEDM | Import attachments into the Otherincome |
+| [**otherincomeSyncDocumenttypechecklistV1()**](ObjectOtherincomeApi.md#otherincomeSyncDocumenttypechecklistV1) | **POST** /1/object/otherincome/{pkiOtherincomeID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `otherincomeBatchDownloadV1()`
@@ -386,6 +388,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `otherincomeGetDocumenttypechecklistV1()`
+
+```php
+otherincomeGetDocumenttypechecklistV1($pkiOtherincomeID): \eZmaxAPI\Model\OtherincomeGetDocumenttypechecklistV1Response
+```
+
+Retrieve Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectOtherincomeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiOtherincomeID = 56; // int
+
+try {
+    $result = $apiInstance->otherincomeGetDocumenttypechecklistV1($pkiOtherincomeID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectOtherincomeApi->otherincomeGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiOtherincomeID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\OtherincomeGetDocumenttypechecklistV1Response**](../Model/OtherincomeGetDocumenttypechecklistV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `otherincomeGetListV1()`
 
 ```php
@@ -506,6 +568,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\OtherincomeImportIntoEDMV1Response**](../Model/OtherincomeImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `otherincomeSyncDocumenttypechecklistV1()`
+
+```php
+otherincomeSyncDocumenttypechecklistV1($pkiOtherincomeID, $body): \eZmaxAPI\Model\OtherincomeSyncDocumenttypechecklistV1Response
+```
+
+Synchronize Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectOtherincomeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiOtherincomeID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->otherincomeSyncDocumenttypechecklistV1($pkiOtherincomeID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectOtherincomeApi->otherincomeSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiOtherincomeID** | **int**|  | |
+| **body** | **object**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\OtherincomeSyncDocumenttypechecklistV1Response**](../Model/OtherincomeSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

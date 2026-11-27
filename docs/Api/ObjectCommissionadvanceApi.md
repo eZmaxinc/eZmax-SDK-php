@@ -12,7 +12,9 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**commissionadvanceGetCommunicationListV1()**](ObjectCommissionadvanceApi.md#commissionadvanceGetCommunicationListV1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationList | Retrieve Communication list |
 | [**commissionadvanceGetCommunicationrecipientsV1()**](ObjectCommissionadvanceApi.md#commissionadvanceGetCommunicationrecipientsV1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**commissionadvanceGetCommunicationsendersV1()**](ObjectCommissionadvanceApi.md#commissionadvanceGetCommunicationsendersV1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationsenders | Retrieve Communication senders |
+| [**commissionadvanceGetDocumenttypechecklistV1()**](ObjectCommissionadvanceApi.md#commissionadvanceGetDocumenttypechecklistV1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**commissionadvanceImportIntoEDMV1()**](ObjectCommissionadvanceApi.md#commissionadvanceImportIntoEDMV1) | **POST** /1/object/commissionadvance/{pkiCommissionadvanceID}/importIntoEDM | Import attachments into the Commissionadvance |
+| [**commissionadvanceSyncDocumenttypechecklistV1()**](ObjectCommissionadvanceApi.md#commissionadvanceSyncDocumenttypechecklistV1) | **POST** /1/object/commissionadvance/{pkiCommissionadvanceID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `commissionadvanceBatchDownloadV1()`
@@ -377,6 +379,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `commissionadvanceGetDocumenttypechecklistV1()`
+
+```php
+commissionadvanceGetDocumenttypechecklistV1($pkiCommissionadvanceID): \eZmaxAPI\Model\CommissionadvanceGetDocumenttypechecklistV1Response
+```
+
+Retrieve Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectCommissionadvanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiCommissionadvanceID = 56; // int
+
+try {
+    $result = $apiInstance->commissionadvanceGetDocumenttypechecklistV1($pkiCommissionadvanceID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectCommissionadvanceApi->commissionadvanceGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiCommissionadvanceID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\CommissionadvanceGetDocumenttypechecklistV1Response**](../Model/CommissionadvanceGetDocumenttypechecklistV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `commissionadvanceImportIntoEDMV1()`
 
 ```php
@@ -425,6 +487,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\CommissionadvanceImportIntoEDMV1Response**](../Model/CommissionadvanceImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `commissionadvanceSyncDocumenttypechecklistV1()`
+
+```php
+commissionadvanceSyncDocumenttypechecklistV1($pkiCommissionadvanceID, $body): \eZmaxAPI\Model\CommissionadvanceSyncDocumenttypechecklistV1Response
+```
+
+Synchronize Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectCommissionadvanceApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiCommissionadvanceID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->commissionadvanceSyncDocumenttypechecklistV1($pkiCommissionadvanceID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectCommissionadvanceApi->commissionadvanceSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiCommissionadvanceID** | **int**|  | |
+| **body** | **object**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\CommissionadvanceSyncDocumenttypechecklistV1Response**](../Model/CommissionadvanceSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

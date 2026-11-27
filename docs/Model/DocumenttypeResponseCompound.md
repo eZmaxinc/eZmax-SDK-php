@@ -7,20 +7,19 @@ Name | Type | Description | Notes
 **pkiDocumenttypeID** | **int** | The unique ID of the Documenttype |
 **objDocumenttypeName** | [**\eZmaxAPI\Model\MultilingualDocumenttypeName**](MultilingualDocumenttypeName.md) |  |
 **eDocumenttypeStep** | [**\eZmaxAPI\Model\ComputedEDocumenttypeStep**](ComputedEDocumenttypeStep.md) |  |
-**sDocumenttypeDefaultfilename** | **string** | The defaultfilename of the Documenttype |
-**bDocumenttypeShowagent** | **bool** | Whether if it&#39;s an showagent |
+**sDocumenttypeDefaultfilename** | **string** | The default filename for the document type |
+**bDocumenttypeShowagent** | **bool** | Whether the document type should be shown to the agent |
 **bDocumenttypeIsactive** | **bool** | Whether the documenttype is active or not |
-**bDocumenttypeIsrequired** | **bool** | Whether if it&#39;s an isrequired |
-**bDocumenttypeSale** | **bool** | Whether if it&#39;s an sale | [optional]
-**bDocumenttypeRental** | **bool** | Whether if it&#39;s an rental | [optional]
-**bDocumenttypeReference** | **bool** | Whether if it&#39;s an reference | [optional]
-**bDocumenttypeMortgagereference** | **bool** | Whether if it&#39;s an mortgagereference | [optional]
-**bDocumenttypeEvaluation** | **bool** | Whether if it&#39;s an evaluation | [optional]
-**bDocumenttypeConsultation** | **bool** | Whether if it&#39;s an consultation | [optional]
-**bDocumenttypeOtherservices** | **bool** | Whether if it&#39;s an otherservices | [optional]
-**bDocumenttypeForeclosedsale** | **bool** | Whether if it&#39;s an foreclosedsale | [optional]
-**bDocumenttypeCommercialfunding** | **bool** | Whether if it&#39;s an commercialfunding | [optional]
-**bDocumenttypeCanafe** | **bool** | Whether if it&#39;s an canafe | [optional]
+**bDocumenttypeSale** | **bool** | Whether the document type applies to sale transactions | [optional]
+**bDocumenttypeRental** | **bool** | Whether the document type applies to rental transactions | [optional]
+**bDocumenttypeReference** | **bool** | Whether the document type is a reference document | [optional]
+**bDocumenttypeMortgagereference** | **bool** | Whether the document type is a mortgage reference | [optional]
+**bDocumenttypeEvaluation** | **bool** | Whether the document type applies to evaluation transactions | [optional]
+**bDocumenttypeConsultation** | **bool** | Whether the document type applies to consultation transactions | [optional]
+**bDocumenttypeOtherservices** | **bool** | Whether the document type applies to other services | [optional]
+**bDocumenttypeForeclosedsale** | **bool** | Whether the document type applies to foreclosed sale transactions | [optional]
+**bDocumenttypeCommercialfunding** | **bool** | Whether the document type applies to commercial funding transactions | [optional]
+**bDocumenttypeCanafe** | **bool** | Whether the document type applies to Canafe transactions | [optional]
 **eDocumenttypeEzcom** | [**\eZmaxAPI\Model\FieldEDocumenttypeEzcom**](FieldEDocumenttypeEzcom.md) |  | [optional]
 **eDocumenttypePrivacydefault** | [**\eZmaxAPI\Model\FieldEDocumenttypePrivacydefault**](FieldEDocumenttypePrivacydefault.md) |  | [optional]
 **eDocumenttypeStatusdefault** | [**\eZmaxAPI\Model\FieldEDocumenttypeStatusdefault**](FieldEDocumenttypeStatusdefault.md) |  | [optional]

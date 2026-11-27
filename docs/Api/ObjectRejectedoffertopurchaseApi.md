@@ -12,8 +12,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**rejectedoffertopurchaseGetCommunicationListV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetCommunicationListV1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationList | Retrieve Communication list |
 | [**rejectedoffertopurchaseGetCommunicationrecipientsV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetCommunicationrecipientsV1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationrecipients | Retrieve Rejectedoffertopurchase&#39;s Communicationrecipient |
 | [**rejectedoffertopurchaseGetCommunicationsendersV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetCommunicationsendersV1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationsenders | Retrieve Rejectedoffertopurchase&#39;s Communicationsender |
+| [**rejectedoffertopurchaseGetDocumenttypechecklistV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetDocumenttypechecklistV1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**rejectedoffertopurchaseGetListV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetListV1) | **GET** /1/object/rejectedoffertopurchase/getList | Retrieve Rejectedoffertopurchase list |
 | [**rejectedoffertopurchaseImportIntoEDMV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseImportIntoEDMV1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/importIntoEDM | Import attachments into the Rejectedoffertopurchase |
+| [**rejectedoffertopurchaseSyncDocumenttypechecklistV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseSyncDocumenttypechecklistV1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `rejectedoffertopurchaseBatchDownloadV1()`
@@ -386,6 +388,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `rejectedoffertopurchaseGetDocumenttypechecklistV1()`
+
+```php
+rejectedoffertopurchaseGetDocumenttypechecklistV1($pkiRejectedoffertopurchaseID): \eZmaxAPI\Model\RejectedoffertopurchaseGetDocumenttypechecklistV1Response
+```
+
+Retrieve Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectRejectedoffertopurchaseApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiRejectedoffertopurchaseID = 56; // int
+
+try {
+    $result = $apiInstance->rejectedoffertopurchaseGetDocumenttypechecklistV1($pkiRejectedoffertopurchaseID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchaseGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiRejectedoffertopurchaseID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\RejectedoffertopurchaseGetDocumenttypechecklistV1Response**](../Model/RejectedoffertopurchaseGetDocumenttypechecklistV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `rejectedoffertopurchaseGetListV1()`
 
 ```php
@@ -506,6 +568,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\RejectedoffertopurchaseImportIntoEDMV1Response**](../Model/RejectedoffertopurchaseImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `rejectedoffertopurchaseSyncDocumenttypechecklistV1()`
+
+```php
+rejectedoffertopurchaseSyncDocumenttypechecklistV1($pkiRejectedoffertopurchaseID, $body): \eZmaxAPI\Model\RejectedoffertopurchaseSyncDocumenttypechecklistV1Response
+```
+
+Synchronize Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectRejectedoffertopurchaseApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiRejectedoffertopurchaseID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->rejectedoffertopurchaseSyncDocumenttypechecklistV1($pkiRejectedoffertopurchaseID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchaseSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiRejectedoffertopurchaseID** | **int**|  | |
+| **body** | **object**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\RejectedoffertopurchaseSyncDocumenttypechecklistV1Response**](../Model/RejectedoffertopurchaseSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

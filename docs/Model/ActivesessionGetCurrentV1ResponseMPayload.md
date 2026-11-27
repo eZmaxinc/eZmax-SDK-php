@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **sDepartmentNameX** | **string** | The Name of the Department in the language of the requester |
 **bActivesessionDebug** | **bool** | Whether the active session is in debug or not |
 **bActivesessionIssuperadmin** | **bool** | Whether the active session is superadmin or not |
-**bActivesessionAttachment** | **bool** | Can access attachment when we clone a user | [optional]
+**bActivesessionAttachment** | **bool** | Whether the user can access attachments when their session is cloned | [optional]
 **bActivesessionCanafe** | **bool** | Can access canafe when we clone a user | [optional]
 **bActivesessionFinancial** | **bool** | Can access financial element when we clone a user | [optional]
 **bActivesessionRealestatecompleted** | **bool** | Can access closed realestate folders when we clone a user | [optional]

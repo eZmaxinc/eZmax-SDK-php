@@ -12,8 +12,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**buyercontractGetCommunicationListV1()**](ObjectBuyercontractApi.md#buyercontractGetCommunicationListV1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationList | Retrieve Communication list |
 | [**buyercontractGetCommunicationrecipientsV1()**](ObjectBuyercontractApi.md#buyercontractGetCommunicationrecipientsV1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationrecipients | Retrieve Buyercontract&#39;s Communicationrecipient |
 | [**buyercontractGetCommunicationsendersV1()**](ObjectBuyercontractApi.md#buyercontractGetCommunicationsendersV1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationsenders | Retrieve Buyercontract&#39;s Communicationsender |
+| [**buyercontractGetDocumenttypechecklistV1()**](ObjectBuyercontractApi.md#buyercontractGetDocumenttypechecklistV1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**buyercontractGetListV1()**](ObjectBuyercontractApi.md#buyercontractGetListV1) | **GET** /1/object/buyercontract/getList | Retrieve Buyercontract list |
 | [**buyercontractImportIntoEDMV1()**](ObjectBuyercontractApi.md#buyercontractImportIntoEDMV1) | **POST** /1/object/buyercontract/{pkiBuyercontractID}/importIntoEDM | Import attachments into the Buyercontract |
+| [**buyercontractSyncDocumenttypechecklistV1()**](ObjectBuyercontractApi.md#buyercontractSyncDocumenttypechecklistV1) | **POST** /1/object/buyercontract/{pkiBuyercontractID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `buyercontractBatchDownloadV1()`
@@ -386,6 +388,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `buyercontractGetDocumenttypechecklistV1()`
+
+```php
+buyercontractGetDocumenttypechecklistV1($pkiBuyercontractID): \eZmaxAPI\Model\BuyercontractGetDocumenttypechecklistV1Response
+```
+
+Retrieve Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBuyercontractApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBuyercontractID = 56; // int
+
+try {
+    $result = $apiInstance->buyercontractGetDocumenttypechecklistV1($pkiBuyercontractID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBuyercontractApi->buyercontractGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBuyercontractID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BuyercontractGetDocumenttypechecklistV1Response**](../Model/BuyercontractGetDocumenttypechecklistV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `buyercontractGetListV1()`
 
 ```php
@@ -506,6 +568,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\BuyercontractImportIntoEDMV1Response**](../Model/BuyercontractImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `buyercontractSyncDocumenttypechecklistV1()`
+
+```php
+buyercontractSyncDocumenttypechecklistV1($pkiBuyercontractID, $body): \eZmaxAPI\Model\BuyercontractSyncDocumenttypechecklistV1Response
+```
+
+Synchronize Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBuyercontractApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBuyercontractID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->buyercontractSyncDocumenttypechecklistV1($pkiBuyercontractID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBuyercontractApi->buyercontractSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBuyercontractID** | **int**|  | |
+| **body** | **object**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\BuyercontractSyncDocumenttypechecklistV1Response**](../Model/BuyercontractSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

@@ -12,8 +12,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**adjustmentGetCommunicationListV1()**](ObjectAdjustmentApi.md#adjustmentGetCommunicationListV1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationList | Retrieve Communication list |
 | [**adjustmentGetCommunicationrecipientsV1()**](ObjectAdjustmentApi.md#adjustmentGetCommunicationrecipientsV1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**adjustmentGetCommunicationsendersV1()**](ObjectAdjustmentApi.md#adjustmentGetCommunicationsendersV1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationsenders | Retrieve Communication senders |
+| [**adjustmentGetDocumenttypechecklistV1()**](ObjectAdjustmentApi.md#adjustmentGetDocumenttypechecklistV1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getDocumenttypechecklist | Retrieve Document type checklist |
 | [**adjustmentGetListV1()**](ObjectAdjustmentApi.md#adjustmentGetListV1) | **GET** /1/object/adjustment/getList | Retrieve Adjustment list |
 | [**adjustmentImportIntoEDMV1()**](ObjectAdjustmentApi.md#adjustmentImportIntoEDMV1) | **POST** /1/object/adjustment/{pkiAdjustmentID}/importIntoEDM | Import attachments into the Adjustment |
+| [**adjustmentSyncDocumenttypechecklistV1()**](ObjectAdjustmentApi.md#adjustmentSyncDocumenttypechecklistV1) | **POST** /1/object/adjustment/{pkiAdjustmentID}/syncDocumenttypechecklist | Synchronize Document type checklist |
 
 
 ## `adjustmentBatchDownloadV1()`
@@ -378,6 +380,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `adjustmentGetDocumenttypechecklistV1()`
+
+```php
+adjustmentGetDocumenttypechecklistV1($pkiAdjustmentID): \eZmaxAPI\Model\AdjustmentGetDocumenttypechecklistV1Response
+```
+
+Retrieve Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAdjustmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiAdjustmentID = 56; // int
+
+try {
+    $result = $apiInstance->adjustmentGetDocumenttypechecklistV1($pkiAdjustmentID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAdjustmentApi->adjustmentGetDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiAdjustmentID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\AdjustmentGetDocumenttypechecklistV1Response**](../Model/AdjustmentGetDocumenttypechecklistV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `adjustmentGetListV1()`
 
 ```php
@@ -496,6 +558,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\AdjustmentImportIntoEDMV1Response**](../Model/AdjustmentImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `adjustmentSyncDocumenttypechecklistV1()`
+
+```php
+adjustmentSyncDocumenttypechecklistV1($pkiAdjustmentID, $body): \eZmaxAPI\Model\AdjustmentSyncDocumenttypechecklistV1Response
+```
+
+Synchronize Document type checklist
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectAdjustmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiAdjustmentID = 56; // int
+$body = array('key' => new \stdClass); // object
+
+try {
+    $result = $apiInstance->adjustmentSyncDocumenttypechecklistV1($pkiAdjustmentID, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectAdjustmentApi->adjustmentSyncDocumenttypechecklistV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiAdjustmentID** | **int**|  | |
+| **body** | **object**|  | [optional] |
+
+### Return type
+
+[**\eZmaxAPI\Model\AdjustmentSyncDocumenttypechecklistV1Response**](../Model/AdjustmentSyncDocumenttypechecklistV1Response.md)
 
 ### Authorization
 

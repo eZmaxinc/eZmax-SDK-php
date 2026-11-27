@@ -24,7 +24,7 @@ attachmentDeleteV1($pkiAttachmentID, $body): \eZmaxAPI\Model\AttachmentDeleteV1R
 
 Delete an existing attachment
 
-Te endpoint allows to delete an attachment.
+The endpoint allows to delete an attachment.
 
 ### Example
 
@@ -280,7 +280,7 @@ attachmentRestoreV1($pkiAttachmentID, $attachmentRestoreV1Request): \eZmaxAPI\Mo
 
 Restore a deleted attachment
 
-The endpoints allows to restore a previously deleted attachment.
+The endpoint allows to restore a previously deleted attachment.
 
 ### Example
 
@@ -344,7 +344,7 @@ attachmentSetDocumentTypeV1($pkiAttachmentID, $attachmentSetDocumentTypeV1Reques
 
 Change attachment document type
 
-The endpoint allows to change the checklist document type for an attachment.
+The endpoint allows to change the document type for an attachment.
 
 ### Example
 
