@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **objApikeyDescription** | [**\eZmaxAPI\Model\MultilingualApikeyDescription**](MultilingualApikeyDescription.md) |  |
 **objContactName** | [**\eZmaxAPI\Model\CustomContactNameResponse**](CustomContactNameResponse.md) |  |
 **sApikeyApikey** | **string** | The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey. | [optional]
-**sApikeySecret** | **string** | The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey. | [optional]
+**sApikeySecret** | **string** | The secret of the Apikey | [optional]
 **bApikeyIsactive** | **bool** | Whether the apikey is active or not |
 **bApikeyIssigned** | **bool** | Whether the apikey is signed or not | [optional]
 **objAudit** | [**\eZmaxAPI\Model\CommonAudit**](CommonAudit.md) |  |

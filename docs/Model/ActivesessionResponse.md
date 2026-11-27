@@ -8,11 +8,13 @@ Name | Type | Description | Notes
 **eActivesessionOrigin** | [**\eZmaxAPI\Model\FieldEActivesessionOrigin**](FieldEActivesessionOrigin.md) |  |
 **eActivesessionWeekdaystart** | [**\eZmaxAPI\Model\FieldEActivesessionWeekdaystart**](FieldEActivesessionWeekdaystart.md) |  |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
+**fkiCompanyID** | **int** | The unique ID of the Company |
 **sCompanyNameX** | **string** | The Name of the Company in the language of the requester |
+**fkiDepartmentID** | **int** | The unique ID of the Department |
 **sDepartmentNameX** | **string** | The Name of the Department in the language of the requester |
 **bActivesessionDebug** | **bool** | Whether the active session is in debug or not |
 **bActivesessionIssuperadmin** | **bool** | Whether the active session is superadmin or not |
-**bActivesessionAttachment** | **bool** | Can access attachment when we clone a user | [optional]
+**bActivesessionAttachment** | **bool** | Whether the user can access attachments when their session is cloned | [optional]
 **bActivesessionCanafe** | **bool** | Can access canafe when we clone a user | [optional]
 **bActivesessionFinancial** | **bool** | Can access financial element when we clone a user | [optional]
 **bActivesessionRealestatecompleted** | **bool** | Can access closed realestate folders when we clone a user | [optional]

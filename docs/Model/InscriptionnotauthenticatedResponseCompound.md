@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiInscriptionnotauthenticatedID** | **int** | The unique ID of the Inscriptionnotauthenticated. |
 **fkiInscriptionID** | **int** | The unique ID of the Inscription. |
+**objInscription** | [**\eZmaxAPI\Model\CustomInscription**](CustomInscription.md) |  |
 **fkiDepartmentID** | **int** | The unique ID of the Department | [optional]
 **sDepartmentNameX** | **string** | The Name of the Department in the language of the requester | [optional]
 **fkiFinancialinstitutionID** | **int** | The unique ID of the Financialinstitution | [optional]

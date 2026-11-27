@@ -45,7 +45,8 @@ Name | Type | Description | Notes
 **fkiSupplierID** | **int** | The unique ID of the Supplier. | [optional]
 **fkiTranqcontractID** | **int** | The unique ID of the Tranqcontract | [optional]
 **fkiTemplateID** | **int** | The unique ID of the Template | [optional]
-**fkiInscriptionchecklistID** | **int** | The unique ID of the Inscriptionchecklist | [optional]
+**fkiDocumenttypechecklistID** | **int** | The unique ID of the Documenttypechecklist | [optional]
+**sDocumenttypeNameX** | **string** | The name of the document type in the requester&#39;s language | [optional]
 **fkiFolderID** | **int** | The unique ID of the Folder | [optional]
 **fkiRejectedoffertopurchaseID** | **int** | The unique ID of the Rejectedoffertopurchase | [optional]
 **fkiDisclosureID** | **int** | The unique ID of the Disclosure | [optional]
@@ -53,14 +54,16 @@ Name | Type | Description | Notes
 **fkiEzsigndocumentIDReference** | **int** | The unique ID of the Ezsigndocument | [optional]
 **eAttachmentDocumenttype** | [**\eZmaxAPI\Model\FieldEAttachmentDocumenttype**](FieldEAttachmentDocumenttype.md) |  |
 **sAttachmentName** | **string** | The name of the Attachment |
+**sAttachmentCategory** | **string** | The attachment category |
 **eAttachmentPrivacy** | [**\eZmaxAPI\Model\FieldEAttachmentPrivacy**](FieldEAttachmentPrivacy.md) |  |
 **fkiUserIDSpecific** | **int** | The unique ID of the User | [optional]
+**objUserSpecific** | [**\eZmaxAPI\Model\CustomUserNameResponse**](CustomUserNameResponse.md) |  | [optional]
 **eAttachmentType** | [**\eZmaxAPI\Model\FieldEAttachmentType**](FieldEAttachmentType.md) |  |
 **iAttachmentSize** | **int** | The size of the Attachment |
 **iAttachmentEDMmoduleflag** | **int** | The edmmoduleflag of the Attachment | [optional]
 **sAttachmentMD5** | **string** | The MD5 of the Attachment |
-**bAttachmentDeleted** | **bool** | Whether if it&#39;s deleted |
-**bAttachmentValid** | **bool** | Whether if it&#39;s valid |
+**bAttachmentDeleted** | **bool** | Whether the Attachment is deleted or not |
+**bAttachmentValid** | **bool** | Whether the Attachment is valid or not |
 **eAttachmentVerified** | [**\eZmaxAPI\Model\FieldEAttachmentVerified**](FieldEAttachmentVerified.md) |  |
 **tAttachmentRejectioncomment** | **string** | The rejectioncomment of the Attachment | [optional]
 **fkiUserIDOwner** | **int** | The unique ID of the User | [optional]

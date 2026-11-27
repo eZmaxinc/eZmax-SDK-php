@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **sEzsignformfieldgroupTextvalidationcustommessage** | **string** | Description of validation rule. Show by signatory. | [optional]
 **tEzsignformfieldgroupTooltip** | **string** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional]
 **eEzsignformfieldgroupTooltipposition** | [**\eZmaxAPI\Model\FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional]
+**dtEzsignformfieldgroupCompleted** | **string** | The date the Ezsignformfieldgroup was completed. | [optional]
 **aObjEzsignformfield** | [**\eZmaxAPI\Model\EzsignformfieldResponseCompound[]**](EzsignformfieldResponseCompound.md) |  |
 **aObjDropdownElement** | [**\eZmaxAPI\Model\CustomDropdownElementResponseCompound[]**](CustomDropdownElementResponseCompound.md) |  | [optional]
 **aObjEzsignformfieldgroupsigner** | [**\eZmaxAPI\Model\EzsignformfieldgroupsignerResponseCompound[]**](EzsignformfieldgroupsignerResponseCompound.md) |  |

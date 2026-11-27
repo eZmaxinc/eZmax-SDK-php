@@ -405,7 +405,7 @@ try {
 ## `userGetAutocompleteV2()`
 
 ```php
-userGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage): \eZmaxAPI\Model\UserGetAutocompleteV2Response
+userGetAutocompleteV2($sSelector, $eFilterActive, $fkiAttachmentID, $sQuery, $acceptLanguage): \eZmaxAPI\Model\UserGetAutocompleteV2Response
 ```
 
 Retrieve Users and IDs
@@ -433,11 +433,12 @@ $apiInstance = new eZmaxAPI\Api\ObjectUserApi(
 );
 $sSelector = 'sSelector_example'; // string | The type of Users to return
 $eFilterActive = 'Active'; // string | Specify which results we want to display.
+$fkiAttachmentID = 'fkiAttachmentID_example'; // string | Specify for which fkiAttachmentID we want to find users for. Only used when sSelector is AttachmentSpecificUser.
 $sQuery = 'sQuery_example'; // string | Allow to filter the returned results
 $acceptLanguage = new \eZmaxAPI\Model\\eZmaxAPI\Model\HeaderAcceptLanguage(); // \eZmaxAPI\Model\HeaderAcceptLanguage
 
 try {
-    $result = $apiInstance->userGetAutocompleteV2($sSelector, $eFilterActive, $sQuery, $acceptLanguage);
+    $result = $apiInstance->userGetAutocompleteV2($sSelector, $eFilterActive, $fkiAttachmentID, $sQuery, $acceptLanguage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObjectUserApi->userGetAutocompleteV2: ', $e->getMessage(), PHP_EOL;
@@ -450,6 +451,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sSelector** | **string**| The type of Users to return | |
 | **eFilterActive** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;] |
+| **fkiAttachmentID** | **string**| Specify for which fkiAttachmentID we want to find users for. Only used when sSelector is AttachmentSpecificUser. | [optional] |
 | **sQuery** | **string**| Allow to filter the returned results | [optional] |
 | **acceptLanguage** | [**\eZmaxAPI\Model\HeaderAcceptLanguage**](../Model/.md)|  | [optional] |
 

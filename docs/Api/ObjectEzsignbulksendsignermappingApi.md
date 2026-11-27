@@ -7,8 +7,10 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**ezsignbulksendsignermappingCreateObjectV1()**](ObjectEzsignbulksendsignermappingApi.md#ezsignbulksendsignermappingCreateObjectV1) | **POST** /1/object/ezsignbulksendsignermapping | Create a new Ezsignbulksendsignermapping |
+| [**ezsignbulksendsignermappingCreateObjectV2()**](ObjectEzsignbulksendsignermappingApi.md#ezsignbulksendsignermappingCreateObjectV2) | **POST** /2/object/ezsignbulksendsignermapping | Create a new Ezsignbulksendsignermapping |
 | [**ezsignbulksendsignermappingDeleteObjectV1()**](ObjectEzsignbulksendsignermappingApi.md#ezsignbulksendsignermappingDeleteObjectV1) | **DELETE** /1/object/ezsignbulksendsignermapping/{pkiEzsignbulksendsignermappingID} | Delete an existing Ezsignbulksendsignermapping |
 | [**ezsignbulksendsignermappingGetObjectV2()**](ObjectEzsignbulksendsignermappingApi.md#ezsignbulksendsignermappingGetObjectV2) | **GET** /2/object/ezsignbulksendsignermapping/{pkiEzsignbulksendsignermappingID} | Retrieve an existing Ezsignbulksendsignermapping |
+| [**ezsignbulksendsignermappingGetObjectV3()**](ObjectEzsignbulksendsignermappingApi.md#ezsignbulksendsignermappingGetObjectV3) | **GET** /3/object/ezsignbulksendsignermapping/{pkiEzsignbulksendsignermappingID} | Retrieve an existing Ezsignbulksendsignermapping |
 
 
 ## `ezsignbulksendsignermappingCreateObjectV1()`
@@ -59,6 +61,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignbulksendsignermappingCreateObjectV1Response**](../Model/EzsignbulksendsignermappingCreateObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignbulksendsignermappingCreateObjectV2()`
+
+```php
+ezsignbulksendsignermappingCreateObjectV2($ezsignbulksendsignermappingCreateObjectV2Request): \eZmaxAPI\Model\EzsignbulksendsignermappingCreateObjectV2Response
+```
+
+Create a new Ezsignbulksendsignermapping
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksendsignermappingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ezsignbulksendsignermappingCreateObjectV2Request = new \eZmaxAPI\Model\EzsignbulksendsignermappingCreateObjectV2Request(); // \eZmaxAPI\Model\EzsignbulksendsignermappingCreateObjectV2Request
+
+try {
+    $result = $apiInstance->ezsignbulksendsignermappingCreateObjectV2($ezsignbulksendsignermappingCreateObjectV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignbulksendsignermappingApi->ezsignbulksendsignermappingCreateObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsignbulksendsignermappingCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsignbulksendsignermappingCreateObjectV2Request**](../Model/EzsignbulksendsignermappingCreateObjectV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignbulksendsignermappingCreateObjectV2Response**](../Model/EzsignbulksendsignermappingCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -183,6 +247,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignbulksendsignermappingGetObjectV2Response**](../Model/EzsignbulksendsignermappingGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignbulksendsignermappingGetObjectV3()`
+
+```php
+ezsignbulksendsignermappingGetObjectV3($pkiEzsignbulksendsignermappingID): \eZmaxAPI\Model\EzsignbulksendsignermappingGetObjectV3Response
+```
+
+Retrieve an existing Ezsignbulksendsignermapping
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksendsignermappingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignbulksendsignermappingID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignbulksendsignermappingGetObjectV3($pkiEzsignbulksendsignermappingID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignbulksendsignermappingApi->ezsignbulksendsignermappingGetObjectV3: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksendsignermappingID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignbulksendsignermappingGetObjectV3Response**](../Model/EzsignbulksendsignermappingGetObjectV3Response.md)
 
 ### Authorization
 

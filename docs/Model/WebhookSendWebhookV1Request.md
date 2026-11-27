@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **eWebhookModule** | [**\eZmaxAPI\Model\FieldEWebhookModule**](FieldEWebhookModule.md) |  |
 **eWebhookEzsignevent** | [**\eZmaxAPI\Model\CustomEWebhookEzsignevent**](CustomEWebhookEzsignevent.md) |  | [optional]
+**eWebhookEzmaxpartnerevent** | [**\eZmaxAPI\Model\FieldEWebhookEzmaxpartnerevent**](FieldEWebhookEzmaxpartnerevent.md) |  | [optional]
 **eWebhookManagementevent** | [**\eZmaxAPI\Model\FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional]
 **eWebhookRealestateevent** | [**\eZmaxAPI\Model\FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional]
 **fkiEzsignfolderID** | **int** | The unique ID of the Ezsignfolder | [optional]

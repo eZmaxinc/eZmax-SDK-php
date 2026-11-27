@@ -7,9 +7,12 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**ezsigntemplatepackagesignerCreateObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerCreateObjectV1) | **POST** /1/object/ezsigntemplatepackagesigner | Create a new Ezsigntemplatepackagesigner |
+| [**ezsigntemplatepackagesignerCreateObjectV2()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerCreateObjectV2) | **POST** /2/object/ezsigntemplatepackagesigner | Create a new Ezsigntemplatepackagesigner |
 | [**ezsigntemplatepackagesignerDeleteObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerDeleteObjectV1) | **DELETE** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Delete an existing Ezsigntemplatepackagesigner |
 | [**ezsigntemplatepackagesignerEditObjectV1()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerEditObjectV1) | **PUT** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Edit an existing Ezsigntemplatepackagesigner |
+| [**ezsigntemplatepackagesignerEditObjectV2()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerEditObjectV2) | **PUT** /2/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Edit an existing Ezsigntemplatepackagesigner |
 | [**ezsigntemplatepackagesignerGetObjectV2()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerGetObjectV2) | **GET** /2/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Retrieve an existing Ezsigntemplatepackagesigner |
+| [**ezsigntemplatepackagesignerGetObjectV3()**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesignerGetObjectV3) | **GET** /3/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Retrieve an existing Ezsigntemplatepackagesigner |
 
 
 ## `ezsigntemplatepackagesignerCreateObjectV1()`
@@ -60,6 +63,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigntemplatepackagesignerCreateObjectV1Response**](../Model/EzsigntemplatepackagesignerCreateObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigntemplatepackagesignerCreateObjectV2()`
+
+```php
+ezsigntemplatepackagesignerCreateObjectV2($ezsigntemplatepackagesignerCreateObjectV2Request): \eZmaxAPI\Model\EzsigntemplatepackagesignerCreateObjectV2Response
+```
+
+Create a new Ezsigntemplatepackagesigner
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatepackagesignerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ezsigntemplatepackagesignerCreateObjectV2Request = new \eZmaxAPI\Model\EzsigntemplatepackagesignerCreateObjectV2Request(); // \eZmaxAPI\Model\EzsigntemplatepackagesignerCreateObjectV2Request
+
+try {
+    $result = $apiInstance->ezsigntemplatepackagesignerCreateObjectV2($ezsigntemplatepackagesignerCreateObjectV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesignerCreateObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ezsigntemplatepackagesignerCreateObjectV2Request** | [**\eZmaxAPI\Model\EzsigntemplatepackagesignerCreateObjectV2Request**](../Model/EzsigntemplatepackagesignerCreateObjectV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplatepackagesignerCreateObjectV2Response**](../Model/EzsigntemplatepackagesignerCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -200,6 +265,70 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `ezsigntemplatepackagesignerEditObjectV2()`
+
+```php
+ezsigntemplatepackagesignerEditObjectV2($pkiEzsigntemplatepackagesignerID, $ezsigntemplatepackagesignerEditObjectV2Request): \eZmaxAPI\Model\EzsigntemplatepackagesignerEditObjectV2Response
+```
+
+Edit an existing Ezsigntemplatepackagesigner
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatepackagesignerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigntemplatepackagesignerID = 56; // int
+$ezsigntemplatepackagesignerEditObjectV2Request = new \eZmaxAPI\Model\EzsigntemplatepackagesignerEditObjectV2Request(); // \eZmaxAPI\Model\EzsigntemplatepackagesignerEditObjectV2Request
+
+try {
+    $result = $apiInstance->ezsigntemplatepackagesignerEditObjectV2($pkiEzsigntemplatepackagesignerID, $ezsigntemplatepackagesignerEditObjectV2Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesignerEditObjectV2: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackagesignerID** | **int**|  | |
+| **ezsigntemplatepackagesignerEditObjectV2Request** | [**\eZmaxAPI\Model\EzsigntemplatepackagesignerEditObjectV2Request**](../Model/EzsigntemplatepackagesignerEditObjectV2Request.md)|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplatepackagesignerEditObjectV2Response**](../Model/EzsigntemplatepackagesignerEditObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `ezsigntemplatepackagesignerGetObjectV2()`
 
 ```php
@@ -248,6 +377,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsigntemplatepackagesignerGetObjectV2Response**](../Model/EzsigntemplatepackagesignerGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsigntemplatepackagesignerGetObjectV3()`
+
+```php
+ezsigntemplatepackagesignerGetObjectV3($pkiEzsigntemplatepackagesignerID): \eZmaxAPI\Model\EzsigntemplatepackagesignerGetObjectV3Response
+```
+
+Retrieve an existing Ezsigntemplatepackagesigner
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsigntemplatepackagesignerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsigntemplatepackagesignerID = 56; // int
+
+try {
+    $result = $apiInstance->ezsigntemplatepackagesignerGetObjectV3($pkiEzsigntemplatepackagesignerID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesignerGetObjectV3: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsigntemplatepackagesignerID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsigntemplatepackagesignerGetObjectV3Response**](../Model/EzsigntemplatepackagesignerGetObjectV3Response.md)
 
 ### Authorization
 

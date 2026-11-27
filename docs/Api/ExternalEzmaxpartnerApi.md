@@ -6,7 +6,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**ezmaxpartnerSubscribeV1()**](ExternalEzmaxpartnerApi.md#ezmaxpartnerSubscribeV1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage |
+| [**ezmaxpartnerSubscribeV1()**](ExternalEzmaxpartnerApi.md#ezmaxpartnerSubscribeV1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxpartnerproductstage |
 
 
 ## `ezmaxpartnerSubscribeV1()`
@@ -15,9 +15,9 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 ezmaxpartnerSubscribeV1($ezmaxpartnerSubscribeV1Request): \eZmaxAPI\Model\EzmaxpartnerSubscribeV1Response
 ```
 
-Subscribe to an Ezmaxparnerproductstage
+Subscribe to an Ezmaxpartnerproductstage
 
-Subscribe to an Ezmaxparnerproductstage
+Subscribe to an Ezmaxpartnerproductstage
 
 ### Example
 

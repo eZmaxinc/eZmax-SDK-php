@@ -6,44 +6,44 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiCustomerID** | **int** | The unique ID of the Customer. |
 **fkiCompanyID** | **int** | The unique ID of the Company |
-**fkiCustomergroupID** | **int** | The unique ID of the Customergroup |
+**fkiCustomergroupID** | **int** | The unique ID of the Customergroup | [optional]
 **sCustomerName** | **string** | The name of the Customer |
 **sCustomerNote** | **string** | A note for the Customer | [optional]
 **fkiContactinformationsID** | **int** | The unique ID of the Contactinformations |
 **fkiContactcontainerID** | **int** | The unique ID of the Contactcontainer |
-**fkiImageID** | **int** | The unique ID of the Image |
+**fkiImageID** | **int** | The unique ID of the Image | [optional]
 **fkiGlaccountcontainerID** | **int** | The unique ID of the Glaccountcontainer |
 **fkiLanguageID** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |
 **fkiDepartmentID** | **int** | The unique ID of the Department |
 **fkiPaymentmethodID** | **int** | The unique ID of the Paymentmethod |
-**fkiElectronicfundstransferbankaccountID** | **int** | The unique ID of the Electronicfundstransferbankaccount |
-**fkiElectronicfundstransferbankaccountIDDirectdebit** | **int** | The unique ID of the Electronicfundstransferbankaccount |
+**fkiElectronicfundstransferbankaccountID** | **int** | The unique ID of the Electronicfundstransferbankaccount | [optional]
+**fkiElectronicfundstransferbankaccountIDDirectdebit** | **int** | The unique ID of the Electronicfundstransferbankaccount | [optional]
 **fkiSendingmethodID** | **int** | The unique ID of the Sendingmethod |
 **fkiTaxassignmentID** | **int** | The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable| |
 **fkiAttendancestatusID** | **int** | The unique ID of the Attendancestatus |
-**fkiAgentIDVariableexpensechargeto** | **int** | The unique ID of the Agent. |
-**fkiBrokerIDVariableexpensechargeto** | **int** | The unique ID of the Broker. |
-**fkiCustomerIDVariableexpensechargeto** | **int** | The unique ID of the Customer. |
-**fkiGlaccountcontainerIDVariableexpensechargeto** | **int** | The unique ID of the Glaccountcontainer |
-**fkiAgentIDSupplychargechargeto** | **int** | The unique ID of the Agent. |
-**fkiBrokerIDSupplychargechargeto** | **int** | The unique ID of the Broker. |
-**fkiCustomerIDSupplychargechargeto** | **int** | The unique ID of the Customer. |
-**fkiGlaccountcontainerIDSupplychargechargeto** | **int** | The unique ID of the Glaccountcontainer |
-**fkiInvoicealternatelogoID** | **int** | The unique ID of the Invoicealternatelogo |
-**fkiSynchronizationlinkserverID** | **int** | The unique ID of the Synchronizationlinkserver |
+**fkiAgentIDVariableexpensechargeto** | **int** | The unique ID of the Agent. | [optional]
+**fkiBrokerIDVariableexpensechargeto** | **int** | The unique ID of the Broker. | [optional]
+**fkiCustomerIDVariableexpensechargeto** | **int** | The unique ID of the Customer. | [optional]
+**fkiGlaccountcontainerIDVariableexpensechargeto** | **int** | The unique ID of the Glaccountcontainer | [optional]
+**fkiAgentIDSupplychargechargeto** | **int** | The unique ID of the Agent. | [optional]
+**fkiBrokerIDSupplychargechargeto** | **int** | The unique ID of the Broker. | [optional]
+**fkiCustomerIDSupplychargechargeto** | **int** | The unique ID of the Customer. | [optional]
+**fkiGlaccountcontainerIDSupplychargechargeto** | **int** | The unique ID of the Glaccountcontainer | [optional]
+**fkiInvoicealternatelogoID** | **int** | The unique ID of the Invoicealternatelogo | [optional]
+**fkiSynchronizationlinkserverID** | **int** | The unique ID of the Synchronizationlinkserver | [optional]
 **efkiUserID** | **int** | The unique ID of the User | [optional]
 **efksCustomerCode** | **string** | The code of the Customer | [optional]
 **sCustomerCode** | **string** | The code of the Customer |
-**dCustomerFulltimeequivalent** | **string** | The fulltimeequivalent of the Customer |
+**dCustomerFulltimeequivalent** | **string** | The fulltimeequivalent of the Customer | [optional]
 **iCustomerPhotocopiercode** | **int** | The photocopiercode of the Customer |
 **iCustomerLongdistancecode** | **int** | The longdistancecode of the Customer |
 **iCustomerTimewindowstart** | **int** | The timewindowstart of the Customer |
 **iCustomerTimewindowend** | **int** | The timewindowend of the Customer |
 **dCustomerMinimumchargeableinterests** | **string** | The minimumchargeableinterests of the Customer |
-**dtCustomerBirthdate** | **string** | The birthdate of the Customer |
+**dtCustomerBirthdate** | **string** | The birthdate of the Customer | [optional]
 **dtCustomerTransfer** | **string** | The transfer of the Customer |
 **dtCustomerTransferappointment** | **string** | The transferappointment of the Customer |
-**dtCustomerTransfersurvey** | **string** | The transfersurvey of the Customer |
+**dtCustomerTransfersurvey** | **string** | The transfersurvey of the Customer | [optional]
 **bCustomerIsactive** | **bool** | Whether the customer is active or not |
 **bCustomerVariableexpensefinanced** | **bool** | Whether if it&#39;s an variableexpensefinanced |
 **bCustomerVariableexpensefinancedtaxes** | **bool** | Whether if it&#39;s an variableexpensefinancedtaxes |

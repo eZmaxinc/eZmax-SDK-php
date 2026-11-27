@@ -6,6 +6,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**buyercontractBatchDownloadV1()**](ObjectBuyercontractApi.md#buyercontractBatchDownloadV1) | **POST** /1/object/buyercontract/{pkiBuyercontractID}/batchDownload | Download multiples attachments from a Buyercontract |
+| [**buyercontractGetAttachmentsV1()**](ObjectBuyercontractApi.md#buyercontractGetAttachmentsV1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getAttachments | Retrieve Buyercontract&#39;s attachments |
 | [**buyercontractGetCommunicationCountV1()**](ObjectBuyercontractApi.md#buyercontractGetCommunicationCountV1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationCount | Retrieve Communication count |
 | [**buyercontractGetCommunicationListV1()**](ObjectBuyercontractApi.md#buyercontractGetCommunicationListV1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationList | Retrieve Communication list |
 | [**buyercontractGetCommunicationrecipientsV1()**](ObjectBuyercontractApi.md#buyercontractGetCommunicationrecipientsV1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationrecipients | Retrieve Buyercontract&#39;s Communicationrecipient |
@@ -13,6 +15,128 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**buyercontractGetListV1()**](ObjectBuyercontractApi.md#buyercontractGetListV1) | **GET** /1/object/buyercontract/getList | Retrieve Buyercontract list |
 | [**buyercontractImportIntoEDMV1()**](ObjectBuyercontractApi.md#buyercontractImportIntoEDMV1) | **POST** /1/object/buyercontract/{pkiBuyercontractID}/importIntoEDM | Import attachments into the Buyercontract |
 
+
+## `buyercontractBatchDownloadV1()`
+
+```php
+buyercontractBatchDownloadV1($pkiBuyercontractID, $buyercontractBatchDownloadV1Request): \SplFileObject
+```
+
+Download multiples attachments from a Buyercontract
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBuyercontractApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBuyercontractID = 56; // int
+$buyercontractBatchDownloadV1Request = new \eZmaxAPI\Model\BuyercontractBatchDownloadV1Request(); // \eZmaxAPI\Model\BuyercontractBatchDownloadV1Request
+
+try {
+    $result = $apiInstance->buyercontractBatchDownloadV1($pkiBuyercontractID, $buyercontractBatchDownloadV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBuyercontractApi->buyercontractBatchDownloadV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBuyercontractID** | **int**|  | |
+| **buyercontractBatchDownloadV1Request** | [**\eZmaxAPI\Model\BuyercontractBatchDownloadV1Request**](../Model/BuyercontractBatchDownloadV1Request.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/zip`, `text/xml`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `buyercontractGetAttachmentsV1()`
+
+```php
+buyercontractGetAttachmentsV1($pkiBuyercontractID): \eZmaxAPI\Model\BuyercontractGetAttachmentsV1Response
+```
+
+Retrieve Buyercontract's attachments
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectBuyercontractApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiBuyercontractID = 56; // int
+
+try {
+    $result = $apiInstance->buyercontractGetAttachmentsV1($pkiBuyercontractID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectBuyercontractApi->buyercontractGetAttachmentsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiBuyercontractID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\BuyercontractGetAttachmentsV1Response**](../Model/BuyercontractGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `buyercontractGetCommunicationCountV1()`
 

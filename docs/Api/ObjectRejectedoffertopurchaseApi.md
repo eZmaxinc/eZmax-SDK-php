@@ -6,6 +6,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**rejectedoffertopurchaseBatchDownloadV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseBatchDownloadV1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/batchDownload | Download multiples attachments from a Rejectedoffertopurchase |
+| [**rejectedoffertopurchaseGetAttachmentsV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetAttachmentsV1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getAttachments | Retrieve Rejectedoffertopurchase&#39;s attachments |
 | [**rejectedoffertopurchaseGetCommunicationCountV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetCommunicationCountV1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationCount | Retrieve Communication count |
 | [**rejectedoffertopurchaseGetCommunicationListV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetCommunicationListV1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationList | Retrieve Communication list |
 | [**rejectedoffertopurchaseGetCommunicationrecipientsV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetCommunicationrecipientsV1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationrecipients | Retrieve Rejectedoffertopurchase&#39;s Communicationrecipient |
@@ -13,6 +15,128 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**rejectedoffertopurchaseGetListV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseGetListV1) | **GET** /1/object/rejectedoffertopurchase/getList | Retrieve Rejectedoffertopurchase list |
 | [**rejectedoffertopurchaseImportIntoEDMV1()**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchaseImportIntoEDMV1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/importIntoEDM | Import attachments into the Rejectedoffertopurchase |
 
+
+## `rejectedoffertopurchaseBatchDownloadV1()`
+
+```php
+rejectedoffertopurchaseBatchDownloadV1($pkiRejectedoffertopurchaseID, $rejectedoffertopurchaseBatchDownloadV1Request): \SplFileObject
+```
+
+Download multiples attachments from a Rejectedoffertopurchase
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectRejectedoffertopurchaseApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiRejectedoffertopurchaseID = 56; // int
+$rejectedoffertopurchaseBatchDownloadV1Request = new \eZmaxAPI\Model\RejectedoffertopurchaseBatchDownloadV1Request(); // \eZmaxAPI\Model\RejectedoffertopurchaseBatchDownloadV1Request
+
+try {
+    $result = $apiInstance->rejectedoffertopurchaseBatchDownloadV1($pkiRejectedoffertopurchaseID, $rejectedoffertopurchaseBatchDownloadV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchaseBatchDownloadV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiRejectedoffertopurchaseID** | **int**|  | |
+| **rejectedoffertopurchaseBatchDownloadV1Request** | [**\eZmaxAPI\Model\RejectedoffertopurchaseBatchDownloadV1Request**](../Model/RejectedoffertopurchaseBatchDownloadV1Request.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/zip`, `text/xml`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `rejectedoffertopurchaseGetAttachmentsV1()`
+
+```php
+rejectedoffertopurchaseGetAttachmentsV1($pkiRejectedoffertopurchaseID): \eZmaxAPI\Model\RejectedoffertopurchaseGetAttachmentsV1Response
+```
+
+Retrieve Rejectedoffertopurchase's attachments
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectRejectedoffertopurchaseApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiRejectedoffertopurchaseID = 56; // int
+
+try {
+    $result = $apiInstance->rejectedoffertopurchaseGetAttachmentsV1($pkiRejectedoffertopurchaseID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchaseGetAttachmentsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiRejectedoffertopurchaseID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\RejectedoffertopurchaseGetAttachmentsV1Response**](../Model/RejectedoffertopurchaseGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `rejectedoffertopurchaseGetCommunicationCountV1()`
 

@@ -9,6 +9,7 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**ezsignbulksenddocumentmappingCreateObjectV1()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingCreateObjectV1) | **POST** /1/object/ezsignbulksenddocumentmapping | Create a new Ezsignbulksenddocumentmapping |
 | [**ezsignbulksenddocumentmappingDeleteObjectV1()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingDeleteObjectV1) | **DELETE** /1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Delete an existing Ezsignbulksenddocumentmapping |
 | [**ezsignbulksenddocumentmappingGetObjectV2()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingGetObjectV2) | **GET** /2/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Retrieve an existing Ezsignbulksenddocumentmapping |
+| [**ezsignbulksenddocumentmappingGetObjectV3()**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmappingGetObjectV3) | **GET** /3/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Retrieve an existing Ezsignbulksenddocumentmapping |
 
 
 ## `ezsignbulksenddocumentmappingCreateObjectV1()`
@@ -183,6 +184,68 @@ try {
 ### Return type
 
 [**\eZmaxAPI\Model\EzsignbulksenddocumentmappingGetObjectV2Response**](../Model/EzsignbulksenddocumentmappingGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `ezsignbulksenddocumentmappingGetObjectV3()`
+
+```php
+ezsignbulksenddocumentmappingGetObjectV3($pkiEzsignbulksenddocumentmappingID): \eZmaxAPI\Model\EzsignbulksenddocumentmappingGetObjectV3Response
+```
+
+Retrieve an existing Ezsignbulksenddocumentmapping
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectEzsignbulksenddocumentmappingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiEzsignbulksenddocumentmappingID = 56; // int
+
+try {
+    $result = $apiInstance->ezsignbulksenddocumentmappingGetObjectV3($pkiEzsignbulksenddocumentmappingID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectEzsignbulksenddocumentmappingApi->ezsignbulksenddocumentmappingGetObjectV3: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiEzsignbulksenddocumentmappingID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\EzsignbulksenddocumentmappingGetObjectV3Response**](../Model/EzsignbulksenddocumentmappingGetObjectV3Response.md)
 
 ### Authorization
 

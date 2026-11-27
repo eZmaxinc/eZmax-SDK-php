@@ -6,6 +6,8 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**inscriptiontempBatchDownloadV1()**](ObjectInscriptiontempApi.md#inscriptiontempBatchDownloadV1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/batchDownload | Download multiples attachments from a Inscriptiontemp |
+| [**inscriptiontempGetAttachmentsV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetAttachmentsV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getAttachments | Retrieve Inscriptiontemp&#39;s attachments |
 | [**inscriptiontempGetCommunicationCountV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetCommunicationCountV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationCount | Retrieve Communication count |
 | [**inscriptiontempGetCommunicationListV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetCommunicationListV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList | Retrieve Communication list |
 | [**inscriptiontempGetCommunicationrecipientsV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetCommunicationrecipientsV1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationrecipients | Retrieve Inscriptiontemp&#39;s Communicationrecipient |
@@ -13,6 +15,128 @@ All URIs are relative to https://prod.api.appcluster01.ca-central-1.ezmax.com/re
 | [**inscriptiontempGetListV1()**](ObjectInscriptiontempApi.md#inscriptiontempGetListV1) | **GET** /1/object/inscriptiontemp/getList | Retrieve Inscriptiontemp list |
 | [**inscriptiontempImportIntoEDMV1()**](ObjectInscriptiontempApi.md#inscriptiontempImportIntoEDMV1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/importIntoEDM | Import attachments into the Inscriptiontemp |
 
+
+## `inscriptiontempBatchDownloadV1()`
+
+```php
+inscriptiontempBatchDownloadV1($pkiInscriptiontempID, $inscriptiontempBatchDownloadV1Request): \SplFileObject
+```
+
+Download multiples attachments from a Inscriptiontemp
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectInscriptiontempApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiInscriptiontempID = 56; // int
+$inscriptiontempBatchDownloadV1Request = new \eZmaxAPI\Model\InscriptiontempBatchDownloadV1Request(); // \eZmaxAPI\Model\InscriptiontempBatchDownloadV1Request
+
+try {
+    $result = $apiInstance->inscriptiontempBatchDownloadV1($pkiInscriptiontempID, $inscriptiontempBatchDownloadV1Request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectInscriptiontempApi->inscriptiontempBatchDownloadV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiInscriptiontempID** | **int**|  | |
+| **inscriptiontempBatchDownloadV1Request** | [**\eZmaxAPI\Model\InscriptiontempBatchDownloadV1Request**](../Model/InscriptiontempBatchDownloadV1Request.md)|  | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/zip`, `text/xml`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `inscriptiontempGetAttachmentsV1()`
+
+```php
+inscriptiontempGetAttachmentsV1($pkiInscriptiontempID): \eZmaxAPI\Model\InscriptiontempGetAttachmentsV1Response
+```
+
+Retrieve Inscriptiontemp's attachments
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: Authorization
+$config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = eZmaxAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+
+$apiInstance = new eZmaxAPI\Api\ObjectInscriptiontempApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pkiInscriptiontempID = 56; // int
+
+try {
+    $result = $apiInstance->inscriptiontempGetAttachmentsV1($pkiInscriptiontempID);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObjectInscriptiontempApi->inscriptiontempGetAttachmentsV1: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pkiInscriptiontempID** | **int**|  | |
+
+### Return type
+
+[**\eZmaxAPI\Model\InscriptiontempGetAttachmentsV1Response**](../Model/InscriptiontempGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `inscriptiontempGetCommunicationCountV1()`
 
