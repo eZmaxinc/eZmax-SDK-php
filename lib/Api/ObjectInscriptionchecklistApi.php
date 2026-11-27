@@ -105,7 +105,7 @@ class ObjectInscriptionchecklistApi
             'authorizationsources' => [
                 'Authorization',
             ],
-            'deprecated' => false,
+            'deprecated' => true,
         ],
     ];
 
@@ -177,6 +177,7 @@ class ObjectInscriptionchecklistApi
      * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \eZmaxAPI\Model\InscriptionchecklistGetAutocompleteV3Response
+     * @deprecated
      */
     public function inscriptionchecklistGetAutocompleteV3($sSelector, $fkiBuyercontractID = null, $fkiInscriptionID = null, $fkiInscriptionnotauthenticatedID = null, $fkiInscriptiontempID = null, $fkiAgentID = null, $fkiBrokerID = null, $fkiOtherincomeID = null, $fkiRejectedoffertopurchaseID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['inscriptionchecklistGetAutocompleteV3'][0])
     {
@@ -206,6 +207,7 @@ class ObjectInscriptionchecklistApi
      * @throws \eZmaxAPI\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \eZmaxAPI\Model\InscriptionchecklistGetAutocompleteV3Response, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function inscriptionchecklistGetAutocompleteV3WithHttpInfo($sSelector, $fkiBuyercontractID = null, $fkiInscriptionID = null, $fkiInscriptionnotauthenticatedID = null, $fkiInscriptiontempID = null, $fkiAgentID = null, $fkiBrokerID = null, $fkiOtherincomeID = null, $fkiRejectedoffertopurchaseID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['inscriptionchecklistGetAutocompleteV3'][0])
     {
@@ -302,6 +304,7 @@ class ObjectInscriptionchecklistApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function inscriptionchecklistGetAutocompleteV3Async($sSelector, $fkiBuyercontractID = null, $fkiInscriptionID = null, $fkiInscriptionnotauthenticatedID = null, $fkiInscriptiontempID = null, $fkiAgentID = null, $fkiBrokerID = null, $fkiOtherincomeID = null, $fkiRejectedoffertopurchaseID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['inscriptionchecklistGetAutocompleteV3'][0])
     {
@@ -334,6 +337,7 @@ class ObjectInscriptionchecklistApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function inscriptionchecklistGetAutocompleteV3AsyncWithHttpInfo($sSelector, $fkiBuyercontractID = null, $fkiInscriptionID = null, $fkiInscriptionnotauthenticatedID = null, $fkiInscriptiontempID = null, $fkiAgentID = null, $fkiBrokerID = null, $fkiOtherincomeID = null, $fkiRejectedoffertopurchaseID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['inscriptionchecklistGetAutocompleteV3'][0])
     {
@@ -403,6 +407,7 @@ class ObjectInscriptionchecklistApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function inscriptionchecklistGetAutocompleteV3Request($sSelector, $fkiBuyercontractID = null, $fkiInscriptionID = null, $fkiInscriptionnotauthenticatedID = null, $fkiInscriptiontempID = null, $fkiAgentID = null, $fkiBrokerID = null, $fkiOtherincomeID = null, $fkiRejectedoffertopurchaseID = null, $eFilterActive = 'Active', $sQuery = null, $acceptLanguage = null, string $contentType = self::contentTypes['inscriptionchecklistGetAutocompleteV3'][0])
     {
