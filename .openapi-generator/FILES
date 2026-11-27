@@ -46,7 +46,6 @@ docs/Api/ObjectDisclosureApi.md
 docs/Api/ObjectDiscussionApi.md
 docs/Api/ObjectDiscussionmembershipApi.md
 docs/Api/ObjectDiscussionmessageApi.md
-docs/Api/ObjectDocumenttypechecklistApi.md
 docs/Api/ObjectDomainApi.md
 docs/Api/ObjectElectronicfundstransferApi.md
 docs/Api/ObjectElectronicfundstransfertransactionApi.md
@@ -739,9 +738,6 @@ docs/Model/DiscussionmessageRequestCompound.md
 docs/Model/DiscussionmessageRequestPatch.md
 docs/Model/DiscussionmessageResponse.md
 docs/Model/DiscussionmessageResponseCompound.md
-docs/Model/DocumenttypechecklistPatchObjectV1Request.md
-docs/Model/DocumenttypechecklistPatchObjectV1Response.md
-docs/Model/DocumenttypechecklistRequestPatch.md
 docs/Model/DomainAutocompleteElementResponse.md
 docs/Model/DomainCreateObjectV1Request.md
 docs/Model/DomainCreateObjectV1Response.md
@@ -1760,7 +1756,6 @@ docs/Model/FieldECustomerType.md
 docs/Model/FieldEDisclosureInteresttype.md
 docs/Model/FieldEDiscussionRobot.md
 docs/Model/FieldEDiscussionmessageStatus.md
-docs/Model/FieldEDocumenttypechecklistStatus.md
 docs/Model/FieldEErrorCode.md
 docs/Model/FieldEEzdoctemplatedocumentPrivacylevel.md
 docs/Model/FieldEEzmaxinvoicingPaymenttype.md
@@ -2681,7 +2676,6 @@ lib/Api/ObjectDisclosureApi.php
 lib/Api/ObjectDiscussionApi.php
 lib/Api/ObjectDiscussionmembershipApi.php
 lib/Api/ObjectDiscussionmessageApi.php
-lib/Api/ObjectDocumenttypechecklistApi.php
 lib/Api/ObjectDomainApi.php
 lib/Api/ObjectElectronicfundstransferApi.php
 lib/Api/ObjectElectronicfundstransfertransactionApi.php
@@ -3387,9 +3381,6 @@ lib/Model/DiscussionmessageRequestCompound.php
 lib/Model/DiscussionmessageRequestPatch.php
 lib/Model/DiscussionmessageResponse.php
 lib/Model/DiscussionmessageResponseCompound.php
-lib/Model/DocumenttypechecklistPatchObjectV1Request.php
-lib/Model/DocumenttypechecklistPatchObjectV1Response.php
-lib/Model/DocumenttypechecklistRequestPatch.php
 lib/Model/DomainAutocompleteElementResponse.php
 lib/Model/DomainCreateObjectV1Request.php
 lib/Model/DomainCreateObjectV1Response.php
@@ -4408,7 +4399,6 @@ lib/Model/FieldECustomerType.php
 lib/Model/FieldEDisclosureInteresttype.php
 lib/Model/FieldEDiscussionRobot.php
 lib/Model/FieldEDiscussionmessageStatus.php
-lib/Model/FieldEDocumenttypechecklistStatus.php
 lib/Model/FieldEErrorCode.php
 lib/Model/FieldEEzdoctemplatedocumentPrivacylevel.php
 lib/Model/FieldEEzmaxinvoicingPaymenttype.php
